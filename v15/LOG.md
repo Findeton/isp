@@ -3520,3 +3520,43 @@ amendment above rather than a kill: the worker rebuilds
 the affected charges under the amended charter and
 DISCLOSES what it had already inspected at receipt.
 
+## 2026-08-17 — THE SEVENTEENTH REVIEW ADOPTED: SEVEN NARROW CORRECTIONS EXECUTED BEFORE EITHER SCOUT GENERATES VERDICTS (v15 LEDGER #87)
+
+All seven verified and executed: (1) DC ontology addendum
+v3 (representational-CANDIDATES language, fork-consistent
+with E-35; triples = a candidate minimum under the
+pair-update hypothesis; the PLAN reference corrected to
+the superseding version).  (2) S4's positive outcome made
+ASYMMETRIC — SPAIR-NO-INSUFFICIENCY-WITNESS-THROUGH-
+<window>, never SUFFICIENT (finite census cannot prove
+all-future sufficiency; the closure/bisimulation theorem
+named as successor); the geometry leg BLOCKED-AT-FIXED-G.
+(3) THE S4 PREMISE GATE: raw (R,G)-equality or one
+declared quotient PROVEN before any future comparison —
+SCOUT-K's clash rows are covariant-vector-identical, NOT
+raw-record-identical; the REC collision classes bound as
+the proper seeds.  (4) S3's outcomes split
+(CK-DIVISIBLE / PROCESS-TENSOR-DIVISIBLE /
+INTERVENTION-SEMANTICS-UNBUILT) + tomographic sufficiency
+of the preparation set proven-or-published + the
+state-grain separation (record+geometry / +trace / +psi /
++history) run separately or proven grain-independent.
+(5) THE INTERPRETATION WALL: an insufficiency witness
+shows only that the instantaneous pair-record+geometry
+state is insufficient — history / trigger memory / ontic
+psi / n-body beable stay distinct and unchosen.  (6) the
+base pin's S2 outcome words EXPLICITLY REPLACED
+(ORDER-DEFECT-NONZERO/ZERO +
+GEOMETRIC-INTERPRETATION-UNTESTED-FIXED-G) — no prose
+precedence.  (7) SCOUT-T's addendum frozen: the #86
+fork-neutral wall replaces the #84 citation, and THE
+MINIMALITY LADDER (no trace / previous trigger /
+unordered counts / finite suffixes / full ordered trace)
+replaces the single full-trace test — the headline names
+the COARSEST feasible grain; full-trace success is never
+called minimal.  Both addenda routed to their workers by
+confirmed send (scoutpair addendum-2 + scoutt addendum;
+digests in commit).  The reviewer's execution-state
+observations concur with the board (no scout verdicts
+yet; three repairs in battery).
+
