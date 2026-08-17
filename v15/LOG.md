@@ -3311,3 +3311,124 @@ canonical-first clash — re-derived by the unit's own
 instrument) routed to the in-flight SCOUT-K micro-repair
 worker by confirmed send this entry.
 
+## 2026-08-17 — OUTAGE 3 (MONTHLY SPEND LIMIT, USER-RESET): FOUR WORKERS KILLED MID-FLIGHT; CONTINUATIONS RELAUNCH THIS ENTRY (v15 LEDGER #83)
+
+The monthly spend limit terminated: the ARITY-16 repair
+(waiting on its battery's first checkpoint — mid-to-late),
+the SCOUT-K micro-repair (LATE — its last act was
+inspecting a green run's gate list and totality stats),
+the SCOUT-PSI repair (progress unknown at kill), and
+SCOUT-T (EARLY — it had verified the parent digest
+38c3f6cb288e unchanged, snapshotted nothing yet).  User
+reset; the standing outage protocol applies (scratch =
+evidence to reconcile; batteries and frozen artifacts =
+the only acceptance).
+
+
+## 2026-08-17 — THE FOURTEENTH REVIEW (THE USER'S CONVERSATION) ADOPTED IN A FUNDAMENTAL WAY: THE THREE-LEVEL ONTOLOGY; THE ARITY SPLIT (RECORD-ARITY vs PROCESS-ARITY) — WHICH THE COMMITTED THEORY ALREADY INSTANTIATES; THE INTERACTION-GEOMETRY IDENTITY; THREE AS THE SMALLEST CURVATURE PROBE; W-REPRESENTATION ENGRAVED; THE DC ONTOLOGY ADDENDUM FROZEN; SCOUT-PAIR PINNED (v15 LEDGER #84)
+
+THE FRAMEWORK, engraved as the era's working ontology
+language (three levels, never conflated): WHAT EXISTS =
+the actual relational configuration and its realized
+history (actors, relations, records, generated causal
+geometry); THE PHYSICAL LAW = objective chances for
+complete future histories, conditioned only where
+conditioning is physically meaningful; REPRESENTATION =
+transition matrices, amplitudes, psi, rho, unitaries,
+Hamiltonians, fields, chosen clocks and cuts.  The
+Barandes move, with ISP's extension: a fixed SPACE OF
+POSSIBLE RELATIONAL CONFIGURATIONS within which the
+actual geometry changes — a fixed possibility space is
+not a fixed spacetime (v11 paper-0's own primacy of
+transition probabilities cited).  W-REPRESENTATION,
+bought as a wall for every future pin: NO UNIT MAY
+PROMOTE K, psi, rho, H, OR ANY REPRESENTATION TO
+ONTOLOGY — the danger named: replacing
+the-Hamiltonian-is-reality with the-kernel-is-reality
+would change costumes, not ontology.  Even
+TRACE-SUFFICIENT (SCOUT-T) is feasibility, not nature.
+
+THE ARITY SPLIT, the central adoption: RECORD-ARITY (two
+actors per elementary relational fact — the atomic
+beable is a pair relation) vs PROCESS-ARITY (any number
+of actors may participate in ONE indivisible
+boundary-to-boundary transition).  Binary beables;
+n-ary, indivisible process law.  Pairwise ontology does
+NOT imply classically pairwise dynamics — forcing every
+n-body interaction into a sequence of Markovian pair
+transitions would destroy exactly the indivisibility
+that produces quantum behavior.  AND THE RETROACTIVE
+RECOGNITION, verified against the committed structure:
+THE THEORY ALREADY INSTANTIATES THIS — the record's
+atoms ARE pair-cells (every cell is a pair-relation
+datum; the count field counts pair-incidences), and the
+three-actor division event is the indivisible JOINT
+change of three of them.  The era's entire type-error
+arc — paper-20's one-cell write vs paper-19's three-cell
+footprint, Mp=3q's 133% inclusion probability, SCOUT-K's
+trigger erasure — was the collision of record-arity with
+process-arity under one name.  E-34's term registry
+gains the split: "arity" itself was the deepest homonym.
+
+THE FIELD EQUIVALENT: not a field on a pre-existing
+spacetime but a RELATIONAL REWRITE PROCESS — from the
+current configuration, a structured set of possible
+local relation changes; the law assigns JOINT chances to
+entire compatible collections; the realized collection
+becomes the new record; the new record changes which
+future changes are possible.  QFT-like multiplicity
+without a fundamental n-actor event for every n;
+particle species as stable propagating MOTIFS of the
+process, not actors.  CONCURRENCY: disjoint commuting
+changes = one causal layer; commuting overlaps = order
+physically irrelevant; non-commuting overlaps = order
+becomes causal structure; no valid intermediate
+conditioning = one indivisible quantum process.
+
+THE INTERACTION-GEOMETRY IDENTITY (the gravity leap): an
+elementary relational event is SIMULTANEOUSLY an
+interaction and a revision of geometry — not an
+interaction inside spacetime followed by a gravitational
+response; the changed relation itself determines future
+nearness, causal accessibility, interaction opportunity.
+AND THE NEW ROLE OF THREE: two actors are the smallest
+ONTIC FACT; three are the smallest CURVATURE PROBE —
+with only AB there is no relational comparison; with C,
+the order defect of AB-then-BC vs BC-then-AB can become
+the smallest curvature measurement.  Triples keep
+appearing WITHOUT every event needing three actors.
+(ARITY-16's saturation-follows-characteristic-two hint
+noted as viability evidence, not derivation — its files
+are under repair.)
+
+THE HAMILTONIAN DISCIPLINE: ISP does not seek the true
+Hamiltonian first; it defines the real process and asks
+whether a Hamiltonian representation exists.  TWO
+HAMILTONIANS ARE PHYSICALLY EQUIVALENT IFF THEY PRODUCE
+THE SAME OBJECTIVE LAW FOR EVERY COMPLETE
+RECORD-AND-GEOMETRY HISTORY; one Hamiltonian with
+different record/geometry semantics = different
+theories.  Under backreaction there may be NO global
+Hamiltonian — only local representations relative to
+cuts, clocks, approximately stable geometries, judged by
+the underlying history law.
+
+FROZEN THIS ENTRY: the DC ONTOLOGY ADDENDUM
+(v15/note-dc-ontology-addendum.md, digest in commit) —
+the six requirements (ontic configuration and history
+space independent of psi/H/K; which cuts are genuine
+division events; a joint law over pair-relation changes
+without assumed intermediate divisibility; how the
+realized record changes future relational locality; the
+Hamiltonian equivalence criterion; whether the existing
+walk is RECONSTRUCTIBLE from the process rather than
+imported) plus the sharp instruction verbatim (test
+binary relational facts + division-to-division joint
+network laws + Hamiltonians as reconstructed
+representations + triples as curvature contexts, not
+automatically primitive events).  SCOUT-PAIR PINNED
+(v15/note-scoutpair-pin.md, digest in commit) and
+launched: the computable core of the hybrid — the formal
+re-typing audit, the order-defect/curvature census, the
+pair-sequential factorization test.
+
