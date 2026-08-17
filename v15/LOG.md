@@ -2558,3 +2558,45 @@ era standards; battery + one verifier seat, scout class.
 Deliverables: v15/note-scoutpsi.md,
 v15/code/scoutpsi_exact.py + output + receipt.
 
+## 2026-08-17 — SCOUT REPAIR DELIVERED AND COMMITTED: ALL EIGHT ORDERS + THE #64 ADDENDUM FOLDED; THE ROOT CAUSE WAS THE LEDGER ITSELF — THE RECEIPT SERIALIZED THE LIVE LOG'S DIGEST, SO EVERY LEDGER APPEND MOVED THE RECEIPT (v15 LEDGER #66)
+
+Committed as delivered (note 57177f5bb9b9 / code
+63bf34c9df62 / output 04fe8f67f75b / receipt
+9fd9029516f2; snapshots byte-frozen).  R1: the kernel
+verdict rescoped EVERYWHERE to the record-blind
+fixed-alpha line, the mechanism stated in a new receipt
+field, SCOUT-K named at every open site, the old
+overclaim strings grep-clean across all four files.  R2:
+the S1 escape renamed TRIGGER-MARGINAL-NOT-OCCUPANCY-
+MARGINAL with the scaffold status plain (no rho'_e;
+transport owed) and the #64 candidate-marking folded
+(trigger = candidate bridge; the primitive
+ADOPTED-BY-PROGRAM-DECISION).  R3: 27→7 corrected with
+the fourth-false-numeral disclosure + the SEMANTIC
+NUMERAL GATE (a 30-binding NUMERAL_FIELD_MAP tying each
+load-bearing prose numeral to its SPECIFIC receipt field;
+the teeth proven: a receipt-backed-elsewhere "8" planted
+in the prose DIES where the old wall would have passed
+it).  R4: the S4 verdict CONDITIONAL-ON-THE-PSI-ONTOLOGY
+in the #64 sharpened form, SCOUT-PSI named as the running
+test.  R5: proximity counted, Q27 open, the alternatives
+= SCOUT-K's fork.  R6 — THE ROOT CAUSE, exactly: NOT
+hash-order; the receipt's read_set carried the sha256-12
+of the LIVE APPEND-ONLY v15/LOG.md (read only to locate
+one anchor), and double_build_digest covered read_set —
+every ledger append moved the receipt; the motion
+reproduced exactly, first divergence at
+/read_set/v15/LOG.md.  Fix: serialized read_set carries
+ONLY the four gate-forced pinned digests; unpinned
+digests checked in-run, stderr only; new G-ENV-EXCLUSION
+gate scans the payload for any unpinned live-read digest
+(registered falsifier with move proof).  R7: the
+alpha=1/3 tension disclosed at the scaffold.  R8 battery
+green INCLUDING THE DECISIVE PROBE: a seventh
+regeneration after a synthetic LOG append in-mirror,
+still byte-identical — the defect provably eliminated.
+Moved values: the ordered 27→7 and instrument counts
+only (gates 35→37, falsifiers 27→29); every measured
+number byte-identical.  Orchestrator battery next; the
+pin's single hostile verifier seat on green.
+

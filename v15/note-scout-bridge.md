@@ -74,8 +74,8 @@ mid-argument is the disease this scout exists to prevent.
 |---|---|---|---|
 | R1 the delivered bridge Mp = 3q | TRIPLE-EVENTS (misread as CELLS) | DEAD-BY-TYPE-ERROR: demands inclusion probability 4/3 | none -- this is the surfaced conflation |
 | R2 CELL-HIT primitive (paper-20 as delivered) | CELLS | SOUND-AS-BOOKKEEPING: q sums to 1; cannot phrase the grammar object or growth | renames the walk's primitive; refuses the grammar identification |
-| R3 TRIPLE-EVENT primitive with kernel K | TRIPLE-EVENTS | SOUND-IF-A-KERNEL-IS-DECLARED: no equivariant record-consistent K exists; 288 pure non-line kernels survive the measured windows | purchases the kernel declaration |
-| R4 complete-successor law (escape a) | COMPLETE-SUCCESSOR-CONFIGURATIONS | EXHIBITED: sum 1, trigger readout q, bridge abandoned | purchases the successor ontology and the owed transport law |
+| R3 TRIPLE-EVENT primitive with kernel K | TRIPLE-EVENTS | SOUND-IF-A-KERNEL-IS-DECLARED: no record-blind fixed-alpha affine-equivariant K preserves the three-step walk statistics; 288 pure non-line kernels survive the measured windows; the record-dependent census is SCOUT-K's | purchases the kernel declaration |
+| R4 complete-successor law (escape a) | COMPLETE-SUCCESSOR-CONFIGURATIONS | EXHIBITED-AS-SCAFFOLD: sum 1, trigger readout q, bridge abandoned; no rho'_e, geometry unchanged | purchases the successor ontology and the owed transport law |
 | R5 endpoint Born statistics (escape b) | CELLS | EXHIBITED: unit column sums, ceiling vacuous | purchases endpoint semantics for every Born weight |
 | R6 non-additive history measure (escape c) | TRIPLE-EVENTS | CLASS-SPLIT: signed witness at E-TRIPLE only; refused at the affine level at the other three classes | purchases non-additivity and buys only the full triple class |
 | R7 selective record-writing (escape d) | TRIPLE-EVENTS | INHERITED: scale invariance returns the same LP | purchases nothing in its minimal form |
@@ -85,13 +85,13 @@ no route claims to evade the no-go without naming the sample-space change or esc
 
 ## SCOUT-BRIDGE verdicts:
 
-SCOUT-PUSHFORWARD-ESCAPE-EXHIBITED-AT-NO-INSTANTANEOUS-TRIPLE-EVENT-VARIABLE<CEILING-THEOREM-PROVED-AT-THE-INCLUSION-BRIDGE-156-OF-156-EXCEPTIONS-0; ESCAPE-A-EXHIBITED; ESCAPE-B-EXHIBITED; ESCAPE-C-CLASS-SPLIT-E-TRIPLE-ONLY; ESCAPE-D-INHERITED-BY-SCALE-INVARIANCE>
+SCOUT-PUSHFORWARD-ESCAPE-EXHIBITED-AT-TRIGGER-MARGINAL-NOT-OCCUPANCY-MARGINAL<CEILING-THEOREM-PROVED-AT-THE-INCLUSION-BRIDGE-156-OF-156-EXCEPTIONS-0; ESCAPE-A-EXHIBITED-AS-SCAFFOLD; ESCAPE-B-EXHIBITED; ESCAPE-C-CLASS-SPLIT-E-TRIPLE-ONLY; ESCAPE-D-INHERITED-BY-SCALE-INVARIANCE>
 
-SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-RECORD-CONSISTENT<TRIGGER-ONLY-DIM-54-EQUIVARIANT-DIM-1; ALL-WRITE-ONE-MEASURED-EMPTY-GAP-6; RECORD-CONSISTENCY-VACUOUS-AT-TWO-STEPS-FIRST-BITES-AT-THREE-STEPS; PURE-NON-LINE-SURVIVORS-8-EXTENDING-TO-288; EQUIVARIANT-LINE-EMPTY>
+SCOUT-KERNEL-EMPTY-AT-RECORD-BLIND-FIXED-ALPHA-AFFINE-EQUIVARIANT<TRIGGER-ONLY-DIM-54-EQUIVARIANT-DIM-1; ALL-WRITE-ONE-MEASURED-EMPTY-GAP-6; RECORD-CONSISTENCY-VACUOUS-AT-TWO-STEPS-FIRST-BITES-AT-THREE-STEPS; PURE-NON-LINE-SURVIVORS-8-EXTENDING-TO-288; RECORD-BLIND-FIXED-ALPHA-LINE-EMPTY; RECORD-DEPENDENT-CENSUS-IS-SCOUT-K>
 
 SCOUT-DELTA-B-IDENTIFICATION-KILLED-AT-CONDITION-1-THE-DATUM-DOES-NOT-DETERMINE-THE-CERTIFICATE<DATUM-ZERO-AT-ALL-156-ROWS; CUTS-INCLUDE-THE-DEGENERATE-I.U; BOTH-COUNTERCONTROLS-KILL; PREDICTION-SCORES-20-OF-156>
 
-SCOUT-RECORD-UPDATE-NOT-A-LINEAR-MAP-ON-MIXTURES<CLOSED-FORM-WITNESS-EXACT; JOINT-SUCCESSOR-FORM-SATISFIED-WITH-AN-OUTCOME-INDEPENDENT-STATE-LEG; RHO-TRANSPORT-CONSTRAINTS-STATED-DELIVERED-CANDIDATES-0-OF-4>
+SCOUT-RECORD-UPDATE-NOT-A-LINEAR-MAP-ON-MIXTURES<CONDITIONAL-ON-THE-PSI-ONTOLOGY; CLOSED-FORM-WITNESS-EXACT; JOINT-SUCCESSOR-FORM-SATISFIED-WITH-AN-OUTCOME-INDEPENDENT-STATE-LEG; RHO-TRANSPORT-CONSTRAINTS-STATED-DELIVERED-CANDIDATES-0-OF-4>
 
 SCOUT-PRIMITIVE-SELECTION-TRIPLE-SURVIVES-THE-TYPE-TESTS-AND-COSTS-THE-KERNEL-CELL-HIT-SURVIVES-AS-THE-DELIVERED-WALK
 
@@ -137,8 +137,8 @@ probability; the bridge demanded an inclusion probability of 4/3.
 **The escape menu, each formalized as what-changes-in-the-LP and tested
 by construction.**
 
-*(a) No instantaneous triple-event variable — the Barandes-compatible
-form.*  The universal configuration space Omega is the disjoint union over
+*(a) The trigger-marginal reading — the Barandes-compatible form.*  The
+universal configuration space Omega is the disjoint union over
 geometries G of configurations (G, R, rho, event data, ...): the outer
 space fixed, G changing between configurations, per the addendum and
 w5-recast:68 —
@@ -147,15 +147,39 @@ w5-recast:68 —
 
 Mp = 3q is abandoned under the triple primitive, not repaired: the object is P(X'_e|X) over mutually exclusive complete local successors, summing to one, with the three pair-cells correlated consequences of one transition [SS:COMPLETE-SUCCESSOR-CONFIGURATIONS]
 
-What this demands of the transition law: one normalized law per
-configuration over complete successors, each successor bundling the event,
-the record change, the geometry change and the state transport together.
-The scout built it at the committed arena: the joint law with the uniform
-kernel carries total mass one, its trigger readout equals the committed q
-byte for byte, its 27 successors are pairwise distinct records, and its
-event-law inclusion marginal is measurably NOT 3q — nothing is violated,
-the bridge is gone [LIC:G-ESCAPE-A].  The theorem stands as the proof of
-why anything less re-inherits the ceiling.
+The exhibited escape, named by its true content: q is read as a TRIGGER
+MARGINAL of the joint law, not as an occupancy marginal — and the
+construction RETAINS an instantaneous triple variable t, so "no
+instantaneous triple-event variable" (the delivered outcome name) was
+the wrong name for it; this repair renames it on the ninth review's
+finding.  The reading itself is candidate-marked:
+
+the trigger reading is the exhibited construction's reading, a CANDIDATE -- not an established physical mechanism: cells have not been proven to trigger triple-events, and establishing or rejecting the trigger mechanism is SCOUT-K's charge
+
+What a full transition law would demand: one normalized law
+per configuration over complete successors, each successor bundling the
+event, the record change, the geometry change and the state transport
+together.  What the scout actually built is less, and is here named
+plainly:
+
+SCAFFOLD, not a successor dynamics: each stored successor carries (event, new record, G-UNCHANGED) and NO rho'_e -- normalized trigger/triple bookkeeping on the fixed arena; rho'_e and carrier transport are owed
+
+The scaffold's joint law with the uniform kernel carries total mass one,
+its trigger readout equals the committed q byte for byte, its 7
+successors are pairwise distinct records, and its event-law inclusion
+marginal is measurably NOT 3q — nothing is violated, the bridge is gone
+[LIC:G-ESCAPE-A].  (The delivered note printed 27 here; the receipt's
+s1_escape_a.successors reads 7, and the ninth review verified 27 as the
+era's fourth false delivered numeral — corrected under the standing
+ordered-exception discipline, and the numeral-field map below now binds
+this numeral to that exact field.)  It proves type-correct
+normalization is possible; it is not the physical law.  One more
+tension, disclosed where the scaffold is presented:
+
+the scaffold's uniform kernel is rejected by the scout's own three-step test under walk preservation (the alpha probes refuse 0, 1/3 and 1 alike)
+
+The theorem stands as the proof of why anything less re-inherits the
+ceiling.
 
 *(b) Born weights as endpoint statistics.*  Replace the incidence matrix
 (column sums 3) by the endpoint matrix over (trigger, event) pairs: column
@@ -186,7 +210,11 @@ pairs with the kernel supported on events containing the trigger
 [SS:TRIPLE-EVENTS].  The committed adjacency is declared: two cells are
 adjacent when their actor pairs share an actor; every cell an incident
 block writes shares an actor with the trigger, so the kernel's support
-lies inside the declared neighborhood [LIC:G-LOCALITY].  The relabelling
+lies inside the declared neighborhood [LIC:G-LOCALITY].
+
+the shared-actor adjacency is itself a DECLARATION and is counted as one; Q27 -- whether proximity is primitive, or means record co-participation, declared adjacency, causal influence, or something else -- remains OPEN; the alternatives (record-distance, metric distance, causal neighborhood) are SCOUT-K's declared fork
+
+The relabelling
 group is the affine stabilizer of the declared direction set: order 108,
 12 linear parts times 9 translations, measured transitive on the 27 cells,
 splitting the 27 blocks into 9 declared lines plus 18 non-line triangles
@@ -225,18 +253,34 @@ all 3 CELL-HIT increments and all 7 incident triple-writes — 11 variants
 there for every kernel.  The window where the fork first bites is three
 steps:
 
-at the three-step window the 729 agreement rows reduce to 25 distinct polynomials in the line weight; linear rows force alpha = -1, alpha = 0 and alpha = 1 at once, so the equivariant family is empty, while 8 pure non-line first-step selections survive and extend to 288 pure kernels on the reached cells
+at the three-step window the 729 agreement rows reduce to 25 distinct polynomials in the line weight; linear rows force alpha = -1, alpha = 0 and alpha = 1 at once, so the record-blind fixed-alpha equivariant line is empty, while 8 pure non-line first-step selections survive and extend to 288 pure kernels on the reached cells
+
+**The scope of this emptiness — the ninth review's downgrade, engraved.**
+The family the three-step test measures is RECORD-BLIND and FIXED-ALPHA:
+
+RECORD-BLIND, FIXED-ALPHA: the three-step test multiplies the SAME one-parameter line-vs-non-line kernel polynomial at BOTH event selections, although the first event has already changed the record R; true equivariance K(ge|gc,gG,gR)=K(e|c,G,R) admits record-dependent kernels that distinguish candidate triples by their relation to the written record, and that census is SCOUT-K's (v15/note-scoutk-pin.md), not this unit's
+
+So the honest verdict is: no record-blind, fixed-alpha,
+affine-equivariant kernel preserves the delivered three-step walk
+statistics.  The general no-go is NOT proven here; mixed kernels at the
+three-step window were already disclosed undecided, and the
+record-dependent, locally covariant kernel census — one variable per
+relational orbit of (G, R, c, e) — is the successor calculation,
+SCOUT-K.
 
 **The unique-determination test (the addendum's order four).**
 
-locality + proximity + relabelling symmetry + record consistency are JOINTLY EMPTY at the first window where record consistency has teeth: symmetry pins the one-parameter line family, record consistency excludes that whole line and selects only non-equivariant deterministic kernels; an arbitrary K remains a hidden free law and is refused
+no record-blind, fixed-alpha, affine-equivariant kernel preserves the delivered three-step walk statistics: within that measured family, symmetry pins the one-parameter line family and record consistency excludes that whole line, leaving only deterministic kernels outside it; the general record-dependent equivariant question is NOT decided here and is SCOUT-K's census; an arbitrary K remains a hidden free law and is refused
 
 an arbitrary K is a hidden free law and is refused as an outcome word
 
-So the four criteria do not uniquely determine K — they overdetermine it
-to death, and the measured tension is sharp: symmetry and record
-consistency pull in incompatible directions at this arena.  The surviving
-pure kernels are a counted declaration, published, nothing selected.
+So the four criteria do not uniquely determine K within the measured
+record-blind fixed-alpha family — there they overdetermine it to death,
+and the measured tension is sharp: symmetry and record consistency pull
+in incompatible directions at this arena, within that family.  Whether
+record dependence dissolves the tension is exactly SCOUT-K's question.
+The surviving pure kernels are a counted declaration, published,
+nothing selected.
 
 overlapping triples are compatible with mutual exclusivity: exclusivity is about which complete successor happens, not about which actors are shared, and all 351 successor pairs are distinct
 
@@ -316,9 +360,16 @@ the delivered record-update rule fails linearity on mixtures with an exact witne
 
 What the object is: a branch-indexed family of linear weight functionals
 multiplying one outcome-independent unitary conjugation — quadratic in
-the state, so neither a channel nor an instrument; the linear completion
-that records and collapses is exactly the selective reading paper-20
-declares not run [LIC:G-S4-LINEARITY].
+the state, so neither a channel nor an instrument [LIC:G-S4-LINEARITY].
+
+**The verdict's condition and the completion space (the ninth review's
+qualification, folded; the fork sharpened per the tenth).**
+
+the nonlinearity verdict is conditional on the psi-ontology: mixtures read as preparation-independent physical states; if pure psi is ontic, the fundamental process (psi, R) -> (U psi, R + event record) with outcome probabilities q_c(psi) is an ORDINARY stochastic process, distributions over ontic psi evolve LINEARLY, and the nonlinearity lives ONLY in the compressed density-matrix description -- two ensembles with the same rho may produce different future records
+
+the dichotomy: either rho is complete and the delivered rule must be replaced -- and the linear completion space is larger than projective collapse, the general instruments with outcome-dependent post-states -- or rho is INCOMPLETE because the ontic decomposition matters; SCOUT-PSI (v15/note-scoutpsi-pin.md) is the operational test now running, and until it reports the fork has mathematical content and no demonstrated operational distinction
+
+projective collapse is not the only linear completion: the larger space is the general instruments with outcome-dependent post-states and no projective collapse required, and that space is DC's search space; the selective reading paper-20 declared not-run is one member of it
 
 **The joint-successor requirement, formalized and measured.**  A joint
 successor law supplies, per mutually exclusive outcome, both the record
@@ -348,14 +399,17 @@ The delivered boundary, quoted from ECC's bytes:
 
 The user recommends the triple-event primitive; the scout built both
 ontologies at the committed arena and measured the decision criteria.
+The adoption's status is engraved (per the tenth review):
+
+the triple-event primitive is ADOPTED-BY-PROGRAM-DECISION: adopted because it matches the intended local, backreacting ontology; not selected uniquely by an existing ISP law
 
 | criterion | CELL-HIT primitive | TRIPLE-EVENT primitive |
 |---|---|---|
 | carries the committed q | PASS: a distribution over CELLS, sum 1 | PASS: q is the trigger readout of a normalized successor law |
 | the grammar object's arity | FAIL: writes 1 cell per step; the three-actor object never occurs as one process event | PASS: writes 3 cells per event; one admissible round writes 9 |
-| walk preservation | PASS: identity with the delivered walk | CONDITIONAL: every kernel preserves the two-step window; at the three-step window only the 288 pure non-line kernels preserve it and no equivariant kernel does |
+| walk preservation | PASS: identity with the delivered walk | CONDITIONAL: every kernel preserves the two-step window; at the three-step window only the 288 pure non-line kernels preserve it and no record-blind fixed-alpha equivariant kernel does; the record-dependent equivariant question is SCOUT-K's |
 | successor/backreaction reading | FAIL: no geometry leg; the walk's menu meets the cross class at 0 of 36, growth is unphrasable | PASS-AS-FORM: successors bundle event, record, geometry, state; the transport leg is owed, 0 of 4 delivered candidates supply it |
-| purchased declarations | the rename only; the grammar identification is refused without proof | the kernel (a counted declaration among the surviving pure kernels) plus the owed transport law |
+| purchased declarations | the rename only; the grammar identification is refused without proof | the kernel (a counted declaration among the surviving pure kernels) plus the owed transport law plus the shared-actor proximity declaration (Q27 open; SCOUT-K's fork) |
 
 The grain tension this table sits on is ECC's own, quoted from its bytes:
 
@@ -363,17 +417,22 @@ The grain tension this table sits on is ECC's own, quoted from its bytes:
 
 **The answer.**  The TRIPLE-EVENT primitive survives every sample-space
 and type test at the committed windows and costs one counted kernel
-declaration plus the owed transport law; the CELL-HIT primitive survives
-as the delivered walk's own bookkeeping and cannot phrase the three-actor
-grammar object or growth; under the triple primitive the walk's
-statistics are preserved at the committed windows only by non-equivariant
-kernel selections.  The scout's measurements are consistent with the
-user's recommendation, and they price it: the triple primitive is not a
+declaration plus the owed transport law plus the counted proximity
+declaration; the CELL-HIT primitive survives as the delivered walk's own
+bookkeeping and cannot phrase the three-actor grammar object or growth;
+under the triple primitive the walk's statistics are preserved at the
+committed windows only by kernel selections outside the record-blind
+fixed-alpha equivariant family, and whether a record-dependent, locally
+covariant equivariant kernel preserves them is OPEN — the SCOUT-K
+census.  The scout's measurements are consistent with the user's
+recommendation, and they price it: the triple primitive is not a
 re-description of the delivered walk — at the three-step window it is a
-selection among kernels, and the selection breaks the arena's symmetry.
-Which is a finding, not a defect: the committed corpus's record
-consistency and its relabelling symmetry cannot both be kept by any
-kernel bridge at this arena.
+selection among kernels, and within the measured record-blind
+fixed-alpha family the selection breaks the arena's symmetry.  Which is
+a finding, not a defect, at its measured scope: the committed corpus's
+record consistency and its relabelling symmetry cannot both be kept by
+any record-blind fixed-alpha kernel bridge at this arena; whether a
+record-dependent kernel keeps both is SCOUT-K's question.
 
 ## The alternatives-vs-consequences audit (per bridge equation, gated)
 
@@ -454,13 +513,38 @@ transport to the nine-actor arena is exactly where the homonym bit.
    and takes under two minutes; nothing is cached across mutant runs.
 6. **Review shape.**  Orchestrator battery + ONE hostile verifier seat,
    per the pin; the smallness is the user's order.
+7. **The ordered numeral correction (ledger #59 R3).**  The delivered
+   note printed "its 27 successors are pairwise distinct records" where
+   the receipt's s1_escape_a.successors reads 7 — verified by the ninth
+   review as the era's fourth false delivered numeral, corrected in
+   this repair under the standing ordered-exception discipline.  The
+   enabling disease: the numeral wall backed any prose numeral by ANY
+   receipt occurrence, so the arena's 27 backed the false count.
+   Repaired structurally: the numeral-field map binds every
+   load-bearing prose numeral to its SPECIFIC receipt field
+   [LIC:G-NUMERAL-FIELD], with the mutant registered.
+8. **The reproducibility defect (ledger #59 R6), root-caused and
+   fixed.**  The delivered receipt serialized environment-dependent
+   bytes: the sha256-12 of the live, unpinned, append-only v15/LOG.md
+   (read only to locate one anchor) sat in read_set, so EVERY ledger
+   append moved the receipt and its double_build_digest with it — the
+   committed db5204220d86 against the orchestrator-mirror 4fcc9b112441
+   is exactly that motion; the per-run LIVE/SNAPSHOT resolution flags
+   and anchor offsets were likewise environment-contingent.  At fixed
+   tree bytes the receipt is measured seed-invariant.  Fixed: the
+   serialized read_set carries only the four digest-pinned reads
+   (gate-forced constants); unpinned digests and resolution are
+   checked in-run, printed to stderr, and never persisted; the receipt
+   payload is scanned for leaks [LIC:G-ENV-EXCLUSION]; byte-stability
+   is proved by deleted-artifact regeneration in git-less mirrors at
+   alien working directories across three PYTHONHASHSEED values.
 
 ## The instrument
 
 v15/code/scout_exact.py: delivery is the only writer and a failing run
 writes nothing; --no-write, --numbers, --kit, --selftest, --mutant NAME,
 --verify-paper PATH, --list-gates, --list-mutants; unknown or conflicting
-argv exits with the usage code.  35 gates; 27 registered falsifiers, each
+argv exits with the usage code.  37 gates; 29 registered falsifiers, each
 naming the measured object it corrupts and the gate it must die at, each
 verified by a fresh full run with a digest move proof and the artifacts
 byte-untouched.  The abstract-syntax self-scan bans float literals, the
@@ -472,4 +556,10 @@ note is checked against the receipt's inventories, the S3 section is
 scanned for the refused speculation words, and the four newest disease
 species are scanned for: atomic slash-rationals in prose, the NEG-guard
 excuse loop, licence tokens that name no registered gate, and
-derivation sentences without a subject.
+derivation sentences without a subject.  Two gates are new at this
+repair: G-NUMERAL-FIELD consumes the numeral-field map — every
+load-bearing prose numeral bound to its specific receipt field, with
+the context sentence required verbatim, so any-occurrence backing can
+never again be a numeral's sole backing — and G-ENV-EXCLUSION scans the
+receipt payload for any unpinned live-read digest, so no
+environment-dependent byte enters either artifact.

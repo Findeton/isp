@@ -576,28 +576,48 @@ ANCHORS = (
 
 
 def measure_reads(LD, P):
+    # Environment-dependent bytes are checked IN-RUN and NOT persisted:
+    # the delivered receipt serialized the sha256-12 of the live,
+    # unpinned, append-only v15/LOG.md (and per-run LIVE/SNAPSHOT
+    # resolution flags), so every ledger append moved the receipt --
+    # the #59 reproducibility defect.  The serialized read_set now
+    # carries ONLY the four digest-pinned reads (gate-forced constants);
+    # unpinned reads are verified by verbatim anchor location, their
+    # digests and resolution printed to stderr only.
     reads = {}
     resolution = {}
     for rel in sorted({rel for (_i, rel, _q) in ANCHORS} | set(PINNED)):
         data, how = read_pinned(rel)
         reads[rel] = sha12(data)
         resolution[rel] = how
-    P["read_set"] = reads
-    P["read_resolution"] = resolution
+    P["read_set"] = {rel: reads[rel] for rel in PINNED}
+    P["unpinned_reads"] = sorted(
+        rel for rel in reads if rel not in PINNED)
+    P["read_resolution_policy"] = (
+        "pinned reads resolve through the live path when it still "
+        "carries the pinned bytes, else through the byte-verified "
+        "delivered snapshot; the resolved bytes are digest-gated either "
+        "way, and the per-run LIVE/SNAPSHOT flag is environment-"
+        "dependent so it is checked in-run and not serialized")
+    sys.stderr.write("READ-RESOLUTION (in-run, not persisted): "
+                     + to_json({"resolution": resolution,
+                                "unpinned_digests":
+                                {r: reads[r] for r in
+                                 P["unpinned_reads"]}}) + "\n")
     bad = sorted(rel for rel, d in PINNED.items() if reads[rel] != d)
     LD.gate("G-PIN-DIGESTS", not bad,
             "the two frozen pins and the two delivered ECC artifacts are "
             "read at their pinned digests and no other bytes; pinned "
             "reads that the live tree no longer carries resolve through "
             "the byte-verified delivered snapshots",
-            {"pinned": PINNED, "bad": bad, "resolution": resolution})
+            {"pinned": PINNED, "bad": bad})
     anch = []
     for (aid, rel, quote) in ANCHORS:
         hay = canon(read_pinned(rel)[0].decode("utf-8"))
         needle = canon(pick("MUT-ANCHOR", quote, quote + " CORRUPTED"))
         pos = hay.find(needle)
         anch.append({"id": aid, "rel": rel, "found": pos >= 0,
-                     "offset": pos, "quote": quote})
+                     "quote": quote})
     P["anchors"] = anch
     LD.gate("G-ANCHORS", all(a["found"] for a in anch),
             "every declared source anchor is located verbatim "
@@ -1012,6 +1032,32 @@ def s1_pushforward(LD, P, CLS, qc):
         "inclusion_marginal_max": max(incl),
         "inclusion_marginal_of_event_law_equals_3q":
             incl == [3 * v for v in qc],
+        "instantaneous_triple_retained": True,
+        "scaffold_status": "SCAFFOLD, not a successor dynamics: each "
+                           "stored successor carries (event, new "
+                           "record, G-UNCHANGED) and NO rho'_e -- "
+                           "normalized trigger/triple bookkeeping on "
+                           "the fixed arena; rho'_e and carrier "
+                           "transport are owed",
+        "exhibited_semantics": "TRIGGER-MARGINAL-NOT-OCCUPANCY-"
+                               "MARGINAL: q is read as a trigger "
+                               "marginal of the joint law, not as an "
+                               "occupancy marginal; the construction "
+                               "RETAINS an instantaneous triple t",
+        "trigger_semantics_status": "the trigger reading is the "
+                                    "exhibited construction's reading, "
+                                    "a CANDIDATE -- not an established "
+                                    "physical mechanism: cells have "
+                                    "not been proven to trigger "
+                                    "triple-events, and establishing "
+                                    "or rejecting the trigger "
+                                    "mechanism is SCOUT-K's charge",
+        "uniform_kernel_alpha": Fraction(1, 3),
+        "uniform_kernel_tension": "the scaffold's uniform kernel is "
+                                  "rejected by the scout's own "
+                                  "three-step test under walk "
+                                  "preservation (the alpha probes "
+                                  "refuse 0, 1/3 and 1 alike)",
         "lp_change": "the constraint M p = 3 q is DELETED, not repaired; "
                      "the object is P(X'_e | X) over mutually exclusive "
                      "complete local successors, sum 1; q returns as the "
@@ -1021,10 +1067,14 @@ def s1_pushforward(LD, P, CLS, qc):
             sum(joint.values()) == 1 and trig == list(qc)
             and distinct_succ
             and incl != [3 * v for v in qc],
-            "escape (a) exhibited by construction: a normalized law over "
-            "complete successors carries the committed q as its trigger "
-            "readout while its event-law inclusion marginal is NOT 3q -- "
-            "the bridge is abandoned, nothing is violated",
+            "escape (a) exhibited by construction AS A SCAFFOLD "
+            "(normalized trigger/triple bookkeeping on the fixed arena, "
+            "no rho'_e, geometry unchanged): a normalized law over "
+            "complete-successor bookkeeping carries the committed q as "
+            "its trigger readout while its event-law inclusion marginal "
+            "is NOT 3q -- the bridge is abandoned, nothing is violated; "
+            "the exhibited escape is trigger-marginal semantics, and an "
+            "instantaneous triple variable is retained",
             {"max_inclusion": max(incl)})
     # ESCAPE (b): endpoint statistics -- the (c,e) endpoint matrix has
     # column sums 1; every simplex target is expressible
@@ -1232,8 +1282,9 @@ def s2_kernel(LD, P, qc):
             "equivariance is measured, not assumed: cells transitive, "
             "blocks split 9 lines + 18 non-lines, incident pairs split "
             "27 + 54, the cell stabilizer (order 4) swaps the two "
-            "non-line blocks, and the equivariant kernel family has "
-            "dimension exactly 1 (the line weight alpha)",
+            "non-line blocks, and the record-blind equivariant kernel "
+            "family has dimension exactly 1 (the one fixed line weight "
+            "alpha)",
             P["s2_orbits"])
     # locality: support locality is structural; the declared adjacency
     adj_ok = True
@@ -1247,6 +1298,17 @@ def s2_kernel(LD, P, qc):
         "adjacency": "two cells are adjacent when their actor pairs "
                      "share an actor",
         "support_local": adj_ok,
+        "proximity_declaration": "the shared-actor adjacency is itself "
+                                 "a DECLARATION and is counted as one; "
+                                 "Q27 -- whether proximity is "
+                                 "primitive, or means record "
+                                 "co-participation, declared "
+                                 "adjacency, causal influence, or "
+                                 "something else -- remains OPEN; the "
+                                 "alternatives (record-distance, "
+                                 "metric distance, causal "
+                                 "neighborhood) are SCOUT-K's "
+                                 "declared fork",
         "record_dependence": "at the committed record R0 the kernel's "
                              "record argument is constant; the "
                              "round-window rows are fiber rows"}
@@ -1443,14 +1505,27 @@ def s2_record_consistency(LD, P):
     P["s2_arm_c_depth3"] = {
         "rows": nrows, "distinct_nonzero_polys": len(polys),
         "linear_poly_roots": lin_roots,
-        "equivariant_line_empty": len(lin_roots) >= 2,
+        "record_blind_fixed_alpha_line_empty": len(lin_roots) >= 2,
         "alpha_probes": alpha_tests,
         "pure_first_step_survivors": len(combos_ok),
         "pure_survivors_all_nonline": all_nonline,
         "pure_kernels_total": total_kernels,
+        "kernel_family_scope": "RECORD-BLIND, FIXED-ALPHA: the "
+                               "three-step test multiplies the SAME "
+                               "one-parameter line-vs-non-line kernel "
+                               "polynomial at BOTH event selections, "
+                               "although the first event has already "
+                               "changed the record R; true "
+                               "equivariance K(ge|gc,gG,gR)=K(e|c,G,R) "
+                               "admits record-dependent kernels that "
+                               "distinguish candidate triples by their "
+                               "relation to the written record, and "
+                               "that census is SCOUT-K's "
+                               "(v15/note-scoutk-pin.md), not this "
+                               "unit's",
         "sample_space": "CELLS",
         "word": "NONVACUOUS-AT-THE-THREE-STEP-WINDOW-EMPTY-ON-THE-"
-                "EQUIVARIANT-LINE"}
+                "RECORD-BLIND-FIXED-ALPHA-LINE"}
     LD.gate("G-ARM-C-WINDOW3",
             nrows == 729 and len(polys) == 25
             and lin_roots == [Fraction(-1), Fraction(0), Fraction(1)]
@@ -1460,8 +1535,10 @@ def s2_record_consistency(LD, P):
             "arm three first bites at the three-step window: 729 "
             "agreement rows reduce to 25 distinct polynomials in the "
             "line weight; linear rows force alpha = -1, alpha = 0 and "
-            "alpha = 1 simultaneously, so the equivariant family is EMPTY over the "
-            "reals; 8 pure non-line first-step selections survive, "
+            "alpha = 1 simultaneously, so the record-blind fixed-alpha "
+            "equivariant line is EMPTY over the reals (the "
+            "record-dependent equivariant question is SCOUT-K's); 8 "
+            "pure non-line first-step selections survive, "
             "extending to 288 pure kernels on the reached cells",
             {"rows": nrows, "polys": len(polys),
              "survivors": len(combos_ok)})
@@ -1482,17 +1559,20 @@ def s2_record_consistency(LD, P):
             "overlapping triples are compatible with exclusivity: the 27 "
             "block successors are pairwise distinct records, 351 pairs, "
             "0 collisions", {"pairs": 351})
-    verdict = ("SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-RECORD-CONSISTENT"
+    verdict = ("SCOUT-KERNEL-EMPTY-AT-RECORD-BLIND-FIXED-ALPHA-"
+               "AFFINE-EQUIVARIANT"
                if (len(lin_roots) >= 2 and len(combos_ok) > 0
                    and all_nonline) else "SCOUT-KERNEL-UNDETERMINED")
     P["s2_determination"] = {
         "word": verdict,
-        "finding": "locality + proximity + relabelling symmetry + record "
-                   "consistency are JOINTLY EMPTY at the first window "
-                   "where record consistency has teeth: symmetry pins "
-                   "the one-parameter line family, record consistency "
-                   "excludes that whole line and selects only "
-                   "non-equivariant deterministic kernels; an arbitrary "
+        "finding": "no record-blind, fixed-alpha, affine-equivariant "
+                   "kernel preserves the delivered three-step walk "
+                   "statistics: within that measured family, symmetry "
+                   "pins the one-parameter line family and record "
+                   "consistency excludes that whole line, leaving only "
+                   "deterministic kernels outside it; the general "
+                   "record-dependent equivariant question is NOT "
+                   "decided here and is SCOUT-K's census; an arbitrary "
                    "K remains a hidden free law and is refused"}
 
 
@@ -1778,12 +1858,54 @@ def s4_map(LD, P):
                       "consistent bookkeeping, but as a map on mixtures "
                       "it is quadratic in the state -- not a CPTP "
                       "instrument, and not any linear map",
+        "ontology_qualification": "the nonlinearity verdict is "
+                                  "conditional on the psi-ontology: "
+                                  "mixtures read as "
+                                  "preparation-independent physical "
+                                  "states; if pure psi is ontic, the "
+                                  "fundamental process (psi, R) -> "
+                                  "(U psi, R + event record) with "
+                                  "outcome probabilities q_c(psi) is "
+                                  "an ORDINARY stochastic process, "
+                                  "distributions over ontic psi "
+                                  "evolve LINEARLY, and the "
+                                  "nonlinearity lives ONLY in the "
+                                  "compressed density-matrix "
+                                  "description -- two ensembles with "
+                                  "the same rho may produce different "
+                                  "future records",
+        "completeness_dichotomy": "the dichotomy: either rho is "
+                                  "complete and the delivered rule "
+                                  "must be replaced -- and the linear "
+                                  "completion space is larger than "
+                                  "projective collapse, the general "
+                                  "instruments with outcome-dependent "
+                                  "post-states -- or rho is "
+                                  "INCOMPLETE because the ontic "
+                                  "decomposition matters; SCOUT-PSI "
+                                  "(v15/note-scoutpsi-pin.md) is the "
+                                  "operational test now running, and "
+                                  "until it reports the fork has "
+                                  "mathematical content and no "
+                                  "demonstrated operational "
+                                  "distinction",
+        "linear_completion_space": "projective collapse is not the "
+                                   "only linear completion: the larger "
+                                   "space is the general instruments "
+                                   "with outcome-dependent post-states "
+                                   "and no projective collapse "
+                                   "required, and that space is DC's "
+                                   "search space; the selective "
+                                   "reading paper-20 declared not-run "
+                                   "is one member of it",
         "sample_space": "CELLS"}
     LD.gate("G-S4-LINEARITY", identity_ok and nonlinear,
             "the delivered record-a-cell-leave-the-state-uncollapsed "
             "rule fails linearity on mixtures with an exact witness, and "
             "the deviation obeys the closed form "
-            "-(1/4)(w_c(rho0)-w_c(rho1))(P0-P1) entry by entry",
+            "-(1/4)(w_c(rho0)-w_c(rho1))(P0-P1) entry by entry; the "
+            "verdict is conditional on the psi-ontology (mixtures as "
+            "preparation-independent physical states)",
             witness)
     # the joint-successor requirement
     branch_states = []
@@ -1868,13 +1990,17 @@ def primitive_selection(LD, P):
             "TRIPLE-EVENT": "CONDITIONAL (any kernel preserves the "
                             "two-step window; at the three-step window "
                             "only 288 pure non-line kernels preserve it "
-                            "and no equivariant kernel does)",
+                            "and no record-blind fixed-alpha "
+                            "equivariant kernel does; the "
+                            "record-dependent equivariant question is "
+                            "SCOUT-K's)",
             "measured": {"two_step_blind": True,
                          "three_step_pure_survivors":
                              d3["pure_first_step_survivors"],
                          "three_step_pure_total":
                              d3["pure_kernels_total"],
-                         "equivariant_survivors": 0}},
+                         "record_blind_fixed_alpha_equivariant_"
+                         "survivors": 0}},
         "CRIT-D-successor-and-backreaction-reading": {
             "CELL-HIT": "FAIL (no geometry leg; the walk's menu meets "
                         "the cross class at 0 of 36, so growth is "
@@ -1889,21 +2015,32 @@ def primitive_selection(LD, P):
                         "refused without proof",
             "TRIPLE-EVENT": "the kernel K (not uniquely determined; the "
                             "surviving pure kernels are a counted "
-                            "declaration) plus the owed transport law"},
+                            "declaration) plus the owed transport law "
+                            "plus the shared-actor proximity "
+                            "declaration (Q27 open; SCOUT-K's fork)"},
     }
     P["primitive_selection"] = {
         "criteria": crit,
         "user_recommendation": "the user recommends the triple-event "
                                "primitive; the scout tested both",
+        "adoption_status": "the triple-event primitive is "
+                           "ADOPTED-BY-PROGRAM-DECISION: adopted "
+                           "because it matches the intended local, "
+                           "backreacting ontology; not selected "
+                           "uniquely by an existing ISP law",
         "answer": "the TRIPLE-EVENT primitive survives every "
                   "sample-space and type test at the committed windows "
                   "and costs one counted kernel declaration plus the "
-                  "owed transport law; the CELL-HIT primitive survives "
+                  "owed transport law plus the counted proximity "
+                  "declaration; the CELL-HIT primitive survives "
                   "as the delivered walk's own bookkeeping and cannot "
                   "phrase the three-actor grammar object or growth; "
                   "under the triple primitive the walk's statistics are "
-                  "preserved at the committed windows only by "
-                  "non-equivariant kernel selections",
+                  "preserved at the committed windows only by kernel "
+                  "selections outside the record-blind fixed-alpha "
+                  "equivariant family, and whether a record-dependent, "
+                  "locally covariant equivariant kernel preserves them "
+                  "is OPEN -- the SCOUT-K census",
         "word": "SCOUT-PRIMITIVE-SELECTION-TRIPLE-SURVIVES-THE-TYPE-"
                 "TESTS-AND-COSTS-THE-KERNEL-CELL-HIT-SURVIVES-AS-THE-"
                 "DELIVERED-WALK"}
@@ -1949,15 +2086,146 @@ def sample_space_audit(LD, P):
             {"declared": len(found)})
 
 
+# ---- the semantic numeral gate (ordered at ledger #59, R3) ---------------
+# Every load-bearing prose numeral in the note is bound to its SPECIFIC
+# receipt field: (context sentence, token, field path).  Any-occurrence
+# backing -- accepting a prose numeral because the same number appears
+# ANYWHERE in the receipt -- is the disease that let the delivered note
+# say 27 where the receipt's s1_escape_a.successors said 7 (the era's
+# fourth false delivered numeral).  The gate checks token == field value
+# in-build; note verification requires each context sentence verbatim.
+NUMERAL_FIELD_MAP = (
+    ("its 7 successors are pairwise distinct records",
+     "7", "s1_escape_a/successors"),
+    ("infeasible at all four committed classes with exact gaps 4, 4, 3 "
+     "and 7/3", "4", "committed_duals[0]/gap"),
+    ("infeasible at all four committed classes with exact gaps 4, 4, 3 "
+     "and 7/3", "4", "committed_duals[2]/gap"),
+    ("infeasible at all four committed classes with exact gaps 4, 4, 3 "
+     "and 7/3", "3", "committed_duals[1]/gap"),
+    ("infeasible at all four committed classes with exact gaps 4, 4, 3 "
+     "and 7/3", "7/3", "committed_duals[3]/gap"),
+    ("matches the delivered receipt at 156 of 156 rows",
+     "156", "census/receipt_row_matches"),
+    ("The receipt carries 182 such declarations",
+     "182", "sample_spaces/declared"),
+    ("order 108, 12 linear parts times 9 translations",
+     "108", "s2_gamma/order"),
+    ("order 108, 12 linear parts times 9 translations",
+     "12", "s2_gamma/linear_order"),
+    ("Equivariance cuts 54 to 1", "54", "s2_arm_a/bare_dim"),
+    ("Equivariance cuts 54 to 1", "1", "s2_arm_a/equivariant_dim"),
+    ("EMPTY at the committed row with exact phase-one gap 6",
+     "6", "s2_arm_b/gap"),
+    ("729 agreement rows reduce to 25 distinct polynomials",
+     "729", "s2_arm_c_depth3/rows"),
+    ("729 agreement rows reduce to 25 distinct polynomials",
+     "25", "s2_arm_c_depth3/distinct_nonzero_polys"),
+    ("8 pure non-line first-step selections survive and extend to 288 "
+     "pure kernels", "8", "s2_arm_c_depth3/pure_first_step_survivors"),
+    ("8 pure non-line first-step selections survive and extend to 288 "
+     "pure kernels", "288", "s2_arm_c_depth3/pure_kernels_total"),
+    ("the declared predictor scores 20 of 156", "20", "s3_cond4/correct"),
+    ("81 nonzero Delta-B entries", "81",
+     "s3_cond3/fourier_control/delta_b_nonzero_entries"),
+    ("0 of 4 delivered candidates evolve across creation",
+     "0", "ecc_consumed/carrier_evolves"),
+    ("0 of 4 delivered candidates evolve across creation",
+     "4", "ecc_consumed/carrier_candidates"),
+    ("all 36 cross pairs are directionless",
+     "36", "ecc_consumed/debt_cross_pairs"),
+    ("all 351 successor pairs are distinct",
+     "351", "s2_exclusivity/block_pairs_checked"),
+    ("weights 1/9, 4/9, 4/9 on the three cells of the start site",
+     "4/9", "committed_q/qmax"),
+    ("most negative entry is -2/3",
+     "-2/3", "s1_escape_c/per_class[3]/min_entry"),
+    ("11 variants", "11", "s2_arm_c_depth2/variants"),
+    ("36 admissible rounds", "36", "arena/rounds"),
+    ("27 cells over the 9 actors", "27", "arena/cells"),
+    ("84 actor triples", "84", "arena/triples"),
+    ("9 declared lines", "9", "arena/declared_lines"),
+    ("12 affine-line cosets", "12", "arena/lines"),
+)
+
+
+def resolve_field(P, path):
+    cur = P
+    for seg in path.split("/"):
+        idxs = []
+        while seg.endswith("]"):
+            k = seg.rindex("[")
+            idxs.insert(0, int(seg[k + 1:-1]))
+            seg = seg[:k]
+        cur = cur[seg]
+        for i in idxs:
+            cur = cur[i]
+    return cur
+
+
+def numeral_bindings(LD, P):
+    rows = []
+    allok = True
+    for (ctx, tok, path) in NUMERAL_FIELD_MAP:
+        try:
+            val = fser(resolve_field(P, path))
+        except (KeyError, IndexError, TypeError):
+            val = "UNRESOLVED-FIELD"
+        if mut("MUT-NUMBIND") and path == "s1_escape_a/successors":
+            val = 27
+        ok = str(val) == tok
+        allok = allok and ok
+        rows.append({"context": ctx, "token": tok, "field": path,
+                     "value": val, "ok": ok})
+    P["numeral_bindings"] = {
+        "bindings": rows, "all_bound": allok,
+        "policy": "every load-bearing prose numeral is bound to its "
+                  "specific receipt field by this map; any-occurrence "
+                  "backing is refused as the sole backing"}
+    LD.gate("G-NUMERAL-FIELD", allok,
+            "every load-bearing prose numeral is bound to a specific "
+            "receipt field and each bound token equals that field's "
+            "value exactly; the note-side context sentences are "
+            "required verbatim at note verification",
+            {"bindings": len(rows),
+             "failing": [r["field"] for r in rows if not r["ok"]]})
+
+
+def env_exclusion(LD, P):
+    """no environment-dependent value may enter the serialized receipt:
+    the sha256-12 of every unpinned live read is computed in-run and
+    must not occur anywhere in the receipt payload (the delivered
+    receipt's defect: it serialized the live LOG digest)."""
+    unp = sorted({rel for (_i, rel, _q) in ANCHORS} - set(PINNED))
+    digs = {}
+    for rel in unp:
+        data, _how = read_pinned(rel)
+        digs[rel] = sha12(data)
+    P["env_exclusion"] = {
+        "unpinned_reads_scanned": unp,
+        "probe": pick("MUT-ENV", None, digs[unp[-1]]),
+        "policy": "unpinned live-read digests and LIVE/SNAPSHOT "
+                  "resolution flags are checked in-run and never "
+                  "serialized into either artifact"}
+    blob = to_json(P) + to_json(LD.rows)
+    leaks = sorted(rel for rel, d in digs.items() if d in blob)
+    P["env_exclusion"]["leaks"] = leaks
+    LD.gate("G-ENV-EXCLUSION", not leaks,
+            "the serialized receipt payload carries no digest of any "
+            "unpinned live read: environment-dependent bytes are "
+            "excluded from the artifacts and checked in-run only",
+            {"scanned": len(unp), "leaks": leaks})
+
+
 def build_verdicts(P):
     d3 = P["s2_arm_c_depth3"]
     esc_c = {r["class"]: r["signed_solvable"]
              for r in P["s1_escape_c"]["per_class"]}
     V = {}
-    V["S1"] = ("SCOUT-PUSHFORWARD-ESCAPE-EXHIBITED-AT-NO-INSTANTANEOUS-"
-               "TRIPLE-EVENT-VARIABLE<CEILING-THEOREM-PROVED-AT-THE-"
+    V["S1"] = ("SCOUT-PUSHFORWARD-ESCAPE-EXHIBITED-AT-TRIGGER-MARGINAL-"
+               "NOT-OCCUPANCY-MARGINAL<CEILING-THEOREM-PROVED-AT-THE-"
                "INCLUSION-BRIDGE-156-OF-156-EXCEPTIONS-0; "
-               "ESCAPE-A-EXHIBITED; ESCAPE-B-EXHIBITED; "
+               "ESCAPE-A-EXHIBITED-AS-SCAFFOLD; ESCAPE-B-EXHIBITED; "
                "ESCAPE-C-CLASS-SPLIT-E-TRIPLE-ONLY; "
                "ESCAPE-D-INHERITED-BY-SCALE-INVARIANCE>")
     if not (P["census"]["ceiling_exceptions"] == 0
@@ -1971,14 +2239,16 @@ def build_verdicts(P):
                "RECORD-CONSISTENCY-VACUOUS-AT-TWO-STEPS-"
                "FIRST-BITES-AT-THREE-STEPS; "
                "PURE-NON-LINE-SURVIVORS-8-EXTENDING-TO-288; "
-               "EQUIVARIANT-LINE-EMPTY>")
+               "RECORD-BLIND-FIXED-ALPHA-LINE-EMPTY; "
+               "RECORD-DEPENDENT-CENSUS-IS-SCOUT-K>")
     V["S3"] = (P["s3_verdict"]["word"]
                + "<DATUM-ZERO-AT-ALL-156-ROWS; "
                "CUTS-INCLUDE-THE-DEGENERATE-I.U; "
                "BOTH-COUNTERCONTROLS-KILL; "
                "PREDICTION-SCORES-20-OF-156>")
     V["S4"] = ("SCOUT-RECORD-UPDATE-NOT-A-LINEAR-MAP-ON-MIXTURES"
-               "<CLOSED-FORM-WITNESS-EXACT; "
+               "<CONDITIONAL-ON-THE-PSI-ONTOLOGY; "
+               "CLOSED-FORM-WITNESS-EXACT; "
                "JOINT-SUCCESSOR-FORM-SATISFIED-WITH-AN-OUTCOME-"
                "INDEPENDENT-STATE-LEG; "
                "RHO-TRANSPORT-CONSTRAINTS-STATED-DELIVERED-"
@@ -1996,12 +2266,15 @@ ROUTE_TABLE = (
      "object or growth",
      "renames the walk's primitive; refuses the grammar identification"),
     ("R3 TRIPLE-EVENT primitive with kernel K", "TRIPLE-EVENTS",
-     "SOUND-IF-A-KERNEL-IS-DECLARED: no equivariant record-consistent "
-     "K exists; 288 pure non-line kernels survive the measured windows",
+     "SOUND-IF-A-KERNEL-IS-DECLARED: no record-blind fixed-alpha "
+     "affine-equivariant K preserves the three-step walk statistics; "
+     "288 pure non-line kernels survive the measured windows; the "
+     "record-dependent census is SCOUT-K's",
      "purchases the kernel declaration"),
     ("R4 complete-successor law (escape a)",
      "COMPLETE-SUCCESSOR-CONFIGURATIONS",
-     "EXHIBITED: sum 1, trigger readout q, bridge abandoned",
+     "EXHIBITED-AS-SCAFFOLD: sum 1, trigger readout q, bridge "
+     "abandoned; no rho'_e, geometry unchanged",
      "purchases the successor ontology and the owed transport law"),
     ("R5 endpoint Born statistics (escape b)", "CELLS",
      "EXHIBITED: unit column sums, ceiling vacuous",
@@ -2110,9 +2383,19 @@ def build_kit(P):
                "to 25 distinct polynomials in the line weight; "
                "linear rows force alpha = -1, alpha = 0 and alpha = 1 "
                "at once, so "
-               "the equivariant family is empty, while 8 pure non-line "
+               "the record-blind fixed-alpha equivariant line is "
+               "empty, while 8 pure non-line "
                "first-step selections survive and extend to 288 pure "
                "kernels on the reached cells")
+    kit.append(P["s2_arm_c_depth3"]["kernel_family_scope"])
+    kit.append(P["s1_escape_a"]["scaffold_status"])
+    kit.append(P["s1_escape_a"]["uniform_kernel_tension"])
+    kit.append(P["s1_escape_a"]["trigger_semantics_status"])
+    kit.append(P["s2_locality"]["proximity_declaration"])
+    kit.append(P["s4_linearity"]["ontology_qualification"])
+    kit.append(P["s4_linearity"]["completeness_dichotomy"])
+    kit.append(P["s4_linearity"]["linear_completion_space"])
+    kit.append(P["primitive_selection"]["adoption_status"])
     kit.append("the one-step Delta-B datum is identically zero at every "
                "allowed cut of every census row (a diagonal factor "
                "never moves an entrywise squared modulus), while the "
@@ -2188,6 +2471,11 @@ FALSIFIERS = (
     ("MUT-ANCHOR", "G-ANCHORS", "anchors", "corrupts an anchor quote"),
     ("MUT-ECC-VALS", "G-ECC-CONSUME", "ecc_consumed",
      "corrupts a consumed delivered gap"),
+    ("MUT-NUMBIND", "G-NUMERAL-FIELD", "numeral_bindings",
+     "re-injects 27 into the bound successors field (the fourth false "
+     "delivered numeral's disease)"),
+    ("MUT-ENV", "G-ENV-EXCLUSION", "env_exclusion",
+     "injects an unpinned live-read digest into the receipt payload"),
 )
 
 
@@ -2247,6 +2535,8 @@ def build_all(P=None):
     sample_space_audit(LD, P)
     build_verdicts(P)
     build_kit(P)
+    numeral_bindings(LD, P)
+    env_exclusion(LD, P)
     P["ledger"] = LD.rows
     return P
 
@@ -2367,6 +2657,16 @@ def verify_note(P, note_bytes, problems):
                 and "[BY:" not in ln and "|" not in ln:
             problems.append("derivation sentence without subject tag: "
                             + ln.strip()[:60])
+    # the semantic numeral gate, note side: every load-bearing prose
+    # numeral's context sentence must be present verbatim, welding the
+    # prose numeral to its specific receipt field (any-occurrence
+    # backing is refused as the sole backing)
+    for (ctx, tok, path) in NUMERAL_FIELD_MAP:
+        if canon(ctx) not in hay:
+            problems.append("numeral-field context missing (%s = %s): %s"
+                            % (path, tok, ctx[:60]))
+    if not P.get("numeral_bindings", {}).get("all_bound"):
+        problems.append("numeral-field bindings not all bound")
     # slash rationals in prose are backed by the receipt inventory
     inv = set()
     rationals_of(fser(P), inv)
@@ -2423,8 +2723,9 @@ def render_output(P, note_digest):
                  "delivered receipt")
     lines.append("  arm two gap: 6; arm three: vacuous at two steps, "
                  "first bites at three steps")
-    lines.append("  equivariant kernel family: dim 1; empty under "
-                 "record consistency; pure survivors 8 -> 288")
+    lines.append("  record-blind fixed-alpha kernel family: dim 1; "
+                 "empty under record consistency; pure survivors "
+                 "8 -> 288; the record-dependent census is SCOUT-K's")
     lines.append("  Delta-B datum: zero at every cut of every row; "
                  "prediction scores 20 of 156")
     lines.append("  S4: nonlinear on mixtures, exact witness; state leg "
@@ -2549,7 +2850,8 @@ def main(argv):
                           "G-DETERMINISM", "G-NOTE-KIT", "G-LOCALITY",
                           "G-LP-CONTROLS", "G-PUSHFORWARD", "G-FARKAS",
                           "G-S3-COND2", "G-S3-EXEMPLAR", "G-PRIMITIVE",
-                          "G-S4-RHO", "G-COMMITTED-ROW"})
+                          "G-S4-RHO", "G-COMMITTED-ROW",
+                          "G-NUMERAL-FIELD", "G-ENV-EXCLUSION"})
         for g in gates:
             sys.stdout.write(g + "\n")
         return 0
