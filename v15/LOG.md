@@ -3239,3 +3239,75 @@ port G-ENV-EXCLUSION + G-AST-DETERMINISM; M4 numeral
 per-occurrence totality replacing the blanket; M5 the
 no-caps sentence receipt-backed or scoped.  No measured
 value moves.  On green: SCOUT-K CLOSES-SEALED.
+
+## 2026-08-17 — THE THIRTEENTH EXTERNAL REVIEW ADOPTED: THE TRIGGER-ERASURE MECHANISM VERIFIED AT THE CODE — THE BRIDGE DISCARDS THE TRIGGER IDENTITY THE WALK LATER NEEDS; THE FOUR-WAY SUCCESSOR FORK; DC ADDENDUM v2 (CP NOT MERE LINEARITY; Z/X AS FALSIFIER; THE EMPIRICAL-FAILURE OUTCOME); THE VERIFIER REBUILD ARCHIVED (M6); SCOUT-T PINNED (v15 LEDGER #82)
+
+Adopted with the mechanism VERIFIED AT THE BYTES
+(scoutk_exact.py:1010 region): the kernel construction
+builds the available record from the WHOLE TRIPLE
+FOOTPRINT (R1 = nfield(BLOCK_OF[e1])) while the target
+walk depends on the individual CELL-TRIGGER history
+(q3 over [c1],[c2]).  The bridge lets one cell trigger a
+three-cell event, AND THE TRIPLE RECORD FORGETS WHICH
+CELL WAS THE TRIGGER; the walk remembers and uses it.
+That is why GLOBAL fails: global access cannot recover
+information the bridge ERASED AT WRITE-TIME.  SCOUT-K's
+no-go is thereby re-read as ANOTHER FACE OF THE
+CELL-HIT/TRIPLE-EVENT TYPE MISMATCH — and the #80
+synthesis is REFINED: the missing state slot may not be
+psi or rho at all; THE MINIMAL SUFFICIENT DATUM MAY BE
+THE ORDERED TRIGGER TRACE.  The precise established
+formulation engraved (the reviewer's): at this arena, no
+normalized covariant conditional kernel K(e|c,G,R) with
+fixed geometry, the trigger factorization
+P(c,e)=q(c)K(e|c,G,R), and exact preservation of the
+delivered cell-walk's conditional statistics, works
+through window 3 — even with the entire record.  It does
+NOT kill: the triple ontology, covariance, locality
+generally, kernels with additional state or history,
+changing geometry, non-trigger-factorized bridges,
+history-level indivisible processes, or agreement at the
+observable-history level only.
+
+THE FOUR-WAY FORK (the successor decision, ordered ahead
+of any add-psi conclusion): (1) TRIGGER PHYSICALLY REAL
+— test K(e|c,G,R,T) with T the ordered trigger trace;
+the hidden memory priced ontologically.  (2) TRIGGER
+BOOKKEEPING — per-latent-history equality may be too
+strong; test the marginal-history mode (the frozen
+secondary the #68 addendum already names): an exact
+factorizing history-level process compared AFTER latent
+triggers are marginalized.  (3) TRIGGER BRIDGE WRONG —
+probabilities over complete triple successors directly
+(R4's ontology; DC's).  (4) WALK NOT PRESERVED — a
+triple-native quantum dynamics (DC's).  Arms 1+2 are
+scout-computable on SCOUT-K's committed apparatus:
+SCOUT-T PINNED THIS ENTRY (v15/note-scoutt-pin.md,
+digest in commit) and launched.
+
+DC ADDENDUM v2 (v15/note-dc-causality-addendum-v2.md,
+supersedes v1 4c7282b2a518 which stands as history):
+(a) the SCOUT-K summary RESCOPED to the fixed-G,
+trigger-factorized, conditional-K class at the committed
+window; (b) the linear branch requires COMPLETELY
+POSITIVE trace-nonincreasing outcome maps summing to
+CPTP — mere density-matrix linearity is insufficient
+once ancillas and bipartite systems exist; (c) the
+canonical Z/X steering test is A FALSIFIER, not the
+proof — the positive theorem must cover EVERY allowed
+joint preparation and local instrument; (d) new outcome
+word COMPOSITE-DYNAMICS-COMPLETE-BUT-STEERING-
+UNREPRODUCED — an EMPIRICAL FAILURE, never safety.
+
+M6 (the reproducibility point, executed by the
+orchestrator): the verifier's independent rebuild.py was
+prose-testimony only — NOW ARCHIVED at
+v15/verify/scoutk-verifier-rebuild.py with its
+regenerated machine-readable check ledger at
+v15/verify/scoutk-verifier-rebuild-output.txt (digests
+in the commit); the M6-PORT order (the three
+strengthenings — 108x8 covariance, the refinement order,
+canonical-first clash — re-derived by the unit's own
+instrument) routed to the in-flight SCOUT-K micro-repair
+worker by confirmed send this entry.
+

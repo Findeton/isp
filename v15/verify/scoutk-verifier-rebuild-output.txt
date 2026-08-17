@@ -1,0 +1,75 @@
+[OK ] arena: 27 cells / bijection                                
+[OK ] arena: 84 triples, 27 triangles                            
+[OK ] arena: 9 declared lines of 12                              
+[OK ] arena: every cell in exactly 3 blocks                      
+[OK ] group: order 108                                           
+[OK ] group: triangle set closed                                 
+[OK ] group: cell-0 stabilizer order 4                           
+[OK ] group: stabilizer orbits on incident blocks sizes [1,2]    
+[OK ] group: exactly one incident block of cell 0 is a line and the stabilizer fixes it, swapping the two non-lines 
+[OK ] walk: q1 = (1/9,4/9,4/9) on cells 0,1,2                    
+[OK ] walk: q2 support the 9 shifted-site cells, unit mass       
+[OK ] reach: 7 distinct first events                             
+[OK ] blindness: 11 variants, one second-step Born vector        
+[OK ] blindness mechanism: single occupied link per site in psi1 
+[OK ] arms: neighborhood sizes at cell 0, zero record (11/1/27/15/27) 
+[OK ] arms: relabelling-covariant, all 108 g x all 8 reached records 
+[OK ] reach: 189 raw tuples / 63 raw contexts                    
+[OK ] orbits: depth-3 orbit variables per arm 16/16/25/19/25     
+[OK ] orbits: context classes per arm 6/6/9/7/9                  
+[OK ] orbits: depth-1 orbits = 2 per arm                         
+[OK ] orbits: shared-with-depth-1 per arm 2/2/0/2/0              
+[OK ] coincidence: SA == RD partitions byte-identical            
+[OK ] coincidence: MC == GLOBAL partitions byte-identical        
+[OK ] coincidence: CN distinct from both                         
+[OK ] coincidence: CN strictly between (GLOBAL refines CN refines SA) 
+[OK ] step 1: 2 orbit variables (line / non-line), dim 1         
+[OK ] step 1: the two non-line incident blocks of one trigger lie in ONE orbit (stabilizer swap kills deterministic non-line pick) 
+[OK ] depth 2: consistency rows vacuous; polytope {a+2b=1,a,b>=0} dim 1 
+[OK ] d3 SA-RD: nv                                               
+[OK ] d3 SA-RD: line-ness constant on every orbit                
+[OK ] d3 SA-RD a=0: INFEASIBLE, own Farkas verified              
+[OK ] d3 SA-RD a=1/6: INFEASIBLE, own Farkas verified            
+[OK ] d3 SA-RD a=1/3: INFEASIBLE, own Farkas verified            
+[OK ] d3 SA-RD a=1/2: INFEASIBLE, own Farkas verified            
+[OK ] d3 SA-RD a=2/3: INFEASIBLE, own Farkas verified            
+[OK ] d3 SA-RD a=1: INFEASIBLE, own Farkas verified              
+[OK ] d3 SA-RD branchwise: INFEASIBLE own-certified              
+[OK ] d3 CN: nv                                                  
+[OK ] d3 CN: line-ness constant on every orbit                   
+[OK ] d3 CN a=0: INFEASIBLE, own Farkas verified                 
+[OK ] d3 CN a=1/6: INFEASIBLE, own Farkas verified               
+[OK ] d3 CN a=1/3: INFEASIBLE, own Farkas verified               
+[OK ] d3 CN a=1/2: INFEASIBLE, own Farkas verified               
+[OK ] d3 CN a=2/3: INFEASIBLE, own Farkas verified               
+[OK ] d3 CN a=1: INFEASIBLE, own Farkas verified                 
+[OK ] d3 CN branchwise: INFEASIBLE own-certified                 
+[OK ] d3 MC-GLOBAL: nv                                           
+[OK ] d3 MC-GLOBAL: line-ness constant on every orbit            
+[OK ] d3 MC-GLOBAL a=0: INFEASIBLE, own Farkas verified          
+[OK ] d3 MC-GLOBAL a=1/6: INFEASIBLE, own Farkas verified        
+[OK ] d3 MC-GLOBAL a=1/3: INFEASIBLE, own Farkas verified        
+[OK ] d3 MC-GLOBAL a=1/2: INFEASIBLE, own Farkas verified        
+[OK ] d3 MC-GLOBAL a=2/3: INFEASIBLE, own Farkas verified        
+[OK ] d3 MC-GLOBAL a=1: INFEASIBLE, own Farkas verified          
+[OK ] d3 MC-GLOBAL branchwise: INFEASIBLE own-certified          
+[OK ] identified SA-RD: exactly one empty line orbit + one non-line 
+[OK ] identified SA-RD a=1/3: INFEASIBLE own-certified           
+[OK ] identified SA-RD a=1/2: INFEASIBLE own-certified           
+[OK ] identified CN: exactly one empty line orbit + one non-line 
+[OK ] identified CN a=1/3: INFEASIBLE own-certified              
+[OK ] identified CN a=1/2: INFEASIBLE own-certified              
+[OK ] clash: rows (0,5,14) and (1,11,21) identical covariant coefficient vectors at a=0 
+[OK ] clash: walk masses 16/729 vs 64/729                        
+[OK ] clash: (0,5,14)/(1,11,21) is the first clash in row order  
+[OK ] subfamily: 729 rows, 25 distinct nonzero polys             
+[OK ] subfamily: linear roots -1, 0, +1                          
+[OK ] subfamily: alpha=0 fails                                   
+[OK ] subfamily: alpha=1/3 fails                                 
+[OK ] subfamily: alpha=1 fails                                   
+[OK ] subfamily: orbit-route poly set equals direct route        
+[OK ] pure census: 8 surviving first-step combos, all non-line, 288 
+[OK ] control forced-nonvacuous: FEASIBLE with nonnegative witness 
+[OK ] control forced-empty: INFEASIBLE gap 433415665/29073978 own-certified 
+
+RECOMPUTATIONS: 73 checks, 0 failed
