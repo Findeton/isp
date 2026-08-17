@@ -245,3 +245,13 @@ The report is frozen verbatim before the quantum delta report is read or joint
 adjudication begins.  Its grade is `ACCEPT-WITH-FIXES`; that grade is the
 reviewer's finding, not yet a terminal verdict.  No candidate artifact moved,
 no other report was staged, and no v15 SCOUT-T path was touched.
+
+## 2026-08-17 — JRH QUANTUM HOSTILE DELTA REPORT FROZEN VERBATIM (v16 LEDGER #13)
+
+The independent QUANTUM / EPR / QFT delta seat delivered
+`v16/review-jrh-quantum-delta.md` with SHA-256
+`b99baa273cea7955d65e13b0e161c3d0ba908b8d46c4481b6da96aab8cdb02b4`.
+The report is frozen verbatim before joint delta adjudication.  Its grade is
+`ACCEPT-WITH-FIXES`; that grade is the reviewer's finding, not yet a terminal
+verdict.  No candidate artifact moved, no other report was staged, and no v15
+SCOUT-T path was touched.  All three delta reports are now frozen.
