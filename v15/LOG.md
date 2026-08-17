@@ -3098,3 +3098,98 @@ self-reference, numeral any-occurrence, resurrection,
 plus the ported determinism leg); two more registered
 programme-wide.  Zero false numbers remain in the
 sealed note.
+
+## 2026-08-17 — THE TWELFTH EXTERNAL REVIEW ADOPTED: TWO ORCHESTRATOR OVERCLAIMS CORRECTED (NON-COLLAPSE IS NOT A SAFETY ARGUMENT; UNPHRASABILITY IS INCOMPLETENESS, NOT ACHIEVEMENT; THE PAPER-38 ZERO IS NOT A WALL); THE HJW SHARPENING — SCOUT-PSI TESTED THE CANONICAL REMOTELY-STEERABLE PAIR; THE DC BIPARTITE-CAUSALITY ADDENDUM FROZEN (v15 LEDGER #80)
+
+Adopted, with the corrections owned:
+
+(1) THE HJW SHARPENING (verified against the frozen
+preparations): SCOUT-PSI's pre-registered primary pair —
+D1A {e0; e1} vs D1B {e0 plus/minus e1} of the same rho —
+IS structurally the Z-basis/X-basis decomposition pair of
+a two-dimensional span: EXACTLY the two ensembles a
+remote party can place a subsystem into by measuring her
+half of a Bell pair in either basis
+(Hughston-Jozsa-Wootters).  The sensitivity was therefore
+measured at precisely the remotely-preparable
+decompositions.  The result is a HARD COMPATIBILITY GATE
+on any future composite dynamics, not a hypothetical.
+The Polchinski/Simon-Buzek-Gisin line is the standing
+context: under the usual assumptions, no-signalling
+drives dynamics to linear CP maps on rho — ISP must
+either land there or prove its own escape.
+
+(2) ORCHESTRATOR CORRECTIONS, on the record: (a) "the
+delivered rule does not collapse, so the steering lever
+is absent" is NOT a safety argument — no-collapse
+interpretations reproduce steering correlations; what
+decides is the eventual JOINT AB dynamics and what
+Alice's allowed operation does to Bob's local ontic
+ensemble, which ISP has not defined.  (b)
+"steering-unphrasable = Einstein without the nightmare"
+was too strong: unphrasability arising from missing
+composite systems is MISSING PHYSICS —
+UNPHRASABLE-BECAUSE-COMPOSITE-DYNAMICS-UNBUILT is
+incompleteness, not safety; the achievement reading
+requires reproducing actual Bell/steering experiments,
+supplying the local operations, AND proving Bob's
+unconditional records independent of Alice's choice.
+(c) paper-38's 0/105,408 is NOT a wall against future
+steering — the paper itself scopes the far reading as a
+function on an unchanged record (paper-38:429); the zero
+is forced by the formalization and cannot exonerate a
+future nonlinear measurement dynamics.  The corpus has
+an entanglement VOCABULARY (v5 record-nonfactorization);
+the current model has NO implemented bipartite entangled
+dynamics.
+
+(3) THE TWO-SCOUT SYNTHESIS, engraved: the complete
+state likely needs a quantum/process-state slot beyond
+(G,R,c) — SCOUT-K measured that no covariant function of
+record and geometry carries the walk's distinctions —
+BUT distinctions placed in that slot must obey a NEW
+COMPOSITIONAL NO-SIGNALLING LAW, because SCOUT-PSI
+measured that the natural candidate (the delivered
+rule's state-dependence) is steering-sensitive at the
+canonical pair.  SCOUT-K does not specifically select
+ontic psi: rho, a process state, or another covariant
+memory variable might fill the slot; adopting ontic psi
+sharpens the steering obligation.
+
+(4) THE DC BIPARTITE-CAUSALITY ADDENDUM FROZEN
+(v15/note-dc-causality-addendum.md, digest in commit) —
+a MANDATORY component of DC's eventual pin (DC itself
+stays parked per the holds): the six requirements (the
+composite state X_AB with factorization, relational
+separation and allowed local instruments; the canonical
+Bell-pair steering implementation producing the exact
+D_Z/D_X pair; Bob's UNCONDITIONAL record-and-geometry
+distribution summed over Alice's outcomes; every
+operational grain and every pre-contact window — the
+grain-indexed lesson and the backreaction-amplification
+point; both branches tested, rho-linear instrument AND
+ontic-state dynamics), the relational no-signalling
+condition with O_B covering records, local geometry,
+carrier availability, event rates, label quotients, and
+all pre-contact distributions (the Barandes-Hasan-Kagan
+fixed-factorization proof CANNOT be inherited under
+backreaction — ISP owes its own), and the four outcome
+words: UNPHRASABLE-BECAUSE-COMPOSITE-DYNAMICS-UNBUILT /
+PHRASABLE-NO-SIGNALLING-PROVED /
+PHRASABLE-SIGNALLING-WITNESS (delivered rule rejected) /
+REMOTE-DECOMPOSITIONS-ONLY-EPISTEMIC (with a concrete
+joint-law proof and steering-experiment reproduction).
+
+(5) THE REVIEW'S STRATEGIC RECOMMENDATION recorded, the
+decision the user's: until a positive backreaction-aware
+no-signalling theorem exists, the density-matrix-linear
+instrument branch is the scientifically safer default.
+
+Routed (per #77 discipline, send-then-record): the
+SCOUT-PSI repair worker receives the Z3 sharpening this
+entry — the qualification sentences must state the
+tested pair IS the canonical remotely-steerable pair
+(making the result a compatibility gate), and no
+sentence may present non-collapse or unphrasability as
+safety.
+
