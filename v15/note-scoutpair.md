@@ -112,7 +112,10 @@ Disclosed deviations and receipt-state disclosures, counted: (1)
 three snapshot files beyond the pin's four deliverables — input
 snapshots, not deliverables, forced by the live repairs and disclosed
 here; (2) LOG.md is never read and no unpinned file's digest enters
-the receipt [LIC:G-ENV-EXCLUSION]; (3) the #85 addendum arrived as a
+the receipt [LIC:G-ENV-EXCLUSION], enforced by the receipt-wide
+hex-12 digest inventory (every token classified pinned/declared/self;
+an unclassified token refuses; the canary scan stays); (3) the #85
+addendum arrived as a
 routed message with no in-tree file; its clauses were subsumed by the
 frozen #86/#87 files, which this unit binds and quotes; (4) at #86
 receipt this worker had read the sources and run a scratchpad
@@ -156,10 +159,7 @@ THE FIXED POINT [LIC:G-FIXED-POINT]: a = a(a-1)/2 has the unique
 solution a = 3 on the scanned range 2..9.  Measured over the sweep:
 the record's own arity of 2 is never called an arity anywhere in the
 swept corpus: the homonym was one-sided, and a = a(a-1)/2 at a = 3 is
-the fixed point that kept it invisible.  The record's own arity of
-2 is never called an arity anywhere in the swept corpus: the homonym
-was one-sided, and a = a(a-1)/2 at a = 3 is the fixed point that kept
-it invisible.
+the fixed point that kept it invisible.
 
 THE SWEEP [LIC:G-S1-SWEEP]: word-boundary "arity"/"arities" plus
 "event size"/"event-size" over 11 pinned files.  The sweep is total
@@ -447,7 +447,7 @@ start the delivered walk supplies.
 
 ## 10. Verification regime
 
-The instrument carries 30 gates and 27 registered falsifiers, each
+The instrument carries 30 gates and 28 registered falsifiers, each
 falsifier required to die at its declared gate with a digest move
 proof; the selftest writes nothing; hostile argv exits 2; every
 failure path writes nothing; the note's kit sentences, anchors,

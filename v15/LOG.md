@@ -3804,3 +3804,25 @@ digests.  Zero false numbers remain in the sealed note.
 THREE SCOUT CYCLES NOW: BRIDGE sealed #79, K sealed
 here; PSI at its delta-verifier; PAIR at its
 micro-repair; T constructing.
+
+## 2026-08-17 — SCOUT-PAIR MICRO-REPAIR DELIVERED AND COMMITTED: THE LICENCE SENTENCE IS NOW THE GATE (PAYLOAD-WIDE HEX INVENTORY, THE I9 SURVIVOR DIES); THE TAUTOLOGY REPLACED BY THE REAL COMPARISON; ZERO MOVED VALUES (v15 LEDGER #95)
+
+Committed as delivered (note 5a4a10016ae5 / code
+433f79327b2a / output cc40bdf4955f / receipt
+24ca5fb51528; snapshots byte-frozen).  M1: every hex-12
+token in the serialized receipt classified
+pinned/declared/self with unclassified refusing —
+enforced in-build AND over the final receipt with a
+fixed-point re-scan; the inventory matches the seat own
+count (26 distinct: 34/6/3 occurrences by class);
+MUT-LOGDIG registered, mirror-safe; BOTH I9 variants die
+(payload-wide, not probe-field-only).  M2: the
+unclocked check rebuilt as the seat comparison (6
+per-order records collapse to ONE field = the committed
+joint record = the target profile; 7/7 events 1/1).
+M3: the duplicate cut.  One forced count correction
+disclosed (27 to 28 falsifiers — leaving it would be a
+false count).  Zero moved values (flattened diff: zero
+removed; verdict lines byte-identical).  Worker battery
+green incl. the LOG-less mirror and the LOG-append
+probe.  Orchestrator battery next; SEALS on green.

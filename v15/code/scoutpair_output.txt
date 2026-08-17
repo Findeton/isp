@@ -1,7 +1,7 @@
 SCOUT-PAIR delivery transcript
 pin 67e6082b445a (v15 ledger #84) + the #85 routed addendum + the FROZEN #86 addendum b3aa0f973ae1; unit note v15/note-scoutpair.md
-object under test (the note): sha256-12 0fdebdfb99a8
-instrument source: sha256-12 2004930898ed
+object under test (the note): sha256-12 5a4a10016ae5
+instrument source: sha256-12 433f79327b2a
 sources: the #86 frozen table, bound at pinned digests or disclosed byte-verified snapshots; 6 ARITY-16/SCOUT-K legs declared, not read
 
 GATE G-SRC-CLEAN        PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
@@ -33,7 +33,7 @@ GATE G-S4-SUFFICIENCY   PASS  pair-sufficiency at W4: all 9 premise-gated record
 GATE G-KERNEL-WALL      PASS  all four walls fire on their dead controls and stay silent on their licensed alive twins on this build
 GATE G-SAMPLE-SPACE     PASS  every probability-typed receipt block declares its sample space: 7 declarations over the three declared names
 GATE G-NUMERAL-FIELD    PASS  every load-bearing prose numeral is bound to a specific receipt field and each bound token equals that field's value exactly
-GATE G-ENV-EXCLUSION    PASS  the serialized receipt payload carries no environment-dependent digest: every recorded digest is a frozen pin, and the canary scan is clean
+GATE G-ENV-EXCLUSION    PASS  the serialized receipt payload carries no environment-dependent digest: the receipt-wide inventory classifies every hex-12 token as pinned, declared or self, any unclassified token refuses, and the canary scan is clean
 
 VERDICTS
   SPAIR-RETYPING-CONSISTENT<RECORD-ARITY-2-AT-27-OF-27-ATOMS; PROCESS-ARITY-3-COMMITTED-THE-DIAL; FOOTPRINT-FIXED-POINT-a-EQUALS-3; SWEEP-234-OCCURRENCES-TOTAL; NEW-CONFLATION-SITES-0-BEYOND-THE-DIAGNOSED-ARC>
@@ -46,5 +46,5 @@ KEY CLAIMS
   S2: record write flat 729/729; transport 81 non-commuting unordered pairs, all third-actor, values 1/9 and 4/9; full step support-criterion with 90 disjoint ordered non-commuting; phase-only record dependence 1620/450
   S3: CK-divisible at the W3 cuts (support-carried, 486 histories, grain record+geometry); refused at 9 of 9 ambiguous W4 cuts of 477, first gap 224/729; clocked expansion refused 7/7; unclocked free; vacuous null exhibited; tomography deficient (1 preparation); grains fork; intervention semantics unbuilt
   S4: pair record insufficient at W4, 9 of 9 premise-gated collision classes; no insufficiency witness through W3; geometry leg blocked at fixed G
-  falsifiers: 27 registered; gates: 30
+  falsifiers: 28 registered; gates: 30
 

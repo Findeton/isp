@@ -1185,13 +1185,39 @@ def s3_clocked(LD, P, psi1, q2, sup1, BOC, E1S):
         feas = solve_simplex_membership(profs, target)
         gap = max(max(abs(a - b) for a, b in zip(v, target))
                   for v in profs)
-        unclocked_ok = born(psi1, nfield(B)) == target
+        # the REAL unclocked comparison (not an expression compared to
+        # itself): build the 6 per-order records by sequential
+        # increments, check they collapse to ONE count field, that it
+        # equals the committed joint record, and that its profile is
+        # the committed target.
+        order_recs = []
+        for pi in sorted(permutations(B)):
+            r = [0] * DIM
+            for c in pi:
+                r[c] += 1
+            order_recs.append(tuple(r))
+        distinct_recs = []
+        for r in order_recs:
+            if r not in distinct_recs:
+                distinct_recs.append(r)
+        distinct_uprofs = []
+        for r in order_recs:
+            up = born(psi1, r)
+            if up not in distinct_uprofs:
+                distinct_uprofs.append(up)
+        unclocked_ok = (len(order_recs) == 6
+                        and distinct_recs == [nfield(B)]
+                        and len(distinct_uprofs) == 1
+                        and distinct_uprofs[0] == target)
         rows.append({"event": list(e1), "block": list(B),
                      "distinct_order_profiles": len(profs),
                      "target_is_blind_q2": target == q2,
                      "clocked_feasible": feas["feasible"],
                      "clocked_certificate": feas["certificate"],
                      "clocked_max_gap": str(gap),
+                     "unclocked_distinct_records": len(distinct_recs),
+                     "unclocked_distinct_profiles":
+                         len(distinct_uprofs),
                      "unclocked_matches": unclocked_ok})
         ok = ok and (not feas["feasible"]) and unclocked_ok
     ok = pick("MUT-CLOCK", ok, False)
@@ -1857,26 +1883,91 @@ def numeral_bindings(LD, P):
              "failing": [r["field"] for r in rows if not r["ok"]]})
 
 
+HEX_DIGITS = "0123456789abcdef"
+
+
+def hex12_tokens(blob):
+    # every maximal run of lowercase-hex characters of length >= 12 in
+    # the serialized payload; runs of length exactly 12 are
+    # digest-shaped, longer runs are unclassifiable by construction.
+    toks = []
+    run = 0
+    for k, ch in enumerate(blob):
+        if ch in HEX_DIGITS:
+            run += 1
+        else:
+            if run >= 12:
+                toks.append(blob[k - run:k])
+            run = 0
+    if run >= 12:
+        toks.append(blob[len(blob) - run:])
+    return toks
+
+
+def classify_hex12(blob, self_vals):
+    # the receipt-wide digest inventory: every hex-12 token classified
+    # pinned / declared / self; anything else is unclassified and the
+    # caller's gate must refuse on it.
+    pinned_vals = sorted(PINNED.values())
+    declared_vals = sorted(DECLARED_NOT_READ.values())
+    counts = {"pinned": 0, "declared": 0, "self": 0}
+    distinct = []
+    unclassified = []
+    toks = hex12_tokens(blob)
+    for t in toks:
+        if t not in distinct:
+            distinct.append(t)
+        if len(t) == 12 and t in pinned_vals:
+            counts["pinned"] += 1
+        elif len(t) == 12 and t in declared_vals:
+            counts["declared"] += 1
+        elif len(t) == 12 and t in self_vals:
+            counts["self"] += 1
+        elif t not in unclassified:
+            unclassified.append(t)
+    return {"hex12_occurrences": len(toks),
+            "distinct_tokens": len(distinct),
+            "classified_occurrences": counts,
+            "unclassified": sorted(unclassified)}
+
+
 def env_exclusion(LD, P):
     live = ("v15/note-scout-bridge.md",)
     digs = {rel: sha12(read_rel(rel)) for rel in live}
     P["env_exclusion"] = {
-        "policy": "no unpinned live digest enters the artifacts; every "
-                  "read this unit performs is pinned, so the scan runs "
-                  "over the pinned set's live digests as a canary",
+        "policy": "no unpinned file's digest enters the receipt, "
+                  "enforced two ways: the canary scan over the pinned "
+                  "set's live digests stays, and the receipt-wide "
+                  "digest inventory classifies every hex-12 token in "
+                  "the serialized payload as pinned, declared or self "
+                  "-- any unclassified token refuses",
         "probe": pick("MUT-ENV", None,
                       digs["v15/note-scout-bridge.md"])}
+    if mut("MUT-LOGDIG"):
+        logp = os.path.join(ROOT, "v15/LOG.md")
+        if os.path.exists(logp):
+            P["env_exclusion"]["probe"] = sha12(read_rel("v15/LOG.md"))
+        else:
+            P["env_exclusion"]["probe"] = sha12(
+                b"LOG-ABSENT-REGISTRY-PLANT")
     blob = to_json(P) + to_json(LD.rows)
     leaks = sorted(rel for rel in sorted(digs) if digs[rel] in blob
                    and PINNED.get(rel) != digs[rel])
     if mut("MUT-ENV"):
         leaks = ["v15/note-scout-bridge.md"]
+    inv = classify_hex12(blob, (P["source_hygiene"]["digest"],))
     P["env_exclusion"]["leaks"] = leaks
-    LD.gate("G-ENV-EXCLUSION", not leaks,
+    P["env_exclusion"]["inventory"] = inv
+    LD.gate("G-ENV-EXCLUSION",
+            not leaks and not inv["unclassified"],
             "the serialized receipt payload carries no "
-            "environment-dependent digest: every recorded digest is a "
-            "frozen pin, and the canary scan is clean",
-            {"scanned": len(digs), "leaks": leaks})
+            "environment-dependent digest: the receipt-wide inventory "
+            "classifies every hex-12 token as pinned, declared or "
+            "self, any unclassified token refuses, and the canary "
+            "scan is clean",
+            {"scanned": len(digs), "leaks": leaks,
+             "hex12_occurrences": inv["hex12_occurrences"],
+             "unclassified": inv["unclassified"]})
 
 
 MUT_SETITER_SNIPPET = (
@@ -2040,6 +2131,9 @@ FALSIFIERS = (
      "corrupts a numeral binding resolution"),
     ("MUT-ENV", "G-ENV-EXCLUSION", "env_exclusion",
      "serializes a live digest into the receipt"),
+    ("MUT-LOGDIG", "G-ENV-EXCLUSION", "env_exclusion",
+     "serializes the live LOG.md digest into the receipt payload; "
+     "dies at the receipt-wide digest inventory"),
     ("MUT-SETITER", "G-AST-DETERMINISM", "source_hygiene",
      "injects bare set iteration and raw listdir"),
 )
@@ -2256,8 +2350,30 @@ def deliver(write):
                          "description": d}
                         for (n, g, o, d) in FALSIFIERS]
     P1["schema"] = "scoutpair-receipt-v1"
+    # the receipt-wide digest inventory, re-run over the FINAL payload
+    # (after object/determinism/falsifier fields are in place): every
+    # hex-12 token must classify pinned / declared-not-read / self
+    # (object, source, determinism); an unclassified token refuses the
+    # delivery at G-ENV-EXCLUSION and nothing is written.
+    self_vals = (P1["source_hygiene"]["digest"], d1, nd)
+    inv0 = classify_hex12(to_json(P1), self_vals)
+    if inv0["unclassified"]:
+        raise GateFail("G-ENV-EXCLUSION",
+                       "unclassified hex-12 token in the final "
+                       "receipt: " + " ".join(inv0["unclassified"][:4]))
+    P1["receipt_inventory"] = {
+        "scan": inv0,
+        "self_classes": "object, source, determinism",
+        "policy": "the final serialized receipt is re-scanned with "
+                  "every field in place; every hex-12 token is a "
+                  "frozen pin, a declared-not-read digest or a self "
+                  "digest, and any unclassified token refuses"}
     out = render_output(P1, nd)
     rec = to_json(P1)
+    if classify_hex12(rec, self_vals) != inv0:
+        raise GateFail("G-ENV-EXCLUSION",
+                       "the receipt-wide inventory is not a fixed "
+                       "point of its own recording")
     if write:
         with open(os.path.join(ROOT, OUT_REL), "w",
                   encoding="utf-8") as f:
