@@ -3826,3 +3826,40 @@ false count).  Zero moved values (flattened diff: zero
 removed; verdict lines byte-identical).  Worker battery
 green incl. the LOG-less mirror and the LOG-append
 probe.  Orchestrator battery next; SEALS on green.
+
+## 2026-08-17 — SCOUT-PAIR CLOSED-SEALED: THE THIRD SCOUT THROUGH ITS FULL CYCLE (v15 LEDGER #96)
+
+Final battery green (byte-identical from deleted
+artifacts incl. receipt; seed-invariant; 28/28 selftest
+with move proofs; MUT-LOGDIG dead at G-ENV-EXCLUSION;
+artifacts untouched).  THE CYCLE: pinned #84 -> the
+three addenda (#85 routed, #86, #87 — the
+freeze-before-results discipline holding) -> delivered
+#88 -> battery #89 -> verifier #92 (~4,900
+recomputations zero discrepancies; the bonus closed
+form) -> micro-repair #95 -> SEALED at note 5a4a10016ae5
+/ code 433f79327b2a / output cc40bdf4955f / receipt
+24ca5fb51528.
+
+WHAT IT SEALS (scout-note class; feeds DC and the
+ontology program): RETYPING-CONSISTENT with the E-34
+term table (record-arity 2 / process-arity / the third
+FOOTPRINT sense; the a(a-1)/2 = a fixed point at a=3
+that camouflaged the homonym; zero new conflations in
+234 classified occurrences); ORDER-DEFECT-NONZERO at
+fixed G (record write FLAT arena-generally; the
+transport defect requiring exactly a third actor
+162/162 with values 1/9 and 4/9, record motion
+phase-only; the full-step closed form d^2 =
+3(q(c1)+q(c2)) seat-verified as an identity);
+CK-DIVISIBLE-AT-W3 / SEQUENTIAL-REFUSED-AT-W4 at
+declared-state cut-validity (the process clock, not the
+record, refuses pair-sequencing; the vacuous null
+exhibited; tomographic deficiency published;
+grain-independence fails — psi separates the collision
+classes); PAIR-RECORD-INSUFFICIENT-AT-W4 with the
+premise gate honest and the interpretation wall holding
+history/trace/psi/n-body unchosen.  Zero false numbers
+remain in the sealed note.  THREE SCOUTS SEALED (BRIDGE
+#79, K #94, PAIR here); PSI at its delta-verifier; T
+constructing.
