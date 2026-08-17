@@ -2616,3 +2616,89 @@ rebuild the load-bearing numbers, audit the repaired
 language for downgrade/candidate-marking compliance, and
 attack the two new gates.
 
+## 2026-08-17 — THE ELEVENTH EXTERNAL REVIEW ADOPTED: BOTH SCOUT PINS TIGHTENED BY FROZEN ADDENDA BEFORE RESULTS ARE INSPECTED — THE LP-vs-POLYNOMIAL FREEZE, THE PROXIMITY PREDICATES, THE PRE-REGISTERED PREPARATIONS, THE RECORD-DISTRIBUTION GRAINS, THE EXACT NULL INSTRUMENT; THE NUMERAL GATE'S GENERAL DISEASE NAMED (v15 LEDGER #68)
+
+Adopted in full; the review's own framing is the era's
+discipline (freeze before inspecting).  Both addenda
+frozen THIS ENTRY and routed to the in-flight workers
+with a REQUIRED DISCLOSURE: each worker must state which
+computations it had already inspected before receipt,
+and re-run any leg whose definition the addendum fixes,
+disclosing the order of events.
+
+SCOUT-K addendum (note-scoutk-pin-addendum.md):
+(1) CONSISTENCY MODE FROZEN — CONDITIONAL transition
+agreement at every reached state is the PRIMARY mode
+(each constraint linear in ONE kernel factor; the pin's
+LP/Farkas promise is valid there and only there);
+marginal-history agreement is a DISCLOSED SECONDARY that,
+if attempted, must preserve exact Markov factorization
+with a polynomial method and certificates — a linear
+relaxation over history flows is REFUSED (it can produce
+"kernels" that do not factor).  (2) THE PROXIMITY
+PREDICATES: each arm's exact predicate — stated in
+committed objects only (actor sharing, count-field
+values, declared adjacency, event order) — is
+PRE-REGISTERED AND DIGEST-SEALED by the worker BEFORE
+any feasibility row runs; an unformalizable arm is
+REFUSED with the refusal published, never improvised.
+(3) THE FIRST-EVENT REQUIREMENTS formally frozen (they
+lived only in #64 and a runner message): the step-one
+orbit census separately; whether a unique symmetric
+stochastic kernel exists at the blank record; which
+tie-break, if any, is purchased; step-2+ record
+selection reported independently.  (4) SCOPE WALL: G is
+FIXED — this unit tests RECORD backreaction only; a
+success does not establish transport across
+AUTOGLUE-created cells or any G→G'; gated sentence.
+
+SCOUT-PSI addendum (note-scoutpsi-pin-addendum.md):
+(1) THE PREPARATIONS PRE-REGISTERED EXACTLY — PRIMARY
+rho* = the equal mixture of the two lexicographically
+first computational basis states in the S4 witness's
+support (the deterministic rule, anchored at the
+committed receipt); D1 = that computational pair,
+weights 1/2|1/2; D2 = the plus/minus superposition
+ensemble of the same pair (unnormalized vectors with
+norms absorbed — all record probabilities are squared
+moduli, computable in Q(omega), no radicals).
+SECONDARY rho** = maximally mixed on the S4 carrier;
+D1 = the computational basis uniform; D2 = the
+F3-character (Fourier) basis uniform.  Nothing else may
+be selected after behavior is visible.  (2) THE RECORD
+DISTRIBUTION — FOUR FROZEN COMPARISON ROWS, each its own
+verdict: {complete ordered CELL-HIT emission histories,
+final count field} x {raw, relabelling-quotiented}, at
+windows 1|2|3.  Sensitivity that vanishes under
+coarse-graining or quotient is verdict-relevant and
+published per row.  (3) THE NULL INSTRUMENT FROZEN to
+ONE explicit object: the selective Born-collapse
+instrument paper-20 names as not-run — outcome c with
+probability w_c; post-state P_c psi renormalized (the
+S4 formalization's projectors); record += c; as a
+channel rho -> sum_c P_c rho P_c with the record
+outcome.  Its effects and post-states stated in the
+note.  (4) THE OPERATIONAL QUALIFICATION as a wall:
+sensitivity proves rho is not a sufficient state
+descriptor FOR THE DELIVERED CELL-HIT RULE; operational
+observability requires preparation/intervention
+protocols not yet built; a future triple-event law may
+remove or change the sensitivity.  Gated sentences.
+
+THE NUMERAL GATE'S GENERAL DISEASE (adopted): the scout's
+30-binding map is a LOCAL fix — ~311 numeral occurrences
+in the note, nothing proving the unbound ones
+non-load-bearing.  THE STANDARD, engraved forward:
+per-occurrence TOTALITY — every numeral occurrence in a
+unit's note/paper classified BOUND (with its specific
+receipt field) or NON-CLAIM (with its reason class:
+section number, digest, date, anchored quotation);
+required of SCOUT-K and SCOUT-PSI from birth (their
+addenda say so), of every future pin, and measured on the
+repaired scout by its verifier seat (charge routed).
+Status corrections to the review's table: the scout
+repair is COMMITTED (#66) with battery green (#67) and
+its verifier seat running; ECC's repair is uncommitted
+pending its last replay leg + the user's hold; the rest
+as stated.
+
