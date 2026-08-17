@@ -3635,3 +3635,15 @@ three CWDs incl. a spaced path, three seeds, LOG-append
 probe).  Orchestrator battery next; verifier seat on
 green.
 
+
+## 2026-08-17 — SCOUT-PAIR BATTERY GREEN AT THE ORCHESTRATOR; ITS VERIFIER SEAT LAUNCHED (v15 LEDGER #89)
+
+Byte-identical from deleted artifacts incl. receipt;
+byte x2; seed-invariant; argv rc 2; selftest 27/27 with
+move proofs (MUT-SETITER at G-AST-DETERMINISM);
+MUT-CLOCK dead at G-S3-CLOCKED; artifacts untouched.
+The verifier seat launched
+(v15/review-scoutpair-verifier.md): rebuild the S2
+defect census and the S3/S4 nine-cut measurement from
+scratch, audit the four-addenda compliance and the
+premise gate, attack the instrument.
