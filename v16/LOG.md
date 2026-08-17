@@ -93,3 +93,21 @@ Repaired hashes: paper `ae737af4b22b` unchanged; source `7db010d1b1c9`;
 transcript `5fe1fb21a55e`; receipt `a7cd7a576a25`.  Candidate primary and all
 scientific measured values remain unchanged.  The hostile protocol may now be
 frozen against these bytes.
+
+## 2026-08-17 — JRH THREE-SEAT HOSTILE PROTOCOL FROZEN (v16 LEDGER #4)
+
+`v16/note-jrh-hostile-protocol.md` freezes the repaired artifact hashes at
+commit `2f117f2` and dispatches three independent, non-communicating seats.
+OPERATOR must rebuild the decisive finite mathematics and attack the rival-law
+countermodel, arity, Hamiltonian/species logic, and instrument.  GRAVITY must
+decide whether the toy has dynamic geometry or merely a geometry-labelled
+branch, test the route through gluing/refinement/deformation closure against
+Regge/causal-set/general-boundary/HKT/Lovelock precedents, and audit constants,
+scale, and deviations.  QUANTUM must rebuild HJW/EPR signalling at its own
+hands, settle what the CP replacement does to the psi fork, attack outcome
+ontology and Hamiltonian reconstruction, and price the field/species analogy.
+
+Each seat may write only its named report, may not read either other report, and
+may not import or mechanically translate the candidate implementation.  All
+headlines remain candidate readings.  Reports must be frozen verbatim before
+joint adjudication.
