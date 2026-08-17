@@ -208,3 +208,20 @@ The status is **REPAIRED-PENDING-DELTA-VERIFICATION**, not terminal.  The root
 should have updated it in the same commit under RUNBOOK §13 but did not.  The
 next event is a separately frozen delta protocol followed by three independent
 reviewers checking only the load-bearing repair and refined candidate.
+
+## 2026-08-17 — JRH INDEPENDENT HOSTILE DELTA PROTOCOL FROZEN (v16 LEDGER #10)
+
+`v16/note-jrh-delta-protocol.md` freezes the repaired target at commit
+`99f2352` and sends the operator, gravity, and quantum seats back independently.
+The protocol binds the exact artifact hashes, forbids cross-reading, requires
+fresh recomputation of every load-bearing repair, and makes the distinction
+between the boundary instrument, general decoherence-functional framework, and
+local-weight ansatz an explicit gate.
+
+The delta panel must also audit changing-carrier typing, gluing, strong
+positivity, exact versus approximate division, objective actualization, EPR,
+all-n interactions, Hamiltonian reconstruction, species, constants, scales,
+and QFT/GR deviations.  A coherent framework is not a selected law.  False
+exact claims, surviving dynamic-geometry overclaim, an untyped cross-carrier
+trace, or any promoted particle/constant/deviation result are pre-registered
+kill conditions.  Reports will be frozen verbatim before adjudication.
