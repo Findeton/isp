@@ -1867,3 +1867,123 @@ verifier seat (the smallness is the user's order).
 Construction worker launched this entry.  ECC seal HOLD
 unchanged; DC pin remains parked on this scout + the
 user's fold ruling.
+
+## 2026-08-16 — OUTAGE RECORD: SESSION LIMIT KILLED ALL FIVE WORKERS MID-FLIGHT; LIMIT LIFTED; CONTINUATIONS RELAUNCH THIS ENTRY (v15 LEDGER #54)
+
+The session usage limit terminated, mid-flight: the ECC
+repair worker (at scratch setup — nothing material), the
+three ARITY-16 panel seats (K2 had completed its
+head-to-receipt verification, nearly all exact, findings
+logged to scratch; K1 was mid-rebuild before the modulus
+sweep; K3 was building its probe harness; NO review file
+frozen by any seat), and the SCOUT-BRIDGE construction
+(at start).  Per the standing outage protocol (v14 #325/
+#354 precedent): this record; relaunches as continuations
+with reconcile-against-scratch contracts; batteries and
+frozen review files remain the sole acceptance — a
+worker's unverified scratch is evidence to reconcile,
+never a result.
+
+
+## 2026-08-16 — USER DIAGNOSIS ENGRAVED (BINDING): THE ECC NO-GO IS A TYPE ERROR TRANSPORTED FROM v14 — "DIVISION EVENT" NAMED TWO INCOMPATIBLE OBJECTS; E-34 BOUGHT; THE SCOUT SHARPENED BY ADDENDUM; THE HOMONYM AUDIT ORDERED (v15 LEDGER #55)
+
+THE DIAGNOSIS (the user's, verified against the cited
+bytes): the original probability law was established on a
+two-actor carrier whose alternatives were individual
+pair-cells (note-coupling-pin.md:67 — transported from
+the (A,B) carrier).  Paper-20 defines the Born menu as
+three link traversals and its "division event on cell
+(x,l) increments THAT ONE CELL" (paper-20:277).
+Paper-19 had already defined a division event as a
+THREE-ACTOR conflict group whose footprint writes ALL
+THREE pair-relations (paper-19:289).  Two layers, one
+word: the walk's primitive alternative is one selected
+pair-cell; the grammar's is one three-actor occurrence
+writing three cells together.  THE BAD ASSUMPTION: the
+pair-cell selected by the quantum menu was treated as the
+same random variable as the three-actor event that
+contains it.  SIG saw the symptom (one grammar event
+brings additional deposits; an emission buys one cell,
+paper-24:396) and classified it as channel asymmetry.
+ECC did not introduce the error — it attempted to REPAIR
+it, and Mp=3q is where the conflation surfaced: the
+equation says P(c is among the three written cells) =
+3q(c), an inclusion probability, hence <=1, hence
+q<=1/3; the committed cell's 4/9 would require 133%.
+THE CEILING IS NOT NONCLASSICALITY — (4/9,4/9,1/9) is an
+ordinary distribution; it merely cannot be one third of
+the inclusion frequencies of three-cell events.  The
+confusion: MUTUALLY EXCLUSIVE ALTERNATIVES (which cell
+triggered) vs SIMULTANEOUS CONSEQUENCES (which three
+relations were written).  Not the same observable.
+
+THE RIGHT RULE, engraved (E-34.4): probabilities are
+normalized over mutually exclusive, complete local
+successor configurations X -> X'_e (one outcome = the
+actor-event + the record change + the geometry change +
+the state transport, together; sum_e P(X'_e|X)=1); a
+triple's three pair-cells are correlated consequences of
+one transition, not recipients of a third of its
+probability each.  Two coherent ontologies: (1) pair-cell
+primitive (keep the walk, RENAME its primitive CELL-HIT,
+triples become composites); (2) three-actor event
+primitive (fits the local-sector/backreaction reading;
+cell Born weights become conditional triggers, readouts
+or derived marginals — never normalized footprint
+occupancies).  THE USER RECOMMENDS (2); the scout still
+tests both.  Candidate bridge preserving q(c):
+P(c,e|X) = q(c|X) K(e|c,G,R) with K selected by locality,
+proximity, relabelling symmetry, record consistency,
+ideally uniqueness — an arbitrary K is a hidden free law.
+Overlapping triples are compatible: mutual exclusivity is
+about which complete successor happens, not about shared
+actors.  THE BARANDES-COMPATIBLE BACKREACTION FORM: a
+fixed UNIVERSAL configuration space
+Omega = union over G of {(G,R,rho,event data,...)} — the
+outer space fixed, the actual G changing between
+configurations (his per-model space is fixed,
+w5-recast:68; a fixed Omega does not require a fixed
+geometry).  ISP implements this only partially: the v14
+coupling backreacts on a FIXED 27-cell carrier; AUTOGLUE
+grows the carrier; ECC measured that no candidate evolves
+amplitude across creation (paper-46:529).  The intended
+ontology is backreacting; the unified backreacting
+dynamics does not yet exist.
+
+PREVENTION, "never again" (the user's order): RUNBOOK
+E-34 bought this entry — term-binding tables in every
+pin; cross-paper identification is a claim (proven or the
+terms split); the CELL-HIT rename forward-binding;
+sample-space declaration before any equation, normalized
+over complete successors; the
+alternatives-vs-consequences audit a standing pin duty.
+PLAN.md gains wall W4-TYPE-IDENTITY.  THE HOMONYM AUDIT
+launched this entry: a read-only sweep for other terms
+naming two formally distinct objects (candidates include:
+event, cell, sector, seam, state, record, menu, window,
+saturating, carrier, footprint, division), report
+v15/note-homonym-audit.md with per-term verdicts
+(SINGLE-SENSE / DISCLOSED-POLYSEMY /
+TYPE-ERROR-CANDIDATE) and citations.
+
+THE SCOUT SHARPENED (addendum frozen this entry,
+v15/note-scout-pin-addendum.md): (1) the CELL-HIT rename
+mandatory in its language; (2) the primitive selection
+(CELL-HIT vs TRIPLE-EVENT) is the scout's explicit
+deliverable question, the user's recommendation of
+triple-primitive noted; (3) if triples primitive, Mp=3q
+is ABANDONED — probabilities over complete backreacting
+successors; (4) S2's K tested for unique determination by
+locality/proximity/overlap-symmetry/record-consistency;
+(5) the event-conditioned quantum successor rho'_e
+specified INCLUDING transport onto created cells; (6) NEW
+PROBLEM S4: paper-20 records a Born-selected cell while
+leaving the state UNCOLLAPSED (paper-20:633) — if a
+standard quantum operation, its linearity must be
+tested; the joint successor law specifies both the
+recorded event and the state update.  ECC repair
+proceeds on its frozen Z-orders unchanged (prose/
+instrument only — the type-error reframing lands in the
+scout and future units; ECC stays HELD-UNSEALED for any
+user-ordered erratum after).
+

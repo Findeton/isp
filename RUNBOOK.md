@@ -1950,3 +1950,41 @@ the measure with it or stamps it COUNTING-ONLY.
 E-25 totality/seals recomputed at the door. E-26 the transcript bound to the ledger by content. E-27 walls semantic, positive, self-sealing. E-28 an anchor is consumed or it is decoration. E-29 claims by equality, both ways, keyed by table. E-30 referent binding per occurrence, over prose, paired. E-31 no typed counts anywhere the unit vouches. E-32 a falsifier moves the measurement or it is not a falsifier. E-33 the read set recorded where reads happen. **Adoption: NEW UNITS ONLY** (terminal units carry their exposure in v14/tpl_census.md; no seal is reopened for a class that moved no measured number).
 **§B backfill (ledger-only engravings now RUNBOOK-carried):** #295 class words gate-bound to computed predicates; #299 (+#319, +#348-extension) pre-registered outcomes with feasibility argued against the committed corpus, at the declared row list; #348 a seal manifest is total only if totality is recomputed at promotion time.
 **Registered-unimplemented families (owed):** S-1 the comparator is the builder (the corpus's most recurrent shape — no mechanism anywhere); S-2 two "independent" routes through one shared component; S-3 the gates encode the answer.
+
+## E-34 — TYPE IDENTITY ACROSS PAPERS: A SHARED NAME IS NOT A SHARED OBJECT (bought at v15 #55, the ECC bridge type error)
+
+The most expensive defect the programme has carried: "division event"
+named TWO formally incompatible objects for an entire era — paper-20's
+walk primitive (ONE selected pair-cell; "a division event on cell (x,l)
+increments that one cell", paper-20:277) and paper-19's grammar
+primitive (a three-actor conflict group whose footprint writes THREE
+pair-cells, paper-19:289).  The conflation was transported into ECC's
+LP normalization (Mp=3q reads "the inclusion probability of cell c is
+3q(c)" — >1 at the committed cell: a 133% probability), where it
+surfaced as an infeasibility that is NOT nonclassicality:
+(4/9,4/9,1/9) is an ordinary distribution.  SIG saw the symptom at
+paper-24:396 and misclassified it as channel asymmetry.  THE RULES,
+forward-binding on every new pin and unit:
+
+1. Every pin carries a TERM-BINDING TABLE: for each inherited
+   load-bearing term, WHICH paper's definition it binds, by
+   file:line/anchor.  A term bound to two sources is a refusal at
+   construction unless rule 2 is satisfied.
+2. Cross-paper identification of same-named objects is a CLAIM: it is
+   proven (an exhibited isomorphism/equality gated in the instrument)
+   or the terms are SPLIT (renamed apart).  Never assumed.
+3. THE RENAME, forward-binding: paper-20's primitive is CELL-HIT.
+   The words "division event" in new work refer ONLY to the
+   three-actor grammar object.  Sealed v14 papers are not rewritten;
+   the registry note v15/note-homonym-audit.md carries the
+   terminology map.
+4. Probability normalization declares its sample space (cells /
+   triple-events / complete successor configurations) BEFORE any
+   equation, per claim (the scout's W-SAMPLE-SPACE-DECLARED,
+   generalized): probabilities are normalized over MUTUALLY EXCLUSIVE
+   COMPLETE LOCAL SUCCESSORS, never over the simultaneous
+   components a successor writes.
+5. The mutually-exclusive-vs-simultaneous audit is a standing pin
+   duty: any bridge between layers states which of its variables are
+   alternatives and which are consequences, gated.
+

@@ -7,6 +7,7 @@
 ## STANDING WALLS (all units)
 - **W1**: reconstruction is never promoted to derivation.
 - **W2**: invariance is never promoted to gauge or physical meaning before operational observables exist (gauge = identical values for EVERY observable and experiment).
+- **W4-TYPE-IDENTITY (E-34, bought at #55)**: a shared name is not a shared object. Every pin carries a term-binding table (each inherited term bound to ONE paper's definition by anchor); cross-paper identification of same-named objects is a claim — proven and gated, or the terms are split. Paper-20's primitive is CELL-HIT forward-binding; "division event" = the three-actor grammar object only. Probability claims declare their sample space before any equation and normalize over mutually exclusive COMPLETE LOCAL SUCCESSORS, never over the simultaneous components a successor writes; every layer-bridge states which variables are alternatives and which are consequences.
 - **W3**: a result is an ISP-family prediction only if it holds across every still-free fibre or the fibre is independently selected. **Instrumented from ECC onward: every headline auto-labelled member-specific or family-level with the varied fibres disclosed** (also a TPL-2 requirement).
 - **W-ABLATION-NOT-PREDICTION** (DISC-line units).
 - Wall implementation: SemanticWall licence legs; falsifiers plant independent paraphrases; spelled fractions/proportions gated.
