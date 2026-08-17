@@ -4142,3 +4142,59 @@ scaling gate) REGISTERED as phase two.  Launched this
 entry.  DC proper remains parked; JS is its foundational
 precursor.
 
+## 2026-08-17 — THE TWENTIETH REVIEW ADOPTED: SCOUT-T'S LIVE SELFTEST FAILS (THREE NO-OP FALSIFIERS VIA GRAIN INHERITANCE + ONE GATE-DEFINITION MISMATCH — ROUTED TO THE WORKER MID-BATTERY); THE JS PIN REPAIRED BY FROZEN ADDENDUM (THE STATE-LAW FIXED POINT; MY NATURALITY OVERCLAIM CORRECTED; TYPE-BEFORE-ENUMERATION; TWO-AXIS STABILIZATION; CP METHOD HONESTY; THE SIX-WAY S5 SPACE); THE PLAN RECONCILED (v15 LEDGER #102)
+
+SCOUT-T (uncommitted candidate, its own battery still
+running): the reviewer ran the live selftest — rc 3.
+MUT-SAMPLE / MUT-CERT / MUT-BW SURVIVE because they
+target the FULL grain, which the minimality ladder
+INHERITS from PREV1 — the mutation site never executes
+(a no-op-falsifier class instance: the ladder's own
+optimization silently disabled its falsifiers).
+MUT-A2 dies at G-A2-CERT instead of its registered
+G-A2-SAMPLES — the SAMPLES gate only validates status
+WORDS, so a status flip cannot fail it (a
+gate-definition mismatch).  The clean run's exact
+certificates still verify — audit wiring, not
+mathematics — but any all-35-die claim is FALSE and the
+unit stays candidate-uncommitted.  THE FIX ROUTED BY
+CONFIRMED SEND: inject into solved grains or after
+inheritance; make the SAMPLES gates validate against
+the solver object or re-register status-forgery mutants
+to the certificate gates; rerun everything; AND the
+scope note — at depth 3 the trace grains COINCIDE
+(FULL = PREV1 = COUNTS = SUFFIX2 at one previous
+trigger), so the verdict defeats THIS trace repair AT
+THIS WINDOW and does not rule out longer-memory
+distinctions at later windows.
+
+THE JS PIN REPAIRED (note-js-pin-addendum.md, digest in
+commit; routed; the worker folds before any
+verdict-bearing computation): (1) the circularity — the
+predictive state cannot be solved before the law; S1
+splits into the delivered-dynamics regression benchmark
+(S1a) and the state-law FIXED-POINT loop (S1b);
+genuine-boundary status is a property of the law.  (2)
+THE ORCHESTRATOR'S C3 OVERCLAIM CORRECTED: the anchored
+walk does not establish an unnatural law (a symmetric
+law can evolve an asymmetric state); the frozen test is
+whether the anchor transforms covariantly as
+state/boundary data or the law references an absolute
+label.  (3) type-before-enumeration (S2/S3 reordered).
+(4) JS-NO-STABILIZATION-WITHIN-<range> replaces the
+unprovable no-compression word; the two-axis
+(past x horizon) partition-refinement test.  (5) CP
+typing fixed (trace-nonincreasing CP maps on trace-class
+operators, direct sum trace-preserving) + certificate
+METHOD HONESTY (Choi = semidefinite; factorization
+polynomial/non-convex; LP/Farkas not automatically
+sufficient; UNDECIDABLE-WITHIN-METHOD an honest word).
+(6) the six-way S5 verdict space; commutes = compatible
+joint representation only.  THE PLAN RECONCILED: DC now
+consumes JS explicitly and treats the three maps as
+diagnostics (the contradiction with the superseded ECC
+text removed).  The review's bottom line stands
+engraved: the right research object is found; the state
+and the subdivisions get their meaning FROM the law, and
+the machinery must not pretend otherwise.
+
