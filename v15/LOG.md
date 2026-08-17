@@ -1723,3 +1723,38 @@ byte-stable except where Z-orders name a token (E-11
 renames, E-9 qualification).  Repair worker launches on
 this entry; seal on its green battery.
 
+## 2026-08-16 — ARITY-16 BATTERY GREEN; ITS THREE-SEAT PANEL LAUNCHED (v15 LEDGER #51)
+
+Orchestrator battery all green on the committed blob
+(git-less mirror: plain run from DELETED artifacts
+byte-identical to committed, byte x2, PYTHONHASHSEED
+77777 invariant; unknown flag and unknown mutant rc 2;
+selftest corrupted-anchor probe refused at G-VERBATIM
+with artifacts unchanged; MUT-ARENA dead at G-ARENA16,
+its declared gate; committed artifacts untouched).
+
+Panel launched, three seats, review files
+v15/review-arity16-{operator,effectus,instrument}.md:
+K1 OPERATOR — from-scratch rebuild of the two subgroup
+lattices (7 F4-linear / 67 abstract), the 6-principle
+x 16-size admission census under both readings, the
+modulus rungs at a=2|4|9 and the a=8 cover refusal, the
+2,627,625-grouping DP against closed forms, the transport
+tallies at both levels and both readings, the 307
+invariant partitions, the floors 10|8|6|5, the SEC-2
+union census 28/64/0 and the 0|1|2|4 obstruction column,
+the naming route comparisons.  K2 EFFECTUS — licensure:
+the reading-fork discipline (no merge anywhere), the
+capped rows' publication, the extension-family stamps,
+the idle-arity refusal wording, W3's which-n labels,
+the five disclosed deviations, fresh-paraphrase plants
+incl. the era's four newest bypass species (slash-
+rational-in-prose, NEG-guard bypass, licence-token
+laundering, W1-subject-gap).  K3 INSTRUMENT — live
+injections per the standing catalogue plus the four new
+species, registry-mutant verification, determinism and
+seal-window probes, CLI hostility.
+
+ECC repair runs in parallel; adjudication of ARITY-16 on
+its third seat.
+
