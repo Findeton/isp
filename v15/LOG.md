@@ -1485,3 +1485,80 @@ REFUSED at G-WALLS — the mechanism proven, not guessed.
 K1 (operator) and K3 (instrument) still in flight;
 adjudication after the third seat.
 
+## 2026-08-16 — ARITY-16 (PAPER-50) DELIVERED, COMMITTED AS-IS: THE a=q CONDITIONAL IS READING-DEPENDENT (F4-LINEAR TRACKS THE FIELD, ABSTRACT SELECTS A SET); THE MODULUS THEOREM HOLDS AT THE ROWS THE PARENT ARENA COULD NOT SUPPLY; SATURATION-IS-MAXIMALITY SELECTS THE CHARACTERISTIC (v15 LEDGER #47)
+
+Construction complete under pin 1dac6a35ddc5; the four
+artifacts committed exactly as delivered (paper
+c86ea5edcfec / code 613e05fc7ff0 / output 837333a85fcb /
+receipt 52f600389933; 43 gates; ledger head
+630f7508679f5550; 54 path anchors into two committed
+receipts; 43 registry falsifiers; 9 walls incl. the new
+W-NO-READING-MERGE).  CANDIDATE READINGS UNTIL
+ADJUDICATION.  Ten-segment head; the load-bearing
+findings:
+
+THE CONDITIONAL SPLITS ON THE PRE-REGISTERED READING:
+F4-linear lattice = 7 subspaces, orders 1|4|16 — the
+proper nontrivial coset size is 4 ALONE, so the parent's
+conditional selects a=4=q (TRACKS-THE-FIELD on that
+branch); abstract lattice = 67 subgroups, orders
+1|2|4|8|16 (the #11 registration's divisor coincidence
+re-measured) — the antecedent admits {2,4,8}, A SET, NOT
+A SIZE.  And the parent's selecting principles STOP
+AGREEING: saturation-is-maximality, a unique selector at
+both arenas, selects 3 at n=9 but 2 = THE CHARACTERISTIC
+at n=16 — the field-order reading of that principle is
+REFUTED; the characteristic survives as a candidate.
+Nothing measured selects an event size without the arena
+AND a reading.
+
+THE MODULUS THEOREM HOLDS: instance L=4; rungs found at
+a=2|4|9, every found set exactly the multiples of 4
+within R<=8; mod-a at 1 of 3 found rows (a=4=L) and at
+NEITHER row where a≠L — the iff instanced at
+discriminating rows n=9 could not supply.  a=8's complete
+18-round pool refuses every cover; a=3|5|6|7 capped and
+published as capped.
+
+TRANSPORT: numerals 0 LAW-IN-A / 0 NEEDS-3 / 7 BREAKS
+under the declared rule AT BOTH READINGS — the parent's
+two standing-still numerals both move once n moves;
+statements 3/3 linear vs 2/4 abstract vs the parent's
+anchored 4/2, the division-forcing statement the row that
+moves (parent's thesis VERBATIM on the linear window —
+5/5 non-unique all parallel classes; FALSE on the
+abstract — 35/35 non-unique, only 5 classes: non-linear
+coset rounds are joiners a prime arena cannot have).
+
+THE SECOND-ARENA CHECKS: SEC-2's obstruction form
+VERIFIED at the realised census — the measured minimum
+of within-sector pairs reads 0|1|2|4, equal to the
+parent's anchored column and closed form at every arity;
+the a=2 vanishing REPRODUCED (144 spanning events, every
+one exactly one cross pair); the prime arena's tripartite
+link-graph reading FAILS here (32 link edges vs 96
+off-span pairs — a prime-field coincidence measured as
+one).  NDEP's sharpened floor REPRODUCES all four
+certified floors 10|8|6|5 at the second arena; the
+counting bound and closed form agree only on the a=q
+diagonal.  The menu closed form BREAKS under BOTH
+readings at the hypothesis NDEP measured failed (307
+invariant partitions; 156 with mixed block sizes — an
+object no coset partition can be).  The budget-saturating
+class the parent measured EMPTY at a=2 is NON-EMPTY here
+(256) — the characteristic's own reversal.  Idle arities
+3|5 refuse under both readings; the refusal is the
+measurement.  2,627,625-grouping substrate censused
+entire by exact DP, every total against its closed form.
+
+Five pin deviations DISCLOSED in-paper (§2/§13), incl.
+the count-level packing gate with a declared 2000-object
+prefix window, the non-occurrence register implementing
+prereg clause (iii) in full, and the a=4 schedule as a
+window value on NDEP's committed 24-tuple corpus (the
+334,761-round full-pool sweep a named successor).
+Worker battery green (byte x2 deleted-artifact alien-CWD
+three trees; PYTHONHASHSEED 0/1/424242 identical; 43/43
+out-of-harness deaths at declared gates; argv 6/6 rc 2).
+Orchestrator battery next; panel on green.
+
