@@ -4003,3 +4003,26 @@ monitor stop collaterally killed the worker own sweep at
 48/56; resumed in the same mirror, closing tree hash
 equal.  Orchestrator battery next; TERMINAL FIVE on
 green.
+
+
+## 2026-08-17 — ARITY-16 IS TERMINAL: v15 TERMINAL FIVE (v15 LEDGER #100)
+
+Orchestrator battery all green (byte-identical from
+deleted artifacts incl. receipt; byte x2; seed-invariant;
+argv rc 2; selftest corrupted-anchor refusal with
+artifacts unchanged; MUT-HYPHEN dead at G-WALLS, its
+declared gate, confirmed directly; artifacts untouched).
+STATUS row appended; registry sealed in this commit: Q14
+upgraded (a=3 at n=16 = pure extension family — the
+refusal is the measurement), Q16 PARTIAL (the reading
+fork measured; independent-q open), Q22 further
+strengthened (the modulus theorem at the second arena +
+the seat's closures), the Q11 leg noted.  FIVE v15
+TERMINALS (CONTRACT #35, DISC #37, ARITY #39, AUTOGLUE
+#42, ARITY-16 here) + FOUR SEALED SCOUTS (BRIDGE #79, K
+#94, PAIR #96, PSI #97) + ECC PARKED VERIFIED-UNSEALED
+(#72, the user's hold).  43 terminals across the eras.
+Zero false physics numbers REMAIN in any terminal paper;
+zero false computed-output numbers ever.  SCOUT-T is the
+last thread; on its seal, the decision package goes to
+the user.
