@@ -3768,3 +3768,39 @@ measured groups byte-identical to committed (the 18
 gaps, 3 branchwise, 3 uniform certificates, clash,
 step-1, everything).  Worker battery 26/26 fresh.
 Orchestrator battery next; CLOSES-SEALED on green.
+
+## 2026-08-17 — SCOUT-K CLOSED-SEALED: THE SECOND SCOUT THROUGH ITS FULL CYCLE (v15 LEDGER #94)
+
+Final battery green (byte-identical from deleted
+artifacts incl. receipt; seed-invariant; 29/29 selftest
+with move proofs; MUT-ENV dead at G-ENV-EXCLUSION;
+artifacts untouched).  THE CYCLE: pinned #60 (the ninth
+review order) -> #68 addendum -> delivered #74
+(COVARIANT-EMPTY-AT-3 at every arm incl. GLOBAL) ->
+battery #75 -> verifier #81 (verdict holds 104/104;
+~230 recomputations zero discrepancies; the
+affine-endpoint logic sound) -> the thirteenth review
+#82 (the trigger-erasure mechanism; the verifier rebuild
+archived 73/73) -> micro-repair #93 (M1-M6 incl. the
+108x8 covariance re-derived in-instrument and the
+self-caught totality hole) -> SEALED THIS ENTRY at note
+cc4d31ce7740 / code 723ebc41cc0f / output 78391a8c6ef0 /
+receipt 18330562d6bc.
+
+WHAT IT SEALS (scout-note class; feeds DC and the
+four-way fork): at the committed arena and windows, no
+normalized covariant conditional kernel K(e|c,G,R) with
+fixed geometry and the trigger factorization preserves
+the delivered walk through window 3 — at conditional
+consistency, at every proximity arm and the global
+record, uniformly in the line weight, with Farkas
+certificates; the fixed-alpha subfamily binds it to
+#58; the 288 pure kernels priced none-covariant; the
+mechanism = TRIGGER ERASURE (gated verbatim); step-1
+admits only the symmetric-stochastic tie-break; the
+successors (SCOUT-T grains; the geometry-coupled
+census; depth-4; sub-normalized kernels) all cited with
+digests.  Zero false numbers remain in the sealed note.
+THREE SCOUT CYCLES NOW: BRIDGE sealed #79, K sealed
+here; PSI at its delta-verifier; PAIR at its
+micro-repair; T constructing.
