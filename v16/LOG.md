@@ -321,3 +321,27 @@ actualization OPEN or conditional at their honest scope.
 The only authorized next action is to commit these bytes and run one
 post-commit verifier, including true off-tree/no-git execution and the complete
 mutant/CLI battery.  No successor physics unit is authorized.
+
+## 2026-08-17 — JRH TERMINAL: THE BOUNDARY INSTRUMENT EXISTS; THE FUNDAMENTAL DYNAMICS REMAINS UNSELECTED (v16 LEDGER #16)
+
+Commit `e657b2069ec3e338e517d8763dd96158d6db8e96` was rerun after commit and
+reproduced its paper, transcript, and receipt byte-for-byte.  A second test used
+`git archive` to construct a true off-tree copy from those committed bytes,
+with no `.git` metadata, and ran it from an alien working directory.  Its three
+generated artifacts were byte-identical to the committed artifacts.
+
+The full post-commit audit confirms 38/38 gates, 17/17 named mutants, the CLI
+exit contract, zero artifact writes by test modes, 13/13 source anchors, 32
+consequence rows, 202/202 bound numeral occurrences, all 19 sealed payload
+keys, no floating-point literals, and unchanged artifact hashes.  The detailed
+record is `v16/note-jrh-terminal-verification.md`.
+
+The terminal verdict is
+`BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.  It
+licenses the exact finite instrument and negative/no-go results at their stated
+fixtures.  It does not license a selected quantum-gravity law, genuine
+backreaction, objective actualization, an all-n interaction field, the existing
+walk's reconstruction, particles, constants, a continuum limit, or deviations
+from QFT/GR.
+
+Paper 01 and v16 close at that boundary.  No successor unit is authorized.

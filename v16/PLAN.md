@@ -2,7 +2,7 @@
 
 ## Paper 01 — JRH: a joint relational-history law
 
-Status: **FINAL BOUNDED REPAIR BUILT; POST-COMMIT VERIFICATION PENDING**.
+Status: **TERMINAL AT THE SCOPED NEGATIVE/CANDIDATE VERDICT (v16 #16)**.
 
 The paper tests the strongest serious version of the current conjecture:
 
@@ -44,14 +44,19 @@ The work is split into five locked stages.
    binding repairs.  The independent delta round returned three
    `ACCEPT-WITH-FIXES` and was adjudicated at #14.  Its exact bridge,
    geometry-sector, backreaction, actualization, all-arity, and Hamiltonian
-   findings are incorporated in the bounded final repair.  Only post-commit
-   verification remains authorized.
+   findings are incorporated in the bounded final repair.  Post-commit and
+   true off-tree/no-git verification are complete at #16.
 
 The resulting scope is deliberately asymmetric.  A fixed-boundary quantum
 instrument and several no-go/refusal results are exact.  A changing-carrier
 joint history architecture is consistently typed but its weights, actualization
 rule, genuine nonfactorizing backreaction, continuum limit, and selection
 principle remain unconstructed or unselected.
+
+The unit therefore closes without promoting its candidate architecture into a
+physical theory.  Its terminal contribution is the exact existence/no-go
+boundary plus a sharply typed list of what a real joint successor law would
+still have to supply.
 
 ## Successor register
 

@@ -5,13 +5,12 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-17 (v16 JRH bounded final repair built at #15 after a delta
-panel of three independent `ACCEPT-WITH-FIXES`; post-commit verification alone
-precedes scoped terminalization).
+Updated: 2026-08-17 (v16 JRH terminal at #16 after the bounded repair,
+post-commit replay, and true off-tree/no-git verification).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
-| JRH (paper-01, v16) — joint relational-history law | **FINAL BOUNDED REPAIR BUILT; POST-COMMIT VERIFICATION PENDING**: original panel two `REJECT`/one `ACCEPT-WITH-FIXES`; repaired delta panel three `ACCEPT-WITH-FIXES`; fixed-factor CP instrument, feed-forward no-go, entanglement breaking, interference placement, arity/cycle separation, generator ambiguity, weak-surface nonselection, and the state-relative-decoherence/instrument-completeness gap are exact; common boundary pairing, all-input instrument derivation, nonfactorizing backreaction, stable actualization partitions, all-n extension, weights, geometry, and selection remain open | v16 #1–#15 ✓adj |
+| JRH (paper-01, v16) — joint relational-history law | **TERMINAL: BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED**: original panel two `REJECT`/one `ACCEPT-WITH-FIXES`; delta panel three `ACCEPT-WITH-FIXES`; 38/38 gates, 17/17 mutants, and post-commit off-tree replay exact.  Fixed-boundary instrument, feed-forward no-go, entanglement breaking, interference placement, binary viability/first-loop separation, generator ambiguity, weak-surface nonselection, and the state-relative-decoherence/instrument-completeness gap are exact.  Common-boundary pairing, all-input instrument derivation, nonfactorizing backreaction, stable actualization, all-n extension, weights, geometry, continuum recovery, and law selection remain open | v16 #1–#16 ✓adj |
 | GW1 — metric from deformation closure | terminal negative: blocked at the kernel/deformation interface | v13 #2–#5 |
 | GW2 — regional-descent STEP-0 census | ran (code + receipts committed); see ledger for verdict | v13 LOG |
 | RQ0 quantum factual base | hostile round run; see ledger | v13 ~#20s |

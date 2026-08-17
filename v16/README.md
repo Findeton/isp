@@ -18,9 +18,10 @@ theory-selection result.
 
 ## Live state
 
-- `JRH`: the original hostile panel and the independent delta panel are both
-  adjudicated through v16 ledger #14.  The bounded final repair is built and
-  **PENDING POST-COMMIT VERIFICATION**.
+- `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
+  `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
+  The original hostile panel, independent delta panel, bounded repair, and
+  post-commit/off-tree verification are complete.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.
@@ -35,7 +36,11 @@ theory-selection result.
 - Matter and geometry merely appearing in the same history is not yet
   backreaction.  A surviving law must exhibit nonfactorizing weights and a
   calibrated matter-to-geometry-to-held-out-response chain.
-- No v16 terminal physical result is yet citable.
+- The exact finite existence and negative results are citable only at their
+  stated fixtures.  The proposed whole-history dynamics is a serious candidate
+  architecture, not a derived or selected law of nature.
+- The candidate artifacts retain their pre-verification status text by design;
+  `note-jrh-terminal-verification.md` discharges it without moving frozen bytes.
 - The v15 worktree's untracked SCOUT-T files are outside v16 and are not read,
   edited, staged, or cited by this unit.
 
