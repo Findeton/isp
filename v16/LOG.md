@@ -122,6 +122,27 @@ The report is frozen verbatim before joint adjudication.  Its grade is
 terminal verdict.  No candidate artifact moved, and no v15 SCOUT-T path was
 touched.
 
+## 2026-08-17 — JRH THREE-SEAT ADJUDICATION: DYNAMIC-GEOMETRY CLAIM REJECTED; BOUNDARY-INSTRUMENT CORE SURVIVES (v16 LEDGER #8)
+
+`v16/note-jrh-adjudication.md` reconciles the two `REJECT` grades and one
+`ACCEPT-WITH-FIXES` grade.  The exact quantum instrument, fixed-factor
+preparation blindness, registered no-signalling comparison, nonlinear control,
+generator ambiguity, and weak-surface Z/X underdetermination survive.  The
+claimed dynamic geometry does not: `G'` and `C'` are reconstructible copied
+memory, the later probe is identity-only, the input collar is unused, and no
+relation carrier changes.  The panel therefore rejects the pinned
+dynamic-spacetime object while retaining a finite CP boundary-instrument
+schema.
+
+The adjudication also adopts two new exact consequences: feed-forward
+equivalence and entanglement breaking.  Together with the corpus's prior proof
+that a positive history law loses quantum phase, they force the serious
+refinement one level upward: a strongly positive complex decoherence functional
+over complete relational histories, with CP instruments induced only at
+genuine durable-record boundaries.  That object is a conjectural dynamical
+target, not a promoted result.  Twelve binding repair orders precede any final
+paper.
+
 ## 2026-08-17 — JRH QUANTUM HOSTILE REPORT FROZEN VERBATIM (v16 LEDGER #6)
 
 The independent QUANTUM / EPR / QFT seat delivered
