@@ -1604,3 +1604,122 @@ deviation #4).
 K3 (instrument) still in flight; adjudication on its
 freeze.
 
+## 2026-08-16 — ECC K3 (INSTRUMENT) FROZEN: ACCEPT-WITH-FIXES; 35/35 DEATH-EXPECTED INJECTIONS DIE AT THEIR DECLARED GATES TREE-INTACT; ONE NEW DISEASE (SLASH-RATIONAL-IN-PROSE) AND ONE WALL GAP (v15 LEDGER #49)
+
+Review frozen v15/review-ecc-instrument.md.  Campaign:
+39 live off-tree injections + 12 hostile argv forms + the
+73-recipe selftest + determinism proofs, mirror restored
+to baseline whole-tree hash after every one.  THE CORE IS
+SOUND: forged values, flipped words and direction flips
+in every load-bearing position die at G-PAPER-CLAIMS; the
+post-final-gate seal window dies at G-SEAL-TOTAL; both
+freeze/serialize windows at G-INTEGRITY; the
+object-under-test drop at G-OBJECT-UNDER-TEST; the
+repr-key and builtin-hash species at G-DETERMINISM (a
+mutated mirror dies under 3 seeds — no silent variation);
+six registry mutants at their registry-declared gates;
+the de-twinned comparator recomputes the head from
+primitive rows; a disk-forged receipt leaf cannot reach
+the head; --selftest write-nothing; every failing run
+wrote nothing.
+
+F-1 MEDIUM, NEW DISEASE — SLASH-RATIONAL-IN-PROSE: the
+prose numeral scanner splits a/b into two independently
+backed integers, so a FALSE COMMITTED BORN WEIGHT (4/9
+forged to 5/9 in §6 prose) passes G-PAPER-COVERAGE while
+the fence and table still read 4/9 — an internal
+contradiction the instrument misses; the same forge
+inside fence/table dies.  Registered for TPL-2.  F-2
+MEDIUM: the bare sentence "The Born rule is derived
+here." passes every wall — WALL-W1 polices only the
+"...derived from the record" form and its licence subject
+requires a reproduction word.  F-3 LOW: the determinism
+AST scan is repr/hash-scoped; an os.listdir dependence is
+absorbed by canonicalization (no exploitable
+nondeterminism).  Neither offending construct exists in
+the committed paper.  The seat: a fix pass closing
+F-1/F-2 lifts the unit to ACCEPT.
+
+
+## 2026-08-16 — ECC ADJUDICATED: ACCEPT-WITH-FIXES ACROSS THE PANEL — THE PHYSICS STANDS UNTOUCHED (K1 CLEAN ACCEPT AT ~1,450 COMPARISONS); REPAIR ORDERED, NO REJECT (v15 LEDGER #50)
+
+Joint reading of #46/#48/#49.  THE PHYSICS IS UNANIMOUS:
+zero false measured numbers across all three seats; the
+committed-row infeasibility (qmax 4/9, gaps 4|4|3|7/3)
+triple-derived (unit + K1's independent simplex + K1's
+hand derivation from the Grover-column support); the
+ceiling a genuine theorem for the 0/1 incidence classes,
+156/156; the seam, psi, carrier and debt censuses exact
+to the last cell.  ALL FIVE HEAD SEGMENTS STAND AS
+DELIVERED.  Every defect found is instrument-surface or
+prose-licensure; adjudicated repair list (Z-order):
+
+Z1 (K2 E-1, MAJOR): §11's outcome-emitability sentence is
+FALSE — rewrite to the measured truth (the gates
+hard-require the reached arm; any other measured world
+ends as a REFUSAL) and BIND the corrected sentence with a
+gate; the prereg table keeps the unreached arms as
+registered words with their refusal semantics stated.
+Z2 (K2 E-2, MAJOR): make the no-summary-scalar comparator
+claim TRUE — add receipt primitives for the nine
+offending head positions and re-derive them in the
+comparator; where a position is genuinely
+primitive-irreducible, the paper discloses it instead of
+claiming otherwise.  The pin's engraved standard is the
+target, not the casualty.
+Z3 (K3 F-1): close SLASH-RATIONAL-IN-PROSE — atomic
+rational tokens in every prose scanner, backed against
+the receipt's rational strings; the 5/9 forge becomes a
+permanent control with a registry mutant.
+Z4 (THE WALL FAMILY — K3 F-2 + K2 E-4 + K2 E-5 + the
+polarity finding): kill the found survivors — the bare
+derivation claim (subject-based W1 policing), the
+NEG-guard excuse-loop bypass ("No reader will doubt
+that..."), licence-token laundering (", being gated," —
+licences become structural, tied to registered licence
+ids, never bare keywords), and the central no-go
+INVERSION joins the polarity family with controls.  The
+eight fresh paraphrases K2 listed die as plants.  The
+GENERAL fresh-paraphrase condition remains REGISTERED
+programme-wide (#10/#25/#30) — the repair kills the
+found instances and does not claim the class closed.
+Z5 (K2 E-6 + K1 minor): re-stamp the 197 non-psi rows
+honestly (FACE-INDEPENDENT-BY-REACH-AUDIT; BY-BYTE-
+EQUALITY only at the 18 measured rows) and GATE the
+born_target accessor's identity with face 1 row-by-row.
+Z6 (K2 E-14): EQUIVARIANT-OR-DECLARED lands in-paper as
+the pin words it — the unit's own declared choices
+(probe-extras, container-order) published as a
+first-class declaration inventory beside CONTRACT's 15,
+consumed by a gate.
+Z7 (minors, all ordered): E-7 counterfactual gated or
+cut; E-8 the four typed W3 labels COMPUTED + the
+3-cells universal scoped to its E-BLOCK measurement;
+E-9 the head's family-level token carries its qualified
+form; E-10 corpus-completeness universals scoped to the
+8-member menu; E-11 TARGET-UNDEFINED-AMPLITUDES counts
+ROWS (rename) and READING-CONDITIONAL aligned to the
+pinned READING-RELATIVE; E-12 small-prose sweep (the
+ungated differ-sentence, the 136-attribution corrected
+to the fiber's 132 + 4, the §10 taxonomy naming the
+gaps, §8's 4-of-4 scope); E-13 the delivery-time
+suffixes of segment five disclosed as constructions in
+§11.
+Z8 (K1 minors): the vacuous-filter zero recomputed by a
+non-vacuous route or its emptiness gated; the
+tautological-blindness disclosure stands as delivered
+(the AST audit is the certificate).
+Z9 (K3 F-3): the determinism scan's repr/hash scope
+stated in-paper.
+
+TPL-2 REGISTRATIONS from this panel:
+SLASH-RATIONAL-IN-PROSE (F-1), NEG-GUARD-EXCUSE-LOOP
+BYPASS (E-4), LICENCE-TOKEN-LAUNDERING (E-5),
+W1-SUBJECT-GAP (F-2) — joining the seed-dependent-
+receipt species from #41.
+
+No number moves in this repair; the head is expected
+byte-stable except where Z-orders name a token (E-11
+renames, E-9 qualification).  Repair worker launches on
+this entry; seal on its green battery.
+
