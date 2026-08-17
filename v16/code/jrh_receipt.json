@@ -1,0 +1,850 @@
+{
+ "choice_inventory": [
+  {
+   "item": "pair records as atomic durable facts",
+   "status": "ONTOLOGY-ASSUMED"
+  },
+  {
+   "item": "complete outcome as probability sample point",
+   "status": "TYPE-FORCED"
+  },
+  {
+   "item": "operational CP-affinity/no-signalling",
+   "status": "ADMISSIBILITY-ASSUMED"
+  },
+  {
+   "item": "finite geometry alphabet",
+   "status": "FREE"
+  },
+  {
+   "item": "collar representation",
+   "status": "FREE-UP-TO-PREDICTIVE-SUFFICIENCY"
+  },
+  {
+   "item": "Z-projective candidate law",
+   "status": "FREE"
+  },
+  {
+   "item": "X-projective rival law",
+   "status": "FREE-CONTROL"
+  },
+  {
+   "item": "history amplitudes/action",
+   "status": "MISSING"
+  },
+  {
+   "item": "division boundaries",
+   "status": "MISSING-BEYOND-FIXTURE"
+  },
+  {
+   "item": "all-n extension law",
+   "status": "MISSING"
+  },
+  {
+   "item": "vacuum",
+   "status": "MISSING"
+  },
+  {
+   "item": "clock/logarithm branch",
+   "status": "FREE-IN-REPRESENTATION"
+  },
+  {
+   "item": "continuum/coarse-graining map",
+   "status": "MISSING"
+  },
+  {
+   "item": "absolute scale",
+   "status": "MISSING-BY-WALL"
+  },
+  {
+   "item": "readout connecting toy geometry to metric observations",
+   "status": "MISSING"
+  }
+ ],
+ "claims": {
+  "ARITY": "Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.",
+  "DEVIATION": "No dimensionless deviation from QFT or GR is forced across the registered surviving law family.",
+  "EXISTENCE": "An outcome-resolved dynamic-geometry instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 registered branch maps.",
+  "HAMILTONIAN": "The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.",
+  "PRIMARY": "JRH-CONSISTENT-BUT-UNDERDETERMINED",
+  "SELECTION": "The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law."
+ },
+ "consequences": [
+  {
+   "classification": "FORCED-IN-REGISTERED-ARENA",
+   "reason": "An exact outcome-resolved CP instrument exists in the finite arena.",
+   "topic": "joint dynamic-geometry instrument"
+  },
+  {
+   "classification": "FORCED-IN-REGISTERED-ARENA",
+   "reason": "The L2 construction passes with an idle spectator; pair viability does not imply universal pair factorization.",
+   "topic": "two-actor occurrence"
+  },
+  {
+   "classification": "FORCED-AS-FIRST-LOOP-ONLY",
+   "reason": "A triangle is the first closed relational loop, not a derived minimum event arity.",
+   "topic": "three actors"
+  },
+  {
+   "classification": "FORCED-BY-ADMISSIBILITY-GATE",
+   "reason": "HJW-equivalent ensembles and remote steering choices give identical unconditioned local outputs.",
+   "topic": "EPR and no-signalling"
+  },
+  {
+   "classification": "REFUSED-AT-THIS-OPERATIONAL-READING",
+   "reason": "The registered decomposition-reading control violates affinity and enables the steering signal.",
+   "topic": "ontic pure-state nonlinear rule"
+  },
+  {
+   "classification": "REFUSED-AS-A-DERIVED-OBJECT",
+   "reason": "The changing-geometry instrument supplies no canonical same-sector unitary or generator.",
+   "topic": "global fundamental Hamiltonian"
+  },
+  {
+   "classification": "CONDITIONAL",
+   "reason": "It is reconstructible only after choosing a sector, clock and logarithm branch; multiple lifts are equivalent at one step.",
+   "topic": "frozen-sector Hamiltonian"
+  },
+  {
+   "classification": "OPEN-AND-UNSELECTED",
+   "reason": "Different admissible transfer laws on the same ontology have different mode inventories.",
+   "topic": "particle species"
+  },
+  {
+   "classification": "OPEN-AND-UNSELECTED",
+   "reason": "The joint-law architecture neither derives the affine-line coset nor the old three-actor grammar.",
+   "topic": "affine-coset event rule"
+  },
+  {
+   "classification": "PERMITTED-BUT-UNSELECTED",
+   "reason": "Both zero and nonzero translations occur in exact CPTP channels.",
+   "topic": "channel affine translation"
+  },
+  {
+   "classification": "OPEN-AND-UNSELECTED",
+   "reason": "No continuum constraint/Bianchi system is built in this unit.",
+   "topic": "cosmological integration constant"
+  },
+  {
+   "classification": "REFUSED-AS-DERIVED",
+   "reason": "No weight-nonzero datum is generated; the earlier scale wall remains.",
+   "topic": "Newton or area scale"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "A selected vacuum, matter law and continuum matching map are missing.",
+   "topic": "dimensionless gravitational coupling"
+  },
+  {
+   "classification": "CONDITIONAL",
+   "reason": "Requires a continuum/refinement limit and a discrete deformation or covariance closure selecting an effective gravitational action.",
+   "topic": "GR limit"
+  },
+  {
+   "classification": "CONDITIONAL",
+   "reason": "Requires a selected vacuum, stable excitation/Fock reconstruction, locality and continuum scaling.",
+   "topic": "QFT limit"
+  },
+  {
+   "classification": "PERMITTED",
+   "reason": "Outcome-geometry correlation exists, but its scale and coarse-grained observability are unselected.",
+   "topic": "macroscopic geometry noise"
+  },
+  {
+   "classification": "PERMITTED",
+   "reason": "Finite loops allow such terms; no coefficient or sign is selected.",
+   "topic": "higher-curvature deviations"
+  },
+  {
+   "classification": "REFUSED-IN-REGISTERED-FAMILY",
+   "reason": "Rival laws survive with different microscopic statistics, so no common dimensionless deviation is fixed.",
+   "topic": "forced QFT/GR deviation"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "No full representation-packet reconstruction is attempted.",
+   "topic": "existing ISP walk"
+  }
+ ],
+ "gates": [
+  {
+   "evidence": "observed source digests match frozen inventory at 13 of 13 paths",
+   "gate": "G-SOURCE-ANCHOR",
+   "index": 1,
+   "passed": true,
+   "previous": "0000000000000000",
+   "row_digest": "e4e99ec76aa4b052"
+  },
+  {
+   "evidence": "complete-successor mass is one at 4 of 4 exact input rows",
+   "gate": "G-A1-TOTAL-OUTCOMES",
+   "index": 2,
+   "passed": true,
+   "previous": "82ce194cd86cd344",
+   "row_digest": "0cba2db512626f0e"
+  },
+  {
+   "evidence": "domain/output geometry-sector types close at 4 of 4 rows",
+   "gate": "G-A2-DIRECT-SUM-TYPES",
+   "index": 3,
+   "passed": true,
+   "previous": "254d3cc183446120",
+   "row_digest": "8dfb7339d3824ab9"
+  },
+  {
+   "evidence": "one complete outcome carries 3 simultaneous pair writes; cells are payload, not sample space",
+   "gate": "G-A3-NO-CELL-NORMALIZATION",
+   "index": 4,
+   "passed": true,
+   "previous": "d006684aa1050f61",
+   "row_digest": "fa69af8f139b484f"
+  },
+  {
+   "evidence": "the full actor-plus-write boundary commutes with the registered cyclic relabelling",
+   "gate": "G-A4-RELABEL",
+   "index": 5,
+   "passed": true,
+   "previous": "302317a06c90ed7e",
+   "row_digest": "d0add384586d9457"
+  },
+  {
+   "evidence": "Kraus-Gram Choi certificates pass 90 exact principal-minor checks across 6 branch maps",
+   "gate": "G-B1-CP",
+   "index": 6,
+   "passed": true,
+   "previous": "703019b02810ec63",
+   "row_digest": "c3527220e00af536"
+  },
+  {
+   "evidence": "sum K-dagger-K equals identity for 3 of 3 registered channel families",
+   "gate": "G-B2-TRACE-PRESERVING",
+   "index": 7,
+   "passed": true,
+   "previous": "88eb70c1145d2cb0",
+   "row_digest": "250c4d9b8751298a"
+  },
+  {
+   "evidence": "classical-quantum output respects the registered rational mixture of weight 1/3 block by block",
+   "gate": "G-B3-AFFINITY",
+   "index": 8,
+   "passed": true,
+   "previous": "442ebe1e32010740",
+   "row_digest": "77779623e31147f8"
+  },
+  {
+   "evidence": "Z and X pure-state ensembles equal I/2 and produce identical complete local instrument blocks",
+   "gate": "G-B4-HJW-BLIND",
+   "index": 9,
+   "passed": true,
+   "previous": "5605e0af7ff75c02",
+   "row_digest": "1a28c0fc17e97cb6"
+  },
+  {
+   "evidence": "Alice's Z/X steering choice leaves Bob's unconditioned record-plus-geometry blocks identical",
+   "gate": "G-B5-NO-SIGNALLING",
+   "index": 10,
+   "passed": true,
+   "previous": "3e3e4bb4e89bee22",
+   "row_digest": "779d477a1fa9b18a"
+  },
+  {
+   "evidence": "decomposition-reading control separates Z/X at 1 versus 0 and violates affinity at 0 versus 1",
+   "gate": "G-B6-POSITIVE-CONTROL",
+   "index": 11,
+   "passed": true,
+   "previous": "2828fb9d7341db2f",
+   "row_digest": "900b0647b9ab6f36"
+  },
+  {
+   "evidence": "realized flux, output collar, and durable record agree on all 2 complete branches",
+   "gate": "G-C1-BRANCH-RESOLUTION",
+   "index": 12,
+   "passed": true,
+   "previous": "66c90440c7ed10a2",
+   "row_digest": "0826cd619d2bb77f"
+  },
+  {
+   "evidence": "2 reachable geometry labels are separated by the registered later geometry probe",
+   "gate": "G-C2-NONTRIVIAL-GEOMETRY",
+   "index": 13,
+   "passed": true,
+   "previous": "7abf56af583a4f06",
+   "row_digest": "d66e8b294641e1ea"
+  },
+  {
+   "evidence": "mean outcome 1/2 is not an actual geometry label; thresholding it violates affinity at 1 versus 1/2",
+   "gate": "G-C3-MEAN-DRIVEN-CONTROL",
+   "index": 14,
+   "passed": true,
+   "previous": "332bffe9dda62eb1",
+   "row_digest": "98fc192aae7f0459"
+  },
+  {
+   "evidence": "same relation and geometry with distinct collar data has distinguishable exact successor distributions",
+   "gate": "G-C4-COLLAR",
+   "index": 15,
+   "passed": true,
+   "previous": "9698a3659d7f4f42",
+   "row_digest": "d815fc052b1c3438"
+  },
+  {
+   "evidence": "the two-actor complete successor jointly writes the pair fact, state block, geometry/collar and record",
+   "gate": "G-D1-L2-VIABLE",
+   "index": 16,
+   "passed": true,
+   "previous": "4336039022e9ea34",
+   "row_digest": "867720a07c01b330"
+  },
+  {
+   "evidence": "tensoring an irrelevant third actor and tracing it back reproduces every local branch exactly",
+   "gate": "G-D2-IDLE-SPECTATOR",
+   "index": 17,
+   "passed": true,
+   "previous": "09c65b266b7877f2",
+   "row_digest": "2f1c49d3488bbaff"
+  },
+  {
+   "evidence": "both construction orders agree on all 4 complete branches while the Bell input keeps non-factorized outcome correlations",
+   "gate": "G-D3-DISJOINT-DIAMOND",
+   "index": 18,
+   "passed": true,
+   "previous": "2639b93260cb4651",
+   "row_digest": "856e23e2f5ff0f74"
+  },
+  {
+   "evidence": "cycle ranks are 0, 0, 1 for K2, the three-actor path, and the triangle; triangle holonomy is [['1i', '0'], ['0', '-1i']]",
+   "gate": "G-D4-FIRST-LOOP",
+   "index": 19,
+   "passed": true,
+   "previous": "c2c8e9b58eca33d4",
+   "row_digest": "cb445e80869944f8"
+  },
+  {
+   "evidence": "a valid L2 instrument and a valid joint three-support parity instrument coexist; no robust irreducibility claim is made",
+   "gate": "G-D5-ARITY-NONSEQUITUR",
+   "index": 20,
+   "passed": true,
+   "previous": "bf7f020267a3a7c4",
+   "row_digest": "abdee753093b129d"
+  },
+  {
+   "evidence": "with a declared unit clock, the frozen-sector integer phase generator reconstructs diag(1,i) exactly",
+   "gate": "G-E1-FROZEN-RECOVERY",
+   "index": 21,
+   "passed": true,
+   "previous": "272a4c7f39b9d471",
+   "row_digest": "701f106accf426cf"
+  },
+  {
+   "evidence": "5 distinct registered generator lifts yield the identical one-step transfer operator",
+   "gate": "G-E2-BRANCH-AMBIGUITY",
+   "index": 22,
+   "passed": true,
+   "previous": "ee703771f928100d",
+   "row_digest": "ae69a31b168c31b9"
+  },
+  {
+   "evidence": "Hamiltonian comparison packet carries all 6 registered components; a bare matrix is not the comparison object",
+   "gate": "G-E3-PACKET-WALL",
+   "index": 23,
+   "passed": true,
+   "previous": "ec81cf23c9638b80",
+   "row_digest": "af49da4e63fdbda7"
+  },
+  {
+   "evidence": "pure input has purity 1 while the same-sector classical-quantum output has purity 1/2; a unitary dilation is possible but not selected",
+   "gate": "G-E4-DYNAMIC-SECTOR-OBSTRUCTION",
+   "index": 24,
+   "passed": true,
+   "previous": "260172bc6035abde",
+   "row_digest": "b1777c7bc5cf7fee"
+  },
+  {
+   "evidence": "same four-site relational cycle admits identity degeneracy 4 and a shift with 4 exact one-dimensional phase modes",
+   "gate": "G-F1-SPECIES-UNDERDETERMINATION",
+   "index": 25,
+   "passed": true,
+   "previous": "d59b6531d9b8730a",
+   "row_digest": "0dce2323ff079809"
+  },
+  {
+   "evidence": "CPTP dephasing has channel translation ['0', '0', '0'] while CPTP reset has ['0', '0', '1']",
+   "gate": "G-F2-AFFINE-SPLIT",
+   "index": 26,
+   "passed": true,
+   "previous": "92c3a02fc1b1ef5c",
+   "row_digest": "d0e8d410d77daac6"
+  },
+  {
+   "evidence": "same ontology and structural gates admit record statistics {'0': '1', '1': '0'} versus {'0': '1/2', '1': '1/2'} on the same input",
+   "gate": "G-F3-RIVAL-LAW",
+   "index": 27,
+   "passed": true,
+   "previous": "320907f74af68615",
+   "row_digest": "2db2d69e3c762ba0"
+  },
+  {
+   "evidence": "rival admissible microscopic statistics prevent any law-family-invariant QFT/GR deviation from being inferred",
+   "gate": "G-F4-DEVIATION-STANDARD",
+   "index": 28,
+   "passed": true,
+   "previous": "236c074116ea21ae",
+   "row_digest": "3fcf6f648d3ca810"
+  },
+  {
+   "evidence": "the finite candidate contains no generated dimensionful datum; Newton, mass, cutoff and cosmological values remain unpriced",
+   "gate": "G-F5-SCALE-WALL",
+   "index": 29,
+   "passed": true,
+   "previous": "7353541c12354eb5",
+   "row_digest": "35df12cb6464c4f3"
+  },
+  {
+   "evidence": "two independent exact core builds are byte-identical before rendering",
+   "gate": "G-G2-DETERMINISM",
+   "index": 30,
+   "passed": true,
+   "previous": "8a5d6b77ef30974a",
+   "row_digest": "6d83b54f73401d33"
+  },
+  {
+   "evidence": "plain and selftest parse; unknown syntax is rejected before construction",
+   "gate": "G-G1-CLI",
+   "index": 31,
+   "passed": true,
+   "previous": "1462c3b985866699",
+   "row_digest": "f6e16553926eaac7"
+  },
+  {
+   "evidence": "observed source-anchor corruption dies at its named gate and changes no artifact bytes",
+   "gate": "G-G3-SELFTEST",
+   "index": 32,
+   "passed": true,
+   "previous": "e4710ea9aab2c781",
+   "row_digest": "626093ace06fe33f"
+  },
+  {
+   "evidence": "all 13 registered mutants move measured objects and die at their named gates",
+   "gate": "G-G4-MUTANTS-MOVE",
+   "index": 33,
+   "passed": true,
+   "previous": "eeb5c78b94f1eb5c",
+   "row_digest": "9042227986931924"
+  },
+  {
+   "evidence": "sole accessor read set equals all 13 frozen path/digest anchors",
+   "gate": "G-G7-READ-SET",
+   "index": 34,
+   "passed": true,
+   "previous": "bf91df5414c49513",
+   "row_digest": "4c83ee2a57769371"
+  },
+  {
+   "evidence": "foreign-CWD exact rebuild matches and all reads remain explicit; git is unused",
+   "gate": "G-G8-PORTABILITY",
+   "index": 35,
+   "passed": true,
+   "previous": "d8d930b330a0f076",
+   "row_digest": "1ed1135997db72f2"
+  },
+  {
+   "evidence": "two-way claim keys and exact strings agree",
+   "gate": "G-G6-CLAIM-EQUALITY",
+   "index": 36,
+   "passed": true,
+   "previous": "236c70ef4401176f",
+   "row_digest": "efb740ac8a34fc77"
+  },
+  {
+   "evidence": "clean seal passes; post-seal add and edit controls both die before promotion",
+   "gate": "G-G5-TOTAL-SEAL",
+   "index": 37,
+   "passed": true,
+   "previous": "b01a0f004c87ac03",
+   "row_digest": "c0d454a8013a6eb0"
+  }
+ ],
+ "ledger_head": "fcf75685ff87ab2d",
+ "measurements": {
+  "complete_row_total": 4,
+  "complete_rows": 4,
+  "cp_branch_maps": 6,
+  "cp_principal_minors_checked": 90,
+  "cq_output_purity": "1/2",
+  "cycle_ranks": {
+   "K2": 0,
+   "path3": 0,
+   "triangle": 1
+  },
+  "dephasing_translation": [
+   "0",
+   "0",
+   "0"
+  ],
+  "diamond_branches": 4,
+  "dimensionful_inputs": [],
+  "hamiltonian_lifts": [
+   [
+    0,
+    -7
+   ],
+   [
+    0,
+    -3
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    9
+   ]
+  ],
+  "input_purity": "1",
+  "main_stats_on_zero": {
+   "0": "1",
+   "1": "0"
+  },
+  "mean_geometry": "1/2",
+  "mixture_weight": "1/3",
+  "nonlinear_control_x": "0",
+  "nonlinear_control_z": "1",
+  "reachable_geometries": [
+   0,
+   1
+  ],
+  "reset_translation": [
+   "0",
+   "0",
+   "1"
+  ],
+  "rival_stats_on_zero": {
+   "0": "1/2",
+   "1": "1/2"
+  },
+  "shift_modes": [
+   "1",
+   "1i",
+   "-1",
+   "-1i"
+  ],
+  "source_paths": 13,
+  "tp_families": 3,
+  "tp_family_total": 3,
+  "triangle_holonomy": [
+   [
+    "1i",
+    "0"
+   ],
+   [
+    "0",
+    "-1i"
+   ]
+  ]
+ },
+ "mutant_survey": [
+  {
+   "expected_gate": "G-SOURCE-ANCHOR",
+   "move_proofs": [
+    {
+     "after": "1aa8e8443881742e",
+     "before": "1d9840ac0c613aab",
+     "target": "ANCHOR_CORRUPT"
+    }
+   ],
+   "moved": true,
+   "mutant": "ANCHOR_CORRUPT",
+   "observed_gate": "G-SOURCE-ANCHOR",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-A1-TOTAL-OUTCOMES",
+   "move_proofs": [
+    {
+     "after": "1bfa81c5551fe8a1",
+     "before": "a7c5089655b57a2c",
+     "target": "DROP_OUTCOME"
+    }
+   ],
+   "moved": true,
+   "mutant": "DROP_OUTCOME",
+   "observed_gate": "G-A1-TOTAL-OUTCOMES",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-A3-NO-CELL-NORMALIZATION",
+   "move_proofs": [
+    {
+     "after": "19e2a08253048a04",
+     "before": "e689e38871ad9bf6",
+     "target": "CELL_NORMALIZE"
+    }
+   ],
+   "moved": true,
+   "mutant": "CELL_NORMALIZE",
+   "observed_gate": "G-A3-NO-CELL-NORMALIZATION",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-A4-RELABEL",
+   "move_proofs": [
+    {
+     "after": "696228bf925f1844",
+     "before": "4c432f98fe9b2687",
+     "target": "RELABEL_BREAK"
+    }
+   ],
+   "moved": true,
+   "mutant": "RELABEL_BREAK",
+   "observed_gate": "G-A4-RELABEL",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-B1-CP",
+   "move_proofs": [
+    {
+     "after": "3f90ec9f68ac1af7",
+     "before": "ade7ab3d9f45d2a5",
+     "target": "CP_BREAK"
+    }
+   ],
+   "moved": true,
+   "mutant": "CP_BREAK",
+   "observed_gate": "G-B1-CP",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-B3-AFFINITY",
+   "move_proofs": [
+    {
+     "after": "fcbcf165908dd18a",
+     "before": "b5bea41b6c623f7c",
+     "target": "NONLINEAR"
+    }
+   ],
+   "moved": true,
+   "mutant": "NONLINEAR",
+   "observed_gate": "G-B3-AFFINITY",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-B5-NO-SIGNALLING",
+   "move_proofs": [
+    {
+     "after": "fcbcf165908dd18a",
+     "before": "b5bea41b6c623f7c",
+     "target": "EPR_SIGNAL"
+    }
+   ],
+   "moved": true,
+   "mutant": "EPR_SIGNAL",
+   "observed_gate": "G-B5-NO-SIGNALLING",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-C2-NONTRIVIAL-GEOMETRY",
+   "move_proofs": [
+    {
+     "after": "d0bca111f8628137",
+     "before": "463f2998327eb3a6",
+     "target": "GEOMETRY_ERASE"
+    }
+   ],
+   "moved": true,
+   "mutant": "GEOMETRY_ERASE",
+   "observed_gate": "G-C2-NONTRIVIAL-GEOMETRY",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-C4-COLLAR",
+   "move_proofs": [
+    {
+     "after": "a0ab9e44855dba54",
+     "before": "320f9ff5ab30f0a7",
+     "target": "COLLAR_ERASE"
+    }
+   ],
+   "moved": true,
+   "mutant": "COLLAR_ERASE",
+   "observed_gate": "G-C4-COLLAR",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-D2-IDLE-SPECTATOR",
+   "move_proofs": [
+    {
+     "after": "fcbcf165908dd18a",
+     "before": "b5bea41b6c623f7c",
+     "target": "SPECTATOR_COUPLE"
+    }
+   ],
+   "moved": true,
+   "mutant": "SPECTATOR_COUPLE",
+   "observed_gate": "G-D2-IDLE-SPECTATOR",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-D4-FIRST-LOOP",
+   "move_proofs": [
+    {
+     "after": "6b86b273ff34fce1",
+     "before": "5feceb66ffc86f38",
+     "target": "LOOP_FAKE"
+    }
+   ],
+   "moved": true,
+   "mutant": "LOOP_FAKE",
+   "observed_gate": "G-D4-FIRST-LOOP",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-E2-BRANCH-AMBIGUITY",
+   "move_proofs": [
+    {
+     "after": "f515fa775d99acd6",
+     "before": "c9d89101bd04e4c4",
+     "target": "HAMILTONIAN_CANONICAL"
+    }
+   ],
+   "moved": true,
+   "mutant": "HAMILTONIAN_CANONICAL",
+   "observed_gate": "G-E2-BRANCH-AMBIGUITY",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-F3-RIVAL-LAW",
+   "move_proofs": [
+    {
+     "after": "a7c5089655b57a2c",
+     "before": "5cfc3494e4adaf27",
+     "target": "RIVAL_IDENTICAL"
+    }
+   ],
+   "moved": true,
+   "mutant": "RIVAL_IDENTICAL",
+   "observed_gate": "G-F3-RIVAL-LAW",
+   "passed": true
+  }
+ ],
+ "output_sha256": "cb3721229df05c8d1cd851c56d5b67e7ab8de3d6589a03cce8ede2667eefcaa1",
+ "paper_sha256": "ae737af4b22b5e8ce402f45d5bd82130bb28bf6e016e80e504516541c184023e",
+ "primary_verdict": "JRH-CONSISTENT-BUT-UNDERDETERMINED",
+ "read_set": [
+  {
+   "path": "v10/note-d13-literature-audit-action-selection.md",
+   "sha256": "efe8792fd2c4fdcd78901b7de93e07fa77e4ef5bf7f652e630525ac8790f4173"
+  },
+  {
+   "path": "v10/note-d15-maximal-low-energy-action.md",
+   "sha256": "0d39eb2f023ce33fb27a0455424a8fba2e93dec590b3de6cc71fae84a27bd66b"
+  },
+  {
+   "path": "v14/code/epr_receipt.json",
+   "sha256": "8813e0c2aad9b003493fcbed6931cb1d93ad4fdb2f3ba76ce8f8be8c5568948f"
+  },
+  {
+   "path": "v14/code/era_template.py",
+   "sha256": "d04a3eb58fbcfe3d093b98126ca23c1610a9cc7cec96c9b9097eed515516f2b9"
+  },
+  {
+   "path": "v14/paper-38-epr.md",
+   "sha256": "22beb66962232240d2e673763e32b1fe451db7c44a2420754ed42f83e99983e2"
+  },
+  {
+   "path": "v15/code/arity16_receipt.json",
+   "sha256": "92a3e11b34a0f7c83d789c46a2b1b29723b27039bc0372bcb38f448453652def"
+  },
+  {
+   "path": "v15/code/scoutpsi_receipt.json",
+   "sha256": "681a9cccfa75ebc1755d03fd9555c7ef9902d6947cfd0e99e8db65776cc802e4"
+  },
+  {
+   "path": "v15/note-dc-causality-addendum-v2.md",
+   "sha256": "ca713e89633bcd3510bbc898aef24133a64172cd2af158c82457033e32a53d71"
+  },
+  {
+   "path": "v15/note-dc-ontology-addendum-v3.md",
+   "sha256": "7df6120f585f194c3fd48c0cf36dadd8e10a0c1a9a7b440abb5b5139892f6160"
+  },
+  {
+   "path": "v15/note-js-pin-v2.md",
+   "sha256": "99e90f9a2e8db6a67a1cb46902de96d6086a0931897145d5d54ca3a9e78816ea"
+  },
+  {
+   "path": "v15/note-scoutpsi.md",
+   "sha256": "5c46b34a4de9149cef48019eab16e39abd67797c34939cc2626f4a3546dfcc3a"
+  },
+  {
+   "path": "v15/paper-50-arity16.md",
+   "sha256": "3e01a1ce1b39e478482c485a15b6e5847a427310bafcb3370f04fe2ae963a9eb"
+  },
+  {
+   "path": "v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md",
+   "sha256": "173143f9ffb91673fe13f8b3a741dd29baaadf542b29720104af49f14f617578"
+  }
+ ],
+ "schema": "JRH-RECEIPT-v1",
+ "scope": {
+  "actors": "finite labelled boundaries at two through four actors",
+  "arithmetic": "exact Q(i)",
+  "continuum": false,
+  "existing_walk_reconstruction": false,
+  "gr_claim": false,
+  "particle_claim": false,
+  "qft_claim": false
+ },
+ "seal_manifest": {
+  "algorithm": "sha256-canonical-json",
+  "sealed_keys": {
+   "choice_inventory": "9ee27ca2fc09e20ea1b49a8f5b19ce7d35d5135340d7e250ce5b82f95c667582",
+   "claims": "25ec53a728bdb441547bf842907575164e1e27cb218f682d81625a103de17db7",
+   "consequences": "fa2fe5386955bc844ef62c3e08681ae652f590b927caeef19275d093ac9be76a",
+   "gates": "ce6420d65959016655194e8b2e4d5e085ec14f329c96f64665995a580feb8312",
+   "ledger_head": "703bfbdeb5208319033339ce993ac86b11ca7b25c4eb40fb9100e8a1893d3f10",
+   "measurements": "180ad9f6293651de6833c6f860f8c4dfad1dc98ba7fbc91d323b1d706704e454",
+   "mutant_survey": "7450238a39a9dea3da9a1460d0901fe2c493ccd2b27d415c16072742b5de6711",
+   "output_sha256": "0c7071490ca18e52ac5c302f1fb59df79a9f06eca5a8e65aa4c04f4682593be3",
+   "paper_sha256": "12aaca27253bbea4f5eab7ac84074209a9fd2f08ad447bb64cd9a94f2fe60d8f",
+   "primary_verdict": "2d68682c99ae89ac0e15354ceb1217018e1125b85241aa94478a7efca65a94fd",
+   "read_set": "407936a10a0c12285ebacbd449b2e6bad59aba50d475c7a126a019dce83ec7b3",
+   "schema": "a5196abf79e891397af797cd1f1ac3354af30445b0f5f2d2be0edca7a0da895a",
+   "scope": "282c0106ffceb4dcf78ce9bb788ead445eddf0dd6d3186af22ccc0a32406f860",
+   "secondary_verdicts": "cab8190bd2d428b535206d84641836d01e2a7f9e5055f4c99e23d83a74290dd9",
+   "source_anchors": "7a4fcd272d43c17c788222fcfce087b7c9bb0f6a94a1c5aae872c4c62890ac39",
+   "status": "fb66d63949ba478e95280e7746a024ff26523d257ff8c35d1d9fbe67d41b1e11",
+   "unit": "e496d1be638f54071d96e5dd07ab9852302d9441eb1d7af6011ebfb5c95ab08c"
+  },
+  "total_keys_excluding_manifest": 17
+ },
+ "secondary_verdicts": [
+  "L2-VIABLE",
+  "TRIANGLE-FIRST-LOOP-NOT-FIRST-EVENT",
+  "EPR-SAFE-INSTRUMENT",
+  "HAMILTONIAN-RECOVERABLE-ONLY-RELATIVE-TO-FROZEN-SECTOR-AND-CLOCK",
+  "SPECIES-UNSELECTED",
+  "AFFINE-CHANNEL-TERM-UNSELECTED",
+  "NO-FORCED-QFT-GR-DEVIATION-IN-REGISTERED-FAMILY"
+ ],
+ "source_anchors": {
+  "v10/note-d13-literature-audit-action-selection.md": "efe8792fd2c4fdcd78901b7de93e07fa77e4ef5bf7f652e630525ac8790f4173",
+  "v10/note-d15-maximal-low-energy-action.md": "0d39eb2f023ce33fb27a0455424a8fba2e93dec590b3de6cc71fae84a27bd66b",
+  "v14/code/epr_receipt.json": "8813e0c2aad9b003493fcbed6931cb1d93ad4fdb2f3ba76ce8f8be8c5568948f",
+  "v14/code/era_template.py": "d04a3eb58fbcfe3d093b98126ca23c1610a9cc7cec96c9b9097eed515516f2b9",
+  "v14/paper-38-epr.md": "22beb66962232240d2e673763e32b1fe451db7c44a2420754ed42f83e99983e2",
+  "v15/code/arity16_receipt.json": "92a3e11b34a0f7c83d789c46a2b1b29723b27039bc0372bcb38f448453652def",
+  "v15/code/scoutpsi_receipt.json": "681a9cccfa75ebc1755d03fd9555c7ef9902d6947cfd0e99e8db65776cc802e4",
+  "v15/note-dc-causality-addendum-v2.md": "ca713e89633bcd3510bbc898aef24133a64172cd2af158c82457033e32a53d71",
+  "v15/note-dc-ontology-addendum-v3.md": "7df6120f585f194c3fd48c0cf36dadd8e10a0c1a9a7b440abb5b5139892f6160",
+  "v15/note-js-pin-v2.md": "99e90f9a2e8db6a67a1cb46902de96d6086a0931897145d5d54ca3a9e78816ea",
+  "v15/note-scoutpsi.md": "5c46b34a4de9149cef48019eab16e39abd67797c34939cc2626f4a3546dfcc3a",
+  "v15/paper-50-arity16.md": "3e01a1ce1b39e478482c485a15b6e5847a427310bafcb3370f04fe2ae963a9eb",
+  "v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md": "173143f9ffb91673fe13f8b3a741dd29baaadf542b29720104af49f14f617578"
+ },
+ "status": "CANDIDATE-PENDING-HOSTILE-REVIEW",
+ "unit": "v16-paper-01-jrh"
+}

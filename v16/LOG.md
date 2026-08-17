@@ -28,3 +28,36 @@ commit-as-is and orchestrator verification, three independent hostile seats
 
 Status: **PIN**.  No v16 physical result is citable.
 
+## 2026-08-17 — JRH CONSTRUCTION DELIVERED AND COMMITTED AS-IS: EXACT FINITE EXISTENCE, EXACT RIVAL-LAW UNDERDETERMINATION (v16 LEDGER #2)
+
+The four whitelisted construction artifacts landed without touching any v15
+SCOUT-T path:
+
+- paper `ae737af4b22b`;
+- exact source `d06004f609b7`;
+- transcript `cb3721229df0`;
+- receipt `4b2acffbd8cc`.
+
+Candidate primary reading: `JRH-CONSISTENT-BUT-UNDERDETERMINED`.  The delivered
+battery has 37 passing gate rows, 13 frozen source reads, 13 of 13 named
+measurement-moving mutants dying at their registered gates, and an exact total
+seal.  The finite candidate is a branch-resolved CP instrument whose complete
+outcome co-updates one pair record, geometry/collar, and process-state block.
+It passes affinity, the canonical HJW equal-density comparison, remote-steering
+no-signalling, L2 idle-spectator extension, and a disjoint diamond.  Cycle ranks
+0, 0, 1 separate the two-actor edge, three-actor path, and triangle; the licensed
+candidate reading is “triangle first loop, not first event.”
+
+The construction's internal hostile control is load-bearing: the same ontology
+and structural safety gates admit Z- and X-resolving laws with different record
+statistics on the same input.  Hence the architecture selects no unique law,
+species list, channel affine translation, cosmological value, absolute scale,
+or common dimensionless QFT/GR deviation.  The frozen-sector transfer has five
+tested integer generator lifts with one image, while the backreacting
+classical-quantum output is not a unitary endomorphism of the original matter
+sector.
+
+Every sentence remains a **CANDIDATE READING**.  Per the RUNBOOK, this commit is
+delivery-as-is, not terminalization.  The next event is the orchestrator's
+post-commit battery, followed by a separately frozen three-seat hostile
+protocol.
