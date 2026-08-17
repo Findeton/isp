@@ -5,10 +5,13 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-10 (v14 #103: **R4/paper-10 TERMINAL** — the relocated headline final ("the unique scale is a theorem about I7's declared link set"); the sixth terminal. WELD-2 adjudicated #102: **EMPTY STANDS**, the account reading-stratified; U4 ruled the next Route-A unit; the ≥9-actor form registered-not-launched. Γ-main repair committed #98 (battery running → terminal); Γ-prep + weld-2 repairs in flight. Terminals: 01/02/03/04/09/10. Four panels queued (CR-A/B/C/D).
+Updated: 2026-08-17 (v16 JRH hostile panel adjudicated at #8; the
+dynamic-geometry claim was rejected, the exact boundary-instrument core
+survived, and a whole-history repair is pending independent delta review).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
+| JRH (paper-01, v16) — joint relational-history law | **PANEL ADJUDICATED; REPAIR PENDING DELTA REVIEW**: two `REJECT`, one `ACCEPT-WITH-FIXES`; claimed geometry proved eliminable feed-forward and the displayed division map entanglement breaking; fixed-factor CP/HJW/no-signalling core and weak-surface rival-law underdetermination survive; refined strongly positive complex matter–geometry history functional is a serious unproved candidate, not an earned law | v16 #1–#8 ✓adj |
 | GW1 — metric from deformation closure | terminal negative: blocked at the kernel/deformation interface | v13 #2–#5 |
 | GW2 — regional-descent STEP-0 census | ran (code + receipts committed); see ledger for verdict | v13 LOG |
 | RQ0 quantum factual base | hostile round run; see ledger | v13 ~#20s |

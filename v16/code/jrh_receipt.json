@@ -13,15 +13,15 @@
    "status": "ADMISSIBILITY-ASSUMED"
   },
   {
-   "item": "finite geometry alphabet",
-   "status": "FREE"
+   "item": "copied binary geometry alphabet",
+   "status": "REJECTED-AS-GEOMETRY"
   },
   {
-   "item": "collar representation",
-   "status": "FREE-UP-TO-PREDICTIVE-SUFFICIENCY"
+   "item": "delivered collar representation",
+   "status": "REJECTED-AS-UNUSED"
   },
   {
-   "item": "Z-projective candidate law",
+   "item": "Z-projective division instrument",
    "status": "FREE"
   },
   {
@@ -29,12 +29,16 @@
    "status": "FREE-CONTROL"
   },
   {
-   "item": "history amplitudes/action",
+   "item": "complex whole-history functional",
    "status": "MISSING"
   },
   {
-   "item": "division boundaries",
-   "status": "MISSING-BEYOND-FIXTURE"
+   "item": "local matter-geometry amplitudes/action",
+   "status": "MISSING"
+  },
+  {
+   "item": "genuine division boundaries",
+   "status": "MISSING"
   },
   {
    "item": "all-n extension law",
@@ -57,113 +61,158 @@
    "status": "MISSING-BY-WALL"
   },
   {
-   "item": "readout connecting toy geometry to metric observations",
+   "item": "relational geometry and metric readout",
    "status": "MISSING"
   }
  ],
  "claims": {
-  "ARITY": "Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.",
-  "DEVIATION": "No dimensionless deviation from QFT or GR is forced across the registered surviving law family.",
-  "EXISTENCE": "An outcome-resolved dynamic-geometry instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 registered branch maps.",
-  "HAMILTONIAN": "The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.",
-  "PRIMARY": "JRH-CONSISTENT-BUT-UNDERDETERMINED",
-  "SELECTION": "The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law."
+  "ARITY": "A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
+  "DEVIATION": "No QFT or GR comparison observable is typed in this unit; deviations remain open rather than absent.",
+  "EXISTENCE": "A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.",
+  "HAMILTONIAN": "The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+  "PRIMARY": "BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED",
+  "SELECTION": "The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law."
  },
  "consequences": [
   {
-   "classification": "FORCED-IN-REGISTERED-ARENA",
-   "reason": "An exact outcome-resolved CP instrument exists in the finite arena.",
+   "classification": "FORCED",
+   "reason": "The exact Z instrument exists and is independently checkable from its Kraus maps.",
+   "topic": "branch-resolved CP boundary instrument"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "The delivered geometry and collar are reconstructible copied memory and no relation carrier changes.",
    "topic": "joint dynamic-geometry instrument"
   },
   {
-   "classification": "FORCED-IN-REGISTERED-ARENA",
-   "reason": "The L2 construction passes with an idle spectator; pair viability does not imply universal pair factorization.",
-   "topic": "two-actor occurrence"
-  },
-  {
-   "classification": "FORCED-AS-FIRST-LOOP-ONLY",
-   "reason": "A triangle is the first closed relational loop, not a derived minimum event arity.",
-   "topic": "three actors"
-  },
-  {
-   "classification": "FORCED-BY-ADMISSIBILITY-GATE",
-   "reason": "HJW-equivalent ensembles and remote steering choices give identical unconditioned local outputs.",
-   "topic": "EPR and no-signalling"
-  },
-  {
-   "classification": "REFUSED-AT-THIS-OPERATIONAL-READING",
-   "reason": "The registered decomposition-reading control violates affinity and enables the steering signal.",
-   "topic": "ontic pure-state nonlinear rule"
-  },
-  {
-   "classification": "REFUSED-AS-A-DERIVED-OBJECT",
-   "reason": "The changing-geometry instrument supplies no canonical same-sector unitary or generator.",
-   "topic": "global fundamental Hamiltonian"
-  },
-  {
-   "classification": "CONDITIONAL",
-   "reason": "It is reconstructible only after choosing a sector, clock and logarithm branch; multiple lifts are equivalent at one step.",
-   "topic": "frozen-sector Hamiltonian"
-  },
-  {
-   "classification": "OPEN-AND-UNSELECTED",
-   "reason": "Different admissible transfer laws on the same ontology have different mode inventories.",
-   "topic": "particle species"
-  },
-  {
-   "classification": "OPEN-AND-UNSELECTED",
-   "reason": "The joint-law architecture neither derives the affine-line coset nor the old three-actor grammar.",
-   "topic": "affine-coset event rule"
-  },
-  {
-   "classification": "PERMITTED-BUT-UNSELECTED",
-   "reason": "Both zero and nonzero translations occur in exact CPTP channels.",
-   "topic": "channel affine translation"
-  },
-  {
-   "classification": "OPEN-AND-UNSELECTED",
-   "reason": "No continuum constraint/Bianchi system is built in this unit.",
-   "topic": "cosmological integration constant"
-  },
-  {
-   "classification": "REFUSED-AS-DERIVED",
-   "reason": "No weight-nonzero datum is generated; the earlier scale wall remains.",
-   "topic": "Newton or area scale"
+   "classification": "FORCED",
+   "reason": "A typed pair-supported instrument exists and has an exact idle-spectator extension.",
+   "topic": "two-actor projective occurrence"
   },
   {
    "classification": "OPEN",
-   "reason": "A selected vacuum, matter law and continuum matching map are missing.",
-   "topic": "dimensionless gravitational coupling"
+   "reason": "No calibrated source, relation rewrite, constraint, or geometric response is constructed.",
+   "topic": "two-actor gravitational backreaction"
   },
   {
-   "classification": "CONDITIONAL",
-   "reason": "Requires a continuum/refinement limit and a discrete deformation or covariance closure selecting an effective gravitational action.",
+   "classification": "FORCED",
+   "reason": "The exact connected simple-graph cycle ranks are 0, 0, and 1.",
+   "topic": "three actors as first simple-graph cycle"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "The L2 instrument is a counterexample and no universal arity law is derived.",
+   "topic": "three actors as minimum event arity"
+  },
+  {
+   "classification": "FORCED",
+   "reason": "Blockwise linearity makes all decompositions of one density operator operationally equal.",
+   "topic": "fixed-factor preparation blindness"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "Relational subsystem algebras and their output-sector embeddings are not defined.",
+   "topic": "growing-geometry no-signalling"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "It violates affinity and produces the registered steering signal.",
+   "topic": "registered decomposition-reading control"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "One bad ensemble functional does not classify the full ontic branch.",
+   "topic": "every ontic pure-state dynamics"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "The unconditioned projective map is entanglement breaking.",
+   "topic": "coherent propagation through the displayed division map"
+  },
+  {
+   "classification": "PERMITTED",
+   "reason": "The exact interference witness requires coherent alternatives before a record boundary, but does not select their amplitudes.",
+   "topic": "complex whole-history representation"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "Infinitely many logarithm lifts share the registered transfer once a clock is chosen.",
+   "topic": "one-step Hamiltonian uniqueness"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "No canonical one is supplied, while larger-space dilations remain possible.",
+   "topic": "global Hamiltonian representation"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "No selected law, vacuum, statistics, stability criterion, or scattering map exists.",
+   "topic": "particle species"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "The older affine-line grammar is untouched.",
+   "topic": "affine-coset event rule"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "Exact unital and nonunital CPTP channels both exist.",
+   "topic": "channel affine translation fixed by CP/TP"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "No continuum metric constraint or Bianchi system exists here.",
+   "topic": "cosmological integration constant"
+  },
+  {
+   "classification": "REFUSED",
+   "reason": "No dimensionful or weight-nonzero datum is generated.",
+   "topic": "Newton or area scale derived here"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "Matter load and geometric response have not been independently typed.",
+   "topic": "dimensionless matter-gravity coupling"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "No geometric action, deformation closure, scale map, or continuum limit is constructed.",
    "topic": "GR limit"
   },
   {
-   "classification": "CONDITIONAL",
-   "reason": "Requires a selected vacuum, stable excitation/Fock reconstruction, locality and continuum scaling.",
+   "classification": "OPEN",
+   "reason": "No local algebra net, vacuum, statistics, excitation sectors, or continuum limit is constructed.",
    "topic": "QFT limit"
   },
   {
-   "classification": "PERMITTED",
-   "reason": "Outcome-geometry correlation exists, but its scale and coarse-grained observability are unselected.",
-   "topic": "macroscopic geometry noise"
+   "classification": "OPEN",
+   "reason": "The measured dephasing is ordinary record-forgetting, not an independent geometry effect.",
+   "topic": "geometry-induced decoherence"
   },
   {
-   "classification": "PERMITTED",
-   "reason": "Finite loops allow such terms; no coefficient or sign is selected.",
-   "topic": "higher-curvature deviations"
+   "classification": "OPEN",
+   "reason": "No metric or macroscopic coarse-graining is typed.",
+   "topic": "metric noise"
   },
   {
-   "classification": "REFUSED-IN-REGISTERED-FAMILY",
-   "reason": "Rival laws survive with different microscopic statistics, so no common dimensionless deviation is fixed.",
+   "classification": "OPEN",
+   "reason": "A loop transport exists, but no gravitational curvature action or coefficient is selected.",
+   "topic": "higher-curvature correction"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "There is no momentum, energy, continuum clock, or dispersion observable.",
+   "topic": "modified dispersion"
+  },
+  {
+   "classification": "OPEN",
+   "reason": "No comparison observable or exhaustive surviving law family is defined.",
    "topic": "forced QFT/GR deviation"
   },
   {
    "classification": "OPEN",
-   "reason": "No full representation-packet reconstruction is attempted.",
-   "topic": "existing ISP walk"
+   "reason": "The qubit fixture is not a map from the committed walk.",
+   "topic": "existing ISP walk reconstruction"
   }
  ],
  "gates": [
@@ -184,288 +233,315 @@
    "row_digest": "0cba2db512626f0e"
   },
   {
-   "evidence": "domain/output geometry-sector types close at 4 of 4 rows",
-   "gate": "G-A2-DIRECT-SUM-TYPES",
+   "evidence": "matrix blocks and nominal branch-key positions close at 4 of 4 rows",
+   "gate": "G-A2-NOMINAL-BRANCH-TYPES",
    "index": 3,
    "passed": true,
    "previous": "254d3cc183446120",
-   "row_digest": "8dfb7339d3824ab9"
+   "row_digest": "a8627cec22173363"
   },
   {
    "evidence": "one complete outcome carries 3 simultaneous pair writes; cells are payload, not sample space",
    "gate": "G-A3-NO-CELL-NORMALIZATION",
    "index": 4,
    "passed": true,
-   "previous": "d006684aa1050f61",
-   "row_digest": "fa69af8f139b484f"
+   "previous": "f6ba875ceacf175d",
+   "row_digest": "c49c980fed192048"
   },
   {
-   "evidence": "the full actor-plus-write boundary commutes with the registered cyclic relabelling",
+   "evidence": "the complete nominal successor map commutes with the registered cyclic boundary relabelling",
    "gate": "G-A4-RELABEL",
    "index": 5,
    "passed": true,
-   "previous": "302317a06c90ed7e",
-   "row_digest": "d0add384586d9457"
+   "previous": "ff5ad0aa829ae4ff",
+   "row_digest": "dba35d64aa89762e"
   },
   {
    "evidence": "Kraus-Gram Choi certificates pass 90 exact principal-minor checks across 6 branch maps",
    "gate": "G-B1-CP",
    "index": 6,
    "passed": true,
-   "previous": "703019b02810ec63",
-   "row_digest": "c3527220e00af536"
+   "previous": "5b74673c7f5237a5",
+   "row_digest": "ab9f053d2d42f6a1"
   },
   {
    "evidence": "sum K-dagger-K equals identity for 3 of 3 registered channel families",
    "gate": "G-B2-TRACE-PRESERVING",
    "index": 7,
    "passed": true,
-   "previous": "88eb70c1145d2cb0",
-   "row_digest": "250c4d9b8751298a"
+   "previous": "bd76bd5174428371",
+   "row_digest": "abc235d96d8da570"
   },
   {
    "evidence": "classical-quantum output respects the registered rational mixture of weight 1/3 block by block",
    "gate": "G-B3-AFFINITY",
    "index": 8,
    "passed": true,
-   "previous": "442ebe1e32010740",
-   "row_digest": "77779623e31147f8"
+   "previous": "c0261c87f36351b0",
+   "row_digest": "a267621f6eaa36b6"
   },
   {
    "evidence": "Z and X pure-state ensembles equal I/2 and produce identical complete local instrument blocks",
    "gate": "G-B4-HJW-BLIND",
    "index": 9,
    "passed": true,
-   "previous": "5605e0af7ff75c02",
-   "row_digest": "1a28c0fc17e97cb6"
+   "previous": "8350818dce970103",
+   "row_digest": "7c0f69804d59f2f1"
   },
   {
-   "evidence": "Alice's Z/X steering choice leaves Bob's unconditioned record-plus-geometry blocks identical",
+   "evidence": "Alice's Z/X steering choice leaves Bob's unconditioned complete nominal branch blocks identical",
    "gate": "G-B5-NO-SIGNALLING",
    "index": 10,
    "passed": true,
-   "previous": "3e3e4bb4e89bee22",
-   "row_digest": "779d477a1fa9b18a"
+   "previous": "4538f34c1ac67b1e",
+   "row_digest": "6af9322b6911deba"
   },
   {
    "evidence": "decomposition-reading control separates Z/X at 1 versus 0 and violates affinity at 0 versus 1",
    "gate": "G-B6-POSITIVE-CONTROL",
    "index": 11,
    "passed": true,
-   "previous": "2828fb9d7341db2f",
-   "row_digest": "900b0647b9ab6f36"
+   "previous": "8a9d366c21a116ea",
+   "row_digest": "434aef4e63390a3d"
   },
   {
-   "evidence": "realized flux, output collar, and durable record agree on all 2 complete branches",
-   "gate": "G-C1-BRANCH-RESOLUTION",
+   "evidence": "the unconditioned Z division map sends the Bell state to the exact separable 00/11 mixture of purity 1/2",
+   "gate": "G-B7-ENTANGLEMENT-BREAKING",
    "index": 12,
    "passed": true,
-   "previous": "66c90440c7ed10a2",
-   "row_digest": "0826cd619d2bb77f"
+   "previous": "85ee6330d68aed5f",
+   "row_digest": "88095c6b1720efe7"
   },
   {
-   "evidence": "2 reachable geometry labels are separated by the registered later geometry probe",
-   "gate": "G-C2-NONTRIVIAL-GEOMETRY",
+   "evidence": "unresolved rational paths give 49/625 while an inserted intermediate record gives 337/625",
+   "gate": "G-B8-DIVISION-BOUNDARY",
    "index": 13,
    "passed": true,
-   "previous": "7abf56af583a4f06",
-   "row_digest": "d66e8b294641e1ea"
+   "previous": "fe8b188b6a6af83a",
+   "row_digest": "ba63068bc5126e5a"
   },
   {
-   "evidence": "mean outcome 1/2 is not an actual geometry label; thresholding it violates affinity at 1 versus 1/2",
-   "gate": "G-C3-MEAN-DRIVEN-CONTROL",
+   "evidence": "the output collar label and durable record copy the outcome on all 2 nominal branches",
+   "gate": "G-C1-BRANCH-MEMORY",
    "index": 14,
    "passed": true,
-   "previous": "332bffe9dda62eb1",
-   "row_digest": "98fc192aae7f0459"
+   "previous": "1437b6aff4ec14d3",
+   "row_digest": "cf830449d83ab14e"
   },
   {
-   "evidence": "same relation and geometry with distinct collar data has distinguishable exact successor distributions",
-   "gate": "G-C4-COLLAR",
+   "evidence": "input bit plus retained record reconstruct every published geometry/collar label and its only later readout",
+   "gate": "G-C2-FEEDFORWARD-EQUIVALENCE",
    "index": 15,
    "passed": true,
-   "previous": "9698a3659d7f4f42",
-   "row_digest": "d815fc052b1c3438"
+   "previous": "273016ac38ea04fd",
+   "row_digest": "12a2a2cc8893796f"
   },
   {
-   "evidence": "the two-actor complete successor jointly writes the pair fact, state block, geometry/collar and record",
-   "gate": "G-D1-L2-VIABLE",
+   "evidence": "in this binary pointer alphabet the mean 1/2 is not a label, and the registered threshold rule violates affinity at 1 versus 1/2",
+   "gate": "G-C3-BINARY-MEAN-CONTROL",
    "index": 16,
    "passed": true,
-   "previous": "4336039022e9ea34",
-   "row_digest": "867720a07c01b330"
+   "previous": "6f71bcef771436c3",
+   "row_digest": "964d4f911e310f0e"
+  },
+  {
+   "evidence": "changing the input collar leaves the delivered successor exactly unchanged; no collar dynamics is instantiated",
+   "gate": "G-C4-COLLAR-UNINSTANTIATED",
+   "index": 17,
+   "passed": true,
+   "previous": "5ce07c2b87cd4c9b",
+   "row_digest": "3b782c96c4acc64f"
+  },
+  {
+   "evidence": "the two-actor projective instrument writes a pair-keyed nominal branch and durable outcome record",
+   "gate": "G-D1-L2-INSTRUMENT",
+   "index": 18,
+   "passed": true,
+   "previous": "3b970ccf8f4fff52",
+   "row_digest": "65595a9c71ee7881"
   },
   {
    "evidence": "tensoring an irrelevant third actor and tracing it back reproduces every local branch exactly",
    "gate": "G-D2-IDLE-SPECTATOR",
-   "index": 17,
-   "passed": true,
-   "previous": "09c65b266b7877f2",
-   "row_digest": "2f1c49d3488bbaff"
-  },
-  {
-   "evidence": "both construction orders agree on all 4 complete branches while the Bell input keeps non-factorized outcome correlations",
-   "gate": "G-D3-DISJOINT-DIAMOND",
-   "index": 18,
-   "passed": true,
-   "previous": "2639b93260cb4651",
-   "row_digest": "856e23e2f5ff0f74"
-  },
-  {
-   "evidence": "cycle ranks are 0, 0, 1 for K2, the three-actor path, and the triangle; triangle holonomy is [['1i', '0'], ['0', '-1i']]",
-   "gate": "G-D4-FIRST-LOOP",
    "index": 19,
    "passed": true,
-   "previous": "c2c8e9b58eca33d4",
-   "row_digest": "cb445e80869944f8"
+   "previous": "497314ce865cfeac",
+   "row_digest": "797066435fc1763b"
+  },
+  {
+   "evidence": "both orders agree on quantum blocks and every nominal payload field for all 4 disjoint branches",
+   "gate": "G-D3-DISJOINT-DIAMOND",
+   "index": 20,
+   "passed": true,
+   "previous": "fb7384661f49dc3c",
+   "row_digest": "c7f5494bc908d6a9"
+  },
+  {
+   "evidence": "cycle ranks are 0, 0, 1; a three-edge oriented loop has gauge-invariant trace 0 and determinant 1",
+   "gate": "G-D4-FIRST-LOOP",
+   "index": 21,
+   "passed": true,
+   "previous": "28f87a0eda709d58",
+   "row_digest": "fd2764badaeb6f14"
   },
   {
    "evidence": "a valid L2 instrument and a valid joint three-support parity instrument coexist; no robust irreducibility claim is made",
    "gate": "G-D5-ARITY-NONSEQUITUR",
-   "index": 20,
+   "index": 22,
    "passed": true,
-   "previous": "bf7f020267a3a7c4",
-   "row_digest": "abdee753093b129d"
+   "previous": "9b3b01802664cf2e",
+   "row_digest": "55c2d1aa72a201c0"
   },
   {
    "evidence": "with a declared unit clock, the frozen-sector integer phase generator reconstructs diag(1,i) exactly",
    "gate": "G-E1-FROZEN-RECOVERY",
-   "index": 21,
+   "index": 23,
    "passed": true,
-   "previous": "272a4c7f39b9d471",
-   "row_digest": "701f106accf426cf"
+   "previous": "5e884613ef071b53",
+   "row_digest": "60020bb13a6bb4ae"
   },
   {
    "evidence": "5 distinct registered generator lifts yield the identical one-step transfer operator",
    "gate": "G-E2-BRANCH-AMBIGUITY",
-   "index": 22,
-   "passed": true,
-   "previous": "ee703771f928100d",
-   "row_digest": "ae69a31b168c31b9"
-  },
-  {
-   "evidence": "Hamiltonian comparison packet carries all 6 registered components; a bare matrix is not the comparison object",
-   "gate": "G-E3-PACKET-WALL",
-   "index": 23,
-   "passed": true,
-   "previous": "ec81cf23c9638b80",
-   "row_digest": "af49da4e63fdbda7"
-  },
-  {
-   "evidence": "pure input has purity 1 while the same-sector classical-quantum output has purity 1/2; a unitary dilation is possible but not selected",
-   "gate": "G-E4-DYNAMIC-SECTOR-OBSTRUCTION",
    "index": 24,
    "passed": true,
-   "previous": "260172bc6035abde",
-   "row_digest": "b1777c7bc5cf7fee"
+   "previous": "9d94492361436e15",
+   "row_digest": "a12ac7f53c2935fa"
   },
   {
-   "evidence": "same four-site relational cycle admits identity degeneracy 4 and a shift with 4 exact one-dimensional phase modes",
-   "gate": "G-F1-SPECIES-UNDERDETERMINATION",
+   "evidence": "pure matter input has purity 1 while the unconditioned enlarged classical-quantum output has purity 1/2; a unitary dilation is possible but not selected",
+   "gate": "G-E3-UNCONDITIONED-CHANNEL-NONUNITARY",
    "index": 25,
    "passed": true,
-   "previous": "d59b6531d9b8730a",
-   "row_digest": "0dce2323ff079809"
+   "previous": "829e1f5888579ea5",
+   "row_digest": "2c5b1ab392ec9d50"
+  },
+  {
+   "evidence": "one four-site carrier admits an identity degeneracy and a shift with 4 exact one-dimensional phase modes; neither is a particle census",
+   "gate": "G-F1-MODE-LAW-DEPENDENCE",
+   "index": 26,
+   "passed": true,
+   "previous": "3943480cc99f2581",
+   "row_digest": "06d0d01b4d1f15c4"
   },
   {
    "evidence": "CPTP dephasing has channel translation ['0', '0', '0'] while CPTP reset has ['0', '0', '1']",
    "gate": "G-F2-AFFINE-SPLIT",
-   "index": 26,
-   "passed": true,
-   "previous": "92c3a02fc1b1ef5c",
-   "row_digest": "d0e8d410d77daac6"
-  },
-  {
-   "evidence": "rival passes 9 of 9 repeated safety checks and yields record statistics {'0': '1', '1': '0'} versus {'0': '1/2', '1': '1/2'}",
-   "gate": "G-F3-RIVAL-LAW",
    "index": 27,
    "passed": true,
-   "previous": "320907f74af68615",
-   "row_digest": "e18478978d95f173"
+   "previous": "ccab4531382b7a76",
+   "row_digest": "d162f4a5803a28ca"
   },
   {
-   "evidence": "rival admissible microscopic statistics prevent any law-family-invariant QFT/GR deviation from being inferred",
-   "gate": "G-F4-DEVIATION-STANDARD",
+   "evidence": "rival passes 9 of 9 boundary-instrument checks and yields record statistics {'0': '1', '1': '0'} versus {'0': '1/2', '1': '1/2'}",
+   "gate": "G-F3-RIVAL-LAW",
    "index": 28,
    "passed": true,
-   "previous": "a51fce0ab657811e",
-   "row_digest": "112fc61785fcc22d"
+   "previous": "d3bb64aafe2fda13",
+   "row_digest": "6f45cf1437a75565"
   },
   {
-   "evidence": "the finite candidate contains no generated dimensionful datum; Newton, mass, cutoff and cosmological values remain unpriced",
-   "gate": "G-F5-SCALE-WALL",
+   "evidence": "all 28 consequence rows use exactly one of the five registered classification words",
+   "gate": "G-F4-CONSEQUENCE-VOCABULARY",
    "index": 29,
    "passed": true,
-   "previous": "b6cd3713da610bec",
-   "row_digest": "b7ec4fd908ea1586"
+   "previous": "dd151e6baad68e50",
+   "row_digest": "af0941ea453e67bf"
   },
   {
    "evidence": "two independent exact core builds are byte-identical before rendering",
    "gate": "G-G2-DETERMINISM",
    "index": 30,
    "passed": true,
-   "previous": "66c2733f41430122",
-   "row_digest": "9975fb7f870fbaa6"
+   "previous": "4acca8e5082f9ace",
+   "row_digest": "91014deca7b08999"
   },
   {
    "evidence": "plain and selftest parse; unknown syntax is rejected before construction",
    "gate": "G-G1-CLI",
    "index": 31,
    "passed": true,
-   "previous": "dfc9bbd1f9614f7f",
-   "row_digest": "400160a877bf4bcc"
+   "previous": "0a00f0e7e0446913",
+   "row_digest": "e88a48c34d9c3085"
   },
   {
    "evidence": "observed source-anchor corruption dies at its named gate and changes no artifact bytes",
    "gate": "G-G3-SELFTEST",
    "index": 32,
    "passed": true,
-   "previous": "f55beb02e561be84",
-   "row_digest": "d812233b475dac7e"
+   "previous": "1ed473410c5ead7d",
+   "row_digest": "21cd6180012361b4"
   },
   {
    "evidence": "all 13 registered mutants move measured objects and die at their named gates",
    "gate": "G-G4-MUTANTS-MOVE",
    "index": 33,
    "passed": true,
-   "previous": "2f231513c67d1284",
-   "row_digest": "c45bb59ad8bd9c49"
+   "previous": "5a6ce8db7d2a448b",
+   "row_digest": "3d667a42efb78401"
   },
   {
    "evidence": "sole accessor read set equals all 13 frozen path/digest anchors",
    "gate": "G-G7-READ-SET",
    "index": 34,
    "passed": true,
-   "previous": "751bd593494282b7",
-   "row_digest": "bce53d361ae91889"
+   "previous": "9377170682d90a48",
+   "row_digest": "367f1aca6558d0f4"
   },
   {
    "evidence": "foreign-CWD exact rebuild matches and all reads remain explicit; git is unused",
    "gate": "G-G8-PORTABILITY",
    "index": 35,
    "passed": true,
-   "previous": "d954020b82977588",
-   "row_digest": "2ce8339e5e4a5fbb"
+   "previous": "8754038ae9b2d417",
+   "row_digest": "a306ed9307df3906"
   },
   {
-   "evidence": "two-way claim keys and exact strings agree; all 115 paper numeral occurrences carry line-level referent classes",
+   "evidence": "two-way claim keys and exact strings agree; all 184 paper numeral occurrences carry line-level referent classes",
    "gate": "G-G6-CLAIM-EQUALITY",
    "index": 36,
    "passed": true,
-   "previous": "9289c454b6c8be68",
-   "row_digest": "60ff27dcf392df8c"
+   "previous": "38c002e0ffdee162",
+   "row_digest": "85ce03c054c9a6ff"
   },
   {
    "evidence": "clean seal passes; post-seal add and edit controls both die before promotion",
    "gate": "G-G5-TOTAL-SEAL",
    "index": 37,
    "passed": true,
-   "previous": "ec47833f0cb41cea",
-   "row_digest": "91d8363171cd141c"
+   "previous": "3a98da266dceb8fa",
+   "row_digest": "a6df1e895fc0b69d"
   }
  ],
- "ledger_head": "8e284d3bcc1ce723",
+ "ledger_head": "0fa34c09d2105cf9",
  "measurements": {
+  "bell_after_division": [
+   [
+    "1/2",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "0",
+    "1/2"
+   ]
+  ],
+  "coherent_probability": "49/625",
   "complete_row_total": 4,
   "complete_rows": 4,
   "cp_branch_maps": 6,
@@ -483,6 +559,9 @@
   ],
   "diamond_branches": 4,
   "dimensionful_inputs": [],
+  "divided_probability": "337/625",
+  "entanglement_breaking": true,
+  "feedforward_equivalent": true,
   "hamiltonian_lifts": [
    [
     0,
@@ -525,14 +604,14 @@
   ],
   "rival_safety": {
    "affinity": true,
-   "branch_geometry": true,
-   "collar": true,
+   "branch_record": true,
    "cp_tp": true,
    "disjoint_diamond": true,
    "hjw": true,
    "idle_spectator": true,
    "no_signalling": true,
-   "normalization": true
+   "normalization": true,
+   "relabel": true
   },
   "rival_safety_passes": 9,
   "rival_safety_total": 9,
@@ -558,7 +637,9 @@
     "0",
     "-1i"
    ]
-  ]
+  ],
+  "triangle_holonomy_determinant": "1",
+  "triangle_holonomy_trace": "0"
  },
  "mutant_survey": [
   {
@@ -607,8 +688,8 @@
    "expected_gate": "G-A4-RELABEL",
    "move_proofs": [
     {
-     "after": "696228bf925f1844",
-     "before": "4c432f98fe9b2687",
+     "after": "b2bfe4f7ccd4c39e",
+     "before": "1a414e5e1a2875b0",
      "target": "RELABEL_BREAK"
     }
    ],
@@ -660,31 +741,31 @@
    "passed": true
   },
   {
-   "expected_gate": "G-C2-NONTRIVIAL-GEOMETRY",
+   "expected_gate": "G-C2-FEEDFORWARD-EQUIVALENCE",
    "move_proofs": [
     {
-     "after": "d0bca111f8628137",
-     "before": "463f2998327eb3a6",
-     "target": "GEOMETRY_ERASE"
+     "after": "ce1b747f7c896aa4",
+     "before": "8c3b962ad36b3e4d",
+     "target": "FEEDFORWARD_BREAK"
     }
    ],
    "moved": true,
-   "mutant": "GEOMETRY_ERASE",
-   "observed_gate": "G-C2-NONTRIVIAL-GEOMETRY",
+   "mutant": "FEEDFORWARD_BREAK",
+   "observed_gate": "G-C2-FEEDFORWARD-EQUIVALENCE",
    "passed": true
   },
   {
-   "expected_gate": "G-C4-COLLAR",
+   "expected_gate": "G-C4-COLLAR-UNINSTANTIATED",
    "move_proofs": [
     {
-     "after": "a0ab9e44855dba54",
-     "before": "320f9ff5ab30f0a7",
-     "target": "COLLAR_ERASE"
+     "after": "f08fdfe8222e5bc6",
+     "before": "57a8a091dc0114c8",
+     "target": "COLLAR_SMUGGLE"
     }
    ],
    "moved": true,
-   "mutant": "COLLAR_ERASE",
-   "observed_gate": "G-C4-COLLAR",
+   "mutant": "COLLAR_SMUGGLE",
+   "observed_gate": "G-C4-COLLAR-UNINSTANTIATED",
    "passed": true
   },
   {
@@ -705,8 +786,8 @@
    "expected_gate": "G-D4-FIRST-LOOP",
    "move_proofs": [
     {
-     "after": "6b86b273ff34fce1",
-     "before": "5feceb66ffc86f38",
+     "after": "cba77634b27f0e26",
+     "before": "4cab747021c2d4aa",
      "target": "LOOP_FAKE"
     }
    ],
@@ -744,816 +825,1299 @@
    "passed": true
   }
  ],
- "output_sha256": "5fe1fb21a55e659b08bb93cc51ef758dae391c1c647ee89ef7cce6246ab07028",
+ "output_sha256": "396f931ade115a2c6cf644bcb670fa2160c6696dc2925426451bf3d8b05901ff",
  "paper_numeral_inventory": [
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 109,
+   "line": 28,
    "occurrence": 1,
-   "referent": "The construction checks 6 branch maps by 90 exact Choi",
-   "token": "6"
+   "referent": "`49/625` before an intermediate record",
+   "token": "49/625"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 109,
+   "line": 29,
    "occurrence": 2,
-   "referent": "The construction checks 6 branch maps by 90 exact Choi",
-   "token": "90"
+   "referent": "and `337/625` after one is inserted.  If",
+   "token": "337/625"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
    "line": 111,
    "occurrence": 3,
-   "referent": "full transcript carries 37 gate rows and authenticates 13",
-   "token": "37"
+   "referent": "The exact battery checks 6 branch maps by 90 Choi",
+   "token": "6"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
    "line": 111,
    "occurrence": 4,
-   "referent": "full transcript carries 37 gate rows and authenticates 13",
+   "referent": "The exact battery checks 6 branch maps by 90 Choi",
+   "token": "90"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 113,
+   "occurrence": 5,
+   "referent": "37 passing gates and authenticates 13 frozen source",
+   "token": "37"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 113,
+   "occurrence": 6,
+   "referent": "37 passing gates and authenticates 13 frozen source",
    "token": "13"
   },
   {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 125,
-   "occurrence": 5,
-   "referent": "This is the right correction to v15's delivered nonlinear update.  Backreaction",
-   "token": "15"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 132,
-   "occurrence": 6,
-   "referent": "The exact L2 occurrence changes one pair fact, its geometry/collar, its process",
-   "token": "2"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 156,
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 122,
    "occurrence": 7,
-   "referent": "clock gives the transfer `diag(1,i)`.  The exact battery exhibits 5",
+   "referent": "`1` to",
    "token": "1"
   },
   {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 156,
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 123,
    "occurrence": 8,
-   "referent": "clock gives the transfer `diag(1,i)`.  The exact battery exhibits 5",
-   "token": "5"
+   "referent": "`0` and is non-affine.  This proves a",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 149,
+   "occurrence": 9,
+   "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 149,
+   "occurrence": 10,
+   "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "token": "00"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 149,
+   "occurrence": 11,
+   "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "token": "00"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 149,
+   "occurrence": 12,
+   "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 149,
+   "occurrence": 13,
+   "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "token": "11"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 149,
+   "occurrence": 14,
+   "referent": "`(1/2)|00><00| + (1/2)|11><11|`,",
+   "token": "11"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 151,
+   "occurrence": 15,
+   "referent": "a separable state of purity `1/2`.  The",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 158,
+   "occurrence": 16,
+   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "token": "3/5"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 158,
+   "occurrence": 17,
+   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "token": "4/5"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 158,
+   "occurrence": 18,
+   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "token": "4/5"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 158,
+   "occurrence": 19,
+   "referent": "R = [[3/5, 4/5], [-4/5, 3/5]].",
+   "token": "3/5"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
    "line": 162,
-   "occurrence": 9,
-   "referent": "sectors, with exact purity changing from 1",
-   "token": "1"
+   "occurrence": 20,
+   "referent": "amplitudes are `9/25` and `-16/25`.  Summing them before squaring gives",
+   "token": "9/25"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 162,
+   "occurrence": 21,
+   "referent": "amplitudes are `9/25` and `-16/25`.  Summing them before squaring gives",
+   "token": "16/25"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
    "line": 163,
-   "occurrence": 10,
-   "referent": "to 1/2.  It cannot be the unitary",
-   "token": "1/2"
+   "occurrence": 22,
+   "referent": "`49/625`.  Inserting an intermediate",
+   "token": "49/625"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 188,
-   "occurrence": 11,
-   "referent": "The choice inventory contains 15 named items, of which 12",
-   "token": "15"
+   "line": 165,
+   "occurrence": 23,
+   "referent": "`337/625`.  The difference is exact.",
+   "token": "337/625"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 188,
-   "occurrence": 12,
-   "referent": "The choice inventory contains 15 named items, of which 12",
-   "token": "12"
+   "line": 179,
+   "occurrence": 24,
+   "referent": "respectively `0`,",
+   "token": "0"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 218,
-   "occurrence": 13,
-   "referent": "1. **regional gluing:** equivalent decompositions of one finite region give the",
+   "line": 180,
+   "occurrence": 25,
+   "referent": "`0`, and",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 181,
+   "occurrence": 26,
+   "referent": "`1`.  The repaired loop uses three",
    "token": "1"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 220,
-   "occurrence": 14,
-   "referent": "2. **refinement/path independence:** changing an unphysical slicing or",
+   "line": 183,
+   "occurrence": 27,
+   "referent": "transformation.  Its trace `0`",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 184,
+   "occurrence": 28,
+   "referent": "and determinant `1` are",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 199,
+   "occurrence": 29,
+   "referent": "`{'0': '1', '1': '0'}` and",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 199,
+   "occurrence": 30,
+   "referent": "`{'0': '1', '1': '0'}` and",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 199,
+   "occurrence": 31,
+   "referent": "`{'0': '1', '1': '0'}` and",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 199,
+   "occurrence": 32,
+   "referent": "`{'0': '1', '1': '0'}` and",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 200,
+   "occurrence": 33,
+   "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 200,
+   "occurrence": 34,
+   "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 200,
+   "occurrence": 35,
+   "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 200,
+   "occurrence": 36,
+   "referent": "`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 235,
+   "occurrence": 37,
+   "referent": "1. **regional gluing:** shared unrecorded boundaries are summed/contracted and",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 237,
+   "occurrence": 38,
+   "referent": "2. **refinement consistency:** two descriptions of one region push forward to",
    "token": "2"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 222,
-   "occurrence": 15,
-   "referent": "3. **local covariance and causal composition:** disjoint regions compose and",
+   "line": 239,
+   "occurrence": 39,
+   "referent": "3. **relational locality:** a remote pre-contact intervention cannot alter a",
    "token": "3"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 224,
-   "occurrence": 16,
-   "referent": "4. **record permanence and outcome-resolved flux:** realized local transfers",
+   "line": 241,
+   "occurrence": 40,
+   "referent": "4. **branchwise constraints:** invalid relation, flux, gauge, or geometric",
    "token": "4"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 226,
-   "occurrence": 17,
-   "referent": "5. **quantum operational safety:** affinity, complete positivity where the",
+   "line": 244,
+   "occurrence": 41,
+   "referent": "5. **record permanence:** a durable record defines a stable orthogonal sector",
    "token": "5"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 229,
-   "occurrence": 18,
-   "referent": "6. **a classical deformation-algebra limit:** coarse boundary moves reproduce",
+   "line": 246,
+   "occurrence": 42,
+   "referent": "6. **nontrivial coherence:** at least one unrecorded refinement retains an",
    "token": "6"
   },
   {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 231,
-   "occurrence": 19,
-   "referent": "7. **a nontrivial renormalization fixed point:** many microscopic refinements",
+   "line": 252,
+   "occurrence": 43,
+   "referent": "`D(A_alpha,A_beta) = 0` for distinct recorded alternatives.",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 277,
+   "occurrence": 44,
+   "referent": "`a[h] = product_v exp(-I_v[h]/2 + i Theta_v[h])`,",
+   "token": "2"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 348,
+   "occurrence": 45,
+   "referent": "In the frozen two-level fixture, one boundary transfer is `diag(1,i)`.  The",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 349,
+   "occurrence": 46,
+   "referent": "receipt displays 5 exact witnesses, while the full integer family is",
+   "token": "5"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 350,
+   "occurrence": 47,
+   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
+   "token": "4"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 350,
+   "occurrence": 48,
+   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 350,
+   "occurrence": 49,
+   "referent": "`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,",
+   "token": "4"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 351,
+   "occurrence": 50,
+   "referent": "the energy branches differ by integer multiples of `2 pi hbar / Delta t`.",
+   "token": "2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 414,
+   "occurrence": 51,
+   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 414,
+   "occurrence": 52,
+   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 414,
+   "occurrence": 53,
+   "referent": "| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |",
+   "token": "1"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 415,
+   "occurrence": 54,
+   "referent": "| three actors as minimum event arity | REFUSED | The L2 instrument is a counterexample and no universal arity law is derived. |",
+   "token": "2"
+  },
+  {
+   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
+   "line": 482,
+   "occurrence": 55,
+   "referent": "- `L2-INSTRUMENT-VIABLE`",
+   "token": "2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 495,
+   "occurrence": 56,
+   "referent": "EXISTENCE: A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.",
+   "token": "6"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 496,
+   "occurrence": 57,
+   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 496,
+   "occurrence": 58,
+   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 496,
+   "occurrence": 59,
+   "referent": "ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 497,
+   "occurrence": 60,
+   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+   "token": "5"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 497,
+   "occurrence": 61,
+   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 497,
+   "occurrence": 62,
+   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 63,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 64,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 65,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 66,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 67,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "0"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 68,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 69,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 498,
+   "occurrence": 70,
+   "referent": "SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.",
+   "token": "1/2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 507,
+   "occurrence": 71,
+   "referent": "1. two refinements/cuts of the same regional history;",
+   "token": "1"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 508,
+   "occurrence": 72,
+   "referent": "2. an actual relation or transport rewrite, not a copied label;",
+   "token": "2"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 509,
+   "occurrence": 73,
+   "referent": "3. a downstream interaction whose availability is computed from the output",
+   "token": "3"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 511,
+   "occurrence": 74,
+   "referent": "4. equality of the complete boundary decoherence functional under both cuts;",
+   "token": "4"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 512,
+   "occurrence": 75,
+   "referent": "5. closure of overlapping deformations into independently defined boundary",
+   "token": "5"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 514,
+   "occurrence": 76,
+   "referent": "6. branchwise flux conservation and a geometry-validity constraint;",
+   "token": "6"
+  },
+  {
+   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
+   "line": 515,
+   "occurrence": 77,
+   "referent": "7. a fixed-factor and changing-factorization no-signalling census; and",
    "token": "7"
   },
   {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 260,
-   "occurrence": 20,
-   "referent": "| two-actor occurrence | FORCED-IN-REGISTERED-ARENA | The L2 construction passes with an idle spectator; pair viability does not imply universal pair factorization. |",
-   "token": "2"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 286,
-   "occurrence": 21,
-   "referent": "The EPR consequence is more definite but scoped.  Replacing v15's",
-   "token": "15"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 309,
-   "occurrence": 22,
-   "referent": "- `L2-VIABLE`",
-   "token": "2"
-  },
-  {
    "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 321,
-   "occurrence": 23,
-   "referent": "EXISTENCE: An outcome-resolved dynamic-geometry instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 registered branch maps.",
-   "token": "6"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 322,
-   "occurrence": 24,
-   "referent": "ARITY: Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 322,
-   "occurrence": 25,
-   "referent": "ARITY: Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 322,
-   "occurrence": 26,
-   "referent": "ARITY: Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 323,
-   "occurrence": 27,
-   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.",
-   "token": "5"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 323,
-   "occurrence": 28,
-   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 323,
-   "occurrence": 29,
-   "referent": "HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.",
-   "token": "1/2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 30,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 31,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 32,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 33,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 34,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "0"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 35,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "1/2"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 36,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "1"
-  },
-  {
-   "category": "GENERATED-FIXTURE-OR-MEASUREMENT",
-   "line": 324,
-   "occurrence": 37,
-   "referent": "SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.",
-   "token": "1/2"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 333,
-   "occurrence": 38,
-   "referent": "selected action, a nonperturbative QFT, or a reconstruction of the v14/v15 walk.",
-   "token": "14"
-  },
-  {
-   "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 333,
-   "occurrence": 39,
-   "referent": "selected action, a nonperturbative QFT, or a reconstruction of the v14/v15 walk.",
-   "token": "15"
+   "line": 516,
+   "occurrence": 78,
+   "referent": "8. an interference witness that an entanglement-breaking placeholder cannot",
+   "token": "8"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 349,
-   "occurrence": 40,
+   "line": 546,
+   "occurrence": 79,
    "referent": "arXiv:2507.21192.",
    "token": "2507"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 349,
-   "occurrence": 41,
+   "line": 546,
+   "occurrence": 80,
    "referent": "arXiv:2507.21192.",
    "token": "21192"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 351,
-   "occurrence": 42,
-   "referent": "interpretation*, arXiv:hep-th/0509122; and *Probabilities in the general",
-   "token": "0509122"
+   "line": 548,
+   "occurrence": 81,
+   "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "token": "36"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 352,
-   "occurrence": 43,
-   "referent": "boundary formulation*, arXiv:hep-th/0612076.",
-   "token": "0612076"
+   "line": 548,
+   "occurrence": 82,
+   "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "token": "1984"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 354,
-   "occurrence": 44,
-   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839,",
-   "token": "20"
+   "line": 548,
+   "occurrence": 83,
+   "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "token": "219"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 354,
-   "occurrence": 45,
-   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839,",
-   "token": "2003"
+   "line": 548,
+   "occurrence": 84,
+   "referent": "Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,",
+   "token": "272"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 354,
-   "occurrence": 46,
-   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839,",
-   "token": "3839"
+   "line": 549,
+   "occurrence": 85,
+   "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "token": "47"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 355,
-   "occurrence": 47,
-   "referent": "doi:10.1088/0264-9381/20/16/320.",
-   "token": "10"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 355,
-   "occurrence": 48,
-   "referent": "doi:10.1088/0264-9381/20/16/320.",
-   "token": "1088/0264"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 355,
-   "occurrence": 49,
-   "referent": "doi:10.1088/0264-9381/20/16/320.",
-   "token": "9381/20"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 355,
-   "occurrence": 50,
-   "referent": "doi:10.1088/0264-9381/20/16/320.",
-   "token": "16/320"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 357,
-   "occurrence": 51,
-   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002,",
-   "token": "61"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 357,
-   "occurrence": 52,
-   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002,",
-   "token": "2000"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 357,
-   "occurrence": 53,
-   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002,",
-   "token": "024002"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 358,
-   "occurrence": 54,
-   "referent": "doi:10.1103/PhysRevD.61.024002.",
-   "token": "10"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 358,
-   "occurrence": 55,
-   "referent": "doi:10.1103/PhysRevD.61.024002.",
-   "token": "1103"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 358,
-   "occurrence": 56,
-   "referent": "doi:10.1103/PhysRevD.61.024002.",
-   "token": "61"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 358,
-   "occurrence": 57,
-   "referent": "doi:10.1103/PhysRevD.61.024002.",
-   "token": "024002"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 359,
-   "occurrence": 58,
-   "referent": "- T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)",
-   "token": "19"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 359,
-   "occurrence": 59,
-   "referent": "- T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)",
-   "token": "1961"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 360,
-   "occurrence": 60,
-   "referent": "558–571, doi:10.1007/BF02733251.",
-   "token": "558"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 360,
-   "occurrence": 61,
-   "referent": "558–571, doi:10.1007/BF02733251.",
-   "token": "571"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 360,
-   "occurrence": 62,
-   "referent": "558–571, doi:10.1007/BF02733251.",
-   "token": "10"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 360,
-   "occurrence": 63,
-   "referent": "558–571, doi:10.1007/BF02733251.",
-   "token": "1007"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 360,
-   "occurrence": 64,
-   "referent": "558–571, doi:10.1007/BF02733251.",
-   "token": "02733251"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 65,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "104"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 66,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "2010"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 67,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "181301"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 68,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "10"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 69,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "1103"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 70,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "104"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 362,
-   "occurrence": 71,
-   "referent": "Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.",
-   "token": "181301"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 364,
-   "occurrence": 72,
-   "referent": "quantum ensembles having a given density matrix*, Phys. Lett. A 183 (1993)",
-   "token": "183"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 364,
-   "occurrence": 73,
-   "referent": "quantum ensembles having a given density matrix*, Phys. Lett. A 183 (1993)",
+   "line": 549,
+   "occurrence": 86,
+   "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
    "token": "1993"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 74,
+   "line": 549,
+   "occurrence": 87,
+   "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "token": "3345"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 549,
+   "occurrence": 88,
+   "referent": "*Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.",
+   "token": "3382"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 551,
+   "occurrence": 89,
+   "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "token": "9"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 551,
+   "occurrence": 90,
+   "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "token": "1994"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 551,
+   "occurrence": 91,
+   "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "token": "3119"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 551,
+   "occurrence": 92,
+   "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "token": "3127"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 551,
+   "occurrence": 93,
+   "referent": "A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.",
+   "token": "9401003"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 553,
+   "occurrence": 94,
+   "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "token": "12"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 553,
+   "occurrence": 95,
+   "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "token": "2008"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 553,
+   "occurrence": 96,
+   "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "token": "319"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 553,
+   "occurrence": 97,
+   "referent": "Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,",
+   "token": "352"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 554,
+   "occurrence": 98,
+   "referent": "arXiv:hep-th/0509122.",
+   "token": "0509122"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 556,
+   "occurrence": 99,
+   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "token": "20"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 556,
+   "occurrence": 100,
+   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "token": "2003"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 556,
+   "occurrence": 101,
+   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "token": "3839"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 556,
+   "occurrence": 102,
+   "referent": "Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,",
+   "token": "3854"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 557,
+   "occurrence": 103,
+   "referent": "arXiv:hep-th/0302111.",
+   "token": "0302111"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 559,
+   "occurrence": 104,
+   "referent": "Quantum Ensembles Having a Given Density Matrix*, Phys. Lett. A 183 (1993)",
+   "token": "183"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 559,
+   "occurrence": 105,
+   "referent": "Quantum Ensembles Having a Given Density Matrix*, Phys. Lett. A 183 (1993)",
+   "token": "1993"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 560,
+   "occurrence": 106,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "14"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 75,
+   "line": 560,
+   "occurrence": 107,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "18"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 76,
+   "line": 560,
+   "occurrence": 108,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 77,
+   "line": 560,
+   "occurrence": 109,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "1016/0375"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 78,
+   "line": 560,
+   "occurrence": 110,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "9601"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 79,
+   "line": 560,
+   "occurrence": 111,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "93"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 80,
+   "line": 560,
+   "occurrence": 112,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "90880"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 365,
-   "occurrence": 81,
+   "line": 560,
+   "occurrence": 113,
    "referent": "14–18, doi:10.1016/0375-9601(93)90880-9.",
    "token": "9"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 367,
-   "occurrence": 82,
-   "referent": "Phys. Rev. Lett. 87 (2001) 170405,",
+   "line": 562,
+   "occurrence": 114,
+   "referent": "Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,",
    "token": "87"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 367,
-   "occurrence": 83,
-   "referent": "Phys. Rev. Lett. 87 (2001) 170405,",
+   "line": 562,
+   "occurrence": 115,
+   "referent": "Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,",
    "token": "2001"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 367,
-   "occurrence": 84,
-   "referent": "Phys. Rev. Lett. 87 (2001) 170405,",
+   "line": 562,
+   "occurrence": 116,
+   "referent": "Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,",
    "token": "170405"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 368,
-   "occurrence": 85,
-   "referent": "doi:10.1103/PhysRevLett.87.170405.",
+   "line": 563,
+   "occurrence": 117,
+   "referent": "arXiv:quant-ph/0102125.",
+   "token": "0102125"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 565,
+   "occurrence": 118,
+   "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "token": "15"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 565,
+   "occurrence": 119,
+   "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "token": "2003"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 565,
+   "occurrence": 120,
+   "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "token": "629"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 565,
+   "occurrence": 121,
+   "referent": "Channels*, Rev. Math. Phys. 15 (2003) 629–641,",
+   "token": "641"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 566,
+   "occurrence": 122,
+   "referent": "arXiv:quant-ph/0302031.",
+   "token": "0302031"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 568,
+   "occurrence": 123,
+   "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "token": "80"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 568,
+   "occurrence": 124,
+   "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "token": "2009"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 568,
+   "occurrence": 125,
+   "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "token": "022339"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 568,
+   "occurrence": 126,
+   "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "token": "0904"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 568,
+   "occurrence": 127,
+   "referent": "Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.",
+   "token": "4483"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 570,
+   "occurrence": 128,
+   "referent": "and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,",
+   "token": "97"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 570,
+   "occurrence": 129,
+   "referent": "and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,",
+   "token": "2018"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 570,
+   "occurrence": 130,
+   "referent": "and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,",
+   "token": "012127"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 571,
+   "occurrence": 131,
+   "referent": "arXiv:1512.00589.",
+   "token": "1512"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 571,
+   "occurrence": 132,
+   "referent": "arXiv:1512.00589.",
+   "token": "00589"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 573,
+   "occurrence": 133,
+   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "token": "61"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 573,
+   "occurrence": 134,
+   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "token": "2000"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 573,
+   "occurrence": 135,
+   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "token": "024002"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 573,
+   "occurrence": 136,
+   "referent": "Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.",
+   "token": "9904062"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 574,
+   "occurrence": 137,
+   "referent": "- T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)",
+   "token": "19"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 574,
+   "occurrence": 138,
+   "referent": "- T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)",
+   "token": "1961"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 575,
+   "occurrence": 139,
+   "referent": "558–571, doi:10.1007/BF02733251.",
+   "token": "558"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 575,
+   "occurrence": 140,
+   "referent": "558–571, doi:10.1007/BF02733251.",
+   "token": "571"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 575,
+   "occurrence": 141,
+   "referent": "558–571, doi:10.1007/BF02733251.",
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 368,
-   "occurrence": 86,
-   "referent": "doi:10.1103/PhysRevLett.87.170405.",
-   "token": "1103"
+   "line": 575,
+   "occurrence": 142,
+   "referent": "558–571, doi:10.1007/BF02733251.",
+   "token": "1007"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 368,
-   "occurrence": 87,
-   "referent": "doi:10.1103/PhysRevLett.87.170405.",
-   "token": "87"
+   "line": 575,
+   "occurrence": 143,
+   "referent": "558–571, doi:10.1007/BF02733251.",
+   "token": "02733251"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 368,
-   "occurrence": 88,
-   "referent": "doi:10.1103/PhysRevLett.87.170405.",
-   "token": "170405"
+   "line": 577,
+   "occurrence": 144,
+   "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "token": "104"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 370,
-   "occurrence": 89,
-   "referent": "communications*, Phys. Lett. A 143 (1990) 1–2,",
-   "token": "143"
+   "line": 577,
+   "occurrence": 145,
+   "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "token": "2010"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 370,
-   "occurrence": 90,
-   "referent": "communications*, Phys. Lett. A 143 (1990) 1–2,",
-   "token": "1990"
+   "line": 577,
+   "occurrence": 146,
+   "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "token": "181301"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 370,
-   "occurrence": 91,
-   "referent": "communications*, Phys. Lett. A 143 (1990) 1–2,",
-   "token": "1"
+   "line": 577,
+   "occurrence": 147,
+   "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "token": "1001"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 370,
-   "occurrence": 92,
-   "referent": "communications*, Phys. Lett. A 143 (1990) 1–2,",
-   "token": "2"
+   "line": 577,
+   "occurrence": 148,
+   "referent": "Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.",
+   "token": "2725"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 371,
-   "occurrence": 93,
-   "referent": "doi:10.1016/0375-9601(90)90786-N.",
-   "token": "10"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 371,
-   "occurrence": 94,
-   "referent": "doi:10.1016/0375-9601(90)90786-N.",
-   "token": "1016/0375"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 371,
-   "occurrence": 95,
-   "referent": "doi:10.1016/0375-9601(90)90786-N.",
-   "token": "9601"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 371,
-   "occurrence": 96,
-   "referent": "doi:10.1016/0375-9601(90)90786-N.",
-   "token": "90"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 371,
-   "occurrence": 97,
-   "referent": "doi:10.1016/0375-9601(90)90786-N.",
-   "token": "90786"
-  },
-  {
-   "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 98,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 149,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "96"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 99,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 150,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "1976"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 100,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 151,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "88"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 101,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 152,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "135"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 102,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 153,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 103,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 154,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "1016/0003"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 104,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 155,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "4916"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 105,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 156,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "76"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 106,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 157,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "90112"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 373,
-   "occurrence": 107,
-   "referent": "Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
+   "line": 579,
+   "occurrence": 158,
+   "referent": "Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.",
    "token": "3"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 374,
-   "occurrence": 108,
-   "referent": "- D. Lovelock, *The Einstein Tensor and Its Generalizations*, J. Math. Phys. 12",
+   "line": 581,
+   "occurrence": 159,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "12"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 375,
-   "occurrence": 109,
-   "referent": "(1971) 498–501, doi:10.1063/1.1665613.",
+   "line": 581,
+   "occurrence": 160,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "1971"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 375,
-   "occurrence": 110,
-   "referent": "(1971) 498–501, doi:10.1063/1.1665613.",
+   "line": 581,
+   "occurrence": 161,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "498"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 375,
-   "occurrence": 111,
-   "referent": "(1971) 498–501, doi:10.1063/1.1665613.",
+   "line": 581,
+   "occurrence": 162,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "501"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 375,
-   "occurrence": 112,
-   "referent": "(1971) 498–501, doi:10.1063/1.1665613.",
+   "line": 581,
+   "occurrence": 163,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "10"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 375,
-   "occurrence": 113,
-   "referent": "(1971) 498–501, doi:10.1063/1.1665613.",
+   "line": 581,
+   "occurrence": 164,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "1063/1"
   },
   {
    "category": "BIBLIOGRAPHIC-COORDINATE",
-   "line": 375,
-   "occurrence": 114,
-   "referent": "(1971) 498–501, doi:10.1063/1.1665613.",
+   "line": 581,
+   "occurrence": 165,
+   "referent": "12 (1971) 498–501, doi:10.1063/1.1665613.",
    "token": "1665613"
   },
   {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 582,
+   "occurrence": 166,
+   "referent": "- J. Oppenheim, *A Postquantum Theory of Classical Gravity?*, Phys. Rev. X 13",
+   "token": "13"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 583,
+   "occurrence": 167,
+   "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "token": "2023"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 583,
+   "occurrence": 168,
+   "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "token": "041040"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 583,
+   "occurrence": 169,
+   "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "token": "1811"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 583,
+   "occurrence": 170,
+   "referent": "(2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing",
+   "token": "03116"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 585,
+   "occurrence": 171,
+   "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "token": "93"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 585,
+   "occurrence": 172,
+   "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "token": "2016"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 585,
+   "occurrence": 173,
+   "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "token": "024026"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 585,
+   "occurrence": 174,
+   "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "token": "1509"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 585,
+   "occurrence": 175,
+   "referent": "Rev. D 93 (2016) 024026, arXiv:1509.08705.",
+   "token": "08705"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 587,
+   "occurrence": 176,
+   "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "token": "5"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 587,
+   "occurrence": 177,
+   "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "token": "1964"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 587,
+   "occurrence": 178,
+   "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "token": "848"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 587,
+   "occurrence": 179,
+   "referent": "Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,",
+   "token": "861"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 588,
+   "occurrence": 180,
+   "referent": "*Fields, Observables and Gauge Transformations I*, Commun. Math. Phys. 13",
+   "token": "13"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 589,
+   "occurrence": 181,
+   "referent": "(1969) 1–23.",
+   "token": "1969"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 589,
+   "occurrence": 182,
+   "referent": "(1969) 1–23.",
+   "token": "1"
+  },
+  {
+   "category": "BIBLIOGRAPHIC-COORDINATE",
+   "line": 589,
+   "occurrence": 183,
+   "referent": "(1969) 1–23.",
+   "token": "23"
+  },
+  {
    "category": "FORMAL-OR-CORPUS-IDENTIFIER",
-   "line": 379,
-   "occurrence": 115,
-   "referent": "All finite claims above are generated from `v16/code/jrh_exact.py` into the",
+   "line": 594,
+   "occurrence": 184,
+   "referent": "`v16/code/jrh_exact.py` into the paired transcript and JSON receipt using exact",
    "token": "16"
   }
  ],
- "paper_sha256": "ae737af4b22b5e8ce402f45d5bd82130bb28bf6e016e80e504516541c184023e",
- "primary_verdict": "JRH-CONSISTENT-BUT-UNDERDETERMINED",
+ "paper_sha256": "2f5d79266231d036fab180855a8b2ba80d652544e5b3ff55f8a0bee60e228a78",
+ "primary_verdict": "BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED",
  "read_set": [
   {
    "path": "v10/note-d13-literature-audit-action-selection.md",
@@ -1621,35 +2185,39 @@
  "seal_manifest": {
   "algorithm": "sha256-canonical-json",
   "sealed_keys": {
-   "choice_inventory": "9ee27ca2fc09e20ea1b49a8f5b19ce7d35d5135340d7e250ce5b82f95c667582",
-   "claims": "25ec53a728bdb441547bf842907575164e1e27cb218f682d81625a103de17db7",
-   "consequences": "fa2fe5386955bc844ef62c3e08681ae652f590b927caeef19275d093ac9be76a",
-   "gates": "55c0c8a950051ce425d3c0cd93ff320298ea2a5d845c33fc4f008fc3d46a7ab9",
-   "ledger_head": "4959fb1c5646638b3508077e06c050ae4a627f2b58b6e120ef295b27315e51ee",
-   "measurements": "4111e64c967364fc4d769ae6396db28298b9af460f0b401401df96866c5d4ac2",
-   "mutant_survey": "7450238a39a9dea3da9a1460d0901fe2c493ccd2b27d415c16072742b5de6711",
-   "output_sha256": "ab06f85959ab41d2c0fe839ad161ba56e8240c2eee0c4f08020829a698645227",
-   "paper_numeral_inventory": "f8982c0f320732d77cc4b78b738e7830afe3a59ef7c4247a98006d3580f66ebe",
-   "paper_sha256": "12aaca27253bbea4f5eab7ac84074209a9fd2f08ad447bb64cd9a94f2fe60d8f",
-   "primary_verdict": "2d68682c99ae89ac0e15354ceb1217018e1125b85241aa94478a7efca65a94fd",
+   "choice_inventory": "d146b7a8e96dfd0137fdfca6f15ed73a8172f88019e702d91db4df2ad38170e0",
+   "claims": "a8c55608bbec85125dd4efe1762deb2f1690a7a9804407577bc60aed24da7d92",
+   "consequences": "bc2f1332f5575f02ff74fd20a690ddfa913675c71208d0ac8ea77d22af5e58c0",
+   "gates": "3f0be07703557c7ceee3da9598fb7e3385cdda01f81f3cbfadbf3f46efc1f776",
+   "ledger_head": "0246f2f6cbfaeba45096b29a20add782317a0cca5896c303802e5de42f9c528d",
+   "measurements": "db3e31d9afa94964c8fd01b23806238adaf4324a2a1e77792f08ea2758f087af",
+   "mutant_survey": "5f5d85c6b5c8d90dc27e11e977e98005c916af6437ed7784e6a40c0c1d69f25c",
+   "output_sha256": "1da7f15c7c9947af42c16bd9a87fe023729f960c281ebc35fde9f1754c5dc296",
+   "paper_numeral_inventory": "791ab4139073a41a08a190940948e6f78617d1cacf240639fe35e8c8bf12a103",
+   "paper_sha256": "99c396d4d2a391341f2dafaece1d2903732d454a98a29b3f1ea8d72846db450e",
+   "primary_verdict": "f64ae45e4c1a50a3efc9f418996c5e2977ac99cef95edb7357d41fdf1a84a7e3",
    "read_set": "407936a10a0c12285ebacbd449b2e6bad59aba50d475c7a126a019dce83ec7b3",
    "schema": "a5196abf79e891397af797cd1f1ac3354af30445b0f5f2d2be0edca7a0da895a",
    "scope": "282c0106ffceb4dcf78ce9bb788ead445eddf0dd6d3186af22ccc0a32406f860",
-   "secondary_verdicts": "cab8190bd2d428b535206d84641836d01e2a7f9e5055f4c99e23d83a74290dd9",
+   "secondary_verdicts": "42cddff7ffba7afe4fb8a33aea3c103081c170b57f51bb4a4ffd0e749d10e7e2",
    "source_anchors": "7a4fcd272d43c17c788222fcfce087b7c9bb0f6a94a1c5aae872c4c62890ac39",
-   "status": "fb66d63949ba478e95280e7746a024ff26523d257ff8c35d1d9fbe67d41b1e11",
+   "status": "f27ac8b0a3ae18a8fa4b38f622cce2d9bb53280dd461910715baf5efc30a13b9",
    "unit": "e496d1be638f54071d96e5dd07ab9852302d9441eb1d7af6011ebfb5c95ab08c"
   },
   "total_keys_excluding_manifest": 18
  },
  "secondary_verdicts": [
-  "L2-VIABLE",
-  "TRIANGLE-FIRST-LOOP-NOT-FIRST-EVENT",
-  "EPR-SAFE-INSTRUMENT",
-  "HAMILTONIAN-RECOVERABLE-ONLY-RELATIVE-TO-FROZEN-SECTOR-AND-CLOCK",
+  "DYNAMIC-GEOMETRY-NOT-INSTANTIATED",
+  "FEEDFORWARD-EQUIVALENT",
+  "CORE-DIVISION-MAP-ENTANGLEMENT-BREAKING",
+  "L2-INSTRUMENT-VIABLE",
+  "TRIANGLE-FIRST-CYCLE-NOT-FIRST-EVENT",
+  "FIXED-FACTOR-PREPARATION-BLIND",
+  "HAMILTONIAN-ONE-STEP-NONUNIQUE",
   "SPECIES-UNSELECTED",
   "AFFINE-CHANNEL-TERM-UNSELECTED",
-  "NO-FORCED-QFT-GR-DEVIATION-IN-REGISTERED-FAMILY"
+  "QFT-GR-DEVIATIONS-OPEN-UNTYPED",
+  "COMPLEX-RELATIONAL-HISTORY-LAW-CANDIDATE-UNPROVED"
  ],
  "source_anchors": {
   "v10/note-d13-literature-audit-action-selection.md": "efe8792fd2c4fdcd78901b7de93e07fa77e4ef5bf7f652e630525ac8790f4173",
@@ -1666,6 +2234,6 @@
   "v15/paper-50-arity16.md": "3e01a1ce1b39e478482c485a15b6e5847a427310bafcb3370f04fe2ae963a9eb",
   "v6/relativistic-isp-v6-paper57-gravity-from-sealed-records.md": "173143f9ffb91673fe13f8b3a741dd29baaadf542b29720104af49f14f617578"
  },
- "status": "CANDIDATE-PENDING-HOSTILE-REVIEW",
+ "status": "REPAIRED-PENDING-DELTA-VERIFICATION",
  "unit": "v16-paper-01-jrh"
 }

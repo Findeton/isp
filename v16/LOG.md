@@ -162,3 +162,49 @@ The report is frozen verbatim before joint adjudication.  Its grade is
 `REJECT`; that grade is the reviewer's finding, not yet the orchestrator's
 terminal verdict.  No candidate artifact moved, and no v15 SCOUT-T path was
 touched.
+
+## 2026-08-17 — JRH HOSTILE REPAIR DELIVERED: THE TOY IS A BOUNDARY SHADOW; THE DYNAMICAL BET MOVES TO COMPLETE MATTER–GEOMETRY HISTORIES (v16 LEDGER #9)
+
+All twelve #8 repair orders are implemented without altering any v15 SCOUT-T
+path.  The repaired exact artifacts are: paper
+`2f5d79266231d036fab180855a8b2ba80d652544e5b3ff55f8a0bee60e228a78`,
+source `05979a992eb9b3b5c21b29af5736b85cadba744cf847404cb84ab7e6516ff53c`,
+transcript `396f931ade115a2c6cf644bcb670fa2160c6696dc2925426451bf3d8b05901ff`,
+and receipt
+`abe43f42492e88dfc9a279ca95d7143ce8e6e024bca318122d6ff99c3681de99`.
+The battery has 37 of 37 passing gates, 13 of 13 named mutants dying at their
+registered gates, 13 frozen source anchors, no floating-point literals, and an
+18-key total receipt seal.
+
+The principal correction is ontological, not cosmetic.  The delivered
+`G'`/`C'` labels are now proved exactly equivalent to a retained outcome bit;
+the input collar is unused, no relation carrier changes, and the later probe
+does not respond.  The finite construction is therefore published only as a
+fixed-factor CP boundary instrument.  Its unconditioned Z map is explicitly
+entanglement breaking.  A separate exact two-path witness measures coherent
+probability 49/625 before an intermediate division and 337/625 after one, so
+the projective boundary map cannot be iterated as the microscopic law without
+destroying the target quantum effect.
+
+The exact harness now uses a full nominal relabelling check, a complete nominal
+diamond payload comparison, and a genuine three-edge triangle holonomy with
+vertex-frame gauge invariance.  The circular Hamiltonian-packet gate and the
+invalid inference from rival microscopic laws to “no QFT/GR deviation” are
+deleted.  The only licensed deviation verdict is OPEN-UNTYPED.  Consequences
+are bound to exactly `FORCED`, `CONDITIONAL`, `PERMITTED`, `REFUSED`, or `OPEN`.
+
+The serious dynamical candidate is moved one level above the instrument: a
+strongly positive complex decoherence functional over complete finite
+relational histories of matter and geometry, with coherent summation between
+genuine division boundaries and CP instruments only as their boundary
+shadows.  One actual history is the proposed ontology.  Each alternative
+carries its own causal/transport structure, so this is not a quantum process
+on one fixed realized spacetime; the local complex weights, division
+criterion, refinement fixed point, vacuum, scales, species, and continuum
+phase remain unselected.
+
+The status is **REPAIRED-PENDING-DELTA-VERIFICATION**, not terminal.  The root
+`STATUS.md` board is updated here as a forward correction: adjudication #8
+should have updated it in the same commit under RUNBOOK §13 but did not.  The
+next event is a separately frozen delta protocol followed by three independent
+reviewers checking only the load-bearing repair and refined candidate.

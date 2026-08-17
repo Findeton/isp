@@ -1,59 +1,86 @@
 JRH EXACT FINITE BATTERY
-PRIMARY JRH-CONSISTENT-BUT-UNDERDETERMINED
+PRIMARY BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED
 GATES 37 OF 37 PASS
-LEDGER_HEAD 8e284d3bcc1ce723
+LEDGER_HEAD 0fa34c09d2105cf9
 SOURCE_READS 13
 MUTANTS 13 OF 13 DIE AT NAMED GATES
 
 CLAIMS
-PRIMARY: JRH-CONSISTENT-BUT-UNDERDETERMINED
-EXISTENCE: An outcome-resolved dynamic-geometry instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 registered branch maps.
-ARITY: Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.
-HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.
-SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.
-DEVIATION: No dimensionless deviation from QFT or GR is forced across the registered surviving law family.
+PRIMARY: BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED
+EXISTENCE: A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.
+ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.
+HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.
+SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.
+DEVIATION: No QFT or GR comparison observable is typed in this unit; deviations remain open rather than absent.
 
 GATES
 01 G-SOURCE-ANCHOR PASS :: observed source digests match frozen inventory at 13 of 13 paths
 02 G-A1-TOTAL-OUTCOMES PASS :: complete-successor mass is one at 4 of 4 exact input rows
-03 G-A2-DIRECT-SUM-TYPES PASS :: domain/output geometry-sector types close at 4 of 4 rows
+03 G-A2-NOMINAL-BRANCH-TYPES PASS :: matrix blocks and nominal branch-key positions close at 4 of 4 rows
 04 G-A3-NO-CELL-NORMALIZATION PASS :: one complete outcome carries 3 simultaneous pair writes; cells are payload, not sample space
-05 G-A4-RELABEL PASS :: the full actor-plus-write boundary commutes with the registered cyclic relabelling
+05 G-A4-RELABEL PASS :: the complete nominal successor map commutes with the registered cyclic boundary relabelling
 06 G-B1-CP PASS :: Kraus-Gram Choi certificates pass 90 exact principal-minor checks across 6 branch maps
 07 G-B2-TRACE-PRESERVING PASS :: sum K-dagger-K equals identity for 3 of 3 registered channel families
 08 G-B3-AFFINITY PASS :: classical-quantum output respects the registered rational mixture of weight 1/3 block by block
 09 G-B4-HJW-BLIND PASS :: Z and X pure-state ensembles equal I/2 and produce identical complete local instrument blocks
-10 G-B5-NO-SIGNALLING PASS :: Alice's Z/X steering choice leaves Bob's unconditioned record-plus-geometry blocks identical
+10 G-B5-NO-SIGNALLING PASS :: Alice's Z/X steering choice leaves Bob's unconditioned complete nominal branch blocks identical
 11 G-B6-POSITIVE-CONTROL PASS :: decomposition-reading control separates Z/X at 1 versus 0 and violates affinity at 0 versus 1
-12 G-C1-BRANCH-RESOLUTION PASS :: realized flux, output collar, and durable record agree on all 2 complete branches
-13 G-C2-NONTRIVIAL-GEOMETRY PASS :: 2 reachable geometry labels are separated by the registered later geometry probe
-14 G-C3-MEAN-DRIVEN-CONTROL PASS :: mean outcome 1/2 is not an actual geometry label; thresholding it violates affinity at 1 versus 1/2
-15 G-C4-COLLAR PASS :: same relation and geometry with distinct collar data has distinguishable exact successor distributions
-16 G-D1-L2-VIABLE PASS :: the two-actor complete successor jointly writes the pair fact, state block, geometry/collar and record
-17 G-D2-IDLE-SPECTATOR PASS :: tensoring an irrelevant third actor and tracing it back reproduces every local branch exactly
-18 G-D3-DISJOINT-DIAMOND PASS :: both construction orders agree on all 4 complete branches while the Bell input keeps non-factorized outcome correlations
-19 G-D4-FIRST-LOOP PASS :: cycle ranks are 0, 0, 1 for K2, the three-actor path, and the triangle; triangle holonomy is [['1i', '0'], ['0', '-1i']]
-20 G-D5-ARITY-NONSEQUITUR PASS :: a valid L2 instrument and a valid joint three-support parity instrument coexist; no robust irreducibility claim is made
-21 G-E1-FROZEN-RECOVERY PASS :: with a declared unit clock, the frozen-sector integer phase generator reconstructs diag(1,i) exactly
-22 G-E2-BRANCH-AMBIGUITY PASS :: 5 distinct registered generator lifts yield the identical one-step transfer operator
-23 G-E3-PACKET-WALL PASS :: Hamiltonian comparison packet carries all 6 registered components; a bare matrix is not the comparison object
-24 G-E4-DYNAMIC-SECTOR-OBSTRUCTION PASS :: pure input has purity 1 while the same-sector classical-quantum output has purity 1/2; a unitary dilation is possible but not selected
-25 G-F1-SPECIES-UNDERDETERMINATION PASS :: same four-site relational cycle admits identity degeneracy 4 and a shift with 4 exact one-dimensional phase modes
-26 G-F2-AFFINE-SPLIT PASS :: CPTP dephasing has channel translation ['0', '0', '0'] while CPTP reset has ['0', '0', '1']
-27 G-F3-RIVAL-LAW PASS :: rival passes 9 of 9 repeated safety checks and yields record statistics {'0': '1', '1': '0'} versus {'0': '1/2', '1': '1/2'}
-28 G-F4-DEVIATION-STANDARD PASS :: rival admissible microscopic statistics prevent any law-family-invariant QFT/GR deviation from being inferred
-29 G-F5-SCALE-WALL PASS :: the finite candidate contains no generated dimensionful datum; Newton, mass, cutoff and cosmological values remain unpriced
+12 G-B7-ENTANGLEMENT-BREAKING PASS :: the unconditioned Z division map sends the Bell state to the exact separable 00/11 mixture of purity 1/2
+13 G-B8-DIVISION-BOUNDARY PASS :: unresolved rational paths give 49/625 while an inserted intermediate record gives 337/625
+14 G-C1-BRANCH-MEMORY PASS :: the output collar label and durable record copy the outcome on all 2 nominal branches
+15 G-C2-FEEDFORWARD-EQUIVALENCE PASS :: input bit plus retained record reconstruct every published geometry/collar label and its only later readout
+16 G-C3-BINARY-MEAN-CONTROL PASS :: in this binary pointer alphabet the mean 1/2 is not a label, and the registered threshold rule violates affinity at 1 versus 1/2
+17 G-C4-COLLAR-UNINSTANTIATED PASS :: changing the input collar leaves the delivered successor exactly unchanged; no collar dynamics is instantiated
+18 G-D1-L2-INSTRUMENT PASS :: the two-actor projective instrument writes a pair-keyed nominal branch and durable outcome record
+19 G-D2-IDLE-SPECTATOR PASS :: tensoring an irrelevant third actor and tracing it back reproduces every local branch exactly
+20 G-D3-DISJOINT-DIAMOND PASS :: both orders agree on quantum blocks and every nominal payload field for all 4 disjoint branches
+21 G-D4-FIRST-LOOP PASS :: cycle ranks are 0, 0, 1; a three-edge oriented loop has gauge-invariant trace 0 and determinant 1
+22 G-D5-ARITY-NONSEQUITUR PASS :: a valid L2 instrument and a valid joint three-support parity instrument coexist; no robust irreducibility claim is made
+23 G-E1-FROZEN-RECOVERY PASS :: with a declared unit clock, the frozen-sector integer phase generator reconstructs diag(1,i) exactly
+24 G-E2-BRANCH-AMBIGUITY PASS :: 5 distinct registered generator lifts yield the identical one-step transfer operator
+25 G-E3-UNCONDITIONED-CHANNEL-NONUNITARY PASS :: pure matter input has purity 1 while the unconditioned enlarged classical-quantum output has purity 1/2; a unitary dilation is possible but not selected
+26 G-F1-MODE-LAW-DEPENDENCE PASS :: one four-site carrier admits an identity degeneracy and a shift with 4 exact one-dimensional phase modes; neither is a particle census
+27 G-F2-AFFINE-SPLIT PASS :: CPTP dephasing has channel translation ['0', '0', '0'] while CPTP reset has ['0', '0', '1']
+28 G-F3-RIVAL-LAW PASS :: rival passes 9 of 9 boundary-instrument checks and yields record statistics {'0': '1', '1': '0'} versus {'0': '1/2', '1': '1/2'}
+29 G-F4-CONSEQUENCE-VOCABULARY PASS :: all 28 consequence rows use exactly one of the five registered classification words
 30 G-G2-DETERMINISM PASS :: two independent exact core builds are byte-identical before rendering
 31 G-G1-CLI PASS :: plain and selftest parse; unknown syntax is rejected before construction
 32 G-G3-SELFTEST PASS :: observed source-anchor corruption dies at its named gate and changes no artifact bytes
 33 G-G4-MUTANTS-MOVE PASS :: all 13 registered mutants move measured objects and die at their named gates
 34 G-G7-READ-SET PASS :: sole accessor read set equals all 13 frozen path/digest anchors
 35 G-G8-PORTABILITY PASS :: foreign-CWD exact rebuild matches and all reads remain explicit; git is unused
-36 G-G6-CLAIM-EQUALITY PASS :: two-way claim keys and exact strings agree; all 115 paper numeral occurrences carry line-level referent classes
+36 G-G6-CLAIM-EQUALITY PASS :: two-way claim keys and exact strings agree; all 184 paper numeral occurrences carry line-level referent classes
 37 G-G5-TOTAL-SEAL PASS :: clean seal passes; post-seal add and edit controls both die before promotion
 
 MEASUREMENTS
 {
+ "bell_after_division": [
+  [
+   "1/2",
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0",
+   "0",
+   "1/2"
+  ]
+ ],
+ "coherent_probability": "49/625",
  "complete_row_total": 4,
  "complete_rows": 4,
  "cp_branch_maps": 6,
@@ -71,6 +98,9 @@ MEASUREMENTS
  ],
  "diamond_branches": 4,
  "dimensionful_inputs": [],
+ "divided_probability": "337/625",
+ "entanglement_breaking": true,
+ "feedforward_equivalent": true,
  "hamiltonian_lifts": [
   [
    0,
@@ -113,14 +143,14 @@ MEASUREMENTS
  ],
  "rival_safety": {
   "affinity": true,
-  "branch_geometry": true,
-  "collar": true,
+  "branch_record": true,
   "cp_tp": true,
   "disjoint_diamond": true,
   "hjw": true,
   "idle_spectator": true,
   "no_signalling": true,
-  "normalization": true
+  "normalization": true,
+  "relabel": true
  },
  "rival_safety_passes": 9,
  "rival_safety_total": 9,
@@ -146,28 +176,39 @@ MEASUREMENTS
    "0",
    "-1i"
   ]
- ]
+ ],
+ "triangle_holonomy_determinant": "1",
+ "triangle_holonomy_trace": "0"
 }
 
 CONSEQUENCES
-joint dynamic-geometry instrument :: FORCED-IN-REGISTERED-ARENA :: An exact outcome-resolved CP instrument exists in the finite arena.
-two-actor occurrence :: FORCED-IN-REGISTERED-ARENA :: The L2 construction passes with an idle spectator; pair viability does not imply universal pair factorization.
-three actors :: FORCED-AS-FIRST-LOOP-ONLY :: A triangle is the first closed relational loop, not a derived minimum event arity.
-EPR and no-signalling :: FORCED-BY-ADMISSIBILITY-GATE :: HJW-equivalent ensembles and remote steering choices give identical unconditioned local outputs.
-ontic pure-state nonlinear rule :: REFUSED-AT-THIS-OPERATIONAL-READING :: The registered decomposition-reading control violates affinity and enables the steering signal.
-global fundamental Hamiltonian :: REFUSED-AS-A-DERIVED-OBJECT :: The changing-geometry instrument supplies no canonical same-sector unitary or generator.
-frozen-sector Hamiltonian :: CONDITIONAL :: It is reconstructible only after choosing a sector, clock and logarithm branch; multiple lifts are equivalent at one step.
-particle species :: OPEN-AND-UNSELECTED :: Different admissible transfer laws on the same ontology have different mode inventories.
-affine-coset event rule :: OPEN-AND-UNSELECTED :: The joint-law architecture neither derives the affine-line coset nor the old three-actor grammar.
-channel affine translation :: PERMITTED-BUT-UNSELECTED :: Both zero and nonzero translations occur in exact CPTP channels.
-cosmological integration constant :: OPEN-AND-UNSELECTED :: No continuum constraint/Bianchi system is built in this unit.
-Newton or area scale :: REFUSED-AS-DERIVED :: No weight-nonzero datum is generated; the earlier scale wall remains.
-dimensionless gravitational coupling :: OPEN :: A selected vacuum, matter law and continuum matching map are missing.
-GR limit :: CONDITIONAL :: Requires a continuum/refinement limit and a discrete deformation or covariance closure selecting an effective gravitational action.
-QFT limit :: CONDITIONAL :: Requires a selected vacuum, stable excitation/Fock reconstruction, locality and continuum scaling.
-macroscopic geometry noise :: PERMITTED :: Outcome-geometry correlation exists, but its scale and coarse-grained observability are unselected.
-higher-curvature deviations :: PERMITTED :: Finite loops allow such terms; no coefficient or sign is selected.
-forced QFT/GR deviation :: REFUSED-IN-REGISTERED-FAMILY :: Rival laws survive with different microscopic statistics, so no common dimensionless deviation is fixed.
-existing ISP walk :: OPEN :: No full representation-packet reconstruction is attempted.
+branch-resolved CP boundary instrument :: FORCED :: The exact Z instrument exists and is independently checkable from its Kraus maps.
+joint dynamic-geometry instrument :: REFUSED :: The delivered geometry and collar are reconstructible copied memory and no relation carrier changes.
+two-actor projective occurrence :: FORCED :: A typed pair-supported instrument exists and has an exact idle-spectator extension.
+two-actor gravitational backreaction :: OPEN :: No calibrated source, relation rewrite, constraint, or geometric response is constructed.
+three actors as first simple-graph cycle :: FORCED :: The exact connected simple-graph cycle ranks are 0, 0, and 1.
+three actors as minimum event arity :: REFUSED :: The L2 instrument is a counterexample and no universal arity law is derived.
+fixed-factor preparation blindness :: FORCED :: Blockwise linearity makes all decompositions of one density operator operationally equal.
+growing-geometry no-signalling :: OPEN :: Relational subsystem algebras and their output-sector embeddings are not defined.
+registered decomposition-reading control :: REFUSED :: It violates affinity and produces the registered steering signal.
+every ontic pure-state dynamics :: OPEN :: One bad ensemble functional does not classify the full ontic branch.
+coherent propagation through the displayed division map :: REFUSED :: The unconditioned projective map is entanglement breaking.
+complex whole-history representation :: PERMITTED :: The exact interference witness requires coherent alternatives before a record boundary, but does not select their amplitudes.
+one-step Hamiltonian uniqueness :: REFUSED :: Infinitely many logarithm lifts share the registered transfer once a clock is chosen.
+global Hamiltonian representation :: OPEN :: No canonical one is supplied, while larger-space dilations remain possible.
+particle species :: OPEN :: No selected law, vacuum, statistics, stability criterion, or scattering map exists.
+affine-coset event rule :: OPEN :: The older affine-line grammar is untouched.
+channel affine translation fixed by CP/TP :: REFUSED :: Exact unital and nonunital CPTP channels both exist.
+cosmological integration constant :: OPEN :: No continuum metric constraint or Bianchi system exists here.
+Newton or area scale derived here :: REFUSED :: No dimensionful or weight-nonzero datum is generated.
+dimensionless matter-gravity coupling :: OPEN :: Matter load and geometric response have not been independently typed.
+GR limit :: OPEN :: No geometric action, deformation closure, scale map, or continuum limit is constructed.
+QFT limit :: OPEN :: No local algebra net, vacuum, statistics, excitation sectors, or continuum limit is constructed.
+geometry-induced decoherence :: OPEN :: The measured dephasing is ordinary record-forgetting, not an independent geometry effect.
+metric noise :: OPEN :: No metric or macroscopic coarse-graining is typed.
+higher-curvature correction :: OPEN :: A loop transport exists, but no gravitational curvature action or coefficient is selected.
+modified dispersion :: OPEN :: There is no momentum, energy, continuum clock, or dispersion observable.
+forced QFT/GR deviation :: OPEN :: No comparison observable or exhaustive surviving law family is defined.
+existing ISP walk reconstruction :: OPEN :: The qubit fixture is not a map from the committed walk.
 
 END JRH EXACT FINITE BATTERY

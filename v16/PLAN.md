@@ -2,23 +2,27 @@
 
 ## Paper 01 — JRH: a joint relational-history law
 
-Status: **PIN**.
+Status: **REPAIRED AFTER HOSTILE ADJUDICATION; DELTA VERIFICATION PENDING**.
 
 The paper tests the strongest serious version of the current conjecture:
 
-> The fundamental law is a probability law for complete finite relational
-> histories between genuine division boundaries.  One complete outcome
-> jointly updates pair-relations/records, geometry including its boundary
-> momentum or collar, and the predictive process state.  Quantum instruments,
-> path amplitudes, fields, and Hamiltonians are representations of that law
-> unless an independent beable map promotes them.
+> The ontology is one actual relational history.  The fundamental predictive
+> law is a strongly positive complex functional over complete finite histories
+> of relations, geometry, matter/process content, and records between genuine
+> division boundaries.  Ordinary probabilities and CP instruments are its
+> boundary shadows where alternatives have durably decohered.  Fields,
+> amplitudes, actions, and Hamiltonians are representations unless an
+> independent beable map promotes invariant content.
 
 The work is split into five locked stages.
 
 1. **Finite existence and safety.**  Construct an exact classical-quantum
-   direct-sum instrument with actual outcome-resolved geometry change; test
+   direct-sum instrument with claimed outcome-resolved geometry change; test
    normalization, complete positivity, operational affinity, EPR/HJW
-   preparation-independence, no-signalling, and disjoint composition.
+   preparation-independence, no-signalling, and disjoint composition.  **Panel
+   result:** the instrument is sound at fixed factorization, but the geometry
+   is eliminable feed-forward and the unconditioned map is entanglement
+   breaking.
 2. **Arity and curvature.**  test a viable two-actor occurrence, idle-spectator
    extension, arbitrary finite joint support, and the separate statement that
    three actors are the first possible closed relational loop—not necessarily
@@ -35,7 +39,10 @@ The work is split into five locked stages.
 5. **Independent demolition.**  freeze the delivered candidate, then commission
    three mutually independent hostile reports: mathematical/operator,
    gravity/covariance, and quantum/operational.  Adjudicate every finding before
-   repair or terminalization.
+   repair or terminalization.  **Completed:** two `REJECT`, one
+   `ACCEPT-WITH-FIXES`; adjudication #8 issued twelve binding repairs.  A
+   focused independent delta round must now test those repairs and the refined
+   whole-history candidate.
 
 ## Successor register
 
@@ -50,4 +57,3 @@ Nothing below is authorized by this plan alone.
   law-selected rather than declared.
 - A phenomenology unit, only after at least one dimensionless deviation is
   fixed across the surviving law family.
-

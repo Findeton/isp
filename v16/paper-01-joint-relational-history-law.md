@@ -1,382 +1,599 @@
-# The missing object is a law over complete relational histories
+# The law one level above the Hamiltonian
 
-## Candidate paper — hostile-review version
+## Complete relational histories, division boundaries, and the dynamics still missing
+
+**Status:** final finite result plus a serious unproved candidate for the
+fundamental law.
 
 ### Abstract
 
-This paper tests a proposed completion of ISP rather than announcing one.  The
-candidate says that a fundamental occurrence is a complete finite relational
-history between genuine division boundaries.  A single outcome jointly changes
-binary relational records, effective geometry with continuation/collar data,
-and the predictive process state.  Quantum states, instruments, actions,
-fields, and Hamiltonians begin as representations of that history law rather
-than as the ontology itself.
+The proposed ontology is one actual relational history: relations, durable
+records, effective causal/transport geometry, and physical contents change
+together.  A wave function, density matrix, action, field, transfer matrix, or
+Hamiltonian is a representation of the law over possible histories, not an
+additional substance merely because it appears in the equations.
 
-An exact finite construction shows that this package is coherent at one small
-but important level.  Outcome-resolved geometry change can be represented by a
-linear completely positive instrument; it need not use expectation-valued
-semiclassical backreaction or a decomposition-sensitive nonlinear update.  A
-two-actor occurrence is viable with an idle spectator, while three actors are
-only the first carrier of a closed loop.  The canonical remotely steerable
-equal-density ensembles remain operationally indistinguishable, so the finite
-candidate does not turn EPR steering into signalling.  A Hamiltonian is
-recoverable in a frozen sector only after a clock and logarithm branch are
-chosen.
+An exact finite test identifies where that proposal must live.  A
+branch-resolved projective instrument is completely positive, trace preserving,
+affine, preparation-independent, and non-signalling in a fixed one-region Bell
+test.  But the labels originally attached to it as geometry and collar are
+exactly reconstructible from an ordinary retained outcome bit.  No relation
+carrier changes and the input collar is ignored.  The model is therefore
+prediction-equivalent to a projective measurement followed by classical
+feed-forward; it is not a model of back-reacting spacetime.
 
-The demolition is more important.  A second law on the identical ontology
-passes the same structural safety conditions and predicts different records.
-The ontology plus jointness, locality, affinity, and covariance therefore does
-not select the dynamics.  It fixes no particle list, affine channel term,
-cosmological value, gravitational scale, or dimensionless deviation from QFT or
-GR.  The primary candidate verdict is `JRH-CONSISTENT-BUT-UNDERDETERMINED`.  This is an exact
-finite existence-and-no-selection result, not quantum gravity.
+The same test reveals why a boundary instrument cannot be the microscopic law.
+Its unconditioned map is entanglement breaking.  A separate exact rational
+two-path example gives coherent probability
+`49/625` before an intermediate record
+and `337/625` after one is inserted.  If
+the projective map were applied at every relational rewrite, it would erase the
+interference the theory is meant to explain.
 
-### The idea without formalism
+The refined bet is consequently a strongly positive complex decoherence
+functional over complete finite relational histories of matter and geometry.
+Coherent alternatives are summed between genuine division boundaries.  A CP
+instrument and one actual durable successor emerge only at a partition where
+the functional decoheres.  Geometry back-reacts history by history because
+each alternative contains its own relation and transport data; no expectation
+value is fed nonlinearly into a classical metric.  This proposal has genuine
+dynamical form, but its local complex weights, division criterion, refinement
+fixed point, vacuum, scales, and continuum phase remain unselected.  The exact
+primary verdict is `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
 
-Think of reality not as objects moving across a pre-existing stage but as an
-expanding engineering log.  Each accepted transaction says which actors became
-related, what local routing/geometry now exists, what information can be carried
-forward, and what durable fact was written.  Those are not four successive
-jobs.  They are four readings of one committed transaction.
+### The idea without technical language
 
-The most important correction to the earlier three-actor picture is that a
-record is binary but an occurrence need not be.  Two actors can create or alter
-one relation and thereby change the local geometry.  Three actors become special
-only because a closed route can first be drawn among them.  A loop lets one
-compare transport around different paths and therefore first makes curvature
-meaningful.  That does not imply that nature groups every interaction into
-triples.  A region can contain two, three, or many actors, and its law can assign
-probabilities to the whole compatible network change at once.
+Imagine that reality is an expanding transaction history, not objects moving
+on a stage that exists independently of them.  A transaction may change who
+can affect whom, what durable fact exists, and how later signals can travel.
+Those are different readings of one physical occurrence.
 
-This is the relational analogue of what a field accomplishes in QFT.  A field
-is not a command to execute isolated particle collisions serially; it packages
-degrees of freedom and their joint local evolution across a region.  Here the
-corresponding object is a compatible regional successor instrument over a
-changing relation network.  Pair facts are its local alphabet.  A finite joint
-rewrite is its interaction.  Stable normal modes of a selected large-network
-law would be the place to look for particles.
+There is an important quantum qualification.  Before a durable receipt exists,
+several possible internal routes can combine and cancel or reinforce one
+another.  Treating every internal route as an already completed transaction
+destroys that effect.  The law must therefore speak about a whole stretch of
+possible relational history at once.  Only when the alternatives have left
+distinguishable, stable records may the law assign ordinary probabilities to
+them and select one actual continuation.
 
-### What exists, what is law, and what is representation
+This gives the Hamiltonian its classical philosophical status back.  It can be
+an extremely useful compressed description of repeated evolution in a sector
+where the geometry and clock have been held fixed.  It is not automatically
+what exists.  What exists is the relational history; what is fundamental law
+is the rule assigning coherent weights and eventual record probabilities to
+such histories.
 
-The proposal keeps three levels separate.
+### Ontology, law, and representation
 
-**Ontology.**  One actual relational history exists.  Its durable elementary
-facts are pair relations and records.  Effective geometry is encoded by the
-actual pattern of relations and transport data, together with boundary collar
-data that carries how that geometry can continue.  The mathematical catalogue
-of possible graphs may be fixed once; the realized spacetime is not.  Its
-relations, adjacency, carrier, and continuation data change with the actual
-outcome and affect later possibilities.
+The proposal separates three levels.
 
-**Law.**  For a genuine finite division region, the law assigns chances to
-mutually exclusive complete successors.  Each successor contains the new
-relations, new geometry/collar, new predictive state, and record.  Probabilities
-normalize over those complete successors.  Three pair cells written in one
-triple occurrence are simultaneous consequences, not three competing outcomes.
+**Ontology.**  Exactly one realized relational history exists.  Its elementary
+durable facts are relations and records.  Effective geometry is not an extra
+bit named `geometry`; it must be a rule-governed property of the realized
+relation and transport structure that controls later reachability,
+composition, or measured interval data.  A boundary collar is geometric only
+if it carries typed continuation data constrained by that structure.
 
-**Representation.**  In the finite construction the law is encoded by a
-classical-quantum instrument: one completely positive map for each complete
-outcome, with their sum trace preserving.  This is a representation of the law.
-It does not prove that density matrices or Kraus operators are beables.  A
-history action, path amplitude, wave function, transfer matrix, or Hamiltonian
-would likewise need an explicit map back to complete history probabilities and
-records before receiving ontological status.
+**Law.**  The law concerns the complete possible histories between genuine
+division boundaries.  It need not factor into a sequence of physically real
+micro-updates.  Mutually exclusive complete recorded successors are the sample
+points of ordinary probability.  Several cells or relations written inside
+one successor are simultaneous consequences, not competing outcomes.
 
-This point is compatible with Barandes's programme of treating Hilbert-space
-objects as secondary representations of an indivisible stochastic process, but
-the present conjecture is not merely Barandes on a new graph.  Here the actual
-spacetime carrier and its local geometry back-react in the same transaction.
-The stage is not physically fixed.
+**Representation.**  Hilbert spaces, class operators, amplitudes, density
+operators, instruments, process tensors, actions, and Hamiltonians may encode
+the law.  Their gauge-dependent parts are not promoted to ontology.  A
+representation earns physical meaning by mapping its invariant content to
+history probabilities, durable records, and relational observables.
 
-### The finite construction
+One actual history does not imply a classical probability distribution over
+every microscopic route.  Counterfactual histories may interfere in the law
+that assigns the chance of the one realized recorded history, just as paths in
+a path integral need not be individually actual.
 
-The exact arena uses rational and Gaussian-rational matrices, finite qubit
-carriers, binary geometry labels, and boundaries of two through four actors.
-It is deliberately too small to be called spacetime physics.  It isolates the
-type constraints that any larger dynamics must satisfy.
+The Barandes-inspired move here is the inversion of ontology and
+representation: the process law and actual events are primary, while the
+wave-function description is not automatically substance.  The present
+candidate does not place that process on a fixed realized stage.  The
+mathematical catalogue of possible relational histories may be fixed, but the
+causal and transport structure of the realized history is itself part of the
+outcome.  Each alternative carries its own geometry rather than evolving on
+one externally supplied spacetime.
 
-The core two-actor instrument has outcome maps
+### Exact finite results
 
-`J_z(rho) = P_z rho P_z`,
+#### A safe boundary instrument
 
-where the same complete outcome writes the pair relation, stores outcome `z`,
-and changes the geometry/collar label by `z`.  The direct sum over `z` preserves
-the branch identity.  Geometry reacts to the realized transfer rather than to
-an ensemble expectation.  A later registered probe reads different lawful
-continuations from the two geometry labels, so the output is not discarded
-bookkeeping inside the toy.
+For projectors `P_z`, define the outcome maps
 
-The construction checks 6 branch maps by 90 exact Choi
-principal-minor certificates, in addition to exact Kraus completeness.  The
-full transcript carries 37 gate rows and authenticates 13
-frozen corpus sources.  These are instrument counts, not continuum evidence.
+`J_z(rho) = P_z rho P_z`.
 
-The decisive comparison is with two bad replacements.
+The exact battery checks 6 branch maps by 90 Choi
+principal-minor certificates and exact Kraus completeness.  Its transcript has
+37 passing gates and authenticates 13 frozen source
+files.  The complete direct-sum output is linear in `rho`.  Therefore every
+ensemble decomposition of one density operator gives the same output under
+the fixed instrument, not only the displayed Z and X ensembles.
 
-- A mean-driven geometry uses the average outcome.  On the balanced state the
-  average lies between the two allowed actual geometries; retaining it loses a
-  realized branch, while thresholding it is nonlinear under mixing.
-- A preparation-decomposition rule reads which pure-state ensemble was used.
-  It distinguishes the canonical Z and X ensembles of the same maximally mixed
-  state.  In a Bell-pair steering realization Alice can select those ensembles,
-  so the rule changes Bob's local statistics.  The linear instrument stays
-  blind to that choice.
+For a Bell pair, Alice's Z and X steering choices prepare different ensembles
+of Bob's same reduced state.  Bob's unconditioned complete blocks remain equal
+under the registered fixed-factor instrument.  The deliberately
+decomposition-reading statistic instead changes from
+`1` to
+`0` and is non-affine.  This proves a
+fixed-factor safety result.  It does not prove no-signalling when the outcome
+changes which relational algebra counts as Bob's subsystem.
 
-This is the right correction to v15's delivered nonlinear update.  Backreaction
-does not require feeding an expectation value into geometry.  It can be a
-correlation in a complete outcome: each actual branch carries its own geometry.
-The ensemble map remains affine because the branch-resolved output is retained.
+#### The geometry eliminability theorem
 
-### Why two actors work and why three still matter
+In every delivered branch the nominal outputs obey
 
-The exact L2 occurrence changes one pair fact, its geometry/collar, its process
-state block, and its record.  Tensoring an irrelevant third actor and tracing it
-back gives the identical local branch maps.  Two separated pair occurrences
-also commute as complete instruments even on a correlated Bell input; their
-probabilities need not factor.
+`G' = g xor record` and `C' = record`.
 
-The graph calculation then separates arity from curvature.  The two-actor edge
-and a three-actor open path have zero cycle rank.  A triangle has the first
-cycle, and a nontrivial exact quaternionic transport around it supplies a
-holonomy witness.  Thus:
+The only later probe returns the reconstructed label, and changing the input
+collar changes no successor.  Erasing `G'` and `C'` while retaining the input
+bit and outcome record leaves every declared prediction recoverable exactly.
+Thus the finite model is equivalent to ordinary measurement plus classical
+feed-forward.  Its purity loss is ordinary loss from ignoring a record, not
+evidence that gravity caused decoherence.
 
-> Three actors are the first context in which relational curvature can be
-> tested.  They are not thereby the smallest possible occurrence.
+This is a constructive refusal, not a no-go against relational gravity.  A
+valid successor must perform an actual relation or transport rewrite and use a
+fixed geometric rule to change later availability or propagation.  Renaming a
+controller bit is insufficient.
 
-The paper also constructs a valid joint three-support parity instrument.  This
-shows that higher-support complete laws are expressible; it does not establish
-robust irreducibility.  A three-body map may admit a sequential dilation with an
-ancilla even when the inserted intermediate steps are not physical division
-events.  The all-arity extension theorem and the classification of genuine
-division boundaries remain missing.
+#### Division events cannot occur at every rewrite
 
-### The Hamiltonian returns to being a representation
+On one half of a Bell pair, the unconditioned Z instrument produces exactly
 
-On a frozen two-level geometry sector, choosing one boundary interval as a
-clock gives the transfer `diag(1,i)`.  The exact battery exhibits 5
-distinct integer phase-generator lifts with that same one-step image.  One
-transfer matrix therefore does not select one logarithm or one Hamiltonian.
+`(1/2)|00><00| + (1/2)|11><11|`,
 
-For the backreacting instrument the stronger obstruction is type-level.  A pure
-matter input becomes a classical-quantum mixture over distinct geometry
-sectors, with exact purity changing from 1
-to 1/2.  It cannot be the unitary
-endomorphism of the original fixed matter sector.  A Stinespring dilation on a
-larger fixed mathematical space certainly can be written, but the choice of
-environment, geometry embedding, clock, and unravelling is additional
-representation data.  The instrument does not select it.
+a separable state of purity `1/2`.  The
+map is entanglement breaking.
 
-Accordingly, the proper reconstruction target is a packet: generator, state,
-instruments and observables, clock/cut, and beable map.  Matching only a matrix
-or spectrum is not enough.  A global Hamiltonian may become useful after a
-background, foliation, or relational clock is chosen; it is not the fundamental
-object in this proposal.
+The independent rational interference fixture uses the exact orthogonal
+rotation
 
-### The hostile result already inside the construction
+```text
+R = [[3/5, 4/5], [-4/5, 3/5]].
+```
 
-The proposal's strongest version said, in effect, “this is the missing law.”
-The exact result supports only “this is a viable type for the missing law.”
+For return to the first output after two rotations, the two intermediate path
+amplitudes are `9/25` and `-16/25`.  Summing them before squaring gives
+`49/625`.  Inserting an intermediate
+record makes the path probabilities add and gives
+`337/625`.  The difference is exact.
 
-Hold fixed the actors, relation records, binary geometry outcomes, complete
-successor grammar, CP/trace/affinity requirements, backreaction pattern, and
-no-signalling.  One admissible law resolves the Z alternatives.  Another
-resolves the X alternatives.  On the same input, the first gives deterministic
-record statistics and the second gives a balanced pair.  Both satisfy the
-architecture.  Therefore the architecture has not selected transition weights,
-an action, or even a prediction-equivalent class.
+Therefore the projective instrument is a possible shadow at a genuine record
+boundary, not a universal microscopic successor.  A fundamental law must keep
+coherent histories available between such boundaries.
 
-The choice inventory contains 15 named items, of which 12
-remain free or missing under the displayed classification.  The exact counts
-are less important than their types: the remaining choices include the history
-weights/action, genuine division boundaries, all-arity extension, vacuum,
-continuum map, readout, and scale.  No amount of renaming the instrument as “the
-kernel” pays those debts.
+#### Arity and loops
+
+A pair-supported projective instrument exists and survives an idle spectator.
+This establishes typed two-actor viability only; it does not establish
+gravitational backreaction.  A higher-support parity instrument also exists,
+so pair-record ontology does not imply pair-factorized dynamics.
+
+The cycle ranks of a two-actor edge, a three-actor path, and a triangle are
+respectively `0`,
+`0`, and
+`1`.  The repaired loop uses three
+oriented edge transports, reverse edges as inverses, and a vertex-frame gauge
+transformation.  Its trace `0`
+and determinant `1` are
+unchanged.  This licenses a finite transport-loop statement, not Regge or
+spacetime curvature.
+
+Three actors are therefore the first cycle context in this simple-graph
+family.  They are not the minimum interaction arity.  A regional law may
+contain pair, triple, and arbitrary finite support in parallel, just as a field
+theory packages simultaneous local degrees of freedom rather than enforcing
+one universal collision size.
+
+#### Underdetermination
+
+The Z- and X-resolving instruments obey the same uncalibrated carrier and
+output grammar and pass the same fixed boundary-instrument safety surface.
+On the same input they predict record distributions
+`{'0': '1', '1': '0'}` and
+`{'0': '1/2', '1': '1/2'}`.  Hence CP, normalization,
+affinity, fixed-factor no-signalling, relabelling, idle-spectator extension,
+and disjoint composition do not select the instrument.
+
+This does not prove nonselection after an independently calibrated flux,
+branchwise conservation, overlapping refinement, or continuum deformation
+closure is imposed.  Z and X are different observables until such a common
+calibration exists.  The exact result is nonselection by the present weak
+surface.
+
+### The refined dynamical candidate
+
+Let `Hist(B_-,B_+)` be the finite complete relational histories between two
+boundary records.  A history `h` contains at least:
+
+- its changing relation and causal/transport structure `R_h`;
+- boundary continuation data `C_h`;
+- matter or process configurations `q_h`;
+- every durable record actually formed; and
+- typed maps identifying the same boundary fact across refinements.
+
+For a coarse history question `A`, define a class operator by coherent
+summation,
+
+`K_A = sum_(h in A) a[h] V[h]`,
+
+where `V[h]` transports the process state along the geometry of that same
+history and `a[h]` is its complex scalar weight.  Define
+
+`D(A,B) = Tr(K_A rho_boundary K_B^dagger)`.
+
+The candidate law is the compatible family of these functionals, not one
+instantaneous wave function.  It must be Hermitian, normalized, additive under
+coarse graining, and strongly positive.  It must also satisfy:
+
+1. **regional gluing:** shared unrecorded boundaries are summed/contracted and
+   disjoint regions compose;
+2. **refinement consistency:** two descriptions of one region push forward to
+   the same boundary functional;
+3. **relational locality:** a remote pre-contact intervention cannot alter a
+   local unconditioned boundary law;
+4. **branchwise constraints:** invalid relation, flux, gauge, or geometric
+   histories have zero amplitude, and valid histories satisfy the discrete
+   conservation/closure law on every branch;
+5. **record permanence:** a durable record defines a stable orthogonal sector
+   under every licensed future continuation; and
+6. **nontrivial coherence:** at least one unrecorded refinement retains an
+   off-diagonal term, so the theory is not a classical stochastic growth law
+   in disguise.
+
+A partition `{A_alpha}` is a genuine division boundary only when
+
+`D(A_alpha,A_beta) = 0` for distinct recorded alternatives.
+
+Then, and only then, ordinary probabilities are licensed:
+
+`p(alpha) = D(A_alpha,A_alpha)`.
+
+Conditioned on the actual recorded past `H`, the next complete recorded
+successor has
+
+`p(alpha | H) = D(H alpha,H alpha) / D(H,H)`
+
+when the denominator is nonzero and the successor partition decoheres.  One
+`alpha` becomes actual by an objective stochastic postulate.  The normalized
+conditional state on that branch may be nonlinear because of conditioning;
+the unconditioned complete law remains preparation-independent.
+
+The finite result uses exact zero off-diagonal terms.  A macroscopic theory
+would need a quantitative and refinement-stable error theorem for approximate
+decoherence before an approximate division could count as physical; no
+threshold is declared here.
+
+#### A concrete local-weight ansatz
+
+The least empty dynamical ansatz is
+
+`a[h] = product_v exp(-I_v[h]/2 + i Theta_v[h])`,
+
+with the product over local relational vertices/regions.  `I_v` is an
+information or record-distinguishability cost and `Theta_v` is an oriented
+phase/transport functional.  They are evaluated on the same local
+matter-geometry history, so backreaction is not appended afterward.  They must
+remain distinct: a positive probability shadow does not determine the phase
+data responsible for interference.
+
+This ansatz is concrete but not selected.  Its serious selector is a
+universality problem rather than a slogan:
+
+`R_coarse(D_*) = D_*`,
+
+where `R_coarse` sums fine relational histories to a coarse boundary
+functional.  The fixed point must simultaneously satisfy overlap gluing,
+changing-factorization no-signalling, branchwise conservation, nontrivial
+coherence, and a continuum deformation/refoliation closure.  A family of fixed
+points or relevant directions is expected; boundary conditions and measured
+couplings may remain physical data.  If only a trivial/topological or
+entanglement-breaking fixed point survives, the proposal fails.
+
+### How gravity would have to emerge
+
+Geometry must do work through the relation/transport structure, not through a
+label.  At minimum a local history must change `R` to `R'`; a predeclared graph
+or transport rule must then change a later interaction's availability or
+amplitude.  Matter flux must be defined independently of the outcome name, and
+each history must satisfy a boundary balance law.  Neighboring loop transports
+must obey a discrete closure/Bianchi relation, and two unphysical cuts of one
+overlapping region must induce the same boundary functional.
+
+The candidate differs from expectation-sourced semiclassical gravity.  It
+does not calculate an average stress tensor and feed that average back into one
+classical branch.  Matter and geometry are varied/summed jointly as parts of
+each complete history.  The actual geometry is the geometry of the selected
+recorded history.
+
+There are then two empirical forks.
+
+- If distinct geometry histories remain coherent until a genuine record forms,
+  gravity need not cause universal microscopic decoherence.
+- If geometry is classical and distinguishing at every microscopic step, it
+  continually records the matter alternatives.  Decoherence and stochastic
+  geometric noise then become unavoidable conditional consequences, with a
+  quantitative tradeoff fixed only after the coupling and division rate are
+  selected.
+
+The present finite model realizes neither gravitational branch; it realizes
+ordinary detector feed-forward.
+
+### EPR and locality
+
+The density-operator-complete boundary instrument removes the registered
+decomposition-sensitive signalling mechanism at fixed factorization.  It is a
+consistent replacement, not a derivation from an earlier nonlinear rule.
+
+For growing geometry, no-signalling must be stated on relational local
+algebras.  Summing over every outcome of a remote pre-contact intervention must
+leave Bob's boundary functional invariant after the correct sector embedding,
+even if Alice's outcome creates or deletes relations elsewhere.  This is a
+constraint on the complete history functional and its gluing maps.  A partial
+trace on one frozen tensor product is not enough.
+
+An ontic pure-state variable is not ruled out in general.  It is viable only if
+its complete composite law is preparation-independent wherever remote steering
+is operationally phrasable, or if the extra structure cannot be remotely
+selected.  The registered decomposition-reading functional fails this test.
+
+### Hamiltonian reconstruction
+
+In the frozen two-level fixture, one boundary transfer is `diag(1,i)`.  The
+receipt displays 5 exact witnesses, while the full integer family is
+`(4m,1+4n)`.  After choosing a duration `Delta t`, units, and sign convention,
+the energy branches differ by integer multiples of `2 pi hbar / Delta t`.
+One discrete transfer therefore does not select a Hamiltonian.
+
+A Hamiltonian can emerge when a selected phase contains:
+
+- a stable background or relational clock;
+- repeated thin boundaries on one identifiable state space;
+- continuity or a semigroup/group law;
+- locality and spectral conditions; and
+- a chosen logarithm branch and units.
+
+Then `H` is the generator of that effective transfer representation.  On a
+changing carrier the more natural objects may be class operators, regional
+amplitudes, combs, or process tensors.  A larger fixed-space unitary dilation
+can always repackage many channels, but its environment, clock, and embedding
+are additional representation choices.  None becomes ontology by notation.
+
+### Particles, species, and interactions
+
+A finite transfer matrix's eigenvectors are not particles.  In the serious
+candidate, species would be sought only after a nontrivial refinement fixed
+point and vacuum are selected.  Stable irreducible perturbations or localized
+superselection sectors around that phase are species candidates.  Exchange
+statistics require a permutation or braid action and the appropriate local
+observable algebra; pair records alone neither force nor forbid bosons and
+fermions.
+
+Interactions are the multilinear/fusion terms among those stable sectors, or
+equivalently the local vertices in the coarse history functional.  Pair,
+triple, and higher effective vertices can coexist.  The number three has no
+universal particle or interaction status merely because a triangle is the
+first loop.
+
+The exact identity-versus-shift example proves only that different unspecified
+transfer laws on one finite carrier have different spectral partitions.  It
+therefore establishes that the current ontology does not select a particle
+list; it does not show that species can never be derived from a selected law.
+
+### Constants, scales, and possible deviations
+
+Three uses of “affine” or “constant” remain separate.
+
+- The old affine-coset event grammar is untouched.
+- Complete positivity and trace preservation do not select a channel's affine
+  Bloch translation; exact unital and reset channels give zero and nonzero
+  translations.
+- A cosmological constant is not typed until an effective metric constraint
+  system exists.  At a continuum fixed point it could be a relevant coupling
+  or boundary/integration datum; the current law does not choose its value.
+
+Dimensionless record data cannot create an absolute meter, second, mass, or
+Newton constant without a scale-bearing input or dimensional transmutation
+with a calibrated observable.  The proposal might derive ratios or critical
+exponents before it derives a unit.
+
+The consequence ledger is therefore deliberately conservative:
+
+| topic | classification | reason |
+|---|---|---|
+| branch-resolved CP boundary instrument | FORCED | The exact Z instrument exists and is independently checkable from its Kraus maps. |
+| joint dynamic-geometry instrument | REFUSED | The delivered geometry and collar are reconstructible copied memory and no relation carrier changes. |
+| two-actor projective occurrence | FORCED | A typed pair-supported instrument exists and has an exact idle-spectator extension. |
+| two-actor gravitational backreaction | OPEN | No calibrated source, relation rewrite, constraint, or geometric response is constructed. |
+| three actors as first simple-graph cycle | FORCED | The exact connected simple-graph cycle ranks are 0, 0, and 1. |
+| three actors as minimum event arity | REFUSED | The L2 instrument is a counterexample and no universal arity law is derived. |
+| fixed-factor preparation blindness | FORCED | Blockwise linearity makes all decompositions of one density operator operationally equal. |
+| growing-geometry no-signalling | OPEN | Relational subsystem algebras and their output-sector embeddings are not defined. |
+| registered decomposition-reading control | REFUSED | It violates affinity and produces the registered steering signal. |
+| every ontic pure-state dynamics | OPEN | One bad ensemble functional does not classify the full ontic branch. |
+| coherent propagation through the displayed division map | REFUSED | The unconditioned projective map is entanglement breaking. |
+| complex whole-history representation | PERMITTED | The exact interference witness requires coherent alternatives before a record boundary, but does not select their amplitudes. |
+| one-step Hamiltonian uniqueness | REFUSED | Infinitely many logarithm lifts share the registered transfer once a clock is chosen. |
+| global Hamiltonian representation | OPEN | No canonical one is supplied, while larger-space dilations remain possible. |
+| particle species | OPEN | No selected law, vacuum, statistics, stability criterion, or scattering map exists. |
+| affine-coset event rule | OPEN | The older affine-line grammar is untouched. |
+| channel affine translation fixed by CP/TP | REFUSED | Exact unital and nonunital CPTP channels both exist. |
+| cosmological integration constant | OPEN | No continuum metric constraint or Bianchi system exists here. |
+| Newton or area scale derived here | REFUSED | No dimensionful or weight-nonzero datum is generated. |
+| dimensionless matter-gravity coupling | OPEN | Matter load and geometric response have not been independently typed. |
+| GR limit | OPEN | No geometric action, deformation closure, scale map, or continuum limit is constructed. |
+| QFT limit | OPEN | No local algebra net, vacuum, statistics, excitation sectors, or continuum limit is constructed. |
+| geometry-induced decoherence | OPEN | The measured dephasing is ordinary record-forgetting, not an independent geometry effect. |
+| metric noise | OPEN | No metric or macroscopic coarse-graining is typed. |
+| higher-curvature correction | OPEN | A loop transport exists, but no gravitational curvature action or coefficient is selected. |
+| modified dispersion | OPEN | There is no momentum, energy, continuum clock, or dispersion observable. |
+| forced QFT/GR deviation | OPEN | No comparison observable or exhaustive surviving law family is defined. |
+| existing ISP walk reconstruction | OPEN | The qubit fixture is not a map from the committed walk. |
+
+No QFT/GR deviation is presently typed, which is different from proving that
+there is none.  Conditional possibilities include geometry-correlated
+decoherence/noise in the always-classical branch, higher-derivative or nonlocal
+operators away from a continuum fixed point, and multi-time memory not visible
+in one-time channels.  Lorentz violation is not forced by discreteness.  No
+coefficient, scale, or even presence of these effects is selected here.
+
+### Choice inventory
 
 | item | status |
 |---|---|
 | pair records as atomic durable facts | ONTOLOGY-ASSUMED |
 | complete outcome as probability sample point | TYPE-FORCED |
 | operational CP-affinity/no-signalling | ADMISSIBILITY-ASSUMED |
-| finite geometry alphabet | FREE |
-| collar representation | FREE-UP-TO-PREDICTIVE-SUFFICIENCY |
-| Z-projective candidate law | FREE |
+| copied binary geometry alphabet | REJECTED-AS-GEOMETRY |
+| delivered collar representation | REJECTED-AS-UNUSED |
+| Z-projective division instrument | FREE |
 | X-projective rival law | FREE-CONTROL |
-| history amplitudes/action | MISSING |
-| division boundaries | MISSING-BEYOND-FIXTURE |
+| complex whole-history functional | MISSING |
+| local matter-geometry amplitudes/action | MISSING |
+| genuine division boundaries | MISSING |
 | all-n extension law | MISSING |
 | vacuum | MISSING |
 | clock/logarithm branch | FREE-IN-REPRESENTATION |
 | continuum/coarse-graining map | MISSING |
 | absolute scale | MISSING-BY-WALL |
-| readout connecting toy geometry to metric observations | MISSING |
+| relational geometry and metric readout | MISSING |
 
-### What could actually select the law
-
-The serious refined bet is now narrower and testable.  The joint instrument is
-the right container.  Its content should be constrained by the conjunction of:
-
-1. **regional gluing:** equivalent decompositions of one finite region give the
-   same boundary instrument, with no fake intermediate division events;
-2. **refinement/path independence:** changing an unphysical slicing or
-   refinement leaves complete boundary probabilities invariant;
-3. **local covariance and causal composition:** disjoint regions compose and
-   overlap data admit consistent extensions;
-4. **record permanence and outcome-resolved flux:** realized local transfers
-   change both durable facts and the geometry that controls later locality;
-5. **quantum operational safety:** affinity, complete positivity where the
-   standard operational state applies, HJW preparation-independence, and
-   compositional no-signalling;
-6. **a classical deformation-algebra limit:** coarse boundary moves reproduce
-   the refoliation/path-independence structure of relativistic geometry; and
-7. **a nontrivial renormalization fixed point:** many microscopic refinements
-   flow to one stable long-distance law and vacuum.
-
-The first five constrain a microscopic history law.  The sixth is where an
-Einstein/Regge-like effective action might be selected rather than guessed.  In
-four continuum dimensions, Lovelock-type and Hojman-Kuchar-Teitelboim results
-show how strong locality, derivative, field-content, and deformation-algebra
-assumptions can isolate Einstein dynamics up to constants.  They do not select
-the microscopic ISP kernel, and importing Einstein's action would be a target
-fit, not a derivation.  The seventh is what could turn normal modes into robust
-species rather than fixture-dependent eigenvectors.
-
-One serious speculative representation is a boundary class operator obtained
-by summing amplitudes over finite relational histories with fixed boundary
-data, using one local weight for both matter transport and geometric deficit.
-That resembles general-boundary and spin-foam state sums and can encode the
-joint transaction cleanly.  But an unrestricted choice of history weights can
-represent almost any instrument.  Until gluing/refinement and the continuum
-constraint algebra reduce that family, the action is an IOU, not the answer.
-
-### Direct and indirect consequences
-
-The classification below uses “forced” only relative to the registered finite
-admissibility family.  “Permitted” means an example exists; it is not a
-prediction.
-
-| topic | classification | reason |
-|---|---|---|
-| joint dynamic-geometry instrument | FORCED-IN-REGISTERED-ARENA | An exact outcome-resolved CP instrument exists in the finite arena. |
-| two-actor occurrence | FORCED-IN-REGISTERED-ARENA | The L2 construction passes with an idle spectator; pair viability does not imply universal pair factorization. |
-| three actors | FORCED-AS-FIRST-LOOP-ONLY | A triangle is the first closed relational loop, not a derived minimum event arity. |
-| EPR and no-signalling | FORCED-BY-ADMISSIBILITY-GATE | HJW-equivalent ensembles and remote steering choices give identical unconditioned local outputs. |
-| ontic pure-state nonlinear rule | REFUSED-AT-THIS-OPERATIONAL-READING | The registered decomposition-reading control violates affinity and enables the steering signal. |
-| global fundamental Hamiltonian | REFUSED-AS-A-DERIVED-OBJECT | The changing-geometry instrument supplies no canonical same-sector unitary or generator. |
-| frozen-sector Hamiltonian | CONDITIONAL | It is reconstructible only after choosing a sector, clock and logarithm branch; multiple lifts are equivalent at one step. |
-| particle species | OPEN-AND-UNSELECTED | Different admissible transfer laws on the same ontology have different mode inventories. |
-| affine-coset event rule | OPEN-AND-UNSELECTED | The joint-law architecture neither derives the affine-line coset nor the old three-actor grammar. |
-| channel affine translation | PERMITTED-BUT-UNSELECTED | Both zero and nonzero translations occur in exact CPTP channels. |
-| cosmological integration constant | OPEN-AND-UNSELECTED | No continuum constraint/Bianchi system is built in this unit. |
-| Newton or area scale | REFUSED-AS-DERIVED | No weight-nonzero datum is generated; the earlier scale wall remains. |
-| dimensionless gravitational coupling | OPEN | A selected vacuum, matter law and continuum matching map are missing. |
-| GR limit | CONDITIONAL | Requires a continuum/refinement limit and a discrete deformation or covariance closure selecting an effective gravitational action. |
-| QFT limit | CONDITIONAL | Requires a selected vacuum, stable excitation/Fock reconstruction, locality and continuum scaling. |
-| macroscopic geometry noise | PERMITTED | Outcome-geometry correlation exists, but its scale and coarse-grained observability are unselected. |
-| higher-curvature deviations | PERMITTED | Finite loops allow such terms; no coefficient or sign is selected. |
-| forced QFT/GR deviation | REFUSED-IN-REGISTERED-FAMILY | Rival laws survive with different microscopic statistics, so no common dimensionless deviation is fixed. |
-| existing ISP walk | OPEN | No full representation-packet reconstruction is attempted. |
-
-The clean phenomenological verdict is therefore negative.  The candidate has
-no forced deviation from QFT or GR.  Discrete higher-curvature corrections,
-outcome-correlated metric noise, nonunitary matter evolution after geometry is
-ignored, and species-dependent dispersion are all possible in members of the
-family.  Their coefficients, scaling, and even presence depend on the missing
-law.  Listing them as predictions would invert the logic of the investigation.
-
-The EPR consequence is more definite but scoped.  Replacing v15's
-decomposition-sensitive update by a proper outcome-resolved instrument removes
-that specific signalling gun.  This does not derive relativistic microcausality,
-Bell locality, or a continuum light cone.  It says only that backreaction and
-standard mixture consistency are compatible when the complete branch, including
-geometry, is retained.
-
-The affine question divides into three independent debts.  The old affine-line
-coset that selected three-actor records is untouched.  A channel's affine
-translation is not fixed because exact unital and reset channels both satisfy
-CP and trace preservation.  A cosmological constant is not even typed before a
-continuum gravitational constraint system exists; in the earlier unimodular
-branch it remains an integration/boundary datum.  None should borrow a result
-from another merely because the word “affine” or “constant” appears.
+The architecture has named the correct level of the missing object but has not
+chosen its content.  In particular, writing an action for arbitrary weights is
+not selection; any sufficiently regular law can be rewritten in action form.
 
 ### Candidate verdicts
 
 Primary:
 
-`JRH-CONSISTENT-BUT-UNDERDETERMINED`
+`BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`
 
 Secondary:
 
-- `L2-VIABLE`
-- `TRIANGLE-FIRST-LOOP-NOT-FIRST-EVENT`
-- `EPR-SAFE-INSTRUMENT`
-- `HAMILTONIAN-RECOVERABLE-ONLY-RELATIVE-TO-FROZEN-SECTOR-AND-CLOCK`
+- `DYNAMIC-GEOMETRY-NOT-INSTANTIATED`
+- `FEEDFORWARD-EQUIVALENT`
+- `CORE-DIVISION-MAP-ENTANGLEMENT-BREAKING`
+- `L2-INSTRUMENT-VIABLE`
+- `TRIANGLE-FIRST-CYCLE-NOT-FIRST-EVENT`
+- `FIXED-FACTOR-PREPARATION-BLIND`
+- `HAMILTONIAN-ONE-STEP-NONUNIQUE`
 - `SPECIES-UNSELECTED`
 - `AFFINE-CHANNEL-TERM-UNSELECTED`
-- `NO-FORCED-QFT-GR-DEVIATION-IN-REGISTERED-FAMILY`
+- `QFT-GR-DEVIATIONS-OPEN-UNTYPED`
+- `COMPLEX-RELATIONAL-HISTORY-LAW-CANDIDATE-UNPROVED`
 
 Machine-equal claim block:
 
 ```text
-PRIMARY: JRH-CONSISTENT-BUT-UNDERDETERMINED
-EXISTENCE: An outcome-resolved dynamic-geometry instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 registered branch maps.
-ARITY: Two-actor dynamics is viable in the fixture; cycle ranks 0, 0, 1 make three actors the first loop context, not the first event.
-HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the complete backreacting output changes purity from 1 to 1/2.
-SELECTION: The same ontology admits main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the architecture does not select the law.
-DEVIATION: No dimensionless deviation from QFT or GR is forced across the registered surviving law family.
+PRIMARY: BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED
+EXISTENCE: A fixed-factor boundary instrument passes exact CP, trace, affinity, HJW and no-signalling checks across 6 branch maps, but its geometry labels are feed-forward equivalent.
+ARITY: A two-actor projective instrument is viable; cycle ranks 0, 0, 1 make three actors the first simple-graph cycle, not the first event.
+HAMILTONIAN: The frozen transfer has 5 tested generator lifts with one image, while the unconditioned boundary output changes purity from 1 to 1/2.
+SELECTION: The same uncalibrated carrier and output grammar admit main statistics {'0': '1', '1': '0'} and rival statistics {'0': '1/2', '1': '1/2'}; the weak safety surface does not select a law.
+DEVIATION: No QFT or GR comparison observable is typed in this unit; deviations remain open rather than absent.
 ```
 
-### Scope and missing work
+### Smallest decisive next test
 
-This paper proves an exact finite consistency example and an exact
-underdetermination counterexample.  It does not provide a Lorentzian continuum,
-Einstein equations, a graviton, a particle, a vacuum, a cross-scale map, a
-selected action, a nonperturbative QFT, or a reconstruction of the v14/v15 walk.
-Its geometry labels implement the algebraic role of outcome-dependent future
-connectivity; they are not a measured metric.  Its process regions are declared
-fixtures; genuine division events are not yet derived.
+The next exact arena should use three actors with overlapping supports `AB`
+and `BC`, plus one external probe actor.  It must include:
 
-The next worthwhile unit is therefore not a larger particle census.  It is a
-law-selection attack: enumerate a finite but genuinely broad family of regional
-instruments and ask whether gluing under competing refinements plus a discrete
-deformation-algebra condition leaves a unique prediction-equivalence class.  If
-many survive, the programme needs a new physical principle.  If none survive,
-the joint-law conjecture is wrong in its present form.  Only if one robust class
-survives should species, couplings, and deviations be computed.
+1. two refinements/cuts of the same regional history;
+2. an actual relation or transport rewrite, not a copied label;
+3. a downstream interaction whose availability is computed from the output
+   relation structure;
+4. equality of the complete boundary decoherence functional under both cuts;
+5. closure of overlapping deformations into independently defined boundary
+   transport;
+6. branchwise flux conservation and a geometry-validity constraint;
+7. a fixed-factor and changing-factorization no-signalling census; and
+8. an interference witness that an entanglement-breaking placeholder cannot
+   pass.
+
+A neighboring-loop four-actor closure test should follow.  Only after these
+survive is it meaningful to search for an all-arity law, a vacuum, species, or
+continuum deviations.
+
+### Falsifiers of the refined bet
+
+The proposal fails, rather than merely remaining incomplete, if any of the
+following is proved at the intended scope:
+
+- no strongly positive compatible functional exists when relations and local
+  subsystem types change;
+- overlap/refinement equality forces every allowed functional to be classical,
+  topological, or entanglement breaking;
+- no intrinsic record criterion separates coherent internal alternatives from
+  actual division boundaries;
+- branchwise conservation and changing geometry are incompatible with
+  compositional no-signalling; or
+- every nontrivial fixed point misses both the QFT benchmarks and a Lorentzian
+  gravitational continuum.
+
+Conversely, consistency alone is not confirmation.  The candidate becomes
+physical only when a selected fixed point predicts a held-out dimensionless
+observable or a controlled QFT/GR limit.
 
 ### Primary literature anchors
 
 - J. A. Barandes, *Quantum Systems as Indivisible Stochastic Processes*,
   arXiv:2507.21192.
-- R. Oeckl, *General boundary quantum field theory: Foundations and probability
-  interpretation*, arXiv:hep-th/0509122; and *Probabilities in the general
-  boundary formulation*, arXiv:hep-th/0612076.
-- E. Hawkins, F. Markopoulou, H. Sahlmann, *Evolution in Quantum Causal
-  Histories*, Class. Quantum Grav. 20 (2003) 3839,
-  doi:10.1088/0264-9381/20/16/320.
-- D. P. Rideout, R. D. Sorkin, *A Classical Sequential Growth Dynamics for
-  Causal Sets*, Phys. Rev. D 61 (2000) 024002,
-  doi:10.1103/PhysRevD.61.024002.
+- R. B. Griffiths, *Consistent Histories and the Interpretation of Quantum
+  Mechanics*, J. Stat. Phys. 36 (1984) 219–272; M. Gell-Mann and J. B. Hartle,
+  *Classical Equations for Quantum Systems*, Phys. Rev. D 47 (1993) 3345–3382.
+- R. D. Sorkin, *Quantum Mechanics as Quantum Measure Theory*, Mod. Phys. Lett.
+  A 9 (1994) 3119–3127, arXiv:gr-qc/9401003.
+- R. Oeckl, *General Boundary Quantum Field Theory: Foundations and
+  Probability Interpretation*, Adv. Theor. Math. Phys. 12 (2008) 319–352,
+  arXiv:hep-th/0509122.
+- E. Hawkins, F. Markopoulou, and H. Sahlmann, *Evolution in Quantum Causal
+  Histories*, Class. Quantum Grav. 20 (2003) 3839–3854,
+  arXiv:hep-th/0302111.
+- L. P. Hughston, R. Jozsa, and W. K. Wootters, *A Complete Classification of
+  Quantum Ensembles Having a Given Density Matrix*, Phys. Lett. A 183 (1993)
+  14–18, doi:10.1016/0375-9601(93)90880-9.
+- C. Simon, V. Buzek, and N. Gisin, *No-Signaling Condition and Quantum
+  Dynamics*, Phys. Rev. Lett. 87 (2001) 170405,
+  arXiv:quant-ph/0102125.
+- M. Horodecki, P. W. Shor, and M. B. Ruskai, *Entanglement Breaking
+  Channels*, Rev. Math. Phys. 15 (2003) 629–641,
+  arXiv:quant-ph/0302031.
+- G. Chiribella, G. M. D'Ariano, and P. Perinotti, *Theoretical Framework for
+  Quantum Networks*, Phys. Rev. A 80 (2009) 022339, arXiv:0904.4483.
+- F. M. Pollock et al., *Non-Markovian Quantum Processes: Complete Framework
+  and Efficient Characterization*, Phys. Rev. A 97 (2018) 012127,
+  arXiv:1512.00589.
+- D. P. Rideout and R. D. Sorkin, *A Classical Sequential Growth Dynamics for
+  Causal Sets*, Phys. Rev. D 61 (2000) 024002, arXiv:gr-qc/9904062.
 - T. Regge, *General Relativity Without Coordinates*, Nuovo Cimento 19 (1961)
   558–571, doi:10.1007/BF02733251.
-- D. M. T. Benincasa, F. Dowker, *The Scalar Curvature of a Causal Set*, Phys.
-  Rev. Lett. 104 (2010) 181301, doi:10.1103/PhysRevLett.104.181301.
-- L. P. Hughston, R. Jozsa, W. K. Wootters, *A complete classification of
-  quantum ensembles having a given density matrix*, Phys. Lett. A 183 (1993)
-  14–18, doi:10.1016/0375-9601(93)90880-9.
-- C. Simon, V. Buzek, N. Gisin, *No-Signaling Condition and Quantum Dynamics*,
-  Phys. Rev. Lett. 87 (2001) 170405,
-  doi:10.1103/PhysRevLett.87.170405.
-- N. Gisin, *Weinberg's non-linear quantum mechanics and supraluminal
-  communications*, Phys. Lett. A 143 (1990) 1–2,
-  doi:10.1016/0375-9601(90)90786-N.
-- S. A. Hojman, K. Kuchar, C. Teitelboim, *Geometrodynamics Regained*, Ann.
-  Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.
-- D. Lovelock, *The Einstein Tensor and Its Generalizations*, J. Math. Phys. 12
-  (1971) 498–501, doi:10.1063/1.1665613.
+- D. M. T. Benincasa and F. Dowker, *The Scalar Curvature of a Causal Set*,
+  Phys. Rev. Lett. 104 (2010) 181301, arXiv:1001.2725.
+- S. A. Hojman, K. Kuchar, and C. Teitelboim, *Geometrodynamics Regained*,
+  Ann. Phys. 96 (1976) 88–135, doi:10.1016/0003-4916(76)90112-3.
+- D. Lovelock, *The Einstein Tensor and Its Generalizations*, J. Math. Phys.
+  12 (1971) 498–501, doi:10.1063/1.1665613.
+- J. Oppenheim, *A Postquantum Theory of Classical Gravity?*, Phys. Rev. X 13
+  (2023) 041040, arXiv:1811.03116; A. Tilloy and L. Diosi, *Sourcing
+  Semiclassical Gravity from Spontaneously Localized Quantum Matter*, Phys.
+  Rev. D 93 (2016) 024026, arXiv:1509.08705.
+- R. Haag and D. Kastler, *An Algebraic Approach to Quantum Field Theory*, J.
+  Math. Phys. 5 (1964) 848–861; S. Doplicher, R. Haag, and J. E. Roberts,
+  *Fields, Observables and Gauge Transformations I*, Commun. Math. Phys. 13
+  (1969) 1–23.
 
 ### Exact artifact statement
 
-All finite claims above are generated from `v16/code/jrh_exact.py` into the
-paired transcript and receipt.  The source uses exact arithmetic and a frozen
-read whitelist.  This manuscript is a candidate reading until its independent
-operator, gravity, and quantum hostile reports are frozen and adjudicated.
+Every finite numerical and matrix claim in this paper is regenerated from
+`v16/code/jrh_exact.py` into the paired transcript and JSON receipt using exact
+rational or Gaussian-rational arithmetic.  The dynamical functional and its
+continuum fixed point are explicitly conjectural and have no generated
+coefficient.  This paper proves a boundary-instrument result, an eliminability
+no-go, an entanglement-breaking consequence, an interference placement
+constraint, and weak-surface nonselection.  It does not prove quantum gravity.
