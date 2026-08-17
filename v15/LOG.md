@@ -1987,3 +1987,60 @@ instrument only — the type-error reframing lands in the
 scout and future units; ECC stays HELD-UNSEALED for any
 user-ordered erratum after).
 
+## 2026-08-16 — THE HOMONYM AUDIT FROZEN: ONE REALIZED TYPE ERROR CORPUS-WIDE (THE DIAGNOSED ONE); FIVE OPEN CANDIDATES, ALL NAMING-LEVEL; THE FIVE SPLITS RULED FORWARD-BINDING (v15 LEDGER #56)
+
+v15/note-homonym-audit.md frozen this commit — the E-34.3
+terminology registry.  36 terms audited read-only across
+the live corpus.
+
+THE DIVISION-EVENT MAP (three formal senses): R (v11's
+renewal marker, inherited by papers 04-10/15/18/22 — the
+R<->G identification was a DISCLOSED posit, type-audited
+in place at paper-09:402-406); G (the three-actor grammar
+event — papers 13-41 and v15; crisp at paper-41:96-98);
+C (CELL-HIT — papers 20/24/25, DISC, CONTRACT's influence
+row).  The G<->C collision at ECC paper-46:447-449 is
+where Mp=3q was born, and the audit found WHY the homonym
+stayed hidden: BOTH SENSES WRITE THE SAME REGISTER
+n_l(x), at arities 3 vs 1 — the shared register masked
+the type split until an equation forced them together.
+
+VERDICTS: 9 SINGLE-SENSE; 22 DISCLOSED-POLYSEMY (incl.
+the prompt's asks: state honors CONTRACT's
+reading-relative ruling everywhere, one flagged tension
+at sealed paper-47:458; saturating's fork published on
+every row; window's four instance-types all qualified);
+FIVE OPEN TYPE-ERROR-CANDIDATES, no second realized
+error.
+
+THE FIVE SPLITS, RULED FORWARD-BINDING THIS ENTRY (E-34
+rule 3 style; sealed papers not rewritten; every new pin
+binds these in its term table):
+1. MENU splits: EVENT-MENU (grammar, offers events) /
+   EMISSION-MENU (the walk's cell menu; Born and record
+   weightings live here) / GRAIN-MENU (CONTRACT's
+   admissible actor grains).
+2. CARRIER: actor-participants are ACTORS, never
+   carriers; the quantum host is the QUANTUM CARRIER
+   (H_G); lattice/grammar carriers keep their qualified
+   forms.
+3. SEAM: bare "seam" = the shared SITE (SEC-2's binding);
+   the completion data are the SEAM DATUM / SEAM
+   COMPLETION — the audit notes E-34 rule 1's refusal
+   condition was ALREADY STANDING between sealed
+   paper-40 and paper-43/46.
+4. HISTORY: mandatory qualifiers — GRAMMAR-HISTORY vs
+   EMISSION-HISTORY (post-split these are sequences of
+   different event types; the scout's S4 joint object
+   must say which it joins).
+5. CHART: the charts-successor pin OWES the binding table
+   before the COSET-FROM-COMPATIBILITY argument runs —
+   the a=q upgrade must not be argued at the wrong
+   object (PLAN:27 flagged).
+The scout and every in-flight worker inherit these splits
+where their language touches them; risky sealed sites
+(paper-43:420, paper-46:60, paper-46:540-542,
+paper-43:221, paper-47:458) are REGISTRY-FLAGGED for the
+user-optional erratum pass on ECC and any future
+supersessions — no seal reopened by this entry.
+
