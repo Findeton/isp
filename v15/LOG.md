@@ -3064,3 +3064,37 @@ Worker battery green (6/6 byte-identical across seeds
 and CWDs; 31/31 out-of-harness; LOG-append probe
 byte-identical).  Orchestrator battery next; on green
 the scout CLOSES AS A SEALED SCOUT NOTE per #73.
+
+## 2026-08-17 — SCOUT-BRIDGE CLOSED-SEALED: THE FIRST SCOUT TO COMPLETE ITS FULL CYCLE (v15 LEDGER #79)
+
+Final battery green (byte-identical from deleted
+artifacts incl. receipt; seed-invariant; 31/31 selftest
+with move proofs, MUT-SETITER dead at G-AST-DETERMINISM;
+MUT-KWALL dead at G-KERNEL-WALL; artifacts untouched).
+THE CYCLE: delivered #58 -> corrected by the ninth
+review #59 (kernel downgrade; 27-vs-7; battery red) ->
+repaired #66 (the ledger-self-reference root cause) ->
+battery green #67 -> verifier #73 (~280 recomputations
+zero discrepancies; the resurrection disease) ->
+micro-repair #78 -> SEALED THIS ENTRY at note
+11fad29b4ad0 / code 96bfb528e0fb / output 42d5740c8038 /
+receipt 0a845dd6a023.
+
+WHAT IT SEALS (scout-note class; no registry questions
+of its own; feeds DC and the held decisions): the
+pushforward-ceiling theorem with the four-escape formal
+menu; the committed-row Farkas certificates and the
+156-row census (now four independent derivation routes);
+the record-blind fixed-alpha kernel refusal IN ITS
+HONEST SCOPE (the covariant question answered by
+SCOUT-K, candidate); the Delta-B identification KILLED;
+the S4 record-update nonlinearity-on-mixtures
+(conditional on the psi-ontology, per the sharpened
+fork); the scaffold demonstration of trigger-marginal
+normalization; the trigger-semantics and
+triple-primitivity candidate-markings.  Six diseases
+found-and-closed inside its own cycle (ledger
+self-reference, numeral any-occurrence, resurrection,
+plus the ported determinism leg); two more registered
+programme-wide.  Zero false numbers remain in the
+sealed note.
