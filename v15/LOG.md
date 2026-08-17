@@ -2044,3 +2044,46 @@ paper-43:221, paper-47:458) are REGISTRY-FLAGGED for the
 user-optional erratum pass on ECC and any future
 supersessions — no seal reopened by this entry.
 
+## 2026-08-16 — ARITY-16 K1 (OPERATOR) FROZEN: ACCEPT-WITH-FIXES; 996 RECOMPUTATIONS, ZERO DISCREPANCIES; THE SEAT'S OWN FULL-POOL CLOSURES ADD THREE FRESH mod-a-IFF-a=L CONFIRMATIONS AT ROWS THE UNIT COULD NOT REACH (v15 LEDGER #57)
+
+Review frozen v15/review-arity16-operator.md
+(c642507572c7, 351 lines).  Continuation note:
+predecessor scratch was EMPTY — everything rebuilt from
+zero (GF(4) re-derived from polynomial arithmetic; the
+unit's hardcoded table confirmed).  996 exact
+comparisons, ZERO discrepancies: both lattices (67
+abstract 1/15/35/15/1; 7 linear 1/5/1), all 96 census
+cells (saturation-is-maximality admits 2 ALONE), the
+modulus rungs with witnesses (mod-a at a=4 only), the
+substrate DP quadruple, all 56 transport rule-words
+(moved rows = exactly the parent's two NEEDS-3 rows),
+307 survivors/156 mixed, floors 10|8|6|5 (schedule 14
+complete over 65,536 pairs; 4,104 attain it), the SEC-2
+column 0|1|2|4 = closed form = parent, naming
+1,872,400/0 with NDEP reproduced from scratch, forcing
+5-of-5 / 35-of-35 with joiners verified object-for-object.
+
+MAJORS: NONE.  Five minors: F1 the a=8 refusal claim
+includes R=8 the unit never searched — the seat's own
+exhaustive multiplicity-2 search proves the claim TRUE
+(verify-then-align); F2 the fork-blindness claim swept
+only singles — the seat swept m=2|3|4, identical sets,
+TRUE; F3 the offsets referent ambiguity; F4 a fence
+compression; F5 the §8 "achievable budgets: none" cells
+at a=3|5 are KNOWN FALSE under the column header's
+literal reading (guarded by NOT-FOUND-WITHIN-CAP stamps
+and the head fence — retitle or stamp ordered at
+adjudication).
+
+REVIEWER CLOSURES BEYOND SCOPE (candidate values, seat-
+attributed, not the unit's): full-pool R=4 covers EXIST
+at a=3 (83,664 distinct masks), a=5 (96,336) and a=7
+(8,928), each with a verified witness, EVERY RUNG 4=L —
+three fresh confirmations of mod-a-iff-a=L at rows the
+unit's caps excluded (a=6 unfinished, with the
+successor).  And the 4001-node receipts EXPLAINED: no two
+window masks are even pairwise disjoint inside the
+declared 4000-round windows.  These enter the repair as
+ordered strengthenings (cite-the-seat) or stay
+seat-carried — adjudication's call.
+
