@@ -3706,3 +3706,39 @@ quotient columns and the RHO1-family caveat), the frozen
 secondary run (378 records, {26:2} at 0 vs 1/729), the
 HJW mutual-unbiasedness check, the Z6 witnesses.  On its
 freeze: SCOUT-PSI seals.
+
+## 2026-08-17 — SCOUT-PAIR VERIFIER FROZEN: ACCEPT-WITH-FIXES AT ~4,900 RECOMPUTATIONS ZERO DISCREPANCIES; THE SEAT STRENGTHENED THE DELIVERY (THE FULL-STEP DEFECT CLOSED FORM VERIFIED AS AN IDENTITY); MICRO-REPAIR ORDERED (v15 LEDGER #92)
+
+Review frozen v15/review-scoutpair-verifier.md
+(18e3b2d202f2).  Everything rebuilt in the seat own code
+(own ring, walk, matrices, simplex): the S1 bijection
+PROVEN (not just counted); the arena-general flatness
+argument verified (free commutative monoid — nothing
+arena-specific); ALL 1620 phase-magnitude checks (not
+the sampled 100); the full-step census re-derived by
+direct operator composition with the BONUS closed form
+d^2 = 3(q(c1)+q(c2)) verified as an identity at all 702
+pairs; all nine S3 certificates entrywise from the seat
+own q4map; the S4 premise gate re-proven byte-equal with
+the paper-41 seed verified at source; the
+declared-not-read legs PROVEN never-opened (mirror runs
+green without them).  Compliance exact (#87 words; the
+bound snapshots differ from live successors — repairs
+not adopted; totality zero-unbacked).  7 paraphrase
+survivors all REGISTERED species, zero new.
+
+FINDINGS: F1 MEDIUM — G-ENV-EXCLUSION is CANARY-ONLY
+while the note licence sentence implies receipt-wide
+enforcement (the delivered receipt itself clean: all 26
+hex-12 tokens inventoried as pinned/declared/self); fix
+= receipt-wide digest-inventory scan or the disclosure
+reworded.  F2 minor — a tautological self-comparison
+(claim TRUE, seat-verified non-tautologically).  F3 the
+registered paraphrase species.  F4 cosmetic duplicate
+sentence.  MICRO-REPAIR ORDERED (worker this entry): M1
+the receipt-wide digest-inventory scan implementing the
+sentence as written (the canary stays; every hex-12
+token classified pinned/declared/self, gated; registry
+mutant); M2 the tautology replaced by the real
+comparison; M3 the duplicate sentence cut.  On green:
+SCOUT-PAIR SEALS.
