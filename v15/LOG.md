@@ -2201,3 +2201,138 @@ verifier seat on green; DC remains PARKED on the user's
 rulings (fold decision + sample-space selection + the ECC
 hold).
 
+## 2026-08-17 — OUTAGE 2 (WEEKLY LIMIT, USER-RESET) + THE NINTH EXTERNAL REVIEW ADOPTED: THE KERNEL VERDICT DOWNGRADED ON THE RECORD; THE SCOUT'S BATTERY RED AT THE ORCHESTRATOR (RECEIPT SEED-VARIANT); 27-vs-7 VERIFIED AS THE ERA'S FOURTH FALSE DELIVERED NUMERAL; SCOUT REPAIR ORDERED (v15 LEDGER #59)
+
+OUTAGE 2: the weekly limit killed the ECC repair
+continuation (its selftest had finished rc 0; the 48-row
+replay and 78-recipe sweep were pending), ARITY-16 K2
+(mid wave 3) and K3 (runs essentially done, review
+unfrozen).  The user reset the limit; continuations
+relaunch this entry.  The reviewer's independent rerun
+(all 35 scout gates pass; the live ECC repair exits
+cleanly with its four files modified-uncommitted) is
+noted as EVIDENCE, not acceptance.
+
+THE NINTH REVIEW, evaluated and adopted:
+
+(1) THE KERNEL DOWNGRADE — VERIFIED AGAINST THE CODE AND
+ENGRAVED: #58's "SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-
+RECORD-CONSISTENT" and the sentence "no equivariant
+record-consistent kernel exists" are OVERSTATED.  The
+three-step implementation multiplies the SAME
+kpoly(t) — one fixed alpha, line-vs-non-line only — at
+BOTH event selections (scout_exact.py:1371/:1404),
+record-blind, although the first event has already
+changed R; true equivariance K(ge|gc,gG,gR)=K(e|c,G,R)
+admits record-dependent kernels that distinguish
+candidate triples by their RELATION to the written
+record without privileging labels.  THE HONEST VERDICT:
+"no record-blind, fixed-alpha, affine-equivariant kernel
+preserves the delivered three-step walk statistics."
+The general no-go is NOT proven; mixed kernels at depth
+3 were already disclosed undecided.  The
+record-dependent, locally covariant census is the next
+calculation — SCOUT-K, pinned at #60.
+(2) R4 IS A SCAFFOLD — VERIFIED: the built successor
+carries (event, new record, "G-UNCHANGED") and NO
+rho'_e (code:1001); it uses the uniform alpha=1/3 the
+scout's own three-step test later rejects under walk
+preservation; it RETAINS an instantaneous triple t, so
+S1's outcome name is WRONG — the true escape is that
+q(c) is a TRIGGER marginal, not an occupancy marginal.
+R4 proves type-correct normalization is possible; it is
+not the physical law.
+(3) 27-vs-7 — VERIFIED AT THE BYTES: the note's "its 27
+successors are pairwise distinct records" against the
+receipt's s1_escape_a.successors = 7.  THE ERA'S FOURTH
+FALSE DELIVERED NUMERAL (after SEC-2's column, HOR's
+offsets, DISC's superseded price); the enabling disease:
+the gate checked distinctness but not the LOCAL count,
+so any receipt occurrence of 27 could back the prose.
+NUMERAL-FIELD BINDING registered for TPL-2 and ordered
+into the repair.  Zero false numbers still REMAIN in any
+terminal paper; the scout is uncommitted-to-terminal and
+now in repair.
+(4) S4 QUALIFIED: the nonlinearity verdict is
+conditional on the psi-ontology (mixtures as
+preparation-independent states); the ontic-pure-state
+nonlinear-law branch is a declarable alternative ISP may
+take EXPLICITLY or refuse; and projective collapse is
+not the only linear completion — general instruments
+with outcome-dependent post-states are the larger space
+DC must search.
+(5) PROXIMITY: the scout's shared-actor declaration is
+minimal; the choice is COUNTED; Q27 remains open.
+(6) The reviewer's assessment table (type error solid;
+ceiling solid; Delta-B convincingly killed; S4 valid
+conditional; R4 correct-framework-not-yet-dynamics;
+kernel overstated) is adopted as the standing reading.
+
+THE ORCHESTRATOR BATTERY, RED — the sole-acceptance rule
+did its job: in the git-less mirror, deleted-artifact
+regeneration returns the OUTPUT byte-identical but the
+RECEIPT DIFFERS from committed and is
+PYTHONHASHSEED-VARIANT; first divergence located at
+/determinism/double_build_digest (db5204220d86 committed
+vs 4fcc9b112441 mirror) — the instrument's own
+determinism self-check digest is environment-dependent,
+so the worker's 4-seed byte-claim did not transport off
+its scratch.  ARTIFACTS MOVED follows.  The scout is NOT
+battery-eligible.
+
+SCOUT REPAIR ORDERED (worker launched this entry):
+R1 the kernel verdict downgraded EVERYWHERE (head words,
+note sentences, receipt outcomes) to the record-blind
+fixed-alpha scope, SCOUT-K named successor; R2 the S1
+escape-(a) outcome RENAMED to its true content
+(TRIGGER-MARGINAL-NOT-OCCUPANCY) and the Omega
+construction relabelled SCAFFOLD with "no rho'_e,
+geometry unchanged" said plainly; R3 27 corrected to 7 +
+the SEMANTIC NUMERAL GATE (every load-bearing prose
+numeral bound to its SPECIFIC receipt field); R4 the S4
+qualification folded; R5 the proximity declaration
+counted, Q27 stated open; R6 the reproducibility defect
+root-caused and FIXED (receipt byte-stable across seeds,
+CWDs, and git-less mirrors from deleted artifacts); R7
+the alpha=1/3 scaffold-vs-rejection tension disclosed;
+R8 full battery, THEN the pin's promised single hostile
+verifier seat runs on the repaired blob.  ECC repair
+continuation 3 + ARITY-16 K2/K3 continuations relaunch
+this entry.  DC remains PARKED (the ECC hold, the fold
+ruling, the sample-space selection — now joined by
+SCOUT-K's verdict).
+
+
+## 2026-08-17 — SCOUT-K PINNED AND LAUNCHED: THE RECORD-DEPENDENT, LOCALLY COVARIANT KERNEL CENSUS — THE CALCULATION THE NINTH REVIEW NAMES AS THE ONE THAT MATTERS (v15 LEDGER #60)
+
+Pin frozen v15/note-scoutk-pin.md (digest in the commit).
+THE QUESTION: does any LOCAL, RECORD-DEPENDENT,
+equivariant kernel K(e|c,G,R) — equivariance in the true
+form K(ge|gc,gG,gR)=K(e|c,G,R) — reproduce the delivered
+walk statistics at exact multi-step consistency?  THE
+METHOD (the reviewer's, adopted): enumerate the local
+record types actually REACHED at the committed windows;
+form the orbits of (G,R,c,e) under SIMULTANEOUS
+relabelling; ONE VARIABLE PER LOCAL RELATIONAL ORBIT (the
+kernel may distinguish triples by their relation to the
+written record — that is the physics of backreaction the
+fixed-alpha family could not see); solve exact multi-step
+consistency at depths 2 and 3 (deeper registered);
+PROXIMITY AS A DECLARED FORK — shared-actor /
+record-distance / metric-distance / causal-neighborhood —
+each arm counted as a declaration, none silently chosen.
+OUTCOMES: SCOUTK-COVARIANT-EMPTY-AT-<depth> (with Farkas
+certificates) / SCOUTK-NONVACUOUS-<dim>-AT-<depth> /
+SCOUTK-UNIQUE-AT-<depth> / SCOUTK-BLOCKED-AT-<object>;
+every outcome carries its depth and proximity arm.
+WALLS: the #59 downgrade language binding (the
+fixed-alpha result cited ONLY in its honest scope); W4
+term-binding table; the sample-space spine; E-34;
+numeral-field binding from birth; the four newest
+species; era standards, exact arithmetic, byte x2,
+registry falsifiers with move proofs.  Deliverables:
+v15/note-scoutk.md + v15/code/scoutk_exact.py + output +
+receipt.  Battery + one hostile verifier seat (scout
+class).  Launched in parallel with the scout repair —
+different files, no contention.
+
