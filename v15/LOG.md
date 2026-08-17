@@ -1562,3 +1562,45 @@ three trees; PYTHONHASHSEED 0/1/424242 identical; 43/43
 out-of-harness deaths at declared gates; argv 6/6 rc 2).
 Orchestrator battery next; panel on green.
 
+## 2026-08-16 — ECC K1 (OPERATOR) FROZEN: ACCEPT — THE ERA'S FIRST CLEAN ACCEPT; ~1,450 INDEPENDENT EXACT COMPARISONS, ZERO SURVIVING DISCREPANCIES; THE COMMITTED-ROW GAPS DERIVED BY HAND FROM THE GROVER-COLUMN SUPPORT (v15 LEDGER #48)
+
+Review frozen v15/review-ecc-operator.md (70140f1925ae).
+The seat rebuilt the unit's ENTIRE numeric surface from
+scratch — own Eisenstein arithmetic, own two-phase exact
+simplex, own rank/nullspace, own implicit-zero programme
+— from the four sealed parents' committed definitions
+only, then compared row-by-row: ~1,450 exact comparisons,
+ZERO discrepancies surviving.
+
+The committed row CONFIRMED: INFEASIBLE at all four
+classes, qmax 4/9, gaps 4|4|3|7/3 EXACT — and re-derived
+BY HAND from the Grover-column support structure.  The
+ceiling CONFIRMED AS A THEOREM for the 0/1 incidence
+classes ((Mp)_c <= sum(p) = 1 forces q_c <= 1/3); 156
+rows, 0 exceptions.  The census 936/936 row-fields exact
+(136/8/6@dim-8/6; the 57 implicit zeroes; the a=2
+identity 39/39; the three-member target coincidence
+verified as a 27-component equality).  The seam
+apparatus exact at every number incl. the re-solved
+fiber matching AUTOGLUE's sealed table cell-for-cell and
+all 324 per-crossing values.  All three psi carriers
+rebuilt independently — byte-identical 18/18.
+Carrier/debt and the 18 interface extents all rebuilt.
+Nine verbatim parent quotes located in parent bytes.
+
+The seat's ONE transient discrepancy was ITS OWN (a
+quick phase-1 solver barring artificial re-entry
+over-reported 16 round-fiber gaps; a sound solver
+reproduces the delivered values — the delivered simplex
+is CORRECT there).  Majors: NONE.  Minors: the 8-of-8
+observable blindness is structurally tautological (the
+paper discloses this; the AST audit is the real
+certificate); a vacuously-empty filter computes a
+necessarily-correct 0; born_target is an ungated code
+twin of face 1 (equality forced by definition, verified
+by the seat); fiber rows carry no dimension (priced
+deviation #4).
+
+K3 (instrument) still in flight; adjudication on its
+freeze.
+
