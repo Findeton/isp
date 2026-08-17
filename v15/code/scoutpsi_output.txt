@@ -1,0 +1,38 @@
+SCOUT-PSI delivery transcript
+pin 8e9fe2448b00; unit note v15/note-scoutpsi.md
+S4 apparatus consumed at the committed digests 34f10a6fd494 / 12bdb7a58909
+object under test (the note): sha256-12 7c3655632bc4
+instrument source: sha256-12 a5c4f323e741
+
+GATE G-SRC-CLEAN          PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
+GATE G-PIN-DIGESTS        PASS  the pin note and paper-20 carry their pinned digests
+GATE G-P20-ANCHOR         PASS  paper-20's two delivered-rule sentences (the paper-20:633 region) are present verbatim in the live paper bytes
+GATE G-ARENA              PASS  the committed arena rebuilds from constructors: 27 cells over 9 sites, the shift a permutation, and the coin exactly unitary over Z[w] (Gram = 9I)
+GATE G-UNITARITY          PASS  one coin application conserves the exact squared norm (total 9 x scale2) at every probe state
+GATE G-RHO-EQUAL          PASS  within each rho every decomposition's weighted mixture is the same density matrix over Q(w), entry by entry, and every member's declared scale2 is its exact squared norm
+GATE G-DISTINCT           PASS  the decompositions of one rho are genuinely distinct as ensembles: their weighted member density matrices differ as multisets, pairwise
+GATE G-MASS               PASS  every ensemble record distribution carries total mass exactly 1 at every window
+GATE G-WINDOW1-BLIND      PASS  window 1 is blind at every decomposition pair of both rhos: the one-step CELL-HIT branch weights enter the ensemble record marginal linearly, and every pairwise comparison agrees record by record
+GATE G-SENSITIVE          PASS  the delivered rule is decomposition-sensitive with first divergence at window 2, at the witness pair and at every measured pair of both rhos
+GATE G-NULL-BLIND         PASS  the declared linear completion (the selective collapse reading) is blind at windows 1, 2 and 3 on the same decompositions, record by record
+GATE G-POSITIVE-SENSITIVE PASS  the synthetic decomposition-sensitive control reads SENSITIVE at window 1 on the witness pair
+GATE G-CLOSED-FORM        PASS  the S4 closed form -(1/4)(w_c(rho0)-w_c(rho1))(P0-P1) verifies entry by entry on this instrument's own machinery
+GATE G-S4-CONSUMED        PASS  the committed S4 nonlinearity witness (branch cell 0, entry (4, 4), value 1/36) is recomputed exactly and equals the embedded committed values
+GATE G-S4-REPAIRED        PASS  the repaired successor's s4_linearity rows carry the identical witness values at the value grain, verified against the same embedded committed values
+GATE G-SAMPLE-SPACE       PASS  every probability-typed row in the receipt declares its sample space from the two declared names
+GATE G-NUMERAL-BINDING    PASS  every load-bearing numeral of the note is bound to its specific receipt field and the binding resolves to the identical token
+
+VERDICT
+  SCOUTPSI-DECOMPOSITION-SENSITIVE-AT-2<WINDOW-1-BLIND-AT-EVERY-PAIR-BY-MEASUREMENT; FIRST-DIVERGENCE-AT-WINDOW-2-ON-RHO1-D1A-VS-D1B-AT-RECORD-2x1-14x1-MASSES-16-OVER-729-VS-32-OVER-729; EVERY-MEASURED-PAIR-OF-BOTH-RHOS-DIVERGES-FIRST-AT-WINDOW-2; NULL-SELECTIVE-COMPLETION-BLIND-AT-ALL-THREE-WINDOWS; POSITIVE-SYNTHETIC-MAP-SENSITIVE-AT-WINDOW-1; WINDOWS-BEYOND-3-REGISTERED-NOT-CLAIMED>
+
+KEY CLAIMS
+  window 1 is BLIND at every decomposition pair of both committed rhos: the one-step CELL-HIT branch weights enter the ensemble record marginal linearly, and all 4 pairwise comparisons agree record by record [SS:RECORD-FIELDS]
+  the first divergence is at window 2: preparations D1A and D1B of the same rho assign masses 16/729 and 32/729 to the record {2:1,14:1}, difference -16/729, and 27 records diverge at that window [SS:RECORD-FIELDS]
+  every measured decomposition pair of both rhos diverges first at window 2, and window 3 diverges at every pair as well; windows beyond 3 are registered, not claimed
+  the declared genuinely linear completion -- the selective collapse reading paper-20 names as not run -- is BLIND at windows 1, 2 and 3 on the same decompositions, record by record [SS:RECORD-FIELDS]
+  the synthetic decomposition-sensitive control reads SENSITIVE at window 1: on the witness pair it assigns masses 16/33 and 64/129 to its first diverging record {2:1} [SS:RECORD-FIELDS]
+  this unit decides no ontology: it measures a property of the delivered rule, and the fork's resolution is a program decision informed by this measurement
+  the S4 apparatus is consumed at the committed digests 34f10a6fd494 and 12bdb7a58909, and the committed nonlinearity witness is recomputed exactly: branch cell 0, entry (4, 4), value 1/36
+
+  falsifiers: 14 registered; gates: 17
+

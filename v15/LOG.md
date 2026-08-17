@@ -2729,3 +2729,51 @@ acceptance.  THE UNIT THEN PARKS VERIFIED-UNSEALED: no
 seal, no registry updates, no DC consumption, per the
 user's hold.
 
+## 2026-08-17 — SCOUT-PSI DELIVERED, COMMITTED AS-IS: SCOUTPSI-DECOMPOSITION-SENSITIVE-AT-2 — THE DELIVERED RULE'S RECORD STATISTICS ARE NOT A FUNCTION OF THE DENSITY MATRIX ALONE; WINDOW 1 BLIND BY MEASUREMENT WITH THE MECHANISM; BOTH CONTROLS FIRE (v15 LEDGER #70)
+
+Construction complete under pin 8e9fe2448b00 + the #68
+addendum e717d3bbc1df (the pre-registered preparations
+run exactly as frozen).  Committed as delivered (note
+7c3655632bc4 / code a5c4f323e741 / output 55390f282cff /
+receipt d61a7f6e5ac0).  CANDIDATE READINGS until the
+verifier seat.
+
+THE VERDICT: WINDOW 1 IS BLIND at every pair, by
+measurement, with the mechanism as bookkeeping (one-step
+CELL-HIT weights are quadratic-form ratios with a
+unitarity-fixed denominator, so the one-step ensemble
+marginal is linear in the mixture).  WINDOW 2 DIVERGES
+EVERYWHERE: the witness pair D1A {e0; e1} vs D1B
+{e0 plus/minus e1} of the S4 witness rho — at the record
+{cell 2: 1, cell 14: 1} the masses are 16/729 vs 32/729,
+difference -16/729; ALL 27 window-2 records diverge;
+every measured pair on both rhos diverges first at
+window 2; window 3 diverges everywhere; windows >= 4
+registered, not claimed.  CONTROLS, both through the
+real tree engine, both gated: the frozen NULL (the
+selective collapse instrument paper-20:633 names as
+not-run) is BLIND at windows 1|2|3 on the same five
+ensembles; the synthetic POSITIVE is SENSITIVE at
+window 1.
+
+The S4 source: the COMMITTED digests via git show,
+values recomputed exactly; the scout repair landed
+mid-build and a dual-anchor gate verifies the repaired
+successor's s4 rows identical at value grain — no
+live-file digest serialized (the #66 lesson applied).
+17 ledger gates, 14 falsifiers with move proofs in both
+harnesses; artifacts byte-identical across three seeds
+and alien CWDs from deleted artifacts; no
+environment-dependent bytes; the ontology wall
+MACHINE-ENFORCED (no sentence decides the fork; the
+measurement says: UNDER THE DELIVERED RULE, rho is not a
+sufficient state descriptor from two steps on — what to
+do about it is the program's decision).  Deviations
+disclosed incl. equal-weight two-member ensembles only
+(unequal weights need amplitudes outside Q(omega) —
+registered).  Orchestrator battery next; verifier seat
+on green.  The #64 program's second decisive computation
+has its candidate answer; the steering successor
+question (the EPR/no-signalling gun) stays HELD until
+this seals and the user rules.
+
