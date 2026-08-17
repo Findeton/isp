@@ -1989,7 +1989,8 @@ def primitive_selection(LD, P):
             "CELL-HIT": "PASS (identity with the delivered walk)",
             "TRIPLE-EVENT": "CONDITIONAL (any kernel preserves the "
                             "two-step window; at the three-step window "
-                            "only 288 pure non-line kernels preserve it "
+                            "only 288 pure non-line kernels among the "
+                            "censused deterministic kernels preserve it "
                             "and no record-blind fixed-alpha "
                             "equivariant kernel does; the "
                             "record-dependent equivariant question is "
@@ -2476,16 +2477,40 @@ FALSIFIERS = (
      "delivered numeral's disease)"),
     ("MUT-ENV", "G-ENV-EXCLUSION", "env_exclusion",
      "injects an unpinned live-read digest into the receipt payload"),
+    ("MUT-KWALL", "G-KERNEL-WALL", "kernel_wall",
+     "blanks the kernel-scope wall's pattern family so the retired "
+     "overclaim's permanent dead controls stop dying (the verifier's "
+     "verbatim replant, finding F1)"),
+    ("MUT-SETITER", "G-AST-DETERMINISM", "source_hygiene",
+     "injects a bare set-iteration and a raw os.listdir into the "
+     "scanned source (the registered iteration-order species, verifier "
+     "finding F2); must die deterministically at every hash seed, "
+     "never vary silently"),
 )
 
 
 # ===========================================================================
 # SECTION 12.  SELF-SOURCE HYGIENE
 # ===========================================================================
+# The MUT-SETITER falsifier's injection: appended to the SCANNED source
+# only (never executed, never written) so the determinism leg below has
+# a registered mutant that must die at G-AST-DETERMINISM at every hash
+# seed rather than varying silently.
+MUT_SETITER_SNIPPET = (
+    "\n\ndef _mutant_set_iteration_and_listdir():\n"
+    "    acc = []\n"
+    "    for cell in {3, 1, 2}:\n"
+    "        acc.append(cell)\n"
+    "    for name in os.listdir(HERE):\n"
+    "        acc.append(name)\n"
+    "    return acc\n")
+
+
 def source_scan(LD, P):
     with open(os.path.abspath(__file__), "r", encoding="utf-8") as f:
         src = f.read()
-    tree = ast.parse(src)
+    scan_src = pick("MUT-SETITER", src, src + MUT_SETITER_SNIPPET)
+    tree = ast.parse(scan_src)
     floats = [n.lineno for n in ast.walk(tree)
               if isinstance(n, ast.Constant) and isinstance(n.value, float)]
     hashes = [n.lineno for n in ast.walk(tree)
@@ -2499,9 +2524,57 @@ def source_scan(LD, P):
             imports.add(n.module)
     allowed = {"os", "sys", "json", "hashlib", "ast", "fractions",
                "itertools", "collections"}
+    # ---- the determinism leg (the micro-repair's M3; ARITY-16 Z10
+    # ported; the #62 iteration-order species, verifier finding F2) ----
+    # Iteration order must never depend on the process hash seed: every
+    # collection this instrument iterates can reach the sealed
+    # artifacts through the double build, so bare iteration over a set
+    # display, a set comprehension or a set()/frozenset() call, and any
+    # os.listdir call not wrapped directly in sorted(), are refused at
+    # the source.  The scan is syntactic (AST), so the refusal is
+    # deterministic -- the same verdict at every PYTHONHASHSEED --
+    # complementing the battery's cross-seed regeneration leg in-run.
+    sorted_args = set()
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) \
+                and n.func.id == "sorted":
+            for a in n.args:
+                sorted_args.add(id(a))
+
+    def set_like(node):
+        return isinstance(node, (ast.Set, ast.SetComp)) or (
+            isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Name)
+            and node.func.id in ("set", "frozenset"))
+
+    def is_listdir(node):
+        return isinstance(node, ast.Call) and (
+            (isinstance(node.func, ast.Attribute)
+             and node.func.attr == "listdir")
+            or (isinstance(node.func, ast.Name)
+                and node.func.id == "listdir"))
+    set_iter = []
+    raw_listdir = []
+    for n in ast.walk(tree):
+        if isinstance(n, ast.For) and set_like(n.iter):
+            set_iter.append(n.iter.lineno)
+        if isinstance(n, (ast.ListComp, ast.SetComp, ast.GeneratorExp,
+                          ast.DictComp)):
+            for g in n.generators:
+                if set_like(g.iter):
+                    set_iter.append(g.iter.lineno)
+        if is_listdir(n) and id(n) not in sorted_args:
+            raw_listdir.append(n.lineno)
     P["source_hygiene"] = {"float_literals": floats,
                            "hash_calls": hashes,
                            "imports": sorted(imports),
+                           "set_iteration_lines": sorted(set_iter),
+                           "raw_listdir_lines": sorted(raw_listdir),
+                           "determinism_policy":
+                               "bare set-iteration and raw os.listdir "
+                               "are refused at the source by AST scan, "
+                               "in-run and seed-independent; sorted() "
+                               "is the one licensed wrapper",
                            "digest": sha12(src.encode("utf-8"))}
     LD.gate("G-SRC-CLEAN",
             not floats and not hashes and imports <= allowed,
@@ -2509,6 +2582,17 @@ def source_scan(LD, P):
             "no builtin hash call, and no import outside the declared "
             "whitelist",
             {"imports": sorted(imports)})
+    LD.gate("G-AST-DETERMINISM",
+            not set_iter and not raw_listdir,
+            "the determinism leg: the instrument's own syntax tree "
+            "carries no bare iteration over a set display, set "
+            "comprehension or set()/frozenset() call and no os.listdir "
+            "call outside a direct sorted() wrapper -- every collection "
+            "iterated here feeds the sealed artifacts through the "
+            "double build, so unsorted iteration is refused at the "
+            "source, deterministically at every hash seed",
+            {"set_iteration_lines": sorted(set_iter),
+             "raw_listdir_lines": sorted(raw_listdir)})
 
 
 # ===========================================================================
@@ -2536,6 +2620,7 @@ def build_all(P=None):
     build_verdicts(P)
     build_kit(P)
     numeral_bindings(LD, P)
+    kernel_wall_gate(LD, P)
     env_exclusion(LD, P)
     P["ledger"] = LD.rows
     return P
@@ -2550,8 +2635,124 @@ FORBIDDEN_GLOBAL = (
     "delta-b is divisibility", "measures divisibility",
     "missing single-time", "lacks single-time",
     "no single-time distributions",
+    "no equivariant record-consistent kernel",
+    "no equivariant record consistent kernel",
 )
 S3_FORBIDDEN = ("probably", "likely", "explains")
+
+# ---- the kernel-scope wall (the micro-repair's M1; verifier finding
+# F1) --------------------------------------------------------------------
+# The RETIRED overclaim -- the general "no equivariant record-consistent
+# kernel" verdict, downgraded at #59 to the record-blind fixed-alpha
+# scope -- replanted VERBATIM with no wall firing (verifier plant P14 /
+# INJ-8): the #59/#66 repair made the four files grep-clean but
+# installed no defense against reintroduction.  This wall is
+# SUBJECT-BASED: hyphens and spacing are normalized away, the note is
+# split into segments, and any segment whose subject is the equivariant
+# / record-consistent kernel family carrying a nonexistence or
+# emptiness predicate is refused -- UNLESS the segment carries the
+# licensed record-blind scope qualifier, so the honest downgraded
+# verdict (the twin) stays alive.
+KERNEL_WALL_TOKENS = (
+    "scout kernel empty at equivariant record consistent",
+)
+KERNEL_WALL_SUBJECTS = (
+    "equivariant record consistent kernel",
+    "record consistent kernel",
+    "equivariant kernel",
+)
+KERNEL_WALL_NEG_EXISTENTIALS = tuple(
+    "no " + s for s in KERNEL_WALL_SUBJECTS)
+KERNEL_WALL_PREDICATES = (
+    "does not exist", "do not exist", "cannot exist", "never exists",
+    "none exists", "none exist", "is empty", "are empty",
+    "is impossible", "are impossible", "is ruled out", "are ruled out",
+)
+KERNEL_WALL_LICENCE = "record blind"
+# Permanent controls, exercised on every build by G-KERNEL-WALL: the
+# verbatim retired sentence (the verifier's P14 plant), two paraphrase
+# variants and the retired verdict token must DIE at this wall; the
+# licensed record-blind fixed-alpha forms are the twins and must
+# SURVIVE.
+KERNEL_WALL_DEAD_CONTROLS = (
+    "So no equivariant record-consistent kernel exists at the "
+    "committed arena.",
+    "every equivariant kernel is empty at the committed arena",
+    "record consistent kernels do not exist at this arena",
+    "SCOUT-KERNEL-EMPTY-AT-EQUIVARIANT-RECORD-CONSISTENT",
+)
+KERNEL_WALL_ALIVE_CONTROLS = (
+    "no record-blind, fixed-alpha, affine-equivariant kernel preserves "
+    "the delivered three-step walk statistics",
+    "at the three-step window only the 288 pure non-line kernels among "
+    "the censused deterministic kernels preserve it and no "
+    "record-blind fixed-alpha equivariant kernel does",
+)
+
+
+def kernel_norm(seg):
+    return " ".join(seg.lower().replace("-", " ").split())
+
+
+def kernel_wall_hits(text):
+    tokens = pick("MUT-KWALL", KERNEL_WALL_TOKENS, ())
+    negs = pick("MUT-KWALL", KERNEL_WALL_NEG_EXISTENTIALS, ())
+    subjects = pick("MUT-KWALL", KERNEL_WALL_SUBJECTS, ())
+    hits = []
+    for ln in text.splitlines():
+        cut = ln.replace(";", ".").replace("|", ".").replace(":", ".")
+        for seg in cut.split("."):
+            s = kernel_norm(seg)
+            if not s:
+                continue
+            if any(t in s for t in tokens):
+                hits.append("retired verdict token present: "
+                            + seg.strip()[:60])
+                continue
+            if KERNEL_WALL_LICENCE in s:
+                continue
+            if any(p in s for p in negs) \
+                    or (any(p in s for p in subjects)
+                        and any(p in s for p in KERNEL_WALL_PREDICATES)):
+                hits.append("retired kernel-scope claim: "
+                            + seg.strip()[:60])
+    return hits
+
+
+def kernel_wall_gate(LD, P):
+    rows = []
+    ok = True
+    for s in KERNEL_WALL_DEAD_CONTROLS:
+        flagged = bool(kernel_wall_hits(s))
+        rows.append({"control": s, "expected": "DEAD",
+                     "flagged": flagged})
+        ok = ok and flagged
+    for s in KERNEL_WALL_ALIVE_CONTROLS:
+        flagged = bool(kernel_wall_hits(s))
+        rows.append({"control": s, "expected": "ALIVE",
+                     "flagged": flagged})
+        ok = ok and not flagged
+    P["kernel_wall"] = {
+        "controls": rows,
+        "policy": "the retired kernel-scope overclaim family is "
+                  "refused subject-based (normalized against hyphen "
+                  "and spacing evasion) wherever the licensed "
+                  "record-blind scope qualifier is absent; the "
+                  "verbatim retired sentence, two paraphrases and the "
+                  "retired verdict token are permanent dead controls, "
+                  "and the licensed downgraded forms are permanent "
+                  "alive twins"}
+    LD.gate("G-KERNEL-WALL", ok,
+            "the kernel-scope wall fires on the retired overclaim "
+            "family (verbatim, hyphen and paraphrase variants, and the "
+            "retired verdict token) and stays silent on the licensed "
+            "record-blind fixed-alpha forms; all permanent controls "
+            "behave as declared on this build",
+            {"dead_controls": len(KERNEL_WALL_DEAD_CONTROLS),
+             "alive_controls": len(KERNEL_WALL_ALIVE_CONTROLS),
+             "misbehaving": [r["control"][:50] for r in rows
+                             if (r["expected"] == "DEAD")
+                             != r["flagged"]]})
 
 
 def collect_numerals(obj, out):
@@ -2615,6 +2816,8 @@ def verify_note(P, note_bytes, problems):
     for pat in FORBIDDEN_GLOBAL:
         if pat in low:
             problems.append("forbidden pattern present: " + pat)
+    for h in kernel_wall_hits(text):
+        problems.append("kernel-scope wall: " + h)
     # the S3 language wall, scoped to the S3 section
     s3start = text.find("## S3")
     s3end = text.find("## S4")

@@ -407,7 +407,7 @@ the triple-event primitive is ADOPTED-BY-PROGRAM-DECISION: adopted because it ma
 |---|---|---|
 | carries the committed q | PASS: a distribution over CELLS, sum 1 | PASS: q is the trigger readout of a normalized successor law |
 | the grammar object's arity | FAIL: writes 1 cell per step; the three-actor object never occurs as one process event | PASS: writes 3 cells per event; one admissible round writes 9 |
-| walk preservation | PASS: identity with the delivered walk | CONDITIONAL: every kernel preserves the two-step window; at the three-step window only the 288 pure non-line kernels preserve it and no record-blind fixed-alpha equivariant kernel does; the record-dependent equivariant question is SCOUT-K's |
+| walk preservation | PASS: identity with the delivered walk | CONDITIONAL: every kernel preserves the two-step window; at the three-step window only the 288 pure non-line kernels among the censused deterministic kernels preserve it and no record-blind fixed-alpha equivariant kernel does; the record-dependent equivariant question is SCOUT-K's |
 | successor/backreaction reading | FAIL: no geometry leg; the walk's menu meets the cross class at 0 of 36, growth is unphrasable | PASS-AS-FORM: successors bundle event, record, geometry, state; the transport leg is owed, 0 of 4 delivered candidates supply it |
 | purchased declarations | the rename only; the grammar identification is refused without proof | the kernel (a counted declaration among the surviving pure kernels) plus the owed transport law plus the shared-actor proximity declaration (Q27 open; SCOUT-K's fork) |
 
@@ -544,7 +544,7 @@ transport to the nine-actor arena is exactly where the homonym bit.
 v15/code/scout_exact.py: delivery is the only writer and a failing run
 writes nothing; --no-write, --numbers, --kit, --selftest, --mutant NAME,
 --verify-paper PATH, --list-gates, --list-mutants; unknown or conflicting
-argv exits with the usage code.  37 gates; 29 registered falsifiers, each
+argv exits with the usage code.  39 gates; 31 registered falsifiers, each
 naming the measured object it corrupts and the gate it must die at, each
 verified by a fresh full run with a digest move proof and the artifacts
 byte-untouched.  The abstract-syntax self-scan bans float literals, the
@@ -562,4 +562,12 @@ load-bearing prose numeral bound to its specific receipt field, with
 the context sentence required verbatim, so any-occurrence backing can
 never again be a numeral's sole backing — and G-ENV-EXCLUSION scans the
 receipt payload for any unpinned live-read digest, so no
-environment-dependent byte enters either artifact.
+environment-dependent byte enters either artifact.  Two more gates are
+new at the verifier-ordered micro-repair: G-KERNEL-WALL, a subject-based
+wall refusing the retired kernel-scope overclaim family (hyphen and
+paraphrase variants included) wherever the licensed record-blind scope
+qualifier is absent, with the verbatim retired sentence and its variants
+held as permanent dead controls and the licensed downgraded forms as
+permanent alive twins, and G-AST-DETERMINISM, an in-run AST leg refusing
+bare set-iteration and raw os.listdir in the instrument's own source —
+seed-independent by construction — each with its registered falsifier.

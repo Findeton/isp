@@ -3038,3 +3038,29 @@ the addendum text IN ITS PROMPT (no routing dependency),
 the verifier's measured expected values, and the
 in-note disclosure duty for the whole chain.
 
+
+## 2026-08-17 — SCOUT MICRO-REPAIR DELIVERED AND COMMITTED: THE RESURRECTION DISEASE CLOSED (SUBJECT-BASED KERNEL-SCOPE WALL, LICENSED TWINS ALIVE); THE AST DETERMINISM LEG PORTED; ZERO MEASURED VALUES MOVED (v15 LEDGER #78)
+
+Committed as delivered (note 11fad29b4ad0 / code
+96bfb528e0fb / output 42d5740c8038 / receipt
+0a845dd6a023).  M1: G-KERNEL-WALL — hyphen/spacing
+normalized, subject-based: any segment whose subject is
+the equivariant/record-consistent kernel family carrying
+a nonexistence predicate is refused UNLESS it carries
+the licensed record-blind scope qualifier; the
+verifier F1 replant DIES, the de-hyphenated and
+paraphrase variants DIE, the retired verdict token DIES,
+both licensed twins ALIVE; MUT-KWALL with move proof.
+M2: the CRIT-C cell rescoped to the censused
+deterministic kernels; numbers unmoved.  M3:
+G-AST-DETERMINISM (the ARITY-16 Z10 port) — bare
+set-iteration and unsorted listdir refused
+syntactically; MUT-SETITER dies IDENTICALLY at three
+seeds (deterministic death, not variance).  Receipt
+diff exhaustive: all 37 shared ledger rows and all 29
+old falsifier rows byte-identical; gates 37 to 39;
+falsifiers 29 to 31; zero measured values moved.
+Worker battery green (6/6 byte-identical across seeds
+and CWDs; 31/31 out-of-harness; LOG-append probe
+byte-identical).  Orchestrator battery next; on green
+the scout CLOSES AS A SEALED SCOUT NOTE per #73.

@@ -1,9 +1,10 @@
 SCOUT-BRIDGE delivery transcript
 pin c57a0afffd58 + addendum 2aa72e566cba; unit note v15/note-scout-bridge.md
-object under test (the note): sha256-12 57177f5bb9b9
-instrument source: sha256-12 63bf34c9df62
+object under test (the note): sha256-12 11fad29b4ad0
+instrument source: sha256-12 96bfb528e0fb
 
 GATE G-SRC-CLEAN        PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
+GATE G-AST-DETERMINISM  PASS  the determinism leg: the instrument's own syntax tree carries no bare iteration over a set display, set comprehension or set()/frozenset() call and no os.listdir call outside a direct sorted() wrapper -- every collection iterated here feeds the sealed artifacts through the double build, so unsorted iteration is refused at the source, deterministically at every hash seed
 GATE G-PIN-DIGESTS      PASS  the two frozen pins and the two delivered ECC artifacts are read at their pinned digests and no other bytes; pinned reads that the live tree no longer carries resolve through the byte-verified delivered snapshots
 GATE G-ANCHORS          PASS  every declared source anchor is located verbatim (whitespace-collapsed) in its file
 GATE G-ECC-CONSUME      PASS  the delivered-candidate ECC values consumed by this scout are parsed from the sealed-digest receipt, not typed
@@ -39,6 +40,7 @@ GATE G-S4-RHO           PASS  the rho'_e successor constraints are stated as con
 GATE G-PRIMITIVE        PASS  the primitive-selection criteria are measured, and the selection answer is rendered from them
 GATE G-SAMPLE-SPACE     PASS  every probability-typed measurement row in this receipt declares its sample space from the three declared names, 182 declarations; no claim changes sample space silently
 GATE G-NUMERAL-FIELD    PASS  every load-bearing prose numeral is bound to a specific receipt field and each bound token equals that field's value exactly; the note-side context sentences are required verbatim at note verification
+GATE G-KERNEL-WALL      PASS  the kernel-scope wall fires on the retired overclaim family (verbatim, hyphen and paraphrase variants, and the retired verdict token) and stays silent on the licensed record-blind fixed-alpha forms; all permanent controls behave as declared on this build
 GATE G-ENV-EXCLUSION    PASS  the serialized receipt payload carries no digest of any unpinned live read: environment-dependent bytes are excluded from the artifacts and checked in-run only
 
 VERDICTS
@@ -56,5 +58,5 @@ KEY CLAIMS
   record-blind fixed-alpha kernel family: dim 1; empty under record consistency; pure survivors 8 -> 288; the record-dependent census is SCOUT-K's
   Delta-B datum: zero at every cut of every row; prediction scores 20 of 156
   S4: nonlinear on mixtures, exact witness; state leg outcome-independent
-  falsifiers: 29 registered; gates: 37
+  falsifiers: 31 registered; gates: 39
 
