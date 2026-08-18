@@ -2071,3 +2071,22 @@ irreducibility. DISC's third-tick exclusion is evidence for record/memory
 dependence against its declared memoryless classes, not yet for a dynamically
 rewritten relational carrier. Hostile protocol and three isolated reports are
 still mandatory; no terminal promotion is authorized.
+
+## 2026-08-18 — WRC HOSTILE PROTOCOL FROZEN (v16 LEDGER #98)
+
+`v16/note-wrc-hostile-protocol.md` freezes before reviewer assignment at
+SHA-256
+`340c32eca87bd06d4a95a0721a6d9bff93df8ad15f36e3ce5604d5243276ea19`.
+The immutable target is candidate `e5fb604`, repair `3f75079`, verification
+`7aa4742`, and the three artifact hashes bound in #97.
+
+Three isolated seats are required: operator/instrument; histories, records,
+covariance, and eliminability; and physical ontology/geometry/Barandes scope.
+All seats must audit the pre-freeze successful dry-run exposure, the first
+post-result replay refusal, the bounded Questions repair, and Q8 retirement.
+
+The protocol adopts no later ontology claim. It requires the reviewers to
+evaluate the proposed class-relative eliminability doctrine and freezes its
+critical qualification: DISC excluded registered memoryless classes, not all
+memory-bearing or geometry-blind laws. Any new carrier family, adversary class,
+or dynamic-geometry construction belongs to a successor, not a WRC repair.

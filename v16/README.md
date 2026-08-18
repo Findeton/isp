@@ -54,7 +54,9 @@ theory-selection result.
   byte-identical; only the truthful scorer/board-bound receipt moves.
   Verification #97 passes two exact replays, all 34 no-write mutants, an
   independent exact reconstruction, and true off-tree execution. The result
-  is green-unreviewed and fixed-carrier only; hostile review is next.
+  is green-unreviewed and fixed-carrier only. Hostile protocol #98 freezes
+  operator, records/eliminability, and physics/geometry seats; reviewer
+  assignment is next.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
