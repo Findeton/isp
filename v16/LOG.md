@@ -751,3 +751,27 @@ uses v12's co-live/co-merge availability criterion plus an explicit erasure
 that restores interference. The next event is the first official execution;
 failure must be frozen before repair, while success renders and commits the
 three result artifacts as-is.
+
+## 2026-08-17 — PPR FIRST PHYSICAL EXECUTION REFUSED BEFORE GATES OR WRITE (v16 LEDGER #36)
+
+The first invocation of committed scorer `e055ed6` was exactly
+`python3 v16/code/ppr_score.py`. It exited 1 with:
+
+```text
+REFUSED Invalid literal for Fraction: '9/25i'
+```
+
+No output, receipt, or Paper 3 path was created. The failure precedes a physical
+gate verdict. Its exact cause is a scorer-layer serialization round trip in the
+dangling-record constructor: an already exact Gaussian-rational matrix was
+converted with `matrix_text`, producing a display scalar such as `9/25i`, and
+then passed back to the fixture parser, whose string grammar intentionally
+accepts rational literals only. The fixture equations, outcome classifier,
+record doctrine, and physical predicates have not yet been evaluated.
+
+The bounded repair is mechanical: retain the exact matrix entries as `GQ`
+objects when extending them by a record row, rather than serializing and
+re-parsing them. It may not alter a fixture byte, weight, gate predicate,
+outcome order, or expected result. The repaired source must be hash-frozen and
+committed before a second physical invocation. This failure remains part of
+the chronology even if that invocation succeeds.
