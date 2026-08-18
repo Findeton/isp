@@ -69,8 +69,8 @@ theory-selection result.
   operator/resources, records/recurrence/relational typing, and locality/
   dynamics/physics. All three seats were dispatched at #74 and remain
   mutually isolated.
-- `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
-  PANEL RUNNING** at v16 ledger #74. The pin
+- `CSF` / Paper 6: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
+  AWAITING JOINT ADJUDICATION** at v16 ledger #89. The pin
   is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
   at #63, and bounded scorer repair at #64.
   The user-authorized continuation tests the completeness spectrahedron
@@ -96,7 +96,9 @@ theory-selection result.
   #66 gives two byte-identical worktree replays, 36/36 mutant deaths, an
   independent exact reconstruction, and a byte-identical true off-tree/no-git
   replay. The three-lens hostile protocol is frozen at #67; all three seats
-  were dispatched at #74.
+  were dispatched at #74. The operator report at #87, records/relational
+  report at #88, and physics/locality report at #89 are immutable hostile
+  evidence; their allegations await joint adjudication.
 - `OVG` / Paper 5: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #86. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first

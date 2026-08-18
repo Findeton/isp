@@ -1903,3 +1903,13 @@ The second isolated Paper 6 report is frozen verbatim as
 It is hostile evidence only; no finding is adjudicated or repaired here. This
 seat did not read the operator or physics/locality report. The final seat must
 be frozen before joint adjudication begins.
+
+## 2026-08-18 — CSF PHYSICS/LOCALITY REVIEW FROZEN; PANEL COMPLETE (v16 LEDGER #89)
+
+The third isolated Paper 6 report is frozen verbatim as
+`v16/review-csf-physics.md`, SHA-256
+`b7902de853e8a8311b8e72825db8e20c4962ef7ef0bef55b4620194b3f74eade`.
+This seat did not read the operator or records/relational reports. The CSF
+panel is now complete at three immutable reports. Their findings remain
+hostile allegations until one joint adjudication independently recomputes and
+rules them; no repair or candidate promotion occurs in this event.
