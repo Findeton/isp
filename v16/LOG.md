@@ -2536,3 +2536,41 @@ durable redundant record, division, growth, or WRC regression. The corrected
 status is a promising unitary matter/memory nucleus and explicit possible new
 base-law postulate, not geometry or quantum gravity. Q31 registers the
 successor gates; QSF remains unchanged and Paper 10 remains unpinned.
+
+## 2026-08-18 — CRL COUPLING-FAMILY ADDENDUM (v16 LEDGER #119)
+
+An external response to #118 withdraws its event-centrality,
+two-eigenphase-stratum, and curvature claims and reports a new exact
+isospectrality. Independent reconstruction in
+`v16/note-conjugate-record-law-coupling-addendum.md` confirms that
+`Omega_k=(WT_k)^dagger(T_kW)` has the same #118 characteristic polynomial for
+all four clock powers `k=0,1,2,3`. One-event spectral invariants are therefore
+coupling-blind even though the registered fourth-tick count law moves with
+`k`; `k=1` and `k=3` coincide on that real calibration.
+
+The addendum narrows the interpretation further. The matrices themselves are
+not equal: `(Omega_k)_(0,5)=(12/25)i^k`, and the preparable state
+`(|0>+|5>)/sqrt(2)` gives expectations `9/25`, `9/25+12i/25`, `9/25`, and
+`9/25-12i/25`. Thus “multi-event only” is false; the content is relative to a
+fixed state/observable calibration rather than intrinsic to the spectrum.
+Moreover `E_{-k}=conjugate(E_k)` proves all-tick `k <-> -k` count-blindness for
+real seeds and computational count probes. The complex seed `(3/5,4i/5)`
+breaks it exactly at tick three.
+
+The lawful nucleus and fixed-calibration discriminator survive. The Weyl
+relation remains conditional on the declared `Z_4` pair; curvature, geometry,
+gauge-invariant coupling selection, and Paper 10 readiness do not. Q31 is
+updated; QSF and the Paper 10 hold are unchanged.
+
+A later response reports a tick-three split after setting `q=3` and promotes
+that setting to a “maximally forced” Eisenstein/Grover/growth law. The addendum
+refuses the promotion. CRL record cardinality is not welded to WRC's arithmetic
+field; no hashed Grover, redundancy, growth, or regression object was
+supplied; and the five-phase `q=4` result cannot move dials. Independent exact
+`Q(omega)` reconstruction of the exposed rational-coin form at `q=3` instead
+gives `(x-1)^2 (x^2-2x/25+1)^2`, only three distinct phases. The identity-coin
+control never splits at any tick, so generic split existence is also unproved.
+The sampled CRL shadow remains lawful and non-WRC. Finally, the corpus has
+shown nonselection only by registered finite surfaces, not by every possible
+principle; the three proposed contacts would still leave relational growth,
+geometry, continuum recovery, and empirical calibration open.

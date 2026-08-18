@@ -219,4 +219,13 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     no loop, growth, locality law, WRC regression, or law selection. A future
     pin may treat CRL only as an explicit new base-law postulate and must join
     it to Q30's graph-family, curvature, coherent-growth, division, E-37, and
-    held-out parity gates. No Paper 10 pin exists yet.
+    held-out parity gates. The #119 coupling-family addendum proves all four
+    `C^k` event holonomies isospectral, but a fixed state-fed one-event
+    expectation distinguishes them. It also derives exact `k <-> -k`
+    count-blindness on the real calibration and breaks it with a complex seed.
+    Coupling content is therefore calibration-relative, not spectrally
+    intrinsic, until the future relational gauge is fixed. A later `q=3`
+    extrapolation moves the split to tick three but does not select the dial:
+    the corresponding rational-coin holonomy has three rather than five
+    phases, and `R=I` is an exact all-tick no-split control. No Paper 10 pin
+    exists yet.
