@@ -2046,3 +2046,28 @@ digest. The candidate primary and 31/31 scientific result are unchanged.
 This regeneration does not cure or conceal the first replay refusal. It makes
 that refusal and its bounded provenance repair part of the auditable chain.
 Full verification remains next.
+
+## 2026-08-18 — WRC CANDIDATE VERIFICATION (v16 LEDGER #97)
+
+Paper 8 is **REPLAY-VERIFIED GREEN-UNREVIEWED** at candidate commit
+`e5fb6047a84805b5bd260d969099bb229e369441`. Verification note
+`v16/note-wrc-candidate-verification.md` freezes at SHA-256
+`7e43f3ff699215bb48e6e56cf9c4939ad60c3e9e61922d0010959ca12df21d5a`.
+
+Two clean worktree replays and one true off-tree/no-git replay reproduce all
+three candidate artifacts byte-for-byte. All 34 registered mutants refuse
+with exit `1`, no stdout/traceback, and no writes. Strict CLI, selftest,
+existing-target refusal, exact-arithmetic scans, payload/seal/claim bindings,
+and twelve current anchor hashes pass.
+
+An independent exact `Q(w)` implementation importing neither WRC module
+reconstructs the five-tick ladder, all nine observable families, the beable
+map, recurrence counts, alternate-coin discriminator, and the source-versus-CP
+instrument witness. It confirms the primary at fixed-carrier finite scope.
+
+The verification also freezes the methodological limit requested during
+review: finite packet reconstruction is not family-level geometry
+irreducibility. DISC's third-tick exclusion is evidence for record/memory
+dependence against its declared memoryless classes, not yet for a dynamically
+rewritten relational carrier. Hostile protocol and three isolated reports are
+still mandatory; no terminal promotion is authorized.

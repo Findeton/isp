@@ -51,8 +51,10 @@ theory-selection result.
   board update moved a pre-result anchor. A scorer-only provenance repair is
   frozen at #95 for exactly the pre/post board hashes and terminal tokens; it
   changes no physics or comparator. Regeneration #96 keeps output and paper
-  byte-identical; only the truthful scorer/board-bound receipt moves. Full
-  replay/independent/off-tree verification is restarting.
+  byte-identical; only the truthful scorer/board-bound receipt moves.
+  Verification #97 passes two exact replays, all 34 no-write mutants, an
+  independent exact reconstruction, and true off-tree execution. The result
+  is green-unreviewed and fixed-carrier only; hostile review is next.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
