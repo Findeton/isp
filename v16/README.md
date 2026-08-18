@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `CEL` / Paper 7: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
-  FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #73. The pin is frozen at
+- `CEL` / Paper 7: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
+  PANEL RUNNING** at v16 ledger #74. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
   verification at #72.
   The user-authorized continuation tests the creation-event layer at four
@@ -49,12 +49,10 @@ theory-selection result.
   reconstruction, and a byte-identical true off-tree/no-git run. A separately
   frozen hostile protocol at #73 now binds three isolated seats: exact
   operator/resources, records/recurrence/relational typing, and locality/
-  dynamics/physics. It authorizes no reviewer dispatch; reviewers are not
-  assigned.
-  Papers 3–6 and their four pending hostile panels remain unchanged review
-  debt.
-- `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
-  FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #67. The pin
+  dynamics/physics. All three seats were dispatched at #74 and remain
+  mutually isolated.
+- `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
+  PANEL RUNNING** at v16 ledger #74. The pin
   is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
   at #63, and bounded scorer repair at #64.
   The user-authorized continuation tests the completeness spectrahedron
@@ -79,10 +77,10 @@ theory-selection result.
   permanence theorem, and conditional steering remains open. Verification
   #66 gives two byte-identical worktree replays, 36/36 mutant deaths, an
   independent exact reconstruction, and a byte-identical true off-tree/no-git
-  replay. The three-lens hostile protocol is frozen at #67; reviewers are not
-  assigned.
-  Papers 3–5 remain frozen and untouched.
-- `OVG` / Paper 5: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #57. The pin
+  replay. The three-lens hostile protocol is frozen at #67; all three seats
+  were dispatched at #74.
+- `OVG` / Paper 5: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
+  PANEL RUNNING** at v16 ledger #74. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first
   refusal at #55, and bounded comparator repair at #56.
   The user-authorized continuation replaces a refuted “record or fuse” order
@@ -103,10 +101,10 @@ theory-selection result.
   survive; port law, transport law, primitive arity, and causal
   nonseparability remain unselected or untested. Verification #58 passes two
   clean replays, all 30 mutants, independent seals/math, and true off-tree
-  execution. The three-lens hostile protocol is frozen at #59; reviewers are
-  not assigned.
-- `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
-  FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
+  execution. The three-lens hostile protocol is frozen at #59; all three seats
+  were dispatched at #74.
+- `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
+  PANEL RUNNING** at v16 ledger #74. The pin is frozen at #41,
   original generic core at
   #42, physical fixture/scorer at #43, first refusal at #44, bounded text
   repair at #45, candidate at #46, and failed verification at #47.
@@ -136,8 +134,8 @@ theory-selection result.
   pass. The #51 protocol freezes independent operator/representation,
   rewrite/category, and physics/gravity/QFT attacks. Reviewers and adjudication
   remain.
-- `PPR` / Paper 3: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT
-  YET ASSIGNED** at v16 ledger #40. The pin was frozen at #33, generic core at
+- `PPR` / Paper 3: **GREEN-UNREVIEWED; THREE-SEAT HOSTILE PANEL RUNNING** at
+  v16 ledger #74. The pin was frozen at #33, generic core at
   #34, physical
   scorer at #35, first refusal at #36, and bounded repair at #37. The
   authorized unit asks whether cross-carrier comparison descends from the

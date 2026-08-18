@@ -1714,3 +1714,23 @@ Three mutually isolated seats are specified:
 The protocol assigns no reviewer and authorizes no report, adjudication,
 repair, or terminal promotion. CEL remains replay-verified green-unreviewed.
 Papers 3–6 and the unrelated untracked v15 SCOUT-T files remain untouched.
+
+## 2026-08-18 — PAPERS 3–7 HOSTILE PANELS DISPATCHED (v16 LEDGER #74)
+
+After the user's explicit instruction to run the pending reviews concurrently
+with Paper 8, the frozen hostile protocols for PPR (#40), SRW (#51), OVG
+(#59), CSF (#67), and CEL (#73) were dispatched to three mutually isolated
+seats. The operator seat writes only the five `review-*-operator.md` reports;
+the records/rewrite seat writes only the five
+`review-*-histories|rewrite|records.md` reports; and the physics/locality seat
+writes only the five `review-*-gravity|physics.md` reports. Each seat works
+paper-by-paper from the corresponding frozen protocol, uses only private
+scratch for independent recomputation, reads no other seat report, makes no
+git mutation, and messages completion after each frozen report.
+
+No review finding is adjudicated, repaired, or promoted in this event. A
+paper's panel may be opened for joint adjudication only after all three of its
+reports exist and are hash-frozen. WRC construction proceeds independently;
+none of these in-flight reports may become a WRC anchor or silently alter its
+pin. The unrelated untracked v15 SCOUT-T files remain outside the read, edit,
+and staging sets.
