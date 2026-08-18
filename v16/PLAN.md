@@ -148,6 +148,28 @@ unselected. Event-algebra, representation, continuation, permanence,
 comparison/dynamics typing, relational rewrite, classical-only, and empty-law
 blocks are all pre-registered first-class outcomes.
 
+## Paper 04 — SRW: support–rewrite weld and local couplings
+
+Status: **PIN — FROZEN BEFORE CONSTRUCTION (v16 #41)**.
+
+The user's 2026-08-17 instruction authorizes a separate continuation that
+tests the possible weld left exposed by Paper 3. The immutable pin is
+`v16/note-srw-pin.md`. SRW does not repair or terminalize PPR.
+
+The unit first asks whether the strong claim “the support of one map is the
+rewrite and its entries are the dynamics” survives exact typing. It then tests
+a corrected bundle-morphism object `(rewrite, transport)`, distinguishes
+kinematically allowed support from actual nonzero coupling, computes whether
+the two surviving anonymous dictionaries remain equivalent under appended
+graph- and history-sensitive futures, enlarges the carrier functor, solves the
+growth/history coupling variety with the angles initially independent, and
+separates boundary-frame gauge from physical loop holonomy.
+
+The locked order is pin -> generic public core -> result-free physical fixture
+and verdict-neutral scorer -> one official execution -> candidate verification
+-> frozen three-lens hostile protocol. No hostile reviewer is authorized by
+this pin alone.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

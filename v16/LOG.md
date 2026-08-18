@@ -871,3 +871,37 @@ counterfixtures, twelve adjudication questions, and an earliest-failed-rung
 demotion rule. Candidate artifacts remain immutable. No reviewer is assigned
 by this commit; explicit user authorization to delegate the three independent
 seats is still required.
+
+## 2026-08-17 — PAPER 4 SRW PIN FROZEN BEFORE CONSTRUCTION (v16 LEDGER #41)
+
+The user's explicit instruction, “ok go ahead, investigate all that,”
+authorizes the bounded SRW continuation pinned in `v16/note-srw-pin.md`. The
+immutable base is PPR hostile-protocol commit
+`a8e7cb698be92ef09c859526ff0dddfc0c0f8eaa`. SRW is a separate Paper 4 unit;
+it does not alter, repair, review, or terminalize Paper 3.
+The pin SHA-256 is
+`8f91610f93866c9edcc13c4e9add5878f0fa4806d96e4b88024711b7db8b6299`.
+
+The pin tests both the strong map-only proposal and a corrected bundle weld.
+It distinguishes transition support, spatial incidence, persistence ancestry,
+kinematic permission, actual nonzero coupling, and complete configuration
+basis. The first gate is a referent/type census. The registered physical work
+then separates current-observable blindness from continuation-stable gauge,
+enumerates all twelve one-excitation dictionaries, appends graph- and history-
+sensitive futures, tests zero-coupling endpoints, compares four fiber
+functors, solves initially independent growth and history/readout coupling
+circles under recurrence and reciprocity, and exhausts a finite phase-gauge /
+holonomy control.
+
+The external scratchpad proposal supplied through the user is motivation only:
+none of its scripts or claimed outcomes is an anchor. The Paper 3 identities
+are exit-1 antecedents; reproducing them cannot prove the cross-object weld.
+Eight reachable outcomes include referent absence, legacy inconsistency,
+map-only refutation, current-blind-but-future-physical dictionaries,
+continuation-stable gauge, a constructed-but-unselected bundle weld,
+reciprocal transport with history weights free, and finite-arena selection.
+
+No SRW implementation, fixture, scorer, output, receipt, or Paper 4 result
+exists at this commit. The next authorized event is a generic exact core
+freeze on public calibrations before any physical fixture truth exists. The
+unrelated untracked v15 SCOUT-T files remain outside the unit.
