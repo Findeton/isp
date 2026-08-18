@@ -60,9 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **ADJUDICATED REPAIRED ARTIFACTS COMMITTED-AS-IS — TERMINAL
-VERIFICATION PENDING (v16 #31)**.  This is a separate unit; it does not reopen
-or repair paper 01.
+Status: **TERMINAL AT THE SCOPED LOCAL-COMPATIBILITY VERDICT (v16 #32)**.  This
+is a separate unit; it does not reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping
@@ -90,8 +89,8 @@ The locked chronology is:
    exact values, and order an interpretive/certificate repair.  The finite
    classifier survives; `fixed point` and carrier-derived comparison do not.
    The bounded repair source is frozen at #30; repaired artifacts are generated
-   and committed as-is at #31 with 20/20 gates and 16/16 mutants.  One terminal
-   worktree/off-tree verifier remains.**
+   and committed as-is at #31 with 20/20 gates and 16/16 mutants; worktree and
+   true off-tree/no-git verification close the unit at #32.**
 
 The result is limited to a real two-channel interface and its first neighboring
 cocycle extension.  It cannot promote geometry, backreaction, a general

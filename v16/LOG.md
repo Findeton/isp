@@ -635,3 +635,34 @@ actualization, particles, constants, or QFT/GR result.
 
 These bytes are committed before replay.  One post-commit worktree and true
 off-tree/no-git verifier remains; no further repair or successor is authorized.
+
+## 2026-08-17 — JCV TERMINAL: LOCAL COMPATIBILITY CONFIRMED; THE RECORD-GENERATED FIXED POINT REMAINS UNBUILT (v16 LEDGER #32)
+
+`v16/note-jcv-terminal-verification.md` closes Paper 2 at
+`LOCAL-COMPATIBILITY-VARIETY-CONFIRMED-BUT-RECORD-GENERATED-FIXED-POINT-UNBUILT`.
+The worktree replay is byte-identical.  All 16 explicit mutants die at their
+registered gates with zero artifact movement; second-official and invalid CLI
+forms refuse correctly.  An independent audit confirms all 19 sealed payload
+keys, seven source anchors, 20 gates, 16 mutants, 18 paper bindings, repaired
+operator/corollary values, scope walls, and exact source syntax.
+
+A true `git archive` of repaired commit `126caa4`, containing only the
+runtime/read/result set and no `.git` metadata, was invoked by absolute path
+from alien CWD `/private/tmp`.  Replay and selftest pass, and the archived
+paper, transcript, and receipt hashes are byte-identical to the committed
+artifacts.
+
+The terminal exact content is local.  The declared sign/gauge quotient and
+variety, `S^1 x S^1` active boundary-instrument family, fixed-boundary CPTP
+identity, operator/unravelling distinction, homogeneity scope, direct-`03`
+extension countermodel, and one-step law-null theorem survive.  A physical
+cross-carrier comparison, continuation-stable null congruence, record-generated
+self-map, selected weights, global refinement, actualization, geometry,
+backreaction, all-arity dynamics, particles, constants, and QFT/GR consequences
+remain unconstructed or unselected.
+
+The refined successor target is a strongly positive complete-history law whose
+complete continuation-stable null quotient generates physical boundary
+identity and whose own durable records reproduce that quotient across at least
+three overlaps.  This target is now precise, but it is not a result and is not
+authorized without a fresh user instruction and pin.  JCV and Paper 2 halt.

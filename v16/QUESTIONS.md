@@ -89,7 +89,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     history.  It still owes a preferred, refinement-stable family of compatible
     record partitions and an actualization rule consistent across them.
 20. **PARTIAL — Is the comparison structure and law a selected joint fixed
-    point?**  JCV's hostile panel confirms the exact local variety but rejects
+    point?**  JCV is terminal at its local scope.  Its hostile panel confirms
+    the exact local variety but rejects
     the fixed-point interpretation.  On the registered full-coherent locus,
     flat holonomy is unique modulo chart-sign gauge while a real
     two-dimensional boundary-instrument family remains.  Six nontrivial
