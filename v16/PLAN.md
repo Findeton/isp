@@ -432,6 +432,29 @@ three artifacts. The hostile protocol is frozen at #73 with operator/resource,
 records/recurrence/relational, and locality/dynamics/physics seats. It assigns
 no reviewer and authorizes no adjudication or repair.
 
+## Paper 09 — QSF: the quantum seam
+
+Status: **PANEL-ADJUDICATED AND BOUNDED-REPAIRED AT
+`QSF-METHOD-INCONCLUSIVE`; TERMINAL VERIFICATION PENDING (v16 #125)**.
+
+QSF compares three non-equivalent readings of WRC's CELL-HIT seam: a standard
+affine instrument family, a fine pure-ray/count stochastic ontology with its
+natural fixed-factor composite, and an indivisible-history boundary. The
+three-seat panel preserves the cautious primary while correcting the original
+candidate: record-indexed A0 is false, branch recurrence does not settle
+aggregate feasibility, the fixed-factor witness is remote-setting dependence
+at Bob's count-record grain rather than a Lorentz theorem, and Arm C proves
+failure of `rho` sufficiency rather than failure of every stochastic law.
+
+The bounded repair derives all dispositions and adds the panel's exact
+controls. It also distinguishes suffix prediction from complete JS-S1a:
+calibrated final-record quotients are `3,3,27,27,486,486`, and one exact pair
+with equal horizon-two suffix law separates at horizon three. Two clean
+generations pass 20/20 gates byte-identically below the runtime ceiling. The
+next lawful event is terminal verification over all 28 mutants and true
+off-tree/no-`.git` replay. Only after that event may Paper 10's forcing-boundary
+pin freeze; Paper 10 construction is not authorized by QSF itself.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

@@ -2679,3 +2679,26 @@ and primary immovable. It must compute the previously literal dispositions,
 bind the new operator/causality/history controls, retype the ontology and S1,
 and pass expanded mutants plus true off-tree replay. Paper 10 may be pinned
 only after separate terminal verification; its construction remains held.
+
+## 2026-08-18 — QSF PAPER 9 BOUNDED REPAIR (v16 LEDGER #125)
+
+`v16/note-qsf-bounded-repair.md` freezes the panel-ordered repair. The primary
+remains **QSF-METHOD-INCONCLUSIVE**. All previously literal arm dispositions
+are now derived: record-indexed A0 is killed by the exact collision; raw and
+aligned branch descent each retain 30 conflicts; a 10,527-row terminal phase
+control proves branch failure does not decide aggregate feasibility; and the
+aggregate A1/A2 mixed-state problem is explicitly unentered.
+
+The fixed-factor HJW arm now binds all five history/count/readout windows, a
+second MUB, outcome relabel, two affine controls, and feedback erasure. Arm C
+is narrowed to no `rho`-sufficient retained state-record boundary, with its
+tick-two 72-entry density witness; the fine ray/count rule remains a normalized
+stochastic kernel whose natural composite the causality arm rejects. S1 is
+retyped suffix-only, final-record quotients are `3,3,27,27,486,486`, and an
+exact two-history horizon-three witness proves non-stabilization. The generated
+paper carries the Barandes-safe ontology split.
+
+Two pre-commit clean generations are byte-identical and pass 20/20 scientific
+gates in about 184 seconds. Eight new upstream mutants bring the registered
+total to 28. Terminal status is still withheld pending post-commit replay, all
+mutants, and true off-tree/no-`.git` execution. Paper 10 remains unpinned.

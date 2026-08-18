@@ -1,12 +1,20 @@
 QSF PAPER 9 QUANTUM-SEAM ASSAY
-gates=14 passed=14
-arm_a=QSF-AFFINE-METHOD-INCONCLUSIVE-AT-A1-A2-AGGREGATE-VARIETY
+gates=20 passed=20
+arm_a=QSF-AFFINE-METHOD-INCONCLUSIVE-AT-A1-A2-AGGREGATE-PROBLEM
+a0_record_context_exact=false
 a1_conflicting_signatures=30
+a2_aligned_conflicting_signatures=30
+aggregate_problem_entered=false
 projective_survival=0/9
 arm_b=PHRASABLE-SIGNALLING-WITNESS
-literal_fixed_factor_history_tv=0,1/2,211/324
+literal_fixed_factor_history_tv=0,1/2,211/324,180223/236196,1694745299/2066242608
+literal_fixed_factor_count_tv=0,1/2,211/324,12415/17496,820725659/1162261467
 arm_c=QSF-HISTORY-NO-AFFINE-RECORD-BOUNDARY-WITHIN-1-5
-record_boundary_witnesses=5/5
-s1b=QSF-S1B-NOT-ENTERED-BECAUSE-LAW-FAMILY-NOT-CLOSED
+arm_c_scope=NO-RHO-SUFFICIENT-RETAINED-STATE-RECORD-MAP
+tick2_density_difference_entries=72
+suffix_quotients=1,1,2,15,126,485
+final_record_quotients=3,3,27,27,486,486
+complete_js_s1a_entered=false
+s1b=QSF-S1B-NOT-ENTERED-BECAUSE-A1-A2-AND-COMPLETE-S1A-UNENTERED
 synthesis=QSF-METHOD-INCONCLUSIVE
-payload_sha256=69bf58d9542b1a778d0adb33f03a66579bb2b3e3a342541fe0f0b98bd5237e69
+payload_sha256=073ac1e57c2f56c3f5e33dc8d15a1a37e7cb3ff073745f2a883579cf83bdc3b7

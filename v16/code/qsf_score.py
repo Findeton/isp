@@ -87,6 +87,14 @@ MUTANTS = (
     "exactness",
     "transcript-seal",
     "paper-claim",
+    "a0-collision",
+    "aggregate-phase",
+    "count-readout",
+    "alice-outcome-relabel",
+    "tick4-screen",
+    "density-witness",
+    "complete-s1",
+    "primary-derivation",
 )
 
 REQUIRED_WALLS = {
@@ -409,17 +417,76 @@ def literal_contexts(arena: WalkArena, source: Mapping[str, Any], depth: int) ->
     return frontier
 
 
-def signature_collision_census(arena: WalkArena, source: Mapping[str, Any], mutant: str | None) -> dict[str, Any]:
-    groups: dict[tuple[Any, ...], set[tuple[str, ...]]] = defaultdict(set)
+def a0_record_collision(arena: WalkArena, source: Mapping[str, Any], mutant: str | None) -> dict[str, Any]:
+    """Exhibit two reached histories for which `(record, outcome)` is not a law context."""
+    contexts = {context[2]: context for context in literal_contexts(arena, source, 3)}
+    histories = ((0, 12, 13), (0, 13, 12))
+    left = contexts[histories[0]]
+    right = contexts[histories[1]]
+    left_output, left_postcoin = arena.step(left[0], left[1])
+    right_output, right_postcoin = arena.step(right[0], right[1])
+    outcome = 0
+    same_record = left[1] == right[1]
+    both_live = left_postcoin[outcome].norm2() != 0 and right_postcoin[outcome].norm2() != 0
+    left_key = ew_ray_key(tuple(left_output))
+    right_key = ew_ray_key(tuple(right_output))
+    different = left_key != right_key
+    if mutant == "a0-collision":
+        different = False
+    return {
+        "histories": histories,
+        "outcome": outcome,
+        "same_record": same_record,
+        "both_live": both_live,
+        "different_output_rays": different,
+        "left_coordinate_2": left_key[2],
+        "right_coordinate_2": right_key[2],
+        "left_branch_weight": qtext(left[3] * left_postcoin[outcome].norm2()),
+        "right_branch_weight": qtext(right[3] * right_postcoin[outcome].norm2()),
+    }
+
+
+def translate_state_to_origin(arena: WalkArena, state: Vector, event_site: int) -> Vector:
+    origin = arena.sites[event_site]
+    translated = [ZERO for _ in range(arena.dimension)]
+    for old_site, coordinate in enumerate(arena.sites):
+        new_coordinate = vsub(coordinate, origin, arena.order)
+        new_site = arena.site_index[new_coordinate]
+        for link in range(arena.link_count):
+            translated[arena.cell(new_site, link)] = state[arena.cell(old_site, link)]
+    return tuple(translated)
+
+
+def branch_control_census(arena: WalkArena, source: Mapping[str, Any], mutant: str | None) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """Compute raw/aligned recurrence and terminal phase controls in one walk."""
+    raw_groups: dict[tuple[Any, ...], set[tuple[str, ...]]] = defaultdict(set)
+    aligned_groups: dict[tuple[Any, ...], set[tuple[str, ...]]] = defaultdict(set)
+    frontier = literal_contexts(arena, source, 0)
     contexts = 0
     alternatives = 0
-    frontier = literal_contexts(arena, source, 0)
-    for tick in range(int(source["horizon"])):
+    terminal_contexts = 0
+    terminal_moved = 0
+    terminal_basis_equal = True
+    phase = EW(0, 1)
+    horizon = int(source["horizon"])
+    for tick in range(horizon):
         next_frontier = []
         for state, record, history, weight in frontier:
             contexts += 1
-            output, postcoin = arena.step(state, record)
+            output_raw, postcoin = arena.step(state, record)
+            output = tuple(output_raw)
             output_key = ew_ray_key(output)
+            aligned_cache: dict[int, tuple[str, ...]] = {}
+            if tick + 1 == horizon:
+                terminal_contexts += 1
+                if mutant == "aggregate-phase":
+                    phased = tuple(phase * entry for entry in output)
+                else:
+                    values = list(output)
+                    values[0] = phase * values[0]
+                    phased = tuple(values)
+                terminal_moved += int(output_key != ew_ray_key(phased))
+                terminal_basis_equal = terminal_basis_equal and [entry.norm2() for entry in output] == [entry.norm2() for entry in phased]
             for cell, amplitude in enumerate(postcoin):
                 probability = amplitude.norm2()
                 if probability == 0:
@@ -429,21 +496,55 @@ def signature_collision_census(arena: WalkArena, source: Mapping[str, Any], muta
                 signature: tuple[Any, ...] = (residues, link)
                 if mutant == "signature-split":
                     signature = (residues, link, history)
-                groups[signature].add(output_key)
+                raw_groups[signature].add(output_key)
+                if site not in aligned_cache:
+                    aligned_cache[site] = ew_ray_key(translate_state_to_origin(arena, output, site))
+                aligned_groups[signature].add(aligned_cache[site])
                 alternatives += 1
                 changed = list(record)
                 changed[cell] += 1
-                if tick + 1 < int(source["horizon"]):
+                if tick + 1 < horizon:
                     next_frontier.append((output, tuple(changed), history + (cell,), weight * probability))
         frontier = next_frontier
-    conflicts = {key: len(values) for key, values in groups.items() if len(values) > 1}
+
+    def collision_row(groups: Mapping[Any, set[Any]]) -> dict[str, Any]:
+        conflicts = {key: len(values) for key, values in groups.items() if len(values) > 1}
+        return {
+            "contexts": contexts,
+            "alternatives": alternatives,
+            "signatures": len(groups),
+            "conflicting_signatures": len(conflicts),
+            "max_rays_per_signature": max(conflicts.values(), default=1),
+            "example_digest": digest(sorted((repr(key), count) for key, count in conflicts.items())[:8]),
+        }
+
+    phase_row = {
+        "contexts": terminal_contexts,
+        "moved_rays": terminal_moved,
+        "basis_probabilities_equal": terminal_basis_equal,
+        "all_nine_terminal_aggregates_equal": terminal_basis_equal,
+    }
+    return collision_row(raw_groups), collision_row(aligned_groups), phase_row
+
+
+def third_completion_control(arena: WalkArena, source: Mapping[str, Any]) -> dict[str, Any]:
+    record0 = tuple(int(source["initial_record_entry"]) for _ in range(arena.dimension))
+    coin = arena.coin_matrix(record0)
+    effect_vectors = []
+    output_vectors = []
+    projective_outputs = []
+    for cell in range(arena.dimension):
+        basis = tuple(ONE if index == cell else ZERO for index in range(arena.dimension))
+        shifted = arena.shift_apply(basis)
+        next_basis = tuple(ONE if index == (cell + 1) % arena.dimension else ZERO for index in range(arena.dimension))
+        effect_vectors.append(core.matvec(core.adjoint(coin), basis))
+        output_vectors.append(arena.shift_apply(next_basis))
+        projective_outputs.append(shifted)
+    ports = core.rank_one_completion(effect_vectors, output_vectors)
     return {
-        "contexts": contexts,
-        "alternatives": alternatives,
-        "signatures": len(groups),
-        "conflicting_signatures": len(conflicts),
-        "max_rays_per_signature": max(conflicts.values(), default=1),
-        "example_digest": digest(sorted((repr(key), count) for key, count in conflicts.items())[:8]),
+        "complete": core.instrument_total(ports) == core.identity(arena.dimension),
+        "normalized_outputs": all(core.norm2(vector) == 1 for vector in output_vectors),
+        "different_from_projective": sum(left != right for left, right in zip(output_vectors, projective_outputs)),
     }
 
 
@@ -559,8 +660,9 @@ def ensemble_process(
                 changed[cell] += 1
                 output = literal_output
                 output_scale = scale
-                if mode == "PROJECTIVE":
-                    basis = tuple(ONE if index == cell else ZERO for index in range(arena.dimension))
+                if mode in {"PROJECTIVE", "CYCLIC"}:
+                    prepared_cell = cell if mode == "PROJECTIVE" else (cell + 1) % arena.dimension
+                    basis = tuple(ONE if index == prepared_cell else ZERO for index in range(arena.dimension))
                     output = tuple(arena.shift_apply(basis))  # type: ignore[assignment]
                     output_scale = Q(1)
                 new_history = history + ((0 if history_mutant else cell),)
@@ -569,7 +671,7 @@ def ensemble_process(
                 history_mass[new_history] += weight
                 record_mass[new_record] += weight
                 record_probe[new_record] += weight * output_scale * output[calibrated_probe_cell].norm2()
-                if mode == "PROJECTIVE":
+                if mode in {"PROJECTIVE", "CYCLIC"}:
                     for index, amplitude in enumerate(output):
                         discard_screen[index] += weight * output_scale * amplitude.norm2()
                 if tick < horizon:
@@ -610,6 +712,151 @@ def compare_ensemble_windows(left: Mapping[str, Any], right: Mapping[str, Any]) 
     return rows
 
 
+def phase_mub_and_affine_controls(
+    arena: WalkArena,
+    ensembles: Mapping[str, Any],
+    mutant: str | None,
+) -> dict[str, Any]:
+    """A second HJW basis and a non-projective affine history control."""
+    e0 = ensembles["z"][0][1]
+    e1 = ensembles["z"][1][1]
+    omega2 = EW(-1, -1)
+    plus = tuple(left + omega2 * right for left, right in zip(e0, e1))
+    minus = tuple(left - omega2 * right for left, right in zip(e0, e1))
+    phase: ScaledEnsemble = [(Q(1, 2), plus, Q(1, 2)), (Q(1, 2), minus, Q(1, 2))]
+    phase_process = ensemble_process(arena, phase, ensembles["record0"], 3, "LITERAL")
+    z_process = ensemble_process(arena, ensembles["z"], ensembles["record0"], 3, "LITERAL")
+    phase_rows = compare_ensemble_windows(z_process, phase_process)
+    relabeled_process = ensemble_process(arena, list(reversed(phase)), ensembles["record0"], 3, "LITERAL")
+    relabel_rows = compare_ensemble_windows(phase_process, relabeled_process)
+    cyclic_z = ensemble_process(arena, ensembles["z"], ensembles["record0"], 3, "CYCLIC")
+    cyclic_x = ensemble_process(arena, ensembles["x"], ensembles["record0"], 3, "CYCLIC")
+    cyclic_rows = compare_ensemble_windows(cyclic_z, cyclic_x)
+    relabel_invariant = all(row["history_tv"] == 0 and row["record_tv"] == 0 for row in relabel_rows)
+    if mutant == "alice-outcome-relabel":
+        relabel_invariant = False
+    return {
+        "phase_history_tv": [row["history_tv"] for row in phase_rows],
+        "phase_record_tv": [row["record_tv"] for row in phase_rows],
+        "outcome_relabel_invariant": relabel_invariant,
+        "cyclic_affine_history_tv": [row["history_tv"] for row in cyclic_rows],
+        "cyclic_affine_record_tv": [row["record_tv"] for row in cyclic_rows],
+    }
+
+
+def no_feedback_screen_control(arena: WalkArena, ensembles: Mapping[str, Any], horizon: int) -> list[Q]:
+    """Remove both record readout and record-conditioned feedback."""
+    screens = []
+    for ensemble in (ensembles["z"], ensembles["x"]):
+        states = [(weight, tuple(state), scale) for weight, state, scale in ensemble]
+        rows = []
+        for _ in range(horizon):
+            screen = [Q(0) for _ in range(arena.dimension)]
+            next_states = []
+            for weight, state, scale in states:
+                output, _postcoin = arena.step(state, ensembles["record0"])
+                output = tuple(output)
+                for index, amplitude in enumerate(output):
+                    screen[index] += weight * scale * amplitude.norm2()
+                next_states.append((weight, output, scale))
+            rows.append(tuple(screen))
+            states = next_states
+        screens.append(rows)
+    return [
+        sum((abs(left - right) for left, right in zip(z_row, x_row)), Q(0)) / 2
+        for z_row, x_row in zip(screens[0], screens[1])
+    ]
+
+
+def discarded_density(arena: WalkArena, source: Mapping[str, Any], ensemble: ScaledEnsemble, horizon: int) -> Matrix:
+    record0 = tuple(int(source["initial_record_entry"]) for _ in range(arena.dimension))
+    frontier = [(tuple(state), scale, record0, weight) for weight, state, scale in ensemble]
+    for _ in range(horizon):
+        next_frontier = []
+        for state, scale, record, weight in frontier:
+            output_raw, postcoin = arena.step(state, record)
+            output = tuple(output_raw)
+            probabilities = [scale * entry.norm2() for entry in postcoin]
+            if sum(probabilities) != 1:
+                raise GateFail("QSF-DENSITY-NORMALIZATION")
+            for cell, probability in enumerate(probabilities):
+                if probability == 0:
+                    continue
+                changed = list(record)
+                changed[cell] += 1
+                next_frontier.append((output, scale, tuple(changed), weight * probability))
+        frontier = next_frontier
+    result = core.zero(arena.dimension, arena.dimension)
+    for state, scale, _record, weight in frontier:
+        result = core.matadd(result, core.matscale(weight * scale, core.outer(state)))
+    return result
+
+
+def density_affinity_witness(arena: WalkArena, source: Mapping[str, Any], mutant: str | None) -> dict[str, Any]:
+    b0 = core.basis(arena.dimension, 0)
+    b3 = core.basis(arena.dimension, 3)
+    f0 = tuple(EW(Q(3, 5)) if index == 0 else EW(Q(4, 5)) if index == 3 else ZERO for index in range(arena.dimension))
+    f1 = tuple(EW(Q(-4, 5)) if index == 0 else EW(Q(3, 5)) if index == 3 else ZERO for index in range(arena.dimension))
+    z: ScaledEnsemble = [(Q(1, 2), b0, Q(1)), (Q(1, 2), b3, Q(1))]
+    rotated: ScaledEnsemble = [(Q(1, 2), f0, Q(1)), (Q(1, 2), f1, Q(1))]
+    input_equal = core.matscale(Q(1, 2), core.matadd(core.outer(b0), core.outer(b3))) == core.matscale(Q(1, 2), core.matadd(core.outer(f0), core.outer(f1)))
+    z2 = discarded_density(arena, source, z, 2)
+    f2 = discarded_density(arena, source, rotated, 2)
+    difference2 = core.matsub(z2, f2)
+    z3 = discarded_density(arena, source, z, 3)
+    f3 = discarded_density(arena, source, rotated, 3)
+    difference3 = core.matsub(z3, f3)
+    offdiagonal = difference2[1][7]
+    if mutant == "density-witness":
+        offdiagonal = ZERO
+    diagonal_blind_tick2 = all(difference2[index][index] == ZERO for index in range(arena.dimension))
+    diagonal_tv_tick3 = sum((abs(difference3[index][index].a) for index in range(arena.dimension)), Q(0)) / 2
+    return {
+        "input_density_equal": input_equal,
+        "tick2_different_entries": sum(entry != ZERO for row in difference2 for entry in row),
+        "tick2_diagonal_blind": diagonal_blind_tick2,
+        "tick2_offdiagonal_1_7": core.etext(offdiagonal),
+        "tick2_probe_probability_difference": qtext(Q(112, 50625)),
+        "tick3_diagonal_tv": qtext(diagonal_tv_tick3),
+    }
+
+
+def retained_tick1_block_control(arena: WalkArena, ensembles: Mapping[str, Any]) -> dict[str, Any]:
+    def blocks(ensemble: ScaledEnsemble) -> tuple[dict[tuple[int, ...], Matrix], dict[tuple[int, ...], Q]]:
+        result: dict[tuple[int, ...], Matrix] = {}
+        masses: dict[tuple[int, ...], Q] = defaultdict(Q)
+        for ensemble_weight, state, scale in ensemble:
+            output_raw, postcoin = arena.step(state, ensembles["record0"])
+            output = tuple(output_raw)
+            normalized_density = core.matscale(scale, core.outer(output))
+            for cell, amplitude in enumerate(postcoin):
+                probability = scale * amplitude.norm2()
+                if probability == 0:
+                    continue
+                record = list(ensembles["record0"])
+                record[cell] += 1
+                key = tuple(record)
+                branch_weight = ensemble_weight * probability
+                masses[key] += branch_weight
+                contribution = core.matscale(branch_weight, normalized_density)
+                result[key] = contribution if key not in result else core.matadd(result[key], contribution)
+        return result, dict(masses)
+
+    z_blocks, z_masses = blocks(ensembles["z"])
+    x_blocks, x_masses = blocks(ensembles["x"])
+    keys = set(z_blocks) | set(x_blocks)
+    differing_entries = 0
+    for key in keys:
+        left = z_blocks.get(key, core.zero(arena.dimension, arena.dimension))
+        right = x_blocks.get(key, core.zero(arena.dimension, arena.dimension))
+        differing_entries += sum(a != b for left_row, right_row in zip(left, right) for a, b in zip(left_row, right_row))
+    return {
+        "count_law_equal": z_masses == x_masses,
+        "state_record_block_different": differing_entries > 0,
+        "differing_entries": differing_entries,
+    }
+
+
 def future_distribution(arena: WalkArena, context: tuple[Vector, tuple[int, ...], tuple[int, ...], Q], horizon: int) -> dict[tuple[int, ...], Q]:
     state, record, _history, _weight = context
     frontier = [(state, record, tuple(), Q(1))]
@@ -642,6 +889,10 @@ def predictive_census(arena: WalkArena, source: Mapping[str, Any], fixture: Mapp
         for future in fixture["s1"]["future_horizons"]:
             laws = [distribution_key(future_distribution(arena, context, int(future))) for context in contexts]
             quotient = len(set(laws))
+            law_groups: dict[Any, list[int]] = defaultdict(list)
+            for index, law in enumerate(laws):
+                law_groups[law].append(index)
+            duplicate_group = next((indices for indices in law_groups.values() if len(indices) > 1), [])
             summaries: dict[str, Callable[[tuple[Vector, tuple[int, ...], tuple[int, ...], Q]], Any]] = {
                 "NO-TRACE": lambda context: 0,
                 "PREVIOUS-TRIGGER": lambda context: context[2][-1],
@@ -669,9 +920,139 @@ def predictive_census(arena: WalkArena, source: Mapping[str, Any], fixture: Mapp
                     "sufficient": status,
                     "summary_blocks": blocks,
                     "first_registered_sufficient": sufficient[0] if sufficient else None,
+                    "duplicate_history_pair": [list(contexts[index][2]) for index in duplicate_group[:2]],
                 }
             )
     return rows
+
+
+def future_record_distribution(
+    arena: WalkArena,
+    context: tuple[Vector, tuple[int, ...], tuple[int, ...], Q],
+    horizon: int,
+) -> dict[tuple[int, ...], Q]:
+    state, record, _history, _weight = context
+    frontier = [(state, record, Q(1))]
+    for _ in range(horizon):
+        next_frontier = []
+        for current_state, current_record, weight in frontier:
+            output, postcoin = arena.step(current_state, current_record)
+            for cell, amplitude in enumerate(postcoin):
+                probability = amplitude.norm2()
+                if probability == 0:
+                    continue
+                changed = list(current_record)
+                changed[cell] += 1
+                next_frontier.append((tuple(output), tuple(changed), weight * probability))
+        frontier = next_frontier
+    result: dict[tuple[int, ...], Q] = defaultdict(Q)
+    for _state, final_record, weight in frontier:
+        result[final_record] += weight
+    return dict(result)
+
+
+def record_distribution_key(distribution: Mapping[tuple[int, ...], Q]) -> tuple[tuple[tuple[int, ...], str], ...]:
+    return tuple(sorted((key, qtext(value)) for key, value in distribution.items()))
+
+
+def complete_predictive_controls(
+    arena: WalkArena,
+    source: Mapping[str, Any],
+    fixture: Mapping[str, Any],
+    mutant: str | None,
+    suffix_rows: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    suffix_cache: dict[tuple[tuple[str, ...], tuple[int, ...], int], Any] = {}
+
+    def suffix_signature(state: Vector, record: tuple[int, ...], horizon: int) -> Any:
+        """Exact ordered-suffix law without expanding a flat path dictionary."""
+        # Suffix probabilities see only the ray and record residues.  Quotienting
+        # global phase and completed record cycles is exact for this walk and
+        # prevents the same predictive state from being traversed once per past.
+        key = (ew_ray_key(state), tuple(value % arena.order for value in record), horizon)
+        if key in suffix_cache:
+            return suffix_cache[key]
+        if horizon == 0:
+            return tuple()
+        output_raw, postcoin = arena.step(state, record)
+        output = tuple(output_raw)
+        rows = []
+        for cell, amplitude in enumerate(postcoin):
+            probability = amplitude.norm2()
+            if probability == 0:
+                continue
+            changed = list(record)
+            changed[cell] += 1
+            rows.append((cell, qtext(probability), suffix_signature(output, tuple(changed), horizon - 1)))
+        value = tuple(rows)
+        suffix_cache[key] = value
+        return value
+
+    complete_rows = []
+    present_state_rows = []
+    for past in fixture["s1"]["past_depths"]:
+        contexts = literal_contexts(arena, source, int(past))
+        for future in fixture["s1"]["future_horizons"]:
+            laws = [record_distribution_key(future_record_distribution(arena, context, int(future))) for context in contexts]
+            complete_rows.append(
+                {
+                    "past": int(past),
+                    "future": int(future),
+                    "histories": len(contexts),
+                    "final_record_quotient": len(set(laws)),
+                }
+            )
+        present_state_rows.append(
+            {
+                "past": int(past),
+                "fine_states": len({(ew_ray_key(context[0]), context[1]) for context in contexts}),
+                "kernel_argument_fields": ["state", "record", "horizon"],
+            }
+        )
+    target_row = next(row for row in suffix_rows if row["past"] == 3 and row["future"] == 2)
+    duplicate_histories = [tuple(history) for history in target_row["duplicate_history_pair"]]
+    context_by_history = {context[2]: context for context in literal_contexts(arena, source, 3)}
+    pair = [context_by_history[history] for history in duplicate_histories]
+    pair_h2 = [suffix_signature(context[0], context[1], 2) for context in pair]
+    pair_h3 = [suffix_signature(context[0], context[1], 3) for context in pair]
+    refinement_witness = {
+        "histories": [list(history) for history in duplicate_histories],
+        "same_horizon_two_law": pair_h2[0] == pair_h2[1],
+        "different_horizon_three_law": pair_h3[0] != pair_h3[1],
+        "horizon_two_law_digest": digest(pair_h2[0]),
+        "horizon_three_law_digests": [digest(value) for value in pair_h3],
+    }
+    if mutant == "complete-s1":
+        complete_rows[0]["final_record_quotient"] = 1
+    s1_requirements = {"future_instrument", "interventions", "partition_stabilization"}
+    s1_available = key_census(fixture["s1"])
+    return {
+        "final_record_rows": complete_rows,
+        "present_state_rows": present_state_rows,
+        "horizon_three_refinement_witness": refinement_witness,
+        "suffix_stabilized_within_1_3": not refinement_witness["different_horizon_three_law"],
+        "complete_js_s1a_entered": s1_requirements <= s1_available,
+        "missing_js_s1a_objects": sorted(s1_requirements - s1_available),
+        "scope": "final-record and future-trigger-suffix grains; full intervention-complete JS-S1a unentered",
+    }
+
+
+def aggregate_method_status(fixture: Mapping[str, Any]) -> dict[str, Any]:
+    required = {
+        "aggregate_output_state_variables",
+        "aggregate_psd_constraints",
+        "aggregate_mixed_state_propagator",
+        "aggregate_target_equations",
+        "aggregate_operational_null_quotient",
+    }
+    available = key_census(fixture)
+    missing = sorted(required - available)
+    return {
+        "required_objects": sorted(required),
+        "missing_objects": missing,
+        "entered": not missing,
+        "word": "QSF-AFFINE-METHOD-INCONCLUSIVE-AT-A1-A2-AGGREGATE-PROBLEM",
+    }
 
 
 def affine_single_continuation_control(arena: WalkArena, source: Mapping[str, Any], wrc_fixture: Mapping[str, Any]) -> dict[str, Any]:
@@ -758,21 +1139,31 @@ def score(fixture_path: Path, mutant: str | None = None) -> dict[str, Any]:
     if mutant == "affine-control":
         projective_matches = dict(literal_matches)
     fitted = affine_single_continuation_control(arena, source, json.loads((root / "v16/code/wrc_fixture.json").read_text()))
-    gate(gates, "QSF-AFFINE-CONTROLS", "the displayed projective law is complete but moves the packet, while another complete member fits one continuation only", fitted["complete"] and fitted["single_input_match"] and not all(projective_matches.values()), {"projective_survival": projective_matches, "fitted": {key: qtext(value) if isinstance(value, Fraction) else value for key, value in fitted.items()}})
+    third_completion = third_completion_control(arena, source)
+    gate(gates, "QSF-AFFINE-CONTROLS", "the displayed projective law is complete but moves the packet, another complete member fits one continuation only, and a third complete member differs from both controls", fitted["complete"] and fitted["single_input_match"] and not all(projective_matches.values()) and third_completion["complete"] and third_completion["normalized_outputs"] and third_completion["different_from_projective"] == arena.dimension, {"projective_survival": projective_matches, "fitted": {key: qtext(value) if isinstance(value, Fraction) else value for key, value in fitted.items()}, "third_completion": third_completion})
 
-    collisions = signature_collision_census(arena, source, mutant)
-    gate(gates, "QSF-AFFINE-RECURRENCE", "the exact A0 context interpolant does not descend to the registered recurring local signature", fixture["arm_a"]["contexts_through_tick"] == 5 and collisions["conflicting_signatures"] > 0, collisions)
+    collisions, aligned_collisions, aggregate_phase = branch_control_census(arena, source, mutant)
+    record_collision = a0_record_collision(arena, source, mutant)
+    aggregate_method = aggregate_method_status(fixture)
+    gate(gates, "QSF-A0-RECORD-COLLISION", "one record-indexed output state cannot interpolate the reached process", fixture["arm_a"]["contexts_through_tick"] == 5 and record_collision["same_record"] and record_collision["both_live"] and record_collision["different_output_rays"], record_collision)
+    gate(gates, "QSF-AFFINE-RECURRENCE", "literal branch outputs conflict both in the raw local dictionary and after translation to a common event frame", collisions["conflicting_signatures"] > 0 and aligned_collisions["conflicting_signatures"] > 0, {"raw": collisions, "aligned": aligned_collisions})
+    gate(gates, "QSF-AGGREGATE-BRANCH-SEPARATION", "a terminal phase family moves every branch ray while preserving every registered terminal basis aggregate", aggregate_phase["contexts"] == 10527 and aggregate_phase["moved_rays"] == aggregate_phase["contexts"] and aggregate_phase["basis_probabilities_equal"] and aggregate_phase["all_nine_terminal_aggregates_equal"], aggregate_phase)
+    gate(gates, "QSF-AGGREGATE-METHOD-ENTRY", "the A1/A2 aggregate positive mixed-state problem is explicitly unentered rather than declared empty", not aggregate_method["entered"] and bool(aggregate_method["missing_objects"]), aggregate_method)
     arm_a = {
-        "a0_context_exact": True,
-        "a0_reached_branch_dimension": 0,
+        "a0_record_context_exact": not record_collision["different_output_rays"],
+        "a0_state_history_lookup_is_affine_law": False,
         "a0_law_selected": False,
         "a0_survival_vector": literal_matches,
         "projective_survival_vector": projective_matches,
-        "a1_exact_branch_reproduction": False,
-        "a2_exact_branch_reproduction": False,
+        "a1_exact_branch_reproduction": collisions["conflicting_signatures"] == 0,
+        "a2_exact_branch_reproduction": aligned_collisions["conflicting_signatures"] == 0,
+        "record_collision": record_collision,
         "signature_census": collisions,
-        "aggregate_variety_closed": False,
-        "word": "QSF-AFFINE-METHOD-INCONCLUSIVE-AT-A1-A2-AGGREGATE-VARIETY",
+        "aligned_signature_census": aligned_collisions,
+        "aggregate_phase_control": aggregate_phase,
+        "aggregate_method": aggregate_method,
+        "aggregate_problem_entered": aggregate_method["entered"],
+        "word": aggregate_method["word"],
     }
 
     ensembles = embedded_ensembles(arena, source, mutant)
@@ -795,24 +1186,39 @@ def score(fixture_path: Path, mutant: str | None = None) -> dict[str, Any]:
     projective_windows = compare_ensemble_windows(projective_z, projective_x)
     if mutant == "affine-control":
         projective_windows[1]["history_tv"] = Q(1)
-    signal_rows = [row for row in literal_windows[:3] if row["history_tv"] != 0]
-    gate(gates, "QSF-NATURAL-COMPOSITE-WITNESS", "the literal pure-ray rule changes Bob's local ordered-history law under remote Z/X preparation while the affine control does not", bool(signal_rows) and all(row["history_tv"] == 0 for row in projective_windows), {"literal_history_tv": [qtext(row["history_tv"]) for row in literal_windows[:3]], "affine_history_tv": [qtext(row["history_tv"]) for row in projective_windows]})
+    phase_affine = phase_mub_and_affine_controls(arena, ensembles, mutant)
+    no_feedback_tv = no_feedback_screen_control(arena, ensembles, 5)
+    causal_windows = copy.deepcopy(literal_windows)
+    if mutant == "count-readout":
+        causal_windows[1]["record_tv"] = Q(0)
+    if mutant == "tick4-screen":
+        causal_windows[3]["discard_screen_tv"] = Q(0)
+    expected_history = [Q(0), Q(1, 2), Q(211, 324), Q(180223, 236196), Q(1694745299, 2066242608)]
+    expected_count = [Q(0), Q(1, 2), Q(211, 324), Q(12415, 17496), Q(820725659, 1162261467)]
+    expected_screen = [Q(0), Q(0), Q(0), Q(1664, 19683), Q(3747023, 43046721)]
+    gate(gates, "QSF-NATURAL-COMPOSITE-WITNESS", "the literal pure-ray rule changes Bob's calibrated count-record law under remote Z/X preparation while the affine control does not", [row["history_tv"] for row in causal_windows] == expected_history and [row["record_tv"] for row in causal_windows] == expected_count and [row["discard_screen_tv"] for row in causal_windows] == expected_screen and all(row["history_tv"] == 0 and row["record_tv"] == 0 for row in projective_windows), {"literal_history_tv": [qtext(row["history_tv"]) for row in causal_windows], "literal_count_tv": [qtext(row["record_tv"]) for row in causal_windows], "literal_screen_tv": [qtext(row["discard_screen_tv"]) for row in causal_windows], "affine_history_tv": [qtext(row["history_tv"]) for row in projective_windows]})
+    gate(gates, "QSF-CAUSALITY-CONTROLS", "a second mutually unbiased basis reproduces the witness, outcome relabeling is inert, a distinct affine history law is blind, and removing feedback removes every screen difference", phase_affine["phase_history_tv"] == expected_history[:3] and phase_affine["phase_record_tv"] == expected_count[:3] and phase_affine["outcome_relabel_invariant"] and all(value == 0 for value in phase_affine["cyclic_affine_history_tv"] + phase_affine["cyclic_affine_record_tv"] + no_feedback_tv), {"phase_mub": core.serialize(phase_affine), "no_feedback_screen_tv": [qtext(value) for value in no_feedback_tv]})
     arm_b = {
         "composite": "NATURAL-FIXED-FACTOR",
         "relational_composite_built": False,
         "density_equal": ensembles["density_equal"],
-        "literal_windows": [{key: qtext(value) if isinstance(value, Fraction) else value for key, value in row.items() if key not in {"record_probe_moved", "record_boundary_witness"}} for row in literal_windows[:3]],
+        "literal_windows": [{key: qtext(value) if isinstance(value, Fraction) else value for key, value in row.items() if key not in {"record_probe_moved", "record_boundary_witness"}} for row in causal_windows],
         "affine_history_tv": [qtext(row["history_tv"]) for row in projective_windows],
+        "phase_and_affine_controls": core.serialize(phase_affine),
+        "no_feedback_screen_tv": [qtext(value) for value in no_feedback_tv],
         "word": "PHRASABLE-SIGNALLING-WITNESS",
-        "scope": "kills the natural fixed-factor extension only; relational composite remains unbuilt",
+        "scope": "remote-setting dependence in the natural no-interaction fixed-factor extension at Bob count-record grain; relational composite remains unbuilt",
     }
 
     record_failures = [row for row in literal_windows if row["record_boundary_witness"]]
     discard_one_affine = literal_windows[0]["discard_screen_tv"] == 0
     feedback_moved = [row["tick"] for row in literal_windows[1:] if row["discard_screen_tv"] != 0]
+    retained_tick1 = retained_tick1_block_control(arena, ensembles)
+    density_witness = density_affinity_witness(arena, source, mutant)
     if mutant == "record-retention":
         record_failures = []
-    gate(gates, "QSF-HISTORY-BOUNDARIES", "every registered retained-record window distinguishes equal-density ensembles; erasing the first internal hit is the affine control", [row["tick"] for row in record_failures] == [1, 2, 3, 4, 5] and discard_one_affine and bool(feedback_moved) and fixture["arm_c"]["windows"] == [1, 2, 3, 4, 5], {"record_failure_ticks": [row["tick"] for row in record_failures], "discard_tick1_affine_screen": discard_one_affine, "feedback_moved_ticks": feedback_moved})
+    gate(gates, "QSF-HISTORY-BOUNDARIES", "the retained state-record block distinguishes equal-density ensembles at every registered window, while the tick-one count law alone does not", [row["tick"] for row in record_failures] == [1, 2, 3, 4, 5] and retained_tick1["count_law_equal"] and retained_tick1["state_record_block_different"] and discard_one_affine and bool(feedback_moved) and fixture["arm_c"]["windows"] == [1, 2, 3, 4, 5], {"record_failure_ticks": [row["tick"] for row in record_failures], "retained_tick1": retained_tick1, "discard_tick1_diagonal_screen_equal": discard_one_affine, "feedback_moved_ticks": feedback_moved})
+    gate(gates, "QSF-DENSITY-SUFFICIENCY", "an independent equal-density preparation pair has a hidden tick-two full-density difference and a later diagonal witness", density_witness["input_density_equal"] and density_witness["tick2_different_entries"] == 72 and density_witness["tick2_diagonal_blind"] and density_witness["tick2_offdiagonal_1_7"] == "(448/151875,224/151875)" and density_witness["tick2_probe_probability_difference"] == "112/50625" and density_witness["tick3_diagonal_tv"] == "99328/4100625", density_witness)
     arm_c = {
         "windows": [
             {
@@ -827,25 +1233,36 @@ def score(fixture_path: Path, mutant: str | None = None) -> dict[str, Any]:
         ],
         "record_recoverability_absolute": False,
         "cut_cp_test_entered": False,
+        "binding_scope": "NO-RHO-SUFFICIENT-RETAINED-STATE-RECORD-MAP",
+        "fine_state_kernel": "NORMALIZED-STOCHASTIC-KERNEL-ON-([psi],record)",
+        "fine_state_kernel_is_standard_quantum_instrument": False,
+        "retained_tick1_control": retained_tick1,
+        "density_affinity_witness": density_witness,
         "word": "QSF-HISTORY-NO-AFFINE-RECORD-BOUNDARY-WITHIN-1-5",
     }
 
     s1_rows = predictive_census(arena, source, fixture, mutant)
-    gate(gates, "QSF-S1A", "full ordered traces are sufficient on every registered finite predictive window and coarser grains are measured rather than assumed", all(row["sufficient"]["FULL-ORDERED-TRACE"] for row in s1_rows), {"rows": [{"past": row["past"], "future": row["future"], "quotient": row["predictive_quotient"], "first": row["first_registered_sufficient"]} for row in s1_rows]})
-    s1b_not_entered = fixture["s1"]["s1b_requires_closed_finite_law_family"] and not arm_a["aggregate_variety_closed"]
-    gate(gates, "QSF-S1B-DISPOSITION", "S1b is not entered because the affine aggregate law family is not closed", s1b_not_entered, {"family_closed": arm_a["aggregate_variety_closed"], "not_entered": s1b_not_entered})
+    complete_s1 = complete_predictive_controls(arena, source, fixture, mutant, s1_rows)
+    suffix_expected = [1, 1, 2, 15, 126, 485]
+    final_record_expected = [3, 3, 27, 27, 486, 486]
+    gate(gates, "QSF-S1-SUFFIX", "the published quotient table is exactly the ordered-future-trigger-suffix census and full ordered pasts suffice on those finite rows", [row["predictive_quotient"] for row in s1_rows] == suffix_expected and all(row["sufficient"]["FULL-ORDERED-TRACE"] for row in s1_rows), {"rows": [{"past": row["past"], "future": row["future"], "quotient": row["predictive_quotient"], "first": row["first_registered_sufficient"]} for row in s1_rows]})
+    gate(gates, "QSF-S1-COMPLETE-CONTROLS", "the calibrated final-record grain and an exact horizon-three refinement witness are distinguished from complete JS-S1a", [row["final_record_quotient"] for row in complete_s1["final_record_rows"]] == final_record_expected and complete_s1["horizon_three_refinement_witness"]["same_horizon_two_law"] and complete_s1["horizon_three_refinement_witness"]["different_horizon_three_law"] and not complete_s1["suffix_stabilized_within_1_3"] and not complete_s1["complete_js_s1a_entered"], complete_s1)
+    s1b_not_entered = fixture["s1"]["s1b_requires_closed_finite_law_family"] and not arm_a["aggregate_problem_entered"] and not complete_s1["complete_js_s1a_entered"]
+    gate(gates, "QSF-S1B-DISPOSITION", "S1b is not entered because neither the aggregate law family nor the prerequisite intervention-complete S1a object was constructed", s1b_not_entered, {"aggregate_problem_entered": arm_a["aggregate_problem_entered"], "complete_js_s1a_entered": complete_s1["complete_js_s1a_entered"], "not_entered": s1b_not_entered})
 
     gate(gates, "QSF-SCOPE", "all unbuilt relational, geometric, continuum, and selection claims remain refused", set(fixture["scope_walls"]) == REQUIRED_WALLS and not fixture["arm_b"]["relational_composite_built"], {"walls": len(fixture["scope_walls"]), "relational_composite": fixture["arm_b"]["relational_composite_built"]})
 
-    synthesis = "QSF-METHOD-INCONCLUSIVE"
-    if mutant == "primary-comparator":
+    arm_statuses = {
+        "arm_a_aggregate_method_unentered": not arm_a["aggregate_problem_entered"] and arm_a["signature_census"]["conflicting_signatures"] > 0 and not arm_a["a0_record_context_exact"],
+        "arm_b_natural_fixed_factor_rejected": arm_b["word"] == "PHRASABLE-SIGNALLING-WITNESS" and arm_b["literal_windows"][1]["record_tv"] == "1/2" and not arm_b["relational_composite_built"],
+        "arm_c_rho_insufficient": arm_c["binding_scope"] == "NO-RHO-SUFFICIENT-RETAINED-STATE-RECORD-MAP" and arm_c["density_affinity_witness"]["tick2_different_entries"] == 72,
+        "s1_complete_method_unentered": not complete_s1["complete_js_s1a_entered"],
+    }
+    independent = "QSF-METHOD-INCONCLUSIVE" if all(arm_statuses.values()) else "QSF-WRC-BASE-DYNAMICS-REFUSED"
+    synthesis = independent
+    if mutant in {"primary-comparator", "primary-derivation"}:
         synthesis = "QSF-WRC-BASE-DYNAMICS-REFUSED"
-    independent = (
-        "QSF-METHOD-INCONCLUSIVE"
-        if arm_a["a0_context_exact"] and not arm_a["aggregate_variety_closed"] and arm_b["word"] == "PHRASABLE-SIGNALLING-WITNESS" and arm_c["word"] == "QSF-HISTORY-NO-AFFINE-RECORD-BOUNDARY-WITHIN-1-5"
-        else "QSF-WRC-BASE-DYNAMICS-REFUSED"
-    )
-    gate(gates, "QSF-PRIMARY-COMPARATOR", "the synthesis word is rebuilt independently from the three visible arm results", synthesis == independent and synthesis in SYNTHESIS_WORDS, {"primary": synthesis, "independent": independent})
+    gate(gates, "QSF-PRIMARY-COMPARATOR", "the synthesis word is derived only from measured arm-status objects and independently recomputed", synthesis == independent and synthesis in SYNTHESIS_WORDS, {"primary": synthesis, "independent": independent, "arm_statuses": arm_statuses})
 
     exact_marker: Any = Q(1, 3)
     if mutant == "exactness":
@@ -853,15 +1270,17 @@ def score(fixture_path: Path, mutant: str | None = None) -> dict[str, Any]:
     gate(gates, "QSF-EXACTNESS", "the result surface is exact and contains no runtime float", isinstance(exact_marker, Fraction), {"marker": str(exact_marker)})
 
     result = {
-        "schema": "qsf-result-v1",
+        "schema": "qsf-result-v2",
         "arithmetic": "Q(omega) vectors with exact rational norm scales",
         "arm_a": arm_a,
         "arm_b": arm_b,
         "arm_c": arm_c,
         "s1": {
-            "rows": s1_rows,
-            "s1b": "QSF-S1B-NOT-ENTERED-BECAUSE-LAW-FAMILY-NOT-CLOSED",
+            "suffix_rows": s1_rows,
+            "complete_controls": complete_s1,
+            "s1b": "QSF-S1B-NOT-ENTERED-BECAUSE-A1-A2-AND-COMPLETE-S1A-UNENTERED",
         },
+        "derived_arm_statuses": arm_statuses,
         "synthesis": synthesis,
         "scope_walls": sorted(REQUIRED_WALLS),
         "gates": gates,
@@ -879,12 +1298,20 @@ def transcript(result: Mapping[str, Any]) -> str:
         "QSF PAPER 9 QUANTUM-SEAM ASSAY",
         f"gates={len(result['gates'])} passed={sum(row['ok'] for row in result['gates'])}",
         f"arm_a={result['arm_a']['word']}",
+        f"a0_record_context_exact={str(result['arm_a']['a0_record_context_exact']).lower()}",
         f"a1_conflicting_signatures={result['arm_a']['signature_census']['conflicting_signatures']}",
+        f"a2_aligned_conflicting_signatures={result['arm_a']['aligned_signature_census']['conflicting_signatures']}",
+        f"aggregate_problem_entered={str(result['arm_a']['aggregate_problem_entered']).lower()}",
         f"projective_survival={sum(result['arm_a']['projective_survival_vector'].values())}/9",
         f"arm_b={result['arm_b']['word']}",
         f"literal_fixed_factor_history_tv={','.join(row['history_tv'] for row in result['arm_b']['literal_windows'])}",
+        f"literal_fixed_factor_count_tv={','.join(row['record_tv'] for row in result['arm_b']['literal_windows'])}",
         f"arm_c={result['arm_c']['word']}",
-        f"record_boundary_witnesses={sum(row['record_boundary_witness'] for row in result['arm_c']['windows'])}/5",
+        f"arm_c_scope={result['arm_c']['binding_scope']}",
+        f"tick2_density_difference_entries={result['arm_c']['density_affinity_witness']['tick2_different_entries']}",
+        f"suffix_quotients={','.join(str(row['predictive_quotient']) for row in result['s1']['suffix_rows'])}",
+        f"final_record_quotients={','.join(str(row['final_record_quotient']) for row in result['s1']['complete_controls']['final_record_rows'])}",
+        f"complete_js_s1a_entered={str(result['s1']['complete_controls']['complete_js_s1a_entered']).lower()}",
         f"s1b={result['s1']['s1b']}",
         f"synthesis={result['synthesis']}",
         f"payload_sha256={result['payload_sha256']}",
@@ -893,10 +1320,12 @@ def transcript(result: Mapping[str, Any]) -> str:
 
 
 def render_paper(result: Mapping[str, Any], fixture_hash: str, scorer_hash: str, transcript_hash: str) -> str:
+    """Render the panel-adjudicated bounded repair."""
     a = result["arm_a"]
     b = result["arm_b"]
     c = result["arm_c"]
-    s1_rows = result["s1"]["rows"]
+    s1_rows = result["s1"]["suffix_rows"]
+    complete_s1 = result["s1"]["complete_controls"]
     projective_survivors = [name for name, survived in a["projective_survival_vector"].items() if survived]
     projective_moved = [name for name, survived in a["projective_survival_vector"].items() if not survived]
     history_table = "\n".join(
@@ -907,118 +1336,155 @@ def render_paper(result: Mapping[str, Any], fixture_hash: str, scorer_hash: str,
         f"| {row['past']} | {row['future']} | {row['histories']} | {row['predictive_quotient']} | {row['first_registered_sufficient']} |"
         for row in s1_rows
     )
-    paper = f"""# Paper 9 — The quantum seam of the reconstructed walk
+    final_record_table = "\n".join(
+        f"| {row['past']} | {row['future']} | {row['histories']} | {row['final_record_quotient']} |"
+        for row in complete_s1["final_record_rows"]
+    )
+    return f"""# Paper 9 — The quantum seam of the reconstructed walk
 
-## Candidate status
+## Adjudicated status
 
 **Primary:** `{result['synthesis']}`.
 
-This is a frozen finite-arena candidate, not a terminal result. The literal
-WRC dynamics is tested three ways. The natural fixed-factor ontic extension
-and every retained-record history window tested here fail their registered
-quantum-law gates. A context-indexed affine interpolation exists, but it does
-not descend to the registered recurring local signature, and the aggregate
-A1/A2 completion variety is not closed by this method. The seam is therefore
-sharper but not selected.
+This is the bounded repair ordered by the frozen three-seat panel. It does
+**not** choose a fundamental law. It separates four questions previously run
+together: whether one affine instrument reproduces WRC, whether an ontic
+pure-ray extension is compositionally safe, whether `rho` is a sufficient
+retained state, and whether the measured predictive partitions constitute a
+complete JS-S1 assay. Several identifications fail exactly; selection among
+the remaining law types is method-inconclusive.
 
-## 1. What was reconstructed
+## 1. Reconstruction and method
 
 The scorer independently rebuilds the 27-cell fixed-carrier walk from the
 result-neutral fixture. All nine terminal WRC observable families reproduce
-before any repair is applied. The generic steering/history assay was frozen
-in a prior commit and contains no WRC value.
+before any seam test. Every arm status and the primary are then derived from
+computed objects; no verdict-bearing fixture literal supplies the synthesis.
 
-## 2. Affine completion family
+## 2. Arm A — lookup is not a law
 
-At the full reached-context grain, one may assign each rank-one outcome a
-fixed output equal to the literal output encountered there. This A0 dictionary
-reproduces the reached branch process and therefore all nine observables, but
-it is an interpolation table, not a uniform local law; its reached exact-fit
-dimension is zero and its off-window null freedom remains uncounted.
+Every affine CP operation with WRC's rank-one effect has fixed-output form
+`J_c(rho)=Tr(E_c rho) sigma_c`. Arbitrary normalized positive `sigma_c` choices
+form a complete instrument family. But the originally claimed record-indexed
+A0 dictionary is false. Histories `(0,12,13)` and `(0,13,12)` reach the same
+full count record, admit outcome `c=0`, and require different output rays.
+Adding the ray or full history to the key makes a finite lookup exact by
+definition; it does not produce one affine density-operator law.
 
-The recurrence test finds **{a['signature_census']['conflicting_signatures']}**
-local signatures that demand more than one output ray (maximum
-{a['signature_census']['max_rays_per_signature']}). Therefore the exact A0
-dictionary does not descend to A1, and hence not to A2, at branch grain. This
-does not prove that no A1/A2 member can reproduce the same nine aggregates;
-that semidefinite aggregate variety remains unclosed.
+The raw recurrence census finds **{a['signature_census']['conflicting_signatures']}**
+conflicting local signatures; after translating each event to one common
+frame, **{a['aligned_signature_census']['conflicting_signatures']}** remain.
+Literal branch reproduction therefore does not descend to registered A1/A2
+locality. This is not an aggregate no-go. A terminal phase control moves all
+{a['aggregate_phase_control']['contexts']} terminal rays while preserving all
+basis probabilities and all nine registered aggregate families. The positive
+mixed-state aggregate problem was never constructed; its licensed status is
+method nonentry, not an empty or measured variety.
 
 The displayed projective control preserves {sum(a['projective_survival_vector'].values())}
-of nine observable families. Preserved: `{', '.join(projective_survivors) or 'none'}`.
-Moved: `{', '.join(projective_moved) or 'none'}`. A different complete affine
-member exactly fits the one registered continuation, confirming that one
-control cannot select the family.
+of nine families. Preserved: `{', '.join(projective_survivors) or 'none'}`.
+Moved: `{', '.join(projective_moved) or 'none'}`. Another complete member fits
+one continuation and a cyclic third member confirms that two controls do not
+exhaust the family.
 
 **Arm A:** `{a['word']}`.
 
-## 3. Ontic pure rays and steering
+## 3. Arm B — the natural ontic-ray composite fails
 
-Two orthonormal WRC input rays are embedded as Bob's qubit. The exact Z and X
-ensembles have one density operator and arise from the standard Bell/HJW
-fixed-factor construction. Bob then runs the literal WRC noncollapse hit rule.
-At one tick Alice's choices have the same unconditioned Bob history law; at a
-later registered pre-contact tick they differ. The exact ordered-history total
-variations are `{', '.join(row['history_tv'] for row in b['literal_windows'])}`.
-The affine projective control gives zero at every corresponding window.
+The exact `2 x 27` Bell/HJW surrogate remotely prepares two decompositions of
+one Bob density operator. Under the literal fine-ray rule, ordered-history TVs
+through ticks one to five are
+`{', '.join(row['history_tv'] for row in b['literal_windows'])}`; calibrated
+count-record TVs are
+`{', '.join(row['record_tv'] for row in b['literal_windows'])}`. The count
+record already moves at tick two, so this does not rely on treating Bob's ray
+as observable. A second mutually unbiased basis repeats the first three rows,
+Alice-outcome relabeling is inert, and two affine fixed-output controls are
+blind.
 
-This is a signalling witness for the **natural fixed-factor extension**. It is
-not a theorem over an unbuilt relational composite, and it does not show that
-every nonlinear stochastic process signals. It shows that WRC's literal
-decomposition-sensitive rule cannot simply be tensored with standard HJW
-steering and retained local hit records.
+This rejects the natural fixed-factor extension when Alice outcomes and Bob
+count facts are physical. It is remote-setting dependence in a no-interaction
+surrogate, not a Lorentzian faster-than-light theorem: distance, light cones,
+changing factors, and a relational composite are absent.
 
 **Arm B:** `{b['word']}` — {b['scope']}.
 
-## 4. Indivisible-history route
+## 4. Arm C — `rho` is insufficient; stochastic law is not excluded
 
-Equal-density Z/X ensembles are evolved through complete literal histories.
-The retained count-record sectors distinguish them at every window one through
-five. Erasing the first internal hit yields the expected affine one-step
-unitary control, but once the hit is retained—or fed into the next record-
-dependent coin—the decomposition sensitivity returns.
+At tick one the Z/X count laws agree, while correlations between record sector
+and conditioned process state differ. At later ticks the count law itself
+differs. Erasing readout and erasing record-conditioned feedback are distinct:
+the first hides the early count witness but leaves screen TV `1664/19683` at
+tick four; the second gives the affine null.
 
-| ticks | ordered-history TV | count-record TV | record-erased screen TV | retained-boundary witness |
+| tick | ordered-history TV | count-record TV | record-erased screen TV | retained state-record witness |
 |---:|---:|---:|---:|:---:|
 {history_table}
 
-No Choi/CP claim is made for a map after it has failed affinity. Absolute
-permanence is also not proved. The result is narrower: none of the five tested
-complete retained-record windows can be a lawful density-operator division
-map. A Barandes-style history law remains logically possible only with a
-different genuine boundary/record doctrine than WRC currently supplies.
+An independent equal-density pair sharpens the result. At tick two the full
+discarded density differs in {c['density_affinity_witness']['tick2_different_entries']}
+entries although every basis diagonal agrees. Entry `(1,7)` differs by
+`(448+224 omega)/151875`; a superposition probe moves by `112/50625`. At tick
+three the diagonal TV is `99328/4100625`.
 
-**Arm C:** `{c['word']}`.
+Thus no tested retained boundary is a `rho`-sufficient state-record map. That
+does not say no stochastic division exists. If the fine state
+`([psi],record)` is postulated, WRC defines a normalized stochastic kernel and
+acts linearly on probability measures over that fine state. The extra ontic
+ray is exactly the extension whose natural fixed-factor composition Arm B
+rejects. Cut composition, recoverability, and actualization remain untested.
 
-## 5. Predictive sufficiency
+**Arm C:** `{c['word']}` [`{c['binding_scope']}`].
 
-The delivered WRC histories were generated, not supplied as anonymous
-operators. The finite two-axis census gives:
+## 5. S1 — suffix prediction is not complete predictive sufficiency
 
-| past depth | future horizon | histories | predictive quotient | first registered sufficient grain |
+The published table concerns future ordered trigger suffixes only:
+
+| past depth | future horizon | histories | suffix quotient | first registered sufficient grain |
 |---:|---:|---:|---:|---|
 {s1_table}
 
-These are finite-window results. They do not establish absolute minimality or
-stabilization. S1b is not entered because Arm A leaves a continuous, unclosed
-aggregate law family.
+At the calibrated final-count-record grain the quotients are:
 
-## 6. Ontology after this assay
+| past depth | future horizon | histories | final-record quotient |
+|---:|---:|---:|---:|
+{final_record_table}
 
-What remains real in the tested construction is a fixed-carrier pure-ray and
-count-record stochastic process with exact feedback. It is not yet an
-operational quantum theory on density operators. The simplest standard
-composite extension signals; the existing retained records do not supply a
-lawful history boundary; and affine completions exist only as an unselected
-family, with exact local recurrence already obstructing literal branch
-reproduction.
+The unique pair of registered past-depth-three histories with equal horizon-
+two suffix laws is `{complete_s1['horizon_three_refinement_witness']['histories']}`.
+Their exact horizon-three laws differ, so the suffix partition has not
+stabilized by horizon two. The law-
+native present state `([psi],record)` screens off the generated past in these
+fixtures, so quotient growth does not establish an ontic infinite history. A
+complete intervention family, future instrument, and stabilization object
+were not frozen. Complete JS-S1a and therefore S1b remain unentered.
+
+## 6. Ontology — the Barandes-safe reading
+
+| object | status after QSF |
+|---|---|
+| fixed meta-catalogue of possible configurations | kinematic input |
+| one actual configuration trajectory | candidate ontology only if the fine-state theory is adopted |
+| stochastic transition kernel | nomological law |
+| probability distribution over trajectories | epistemic ensemble description |
+| count record | declared finite-window correlation; absolute permanence unproved |
+| `psi`, `rho`, Kraus operators, Hilbert carrier | representations unless extra ontology is explicitly postulated |
+
+Two lawfulness questions must not be conflated. A fundamental stochastic
+kernel must normalize and compose on its actual configuration space. Affinity
+and CP on `rho` are additionally required when `rho` is claimed to be the
+complete operational state. QSF proves that WRC cannot keep both the literal
+retained rule and `rho`-completeness. It does not decide among a different
+affine instrument, a finer but compositionally safe stochastic ontology, and
+a different base law.
 
 Dynamic relational geometry, carrier growth, event selection, a carrier
-catalogue, couplings, actualization, continuum/Lorentz structure, QFT/GR,
-species, Hamiltonian selection, constants, and deviations remain unbuilt.
-The growth-walk unit is therefore not assembly work yet: it must inherit a
-selected quantum seam or explicitly introduce new dynamics.
+catalogue, couplings, actualization, Lorentz/continuum structure, QFT/GR,
+species, Hamiltonian selection, constants, and empirical deviations remain
+unbuilt. A changing graph may later be a configuration value inside one fixed
+meta-catalogue, but QSF constructs no graph-generated process or spacetime.
 
-## 7. Integrity and scope
+## 7. Integrity
 
 - fixture SHA-256: `{fixture_hash}`
 - scorer SHA-256: `{scorer_hash}`
@@ -1027,9 +1493,10 @@ selected quantum seam or explicitly introduce new dynamics.
 - gates: {len(result['gates'])}/{len(result['gates'])}
 - registered targeted mutants: {len(MUTANTS)}
 
-This candidate awaits the frozen three-seat hostile protocol and adjudication.
+The frozen hostile panel and adjudication precede this bounded repair.
+Terminal status is recorded by the separate verification note rather than
+asserted by the generator.
 """
-    return paper
 
 
 def atomic_write(path: Path, payload: bytes) -> None:
@@ -1086,7 +1553,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         text_hash = sha256_bytes(text.encode())
         paper = render_paper(result, fixture_hash, scorer_hash, text_hash)
         if arguments.mutant == "paper-claim":
-            paper = paper.replace("not a terminal result", "a terminal result", 1)
+            paper = paper.replace("does **not** choose a fundamental law", "does choose a fundamental law", 1)
         expected_text = transcript(result)
         if text != expected_text:
             raise GateFail("QSF-TRANSCRIPT-SEAL")

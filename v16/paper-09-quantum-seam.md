@@ -1,74 +1,81 @@
 # Paper 9 — The quantum seam of the reconstructed walk
 
-## Candidate status
+## Adjudicated status
 
 **Primary:** `QSF-METHOD-INCONCLUSIVE`.
 
-This is a frozen finite-arena candidate, not a terminal result. The literal
-WRC dynamics is tested three ways. The natural fixed-factor ontic extension
-and every retained-record history window tested here fail their registered
-quantum-law gates. A context-indexed affine interpolation exists, but it does
-not descend to the registered recurring local signature, and the aggregate
-A1/A2 completion variety is not closed by this method. The seam is therefore
-sharper but not selected.
+This is the bounded repair ordered by the frozen three-seat panel. It does
+**not** choose a fundamental law. It separates four questions previously run
+together: whether one affine instrument reproduces WRC, whether an ontic
+pure-ray extension is compositionally safe, whether `rho` is a sufficient
+retained state, and whether the measured predictive partitions constitute a
+complete JS-S1 assay. Several identifications fail exactly; selection among
+the remaining law types is method-inconclusive.
 
-## 1. What was reconstructed
+## 1. Reconstruction and method
 
 The scorer independently rebuilds the 27-cell fixed-carrier walk from the
 result-neutral fixture. All nine terminal WRC observable families reproduce
-before any repair is applied. The generic steering/history assay was frozen
-in a prior commit and contains no WRC value.
+before any seam test. Every arm status and the primary are then derived from
+computed objects; no verdict-bearing fixture literal supplies the synthesis.
 
-## 2. Affine completion family
+## 2. Arm A — lookup is not a law
 
-At the full reached-context grain, one may assign each rank-one outcome a
-fixed output equal to the literal output encountered there. This A0 dictionary
-reproduces the reached branch process and therefore all nine observables, but
-it is an interpolation table, not a uniform local law; its reached exact-fit
-dimension is zero and its off-window null freedom remains uncounted.
+Every affine CP operation with WRC's rank-one effect has fixed-output form
+`J_c(rho)=Tr(E_c rho) sigma_c`. Arbitrary normalized positive `sigma_c` choices
+form a complete instrument family. But the originally claimed record-indexed
+A0 dictionary is false. Histories `(0,12,13)` and `(0,13,12)` reach the same
+full count record, admit outcome `c=0`, and require different output rays.
+Adding the ray or full history to the key makes a finite lookup exact by
+definition; it does not produce one affine density-operator law.
 
-The recurrence test finds **30**
-local signatures that demand more than one output ray (maximum
-8861). Therefore the exact A0
-dictionary does not descend to A1, and hence not to A2, at branch grain. This
-does not prove that no A1/A2 member can reproduce the same nine aggregates;
-that semidefinite aggregate variety remains unclosed.
+The raw recurrence census finds **30**
+conflicting local signatures; after translating each event to one common
+frame, **30** remain.
+Literal branch reproduction therefore does not descend to registered A1/A2
+locality. This is not an aggregate no-go. A terminal phase control moves all
+10527 terminal rays while preserving all
+basis probabilities and all nine registered aggregate families. The positive
+mixed-state aggregate problem was never constructed; its licensed status is
+method nonentry, not an empty or measured variety.
 
 The displayed projective control preserves 0
-of nine observable families. Preserved: `none`.
-Moved: `admissibility_exit_probability, curvature_constant_probability, det_values_reached, emission_field, ipr, link_class_marginal, max_cell_count, p_site, posdef_distribution`. A different complete affine
-member exactly fits the one registered continuation, confirming that one
-control cannot select the family.
+of nine families. Preserved: `none`.
+Moved: `admissibility_exit_probability, curvature_constant_probability, det_values_reached, emission_field, ipr, link_class_marginal, max_cell_count, p_site, posdef_distribution`. Another complete member fits
+one continuation and a cyclic third member confirms that two controls do not
+exhaust the family.
 
-**Arm A:** `QSF-AFFINE-METHOD-INCONCLUSIVE-AT-A1-A2-AGGREGATE-VARIETY`.
+**Arm A:** `QSF-AFFINE-METHOD-INCONCLUSIVE-AT-A1-A2-AGGREGATE-PROBLEM`.
 
-## 3. Ontic pure rays and steering
+## 3. Arm B — the natural ontic-ray composite fails
 
-Two orthonormal WRC input rays are embedded as Bob's qubit. The exact Z and X
-ensembles have one density operator and arise from the standard Bell/HJW
-fixed-factor construction. Bob then runs the literal WRC noncollapse hit rule.
-At one tick Alice's choices have the same unconditioned Bob history law; at a
-later registered pre-contact tick they differ. The exact ordered-history total
-variations are `0, 1/2, 211/324`.
-The affine projective control gives zero at every corresponding window.
+The exact `2 x 27` Bell/HJW surrogate remotely prepares two decompositions of
+one Bob density operator. Under the literal fine-ray rule, ordered-history TVs
+through ticks one to five are
+`0, 1/2, 211/324, 180223/236196, 1694745299/2066242608`; calibrated
+count-record TVs are
+`0, 1/2, 211/324, 12415/17496, 820725659/1162261467`. The count
+record already moves at tick two, so this does not rely on treating Bob's ray
+as observable. A second mutually unbiased basis repeats the first three rows,
+Alice-outcome relabeling is inert, and two affine fixed-output controls are
+blind.
 
-This is a signalling witness for the **natural fixed-factor extension**. It is
-not a theorem over an unbuilt relational composite, and it does not show that
-every nonlinear stochastic process signals. It shows that WRC's literal
-decomposition-sensitive rule cannot simply be tensored with standard HJW
-steering and retained local hit records.
+This rejects the natural fixed-factor extension when Alice outcomes and Bob
+count facts are physical. It is remote-setting dependence in a no-interaction
+surrogate, not a Lorentzian faster-than-light theorem: distance, light cones,
+changing factors, and a relational composite are absent.
 
-**Arm B:** `PHRASABLE-SIGNALLING-WITNESS` — kills the natural fixed-factor extension only; relational composite remains unbuilt.
+**Arm B:** `PHRASABLE-SIGNALLING-WITNESS` — remote-setting dependence in the natural no-interaction fixed-factor extension at Bob count-record grain; relational composite remains unbuilt.
 
-## 4. Indivisible-history route
+## 4. Arm C — `rho` is insufficient; stochastic law is not excluded
 
-Equal-density Z/X ensembles are evolved through complete literal histories.
-The retained count-record sectors distinguish them at every window one through
-five. Erasing the first internal hit yields the expected affine one-step
-unitary control, but once the hit is retained—or fed into the next record-
-dependent coin—the decomposition sensitivity returns.
+At tick one the Z/X count laws agree, while correlations between record sector
+and conditioned process state differ. At later ticks the count law itself
+differs. Erasing readout and erasing record-conditioned feedback are distinct:
+the first hides the early count witness but leaves screen TV `1664/19683` at
+tick four; the second gives the affine null.
 
-| ticks | ordered-history TV | count-record TV | record-erased screen TV | retained-boundary witness |
+| tick | ordered-history TV | count-record TV | record-erased screen TV | retained state-record witness |
 |---:|---:|---:|---:|:---:|
 | 1 | 0 | 0 | 0 | true |
 | 2 | 1/2 | 1/2 | 0 | true |
@@ -76,20 +83,26 @@ dependent coin—the decomposition sensitivity returns.
 | 4 | 180223/236196 | 12415/17496 | 1664/19683 | true |
 | 5 | 1694745299/2066242608 | 820725659/1162261467 | 3747023/43046721 | true |
 
-No Choi/CP claim is made for a map after it has failed affinity. Absolute
-permanence is also not proved. The result is narrower: none of the five tested
-complete retained-record windows can be a lawful density-operator division
-map. A Barandes-style history law remains logically possible only with a
-different genuine boundary/record doctrine than WRC currently supplies.
+An independent equal-density pair sharpens the result. At tick two the full
+discarded density differs in 72
+entries although every basis diagonal agrees. Entry `(1,7)` differs by
+`(448+224 omega)/151875`; a superposition probe moves by `112/50625`. At tick
+three the diagonal TV is `99328/4100625`.
 
-**Arm C:** `QSF-HISTORY-NO-AFFINE-RECORD-BOUNDARY-WITHIN-1-5`.
+Thus no tested retained boundary is a `rho`-sufficient state-record map. That
+does not say no stochastic division exists. If the fine state
+`([psi],record)` is postulated, WRC defines a normalized stochastic kernel and
+acts linearly on probability measures over that fine state. The extra ontic
+ray is exactly the extension whose natural fixed-factor composition Arm B
+rejects. Cut composition, recoverability, and actualization remain untested.
 
-## 5. Predictive sufficiency
+**Arm C:** `QSF-HISTORY-NO-AFFINE-RECORD-BOUNDARY-WITHIN-1-5` [`NO-RHO-SUFFICIENT-RETAINED-STATE-RECORD-MAP`].
 
-The delivered WRC histories were generated, not supplied as anonymous
-operators. The finite two-axis census gives:
+## 5. S1 — suffix prediction is not complete predictive sufficiency
 
-| past depth | future horizon | histories | predictive quotient | first registered sufficient grain |
+The published table concerns future ordered trigger suffixes only:
+
+| past depth | future horizon | histories | suffix quotient | first registered sufficient grain |
 |---:|---:|---:|---:|---|
 | 1 | 1 | 3 | 1 | NO-TRACE |
 | 1 | 2 | 3 | 1 | NO-TRACE |
@@ -98,33 +111,60 @@ operators. The finite two-axis census gives:
 | 3 | 1 | 486 | 126 | FULL-ORDERED-TRACE |
 | 3 | 2 | 486 | 485 | FULL-ORDERED-TRACE |
 
-These are finite-window results. They do not establish absolute minimality or
-stabilization. S1b is not entered because Arm A leaves a continuous, unclosed
-aggregate law family.
+At the calibrated final-count-record grain the quotients are:
 
-## 6. Ontology after this assay
+| past depth | future horizon | histories | final-record quotient |
+|---:|---:|---:|---:|
+| 1 | 1 | 3 | 3 |
+| 1 | 2 | 3 | 3 |
+| 2 | 1 | 27 | 27 |
+| 2 | 2 | 27 | 27 |
+| 3 | 1 | 486 | 486 |
+| 3 | 2 | 486 | 486 |
 
-What remains real in the tested construction is a fixed-carrier pure-ray and
-count-record stochastic process with exact feedback. It is not yet an
-operational quantum theory on density operators. The simplest standard
-composite extension signals; the existing retained records do not supply a
-lawful history boundary; and affine completions exist only as an unselected
-family, with exact local recurrence already obstructing literal branch
-reproduction.
+The unique pair of registered past-depth-three histories with equal horizon-
+two suffix laws is `[[1, 3, 12], [1, 3, 14]]`.
+Their exact horizon-three laws differ, so the suffix partition has not
+stabilized by horizon two. The law-
+native present state `([psi],record)` screens off the generated past in these
+fixtures, so quotient growth does not establish an ontic infinite history. A
+complete intervention family, future instrument, and stabilization object
+were not frozen. Complete JS-S1a and therefore S1b remain unentered.
+
+## 6. Ontology — the Barandes-safe reading
+
+| object | status after QSF |
+|---|---|
+| fixed meta-catalogue of possible configurations | kinematic input |
+| one actual configuration trajectory | candidate ontology only if the fine-state theory is adopted |
+| stochastic transition kernel | nomological law |
+| probability distribution over trajectories | epistemic ensemble description |
+| count record | declared finite-window correlation; absolute permanence unproved |
+| `psi`, `rho`, Kraus operators, Hilbert carrier | representations unless extra ontology is explicitly postulated |
+
+Two lawfulness questions must not be conflated. A fundamental stochastic
+kernel must normalize and compose on its actual configuration space. Affinity
+and CP on `rho` are additionally required when `rho` is claimed to be the
+complete operational state. QSF proves that WRC cannot keep both the literal
+retained rule and `rho`-completeness. It does not decide among a different
+affine instrument, a finer but compositionally safe stochastic ontology, and
+a different base law.
 
 Dynamic relational geometry, carrier growth, event selection, a carrier
-catalogue, couplings, actualization, continuum/Lorentz structure, QFT/GR,
-species, Hamiltonian selection, constants, and deviations remain unbuilt.
-The growth-walk unit is therefore not assembly work yet: it must inherit a
-selected quantum seam or explicitly introduce new dynamics.
+catalogue, couplings, actualization, Lorentz/continuum structure, QFT/GR,
+species, Hamiltonian selection, constants, and empirical deviations remain
+unbuilt. A changing graph may later be a configuration value inside one fixed
+meta-catalogue, but QSF constructs no graph-generated process or spacetime.
 
-## 7. Integrity and scope
+## 7. Integrity
 
 - fixture SHA-256: `7fe949383d1e27017b972f941c4cf1875d3c574d3120d9993240bd7a0756404f`
-- scorer SHA-256: `e5cebe8f40760277942d325b1cd257108c20c323e8a5d05b4c86d878471077bf`
-- transcript SHA-256: `ecc8abf7dd17951b262641870ee2ec3748f83bba70434a55354bdad8ff0b78d1`
-- result payload SHA-256: `69bf58d9542b1a778d0adb33f03a66579bb2b3e3a342541fe0f0b98bd5237e69`
-- gates: 14/14
-- registered targeted mutants: 20
+- scorer SHA-256: `de12902eac3cb6683385fd3f1060b7a6e5ea03c24c0893ecb9273e3e5c3ea5b5`
+- transcript SHA-256: `d9e6317ac31caf8f7a5e6e0a9999400a1b063291120a221a4cc1d66863c85a2d`
+- result payload SHA-256: `073ac1e57c2f56c3f5e33dc8d15a1a37e7cb3ff073745f2a883579cf83bdc3b7`
+- gates: 20/20
+- registered targeted mutants: 28
 
-This candidate awaits the frozen three-seat hostile protocol and adjudication.
+The frozen hostile panel and adjudication precede this bounded repair.
+Terminal status is recorded by the separate verification note rather than
+asserted by the generator.
