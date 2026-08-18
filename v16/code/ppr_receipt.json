@@ -1,0 +1,1367 @@
+{
+  "artifact_sha256": {
+    "output": "0c85efb4186e0faf6afc55f06184e9351bd6df621297ab2155745d7106e45b05",
+    "paper": "ca7b06e9e5540d81afb4a401beb66cb2834e3e74033fd742ac5257108a19654f"
+  },
+  "payload": {
+    "exact_claims": [
+      {
+        "id": "C1",
+        "text": "The multi-boundary null descent takes 2 strict rounds and reduces the cut null dimension from 3 to 2."
+      },
+      {
+        "id": "C2",
+        "text": "The heterogeneous pullback check covers 4 reached basis pairs and agrees with the direct common-boundary cross terms in every case."
+      },
+      {
+        "id": "C3",
+        "text": "The reconvergent screen probability is 49/625 coherently and 337/625 after the alternatives are recorded."
+      },
+      {
+        "id": "C4",
+        "text": "The physical tag control changes the path-zero probability from 337/625 to 1 when the tag is lawfully erased."
+      },
+      {
+        "id": "C5",
+        "text": "The partial-overlap fixture has exact absolute shift 1152/3125, equal to overlap times coefficient 288/625 in this fixture."
+      },
+      {
+        "id": "C6",
+        "text": "The same-fact comparison diagram has 3 agreeing routes, while the physical loop moves the exact screen probability from 1 to 49/625."
+      },
+      {
+        "id": "C7",
+        "text": "The two relational branches use carrier dimensions 2 and 3, and one record-only lookup cannot reconstruct both graph-computed transports."
+      },
+      {
+        "id": "C8",
+        "text": "The rival laws predict held-out screen pairs ['49/625', '576/625'] and ['0', '1']; therefore the law is not selected by these constraints."
+      },
+      {
+        "id": "C9",
+        "text": "Both complete Alice growth instruments leave the fixed Bob marginal at [['1/2', '0'], ['0', '1/2']], while the registered amplifier moves it to [['1/2', '0'], ['0', '2']]."
+      },
+      {
+        "id": "C10",
+        "text": "The machine-selected primary outcome is PPR-CONTEXTUAL-PULLBACK-CONSTRUCTED-BUT-LAW-UNSELECTED."
+      }
+    ],
+    "gate_summary": {
+      "passed": 25,
+      "total": 25
+    },
+    "gates": [
+      {
+        "detail": {
+          "base_commit": "7e95322c589a42211e3a10cab7655492014bd0ae",
+          "core": "490668340b08022ac5d11c8fdc07c392739153b609a72b9bda5bfcf112f472ea",
+          "fixture": "cecc3b0d3c7bf46503481fa7b422e915ba0ff6aac42e3cec5f61c395e565b389",
+          "pin": "cce2e194f1f1c557e2cb1745c0f15b9feaa98b48b2300126970098da0fadd48f",
+          "pin_commit": "828b510a3229ae6330a55520b676a33e031c77a8"
+        },
+        "falsifier": "anchor-corrupt",
+        "name": "PPR-ANCHORS",
+        "pass": true
+      },
+      {
+        "detail": {
+          "count": 10,
+          "labels_sha256": "09b1ec9ad5988261050089fb7e41a0acdb2c2046d11b5423979e3a9a8f936dfe"
+        },
+        "falsifier": "anchor-corrupt",
+        "name": "PPR-OUTCOME-VOCABULARY",
+        "pass": true
+      },
+      {
+        "detail": {
+          "distinct_relational_events": true,
+          "relabel_covariant": true
+        },
+        "falsifier": "event-mix",
+        "name": "PPR-EVENT-ALGEBRA",
+        "pass": true
+      },
+      {
+        "detail": {
+          "split": [
+            [
+              "3/5",
+              "4/5"
+            ],
+            [
+              "-4/5",
+              "3/5"
+            ]
+          ],
+          "unsplit": [
+            [
+              "3/5",
+              "4/5"
+            ],
+            [
+              "-4/5",
+              "3/5"
+            ]
+          ]
+        },
+        "falsifier": "split-weight",
+        "name": "PPR-HISTORY-REFINEMENT",
+        "pass": true
+      },
+      {
+        "detail": {
+          "relational_events_distinct": true,
+          "same_record_instrument": false,
+          "same_unconditioned_channel": true
+        },
+        "falsifier": "kraus-promote",
+        "name": "PPR-CHANNEL-INSTRUMENT-QUOTIENT",
+        "pass": true
+      },
+      {
+        "detail": {
+          "present_cut_basis": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "1"
+            ]
+          ],
+          "rank_history": [
+            {
+              "cut": 1,
+              "final": 1,
+              "middle": 1
+            },
+            {
+              "cut": 1,
+              "final": 1,
+              "middle": 2
+            },
+            {
+              "cut": 2,
+              "final": 1,
+              "middle": 2
+            }
+          ],
+          "stable_cut_basis": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          "strict_rounds": 2
+        },
+        "falsifier": "dark-reactivate-drop / null-promote",
+        "name": "PPR-STABLE-NULL-DESCENT",
+        "pass": true
+      },
+      {
+        "detail": {
+          "e1_later_visible": true,
+          "e1_presently_invisible": true,
+          "e2_later_invisible": true,
+          "e3_all_registered_contexts_invisible": true
+        },
+        "falsifier": "dark-reactivate-drop",
+        "name": "PPR-DELAYED-REACTIVATION",
+        "pass": true
+      },
+      {
+        "detail": {
+          "growth_shape": [
+            3,
+            2
+          ],
+          "left_shape": [
+            3,
+            2
+          ],
+          "pullback": [
+            [
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "-3/5",
+              "0",
+              "-4/5"
+            ]
+          ],
+          "reached_basis_pairs": 4,
+          "right_shape": [
+            3,
+            3
+          ]
+        },
+        "falsifier": "pullback-half",
+        "name": "PPR-HETEROGENEOUS-PULLBACK",
+        "pass": true
+      },
+      {
+        "detail": {
+          "unfed_by_growth": true,
+          "visible_to_future": true
+        },
+        "falsifier": "dark-reactivate-drop",
+        "name": "PPR-ONE-STEP-DARK-NOT-GAUGE",
+        "pass": true
+      },
+      {
+        "detail": {
+          "coherent_p0": "49/625",
+          "cross0": [
+            [
+              "-288/625",
+              "-84/625"
+            ],
+            [
+              "-84/625",
+              "288/625"
+            ]
+          ],
+          "cross1": [
+            [
+              "288/625",
+              "84/625"
+            ],
+            [
+              "84/625",
+              "-288/625"
+            ]
+          ],
+          "cross_sum": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "decohered_p0": "337/625"
+        },
+        "falsifier": "transport-flatten",
+        "name": "PPR-INTERFERENCE-REDISTRIBUTION",
+        "pass": true
+      },
+      {
+        "detail": {
+          "complete": true,
+          "cross_operator": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "record_probability": "256/625"
+        },
+        "falsifier": "completeness-amplify",
+        "name": "PPR-DANGLING-RECORD",
+        "pass": true
+      },
+      {
+        "detail": {
+          "absolute_difference": "1152/3125",
+          "coherent_p0": "361/15625",
+          "decohered_p0": "6121/15625",
+          "difference_over_mu": "288/625",
+          "mu": "4/5"
+        },
+        "falsifier": "transport-flatten",
+        "name": "PPR-PARTIAL-OVERLAP",
+        "pass": true
+      },
+      {
+        "detail": {
+          "later_probe_coherent": "1/50",
+          "later_probe_decoherent": "1/2",
+          "total_probability": "1"
+        },
+        "falsifier": "loop-conflate",
+        "name": "PPR-ONE-OUTCOME-CONTROL",
+        "pass": true
+      },
+      {
+        "detail": {
+          "erased_path0": "1",
+          "erasing": {
+            "co_live_pairs": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "co_merge_partition": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ]
+          },
+          "preserving": {
+            "co_live_pairs": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "co_merge_partition": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ]
+          },
+          "record_after_eraser": false,
+          "record_preserved": true,
+          "tagged_path0": "337/625"
+        },
+        "falsifier": "eraser-ignore",
+        "name": "PPR-RECORD-AVAILABILITY",
+        "pass": true
+      },
+      {
+        "detail": {
+          "block_record": {
+            "all_count": 15,
+            "finest": [
+              [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ]
+            ]
+          },
+          "coherent_pair": {
+            "all_count": 2,
+            "finest": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          "erasable_tag": {
+            "all_count": 2,
+            "finest": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          "multiple_maximal": {
+            "all_count": 15,
+            "finest": [
+              [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  3
+                ],
+                [
+                  2
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  3
+                ],
+                [
+                  2
+                ]
+              ]
+            ]
+          }
+        },
+        "falsifier": "record-preplant / result-count-type",
+        "name": "PPR-PARTITION-CENSUS",
+        "pass": true
+      },
+      {
+        "detail": {
+          "gauged_path_values": [
+            [
+              [
+                "3/5",
+                "4/5"
+              ],
+              [
+                "4/5",
+                "-3/5"
+              ]
+            ],
+            [
+              [
+                "3/5",
+                "4/5"
+              ],
+              [
+                "4/5",
+                "-3/5"
+              ]
+            ],
+            [
+              [
+                "3/5",
+                "4/5"
+              ],
+              [
+                "4/5",
+                "-3/5"
+              ]
+            ]
+          ],
+          "path_values": [
+            [
+              [
+                "3/5",
+                "-4/5"
+              ],
+              [
+                "-4/5",
+                "-3/5"
+              ]
+            ],
+            [
+              [
+                "3/5",
+                "-4/5"
+              ],
+              [
+                "-4/5",
+                "-3/5"
+              ]
+            ],
+            [
+              [
+                "3/5",
+                "-4/5"
+              ],
+              [
+                "-4/5",
+                "-3/5"
+              ]
+            ]
+          ]
+        },
+        "falsifier": "comparison-phase",
+        "name": "PPR-COMPARISON-COCYCLE",
+        "pass": true
+      },
+      {
+        "detail": {
+          "comparison_kind": "same-fact dictionary",
+          "dynamical_kind": "distinct physical routes",
+          "flat_probability": "1",
+          "nonflat_probability": "49/625"
+        },
+        "falsifier": "transport-flatten / loop-conflate",
+        "name": "PPR-COMPARISON-DYNAMICS-TYPE",
+        "pass": true
+      },
+      {
+        "detail": {
+          "actual_relation_and_carrier_change": true,
+          "record_only_reconstruction": false,
+          "relabel_covariant": true,
+          "transports": [
+            [
+              [
+                "3/5",
+                "4/5"
+              ],
+              [
+                "-4/5",
+                "3/5"
+              ]
+            ],
+            [
+              [
+                "-4/5",
+                "3/5"
+              ],
+              [
+                "-3/5",
+                "-4/5"
+              ]
+            ]
+          ],
+          "uniform_graph_probe": true
+        },
+        "falsifier": "graph-copy / graph-erase / probe-feedforward",
+        "name": "PPR-RELATIONAL-REWRITE",
+        "pass": true
+      },
+      {
+        "detail": {
+          "disjoint_linearity": true,
+          "idle_spectator": true
+        },
+        "falsifier": "spectator-couple",
+        "name": "PPR-LOCAL-COMPOSITION",
+        "pass": true
+      },
+      {
+        "detail": {
+          "all_input_complete": true,
+          "laws": [
+            {
+              "determinant": "-1",
+              "heldout_screen_probabilities": [
+                "49/625",
+                "576/625"
+              ],
+              "name": "law-A",
+              "operators": [
+                [
+                  [
+                    "-7/25",
+                    "24/25"
+                  ],
+                  [
+                    "-24/25",
+                    "-7/25"
+                  ]
+                ],
+                [
+                  [
+                    "24/25",
+                    "7/25"
+                  ],
+                  [
+                    "-7/25",
+                    "24/25"
+                  ]
+                ]
+              ]
+            },
+            {
+              "determinant": "-1",
+              "heldout_screen_probabilities": [
+                "0",
+                "1"
+              ],
+              "name": "law-B",
+              "operators": [
+                [
+                  [
+                    "0",
+                    "1"
+                  ],
+                  [
+                    "-1",
+                    "0"
+                  ]
+                ],
+                [
+                  [
+                    "1",
+                    "0"
+                  ],
+                  [
+                    "0",
+                    "1"
+                  ]
+                ]
+              ]
+            }
+          ],
+          "nonfactorizing_weight_response": true,
+          "rival_laws_move_heldout": true
+        },
+        "falsifier": "completeness-amplify",
+        "name": "PPR-RELATIONAL-RESPONSE",
+        "pass": true
+      },
+      {
+        "detail": {
+          "x_completeness": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          "z_completeness": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ]
+        },
+        "falsifier": "completeness-amplify",
+        "name": "PPR-ALL-INPUT-COMPLETENESS",
+        "pass": true
+      },
+      {
+        "detail": {
+          "amplified_bob": [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "2"
+            ]
+          ],
+          "x_bob": [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "1/2"
+            ]
+          ],
+          "z_bob": [
+            [
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "1/2"
+            ]
+          ]
+        },
+        "falsifier": "completeness-amplify",
+        "name": "PPR-FIXED-BOB-NO-SIGNALLING",
+        "pass": true
+      },
+      {
+        "detail": {
+          "bell_bob_purity": "1/2",
+          "bell_joint_purity": "1",
+          "interference_moves_screen": true,
+          "unitary_channel_not_entanglement_breaking": true
+        },
+        "falsifier": "transport-flatten",
+        "name": "PPR-NONCLASSICAL-WITNESS",
+        "pass": true
+      },
+      {
+        "detail": {
+          "builder_index": 9,
+          "comparator_index": 9
+        },
+        "falsifier": "verdict-flip",
+        "name": "PPR-INDEPENDENT-PRIMARY",
+        "pass": true
+      },
+      {
+        "detail": {
+          "C1": 1,
+          "C10": 1,
+          "C2": 1,
+          "C3": 1,
+          "C4": 1,
+          "C5": 1,
+          "C6": 1,
+          "C7": 1,
+          "C8": 1,
+          "C9": 1
+        },
+        "falsifier": "seal-after-write",
+        "name": "PPR-PAPER-CLAIM-BINDINGS",
+        "pass": true
+      }
+    ],
+    "limitations": [
+      "finite exact fixtures only",
+      "actualization remains a postulate",
+      "configuration catalogue is declared kinematics; the realized relation carrier changes",
+      "law weights are not selected",
+      "record permanence is proved only against the registered continuation grammar",
+      "fixed-Bob unconditional no-signalling only; conditional steering and changing Bob algebras remain open",
+      "no continuum, Lorentz, GR, QFT, particle, constant, or phenomenology result"
+    ],
+    "measurements": {
+      "comparison_dynamics": {
+        "comparison": {
+          "common_value": [
+            [
+              "3/5",
+              "-4/5"
+            ],
+            [
+              "-4/5",
+              "-3/5"
+            ]
+          ],
+          "flat": true,
+          "frame_covariant": true,
+          "routes": 3
+        },
+        "dynamics": {
+          "claim_level": "finite curvature-sensitive transport observable; not gravity",
+          "flat_screen_probability": "1",
+          "nonflat_screen_probability": "49/625",
+          "nonflat_transport_unitary": true
+        }
+      },
+      "event_representation": {
+        "history_split_merge_equal": true,
+        "kraus": {
+          "arbitrary_kraus_rotation_is_event_gauge": false,
+          "different_calibrated_instrument": true,
+          "same_unconditioned_channel": true
+        },
+        "relabel_covariant": true,
+        "relational_signatures": [
+          [
+            2,
+            3,
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              "R",
+              "I2"
+            ]
+          ],
+          [
+            3,
+            4,
+            [
+              0,
+              1,
+              1,
+              2
+            ],
+            [
+              "J",
+              "R"
+            ]
+          ]
+        ]
+      },
+      "no_signalling": {
+        "amplifier_bob": [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "2"
+          ]
+        ],
+        "amplifier_complete": false,
+        "scope": "unconditioned fixed-Bob algebra under finite Alice-carrier growth",
+        "x_bob": [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        "x_complete": true,
+        "z_bob": [
+          [
+            "1/2",
+            "0"
+          ],
+          [
+            "0",
+            "1/2"
+          ]
+        ],
+        "z_complete": true
+      },
+      "nonclassical": {
+        "bell_bob_purity": "1/2",
+        "bell_joint_purity": "1",
+        "coherent_screen_differs": true,
+        "unitary_not_entanglement_breaking": true
+      },
+      "pullback": {
+        "direct_equals_pullback": true,
+        "heterogeneous_shapes": {
+          "growth": [
+            3,
+            2
+          ],
+          "left": [
+            3,
+            2
+          ],
+          "right": [
+            3,
+            3
+          ]
+        },
+        "interpretation": "context-indexed Gram pullback on reached quotient subspaces",
+        "one_step_unfed_future_visible": true,
+        "pullback": [
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "-3/5",
+            "0",
+            "-4/5"
+          ]
+        ],
+        "reached_basis_pairs_checked": 4
+      },
+      "records": {
+        "census": {
+          "block_record": {
+            "all_count": 15,
+            "finest": [
+              [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ]
+            ]
+          },
+          "coherent_pair": {
+            "all_count": 2,
+            "finest": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          "erasable_tag": {
+            "all_count": 2,
+            "finest": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1
+                ]
+              ]
+            ]
+          },
+          "multiple_maximal": {
+            "all_count": 15,
+            "finest": [
+              [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  3
+                ],
+                [
+                  2
+                ]
+              ]
+            ],
+            "stable": [
+              [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  3
+                ],
+                [
+                  2
+                ]
+              ]
+            ]
+          }
+        },
+        "interference": {
+          "dangling_record_probability": "256/625",
+          "one_outcome_later_coherent": "1/50",
+          "one_outcome_later_decoherent": "1/2",
+          "one_outcome_total": "1",
+          "partial_difference": "1152/3125",
+          "partial_difference_over_mu": "288/625",
+          "reconvergent_coherent_p0": "49/625",
+          "reconvergent_decohered_p0": "337/625"
+        },
+        "quantum_eraser": {
+          "erased_path0": "1",
+          "tagged_path0": "337/625"
+        },
+        "support_criterion": {
+          "eraser_record_available": false,
+          "erasing": {
+            "co_live_pairs": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "co_merge_partition": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ]
+          },
+          "preserving": {
+            "co_live_pairs": [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "co_merge_partition": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ]
+          },
+          "preserving_record_available": true
+        }
+      },
+      "relational_wedge": {
+        "actual_rewrite": true,
+        "carrier_dimensions": [
+          2,
+          3
+        ],
+        "claim_level": "finite relational back-response wedge; not metric gravity",
+        "disjoint_composition": true,
+        "graph_transports": [
+          [
+            [
+              "3/5",
+              "4/5"
+            ],
+            [
+              "-4/5",
+              "3/5"
+            ]
+          ],
+          [
+            [
+              "-4/5",
+              "3/5"
+            ],
+            [
+              "-3/5",
+              "-4/5"
+            ]
+          ]
+        ],
+        "idle_spectator": true,
+        "laws": [
+          {
+            "determinant": "-1",
+            "heldout_screen_probabilities": [
+              "49/625",
+              "576/625"
+            ],
+            "name": "law-A",
+            "operators": [
+              [
+                [
+                  "-7/25",
+                  "24/25"
+                ],
+                [
+                  "-24/25",
+                  "-7/25"
+                ]
+              ],
+              [
+                [
+                  "24/25",
+                  "7/25"
+                ],
+                [
+                  "-7/25",
+                  "24/25"
+                ]
+              ]
+            ]
+          },
+          {
+            "determinant": "-1",
+            "heldout_screen_probabilities": [
+              "0",
+              "1"
+            ],
+            "name": "law-B",
+            "operators": [
+              [
+                [
+                  "0",
+                  "1"
+                ],
+                [
+                  "-1",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1"
+                ]
+              ]
+            ]
+          }
+        ],
+        "record_only_reconstruction": false,
+        "relabel_covariant": true,
+        "rival_laws_move_heldout": true
+      },
+      "stable_null": {
+        "delayed_reactivation": {
+          "e1": true,
+          "e2": false,
+          "e3": false
+        },
+        "descended_maps": {
+          "cut-to-middle": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          "middle-to-final": [
+            [
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "present_cut_dimension": 3,
+        "rank_history": [
+          {
+            "cut": 1,
+            "final": 1,
+            "middle": 1
+          },
+          {
+            "cut": 1,
+            "final": 1,
+            "middle": 2
+          },
+          {
+            "cut": 2,
+            "final": 1,
+            "middle": 2
+          }
+        ],
+        "stable_cut_basis": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "stable_cut_dimension": 2,
+        "strict_rounds": 2
+      }
+    },
+    "mutation_contract": {
+      "clean_run": true,
+      "registered": [
+        "anchor-corrupt",
+        "event-mix",
+        "split-weight",
+        "kraus-promote",
+        "pullback-half",
+        "dark-reactivate-drop",
+        "null-promote",
+        "eraser-ignore",
+        "record-preplant",
+        "comparison-phase",
+        "transport-flatten",
+        "loop-conflate",
+        "graph-copy",
+        "graph-erase",
+        "probe-feedforward",
+        "spectator-couple",
+        "completeness-amplify",
+        "result-count-type",
+        "verdict-flip",
+        "seal-after-write"
+      ]
+    },
+    "primary": {
+      "all_outcomes_digest": "09b1ec9ad5988261050089fb7e41a0acdb2c2046d11b5423979e3a9a8f936dfe",
+      "comparator_index": 9,
+      "index": 9,
+      "label": "PPR-CONTEXTUAL-PULLBACK-CONSTRUCTED-BUT-LAW-UNSELECTED"
+    },
+    "provenance": {
+      "arithmetic": "Q(i)",
+      "base_commit": "7e95322c589a42211e3a10cab7655492014bd0ae",
+      "core_sha256": "490668340b08022ac5d11c8fdc07c392739153b609a72b9bda5bfcf112f472ea",
+      "fixture_sha256": "cecc3b0d3c7bf46503481fa7b422e915ba0ff6aac42e3cec5f61c395e565b389",
+      "pin_commit": "828b510a3229ae6330a55520b676a33e031c77a8",
+      "pin_sha256": "cce2e194f1f1c557e2cb1745c0f15b9feaa98b48b2300126970098da0fadd48f",
+      "schema": "ppr-result-v1",
+      "source_sha256": "c7f1cfb63b179746d0a66f28c1a6ec79975f8489a025d1196a2531d9fee069d6"
+    }
+  },
+  "payload_seals": {
+    "exact_claims": "bc3e621d72d13775d9660f42840dc7e078f6044833610239a5f79ae2ae36e43b",
+    "gate_summary": "6193ff0fb02279d072222becac799d35447cd914c315495265a4d79e1859760e",
+    "gates": "b2450fc7805788318bc2f9d021144296a621d0bbaaa2ca81097b37e98bf5e847",
+    "limitations": "d717611906fc94b84b18e93821c022f15a49ae8850fe738d2b08182eda63405a",
+    "measurements": "b2af7f1d1c2fa5d010645fd195db2a6e301422e2f057de373f376b9c81d38c08",
+    "mutation_contract": "925bc695ca1e0aadc85f33be6c2fc36531e2d667f204d05af902320736f589fe",
+    "primary": "ec1ecd2d53e6c2227d429d6947b5eca805b29bfd86f2e84f4abc501ffb516e4d",
+    "provenance": "2199a68e6f28034c4a344ad83c0071a418b4503ac9a92bc6b1aca88d19b37336"
+  },
+  "promotion": {
+    "all_checks_before_write": true,
+    "output_recomputed": true,
+    "paper_recomputed": true,
+    "payload_manifest_total": true,
+    "payload_seals_recomputed": true
+  },
+  "promotion_sha256": "c490625307e234b009b853c7939114792a44dca49f5185ae0bac4e246ee54479",
+  "schema": "ppr-receipt-v1"
+}

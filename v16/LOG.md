@@ -794,3 +794,43 @@ The next event is the second physical invocation. It is not called the first
 run; #36 remains the immutable first-run failure. Success may generate the
 candidate artifacts as-is, while any further failure must again be recorded
 before repair.
+
+## 2026-08-17 — PPR GREEN-UNREVIEWED CANDIDATE GENERATED AND COMMITTED AS-IS (v16 LEDGER #38)
+
+The repaired, committed #37 scorer invocation exits zero at 25/25 exact gates
+and selects primary outcome
+`PPR-CONTEXTUAL-PULLBACK-CONSTRUCTED-BUT-LAW-UNSELECTED`. The independently
+coded numeric comparator also returns outcome index 9. The generated artifacts
+are committed before replay or interpretation repair:
+
+| artifact | SHA-256 |
+|---|---|
+| `v16/code/ppr_output.txt` | `0c85efb4186e0faf6afc55f06184e9351bd6df621297ab2155745d7106e45b05` |
+| `v16/code/ppr_receipt.json` | `dc88d6a2fbcf350785cc5f12cdcb8ea0805c4df6deaacac9ceffd34b1699c630` |
+| `v16/paper-03-contextual-pullbacks-permanent-records.md` | `ca7b06e9e5540d81afb4a401beb66cb2834e3e74033fd742ac5257108a19654f` |
+
+At the registered finite grammar, the stable-null descent takes two strict
+rounds and reduces the present cut null dimension from three to two. The
+two-dimensional/three-dimensional fork passes all four reached-basis pullback
+equalities; a one-step-unfed direction is later visible. The physical record
+criterion keeps the append-only record, rejects the eraser, and the explicit
+eraser restores path probability from 337/625 to 1. Reconvergent interference
+is 49/625 versus 337/625; partial visibility carries the fixture coefficient
+288/625; the one-outcome later probe distinguishes 1/50 from 1/2.
+
+Three same-fact comparison routes agree covariantly. A separately typed
+physical transport loop moves 1 to 49/625 without being promoted to gravity.
+The relational carrier changes from dimension two to three; its output graph
+computes distinct later transports that one common record label cannot
+reconstruct. Relabelling, spectator, and disjoint controls pass. Both law-A
+and law-B are exact complete nonfactorizing witnesses, but their held-out pairs
+are `[49/625, 576/625]` and `[0, 1]`. That measured disagreement is why the
+fixed-point outcome is not earned.
+
+Two complete Alice carrier-growth instruments leave Bob at `I/2`; the
+incomplete amplifier moves the marginal. This is only unconditional fixed-Bob
+no-signalling. Actualization, generative/all-future permanence, changing-Bob
+and conditional steering, the weight/interaction selector, continuum,
+Lorentz, GR, QFT, particles, constants, and phenomenology remain open. The
+candidate is not terminal: byte replay, all twenty mutants, off-tree/no-git
+execution, and the separately authorized hostile panel remain.
