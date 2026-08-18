@@ -2170,3 +2170,27 @@ a formal dilation, not a local durable record. A three-overlap extension has
 six orders and four composites, so all-n coherence remains unbuilt. No causal
 nonseparability, EPR/steering, geometry, gravity, QFT, species, Hamiltonian, or
 empirical-deviation consequence is promoted.
+
+## 2026-08-18 — CSF PAPER 6 PANEL ADJUDICATION (v16 LEDGER #103)
+
+The isolated CSF panel is adjudicated in `v16/note-csf-adjudication.md`,
+SHA-256
+`3973bb929b0f7edcd744f7504b2ff5310a9f91641d37bc5065766382e57fd10e`.
+Grades were ACCEPT-WITH-FIXES / REJECT / REJECT. Every exact fixed-history
+spectrahedral, JCV, rich-spectrum, port-fiber, flag, and fixed-factor
+no-signalling calculation survives.
+
+The earliest registered outcome is **CSF-BLOCKED-AT-HISTORY-INDIVIDUATION**.
+The scorer creates histories as `(I, Omega)`; actor and relation labels do not
+generate those maps, an elementary event sequence, a relational common
+boundary, or a record quotient. Full-kernel recurrence across token-disjoint
+contexts is therefore a universality postulate. It gives the exact `5 -> 1`
+dimension cut; separately imposed exchange **law invariance**, not gauge
+quotient, gives `1 -> 0` and fixes `M=I/2`. The held-out rich row adds rank
+zero.
+
+`RECURRENCE-DOCTRINE-MOVES-PHYSICS` is killed: its two alleged predictions are
+literal arrays, not probe-derived observables. The fixed-history
+spectrahedron and calibrated instrument fiber remain substantial conditional
+results, but no recurring relational law, durable flag, steering theorem,
+Hamiltonian, gravity, or QFT consequence is promoted.
