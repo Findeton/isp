@@ -483,3 +483,44 @@ literals and zero top-level calls; the repaired source has not been executed.
 
 All result paths remain absent.  The next event is the second official attempt
 from the committed repaired bytes.
+
+## 2026-08-17 — JCV CANDIDATE COMMITTED AS-IS: STRATIFIED GLOBALLY, PAIRING-SELECTED/WEIGHTS-FREE ON THE ACTIVE LOCUS (v16 LEDGER #23)
+
+The second official attempt from committed repaired scorer bytes returned zero
+and atomically promoted the candidate paper, transcript, and totally sealed
+receipt.  They were committed as-is at
+`ab2102a0f452b5760674946cecf5e9b581986bde` before replay or review.
+
+All twenty gates pass and all fifteen named mutants die.  The primary word is
+`JCV-STRATIFIED`; the full-rank internally interfering stratum is
+`JCV-PAIRING-SELECTED-WEIGHTS-FREE`.  The raw 1,024 sign assignments quotient to
+16 holonomy sectors.  Seven shared-law sectors are nonempty: exactly one active
+sector, with invariant key `(1,1,1,1)` and weight-variety dimension two, plus
+six dimension-one dark/rank-deficient sectors.  Exact rational witnesses move
+the calibrated `p_plus` value from `0` to `49/625` on the active variety.
+
+The independent-triangle control leaves nine sectors, two more than the shared
+law.  Those are the two mixed handoffs where neighboring triangles use
+different surviving channels.  This measures the finite selection supplied by
+the homogeneity declaration; it does not derive that declaration.
+
+The candidate's own scope walls hold: the result is conditional on a declared
+real, isometric, nondegenerately calibrated comparison doctrine.  It selects
+coherent holonomy only where both channels are dynamically probed, does not
+select the continuous weights, and constructs no geometry, backreaction,
+actualization, all-n field, particles, constant, Hamiltonian, or QFT/GR
+deviation.
+
+## 2026-08-17 — JCV POST-COMMIT AND TRUE OFF-TREE VERIFICATION GREEN (v16 LEDGER #24)
+
+`v16/note-jcv-postcommit-verification.md` records the complete audit.  Worktree
+`--replay` is byte-identical.  Self-test, all fifteen named mutants, usage
+contracts, zero-write modes, and second-official refusal behave exactly as
+frozen.  An exact independent receipt/seal and holonomy/dimension/witness
+enumeration matches every candidate value.
+
+A `git archive` containing only the committed runtime/read set was executed
+from alien CWD `/private/tmp` with no `.git` metadata; its replay returned zero
+and the paper, transcript, and receipt were byte-identical.  The candidate is
+therefore `GREEN-UNREVIEWED`, not terminal.  The next event is a separately
+frozen hostile protocol and three mutually independent reviews.

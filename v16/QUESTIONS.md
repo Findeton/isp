@@ -88,9 +88,10 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
 19. **OPEN — What makes one record actual?**  The proposal postulates one actual
     history.  It still owes a preferred, refinement-stable family of compatible
     record partitions and an actualization rule consistent across them.
-20. **OPEN — Is the comparison structure and law a selected joint fixed
-    point?**  JCV's generic exact solver and one physical fixture/scorer are
-    frozen in the required order.  The still-unrun official solve must
-    distinguish unique pairing, free weights, pure gauge, declaration-indexed
-    holonomy, dark/classical strata, and inconsistency without importing paper
-    01's weak Z/X control.
+20. **PARTIAL — Is the comparison structure and law a selected joint fixed
+    point?**  At JCV's verified real calibrated fixture, the active locus
+    selects one coherent holonomy class but leaves a two-dimensional weight
+    variety that moves a calibrated probability.  The global variety is
+    stratified because six dark/rank-deficient mismatch sectors survive.  The
+    result is conditional on a still-declared comparison doctrine and is
+    pending hostile adjudication.

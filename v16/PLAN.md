@@ -60,8 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **SCORER REPAIRED AND REFROZEN BEFORE SECOND OFFICIAL ATTEMPT (v16
-#22)**.  This is a separate unit; it does not reopen or repair paper 01.
+Status: **GREEN-UNREVIEWED (v16 #24)**.  This is a separate unit; it does not
+reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping
@@ -80,7 +80,9 @@ The locked chronology is:
 3. run one official solve, render every claim from the sealed receipt, commit
    as-is, and reproduce off-tree; **first attempt at #21 failed inside mutation
    proof serialization and was frozen before repair; #22 adds only total set
-   serialization and refreezes before rerun; no verdict has been emitted**;
+   serialization; the second attempt is committed as-is at #23 and verified
+   worktree/off-tree at #24: `JCV-STRATIFIED`, active locus
+   `JCV-PAIRING-SELECTED-WEIGHTS-FREE`**;
 4. freeze the hostile protocol, obtain three independent lenses, adjudicate,
    repair if ordered, verify, and terminalize or refuse.
 

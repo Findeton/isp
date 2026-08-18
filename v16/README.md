@@ -22,11 +22,11 @@ theory-selection result.
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
   post-commit/off-tree verification are complete.
-- `JCV`: **SCORER REPAIRED AND REFROZEN BEFORE THE SECOND OFFICIAL ATTEMPT** at
-  v16 ledger #22.  The only source delta adds deterministic set serialization
-  for mutation proofs; the fixture and all physical/classifier logic are
-  unchanged.  No physical result path exists and no comparison/weight result
-  is citable.  Paper 01 remains frozen.
+- `JCV`: **GREEN-UNREVIEWED** at v16 ledger #24.  The verified candidate is
+  globally `JCV-STRATIFIED`; its active locus is
+  `JCV-PAIRING-SELECTED-WEIGHTS-FREE`.  Committed, independent, and true
+  off-tree/no-git checks agree at 20/20 gates and 15/15 mutants.  Hostile panel
+  review is still required.  Paper 01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.
