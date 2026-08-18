@@ -1734,3 +1734,33 @@ reports exist and are hash-frozen. WRC construction proceeds independently;
 none of these in-flight reports may become a WRC anchor or silently alter its
 pin. The unrelated untracked v15 SCOUT-T files remain outside the read, edit,
 and staging sets.
+
+## 2026-08-18 — WRC PAPER 8 PIN FROZEN (v16 LEDGER #75)
+
+The user explicitly authorized Paper 8 while the Papers 3–7 panels run. Before
+any WRC core, fixture, scorer, output, receipt, or paper exists,
+`v16/note-wrc-pin.md` is frozen at SHA-256
+`956d26e22515471c49ed95a43b2956d8f73e8bcd662eeacc82215d9527c00f99`
+against base commit `0611966f8b6b5f8e60d8b87e0d5f042278404f91`.
+
+WRC tests Q8 at its own full-packet standard: process state, complete outcome
+instruments, the input/post-coin/post-shift cuts, registered and held-out
+observables, and the record beable map. It separates the fixed-carrier unitary
+transport, an all-input affine CP CELL-HIT instrument, and a literal nonlinear
+pure-state recoding. The committed non-collapse record update is a hypothesis
+to reconstruct or kill, not frozen into the target; JS restriction 13 and the
+CELL-HIT/three-actor split bind throughout.
+
+The pin requires independent reproduction of the terminal v14 packet,
+translation covariance with the state and record transformed together, an
+absolute-anchor negative control, an exact affinity witness, a lawful CP
+comparison plus held-out continuation, a beable-history census, and recurring
+vertex/coupling extraction against the admitted coin fiber. It pre-registers
+full reconstruction, named-residue representation, refusal, blocked referent,
+and inconsistency outcomes. No outcome selects the walk as fundamental law.
+
+The locked chronology is generic exact core and public calibration, data-only
+physical fixture/verdict-neutral scorer, one official run, candidate-bytes
+commit, replay/mutant/independent/off-tree verification, then a separately
+frozen hostile protocol. In-flight Paper 3–7 reports are excluded from the WRC
+read set. The unrelated untracked v15 SCOUT-T files remain untouched.

@@ -18,6 +18,17 @@ theory-selection result.
 
 ## Live state
 
+- `WRC` / Paper 8: **PIN FROZEN BEFORE CONSTRUCTION** at v16 ledger #75.
+  The user-authorized continuation tests whether the committed v14 walk is a
+  creation-event representation at full packet equivalence: state, all-input
+  outcome instruments, the input/post-coin/post-shift cuts, calibrated and
+  held-out observables, and the record beable map. It separates exact unitary
+  transport from the walk's non-collapse CELL-HIT update, an affine CP repair,
+  and a nonlinear ontic-pure-state recoding; translation covariance transforms
+  the state and record with the arena. Couplings may be extracted but not
+  called selected constants. The next stage is a generic exact core frozen
+  before any WRC physical fixture or result. In-flight Paper 3–7 reports are
+  excluded from WRC's anchors and runtime.
 - `CEL` / Paper 7: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
   PANEL RUNNING** at v16 ledger #74. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
