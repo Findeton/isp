@@ -2247,3 +2247,38 @@ primary only at the stipulated fixed-carrier/readout-map grain and rejects
 grammar-history, actualization, permanence, recurring-event-type, and
 geometry-irreducibility promotions. The operator seat remains isolated; joint
 adjudication stays prohibited until its report hash freezes.
+
+## 2026-08-18 — EXTERNAL BLOCKER REVIEW ADOPTED WITH CORRECTIONS; CSF CLAIM-LINEAGE ROOT CAUSE FROZEN; RELATIONAL-SUFFICIENCY METHOD FROZEN; RUNBOOK E-36/E-37 (v16 LEDGER #107)
+
+The external review's central correction is adopted: DISC's third-tick result
+excludes registered memoryless classes, not memory-bearing models and not
+geometry as such. Its backlog description is now stale—Papers 3–7 are jointly
+adjudicated through #104, and WRC is already frozen under hostile review—so no
+candidate bytes are rewritten after exposure.
+
+The CSF instrument breach is audited in
+`v16/note-csf-claim-lineage-root-cause.md`, SHA-256
+`e331ae373884391bf96d053198f1727cd2455083c858f6dd45685f5ad97b2214`.
+The killed doctrine qualifier was produced by comparing two literal arrays in
+the scorer; fixture neutrality, replay, seals, and claim coverage authenticated
+that circular route without deriving either prediction. RUNBOOK E-36 now
+requires preparation-to-law-to-instrument-to-calibrated-output claim lineage,
+an upstream prediction-moving falsifier, scorer-literal neutrality, and an
+independent rebuild.
+
+The corrected successor criterion is frozen in
+`v16/note-relational-sufficiency-method.md`, SHA-256
+`84bac33e47ebe30f94d019e8f669509e9ffa6470316b9d7a50fbc951fc0be660`.
+Geometry-as-sufficient-statistic is necessary but not sufficient: an
+isomorphic memory encoding is representation equivalence. The method therefore
+adds the JS-v2 predictive quotient, minimality, matched graph interventions,
+one graph-generated later probe, erasure/reconstruction, B0/B1/B2 adversary
+nests, resource parity, and held-out family scaling. RUNBOOK E-37 makes every
+finite eliminability result class-relative.
+
+Tracked v15 evidence leaves SCOUT-T procedurally unsealed and JS Pin v2 frozen
+but unexecuted. Their untracked files remain untouched and uncited as results.
+Any successor geometry-irreducibility unit must absorb or disposition JS S1a/
+S1b and must use a generative grammar engine rather than named matrix packets.
+The active WRC operator seat was notified; all WRC adjudication remains barred
+until its independent report freezes.

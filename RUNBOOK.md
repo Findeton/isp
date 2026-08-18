@@ -2003,3 +2003,46 @@ equivalence (isomorphic measures over the complete ontic history
 space) — the second requires the ontic completeness of the compared
 objects to be established first.
 
+## E-36 — CLAIM LINEAGE: A LITERAL IS NOT A MEASUREMENT (bought at v16 #107, CSF Paper 6)
+
+Any claim that changing a doctrine, law, geometry, state, or calibration
+changes a prediction must be backed by a complete computational lineage:
+
+```text
+preparation -> law -> successor/instrument -> calibration/effect
+            -> derived distribution -> comparison
+```
+
+The receipt names the upstream measurement keys consumed by the claim.
+Literal arrays may be anchors or expected regression values; they may never be
+the measured outputs on which the claim predicate is defined. Fixture
+neutrality covers executable/scorer literals as well as data files. A naked
+Boolean shared by comparator, qualifier, and renderer is one route, not three
+independent checks.
+
+Every prediction-bearing claim has a falsifier that changes an upstream
+physical object while holding the common calibration fixed and thereby moves
+or erases the derived output. Mutating a stored answer, label, or Boolean does
+not count. The hostile verifier independently rebuilds at least one complete
+lineage. These duties apply to new units and to adjudication of frozen,
+nonterminal candidates; they do not reopen terminal bytes.
+
+## E-37 — FINITE ELIMINABILITY IS CLASS-RELATIVE (bought at v16 #107, WRC methodology)
+
+An unrestricted finite lookup table always reproduces a finite fixture, while
+a memoryless null is too weak to distinguish geometry from memory. Every
+irreducibility/eliminability claim therefore freezes before data: a genuinely
+varying graph family; train/held-out isomorphism classes; matched graph,
+record, and relabeling interventions; one uniform law; the blind interface;
+locality, state/memory, ancilla, circuit, parameter, description-length, and
+precision budgets; calibration/gauge; and the comparison metric.
+
+Predictive sufficiency is tested first: the proposed present state must screen
+the complete past from every registered future, on predeclared past-window and
+future-horizon axes. Minimality, compositional/naturality structure, a probe
+computed from law-generated output geometry, graph-erasure/reconstruction,
+and family-scaling are separate gates. A memory variable is not a rival if it
+is merely an isomorphic recoding preserving all operations; that is
+representation equivalence, not geometry elimination. Every positive result
+names the excluded adversary/resource class and may not be paraphrased as
+absolute ontological proof.

@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `WRC` / Paper 8: **CANDIDATE GENERATED; VERIFICATION PENDING** at v16
-  ledger #94. The derived primary is
+- `WRC` / Paper 8: **REPLAY-VERIFIED GREEN-UNREVIEWED; TWO HOSTILE REPORTS
+  FROZEN, OPERATOR SEAT RUNNING** through v16 ledger #107. The derived primary is
   `WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`. The pin is frozen at #75; its one provenance-only
   `QUESTIONS.md` digest transcription repair is frozen at #83 after the first
   result-free physical dry run refused without writes.
@@ -56,8 +56,17 @@ theory-selection result.
   independent exact reconstruction, and true off-tree execution. The result
   is green-unreviewed and fixed-carrier only. Hostile protocol #98 freezes
   operator, records/eliminability, and physics/geometry seats; dispatch #99
-  assigns all three independently, with no adjudication before every report
-  hash freezes.
+  assigns all three independently. Physics/geometry #105 and
+  records/eliminability #106 independently preserve the fixed-carrier exact
+  reconstruction and memory-feedback result while rejecting any promotion to
+  changing relational geometry or geometry irreducibility. The operator seat
+  remains live, so no joint adjudication has begun. External-method audit #107
+  freezes two forward corrections without modifying WRC: RUNBOOK E-36 requires
+  full claim lineage after CSF's hard-coded doctrine observable, and E-37
+  requires predictive sufficiency/minimality, matched graph interventions,
+  B0/B1/B2 resource-matched adversaries, and held-out family scaling for any
+  future eliminability result. JS Pin v2's predictive quotient is the governing
+  ancestor; SCOUT-T remains procedurally unsealed and uncited as a result.
 - `CEL` / Paper 7: **PANEL-ADJUDICATED REJECT AT
   `CEL-MATHEMATICAL-LADDER-CONSTRUCTED-BUT-RELATIONAL-FLAG-WELD-UNBUILT`**
   at v16 ledger #104. The pin is frozen at #68, generic core at #69,
