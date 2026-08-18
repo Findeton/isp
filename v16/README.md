@@ -18,6 +18,17 @@ theory-selection result.
 
 ## Live state
 
+- `RFB` / Paper 10: **PIN FROZEN; NO RESULT** at v16 ledger #130. RFB maps
+  the record-feedback forcing boundary rather than proposing another preferred
+  law. It separates process factorization, record implementation, and quantum
+  representation; freezes the Barandes-compatible one-history/indivisible-law/
+  representational-Hilbert/division-kernel ontology as a candidate rather than
+  a verdict; and requires impose/drop controls for every claimed selection.
+  The literature guardrail incorporates quantum networks theory, which already
+  permits coherent node merge/split/reconnection, so the genuinely open target
+  is the graph-generated history law with stable divisions, rewrite concurrency,
+  dynamic-factorization no-signalling, and continuum recovery. No RFB core,
+  fixture, scorer, result, or candidate paper exists at this event.
 - `QSF` / Paper 9: **TERMINAL AT `QSF-METHOD-INCONCLUSIVE`** through v16 ledger
   #129. Three mutually blind seats independently preserved the cautious primary
   while correcting every arm's type. Record-indexed A0 is false; literal local

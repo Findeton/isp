@@ -2766,3 +2766,30 @@ decoherence-functional/Hilbert representation remain candidates, not QSF
 constructions. Aggregate A1/A2, complete JS-S1a, relational composition,
 genuine division selection, growth, and continuum physics remain open. QSF now
 licenses a separate result-neutral Paper 10 pin, not Paper 10 construction.
+
+## 2026-08-18 — RFB PAPER 10 FORCING-BOUNDARY PIN FROZEN (v16 LEDGER #130)
+
+`v16/note-rfb-pin.md` freezes Paper 10 before construction. RFB asks which
+parts of record feedback follow from which named assumptions and requires both
+impose and return-on-drop controls. It separates process factorization,
+record implementation, and mathematical representation, preventing classical/
+coherent tags, indivisible histories, and decoherence functionals from being
+treated as rival objects of one type.
+
+The pin engraves the Barandes-compatible ontology only as a candidate: one
+actual configuration in a fixed meta-catalogue of finite named graphs; an
+indivisible multi-time law; Hilbert/decoherence-functional machinery as
+representation; and ordinary probabilities/CP instruments at stable record
+divisions. Names are coordinate-like, renaming covariance is required, and a
+graph is not geometry until it does calibrated irreducible work.
+
+The primary-source audit materially corrects the forward mathematics claim.
+Quantum causal graph dynamics supplies labelled-graph superpositions and a
+vertex-preserving localizability theorem, while 2024 quantum networks theory
+already permits coherent merge, split, and reconnection with dynamic logical
+partitions. Paper 11 therefore need not invent quantum size change; its open
+target is the graph-generated renaming-covariant history law with stable
+records, quantum rewrite concurrency, dynamic-factorization no-signalling,
+infinite extension, and continuum/QFT/GR recovery. Q32 records the open forcing
+question. No RFB core, fixture, scorer, result, or Paper 10 candidate exists at
+this freeze event.

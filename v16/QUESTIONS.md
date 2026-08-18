@@ -216,7 +216,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     Paper 10 requires graph-generated operators, an in-fixture loop,
     reconvergent coherent growth, a real event law, E-37 parity adversaries,
     four independent role ablations, and a QSF-adjudicated or explicitly
-    postulated base instrument. No Paper 10 pin exists yet.
+    postulated base instrument. Paper 10's RFB pin now carries this only as an
+    exploratory counterfamily; no result exists.
 31. **HOLD / EXPLORATORY AUDIT — Can a coherent conjugate-record field supply
     the lawful base dynamics for a relational growth successor?** The exposed
     `C^2 tensor C^4` toy gives one exact unitary matter/memory feedback law and
@@ -237,5 +238,20 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     intrinsic, until the future relational gauge is fixed. A later `q=3`
     extrapolation moves the split to tick three but does not select the dial:
     the corresponding rational-coin holonomy has three rather than five
-    phases, and `R=I` is an exact all-tick no-split control. No Paper 10 pin
-    exists yet.
+    phases, and `R=I` is an exact all-tick no-split control. Paper 10's RFB pin
+    now carries CRL only as one registered conditional family; no result exists.
+32. **PIN / OPEN — Which microscopic law type and record-feedback family are
+    selected by which principles?** Paper 10 RFB freezes a three-axis forcing
+    census: process factorization, record implementation, and mathematical
+    representation. It explicitly tests classical, coherent, hybrid,
+    decoherence-only, and active feedback; divisible, enriched-state,
+    indivisible multi-time, and higher-order laws; and kernel, Hilbert,
+    decoherence-functional, and process representations. Every selection needs
+    an impose test and a return-on-drop control. The candidate ontology is one
+    actual named relational configuration in a fixed meta-catalogue, an
+    indivisible history law, representational quantum machinery, and ordinary
+    instruments at stable divisions. That hierarchy is not selected. Quantum
+    networks theory already supplies coherent size-changing network kinematics,
+    so the future Paper 11 gap is the graph-generated history law, stable
+    records, overlap composition, dynamic-factorization no-signalling, and the
+    continuum phase. No RFB construction or answer exists at the pin event.

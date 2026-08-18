@@ -457,6 +457,34 @@ artifacts; all 28 mutants refuse without artifacts and the CLI/anchor controls
 pass. Paper 10's forcing-boundary pin may now freeze as a separate result-neutral
 event; Paper 10 construction is not authorized by QSF itself.
 
+## Paper 10 — RFB: the record-feedback forcing boundary
+
+Status: **PIN FROZEN; NO RESULT (v16 #130)**.
+
+RFB asks which pieces of a lawful record-feedback dynamics follow from which
+named principles. It does not ask whether CRL or any other exposed toy is the
+law. The pin separates three axes that earlier discussions mixed: microscopic
+process factorization, classical/coherent/hybrid record implementation, and the
+kernel/Hilbert/decoherence-functional/higher-order representation. Each alleged
+selection needs an impose test and a return-on-drop control.
+
+The candidate ontology is explicit: one actual configuration in a fixed
+meta-catalogue of finite named graphs; an indivisible multi-time law as the
+nomological candidate; Hilbert/decoherence-functional machinery as possible
+representation; and ordinary probabilities/CP instruments only at stable
+record divisions. That is a testable typing, not a result. Names are
+coordinate-like and physical laws must be renaming covariant. A graph is not
+called geometry until it does calibrated operational work.
+
+The pin also corrects the forward literature map. Quantum causal graph
+dynamics supplies graph-superposition locality at fixed vertex set, while
+quantum networks theory already permits coherent node merge, split, and
+reconnection. Paper 11 therefore inherits existing size-changing quantum
+kinematics; its open target is a graph-generated, renaming-covariant history law
+with stable divisions, quantum rewrite concurrency, dynamically defined
+subsystems, and eventual continuum recovery. No RFB artifact beyond the pin is
+authorized or present at this event.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
