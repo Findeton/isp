@@ -2327,3 +2327,29 @@ rule. Q8 retirement is editorial, the comparator shares builder code, and the
 prefreeze controls are post-exposure calibrations. A bounded nine-order repair
 is authorized before terminal promotion; no fixture, core, physical number,
 coordinate, or primary may move.
+
+## 2026-08-18 — WRC PAPER 8 BOUNDED REPAIR DELIVERED (v16 LEDGER #110)
+
+The nine adjudication orders are implemented in
+`v16/note-wrc-bounded-repair.md`.  The generic core and physical fixture remain
+byte-identical.  The exact branch ladder, all nine observables, coordinate
+vector, and primary remain unchanged:
+**WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT**.
+
+The repaired scorer now constructs the complete rank-one-effect affine family
+`Tr(E_c rho) sigma_c`, a second complete instrument that matches the one
+registered continuation exactly, and a two-preparation witness proving no
+fixed-output completion matches the literal noncollapse rule on both inputs or
+all inputs.  The displayed projective comparison remains lawful but is no
+longer called the unique repair.  Pure-ray mixtures, the emission-history/count
+readout, and recurrence are retyped exactly as ordered.  Q8 status is excluded
+from scientific qualifiers and claims.  A separate semantic primary tree
+replaces the shared-function comparator.
+
+The coupled-versus-frozen record assay is now gated directly and reproduces
+tick-three total variation `1024/19683`.  It earns non-inert record feedback on
+fixed `G0`, not geometry.  The repaired receipt has 37/37 passing gates; all
+37/37 mutants refuse, including new record-feedback, alternative-completion,
+two-input, and Q8-evidence-leak controls.  Two clean generations are
+byte-identical.  Status is repaired candidate pending the required post-commit
+off-tree/no-git replay; no terminal claim is made at this event.

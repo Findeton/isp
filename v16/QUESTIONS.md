@@ -34,12 +34,17 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
 8. **TERMINAL AT THE COMMITTED FINITE ARENA — Can the existing v14/v15 walk be
    reconstructed?**  WRC reconstructs its fixed-carrier transport, three cuts,
    all nine registered observable families, nonuniform-record translation
-   covariance, and count-field beable map.  Full affine-instrument equivalence
-   fails: the delivered non-collapse CELL-HIT operation is all-input nonaffine.
-   A complete CP comparison preserves the hit probability but changes a
-   conditioned future; an ontic-pure-state recoding is exact only outside the
-   affine class.  This retires Q8 at the committed finite arena, not across
-   carrier growth or a family of relational geometries.
+   covariance, emission-history-to-count readout, and non-inert record feedback.
+   Full affine-instrument equivalence fails: the delivered non-collapse
+   CELL-HIT operation is all-input nonaffine.  Every rank-one-effect affine CP
+   completion is fixed-output measure-and-prepare.  The displayed projective
+   completion moves a conditioned future; another complete instrument fits that
+   single continuation exactly; no fixed-output completion fits the literal
+   rule on two distinct nonzero-probability preparations or all inputs.  An
+   ontic-pure-ray recoding is exact only when mixtures are measures over rays,
+   not density-matrix equivalence.  Q8's terminal status is editorial at this
+   committed fixed-carrier arena; carrier growth, relational geometry, and
+   geometry irreducibility remain unbuilt.
 9. **PARTIAL — When does a Hamiltonian exist?**  Is it recoverable only after a
    fixed-geometry sector and a clock/logarithm branch are selected?  What data
    make two Hamiltonian packets empirically or ontologically equivalent?  One

@@ -46,14 +46,16 @@ QUALIFIER_WORDS = (
     "REGISTERED-OBSERVABLES-RECONSTRUCTED",
     "TRANSLATION-COVARIANT-WITH-TRANSFORMED-STATE-AND-RECORD",
     "ARENA-EXTENSION-UNBUILT",
-    "CELL-HIT-BEABLE-DICTIONARY-RECONSTRUCTED",
+    "CELL-HIT-EMISSION-HISTORY-TO-COUNT-READOUT-MAP-RECONSTRUCTED",
     "NONCOLLAPSE-CELL-HIT-MAP-NONAFFINE",
-    "AFFINE-CP-REPAIR-MOVES-CONDITIONED-FUTURE",
-    "ONTIC-PSI-EXTENSION-EXACT-BUT-OUTSIDE-AFFINE-CLASS",
-    "RECURRING-VERTEX-COUPLINGS-EXTRACTED-NOT-SELECTED",
+    "RANK-ONE-AFFINE-COMPLETIONS-ARE-MEASURE-AND-PREPARE",
+    "ALTERNATE-AFFINE-COMPLETION-FITS-SINGLE-CONTINUATION",
+    "DISPLAYED-PROJECTIVE-CP-COMPARISON-MOVES-CONDITIONED-FUTURE",
+    "ONTIC-PURE-RAY-RECORD-DYNAMICS-EXACT-BUT-NOT-MIXED-STATE-EQUIVALENCE",
+    "REPEATED-LOCAL-RECORD-SIGNATURES-UNDER-ONE-IMPORTED-RULE",
+    "DECLARED-COIN-FIBER-MEASURED-AND-UNSELECTED",
     "STATE-DEPENDENT-BORN-WEIGHTS-NOT-CONSTANTS",
     "WALK-IS-IMPORTED-CANDIDATE-DYNAMICS-NOT-DERIVED-LAW",
-    "Q8-RETIRED-AT-COMMITTED-FINITE-ARENA",
 )
 
 MUTANTS = (
@@ -70,6 +72,7 @@ MUTANTS = (
     "born-normalization",
     "branch-state",
     "record-increment",
+    "record-feedback",
     "beable-histogram",
     "mixture-affinity",
     "cp-completeness",
@@ -86,7 +89,9 @@ MUTANTS = (
     "cell-hit-type",
     "clock-boundary",
     "primary-comparator",
-    "q8-retirement",
+    "alternative-completion",
+    "two-input-completion",
+    "q8-scientific-leak",
     "exact-arithmetic",
     "transcript-binding",
     "paper-claim",
@@ -110,11 +115,15 @@ REQUIRED_WALLS = {
 }
 
 POST_RESULT_QUESTIONS = {
-    "sha256": "28ea3315436aa1228f6af19b3025624bc1d597862f6cacd9d46187efda10f861",
-    "tokens": (
+    "28ea3315436aa1228f6af19b3025624bc1d597862f6cacd9d46187efda10f861": (
         "TERMINAL AT THE COMMITTED FINITE ARENA",
         "Full affine-instrument equivalence\n   fails",
         "not across\n   carrier growth or a family of relational geometries",
+    ),
+    "0770b14ec3c44a81f16e627a844fb23b353f54f1bffd3d597243688c0ffdd059": (
+        "TERMINAL AT THE COMMITTED FINITE ARENA",
+        "Every rank-one-effect affine CP\n   completion is fixed-output measure-and-prepare",
+        "carrier growth, relational geometry, and\n   geometry irreducibility remain unbuilt",
     ),
 }
 
@@ -234,6 +243,8 @@ def apply_mutant(fixture: MutableMapping[str, Any], mutant: str | None) -> None:
         controls["literal_branch_mode"] = "COLLAPSE"
     elif mutant == "record-increment":
         controls["record_increment"] = 2
+    elif mutant == "record-feedback":
+        controls["feedback_frozen_increment"] = 1
     elif mutant == "beable-histogram":
         source["beable_readout"] = "ORDERED-HISTORY"
     elif mutant == "mixture-affinity":
@@ -270,8 +281,12 @@ def apply_mutant(fixture: MutableMapping[str, Any], mutant: str | None) -> None:
         source["cuts"] = ["INPUT", "GENUINE-DIVISION-BOUNDARY", "POST-SHIFT-OUTPUT"]
     elif mutant == "primary-comparator":
         controls["primary_word_offset"] = 1
-    elif mutant == "q8-retirement":
-        controls["retire_q8"] = False
+    elif mutant == "alternative-completion":
+        controls["alternative_output_mode"] = "PROJECTIVE"
+    elif mutant == "two-input-completion":
+        controls["completion_second_equals_first"] = True
+    elif mutant == "q8-scientific-leak":
+        controls["inject_q8_scientific"] = True
     elif mutant == "exact-arithmetic":
         source["field_order"] = float("3")
     elif mutant == "transcript-binding":
@@ -681,13 +696,93 @@ def instrument_census(arena: WalkArena, source: Mapping[str, Any], controls: Map
         and Q(0) < source_probability < Q(1)
     )
 
+    # For a rank-one effect E_c=|e_c><e_c|, every affine CP outcome
+    # operation has a fixed normalized output state:
+    # J_c(rho)=Tr(E_c rho) sigma_c.  Build one complete member of that
+    # family which fits the registered coherent continuation exactly.  The
+    # displayed projective instrument above is another member of the same
+    # family, with a different fixed output at this port.
+    outcome_effect_vector = core.matvec(core.adjoint(coin), repair_vector)
+    outcome_effect = core.outer(outcome_effect_vector)
+    effect_rank_one = (
+        core.norm2(outcome_effect_vector) == 1
+        and outcome_effect
+        == core.conjugate_by(
+            core.adjoint(coin), core.matrix_unit(arena.dimension, outcome, outcome)
+        )
+    )
+    alternative_ports = []
+    alternative_output = source_output
+    for cell in range(arena.dimension):
+        cell_basis = tuple(
+            core.ONE if index == cell else core.ZERO
+            for index in range(arena.dimension)
+        )
+        effect_vector = core.matvec(core.adjoint(coin), cell_basis)
+        output_vector = arena.shift_apply(cell_basis)
+        if cell == outcome and controls.get("alternative_output_mode") != "PROJECTIVE":
+            output_vector = source_output
+            alternative_output = output_vector
+        elif cell == outcome:
+            alternative_output = output_vector
+        alternative_ports.append(core.outer(output_vector, effect_vector))
+    alternative_total = core.instrument_total(alternative_ports)
+    alternative_complete = alternative_total == core.identity(arena.dimension)
+    alternative_operation = core.kraus_operation(
+        alternative_ports[outcome], core.density(input_state)
+    )
+    source_operation = core.matscale(
+        source_probability, core.density(source_output)
+    )
+    alternative_single_match = alternative_operation == source_operation
+
+    # A second nonzero-probability preparation makes the limitation of every
+    # fixed-output completion explicit.  The effect eigenstate is sent by the
+    # literal rule to the displayed projective output, whereas the coherent
+    # registered preparation is sent to a different ray.  No one sigma_c can
+    # equal both conditioned outputs.
+    basis_input = outcome_effect_vector
+    basis_source_output = core.matvec(unitary, basis_input)
+    second_input = input_state
+    second_source_output = source_output
+    second_probability = source_probability
+    if controls.get("completion_second_equals_first"):
+        second_input = basis_input
+        second_source_output = basis_source_output
+        second_probability = Q(1)
+    pair_inputs_distinct = core.density(basis_input) != core.density(second_input)
+    pair_outputs_distinct = (
+        core.density(basis_source_output) != core.density(second_source_output)
+    )
+    pair_probabilities_nonzero = Q(1) > 0 and second_probability > 0
+    fixed_output_two_input_impossible = (
+        effect_rank_one
+        and pair_inputs_distinct
+        and pair_outputs_distinct
+        and pair_probabilities_nonzero
+    )
+    projective_fits_first = (
+        core.density(standard_repair_output) == core.density(basis_source_output)
+    )
+    projective_fits_second = (
+        core.density(standard_repair_output) == core.density(second_source_output)
+    )
+    alternative_fits_first = (
+        core.density(alternative_output) == core.density(basis_source_output)
+    )
+    alternative_fits_second = (
+        core.density(alternative_output) == core.density(second_source_output)
+    )
+
     changed = list(record)
     changed[outcome] += int(controls.get("record_increment", 1))
     next_record = tuple(changed)
     next_source = arena.coin_apply(source_output, next_record)
     next_repair = arena.coin_apply(repair_output, next_record)
+    next_alternative = arena.coin_apply(alternative_output, next_record)
     source_screen = [entry.norm2() for entry in next_source]
     repair_screen = [entry.norm2() for entry in next_repair]
+    alternative_screen = [entry.norm2() for entry in next_alternative]
     moved_cells = [index for index in range(arena.dimension) if source_screen[index] != repair_screen[index]]
 
     ontic_match = literal_output == source_output and source_probability == postcoin_state[outcome].norm2()
@@ -700,19 +795,34 @@ def instrument_census(arena: WalkArena, source: Mapping[str, Any], controls: Map
         "effect": effect_first,
         "effect_nontrivial": effect_first != core.zero(arena.dimension, arena.dimension) and effect_first != core.identity(arena.dimension),
         "effect_scalar": effect_scalar,
+        "effect_rank_one": effect_rank_one,
         "all_input_nonaffine": all_input_nonaffine,
         "source_probability_complete": source_probability_complete,
         "affinity_delta": affinity_delta,
         "affine": affinity_delta == core.zero(arena.dimension, arena.dimension),
         "cp_total": cp_total,
         "cp_complete": cp_complete,
+        "alternative_total": alternative_total,
+        "alternative_complete": alternative_complete,
+        "alternative_single_match": alternative_single_match,
+        "alternative_output": alternative_output,
+        "alternative_screen": alternative_screen,
+        "alternative_continuation_equal": alternative_screen == source_screen,
+        "pair_inputs_distinct": pair_inputs_distinct,
+        "pair_outputs_distinct": pair_outputs_distinct,
+        "pair_probabilities_nonzero": pair_probabilities_nonzero,
+        "fixed_output_two_input_impossible": fixed_output_two_input_impossible,
+        "projective_fits_first": projective_fits_first,
+        "projective_fits_second": projective_fits_second,
+        "alternative_fits_first": alternative_fits_first,
+        "alternative_fits_second": alternative_fits_second,
         "source_probability": source_probability,
         "cp_probability": cp_probability_real,
         "literal_output": literal_output,
         "source_output": source_output,
         "repair_output": repair_output,
         "standard_repair_output": standard_repair_output,
-        "cp_implementation": repair_output == standard_repair_output,
+        "cp_implementation": core.density(repair_output) == core.density(standard_repair_output),
         "continuation_witness_quality": continuation_witness_quality,
         "ontic_match": ontic_match,
         "next_source_screen": source_screen,
@@ -782,6 +892,35 @@ def derive_primary_code(coordinates: Mapping[str, bool]) -> int:
     return 6
 
 
+def independent_primary_decision(coordinates: Mapping[str, bool]) -> str:
+    """Classify the packet through a separate semantic decision tree.
+
+    This deliberately does not call ``derive_primary_code`` or index
+    ``PRIMARY_WORDS``.  Its duplicated semantic branches are a comparator,
+    not shared production logic.
+    """
+
+    if coordinates.get("referent") is not True:
+        return "WRC-BLOCKED-AT-PACKET-REFERENT"
+    if not (
+        coordinates.get("transport") is True
+        and coordinates.get("cuts") is True
+        and coordinates.get("observables") is True
+    ):
+        return "WRC-WALK-REFUSES-CREATION-EVENT-REPRESENTATION"
+    instrument_ok = coordinates.get("instrument") is True
+    readout_ok = coordinates.get("beable") is True
+    if instrument_ok and readout_ok:
+        return "WRC-WALK-PACKET-RECONSTRUCTED"
+    if not instrument_ok and readout_ok:
+        return "WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT"
+    if instrument_ok and not readout_ok:
+        return "WRC-WALK-REPRESENTABLE-MODULO-RECORD-BEABLE-MAP"
+    if not instrument_ok and not readout_ok:
+        return "WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT-AND-RECORD-BEABLE-MAP"
+    return "WRC-INCONSISTENT"
+
+
 def render_transcript(results: Mapping[str, Any], gates: Sequence[Mapping[str, Any]]) -> str:
     source = results["source_regression"]
     instrument = results["instrument"]
@@ -794,8 +933,12 @@ def render_transcript(results: Mapping[str, Any], gates: Sequence[Mapping[str, A
         f"branch_ladder={','.join(str(item) for item in source['branch_counts'])}",
         f"exit_probability={source['exit_probability']}",
         f"ipr={source['ipr']}",
+        f"tick3_record_feedback_tv={source['record_feedback_total_variation']}",
         f"affinity_delta_nonzero={instrument['affinity_delta_nonzero']}",
         f"cp_complete={instrument['cp_complete']}",
+        f"alternative_cp_complete={instrument['alternative_cp_complete']}",
+        f"alternative_single_fit={instrument['alternative_single_input_match']}",
+        f"two_input_fixed_output_impossible={instrument['fixed_output_two_input_impossible']}",
         f"continuation_moved_cells={instrument['continuation_moved_cells']}",
         f"recurring_signatures={recurrence['repeated_signature_count']}",
         f"hidden_coin_ipr={recurrence['hidden_coin_ipr']}",
@@ -817,9 +960,9 @@ def render_paper(results: Mapping[str, Any], claims: Sequence[str]) -> str:
     qualifier_block = "\n".join(f"- `{item}`" for item in verdict["qualifiers"])
     wall_block = "\n".join(f"- `{item}`" for item in scope["walls"])
     transport_summary = (
-        "admits an exact creation-layer representation at the transport grain"
+        "has an exact fixed-carrier transport and record-feedback reconstruction"
         if verdict["coordinates"]["transport"]
-        else "does not admit the registered creation-layer transport representation"
+        else "does not reconstruct the registered fixed-carrier transport"
     )
     instrument_summary = (
         "is affine on the all-input density-operator domain"
@@ -844,7 +987,7 @@ def render_paper(results: Mapping[str, Any], claims: Sequence[str]) -> str:
     )
     return f"""# Walk reconstruction at full packet grain
 
-Status: **GREEN-UNREVIEWED CANDIDATE**.
+Status: **PANEL-ADJUDICATED; BOUNDED REPAIR CANDIDATE**.
 
 Primary result:
 
@@ -856,10 +999,17 @@ Primary result:
 
 The committed finite walk {transport_summary}. Full packet equivalence is
 stricter. Its delivered Born-selected CELL-HIT operation
-{instrument_summary}. The independently constructed affine CP comparison
+{instrument_summary}. The displayed projective affine CP comparison
 preserves the registered CELL-HIT probability and {repair_summary}. The
 primary word above is derived from the full coordinate table; no outcome is a
 derivation or selection of the walk as fundamental dynamics.
+
+```text
+FIXED-CARRIER WALK PACKET RECONSTRUCTED;
+LITERAL CELL-HIT OPERATION IS NOT AN AFFINE QUANTUM INSTRUMENT;
+STATE-RECORD FEEDBACK IS NON-INERT;
+DYNAMIC RELATIONAL GEOMETRY AND GEOMETRY IRREDUCIBILITY ARE UNBUILT.
+```
 
 The three target packets remain separate:
 
@@ -890,6 +1040,12 @@ has total mass one. At the declared horizon the inverse participation is
 admissibility-exit probability is `{source['exit_probability']}`. These values
 match the committed packet at the registered paths.
 
+At tick {source['record_feedback_tick']}, replacing the evolving count record
+by the frozen-record control changes the site screen by total variation
+`{source['record_feedback_total_variation']}`. The feedback is therefore
+non-inert on this fixed carrier. This is record-backreacted transport, not a
+matter-to-geometry-to-matter chain.
+
 The transport support has {packet['support_size']} nonzero entries and equals
 the coin-then-shift kinematic support. This is a fixed {packet['dimension']}
 dimensional carrier. No graph growth or changing spatial factorization was
@@ -903,10 +1059,11 @@ state and a nonuniform count record together {covariance_summary}
 {packet['translation_rows']} exact covariance rows; keeping an absolute
 preparation anchor is the negative control.
 
-The count-field beable dictionary {beable_summary} on the short exhaustive
-history census: {packet['beable_histories']} labelled histories have
+The CELL-HIT-emission-history-to-count readout {beable_summary} on the short
+exhaustive history census: {packet['beable_histories']} labelled histories have
 {packet['beable_violations']} history-to-histogram violations. This assay does
-not identify CELL-HIT with a three-actor grammar event.
+not identify CELL-HIT with a three-actor grammar event, prove that one branch
+actualizes, or prove that the count is recoverable under every licensed future.
 
 ## 4. The instrument comparison
 
@@ -927,7 +1084,7 @@ requires `Tr(E rho)` to be constant, hence `E` to be scalar. Conversely a
 scalar `E` makes the map linear there. The reconstructed CELL-HIT effect is
 non-scalar, so the obstruction holds over the full registered state space.
 
-The comparison instrument
+The displayed projective comparison instrument
 
 ```text
 J_c(rho) = S P_c C_n rho C_n^dagger P_c S^dagger
@@ -940,17 +1097,38 @@ probabilities differ; the first registered comparison is
 `{instrument['continuation_first_source']}` versus
 `{instrument['continuation_first_repair']}`.
 
-Treating the pure state itself as an ontic variable reproduces the nonlinear
-rule exactly at the registered witness. That is an extension of the ontology
-and law class, not an affine-instrument reconstruction.
+This movement does not select a unique repair. Because the CELL-HIT effect is
+rank one, every affine CP outcome operation with that effect has the form
+
+```text
+J_c(rho) = Tr(E_c rho) sigma_c,
+```
+
+where `sigma_c` is one fixed normalized output state. Conversely every such
+choice is CP, and the family is complete because the effects sum to the
+identity. The exact alternative instrument constructed here is complete and
+matches the single registered conditioned continuation, including its later
+screen. The displayed projective completion and this alternative each fit one
+of two nonzero-probability preparations and fail the other. Since the literal
+rule demands two distinct conditioned rays, no fixed-output affine completion
+can reproduce it on both preparations or on all inputs.
+
+Treating the pure ray itself as ontic reproduces the nonlinear rule exactly.
+Its state space is projective pure rays times count records. Classical mixtures
+are probability measures over rays, not merely density matrices; two measures
+with the same barycentric density matrix can evolve differently. This is a
+coherent alternative ontology and law class, not standard mixed-state quantum
+equivalence. No steering or no-signalling theorem is supplied for it.
 
 ## 5. Couplings and recurrence
 
 The extracted local coin entries are {', '.join(recurrence['coin_entries'])};
 the phase rule has {recurrence['phase_count']} exact values. The recurrence
-census finds {recurrence['repeated_signature_count']} local record signatures
-appearing at more than one distinct token. Equal signatures carry equal local
-operators by the reconstructed rule.
+census finds {recurrence['repeated_signature_count']} numeric local record
+signatures appearing at more than one distinct site. Equal signatures carry
+equal local matrices because one imported rule is reused; this is not a
+grammar-generated recurring event type or a derivation of universality across
+token-disjoint contexts.
 
 This does not select the coupling. A second distinct admitted unitary coin
 preserves the architecture and {fiber_summary} the short-horizon inverse
@@ -972,8 +1150,9 @@ not vertex constants.
 
 {wall_block}
 
-Question Q8 is retired at this committed finite-arena scope. The result does
-not establish carrier growth, gravity, continuum or Lorentz structure, QFT or
+The status board's treatment of Q8 is editorial bookkeeping and is absent from
+the primary, coordinates, scientific qualifiers, and measured claims. The
+result does not establish carrier growth, gravity, continuum or Lorentz structure, QFT or
 GR, particles or species, Hamiltonian reconstruction, constants, steering,
 actualization, or empirical deviations.
 
@@ -981,7 +1160,12 @@ In particular, a successful finite reconstruction does not show that geometry
 is irreducible. Any such claim requires a separately frozen uniform law over a
 family of relational carriers, held-out members, and a declared class of
 geometry-blind adversaries. WRC constructs none of those and does not relabel
-record dependence on its fixed carrier as dynamical geometry.
+record dependence on its fixed carrier as dynamical geometry. The required
+successor experiment must additionally establish predictive sufficiency and
+minimality, matched graph interventions, graph-fed later probes,
+erasure/reconstruction, resource-parity adversaries, and held-out scaling.
+The continuation and alternate-coin rows used here are exact post-exposure
+calibrations, not pristine held-out predictions.
 """
 
 
@@ -1030,8 +1214,8 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         missing = [token for token in anchor.get("tokens", []) if token not in text]
         observed_sha = sha256_bytes(payload)
         hash_ok = observed_sha == anchor["sha256"]
-        if anchor["path"] == "v16/QUESTIONS.md" and observed_sha == POST_RESULT_QUESTIONS["sha256"]:
-            missing = [token for token in POST_RESULT_QUESTIONS["tokens"] if token not in text]
+        if anchor["path"] == "v16/QUESTIONS.md" and observed_sha in POST_RESULT_QUESTIONS:
+            missing = [token for token in POST_RESULT_QUESTIONS[observed_sha] if token not in text]
             hash_ok = not missing
         anchor_rows.append(
             {
@@ -1161,6 +1345,41 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     born_scale = parse_fraction(controls.get("born_scale", "1"))
     record_increment = int(controls.get("record_increment", 1))
     walk = run_walk(arena, source, born_scale=born_scale, record_increment=record_increment)
+    feedback_source = dict(source)
+    feedback_source["horizon"] = int(source["recurrence_horizon"])
+    feedback_coupled = run_walk(
+        arena,
+        feedback_source,
+        born_scale=born_scale,
+        record_increment=record_increment,
+    )
+    feedback_frozen_increment = int(controls.get("feedback_frozen_increment", 0))
+    feedback_frozen = run_walk(
+        arena,
+        feedback_source,
+        born_scale=born_scale,
+        record_increment=feedback_frozen_increment,
+    )
+    feedback_total_variation = Q(1, 2) * sum(
+        (
+            abs(left - right)
+            for left, right in zip(
+                feedback_coupled["site_mass"], feedback_frozen["site_mass"]
+            )
+        ),
+        Q(0),
+    )
+    gate(
+        gates,
+        "WRC-RECORD-FEEDBACK-DISCRIMINATOR",
+        "the coupled count record changes the third-tick site screen relative to the registered frozen-record control",
+        feedback_frozen_increment == 0 and feedback_total_variation > 0,
+        {
+            "tick": feedback_source["horizon"],
+            "frozen_increment": feedback_frozen_increment,
+            "total_variation": qtext(feedback_total_variation),
+        },
+    )
     branch_anchor = [
         int(row["branches"])
         for row in jpath(committed_receipt, ["ensemble", "arms", "A-COUPLED", "levels"])
@@ -1223,6 +1442,13 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         beable["histories"] > 0 and source["beable_readout"] == "COUNT-FIELD",
         beable,
     )
+    gate(
+        gates,
+        "WRC-BEABLE-ZERO-VIOLATIONS",
+        "every registered CELL-HIT emission history maps to its count-field histogram",
+        beable_ok,
+        {"histories": beable["histories"], "violations": beable["violations"], "increment": record_increment},
+    )
 
     translations = translation_census(arena, source, controls)
     translation_assay_ok = (
@@ -1282,7 +1508,7 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     gate(
         gates,
         "WRC-CP-COMPLETENESS",
-        "the projective comparison ports form an all-input complete affine CP instrument",
+        "the displayed projective comparison ports form an all-input complete affine CP instrument",
         instrument["cp_complete"],
         {"complete": instrument["cp_complete"]},
     )
@@ -1291,7 +1517,7 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     gate(
         gates,
         "WRC-CP-REPAIR-DISCRIMINATOR",
-        "the CP comparison is implemented by its Kraus port and the held-out coherent continuation is nondegenerate",
+        "the displayed projective comparison is implemented by its Kraus port and the calibrated coherent continuation is nondegenerate",
         probability_equal
         and instrument["cp_implementation"]
         and instrument["continuation_witness_quality"],
@@ -1305,8 +1531,62 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     )
     gate(
         gates,
-        "WRC-ONTIC-PSI-CONTROL",
-        "the literal pure-state successor reproduces the source branch but remains outside the affine class",
+        "WRC-PROJECTIVE-CONTINUATION-MOVEMENT",
+        "the displayed projective completion changes both the conditioned ray and its registered later screen",
+        continuation_moves
+        and core.density(instrument["source_output"])
+        != core.density(instrument["repair_output"]),
+        {
+            "conditioned_state_equal": core.density(instrument["source_output"])
+            == core.density(instrument["repair_output"]),
+            "moved_cells": instrument["moved_cells"],
+        },
+    )
+    gate(
+        gates,
+        "WRC-RANK-ONE-AFFINE-COMPLETION-CLASS",
+        "the CELL-HIT effect is rank one, so every affine CP completion is a fixed-output measure-and-prepare operation",
+        instrument["effect_rank_one"] and instrument["source_probability_complete"],
+        {
+            "effect_rank_one": instrument["effect_rank_one"],
+            "effects_complete": instrument["source_probability_complete"],
+            "normal_form": "Tr(E_c rho) sigma_c",
+        },
+    )
+    gate(
+        gates,
+        "WRC-ALTERNATIVE-COMPLETION-SINGLE-FIT",
+        "a second complete affine instrument matches the single registered conditioned continuation exactly",
+        instrument["alternative_complete"]
+        and instrument["alternative_single_match"]
+        and instrument["alternative_continuation_equal"],
+        {
+            "complete": instrument["alternative_complete"],
+            "operation_equal": instrument["alternative_single_match"],
+            "continuation_equal": instrument["alternative_continuation_equal"],
+        },
+    )
+    gate(
+        gates,
+        "WRC-TWO-PREPARATION-COMPLETION-DISCRIMINATOR",
+        "two distinct nonzero-probability preparations demand distinct literal output rays, which no fixed-output affine completion can match",
+        instrument["fixed_output_two_input_impossible"]
+        and instrument["projective_fits_first"]
+        and not instrument["projective_fits_second"]
+        and not instrument["alternative_fits_first"]
+        and instrument["alternative_fits_second"],
+        {
+            "inputs_distinct": instrument["pair_inputs_distinct"],
+            "outputs_distinct": instrument["pair_outputs_distinct"],
+            "probabilities_nonzero": instrument["pair_probabilities_nonzero"],
+            "projective_fits": [instrument["projective_fits_first"], instrument["projective_fits_second"]],
+            "alternative_fits": [instrument["alternative_fits_first"], instrument["alternative_fits_second"]],
+        },
+    )
+    gate(
+        gates,
+        "WRC-ONTIC-PURE-RAY-CONTROL",
+        "the literal projective-pure-ray successor reproduces the source branch but is not mixed-state affine equivalence",
         instrument["ontic_match"] and affinity_nonzero,
         {"ontic_match": instrument["ontic_match"], "affine": instrument["affine"]},
     )
@@ -1315,7 +1595,11 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         "WRC-BEABLE-VS-STATE",
         "the same CELL-HIT label and record are compared without presupposing equality of process states",
         instrument["beable_label_equal"],
-        {"label_equal": instrument["beable_label_equal"], "state_equal": instrument["source_output"] == instrument["repair_output"]},
+        {
+            "label_equal": instrument["beable_label_equal"],
+            "state_equal": core.density(instrument["source_output"])
+            == core.density(instrument["repair_output"]),
+        },
     )
 
     signature_uses_site = bool(controls.get("signature_uses_site_name", False))
@@ -1330,7 +1614,7 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     gate(
         gates,
         "WRC-RECURRENCE-CENSUS",
-        "equal local record signatures recur across distinct site tokens under one reconstructed rule",
+        "numeric local record signatures repeat across distinct sites under one imported rule",
         len(repeated_signatures) > 0,
         {"signatures": len(signature_counts), "repeated_across_sites": len(repeated_signatures)},
     )
@@ -1388,6 +1672,9 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
             str(key): qtext(value) for key, value in sorted(walk["posdef_distribution"].items())
         },
         "curvature_constant_probability": qtext(walk["curvature_constant_probability"]),
+        "record_feedback_tick": feedback_source["horizon"],
+        "record_feedback_total_variation": qtext(feedback_total_variation),
+        "record_feedback_noninert": feedback_total_variation > 0,
         "observable_matches": observable_matches,
         "observable_match_count": sum(observable_matches.values()),
     }
@@ -1405,6 +1692,7 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     instrument_result = {
         "effect_nontrivial": instrument["effect_nontrivial"],
         "effect_scalar": instrument["effect_scalar"],
+        "effect_rank_one": instrument["effect_rank_one"],
         "all_input_nonaffine": instrument["all_input_nonaffine"],
         "source_probability_complete": instrument["source_probability_complete"],
         "affinity_delta_nonzero": affinity_nonzero,
@@ -1412,15 +1700,29 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         "affinity_delta_digest": digest(core.matrix_text(instrument["affinity_delta"])),
         "cp_complete": instrument["cp_complete"],
         "cp_implementation": instrument["cp_implementation"],
+        "affine_completion_normal_form": "Tr(E_c rho) sigma_c",
+        "alternative_cp_complete": instrument["alternative_complete"],
+        "alternative_single_input_match": instrument["alternative_single_match"],
+        "alternative_continuation_equal": instrument["alternative_continuation_equal"],
+        "two_input_preparations_distinct": instrument["pair_inputs_distinct"],
+        "two_input_outputs_distinct": instrument["pair_outputs_distinct"],
+        "two_input_probabilities_nonzero": instrument["pair_probabilities_nonzero"],
+        "fixed_output_two_input_impossible": instrument["fixed_output_two_input_impossible"],
+        "projective_fit_pattern": [instrument["projective_fits_first"], instrument["projective_fits_second"]],
+        "alternative_fit_pattern": [instrument["alternative_fits_first"], instrument["alternative_fits_second"]],
         "continuation_witness_quality": instrument["continuation_witness_quality"],
         "source_probability": qtext(instrument["source_probability"]),
         "cp_probability": qtext(instrument["cp_probability"]),
-        "conditioned_state_equal": instrument["source_output"] == instrument["repair_output"],
+        "conditioned_state_equal": core.density(instrument["source_output"])
+        == core.density(instrument["repair_output"]),
         "continuation_moved_cells": len(instrument["moved_cells"]),
         "continuation_first_cell": first_moved,
         "continuation_first_source": first_source,
         "continuation_first_repair": first_repair,
         "ontic_pure_state_match": instrument["ontic_match"],
+        "ontic_state_space": "PROJECTIVE-PURE-RAYS-X-COUNT-RECORDS",
+        "mixtures_are": "PROBABILITY-MEASURES-OVER-PURE-RAYS",
+        "density_matrix_mixture_equivalence": False,
         "beable_label_equal": instrument["beable_label_equal"],
     }
     packet_result = {
@@ -1472,6 +1774,9 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
             "comparison_complete": instrument["cp_complete"],
             "comparison_probability_equal": probability_equal,
             "conditioned_continuation_equal": not continuation_moves,
+            "alternative_complete": instrument["alternative_complete"],
+            "alternative_single_continuation_equal": instrument["alternative_continuation_equal"],
+            "all_input_literal_equivalence": not instrument["fixed_output_two_input_impossible"],
             "match": coordinates["instrument"],
         },
         "ONTIC-PURE-STATE": {
@@ -1497,12 +1802,18 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
     primary_code = derive_primary_code(coordinates)
     word_index = (primary_code + int(controls.get("primary_word_offset", 0))) % len(PRIMARY_WORDS)
     primary = PRIMARY_WORDS[word_index]
+    independent_primary = independent_primary_decision(dict(coordinates))
     gate(
         gates,
         "WRC-PRIMARY-COMPARATOR",
-        "the printed primary index equals an independently recomputed coordinate code",
-        PRIMARY_WORDS.index(primary) == derive_primary_code(dict(coordinates)),
-        {"printed_index": PRIMARY_WORDS.index(primary), "coordinate_code": derive_primary_code(dict(coordinates)), "coordinates": coordinates},
+        "a separate semantic decision tree returns the same primary without calling the builder or indexing its word table",
+        primary == independent_primary,
+        {
+            "builder_code": primary_code,
+            "printed": primary,
+            "independent": independent_primary,
+            "coordinates": coordinates,
+        },
     )
 
     qualifiers = []
@@ -1512,22 +1823,33 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         "REGISTERED-OBSERVABLES-RECONSTRUCTED": coordinates["observables"],
         "TRANSLATION-COVARIANT-WITH-TRANSFORMED-STATE-AND-RECORD": translation_ok,
         "ARENA-EXTENSION-UNBUILT": not packet_result["arena_extension_built"],
-        "CELL-HIT-BEABLE-DICTIONARY-RECONSTRUCTED": coordinates["beable"],
+        "CELL-HIT-EMISSION-HISTORY-TO-COUNT-READOUT-MAP-RECONSTRUCTED": coordinates["beable"],
         "NONCOLLAPSE-CELL-HIT-MAP-NONAFFINE": instrument["all_input_nonaffine"],
-        "AFFINE-CP-REPAIR-MOVES-CONDITIONED-FUTURE": instrument["cp_complete"] and continuation_moves,
-        "ONTIC-PSI-EXTENSION-EXACT-BUT-OUTSIDE-AFFINE-CLASS": instrument["ontic_match"]
-        and instrument["all_input_nonaffine"],
-        "RECURRING-VERTEX-COUPLINGS-EXTRACTED-NOT-SELECTED": len(repeated_signatures) > 0 and hidden["moves"],
+        "RANK-ONE-AFFINE-COMPLETIONS-ARE-MEASURE-AND-PREPARE": instrument["effect_rank_one"]
+        and instrument["source_probability_complete"],
+        "ALTERNATE-AFFINE-COMPLETION-FITS-SINGLE-CONTINUATION": instrument["alternative_complete"]
+        and instrument["alternative_single_match"]
+        and instrument["alternative_continuation_equal"],
+        "DISPLAYED-PROJECTIVE-CP-COMPARISON-MOVES-CONDITIONED-FUTURE": instrument["cp_complete"]
+        and continuation_moves,
+        "ONTIC-PURE-RAY-RECORD-DYNAMICS-EXACT-BUT-NOT-MIXED-STATE-EQUIVALENCE": instrument["ontic_match"]
+        and instrument["all_input_nonaffine"]
+        and instrument_result["density_matrix_mixture_equivalence"] is False,
+        "REPEATED-LOCAL-RECORD-SIGNATURES-UNDER-ONE-IMPORTED-RULE": len(repeated_signatures) > 0,
+        "DECLARED-COIN-FIBER-MEASURED-AND-UNSELECTED": hidden["moves"]
+        and not recurrence_result["couplings_selected"],
         "STATE-DEPENDENT-BORN-WEIGHTS-NOT-CONSTANTS": coupling_typing_ok,
         "WALK-IS-IMPORTED-CANDIDATE-DYNAMICS-NOT-DERIVED-LAW": not recurrence_result["couplings_selected"],
-        "Q8-RETIRED-AT-COMMITTED-FINITE-ARENA": bool(controls.get("retire_q8", True)),
     }
     qualifiers = [word for word in QUALIFIER_WORDS if qualifier_conditions[word]]
+    if controls.get("inject_q8_scientific"):
+        qualifiers.append("Q8-RETIRED-AT-COMMITTED-FINITE-ARENA")
     gate(
         gates,
         "WRC-QUALIFIERS",
-        "every emitted qualifier is derived from its measured predicate and Q8 is retired at finite scope",
-        set(qualifiers) == {word for word, ok in qualifier_conditions.items() if ok} and qualifier_conditions["Q8-RETIRED-AT-COMMITTED-FINITE-ARENA"],
+        "every emitted qualifier is derived from a measured predicate and editorial board status is absent",
+        set(qualifiers) == {word for word, ok in qualifier_conditions.items() if ok}
+        and not any(word.startswith("Q8-") for word in qualifiers),
         {"qualifiers": qualifiers},
     )
 
@@ -1538,7 +1860,14 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         "instrument": instrument_result,
         "targets": targets,
         "recurrence": recurrence_result,
-        "scope": {"walls": sorted(walls), "q8_retired": qualifier_conditions["Q8-RETIRED-AT-COMMITTED-FINITE-ARENA"]},
+        "scope": {
+            "walls": sorted(walls),
+            "fixed_carrier_only": True,
+            "dynamic_relational_geometry_built": False,
+            "geometry_irreducibility_test_run": False,
+            "successor_sufficiency_assay_run": False,
+            "q8_status_is_editorial_not_evidence": True,
+        },
         "verdict": {"primary": primary, "coordinates": coordinates, "qualifiers": qualifiers},
     }
 
@@ -1546,16 +1875,18 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         f"The independent Born ladder is {', '.join(str(item) for item in walk['branch_counts'])}.",
         f"The committed exit probability reproduces as {qtext(walk['exit_probability'])}.",
         f"The committed inverse participation reproduces as {qtext(walk['ipr'])}.",
+        f"The coupled-versus-frozen count record changes the third-tick site screen by total variation {qtext(feedback_total_variation)}.",
         f"All {source_regression['observable_match_count']} committed observable families reproduce exactly.",
         f"The fixed carrier has {arena.dimension} co-division-pair cells and support size {support['support_size']}.",
         f"The post-coin versus post-shift cut moves {cut_moved_cells} labelled probabilities.",
         f"The exact CELL-HIT affinity witness has {instrument_result['affinity_nonzero_entries']} nonzero defect entries.",
-        f"The affine CP comparison differs on {instrument_result['continuation_moved_cells']} next-step probabilities.",
+        f"The displayed projective CP comparison differs on {instrument_result['continuation_moved_cells']} next-step probabilities.",
+        "A distinct complete affine instrument matches the single registered conditioned continuation exactly.",
+        "Two distinct nonzero-probability preparations require different literal conditioned rays, so no fixed-output affine completion matches both.",
         f"The record map has {beable['violations']} violations over {beable['histories']} short histories.",
         f"The recurrence census has {len(repeated_signatures)} signatures repeated across site tokens.",
         f"The admitted coin fiber maps the short inverse participation from {qtext(hidden['grover_short_ipr'])} to {qtext(hidden['hidden_ipr'])}.",
         f"The full-packet comparator returns {primary} for the committed finite arena.",
-        "Question Q8 is retired only at the committed finite fixed-carrier arena.",
     ]
     paper = render_paper(results, claims)
     if controls.get("paper_claim_corruption"):
@@ -1647,7 +1978,7 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         raise GateFail("WRC-PREWRITE-SEAL")
 
     receipt = {
-        "schema": "wrc-result-v1",
+        "schema": "wrc-result-v2",
         "fixture_sha256": sha256_bytes(fixture_path.read_bytes()),
         "core_sha256": sha256_bytes((root / "v16/code/wrc_core.py").read_bytes()),
         "scorer_sha256": sha256_bytes(Path(__file__).read_bytes()),
