@@ -107,7 +107,7 @@ The user separately authorized it on 2026-08-17 under the Paper 3 pin below.
 
 ## Paper 03 — PPR: contextual pullbacks and permanent records
 
-Status: **GREEN-UNREVIEWED CANDIDATE COMMITTED AS-IS (v16 #38)**.
+Status: **GREEN-UNREVIEWED CANDIDATE, REPLAY VERIFIED (v16 #39)**.
 
 The user's 2026-08-17 instruction authorizes the precise successor that JCV
 left open. The immutable pin is `v16/note-ppr-pin.md`. PPR does not reopen
@@ -134,7 +134,8 @@ The locked order is:
    was re-parsed by the rational fixture parser; bounded repair frozen at
    #37 with fixture, equations, gates, and classifier unchanged; repaired
    invocation at #38 passes 25/25 and renders the law-unselected candidate,
-   committed before replay**;
+   committed before replay; candidate replay verified at #39 with 20/20
+   mutants and byte-identical true no-`.git` execution**;
 5. freeze a three-lens hostile protocol, obtain independent reports only under
    explicit delegation authorization, adjudicate, repair if ordered, and
    terminalize or stop at the review gate.

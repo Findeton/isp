@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `PPR` / Paper 3: **GREEN-UNREVIEWED CANDIDATE GENERATED AND COMMITTED AS-IS**
-  at v16 ledger #38. The pin was frozen at #33, generic core at #34, physical
+- `PPR` / Paper 3: **GREEN-UNREVIEWED CANDIDATE, REPLAY VERIFIED** at v16
+  ledger #39. The pin was frozen at #33, generic core at #34, physical
   scorer at #35, first refusal at #36, and bounded repair at #37. The
   authorized unit asks whether cross-carrier comparison descends from the
   complete law on reached subspaces, whether one-step null directions remain
@@ -34,8 +34,9 @@ theory-selection result.
   frozen at a new hash. The repaired invocation passes 25/25 gates at
   `PPR-CONTEXTUAL-PULLBACK-CONSTRUCTED-BUT-LAW-UNSELECTED`: contextual
   comparison and permanence are constructed at the finite arena, while two
-  admissible laws move a held-out screen. Post-commit replay and hostile review
-  remain open.
+  admissible laws move a held-out screen. Two worktree runs, a true no-`.git`
+  replay, 8/8 seals, 10/10 paper bindings, and 20/20 mutants pass. Independent
+  hostile review remains open.
 - `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and

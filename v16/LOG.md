@@ -834,3 +834,23 @@ and conditional steering, the weight/interaction selector, continuum,
 Lorentz, GR, QFT, particles, constants, and phenomenology remain open. The
 candidate is not terminal: byte replay, all twenty mutants, off-tree/no-git
 execution, and the separately authorized hostile panel remain.
+
+## 2026-08-17 — PPR CANDIDATE REPLAY VERIFIED; HOSTILE PANEL REMAINS (v16 LEDGER #39)
+
+`v16/note-ppr-candidate-verification.md` independently verifies the committed
+candidate. Two clean worktree runs and one true archived no-`.git` run from
+alien CWD `/private/tmp` are byte-identical to the paper, transcript, and
+receipt. The existing-artifact guard and unknown CLI forms exit 2; selftest
+passes without writes.
+
+All twenty registered mutants exit 1 before writing. The external receipt
+audit recomputes all 8/8 payload seals, 25/25 passing gates, 10/10 unique paper
+claim bindings, source/fixture/artifact hashes, and the independent outcome-9
+agreement. The frozen fixture contains zero expected/result/verdict/outcome
+keys; source AST has zero float constants and no tolerance mechanism.
+
+The candidate remains **GREEN-UNREVIEWED**, not terminal. The next gate is a
+frozen three-lens hostile protocol and mutually independent operator,
+histories/congruence, and relational-geometry reviews. Assigning those seats
+requires a separate explicit delegation instruction under the active
+collaboration rule.
