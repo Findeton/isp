@@ -2732,3 +2732,19 @@ construction may be representational. This changes ontology prose and result
 typing, not any QSF arithmetic or primary. Terminal verification restarts from
 the resulting committed bytes, and Paper 10 must classify rather than assume
 the law type.
+
+## 2026-08-18 — QSF LAW-TYPE CANDIDATE REGENERATED (v16 LEDGER #128)
+
+The #127 scorer is executed twice after the ontology and paper-seal repairs.
+Both invocations pass 20/20 gates in `232.88` and `234.63` seconds and emit
+byte-identical transcript, receipt, and Paper 9. The primary remains
+**QSF-METHOD-INCONCLUSIVE** and every exact witness is unchanged.
+
+The new receipt explicitly records
+`microscopic_one_step_kernel_selected=false`. Paper 9 now treats the ordinary
+fine-state kernel as a division-level interface, an indivisible multi-time law
+as the unconstructed nomological candidate, and decoherence-functional/
+Hilbert machinery as possible quantum representation. The candidate artifacts
+and their hashes are frozen in `v16/note-qsf-law-type-regeneration.md`.
+Terminal status remains withheld pending post-commit replay, all 28 mutants,
+and true off-tree/no-`.git` execution. Paper 10 remains unpinned.

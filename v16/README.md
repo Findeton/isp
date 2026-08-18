@@ -20,7 +20,7 @@ theory-selection result.
 
 - `QSF` / Paper 9: **PANEL-ADJUDICATED AND BOUNDED-REPAIRED AT
   `QSF-METHOD-INCONCLUSIVE`; TERMINAL VERIFICATION PENDING** through v16 ledger
-  #125. Three mutually blind seats independently preserved the cautious primary
+  #128. Three mutually blind seats independently preserved the cautious primary
   while correcting every arm's type. Record-indexed A0 is false; literal local
   branch descent fails but aggregate A1/A2 feasibility is unentered. The
   natural fixed-factor ontic-ray extension has remote-setting dependence in
@@ -32,7 +32,9 @@ theory-selection result.
   final-record quotients are `3,3,27,27,486,486`, and an exact two-history
   witness proves horizon-two non-stabilization. The repair passes 20/20 gates
   in two byte-identical clean generations and registers 28 mutants. Terminal
-  replay and true off-tree execution remain; Paper 10 is not yet pinned.
+  replay and true off-tree execution remain. The #127 law-type addendum and
+  #128 regeneration explicitly make ordinary kernels division-level shadows,
+  not selected microscopic laws. Paper 10 is not yet pinned.
 - `WRC` / Paper 8: **PANEL-ADJUDICATED ACCEPT-WITH-FIXES AT
   `WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`** through v16 ledger
   #109. The derived primary is

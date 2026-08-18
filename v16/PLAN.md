@@ -435,7 +435,7 @@ no reviewer and authorizes no adjudication or repair.
 ## Paper 09 — QSF: the quantum seam
 
 Status: **PANEL-ADJUDICATED AND BOUNDED-REPAIRED AT
-`QSF-METHOD-INCONCLUSIVE`; TERMINAL VERIFICATION PENDING (v16 #125)**.
+`QSF-METHOD-INCONCLUSIVE`; TERMINAL VERIFICATION PENDING (v16 #128)**.
 
 QSF compares three non-equivalent readings of WRC's CELL-HIT seam: a standard
 affine instrument family, a fine pure-ray/count division kernel with its
