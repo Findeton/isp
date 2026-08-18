@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED CANDIDATE** at v16
-  ledger #66. The pin
+- `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
+  FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #67. The pin
   is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
   at #63, and bounded scorer repair at #64.
   The user-authorized continuation tests the completeness spectrahedron
@@ -44,7 +44,8 @@ theory-selection result.
   permanence theorem, and conditional steering remains open. Verification
   #66 gives two byte-identical worktree replays, 36/36 mutant deaths, an
   independent exact reconstruction, and a byte-identical true off-tree/no-git
-  replay. Hostile review remains pending.
+  replay. The three-lens hostile protocol is frozen at #67; reviewers are not
+  assigned.
   Papers 3–5 remain frozen and untouched.
 - `OVG` / Paper 5: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #57. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first

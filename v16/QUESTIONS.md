@@ -143,7 +143,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     first-port probability from `1` to `9/25`. Which calibrated port law is
     physical, and how record permanence and actualization select it, remain
     open. Replay, 36/36 mutants, independent exact reconstruction, and true
-    off-tree execution survive; hostile review remains.
+    off-tree execution survive. The three-lens hostile protocol is frozen;
+    reviewers are not assigned.
 27. **PARTIAL — Does recurrence across contexts select the history law?** The
     green-unreviewed Paper 6 candidate reduces five independent training
     freedoms of total dimension `5` to a dimension-`1` common family under the
@@ -154,4 +155,5 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     gauge-invariant prediction, and elementary transports and catalogue data
     remain unselected. Extreme-point selection is unstable. Replay, 36/36
     mutants, independent exact reconstruction, and true off-tree execution
-    survive; hostile review remains.
+    survive. The three-lens hostile protocol is frozen; reviewers are not
+    assigned.

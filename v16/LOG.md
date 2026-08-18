@@ -1509,3 +1509,30 @@ extracted with no `.git` and executed from alien CWD `/private/tmp`, produces
 all three candidate artifacts byte-for-byte. CSF is now
 `REPLAY-VERIFIED GREEN-UNREVIEWED`. A separately frozen hostile protocol is
 next; reviewer dispatch still requires a separate explicit user instruction.
+
+## 2026-08-18 — CSF HOSTILE PROTOCOL FROZEN (v16 LEDGER #67)
+
+`v16/note-csf-hostile-protocol.md` is frozen before reviewer assignment at
+SHA-256
+`97772f5571d2d9e5157e0914efa0c6ee20df901964b391ff528933e14d2c5a38`.
+It binds candidate commit `61c32d8`, verification commit `9f98e5a`, every
+constructor and candidate hash, the #63 refusal, #64 bounded repair, and all
+frozen machine words.
+
+Three mutually isolated seats are specified:
+
+1. operator algebra and convex law geometry — rebuild `M=C^dagger C`, the
+   spectrahedron, continuous solution sets, channel quotient, JCV embedding,
+   `5 -> 1 -> 0`, calibrated fiber, nonnormal control, and extremality;
+2. records, representation, and recurring-history identity — attack the
+   physical event dictionary, alternative recurrence maps, exchange licence,
+   the scorer's stored doctrine polynomials, calibrated-port gauge, flag
+   locality, permanence, and actualization; and
+3. relational locality, no-signalling, and physical ontology — attack fixed-
+   factor scope, conditional steering, actor/arity typing, backreaction,
+   catalogue/flag ontology, empirical content, and every continuum/QFT/GR
+   promotion.
+
+The protocol does not assign reviewers and authorizes no review, adjudication,
+repair, or terminal promotion. CSF remains replay-verified green-unreviewed.
+Papers 3–5 and the unrelated untracked v15 SCOUT-T files remain untouched.

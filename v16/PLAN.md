@@ -276,7 +276,8 @@ relational histories. No review or adjudication is authorized yet.
 
 ## Paper 06 — CSF: completeness spectrahedra and record fibers
 
-Status: **REPLAY-VERIFIED GREEN-UNREVIEWED CANDIDATE (v16 #66)**.
+Status: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN,
+REVIEWERS NOT ASSIGNED (v16 #67)**.
 
 The user's 2026-08-18 instruction authorizes a separate continuation after
 Paper 5's coefficient variety was recognized as the factorized presentation
@@ -370,6 +371,16 @@ base/fiber, calibrated-port movement, nonnormal control, flags/eraser,
 extremality nullities, and fixed-Bob safety. The next lawful stage is a
 separately frozen hostile protocol. Reviewer assignment still requires a new
 explicit user instruction.
+
+The three-seat hostile protocol is frozen at #67 before reviewer assignment.
+Its operator/convex seat attacks the spectrahedron, channel quotient,
+continuous dimensions, calibrated fiber, and extremality claims. Its
+records/representation seat attacks recurring-history identity, admissible
+dictionaries, exchange licence, the declaration-side doctrine polynomial,
+port calibration, and permanence. Its relational/no-signalling/physics seat
+attacks fixed-factor scope, conditional steering, event locality,
+backreaction, catalogue/flag ontology, and every QFT/GR promotion. No review,
+adjudication, repair, or terminal promotion is authorized by the protocol.
 
 ## Successor register
 
