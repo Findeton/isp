@@ -666,3 +666,32 @@ complete continuation-stable null quotient generates physical boundary
 identity and whose own durable records reproduce that quotient across at least
 three overlaps.  This target is now precise, but it is not a result and is not
 authorized without a fresh user instruction and pin.  JCV and Paper 2 halt.
+
+## 2026-08-17 — PAPER 3 PPR PIN FROZEN BEFORE CONSTRUCTION (v16 LEDGER #33)
+
+The user's explicit instruction, “ok go ahead with paper 3,” reopens v16 only
+for the bounded PPR unit pinned in `v16/note-ppr-pin.md`. The immutable base is
+JCV terminal commit `7e95322c589a42211e3a10cab7655492014bd0ae`.
+
+PPR asks whether cross-carrier comparison on dynamically reached subspaces is
+the pullback of the complete law's own continuations, whether present null
+directions form a greatest continuation-stable multi-boundary congruence, and
+whether the law's durable records reproduce the quotient used to type that
+law. The term table separates relational configurations, syntactic histories,
+operator/Kraus decompositions, durable record outcomes, comparison
+dictionaries, and dynamical transports. Probabilities normalize only over
+mutually exclusive complete recorded successors.
+
+The pin pre-registers event-algebra and representation controls, the exact
+`Ninf` descending algorithm, heterogeneous-carrier pullback/tamper gates,
+append-only/eraser/reactivation/partial-tag cases, three-overlap comparison
+closure, non-flat dynamical transport interference, an actual graph rewrite
+with a graph-computed held-out probe, fixed-Bob carrier-growth no-signalling,
+all-input completeness, rival-law discrimination, twenty named mutants, exact
+arithmetic, total gate-to-disk sealing, and worktree/off-tree/no-git replay.
+
+The proposal scratchpad is not an anchor and no result from it is imported at
+the pin. No PPR implementation, fixture, scorer, output, receipt, or Paper 3
+path exists at this commit. The next authorized event is the generic exact
+core freeze on public calibrations; the physical fixture and scorer must remain
+absent until after that source freeze.

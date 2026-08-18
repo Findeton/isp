@@ -102,7 +102,40 @@ present outcome law, but it does not know whether future compositions can
 reactivate that direction.  A genuine record-generated fixed point would have
 to derive boundary comparison from the law's complete operational null ideal,
 make that ideal a congruence under gluing/refinement, and reproduce it from the
-law's own durable records.  That successor is not authorized by this plan.
+law's own durable records. That successor was not authorized by the JCV plan.
+The user separately authorized it on 2026-08-17 under the Paper 3 pin below.
+
+## Paper 03 — PPR: contextual pullbacks and permanent records
+
+Status: **AUTHORIZED AND PINNED BEFORE CONSTRUCTION (v16 #33)**.
+
+The user's 2026-08-17 instruction authorizes the precise successor that JCV
+left open. The immutable pin is `v16/note-ppr-pin.md`. PPR does not reopen
+either terminal paper. It separates a primitive relational event algebra
+from operator/Kraus representations, derives context-indexed pullbacks only
+after future transports are typed, computes the greatest continuation-stable
+null family at every boundary, enumerates durable record partitions, and
+separates same-fact comparison flatness from physical dynamical holonomy.
+
+The locked order is:
+
+1. commit the pin and its term bindings before any implementation exists;
+2. freeze a generic exact multi-boundary null/pullback/partition instrument on
+   public calibrations before the new physical fixture or scorer exists;
+3. freeze a data-only relational fixture and verdict-neutral scorer before the
+   official solve;
+4. execute once, render Paper 3 and all artifacts from one sealed result,
+   commit as-is, and verify worktree/off-tree/no-git replay;
+5. freeze a three-lens hostile protocol, obtain independent reports only under
+   explicit delegation authorization, adjudicate, repair if ordered, and
+   terminalize or stop at the review gate.
+
+The maximum positive candidate is a record-generated comparison/law fixed
+point at finite exact scope. The honest intermediate outcome is an induced
+contextual pullback and stable record quotient with the weight law still
+unselected. Event-algebra, representation, continuation, permanence,
+comparison/dynamics typing, relational rewrite, classical-only, and empty-law
+blocks are all pre-registered first-class outcomes.
 
 ## Successor register
 

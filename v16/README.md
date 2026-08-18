@@ -18,6 +18,13 @@ theory-selection result.
 
 ## Live state
 
+- `PPR` / Paper 3: **PINNED BEFORE CONSTRUCTION** at v16 ledger #33. The
+  authorized unit asks whether cross-carrier comparison descends from the
+  complete law on reached subspaces, whether one-step null directions remain
+  null under every licensed future, and whether durable records reproduce the
+  quotient used to type the law. Configuration events, durable record
+  outcomes, comparison dictionaries, and dynamical transports are split by
+  construction. No implementation or Paper 3 result exists at the pin.
 - `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
