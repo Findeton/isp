@@ -2652,3 +2652,30 @@ stochastic kernel, so Arm C excludes a `rho`-sufficient retained boundary—not
 every stochastic division. All three reports are now immutable. Their claims
 await one joint adjudication; no repair or Paper 10 pin is yet authorized by
 this freeze event alone.
+
+## 2026-08-18 — QSF PAPER 9 JOINT ADJUDICATION (v16 LEDGER #124)
+
+`v16/note-qsf-adjudication.md` jointly accepts the three independent
+`ACCEPT-WITH-FIXES` reports. The cautious primary survives:
+**QSF-METHOD-INCONCLUSIVE**. The adjudicator independently confirms the A0
+collision, all-10,527 terminal phase control, tick-two off-diagonal density
+witness, tick-three diagonal TV, and complete-record quotient vector.
+
+The subordinate claims are materially narrowed. Record-indexed A0 is false;
+state/history-indexed A0 is a lookup, not an affine law. The 30-key transported
+branch obstruction survives, but an exact aggregate-null family proves branch
+failure does not decide aggregate feasibility; the aggregate set was never
+constructed. The fixed-factor HJW result is remote-setting dependence in
+Bob's calibrated count record, not yet a Lorentz/superluminal theorem. Arm C
+excludes a `rho`-sufficient retained state-record map at ticks one through
+five; the fine `([psi],n)` rule is still a normalized stochastic kernel whose
+natural fixed-factor extension the causality arm rejects. The published S1
+table is suffix-only, not complete JS-S1a; complete final-record quotients are
+`3,3,27,27,486,486`, and no stabilization occurs within the extended suffix
+range.
+
+A ten-order bounded repair is authorized with core, fixture, old exact values,
+and primary immovable. It must compute the previously literal dispositions,
+bind the new operator/causality/history controls, retype the ontology and S1,
+and pass expanded mutants plus true off-tree replay. Paper 10 may be pinned
+only after separate terminal verification; its construction remains held.
