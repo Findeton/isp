@@ -656,27 +656,18 @@ def analyse(fixture: dict[str, object], mutant: str | None) -> tuple[dict[str, o
 
     iz = scale(I, matrices["Z"])
     sm = multiply(multiply(matrices["R"], iz), matrices["Mdiag"])
-    ta = parse_matrix(
-        [matrix_text(matrices["R"])[0], matrix_text(matrices["R"])[1], ["0", "0"]]
-    )
-    tb = parse_matrix([matrix_text(sm)[0], matrix_text(sm)[1], ["4/5", "0"]])
+    ta = [matrices["R"][0][:], matrices["R"][1][:], [ZERO, ZERO]]
+    tb = [sm[0][:], sm[1][:], [b, ZERO]]
     dangling = class_operator([(a, ta), (b, tb)])
     dangling_complete = multiply(dagger(dangling), dangling) == identity(2)
     dangling_cross = cross_operator(ta, tb, a, b)
     dangling_record_probability = density_probability(row_operator(scale(b, tb), 2), rho0)
 
-    ta4 = parse_matrix(
-        [matrix_text(matrices["R"])[0], matrix_text(matrices["R"])[1], ["0", "0"], ["0", "0"]]
-    )
+    ta4 = [matrices["R"][0][:], matrices["R"][1][:], [ZERO, ZERO], [ZERO, ZERO]]
     rj = multiply(matrices["R"], matrices["J"])
-    tb4 = parse_matrix(
-        [
-            matrix_text(scale(mu, rj))[0],
-            matrix_text(scale(mu, rj))[1],
-            matrix_text(scale(nu, matrices["I2"]))[0],
-            matrix_text(scale(nu, matrices["I2"]))[1],
-        ]
-    )
+    coherent_rows = scale(mu, rj)
+    tag_rows = scale(nu, matrices["I2"])
+    tb4 = [coherent_rows[0][:], coherent_rows[1][:], tag_rows[0][:], tag_rows[1][:]]
     partial_class = class_operator([(a, ta4), (b, tb4)])
     partial_complete = multiply(dagger(partial_class), partial_class) == identity(2)
     partial_coherent = density_probability(row_operator(partial_class, 0), rho0)

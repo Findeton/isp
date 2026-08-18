@@ -775,3 +775,22 @@ re-parsing them. It may not alter a fixture byte, weight, gate predicate,
 outcome order, or expected result. The repaired source must be hash-frozen and
 committed before a second physical invocation. This failure remains part of
 the chronology even if that invocation succeeds.
+
+## 2026-08-17 — PPR BOUNDED FIRST-RUN REPAIR FROZEN BEFORE RE-EXECUTION (v16 LEDGER #37)
+
+The repaired `v16/code/ppr_score.py` is frozen at SHA-256
+`c7f1cfb63b179746d0a66f28c1a6ec79975f8489a025d1196a2531d9fee069d6`.
+The physical fixture remains byte-identical at
+`cecc3b0d3c7bf46503481fa7b422e915ba0ff6aac42e3cec5f61c395e565b389`.
+
+The entire source delta is the #36-authorized serializer-boundary repair. Four
+matrix constructors now retain existing `GQ` entries and append exact zero or
+tag rows directly; they no longer call `matrix_text` and then `parse_matrix`.
+No fixture value, complex matrix entry, equation, gate predicate, mutant,
+outcome label/order, classifier branch, renderer claim, or scope statement
+moves. Static compilation passes and all three result paths remain absent.
+
+The next event is the second physical invocation. It is not called the first
+run; #36 remains the immutable first-run failure. Success may generate the
+candidate artifacts as-is, while any further failure must again be recorded
+before repair.

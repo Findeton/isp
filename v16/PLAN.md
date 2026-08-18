@@ -107,7 +107,7 @@ The user separately authorized it on 2026-08-17 under the Paper 3 pin below.
 
 ## Paper 03 — PPR: contextual pullbacks and permanent records
 
-Status: **FIRST PHYSICAL EXECUTION REFUSED BEFORE GATES OR WRITE (v16 #36)**.
+Status: **BOUNDED FIRST-RUN REPAIR FROZEN BEFORE RE-EXECUTION (v16 #37)**.
 
 The user's 2026-08-17 instruction authorizes the precise successor that JCV
 left open. The immutable pin is `v16/note-ppr-pin.md`. PPR does not reopen
@@ -131,7 +131,8 @@ The locked order is:
 4. execute once, render Paper 3 and all artifacts from one sealed result,
    commit as-is, and verify worktree/off-tree/no-git replay — **first invocation
    at #36 refuses before gates/artifacts: a Gaussian-rational display string
-   was re-parsed by the rational fixture parser; bounded repair required**;
+   was re-parsed by the rational fixture parser; **bounded repair frozen at
+   #37 with fixture, equations, gates, and classifier unchanged**;
 5. freeze a three-lens hostile protocol, obtain independent reports only under
    explicit delegation authorization, adjudicate, repair if ordered, and
    terminalize or stop at the review gate.

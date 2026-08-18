@@ -18,9 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `PPR` / Paper 3: **FIRST PHYSICAL EXECUTION REFUSED BEFORE GATES OR WRITE**
-  at v16 ledger #36. The pin was frozen at #33, generic core at #34, and
-  physical scorer at #35. The
+- `PPR` / Paper 3: **BOUNDED FIRST-RUN REPAIR FROZEN BEFORE RE-EXECUTION** at
+  v16 ledger #37. The pin was frozen at #33, generic core at #34, physical
+  scorer at #35, and first refusal at #36. The
   authorized unit asks whether cross-carrier comparison descends from the
   complete law on reached subspaces, whether one-step null directions remain
   null under every licensed future, and whether durable records reproduce the
@@ -30,8 +30,9 @@ theory-selection result.
   hash-frozen with all twenty registered mutants and the stronger v12
   co-live/co-merge record criterion. The first invocation exited 1 because an
   exact imaginary display string was passed back to the rational-only fixture
-  parser. No gate verdict or result artifact exists; a bounded serializer-
-  boundary repair is next.
+  parser. The repaired scorer now retains those exact entries in memory and is
+  frozen at a new hash. No gate verdict or result artifact exists; the next
+  action is the second physical invocation.
 - `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
