@@ -976,3 +976,19 @@ scope-wall needles before containment testing. Fixture bytes, physical
 predicates, result renderer, outcome classifier, numerical claims, mutants,
 and artifact paths may not move. The repaired scorer must be hash-frozen and
 committed before a second invocation.
+
+## 2026-08-17 — SRW BOUNDED TEXT-GATE REPAIR FROZEN BEFORE RE-EXECUTION (v16 LEDGER #45)
+
+The repaired `v16/code/srw_score.py` is frozen at SHA-256
+`18f0e4f1af224f7f2c6753951621eb3d42dd5e4ce22ee9fd6068ac3e7d62e0ed`.
+The physical fixture remains byte-identical at
+`e40650f04c60635e68fd91938dbba201afec6e426c2e1cfaa0b4f4d8dcefd2e3`.
+
+The entire source delta is the #44-authorized comparator repair: both rendered
+paper and three scope needles are whitespace-normalized before containment.
+No physical input, equation, gate meaning, outcome logic, paper template,
+number, mutant, or artifact path moves. Static compilation with warnings as
+errors passes, and all result paths remain absent.
+
+The next event is the second physical invocation. It is not called the first
+run; #44 remains the immutable first-run refusal.

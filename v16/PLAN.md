@@ -180,6 +180,8 @@ The first invocation at #44 refused at the paper scope wall because one true
 phrase crossed a rendered newline and the gate omitted required whitespace
 normalization. No artifact was written. Only that mechanical comparator repair
 is authorized before re-execution.
+That bounded repair is frozen at #45 with the fixture unchanged and every
+physical predicate, classifier, renderer, numeral, and mutant preserved.
 
 ## Successor register
 

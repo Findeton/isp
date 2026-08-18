@@ -1364,10 +1364,12 @@ def solve(mutant: str | None = None) -> tuple[dict[str, Any], bytes, bytes]:
         "Particle species remain entirely unconstructed",
         "selects neither the complete configuration catalogue nor the physical coupling values",
     )
+    normalized_paper = " ".join(paper_text.split())
+    normalized_walls = tuple(" ".join(phrase.split()) for phrase in wall_phrases)
     ledger.check(
         "SRW-SCOPE-WALLS",
-        all(phrase in paper_text for phrase in wall_phrases),
-        f"walls={sum(phrase in paper_text for phrase in wall_phrases)}/{len(wall_phrases)}",
+        all(phrase in normalized_paper for phrase in normalized_walls),
+        f"walls={sum(phrase in normalized_paper for phrase in normalized_walls)}/{len(normalized_walls)}",
     )
 
     payload: dict[str, Any] = {
