@@ -19,7 +19,9 @@ theory-selection result.
 ## Live state
 
 - `WRC` / Paper 8: **GENERIC EXACT CORE FROZEN BEFORE PHYSICAL FIXTURE** at
-  v16 ledger #79. The pin is frozen at #75.
+  v16 ledger #79. The pin is frozen at #75; its one provenance-only
+  `QUESTIONS.md` digest transcription repair is frozen at #83 after the first
+  result-free physical dry run refused without writes.
   The user-authorized continuation tests whether the committed v14 walk is a
   creation-event representation at full packet equivalence: state, all-input
   outcome instruments, the input/post-coin/post-shift cuts, calibrated and

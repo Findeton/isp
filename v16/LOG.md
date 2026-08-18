@@ -1840,3 +1840,18 @@ This seat did not read the operator or rewrite/category reports. The SRW panel
 is now complete at three immutable reports. Their findings remain hostile
 allegations until one joint adjudication independently recomputes and rules
 them; no repair or candidate promotion occurs in this event.
+
+## 2026-08-18 — WRC PIN ANCHOR TRANSCRIPTION REPAIRED (v16 LEDGER #83)
+
+The first result-free physical dry run refused without writes because the WRC
+pin transcribed the SHA-256 of `v16/QUESTIONS.md` incorrectly. Read-only
+comparison proves that file is byte-identical to the pin's own base commit;
+the correct digest is
+`91ae5d440d9e28df0a459b0ba73ad2f6bba85a3b9395e8a73f493a756638b0e4`.
+
+`v16/note-wrc-pin-addendum.md`, SHA-256
+`a93f648cbdff08fba97054b2b28fe261375bccc52d4ebc3b81c1d9f25bc04a7e`,
+freezes only that provenance correction. No physics clause, fixture, gate,
+comparator, outcome word, mutant, chronology, or scope wall changes. WRC
+scoring must anchor both the immutable parent pin and this addendum and must
+refuse if the corrected source digest moves.
