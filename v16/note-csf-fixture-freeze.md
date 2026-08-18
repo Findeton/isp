@@ -53,3 +53,23 @@ The next and only ordinary event is the first official scorer invocation. It
 must either refuse without artifacts or generate transcript, receipt, and
 Paper 6 from one sealed result object. Any refusal is frozen before a bounded
 repair is considered.
+
+## First invocation refusal
+
+The first ordinary invocation of the #62 frozen scorer exits `1` at
+`CSF-ANCHORS` and writes none of the three reserved result paths. No physical
+context equation, affine intersection, classifier, claim, transcript, receipt,
+or paper is returned.
+
+Read-only diagnosis finds one failing consumed token. The scorer requests
+`erasable` from `v16/paper-03-contextual-pullbacks-permanent-records.md`; the
+frozen paper uses the section heading “Records, erasers, and interference” and
+the noun `eraser`, but not the adjective `erasable`. Every anchor file hash,
+all other consumed tokens, the fixture/scorer freeze hashes, and the core hash
+match.
+
+A bounded scorer-only repair may replace that one requested token with the
+existing word `eraser`. It may not change the fixture, anchor paths or hashes,
+matrix/index conventions, context family, recurrence dictionaries, equations,
+gates, mutants, primary vocabulary, claims, renderer, scope walls, or CLI.
+The repair must be hash-frozen before another ordinary invocation.

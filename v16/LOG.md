@@ -1411,3 +1411,20 @@ receipt, and Paper 6 after every gate and promotion seal passes. Compilation,
 JSON/AST exactness, anchor-token presence, strict unknown-option refusal, and
 result-path absence pass. No normal solve, selftest, mutant, classifier, or
 paper render has run. The next event is the first official invocation.
+
+## 2026-08-18 — CSF FIRST INVOCATION REFUSES AT ANCHOR TOKEN (v16 LEDGER #63)
+
+The first ordinary invocation of the #62 frozen scorer exits `1` at
+`CSF-ANCHORS` and writes no transcript, receipt, or Paper 6. No physical gate,
+affine intersection, classifier, or renderer is reached.
+
+Read-only diagnosis isolates one requested token. Paper 3 contains `eraser`
+and a section on “Records, erasers, and interference,” but the scorer requests
+the absent adjective `erasable`. All 12 anchor hashes, the other 23 consumed
+tokens, both fixture/scorer freeze hashes, and the core hash match.
+
+A bounded scorer-only repair is authorized: replace the requested token
+`erasable` with the existing token `eraser`, freeze the new scorer hash, and
+change no fixture, anchor hash, equation, context, recurrence dictionary,
+gate, mutant, verdict word, claim, renderer, scope wall, or CLI. All result
+paths remain absent.

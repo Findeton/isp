@@ -276,7 +276,7 @@ relational histories. No review or adjudication is authorized yet.
 
 ## Paper 06 — CSF: completeness spectrahedra and record fibers
 
-Status: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE FIRST EXECUTION (v16 #62)**.
+Status: **FIRST INVOCATION REFUSED AT ANCHOR TOKEN (v16 #63)**.
 
 The user's 2026-08-18 instruction authorizes a separate continuation after
 Paper 5's coefficient variety was recognized as the factorized presentation
@@ -325,6 +325,12 @@ data, a nonnormal pair, extreme-point maps, and fixed-Bob safety controls.
 Thirty-six mutants are implemented. Static syntax, exactness, vocabulary,
 anchor-token, CLI, and result-path-absence checks pass. No physical gate,
 classifier, normal solve, selftest, mutant, receipt, or paper render has run.
+
+The first ordinary invocation at #63 refuses at `CSF-ANCHORS` before any
+physical scoring. One requested Paper 3 token is absent: the scorer asks for
+`erasable`, while the frozen paper uses `eraser`. Every hash and all other
+tokens match; no result path is written. Only that one scorer token may move,
+and the repaired hash must freeze before re-execution.
 
 ## Successor register
 
