@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `CEL` / Paper 7: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE** at v16
-  ledger #69. The pin is frozen at #68.
+- `CEL` / Paper 7: **PHYSICAL FIXTURE/SCORER FROZEN BEFORE FIRST OFFICIAL
+  EXECUTION** at v16 ledger #70. The pin is frozen at #68 and generic core at
+  #69.
   The user-authorized continuation tests the creation-event layer at four
   sharply separated types: recurrence propagated by standing naturality,
   symmetry, and gluing versus token-disjoint universality as a priced
@@ -32,8 +33,12 @@ theory-selection result.
   constructive `LDL^dagger`/four-square Gram factors, finite licensed-
   recovery semantics, branch coarse-graining, continuation closure, and
   Stinespring stacking. It contains no CEL physical context or verdict. The
-  result-neutral physical fixture/scorer must freeze before the first
-  official physical execution.
+  result-neutral physical fixture/scorer is now frozen: a data-only fixture,
+  44-gate scorer, and 41 named mutants bind the recurrence, recoverability,
+  relational-flag, and exact-resource arms without embedding a target word or
+  solution dimension. Temporary deterministic/mutant checks pass; all three
+  official candidate paths remain absent. The next action is one official
+  execution and an as-generated candidate commit.
   Papers 3–6 and their four pending hostile panels remain unchanged review
   debt.
 - `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL

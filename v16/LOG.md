@@ -1590,3 +1590,25 @@ literal exists. A separate exact stress battery reconstructs the zero and
 zero-pivot cases plus 32 generated complex PSD matrices of orders one through
 four inside the row bound. The core is now immutable. The next stage is the
 data-only CEL fixture and result-neutral scorer, frozen before official use.
+
+## 2026-08-18 — CEL FIXTURE/SCORER FROZEN (v16 LEDGER #70)
+
+`v16/code/cel_fixture.json` and `v16/code/cel_score.py` are frozen before the
+first official CEL invocation at hashes
+`8a18a70f1e1b7781806d800c54afd5dcbd10dbac1307db4420bafcb4b57854f2`
+and `27ee69af161382dfda3de81e1ea4d0edf4d6b4afb8d11d5f30ec7d3e075749c8`.
+The fixture is data-only, contains zero JSON floats and none of the forbidden
+answer fields, and binds eleven antecedent/core artifacts by hash and tokens.
+
+The frozen assay contains 44 gates across integrity, overlapping-CNOT
+recurrence, operational nulls, shared-token gluing, reset/relabel/refire/
+redundancy/branch recoverability, two JCV flag dilations, a named relational
+attachment/support/relabel weld, `7/5` and determinant resource obstructions,
+constructive `2r` Gram factors, PSD refusal, and fifteen scope walls. Its
+primary comparator is derived from those typed surfaces.
+
+Two alternate-target constructor runs and one alien-CWD run are byte-
+identical. All 41 registered mutants die without artifacts or tracebacks;
+selftest, unknown-option, and existing-target controls behave as frozen. The
+official output, receipt, and paper paths remain absent. The next authorized
+step is one official run followed by an as-generated candidate commit.
