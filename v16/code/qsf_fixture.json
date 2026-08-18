@@ -1,0 +1,128 @@
+{
+  "schema": "qsf-fixture-v1",
+  "arithmetic": "Q(omega), omega^2+omega+1=0; exact Fraction coefficients",
+  "anchors": [
+    {
+      "path": "v16/note-qsf-pin.md",
+      "sha256": "6b70803366ddaf481e4dfb53c4150507a1dfbda86a0c5131021c03ec2ce0bbf3"
+    },
+    {
+      "path": "v16/code/qsf_core.py",
+      "sha256": "6dd6b4999c0474a362f56bb70271845fb5f322c6676a4de90c79b64ce753736f"
+    },
+    {
+      "path": "v16/code/qsf_public_receipt.json",
+      "sha256": "4252153f56b6ad12102eaba218aa8a4e29fe956c83d923796c9d3814f3dffac4"
+    },
+    {
+      "path": "v16/code/wrc_fixture.json",
+      "sha256": "4ced0a163d645072ded79c51c92cf6f847576f062f35091df67db6d6f8a971c8"
+    },
+    {
+      "path": "v16/code/wrc_receipt.json",
+      "sha256": "9cc0b4740c87b1541260e313e4caa1da0ccfa3afed56d74721b86016712a67af"
+    },
+    {
+      "path": "v16/paper-08-walk-reconstruction.md",
+      "sha256": "2be4c85b5b09eeb2cde6a055204520b5bb4fff921b562ff4b59260db3bd71f60"
+    },
+    {
+      "path": "v16/note-wrc-adjudication.md",
+      "sha256": "5ecc1f2f5904443bed4c1010254292e77703851ed3513d71b068415df98caa3e"
+    },
+    {
+      "path": "v16/note-relational-sufficiency-method.md",
+      "sha256": "84bac33e47ebe30f94d019e8f669509e9ffa6470316b9d7a50fbc951fc0be660"
+    },
+    {
+      "path": "v15/note-js-pin-v2.md",
+      "sha256": "99e90f9a2e8db6a67a1cb46902de96d6086a0931897145d5d54ca3a9e78816ea"
+    },
+    {
+      "path": "v15/note-dc-causality-addendum-v2.md",
+      "sha256": "ca713e89633bcd3510bbc898aef24133a64172cd2af158c82457033e32a53d71"
+    }
+  ],
+  "source_packet": {
+    "field_order": 3,
+    "sites": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]],
+    "links": [[1, 0], [0, 1], [1, 1]],
+    "initial_record_entry": 1,
+    "coin_numerators": [[-1, 2, 2], [2, -1, 2], [2, 2, -1]],
+    "coin_denominator": 3,
+    "phase_powers": [[1, 0], [0, 1], [-1, -1]],
+    "coin_order": "GD",
+    "shift_orientation": "PLUS",
+    "initial_site": [0, 0],
+    "initial_coin": 0,
+    "cuts": ["INPUT", "POST-COIN-CELL-HIT", "POST-SHIFT-OUTPUT"],
+    "horizon": 5,
+    "recurrence_horizon": 3,
+    "cell_hit_reading": "BORN",
+    "conditioned_state_rule": "NONCOLLAPSE",
+    "beable_readout": "COUNT-FIELD"
+  },
+  "committed_observable_bindings": {
+    "receipt_path": "v16/code/wrc_receipt.json",
+    "pointer": ["results", "source_regression"],
+    "families": [
+      "admissibility_exit_probability",
+      "curvature_constant_probability",
+      "det_values_reached",
+      "emission_field",
+      "ipr",
+      "link_class_marginal",
+      "max_cell_count",
+      "p_site",
+      "posdef_distribution"
+    ]
+  },
+  "arm_a": {
+    "families": ["A0-CONTEXT", "A1-SIGNATURE", "A2-COVARIANT"],
+    "contexts_through_tick": 5,
+    "local_signature": ["site-record-residues", "cell-outcome-type"],
+    "covariance_group": "site translations of F3 squared",
+    "controls": ["DISPLAYED-PROJECTIVE", "FITTED-SINGLE-CONTINUATION"],
+    "comparison_grains": ["branch", "count-record", "nine-observable-packet"]
+  },
+  "arm_b": {
+    "composite_type": "NATURAL-FIXED-FACTOR",
+    "alice_dimension": 2,
+    "bob_dimension": 27,
+    "alice_settings": ["Z", "X"],
+    "bob_embedded_postcoin_cells": [0, 1],
+    "bob_windows": [1, 2, 3],
+    "bob_grains": ["ordered-history", "count-record", "process-state", "calibrated-readout"],
+    "affine_control": "PROJECTIVE-MEASURE-AND-PREPARE",
+    "relational_composite_built": false
+  },
+  "arm_c": {
+    "windows": [1, 2, 3, 4, 5],
+    "maps": ["DISCARD-INTERNAL-HITS", "RETAIN-COUNT-RECORD"],
+    "tests": ["AFFINITY", "CP-WHEN-LINEAR", "TRACE-PRESERVATION", "CUT-COMPOSITION", "RECORD-RECOVERABILITY"],
+    "affinity_witness_postcoin_cells": [0, 1],
+    "feedback_control_windows": [1, 2, 3]
+  },
+  "s1": {
+    "past_depths": [1, 2, 3],
+    "future_horizons": [1, 2],
+    "summaries": ["NO-TRACE", "PREVIOUS-TRIGGER", "UNORDERED-COUNTS", "SUFFIX-2", "FULL-ORDERED-TRACE"],
+    "s1b_requires_closed_finite_law_family": true
+  },
+  "scope_walls": [
+    "NO-RELATIONAL-COMPOSITE",
+    "NO-CARRIER-GROWTH",
+    "NO-DYNAMIC-GEOMETRY",
+    "NO-GEOMETRY-IRREDUCIBILITY",
+    "NO-EVENT-SELECTION-LAW",
+    "NO-CARRIER-CATALOGUE-SELECTION",
+    "NO-COUPLING-SELECTION",
+    "NO-ACTUALIZATION",
+    "NO-ABSOLUTE-RECORD-PERMANENCE",
+    "NO-CONTINUUM-OR-LORENTZ",
+    "NO-QFT-OR-GR",
+    "NO-PARTICLES-OR-SPECIES",
+    "NO-HAMILTONIAN-SELECTION",
+    "NO-EMPIRICAL-DEVIATION"
+  ]
+}

@@ -2431,3 +2431,18 @@ This event carries **NO QSF PHYSICS RESULT**. The public core contains no WRC
 carrier, walk, target observable, or outcome word. The next permitted event
 is a separately committed result-neutral physical fixture, followed by the
 three registered assays.
+
+## 2026-08-18 — QSF RESULT-NEUTRAL PHYSICAL FIXTURE FROZEN (v16 LEDGER #114)
+
+`v16/code/qsf_fixture.json` now binds the already sealed public core to the
+terminal WRC packet and observable receipt. It freezes the A0/A1/A2 completion
+families, the natural fixed-factor HJW surrogate, history windows one through
+five, S1 trace summaries, controls, and scope walls. The separate freeze note
+is `v16/note-qsf-fixture-freeze.md`.
+
+The fixture contains no answer word, expected survivor, signalling value,
+affinity verdict, predictive quotient, or paper claim. The fixed-factor arm
+also declares that no relational composite has been built, preventing a local
+counterexample from being promoted into an all-extension theorem. **NO QSF
+PHYSICS RESULT** exists at this event. The next permitted event is scorer
+construction and exact three-arm execution.
