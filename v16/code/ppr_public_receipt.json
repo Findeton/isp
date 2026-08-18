@@ -1,0 +1,285 @@
+{
+  "gate_count": 9,
+  "gates": [
+    {
+      "detail": {
+        "expected": "805d7ba388a154f591a1cfc51968ddd8133bda2f4219649a7c3fb9963fd9df03",
+        "observed": "805d7ba388a154f591a1cfc51968ddd8133bda2f4219649a7c3fb9963fd9df03"
+      },
+      "falsifier": "anchor-corrupt",
+      "name": "PUB-ANCHOR",
+      "pass": true
+    },
+    {
+      "detail": {
+        "cut_basis": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ],
+          [
+            "1"
+          ]
+        ],
+        "rank_history": [
+          {
+            "cut": 1,
+            "future": 1
+          },
+          {
+            "cut": 2,
+            "future": 1
+          }
+        ],
+        "strict_rounds": 1
+      },
+      "falsifier": "stable-drop-edge",
+      "name": "PUB-STABLE-NULL",
+      "pass": true
+    },
+    {
+      "detail": {
+        "continuations": 1
+      },
+      "falsifier": "stable-drop-edge",
+      "name": "PUB-CONGRUENCE",
+      "pass": true
+    },
+    {
+      "detail": {
+        "descended_map": [
+          [
+            "0",
+            "1"
+          ]
+        ]
+      },
+      "falsifier": "stable-drop-edge",
+      "name": "PUB-QUOTIENT-DESCENT",
+      "pass": true
+    },
+    {
+      "detail": {
+        "pullback": [
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "-1",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "falsifier": "pullback-transpose",
+      "name": "PUB-PULLBACK",
+      "pass": true
+    },
+    {
+      "detail": {
+        "all": 2,
+        "coherent_finest": [
+          [
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "durable_finest": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        ],
+        "erasable_finest": [
+          [
+            [
+              0,
+              1
+            ]
+          ]
+        ]
+      },
+      "falsifier": "partition-preplant",
+      "name": "PUB-PARTITIONS",
+      "pass": true
+    },
+    {
+      "detail": {
+        "different_record_instrument": true,
+        "same_unconditioned_channel": true
+      },
+      "falsifier": "channel-shadow",
+      "name": "PUB-CHANNEL-INSTRUMENT-SPLIT",
+      "pass": true
+    },
+    {
+      "detail": {
+        "class_operator": [
+          [
+            "27/25",
+            "16/25"
+          ],
+          [
+            "-16/25",
+            "27/25"
+          ]
+        ]
+      },
+      "falsifier": "split-weight",
+      "name": "PUB-HISTORY-SPLIT-MERGE",
+      "pass": true
+    },
+    {
+      "detail": {
+        "graph": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "p"
+          ]
+        ],
+        "renamed": [
+          [
+            "x",
+            "y"
+          ],
+          [
+            "y",
+            "z"
+          ]
+        ]
+      },
+      "falsifier": "machine-forced",
+      "name": "PUB-GRAPH-RELABEL",
+      "pass": true
+    }
+  ],
+  "machine_outcome": "PUBLIC-CALIBRATIONS-ONLY",
+  "schema": "ppr-public-v1",
+  "scope": "PUBLIC-CALIBRATIONS-ONLY",
+  "seal_manifest_total": true,
+  "seals": {
+    "gate_count": "19581e27de7ced00ff1ce50b2047e7a567c76b1cbaebabe5ef03f7c3017bb5b7",
+    "gates": "82ddc776c26bac9500cf24fdd1f5c47cb7af8b0ffabc69309d77c5f50460b32c",
+    "machine_outcome": "3c5a28931977c9e77d778de017145d35af3d24772ac703cdb6e8debc5a6cc234",
+    "schema": "2119245489e9518d49f5916b44bba6d209a4f9566c86e7cca227af860f294c10",
+    "scope": "3c5a28931977c9e77d778de017145d35af3d24772ac703cdb6e8debc5a6cc234",
+    "source_sha256": "5588b5dda0b423950ba8d705973d707ef24433ba0ce7fcd3f68ba070531a6a4a",
+    "transcript_sha256": "e50b5d35da7d5508ed1def203491decd37c90269f5190522f95301229d5df04a",
+    "values": "a5a8f35998a84039edb00c51f11e323bde751b48ffbc62922296af1043000d93"
+  },
+  "source_sha256": "490668340b08022ac5d11c8fdc07c392739153b609a72b9bda5bfcf112f472ea",
+  "transcript_sha256": "f8198dd124c0f7aaa6c3459e43ff4c14e08aa9283e1286549ac0693fd5bf78fc",
+  "values": {
+    "graph": {
+      "original": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "p"
+        ]
+      ],
+      "renamed": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "y",
+          "z"
+        ]
+      ]
+    },
+    "partitions": {
+      "bell_number_2": 2,
+      "coherent_finest": [
+        [
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "durable_finest": [
+        [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ]
+      ],
+      "erasable_finest": [
+        [
+          [
+            0,
+            1
+          ]
+        ]
+      ]
+    },
+    "pullback": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "-1",
+        "0",
+        "0"
+      ]
+    ],
+    "representations": {
+      "different_record_instrument": true,
+      "same_unconditioned_channel": true
+    },
+    "stable_null": {
+      "cut_basis": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "1"
+        ]
+      ],
+      "descended_map": [
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "rank_history": [
+        {
+          "cut": 1,
+          "future": 1
+        },
+        {
+          "cut": 2,
+          "future": 1
+        }
+      ],
+      "strict_rounds": 1
+    }
+  }
+}

@@ -119,9 +119,12 @@ separates same-fact comparison flatness from physical dynamical holonomy.
 
 The locked order is:
 
-1. commit the pin and its term bindings before any implementation exists;
+1. commit the pin and its term bindings before any implementation exists —
+   **complete at #33**;
 2. freeze a generic exact multi-boundary null/pullback/partition instrument on
-   public calibrations before the new physical fixture or scorer exists;
+   public calibrations before the new physical fixture or scorer exists —
+   **complete at #34: 9/9 public gates, six mutants, byte-identical duplicate
+   artifacts**;
 3. freeze a data-only relational fixture and verdict-neutral scorer before the
    official solve;
 4. execute once, render Paper 3 and all artifacts from one sealed result,

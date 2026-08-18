@@ -695,3 +695,29 @@ the pin. No PPR implementation, fixture, scorer, output, receipt, or Paper 3
 path exists at this commit. The next authorized event is the generic exact
 core freeze on public calibrations; the physical fixture and scorer must remain
 absent until after that source freeze.
+
+## 2026-08-17 — PPR GENERIC EXACT CORE FROZEN BEFORE PHYSICAL FIXTURE (v16 LEDGER #34)
+
+`v16/code/ppr_core.py` is frozen at SHA-256
+`490668340b08022ac5d11c8fdc07c392739153b609a72b9bda5bfcf112f472ea`,
+with public transcript
+`f8198dd124c0f7aaa6c3459e43ff4c14e08aa9283e1286549ac0693fd5bf78fc`
+and receipt
+`1acf2d48c5ddf0ca5283f655dfda9fbe29952ca3ec18c47679d7215831992926`.
+The source contains no PPR physical fixture or primary verdict.
+
+Nine public exact gates pass: calibration anchor; multi-boundary stable-null
+descent; congruence; quotient descent; pullback; exhaustive partition census;
+channel-versus-instrument representation split; history split/merge; and graph
+relabelling. The delayed-activation control removes one present-null direction
+after one strict round and retains one permanently null direction. The
+durable, eraser, and coherent public controls return the expected distinct
+partition classifications. A rational Kraus rotation preserves the
+unconditioned channel while moving the calibrated record instrument.
+
+Two generated public runs are byte-identical. Six public mutants exit 1, the
+selftest passes, unknown flags exit 2, the manifest is total, source compilation
+passes, and the substantive path contains no float or tolerance mechanism.
+These are calibration results only. The generic source is now byte-immutable;
+the next event is one separate data-only physical fixture and verdict-neutral
+scorer freeze before any official execution.

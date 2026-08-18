@@ -1,0 +1,9 @@
+PPR GENERIC CORE — PUBLIC CALIBRATIONS
+SOURCE_SHA256 490668340b08022ac5d11c8fdc07c392739153b609a72b9bda5bfcf112f472ea
+GATES 9/9
+STABLE_NULL {'rank_history': [{'cut': 1, 'future': 1}, {'cut': 2, 'future': 1}], 'strict_rounds': 1, 'cut_basis': [['0'], ['0'], ['1']], 'descended_map': [['0', '1']]}
+PULLBACK [['0', '1', '0'], ['-1', '0', '0']]
+PARTITIONS {'bell_number_2': 2, 'durable_finest': (((0,), (1,)),), 'erasable_finest': (((0, 1),),), 'coherent_finest': (((0, 1),),)}
+REPRESENTATIONS {'same_unconditioned_channel': True, 'different_record_instrument': True}
+GRAPH {'original': (('a', 'b'), ('b', 'p')), 'renamed': (('x', 'y'), ('y', 'z'))}
+PUBLIC-CALIBRATIONS-ONLY — NO PPR PHYSICAL FIXTURE OR VERDICT

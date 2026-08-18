@@ -18,13 +18,16 @@ theory-selection result.
 
 ## Live state
 
-- `PPR` / Paper 3: **PINNED BEFORE CONSTRUCTION** at v16 ledger #33. The
+- `PPR` / Paper 3: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE** at v16
+  ledger #34. The pin was frozen at #33. The
   authorized unit asks whether cross-carrier comparison descends from the
   complete law on reached subspaces, whether one-step null directions remain
   null under every licensed future, and whether durable records reproduce the
   quotient used to type the law. Configuration events, durable record
   outcomes, comparison dictionaries, and dynamical transports are split by
-  construction. No implementation or Paper 3 result exists at the pin.
+  construction. The exact generic core passes 9/9 public gates and six public
+  mutants; no physical fixture, scorer, official result, or Paper 3 result
+  exists at this freeze.
 - `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
