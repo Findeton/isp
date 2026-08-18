@@ -1,0 +1,11 @@
+QSF GENERIC PUBLIC CORE
+gates=8 passed=8
+hjw_equal_density=True
+nondemolition_ensemble_sensitive=True
+affine_projective_blind=True
+record_discard_affine=True
+record_retained_nonaffine=True
+feedback_nonaffine=True
+count_summary_sufficient=False
+previous_summary_sufficient=True
+payload_sha256=0d3400768164358b294eae884ff768e1f0479da3428b361772bda552fcc666f7

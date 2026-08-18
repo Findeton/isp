@@ -2411,3 +2411,23 @@ not merely unrun computation.
 The next authorized event is a generic public-only QSF core freeze, followed
 by a separately committed result-neutral physical fixture.  No QSF physics
 result is citable at this event.
+
+## 2026-08-18 — QSF GENERIC PUBLIC CORE FROZEN (v16 LEDGER #113)
+
+The WRC-independent exact assay is frozen in `v16/code/qsf_core.py`, its public
+transcript and receipt, and `v16/note-qsf-core-freeze.md`. It was written and
+calibrated before reading the WRC physical fixture. Eight public gates and
+eight targeted mutant refusals establish the exact field, rank-one affine
+instrument, HJW ensemble, literal-rule nonaffinity, steering discriminator,
+history-grain discriminator, and predictive-partition machinery.
+
+The history calibration is already a binding caution: erasing an internal
+label can yield an affine one-step map while retaining that label or feeding
+it into a later continuation exposes nonaffinity. Arm C therefore earns no
+exemption merely by calling CELL-HIT an internal history label; it must exhibit
+a genuine record boundary and prove the complete boundary map.
+
+This event carries **NO QSF PHYSICS RESULT**. The public core contains no WRC
+carrier, walk, target observable, or outcome word. The next permitted event
+is a separately committed result-neutral physical fixture, followed by the
+three registered assays.
