@@ -22,9 +22,11 @@ theory-selection result.
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
   post-commit/off-tree verification are complete.
-- `JCV`: **PINNED** at v16 ledger #17 as a separate successor unit.  It will
-  solve the cross-carrier comparison structure and history-weight law jointly
-  as an exact gauge-quotiented algebraic variety.  Paper 01 remains frozen.
+- `JCV`: **GENERIC SOLVER FROZEN BEFORE THE PHYSICAL FIXTURE** at v16 ledger
+  #18 as a separate successor unit.  Its exact rational backend passes five
+  public calibration models, 15 gates, and 11 named falsifiers.  Every physical
+  JCV path remained absent; no comparison/weight result is yet citable.  Paper
+  01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.

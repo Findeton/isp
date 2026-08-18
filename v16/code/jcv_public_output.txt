@@ -1,0 +1,24 @@
+JCV GENERIC VARIETY SOLVER — PUBLIC CALIBRATIONS ONLY
+GATE G-ANCHORS PASS :: matched 9 of 9 frozen source hashes
+GATE G-CHRONOLOGY PASS :: reserved physical paths present=[]
+GATE G-SCHEMA PASS :: public models=5
+GATE G-GROEBNER PASS :: generator reductions=10; S-pairs=1; failures=0
+GATE G-CAL-EMPTY PASS :: nonempty=0; dimensions=[]
+GATE G-CAL-POINT PASS :: nonempty=1; dimensions=[0]; sum=3
+GATE G-CAL-POSDIM PASS :: nonempty=1; dimensions=[1]; x=nonconstant:x; xy!=0:nonempty
+GATE G-CAL-REDUCIBLE PASS :: nonempty=1; dimensions=[1]; xy!=0:empty
+GATE G-CAL-GAUGE PASS :: nonempty=1; dimensions=[0]; keys=[['1']]
+GATE G-CAL-QUERY PASS :: positive=nonempty=1; dimensions=[1]; x=nonconstant:x; xy!=0:nonempty; reducible=nonempty=1; dimensions=[1]; xy!=0:empty
+GATE G-EXACT PASS :: AST float literals=0
+GATE G-READSET PASS :: declared=10 observed=10
+GATE G-MUTANTS PASS :: killed=11 declared=11
+GATE G-SEAL-CONTROLS PASS :: clean seal accepted and add/edit controls are rejected
+GATE G-TRANSCRIPT PASS :: rendered gate multiset equals the in-memory ledger in both directions
+MODELS 5
+MODEL EMPTY NONEMPTY 0 DIMENSIONS []
+MODEL POINT NONEMPTY 1 DIMENSIONS [0]
+MODEL POSITIVE_DIMENSIONAL NONEMPTY 1 DIMENSIONS [1]
+MODEL REDUCIBLE NONEMPTY 1 DIMENSIONS [1]
+MODEL GAUGE_SECTOR NONEMPTY 1 DIMENSIONS [0]
+MUTANTS 11 OF 11 DIE AT NAMED GATES
+END JCV PUBLIC SOLVER FREEZE

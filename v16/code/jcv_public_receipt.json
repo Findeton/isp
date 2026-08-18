@@ -1,0 +1,487 @@
+{
+ "base_commit": "7adc7cbf4897b303077bbfba4e11a7268274a10f",
+ "gates": [
+  {
+   "evidence": "matched 9 of 9 frozen source hashes",
+   "gate": "G-ANCHORS",
+   "passed": true
+  },
+  {
+   "evidence": "reserved physical paths present=[]",
+   "gate": "G-CHRONOLOGY",
+   "passed": true
+  },
+  {
+   "evidence": "public models=5",
+   "gate": "G-SCHEMA",
+   "passed": true
+  },
+  {
+   "evidence": "generator reductions=10; S-pairs=1; failures=0",
+   "gate": "G-GROEBNER",
+   "passed": true
+  },
+  {
+   "evidence": "nonempty=0; dimensions=[]",
+   "gate": "G-CAL-EMPTY",
+   "passed": true
+  },
+  {
+   "evidence": "nonempty=1; dimensions=[0]; sum=3",
+   "gate": "G-CAL-POINT",
+   "passed": true
+  },
+  {
+   "evidence": "nonempty=1; dimensions=[1]; x=nonconstant:x; xy!=0:nonempty",
+   "gate": "G-CAL-POSDIM",
+   "passed": true
+  },
+  {
+   "evidence": "nonempty=1; dimensions=[1]; xy!=0:empty",
+   "gate": "G-CAL-REDUCIBLE",
+   "passed": true
+  },
+  {
+   "evidence": "nonempty=1; dimensions=[0]; keys=[['1']]",
+   "gate": "G-CAL-GAUGE",
+   "passed": true
+  },
+  {
+   "evidence": "positive=nonempty=1; dimensions=[1]; x=nonconstant:x; xy!=0:nonempty; reducible=nonempty=1; dimensions=[1]; xy!=0:empty",
+   "gate": "G-CAL-QUERY",
+   "passed": true
+  },
+  {
+   "evidence": "AST float literals=0",
+   "gate": "G-EXACT",
+   "passed": true
+  },
+  {
+   "evidence": "declared=10 observed=10",
+   "gate": "G-READSET",
+   "passed": true
+  },
+  {
+   "evidence": "killed=11 declared=11",
+   "gate": "G-MUTANTS",
+   "passed": true
+  },
+  {
+   "evidence": "clean seal accepted and add/edit controls are rejected",
+   "gate": "G-SEAL-CONTROLS",
+   "passed": true
+  },
+  {
+   "evidence": "rendered gate multiset equals the in-memory ledger in both directions",
+   "gate": "G-TRANSCRIPT",
+   "passed": true
+  }
+ ],
+ "measurements": {
+  "anchor_count": 9,
+  "base_commit": "7adc7cbf4897b303077bbfba4e11a7268274a10f",
+  "groebner_verification": {
+   "generator_failures": 0,
+   "generators": 10,
+   "s_failures": 0,
+   "s_pairs": 1
+  },
+  "model_count": 5,
+  "models": [
+   {
+    "name": "EMPTY",
+    "nonempty_sectors": 0,
+    "sector_count": 1,
+    "sectors": [
+     {
+      "assignment_count": 1,
+      "basis": [
+       "1"
+      ],
+      "dimension": -1,
+      "empty": true,
+      "key": [],
+      "queries": [],
+      "solution_variants": 1
+     }
+    ],
+    "sign_assignment_count": 1,
+    "verification": {
+     "generator_failures": 0,
+     "generators": 2,
+     "s_failures": 0,
+     "s_pairs": 0
+    }
+   },
+   {
+    "name": "POINT",
+    "nonempty_sectors": 1,
+    "sector_count": 1,
+    "sectors": [
+     {
+      "assignment_count": 1,
+      "basis": [
+       "x - 1",
+       "y - 2"
+      ],
+      "dimension": 0,
+      "empty": false,
+      "key": [],
+      "queries": [
+       {
+        "constant": "3",
+        "name": "sum",
+        "nonzero_locus": null,
+        "remainder": "3"
+       }
+      ],
+      "solution_variants": 1
+     }
+    ],
+    "sign_assignment_count": 1,
+    "verification": {
+     "generator_failures": 0,
+     "generators": 2,
+     "s_failures": 0,
+     "s_pairs": 1
+    }
+   },
+   {
+    "name": "POSITIVE_DIMENSIONAL",
+    "nonempty_sectors": 1,
+    "sector_count": 1,
+    "sectors": [
+     {
+      "assignment_count": 1,
+      "basis": [
+       "x^2 + y^2 - 1"
+      ],
+      "dimension": 1,
+      "empty": false,
+      "key": [],
+      "queries": [
+       {
+        "constant": null,
+        "name": "x",
+        "nonzero_locus": null,
+        "remainder": "x"
+       },
+       {
+        "constant": null,
+        "name": "xy",
+        "nonzero_locus": {
+         "basis": [
+          "x + y^3*__inverse - y*__inverse",
+          "y^4*__inverse^2 - y^2*__inverse^2 + 1"
+         ],
+         "dimension": 1,
+         "nonempty": true
+        },
+        "remainder": "x*y"
+       }
+      ],
+      "solution_variants": 1
+     }
+    ],
+    "sign_assignment_count": 1,
+    "verification": {
+     "generator_failures": 0,
+     "generators": 1,
+     "s_failures": 0,
+     "s_pairs": 0
+    }
+   },
+   {
+    "name": "REDUCIBLE",
+    "nonempty_sectors": 1,
+    "sector_count": 1,
+    "sectors": [
+     {
+      "assignment_count": 1,
+      "basis": [
+       "x*y"
+      ],
+      "dimension": 1,
+      "empty": false,
+      "key": [],
+      "queries": [
+       {
+        "constant": "0",
+        "name": "xy",
+        "nonzero_locus": {
+         "basis": [
+          "1"
+         ],
+         "dimension": -1,
+         "nonempty": false
+        },
+        "remainder": "0"
+       }
+      ],
+      "solution_variants": 1
+     }
+    ],
+    "sign_assignment_count": 1,
+    "verification": {
+     "generator_failures": 0,
+     "generators": 1,
+     "s_failures": 0,
+     "s_pairs": 0
+    }
+   },
+   {
+    "name": "GAUGE_SECTOR",
+    "nonempty_sectors": 1,
+    "sector_count": 2,
+    "sectors": [
+     {
+      "assignment_count": 1,
+      "basis": [
+       "1"
+      ],
+      "dimension": -1,
+      "empty": true,
+      "key": [
+       "-1"
+      ],
+      "queries": [],
+      "solution_variants": 1
+     },
+     {
+      "assignment_count": 1,
+      "basis": [
+       "x^2 - 1"
+      ],
+      "dimension": 0,
+      "empty": false,
+      "key": [
+       "1"
+      ],
+      "queries": [],
+      "solution_variants": 1
+     }
+    ],
+    "sign_assignment_count": 2,
+    "verification": {
+     "generator_failures": 0,
+     "generators": 4,
+     "s_failures": 0,
+     "s_pairs": 0
+    }
+   }
+  ],
+  "pin_commit": "a51f9493e5be78f090aa7d387afa9a1eecfc6a4c",
+  "reserved_paths_absent": true,
+  "schema": "JCV-PUBLIC-CALIBRATIONS-v1"
+ },
+ "mutant_survey": [
+  {
+   "expected_gate": "G-ANCHORS",
+   "move_proofs": [
+    {
+     "after": "e716672160f85498",
+     "before": "967665d32f1b3c7e",
+     "target": "ANCHOR_CORRUPT"
+    }
+   ],
+   "moved": true,
+   "mutant": "ANCHOR_CORRUPT",
+   "observed_gate": "G-ANCHORS",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-CHRONOLOGY",
+   "move_proofs": [
+    {
+     "after": "70b420533648c48e",
+     "before": "4f53cda18c2baa0c",
+     "target": "RESERVED_SMUGGLE"
+    }
+   ],
+   "moved": true,
+   "mutant": "RESERVED_SMUGGLE",
+   "observed_gate": "G-CHRONOLOGY",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-CAL-EMPTY",
+   "move_proofs": [
+    {
+     "after": "4a65693005100e05",
+     "before": "fa08b6a4948ad478",
+     "target": "DROP_EQUATION"
+    }
+   ],
+   "moved": true,
+   "mutant": "DROP_EQUATION",
+   "observed_gate": "G-CAL-EMPTY",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-GROEBNER",
+   "move_proofs": [
+    {
+     "after": "4f53cda18c2baa0c",
+     "before": "613c2bc4dd0c7ee9",
+     "target": "S_POLY_SKIP"
+    }
+   ],
+   "moved": true,
+   "mutant": "S_POLY_SKIP",
+   "observed_gate": "G-GROEBNER",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-CAL-POSDIM",
+   "move_proofs": [
+    {
+     "after": "d4735e3a265e16ee",
+     "before": "6b86b273ff34fce1",
+     "target": "DIMENSION_SHIFT"
+    }
+   ],
+   "moved": true,
+   "mutant": "DIMENSION_SHIFT",
+   "observed_gate": "G-CAL-POSDIM",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-CAL-GAUGE",
+   "move_proofs": [
+    {
+     "after": "43de3a417d75f481",
+     "before": "c5697c5ba0439531",
+     "target": "SIGN_SECTOR_COLLAPSE"
+    }
+   ],
+   "moved": true,
+   "mutant": "SIGN_SECTOR_COLLAPSE",
+   "observed_gate": "G-CAL-GAUGE",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-CAL-POSDIM",
+   "move_proofs": [
+    {
+     "after": "fcbcf165908dd18a",
+     "before": "b5bea41b6c623f7c",
+     "target": "SATURATION_FAKE"
+    }
+   ],
+   "moved": true,
+   "mutant": "SATURATION_FAKE",
+   "observed_gate": "G-CAL-POSDIM",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-READSET",
+   "move_proofs": [
+    {
+     "after": "fb2b0d0085872093",
+     "before": "993e948454295d20",
+     "target": "READSET_HIDE"
+    }
+   ],
+   "moved": true,
+   "mutant": "READSET_HIDE",
+   "observed_gate": "G-READSET",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-TRANSCRIPT",
+   "move_proofs": [
+    {
+     "after": "8993a79e9cbb1d35",
+     "before": "2b788fc6a9357fc4",
+     "target": "TRANSCRIPT_CONTRADICTION"
+    }
+   ],
+   "moved": true,
+   "mutant": "TRANSCRIPT_CONTRADICTION",
+   "observed_gate": "G-TRANSCRIPT",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-SEAL-CONTROLS",
+   "move_proofs": [
+    {
+     "after": "e805ab487af27f5f",
+     "before": "eb69af19a5a31cbc",
+     "target": "SEAL_ADD"
+    }
+   ],
+   "moved": true,
+   "mutant": "SEAL_ADD",
+   "observed_gate": "G-SEAL-CONTROLS",
+   "passed": true
+  },
+  {
+   "expected_gate": "G-SEAL-CONTROLS",
+   "move_proofs": [
+    {
+     "after": "d1aacbde3cf42c80",
+     "before": "eb69af19a5a31cbc",
+     "target": "SEAL_EDIT"
+    }
+   ],
+   "moved": true,
+   "mutant": "SEAL_EDIT",
+   "observed_gate": "G-SEAL-CONTROLS",
+   "passed": true
+  }
+ ],
+ "note_sha256": "74de165c63617059e645c49cbb3dd271ec8d3a2d7f89795eabdce817e9a4232d",
+ "output_sha256": "10d483804549b05c00546d9ade845b8c5810122987742404c4739c50f93bf223",
+ "pin_commit": "a51f9493e5be78f090aa7d387afa9a1eecfc6a4c",
+ "read_set": [
+  "v12/paper1-composition-defect.md",
+  "v13/paper-coc-cocycle.md",
+  "v14/code/era_template.py",
+  "v15/paper-43-contract.md",
+  "v16/code/jcv_public_calibrations.json",
+  "v16/code/jcv_variety.py",
+  "v16/note-jcv-pin.md",
+  "v16/note-jrh-delta-adjudication.md",
+  "v16/note-jrh-terminal-verification.md",
+  "v16/paper-01-joint-relational-history-law.md"
+ ],
+ "schema": "JCV-PUBLIC-RECEIPT-v1",
+ "scope": {
+  "complex_physical_claim": false,
+  "exact_field": "Q",
+  "physical_fixture_present": false,
+  "public_calibrations_only": true
+ },
+ "seal_manifest": {
+  "algorithm": "sha256-canonical-json",
+  "sealed_keys": {
+   "base_commit": "5f4b3e250ddd7851fe843824800d28d093f2388bd22b8c563a43efeb99faa0b3",
+   "gates": "7d814ff1bcd37d40e2b6c5ca64bb4b01aba2102254db534e5def308314f12ee4",
+   "measurements": "902b6c2df745bb5a5293d26f6d2d17d947d1af13ffd4906daf0ef1b724832eb0",
+   "mutant_survey": "bd0707b1839fa10e96b79c8c037165b125d41fd06adc4b1c68cad518b0305f95",
+   "note_sha256": "1bcce40c94724eb8b873d5ff012653754dab9d5ab31d1d3d098189e1ccd9c044",
+   "output_sha256": "763c9a2d24335f460b829d83a1aaa1d59edc9f9a2dbc04d374ebd60a9ee2136a",
+   "pin_commit": "d8b1944798b7a54b20bb1470b6c7d37b9cf196b6ee73b77b7fc2e9d6fbd464df",
+   "read_set": "993e948454295d2069b913c7415123ef054936ec116a8e247ea5cf145a73c3a5",
+   "schema": "d6679431dcc3f2ac89b010c6ac1028bc14067771cbfbd9e32aa945bbc6dd7764",
+   "scope": "fe972e6b93588b4c12bc34dd8ee353f4587ae7a2d3c64cef83c7f5c4162474bd",
+   "source_anchors": "967665d32f1b3c7e6c5721ec3a8c4f571ac5090d50105d3b88e705d22b4f07fa",
+   "status": "1e2e7d9474517154d63e6834745a5032ba8e1287ecdfee7a7e9bd04fdfe6f271",
+   "unit": "272c110a852093e68a55d3f3c4437860e54e44ad06406cdaf4eeb1f26f9c6a12"
+  },
+  "total_keys_excluding_manifest": 13
+ },
+ "source_anchors": {
+  "v12/paper1-composition-defect.md": "81bdab5673fb67b63cd10c08fbb80870f8aa01088047718c5b4bf447e1669128",
+  "v13/paper-coc-cocycle.md": "44c50aa1faf956b2e814c82a35d0aac4427eaa8b83061c6a6772d7391681cb82",
+  "v14/code/era_template.py": "d04a3eb58fbcfe3d093b98126ca23c1610a9cc7cec96c9b9097eed515516f2b9",
+  "v15/paper-43-contract.md": "0c8d1a687b148a6cc5a0c1bfc199d2caa30db85f1e9ce4bbcf50fbe91ffe057f",
+  "v16/code/jcv_public_calibrations.json": "d16d7487c9110aa510c4b61108779d0529aa2a339088ea748eecc5379f7f00f1",
+  "v16/note-jcv-pin.md": "4268055286efb5ff0a9790826608c4eb3927ae4e2e87fe66383194cce0059841",
+  "v16/note-jrh-delta-adjudication.md": "cc4f4d11abd77287f645dfd34af438630629c1bfcb2a52212bfd90fd48c0660c",
+  "v16/note-jrh-terminal-verification.md": "223e12ccca014947b6fe8a0dcbd584c72ff0ff83a81f630a14a89ff512047824",
+  "v16/paper-01-joint-relational-history-law.md": "98489edb6a83919199c11b14b92c423965d1a08ad7652a1c1915d5402f9e6003"
+ },
+ "status": "INSTRUMENT-FROZEN-BEFORE-PHYSICAL-FIXTURE",
+ "unit": "v16-jcv-solver-freeze"
+}

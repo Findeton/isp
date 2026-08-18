@@ -1,0 +1,72 @@
+{
+  "schema": "JCV-PUBLIC-CALIBRATIONS-v1",
+  "models": [
+    {
+      "name": "EMPTY",
+      "continuous_variables": ["x"],
+      "sign_variables": [],
+      "equations": [
+        {"name": "x-zero", "terms": [["1", {"x": 1}]]},
+        {"name": "x-one", "terms": [["1", {"x": 1}], ["-1", {}]]}
+      ],
+      "gauge_invariants": [],
+      "queries": [],
+      "expected": {"nonempty_sectors": 0, "dimensions": []}
+    },
+    {
+      "name": "POINT",
+      "continuous_variables": ["x", "y"],
+      "sign_variables": [],
+      "equations": [
+        {"name": "x-one", "terms": [["1", {"x": 1}], ["-1", {}]]},
+        {"name": "y-two", "terms": [["1", {"y": 1}], ["-2", {}]]}
+      ],
+      "gauge_invariants": [],
+      "queries": [
+        {"name": "sum", "terms": [["1", {"x": 1}], ["1", {"y": 1}]], "nonzero_locus": false}
+      ],
+      "expected": {"nonempty_sectors": 1, "dimensions": [0], "query_constants": {"sum": "3"}}
+    },
+    {
+      "name": "POSITIVE_DIMENSIONAL",
+      "continuous_variables": ["x", "y"],
+      "sign_variables": [],
+      "equations": [
+        {"name": "circle", "terms": [["1", {"x": 2}], ["1", {"y": 2}], ["-1", {}]]}
+      ],
+      "gauge_invariants": [],
+      "queries": [
+        {"name": "x", "terms": [["1", {"x": 1}]], "nonzero_locus": false},
+        {"name": "xy", "terms": [["1", {"x": 1, "y": 1}]], "nonzero_locus": true}
+      ],
+      "expected": {"nonempty_sectors": 1, "dimensions": [1], "query_nonconstant": ["x"], "nonzero_nonempty": ["xy"]}
+    },
+    {
+      "name": "REDUCIBLE",
+      "continuous_variables": ["x", "y"],
+      "sign_variables": [],
+      "equations": [
+        {"name": "axes", "terms": [["1", {"x": 1, "y": 1}]]}
+      ],
+      "gauge_invariants": [],
+      "queries": [
+        {"name": "xy", "terms": [["1", {"x": 1, "y": 1}]], "nonzero_locus": true}
+      ],
+      "expected": {"nonempty_sectors": 1, "dimensions": [1], "nonzero_empty": ["xy"]}
+    },
+    {
+      "name": "GAUGE_SECTOR",
+      "continuous_variables": ["x"],
+      "sign_variables": ["s"],
+      "equations": [
+        {"name": "unit", "terms": [["1", {"x": 2}], ["-1", {}]]},
+        {"name": "visible-sign", "terms": [["1", {"s": 1, "x": 1}], ["-1", {"x": 1}]]}
+      ],
+      "gauge_invariants": [
+        {"name": "q", "terms": [["1", {"s": 1}]]}
+      ],
+      "queries": [],
+      "expected": {"nonempty_sectors": 1, "dimensions": [0], "sector_keys": [["1"]]}
+    }
+  ]
+}

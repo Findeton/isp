@@ -376,3 +376,34 @@ run once.  The pin registers seven reachable primary outcomes including a
 stratified variety, exact kill conditions, three later hostile lenses, the
 current template engravings, and the real-slice limitation.  No JCV result is
 citable at PIN status.
+
+## 2026-08-17 — JCV GENERIC EXACT SOLVER FROZEN BEFORE ANY PHYSICAL FIXTURE (v16 LEDGER #18)
+
+`v16/code/jcv_variety.py` and its public calibration file are frozen before
+any physical JCV fixture, scorer, result, receipt, or paper exists.  The
+instrument implements exact rational polynomial arithmetic, Buchberger
+reduction with independently checked generator and S-polynomial remainders,
+leading-ideal Krull dimension, exact sign-sector quotienting, polynomial
+remainder diagnostics, and nonzero-locus saturation.
+
+The public battery passes all 15 gates on five verdict-neutral models: empty,
+isolated point, positive-dimensional, reducible, and gauge-sector.  All 11
+named falsifiers die at their registered gates with proved data movement.  The
+CLI contract, zero-write test modes, AST float exclusion, total receipt seals,
+and transcript/in-memory equality also pass.  Repeated execution is
+byte-deterministic.  A true off-tree copy containing no `.git` directory and
+run from an alien working directory produced byte-identical output, receipt,
+and note.
+
+Frozen SHA-256 values are:
+
+- solver: `ccc286c0ae82cd118fceb41ee6a4250a5da2974d6381456ba3ec075c8a8f294d`;
+- public calibrations: `d16d7487c9110aa510c4b61108779d0529aa2a339088ea748eecc5379f7f00f1`;
+- public output: `10d483804549b05c00546d9ade845b8c5810122987742404c4739c50f93bf223`;
+- public receipt: `7e8d1edc2b8adc5ee5630ca8702ef2ff9b4f60688878089af16b0dc1ab87b441`;
+- solver-freeze note: `74de165c63617059e645c49cbb3dd271ec8d3a2d7f89795eabdce817e9a4232d`.
+
+This event licenses only an instrument freeze.  It measures no cross-carrier
+comparison, history weight, holonomy, interference, geometry, backreaction,
+particle, constant, or QFT/GR consequence.  The next step is verification from
+the committed bytes, then the separate fixture/scorer freeze.

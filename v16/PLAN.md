@@ -60,8 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **PINNED (v16 #17)**.  This is a separate unit; it does not reopen or
-repair paper 01.
+Status: **GENERIC SOLVER FROZEN BEFORE THE PHYSICAL FIXTURE (v16 #18)**.  This
+is a separate unit; it does not reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping
@@ -73,7 +73,8 @@ rank-deficient strata.
 The locked chronology is:
 
 1. freeze a generic exact polynomial/sector solver on public calibrations while
-   every physical fixture path is absent;
+   every physical fixture path is absent; **complete at #18: five public
+   models, 15 gates, 11/11 named mutants, deterministic and off-tree exact**;
 2. freeze one physical fixture and verdict-neutral scorer before execution;
 3. run one official solve, render every claim from the sealed receipt, commit
    as-is, and reproduce off-tree;
