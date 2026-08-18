@@ -31,9 +31,15 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
 7. **OPEN — What selects the complete-successor probabilities/amplitudes?**  Do
    covariance, locality, records, and gluing leave one law, a finite family, or
    an unrestricted family?
-8. **OPEN — Can the existing v14/v15 walk be reconstructed?**  A successful
-   reconstruction must include state, instruments, clock/cuts, observables,
-   and beable map—not only a matrix with the same spectrum.
+8. **TERMINAL AT THE COMMITTED FINITE ARENA — Can the existing v14/v15 walk be
+   reconstructed?**  WRC reconstructs its fixed-carrier transport, three cuts,
+   all nine registered observable families, nonuniform-record translation
+   covariance, and count-field beable map.  Full affine-instrument equivalence
+   fails: the delivered non-collapse CELL-HIT operation is all-input nonaffine.
+   A complete CP comparison preserves the hit probability but changes a
+   conditioned future; an ontic-pure-state recoding is exact only outside the
+   affine class.  This retires Q8 at the committed finite arena, not across
+   carrier growth or a family of relational geometries.
 9. **PARTIAL — When does a Hamiltonian exist?**  Is it recoverable only after a
    fixed-geometry sector and a clock/logarithm branch are selected?  What data
    make two Hamiltonian packets empirically or ontologically equivalent?  One

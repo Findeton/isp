@@ -1971,3 +1971,36 @@ selftest, strict CLI, no-overwrite, no-float, and fail-before-write checks pass.
 
 No result is adopted here. The next action is the one authorized official
 invocation from these committed bytes.
+
+## 2026-08-18 — WRC PAPER 8 CANDIDATE GENERATED (v16 LEDGER #94)
+
+The one authorized official invocation of the committed #93 fixture/scorer
+passes `31/31` gates and writes the candidate artifacts exactly once:
+
+| path | SHA-256 |
+|---|---|
+| `v16/code/wrc_output.txt` | `45d386714b600ae3dc78369e3785cd78788333a3d0b6bdd31917289d03c2c34c` |
+| `v16/code/wrc_receipt.json` | `8f475a09f7c5824d69b236f9a9bf057add8542d6cc3b2f1d55658ccdce1aabca` |
+| `v16/paper-08-walk-reconstruction.md` | `6934297cc2a79a8d7ebfa4dd7c52a58d601d686adf9d91b15c45fe416291e0f5` |
+
+The derived primary is
+`WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`. `TRANSPORT`
+matches; all nine committed observable families, both nonuniform-record
+translation rows, the three declared cuts, and the count-field beable map
+reconstruct exactly. `AFFINE-CP` does not match the delivered source update:
+the CELL-HIT effect is non-scalar, so
+`Tr(E_c rho) U rho U^dagger` is nonaffine on the full state space. The complete
+projective CP comparison preserves the registered `9/25` outcome probability
+but moves six next-step CELL-HIT probabilities (`64/225` versus `0` at the
+first screen). The ontic-pure-state recoding is exact but lies outside the
+affine class.
+
+The walk remains imported finite candidate dynamics. Its Grover entries and
+phase values are extracted but not selected. No carrier growth, dynamic
+geometry, family-level eliminability theorem, gravity, continuum, QFT/GR,
+species, Hamiltonian, constant, steering, actualization, or deviation is
+claimed. Q8 is retired only at this committed finite-arena scope.
+
+The three generated files are committed without editing. Replay, independent
+reconstruction, all-mutant, seal, and true off-tree verification remain next;
+the candidate is green-unreviewed, not terminal.

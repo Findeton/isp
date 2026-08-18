@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `WRC` / Paper 8: **PHYSICAL FIXTURE/SCORER FROZEN BEFORE OFFICIAL
-  INVOCATION** at v16 ledger #93. The pin is frozen at #75; its one provenance-only
+- `WRC` / Paper 8: **CANDIDATE GENERATED; VERIFICATION PENDING** at v16
+  ledger #94. The derived primary is
+  `WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`. The pin is frozen at #75; its one provenance-only
   `QUESTIONS.md` digest transcription repair is frozen at #83 after the first
   result-free physical dry run refused without writes.
   The user-authorized continuation tests whether the committed v14 walk is a
@@ -29,9 +30,9 @@ theory-selection result.
   transport from the walk's non-collapse CELL-HIT update, an affine CP repair,
   and a nonlinear ontic-pure-state recoding; translation covariance transforms
   the state and record with the arena. Couplings may be extracted but not
-  called selected constants. The next stage is a generic exact core frozen
-  before any WRC physical fixture or result. In-flight Paper 3–7 reports are
-  excluded from WRC's anchors and runtime. The generic core passes 8/8 public
+  called selected constants. The chronology froze a generic exact core before
+  any WRC physical fixture or result. All Paper 3–7 reports are excluded from
+  WRC's anchors and runtime. The generic core passes 8/8 public
   exact gates and freezes `Q(w)` state/effect/instrument, nonaffinity, CP
   comparison, covariance, and event-history machinery without any physical
   walk value or outcome. The data-only fixture and verdict-neutral scorer are
@@ -40,7 +41,13 @@ theory-selection result.
   `AFFINE-CP`, and `ONTIC-PURE-STATE`, use a moved nonuniform record, and carry
   the explicit refusal that fixed-carrier record dependence proves irreducible
   geometry. Two clean runs plus alien-CWD are byte-identical and 34/34 mutants
-  refuse without writes. One official invocation is next.
+  refuse without writes. The one official invocation passes 31/31: transport,
+  cuts, all nine observables, moved-record covariance, and the beable map
+  reconstruct; the delivered CELL-HIT operation is all-input nonaffine. A
+  complete CP comparison keeps probability `9/25` but moves six conditioned
+  future probabilities, while the ontic-pure-state recoding is exact only
+  outside the affine class. Generated output, receipt, and paper bytes are
+  committed unchanged; replay/independent/off-tree verification is next.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
