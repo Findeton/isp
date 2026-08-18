@@ -18,10 +18,10 @@ theory-selection result.
 
 ## Live state
 
-- `SRW` / Paper 4: **GREEN CANDIDATE PRESERVED; VERIFICATION FAILED AT RUNTIME
-  EXACTNESS** at v16 ledger #47. The pin is frozen at #41, generic core at
+- `SRW` / Paper 4: **FORWARD EXACTNESS REPAIR FROZEN; REGENERATION PENDING** at
+  v16 ledger #48. The pin is frozen at #41, original generic core at
   #42, physical fixture/scorer at #43, first refusal at #44, bounded text
-  repair at #45, and candidate at #46.
+  repair at #45, candidate at #46, and failed verification at #47.
   The authorized continuation tests whether Paper 3's anonymous
   dimension-changing transport and its separately named graph rewrite are one
   recoverable map, or only components of a typed bundle morphism. It freezes
@@ -29,8 +29,8 @@ theory-selection result.
   kinematic grammar versus actual support, carrier-functor enlargement,
   independent growth/history couplings, reversible reconvergence, and
   boundary gauge versus physical holonomy. It does not alter Paper 3.
-  The generic exact core passes twelve unrelated public calibrations and is
-  byte-immutable. The first scorer run wrote nothing: a true scope sentence
+  The historical generic-core bytes remain preserved at #42. The first scorer
+  run wrote nothing: a true scope sentence
   wrapped across a newline while its gate used literal substring matching.
   The repaired invocation passes 36/36. It refutes anonymous map-only recovery,
   constructs the typed rewrite-plus-transport weld, proves the two formerly
@@ -38,8 +38,11 @@ theory-selection result.
   coherent creation–erasure reciprocity on the reached image. Catalogue,
   recorded-successor weights, and coupling values remain unselected. Two
   clean replays and 19 mutants pass, but the phase-frame mutant exposes an
-  integer-to-float leak in Gaussian-rational inversion. Exact-core repair,
-  regeneration, full verification, and hostile review remain.
+  integer-to-float leak in Gaussian-rational inversion. The #48 forward source
+  repair enforces `Fraction` components, anchors both historical and repaired
+  core hashes, and adds a runtime exactness gate plus direct leak mutant. It is
+  frozen before execution. Regeneration, full verification, and hostile review
+  remain.
 - `PPR` / Paper 3: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT
   YET ASSIGNED** at v16 ledger #40. The pin was frozen at #33, generic core at
   #34, physical

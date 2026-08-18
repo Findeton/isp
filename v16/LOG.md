@@ -1072,3 +1072,28 @@ verified. A forward repair is authorized: exact constructor coercion, a
 runtime component-type gate, explicit repaired-core anchoring, a direct leak
 control, regenerated artifacts, and the complete replay/mutant/off-tree audit.
 No physical fixture equation, scientific predicate, or outcome word may move.
+
+## 2026-08-17 — SRW FORWARD EXACTNESS SOURCE REPAIR FROZEN (v16 LEDGER #48)
+
+The bounded source repair is frozen before any repaired physical execution.
+The historical #42 core and #46 candidate remain recoverable at their commits;
+the data-only physical fixture remains byte-identical at
+`e40650f04c60635e68fd91938dbba201afec6e426c2e1cfaa0b4f4d8dcefd2e3`.
+
+`GQ.__post_init__` now coerces both runtime components through `Fraction`.
+The scorer separately binds the fixture's historical core hash
+`783f71589b2c1d9cee3b20ccf864ae372b480affcf6df4a4181befd5b55f0137`
+and repaired runtime core hash
+`dd902c37375f87185f693f8b1e4b22ba3ddeaf9de5641e5d7d951cbba1d3c585`.
+It adds `SRW-RUNTIME-GAUSSIAN-EXACT`, which inspects the runtime component
+types of the phase group, connections, orbit holonomies, frames, transformed
+connections, and screens. A new `runtime-scalar-leak` mutant bypasses the
+constructor deliberately and must die at that gate; the registered battery is
+now 27 mutants.
+
+The repaired scorer hash is
+`73dfb580b056b4ed2cee511542684bdbe9943633bd2c9888fd4934cd521742f9`.
+Both repaired sources compile and contain zero float literals. No repaired
+scorer invocation, result regeneration, replay, or mutant has occurred. No
+fixture equation, scientific gate, numeric comparator, result word, or paper
+claim was changed.

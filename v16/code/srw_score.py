@@ -82,6 +82,8 @@ DEFAULT_RECEIPT = CODE_DIR / "srw_receipt.json"
 DEFAULT_PAPER = ROOT / "v16" / "paper-04-support-rewrite-weld.md"
 
 EXPECTED_FIXTURE_SHA256 = "e40650f04c60635e68fd91938dbba201afec6e426c2e1cfaa0b4f4d8dcefd2e3"
+ORIGINAL_CORE_SHA256 = "783f71589b2c1d9cee3b20ccf864ae372b480affcf6df4a4181befd5b55f0137"
+EXPECTED_REPAIRED_CORE_SHA256 = "dd902c37375f87185f693f8b1e4b22ba3ddeaf9de5641e5d7d951cbba1d3c585"
 BANNED_FIXTURE_KEYS = ("expected", "result", "verdict", "outcome")
 
 
@@ -106,6 +108,7 @@ MUTANTS = (
     "reciprocity-assume",
     "reciprocity-remove",
     "phase-frame-break",
+    "runtime-scalar-leak",
     "holonomy-flatten",
     "cycle-call-gauge",
     "result-count-type",
@@ -136,6 +139,7 @@ EXPECTED_MUTANT_GATE = {
     "reciprocity-assume": "SRW-RECIPROCITY-LOCUS",
     "reciprocity-remove": "SRW-RECIPROCAL-LEFT-INVERSE",
     "phase-frame-break": "SRW-PHASE-GAUGE",
+    "runtime-scalar-leak": "SRW-RUNTIME-GAUSSIAN-EXACT",
     "holonomy-flatten": "SRW-HOLONOMY-SCREEN",
     "cycle-call-gauge": "SRW-PHASE-ORBITS",
     "result-count-type": "SRW-PAPER-BINDINGS",
@@ -697,7 +701,8 @@ def solve(mutant: str | None = None) -> tuple[dict[str, Any], bytes, bytes]:
     fixture_sha = sha256_bytes(fixture_bytes)
     anchor_ok = (
         fixture_sha == EXPECTED_FIXTURE_SHA256
-        and observed_anchor == anchors["core_sha256"]
+        and anchors["core_sha256"] == ORIGINAL_CORE_SHA256
+        and observed_anchor == EXPECTED_REPAIRED_CORE_SHA256
         and sha256_bytes(pin_bytes) == anchors["pin_sha256"]
         and sha256_bytes(ppr_fixture_bytes) == anchors["ppr_fixture_sha256"]
         and sha256_bytes(ppr_receipt_bytes) == anchors["ppr_receipt_sha256"]
@@ -1191,6 +1196,32 @@ def solve(mutant: str | None = None) -> tuple[dict[str, Any], bytes, bytes]:
         f"screens={phase_screens}",
     )
 
+    runtime_phase_values = [
+        *fixture_phases,
+        *(value for orbit in orbits for connection in orbit for value in connection),
+        *(value for hs in holonomy_sets for value in hs),
+        *seed_connection,
+        *frames,
+        *transformed,
+        *holonomies,
+    ]
+    if mutant == "runtime-scalar-leak":
+        leaked = object.__new__(GQ)
+        object.__setattr__(leaked, "re", 0)
+        object.__setattr__(leaked, "im", 1)
+        runtime_phase_values.append(leaked)
+    runtime_gaussian_exact = all(
+        isinstance(value, GQ)
+        and isinstance(value.re, Fraction)
+        and isinstance(value.im, Fraction)
+        for value in runtime_phase_values
+    )
+    ledger.check(
+        "SRW-RUNTIME-GAUSSIAN-EXACT",
+        runtime_gaussian_exact,
+        f"values={len(runtime_phase_values)} exact={runtime_gaussian_exact}",
+    )
+
     expected_reads = {
         "v16/code/srw_fixture.json",
         "v16/code/srw_core.py",
@@ -1388,6 +1419,7 @@ def solve(mutant: str | None = None) -> tuple[dict[str, Any], bytes, bytes]:
             "base_commit": fixture["anchors"]["base_commit"],
             "pin_commit": fixture["anchors"]["pin_commit"],
             "core_commit": fixture["anchors"]["core_commit"],
+            "core_repair_from_sha256": ORIGINAL_CORE_SHA256,
             "fixture_sha256": fixture_sha,
             "core_sha256": sha256_bytes(core_bytes),
             "paper_sha256": sha256_bytes(paper),

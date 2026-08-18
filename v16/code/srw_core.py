@@ -31,6 +31,12 @@ class GQ:
     re: Q = Q(0)
     im: Q = Q(0)
 
+    def __post_init__(self) -> None:
+        """Keep the runtime representation inside Q(i), not merely its type hints."""
+
+        object.__setattr__(self, "re", Q(self.re))
+        object.__setattr__(self, "im", Q(self.im))
+
     @staticmethod
     def coerce(value: Any) -> "GQ":
         if isinstance(value, GQ):

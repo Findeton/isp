@@ -190,6 +190,11 @@ Candidate verification #47 reproduces two clean runs and the first 19 mutant
 deaths, then finds a runtime exactness defect: uncoerced Gaussian-rational
 integer fields produce floats under phase inversion. The candidate is not
 verified. A bounded forward scalar/core repair and full regeneration are next.
+The forward source repair is frozen at #48 before repaired physical execution.
+It coerces both `GQ` components through `Fraction`, distinguishes the fixture's
+historical core anchor from the repaired runtime core, adds an explicit runtime
+Gaussian-exactness gate, and adds a twenty-seventh direct scalar-leak mutant.
+The physical fixture and the #46 candidate remain unchanged at this stage.
 
 ## Successor register
 
