@@ -438,13 +438,15 @@ Status: **PANEL-ADJUDICATED AND BOUNDED-REPAIRED AT
 `QSF-METHOD-INCONCLUSIVE`; TERMINAL VERIFICATION PENDING (v16 #125)**.
 
 QSF compares three non-equivalent readings of WRC's CELL-HIT seam: a standard
-affine instrument family, a fine pure-ray/count stochastic ontology with its
+affine instrument family, a fine pure-ray/count division kernel with its
 natural fixed-factor composite, and an indivisible-history boundary. The
 three-seat panel preserves the cautious primary while correcting the original
 candidate: record-indexed A0 is false, branch recurrence does not settle
 aggregate feasibility, the fixed-factor witness is remote-setting dependence
 at Bob's count-record grain rather than a Lorentz theorem, and Arm C proves
-failure of `rho` sufficiency rather than failure of every stochastic law.
+failure of `rho` sufficiency rather than failure of every stochastic law. A
+one-step kernel is not promoted to microscopic law: unrecorded alternatives
+must retain their interference until a genuine record/division boundary.
 
 The bounded repair derives all dispositions and adds the panel's exact
 controls. It also distinguishes suffix prediction from complete JS-S1a:

@@ -2717,3 +2717,18 @@ contiguous rendered phrase `**not** choose a fundamental law`. No core,
 fixture, equation, scientific predicate, result, primary, renderer, or
 official artifact changes at this event. The repair freezes before rerun.
 Paper 10 remains unpinned.
+
+## 2026-08-18 — QSF LAW-TYPE ONTOLOGY ADDENDUM FROZEN (v16 LEDGER #127)
+
+Before repaired candidate regeneration completed, the user supplied a
+law-type audit that catches one remaining overstatement: an ordinary
+stochastic transition kernel is sufficient at genuine record/division events,
+but is not established as the microscopic law between them. Positive
+probabilities assigned after every unrecorded rewrite would classicalize the
+alternatives and lose interference. The next regeneration must therefore
+render the nomological candidate as an indivisible multi-time process, with a
+division kernel only as its boundary shadow; a decoherence functional/Hilbert
+construction may be representational. This changes ontology prose and result
+typing, not any QSF arithmetic or primary. Terminal verification restarts from
+the resulting committed bytes, and Paper 10 must classify rather than assume
+the law type.

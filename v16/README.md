@@ -26,8 +26,9 @@ theory-selection result.
   natural fixed-factor ontic-ray extension has remote-setting dependence in
   Bob's count record, without yet constituting a spacetime signalling theorem.
   Literal retained WRC output is not `rho`-sufficient, while the finer ray/count
-  rule remains a normalized stochastic kernel with explicit ontology and
-  composite debts. The published predictive table is suffix-only; calibrated
+  rule remains a normalized division-level stochastic kernel with explicit
+  ontology and composite debts; no microscopic one-step factorization is
+  selected. The published predictive table is suffix-only; calibrated
   final-record quotients are `3,3,27,27,486,486`, and an exact two-history
   witness proves horizon-two non-stabilization. The repair passes 20/20 gates
   in two byte-identical clean generations and registers 28 mutants. Terminal

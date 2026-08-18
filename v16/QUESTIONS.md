@@ -193,7 +193,9 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     dependence in Bob's calibrated count record (`0,1/2,211/324` through
     tick three), but no relational composite exists. The retained state-record
     map is not `rho`-sufficient at ticks 1–5; the finer pure-ray/count rule is a
-    normalized stochastic kernel with its ontology/composite debts explicit.
+    normalized division-level stochastic kernel with its ontology/composite
+    debts explicit; microscopic one-step factorization is not selected and
+    may be incompatible with interference between unrecorded histories.
     The published S1 values are future-trigger suffix quotients, not complete
     JS-S1a; complete final-record quotients are `3,3,27,27,486,486`. Bounded
     repair now derives every arm disposition, adds the full-density and

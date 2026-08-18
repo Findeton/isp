@@ -1234,7 +1234,8 @@ def score(fixture_path: Path, mutant: str | None = None) -> dict[str, Any]:
         "record_recoverability_absolute": False,
         "cut_cp_test_entered": False,
         "binding_scope": "NO-RHO-SUFFICIENT-RETAINED-STATE-RECORD-MAP",
-        "fine_state_kernel": "NORMALIZED-STOCHASTIC-KERNEL-ON-([psi],record)",
+        "division_level_fine_state_kernel": "NORMALIZED-STOCHASTIC-KERNEL-ON-([psi],record)",
+        "microscopic_one_step_kernel_selected": False,
         "fine_state_kernel_is_standard_quantum_instrument": False,
         "retained_tick1_control": retained_tick1,
         "density_affinity_witness": density_witness,
@@ -1429,10 +1430,14 @@ three the diagonal TV is `99328/4100625`.
 
 Thus no tested retained boundary is a `rho`-sufficient state-record map. That
 does not say no stochastic division exists. If the fine state
-`([psi],record)` is postulated, WRC defines a normalized stochastic kernel and
-acts linearly on probability measures over that fine state. The extra ontic
-ray is exactly the extension whose natural fixed-factor composition Arm B
-rejects. Cut composition, recoverability, and actualization remain untested.
+`([psi],record)` is postulated, WRC defines a normalized stochastic kernel at
+the displayed cuts and acts linearly on probability measures over that fine
+state. QSF does **not** show that such one-step kernels are the microscopic
+law: assigning probabilities after every unrecorded rewrite would erase the
+relations between alternatives needed for interference. The extra ontic ray
+is exactly the extension whose natural fixed-factor composition Arm B
+rejects. Cut composition, recoverability, actualization, and an indivisible
+multi-time law between genuine records remain untested.
 
 **Arm C:** `{c['word']}` [`{c['binding_scope']}`].
 
@@ -1465,18 +1470,22 @@ were not frozen. Complete JS-S1a and therefore S1b remain unentered.
 |---|---|
 | fixed meta-catalogue of possible configurations | kinematic input |
 | one actual configuration trajectory | candidate ontology only if the fine-state theory is adopted |
-| stochastic transition kernel | nomological law |
+| indivisible multi-time process law | nomological candidate; unconstructed here |
+| ordinary stochastic transition kernel | licensed division-level interface when a genuine stable record exists; not selected microscopically |
 | probability distribution over trajectories | epistemic ensemble description |
 | count record | declared finite-window correlation; absolute permanence unproved |
 | `psi`, `rho`, Kraus operators, Hilbert carrier | representations unless extra ontology is explicitly postulated |
 
-Two lawfulness questions must not be conflated. A fundamental stochastic
-kernel must normalize and compose on its actual configuration space. Affinity
-and CP on `rho` are additionally required when `rho` is claimed to be the
-complete operational state. QSF proves that WRC cannot keep both the literal
-retained rule and `rho`-completeness. It does not decide among a different
-affine instrument, a finer but compositionally safe stochastic ontology, and
-a different base law.
+Three lawfulness questions must not be conflated. A fundamental multi-time
+process must normalize, coarse-grain, and compose at genuine division
+boundaries while retaining interference between unrecorded histories. An
+ordinary stochastic kernel is sufficient at those boundaries, but need not
+factor the microscopic process into physical one-step marginals. Affinity and
+CP on `rho` are additionally required when `rho` is claimed to be the complete
+operational state. QSF proves that WRC cannot keep both the literal retained
+rule and `rho`-completeness. It does not decide among a different affine
+instrument, a safe indivisible fine-history law, a decoherence-functional
+representation, or a different base law.
 
 Dynamic relational geometry, carrier growth, event selection, a carrier
 catalogue, couplings, actualization, Lorentz/continuum structure, QFT/GR,
