@@ -1,0 +1,20 @@
+SRW GENERIC PUBLIC CALIBRATIONS
+GATES 12/12 PASS
+CIRCLE t=2/3 x=5/13 z=12/13
+DICTIONARIES candidates=12 survivors=2 future=['144/169', '25/169']
+SUPPORT allowed=3 generic=3 endpoint=2
+FIBERS [{'sector': 'vertex-one-excitation', 'multiplicity': 1, 'include_ports': False, 'source_dimension': 2, 'target_dimension': 3}, {'sector': 'vertex-one-excitation', 'multiplicity': 2, 'include_ports': False, 'source_dimension': 4, 'target_dimension': 6}, {'sector': 'vertex-one-excitation', 'multiplicity': 1, 'include_ports': True, 'source_dimension': 3, 'target_dimension': 4}, {'sector': 'edge-one-excitation', 'multiplicity': 1, 'include_ports': False, 'source_dimension': 0, 'target_dimension': 2}]
+ANGLES screen=['29241/48841', '19600/48841'] reciprocal=['1', '0']
+PHASE connections=64 orbits=4 sizes=[16, 16, 16, 16] screens={'1': '1', 'i': '1/2', '-1': '0', '-i': '1/2'}
+[PASS] PUB-CIRCLE :: x=5/13 z=12/13
+[PASS] PUB-ISOMETRY :: shape=(3, 2)
+[PASS] PUB-SUPPORT-SUBSET :: generic=3 endpoint=2 allowed=3
+[PASS] PUB-DICTIONARY-CENSUS :: candidates=12 survivors=2
+[PASS] PUB-FUTURE-SEPARATES :: probabilities=['144/169', '25/169']
+[PASS] PUB-FIBER-DIMENSIONS :: rows=[('vertex-one-excitation', 1, False, 2, 3), ('vertex-one-excitation', 2, False, 4, 6), ('vertex-one-excitation', 1, True, 3, 4), ('edge-one-excitation', 1, False, 0, 2)]
+[PASS] PUB-INTERNAL-LIFT :: shape=(6, 4)
+[PASS] PUB-INTERNAL-REACTIVATION :: blind=true active=false
+[PASS] PUB-INDEPENDENT-ANGLES :: screens=['29241/48841', '19600/48841']
+[PASS] PUB-RECIPROCITY :: screens=['1', '0']
+[PASS] PUB-PHASE-ORBITS :: connections=64 orbits=4 sizes=(16, 16, 16, 16)
+[PASS] PUB-HOLONOMY-SCREEN :: screens={'1': '1', 'i': '1/2', '-1': '0', '-i': '1/2'}

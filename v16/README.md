@@ -18,7 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `SRW` / Paper 4: **PIN — FROZEN BEFORE CONSTRUCTION** at v16 ledger #41.
+- `SRW` / Paper 4: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE** at v16
+  ledger #42. The pin is frozen at #41.
   The authorized continuation tests whether Paper 3's anonymous
   dimension-changing transport and its separately named graph rewrite are one
   recoverable map, or only components of a typed bundle morphism. It freezes
@@ -26,6 +27,9 @@ theory-selection result.
   kinematic grammar versus actual support, carrier-functor enlargement,
   independent growth/history couplings, reversible reconvergence, and
   boundary gauge versus physical holonomy. It does not alter Paper 3.
+  The generic exact core passes twelve unrelated public calibrations and is
+  byte-immutable; no physical fixture, scorer, result, or Paper 4 result yet
+  exists.
 - `PPR` / Paper 3: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT
   YET ASSIGNED** at v16 ledger #40. The pin was frozen at #33, generic core at
   #34, physical

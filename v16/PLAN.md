@@ -170,6 +170,10 @@ and verdict-neutral scorer -> one official execution -> candidate verification
 -> frozen three-lens hostile protocol. No hostile reviewer is authorized by
 this pin alone.
 
+The pin is complete at #41. The generic core is frozen at #42 with twelve
+public gates, three public mutants, exact `Q(i)` arithmetic, and byte-identical
+copied-source replay. No physical fixture or result existed at that freeze.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

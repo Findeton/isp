@@ -905,3 +905,26 @@ No SRW implementation, fixture, scorer, output, receipt, or Paper 4 result
 exists at this commit. The next authorized event is a generic exact core
 freeze on public calibrations before any physical fixture truth exists. The
 unrelated untracked v15 SCOUT-T files remain outside the unit.
+
+## 2026-08-17 — SRW GENERIC EXACT CORE FROZEN BEFORE PHYSICAL FIXTURE (v16 LEDGER #42)
+
+`v16/code/srw_core.py` is frozen at SHA-256
+`783f71589b2c1d9cee3b20ccf864ae372b480affcf6df4a4181befd5b55f0137`,
+with public transcript
+`824bfca1b5ae9007fc1cdccc100c0219a6a2759e14173750ea758b773500668f`
+and receipt
+`e11c38f812e004d8bdc9056ed80bf7ca8d51cdb27cc0d2c8cd6571e8e8a74be7`.
+No physical fixture, scorer, result, verdict, or Paper 4 result path exists.
+
+Twelve public exact gates calibrate the type objects, exact matrix operations,
+allowed-versus-actual support, exhaustive anonymous dictionaries, graph-local
+future probes, computed fiber dimensions, internal-degree reactivation,
+independent and reciprocal angles, and the complete fourth-root phase gauge /
+holonomy census. The public point is `(5/13,12/13)` with unrelated labels; it
+is not a Paper 3 or SRW physical row.
+
+Copied-source alien-directory replay is byte-identical. Three public mutants
+and the selftest refuse before writes, unknown arguments exit 2, compilation
+passes, and the AST has no float literal. The source is now byte-immutable.
+The next authorized event is a separately frozen data-only physical fixture
+and verdict-neutral scorer.
