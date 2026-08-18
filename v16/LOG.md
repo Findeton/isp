@@ -1782,3 +1782,13 @@ The second isolated Paper 3 report is frozen verbatim as
 It is hostile evidence only; no finding is adjudicated or repaired here. This
 seat did not read the operator or gravity/physics report. The final seat must
 be frozen before joint adjudication begins.
+
+## 2026-08-18 — PPR GRAVITY/PHYSICS REVIEW FROZEN; PANEL COMPLETE (v16 LEDGER #78)
+
+The third isolated Paper 3 report is frozen verbatim as
+`v16/review-ppr-gravity.md`, SHA-256
+`f36837c8326b3db7205e4a1c10897007266a82857193f7c02033f1ec89e17fb3`.
+This seat did not read the operator or histories/records reports. The PPR
+panel is now complete at three immutable reports. Their findings remain
+hostile allegations until one joint adjudication independently recomputes and
+rules them; no repair or candidate promotion occurs in this event.

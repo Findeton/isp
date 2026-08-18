@@ -145,8 +145,8 @@ theory-selection result.
   pass. The #51 protocol freezes independent operator/representation,
   rewrite/category, and physics/gravity/QFT attacks. Reviewers and adjudication
   remain.
-- `PPR` / Paper 3: **GREEN-UNREVIEWED; THREE-SEAT HOSTILE PANEL RUNNING** at
-  v16 ledger #74. The pin was frozen at #33, generic core at
+- `PPR` / Paper 3: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
+  AWAITING JOINT ADJUDICATION** at v16 ledger #78. The pin was frozen at #33, generic core at
   #34, physical
   scorer at #35, first refusal at #36, and bounded repair at #37. The
   authorized unit asks whether cross-carrier comparison descends from the
@@ -164,7 +164,7 @@ theory-selection result.
   comparison and permanence are constructed at the finite arena, while two
   admissible laws move a held-out screen. Two worktree runs, a true no-`.git`
   replay, 8/8 seals, 10/10 paper bindings, and 20/20 mutants pass. Independent
-  hostile review remains open. The frozen protocol targets representation,
+  hostile panel is complete but unadjudicated. The frozen protocol targets representation,
   continuation/record congruence, and especially whether the heterogeneous
   process carrier is actually joined to the relational rewrite.
 - `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
