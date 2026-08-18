@@ -182,7 +182,7 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     unselected or unconstructed. Two replays, 41/41 mutant deaths, independent
     exact reconstruction, and true off-tree execution survive. The three-seat
     hostile protocol is frozen; reviewers are not assigned.
-29. **PIN — Which lawful quantum dynamics, if any, survives the WRC CELL-HIT
+29. **CANDIDATE — Which lawful quantum dynamics, if any, survives the WRC CELL-HIT
     seam?**  Terminal WRC proves that the literal record-writing outcome map is
     not affine, while every rank-one-effect affine completion is
     measure-and-prepare and unselected.  QSF Paper 9 freezes three separately
@@ -190,5 +190,9 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     regression; an ontic pure-ray composite with the canonical HJW steering
     gate; and an indivisible complete-history map between genuine record
     boundaries.  It also executes JS S1a over the five trigger-trace summaries
-    and explicitly dispositions S1b when no closed law family exists.  No arm
-    is yet a result.
+    and explicitly dispositions S1b when no closed law family exists. The
+    candidate finds: A0 context interpolation but 30 A1 signature conflicts
+    and an unclosed A1/A2 aggregate variety; a signalling witness for the
+    natural fixed-factor ontic extension (`0, 1/2, 211/324` history TV, affine
+    control zero); no affine retained-record boundary at ticks 1–5; and S1b
+    not entered. Head `QSF-METHOD-INCONCLUSIVE`; hostile review pending.

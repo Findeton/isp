@@ -2446,3 +2446,32 @@ also declares that no relational composite has been built, preventing a local
 counterexample from being promoted into an all-extension theorem. **NO QSF
 PHYSICS RESULT** exists at this event. The next permitted event is scorer
 construction and exact three-arm execution.
+
+## 2026-08-18 — QSF PAPER 9 CANDIDATE GENERATED AND VERIFIED (v16 LEDGER #115)
+
+`v16/paper-09-quantum-seam.md`, scorer, transcript, receipt, and
+`v16/note-qsf-candidate-verification.md` are frozen as a hostile-review
+candidate. The independently rebuilt walk first reproduces all nine WRC
+observable families.
+
+Arm A finds an exact reached-context interpolation but 30 recurring local
+signatures demand incompatible output rays; the displayed projective repair
+preserves 0/9 WRC observable families. A different affine member still fits
+one continuation. The A1/A2 aggregate semidefinite variety is not closed, so
+the arm is method-inconclusive rather than negative.
+
+Arm B constructs the exact `2 x 27` fixed-factor Bell/HJW surrogate. Bob's
+literal ordered-history total variations under Alice's Z/X choice are `0`,
+`1/2`, and `211/324`; the affine projective control is zero at all three
+windows. This is `PHRASABLE-SIGNALLING-WITNESS` for the natural fixed-factor
+extension only. The relational composite remains unbuilt.
+
+Arm C finds a retained-record decomposition witness at every candidate window
+one through five. Erasing the first internal hit is the affine unitary control;
+record-fed process screens move at ticks four and five for this witness. S1a
+is executed on generated histories; at past depth three only full ordered
+trace is sufficient among the registered summaries. S1b is not entered.
+
+The synthesis is **QSF-METHOD-INCONCLUSIVE**. Clean replay is byte-identical;
+14/14 gates pass and 20/20 targeted mutants refuse. This is not terminal. The
+next required event is the three-seat hostile protocol frozen in the pin.
