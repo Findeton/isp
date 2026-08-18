@@ -1932,3 +1932,21 @@ The second isolated Paper 7 report is frozen verbatim as
 It is hostile evidence only; no finding is adjudicated or repaired here. This
 seat did not read the operator or physics/locality report. The final seat must
 be frozen before joint adjudication begins.
+
+## 2026-08-18 — CEL PHYSICS/LOCALITY REVIEW FROZEN; PANEL COMPLETE (v16 LEDGER #92)
+
+The third isolated Paper 7 report is frozen verbatim as
+`v16/review-cel-physics.md`, SHA-256
+`41d8e59b1bc5e9fabcd9ff061b7d1e76bb7322c01450bbdeceec8076a29410c9`.
+This seat did not read the operator or records/relational reports. The CEL
+panel is now complete at three immutable reports. Their findings remain
+hostile allegations until one joint adjudication independently recomputes and
+rules them; no repair or candidate promotion occurs in this event.
+
+The user subsequently supplied a methodological proposal: relational
+irreducibility should be tested at family level by one uniform rule over
+held-out carriers against a predeclared geometry-blind adversary class, rather
+than by unrestricted elimination in one finite fixture. That proposal is not
+adjudicated here and does not alter any frozen report. It also does not license
+identifying DISC's record/memory dependence on a fixed carrier with dynamical
+geometry; that type distinction remains to be tested.

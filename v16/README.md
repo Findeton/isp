@@ -36,8 +36,8 @@ theory-selection result.
   comparison, covariance, and event-history machinery without any physical
   walk value or outcome. A data-only fixture and verdict-neutral scorer are
   next.
-- `CEL` / Paper 7: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
-  PANEL RUNNING** at v16 ledger #74. The pin is frozen at
+- `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
+  AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
   verification at #72.
   The user-authorized continuation tests the creation-event layer at four
@@ -67,8 +67,11 @@ theory-selection result.
   reconstruction, and a byte-identical true off-tree/no-git run. A separately
   frozen hostile protocol at #73 now binds three isolated seats: exact
   operator/resources, records/recurrence/relational typing, and locality/
-  dynamics/physics. All three seats were dispatched at #74 and remain
-  mutually isolated.
+  dynamics/physics. The operator report at #90, records/relational report at
+  #91, and physics/locality report at #92 are immutable hostile evidence;
+  their allegations await joint adjudication. A later family-level,
+  class-relative eliminability proposal is recorded as successor methodology,
+  not retrofitted into the completed reports.
 - `CSF` / Paper 6: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #89. The pin
   is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
