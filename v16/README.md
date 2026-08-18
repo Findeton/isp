@@ -182,8 +182,8 @@ theory-selection result.
   rewrite/category, and physics/gravity/QFT attacks. The operator report at
   #80, rewrite/category report at #81, and physics/causality report at #82 are
   immutable hostile evidence; their allegations await joint adjudication.
-- `PPR` / Paper 3: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
-  AWAITING JOINT ADJUDICATION** at v16 ledger #78. The pin was frozen at #33, generic core at
+- `PPR` / Paper 3: **PANEL-ADJUDICATED REJECT AT
+  `PPR-BLOCKED-AT-EVENT-ALGEBRA`** at v16 ledger #100. The pin was frozen at #33, generic core at
   #34, physical
   scorer at #35, first refusal at #36, and bounded repair at #37. The
   authorized unit asks whether cross-carrier comparison descends from the
@@ -201,9 +201,12 @@ theory-selection result.
   comparison and permanence are constructed at the finite arena, while two
   admissible laws move a held-out screen. Two worktree runs, a true no-`.git`
   replay, 8/8 seals, 10/10 paper bindings, and 20/20 mutants pass. Independent
-  hostile panel is complete but unadjudicated. The frozen protocol targets representation,
-  continuation/record congruence, and especially whether the heterogeneous
-  process carrier is actually joined to the relational rewrite.
+  hostile panel is now adjudicated. Every exact finite calculation survives,
+  but graph events, class operators, continuation-null data, and record
+  instruments are not one represented event algebra under one history law.
+  A minimal graph-blind port-circuit replacement also preserves every wedge
+  prediction. The positive primary is withdrawn; a new joint fixture, not a
+  bounded wording repair, is required.
 - `JRH`: **TERMINAL AT ITS SCOPED VERDICT** at v16 ledger #16:
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and

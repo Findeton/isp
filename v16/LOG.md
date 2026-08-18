@@ -2104,3 +2104,26 @@ not dynamic geometry, that DISC tested memoryless rather than memory-bearing
 nulls, and that the alleged Paper20/GITER weld must be type-audited rather than
 accepted from vocabulary. No adjudication begins before all three hashes
 freeze.
+
+## 2026-08-18 — PPR PAPER 3 PANEL ADJUDICATION (v16 LEDGER #100)
+
+The mutually isolated PPR panel is adjudicated in
+`v16/note-ppr-adjudication.md`, SHA-256
+`d2c458d1f86b380bffb57183a24d85b69e200bc5acfd15acbb993a874621973c`.
+Grades were REJECT / ACCEPT-WITH-FIXES / REJECT. Every exact finite operator,
+null, pullback, record, and two-port number survives.
+
+The frozen positive primary is rejected. The earliest applicable pin outcome
+is **PPR-BLOCKED-AT-EVENT-ALGEBRA**: graph events, class operators, stable-null
+continuations, and record instruments are neighboring fixtures rather than one
+represented event algebra under one history law. Independently, a minimal
+port-circuit replacement removes graph incidence and the declared carrier
+dimensions while preserving every relational-wedge prediction; that is a
+downstream `PPR-BLOCKED-AT-RELATIONAL-REWRITE` result, but outcome 2 wins the
+pin's ordering.
+
+The exact components remain calibration evidence at case-specific grammar
+scope. A joint event algebra and family-level graph-irreducibility test require
+new fixture data and are not a bounded Paper 3 repair. Papers 4--7 may inherit
+only the narrowed operator mathematics, not a completed relational-history
+law.
