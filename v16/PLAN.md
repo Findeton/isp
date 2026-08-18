@@ -384,8 +384,9 @@ adjudication, repair, or terminal promotion is authorized by the protocol.
 
 ## Paper 07 — CEL: creation-event universality and recoverable records
 
-Status: **REPLAY-VERIFIED GREEN-UNREVIEWED (v16 #72)**. Pin #68, generic core
-#69, physical fixture/scorer #70, and candidate #71 remain immutable.
+Status: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN,
+REVIEWERS NOT ASSIGNED (v16 #73)**. Pin #68, generic core #69, physical
+fixture/scorer #70, candidate #71, and verification #72 remain immutable.
 
 The user's 2026-08-18 instruction authorizes Paper 7 as a separate v16
 continuation despite the visible Paper 3–6 hostile-review queue. The immutable
@@ -427,8 +428,9 @@ flag weld but move the calibrated first port `0 -> 49/625`; and the exact
 bound. Candidate verification now passes at #72: two clean replays are byte-
 identical, all 41 mutants die, the independent rational implementation
 reconstructs every headline value, and a git-free archive reproduces all
-three artifacts. A separately frozen hostile protocol remains next; no
-hostile review has been assigned.
+three artifacts. The hostile protocol is frozen at #73 with operator/resource,
+records/recurrence/relational, and locality/dynamics/physics seats. It assigns
+no reviewer and authorizes no adjudication or repair.
 
 ## Successor register
 

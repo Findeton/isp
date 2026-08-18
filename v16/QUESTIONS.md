@@ -169,5 +169,5 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     the last licensed flag; couplings, catalogue, actualization, arbitrary-n,
     steering, backreaction, continuum/QFT/GR, and empirical physics remain
     unselected or unconstructed. Two replays, 41/41 mutant deaths, independent
-    exact reconstruction, and true off-tree execution survive. Hostile review
-    remains; reviewers are not assigned.
+    exact reconstruction, and true off-tree execution survive. The three-seat
+    hostile protocol is frozen; reviewers are not assigned.

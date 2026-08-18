@@ -18,9 +18,10 @@ theory-selection result.
 
 ## Live state
 
-- `CEL` / Paper 7: **REPLAY-VERIFIED GREEN-UNREVIEWED** at v16 ledger #72.
-  The pin is frozen at #68, generic core at #69, fixture/scorer at #70, and
-  candidate at #71.
+- `CEL` / Paper 7: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
+  FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #73. The pin is frozen at
+  #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
+  verification at #72.
   The user-authorized continuation tests the creation-event layer at four
   sharply separated types: recurrence propagated by standing naturality,
   symmetry, and gluing versus token-disjoint universality as a priced
@@ -46,7 +47,10 @@ theory-selection result.
   receipt, and Paper 7 bytes are committed unchanged. Verification #72 gives
   two byte-identical replays, all 41 mutant deaths, an independent exact
   reconstruction, and a byte-identical true off-tree/no-git run. A separately
-  frozen hostile protocol remains next; reviewers are not assigned.
+  frozen hostile protocol at #73 now binds three isolated seats: exact
+  operator/resources, records/recurrence/relational typing, and locality/
+  dynamics/physics. It authorizes no reviewer dispatch; reviewers are not
+  assigned.
   Papers 3–6 and their four pending hostile panels remain unchanged review
   debt.
 - `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL

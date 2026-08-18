@@ -1686,3 +1686,31 @@ all three candidate artifacts byte-for-byte.
 CEL is now `REPLAY-VERIFIED GREEN-UNREVIEWED`. The next procedural step is a
 separately frozen hostile protocol. Reviewer assignment still requires a
 later explicit user instruction.
+
+## 2026-08-18 — CEL HOSTILE PROTOCOL FROZEN (v16 LEDGER #73)
+
+`v16/note-cel-hostile-protocol.md` is frozen before reviewer assignment at
+SHA-256
+`9e0603ea9f3682a7b411689d00efc9f2084c93b09bbecf35db5f0b429bc6af6c`.
+It binds candidate commit `f3c3ef9`, verification commit `15299d1`, every
+constructor/candidate hash, the primary word, and all eleven qualifiers.
+
+Three mutually isolated seats are specified:
+
+1. operator algebra, operational nulls, dilation, and exact resources — prove
+   or kill the general zero-pivot `LDL^dagger`/four-square `2r` theorem,
+   minimal-row obstructions, CNOT recurrence algebra, port gauge, and all
+   payload/mutant claims;
+2. records, recurrence identity, and relational flag typing — attack each
+   recurrence rung, the `2 -> 1` universality declaration, reset/relabel/
+   refire/redundancy/branch recoverability, catalogue closure, source-versus-
+   flag information, actualization, and whether the attachment is physical;
+3. locality, dynamics, Barandes ontology, and physical scope — attack whether
+   the fixtures demonstrate a creation-event layer rather than annotated
+   circuits, whether any backreaction or next-event law exists, and every
+   no-signalling, arbitrary-`n`, continuum, QFT, GR, particle, Hamiltonian,
+   constant, or phenomenological promotion.
+
+The protocol assigns no reviewer and authorizes no report, adjudication,
+repair, or terminal promotion. CEL remains replay-verified green-unreviewed.
+Papers 3–6 and the unrelated untracked v15 SCOUT-T files remain untouched.
