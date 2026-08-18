@@ -2475,3 +2475,12 @@ trace is sufficient among the registered summaries. S1b is not entered.
 The synthesis is **QSF-METHOD-INCONCLUSIVE**. Clean replay is byte-identical;
 14/14 gates pass and 20/20 targeted mutants refuse. This is not terminal. The
 next required event is the three-seat hostile protocol frozen in the pin.
+
+## 2026-08-18 — QSF PAPER 9 HOSTILE PROTOCOL FROZEN (v16 LEDGER #116)
+
+`v16/note-qsf-hostile-protocol.md` freezes three independent future seats:
+operator/instrument/completion family; composite/steering/causality; and
+histories/division/Barandes/predictive sufficiency. The exact candidate hashes,
+mandatory controls, scope discipline, and replay obligations are bound before
+any reviewer is assigned. Sibling reports are mutually blind and candidate
+files immutable. QSF remains a candidate; no adjudication occurs here.
