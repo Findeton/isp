@@ -1319,3 +1319,22 @@ A minimal `git archive` of candidate `bb0f13a` runs from `/private/tmp` with no
 `.git` directory and reproduces all three artifacts byte-identically. OVG is
 **REPLAY-VERIFIED GREEN-UNREVIEWED**. A separately frozen hostile protocol is
 next; no reviewer is authorized by candidate verification alone.
+
+## 2026-08-18 — OVG HOSTILE PROTOCOL FROZEN (v16 LEDGER #59)
+
+`v16/note-ovg-hostile-protocol.md` binds candidate commit
+`bb0f13aedadc354068ea2bcc08478bcd8c43ded1`, verification commit
+`22da1143cfdea19cea4a29f2b942677a02c0c110`, all source/artifact hashes, and
+the seven machine findings before any reviewer is assigned.
+
+Three independent seats are frozen: operator algebra/instruments/
+representation; relational rewriting/concurrency/primitive arity; and quantum
+causality/EPR/gravity-QFT/ontology. The protocol specifically attacks the
+single-port theorem, coefficient lifting and phase sign, implicit-variety
+headline, physical individuation of the two order histories, parity-port
+implementation, graph/operator weld, ancilla-relative arity, fixed-spectator
+scope, causal-nonseparability refusal, and every backreaction/QFT/GR promotion.
+
+No reviewer is assigned. OVG remains **REPLAY-VERIFIED GREEN-UNREVIEWED**.
+Adjudication, repair, and terminalization are unauthorized until all three
+reports are independently frozen under a separate delegation instruction.

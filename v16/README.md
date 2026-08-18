@@ -39,7 +39,8 @@ theory-selection result.
   survive; port law, transport law, primitive arity, and causal
   nonseparability remain unselected or untested. Verification #58 passes two
   clean replays, all 30 mutants, independent seals/math, and true off-tree
-  execution. Hostile review is still pending.
+  execution. The three-lens hostile protocol is frozen at #59; reviewers are
+  not assigned.
 - `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
   original generic core at

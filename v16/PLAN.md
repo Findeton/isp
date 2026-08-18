@@ -268,6 +268,12 @@ controlled mutant deaths, independent seals/claims/classifier and exact-math
 reconstruction, and a true off-tree/no-git archive run. The candidate is
 replay-verified green-unreviewed. A separately frozen hostile protocol is next.
 
+The three-lens hostile protocol is frozen at #59 before reviewer assignment.
+It binds operator/instrument, rewrite/concurrency/arity, and quantum-causality/
+physics attacks, including whether “variety constructed” overstates an
+implicit equation and whether the CNOT paths are physically individuated
+relational histories. No review or adjudication is authorized yet.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
