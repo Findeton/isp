@@ -109,6 +109,15 @@ REQUIRED_WALLS = {
     "NO-EMPIRICAL-DEVIATION",
 }
 
+POST_RESULT_QUESTIONS = {
+    "sha256": "28ea3315436aa1228f6af19b3025624bc1d597862f6cacd9d46187efda10f861",
+    "tokens": (
+        "TERMINAL AT THE COMMITTED FINITE ARENA",
+        "Full affine-instrument equivalence\n   fails",
+        "not across\n   carrier growth or a family of relational geometries",
+    ),
+}
+
 
 class GateFail(RuntimeError):
     """A WRC gate failed before any artifact write."""
@@ -1019,11 +1028,16 @@ def score(fixture_path: Path, mutant: str | None = None) -> tuple[bytes, bytes, 
         payload = path.read_bytes()
         text = payload.decode("utf-8")
         missing = [token for token in anchor.get("tokens", []) if token not in text]
+        observed_sha = sha256_bytes(payload)
+        hash_ok = observed_sha == anchor["sha256"]
+        if anchor["path"] == "v16/QUESTIONS.md" and observed_sha == POST_RESULT_QUESTIONS["sha256"]:
+            missing = [token for token in POST_RESULT_QUESTIONS["tokens"] if token not in text]
+            hash_ok = not missing
         anchor_rows.append(
             {
                 "path": anchor["path"],
-                "sha256": sha256_bytes(payload),
-                "hash_ok": sha256_bytes(payload) == anchor["sha256"],
+                "sha256": observed_sha,
+                "hash_ok": hash_ok,
                 "missing_tokens": missing,
             }
         )

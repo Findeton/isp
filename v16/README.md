@@ -47,7 +47,11 @@ theory-selection result.
   complete CP comparison keeps probability `9/25` but moves six conditioned
   future probabilities, while the ontic-pure-state recoding is exact only
   outside the affine class. Generated output, receipt, and paper bytes are
-  committed unchanged; replay/independent/off-tree verification is next.
+  committed unchanged. The first replay refused because the authorized Q8
+  board update moved a pre-result anchor. A scorer-only provenance repair is
+  frozen at #95 for exactly the pre/post board hashes and terminal tokens; it
+  changes no physics or comparator. Regeneration must keep output and paper
+  byte-identical before replay/independent/off-tree verification restarts.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and

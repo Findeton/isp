@@ -2004,3 +2004,28 @@ claimed. Q8 is retired only at this committed finite-arena scope.
 The three generated files are committed without editing. Replay, independent
 reconstruction, all-mutant, seal, and true off-tree verification remain next;
 the candidate is green-unreviewed, not terminal.
+
+## 2026-08-18 — WRC POST-RESULT QUESTIONS REPLAY REPAIR FROZEN (v16 LEDGER #95)
+
+The first post-commit replay refuses without writes before physical scoring:
+the candidate commit correctly updates `v16/QUESTIONS.md` to retire Q8, while
+the frozen scorer accepts only that board's pre-result hash. The WRC pin itself
+explicitly permits `QUESTIONS.md` to move after the result, so this is a
+scorer provenance defect, not an anchor or physics failure.
+
+One bounded scorer-only repair accepts exactly two Q8 board states: the
+already-frozen pre-result digest, or the current post-result digest
+`28ea3315436aa1228f6af19b3025624bc1d597862f6cacd9d46187efda10f861`
+with three terminal-scope tokens. Every other anchor remains byte-exact. The
+fixture, core, comparator, physical calculations, outcome vocabulary, paper
+renderer, claims, scope walls, and candidate artifacts are untouched.
+
+The repaired scorer is frozen at SHA-256
+`58555958108ea62d28ebb541c5da8f6e9a3ec9ea50ef9a16540ee0df0ce1a128`;
+its strict self-test passes before freeze.
+
+The repaired scorer is frozen before reuse. Its regenerated `wrc_output.txt`
+and Paper 8 must be byte-identical to #94 or the repair is rejected; the
+receipt is expected to move only because it truthfully records the repaired
+scorer hash and post-result Questions anchor. Full replay/mutant/off-tree
+verification restarts after regeneration.
