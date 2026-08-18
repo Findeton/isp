@@ -1120,3 +1120,24 @@ reproduce identically after the repair.
 This is a repaired **GREEN-UNREVIEWED** candidate, not a terminal result.
 Clean replay, selftest, all 27 mutants, true off-tree/no-git execution,
 seal/paper audit, and hostile review remain.
+
+## 2026-08-17 — SRW REPAIRED CANDIDATE VERIFICATION PASSES (v16 LEDGER #50)
+
+`v16/note-srw-repaired-artifacts.md` freezes verification of candidate commit
+`cd3ad8f`. Two clean worktree replays are byte-identical to the committed
+paper, transcript, and receipt. The selftest passes without writes; existing
+paths and unknown options refuse correctly.
+
+All 27 mutants exit one at their registered gate, emit no traceback, and write
+no artifact. In particular, `phase-frame-break` now dies normally at
+`SRW-PHASE-GAUGE`, while `runtime-scalar-leak` dies at the new runtime exactness
+gate. An independent reader verifies 9/9 seals, 37/37 passing rows, 12/12 paper
+claim bindings, 213/213 exact-typed Gaussian values, and reconstructs all four
+primary conditions at indices `(2,3,5,6)`.
+
+A six-file `git archive` of candidate `cd3ad8f`, extracted without `.git`, runs
+from alien CWD `/private/tmp` and produces bytes identical to the committed
+artifacts. The scientific payload and paper remain identical to candidate #46.
+
+SRW is **REPLAY-VERIFIED GREEN-UNREVIEWED**, not terminal. A separately frozen
+three-lens hostile protocol and independent reviews remain.

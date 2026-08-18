@@ -199,6 +199,10 @@ The official repaired invocation at #49 passes 37/37 and is committed before
 replay or mutants. Its four findings, measurement object, twelve claims,
 consequence/scope rows, and Paper 4 bytes are identical to #46; only repaired
 provenance, the runtime exactness row, and the 27-mutant contract differ.
+Postcommit verification #50 gives two byte-identical clean replays, 27/27
+controlled mutant deaths with no writes, 9/9 payload seals, 12/12 paper claim
+bindings, independent reconstruction of all four findings, and true
+off-tree/no-git replay from candidate commit `cd3ad8f`. Hostile protocol is next.
 
 ## Successor register
 

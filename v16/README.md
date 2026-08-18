@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `SRW` / Paper 4: **REPAIRED GREEN-UNREVIEWED CANDIDATE; VERIFICATION
-  PENDING** at v16 ledger #49. The pin is frozen at #41, original generic core at
+- `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
+  PENDING** at v16 ledger #50. The pin is frozen at #41, original generic core at
   #42, physical fixture/scorer at #43, first refusal at #44, bounded text
   repair at #45, candidate at #46, and failed verification at #47.
   The authorized continuation tests whether Paper 3's anonymous
@@ -43,7 +43,9 @@ theory-selection result.
   core hashes, and adds a runtime exactness gate plus direct leak mutant. It is
   frozen before execution. The #49 repaired run passes 37/37; its scientific
   measurements and claims are identical to #46, and the paper is byte-identical.
-  Full replay/mutant/off-tree verification and hostile review remain.
+  Two clean replays, all 27 mutants, all 9 seals, all 12 paper bindings, an
+  independent four-finding reconstruction, and a true off-tree/no-git replay
+  pass. A separately frozen hostile protocol and independent review remain.
 - `PPR` / Paper 3: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT
   YET ASSIGNED** at v16 ledger #40. The pin was frozen at #33, generic core at
   #34, physical
