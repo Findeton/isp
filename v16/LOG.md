@@ -2589,3 +2589,24 @@ the common CLI/mutant/off-tree integrity surface, then freeze their grade,
 proposed primary, hashes, and repair list. No QSF adjudication, bounded repair,
 terminal verdict, or Paper 10 pin exists at this event. The untracked v15
 SCOUT-T files remain outside the source set and untouched.
+
+## 2026-08-18 — QSF SEAT C CAUSALITY REPORT FROZEN (v16 LEDGER #121)
+
+The first mutually blind panel report is frozen verbatim at
+`v16/review-qsf-causality.md`, ordinary SHA-256
+`3f828ff05b1f058ffad8633e12d2a59f8de8f971c6890753b3f8b83f69449143`
+and normalized/self SHA-256
+`0a206f1775f595e622332c17180bad0ac701d219c2533efd4cbcbc6883794786`.
+It grades the candidate `ACCEPT-WITH-FIXES` and proposes preserving
+`QSF-METHOD-INCONCLUSIVE`.
+
+The seat independently reproduces the `2 x 27` HJW construction and exact
+history/count TVs `0,1/2,211/324`, repeats them with a second mutually
+unbiased basis, and proves generic fixed-factor affine local histories blind
+to Alice's choice. It sharpens the witness to Bob's calibrated count-record
+grain at ticks two and three, while requiring “remote-setting dependence in a
+no-interaction fixed-factor surrogate” rather than Lorentz/superluminal
+language. It also orders direct count-readout gates, ticks four and five,
+readout-versus-feedback controls, and causality-specific mutants. These are
+frozen hostile findings, not yet adjudicated facts; the other two reports
+remain required.
