@@ -384,8 +384,8 @@ adjudication, repair, or terminal promotion is authorized by the protocol.
 
 ## Paper 07 — CEL: creation-event universality and recoverable records
 
-Status: **GREEN-UNREVIEWED CANDIDATE (v16 #71)**. Pin #68, generic core #69,
-and physical fixture/scorer #70 remain immutable.
+Status: **REPLAY-VERIFIED GREEN-UNREVIEWED (v16 #72)**. Pin #68, generic core
+#69, physical fixture/scorer #70, and candidate #71 remain immutable.
 
 The user's 2026-08-18 instruction authorizes Paper 7 as a separate v16
 continuation despite the visible Paper 3–6 hostile-review queue. The immutable
@@ -424,8 +424,11 @@ restricted grammar; retained identity/flip branches recover while their
 coarse mixture does not; both JCV factorizations satisfy the explicit created-
 flag weld but move the calibrated first port `0 -> 49/625`; and the exact
 `LDL^dagger`/four-square construction proves the registered `2r` resource
-bound. Candidate replay, independent reconstruction, and off-tree execution
-remain next; no hostile review has been assigned.
+bound. Candidate verification now passes at #72: two clean replays are byte-
+identical, all 41 mutants die, the independent rational implementation
+reconstructs every headline value, and a git-free archive reproduces all
+three artifacts. A separately frozen hostile protocol remains next; no
+hostile review has been assigned.
 
 ## Successor register
 

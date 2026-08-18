@@ -1657,3 +1657,32 @@ Lorentz, QFT, GR, particle species, Hamiltonians, constants, and empirical
 deviations remain outside the result. Replay, mutant, independent exact, and
 true off-tree verification are next. Papers 3–6 and the unrelated untracked
 v15 SCOUT-T files remain untouched.
+
+## 2026-08-18 — CEL CANDIDATE VERIFICATION COMPLETE (v16 LEDGER #72)
+
+`v16/note-cel-candidate-verification.md` binds candidate commit
+`f3c3ef99f1506f01208a670198a91abe27c952d5` and every immutable constructor
+and candidate hash. Two fresh worktree invocations reproduce transcript,
+receipt, and paper byte-for-byte. All eight payload seals, 44 unique gates, 13
+paper claims, eleven qualifiers, fifteen scope walls, and eleven anchor
+bindings revalidate.
+
+All `41/41` registered mutants exit `1`, emit no stdout or traceback, and
+write no artifact. The battery kills every anchor, event/kernel, naturality,
+null, symmetry, gluing, universality, reset/relabel/refire/redundancy/branch,
+JCV/dilation/catalogue/attachment/support, resource/PSD/field, scope,
+comparator, transcript, and prewrite surface. Selftest, unknown-option, and
+existing-target refusals behave exactly as frozen; no runtime float exists.
+
+An independent rational/Gaussian-rational implementation importing neither
+frozen executable reconstructs the CNOT endpoints and probabilities, `2 -> 1`
+universality price, operational null, grammar sizes `2/4`, branch-recovery
+split, JCV kernel/vectors and `0 -> 49/625` movement, relational support and
+catalogue, scalar/determinant obstructions, and the four `LDL^dagger` factors
+with ranks/rows `2,2,1,2`. A git archive of only runtime-read paths at the
+candidate commit, extracted with no `.git` and run from alien CWD, reproduces
+all three candidate artifacts byte-for-byte.
+
+CEL is now `REPLAY-VERIFIED GREEN-UNREVIEWED`. The next procedural step is a
+separately frozen hostile protocol. Reviewer assignment still requires a
+later explicit user instruction.

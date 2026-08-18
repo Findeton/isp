@@ -168,5 +168,6 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     first-port probabilities `0` and `49/625`; grammar enlargement can erase
     the last licensed flag; couplings, catalogue, actualization, arbitrary-n,
     steering, backreaction, continuum/QFT/GR, and empirical physics remain
-    unselected or unconstructed. Candidate verification and hostile review
-    remain.
+    unselected or unconstructed. Two replays, 41/41 mutant deaths, independent
+    exact reconstruction, and true off-tree execution survive. Hostile review
+    remains; reviewers are not assigned.
