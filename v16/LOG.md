@@ -1300,3 +1300,22 @@ This is **GREEN-UNREVIEWED**, not terminal. The candidate bytes are committed
 as generated. Replay, all 30 mutants, independent seal/paper reconstruction,
 true off-tree/no-git execution, and a separately frozen hostile protocol
 remain.
+
+## 2026-08-18 — OVG CANDIDATE VERIFICATION PASSES (v16 LEDGER #58)
+
+`v16/note-ovg-candidate-verification.md` freezes verification of candidate
+commit `bb0f13aedadc354068ea2bcc08478bcd8c43ded1`. Two clean worktree runs
+reproduce the committed transcript, receipt, and paper byte-for-byte.
+
+Selftest, unknown-option, and existing-target refusals behave exactly as
+frozen. All 30 mutants die at their named gates without stdout, traceback, or
+artifact. An independent reader verifies all payload seals, 32 transcript
+rows, 12 paper claims, the classifier, the complex CNOT witness, parity
+completeness, both five-word factorization counts, the Toffoli nonlinearity
+control, phase-nullity mapping, three-history normalization, and spectator
+no-signalling/amplifier contrast.
+
+A minimal `git archive` of candidate `bb0f13a` runs from `/private/tmp` with no
+`.git` directory and reproduces all three artifacts byte-identically. OVG is
+**REPLAY-VERIFIED GREEN-UNREVIEWED**. A separately frozen hostile protocol is
+next; no reviewer is authorized by candidate verification alone.

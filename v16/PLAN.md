@@ -263,6 +263,11 @@ ports, and refuses both primitive-arity and causal-nonseparability promotion.
 The port and elementary transport laws remain unselected. Candidate
 verification and hostile protocol are next.
 
+Candidate verification #58 passes two clean byte-identical replays, all 30
+controlled mutant deaths, independent seals/claims/classifier and exact-math
+reconstruction, and a true off-tree/no-git archive run. The candidate is
+replay-verified green-unreviewed. A separately frozen hostile protocol is next.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

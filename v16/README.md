@@ -37,8 +37,9 @@ theory-selection result.
   passes 32/32 and generates the exact overlap variety candidate: the complex
   CNOT witness kills the old trichotomy; phase constraints and parity ports
   survive; port law, transport law, primitive arity, and causal
-  nonseparability remain unselected or untested. Replay and hostile review are
-  still pending.
+  nonseparability remain unselected or untested. Verification #58 passes two
+  clean replays, all 30 mutants, independent seals/math, and true off-tree
+  execution. Hostile review is still pending.
 - `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
   original generic core at
