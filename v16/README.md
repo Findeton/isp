@@ -124,8 +124,7 @@ theory-selection result.
   were dispatched at #74. The operator report at #87, records/relational
   report at #88, and physics/locality report at #89 are immutable hostile
   evidence; their allegations await joint adjudication.
-- `OVG` / Paper 5: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
-  AWAITING JOINT ADJUDICATION** at v16 ledger #86. The pin
+- `OVG` / Paper 5: **PANEL-ADJUDICATED ACCEPT-WITH-FIXES** at v16 ledger #102. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first
   refusal at #55, and bounded comparator repair at #56.
   The user-authorized continuation replaces a refuted “record or fuse” order
@@ -148,8 +147,12 @@ theory-selection result.
   clean replays, all 30 mutants, independent seals/math, and true off-tree
   execution. The three-lens hostile protocol is frozen at #59; all three seats
   were dispatched at #74. The operator report at #84, rewrite/category report
-  at #85, and physics/causality report at #86 are immutable hostile evidence;
-  their allegations await joint adjudication.
+  at #85, and physics/causality report at #86 are now jointly adjudicated.
+  The local fixed-carrier implicit Gram/instrument variety, complex-weight
+  counterexample, parity ports, and spectral/nonnormal classifier survive.
+  The CNOT and token-rewrite fixtures are not welded; the one-port sum is an
+  ordinary unitary absent fine-history calibration; the flag is formal; and
+  relational order, causal nonseparability, and all-n composition remain open.
 - `SRW` / Paper 4: **PANEL-ADJUDICATED MIXED RESULT** at v16 ledger #101.
   `SRW-MAP-ONLY-WELD-REFUTED` and the registered-future dictionary
   distinction survive; the bundle-weld and reciprocal-weld headlines do not.

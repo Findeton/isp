@@ -2149,3 +2149,24 @@ associator/holonomy, fusion rule, or chosen causal order. Also, while the
 chosen `C^2 -> C^3` carrier enlargement is real, spatial graph adjacency is
 compilable into typed circuit effects and no backreaction is measured. New
 composition/irreducibility data belong to a successor, not an in-place repair.
+
+## 2026-08-18 — OVG PAPER 5 PANEL ADJUDICATION (v16 LEDGER #102)
+
+The unanimous ACCEPT-WITH-FIXES OVG panel is adjudicated in
+`v16/note-ovg-adjudication.md`, SHA-256
+`eabcf6e6f70ead52b47b50e127d8d4594947a4e195efec77e45a2f895e7f9aed`.
+Every exact operator/instrument equation survives.
+
+The binding reading is a **local fixed-carrier implicit Gram/instrument
+variety** with exact witness families. The complex CNOT witness kills the old
+real-weight no-go; parity ports and the spectral/nonnormal classifiers survive;
+port and overlap laws remain unselected. History/port phases are gauge-
+relational, and the one-port coherent sum is operationally one ordinary
+unitary unless a relational calibration individuates its fine paths.
+
+CNOT order maps and token-rewrite critical pairs remain neighboring fixtures;
+the pinned dimension-changing relational critical pair is absent. The flag is
+a formal dilation, not a local durable record. A three-overlap extension has
+six orders and four composites, so all-n coherence remains unbuilt. No causal
+nonseparability, EPR/steering, geometry, gravity, QFT, species, Hamiltonian, or
+empirical-deviation consequence is promoted.
