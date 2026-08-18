@@ -2219,3 +2219,16 @@ survive, not absolute permanence. The general finite `Q(i)` PSD Gram-row
 bound `<=2r` survives as representation-resource mathematics, not physical
 cell cost. Couplings, catalogue, actualization, steering, geometry, gravity,
 Hamiltonian, and QFT remain unselected or unconstructed.
+
+## 2026-08-18 — WRC PHYSICS/GEOMETRY REVIEW FROZEN (v16 LEDGER #105)
+
+The first completed isolated Paper 8 report is frozen verbatim as
+`v16/review-wrc-physics.md`, SHA-256
+`b7b42e681ea57ef1b8f0848ae0bbd788944adcad43814d0546238da566885991`.
+It is hostile evidence only; no WRC finding is adjudicated or repaired here.
+The seat independently confirms the fixed-carrier arithmetic and CELL-HIT
+instrument obstruction, but alleges that the physical result is state-record
+feedback on a fixed 27-cell catalogue rather than changing relational
+geometry. It also verifies that DISC excludes its registered memoryless
+classes only. The operator and records/eliminability seats remain isolated and
+must freeze before joint adjudication.
