@@ -182,7 +182,7 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     unselected or unconstructed. Two replays, 41/41 mutant deaths, independent
     exact reconstruction, and true off-tree execution survive. The three-seat
     hostile protocol is frozen; reviewers are not assigned.
-29. **REPAIRED / METHOD-INCONCLUSIVE; TERMINAL VERIFICATION PENDING — Which lawful quantum dynamics, if any, survives the WRC CELL-HIT
+29. **TERMINAL / METHOD-INCONCLUSIVE — Which lawful quantum dynamics, if any, survives the WRC CELL-HIT
     seam?**  Terminal WRC proves that the literal record-writing outcome map is
     not affine, while every rank-one-effect affine completion is
     measure-and-prepare and unselected. The three-seat ruling preserves
@@ -200,9 +200,12 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     JS-S1a; complete final-record quotients are `3,3,27,27,486,486`. Bounded
     repair now derives every arm disposition, adds the full-density and
     five-window controls, and replaces the alleged complete S1 result by an
-    exact horizon-three refinement witness. Two clean generations pass 20/20
-    gates byte-identically; 28-mutant and true off-tree terminal verification
-    remain before this result is citable.
+    exact horizon-three refinement witness. Post-commit and true off-tree/
+    no-`.git` generations pass 20/20 gates byte-identically; all 28 mutants
+    refuse without artifacts and the CLI/anchor controls pass. The result is
+    terminal at this finite scope, while aggregate A1/A2, complete JS-S1a, the
+    relational composite, genuine divisions, and the microscopic law type stay
+    open.
 30. **HOLD / EXPLORATORY AUDIT — Can one record-derived γ serve as distance,
     causality, curvature, and volume in a lawful growth successor?** The
     exposed scratch demo proves only that branch-dependent carrier activation

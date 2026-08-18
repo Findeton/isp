@@ -434,8 +434,7 @@ no reviewer and authorizes no adjudication or repair.
 
 ## Paper 09 — QSF: the quantum seam
 
-Status: **PANEL-ADJUDICATED AND BOUNDED-REPAIRED AT
-`QSF-METHOD-INCONCLUSIVE`; TERMINAL VERIFICATION PENDING (v16 #128)**.
+Status: **TERMINAL AT `QSF-METHOD-INCONCLUSIVE` (v16 #129)**.
 
 QSF compares three non-equivalent readings of WRC's CELL-HIT seam: a standard
 affine instrument family, a fine pure-ray/count division kernel with its
@@ -452,10 +451,11 @@ The bounded repair derives all dispositions and adds the panel's exact
 controls. It also distinguishes suffix prediction from complete JS-S1a:
 calibrated final-record quotients are `3,3,27,27,486,486`, and one exact pair
 with equal horizon-two suffix law separates at horizon three. Two clean
-generations pass 20/20 gates byte-identically below the runtime ceiling. The
-next lawful event is terminal verification over all 28 mutants and true
-off-tree/no-`.git` replay. Only after that event may Paper 10's forcing-boundary
-pin freeze; Paper 10 construction is not authorized by QSF itself.
+generations pass 20/20 gates byte-identically below the runtime ceiling. A
+fresh post-commit run and true off-tree/no-`.git` replay reproduce all three
+artifacts; all 28 mutants refuse without artifacts and the CLI/anchor controls
+pass. Paper 10's forcing-boundary pin may now freeze as a separate result-neutral
+event; Paper 10 construction is not authorized by QSF itself.
 
 ## Successor register
 

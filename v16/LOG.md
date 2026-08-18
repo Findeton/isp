@@ -2748,3 +2748,21 @@ Hilbert machinery as possible quantum representation. The candidate artifacts
 and their hashes are frozen in `v16/note-qsf-law-type-regeneration.md`.
 Terminal status remains withheld pending post-commit replay, all 28 mutants,
 and true off-tree/no-`.git` execution. Paper 10 remains unpinned.
+
+## 2026-08-18 — QSF PAPER 9 TERMINAL VERIFICATION (v16 LEDGER #129)
+
+`v16/note-qsf-terminal-verification.md` closes QSF at
+**QSF-METHOD-INCONCLUSIVE**. A fresh post-commit run and a true git-free archive
+run from an alien working directory each pass 20/20 scientific gates and
+reproduce the committed transcript, receipt, and paper byte-for-byte. All
+28/28 registered mutants refuse without result artifacts, including the
+repaired `paper-claim` seal. Self-test, unknown arguments, existing-target
+refusal, deleted-anchor refusal, and no-`.git` execution pass.
+
+The terminal result preserves the law-type correction: the displayed
+fine-state kernel is licensed only as a finite division-level interface, not a
+selected microscopic factorization. An indivisible multi-time law and a
+decoherence-functional/Hilbert representation remain candidates, not QSF
+constructions. Aggregate A1/A2, complete JS-S1a, relational composition,
+genuine division selection, growth, and continuum physics remain open. QSF now
+licenses a separate result-neutral Paper 10 pin, not Paper 10 construction.
