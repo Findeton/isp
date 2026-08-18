@@ -448,3 +448,20 @@ Frozen SHA-256 values are:
 The scorer contains no expected physical sector count, dimension, witness
 value, or verdict.  The sole next event is one official execution from these
 committed bytes, followed by commit-as-is before any repair.
+
+## 2026-08-17 — JCV FIRST OFFICIAL RUN FAILS IN MUTATION-PROOF SERIALIZATION; NO VERDICT OR ARTIFACT EXISTS (v16 LEDGER #21)
+
+The first execution of committed scorer `ee8e414` returned exit code 1 before
+artifact promotion.  The clean core reached the mutation survey, where the
+`FIXTURE_DROP_CUT` falsifier asked `Mutator.move` to digest a dictionary of
+sets.  The canonical serializer had no set case, and `json.dumps` raised
+`TypeError: Object of type set is not JSON serializable`.
+
+`v16/note-jcv-official-run-failure.md` freezes the command, traceback locus,
+absence checks, and disposition.  The fixture and scorer did not move.  The
+physical output, receipt, and paper paths are absent.  No physical value or
+classifier word was emitted, so this event licenses no JCV result.
+
+The only authorized repair is total canonical serialization of the already
+used set type.  The fixture, equations, classifier, witnesses, gates, and paper
+renderer may not move.  The failed run is committed before that repair.

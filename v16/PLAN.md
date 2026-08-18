@@ -60,8 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE FIRST EXECUTION (v16
-#20)**.  This is a separate unit; it does not reopen or repair paper 01.
+Status: **FIRST OFFICIAL RUN FAILED BEFORE VERDICT OR ARTIFACT PROMOTION (v16
+#21)**.  This is a separate unit; it does not reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping
@@ -78,7 +78,8 @@ The locked chronology is:
 2. freeze one physical fixture and verdict-neutral scorer before execution;
    **complete at #20, with result fields empty and result paths absent**;
 3. run one official solve, render every claim from the sealed receipt, commit
-   as-is, and reproduce off-tree;
+   as-is, and reproduce off-tree; **first attempt at #21 failed inside mutation
+   proof serialization and was frozen before repair; no verdict was emitted**;
 4. freeze the hostile protocol, obtain three independent lenses, adjudicate,
    repair if ordered, verify, and terminalize or refuse.
 
