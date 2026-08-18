@@ -1,0 +1,150 @@
+{
+  "anchors": {
+    "base_commit": "7e95322c589a42211e3a10cab7655492014bd0ae",
+    "core_sha256": "490668340b08022ac5d11c8fdc07c392739153b609a72b9bda5bfcf112f472ea",
+    "pin_commit": "828b510a3229ae6330a55520b676a33e031c77a8",
+    "pin_sha256": "cce2e194f1f1c557e2cb1745c0f15b9feaa98b48b2300126970098da0fadd48f"
+  },
+  "schema": "ppr-fixture-v1",
+  "scope": {
+    "arithmetic": "Q(i)",
+    "boundary_family": "finite typed exact matrices",
+    "configuration_catalogue": "finite labelled relation graphs modulo declared vertex relabelling",
+    "probability_sample": "complete final screen records",
+    "runtime_cap_seconds": 300
+  },
+  "scalars": {
+    "a": "3/5",
+    "b": "4/5",
+    "mu": "4/5",
+    "nu": "3/5"
+  },
+  "matrices": {
+    "I2": [["1", "0"], ["0", "1"]],
+    "J": [["0", "1"], ["-1", "0"]],
+    "Z": [["1", "0"], ["0", "-1"]],
+    "R": [["3/5", "4/5"], ["-4/5", "3/5"]],
+    "P0": [["1", "0"], ["0", "0"]],
+    "P1": [["0", "0"], ["0", "1"]],
+    "Qplus": [["1/2", "1/2"], ["1/2", "1/2"]],
+    "Qminus": [["1/2", "-1/2"], ["-1/2", "1/2"]],
+    "Mdiag": [["3/5", "0"], ["0", "1"]],
+    "Vgrow": [["3/5", "0"], ["0", "1"], ["4/5", "0"]],
+    "Vgrow2": [["0", "4/5"], ["1", "0"], ["0", "3/5"]],
+    "Ualpha": [["3/5", "4/5"], ["-4/5", "3/5"], ["0", "0"]],
+    "Ubeta": [["-12/25", "3/5", "-16/25"], ["-9/25", "-4/5", "-12/25"], ["4/5", "0", "-3/5"]]
+  },
+  "stable_null": {
+    "dimensions": {"cut": 4, "middle": 3, "final": 2},
+    "observations": {
+      "cut": [["1", "0", "0", "0"]],
+      "middle": [["1", "0", "0"]],
+      "final": [["1", "0"]]
+    },
+    "continuations": [
+      {
+        "name": "cut-to-middle",
+        "source": "cut",
+        "target": "middle",
+        "operator": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"]]
+      },
+      {
+        "name": "middle-to-final",
+        "source": "middle",
+        "target": "final",
+        "operator": [["1", "1", "0"], ["0", "0", "1"]]
+      }
+    ]
+  },
+  "record_cases": {
+    "support_record": {
+      "first_leg": [["3/5", "0"], ["0", "3/5"], ["4/5", "0"], ["0", "4/5"]],
+      "preserving_future": [["3/5", "4/5", "0", "0"], ["-4/5", "3/5", "0", "0"], ["0", "0", "3/5", "4/5"], ["0", "0", "-4/5", "3/5"]],
+      "erasing_future": [["3/5", "0", "4/5", "0"], ["0", "3/5", "0", "4/5"], ["-4/5", "0", "3/5", "0"], ["0", "-4/5", "0", "3/5"]]
+    },
+    "block_record": {
+      "decoherence": [["1", "1", "0", "0"], ["1", "1", "0", "0"], ["0", "0", "1", "1"], ["0", "0", "1", "1"]],
+      "continuations": [
+        [["3/5", "4/5", "0", "0"], ["-4/5", "3/5", "0", "0"], ["0", "0", "3/5", "4/5"], ["0", "0", "-4/5", "3/5"]]
+      ]
+    },
+    "erasable_tag": {
+      "decoherence": [["1", "0"], ["0", "1"]],
+      "continuations": [
+        [["3/5", "4/5"], ["-4/5", "3/5"]]
+      ]
+    },
+    "coherent_pair": {
+      "decoherence": [["1", "1"], ["1", "1"]],
+      "continuations": [
+        [["1", "0"], ["0", "1"]]
+      ]
+    },
+    "multiple_maximal": {
+      "decoherence": [["1", "1", "0", "0"], ["1", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]],
+      "continuations": [
+        [["0", "0", "0", "0"], ["0", "0", "0", "0"], ["0", "0", "0", "1"], ["0", "0", "1", "0"]]
+      ]
+    }
+  },
+  "comparison_diagram": {
+    "edges": {
+      "01": "I2",
+      "12": "Z",
+      "02": "Z",
+      "23": "R",
+      "13": "RZ",
+      "03": "RZ"
+    },
+    "paths": [["01", "12", "23"], ["02", "23"], ["03"]],
+    "gauge_frames": {"0": "Z", "1": "I2", "2": "R", "3": "Z"}
+  },
+  "dynamical_loop": {
+    "beam_splitter": "R",
+    "flat_phase": "I2",
+    "nonflat_phase": "Z",
+    "input": ["1", "0"],
+    "screen_row": 0
+  },
+  "relational_wedge": {
+    "vertices_initial": ["a", "b", "p"],
+    "edges_initial": [["a", "b", "R"], ["b", "p", "I2"]],
+    "branches": [
+      {
+        "name": "alpha",
+        "record_label": "coherent",
+        "carrier_dimension": 2,
+        "vertices": ["a", "b", "p"],
+        "edges": [["a", "b", "R"], ["b", "p", "I2"]],
+        "probe_path": ["a", "b", "p"]
+      },
+      {
+        "name": "beta",
+        "record_label": "coherent",
+        "carrier_dimension": 3,
+        "vertices": ["a", "b", "c", "p"],
+        "edges": [["a", "c", "J"], ["c", "p", "R"]],
+        "probe_path": ["a", "c", "p"]
+      }
+    ],
+    "rename": {"a": "x", "b": "y", "c": "z", "p": "w"},
+    "spectator": "s",
+    "disjoint_edge": ["q", "r", "Z"],
+    "input": ["1", "0"],
+    "screen_row": 0,
+    "law_family": [
+      {
+        "name": "law-A",
+        "matter_weights": [["3/5", "4/5"], ["4/5", "-3/5"]]
+      },
+      {
+        "name": "law-B",
+        "matter_weights": [["4/5", "3/5"], ["3/5", "-4/5"]]
+      }
+    ]
+  },
+  "no_signalling": {
+    "bell_input_dimension": 2,
+    "amplifier": "2"
+  }
+}

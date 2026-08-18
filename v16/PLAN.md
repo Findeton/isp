@@ -107,7 +107,7 @@ The user separately authorized it on 2026-08-17 under the Paper 3 pin below.
 
 ## Paper 03 — PPR: contextual pullbacks and permanent records
 
-Status: **AUTHORIZED AND PINNED BEFORE CONSTRUCTION (v16 #33)**.
+Status: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE EXECUTION (v16 #35)**.
 
 The user's 2026-08-17 instruction authorizes the precise successor that JCV
 left open. The immutable pin is `v16/note-ppr-pin.md`. PPR does not reopen
@@ -126,7 +126,8 @@ The locked order is:
    **complete at #34: 9/9 public gates, six mutants, byte-identical duplicate
    artifacts**;
 3. freeze a data-only relational fixture and verdict-neutral scorer before the
-   official solve;
+   official solve — **complete at #35: result fields absent, reserved result
+   paths absent, exact syntax/static hygiene pass, twenty mutants implemented**;
 4. execute once, render Paper 3 and all artifacts from one sealed result,
    commit as-is, and verify worktree/off-tree/no-git replay;
 5. freeze a three-lens hostile protocol, obtain independent reports only under

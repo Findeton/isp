@@ -721,3 +721,33 @@ passes, and the substantive path contains no float or tolerance mechanism.
 These are calibration results only. The generic source is now byte-immutable;
 the next event is one separate data-only physical fixture and verdict-neutral
 scorer freeze before any official execution.
+
+## 2026-08-17 — PPR PHYSICAL FIXTURE AND SCORER FROZEN BEFORE EXECUTION (v16 LEDGER #35)
+
+`v16/code/ppr_fixture.json` and `v16/code/ppr_score.py` are frozen at SHA-256
+`cecc3b0d3c7bf46503481fa7b422e915ba0ff6aac42e3cec5f61c395e565b389`
+and `f3589042829650c081068342ad5c9b398db6691ade21b1b4c48deb5d6c6d7e73`.
+The fixture has no expected/result/verdict/outcome field, the ten verdict words
+are parsed from the pin, and no official output, receipt, or Paper 3 path
+exists. Static compilation and the exact-arithmetic hygiene scan pass; no
+physical scorer execution has occurred.
+
+The freeze instantiates relational-event/Kraus controls, a delayed-reactivation
+multi-boundary null grammar, a heterogeneous two-to-three carrier fork,
+common-future pullback tamper, append-only and physically erased records,
+reconvergent/dangling/partial/one-outcome interference, unique and ambiguous
+partition censuses, three-route comparison closure, a separately typed
+non-flat physical transport loop, a real graph rewrite and graph-computed
+probe, rival nonfactorizing laws, fixed-Bob carrier-growth no-signalling, all
+twenty mutants, independent numeric verdict reconstruction, and a total
+pre-write seal.
+
+`v16/note-ppr-fixture-freeze.md` records two forward corrections without
+editing frozen history. The actual #33 pin commit is
+`828b510a3229ae6330a55520b676a33e031c77a8`, not the mistyped hash printed in
+the #34 freeze note. And the public core's rotated-coordinate `eraser` row is
+demoted to a coordinate-block calibration: physical permanence in this scorer
+uses v12's co-live/co-merge availability criterion plus an explicit erasure
+that restores interference. The next event is the first official execution;
+failure must be frozen before repair, while success renders and commits the
+three result artifacts as-is.
