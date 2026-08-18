@@ -5,14 +5,16 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-17 (v16 JRH remains terminal at #16; JCV is terminal at its
+Updated: 2026-08-18 (v16 JRH remains terminal at #16; JCV is terminal at its
 scoped local-compatibility verdict at v16 #32; PPR Paper 3 is a replay-verified
 green-unreviewed candidate with hostile protocol frozen at v16 #40; SRW Paper
 4's repaired candidate is replay/mutant/off-tree verified and its hostile
-protocol is frozen before reviewer assignment at v16 #51).
+protocol is frozen before reviewer assignment at v16 #51; OVG Paper 5 is
+pinned before construction at v16 #52).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
+| OVG / Paper 5 (v16 continuation) — overlap Gram/instrument varieties, coherent ports, and arity | **PIN FROZEN BEFORE CONSTRUCTION**: replaces the exactly refuted non-scalar-order “record or fuse” trichotomy with a result-neutral all-input Gram/instrument variety; separately types common boundaries, complex coefficient ports, dependencies, record permanence, local flag implementation, causal nonseparability, and primitive arity relative to a frozen grammar. No implementation, fixture, result, paper, or reviewer exists yet | v16 #52 |
 | SRW / Paper 4 (v16 continuation) — support–rewrite weld, persistent identity, and local couplings | **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT ASSIGNED**: candidate #46 is preserved; verification #47 exposed a runtime integer-to-float leak. Source repair #48 and regenerated candidate #49 leave every scientific field and paper byte unchanged while adding runtime exact typing. Verification #50 passes two clean replays, 27/27 mutant deaths, 9/9 seals, 12/12 paper bindings, independent four-finding reconstruction, and true off-tree/no-git replay. Protocol #51 freezes operator/representation, rewrite/category, and physics/gravity/QFT seats. Does not edit or promote Paper 3 | v16 #41–#51 |
 | PPR / Paper 3 (v16 successor) — contextual pullbacks and permanent records | **GREEN-UNREVIEWED: PPR-CONTEXTUAL-PULLBACK-CONSTRUCTED-BUT-LAW-UNSELECTED**: pin #33, core #34, fixture/scorer #35; refusal #36/repair #37 disclosed. Candidate #38 passes 25/25; verification #39 gives deterministic worktree/off-tree replay, 8/8 seals, 10/10 bindings, 20/20 mutants. Protocol #40 freezes three independent lenses and targets the live seam: whether stable null/records are one generated object and whether the heterogeneous process carrier is actually linked to the relational graph rewrite. Reviewers are not yet assigned | v16 #33–#40 |
 | JCV (v16 successor) — joint comparison/law compatibility variety | **TERMINAL: LOCAL-COMPATIBILITY-VARIETY-CONFIRMED-BUT-RECORD-GENERATED-FIXED-POINT-UNBUILT**: three independent `ACCEPT-WITH-FIXES` reports reproduce every exact count, dimension, witness, seal, and classifier with zero discrepancies; bounded repair passes 20/20 gates and 16/16 mutants; worktree and true off-tree/no-git replay are byte-identical.  Frozen classifier words `JCV-STRATIFIED` / active `JCV-PAIRING-SELECTED-WEIGHTS-FREE` survive at registered scope.  Physical reading: local declared-doctrine flat holonomy; real 2D boundary-instrument weights free; 6 dark mismatch sectors one-step law-null; global continuation/refinement distinction open.  `Fixed point`, carrier-derived comparison, global coherence, geometry, backreaction, and QFT/GR promotion are refused | v16 #17–#32 ✓adj |

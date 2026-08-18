@@ -1160,3 +1160,31 @@ all continuum/GR/QFT promotions.
 No reviewer is assigned and no report, adjudication, repair, or terminal
 promotion is authorized by this freeze. SRW remains **REPLAY-VERIFIED
 GREEN-UNREVIEWED**.
+
+## 2026-08-18 — OVG PAPER 5 PIN FROZEN BEFORE CONSTRUCTION (v16 LEDGER #52)
+
+The user explicitly authorizes Paper 5 after the proposed order-holonomy
+trichotomy meets its own kill condition. `v16/note-ovg-pin.md` freezes a
+result-neutral overlap Gram/instrument-variety investigation before any OVG
+core, fixture, scorer, result, or paper exists.
+
+The failed inference is retained as a mandatory control: failure of one
+equal-real coefficient point cannot imply that a non-scalar relative order
+operator forces an order record or primitive fusion. The new object is the
+full exact family `K_j = sum_h c[j,h] V_h` with all-input completeness
+`sum_j K_j^dagger K_j = I`. The pin separately types common-boundary
+histories, Gram operators, ports, rewrite dependencies, records, local flag
+implementation, causal nonseparability, and primitive arity.
+
+The unit pre-registers a two-unitary spectral theorem, dimension-changing
+nonnormal controls, arbitrary multiport completeness, graph critical pairs,
+local-flag versus local-implementation tests, and a factorization census
+relative to a frozen lower-arity grammar. It forbids promotion from order
+interference to a quantum switch, from a binary composite to primitive arity,
+or from a finite overlap arena to all `n`, QFT, gravity, species, or
+phenomenology.
+
+Scratchpad scripts and claims supplied in conversation are motivation only
+and are excluded from the runtime read set. The next lawful stage is a generic
+exact OVG core frozen on public calibrations while every physical fixture and
+result path is absent.

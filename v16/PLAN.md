@@ -208,6 +208,29 @@ assigned. Its independent seats are operator/representation, relational
 rewrite/category, and physical ontology/gravity/QFT. No adjudication or repair
 is authorized until all three reports are frozen.
 
+## Paper 05 — OVG: overlap Gram/instrument varieties and arity
+
+Status: **PIN FROZEN BEFORE CONSTRUCTION (v16 #52)**.
+
+The user's 2026-08-18 instruction authorizes this separate continuation after
+a proposed noncommuting-order trichotomy was exactly refuted by a complex-
+weight complete class operator. The immutable pin is `v16/note-ovg-pin.md`.
+OVG asks what the complete operator Gram family of overlapping histories
+actually permits, which relative phases it constrains, and whether anything
+there selects an order, a port law, or primitive process arity.
+
+The locked chronology is pin -> generic public core -> result-free physical
+fixture and verdict-neutral scorer -> one official execution -> candidate
+verification -> separately frozen three-lens hostile protocol. The generic
+core must precede physical fixture truth. It will derive exact multiport
+completeness, test the two-unitary spectral classifier, retain nonnormal
+dimension-changing overlaps as a separate operator problem, enumerate graph
+critical pairs, and distinguish local flag kinematics from local event-law
+implementation and binary composites from irreducible generators.
+
+No causal-nonseparability, arbitrary-`n`, field/Fock, gravity, QFT, particle,
+or species conclusion is authorized. No reviewer is authorized by this pin.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

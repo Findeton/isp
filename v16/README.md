@@ -18,6 +18,16 @@ theory-selection result.
 
 ## Live state
 
+- `OVG` / Paper 5: **PIN FROZEN BEFORE CONSTRUCTION** at v16 ledger #52.
+  The user-authorized continuation replaces a refuted “record or fuse” order
+  trichotomy with the exact Gram/instrument variety of overlapping histories.
+  It will test common-boundary typing, all-input multiport completeness, a
+  scoped two-unitary spectral phase classifier, dimension-changing nonnormal
+  overlaps, rewrite critical pairs, local record implementation, and primitive
+  arity relative to a frozen grammar. It explicitly refuses to infer a quantum
+  switch, causal nonseparability, higher-arity ontology, all-`n` dynamics,
+  Fock fields, QFT, or gravity from order interference alone. No OVG code,
+  fixture, result, or paper exists at the pin freeze.
 - `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
   original generic core at
