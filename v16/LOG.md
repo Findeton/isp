@@ -1821,3 +1821,12 @@ It is hostile evidence only; no finding is adjudicated or repaired here. The
 rewrite/category and physics/causality reports were not read by this seat.
 Joint adjudication remains prohibited until all three immutable reports are
 frozen.
+
+## 2026-08-18 — SRW REWRITE/CATEGORY REVIEW FROZEN (v16 LEDGER #81)
+
+The second isolated Paper 4 report is frozen verbatim as
+`v16/review-srw-rewrite.md`, SHA-256
+`d32e3246c69e56201a544537024dec1a35b21509713500e9aacca0ea6632bc0b`.
+It is hostile evidence only; no finding is adjudicated or repaired here. This
+seat did not read the operator or physics/causality report. The final seat must
+be frozen before joint adjudication begins.
