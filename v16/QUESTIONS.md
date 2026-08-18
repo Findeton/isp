@@ -196,3 +196,14 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     natural fixed-factor ontic extension (`0, 1/2, 211/324` history TV, affine
     control zero); no affine retained-record boundary at ticks 1–5; and S1b
     not entered. Head `QSF-METHOD-INCONCLUSIVE`; hostile review pending.
+30. **HOLD / EXPLORATORY AUDIT — Can one record-derived γ serve as distance,
+    causality, curvature, and volume in a lawful growth successor?** The
+    exposed scratch demo proves only that branch-dependent carrier activation
+    and complete projective instruments coexist. Exact hostile controls find
+    its phase and link graph eliminable, its displayed menu unrealized, no
+    curvature loop, a fixed-three-slot memory equivalent, and no WRC
+    regression (the projective control preserves 0/9 QSF families). A future
+    Paper 10 requires graph-generated operators, an in-fixture loop,
+    reconvergent coherent growth, a real event law, E-37 parity adversaries,
+    four independent role ablations, and a QSF-adjudicated or explicitly
+    postulated base instrument. No Paper 10 pin exists yet.

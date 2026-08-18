@@ -2484,3 +2484,27 @@ histories/division/Barandes/predictive sufficiency. The exact candidate hashes,
 mandatory controls, scope discipline, and replay obligations are bound before
 any reviewer is assigned. Sibling reports are mutually blind and candidate
 files immutable. QSF remains a candidate; no adjudication occurs here.
+
+## 2026-08-18 — EXPLORATORY γ-SUCCESSOR AUDIT (v16 LEDGER #117)
+
+The user supplied an external green scratch demo for a record-derived γ growth
+successor. `v16/note-gamma-successor-exploratory-audit.md` records an exact
+audit without promoting it to Paper 10. The source's internal completeness,
+mass, dimension-growth, and new-cell checks reproduce.
+
+Four hostile controls sharply narrow the claim. Replacing the γ phase by one
+leaves the entire three-tick leaf law byte-identical; deleting link metadata
+also moves nothing; a fixed three-slot carrier with dormant `c` and equal
+record memory reproduces every leaf exactly; and the displayed `PAIR/GROW`
+menu is not realized as alternatives. The graph has no cycle, so curvature is
+absent. Analytically, `K_c=P_c D_n R` has effect `R†P_cR`, independent of the
+diagonal phase. QSF additionally shows the projective regression control
+preserves 0/9 WRC observable families.
+
+The corrected positive statement is type-level: a classical-record-controlled
+complete instrument can activate a branch-dependent carrier and populate its
+new cell. Four-role geometry, graph irreducibility, coherent growth, event
+selection, and WRC regression remain unbuilt. Q30 registers the corrected
+Paper 10 prerequisites. Paper 10 stays held until QSF adjudication or an
+explicitly postulated new base instrument; no physics candidate is created at
+this event.
