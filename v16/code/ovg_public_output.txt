@@ -1,0 +1,13 @@
+OVG GENERIC PUBLIC CALIBRATION
+schema: ovg-public-v1
+PASS PUB-GAUSSIAN-EXACT :: i^2=-1 inverse=-i
+PASS PUB-GRAM-TYPED :: cross=[['0', '1'], ['1', '0']]
+PASS PUB-PARITY-COMPLETE :: residual=[['0', '0'], ['0', '0']]
+PASS PUB-FLAG-ISOMETRY :: shape=(4, 2)
+PASS PUB-PHASE-RANKS :: ranks={'one': 1, 'two': 2, 'three': 3}
+PASS PUB-PHASE-NULLITIES :: nullities={'one': 2, 'two': 1, 'three': 0}
+PASS PUB-NONNORMAL-DIRECT :: overlap=[['0', '5/13'], ['0', '0']] rank=3
+PASS PUB-REWRITE-CRITICAL-PAIRS :: kinds=('disjoint-commuting', 'joinable-overlap', 'dependency')
+PASS PUB-BINARY-FACTORIZATION :: words=(('X', 'P'),)
+gate-count: 9
+all-pass: true

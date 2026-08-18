@@ -210,7 +210,7 @@ is authorized until all three reports are frozen.
 
 ## Paper 05 — OVG: overlap Gram/instrument varieties and arity
 
-Status: **PIN FROZEN BEFORE CONSTRUCTION (v16 #52)**.
+Status: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE (v16 #53)**.
 
 The user's 2026-08-18 instruction authorizes this separate continuation after
 a proposed noncommuting-order trichotomy was exactly refuted by a complex-
@@ -230,6 +230,12 @@ implementation and binary composites from irreducible generators.
 
 No causal-nonseparability, arbitrary-`n`, field/Fock, gravity, QFT, particle,
 or species conclusion is authorized. No reviewer is authorized by this pin.
+
+The generic exact core is frozen at #53 before physical fixture truth. Its
+nine public gates calibrate Gram construction, multiport completeness, parity
+flags, exact phase-row ranks, nonnormal dimension-changing overlap equations,
+rewrite critical pairs, and lower-arity factorization. Public duplicate and
+copied-source replays are byte-identical; physical result paths remain absent.
 
 ## Successor register
 

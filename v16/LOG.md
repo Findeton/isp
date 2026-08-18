@@ -1188,3 +1188,24 @@ Scratchpad scripts and claims supplied in conversation are motivation only
 and are excluded from the runtime read set. The next lawful stage is a generic
 exact OVG core frozen on public calibrations while every physical fixture and
 result path is absent.
+
+## 2026-08-18 — OVG GENERIC EXACT CORE FROZEN (v16 LEDGER #53)
+
+`v16/code/ovg_core.py` and its public artifacts are frozen before any OVG
+physical fixture, scorer, official result, or Paper 5 path exists. The core
+hash is `7b17a138dc45f564a5180fca81bdb4620aaa570514d090d8a5c45f0f22d985bf`;
+the public transcript and receipt hashes are respectively
+`07f031203ff500af8974cd15c40f8bd752154a3a10ca319951dcbf961f7fff97`
+and `3cb4153c3685a929b3748aa9862f35bf70e915dba898ec427f6aae9d143b100e`.
+
+Nine public gates calibrate exact Gaussian-rational Gram families, arbitrary
+multiport completeness, parity ports and their flag dilation, exact
+real-linear rank/nullspace certificates, a nonnormal dimension-changing
+overlap solved without a spectral shortcut, rewrite critical-pair typing, and
+finite lower-arity factorization. Two clean runs and a copied-source alien-CWD
+run are byte-identical; three public mutants and selftest refuse before writes;
+unknown options exit `2`; the AST has no float literal.
+
+The public examples contain no CNOT, AB/BC physical arena, OVG target
+coefficient point, outcome, or verdict. The next stage is one data-only
+physical fixture plus verdict-neutral scorer frozen before first execution.
