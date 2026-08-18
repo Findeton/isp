@@ -2376,3 +2376,38 @@ carrier growth, relational rewrite, dynamic geometry, geometry
 irreducibility, actualization, genuine division boundaries, permanence,
 continuum/Lorentz structure, QFT/GR, species, Hamiltonian selection,
 constants, or deviations.
+
+## 2026-08-18 — QSF PAPER 9 QUANTUM-SEAM PIN FROZEN (v16 LEDGER #112)
+
+The user-authorized successor is frozen in `v16/note-qsf-pin.md` before any QSF
+core, fixture, scorer, output, receipt, or paper exists.  It adopts the
+external review's central diagnosis—WRC exposed the exact seam between its
+record feedback and affine quantum operations—but corrects the proposed binary
+fork in two ways.
+
+The affine repair is the full rank-one measure-and-prepare family, not the
+displayed projective choice; QSF must report the nine-observable survival
+vector, completion-family dimension, and selection status.  And because
+CELL-HIT is not a genuine division boundary, a third Barandes-native arm tests
+complete history maps between candidate record boundaries.  It must earn
+all-input affinity, CP/completeness, cut composition, and record recovery; an
+internal coarse-graining is not safety by interpretation.
+
+The ontic branch must first construct a composite, subsystem algebras,
+separation, Bell/HJW preparation, local instruments, and Bob readouts.  A
+natural fixed-factor signalling witness kills only that extension unless the
+relational composite is also derived; unphrasability is incompleteness.  The
+frozen DC outcome words govern.
+
+JS S1a is absorbed as a two-axis predictive-quotient census over five
+trigger-trace summaries.  S1b runs only on a closed finite candidate-law
+family and otherwise has an explicit not-entered word.  SCOUT-T's tracked pin
+supplies question vocabulary only: the v15 ledger leaves its candidate
+procedurally unsealed, so its untracked files remain unread and are superseded
+as evidence.  The proposed growth walk is held: event selection, catalogue,
+couplings/weights, genuine boundaries, and composition remain unknown physics,
+not merely unrun computation.
+
+The next authorized event is a generic public-only QSF core freeze, followed
+by a separately committed result-neutral physical fixture.  No QSF physics
+result is citable at this event.
