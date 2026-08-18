@@ -250,6 +250,11 @@ comparator requires a literal one-line substring. No result artifact is
 written. Only whitespace normalization of consumed anchor prose is authorized
 before another execution; the fixture and scientific predicates stay frozen.
 
+That scorer-only repair is frozen at #56. It canonicalizes whitespace in both
+consumed prose and the already frozen token; byte hashes and all scientific
+objects remain exact. No repaired run has occurred and all result paths remain
+absent.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

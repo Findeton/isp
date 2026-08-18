@@ -440,6 +440,7 @@ def evaluate(
         path = repository_root / relative
         data = register(path)
         text = data.decode("utf-8")
+        normalized_text = " ".join(text.split())
         tokens = anchor_token_map.get(relative, ("schema",))
         anchor_rows.append(
             {
@@ -447,7 +448,7 @@ def evaluate(
                 "declared": declared_hash,
                 "actual": hashlib.sha256(data).hexdigest(),
                 "tokens": list(tokens),
-                "tokens_present": all(token in text for token in tokens),
+                "tokens_present": all(" ".join(token.split()) in normalized_text for token in tokens),
             }
         )
 

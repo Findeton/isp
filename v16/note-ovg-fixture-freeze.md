@@ -10,7 +10,7 @@ The data-only physical fixture and verdict-neutral scorer are now byte-frozen:
 
 ```text
 OVG_FIXTURE_SHA256 = `7b7658492a49c77f6c9ee3e0a2031d5121c627aad5ae6630e21940a68c92b133`
-OVG_SCORER_SHA256 = `012171c27b766030b9b8ef02f5cc6a71e86c367af40faeec240d2d5552447e74`
+OVG_SCORER_SHA256 = `75cc0e7279ee93a60bfa520eecb4ea37fcde49b3d9e9f7298d98031396628844`
 OVG_CORE_SHA256 = `7b17a138dc45f564a5180fca81bdb4620aaa570514d090d8a5c45f0f22d985bf`
 ```
 
@@ -71,3 +71,24 @@ receipt, or paper was returned by this refusal. A bounded source-only repair
 may normalize whitespace in consumed prose before token comparison. It may not
 change the fixture, anchor hash checks, equations, gates, mutants, outcome
 words, renderer, or any physical predicate.
+
+## Bounded anchor-comparator repair freeze
+
+The original scorer remains recoverable at fixture/scorer commit `3b2948d`
+and hash `012171c27b766030b9b8ef02f5cc6a71e86c367af40faeec240d2d5552447e74`.
+The repaired scorer hash bound at the top of this note is
+`75cc0e7279ee93a60bfa520eecb4ea37fcde49b3d9e9f7298d98031396628844`.
+
+The only source move is:
+
+```text
+anchor prose -> split on all whitespace -> rejoin with single spaces
+anchor token -> split on all whitespace -> rejoin with single spaces
+```
+
+Hash equality remains byte-exact and unchanged. The fixture hash, core hash,
+anchor paths, anchor token strings, every operator construction, coefficient
+census, gate, mutant, classifier, outcome word, claim, paper renderer, scope
+wall, and CLI path is unchanged. The repaired source compiles, its AST still
+contains zero float literals, and all result paths remain absent. No repaired
+ordinary solve, selftest, or mutant has run.

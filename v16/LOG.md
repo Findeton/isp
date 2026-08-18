@@ -1248,3 +1248,18 @@ remain untouched.
 A bounded scorer-only repair is authorized: normalize whitespace in consumed
 anchor prose before comparing the already frozen token. It must be hash-frozen
 before re-execution.
+
+## 2026-08-18 — OVG ANCHOR-COMPARATOR REPAIR FROZEN (v16 LEDGER #56)
+
+The bounded source repair is frozen before re-execution. The original #54
+scorer is preserved at commit `3b2948d` and hash
+`012171c27b766030b9b8ef02f5cc6a71e86c367af40faeec240d2d5552447e74`;
+the repaired scorer hash is
+`75cc0e7279ee93a60bfa520eecb4ea37fcde49b3d9e9f7298d98031396628844`.
+
+Only consumed prose tokens and source text are whitespace-canonicalized before
+substring comparison. File hashes remain exact. The fixture, core, anchor
+paths/tokens, physical equations, coefficient census, gates, mutants,
+classifier, result words, claims, renderer, scope walls, and CLI are unchanged.
+The source compiles with zero float literals; result paths remain absent. The
+next event is the repaired official invocation.

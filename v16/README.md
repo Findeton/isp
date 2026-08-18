@@ -33,7 +33,8 @@ theory-selection result.
   The data-only physical fixture and verdict-neutral scorer are now frozen
   with 30 named mutants. The first invocation at #55 refuses before physical
   scoring on a prose-anchor newline mismatch and writes nothing; a bounded
-  scorer-only whitespace repair is next. No official result or paper exists.
+  scorer-only whitespace repair is frozen at #56 before re-execution. No
+  official result or paper exists.
 - `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
   original generic core at
