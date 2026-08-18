@@ -182,6 +182,10 @@ normalization. No artifact was written. Only that mechanical comparator repair
 is authorized before re-execution.
 That bounded repair is frozen at #45 with the fixture unchanged and every
 physical predicate, classifier, renderer, numeral, and mutant preserved.
+The second invocation at #46 passes 36/36 and generates the map-only-refuted,
+future-physical-dictionary, constructed-but-unselected bundle-weld, and
+reciprocal-transport/history-weights-free candidate. Its bytes are committed
+as-is before replay or mutants.
 
 ## Successor register
 

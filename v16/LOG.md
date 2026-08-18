@@ -992,3 +992,62 @@ errors passes, and all result paths remain absent.
 
 The next event is the second physical invocation. It is not called the first
 run; #44 remains the immutable first-run refusal.
+
+## 2026-08-17 — SRW GREEN-UNREVIEWED CANDIDATE GENERATED AND COMMITTED AS-IS (v16 LEDGER #46)
+
+The committed #45 scorer's second physical invocation exits zero at 36/36
+exact gates. The independently coded numeric comparator and result builder
+agree on registered indices `(2,3,5,6)`, yielding four compatible findings:
+
+```text
+SRW-MAP-ONLY-WELD-REFUTED
+SRW-DICTIONARY-CURRENT-BLIND-BUT-FUTURE-PHYSICAL
+SRW-BUNDLE-WELD-CONSTRUCTED-BUT-CATALOGUE-AND-COUPLINGS-UNSELECTED
+SRW-RECIPROCAL-WELD-CONSTRUCTED-BUT-HISTORY-WEIGHTS-FREE
+```
+
+The generated artifacts are committed before replay, mutant execution, or
+interpretive repair:
+
+| artifact | SHA-256 |
+|---|---|
+| `v16/code/srw_output.txt` | `efec1a36cc27863f1107d3e79dbf1cfcdca62f40e182eebeb5d6269288a032fc` |
+| `v16/code/srw_receipt.json` | `9c6098dd5f9ac2dc0d05f39692c3d08e2733941778fc48be96b6d3f43ffaf6e8` |
+| `v16/paper-04-support-rewrite-weld.md` | `f61dde79e5fc0e10db1e5dbe13dec25dceaff9842d5e0c5c06ba2ae90eb4bcae` |
+
+All six inherited exact identities reproduce. The exhaustive anonymous
+dictionary census is 12 to 2; both survivors have one current signature, but
+the graph-local future gives `16/25` versus `9/25`, the persistence future
+gives `9/25` versus `16/25`, and their swap fails the generated future
+commutant. Current blindness is therefore not stable gauge in this grammar.
+
+The kinematic grammar has three allowed entries while either zero-coupling
+endpoint has two actual entries. Two valid persistence spans share the same
+anonymous map. Thus actual transition support cannot recover spatial
+adjacency, allowed rewrite grammar, or ancestry. The corrected typed pair
+`(rewrite, transport)` passes all five registered isometry rows and relabeling
+naturality.
+
+The four computed fiber dimensions are `2->3`, `4->6`, `3->4`, and `2->2`;
+only the one-excitation vertex sector has the inherited anonymous shape. A
+coarse-blind internal bit becomes future-visible. The exact growth/recombiner
+grid has 25 pairs and nine distinct screens. Exact reciprocity selects the five
+diagonal pairs on the registered grid and fixes the left inverse on the
+reached image, while a null-direction extension remains free and five distinct
+complete recorded-successor weight rows survive. The local modulus count is
+three before reciprocity and two after it.
+
+The finite phase census has 64 connections in four size-16 gauge orbits,
+classified by closed holonomy; screen values are `1,1/2,0,1/2`. This is a
+transport control, not gravity.
+
+The candidate's ontological synthesis is a fixed global meta-catalogue of
+complete matter–relation configurations with block-sparse typed transports;
+the realized relational geometry can change even though the possibility
+catalogue is fixed. The catalogue, physical coupling values, recorded-
+successor weights, actualization, Hamiltonian, particles, continuum, Lorentz,
+gravity, QFT, constants, and deviations remain unconstructed or unselected.
+
+The candidate is **GREEN-UNREVIEWED**, not terminal. Candidate replay, all 26
+mutants, true off-tree/no-git execution, seal/paper audit, and a separately
+frozen hostile protocol remain.

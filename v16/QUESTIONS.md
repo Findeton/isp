@@ -106,12 +106,12 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     refinement; and show that the law's own durable records reproduce the same
     quotient?  Only that self-consistent construction would earn the
     record-generated fixed-point label.
-22. **OPEN — Is geometry and transport one recoverable successor map?** Paper
-    3's heterogeneous carrier and relational graph rewrite are separate
-    fixtures. SRW tests whether an anonymous map's support can recover the
-    rewrite, spatial incidence, and persistence data, or whether the correct
-    object is a typed bundle morphism `(rewrite, transport)`. It separately
-    asks whether the current two-dictionary equivalence is stable under every
-    frozen future, whether carrier dimension follows from a selected catalogue,
-    and whether recurring locality or reversible reconvergence relates the
-    growth and history/readout couplings.
+22. **PARTIAL — Is geometry and transport one recoverable successor map?** The
+    green-unreviewed SRW candidate refutes anonymous map-only recovery at its
+    finite arena: transition support, spatial incidence, allowed grammar, and
+    persistence ancestry are not one zero pattern. A typed bundle morphism
+    `(rewrite, transport)` is constructed instead. The 12-to-2 dictionary
+    survivors agree now but split under graph- and persistence-sensitive
+    futures; coherent reciprocity fixes an eraser on the reached image, while
+    catalogue choice, recorded-successor weights, and physical coupling values
+    remain unselected. Replay and hostile review remain.
