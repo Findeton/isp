@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `SRW` / Paper 4: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE EXECUTION** at
-  v16 ledger #43. The pin is frozen at #41 and generic core at #42.
+- `SRW` / Paper 4: **FIRST PHYSICAL EXECUTION REFUSED; BOUNDED TEXT-GATE
+  REPAIR AUTHORIZED** at v16 ledger #44. The pin is frozen at #41, generic
+  core at #42, and physical fixture/scorer at #43.
   The authorized continuation tests whether Paper 3's anonymous
   dimension-changing transport and its separately named graph rewrite are one
   recoverable map, or only components of a typed bundle morphism. It freezes
@@ -28,8 +29,9 @@ theory-selection result.
   independent growth/history couplings, reversible reconvergence, and
   boundary gauge versus physical holonomy. It does not alter Paper 3.
   The generic exact core passes twelve unrelated public calibrations and is
-  byte-immutable. The physical fixture contains no result word, the scorer has
-  not been run, and no output, receipt, or Paper 4 result yet exists.
+  byte-immutable. The first scorer run wrote nothing: a true scope sentence
+  wrapped across a newline while its gate used literal substring matching.
+  Only whitespace normalization is authorized before re-execution.
 - `PPR` / Paper 3: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT
   YET ASSIGNED** at v16 ledger #40. The pin was frozen at #33, generic core at
   #34, physical

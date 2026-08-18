@@ -949,3 +949,30 @@ exit 2. It has not been invoked on the physical fixture—not ordinarily, by
 selftest, or under a mutant. The next event is the first official invocation;
 failure must be frozen before repair, while success renders and commits the
 candidate artifacts as-is.
+
+## 2026-08-17 — SRW FIRST PHYSICAL EXECUTION REFUSED AT PROSE WALL (v16 LEDGER #44)
+
+The first invocation of committed scorer `e5bfabd` was exactly
+`/opt/homebrew/bin/python3.13 v16/code/srw_score.py`. It exited 1 with:
+
+```text
+REFUSED SRW-SCOPE-WALLS: walls=2/3
+```
+
+No output, receipt, or Paper 4 result path was created. The run reached the
+paper scope-wall gate after the substantive exact calculations, but no result
+is promoted from a refused invocation.
+
+The defect is textual and independently visible in the frozen source. One
+registered needle is `not a metric-curvature or gravity result`; the rendered
+template wraps it as `not a` followed by a newline and then
+`metric-curvature or gravity result`. The gate uses literal substring matching
+instead of the RUNBOOK-required whitespace-normalized comparison. The other
+two needles pass. No matrix, graph, rewrite, dictionary, future generator,
+coupling equation, phase census, outcome index, or result claim is implicated.
+
+The only authorized repair is to whitespace-normalize both paper text and
+scope-wall needles before containment testing. Fixture bytes, physical
+predicates, result renderer, outcome classifier, numerical claims, mutants,
+and artifact paths may not move. The repaired scorer must be hash-frozen and
+committed before a second invocation.

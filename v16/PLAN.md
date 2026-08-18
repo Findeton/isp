@@ -176,6 +176,10 @@ copied-source replay. No physical fixture or result existed at that freeze.
 The data-only physical fixture and verdict-neutral scorer are frozen at #43
 before execution; their 26-mutant CLI and static exactness checks pass, while
 all three result paths remain absent.
+The first invocation at #44 refused at the paper scope wall because one true
+phrase crossed a rendered newline and the gate omitted required whitespace
+normalization. No artifact was written. Only that mechanical comparator repair
+is authorized before re-execution.
 
 ## Successor register
 
