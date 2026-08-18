@@ -2232,3 +2232,18 @@ feedback on a fixed 27-cell catalogue rather than changing relational
 geometry. It also verifies that DISC excludes its registered memoryless
 classes only. The operator and records/eliminability seats remain isolated and
 must freeze before joint adjudication.
+
+## 2026-08-18 — WRC RECORDS/ELIMINABILITY REVIEW FROZEN (v16 LEDGER #106)
+
+The second completed isolated Paper 8 report is frozen verbatim as
+`v16/review-wrc-records.md`, SHA-256
+`262500ae7cb971e0950a197ef3d5b37da5dcd8582b64e0170d90965c98cc539b`.
+It is hostile evidence only; no WRC finding is adjudicated or repaired here.
+The seat independently reconstructs the emission-history/count-map census,
+all-state fixed-arena translation covariance, the four repeated numeric
+record signatures, the tick-three feedback witness, and DISC's 10,380
+memoryless configurations / 353 distinct laws / zero matches. It accepts the
+primary only at the stipulated fixed-carrier/readout-map grain and rejects
+grammar-history, actualization, permanence, recurring-event-type, and
+geometry-irreducibility promotions. The operator seat remains isolated; joint
+adjudication stays prohibited until its report hash freezes.
