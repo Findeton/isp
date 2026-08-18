@@ -1764,3 +1764,12 @@ physical fixture/verdict-neutral scorer, one official run, candidate-bytes
 commit, replay/mutant/independent/off-tree verification, then a separately
 frozen hostile protocol. In-flight Paper 3–7 reports are excluded from the WRC
 read set. The unrelated untracked v15 SCOUT-T files remain untouched.
+
+## 2026-08-18 — PPR OPERATOR REVIEW FROZEN (v16 LEDGER #76)
+
+The first isolated Paper 3 report is frozen verbatim as
+`v16/review-ppr-operator.md`, SHA-256
+`ab00e911ffb1146f7fb7b3859ded47c0d0dd2943e2d4957e30c840dd76f824a8`.
+It is hostile evidence only; no finding is adjudicated or repaired here. The
+histories/records and gravity/physics reports were not read by this seat. Joint
+adjudication remains prohibited until all three immutable reports are frozen.
