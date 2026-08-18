@@ -407,3 +407,19 @@ This event licenses only an instrument freeze.  It measures no cross-carrier
 comparison, history weight, holonomy, interference, geometry, backreaction,
 particle, constant, or QFT/GR consequence.  The next step is verification from
 the committed bytes, then the separate fixture/scorer freeze.
+
+## 2026-08-17 — JCV GENERIC SOLVER VERIFIED FROM COMMITTED AND TRUE OFF-TREE BYTES (v16 LEDGER #19)
+
+Commit `aa9a54af19f445e3a2067bf12abb603564c10016` was rerun from the worktree and
+reproduced the public output, receipt, and solver-freeze note byte-for-byte.
+Its self-test killed the injected anchor mutation at the registered gate with
+zero artifact movement.
+
+A second run used `git archive` to export only the committed solver and source
+anchors into a directory with no `.git` metadata.  Execution from the alien
+working directory `/private/tmp` returned zero and reproduced the same three
+artifacts byte-for-byte.  `v16/note-jcv-solver-postcommit.md` records the exact
+checks.
+
+Every reserved physical JCV path remained absent throughout.  This verifier
+licenses the separate fixture/scorer freeze and no physical result.

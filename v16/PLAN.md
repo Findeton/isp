@@ -60,8 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **GENERIC SOLVER FROZEN BEFORE THE PHYSICAL FIXTURE (v16 #18)**.  This
-is a separate unit; it does not reopen or repair paper 01.
+Status: **GENERIC SOLVER POST-COMMIT VERIFIED BEFORE THE PHYSICAL FIXTURE
+(v16 #19)**.  This is a separate unit; it does not reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping

@@ -6,11 +6,12 @@ re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
 Updated: 2026-08-17 (v16 JRH remains terminal at #16; the user-authorized JCV
-successor has its generic solver frozen before physics at v16 #18).
+successor has its generic solver post-commit verified before physics at v16
+#19).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
-| JCV (v16 successor) — joint cross-carrier comparison/law variety | **GENERIC SOLVER FROZEN BEFORE PHYSICAL FIXTURE**: exact rational polynomial/sector backend; 5 public calibration models, 15/15 gates, 11/11 mutants; deterministic true off-tree/no-git precommit replay; every physical JCV path absent, so no comparison/weight result is citable | v16 #17–#18 |
+| JCV (v16 successor) — joint cross-carrier comparison/law variety | **GENERIC SOLVER POST-COMMIT VERIFIED BEFORE PHYSICAL FIXTURE**: exact rational polynomial/sector backend; 5 public calibration models, 15/15 gates, 11/11 mutants; committed and true off-tree/no-git replays byte-identical; every physical JCV path absent, so no comparison/weight result is citable | v16 #17–#19 |
 | JRH (paper-01, v16) — joint relational-history law | **TERMINAL: BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED**: original panel two `REJECT`/one `ACCEPT-WITH-FIXES`; delta panel three `ACCEPT-WITH-FIXES`; 38/38 gates, 17/17 mutants, and post-commit off-tree replay exact.  Fixed-boundary instrument, feed-forward no-go, entanglement breaking, interference placement, binary viability/first-loop separation, generator ambiguity, weak-surface nonselection, and the state-relative-decoherence/instrument-completeness gap are exact.  Common-boundary pairing, all-input instrument derivation, nonfactorizing backreaction, stable actualization, all-n extension, weights, geometry, continuum recovery, and law selection remain open | v16 #1–#16 ✓adj |
 | GW1 — metric from deformation closure | terminal negative: blocked at the kernel/deformation interface | v13 #2–#5 |
 | GW2 — regional-descent STEP-0 census | ran (code + receipts committed); see ledger for verdict | v13 LOG |
