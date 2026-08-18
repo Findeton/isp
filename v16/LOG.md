@@ -1051,3 +1051,24 @@ gravity, QFT, constants, and deviations remain unconstructed or unselected.
 The candidate is **GREEN-UNREVIEWED**, not terminal. Candidate replay, all 26
 mutants, true off-tree/no-git execution, seal/paper audit, and a separately
 frozen hostile protocol remain.
+
+## 2026-08-17 — SRW CANDIDATE VERIFICATION FINDS RUNTIME EXACTNESS DEFECT (v16 LEDGER #47)
+
+`v16/note-srw-candidate-verification.md` preserves the failed verification
+against candidate commit `4f465d0`. Two clean temporary-path replays and the
+selftest pass. The first 19 mutants, through `reciprocity-remove`, refuse at
+their registered gates without writes. Verification stops at
+`phase-frame-break`, which raises an unhandled `AttributeError` instead of a
+controlled gate death.
+
+The generic `GQ` dataclass annotates but does not coerce its fields. Constants
+constructed as `GQ(0,1)` therefore retain Python integers; `inverse()` applies
+`/` to them and creates floats during phase-frame transformations. The AST
+float-literal scan is green but insufficient. The displayed finite phase
+numbers are unchanged, yet the exact-`Q(i)` claim is unearned.
+
+Candidate bytes remain immutable at `4f465d0`; no candidate result is called
+verified. A forward repair is authorized: exact constructor coercion, a
+runtime component-type gate, explicit repaired-core anchoring, a direct leak
+control, regenerated artifacts, and the complete replay/mutant/off-tree audit.
+No physical fixture equation, scientific predicate, or outcome word may move.

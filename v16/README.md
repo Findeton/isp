@@ -18,9 +18,10 @@ theory-selection result.
 
 ## Live state
 
-- `SRW` / Paper 4: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #46. The pin
-  is frozen at #41, generic core at #42, physical fixture/scorer at #43, first
-  refusal at #44, and bounded text repair at #45.
+- `SRW` / Paper 4: **GREEN CANDIDATE PRESERVED; VERIFICATION FAILED AT RUNTIME
+  EXACTNESS** at v16 ledger #47. The pin is frozen at #41, generic core at
+  #42, physical fixture/scorer at #43, first refusal at #44, bounded text
+  repair at #45, and candidate at #46.
   The authorized continuation tests whether Paper 3's anonymous
   dimension-changing transport and its separately named graph rewrite are one
   recoverable map, or only components of a typed bundle morphism. It freezes
@@ -35,8 +36,10 @@ theory-selection result.
   constructs the typed rewrite-plus-transport weld, proves the two formerly
   blind dictionaries future-physical at the registered grammar, and derives
   coherent creation–erasure reciprocity on the reached image. Catalogue,
-  recorded-successor weights, and coupling values remain unselected. Replay,
-  26 mutants, off-tree verification, and hostile review remain.
+  recorded-successor weights, and coupling values remain unselected. Two
+  clean replays and 19 mutants pass, but the phase-frame mutant exposes an
+  integer-to-float leak in Gaussian-rational inversion. Exact-core repair,
+  regeneration, full verification, and hostile review remain.
 - `PPR` / Paper 3: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT
   YET ASSIGNED** at v16 ledger #40. The pin was frozen at #33, generic core at
   #34, physical

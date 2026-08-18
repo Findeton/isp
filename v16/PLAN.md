@@ -186,6 +186,10 @@ The second invocation at #46 passes 36/36 and generates the map-only-refuted,
 future-physical-dictionary, constructed-but-unselected bundle-weld, and
 reciprocal-transport/history-weights-free candidate. Its bytes are committed
 as-is before replay or mutants.
+Candidate verification #47 reproduces two clean runs and the first 19 mutant
+deaths, then finds a runtime exactness defect: uncoerced Gaussian-rational
+integer fields produce floats under phase inversion. The candidate is not
+verified. A bounded forward scalar/core repair and full regeneration are next.
 
 ## Successor register
 
