@@ -1,0 +1,129 @@
+{
+  "schema": "ovg-fixture-v1",
+  "provenance": {
+    "base_commit": "ea71160cac1ba4e2a69a7bb1ce5ffcbcebe17063",
+    "core_sha256": "7b17a138dc45f564a5180fca81bdb4620aaa570514d090d8a5c45f0f22d985bf",
+    "anchors": [
+      ["v16/paper-01-joint-relational-history-law.md", "98489edb6a83919199c11b14b92c423965d1a08ad7652a1c1915d5402f9e6003"],
+      ["v16/code/jrh_receipt.json", "1da2e12dbb6f94a8b93c356e31cb8e00593dbcb083cdbba5d57fc7d49af572a9"],
+      ["v16/paper-03-contextual-pullbacks-permanent-records.md", "ca7b06e9e5540d81afb4a401beb66cb2834e3e74033fd742ac5257108a19654f"],
+      ["v16/code/ppr_receipt.json", "dc88d6a2fbcf350785cc5f12cdcb8ea0805c4df6deaacac9ceffd34b1699c630"],
+      ["v16/paper-04-support-rewrite-weld.md", "f61dde79e5fc0e10db1e5dbe13dec25dceaff9842d5e0c5c06ba2ae90eb4bcae"],
+      ["v16/code/srw_receipt.json", "c9b036c9d6382bfd8f1402fe5eee39d3a362842b82b1690e28e5a0130a4d5675"],
+      ["v16/note-srw-hostile-protocol.md", "bfe09ac0e277045c93a98b8fa6b22471fc42f5fbc54f60e7b1c4476c60083760"],
+      ["v12/paper1-composition-defect.md", "81bdab5673fb67b63cd10c08fbb80870f8aa01088047718c5b4bf447e1669128"],
+      ["v15/note-homonym-audit.md", "4dbdb8f932e1b4e3d3813c7dcb9d2905f37b4c42819cc14537afa993e2ce51d9"]
+    ]
+  },
+  "actors": ["A", "B", "C"],
+  "coefficient_census": {
+    "maximum_hypotenuse": 13,
+    "phase_group": [[1, 0], [0, 1], [-1, 0], [0, -1]],
+    "both_histories_nonzero": true
+  },
+  "event_library": [
+    {"id": "u_ab", "kind": "cnot", "qubits": 3, "control": 0, "target": 1, "support": ["A", "B"]},
+    {"id": "v_bc", "kind": "cnot", "qubits": 3, "control": 1, "target": 2, "support": ["B", "C"]},
+    {"id": "x_two", "kind": "swap-two"},
+    {"id": "d_two", "kind": "diagonal", "entries": [[1, 0], [0, 1]]},
+    {"id": "s_four", "kind": "cyclic-shift", "dimension": 4},
+    {"id": "d_four", "kind": "diagonal", "entries": [[1, 0], [1, 0], [0, 1], [-1, 0]]}
+  ],
+  "unitary_cases": [
+    {
+      "id": "scalar-one",
+      "left": {"kind": "identity", "dimension": 2},
+      "right": {"kind": "identity", "dimension": 2},
+      "phase_certificate": [[[1, 0], 2]]
+    },
+    {
+      "id": "scalar-quarter",
+      "left": {"kind": "identity", "dimension": 2},
+      "right": {"kind": "scalar-identity", "dimension": 2, "scalar": [0, 1]},
+      "phase_certificate": [[[0, 1], 2]]
+    },
+    {
+      "id": "overlap-cnot",
+      "left": {"kind": "event-order", "events": ["u_ab", "v_bc"]},
+      "right": {"kind": "event-order", "events": ["v_bc", "u_ab"]},
+      "phase_certificate": [[[1, 0], 6], [[-1, 0], 2]]
+    },
+    {
+      "id": "two-quarter-phases",
+      "left": {"kind": "event-order", "events": ["x_two", "d_two"]},
+      "right": {"kind": "event-order", "events": ["d_two", "x_two"]},
+      "phase_certificate": [[[0, -1], 1], [[0, 1], 1]]
+    },
+    {
+      "id": "three-phase-control",
+      "left": {"kind": "event-order", "events": ["s_four", "d_four"]},
+      "right": {"kind": "event-order", "events": ["d_four", "s_four"]},
+      "phase_certificate": [[[1, 0], 1], [[0, -1], 2], [[-1, 0], 1]]
+    }
+  ],
+  "growing_case": {
+    "id": "common-four",
+    "source_dimension": 2,
+    "target_dimension": 4,
+    "left_columns": [
+      [[1, 0], [0, 0], [0, 0], [0, 0]],
+      [[0, 0], [1, 0], [0, 0], [0, 0]]
+    ],
+    "right_columns": [
+      [[0, 0], [0, 0], [1, 0], [0, 0]],
+      [["3/5", 0], [0, 0], [0, 0], ["4/5", 0]]
+    ]
+  },
+  "three_history_case": {
+    "id": "pauli-triad",
+    "histories": ["identity-two", "swap-two", "phase-sign-two"],
+    "preparation_basis_index": 0
+  },
+  "dark_reactivation_case": {
+    "current_histories": ["identity-two", "identity-two"],
+    "future_legs": ["identity-two", "phase-sign-two"]
+  },
+  "rewrite_cases": [
+    {
+      "id": "disjoint",
+      "state": ["ab", "c"],
+      "first": {"requires": ["ab"], "adds": ["ab1"], "deletes": [], "support": ["A", "B"]},
+      "second": {"requires": ["c"], "adds": ["c1"], "deletes": [], "support": ["C"]}
+    },
+    {
+      "id": "joinable-overlap",
+      "state": ["ab", "bc"],
+      "first": {"requires": ["ab"], "adds": ["ab1"], "deletes": [], "support": ["A", "B"]},
+      "second": {"requires": ["bc"], "adds": ["bc1"], "deletes": [], "support": ["B", "C"]}
+    },
+    {
+      "id": "delete-use",
+      "state": ["ab", "bc"],
+      "first": {"requires": ["bc"], "adds": [], "deletes": ["bc"], "support": ["B", "C"]},
+      "second": {"requires": ["bc"], "adds": ["c1"], "deletes": [], "support": ["B", "C"]}
+    },
+    {
+      "id": "divergent",
+      "state": ["seed"],
+      "first": {"requires": ["seed"], "adds": ["x"], "deletes": ["seed"], "support": ["A", "B"]},
+      "second": {"requires": [], "adds": [], "deletes": ["x"], "support": ["B", "C"]}
+    }
+  ],
+  "factorization_case": {
+    "binary_generators": ["u_ab", "v_bc"],
+    "maximum_word_length": 4,
+    "ternary_control": {"kind": "toffoli", "qubits": 3, "controls": [0, 1], "target": 2},
+    "ancilla_policy": {"initial_bit": 0, "final_bit": 0, "gate_kind": "cnot"}
+  },
+  "local_flag_case": {
+    "carrier_actor": "B",
+    "flag_dimension": 2,
+    "elementary_map_types": [[8, 8]]
+  },
+  "spectator_case": {
+    "spectator": "D",
+    "spectator_dimension": 2,
+    "linked_actor": "A",
+    "linked_actor_basis_pair": [0, 1]
+  }
+}

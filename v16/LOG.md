@@ -1209,3 +1209,25 @@ unknown options exit `2`; the AST has no float literal.
 The public examples contain no CNOT, AB/BC physical arena, OVG target
 coefficient point, outcome, or verdict. The next stage is one data-only
 physical fixture plus verdict-neutral scorer frozen before first execution.
+
+## 2026-08-18 — OVG PHYSICAL FIXTURE AND SCORER FROZEN (v16 LEDGER #54)
+
+`v16/code/ovg_fixture.json` and `v16/code/ovg_score.py` are frozen at hashes
+`7b7658492a49c77f6c9ee3e0a2031d5121c627aad5ae6630e21940a68c92b133`
+and `012171c27b766030b9b8ef02f5cc6a71e86c367af40faeec240d2d5552447e74`
+before the first physical execution. All three official result paths remain
+absent.
+
+The data-only fixture declares five unitary strata, the overlapping CNOT
+orders, a nonnormal `C^2 -> C^4` common-boundary pair, a three-history family,
+delayed reactivation, four rewrite critical pairs, one exact coefficient
+census grammar, a binary CNOT factorization grammar with Toffoli sensitivity
+control, local flag types, and an idle spectator. It contains no expected
+answer, verdict, outcome, solution dimension, target coefficient, or pass
+count.
+
+The verdict-neutral scorer binds the generic core hash and all immutable
+antecedents, implements 30 named physical mutants, and can write only the
+transcript, receipt, and Paper 5 after every gate passes. Static compilation,
+JSON/AST/vocabulary checks, unknown-option refusal, and path-absence checks
+pass. No normal solve, selftest, mutant, classifier, or paper render has run.

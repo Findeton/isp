@@ -237,6 +237,13 @@ flags, exact phase-row ranks, nonnormal dimension-changing overlap equations,
 rewrite critical pairs, and lower-arity factorization. Public duplicate and
 copied-source replays are byte-identical; physical result paths remain absent.
 
+The data-only physical fixture and verdict-neutral scorer are frozen at #54
+before execution. They bind five unitary spectral strata, the AB/BC CNOT
+overlap, a nonnormal growing-carrier pair, a three-history port family,
+critical-pair rewrite types, a lower-arity factorization assay, local flag
+typing, and spectator no-signalling. Thirty named mutants are implemented.
+All result paths remain absent; the next event is the one official execution.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

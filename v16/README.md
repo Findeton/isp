@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `OVG` / Paper 5: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE** at v16
-  ledger #53. The pin is frozen at #52.
+- `OVG` / Paper 5: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE FIRST
+  EXECUTION** at v16 ledger #54. The pin is frozen at #52 and generic core at
+  #53.
   The user-authorized continuation replaces a refuted “record or fuse” order
   trichotomy with the exact Gram/instrument variety of overlapping histories.
   It will test common-boundary typing, all-input multiport completeness, a
@@ -28,8 +29,9 @@ theory-selection result.
   arity relative to a frozen grammar. It explicitly refuses to infer a quantum
   switch, causal nonseparability, higher-arity ontology, all-`n` dynamics,
   Fock fields, QFT, or gravity from order interference alone. The generic
-  exact core passes nine public gates with deterministic copied-source replay;
-  no physical fixture, scorer, result, or paper exists at its freeze.
+  exact core passes nine public gates with deterministic copied-source replay.
+  The data-only physical fixture and verdict-neutral scorer are now frozen
+  with 30 named mutants; no official result or paper yet exists.
 - `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
   original generic core at
