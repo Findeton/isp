@@ -1884,3 +1884,13 @@ This seat did not read the operator or rewrite/category reports. The OVG panel
 is now complete at three immutable reports. Their findings remain hostile
 allegations until one joint adjudication independently recomputes and rules
 them; no repair or candidate promotion occurs in this event.
+
+## 2026-08-18 — CSF OPERATOR REVIEW FROZEN (v16 LEDGER #87)
+
+The first isolated Paper 6 report is frozen verbatim as
+`v16/review-csf-operator.md`, SHA-256
+`d679072ab5341bc986e67a1327e8d756b835de4abb38d472afe9090c04df99b7`.
+It is hostile evidence only; no finding is adjudicated or repaired here. The
+records/relational and physics/locality reports were not read by this seat.
+Joint adjudication remains prohibited until all three immutable reports are
+frozen.
