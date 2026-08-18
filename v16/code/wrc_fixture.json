@@ -1,0 +1,181 @@
+{
+  "schema": "wrc-fixture-v1",
+  "arithmetic": "Q(w), w^2+w+1=0; exact Fraction components",
+  "anchors": [
+    {
+      "path": "v16/note-wrc-pin.md",
+      "sha256": "956d26e22515471c49ed95a43b2956d8f73e8bcd662eeacc82215d9527c00f99",
+      "tokens": [
+        "state + complete outcome instruments + clock/cuts + observables + beable map",
+        "The third may be an exact mathematical recoding but is outside the frozen\naffine creation-event class."
+      ]
+    },
+    {
+      "path": "v16/note-wrc-pin-addendum.md",
+      "sha256": "a93f648cbdff08fba97054b2b28fe261375bccc52d4ebc3b81c1d9f25bc04a7e",
+      "tokens": [
+        "Scope: provenance only; no physics, fixture, gate, comparator, outcome, or\nclaim changes",
+        "The corrected digest replaces only that one table cell"
+      ]
+    },
+    {
+      "path": "v16/code/wrc_core.py",
+      "sha256": "94c74731179c1302254a3b7424dcb66d1154518bcf936c5531b05a52f42fa6b3",
+      "tokens": [
+        "The literal ``Tr(E rho) U rho U*`` outcome rule."
+      ]
+    },
+    {
+      "path": "v14/paper-20-coupling.md",
+      "sha256": "4824d190af73df4d2140f6733d7cf74a90daf59f0be934278c13168510141704",
+      "commit": "04815e50abe772624cb72d88fd877c785b259dc2",
+      "tokens": [
+        "C_t(x) = G · D_t(x)",
+        "the state is not collapsed onto the emitted cell"
+      ]
+    },
+    {
+      "path": "v14/code/coupling_exact.py",
+      "sha256": "72e7b299f66e9e1e6c93e00cba2b790e185f115a11ffd2d1452dc412ccd825bb",
+      "commit": "04815e50abe772624cb72d88fd877c785b259dc2",
+      "tokens": [
+        "Returns the shifted\n    state and the POST-COIN amplitudes"
+      ]
+    },
+    {
+      "path": "v14/code/coupling_receipt.json",
+      "sha256": "55273f6b6068a8847435884cf7f08fd92adf3400ea949d738f7f5549f8842ca1",
+      "commit": "04815e50abe772624cb72d88fd877c785b259dc2",
+      "tokens": [
+        "COUPLING-CONSISTENT-NOT-REQUIRED"
+      ]
+    },
+    {
+      "path": "v14/paper-31-occ.md",
+      "sha256": "0092caa4d9ad4738d7b35a66317493a3187a3af129f489da6ac0cf35a29e5dcb",
+      "tokens": [
+        "the excitation rides the co-division pair"
+      ]
+    },
+    {
+      "path": "v14/paper-38-epr.md",
+      "sha256": "22beb66962232240d2e673763e32b1fe451db7c44a2420754ed42f83e99983e2",
+      "tokens": [
+        "D-RECORD",
+        "D-SHADOW"
+      ]
+    },
+    {
+      "path": "v15/note-homonym-audit.md",
+      "sha256": "4dbdb8f932e1b4e3d3813c7dcb9d2905f37b4c42819cc14537afa993e2ce51d9",
+      "tokens": [
+        "Paper-20's primitive is **CELL-HIT**"
+      ]
+    },
+    {
+      "path": "v15/note-js-pin-v2.md",
+      "sha256": "99e90f9a2e8db6a67a1cb46902de96d6086a0931897145d5d54ca3a9e78816ea",
+      "tokens": [
+        "the walk as representation, its record\nupdate not frozen in"
+      ]
+    },
+    {
+      "path": "v16/paper-07-creation-event-universality-recoverable-records.md",
+      "sha256": "acf2dafb165d5ceb82bf4bc532b194f760095ce355b0b5ee7c5996df13878f90",
+      "tokens": [
+        "Transport locality and all-input completeness do not force one probability kernel"
+      ]
+    },
+    {
+      "path": "v16/QUESTIONS.md",
+      "sha256": "91ae5d440d9e28df0a459b0ba73ad2f6bba85a3b9395e8a73f493a756638b0e4",
+      "tokens": [
+        "not only a matrix with the same spectrum"
+      ]
+    }
+  ],
+  "committed_receipt_bindings": [
+    {
+      "pointer": ["counts", "horizon"],
+      "committed_value": 5
+    },
+    {
+      "pointer": ["counts", "leaves_coupled_A"],
+      "committed_value": 284078
+    },
+    {
+      "pointer": ["walk", "connection", "connection_group_order"],
+      "committed_value": 3
+    },
+    {
+      "pointer": ["walk", "coin_census", "grover_numerators_over_3"],
+      "committed_value": [[-1, 2, 2], [2, -1, 2], [2, 2, -1]]
+    },
+    {
+      "pointer": ["walk", "coin_census", "classes_up_to_phase"],
+      "committed_value": 6
+    },
+    {
+      "pointer": ["walk", "fiber_measurements", "SITE-TRANSLATION-INVARIANT"],
+      "committed_value": "True"
+    },
+    {
+      "pointer": ["walk", "coin_order_full_horizon", "GD_exit_probability"],
+      "committed_value": "927415552/847288609443"
+    },
+    {
+      "pointer": ["nontriviality", "observables", 1, "coupled"],
+      "committed_value": "35971074413334039128803/239299329230617529590083"
+    }
+  ],
+  "source_packet": {
+    "field_order": 3,
+    "sites": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]],
+    "links": [[1, 0], [0, 1], [1, 1]],
+    "initial_record_entry": 1,
+    "coin_numerators": [[-1, 2, 2], [2, -1, 2], [2, 2, -1]],
+    "coin_denominator": 3,
+    "phase_powers": [[1, 0], [0, 1], [-1, -1]],
+    "coin_order": "GD",
+    "shift_orientation": "PLUS",
+    "initial_site": [0, 0],
+    "initial_coin": 0,
+    "cuts": ["INPUT", "POST-COIN-CELL-HIT", "POST-SHIFT-OUTPUT"],
+    "horizon": 5,
+    "recurrence_horizon": 3,
+    "cell_hit_reading": "BORN",
+    "conditioned_state_rule": "NONCOLLAPSE",
+    "beable_readout": "COUNT-FIELD"
+  },
+  "controls": {
+    "affinity_postcoin_cells": [0, 1],
+    "continuation_postcoin_cells": [0, 1],
+    "continuation_postcoin_vector": ["3/5", "4/5"],
+    "continuation_outcome_cell": 0,
+    "translation_vectors": [[1, 0], [1, 1]],
+    "translate_record": true,
+    "hidden_coin_numerators": [
+      [[3, 1], [0, 1], [0, 1]],
+      [[0, 1], [3, 1], [0, 1]],
+      [[0, 1], [0, 1], [3, 1]]
+    ],
+    "hidden_coin_denominator": 3,
+    "gauge_phase_power": 1,
+    "absolute_anchor_site": [0, 0]
+  },
+  "scope_walls": [
+    "NO-FUNDAMENTAL-LAW-SELECTION",
+    "NO-CARRIER-GROWTH",
+    "NO-ALL-ARENA-EXTENSION",
+    "NO-GENUINE-DIVISION-BOUNDARY",
+    "NO-GRAVITY-OR-RELATIONAL-GRAPH-BACKREACTION",
+    "NO-CONTINUUM-OR-LORENTZ",
+    "NO-QFT-OR-GR",
+    "NO-PARTICLES-SPECIES-OR-STATISTICS",
+    "NO-HAMILTONIAN-RECONSTRUCTION",
+    "NO-CONSTANT-SELECTION",
+    "NO-STEERING-BELL-OR-EPR-EQUIVALENCE",
+    "NO-ACTUALIZATION",
+    "NO-EMPIRICAL-DEVIATION"
+  ]
+}

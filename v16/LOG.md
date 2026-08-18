@@ -1950,3 +1950,24 @@ than by unrestricted elimination in one finite fixture. That proposal is not
 adjudicated here and does not alter any frozen report. It also does not license
 identifying DISC's record/memory dependence on a fixed carrier with dynamical
 geometry; that type distinction remains to be tested.
+
+## 2026-08-18 — WRC PHYSICAL FIXTURE/SCORER FROZEN (v16 LEDGER #93)
+
+`v16/code/wrc_fixture.json` and `v16/code/wrc_score.py` are frozen before any
+official output, receipt, or Paper 8 path exists, at SHA-256
+`4ced0a163d645072ded79c51c92cf6f847576f062f35091df67db6d6f8a971c8`
+and `ff250da02a04c2cb98edc5fcdf5cf86da61072f0e014e6a2f67e9c8ae62772ad`
+respectively. `v16/note-wrc-fixture-freeze.md`, SHA-256
+`f6622aeb0dbd72c7942521a341ce7acfa0fb8340cb9ef1b78fba9c5b5e881fd4`,
+discloses the full construction and prefreeze-dry-run chronology.
+
+The scorer independently binds all nine committed observable families, uses a
+moved nonuniform record in its covariance assay, proves the all-input
+nonaffinity criterion separately from its mixture witness, seals separate
+`TRANSPORT` / `AFFINE-CP` / `ONTIC-PURE-STATE` rows, and refuses to identify
+fixed-carrier record dependence with irreducible geometry. Two final clean
+temporary runs and an alien-CWD run are byte-identical; all 34 mutants,
+selftest, strict CLI, no-overwrite, no-float, and fail-before-write checks pass.
+
+No result is adopted here. The next action is the one authorized official
+invocation from these committed bytes.

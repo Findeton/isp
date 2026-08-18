@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `WRC` / Paper 8: **GENERIC EXACT CORE FROZEN BEFORE PHYSICAL FIXTURE** at
-  v16 ledger #79. The pin is frozen at #75; its one provenance-only
+- `WRC` / Paper 8: **PHYSICAL FIXTURE/SCORER FROZEN BEFORE OFFICIAL
+  INVOCATION** at v16 ledger #93. The pin is frozen at #75; its one provenance-only
   `QUESTIONS.md` digest transcription repair is frozen at #83 after the first
   result-free physical dry run refused without writes.
   The user-authorized continuation tests whether the committed v14 walk is a
@@ -34,8 +34,13 @@ theory-selection result.
   excluded from WRC's anchors and runtime. The generic core passes 8/8 public
   exact gates and freezes `Q(w)` state/effect/instrument, nonaffinity, CP
   comparison, covariance, and event-history machinery without any physical
-  walk value or outcome. A data-only fixture and verdict-neutral scorer are
-  next.
+  walk value or outcome. The data-only fixture and verdict-neutral scorer are
+  now frozen at #93 after full disclosure of the prefreeze dry-run chronology.
+  They bind all nine committed observable families, separate `TRANSPORT`,
+  `AFFINE-CP`, and `ONTIC-PURE-STATE`, use a moved nonuniform record, and carry
+  the explicit refusal that fixed-carrier record dependence proves irreducible
+  geometry. Two clean runs plus alien-CWD are byte-identical and 34/34 mutants
+  refuse without writes. One official invocation is next.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
