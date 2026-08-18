@@ -119,8 +119,8 @@ theory-selection result.
   clean replays, all 30 mutants, independent seals/math, and true off-tree
   execution. The three-lens hostile protocol is frozen at #59; all three seats
   were dispatched at #74.
-- `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
-  PANEL RUNNING** at v16 ledger #74. The pin is frozen at #41,
+- `SRW` / Paper 4: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
+  AWAITING JOINT ADJUDICATION** at v16 ledger #82. The pin is frozen at #41,
   original generic core at
   #42, physical fixture/scorer at #43, first refusal at #44, bounded text
   repair at #45, candidate at #46, and failed verification at #47.
@@ -148,8 +148,9 @@ theory-selection result.
   Two clean replays, all 27 mutants, all 9 seals, all 12 paper bindings, an
   independent four-finding reconstruction, and a true off-tree/no-git replay
   pass. The #51 protocol freezes independent operator/representation,
-  rewrite/category, and physics/gravity/QFT attacks. Reviewers and adjudication
-  remain.
+  rewrite/category, and physics/gravity/QFT attacks. The operator report at
+  #80, rewrite/category report at #81, and physics/causality report at #82 are
+  immutable hostile evidence; their allegations await joint adjudication.
 - `PPR` / Paper 3: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #78. The pin was frozen at #33, generic core at
   #34, physical

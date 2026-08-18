@@ -1830,3 +1830,13 @@ The second isolated Paper 4 report is frozen verbatim as
 It is hostile evidence only; no finding is adjudicated or repaired here. This
 seat did not read the operator or physics/causality report. The final seat must
 be frozen before joint adjudication begins.
+
+## 2026-08-18 — SRW PHYSICS/CAUSALITY REVIEW FROZEN; PANEL COMPLETE (v16 LEDGER #82)
+
+The third isolated Paper 4 report is frozen verbatim as
+`v16/review-srw-physics.md`, SHA-256
+`2a3fcf7df263f8d821c3f752570aecf13c18f86ba6e27f3ba7b1a475b31e666e`.
+This seat did not read the operator or rewrite/category reports. The SRW panel
+is now complete at three immutable reports. Their findings remain hostile
+allegations until one joint adjudication independently recomputes and rules
+them; no repair or candidate promotion occurs in this event.
