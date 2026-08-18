@@ -58,42 +58,29 @@ theory-selection result.
   operator, records/eliminability, and physics/geometry seats; dispatch #99
   assigns all three independently, with no adjudication before every report
   hash freezes.
-- `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
-  AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
-  #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
-  verification at #72.
-  The user-authorized continuation tests the creation-event layer at four
-  sharply separated types: recurrence propagated by standing naturality,
-  symmetry, and gluing versus token-disjoint universality as a priced
-  postulate; record permanence as continuation-stable licensed recoverability
-  rather than bare algebra covariance; calibrated instrument dilations welded
-  to typed relational flag-cell creation; and Gaussian-rational restrictions
-  as minimal resource costs rather than absolute realizability obstructions.
-  External scratchpads are excluded from the runtime read set. A generic
-  exact core is now frozen: nine public gates pass over exact `Q(i)` algebra,
-  constructive `LDL^dagger`/four-square Gram factors, finite licensed-
-  recovery semantics, branch coarse-graining, continuation closure, and
-  Stinespring stacking. It contains no CEL physical context or verdict. The
-  result-neutral physical fixture/scorer is now frozen: a data-only fixture,
-  44-gate scorer, and 41 named mutants bind the recurrence, recoverability,
-  relational-flag, and exact-resource arms without embedding a target word or
-  solution dimension. Temporary deterministic/mutant checks pass; all three
-  official invocation passes 44/44 gates and selects
-  `CEL-CREATION-EVENT-LAYER-CONSTRUCTED-BUT-COUPLINGS-AND-CATALOGUE-UNSELECTED`.
-  It measures universality's `2 -> 1` price, covariance-versus-recovery,
-  grammar-relative redundant records, retained-versus-discarded branch
-  recovery, the typed JCV flag weld with calibrated movement `0 -> 49/625`,
-  and the constructive Gaussian-rational `2r` bound. The generated output,
-  receipt, and Paper 7 bytes are committed unchanged. Verification #72 gives
-  two byte-identical replays, all 41 mutant deaths, an independent exact
-  reconstruction, and a byte-identical true off-tree/no-git run. A separately
-  frozen hostile protocol at #73 now binds three isolated seats: exact
-  operator/resources, records/recurrence/relational typing, and locality/
-  dynamics/physics. The operator report at #90, records/relational report at
-  #91, and physics/locality report at #92 are immutable hostile evidence;
-  their allegations await joint adjudication. A later family-level,
-  class-relative eliminability proposal is recorded as successor methodology,
-  not retrofitted into the completed reports.
+- `CEL` / Paper 7: **PANEL-ADJUDICATED REJECT AT
+  `CEL-MATHEMATICAL-LADDER-CONSTRUCTED-BUT-RELATIONAL-FLAG-WELD-UNBUILT`**
+  at v16 ledger #104. The pin is frozen at #68, generic core at #69,
+  fixture/scorer at #70, candidate at #71, verification at #72, and hostile
+  protocol at #73; reports #90–#92 are jointly adjudicated. Every exact
+  recurrence, reset/relabel, finite-grammar recovery, JCV dilation, and
+  Gaussian-rational calculation survives. The recurrence ladder is retained
+  with its provenance: spectator naturality and exchange covariance are
+  standing principles, shared-token restriction is coordinate consistency,
+  and token-disjoint universality costs `2 -> 1`. Operational null is valid
+  only at the discarded-port algebra and for continuations factoring through
+  it. Registered finite-grammar recoverability and redundancy survive, not
+  objective or catalogue-independent permanence. The general finite
+  rank-`r` PSD Hermitian `Q(i)` Gram-row bound `<=2r` is confirmed as an exact
+  representation-resource theorem. The physical creation-layer headline is
+  killed: deleting or changing the graph attachment leaves every kernel,
+  channel, stack, support count, and calibrated probability unchanged. The
+  flag is an annotated Stinespring target, not yet a relational cell, and the
+  recurrence, grammar, and dilation arms are not one joint successor law.
+  Couplings, catalogue, actualization, steering, geometry, gravity,
+  Hamiltonian, and QFT remain unselected or unconstructed. A later family-
+  level, class-relative eliminability proposal is successor methodology, not
+  retrofitted evidence.
 - `CSF` / Paper 6: **PANEL-ADJUDICATED REJECT AT
   `CSF-BLOCKED-AT-HISTORY-INDIVIDUATION`** at v16 ledger #103. The pin is
   frozen at #60, generic core at #61, fixture/scorer at #62, first refusal at

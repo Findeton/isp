@@ -2194,3 +2194,28 @@ literal arrays, not probe-derived observables. The fixed-history
 spectrahedron and calibrated instrument fiber remain substantial conditional
 results, but no recurring relational law, durable flag, steering theorem,
 Hamiltonian, gravity, or QFT consequence is promoted.
+
+## 2026-08-18 — CEL PAPER 7 PANEL ADJUDICATION (v16 LEDGER #104)
+
+The isolated CEL panel is adjudicated in `v16/note-cel-adjudication.md`,
+SHA-256
+`a7d844e4942a0cfa264a1dfef7f0fe13cfbcba0d4c41f799b5c2227eb2525a65`.
+Grades were ACCEPT-WITH-FIXES / REJECT / REJECT. Every registered exact
+recurrence, recovery, dilation, and Gaussian-rational calculation survives.
+
+The positive creation-layer headline is rejected at the pin's own fallback:
+**CEL-MATHEMATICAL-LADDER-CONSTRUCTED-BUT-RELATIONAL-FLAG-WELD-UNBUILT**.
+Deleting or changing the declared graph attachment leaves every kernel,
+channel, stack, support count, and calibrated port statistic unchanged. The
+Stinespring flag is therefore an exact mathematical target plus catalogue
+annotation, not yet a physically relational created cell. The recurrence,
+classical grammar, and dilation arms are not one joint successor law.
+
+The recurrence ladder is retained with provenance: naturality/symmetry are
+standing principles, shared-token restriction is coordinate consistency, and
+token-disjoint universality costs `2 -> 1`. Operational null is
+discarded-port/future-relative. Finite-grammar recoverability and redundancy
+survive, not absolute permanence. The general finite `Q(i)` PSD Gram-row
+bound `<=2r` survives as representation-resource mathematics, not physical
+cell cost. Couplings, catalogue, actualization, steering, geometry, gravity,
+Hamiltonian, and QFT remain unselected or unconstructed.
