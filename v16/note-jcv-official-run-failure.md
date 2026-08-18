@@ -1,6 +1,6 @@
 # JCV first official run — infrastructure failure
 
-Status: **OFFICIAL-RUN-FAILED-BEFORE-VERDICT-AND-BEFORE-ARTIFACT-PROMOTION**.
+Status: **HISTORICAL FAILURE RECORD — CHRONOLOGY CORRECTED AFTER HOSTILE REVIEW**.
 
 Frozen fixture/scorer commit:
 `ee8e414c2e354b5447af57efedbe234ae12af111`.
@@ -26,8 +26,26 @@ sets.  `json.dumps` therefore raised:
 
 The traceback terminates at `jcv_score.py` in `Mutator.move -> digest ->
 canonical -> json.dumps`, called from `fixture_semantics` during
-`mutation_survey`.  No classifier word or physical numeral was printed or
-promoted.
+`mutation_survey`.  No classifier word or physical numeral was printed,
+written, serialized, promoted, or committed.
+
+## Post-panel chronology correction
+
+The original status phrase `FAILED-BEFORE-VERDICT` was too broad if `verdict`
+includes an internal value.  Source-order reconstruction by all three hostile
+seats shows that `run_core()` had solved and classified the clean fixture and
+the renderer had formed a paper string in memory before `mutation_survey()`
+encountered the set serializer.  The exception exposed none of those values.
+
+The exact chronology is therefore:
+
+`FAILED AFTER INTERNAL CLASSIFICATION, BEFORE RESULT EXPOSURE, SERIALIZATION,
+OR PROMOTION`.
+
+This correction changes no physical rule and does not imply result leakage.
+The evidence for chronology is the committed source order, traceback, git
+history, and absent result paths—not the original scorer's hard-coded
+`P-CHRONOLOGY=True` row.
 
 ## Disposition
 

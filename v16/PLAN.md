@@ -60,8 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **ADJUDICATED — BOUNDED REPAIR PENDING (v16 #29)**.  This is a
-separate unit; it does not reopen or repair paper 01.
+Status: **ADJUDICATED REPAIR SOURCE FROZEN — UNEXECUTED (v16 #30)**.  This is
+a separate unit; it does not reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping
@@ -88,7 +88,8 @@ The locked chronology is:
    adjudication #29: all three seats return `ACCEPT-WITH-FIXES`, reproduce all
    exact values, and order an interpretive/certificate repair.  The finite
    classifier survives; `fixed point` and carrier-derived comparison do not.
-   One bounded repair and one terminal verifier remain.**
+   The bounded repair source is frozen unexecuted at #30.  One repaired
+   artifact generation, commit-as-is, and terminal verifier remain.**
 
 The result is limited to a real two-channel interface and its first neighboring
 cocycle extension.  It cannot promote geometry, backreaction, a general

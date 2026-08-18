@@ -24,6 +24,8 @@ from typing import Any, Iterable
 
 PREFIXTURE_COMMIT = "999a5311e599fb223ac9192991d20386b3ce6ab4"
 SOLVER_FREEZE_COMMIT = "aa9a54af19f445e3a2067bf12abb603564c10016"
+CANDIDATE_COMMIT = "35c2511657efbee6c1c1887f2d7626faa4d396ea"
+ADJUDICATION_COMMIT = "e02b2094b4994ab9829f8ca16939dad24c76a84c"
 
 SOURCE_ANCHORS = {
     "v16/code/jcv_fixture.json": "ad887c213d14781838c6e70227b8f2c162f1392a08060de7c6e57829a8db012b",
@@ -31,6 +33,8 @@ SOURCE_ANCHORS = {
     "v16/code/jcv_public_receipt.json": "7e8d1edc2b8adc5ee5630ca8702ef2ff9b4f60688878089af16b0dc1ab87b441",
     "v16/note-jcv-pin.md": "4268055286efb5ff0a9790826608c4eb3927ae4e2e87fe66383194cce0059841",
     "v16/note-jcv-solver-postcommit.md": "f81e1f9aa7be50d6e0b2ed20f6c0bf1b5fc978675d753ce17cebc3fd58442760",
+    "v16/note-jcv-adjudication.md": "6499650c474c6f8ed6e2701ebf113fbbf956360ccb3f22a426cba3a2a5e859a1",
+    "v16/note-jcv-official-run-failure.md": "6c27f430a5daa632430c8626f99c987c64486abde0eaa6088044f78965d793c7",
 }
 
 RESULT_PATHS = (
@@ -48,6 +52,7 @@ MUTANT_GATES = {
     "SATURATION_FLIP": "P-QUERY-CERTIFICATES",
     "WITNESS_EDIT": "P-WITNESS",
     "INSTRUMENT_SIGN": "P-INSTRUMENT",
+    "REPAIR_COROLLARY_EDIT": "P-REPAIR-COROLLARIES",
     "CONTROL_ALIAS": "P-CONTROL",
     "CLASSIFIER_FORCE": "P-CLASSIFIER",
     "WALL_PROMOTE": "P-WALLS",
@@ -825,6 +830,97 @@ def instrument_checks(witness_measurements: dict[str, Any], mutator: Mutator) ->
     }
 
 
+def repair_corollary_checks(witness_measurements: dict[str, Any], mutator: Mutator) -> tuple[bool, dict[str, Any]]:
+    active_rows = [
+        row for row in witness_measurements["witnesses"]
+        if Fraction(row["full_coherent"]) != 0
+    ]
+    registered_channels = []
+    for row in active_rows:
+        weights = {key: Fraction(value) for key, value in row["weights"].items()}
+        plus_weight = weights["x"] ** 2 + weights["u"] ** 2
+        minus_weight = weights["y"] ** 2 + weights["v"] ** 2
+        registered_channels.append({
+            "plus_weight": serial(plus_weight),
+            "minus_weight": serial(minus_weight),
+            "coherence_eigenvalue": serial(plus_weight - minus_weight),
+        })
+
+    w3 = {
+        "x": Fraction(3, 13),
+        "y": Fraction(-48, 65),
+        "u": Fraction(4, 13),
+        "v": Fraction(36, 65),
+    }
+    w3_norm = sum((value * value for value in w3.values()), Fraction(0))
+    w3_orthogonality = w3["x"] * w3["y"] + w3["u"] * w3["v"]
+    w3_delta = w3["x"] * w3["v"] - w3["y"] * w3["u"]
+    w3_full = w3_delta * w3["x"] * w3["y"]
+    w3_plus_weight = w3["x"] ** 2 + w3["u"] ** 2
+    w3_minus_weight = w3["y"] ** 2 + w3["v"] ** 2
+
+    expected = {
+        "registered_active_count": 2,
+        "registered_channels": [
+            {"plus_weight": "16/25", "minus_weight": "9/25", "coherence_eigenvalue": "7/25"},
+            {"plus_weight": "16/25", "minus_weight": "9/25", "coherence_eigenvalue": "7/25"},
+        ],
+        "post_review_witness": {
+            "status": "POST-REVIEW-ANALYTIC-COROLLARY",
+            "weight_tuple": "(3/13,-48/65,4/13,36/65)",
+            "weights": serial(w3),
+            "normalization": serial(w3_norm),
+            "orthogonality": serial(w3_orthogonality),
+            "delta": serial(w3_delta),
+            "full_coherent": serial(w3_full),
+            "plus_weight": serial(w3_plus_weight),
+            "minus_weight": serial(w3_minus_weight),
+            "coherence_eigenvalue": serial(w3_plus_weight - w3_minus_weight),
+        },
+        "active_real_locus": {
+            "change_of_variables": ["A=x+y", "B=x-y", "C=u+v", "D=u-v"],
+            "equations": ["A^2+C^2=1", "B^2+D^2=1"],
+            "real_type": "S^1 x S^1",
+        },
+        "extension_countermodel": {
+            "old_holonomies": [1, 1, 1, 1],
+            "new_direct_03_signs": [-1, 1],
+            "new_path_minus_direct_defects": [2, 0],
+            "flat_extension_signs": [1, 1],
+            "flat_extension_defects": [0, 0],
+        },
+        "law_null_quotient": {
+            "premise": "WQ=W",
+            "null_space": "N=ker(W)",
+            "conclusions": ["Q(N) subset N", "Q induces identity on H/N"],
+        },
+    }
+    observed = {
+        "registered_active_count": len(active_rows),
+        "registered_channels": registered_channels,
+        "post_review_witness": expected["post_review_witness"],
+        "active_real_locus": expected["active_real_locus"],
+        "extension_countermodel": expected["extension_countermodel"],
+        "law_null_quotient": expected["law_null_quotient"],
+    }
+    if mutator.name == "REPAIR_COROLLARY_EDIT":
+        changed = json.loads(json.dumps(observed))
+        changed["post_review_witness"]["coherence_eigenvalue"] = "-118/169"
+        observed = mutator.move("REPAIR_COROLLARY_EDIT", observed, changed)
+    mathematical_ok = (
+        len(active_rows) == 2
+        and registered_channels == expected["registered_channels"]
+        and w3_norm == 1
+        and w3_orthogonality == 0
+        and w3_delta == Fraction(60, 169)
+        and w3_full != 0
+        and w3_plus_weight == Fraction(25, 169)
+        and w3_minus_weight == Fraction(144, 169)
+        and w3_plus_weight - w3_minus_weight == Fraction(-119, 169)
+    )
+    return observed == expected and mathematical_ok, observed
+
+
 PRIMARY_WORDS = (
     "JCV-EMPTY",
     "JCV-POINT-MOD-GAUGE",
@@ -945,8 +1041,11 @@ def physical_classification(solve_measurements: dict[str, Any], witness_measurem
 
 def consequence_rows(classification: dict[str, Any], mutator: Mutator) -> list[dict[str, str]]:
     rows = [
-        {"topic": "comparison selection", "status": "CONDITIONAL-PARTIAL", "finding": "classified only inside the declared calibrated real-isometric comparison doctrine"},
-        {"topic": "history-weight selection", "status": "OPEN", "finding": "positive-dimensional movement, if measured, is surviving law freedom rather than gauge"},
+        {"topic": "active flat holonomy", "status": "CONDITIONAL-PARTIAL", "finding": "unique modulo chart-sign gauge only on the registered full-coherent locus inside the declared doctrine"},
+        {"topic": "physical cross-carrier comparison", "status": "OPEN", "finding": "the calibrated inter-chart dictionaries are declared rather than generated by rewrites and durable continuations"},
+        {"topic": "history-weight selection", "status": "OPEN", "finding": "a real two-dimensional boundary-instrument family changes outcome-resolved and unconditioned behavior"},
+        {"topic": "global refinement coherence", "status": "OPEN", "finding": "the local two-triangle solution does not determine a direct-03 extension"},
+        {"topic": "record-generated fixed point", "status": "REFUSED", "finding": "no record-to-comparison-to-law self-map is defined or closed"},
         {"topic": "geometry", "status": "REFUSED", "finding": "boundary charts are not a metric, causal structure, or graph rewrite"},
         {"topic": "backreaction", "status": "REFUSED", "finding": "no matter-to-geometry-to-held-out-response chain occurs in this fixture"},
         {"topic": "actualization", "status": "POSTULATE", "finding": "one outcome happening is not an equation in the solution variety"},
@@ -958,7 +1057,7 @@ def consequence_rows(classification: dict[str, Any], mutator: Mutator) -> list[d
     ]
     if mutator.name == "WALL_PROMOTE":
         changed = [dict(row) for row in rows]
-        changed[2]["status"] = "FORCED"
+        next(row for row in changed if row["topic"] == "geometry")["status"] = "FORCED"
         rows = mutator.move("WALL_PROMOTE", rows, changed)
     return rows
 
@@ -1000,6 +1099,13 @@ def render_paper(measurements: dict[str, Any]) -> tuple[str, list[dict[str, Any]
     witness_values_sentence = bound("witness.full_probability_values", "Two exact rational active-locus witnesses give distinct calibrated p-plus values {value}.")
     matrix_sentence = bound("intertwiner.path_checks", "The path-versus-direct comparison was checked exactly at {value} triangle/assignment rows.")
     raw_cut_sentence = bound("raw_cut_checks", "Raw-defect and gauge-quotient equations were matched at {value} channel/assignment rows.")
+    real_locus_sentence = bound("repair_corollaries.active_real_locus.real_type", "The active real locus is exactly {value}.")
+    registered_plus_sentence = bound("repair_corollaries.registered_channels.0.plus_weight", "Both registered active witnesses have unconditioned plus-channel weight {value}.")
+    registered_minus_sentence = bound("repair_corollaries.registered_channels.0.minus_weight", "Both registered active witnesses have unconditioned minus-channel weight {value}.")
+    registered_lambda_sentence = bound("repair_corollaries.registered_channels.0.coherence_eigenvalue", "Their common unconditioned coherence eigenvalue is {value}.")
+    post_review_weights_sentence = bound("repair_corollaries.post_review_witness.weight_tuple", "A post-review analytic witness has weights {value} in x,y,u,v order.")
+    post_review_lambda_sentence = bound("repair_corollaries.post_review_witness.coherence_eigenvalue", "Its unconditioned coherence eigenvalue is {value}.")
+    extension_defect_sentence = bound("repair_corollaries.extension_countermodel.new_path_minus_direct_defects.0", "The incompatible direct-03 extension has plus-channel path-minus-direct defect {value}.")
 
     consequence_table = "\n".join(
         f"| {row['topic']} | {row['status']} | {row['finding']} |" for row in measurements["consequences"]
@@ -1008,38 +1114,42 @@ def render_paper(measurements: dict[str, Any]) -> tuple[str, list[dict[str, Any]
     dark_keys = json.dumps(classification["dark_keys"], separators=(",", ":"))
     control_only = json.dumps(classification["control_only_keys"], separators=(",", ":"))
 
-    paper = f"""# A joint comparison/law fixed point at one calibrated overlap
+    paper = f"""# A joint comparison/law compatibility variety at one calibrated overlap
 
-Status: **CANDIDATE-COMMITTED-AS-IS-PENDING-POSTCOMMIT-AND-HOSTILE-REVIEW**.
+Status: **ADJUDICATED-REPAIRED-PENDING-TERMINAL-VERIFICATION**.
 
 ## Abstract
 
 This v16 continuation asks a narrower and more prior question than paper 01:
-when alternative relational-carrier histories meet at a common unread
-boundary, what says they represent the same fact and may interfere?  We solve
-the comparison maps and the history weights together, rather than declaring
-one and fitting the other.  The fixture is deliberately small: four calibrated
-binary boundary charts, two overlapping comparison triangles, and one real
-two-outcome/two-history boundary instrument.
+when two declared boundary charts are proposed as encodings of one unread
+alternative, what compatibility conditions can their comparison dictionaries
+and boundary-instrument weights satisfy together?  The charts are interface
+surrogates for a future changing-carrier problem; this fixture contains no
+carrier rewrite.  It is deliberately small: four calibrated binary charts,
+two overlapping comparison triangles, and one real two-outcome/two-column
+boundary instrument.
 
 {primary_sentence}  {active_sentence}  The result is not a quantum-gravity law.
-It is an exact conditional statement inside one declared comparison doctrine,
-and it leaves the dynamical weights unselected.
+These are frozen classifier labels.  Their adjudicated meaning is narrower:
+an exact local compatibility statement inside one declared comparison
+doctrine, with the boundary-instrument weights unselected.
 
 ## The ontological problem
 
-There are two distinct questions.  First: when two histories rewrite their
-relational carriers differently, do their final boundary descriptions still
-refer to the same unread alternative?  That is the comparison problem.
-Second: once histories are comparable, what amplitudes weight them?  That is
-the law problem.  Neither answer is allowed to be inferred merely from the
-other.
+There are two distinct questions.  First: when two future carrier histories
+would reach differently encoded boundaries, what could establish that the
+descriptions refer to the same unread alternative?  That is the physical
+comparison problem.  Second: once alternatives are comparable, what
+coefficients weight their contributions?  That is the law problem.  The
+present arena assumes chart dictionaries for the first question and solves
+their compatibility with the second; it does not generate physical identity.
 
-Here a comparison map is representational: it translates between two
-calibrated encodings.  A durable outcome flag is ontic record content.  The
-weight matrix is nomological candidate data.  The occurrence of one actual
-outcome remains a separate postulate.  No chart in this paper is called a
-metric, spacetime point, or gravitational field.
+Here a comparison map is representational: it is a declared calibrated
+inter-chart dictionary.  An orthogonal outcome flag is declared record typing
+at this interface; durability under future continuations is not proved.  The
+weight matrix is candidate boundary-instrument data, not a complete successor
+law.  The occurrence of one actual outcome remains a separate postulate.  No
+chart is a metric, spacetime point, carrier rewrite, or gravitational field.
 
 ## Frozen arena and equations
 
@@ -1058,43 +1168,104 @@ operator identity represented by
 
 Complete positivity is not a fitted inequality here: each outcome map is
 given by its explicit Kraus operator.  The nonzero discriminator
-`(x v - y u) x y` demands both full rank and internal coherent response.
+`(x v - y u) x y` demands both full rank and a coherent cross term relative
+to the declared `I/Z` column decomposition.  It does not by itself prove that
+the two operator summands are ontically distinct histories.
 
 ## Exact solution
 
 {raw_sentence}  {quotient_sentence}  {raw_cut_sentence}  {matrix_sentence}
 
 {nonempty_sentence}  {active_count_sentence}  Its invariant key set is
-`{active_keys}`.  {active_dim_sentence}  {witness_values_sentence}  A moving
-calibrated probability on a positive-dimensional variety proves that the
-surviving direction is physical weight freedom, not merely chart gauge.
+`{active_keys}`.  {active_dim_sentence}  Under the invertible rational change
 
-{dark_sentence}  Their keys are `{dark_keys}`.  They survive normalization by
-turning off an entire coherent history channel, so their comparison mismatch
-is never probed by the law.  This is why the global answer is stratified:
-comparison coherence is selected on the active locus, but hidden mismatch can
-survive wherever the weights make that channel dynamically silent.
+`A=x+y`, `B=x-y`, `C=u+v`, `D=u-v`,
+
+the active equations are exactly
+
+`A^2+C^2=1` and `B^2+D^2=1`.
+
+{real_locus_sentence}  This proves a genuine real two-dimensional continuum,
+not merely a positive-dimensional complex variety with two sampled real
+points.  Since `p_plus=A^2`, the registered probability is nonconstant.
+{witness_values_sentence}
+
+{dark_sentence}  Here `dark sector` means a holonomy sector whose registered
+full-coherent open locus is empty.  Their keys are `{dark_keys}`.  They survive
+normalization by turning off one entire declared column, so their mismatch is
+unobserved by this one-step instrument.  The all-trivial sector also contains
+inactive divisors where `(x v-y u) x y=0`; the six-sector count does not
+enumerate every inactive point.
+
+## Operator meaning of the active family
+
+For all solutions,
+
+`K0^dagger K0+K1^dagger K1=I`,
+
+so the outcome-resolved map is a valid fixed-boundary CPTP instrument for every
+input and ancilla.  {registered_plus_sentence}  {registered_minus_sentence}
+{registered_lambda_sentence}  The two frozen witnesses therefore change the
+calibrated outcome-resolved unravelling while sharing the unconditioned channel
+
+`E(rho)=(16/25) rho+(9/25) Z rho Z`.
+
+That difference is operational because the outcome register is declared and
+calibrated.  It is not evidence that the unconditioned transfer moved.  The
+active family nevertheless contains such movement: {post_review_weights_sentence}
+{post_review_lambda_sentence}  This exact point is a
+**POST-REVIEW-ANALYTIC-COROLLARY**, not a retroactive preregistered witness.
+Thus the surviving boundary-instrument freedom remains after ordinary Kraus-
+unravelling freedom is quotiented.
+
+## The law-null meaning of the dark sectors
+
+Cut equality has the abstract form `WQ=W`.  If `N=ker W`, then `Q` preserves
+`N`, and `Qh-h` lies in `N` for every history-column vector `h`.  Hence every
+comparison induces the identity on `H/N`.  The nontrivial holonomies that
+survive in the six dark sectors act only in this one-step law-null data.
+
+This does not prove that they are gauge or permanently unphysical.  A future
+continuation could repopulate a presently null column.  Physical equivalence
+therefore requires a complete continuation-stable null ideal: equality against
+all licensed preparations, compositions, and readouts, with the quotient a
+congruence under gluing and refinement.  The frozen word `JCV-STRATIFIED`
+classifies the declared algebraic solution set; it does not prove that every
+dark component is a distinct physical world.
 
 ## Homogeneity control
 
 {control_sentence}  {price_sentence}  The extra keys are `{control_only}`.
 They are the mixed handoff cases in which one triangle uses one channel and
-its neighbor uses the other.  This does not derive homogeneity; it measures
-the exact price of declaring that the same local weight law persists across
-the overlap.
+its neighbor uses the other.  Independent full-rank laws at both triangles
+still force all four holonomies to `+1`; numeric reuse of one `W` is not needed
+for active flatness.  Homogeneity removes only these two rank-deficient mixed
+handoffs, and equality of arrays in chosen trivializations is not yet a
+transported local law.
+
+## Local extension control
+
+The two triangles test both cycle generators of the declared five-edge graph,
+not arbitrary refinement.  Set every old edge sign to `+1`, retain an active
+witness, and add a direct `03` edge with signs `(-1,+1)`.  Every old JCV row
+still passes.  {extension_defect_sentence}  Choosing direct signs `(+1,+1)`
+instead gives a flat extension.  The old solution therefore does not determine
+the next overlap.  The positive scope is **LOCAL-TWO-TRIANGLE**, not global
+associativity, cylindrical consistency, or atlas closure.
 
 ## What was selected, and what was not
 
 Within the predeclared real, isometric, nondegenerately calibrated doctrine,
-cut equality plus reuse of one nonfactorizing law selects the coherent
-holonomy class on the active locus.  That is a real advance over simply
-choosing a pairing after inspecting interference.
+full support plus cut equality forces flat holonomy modulo chart-sign gauge on
+the registered active locus.  This is narrower than selecting a physical
+cross-carrier comparison: the doctrine, calibration, graph, and identification
+referent remain declared.
 
-But three freedoms remain logically prior.  The comparison doctrine itself
-was postulated rather than derived from relational records.  The active weight
-variety remains continuous and changes a calibrated probability.  And nothing
-in the equations says why one durable outcome actually happens.  Therefore
-this fixture is a conditional fixed-point result, not the fundamental
+The active weight variety remains continuous and changes calibrated
+outcome-resolved and unconditioned behavior.  Nothing says why one outcome
+actually happens.  Nothing generates the comparison structure from the law's
+own stable records.  This fixture is therefore a conditional joint constraint
+result, not the record-generated comparison/law fixed point or fundamental
 successor law sought by paper 01.
 
 ## Consequence ledger
@@ -1105,15 +1276,15 @@ successor law sought by paper 01.
 
 ## Relation to existing approaches
 
-The demand that descriptions agree under refinement is analogous to
-cylindrical consistency in background-independent discretizations, but this
-finite sign fixture is not a continuum construction.  Its local maps resemble
-the boundary-channel language of quantum causal histories, but no causal
-network dynamics is supplied.  The use of complete histories and record cuts
-is compatible with decoherence-functional or quantum-measure language, but
-this paper solves only a boundary instrument.  Finally, the neighboring
-triangle is a minimal coherence check reminiscent of associator/pentagon
-constraints; it is not a fusion-category derivation.
+The future demand that coarse and fine predictions agree is motivated by
+cylindrical-consistency programmes, but this fixture has no refinement order or
+embedding system.  Its fixed-boundary channel vocabulary is motivated by
+quantum causal histories, but it has no causal network or extension axioms.
+Its proposed continuation-stable null quotient is motivated by histories-
+Hilbert-space and strongly positive decoherence-functional constructions, but
+no complete-history event algebra is built here.  The neighboring triangles
+are only a graph-cocycle check; they contain no associator, fusion space, or
+pentagon identity.
 
 ## Limits and next falsifier
 
@@ -1125,11 +1296,16 @@ pairing freedom.  The arena tests one neighboring overlap, not arbitrary
 refinement, Lorentz covariance, all finite arities, or changing subsystem
 factorizations.
 
-The next decisive construction is not a larger sign census.  It is a record-
-generated comparison doctrine: a law and refinement map whose own durable
-record structure reproduces which histories it allows to interfere, followed
-by a three-overlap associativity/cocycle test.  Until that exists, the deepest
-circularity has been narrowed but not broken.
+The next decisive construction is not a larger sign census.  Begin with a
+typed algebra of complete histories and a strongly positive functional.  Form
+the null ideal that stays invisible under every licensed future continuation,
+prove that it is a congruence under gluing and refinement, and derive physical
+boundary comparison from the resulting quotient.  The law's own stable record
+partitions must then reproduce that quotient and its induced coarse law across
+three overlapping refinements.  Strong positivity can represent this target;
+it does not select the weights or make one record actual.  Until that cycle is
+constructed, JCV has solved one compatibility subproblem inside the
+circularity, not the circularity itself.
 
 ## Primary references for the analogies
 
@@ -1141,6 +1317,13 @@ circularity has been narrowed but not broken.
   measure*, arXiv:1007.2725 (2010).
 - Michael Levin and Xiao-Gang Wen, *String-net condensation: A physical
   mechanism for topological phases*, arXiv:cond-mat/0404617 (2004).
+- David Craig, *The Geometry of Consistency*, arXiv:quant-ph/9704031 (1997).
+- Stan Gudder, *Hilbert Space Representations of Decoherence Functionals and
+  Quantum Measures*, arXiv:1011.1694 (2010).
+- Fay Dowker and Jonathan Halliwell, *Quantum mechanics of history: The
+  decoherence functional in quantum mechanics*, Phys. Rev. D 46, 1580 (1992).
+- Paul Boes and Miguel Navascues, *Composing decoherence functionals*,
+  arXiv:1609.09723 (2016).
 """
     return paper, bindings
 
@@ -1203,12 +1386,6 @@ def run_core(root: Path, mutant_name: str | None = None) -> tuple[Ledger, dict[s
         observed_anchors == SOURCE_ANCHORS,
         f"matched={sum(observed_anchors.get(key) == value for key, value in SOURCE_ANCHORS.items())}/{len(SOURCE_ANCHORS)}",
     )
-    ledger.gate(
-        "P-CHRONOLOGY",
-        True,
-        "scorer source and fixture were committed before this executable path may produce physical artifacts",
-    )
-
     fixture = json.loads(reader.read_text("v16/code/jcv_fixture.json"))
     semantic_ok, fixture_counts = fixture_semantics(fixture, mutator)
     ledger.gate(
@@ -1274,6 +1451,13 @@ def run_core(root: Path, mutant_name: str | None = None) -> tuple[Ledger, dict[s
         f"checked={instrument['witness_instruments_checked']} TP-failures={instrument['trace_preservation_failures']} CP=Kraus",
     )
 
+    repair_corollaries_ok, repair_corollaries = repair_corollary_checks(witness, mutator)
+    ledger.gate(
+        "P-REPAIR-COROLLARIES",
+        repair_corollaries_ok,
+        "registered-unconditioned=shared post-review-witness=exact extension-control=exact null-quotient=typed",
+    )
+
     ledger.gate(
         "P-CONTROL",
         control_ok,
@@ -1311,6 +1495,8 @@ def run_core(root: Path, mutant_name: str | None = None) -> tuple[Ledger, dict[s
         "schema": fixture["schema"],
         "prefixture_commit": PREFIXTURE_COMMIT,
         "solver_freeze_commit": SOLVER_FREEZE_COMMIT,
+        "candidate_commit": CANDIDATE_COMMIT,
+        "adjudication_commit": ADJUDICATION_COMMIT,
         "fixture_counts": fixture_counts,
         "raw_cut_checks": raw_cut_checks,
         "intertwiner": intertwiner,
@@ -1318,6 +1504,7 @@ def run_core(root: Path, mutant_name: str | None = None) -> tuple[Ledger, dict[s
         "solve": solve_measurements,
         "witness": witness,
         "instrument": instrument,
+        "repair_corollaries": repair_corollaries,
         "classification": classification,
         "consequences": consequences,
         "source_anchors": SOURCE_ANCHORS,
@@ -1418,11 +1605,13 @@ def build(root: Path, mutant_name: str | None = None, include_survey: bool = Tru
         raise RuntimeError("paper binding drift")
 
     receipt: dict[str, Any] = {
-        "schema": "JCV-PHYSICAL-RECEIPT-v1",
+        "schema": "JCV-PHYSICAL-RECEIPT-v2",
         "unit": "v16-jcv",
-        "status": "CANDIDATE-COMMITTED-AS-IS-PENDING-POSTCOMMIT-AND-HOSTILE-REVIEW",
+        "status": "ADJUDICATED-REPAIRED-PENDING-TERMINAL-VERIFICATION",
         "prefixture_commit": PREFIXTURE_COMMIT,
         "solver_freeze_commit": SOLVER_FREEZE_COMMIT,
+        "candidate_commit": CANDIDATE_COMMIT,
+        "adjudication_commit": ADJUDICATION_COMMIT,
         "fixture_sha256": SOURCE_ANCHORS["v16/code/jcv_fixture.json"],
         "scorer_sha256": bytes_digest((root / "v16/code/jcv_score.py").read_bytes()),
         "source_anchors": SOURCE_ANCHORS,
@@ -1437,6 +1626,8 @@ def build(root: Path, mutant_name: str | None = None, include_survey: bool = Tru
         "scope": {
             "real_slice_only": True,
             "fixed_calibrated_boundary_only": True,
+            "local_two_triangle_only": True,
+            "record_generated_fixed_point": False,
             "geometry_or_backreaction": False,
             "actualization_derived": False,
             "qft_or_gr_deviation": False,

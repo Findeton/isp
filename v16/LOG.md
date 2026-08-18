@@ -584,3 +584,24 @@ sector-level dark definition, local-extension countermodel, law-null quotient
 theorem, and exact failure chronology; regenerate and reseal from the renderer;
 then run one full worktree and true off-tree/no-git terminal verifier.  No new
 physics unit is authorized before that closure.
+
+## 2026-08-17 — JCV ADJUDICATED REPAIR SOURCE FROZEN BEFORE REGENERATION (v16 LEDGER #30)
+
+`v16/note-jcv-repair-freeze.md` freezes the bounded repair source before it is
+executed.  The scorer moves from candidate hash
+`66b87bdf68f7210d959e13bfacae4c5957413e6d8f234647bfe3ad4a19619a03`
+to `84649be8a56b8248304ba54065b4f4cfb9aae9cc33b3d59f0c76eafa38843b66`.
+Static inspection passes with valid syntax, zero float literals, and zero
+top-level call expressions.  The old candidate artifacts are unchanged.
+
+The delta is limited to adjudicated repairs: one exact corollary gate and named
+falsifier; product-of-circles and operator-family certificates; an explicitly
+post-review transfer-moving witness; the direct-`03` extension control; the
+law-null quotient theorem; corrected paper ontology/scope; expanded receipt
+provenance; and the exact first-run chronology correction.  The hard-coded
+runtime chronology row is removed.  No fixture equation, solver call, gauge
+quotient, original witness, classifier branch, or machine verdict moves.
+
+The next event is one artifact regeneration from the committed repaired
+source, followed by commit-as-is and one terminal worktree/off-tree verifier.
+No post-execution scorer repair or successor physics is authorized.
