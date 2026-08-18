@@ -423,3 +423,28 @@ checks.
 
 Every reserved physical JCV path remained absent throughout.  This verifier
 licenses the separate fixture/scorer freeze and no physical result.
+
+## 2026-08-17 — JCV PHYSICAL FIXTURE AND VERDICT-NEUTRAL SCORER FROZEN BEFORE FIRST EXECUTION (v16 LEDGER #20)
+
+The physical arena is now encoded in `v16/code/jcv_fixture.json`, and its
+single-shot scorer is `v16/code/jcv_score.py`.  Neither has been executed.  The
+physical output, receipt, and paper paths remain absent.  Static inspection
+finds valid JSON and Python syntax, zero float literals, zero top-level call
+expressions, and empty expected-result fields.
+
+The scorer uses the already frozen generic backend only after quotienting the
+raw ten sign coordinates by the declared chart gauge.  It independently checks
+the exact `Q(sqrt(2))` intertwiners, raw-to-holonomy defect identities, full
+gauge orbits, Groebner and saturation certificates, rational real witnesses,
+all-input trace preservation, the independent-triangle homogeneity control,
+seven-word classifier reachability, scope walls, read closure, transcript
+equality, and total seals.  Fifteen named mutants are frozen.
+
+Frozen SHA-256 values are:
+
+- fixture: `ad887c213d14781838c6e70227b8f2c162f1392a08060de7c6e57829a8db012b`;
+- scorer: `768c4bbc6b0e39436a6d6b7dcf026149f95c2e8bb931d080052262638827f692`.
+
+The scorer contains no expected physical sector count, dimension, witness
+value, or verdict.  The sole next event is one official execution from these
+committed bytes, followed by commit-as-is before any repair.

@@ -1,0 +1,121 @@
+{
+  "schema": "JCV-PHYSICAL-FIXTURE-v1",
+  "unit": "v16-jcv",
+  "prefixture_commit": "999a5311e599fb223ac9192991d20386b3ce6ab4",
+  "solver_freeze_commit": "aa9a54af19f445e3a2067bf12abb603564c10016",
+  "exact_domains": {
+    "polynomial_coefficients": "Q",
+    "calibrated_matrices": "Q(sqrt(2))",
+    "solution_variety": "real slice with algebraic-closure dimension and exact rational witnesses"
+  },
+  "scope": {
+    "physical_referent": "calibrated two-channel boundary interface",
+    "geometry_claim": false,
+    "backreaction_claim": false,
+    "complex_uniqueness_claim": false,
+    "all_arity_claim": false,
+    "actualization_equation": false
+  },
+  "charts": [
+    {"name": "B0", "observable": "Z"},
+    {"name": "B1", "observable": "X"},
+    {"name": "B2", "observable": "Z"},
+    {"name": "B3", "observable": "X"}
+  ],
+  "comparison_edges": [
+    {"name": "01", "source": "B0", "target": "B1", "plus_sign": "a", "minus_sign": "b"},
+    {"name": "12", "source": "B1", "target": "B2", "plus_sign": "c", "minus_sign": "d"},
+    {"name": "02", "source": "B0", "target": "B2", "plus_sign": "e", "minus_sign": "f"},
+    {"name": "23", "source": "B2", "target": "B3", "plus_sign": "g", "minus_sign": "h"},
+    {"name": "13", "source": "B1", "target": "B3", "plus_sign": "j", "minus_sign": "k"}
+  ],
+  "triangles": [
+    {"name": "012", "path_edges": ["01", "12"], "direct_edge": "02"},
+    {"name": "123", "path_edges": ["12", "23"], "direct_edge": "13"}
+  ],
+  "classifier": {
+    "active_nonzero_query": "full_coherent",
+    "rank_query": "delta",
+    "interference_query": "internal_interference",
+    "registered_observables": ["p_plus", "p_minus", "response"],
+    "primary_words": [
+      "JCV-EMPTY",
+      "JCV-POINT-MOD-GAUGE",
+      "JCV-PAIRING-SELECTED-WEIGHTS-FREE",
+      "JCV-GAUGE-FAMILY-OBSERVABLE-INVARIANT",
+      "JCV-DECLARATION-INDEXED",
+      "JCV-CLASSICAL-ONLY",
+      "JCV-STRATIFIED"
+    ]
+  },
+  "models": [
+    {
+      "name": "SHARED_LAW",
+      "continuous_variables": ["x", "y", "u", "v"],
+      "sign_variables": ["a", "b", "c", "d", "e", "f", "g", "h", "j", "k"],
+      "equations": [
+        {"name": "cut-012-plus-x", "terms": [["1", {"a": 1, "c": 1, "x": 1}], ["-1", {"e": 1, "x": 1}]]},
+        {"name": "cut-012-plus-u", "terms": [["1", {"a": 1, "c": 1, "u": 1}], ["-1", {"e": 1, "u": 1}]]},
+        {"name": "cut-012-minus-y", "terms": [["1", {"b": 1, "d": 1, "y": 1}], ["-1", {"f": 1, "y": 1}]]},
+        {"name": "cut-012-minus-v", "terms": [["1", {"b": 1, "d": 1, "v": 1}], ["-1", {"f": 1, "v": 1}]]},
+        {"name": "cut-123-plus-x", "terms": [["1", {"c": 1, "g": 1, "x": 1}], ["-1", {"j": 1, "x": 1}]]},
+        {"name": "cut-123-plus-u", "terms": [["1", {"c": 1, "g": 1, "u": 1}], ["-1", {"j": 1, "u": 1}]]},
+        {"name": "cut-123-minus-y", "terms": [["1", {"d": 1, "h": 1, "y": 1}], ["-1", {"k": 1, "y": 1}]]},
+        {"name": "cut-123-minus-v", "terms": [["1", {"d": 1, "h": 1, "v": 1}], ["-1", {"k": 1, "v": 1}]]},
+        {"name": "complete-identity", "terms": [["1", {"x": 2}], ["1", {"y": 2}], ["1", {"u": 2}], ["1", {"v": 2}], ["-1", {}]]},
+        {"name": "complete-z", "terms": [["1", {"x": 1, "y": 1}], ["1", {"u": 1, "v": 1}]]}
+      ],
+      "gauge_invariants": [
+        {"name": "q012_plus", "terms": [["1", {"a": 1, "c": 1, "e": 1}]]},
+        {"name": "q012_minus", "terms": [["1", {"b": 1, "d": 1, "f": 1}]]},
+        {"name": "q123_plus", "terms": [["1", {"c": 1, "g": 1, "j": 1}]]},
+        {"name": "q123_minus", "terms": [["1", {"d": 1, "h": 1, "k": 1}]]}
+      ],
+      "queries": [
+        {"name": "x", "terms": [["1", {"x": 1}]], "nonzero_locus": false},
+        {"name": "y", "terms": [["1", {"y": 1}]], "nonzero_locus": false},
+        {"name": "u", "terms": [["1", {"u": 1}]], "nonzero_locus": false},
+        {"name": "v", "terms": [["1", {"v": 1}]], "nonzero_locus": false},
+        {"name": "delta", "terms": [["1", {"x": 1, "v": 1}], ["-1", {"y": 1, "u": 1}]], "nonzero_locus": true},
+        {"name": "internal_interference", "terms": [["1", {"x": 1, "y": 1}]], "nonzero_locus": true},
+        {"name": "full_coherent", "terms": [["1", {"x": 2, "y": 1, "v": 1}], ["-1", {"x": 1, "y": 2, "u": 1}]], "nonzero_locus": true},
+        {"name": "p_plus", "terms": [["1", {"x": 2}], ["2", {"x": 1, "y": 1}], ["1", {"y": 2}]], "nonzero_locus": false},
+        {"name": "p_minus", "terms": [["1", {"x": 2}], ["-2", {"x": 1, "y": 1}], ["1", {"y": 2}]], "nonzero_locus": false},
+        {"name": "response", "terms": [["4", {"x": 1, "y": 1}]], "nonzero_locus": false}
+      ],
+      "expected": {}
+    },
+    {
+      "name": "INDEPENDENT_TRIANGLES_CONTROL",
+      "continuous_variables": ["x0", "y0", "u0", "v0", "x1", "y1", "u1", "v1"],
+      "sign_variables": ["a", "b", "c", "d", "e", "f", "g", "h", "j", "k"],
+      "equations": [
+        {"name": "cut-012-plus-x0", "terms": [["1", {"a": 1, "c": 1, "x0": 1}], ["-1", {"e": 1, "x0": 1}]]},
+        {"name": "cut-012-plus-u0", "terms": [["1", {"a": 1, "c": 1, "u0": 1}], ["-1", {"e": 1, "u0": 1}]]},
+        {"name": "cut-012-minus-y0", "terms": [["1", {"b": 1, "d": 1, "y0": 1}], ["-1", {"f": 1, "y0": 1}]]},
+        {"name": "cut-012-minus-v0", "terms": [["1", {"b": 1, "d": 1, "v0": 1}], ["-1", {"f": 1, "v0": 1}]]},
+        {"name": "complete-012-identity", "terms": [["1", {"x0": 2}], ["1", {"y0": 2}], ["1", {"u0": 2}], ["1", {"v0": 2}], ["-1", {}]]},
+        {"name": "complete-012-z", "terms": [["1", {"x0": 1, "y0": 1}], ["1", {"u0": 1, "v0": 1}]]},
+        {"name": "cut-123-plus-x1", "terms": [["1", {"c": 1, "g": 1, "x1": 1}], ["-1", {"j": 1, "x1": 1}]]},
+        {"name": "cut-123-plus-u1", "terms": [["1", {"c": 1, "g": 1, "u1": 1}], ["-1", {"j": 1, "u1": 1}]]},
+        {"name": "cut-123-minus-y1", "terms": [["1", {"d": 1, "h": 1, "y1": 1}], ["-1", {"k": 1, "y1": 1}]]},
+        {"name": "cut-123-minus-v1", "terms": [["1", {"d": 1, "h": 1, "v1": 1}], ["-1", {"k": 1, "v1": 1}]]},
+        {"name": "complete-123-identity", "terms": [["1", {"x1": 2}], ["1", {"y1": 2}], ["1", {"u1": 2}], ["1", {"v1": 2}], ["-1", {}]]},
+        {"name": "complete-123-z", "terms": [["1", {"x1": 1, "y1": 1}], ["1", {"u1": 1, "v1": 1}]]}
+      ],
+      "gauge_invariants": [
+        {"name": "q012_plus", "terms": [["1", {"a": 1, "c": 1, "e": 1}]]},
+        {"name": "q012_minus", "terms": [["1", {"b": 1, "d": 1, "f": 1}]]},
+        {"name": "q123_plus", "terms": [["1", {"c": 1, "g": 1, "j": 1}]]},
+        {"name": "q123_minus", "terms": [["1", {"d": 1, "h": 1, "k": 1}]]}
+      ],
+      "queries": [
+        {"name": "delta0", "terms": [["1", {"x0": 1, "v0": 1}], ["-1", {"y0": 1, "u0": 1}]], "nonzero_locus": true},
+        {"name": "delta1", "terms": [["1", {"x1": 1, "v1": 1}], ["-1", {"y1": 1, "u1": 1}]], "nonzero_locus": true},
+        {"name": "p0_plus", "terms": [["1", {"x0": 2}], ["2", {"x0": 1, "y0": 1}], ["1", {"y0": 2}]], "nonzero_locus": false},
+        {"name": "p1_plus", "terms": [["1", {"x1": 2}], ["2", {"x1": 1, "y1": 1}], ["1", {"y1": 2}]], "nonzero_locus": false}
+      ],
+      "expected": {}
+    }
+  ]
+}

@@ -89,8 +89,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     history.  It still owes a preferred, refinement-stable family of compatible
     record partitions and an actualization rule consistent across them.
 20. **OPEN — Is the comparison structure and law a selected joint fixed
-    point?**  JCV's generic exact solver is frozen on public calibrations before
-    the physical fixture.  The still-unrun physical solve must distinguish
-    unique pairing, free weights, pure gauge, declaration-indexed holonomy,
-    dark/classical strata, and inconsistency without importing paper 01's weak
-    Z/X control.
+    point?**  JCV's generic exact solver and one physical fixture/scorer are
+    frozen in the required order.  The still-unrun official solve must
+    distinguish unique pairing, free weights, pure gauge, declaration-indexed
+    holonomy, dark/classical strata, and inconsistency without importing paper
+    01's weak Z/X control.

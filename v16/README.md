@@ -22,12 +22,11 @@ theory-selection result.
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
   post-commit/off-tree verification are complete.
-- `JCV`: **GENERIC SOLVER POST-COMMIT VERIFIED BEFORE THE PHYSICAL FIXTURE** at
-  v16 ledger #19 as a separate successor unit.  Its exact rational backend
-  passes five public calibration models, 15 gates, and 11 named falsifiers;
-  committed and true off-tree/no-git runs are byte-identical.  Every physical
-  JCV path remained absent; no comparison/weight result is yet citable.  Paper
-  01 remains frozen.
+- `JCV`: **PHYSICAL FIXTURE AND VERDICT-NEUTRAL SCORER FROZEN BEFORE FIRST
+  EXECUTION** at v16 ledger #20 as a separate successor unit.  The generic
+  backend was already post-commit/off-tree verified.  The physical result
+  paths remain absent, and the scorer has not been executed; no
+  comparison/weight result is yet citable.  Paper 01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.
