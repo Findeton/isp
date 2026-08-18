@@ -1368,3 +1368,25 @@ The next lawful stage is a generic exact CSF core frozen on public
 calibrations while every physical fixture, scorer, result, and paper path is
 absent. Papers 3–5 and the unrelated untracked v15 SCOUT-T files remain
 untouched.
+
+## 2026-08-18 — CSF GENERIC EXACT CORE FROZEN (v16 LEDGER #61)
+
+`v16/code/csf_core.py` and its public transcript/receipt are frozen before any
+CSF recurring-context physical fixture, scorer, official result, or Paper 6
+path exists. Their SHA-256 values are recorded in
+`v16/note-csf-core-freeze.md`; the core hash is
+`93a093d6ce72be4167d277719daf37aa7df7704510819f3b2e264546a14362b4`.
+
+Eleven public gates pass. They independently reconstruct the JCV
+same-`M`/different-calibrated-port pair, third channel-moving `M`, exact
+completeness and channel factorization through the history kernel, affine
+dimensions `3,2,1`, a dimension-`1` three-context intersection reduced to a
+point by exchange symmetry, tangent nullities `0,1,0`, partial-flag spectral
+separation, and PSD/non-PSD controls. These are constructor-stated public
+calibrations, not a physical CSF outcome.
+
+Two clean runs and one copied-source alien-CWD run are byte-identical.
+Selftest and all three public mutants refuse before writes; unknown options
+exit `2`; the AST contains no float literal. The next lawful stage is a
+data-only recurring-context fixture and verdict-neutral scorer frozen before
+first execution. The generic core is immutable after this commit.

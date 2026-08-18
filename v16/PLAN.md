@@ -276,7 +276,7 @@ relational histories. No review or adjudication is authorized yet.
 
 ## Paper 06 — CSF: completeness spectrahedra and record fibers
 
-Status: **PIN FROZEN BEFORE CONSTRUCTION (v16 #60)**.
+Status: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE (v16 #61)**.
 
 The user's 2026-08-18 instruction authorizes a separate continuation after
 Paper 5's coefficient variety was recognized as the factorized presentation
@@ -308,6 +308,14 @@ actualization, arbitrary-`n` composition, conditional steering, continuum,
 QFT, gravity, particle, Hamiltonian, coupling, affine-constant, or empirical-
 deviation conclusion is authorized. Papers 3–5 remain frozen. Reviewer
 dispatch requires a separate explicit user instruction.
+
+The generic exact core is frozen at #61 before physical fixture truth. Its
+eleven public gates calibrate `M=C^dagger C`, completeness/channel factorization,
+same-base/different-calibrated-record behavior, Hermitian affine dimensions,
+recurring-context intersections, exchange symmetry, tangent extremality, flag
+attenuation, and exact PSD controls. Duplicate and copied-source alien-CWD
+runs are byte-identical; selftest and all public mutants refuse without
+writes. No CSF physical fixture, scorer, official result, or Paper 6 exists.
 
 ## Successor register
 

@@ -1,0 +1,15 @@
+CSF GENERIC PUBLIC CALIBRATION
+schema: csf-public-v1
+PASS PUB-M-FACTORIZATION :: M1=[['16/25', '0'], ['0', '9/25']] M2=[['16/25', '0'], ['0', '9/25']]
+PASS PUB-COMPLETENESS-FACTORS-THROUGH-M :: complete=[['1', '0'], ['0', '1']]
+PASS PUB-CHANNEL-FACTORS-THROUGH-M :: Phi=[['1/2', '7/50'], ['7/50', '1/2']]
+PASS PUB-CALIBRATED-FIBER-MOVES :: p0=0,49/625
+PASS PUB-THIRD-M-MOVES-CHANNEL :: M3=[['25/169', '0'], ['0', '144/169']]
+PASS PUB-AFFINE-DIMENSIONS :: dims=3,2,1
+PASS PUB-RECURRING-INTERSECTION :: intersection=1 exchange=0
+PASS PUB-EXTREME-TANGENT :: nullities=0,1,0
+PASS PUB-FLAG-SPECTRAL-SEPARATION :: two=[['0', '0'], ['0', '0']] rich=[['0', '0', '0'], ['0', '-9/25', '0'], ['0', '0', '0']]
+PASS PUB-PSD-CONTROLS :: factorized=True nonpsd=False
+PASS PUB-CHANNEL-SIGNATURE :: signature-size=4
+gate-count: 11
+all-pass: true
