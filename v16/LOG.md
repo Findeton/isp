@@ -1913,3 +1913,13 @@ This seat did not read the operator or records/relational reports. The CSF
 panel is now complete at three immutable reports. Their findings remain
 hostile allegations until one joint adjudication independently recomputes and
 rules them; no repair or candidate promotion occurs in this event.
+
+## 2026-08-18 — CEL OPERATOR REVIEW FROZEN (v16 LEDGER #90)
+
+The first isolated Paper 7 report is frozen verbatim as
+`v16/review-cel-operator.md`, SHA-256
+`8c90e9a730375e7c876b05f1db303bd760f905641f4fbcf81fd66f384d83635b`.
+It is hostile evidence only; no finding is adjudicated or repaired here. The
+records/relational and physics/locality reports were not read by this seat.
+Joint adjudication remains prohibited until all three immutable reports are
+frozen.
