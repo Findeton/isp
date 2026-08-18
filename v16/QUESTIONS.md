@@ -133,3 +133,17 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     between two fixed circuit orders is not a quantum switch or a witness of
     causal nonseparability. Paper 5 hard-walls that promotion unless a typed
     higher-order process and process-level witness are actually constructed.
+26. **PINNED — Is the fixed-history law space a completeness spectrahedron
+    with nontrivial record fibers?** Paper 6 will test whether all-input
+    completeness and the unconditioned channel factor through
+    `M=C^dagger C`, while calibrated factorizations `C` can remain
+    operationally different. It must reconstruct JCV's same-`M`/different-
+    record pair and third channel-moving witness, and quotient only admitted
+    history and unobserved-port gauge.
+27. **PINNED — Does recurrence across contexts select the history law?** A
+    single compatibility variety does not select dynamics. Paper 6 freezes a
+    gauge-covariant history-coordinate dictionary before constructing at
+    least three contexts, intersects their exact PSD affine law sets, tests a
+    licensed exchange symmetry and held-out context, and separately scores
+    the remaining calibrated record-law freedom. Empty, unique, reduced, and
+    prediction-moving intersections are all pre-registered outcomes.

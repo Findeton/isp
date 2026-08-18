@@ -1338,3 +1338,33 @@ scope, causal-nonseparability refusal, and every backreaction/QFT/GR promotion.
 No reviewer is assigned. OVG remains **REPLAY-VERIFIED GREEN-UNREVIEWED**.
 Adjudication, repair, and terminalization are unauthorized until all three
 reports are independently frozen under a separate delegation instruction.
+
+## 2026-08-18 — CSF PAPER 6 PIN FROZEN BEFORE CONSTRUCTION (v16 LEDGER #60)
+
+The user explicitly authorizes the Paper 6 continuation with “go ahead.”
+`v16/note-csf-pin.md` freezes a result-neutral completeness-spectrahedron,
+record-fiber, and recurring-context selection investigation before any CSF
+core, fixture, scorer, result, or Paper 6 path exists.
+
+The candidate unconditioned object is the positive-semidefinite history kernel
+`M=C^dagger C`; all-input completeness is the affine operator equation
+`L_V(M)=I`. The pin separately types the calibrated factorization `C`, history
+gauge/null quotient, flag overlap, recurrence dictionary, vertex locality,
+extremality, record permanence, and actualization. It pre-registers the
+rich-spectrum implication `p+q=1,m=0` at the two-unitary unconditioned grain
+without calling it an actual or durable order record.
+
+The decisive selection experiment intersects independently constructed
+context spectrahedra under a predeclared gauge-covariant recurrence dictionary,
+then applies exchange symmetry only where licensed and tests a held-out
+context. Selection of `M` and selection of calibrated `C` are scored
+separately. An inequivalent dictionary that moves physics forces a doctrine-
+relative qualifier; extreme-point preference is only a falsifier-controlled
+speculation.
+
+The immutable base is `5cba6f79270e6662d2e739a67cfe50eeaa465c58`.
+External scratchpad scripts and claims are excluded from the runtime read set.
+The next lawful stage is a generic exact CSF core frozen on public
+calibrations while every physical fixture, scorer, result, and paper path is
+absent. Papers 3–5 and the unrelated untracked v15 SCOUT-T files remain
+untouched.

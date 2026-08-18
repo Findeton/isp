@@ -5,7 +5,8 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-18 (v16 JRH remains terminal at #16; JCV is terminal at its
+Updated: 2026-08-18 (v16 CSF Paper 6 is pin-frozen before construction at #60;
+JRH remains terminal at #16; JCV is terminal at its
 scoped local-compatibility verdict at v16 #32; PPR Paper 3 is a replay-verified
 green-unreviewed candidate with hostile protocol frozen at v16 #40; SRW Paper
 4's repaired candidate is replay/mutant/off-tree verified and its hostile
@@ -14,6 +15,7 @@ hostile protocol is frozen before reviewer assignment at v16 #59).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
+| CSF / Paper 6 (v16 continuation) — completeness spectrahedra, calibrated record fibers, and recurring-context selection | **PIN FROZEN BEFORE CONSTRUCTION**: fixed-history law `M=C^dagger C`, all-input affine PSD completeness, calibrated factorization fibers, rich-spectrum unconditioned cross-moment test, recurring-context intersection, held-out context, and extreme-point stability attack are pre-registered. Selection of `M` and `C` are separate; elementary transports/catalogue remain inputs. No implementation or result exists | v16 #60 |
 | OVG / Paper 5 (v16 continuation) — overlap Gram/instrument varieties, coherent ports, and arity | **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT ASSIGNED**: candidate #57 passes 32/32; verification #58 gives two replays, 30/30 mutants, independent seals/math, and true off-tree execution. Protocol #59 freezes operator, rewrite/arity, and quantum-causality/physics attacks. Complex CNOT kills old trichotomy; phase strata/parity ports survive; binary composites do not force arity; laws unselected; causal nonseparability untested | v16 #52–#59 |
 | SRW / Paper 4 (v16 continuation) — support–rewrite weld, persistent identity, and local couplings | **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN, REVIEWERS NOT ASSIGNED**: candidate #46 is preserved; verification #47 exposed a runtime integer-to-float leak. Source repair #48 and regenerated candidate #49 leave every scientific field and paper byte unchanged while adding runtime exact typing. Verification #50 passes two clean replays, 27/27 mutant deaths, 9/9 seals, 12/12 paper bindings, independent four-finding reconstruction, and true off-tree/no-git replay. Protocol #51 freezes operator/representation, rewrite/category, and physics/gravity/QFT seats. Does not edit or promote Paper 3 | v16 #41–#51 |
 | PPR / Paper 3 (v16 successor) — contextual pullbacks and permanent records | **GREEN-UNREVIEWED: PPR-CONTEXTUAL-PULLBACK-CONSTRUCTED-BUT-LAW-UNSELECTED**: pin #33, core #34, fixture/scorer #35; refusal #36/repair #37 disclosed. Candidate #38 passes 25/25; verification #39 gives deterministic worktree/off-tree replay, 8/8 seals, 10/10 bindings, 20/20 mutants. Protocol #40 freezes three independent lenses and targets the live seam: whether stable null/records are one generated object and whether the heterogeneous process carrier is actually linked to the relational graph rewrite. Reviewers are not yet assigned | v16 #33–#40 |

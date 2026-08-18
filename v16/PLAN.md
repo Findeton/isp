@@ -274,6 +274,41 @@ physics attacks, including whether “variety constructed” overstates an
 implicit equation and whether the CNOT paths are physically individuated
 relational histories. No review or adjudication is authorized yet.
 
+## Paper 06 — CSF: completeness spectrahedra and record fibers
+
+Status: **PIN FROZEN BEFORE CONSTRUCTION (v16 #60)**.
+
+The user's 2026-08-18 instruction authorizes a separate continuation after
+Paper 5's coefficient variety was recognized as the factorized presentation
+of a positive-semidefinite history kernel. The immutable pin is
+`v16/note-csf-pin.md`. CSF asks three coupled questions at fixed typed-history
+scope: whether all-input completeness factors exactly through the affine PSD
+set `M=C^dagger C`; which factorizations remain physically distinct when
+ports are calibrated; and whether one covariantly identified law recurring
+across independently constructed contexts is selected, partially selected,
+inconsistent, or unselected.
+
+The locked chronology is pin -> generic public core -> result-free recurring-
+context fixture and verdict-neutral scorer -> one official execution ->
+candidate verification -> separately frozen three-lens hostile protocol. The
+generic core must precede physical fixture truth. The unit separately scores
+selection of the unconditioned kernel `M` and selection of a calibrated port
+law `C`.
+
+The decisive selection arm is not an extreme-point preference. It is the
+exact intersection of several context spectrahedra under a predeclared,
+gauge-covariant recurrence dictionary, followed by a held-out context. An
+exchange-fixed singleton is reported as conditional on a licensed relational
+automorphism. An inequivalent dictionary that moves a gauge-invariant
+prediction forces a doctrine-relative qualifier. Extreme-point stability is
+an exploratory falsifier-controlled arm only.
+
+No configuration catalogue, elementary rewrite/transport law, record
+actualization, arbitrary-`n` composition, conditional steering, continuum,
+QFT, gravity, particle, Hamiltonian, coupling, affine-constant, or empirical-
+deviation conclusion is authorized. Papers 3–5 remain frozen. Reviewer
+dispatch requires a separate explicit user instruction.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
