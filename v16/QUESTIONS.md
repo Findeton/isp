@@ -142,7 +142,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     calibration: two factorizations of the selected `M` move the retained
     first-port probability from `1` to `9/25`. Which calibrated port law is
     physical, and how record permanence and actualization select it, remain
-    open. Replay and hostile review remain.
+    open. Replay, 36/36 mutants, independent exact reconstruction, and true
+    off-tree execution survive; hostile review remains.
 27. **PARTIAL — Does recurrence across contexts select the history law?** The
     green-unreviewed Paper 6 candidate reduces five independent training
     freedoms of total dimension `5` to a dimension-`1` common family under the
@@ -151,5 +152,6 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     passes a held-out rich context. This is conditional selection, not a
     universal derivation: an inequivalent recurrence doctrine moves a
     gauge-invariant prediction, and elementary transports and catalogue data
-    remain unselected. Extreme-point selection is unstable. Replay and hostile
-    review remain.
+    remain unselected. Extreme-point selection is unstable. Replay, 36/36
+    mutants, independent exact reconstruction, and true off-tree execution
+    survive; hostile review remains.

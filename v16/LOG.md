@@ -1478,3 +1478,34 @@ deviation result is promoted.
 Status is `GREEN-UNREVIEWED CANDIDATE`. Replay, mutant, independent exact, and
 true off-tree verification are next. Papers 3–5 and the unrelated untracked
 v15 SCOUT-T files remain untouched.
+
+## 2026-08-18 — CSF CANDIDATE VERIFICATION COMPLETE (v16 LEDGER #66)
+
+`v16/note-csf-candidate-verification.md` binds candidate commit
+`61c32d884d688f49f29d3863fe5959d1053d382e` and the unchanged candidate
+hashes. Two clean worktree runs reproduce transcript, receipt, and paper
+byte-for-byte. Selftest exits `1` at `CSF-ANCHORS`; unknown options exit `2`;
+existing official targets refuse before evaluation. The scorer/core contain
+zero Python float literals and the fixture contains zero JSON float values.
+
+All `36/36` registered mutants exit `1`, emit stderr-only refusals without a
+traceback, and write no artifact. They kill the anchor, history typing,
+orientation, completeness/channel factorization, all-input and PSD claims,
+JCV base/fiber, calibrated record fiber, rich-spectrum, nonnormal, flag,
+eraser/permanence, recurrence, symmetry licence, intersection, held-out,
+singleton certificate, extremality, refinement, steering/all-`n` scope,
+exactness, primary comparator, transcript binding, and payload seal surfaces.
+
+An independent exact implementation importing neither frozen executable
+reconstructs all eight seals, 30 unique gates, 12 paper claims, affine
+dimensions `2,2,1,1,2`, reduction `5 -> 1 -> 0`, selected
+`M=diag(1/2,1/2)`, held-out and asymmetric completeness, JCV probabilities
+`0` and `49/625`, the third channel movement, calibrated fiber movement
+`1 -> 9/25`, nonnormal dimension `1`, flag overlaps `1,3/5,0`, eraser overlap
+`1`, tangent nullities `0/0/1`, fixed-Bob `I/2`, and amplifier `2I`.
+
+A `git archive` containing every runtime-read path at the candidate commit,
+extracted with no `.git` and executed from alien CWD `/private/tmp`, produces
+all three candidate artifacts byte-for-byte. CSF is now
+`REPLAY-VERIFIED GREEN-UNREVIEWED`. A separately frozen hostile protocol is
+next; reviewer dispatch still requires a separate explicit user instruction.

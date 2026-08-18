@@ -18,7 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `CSF` / Paper 6: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #65. The pin
+- `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED CANDIDATE** at v16
+  ledger #66. The pin
   is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
   at #63, and bounded scorer repair at #64.
   The user-authorized continuation tests the completeness spectrahedron
@@ -40,8 +41,10 @@ theory-selection result.
   of the same `M` still move the retained first-port probability from `1` to
   `9/25`, so the record-resolving law remains unselected. Extreme-point
   selection is unstable, flag orthogonality is constructed without a
-  permanence theorem, and conditional steering remains open. Candidate
-  verification and hostile review remain pending.
+  permanence theorem, and conditional steering remains open. Verification
+  #66 gives two byte-identical worktree replays, 36/36 mutant deaths, an
+  independent exact reconstruction, and a byte-identical true off-tree/no-git
+  replay. Hostile review remains pending.
   Papers 3–5 remain frozen and untouched.
 - `OVG` / Paper 5: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #57. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first

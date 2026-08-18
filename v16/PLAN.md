@@ -276,7 +276,7 @@ relational histories. No review or adjudication is authorized yet.
 
 ## Paper 06 — CSF: completeness spectrahedra and record fibers
 
-Status: **GREEN-UNREVIEWED CANDIDATE (v16 #65)**.
+Status: **REPLAY-VERIFIED GREEN-UNREVIEWED CANDIDATE (v16 #66)**.
 
 The user's 2026-08-18 instruction authorizes a separate continuation after
 Paper 5's coefficient variety was recognized as the factorized presentation
@@ -360,6 +360,16 @@ Elementary transports, catalogue, actualization, arbitrary-`n` dynamics, and
 continuum/QFT/GR consequences remain unselected or untested. Candidate replay,
 mutant, independent-exact, and true off-tree verification are the next lawful
 stage; reviewer dispatch remains separately unauthorized.
+
+Candidate verification #66 passes. Two clean worktree replays and one true
+off-tree/no-git archive replay reproduce all three artifacts byte-for-byte;
+all 36 registered mutants die without writes; selftest, unknown-option, and
+existing-target guards behave exactly; and an independent rational-pair
+implementation reconstructs the seals, dimensions, selected kernel, JCV
+base/fiber, calibrated-port movement, nonnormal control, flags/eraser,
+extremality nullities, and fixed-Bob safety. The next lawful stage is a
+separately frozen hostile protocol. Reviewer assignment still requires a new
+explicit user instruction.
 
 ## Successor register
 
