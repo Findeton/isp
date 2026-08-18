@@ -84,7 +84,8 @@ The locked chronology is:
    worktree/off-tree at #24: `JCV-STRATIFIED`, active locus
    `JCV-PAIRING-SELECTED-WEIGHTS-FREE`**;
 4. freeze the hostile protocol, obtain three independent lenses, adjudicate,
-   repair if ordered, verify, and terminalize or refuse.
+   repair if ordered, verify, and terminalize or refuse.  **Protocol frozen at
+   #25 against exact candidate hashes; reports pending.**
 
 The result is limited to a real two-channel interface and its first neighboring
 cocycle extension.  It cannot promote geometry, backreaction, a general

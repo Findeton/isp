@@ -524,3 +524,21 @@ from alien CWD `/private/tmp` with no `.git` metadata; its replay returned zero
 and the paper, transcript, and receipt were byte-identical.  The candidate is
 therefore `GREEN-UNREVIEWED`, not terminal.  The next event is a separately
 frozen hostile protocol and three mutually independent reviews.
+
+## 2026-08-17 — JCV THREE-SEAT INDEPENDENT HOSTILE PROTOCOL FROZEN (v16 LEDGER #25)
+
+`v16/note-jcv-hostile-protocol.md` freezes the five candidate hashes and target
+commit before any reviewer is commissioned.  All seats must independently
+rebuild the raw gauge quotient, exact sector varieties and dimensions,
+saturation and real witnesses, operator completeness, classifier, control,
+and scorer-repair chronology without importing the scorer as an oracle.
+
+The mutually isolated lenses are algebraic geometry/quantifiers,
+operator/instrument/ontology, and gravity/covariance/composition.  The protocol
+pre-registers numerical, typing, real-quantifier, declaration-laundering,
+dark-stratum, fixed-boundary signalling, and physics-promotion kill conditions.
+It also requires targeted countermodels, primary-source checks, complete read
+sets, exact hashes, and explicit zero-discrepancy statements.
+
+No repair is authorized.  Reports will be frozen verbatim and hidden from one
+another until all three are committed.

@@ -25,8 +25,9 @@ theory-selection result.
 - `JCV`: **GREEN-UNREVIEWED** at v16 ledger #24.  The verified candidate is
   globally `JCV-STRATIFIED`; its active locus is
   `JCV-PAIRING-SELECTED-WEIGHTS-FREE`.  Committed, independent, and true
-  off-tree/no-git checks agree at 20/20 gates and 15/15 mutants.  Hostile panel
-  review is still required.  Paper 01 remains frozen.
+  off-tree/no-git checks agree at 20/20 gates and 15/15 mutants.  Its
+  three-seat independent hostile protocol is frozen at ledger #25; reports are
+  still pending.  Paper 01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.
