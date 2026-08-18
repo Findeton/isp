@@ -1894,3 +1894,12 @@ It is hostile evidence only; no finding is adjudicated or repaired here. The
 records/relational and physics/locality reports were not read by this seat.
 Joint adjudication remains prohibited until all three immutable reports are
 frozen.
+
+## 2026-08-18 — CSF RECORDS/RELATIONAL REVIEW FROZEN (v16 LEDGER #88)
+
+The second isolated Paper 6 report is frozen verbatim as
+`v16/review-csf-records.md`, SHA-256
+`2493723d3deafbec6c1dbcfc17490009cfb7495584faa201c93e40f7880ab884`.
+It is hostile evidence only; no finding is adjudicated or repaired here. This
+seat did not read the operator or physics/locality report. The final seat must
+be frozen before joint adjudication begins.
