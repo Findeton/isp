@@ -157,3 +157,10 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     mutants, independent exact reconstruction, and true off-tree execution
     survive. The three-lens hostile protocol is frozen; reviewers are not
     assigned.
+28. **PINNED — Are recurrence, durable records, and calibrated instrument
+    fibers one creation-event layer?** Paper 7 separates five recurrence
+    rungs, defines permanence as continuation-stable licensed recoverability,
+    tests whether port dilations satisfy a typed relational flag-cell weld,
+    and proves or kills an enlarged Gaussian-rational factorization bound.
+    Token-disjoint type universality, coupling values, catalogue choice, and
+    actualization remain postulated or open unless independently selected.

@@ -382,6 +382,38 @@ attacks fixed-factor scope, conditional steering, event locality,
 backreaction, catalogue/flag ontology, and every QFT/GR promotion. No review,
 adjudication, repair, or terminal promotion is authorized by the protocol.
 
+## Paper 07 — CEL: creation-event universality and recoverable records
+
+Status: **PIN FROZEN BEFORE CONSTRUCTION (v16 #68)**.
+
+The user's 2026-08-18 instruction authorizes Paper 7 as a separate v16
+continuation despite the visible Paper 3–6 hostile-review queue. The immutable
+pin is `v16/note-cel-pin.md`. It treats the conversation's recurrence,
+permanence, dilation, and number-field proposals as hypotheses to re-derive,
+not anchors.
+
+The unit separates transport locality from probability-kernel universality;
+standing spectator naturality from completeness; symmetry selection from
+cross-context recurrence; joint-law gluing from token-disjoint universality;
+algebra covariance from licensed zero-error record recovery; mathematical
+Stinespring dilation from a relationally attached flag-cell rewrite; and some
+exact factorization from minimal-resource or specified-instrument
+realization. Kernel equality is scored only modulo operational null directions
+unless faithfulness is certified.
+
+The candidate exact-field theorem is an explicit `LDL^dagger` plus
+four-squares construction: every rank-`r` PSD Hermitian `Q(i)` kernel has some
+Gaussian-rational Gram factorization with at most `2r` rows. Scalar `7/5`,
+`diag(7/5,1)`, a complex Hermitian control, and a non-PSD refusal are frozen
+requirements. The number field is not ontology.
+
+Locked chronology is pin -> generic public exact core -> data-only physical
+fixture and verdict-neutral scorer -> one execution -> commit-as-generated ->
+candidate verification -> hostile protocol. Reviewers remain separately
+unauthorized. No coupling, catalogue, actualization, arbitrary-`n`, steering,
+backreaction, continuum, QFT, GR, particle, Hamiltonian, constant, or
+phenomenological conclusion is authorized.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

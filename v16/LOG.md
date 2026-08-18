@@ -1536,3 +1536,34 @@ Three mutually isolated seats are specified:
 The protocol does not assign reviewers and authorizes no review, adjudication,
 repair, or terminal promotion. CSF remains replay-verified green-unreviewed.
 Papers 3–5 and the unrelated untracked v15 SCOUT-T files remain untouched.
+
+## 2026-08-18 — CEL PAPER 7 PIN FROZEN (v16 LEDGER #68)
+
+The user explicitly authorized Paper 7 as a v16 continuation. Before any CEL
+constructor, fixture, scorer, output, receipt, or paper exists,
+`v16/note-cel-pin.md` is frozen at SHA-256
+`83762533fa6dad63acbeb3c13b2db9a63b6533b0ce113a61012d959552fa542d`
+against base commit `4fb2a637282d213255e00d998bd2816962bc0d22`.
+
+The unit has four coupled arms: a five-rung recurrence ladder that separates
+transport locality from probability-law universality; continuation-stable
+licensed recoverability as the record-permanence criterion; a conditional
+relational weld from instrument ports to created flag cells; and exact
+Gaussian-rational resource bounds for Gram factorizations. The pin registers
+the reset channel as the kill of bare algebra covariance, copied-record and
+branch-retention controls, operational-null quotients, a priced universality
+postulate, the `7/5` and rank-two determinant obstructions, complex-Hermitian
+and non-PSD controls, and explicit failures for every ontology overreach.
+
+The external scratchpad investigations are motivation only and are excluded
+from the runtime and evidentiary base. The locked chronology is pin, generic
+exact core and public calibration, result-neutral physical fixture/scorer,
+one official run, candidate-bytes commit, replay/mutant/independent/off-tree
+verification, then a separately frozen hostile protocol. Reviewer assignment
+still requires separate explicit user authorization.
+
+The unit cannot derive the coupling values, catalogue, actualization,
+unconditional catalogue closure, arbitrary-`n`, continuum/Lorentz, QFT, GR,
+particle species, Hamiltonian reconstruction, affine constant, or empirical
+deviation. Papers 3–6 and the unrelated untracked v15 SCOUT-T files remain
+untouched.

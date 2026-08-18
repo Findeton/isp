@@ -18,6 +18,18 @@ theory-selection result.
 
 ## Live state
 
+- `CEL` / Paper 7: **PIN FROZEN BEFORE CONSTRUCTION** at v16 ledger #68.
+  The user-authorized continuation tests the creation-event layer at four
+  sharply separated types: recurrence propagated by standing naturality,
+  symmetry, and gluing versus token-disjoint universality as a priced
+  postulate; record permanence as continuation-stable licensed recoverability
+  rather than bare algebra covariance; calibrated instrument dilations welded
+  to typed relational flag-cell creation; and Gaussian-rational restrictions
+  as minimal resource costs rather than absolute realizability obstructions.
+  External scratchpads are excluded from the runtime read set. A generic
+  exact core must freeze before the result-neutral physical fixture exists.
+  Papers 3–6 and their four pending hostile panels remain unchanged review
+  debt.
 - `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #67. The pin
   is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
