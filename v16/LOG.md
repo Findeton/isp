@@ -1773,3 +1773,12 @@ The first isolated Paper 3 report is frozen verbatim as
 It is hostile evidence only; no finding is adjudicated or repaired here. The
 histories/records and gravity/physics reports were not read by this seat. Joint
 adjudication remains prohibited until all three immutable reports are frozen.
+
+## 2026-08-18 — PPR HISTORIES/RECORDS REVIEW FROZEN (v16 LEDGER #77)
+
+The second isolated Paper 3 report is frozen verbatim as
+`v16/review-ppr-histories.md`, SHA-256
+`244862b719bb5ab4c8649e75075fb53983ee4928a3166ffdaaaf9f754cbd47a4`.
+It is hostile evidence only; no finding is adjudicated or repaired here. This
+seat did not read the operator or gravity/physics report. The final seat must
+be frozen before joint adjudication begins.
