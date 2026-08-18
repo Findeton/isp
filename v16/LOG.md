@@ -2610,3 +2610,23 @@ language. It also orders direct count-readout gates, ticks four and five,
 readout-versus-feedback controls, and causality-specific mutants. These are
 frozen hostile findings, not yet adjudicated facts; the other two reports
 remain required.
+
+## 2026-08-18 — QSF SEAT O OPERATOR REPORT FROZEN (v16 LEDGER #122)
+
+The second mutually blind report is frozen verbatim at
+`v16/review-qsf-operator.md`, ordinary SHA-256
+`58ef7709d41238d9adafe650f00c0d160a1ba9db5ff532f2aeac954663a7c52a`
+and normalized/self SHA-256
+`0bc88f69b2bd79799bdb092d1c4c2c1b9a7bd543ce29e4af4b0f94eccec16502`.
+It grades the candidate `ACCEPT-WITH-FIXES` and also proposes
+`QSF-METHOD-INCONCLUSIVE`.
+
+The seat independently preserves the rank-one completion theorem, full WRC
+regression, projective `0/9`, fitted one-input control, and transported local
+branch obstruction. It kills record-indexed A0 with a same-record/same-cell/
+different-ray witness; state/history-indexed A0 survives only as a lookup, not
+an affine law. Its terminal-phase construction moves every terminal branch
+ray while preserving all nine aggregate families, proving that branch failure
+does not decide aggregate feasibility. It also finds several Arm-A and
+synthesis dispositions hard-coded rather than computed. These remain hostile
+findings pending joint adjudication and the final Seat H report.
