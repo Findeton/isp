@@ -244,6 +244,12 @@ critical-pair rewrite types, a lower-arity factorization assay, local flag
 typing, and spectator no-signalling. Thirty named mutants are implemented.
 All result paths remain absent; the next event is the one official execution.
 
+The first invocation at #55 refuses at the anchor gate before physical scoring
+because a true Paper 4 sentence wraps across a Markdown newline while the
+comparator requires a literal one-line substring. No result artifact is
+written. Only whitespace normalization of consumed anchor prose is authorized
+before another execution; the fixture and scientific predicates stay frozen.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

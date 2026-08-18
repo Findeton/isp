@@ -53,3 +53,21 @@ gate. Source AST inspection finds zero float literals; unknown arguments exit
 The first ordinary execution is now authorized. It must either refuse and
 freeze the failure as-is, or produce exactly three artifacts and commit them
 as-is before replay or mutation testing.
+
+## First invocation refusal
+
+The first ordinary invocation of the frozen scorer exits `1` at
+`OVG-ANCHORS` and writes none of the three reserved result paths. The fixture,
+scorer, and core hashes remain exactly those frozen above.
+
+Read-only diagnosis finds one failing consumed token. Paper 4 contains the
+true sentence “Those are different types of ordered pair,” but a Markdown
+line break falls between `of` and `ordered`. The scorer searches for the
+literal one-line substring `different types of ordered pair`. Every file hash,
+all other consumed anchor tokens, and both fixture/scorer freeze hashes match.
+
+No physical Gram operator, coefficient census, classifier, claim, transcript,
+receipt, or paper was returned by this refusal. A bounded source-only repair
+may normalize whitespace in consumed prose before token comparison. It may not
+change the fixture, anchor hash checks, equations, gates, mutants, outcome
+words, renderer, or any physical predicate.

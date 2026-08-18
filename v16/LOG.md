@@ -1231,3 +1231,20 @@ antecedents, implements 30 named physical mutants, and can write only the
 transcript, receipt, and Paper 5 after every gate passes. Static compilation,
 JSON/AST/vocabulary checks, unknown-option refusal, and path-absence checks
 pass. No normal solve, selftest, mutant, classifier, or paper render has run.
+
+## 2026-08-18 — OVG FIRST INVOCATION REFUSES AT ANCHOR WHITESPACE (v16 LEDGER #55)
+
+The first ordinary invocation of the #54 frozen scorer exits `1` at
+`OVG-ANCHORS` and writes no transcript, receipt, or Paper 5. No physical gate
+or classifier is reached.
+
+One Paper 4 token is the entire cause. The sentence “Those are different types
+of ordered pair” wraps between `of` and `ordered`; the scorer requires the
+literal one-line substring `different types of ordered pair`. All immutable
+hashes and every other consumed token match. The frozen fixture and all
+physical equations, census bounds, gates, mutants, outcome words, and renderer
+remain untouched.
+
+A bounded scorer-only repair is authorized: normalize whitespace in consumed
+anchor prose before comparing the already frozen token. It must be hash-frozen
+before re-execution.
