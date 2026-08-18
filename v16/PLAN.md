@@ -150,7 +150,7 @@ blocks are all pre-registered first-class outcomes.
 
 ## Paper 04 — SRW: support–rewrite weld and local couplings
 
-Status: **PIN — FROZEN BEFORE CONSTRUCTION (v16 #41)**.
+Status: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN (v16 #51)**.
 
 The user's 2026-08-17 instruction authorizes a separate continuation that
 tests the possible weld left exposed by Paper 3. The immutable pin is
@@ -203,6 +203,10 @@ Postcommit verification #50 gives two byte-identical clean replays, 27/27
 controlled mutant deaths with no writes, 9/9 payload seals, 12/12 paper claim
 bindings, independent reconstruction of all four findings, and true
 off-tree/no-git replay from candidate commit `cd3ad8f`. Hostile protocol is next.
+The three-lens hostile protocol is frozen at #51 before any reviewer is
+assigned. Its independent seats are operator/representation, relational
+rewrite/category, and physical ontology/gravity/QFT. No adjudication or repair
+is authorized until all three reports are frozen.
 
 ## Successor register
 

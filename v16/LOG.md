@@ -1141,3 +1141,22 @@ artifacts. The scientific payload and paper remain identical to candidate #46.
 
 SRW is **REPLAY-VERIFIED GREEN-UNREVIEWED**, not terminal. A separately frozen
 three-lens hostile protocol and independent reviews remain.
+
+## 2026-08-17 — SRW HOSTILE PROTOCOL FROZEN (v16 LEDGER #51)
+
+`v16/note-srw-hostile-protocol.md` binds candidate commit
+`cd3ad8f61c244ef8703a736bc68cdcbcdb397e30`, verification commit
+`3ac6d0449fa013143f59fe9e29f524d4669dcdd9`, all repaired artifact hashes, and
+the four frozen findings before any reviewer is assigned.
+
+Three mutually independent seats are frozen: operator/representation/quantum
+consistency; relational rewrite/category/identity/catalogue; and physical
+ontology/gravity/QFT scope. They must attack configuration-basis individuation,
+declared versus law-generated futures, support versus rewrite typing, overlap
+composition, carrier-functor choice, coupling and reciprocity claims, graph
+eliminability, backreaction, field/actor generalization, Hamiltonian, EPR, and
+all continuum/GR/QFT promotions.
+
+No reviewer is assigned and no report, adjudication, repair, or terminal
+promotion is authorized by this freeze. SRW remains **REPLAY-VERIFIED
+GREEN-UNREVIEWED**.
