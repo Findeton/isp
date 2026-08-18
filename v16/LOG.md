@@ -605,3 +605,33 @@ quotient, original witness, classifier branch, or machine verdict moves.
 The next event is one artifact regeneration from the committed repaired
 source, followed by commit-as-is and one terminal worktree/off-tree verifier.
 No post-execution scorer repair or successor physics is authorized.
+
+## 2026-08-17 — JCV REPAIRED ARTIFACTS GENERATED AND COMMITTED AS-IS BEFORE REPLAY (v16 LEDGER #31)
+
+Committed repair-source `d2421992e8eb797a795161f13ae851e5efd34777`
+generated the adjudicated Paper 2, transcript, and receipt with exit code zero.
+The scorer's first post-freeze invocation merely exercised its existing-path
+guard and changed nothing; the historical candidate bytes were then preserved
+outside the reserved paths and remain recoverable from commit `35c2511`, after
+which the one actual generation ran.
+
+The repaired artifacts report the unchanged frozen classifier words
+`JCV-STRATIFIED` and active
+`JCV-PAIRING-SELECTED-WEIGHTS-FREE`, with 20/20 exact gates, 16/16 named
+mutants, 18/18 bound result claims, and 19/19 totally sealed payload keys.  The
+paper hash is `e06e7ce1ec59397e05ccafa1e51d3bf78e888d0c0b72c214144deb9ba92e9e39`;
+the transcript hash is
+`1ea26ef8b14f0cc915edb9098ff835a5733e1bd31080b9a293dc36c4a8901e02`;
+the receipt hash is
+`b472a4281e40e6aa8b0dfe7a6fcde871cc808acd79bdcbe123d907e2bf12894a`.
+
+The generated paper now states the adjudicated result: local declared-doctrine
+compatibility, active flat holonomy, a real `S^1 x S^1` boundary-instrument
+family, one-step law-null dark mismatch, and global record-generated selection
+open.  It records the operator/unravelling distinction, exact post-review
+transfer-moving witness, direct-`03` extension countermodel, and complete-null-
+quotient successor target.  It promotes no geometry, backreaction,
+actualization, particles, constants, or QFT/GR result.
+
+These bytes are committed before replay.  One post-commit worktree and true
+off-tree/no-git verifier remains; no further repair or successor is authorized.

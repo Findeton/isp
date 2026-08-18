@@ -22,7 +22,8 @@ theory-selection result.
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
   post-commit/off-tree verification are complete.
-- `JCV`: **ADJUDICATED REPAIR SOURCE FROZEN — UNEXECUTED** at v16 ledger #30.  Three
+- `JCV`: **ADJUDICATED REPAIRED ARTIFACTS COMMITTED-AS-IS — TERMINAL
+  VERIFICATION PENDING** at v16 ledger #31.  Three
   mutually isolated hostile seats return `ACCEPT-WITH-FIXES`, independently
   reproducing every exact number with zero discrepancies.  The frozen machine
   words remain exact, but their physical reading is narrowed: this is a local
@@ -30,9 +31,9 @@ theory-selection result.
   two-dimensional family of boundary-instrument weights.  It is not a
   record-generated comparison/law fixed point.  Six dark mismatch sectors are
   one-step law-null; their distinction under all future continuations is open.
-  The bounded repair source is now frozen before artifact regeneration; one
-  repaired run, commit-as-is, and terminal verifier remain.  Paper 01 remains
-  frozen.
+  The bounded repair now passes 20/20 gates and 16/16 named mutants and is
+  committed before replay.  One terminal worktree/off-tree verifier remains.
+  Paper 01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.

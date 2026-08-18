@@ -1,6 +1,5 @@
 JCV PHYSICAL SOLVE — FROZEN FIXTURE AND SCORER
-GATE P-ANCHORS PASS :: matched=5/5
-GATE P-CHRONOLOGY PASS :: scorer source and fixture were committed before this executable path may produce physical artifacts
+GATE P-ANCHORS PASS :: matched=7/7
 GATE P-FIXTURE-SEMANTICS PASS :: charts=4 edges=5 triangles=2 models=2 expected-empty=True
 GATE P-REFERENT PASS :: boundary comparison, outcome record, weight law, geometry, and actualization are separately typed
 GATE P-QUOTIENT-TYPING PASS :: raw-to-holonomy defect identities=4096
@@ -10,13 +9,14 @@ GATE P-SOLVER PASS :: shared=16 control=16 failures=0
 GATE P-QUERY-CERTIFICATES PASS :: shared analytic/Groebner/saturation mismatches=0
 GATE P-WITNESS PASS :: witnesses=8 residual-failures=0 active-p-values=['0', '49/625']
 GATE P-INSTRUMENT PASS :: checked=8 TP-failures=0 CP=Kraus
+GATE P-REPAIR-COROLLARIES PASS :: registered-unconditioned=shared post-review-witness=exact extension-control=exact null-quotient=typed
 GATE P-CONTROL PASS :: independent-triangle analytic/Groebner/saturation mismatches=0
 GATE P-CLASSIFIER PASS :: primary=JCV-STRATIFIED active=JCV-PAIRING-SELECTED-WEIGHTS-FREE reachability=7/7
-GATE P-WALLS PASS :: consequences=10 prohibited-promotions=0
+GATE P-WALLS PASS :: consequences=13 prohibited-promotions=0
 GATE P-EXACT PASS :: AST-float-literals=0
-GATE P-READSET PASS :: declared=6 observed=6
-GATE P-NUMERAL-BINDING PASS :: bound-result-claims=11 failures=0
-GATE P-MUTANTS PASS :: killed=15 declared=15
+GATE P-READSET PASS :: declared=8 observed=8
+GATE P-NUMERAL-BINDING PASS :: bound-result-claims=18 failures=0
+GATE P-MUTANTS PASS :: killed=16 declared=16
 GATE P-SEAL-CONTROLS PASS :: clean total seal accepts; add/edit controls reject
 GATE P-TRANSCRIPT PASS :: rendered gate multiset equals in-memory ledger in both directions
 PRIMARY JCV-STRATIFIED
@@ -28,5 +28,5 @@ ACTIVE 1
 DARK 6
 CONTROL_NONEMPTY 9
 HOMOGENEITY_EXCLUDED 2
-MUTANTS 15 OF 15 DIE AT NAMED GATES
+MUTANTS 16 OF 16 DIE AT NAMED GATES
 END JCV PHYSICAL SOLVE
