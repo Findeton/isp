@@ -1811,3 +1811,13 @@ targets refuse, and no float literal exists.
 The core is immutable. The next WRC stage is a data-only physical fixture and
 verdict-neutral scorer frozen before official use. PPR's completed hostile
 panel remains unadjudicated; the other Paper 4–7 panels continue independently.
+
+## 2026-08-18 — SRW OPERATOR REVIEW FROZEN (v16 LEDGER #80)
+
+The first isolated Paper 4 report is frozen verbatim as
+`v16/review-srw-operator.md`, SHA-256
+`40c1fdb9a567437db7613796a5a0494f77eeb517b4ef2938cf71ae5795f60cbe`.
+It is hostile evidence only; no finding is adjudicated or repaired here. The
+rewrite/category and physics/causality reports were not read by this seat.
+Joint adjudication remains prohibited until all three immutable reports are
+frozen.
