@@ -1874,3 +1874,13 @@ The second isolated Paper 5 report is frozen verbatim as
 It is hostile evidence only; no finding is adjudicated or repaired here. This
 seat did not read the operator or physics/causality report. The final seat
 must be frozen before joint adjudication begins.
+
+## 2026-08-18 — OVG PHYSICS/CAUSALITY REVIEW FROZEN; PANEL COMPLETE (v16 LEDGER #86)
+
+The third isolated Paper 5 report is frozen verbatim as
+`v16/review-ovg-physics.md`, SHA-256
+`961996cc66cb1e63c7bdd0d357b34b3f5cd0e23f83b4ce3e75ba7165d28b8b10`.
+This seat did not read the operator or rewrite/category reports. The OVG panel
+is now complete at three immutable reports. Their findings remain hostile
+allegations until one joint adjudication independently recomputes and rules
+them; no repair or candidate promotion occurs in this event.

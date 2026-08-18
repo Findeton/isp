@@ -97,8 +97,8 @@ theory-selection result.
   independent exact reconstruction, and a byte-identical true off-tree/no-git
   replay. The three-lens hostile protocol is frozen at #67; all three seats
   were dispatched at #74.
-- `OVG` / Paper 5: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE-SEAT HOSTILE
-  PANEL RUNNING** at v16 ledger #74. The pin
+- `OVG` / Paper 5: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
+  AWAITING JOINT ADJUDICATION** at v16 ledger #86. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first
   refusal at #55, and bounded comparator repair at #56.
   The user-authorized continuation replaces a refuted “record or fuse” order
@@ -120,7 +120,9 @@ theory-selection result.
   nonseparability remain unselected or untested. Verification #58 passes two
   clean replays, all 30 mutants, independent seals/math, and true off-tree
   execution. The three-lens hostile protocol is frozen at #59; all three seats
-  were dispatched at #74.
+  were dispatched at #74. The operator report at #84, rewrite/category report
+  at #85, and physics/causality report at #86 are immutable hostile evidence;
+  their allegations await joint adjudication.
 - `SRW` / Paper 4: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #82. The pin is frozen at #41,
   original generic core at
