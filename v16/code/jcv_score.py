@@ -67,6 +67,9 @@ def serial(value: Any) -> Any:
         return [serial(item) for item in value]
     if isinstance(value, list):
         return [serial(item) for item in value]
+    if isinstance(value, (set, frozenset)):
+        items = [serial(item) for item in value]
+        return sorted(items, key=lambda item: json.dumps(item, sort_keys=True, separators=(",", ":"), ensure_ascii=False))
     if isinstance(value, dict):
         return {str(key): serial(item) for key, item in sorted(value.items(), key=lambda pair: str(pair[0]))}
     return value

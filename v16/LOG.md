@@ -465,3 +465,21 @@ classifier word was emitted, so this event licenses no JCV result.
 The only authorized repair is total canonical serialization of the already
 used set type.  The fixture, equations, classifier, witnesses, gates, and paper
 renderer may not move.  The failed run is committed before that repair.
+
+## 2026-08-17 — JCV SCORER-ONLY SERIALIZER REPAIR REFROZEN BEFORE SECOND OFFICIAL ATTEMPT (v16 LEDGER #22)
+
+The adjudicated repair adds one branch to `serial`: sets and frozensets are
+recursively serialized and deterministically sorted by canonical JSON.  The
+scorer hash moves from
+`768c4bbc6b0e39436a6d6b7dcf026149f95c2e8bb931d080052262638827f692` to
+`66b87bdf68f7210d959e13bfacae4c5957413e6d8f234647bfe3ad4a19619a03`.
+
+`v16/note-jcv-scorer-repair.md` records the complete delta and exclusion list.
+The fixture hash remains
+`ad887c213d14781838c6e70227b8f2c162f1392a08060de7c6e57829a8db012b`.
+No equation, quotient, solver call, witness, classifier, gate, consequence
+wall, renderer, or promotion rule moved.  Static parsing passes with zero float
+literals and zero top-level calls; the repaired source has not been executed.
+
+All result paths remain absent.  The next event is the second official attempt
+from the committed repaired bytes.

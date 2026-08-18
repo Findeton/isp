@@ -22,11 +22,11 @@ theory-selection result.
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
   post-commit/off-tree verification are complete.
-- `JCV`: **FIRST OFFICIAL RUN FAILED BEFORE VERDICT/ARTIFACT PROMOTION** at v16
-  ledger #21.  The predeclared mutation survey exposed a missing set case in
-  the scorer's canonical serializer.  No physical result path exists and no
-  comparison/weight result is citable.  The failed bytes are frozen before a
-  narrowly typed instrument repair.  Paper 01 remains frozen.
+- `JCV`: **SCORER REPAIRED AND REFROZEN BEFORE THE SECOND OFFICIAL ATTEMPT** at
+  v16 ledger #22.  The only source delta adds deterministic set serialization
+  for mutation proofs; the fixture and all physical/classifier logic are
+  unchanged.  No physical result path exists and no comparison/weight result
+  is citable.  Paper 01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.
