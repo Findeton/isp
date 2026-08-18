@@ -1553,7 +1553,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         text_hash = sha256_bytes(text.encode())
         paper = render_paper(result, fixture_hash, scorer_hash, text_hash)
         if arguments.mutant == "paper-claim":
-            paper = paper.replace("does **not** choose a fundamental law", "does choose a fundamental law", 1)
+            paper = paper.replace("**not** choose a fundamental law", "choose a fundamental law", 1)
         expected_text = transcript(result)
         if text != expected_text:
             raise GateFail("QSF-TRANSCRIPT-SEAL")

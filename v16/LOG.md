@@ -2702,3 +2702,18 @@ Two pre-commit clean generations are byte-identical and pass 20/20 scientific
 gates in about 184 seconds. Eight new upstream mutants bring the registered
 total to 28. Terminal status is still withheld pending post-commit replay, all
 mutants, and true off-tree/no-`.git` execution. Paper 10 remains unpinned.
+
+## 2026-08-18 — QSF TERMINAL ATTEMPT 1 REFUSES; SEAL REPAIR FROZEN (v16 LEDGER #126)
+
+`v16/note-qsf-terminal-attempt-1.md` records the failed terminal attempt. A
+post-commit clean run passes 20/20 and is byte-identical. Twenty-seven of 28
+mutants refuse without artifacts, but `paper-claim` survives because its
+one-line search token crosses a rendered newline and therefore changes no
+byte. The survivor writes only to its isolated temporary directory; official
+candidate artifacts remain untouched.
+
+Terminal promotion is refused. A one-token scorer repair now binds the
+contiguous rendered phrase `**not** choose a fundamental law`. No core,
+fixture, equation, scientific predicate, result, primary, renderer, or
+official artifact changes at this event. The repair freezes before rerun.
+Paper 10 remains unpinned.
