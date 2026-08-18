@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `WRC` / Paper 8: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE HOSTILE REPORTS
-  FROZEN, AWAITING JOINT ADJUDICATION** through v16 ledger #108. The derived primary is
+- `WRC` / Paper 8: **PANEL-ADJUDICATED ACCEPT-WITH-FIXES AT
+  `WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`** through v16 ledger
+  #109. The derived primary is
   `WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`. The pin is frozen at #75; its one provenance-only
   `QUESTIONS.md` digest transcription repair is frozen at #83 after the first
   result-free physical dry run refused without writes.
@@ -61,18 +62,27 @@ theory-selection result.
   reconstruction and memory-feedback result while rejecting any promotion to
   changing relational geometry or geometry irreducibility. Those reports are
   joined by the operator/instrument report #108. The three seats are
-  unanimously ACCEPT-WITH-FIXES and remain allegations pending the joint
+  unanimously ACCEPT-WITH-FIXES and were allegations pending the #109 joint
   ruling. The operator seat proves that all probability-preserving affine CP
   completions are rank-one measure-and-prepare: one alternative can fit the
   single registered continuation, but no one completion reproduces the source
   noncollapse law on two distinct inputs or all inputs. External-method audit
-  #107
-  freezes two forward corrections without modifying WRC: RUNBOOK E-36 requires
+  #107 freezes two forward corrections without modifying WRC: RUNBOOK E-36 requires
   full claim lineage after CSF's hard-coded doctrine observable, and E-37
   requires predictive sufficiency/minimality, matched graph interventions,
   B0/B1/B2 resource-matched adversaries, and held-out family scaling for any
   future eliminability result. JS Pin v2's predictive quotient is the governing
   ancestor; SCOUT-T remains procedurally unsealed and uncited as a result.
+  Adjudication #109 preserves every exact fixed-carrier regression and the
+  all-input nonaffinity theorem. It adopts the complete rank-one-effect result:
+  every probability-preserving affine CP completion is measure-and-prepare;
+  another completion fits the single registered continuation, but none matches
+  the source noncollapse rule on two distinct inputs or all inputs. The
+  projective qualifier is narrowed. WRC's physical result is emission-history
+  state-record feedback on fixed `G0`, not carrier/relation rewrite or geometry
+  irreducibility. Beable and recurrence words are retyped, Q8 retirement is
+  removed from scientific evidence, comparator/exposure defects are owned, and
+  a bounded repair is ordered before terminal promotion.
 - `CEL` / Paper 7: **PANEL-ADJUDICATED REJECT AT
   `CEL-MATHEMATICAL-LADDER-CONSTRUCTED-BUT-RELATIONAL-FLAG-WELD-UNBUILT`**
   at v16 ledger #104. The pin is frozen at #68, generic core at #69,

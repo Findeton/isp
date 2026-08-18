@@ -2300,3 +2300,30 @@ the source noncollapse successor on two distinct nonzero-probability inputs or
 all inputs. It also identifies the shared-code primary comparator, editorial
 Q8 gate, ontic-mixture domain, and JS/SCOUT-T/family-sufficiency debts. Joint
 adjudication is now authorized and begins only after this freeze.
+
+## 2026-08-18 — WRC PAPER 8 PANEL ADJUDICATION (v16 LEDGER #109)
+
+The unanimous ACCEPT-WITH-FIXES panel is adjudicated in
+`v16/note-wrc-adjudication.md`, SHA-256
+`5ecc1f2f5904443bed4c1010254292e77703851ed3513d71b068415df98caa3e`.
+The frozen primary survives at its narrow fixed-carrier meaning:
+**WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT**.
+
+All exact walk numbers, cuts, nine observable families, covariance, and the
+all-input CELL-HIT nonaffinity theorem survive. The full rank-one-effect
+classification is adopted: every probability-preserving affine CP completion
+is measure-and-prepare; another completion fits the single registered
+continuation, but none reproduces the source noncollapse successor on two
+distinct nonzero-probability inputs or all inputs. The projective-repair
+qualifier is narrowed accordingly.
+
+The physical retyping is binding. WRC constructs emission histories and
+non-inert state-record feedback on a fixed 27-cell catalogue. It does not
+construct carrier/relation rewrite, dynamic geometry, or geometry
+irreducibility. DISC excludes 10,380 registered memoryless configurations / 353
+distinct laws only. Beable and recurrence qualifiers are narrowed to a
+history-to-count readout and repeated numeric signatures under an imported
+rule. Q8 retirement is editorial, the comparator shares builder code, and the
+prefreeze controls are post-exposure calibrations. A bounded nine-order repair
+is authorized before terminal promotion; no fixture, core, physical number,
+coordinate, or primary may move.
