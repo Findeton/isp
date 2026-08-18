@@ -1,0 +1,373 @@
+{
+  "schema": "rfb-fixture-v1",
+  "unit": "RFB",
+  "paper": 10,
+  "frozen_date": "2026-08-18",
+  "purpose": "result-neutral finite forcing census for record-feedback law types",
+  "arithmetic": "exact rational matrices and symbolic cyclic phase exponents",
+  "anchors": [
+    {
+      "path": "v16/note-rfb-pin.md",
+      "sha256": "acc2cca5b46b4512a3b1298ec45623a621539da83691bebb6c4ab2dc8a431bc2",
+      "consumer": "RFB-G-REFERENT"
+    },
+    {
+      "path": "v16/note-rfb-core-freeze.md",
+      "sha256": "6d093c5156c4c265cf574ae7fa13fcddd16f14e3ab4ab24b10f7f89a7a1080ca",
+      "consumer": "RFB-G-CORE"
+    },
+    {
+      "path": "v16/code/rfb_core.py",
+      "sha256": "7d0a787d108ac16229dc6819a81f74f7b80203eaefa71d28f30f1f31b27e9ada",
+      "consumer": "RFB-G-CORE"
+    },
+    {
+      "path": "v16/code/rfb_public_output.txt",
+      "sha256": "4988daa3ca88f52af279d0491d5dd56ac2724f79f998e75f7a0c91ddceb28b2e",
+      "consumer": "RFB-G-CORE"
+    },
+    {
+      "path": "v16/code/rfb_public_receipt.json",
+      "sha256": "7356ae0f309645eaee9e6202e8cc61a4f0e231e087c3c3f6104cb6f6cac6ad11",
+      "consumer": "RFB-G-CORE"
+    },
+    {
+      "path": "v16/note-qsf-terminal-verification.md",
+      "sha256": "a14b8cd33eec9c361df26b72f86874792367c2168bd9ca18b9ae77b916dce533",
+      "consumer": "RFB-G-QSF-SCOPE"
+    },
+    {
+      "path": "v16/note-qsf-law-type-addendum.md",
+      "sha256": "007b7c4ba7d2511224583b93dfd4d34a35b66b916f7099ac45f7f62e1dd135ac",
+      "consumer": "RFB-G-QSF-SCOPE"
+    },
+    {
+      "path": "v16/paper-09-quantum-seam.md",
+      "sha256": "f11fe9e124ed70181dc86422b6db528265599dc4dc9f5d56c31f295654677b71",
+      "consumer": "RFB-G-QSF-SCOPE"
+    },
+    {
+      "path": "v16/code/qsf_receipt.json",
+      "sha256": "70c4b63712aba053177ded4d2fabfe865371d16e42e2e6865f9cace4961a2d45",
+      "consumer": "RFB-G-QSF-SCOPE"
+    },
+    {
+      "path": "v16/note-relational-sufficiency-method.md",
+      "sha256": "84bac33e47ebe30f94d019e8f669509e9ffa6470316b9d7a50fbc951fc0be660",
+      "consumer": "RFB-G-PREDICTIVE-METHOD"
+    },
+    {
+      "path": "v15/note-js-pin-v2.md",
+      "sha256": "99e90f9a2e8db6a67a1cb46902de96d6086a0931897145d5d54ca3a9e78816ea",
+      "consumer": "RFB-G-PREDICTIVE-METHOD"
+    },
+    {
+      "path": "v15/note-dc-causality-addendum-v2.md",
+      "sha256": "ca713e89633bcd3510bbc898aef24133a64172cd2af158c82457033e32a53d71",
+      "consumer": "RFB-G-NOSIGNAL-SCOPE"
+    },
+    {
+      "path": "v16/paper-01-joint-relational-history-law.md",
+      "sha256": "98489edb6a83919199c11b14b92c423965d1a08ad7652a1c1915d5402f9e6003",
+      "consumer": "RFB-G-HISTORY-TYPE"
+    }
+  ],
+  "forbidden_source_prefixes": [
+    "v15/code/scoutt_",
+    "v15/note-scoutt"
+  ],
+  "assumptions": [
+    {
+      "id": "A-NORMALIZATION",
+      "impose": "division probabilities sum to one and coarse grain additively",
+      "drop_control": "one port is amplified while the other ports are unchanged"
+    },
+    {
+      "id": "A-ALL-INPUT-COMPLETENESS",
+      "impose": "the division instrument obeys the operator identity for every input",
+      "drop_control": "the identity fails away from one calibration state"
+    },
+    {
+      "id": "A-POINTER-READABILITY",
+      "impose": "definite pointer labels are permuted reversibly",
+      "drop_control": "two pointer labels are merged"
+    },
+    {
+      "id": "A-FULL-ACCUMULATION",
+      "impose": "repeated writing visits every pointer label",
+      "drop_control": "reversible permutations with more than one cycle are admitted"
+    },
+    {
+      "id": "A-RENAMING-COVARIANCE",
+      "impose": "simultaneous pointer relabelings are representation changes",
+      "drop_control": "named writer and reader parameters are compared before quotienting"
+    },
+    {
+      "id": "A-SPECTATOR-NATURALITY",
+      "impose": "an idle factor leaves the registered law unchanged modulo null directions",
+      "drop_control": "a dressed context receives an independent kernel"
+    },
+    {
+      "id": "A-TYPE-UNIVERSALITY",
+      "impose": "identified event tokens share one reader rule",
+      "drop_control": "token-disjoint contexts carry unrelated reader functions"
+    },
+    {
+      "id": "A-TRANSLATION-COMPOSITION",
+      "impose": "incremental record influences obey U(n+m)=U(n)U(m)",
+      "drop_control": "general pointer-indexed phase readers remain allowed"
+    },
+    {
+      "id": "A-RECIPROCAL-FEEDBACK",
+      "impose": "a matter-controlled write must operationally affect matter",
+      "drop_control": "an uncontrolled record shift is permitted"
+    },
+    {
+      "id": "A-PREDICTIVE-MINIMALITY",
+      "impose": "families are compared by intervention-complete predictive quotients at equal dimension",
+      "drop_control": "a growing raw history label is counted without resource parity"
+    },
+    {
+      "id": "A-DISJOINT-LOCALITY",
+      "impose": "complete operations on one fixed factor preserve the remote unconditioned marginal",
+      "drop_control": "a trace-amplifying local operation is admitted"
+    },
+    {
+      "id": "A-RECORD-RECOVERABILITY",
+      "impose": "the final record partition remains perfectly distinguishable under every licensed continuation",
+      "drop_control": "a reset continuation merges the record sectors"
+    },
+    {
+      "id": "A-REFINEMENT-GLUING",
+      "impose": "the two-history cross terms cancel when all final record ports are coarse grained",
+      "drop_control": "one final port is deleted before coarse graining"
+    },
+    {
+      "id": "A-DIVISION-PLACEMENT",
+      "impose": "ordinary probabilities are assigned only at the final stable record partition",
+      "drop_control": "unrecorded rewrite alternatives are made exclusive at the intermediate cut"
+    }
+  ],
+  "freedoms": [
+    "writer-permutation",
+    "writer-edge-phases",
+    "winding-theta",
+    "record-order-q",
+    "reader-family",
+    "reader-charge",
+    "writer-reader-gauge-orbit",
+    "coin-or-mixing-law",
+    "record-retention-mode",
+    "microscopic-factorization",
+    "division-placement",
+    "record-partition",
+    "actualization"
+  ],
+  "forcing_cells": [
+    {
+      "assumptions": ["A-POINTER-READABILITY", "A-FULL-ACCUMULATION"],
+      "freedom": "writer-permutation",
+      "impose_test": "W-CYCLE",
+      "drop_test": "W-MULTICYCLE"
+    },
+    {
+      "assumptions": ["A-RENAMING-COVARIANCE"],
+      "freedom": "writer-edge-phases",
+      "impose_test": "W-PHASE-QUOTIENT",
+      "drop_test": "W-PHASE-NAMED"
+    },
+    {
+      "assumptions": ["A-RENAMING-COVARIANCE"],
+      "freedom": "winding-theta",
+      "impose_test": "W-WINDING",
+      "drop_test": "W-NO-RECONVERGENCE"
+    },
+    {
+      "assumptions": ["A-TYPE-UNIVERSALITY"],
+      "freedom": "reader-family",
+      "impose_test": "R-UNIVERSALITY",
+      "drop_test": "R-CONTEXT-SPLIT"
+    },
+    {
+      "assumptions": ["A-TRANSLATION-COMPOSITION"],
+      "freedom": "reader-family",
+      "impose_test": "R-CHARACTER",
+      "drop_test": "R-GENERAL"
+    },
+    {
+      "assumptions": ["A-RENAMING-COVARIANCE", "A-TRANSLATION-COMPOSITION"],
+      "freedom": "writer-reader-gauge-orbit",
+      "impose_test": "R-PAIR-QUOTIENT",
+      "drop_test": "R-NAMED-PAIR"
+    },
+    {
+      "assumptions": ["A-RECIPROCAL-FEEDBACK"],
+      "freedom": "reader-charge",
+      "impose_test": "R-DECOHERENCE-LEAK",
+      "drop_test": "R-INERT"
+    },
+    {
+      "assumptions": ["A-NORMALIZATION", "A-ALL-INPUT-COMPLETENESS", "A-DISJOINT-LOCALITY"],
+      "freedom": "record-retention-mode",
+      "impose_test": "M-FAMILY",
+      "drop_test": "M-AMPLIFIER"
+    },
+    {
+      "assumptions": ["A-DIVISION-PLACEMENT", "A-REFINEMENT-GLUING"],
+      "freedom": "microscopic-factorization",
+      "impose_test": "H-RECONVERGENCE",
+      "drop_test": "H-EXCLUSIVE-CUT"
+    },
+    {
+      "assumptions": ["A-PREDICTIVE-MINIMALITY"],
+      "freedom": "record-retention-mode",
+      "impose_test": "P-RESOURCE-PARITY",
+      "drop_test": "P-RAW-HISTORY"
+    },
+    {
+      "assumptions": ["A-RECORD-RECOVERABILITY"],
+      "freedom": "record-partition",
+      "impose_test": "P-APPEND-ONLY",
+      "drop_test": "P-RESET"
+    }
+  ],
+  "dial_rows": [
+    {"q": 2, "pointer_labels": [0, 1]},
+    {"q": 3, "pointer_labels": [0, 1, 2]},
+    {"q": 4, "pointer_labels": [0, 1, 2, 3]}
+  ],
+  "writer_arm": {
+    "candidate_family": "all reversible pointer permutations",
+    "phase_family": "all edge exponents in Z_q on every full-cycle writer",
+    "interferometer": {
+      "path_left": "one complete writer winding",
+      "path_right": "identity",
+      "common_boundary": "initial pointer label after q writes",
+      "ports": ["plus", "minus"]
+    }
+  },
+  "reader_arm": {
+    "general_family": "all functions f:Z_q->Z_q with f(0)=0",
+    "composition_equation": "f(n+m)=f(n)+f(m) mod q",
+    "writer_steps": "all units of Z_q",
+    "reader_charges": "all elements of Z_q",
+    "feedback_controls": [
+      {"id": "inert", "matter_controlled_write": false, "reader_charge": 0},
+      {"id": "decoherence-only", "matter_controlled_write": true, "reader_charge": 0},
+      {"id": "active", "matter_controlled_write": true, "reader_charge": 1}
+    ]
+  },
+  "record_mode_arm": {
+    "common_input_dimension": 2,
+    "common_final_ports": ["plus", "minus"],
+    "rows": [
+      {"id": "classical", "tag_overlap": "0", "tag_complement": "1"},
+      {"id": "hybrid", "tag_overlap": "3/5", "tag_complement": "4/5"},
+      {"id": "coherent", "tag_overlap": "1", "tag_complement": "0"}
+    ],
+    "retained_interface": "stable orthogonal plus/minus output record after recombination"
+  },
+  "history_arm": {
+    "histories": ["h-left", "h-right"],
+    "relative_phase_rows": [1, -1],
+    "intermediate_cut": "no durable record",
+    "final_ports": ["plus", "minus"],
+    "second_cut": "coarse grain both final ports",
+    "candidate_law_types": [
+      "DIVISIBLE-REWRITE-KERNEL",
+      "ENRICHED-STATE-KERNEL",
+      "INDIVISIBLE-MULTITIME",
+      "HIGHER-ORDER"
+    ],
+    "candidate_representations": [
+      "DIVISION-KERNEL",
+      "HILBERT-ROUTED-SECTORS",
+      "STRONGLY-POSITIVE-DECOHERENCE-FUNCTIONAL",
+      "PROCESS-TENSOR",
+      "PROCESS-MATRIX"
+    ]
+  },
+  "predictive_arm": {
+    "q": 3,
+    "states": [0, 1, 2],
+    "transition": "n maps to n+1 mod q",
+    "interventions": ["identity", "advance", "read"],
+    "horizons": [1, 2, 3, 4],
+    "heldout_horizon": 5,
+    "resource_bound": {
+      "classical_states": 3,
+      "coherent_dimension": 3,
+      "hybrid_dimension": 3,
+      "indivisible_boundary_labels": 3
+    },
+    "screen_families": ["constant", "charge-one", "charge-minus-one"]
+  },
+  "recoverability_arm": {
+    "record_labels": [0, 1],
+    "licensed_append_only": ["identity", "label-swap", "copy-to-backup"],
+    "drop_control": "reset both labels to zero",
+    "redundancy_control": "reset primary after copy-to-backup"
+  },
+  "locality_arm": {
+    "state": "two-qubit Bell density",
+    "alice_channels": [
+      {"id": "identity", "kind": "unitary"},
+      {"id": "classical-dephase", "kind": "dephase", "weight": "1/2"},
+      {"id": "hybrid-dephase", "kind": "dephase", "weight": "4/5"},
+      {"id": "active-bit-flip", "kind": "unitary"}
+    ],
+    "drop_control": {"id": "amplifier", "trace_multiplier": "2"},
+    "scope": "fixed factor only; no relational separation or changing Bob"
+  },
+  "result_schema": {
+    "primary_words": [
+      "RFB-FORCING-BOUNDARY-MAPPED",
+      "RFB-BLOCKED-AT-PROCESS-REFERENT",
+      "RFB-METHOD-INCONCLUSIVE-AT-<object>",
+      "RFB-INCONSISTENT"
+    ],
+    "law_type_words": [
+      "DIVISION-KERNEL-SUFFICIENT",
+      "INDIVISIBLE-MULTITIME-LAW-REQUIRED",
+      "HISTORY-DECOHERENCE-FUNCTIONAL-REQUIRED",
+      "HIGHER-ORDER-PROCESS-REQUIRED",
+      "METHOD-INCONCLUSIVE"
+    ],
+    "record_mode_words": [
+      "RFB-CLASSICAL-FEEDBACK-SURVIVES",
+      "RFB-COHERENT-FEEDBACK-SURVIVES",
+      "RFB-HYBRID-FAMILY-SURVIVES-DIM-<d>",
+      "RFB-DECOHERENCE-ONLY-SURVIVES",
+      "RFB-ACTIVE-FEEDBACK-SURVIVES",
+      "RFB-FEEDBACK-FAMILY-UNDERDETERMINED-DIM-<d>",
+      "RFB-NO-REGISTERED-FAMILY-PASSES-<gate>"
+    ],
+    "cell_words": [
+      "FORCED-BY-<assumption-set>",
+      "EXCLUDED-BY-<assumption-set>",
+      "QUOTIENTED-AS-REPRESENTATION-BY-<gauge>",
+      "PRICED-POSTULATE-<dimension>",
+      "UNTOUCHED-BY-REGISTERED-SURFACE",
+      "UNPHRASABLE-AT-<type>",
+      "METHOD-INCONCLUSIVE-AT-<object>"
+    ]
+  },
+  "scope_walls": [
+    "NO-GRAPH-GROWTH",
+    "NO-CATALOGUE-SELECTION",
+    "NO-DIVISION-DERIVATION",
+    "NO-ACTUALIZATION-DERIVATION",
+    "NO-DYNAMIC-FACTORIZATION-NOSIGNAL",
+    "NO-INDEFINITE-CAUSAL-ORDER",
+    "NO-GEOMETRY-CLAIM",
+    "NO-QFT-OR-GR-LIMIT",
+    "NO-HAMILTONIAN-OR-ENERGY",
+    "NO-CONSTANT-SELECTION",
+    "NO-EMPIRICAL-PREDICTION"
+  ],
+  "artifact_whitelist": [
+    "v16/code/rfb_output.txt",
+    "v16/code/rfb_receipt.json",
+    "v16/paper-10-record-feedback-boundary.md"
+  ]
+}

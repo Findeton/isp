@@ -240,7 +240,7 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     the corresponding rational-coin holonomy has three rather than five
     phases, and `R=I` is an exact all-tick no-split control. Paper 10's RFB pin
     now carries CRL only as one registered conditional family; no result exists.
-32. **PUBLIC CORE FROZEN / OPEN — Which microscopic law type and record-feedback family are
+32. **RESULT-NEUTRAL FIXTURE FROZEN / OPEN — Which microscopic law type and record-feedback family are
     selected by which principles?** Paper 10 RFB freezes a three-axis forcing
     census: process factorization, record implementation, and mathematical
     representation. It explicitly tests classical, coherent, hybrid,
@@ -257,5 +257,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     continuum phase. The exact generic core now recognizes writer/reader
     gauge, two-history interference, hybrid tags, predictive partitions, and
     fixed-factor locality, with 9/9 public gates and 11/11 mutant deaths. It
-    contains no physical fixture answer. No RFB scorer, result, or Paper 10
-    candidate exists.
+    contains no physical answer. A data-only fixture now freezes all fourteen
+    assumption toggles, eleven impose/drop cells, three record modes, the
+    two-history assay, equal-resource predictive rows, recovery controls, and
+    fixed-factor locality without a verdict. No RFB scorer, result, or Paper
+    10 candidate exists.

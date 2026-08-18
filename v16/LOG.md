@@ -2809,3 +2809,18 @@ overwrite, transcript-ledger, and payload-seal controls pass. A git-free copy
 run from `/private/tmp` reproduces the transcript byte-for-byte and the receipt
 as identical JSON. The next event may freeze a result-neutral fixture; no
 physical scorer may run until the fixture and scorer have both been committed.
+
+## 2026-08-18 — RFB RESULT-NEUTRAL FIXTURE FROZEN (v16 LEDGER #132)
+
+`v16/note-rfb-fixture-freeze.md` freezes the data-only Paper 10 fixture at
+SHA-256 `f3557b3400584d01984c6a4f38d40744c9e2cf2f0e36c7c4aa225b045e5bd362`.
+It binds fourteen assumption toggles, eleven impose/drop forcing cells, the
+three registered record orders, classical/coherent/hybrid retention rows, a
+two-history two-cut interference arena, equal-resource predictive rows,
+record-recovery grammars, and fixed-factor locality controls.
+
+All thirteen source anchors match. The fixture contains only definitions,
+allowed result schema, and scope walls—no expected count, selected word,
+primary, verdict, or candidate prose. The physical scorer and all three result
+artifacts are absent. The scorer may now be constructed and committed, but it
+may not run against this fixture before that separate freeze event.

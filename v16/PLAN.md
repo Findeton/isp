@@ -459,7 +459,7 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **GENERIC CORE FROZEN; NO RESULT (v16 #131)**.
+Status: **RESULT-NEUTRAL FIXTURE FROZEN; NO RESULT (v16 #132)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the
@@ -484,8 +484,11 @@ kinematics; its open target is a graph-generated, renaming-covariant history law
 with stable divisions, quantum rewrite concurrency, dynamically defined
 subsystems, and eventual continuum recovery. The public exact core is now
 frozen after passing 9/9 algebra gates, 11/11 targeted mutant deaths, and a
-true off-tree replay. It contains no physical fixture or answer. The fixture,
-scorer, result, and Paper 10 candidate remain absent.
+true off-tree replay. The separately frozen data-only fixture now binds the
+fourteen assumption toggles, eleven impose/drop cells, three dial rows, record
+modes, history cuts, predictive resources, recovery grammars, and locality
+controls without an expected answer. The scorer, result, and Paper 10 candidate
+remain absent.
 
 ## Successor register
 
