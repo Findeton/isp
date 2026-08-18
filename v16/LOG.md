@@ -1855,3 +1855,13 @@ freezes only that provenance correction. No physics clause, fixture, gate,
 comparator, outcome word, mutant, chronology, or scope wall changes. WRC
 scoring must anchor both the immutable parent pin and this addendum and must
 refuse if the corrected source digest moves.
+
+## 2026-08-18 — OVG OPERATOR REVIEW FROZEN (v16 LEDGER #84)
+
+The first isolated Paper 5 report is frozen verbatim as
+`v16/review-ovg-operator.md`, SHA-256
+`43ceeb00e127034dc61d5c51f107b7162dde32bcbc9bf0365bbe85967a960421`.
+It is hostile evidence only; no finding is adjudicated or repaired here. The
+rewrite/category and physics/causality reports were not read by this seat.
+Joint adjudication remains prohibited until all three immutable reports are
+frozen.
