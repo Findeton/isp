@@ -18,9 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `OVG` / Paper 5: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE FIRST
-  EXECUTION** at v16 ledger #54. The pin is frozen at #52 and generic core at
-  #53.
+- `OVG` / Paper 5: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #57. The pin
+  is frozen at #52, generic core at #53, physical fixture/scorer at #54, first
+  refusal at #55, and bounded comparator repair at #56.
   The user-authorized continuation replaces a refuted “record or fuse” order
   trichotomy with the exact Gram/instrument variety of overlapping histories.
   It will test common-boundary typing, all-input multiport completeness, a
@@ -33,8 +33,12 @@ theory-selection result.
   The data-only physical fixture and verdict-neutral scorer are now frozen
   with 30 named mutants. The first invocation at #55 refuses before physical
   scoring on a prose-anchor newline mismatch and writes nothing; a bounded
-  scorer-only whitespace repair is frozen at #56 before re-execution. No
-  official result or paper exists.
+  scorer-only whitespace repair is frozen at #56. The repaired invocation
+  passes 32/32 and generates the exact overlap variety candidate: the complex
+  CNOT witness kills the old trichotomy; phase constraints and parity ports
+  survive; port law, transport law, primitive arity, and causal
+  nonseparability remain unselected or untested. Replay and hostile review are
+  still pending.
 - `SRW` / Paper 4: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL
   FROZEN, REVIEWERS NOT ASSIGNED** at v16 ledger #51. The pin is frozen at #41,
   original generic core at

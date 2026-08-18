@@ -255,6 +255,14 @@ consumed prose and the already frozen token; byte hashes and all scientific
 objects remain exact. No repaired run has occurred and all result paths remain
 absent.
 
+The repaired official invocation at #57 passes 32/32 gates and is committed
+as generated before replay or mutants. It constructs the finite exact
+Gram/instrument variety, kills the old real-weight no-go with the complex CNOT
+witness, confirms the scoped unitary spectral classifier and universal parity
+ports, and refuses both primitive-arity and causal-nonseparability promotion.
+The port and elementary transport laws remain unselected. Candidate
+verification and hostile protocol are next.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

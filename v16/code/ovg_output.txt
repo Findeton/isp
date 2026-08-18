@@ -1,0 +1,37 @@
+OVG PAPER 5 EXACT RUN
+primary: OVG-GRAM-INSTRUMENT-VARIETY-CONSTRUCTED
+findings: ['OVG-GRAM-INSTRUMENT-VARIETY-CONSTRUCTED', 'SINGLE-PORT-PHASE-CONSTRAINED', 'MULTIPORT-COHERENCE-EXISTS-BUT-PORT-LAW-UNSELECTED', 'LOCAL-FLAG-KINEMATICALLY-PERMITTED-BUT-IMPLEMENTATION-UNSELECTED', 'COMPOSITE-SUPPORT-DOES-NOT-FORCE-PRIMITIVE-ARITY', 'CAUSAL-NONSEPARABILITY-UNTESTED', 'OVERLAP-LAW-UNSELECTED']
+PASS OVG-ANCHORS :: rows=9 freeze=True/True
+PASS OVG-FIXTURE-NEUTRALITY :: keys=[] text=[]
+PASS OVG-REFERENT-TYPES :: actors=['A', 'B', 'C'] cases=5 distinct=True
+PASS OVG-UNITARY-CERTIFICATES :: rows=5
+PASS OVG-GRAM-OPERATOR :: omega_ac=True
+PASS OVG-CNOT-RELATIVE :: non_scalar=True
+PASS OVG-EQUAL-REAL-CONTROL :: weights=['3/5', '4/5'] complete=False
+PASS OVG-COMPLEX-WITNESS :: weights=['3/5', '4/5i'] scan=32
+PASS OVG-SPECTRAL-RANKS :: nullities=[2, 2, 1, 1, 0]
+PASS OVG-SPECTRAL-PHASE :: phase=True z0=True
+PASS OVG-THREE-PHASE-SINGLE-PORT :: scan=0
+PASS OVG-PARITY-INSTRUMENT :: cases={'scalar-one': True, 'scalar-quarter': True, 'overlap-cnot': True, 'two-quarter-phases': True, 'three-phase-control': True}
+PASS OVG-NONNORMAL-DIRECT :: normal=False rank=3 method=direct-real-linear-operator-equation
+PASS OVG-THREE-HISTORY-VARIETY :: rows=3 screens=2
+PASS OVG-PORT-COARSEGRAIN :: same_channel=True calibrated_diff=True
+PASS OVG-DARK-REACTIVATION :: current=True future=False
+PASS OVG-REWRITE-CRITICAL-PAIRS :: kinds=['disjoint-commuting', 'joinable-overlap', 'dependency', 'divergent-endpoints']
+PASS OVG-DEPENDENCY-TYPE :: dependency_not_record=True divergent_not_common=True
+PASS OVG-ARITY-COMPOSITE :: left=5 right=5
+PASS OVG-ARITY-CONTROL :: toffoli_words=0 witness=[2, 4]
+PASS OVG-ANCILLA-POLICY :: present=True
+PASS OVG-LOCAL-FLAG :: shape=[16, 8] typed_map=False
+PASS OVG-RECORD-PERMANENCE-SCOPE :: censused=False claimed=False
+PASS OVG-SPECTATOR-NOSIGNAL :: unchanged=True amplifier=True
+PASS OVG-CAUSAL-SCOPE :: nonseparability_claimed=False
+PASS OVG-ALL-N-SCOPE :: all_n_claimed=False
+PASS OVG-RUNTIME-READ-SET :: reads=['v12/paper1-composition-defect.md', 'v15/note-homonym-audit.md', 'v16/code/jrh_receipt.json', 'v16/code/ovg_core.py', 'v16/code/ovg_fixture.json', 'v16/code/ovg_score.py', 'v16/code/ppr_receipt.json', 'v16/code/srw_receipt.json', 'v16/note-ovg-fixture-freeze.md', 'v16/note-srw-hostile-protocol.md', 'v16/paper-01-joint-relational-history-law.md', 'v16/paper-03-contextual-pullbacks-permanent-records.md', 'v16/paper-04-support-rewrite-weld.md']
+PASS OVG-EXACT-ARITHMETIC :: source_float_literals=0 fixture_float=False
+PASS OVG-CLASSIFIER :: builder=['OVG-GRAM-INSTRUMENT-VARIETY-CONSTRUCTED', 'SINGLE-PORT-PHASE-CONSTRAINED', 'MULTIPORT-COHERENCE-EXISTS-BUT-PORT-LAW-UNSELECTED', 'LOCAL-FLAG-KINEMATICALLY-PERMITTED-BUT-IMPLEMENTATION-UNSELECTED', 'COMPOSITE-SUPPORT-DOES-NOT-FORCE-PRIMITIVE-ARITY', 'CAUSAL-NONSEPARABILITY-UNTESTED', 'OVERLAP-LAW-UNSELECTED'] comparator=['OVG-GRAM-INSTRUMENT-VARIETY-CONSTRUCTED', 'SINGLE-PORT-PHASE-CONSTRAINED', 'MULTIPORT-COHERENCE-EXISTS-BUT-PORT-LAW-UNSELECTED', 'LOCAL-FLAG-KINEMATICALLY-PERMITTED-BUT-IMPLEMENTATION-UNSELECTED', 'COMPOSITE-SUPPORT-DOES-NOT-FORCE-PRIMITIVE-ARITY', 'CAUSAL-NONSEPARABILITY-UNTESTED', 'OVERLAP-LAW-UNSELECTED']
+PASS OVG-PAPER-BINDINGS :: claims=12 occurrences={'C1': 1, 'C2': 1, 'C3': 1, 'C4': 1, 'C5': 1, 'C6': 1, 'C7': 1, 'C8': 1, 'C9': 1, 'C10': 1, 'C11': 1, 'C12': 1}
+PASS OVG-PREWRITE-INTEGRITY :: late_seal=False
+PASS OVG-TRANSCRIPT-RECONCILIATION :: rows=31
+gate-count: 32
+all-pass: true

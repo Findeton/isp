@@ -1263,3 +1263,40 @@ paths/tokens, physical equations, coefficient census, gates, mutants,
 classifier, result words, claims, renderer, scope walls, and CLI are unchanged.
 The source compiles with zero float literals; result paths remain absent. The
 next event is the repaired official invocation.
+
+## 2026-08-18 — OVG CANDIDATE GENERATED AND COMMITTED AS-IS (v16 LEDGER #57)
+
+The first repaired invocation of the #56 scorer passes 32/32 gates and
+generates exactly three artifacts. Before any replay, selftest, mutant, hostile
+review, or interpretive repair, their hashes are:
+
+| artifact | SHA-256 |
+|---|---|
+| `v16/code/ovg_output.txt` | `48cf0fdecc43b1d148c97bac936a879cbbcf14daddfccd6e597014017155fe7f` |
+| `v16/code/ovg_receipt.json` | `4ba954430acd0772da62c8df16b2c6b08bca9e76fd7b25d3b5b72fcc43ce2852` |
+| `v16/paper-05-overlap-gram-instrument-variety.md` | `89a6ad8b10b97351d71a499ebbb36b2cf5a89f32d5ec9d005f9b4a68dab16b31` |
+
+The primary candidate is `OVG-GRAM-INSTRUMENT-VARIETY-CONSTRUCTED`, with
+six qualifiers: a two-eigenphase single-port phase constraint; coherent
+multiport existence with the port law unselected; a kinematically local flag
+with implementation unselected; composite support not forcing primitive
+arity; causal nonseparability untested; and the overlap law unselected.
+
+The exact CNOT overlap is the mandatory kill: its relative operator is the
+non-scalar `CNOT(A->C)`. Real weights `3/5,4/5` fail completeness, while
+`3/5,4i/5` give zero operator residual; the registered exact coefficient scan
+contains 32 complete single-port rows. The five unitary strata have phase-row
+nullities `[2,2,1,1,0]`. The nonnormal growing-carrier overlap has direct
+constraint rank `3`/nullity `0` but complete parity ports. A three-history
+family supplies three rational rows and two calibrated screens.
+
+Both overlapping three-actor order maps have five factorization words in the
+declared binary grammar, so fusion does not establish primitive arity. A
+Toffoli control is correctly excluded by the CNOT-only `F_2`-linearity assay.
+The complete overlap instrument leaves an entangled idle spectator marginal
+unchanged, while the amplifier control moves it.
+
+This is **GREEN-UNREVIEWED**, not terminal. The candidate bytes are committed
+as generated. Replay, all 30 mutants, independent seal/paper reconstruction,
+true off-tree/no-git execution, and a separately frozen hostile protocol
+remain.

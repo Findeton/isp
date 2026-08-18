@@ -115,17 +115,20 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     futures; coherent reciprocity fixes an eraser on the reached image, while
     catalogue choice, recorded-successor weights, and physical coupling values
     remain unselected. Replay and hostile review remain.
-23. **OPEN — How do overlapping events compose coherently?** Paper 5 is pinned
-    to compute the exact Gram/instrument variety for overlapping `AB` and `BC`
-    histories. A prior claim that non-scalar order holonomy forces “record or
-    fuse” is explicitly withdrawn after a complex-weight counterexample. The
-    live question is the full multiport all-input operator constraint, not one
-    equal-real coefficient point.
-24. **OPEN — Does overlap select primitive arity?** A binary composite with
+23. **PARTIAL — How do overlapping events compose coherently?** The
+    green-unreviewed Paper 5 candidate computes the exact finite
+    Gram/instrument variety for overlapping `AB` and `BC` histories. A
+    non-scalar CNOT relative operator admits a complete complex-weight
+    single-port map, and parity ports exist for every registered isometry
+    pair. The port law, elementary maps, arbitrary-`n` extension, and hostile
+    verification remain open.
+24. **PARTIAL — Does overlap select primitive arity?** A binary composite with
     support on three actors is not a primitive three-actor event. Selection
     requires irreducibility relative to a frozen lower-arity grammar, allowed
-    ancillas/resources, and equivalence. Paper 5 will run that finite census;
-    no all-`n` result is presumed.
+    ancillas/resources, and equivalence. Paper 5 finds both CNOT order maps
+    factorable in the binary grammar; its Toffoli control shows the assay can
+    detect grammar-relative irreducibility. No ISP minimum arity or all-`n`
+    result follows.
 25. **OPEN — Can causal order itself be nonclassical here?** Interference
     between two fixed circuit orders is not a quantum switch or a witness of
     causal nonseparability. Paper 5 hard-walls that promotion unless a typed
