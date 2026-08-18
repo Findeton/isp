@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `WRC` / Paper 8: **REPLAY-VERIFIED GREEN-UNREVIEWED; TWO HOSTILE REPORTS
-  FROZEN, OPERATOR SEAT RUNNING** through v16 ledger #107. The derived primary is
+- `WRC` / Paper 8: **REPLAY-VERIFIED GREEN-UNREVIEWED; THREE HOSTILE REPORTS
+  FROZEN, AWAITING JOINT ADJUDICATION** through v16 ledger #108. The derived primary is
   `WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT`. The pin is frozen at #75; its one provenance-only
   `QUESTIONS.md` digest transcription repair is frozen at #83 after the first
   result-free physical dry run refused without writes.
@@ -59,8 +59,14 @@ theory-selection result.
   assigns all three independently. Physics/geometry #105 and
   records/eliminability #106 independently preserve the fixed-carrier exact
   reconstruction and memory-feedback result while rejecting any promotion to
-  changing relational geometry or geometry irreducibility. The operator seat
-  remains live, so no joint adjudication has begun. External-method audit #107
+  changing relational geometry or geometry irreducibility. Those reports are
+  joined by the operator/instrument report #108. The three seats are
+  unanimously ACCEPT-WITH-FIXES and remain allegations pending the joint
+  ruling. The operator seat proves that all probability-preserving affine CP
+  completions are rank-one measure-and-prepare: one alternative can fit the
+  single registered continuation, but no one completion reproduces the source
+  noncollapse law on two distinct inputs or all inputs. External-method audit
+  #107
   freezes two forward corrections without modifying WRC: RUNBOOK E-36 requires
   full claim lineage after CSF's hard-coded doctrine observable, and E-37
   requires predictive sufficiency/minimality, matched graph interventions,

@@ -2282,3 +2282,21 @@ Any successor geometry-irreducibility unit must absorb or disposition JS S1a/
 S1b and must use a generative grammar engine rather than named matrix packets.
 The active WRC operator seat was notified; all WRC adjudication remains barred
 until its independent report freezes.
+
+## 2026-08-18 — WRC OPERATOR/INSTRUMENT REVIEW FROZEN; PANEL COMPLETE (v16 LEDGER #108)
+
+The third isolated Paper 8 report is frozen verbatim as
+`v16/review-wrc-operator.md`, SHA-256
+`b424f5e8e5993868ce7c2a6b83114db54402bffbe8672ee4dcd58e0a822782d0`.
+All three WRC seats are now immutable; their grades are unanimously
+ACCEPT-WITH-FIXES. Their allegations remain unadjudicated at this event.
+
+The operator seat independently reproduces every fixed-carrier observable and
+the all-input nonaffinity theorem. It adds the complete rank-one-effect
+classification: every probability-preserving affine CP outcome is
+measure-and-prepare. A different complete instrument can match the single
+registered continuation, while no one fixed-output affine completion matches
+the source noncollapse successor on two distinct nonzero-probability inputs or
+all inputs. It also identifies the shared-code primary comparator, editorial
+Q8 gate, ontic-mixture domain, and JS/SCOUT-T/family-sufficiency debts. Joint
+adjudication is now authorized and begins only after this freeze.
