@@ -1,0 +1,6779 @@
+{
+ "active_stratum_word": "JCV-PAIRING-SELECTED-WEIGHTS-FREE",
+ "fixture_sha256": "ad887c213d14781838c6e70227b8f2c162f1392a08060de7c6e57829a8db012b",
+ "gates": [
+  {
+   "evidence": "matched=5/5",
+   "gate": "P-ANCHORS",
+   "passed": true
+  },
+  {
+   "evidence": "scorer source and fixture were committed before this executable path may produce physical artifacts",
+   "gate": "P-CHRONOLOGY",
+   "passed": true
+  },
+  {
+   "evidence": "charts=4 edges=5 triangles=2 models=2 expected-empty=True",
+   "gate": "P-FIXTURE-SEMANTICS",
+   "passed": true
+  },
+  {
+   "evidence": "boundary comparison, outcome record, weight law, geometry, and actualization are separately typed",
+   "gate": "P-REFERENT",
+   "passed": true
+  },
+  {
+   "evidence": "raw-to-holonomy defect identities=4096",
+   "gate": "P-QUOTIENT-TYPING",
+   "passed": true
+  },
+  {
+   "evidence": "local=40 path=2048 failures=0",
+   "gate": "P-INTERTWINER",
+   "passed": true
+  },
+  {
+   "evidence": "raw=1024 quotient=16 orbit-sizes=[64] orbit-failures=0",
+   "gate": "P-GAUGE-QUOTIENT",
+   "passed": true
+  },
+  {
+   "evidence": "shared=16 control=16 failures=0",
+   "gate": "P-SOLVER",
+   "passed": true
+  },
+  {
+   "evidence": "shared analytic/Groebner/saturation mismatches=0",
+   "gate": "P-QUERY-CERTIFICATES",
+   "passed": true
+  },
+  {
+   "evidence": "witnesses=8 residual-failures=0 active-p-values=['0', '49/625']",
+   "gate": "P-WITNESS",
+   "passed": true
+  },
+  {
+   "evidence": "checked=8 TP-failures=0 CP=Kraus",
+   "gate": "P-INSTRUMENT",
+   "passed": true
+  },
+  {
+   "evidence": "independent-triangle analytic/Groebner/saturation mismatches=0",
+   "gate": "P-CONTROL",
+   "passed": true
+  },
+  {
+   "evidence": "primary=JCV-STRATIFIED active=JCV-PAIRING-SELECTED-WEIGHTS-FREE reachability=7/7",
+   "gate": "P-CLASSIFIER",
+   "passed": true
+  },
+  {
+   "evidence": "consequences=10 prohibited-promotions=0",
+   "gate": "P-WALLS",
+   "passed": true
+  },
+  {
+   "evidence": "AST-float-literals=0",
+   "gate": "P-EXACT",
+   "passed": true
+  },
+  {
+   "evidence": "declared=6 observed=6",
+   "gate": "P-READSET",
+   "passed": true
+  },
+  {
+   "evidence": "bound-result-claims=11 failures=0",
+   "gate": "P-NUMERAL-BINDING",
+   "passed": true
+  },
+  {
+   "evidence": "killed=15 declared=15",
+   "gate": "P-MUTANTS",
+   "passed": true
+  },
+  {
+   "evidence": "clean total seal accepts; add/edit controls reject",
+   "gate": "P-SEAL-CONTROLS",
+   "passed": true
+  },
+  {
+   "evidence": "rendered gate multiset equals in-memory ledger in both directions",
+   "gate": "P-TRANSCRIPT",
+   "passed": true
+  }
+ ],
+ "measurements": {
+  "binding_summary": {
+   "binding_count": 11,
+   "failures": []
+  },
+  "classification": {
+   "active_dimensions": [
+    2
+   ],
+   "active_keys": [
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "active_stratum_word": "JCV-PAIRING-SELECTED-WEIGHTS-FREE",
+   "classifier_reachability": {
+    "classical-only": "JCV-CLASSICAL-ONLY",
+    "declaration-indexed": "JCV-DECLARATION-INDEXED",
+    "empty": "JCV-EMPTY",
+    "invariant-family": "JCV-GAUGE-FAMILY-OBSERVABLE-INVARIANT",
+    "point": "JCV-POINT-MOD-GAUGE",
+    "stratified": "JCV-STRATIFIED",
+    "weights-free": "JCV-PAIRING-SELECTED-WEIGHTS-FREE"
+   },
+   "control_nonempty_count": 9,
+   "control_only_keys": [
+    [
+     -1,
+     1,
+     1,
+     -1
+    ],
+    [
+     1,
+     -1,
+     -1,
+     1
+    ]
+   ],
+   "dark_dimensions": [
+    1
+   ],
+   "dark_keys": [
+    [
+     -1,
+     1,
+     -1,
+     1
+    ],
+    [
+     -1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     -1,
+     1,
+     -1
+    ],
+    [
+     1,
+     -1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     -1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     -1
+    ]
+   ],
+   "homogeneity_excluded_count": 2,
+   "nonempty_keys": [
+    [
+     -1,
+     1,
+     -1,
+     1
+    ],
+    [
+     -1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     -1,
+     1,
+     -1
+    ],
+    [
+     1,
+     -1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     -1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     -1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "observable_signatures": [
+    [
+     [
+      "p_plus",
+      null,
+      "-u^2 - 2*u*v - v^2 + 1"
+     ],
+     [
+      "p_minus",
+      null,
+      "-u^2 + 2*u*v - v^2 + 1"
+     ],
+     [
+      "response",
+      null,
+      "-4*u*v"
+     ]
+    ]
+   ],
+   "primary": "JCV-STRATIFIED",
+   "reference_active_stratum_word": "JCV-PAIRING-SELECTED-WEIGHTS-FREE",
+   "reference_primary": "JCV-STRATIFIED",
+   "shared_nonempty_count": 7,
+   "summary": {
+    "active_count": 1,
+    "active_max_dimension": 2,
+    "dark_count": 6,
+    "nonempty_count": 7,
+    "observable_moves": true,
+    "observable_signatures_differ": false
+   }
+  },
+  "consequences": [
+   {
+    "finding": "classified only inside the declared calibrated real-isometric comparison doctrine",
+    "status": "CONDITIONAL-PARTIAL",
+    "topic": "comparison selection"
+   },
+   {
+    "finding": "positive-dimensional movement, if measured, is surviving law freedom rather than gauge",
+    "status": "OPEN",
+    "topic": "history-weight selection"
+   },
+   {
+    "finding": "boundary charts are not a metric, causal structure, or graph rewrite",
+    "status": "REFUSED",
+    "topic": "geometry"
+   },
+   {
+    "finding": "no matter-to-geometry-to-held-out-response chain occurs in this fixture",
+    "status": "REFUSED",
+    "topic": "backreaction"
+   },
+   {
+    "finding": "one outcome happening is not an equation in the solution variety",
+    "status": "POSTULATE",
+    "topic": "actualization"
+   },
+   {
+    "finding": "all-input completeness is local to this fixed boundary; growing factorization and steering are untested",
+    "status": "OPEN",
+    "topic": "EPR and no-signalling"
+   },
+   {
+    "finding": "a family of boundary instruments does not select a clock, logarithm branch, unitary sector, or generator",
+    "status": "OPEN",
+    "topic": "Hamiltonian"
+   },
+   {
+    "finding": "no vacuum, excitation spectrum, or all-arity composition law is present",
+    "status": "REFUSED",
+    "topic": "particles and species"
+   },
+   {
+    "finding": "no scale or gravitational field equation is present",
+    "status": "REFUSED",
+    "topic": "affine or cosmological constant"
+   },
+   {
+    "finding": "no typed dimensionless phenomenological observable is computed",
+    "status": "REFUSED",
+    "topic": "QFT or GR deviation"
+   }
+  ],
+  "fixture_counts": {
+   "all_expected_fields_empty": true,
+   "chart_count": 4,
+   "edge_count": 5,
+   "model_count": 2,
+   "triangle_count": 2
+  },
+  "gauge": {
+   "orbit_checks": 16,
+   "orbit_failures": 0,
+   "orbit_sizes": [
+    64
+   ],
+   "quotient_sector_count": 16,
+   "raw_assignment_count": 1024
+  },
+  "instrument": {
+   "complete_positivity_reason": "each outcome map has one explicit real Kraus operator",
+   "symbolic_identity_coefficients": {
+    "identity": "x^2+y^2+u^2+v^2",
+    "z": "2*(x*y+u*v)"
+   },
+   "trace_preservation_failures": 0,
+   "witness_instruments_checked": 8
+  },
+  "intertwiner": {
+   "local_checks": 40,
+   "local_failures": 0,
+   "path_checks": 2048,
+   "path_failures": 0
+  },
+  "numeric_bindings": [
+   {
+    "path": "gauge.raw_assignment_count",
+    "sentence": "The raw sign family contains 1024 coordinate assignments.",
+    "value": 1024
+   },
+   {
+    "path": "gauge.quotient_sector_count",
+    "sentence": "The declared chart-sign gauge reduces them to 16 holonomy sectors.",
+    "value": 16
+   },
+   {
+    "path": "classification.shared_nonempty_count",
+    "sentence": "The shared-law equations leave 7 holonomy sectors nonempty.",
+    "value": 7
+   },
+   {
+    "path": "classification.summary.active_count",
+    "sentence": "Exactly 1 sector reaches the full coherent discriminator.",
+    "value": 1
+   },
+   {
+    "path": "classification.summary.dark_count",
+    "sentence": "The remaining 6 nonempty sectors are dark/rank-deficient strata.",
+    "value": 6
+   },
+   {
+    "path": "classification.summary.active_max_dimension",
+    "sentence": "The active weight variety has algebraic dimension 2.",
+    "value": 2
+   },
+   {
+    "path": "classification.control_nonempty_count",
+    "sentence": "Allowing independent weights at the two triangles leaves 9 sectors nonempty.",
+    "value": 9
+   },
+   {
+    "path": "classification.homogeneity_excluded_count",
+    "sentence": "Reusing one law across both triangles therefore excludes 2 otherwise lawful holonomy sectors.",
+    "value": 2
+   },
+   {
+    "path": "witness.full_probability_values",
+    "sentence": "Two exact rational active-locus witnesses give distinct calibrated p-plus values ['0', '49/625'].",
+    "value": [
+     "0",
+     "49/625"
+    ]
+   },
+   {
+    "path": "intertwiner.path_checks",
+    "sentence": "The path-versus-direct comparison was checked exactly at 2048 triangle/assignment rows.",
+    "value": 2048
+   },
+   {
+    "path": "raw_cut_checks",
+    "sentence": "Raw-defect and gauge-quotient equations were matched at 4096 channel/assignment rows.",
+    "value": 4096
+   }
+  ],
+  "prefixture_commit": "999a5311e599fb223ac9192991d20386b3ce6ab4",
+  "raw_cut_checks": 4096,
+  "read_set": [
+   "v16/code/jcv_fixture.json",
+   "v16/code/jcv_public_receipt.json",
+   "v16/code/jcv_score.py",
+   "v16/code/jcv_variety.py",
+   "v16/note-jcv-pin.md",
+   "v16/note-jcv-solver-postcommit.md"
+  ],
+  "schema": "JCV-PHYSICAL-FIXTURE-v1",
+  "scope": {
+   "actualization_equation": false,
+   "all_arity_claim": false,
+   "backreaction_claim": false,
+   "complex_uniqueness_claim": false,
+   "geometry_claim": false,
+   "physical_referent": "calibrated two-channel boundary interface"
+  },
+  "solve": {
+   "control_failures": 0,
+   "control_strata": [
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      -1,
+      -1,
+      -1,
+      1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      -1,
+      -1,
+      1,
+      1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      -1,
+      1,
+      -1,
+      -1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0",
+      "y0^2 + v0^2 - 1",
+      "u0",
+      "x1",
+      "y1^2 + v1^2 - 1",
+      "u1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": 2,
+     "key": [
+      -1,
+      1,
+      -1,
+      1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-v0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-v1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0",
+      "y0^2 + v0^2 - 1",
+      "u0",
+      "x1^2 + u1^2 - 1",
+      "y1",
+      "v1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": 2,
+     "key": [
+      -1,
+      1,
+      1,
+      -1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-v0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-u1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0",
+      "y0^2 + v0^2 - 1",
+      "u0",
+      "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+      "x1*y1 + u1*v1",
+      "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+      "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": true,
+     "dimension": 3,
+     "key": [
+      -1,
+      1,
+      1,
+      1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "x0",
+         "y0^2 + v0^2 - 1",
+         "u0",
+         "x1 - y1*u1*v1*__inverse^2 - u1^2*v1*__inverse + v1^3*__inverse - v1*__inverse",
+         "y1^2 + y1*u1*__inverse + u1^2",
+         "y1*u1^2 - y1*v1^2 - u1^5*__inverse - u1^3*v1^2*__inverse^3 + 2*u1^3*v1^2*__inverse + u1^3*__inverse - u1*v1^4*__inverse",
+         "y1*v1^2*__inverse^2 - y1 + u1^3*__inverse + u1*v1^2*__inverse^3 - u1*v1^2*__inverse - u1*__inverse",
+         "u1^4*__inverse^2 + u1^2*v1^2*__inverse^4 - 2*u1^2*v1^2*__inverse^2 - u1^2*__inverse^2 + v1^4*__inverse^2 - v1^2*__inverse^2 + 1"
+        ],
+        "dimension": 3,
+        "nonempty": true
+       },
+       "remainder": "x1*v1 - y1*u1"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-v0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-u1^2 - 2*u1*v1 - v1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      1,
+      -1,
+      -1,
+      -1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0^2 + u0^2 - 1",
+      "y0",
+      "v0",
+      "x1",
+      "y1^2 + v1^2 - 1",
+      "u1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": 2,
+     "key": [
+      1,
+      -1,
+      -1,
+      1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-u0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-v1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0^2 + u0^2 - 1",
+      "y0",
+      "v0",
+      "x1^2 + u1^2 - 1",
+      "y1",
+      "v1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": 2,
+     "key": [
+      1,
+      -1,
+      1,
+      -1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-u0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-u1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0^2 + u0^2 - 1",
+      "y0",
+      "v0",
+      "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+      "x1*y1 + u1*v1",
+      "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+      "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": true,
+     "dimension": 3,
+     "key": [
+      1,
+      -1,
+      1,
+      1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "x0^2 + u0^2 - 1",
+         "y0",
+         "v0",
+         "x1 - y1*u1*v1*__inverse^2 - u1^2*v1*__inverse + v1^3*__inverse - v1*__inverse",
+         "y1^2 + y1*u1*__inverse + u1^2",
+         "y1*u1^2 - y1*v1^2 - u1^5*__inverse - u1^3*v1^2*__inverse^3 + 2*u1^3*v1^2*__inverse + u1^3*__inverse - u1*v1^4*__inverse",
+         "y1*v1^2*__inverse^2 - y1 + u1^3*__inverse + u1*v1^2*__inverse^3 - u1*v1^2*__inverse - u1*__inverse",
+         "u1^4*__inverse^2 + u1^2*v1^2*__inverse^4 - 2*u1^2*v1^2*__inverse^2 - u1^2*__inverse^2 + v1^4*__inverse^2 - v1^2*__inverse^2 + 1"
+        ],
+        "dimension": 3,
+        "nonempty": true
+       },
+       "remainder": "x1*v1 - y1*u1"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-u0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-u1^2 - 2*u1*v1 - v1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta0_nonempty": false,
+     "delta1_nonempty": false,
+     "dimension": -1,
+     "key": [
+      1,
+      1,
+      -1,
+      -1
+     ],
+     "nonempty": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+      "x0*y0 + u0*v0",
+      "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+      "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+      "x1",
+      "y1^2 + v1^2 - 1",
+      "u1"
+     ],
+     "delta0_nonempty": true,
+     "delta1_nonempty": false,
+     "dimension": 3,
+     "key": [
+      1,
+      1,
+      -1,
+      1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "x0 - y0*u0*v0*__inverse^2 - u0^2*v0*__inverse + v0^3*__inverse - v0*__inverse",
+         "y0^2 + y0*u0*__inverse + u0^2",
+         "y0*u0^2 - y0*v0^2 - u0^5*__inverse - u0^3*v0^2*__inverse^3 + 2*u0^3*v0^2*__inverse + u0^3*__inverse - u0*v0^4*__inverse",
+         "y0*v0^2*__inverse^2 - y0 + u0^3*__inverse + u0*v0^2*__inverse^3 - u0*v0^2*__inverse - u0*__inverse",
+         "u0^4*__inverse^2 + u0^2*v0^2*__inverse^4 - 2*u0^2*v0^2*__inverse^2 - u0^2*__inverse^2 + v0^4*__inverse^2 - v0^2*__inverse^2 + 1",
+         "x1",
+         "y1^2 + v1^2 - 1",
+         "u1"
+        ],
+        "dimension": 3,
+        "nonempty": true
+       },
+       "remainder": "x0*v0 - y0*u0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-u0^2 - 2*u0*v0 - v0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-v1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+      "x0*y0 + u0*v0",
+      "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+      "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+      "x1^2 + u1^2 - 1",
+      "y1",
+      "v1"
+     ],
+     "delta0_nonempty": true,
+     "delta1_nonempty": false,
+     "dimension": 3,
+     "key": [
+      1,
+      1,
+      1,
+      -1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "x0 - y0*u0*v0*__inverse^2 - u0^2*v0*__inverse + v0^3*__inverse - v0*__inverse",
+         "y0^2 + y0*u0*__inverse + u0^2",
+         "y0*u0^2 - y0*v0^2 - u0^5*__inverse - u0^3*v0^2*__inverse^3 + 2*u0^3*v0^2*__inverse + u0^3*__inverse - u0*v0^4*__inverse",
+         "y0*v0^2*__inverse^2 - y0 + u0^3*__inverse + u0*v0^2*__inverse^3 - u0*v0^2*__inverse - u0*__inverse",
+         "u0^4*__inverse^2 + u0^2*v0^2*__inverse^4 - 2*u0^2*v0^2*__inverse^2 - u0^2*__inverse^2 + v0^4*__inverse^2 - v0^2*__inverse^2 + 1",
+         "x1^2 + u1^2 - 1",
+         "y1",
+         "v1"
+        ],
+        "dimension": 3,
+        "nonempty": true
+       },
+       "remainder": "x0*v0 - y0*u0"
+      },
+      {
+       "constant": "0",
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-u0^2 - 2*u0*v0 - v0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-u1^2 + 1"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+      "x0*y0 + u0*v0",
+      "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+      "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+      "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+      "x1*y1 + u1*v1",
+      "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+      "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+     ],
+     "delta0_nonempty": true,
+     "delta1_nonempty": true,
+     "dimension": 4,
+     "key": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "nonempty": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "delta0",
+       "nonzero_locus": {
+        "basis": [
+         "x0 - y0*u0*v0*__inverse^2 - u0^2*v0*__inverse + v0^3*__inverse - v0*__inverse",
+         "y0^2 + y0*u0*__inverse + u0^2",
+         "y0*u0^2 - y0*v0^2 - u0^5*__inverse - u0^3*v0^2*__inverse^3 + 2*u0^3*v0^2*__inverse + u0^3*__inverse - u0*v0^4*__inverse",
+         "y0*v0^2*__inverse^2 - y0 + u0^3*__inverse + u0*v0^2*__inverse^3 - u0*v0^2*__inverse - u0*__inverse",
+         "u0^4*__inverse^2 + u0^2*v0^2*__inverse^4 - 2*u0^2*v0^2*__inverse^2 - u0^2*__inverse^2 + v0^4*__inverse^2 - v0^2*__inverse^2 + 1",
+         "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+         "x1*y1 + u1*v1",
+         "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+         "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+        ],
+        "dimension": 4,
+        "nonempty": true
+       },
+       "remainder": "x0*v0 - y0*u0"
+      },
+      {
+       "constant": null,
+       "name": "delta1",
+       "nonzero_locus": {
+        "basis": [
+         "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+         "x0*y0 + u0*v0",
+         "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+         "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+         "x1 - y1*u1*v1*__inverse^2 - u1^2*v1*__inverse + v1^3*__inverse - v1*__inverse",
+         "y1^2 + y1*u1*__inverse + u1^2",
+         "y1*u1^2 - y1*v1^2 - u1^5*__inverse - u1^3*v1^2*__inverse^3 + 2*u1^3*v1^2*__inverse + u1^3*__inverse - u1*v1^4*__inverse",
+         "y1*v1^2*__inverse^2 - y1 + u1^3*__inverse + u1*v1^2*__inverse^3 - u1*v1^2*__inverse - u1*__inverse",
+         "u1^4*__inverse^2 + u1^2*v1^2*__inverse^4 - 2*u1^2*v1^2*__inverse^2 - u1^2*__inverse^2 + v1^4*__inverse^2 - v1^2*__inverse^2 + 1"
+        ],
+        "dimension": 4,
+        "nonempty": true
+       },
+       "remainder": "x1*v1 - y1*u1"
+      },
+      {
+       "constant": null,
+       "name": "p0_plus",
+       "nonzero_locus": null,
+       "remainder": "-u0^2 - 2*u0*v0 - v0^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p1_plus",
+       "nonzero_locus": null,
+       "remainder": "-u1^2 - 2*u1*v1 - v1^2 + 1"
+      }
+     ]
+    }
+   ],
+   "query_failures": 0,
+   "quotient_models": {
+    "INDEPENDENT_TRIANGLES_CONTROL": {
+     "continuous_variables": [
+      "x0",
+      "y0",
+      "u0",
+      "v0",
+      "x1",
+      "y1",
+      "u1",
+      "v1"
+     ],
+     "equations": [
+      {
+       "name": "cut-012-plus-x0",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_plus": 1,
+          "x0": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "x0": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-012-plus-u0",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_plus": 1,
+          "u0": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u0": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-012-minus-y0",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_minus": 1,
+          "y0": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "y0": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-012-minus-v0",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_minus": 1,
+          "v0": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "v0": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-plus-x1",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_plus": 1,
+          "x1": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "x1": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-plus-u1",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_plus": 1,
+          "u1": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u1": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-minus-y1",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_minus": 1,
+          "y1": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "y1": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-minus-v1",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_minus": 1,
+          "v1": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "v1": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "complete-012-identity",
+       "terms": [
+        [
+         "1",
+         {
+          "x0": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "y0": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "u0": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "v0": 2
+         }
+        ],
+        [
+         "-1",
+         {}
+        ]
+       ]
+      },
+      {
+       "name": "complete-012-z",
+       "terms": [
+        [
+         "1",
+         {
+          "x0": 1,
+          "y0": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "u0": 1,
+          "v0": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "complete-123-identity",
+       "terms": [
+        [
+         "1",
+         {
+          "x1": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "y1": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "u1": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "v1": 2
+         }
+        ],
+        [
+         "-1",
+         {}
+        ]
+       ]
+      },
+      {
+       "name": "complete-123-z",
+       "terms": [
+        [
+         "1",
+         {
+          "x1": 1,
+          "y1": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "u1": 1,
+          "v1": 1
+         }
+        ]
+       ]
+      }
+     ],
+     "expected": {},
+     "gauge_invariants": [
+      {
+       "name": "q012_plus",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_plus": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "q012_minus",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_minus": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "q123_plus",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_plus": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "q123_minus",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_minus": 1
+         }
+        ]
+       ]
+      }
+     ],
+     "name": "INDEPENDENT_TRIANGLES_CONTROL_QUOTIENT",
+     "queries": [
+      {
+       "name": "delta0",
+       "nonzero_locus": true,
+       "terms": [
+        [
+         "1",
+         {
+          "v0": 1,
+          "x0": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u0": 1,
+          "y0": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "delta1",
+       "nonzero_locus": true,
+       "terms": [
+        [
+         "1",
+         {
+          "v1": 1,
+          "x1": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u1": 1,
+          "y1": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "p0_plus",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "x0": 2
+         }
+        ],
+        [
+         "2",
+         {
+          "x0": 1,
+          "y0": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "y0": 2
+         }
+        ]
+       ]
+      },
+      {
+       "name": "p1_plus",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "x1": 2
+         }
+        ],
+        [
+         "2",
+         {
+          "x1": 1,
+          "y1": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "y1": 2
+         }
+        ]
+       ]
+      }
+     ],
+     "sign_variables": [
+      "q012_plus",
+      "q012_minus",
+      "q123_plus",
+      "q123_minus"
+     ]
+    },
+    "SHARED_LAW": {
+     "continuous_variables": [
+      "x",
+      "y",
+      "u",
+      "v"
+     ],
+     "equations": [
+      {
+       "name": "cut-012-plus-x",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_plus": 1,
+          "x": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "x": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-012-plus-u",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_plus": 1,
+          "u": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-012-minus-y",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_minus": 1,
+          "y": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "y": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-012-minus-v",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_minus": 1,
+          "v": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "v": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-plus-x",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_plus": 1,
+          "x": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "x": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-plus-u",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_plus": 1,
+          "u": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-minus-y",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_minus": 1,
+          "y": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "y": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "cut-123-minus-v",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_minus": 1,
+          "v": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "v": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "complete-identity",
+       "terms": [
+        [
+         "1",
+         {
+          "x": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "y": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "u": 2
+         }
+        ],
+        [
+         "1",
+         {
+          "v": 2
+         }
+        ],
+        [
+         "-1",
+         {}
+        ]
+       ]
+      },
+      {
+       "name": "complete-z",
+       "terms": [
+        [
+         "1",
+         {
+          "x": 1,
+          "y": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "u": 1,
+          "v": 1
+         }
+        ]
+       ]
+      }
+     ],
+     "expected": {},
+     "gauge_invariants": [
+      {
+       "name": "q012_plus",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_plus": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "q012_minus",
+       "terms": [
+        [
+         "1",
+         {
+          "q012_minus": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "q123_plus",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_plus": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "q123_minus",
+       "terms": [
+        [
+         "1",
+         {
+          "q123_minus": 1
+         }
+        ]
+       ]
+      }
+     ],
+     "name": "SHARED_LAW_QUOTIENT",
+     "queries": [
+      {
+       "name": "x",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "x": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "y",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "y": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "u",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "u": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "v",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "v": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "delta",
+       "nonzero_locus": true,
+       "terms": [
+        [
+         "1",
+         {
+          "v": 1,
+          "x": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u": 1,
+          "y": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "internal_interference",
+       "nonzero_locus": true,
+       "terms": [
+        [
+         "1",
+         {
+          "x": 1,
+          "y": 1
+         }
+        ]
+       ]
+      },
+      {
+       "name": "full_coherent",
+       "nonzero_locus": true,
+       "terms": [
+        [
+         "1",
+         {
+          "v": 1,
+          "x": 2,
+          "y": 1
+         }
+        ],
+        [
+         "-1",
+         {
+          "u": 1,
+          "x": 1,
+          "y": 2
+         }
+        ]
+       ]
+      },
+      {
+       "name": "p_plus",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "x": 2
+         }
+        ],
+        [
+         "2",
+         {
+          "x": 1,
+          "y": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "y": 2
+         }
+        ]
+       ]
+      },
+      {
+       "name": "p_minus",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "1",
+         {
+          "x": 2
+         }
+        ],
+        [
+         "-2",
+         {
+          "x": 1,
+          "y": 1
+         }
+        ],
+        [
+         "1",
+         {
+          "y": 2
+         }
+        ]
+       ]
+      },
+      {
+       "name": "response",
+       "nonzero_locus": false,
+       "terms": [
+        [
+         "4",
+         {
+          "x": 1,
+          "y": 1
+         }
+        ]
+       ]
+      }
+     ],
+     "sign_variables": [
+      "q012_plus",
+      "q012_minus",
+      "q123_plus",
+      "q123_minus"
+     ]
+    }
+   },
+   "shared_strata": [
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      -1,
+      -1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      -1,
+      -1,
+      1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      -1,
+      1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      -1,
+      1,
+      1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      1,
+      -1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x",
+      "y^2 + v^2 - 1",
+      "u"
+     ],
+     "delta_nonempty": false,
+     "dimension": 1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      1,
+      -1,
+      1
+     ],
+     "minus_allowed": true,
+     "nonempty": true,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "y"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "v"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-v^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-v^2 + 1"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      1,
+      1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x",
+      "y^2 + v^2 - 1",
+      "u"
+     ],
+     "delta_nonempty": false,
+     "dimension": 1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      -1,
+      1,
+      1,
+      1
+     ],
+     "minus_allowed": true,
+     "nonempty": true,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "y"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "v"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-v^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-v^2 + 1"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      -1,
+      -1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      -1,
+      -1,
+      1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x^2 + u^2 - 1",
+      "y",
+      "v"
+     ],
+     "delta_nonempty": false,
+     "dimension": 1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      -1,
+      1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": true,
+     "plus_allowed": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "x"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "u"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 1"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x^2 + u^2 - 1",
+      "y",
+      "v"
+     ],
+     "delta_nonempty": false,
+     "dimension": 1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      -1,
+      1,
+      1
+     ],
+     "minus_allowed": false,
+     "nonempty": true,
+     "plus_allowed": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "x"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "u"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 1"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "1"
+     ],
+     "delta_nonempty": false,
+     "dimension": -1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      1,
+      -1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": false,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x",
+      "y^2 + v^2 - 1",
+      "u"
+     ],
+     "delta_nonempty": false,
+     "dimension": 1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      1,
+      -1,
+      1
+     ],
+     "minus_allowed": true,
+     "nonempty": true,
+     "plus_allowed": false,
+     "queries": [
+      {
+       "constant": "0",
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "y"
+      },
+      {
+       "constant": "0",
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "v"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-v^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-v^2 + 1"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x^2 + u^2 - 1",
+      "y",
+      "v"
+     ],
+     "delta_nonempty": false,
+     "dimension": 1,
+     "full_coherent_nonempty": false,
+     "interference_nonempty": false,
+     "key": [
+      1,
+      1,
+      1,
+      -1
+     ],
+     "minus_allowed": false,
+     "nonempty": true,
+     "plus_allowed": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "x"
+      },
+      {
+       "constant": "0",
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "u"
+      },
+      {
+       "constant": "0",
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": "0",
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "1"
+        ],
+        "dimension": -1,
+        "nonempty": false
+       },
+       "remainder": "0"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 1"
+      },
+      {
+       "constant": "0",
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "0"
+      }
+     ]
+    },
+    {
+     "basis": [
+      "x^2 + y^2 + u^2 + v^2 - 1",
+      "x*y + u*v",
+      "x*u*v - y^3 - y*u^2 - y*v^2 + y",
+      "y^4 + y^2*u^2 + y^2*v^2 - y^2 + u^2*v^2"
+     ],
+     "delta_nonempty": true,
+     "dimension": 2,
+     "full_coherent_nonempty": true,
+     "interference_nonempty": true,
+     "key": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "minus_allowed": true,
+     "nonempty": true,
+     "plus_allowed": true,
+     "queries": [
+      {
+       "constant": null,
+       "name": "x",
+       "nonzero_locus": null,
+       "remainder": "x"
+      },
+      {
+       "constant": null,
+       "name": "y",
+       "nonzero_locus": null,
+       "remainder": "y"
+      },
+      {
+       "constant": null,
+       "name": "u",
+       "nonzero_locus": null,
+       "remainder": "u"
+      },
+      {
+       "constant": null,
+       "name": "v",
+       "nonzero_locus": null,
+       "remainder": "v"
+      },
+      {
+       "constant": null,
+       "name": "delta",
+       "nonzero_locus": {
+        "basis": [
+         "x - y*u*v*__inverse^2 - u^2*v*__inverse + v^3*__inverse - v*__inverse",
+         "y^2 + y*u*__inverse + u^2",
+         "y*u^2 - y*v^2 - u^5*__inverse - u^3*v^2*__inverse^3 + 2*u^3*v^2*__inverse + u^3*__inverse - u*v^4*__inverse",
+         "y*v^2*__inverse^2 - y + u^3*__inverse + u*v^2*__inverse^3 - u*v^2*__inverse - u*__inverse",
+         "u^4*__inverse^2 + u^2*v^2*__inverse^4 - 2*u^2*v^2*__inverse^2 - u^2*__inverse^2 + v^4*__inverse^2 - v^2*__inverse^2 + 1"
+        ],
+        "dimension": 2,
+        "nonempty": true
+       },
+       "remainder": "x*v - y*u"
+      },
+      {
+       "constant": null,
+       "name": "internal_interference",
+       "nonzero_locus": {
+        "basis": [
+         "x + y^3*__inverse + y*u^2*__inverse + y*v^2*__inverse - y*__inverse",
+         "y^4 + y^2*u^2 + y^2*v^2 - y^2 + u^2*v^2",
+         "u*v*__inverse + 1"
+        ],
+        "dimension": 2,
+        "nonempty": true
+       },
+       "remainder": "-u*v"
+      },
+      {
+       "constant": null,
+       "name": "full_coherent",
+       "nonzero_locus": {
+        "basis": [
+         "x - y*u*v^5*__inverse^2 + u^3*v^6*__inverse^3 + u^3*v^2*__inverse - u*v^4*__inverse",
+         "y^2 - y*v^3*__inverse + u^2*v^4*__inverse^2 + u^2 - 1",
+         "y*u^2 - y*v^2 + u^6*v^5*__inverse^3 + u^6*v*__inverse - 2*u^4*v^3*__inverse - u^4*v*__inverse + u^2*v^5*__inverse",
+         "y*v^6*__inverse^2 - y - u^4*v^5*__inverse^3 - u^4*v*__inverse - u^2*v^7*__inverse^3 + u^2*v^3*__inverse + u^2*v*__inverse + v^3*__inverse",
+         "u^6*v^6*__inverse^4 + u^6*v^2*__inverse^2 - 2*u^4*v^4*__inverse^2 - u^4*v^2*__inverse^2 + u^2*v^6*__inverse^2 - u^2*v^4*__inverse^2 + 1"
+        ],
+        "dimension": 2,
+        "nonempty": true
+       },
+       "remainder": "-y^3*v - y*v^3 + y*v"
+      },
+      {
+       "constant": null,
+       "name": "p_plus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 - 2*u*v - v^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "p_minus",
+       "nonzero_locus": null,
+       "remainder": "-u^2 + 2*u*v - v^2 + 1"
+      },
+      {
+       "constant": null,
+       "name": "response",
+       "nonzero_locus": null,
+       "remainder": "-4*u*v"
+      }
+     ]
+    }
+   ],
+   "solver_results": {
+    "control": {
+     "name": "INDEPENDENT_TRIANGLES_CONTROL_QUOTIENT",
+     "nonempty_sectors": 9,
+     "sector_count": 16,
+     "sectors": [
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0",
+        "y0^2 + v0^2 - 1",
+        "u0",
+        "x1",
+        "y1^2 + v1^2 - 1",
+        "u1"
+       ],
+       "dimension": 2,
+       "empty": false,
+       "key": [
+        "-1",
+        "1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-v0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-v1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0",
+        "y0^2 + v0^2 - 1",
+        "u0",
+        "x1^2 + u1^2 - 1",
+        "y1",
+        "v1"
+       ],
+       "dimension": 2,
+       "empty": false,
+       "key": [
+        "-1",
+        "1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-v0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-u1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0",
+        "y0^2 + v0^2 - 1",
+        "u0",
+        "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+        "x1*y1 + u1*v1",
+        "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+        "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+       ],
+       "dimension": 3,
+       "empty": false,
+       "key": [
+        "-1",
+        "1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "x0",
+           "y0^2 + v0^2 - 1",
+           "u0",
+           "x1 - y1*u1*v1*__inverse^2 - u1^2*v1*__inverse + v1^3*__inverse - v1*__inverse",
+           "y1^2 + y1*u1*__inverse + u1^2",
+           "y1*u1^2 - y1*v1^2 - u1^5*__inverse - u1^3*v1^2*__inverse^3 + 2*u1^3*v1^2*__inverse + u1^3*__inverse - u1*v1^4*__inverse",
+           "y1*v1^2*__inverse^2 - y1 + u1^3*__inverse + u1*v1^2*__inverse^3 - u1*v1^2*__inverse - u1*__inverse",
+           "u1^4*__inverse^2 + u1^2*v1^2*__inverse^4 - 2*u1^2*v1^2*__inverse^2 - u1^2*__inverse^2 + v1^4*__inverse^2 - v1^2*__inverse^2 + 1"
+          ],
+          "dimension": 3,
+          "nonempty": true
+         },
+         "remainder": "x1*v1 - y1*u1"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-v0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-u1^2 - 2*u1*v1 - v1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "1",
+        "-1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0^2 + u0^2 - 1",
+        "y0",
+        "v0",
+        "x1",
+        "y1^2 + v1^2 - 1",
+        "u1"
+       ],
+       "dimension": 2,
+       "empty": false,
+       "key": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-u0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-v1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0^2 + u0^2 - 1",
+        "y0",
+        "v0",
+        "x1^2 + u1^2 - 1",
+        "y1",
+        "v1"
+       ],
+       "dimension": 2,
+       "empty": false,
+       "key": [
+        "1",
+        "-1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-u0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-u1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0^2 + u0^2 - 1",
+        "y0",
+        "v0",
+        "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+        "x1*y1 + u1*v1",
+        "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+        "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+       ],
+       "dimension": 3,
+       "empty": false,
+       "key": [
+        "1",
+        "-1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "x0^2 + u0^2 - 1",
+           "y0",
+           "v0",
+           "x1 - y1*u1*v1*__inverse^2 - u1^2*v1*__inverse + v1^3*__inverse - v1*__inverse",
+           "y1^2 + y1*u1*__inverse + u1^2",
+           "y1*u1^2 - y1*v1^2 - u1^5*__inverse - u1^3*v1^2*__inverse^3 + 2*u1^3*v1^2*__inverse + u1^3*__inverse - u1*v1^4*__inverse",
+           "y1*v1^2*__inverse^2 - y1 + u1^3*__inverse + u1*v1^2*__inverse^3 - u1*v1^2*__inverse - u1*__inverse",
+           "u1^4*__inverse^2 + u1^2*v1^2*__inverse^4 - 2*u1^2*v1^2*__inverse^2 - u1^2*__inverse^2 + v1^4*__inverse^2 - v1^2*__inverse^2 + 1"
+          ],
+          "dimension": 3,
+          "nonempty": true
+         },
+         "remainder": "x1*v1 - y1*u1"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-u0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-u1^2 - 2*u1*v1 - v1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "1",
+        "1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+        "x0*y0 + u0*v0",
+        "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+        "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+        "x1",
+        "y1^2 + v1^2 - 1",
+        "u1"
+       ],
+       "dimension": 3,
+       "empty": false,
+       "key": [
+        "1",
+        "1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "x0 - y0*u0*v0*__inverse^2 - u0^2*v0*__inverse + v0^3*__inverse - v0*__inverse",
+           "y0^2 + y0*u0*__inverse + u0^2",
+           "y0*u0^2 - y0*v0^2 - u0^5*__inverse - u0^3*v0^2*__inverse^3 + 2*u0^3*v0^2*__inverse + u0^3*__inverse - u0*v0^4*__inverse",
+           "y0*v0^2*__inverse^2 - y0 + u0^3*__inverse + u0*v0^2*__inverse^3 - u0*v0^2*__inverse - u0*__inverse",
+           "u0^4*__inverse^2 + u0^2*v0^2*__inverse^4 - 2*u0^2*v0^2*__inverse^2 - u0^2*__inverse^2 + v0^4*__inverse^2 - v0^2*__inverse^2 + 1",
+           "x1",
+           "y1^2 + v1^2 - 1",
+           "u1"
+          ],
+          "dimension": 3,
+          "nonempty": true
+         },
+         "remainder": "x0*v0 - y0*u0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-u0^2 - 2*u0*v0 - v0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-v1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+        "x0*y0 + u0*v0",
+        "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+        "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+        "x1^2 + u1^2 - 1",
+        "y1",
+        "v1"
+       ],
+       "dimension": 3,
+       "empty": false,
+       "key": [
+        "1",
+        "1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "x0 - y0*u0*v0*__inverse^2 - u0^2*v0*__inverse + v0^3*__inverse - v0*__inverse",
+           "y0^2 + y0*u0*__inverse + u0^2",
+           "y0*u0^2 - y0*v0^2 - u0^5*__inverse - u0^3*v0^2*__inverse^3 + 2*u0^3*v0^2*__inverse + u0^3*__inverse - u0*v0^4*__inverse",
+           "y0*v0^2*__inverse^2 - y0 + u0^3*__inverse + u0*v0^2*__inverse^3 - u0*v0^2*__inverse - u0*__inverse",
+           "u0^4*__inverse^2 + u0^2*v0^2*__inverse^4 - 2*u0^2*v0^2*__inverse^2 - u0^2*__inverse^2 + v0^4*__inverse^2 - v0^2*__inverse^2 + 1",
+           "x1^2 + u1^2 - 1",
+           "y1",
+           "v1"
+          ],
+          "dimension": 3,
+          "nonempty": true
+         },
+         "remainder": "x0*v0 - y0*u0"
+        },
+        {
+         "constant": "0",
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-u0^2 - 2*u0*v0 - v0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-u1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+        "x0*y0 + u0*v0",
+        "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+        "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+        "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+        "x1*y1 + u1*v1",
+        "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+        "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+       ],
+       "dimension": 4,
+       "empty": false,
+       "key": [
+        "1",
+        "1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "delta0",
+         "nonzero_locus": {
+          "basis": [
+           "x0 - y0*u0*v0*__inverse^2 - u0^2*v0*__inverse + v0^3*__inverse - v0*__inverse",
+           "y0^2 + y0*u0*__inverse + u0^2",
+           "y0*u0^2 - y0*v0^2 - u0^5*__inverse - u0^3*v0^2*__inverse^3 + 2*u0^3*v0^2*__inverse + u0^3*__inverse - u0*v0^4*__inverse",
+           "y0*v0^2*__inverse^2 - y0 + u0^3*__inverse + u0*v0^2*__inverse^3 - u0*v0^2*__inverse - u0*__inverse",
+           "u0^4*__inverse^2 + u0^2*v0^2*__inverse^4 - 2*u0^2*v0^2*__inverse^2 - u0^2*__inverse^2 + v0^4*__inverse^2 - v0^2*__inverse^2 + 1",
+           "x1^2 + y1^2 + u1^2 + v1^2 - 1",
+           "x1*y1 + u1*v1",
+           "x1*u1*v1 - y1^3 - y1*u1^2 - y1*v1^2 + y1",
+           "y1^4 + y1^2*u1^2 + y1^2*v1^2 - y1^2 + u1^2*v1^2"
+          ],
+          "dimension": 4,
+          "nonempty": true
+         },
+         "remainder": "x0*v0 - y0*u0"
+        },
+        {
+         "constant": null,
+         "name": "delta1",
+         "nonzero_locus": {
+          "basis": [
+           "x0^2 + y0^2 + u0^2 + v0^2 - 1",
+           "x0*y0 + u0*v0",
+           "x0*u0*v0 - y0^3 - y0*u0^2 - y0*v0^2 + y0",
+           "y0^4 + y0^2*u0^2 + y0^2*v0^2 - y0^2 + u0^2*v0^2",
+           "x1 - y1*u1*v1*__inverse^2 - u1^2*v1*__inverse + v1^3*__inverse - v1*__inverse",
+           "y1^2 + y1*u1*__inverse + u1^2",
+           "y1*u1^2 - y1*v1^2 - u1^5*__inverse - u1^3*v1^2*__inverse^3 + 2*u1^3*v1^2*__inverse + u1^3*__inverse - u1*v1^4*__inverse",
+           "y1*v1^2*__inverse^2 - y1 + u1^3*__inverse + u1*v1^2*__inverse^3 - u1*v1^2*__inverse - u1*__inverse",
+           "u1^4*__inverse^2 + u1^2*v1^2*__inverse^4 - 2*u1^2*v1^2*__inverse^2 - u1^2*__inverse^2 + v1^4*__inverse^2 - v1^2*__inverse^2 + 1"
+          ],
+          "dimension": 4,
+          "nonempty": true
+         },
+         "remainder": "x1*v1 - y1*u1"
+        },
+        {
+         "constant": null,
+         "name": "p0_plus",
+         "nonzero_locus": null,
+         "remainder": "-u0^2 - 2*u0*v0 - v0^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p1_plus",
+         "nonzero_locus": null,
+         "remainder": "-u1^2 - 2*u1*v1 - v1^2 + 1"
+        }
+       ],
+       "solution_variants": 1
+      }
+     ],
+     "sign_assignment_count": 16,
+     "verification": {
+      "generator_failures": 0,
+      "generators": 192,
+      "s_failures": 0,
+      "s_pairs": 172
+     }
+    },
+    "shared": {
+     "name": "SHARED_LAW_QUOTIENT",
+     "nonempty_sectors": 7,
+     "sector_count": 16,
+     "sectors": [
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "-1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x",
+        "y^2 + v^2 - 1",
+        "u"
+       ],
+       "dimension": 1,
+       "empty": false,
+       "key": [
+        "-1",
+        "1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "y"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "v"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-v^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-v^2 + 1"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "-1",
+        "1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x",
+        "y^2 + v^2 - 1",
+        "u"
+       ],
+       "dimension": 1,
+       "empty": false,
+       "key": [
+        "-1",
+        "1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "y"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "v"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-v^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-v^2 + 1"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "1",
+        "-1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x^2 + u^2 - 1",
+        "y",
+        "v"
+       ],
+       "dimension": 1,
+       "empty": false,
+       "key": [
+        "1",
+        "-1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "x"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "u"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 1"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x^2 + u^2 - 1",
+        "y",
+        "v"
+       ],
+       "dimension": 1,
+       "empty": false,
+       "key": [
+        "1",
+        "-1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "x"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "u"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 1"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "1"
+       ],
+       "dimension": -1,
+       "empty": true,
+       "key": [
+        "1",
+        "1",
+        "-1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x",
+        "y^2 + v^2 - 1",
+        "u"
+       ],
+       "dimension": 1,
+       "empty": false,
+       "key": [
+        "1",
+        "1",
+        "-1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": "0",
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "y"
+        },
+        {
+         "constant": "0",
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "v"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-v^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-v^2 + 1"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x^2 + u^2 - 1",
+        "y",
+        "v"
+       ],
+       "dimension": 1,
+       "empty": false,
+       "key": [
+        "1",
+        "1",
+        "1",
+        "-1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "x"
+        },
+        {
+         "constant": "0",
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "u"
+        },
+        {
+         "constant": "0",
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": "0",
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "1"
+          ],
+          "dimension": -1,
+          "nonempty": false
+         },
+         "remainder": "0"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 1"
+        },
+        {
+         "constant": "0",
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "0"
+        }
+       ],
+       "solution_variants": 1
+      },
+      {
+       "assignment_count": 1,
+       "basis": [
+        "x^2 + y^2 + u^2 + v^2 - 1",
+        "x*y + u*v",
+        "x*u*v - y^3 - y*u^2 - y*v^2 + y",
+        "y^4 + y^2*u^2 + y^2*v^2 - y^2 + u^2*v^2"
+       ],
+       "dimension": 2,
+       "empty": false,
+       "key": [
+        "1",
+        "1",
+        "1",
+        "1"
+       ],
+       "queries": [
+        {
+         "constant": null,
+         "name": "x",
+         "nonzero_locus": null,
+         "remainder": "x"
+        },
+        {
+         "constant": null,
+         "name": "y",
+         "nonzero_locus": null,
+         "remainder": "y"
+        },
+        {
+         "constant": null,
+         "name": "u",
+         "nonzero_locus": null,
+         "remainder": "u"
+        },
+        {
+         "constant": null,
+         "name": "v",
+         "nonzero_locus": null,
+         "remainder": "v"
+        },
+        {
+         "constant": null,
+         "name": "delta",
+         "nonzero_locus": {
+          "basis": [
+           "x - y*u*v*__inverse^2 - u^2*v*__inverse + v^3*__inverse - v*__inverse",
+           "y^2 + y*u*__inverse + u^2",
+           "y*u^2 - y*v^2 - u^5*__inverse - u^3*v^2*__inverse^3 + 2*u^3*v^2*__inverse + u^3*__inverse - u*v^4*__inverse",
+           "y*v^2*__inverse^2 - y + u^3*__inverse + u*v^2*__inverse^3 - u*v^2*__inverse - u*__inverse",
+           "u^4*__inverse^2 + u^2*v^2*__inverse^4 - 2*u^2*v^2*__inverse^2 - u^2*__inverse^2 + v^4*__inverse^2 - v^2*__inverse^2 + 1"
+          ],
+          "dimension": 2,
+          "nonempty": true
+         },
+         "remainder": "x*v - y*u"
+        },
+        {
+         "constant": null,
+         "name": "internal_interference",
+         "nonzero_locus": {
+          "basis": [
+           "x + y^3*__inverse + y*u^2*__inverse + y*v^2*__inverse - y*__inverse",
+           "y^4 + y^2*u^2 + y^2*v^2 - y^2 + u^2*v^2",
+           "u*v*__inverse + 1"
+          ],
+          "dimension": 2,
+          "nonempty": true
+         },
+         "remainder": "-u*v"
+        },
+        {
+         "constant": null,
+         "name": "full_coherent",
+         "nonzero_locus": {
+          "basis": [
+           "x - y*u*v^5*__inverse^2 + u^3*v^6*__inverse^3 + u^3*v^2*__inverse - u*v^4*__inverse",
+           "y^2 - y*v^3*__inverse + u^2*v^4*__inverse^2 + u^2 - 1",
+           "y*u^2 - y*v^2 + u^6*v^5*__inverse^3 + u^6*v*__inverse - 2*u^4*v^3*__inverse - u^4*v*__inverse + u^2*v^5*__inverse",
+           "y*v^6*__inverse^2 - y - u^4*v^5*__inverse^3 - u^4*v*__inverse - u^2*v^7*__inverse^3 + u^2*v^3*__inverse + u^2*v*__inverse + v^3*__inverse",
+           "u^6*v^6*__inverse^4 + u^6*v^2*__inverse^2 - 2*u^4*v^4*__inverse^2 - u^4*v^2*__inverse^2 + u^2*v^6*__inverse^2 - u^2*v^4*__inverse^2 + 1"
+          ],
+          "dimension": 2,
+          "nonempty": true
+         },
+         "remainder": "-y^3*v - y*v^3 + y*v"
+        },
+        {
+         "constant": null,
+         "name": "p_plus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 - 2*u*v - v^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "p_minus",
+         "nonzero_locus": null,
+         "remainder": "-u^2 + 2*u*v - v^2 + 1"
+        },
+        {
+         "constant": null,
+         "name": "response",
+         "nonzero_locus": null,
+         "remainder": "-4*u*v"
+        }
+       ],
+       "solution_variants": 1
+      }
+     ],
+     "sign_assignment_count": 16,
+     "verification": {
+      "generator_failures": 0,
+      "generators": 160,
+      "s_failures": 0,
+      "s_pairs": 24
+     }
+    }
+   },
+   "solver_summary": {
+    "control_assignments": 16,
+    "control_sectors": 16,
+    "control_variants": [
+     1
+    ],
+    "failures": 0,
+    "shared_assignments": 16,
+    "shared_sectors": 16,
+    "shared_variants": [
+     1
+    ]
+   }
+  },
+  "solver_freeze_commit": "aa9a54af19f445e3a2067bf12abb603564c10016",
+  "source_anchors": {
+   "v16/code/jcv_fixture.json": "ad887c213d14781838c6e70227b8f2c162f1392a08060de7c6e57829a8db012b",
+   "v16/code/jcv_public_receipt.json": "7e8d1edc2b8adc5ee5630ca8702ef2ff9b4f60688878089af16b0dc1ab87b441",
+   "v16/code/jcv_variety.py": "ccc286c0ae82cd118fceb41ee6a4250a5da2974d6381456ba3ec075c8a8f294d",
+   "v16/note-jcv-pin.md": "4268055286efb5ff0a9790826608c4eb3927ae4e2e87fe66383194cce0059841",
+   "v16/note-jcv-solver-postcommit.md": "f81e1f9aa7be50d6e0b2ed20f6c0bf1b5fc978675d753ce17cebc3fd58442760"
+  },
+  "witness": {
+   "calibrated_probability_moves": true,
+   "equation_failures": 0,
+   "full_nonzero_failures": 0,
+   "full_probability_values": [
+    "0",
+    "49/625"
+   ],
+   "witnesses": [
+    {
+     "delta": "0",
+     "full_coherent": "0",
+     "key": [
+      -1,
+      1,
+      -1,
+      1
+     ],
+     "max_residual": "0",
+     "p_plus": "9/25",
+     "position": 0,
+     "weights": {
+      "u": "0",
+      "v": "4/5",
+      "x": "0",
+      "y": "3/5"
+     }
+    },
+    {
+     "delta": "0",
+     "full_coherent": "0",
+     "key": [
+      -1,
+      1,
+      1,
+      1
+     ],
+     "max_residual": "0",
+     "p_plus": "9/25",
+     "position": 0,
+     "weights": {
+      "u": "0",
+      "v": "4/5",
+      "x": "0",
+      "y": "3/5"
+     }
+    },
+    {
+     "delta": "0",
+     "full_coherent": "0",
+     "key": [
+      1,
+      -1,
+      1,
+      -1
+     ],
+     "max_residual": "0",
+     "p_plus": "9/25",
+     "position": 0,
+     "weights": {
+      "u": "4/5",
+      "v": "0",
+      "x": "3/5",
+      "y": "0"
+     }
+    },
+    {
+     "delta": "0",
+     "full_coherent": "0",
+     "key": [
+      1,
+      -1,
+      1,
+      1
+     ],
+     "max_residual": "0",
+     "p_plus": "9/25",
+     "position": 0,
+     "weights": {
+      "u": "4/5",
+      "v": "0",
+      "x": "3/5",
+      "y": "0"
+     }
+    },
+    {
+     "delta": "0",
+     "full_coherent": "0",
+     "key": [
+      1,
+      1,
+      -1,
+      1
+     ],
+     "max_residual": "0",
+     "p_plus": "9/25",
+     "position": 0,
+     "weights": {
+      "u": "0",
+      "v": "4/5",
+      "x": "0",
+      "y": "3/5"
+     }
+    },
+    {
+     "delta": "0",
+     "full_coherent": "0",
+     "key": [
+      1,
+      1,
+      1,
+      -1
+     ],
+     "max_residual": "0",
+     "p_plus": "9/25",
+     "position": 0,
+     "weights": {
+      "u": "4/5",
+      "v": "0",
+      "x": "3/5",
+      "y": "0"
+     }
+    },
+    {
+     "delta": "12/25",
+     "full_coherent": "-1728/15625",
+     "key": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "max_residual": "0",
+     "p_plus": "0",
+     "position": 0,
+     "weights": {
+      "u": "16/25",
+      "v": "9/25",
+      "x": "12/25",
+      "y": "-12/25"
+     }
+    },
+    {
+     "delta": "12/25",
+     "full_coherent": "-1728/15625",
+     "key": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "max_residual": "0",
+     "p_plus": "49/625",
+     "position": 1,
+     "weights": {
+      "u": "12/25",
+      "v": "12/25",
+      "x": "16/25",
+      "y": "-9/25"
+     }
+    }
+   ]
+  }
+ },
+ "mutant_survey": [
+  {
+   "expected_gate": "P-ANCHORS",
+   "move_proofs": [
+    {
+     "after": "d7de24320c4dec83",
+     "before": "f7c9594665c436d6",
+     "target": "ANCHOR_CORRUPT"
+    }
+   ],
+   "moved": true,
+   "mutant": "ANCHOR_CORRUPT",
+   "observed_gate": "P-ANCHORS",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-FIXTURE-SEMANTICS",
+   "move_proofs": [
+    {
+     "after": "2f853180eb426023",
+     "before": "fc72e5f86f0c1559",
+     "target": "FIXTURE_DROP_CUT"
+    }
+   ],
+   "moved": true,
+   "mutant": "FIXTURE_DROP_CUT",
+   "observed_gate": "P-FIXTURE-SEMANTICS",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-INTERTWINER",
+   "move_proofs": [
+    {
+     "after": "c8441d94b5fd4837",
+     "before": "5b08c3271e515772",
+     "target": "INTERTWINER_SWAP"
+    }
+   ],
+   "moved": true,
+   "mutant": "INTERTWINER_SWAP",
+   "observed_gate": "P-INTERTWINER",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-GAUGE-QUOTIENT",
+   "move_proofs": [
+    {
+     "after": "b41998606e3bab90",
+     "before": "687cccf73fd4f4cf",
+     "target": "GAUGE_COLLAPSE"
+    }
+   ],
+   "moved": true,
+   "mutant": "GAUGE_COLLAPSE",
+   "observed_gate": "P-GAUGE-QUOTIENT",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-SOLVER",
+   "move_proofs": [
+    {
+     "after": "312281b4a33ebb08",
+     "before": "7726816ae9028ca5",
+     "target": "SOLVER_BASIS_CORRUPT"
+    }
+   ],
+   "moved": true,
+   "mutant": "SOLVER_BASIS_CORRUPT",
+   "observed_gate": "P-SOLVER",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-QUERY-CERTIFICATES",
+   "move_proofs": [
+    {
+     "after": "ba29ab40293d2779",
+     "before": "89003eff0b49ee77",
+     "target": "SATURATION_FLIP"
+    }
+   ],
+   "moved": true,
+   "mutant": "SATURATION_FLIP",
+   "observed_gate": "P-QUERY-CERTIFICATES",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-WITNESS",
+   "move_proofs": [
+    {
+     "after": "d2153f6374bdeb6b",
+     "before": "c3a4f1b29baba6d0",
+     "target": "WITNESS_EDIT"
+    }
+   ],
+   "moved": true,
+   "mutant": "WITNESS_EDIT",
+   "observed_gate": "P-WITNESS",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-INSTRUMENT",
+   "move_proofs": [
+    {
+     "after": "e93df88488457e21",
+     "before": "453a6661208f1c35",
+     "target": "INSTRUMENT_SIGN"
+    }
+   ],
+   "moved": true,
+   "mutant": "INSTRUMENT_SIGN",
+   "observed_gate": "P-INSTRUMENT",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-CONTROL",
+   "move_proofs": [
+    {
+     "after": "6b86b273ff34fce1",
+     "before": "5feceb66ffc86f38",
+     "target": "CONTROL_ALIAS"
+    }
+   ],
+   "moved": true,
+   "mutant": "CONTROL_ALIAS",
+   "observed_gate": "P-CONTROL",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-CLASSIFIER",
+   "move_proofs": [
+    {
+     "after": "61c6433ba6717d5c",
+     "before": "6130ad34d0a352d3",
+     "target": "CLASSIFIER_FORCE"
+    }
+   ],
+   "moved": true,
+   "mutant": "CLASSIFIER_FORCE",
+   "observed_gate": "P-CLASSIFIER",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-WALLS",
+   "move_proofs": [
+    {
+     "after": "f144bff8ce7ca98f",
+     "before": "aeacecb939322c06",
+     "target": "WALL_PROMOTE"
+    }
+   ],
+   "moved": true,
+   "mutant": "WALL_PROMOTE",
+   "observed_gate": "P-WALLS",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-READSET",
+   "move_proofs": [
+    {
+     "after": "4a3059acdc141cf3",
+     "before": "4290e4d5806ba5ea",
+     "target": "READSET_HIDE"
+    }
+   ],
+   "moved": true,
+   "mutant": "READSET_HIDE",
+   "observed_gate": "P-READSET",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-TRANSCRIPT",
+   "move_proofs": [
+    {
+     "after": "01121a4ef9c8a080",
+     "before": "6c61a30d1764436d",
+     "target": "TRANSCRIPT_CONTRADICTION"
+    }
+   ],
+   "moved": true,
+   "mutant": "TRANSCRIPT_CONTRADICTION",
+   "observed_gate": "P-TRANSCRIPT",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-SEAL-CONTROLS",
+   "move_proofs": [
+    {
+     "after": "e805ab487af27f5f",
+     "before": "eb69af19a5a31cbc",
+     "target": "SEAL_ADD"
+    }
+   ],
+   "moved": true,
+   "mutant": "SEAL_ADD",
+   "observed_gate": "P-SEAL-CONTROLS",
+   "passed": true
+  },
+  {
+   "expected_gate": "P-SEAL-CONTROLS",
+   "move_proofs": [
+    {
+     "after": "d1aacbde3cf42c80",
+     "before": "eb69af19a5a31cbc",
+     "target": "SEAL_EDIT"
+    }
+   ],
+   "moved": true,
+   "mutant": "SEAL_EDIT",
+   "observed_gate": "P-SEAL-CONTROLS",
+   "passed": true
+  }
+ ],
+ "output_sha256": "b1d950c804c8b568514f1a0206853496b2f578650a3d98187e64c1c8a9b70d6d",
+ "paper_sha256": "b54858c394fe22626ef1e233781737b7199cc56bf816f52e8aae063a99deaefc",
+ "prefixture_commit": "999a5311e599fb223ac9192991d20386b3ce6ab4",
+ "primary": "JCV-STRATIFIED",
+ "read_set": [
+  "v16/code/jcv_fixture.json",
+  "v16/code/jcv_public_receipt.json",
+  "v16/code/jcv_score.py",
+  "v16/code/jcv_variety.py",
+  "v16/note-jcv-pin.md",
+  "v16/note-jcv-solver-postcommit.md"
+ ],
+ "schema": "JCV-PHYSICAL-RECEIPT-v1",
+ "scope": {
+  "actualization_derived": false,
+  "fixed_calibrated_boundary_only": true,
+  "geometry_or_backreaction": false,
+  "qft_or_gr_deviation": false,
+  "real_slice_only": true
+ },
+ "scorer_sha256": "66b87bdf68f7210d959e13bfacae4c5957413e6d8f234647bfe3ad4a19619a03",
+ "seal_manifest": {
+  "algorithm": "sha256-canonical-json",
+  "sealed_keys": {
+   "active_stratum_word": "fe397a61883933cef37de03a4805d05172dac18bfb2a1240f4d767da8fa4297d",
+   "fixture_sha256": "4954b830856064c1b95bb8a4670d5aa4dd3b275cec99f63d946b61519bf88280",
+   "gates": "a2242d9f9c60d9bb87b2f76d342c82deaf4fc713b5b13c1357e5ac5621fddaf7",
+   "measurements": "d4a7ce239f608cdf76cd9546fc05fb962df5a0857355b949a93e0521f458576d",
+   "mutant_survey": "5c3eeaa1c5c8fa8c054703bd5caa21f9e1ddc1538d92829cbe4a1e957a424c15",
+   "output_sha256": "e65226827c46a184c2dfd7b3009187c88543b03327c533037e98f18475cbc3fd",
+   "paper_sha256": "ed71b48838fa9fb48cac337f370bc662f93f33ef7efa27fb2e53583453d88b6d",
+   "prefixture_commit": "7f7cbafda33f708ffd0a533ca788316a56c4a709a40ab4c94cec8761e28e0784",
+   "primary": "b9f22de9f305a48d8d5ebcc1d4efc8d8d44677ff3c830cef2191670fce5d5d4f",
+   "read_set": "4290e4d5806ba5ea20c6d55b9fcbf5a3f2f05b00ea4c89b53e4df909b3b1ac9d",
+   "schema": "c982a0c9a314b57d4f75283b187130c277f3e016df94211eb6b6d5290d95ac4f",
+   "scope": "d9fbb3a264aa76f936154ee13227d5b3a59ae1f08c06e849aa1079fcf9467cb2",
+   "scorer_sha256": "71fc0d536d38884dd20914898cae8e0ee0cb6ccbd872cdf4a68be579f37d8c89",
+   "solver_freeze_commit": "e8651fc5f5a5635fa9bd249303288fbddecf4f0bf9b33541839ee33b8417d531",
+   "source_anchors": "f7c9594665c436d638f4904e8b3371ee81fd9e91a50d9691c92905c1785c4bd7",
+   "status": "b43e38ff5383f2cfe4dc884f461c5fb704957db04e3fad690f75d674f049459e",
+   "unit": "25b55f606bc09e3a412e54904a10603b6ecf225c343466313762557bde7b8842"
+  },
+  "total_keys_excluding_manifest": 17
+ },
+ "solver_freeze_commit": "aa9a54af19f445e3a2067bf12abb603564c10016",
+ "source_anchors": {
+  "v16/code/jcv_fixture.json": "ad887c213d14781838c6e70227b8f2c162f1392a08060de7c6e57829a8db012b",
+  "v16/code/jcv_public_receipt.json": "7e8d1edc2b8adc5ee5630ca8702ef2ff9b4f60688878089af16b0dc1ab87b441",
+  "v16/code/jcv_variety.py": "ccc286c0ae82cd118fceb41ee6a4250a5da2974d6381456ba3ec075c8a8f294d",
+  "v16/note-jcv-pin.md": "4268055286efb5ff0a9790826608c4eb3927ae4e2e87fe66383194cce0059841",
+  "v16/note-jcv-solver-postcommit.md": "f81e1f9aa7be50d6e0b2ed20f6c0bf1b5fc978675d753ce17cebc3fd58442760"
+ },
+ "status": "CANDIDATE-COMMITTED-AS-IS-PENDING-POSTCOMMIT-AND-HOSTILE-REVIEW",
+ "unit": "v16-jcv"
+}
