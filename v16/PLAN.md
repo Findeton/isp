@@ -276,7 +276,7 @@ relational histories. No review or adjudication is authorized yet.
 
 ## Paper 06 — CSF: completeness spectrahedra and record fibers
 
-Status: **BOUNDED SCORER REPAIR FROZEN BEFORE RE-EXECUTION (v16 #64)**.
+Status: **GREEN-UNREVIEWED CANDIDATE (v16 #65)**.
 
 The user's 2026-08-18 instruction authorizes a separate continuation after
 Paper 5's coefficient variety was recognized as the factorized presentation
@@ -337,6 +337,29 @@ replaced by Paper 3's existing token `eraser`; the scorer now has SHA-256
 `d3adf994e1c89fca5b53a0969cf0eed256488790b361477116b7cd1a76da84ba`.
 The fixture and every physical equation, gate, mutant, classifier, renderer,
 and scope wall are unchanged. No repaired run has occurred.
+
+The repaired official invocation at #65 passes all `30/30` frozen gates and
+commits its transcript, receipt, and generated Paper 6 byte-for-byte as
+rendered. The lawful per-context affine dimensions are `2,2,1,1,2`; before
+recurrence the five independent training freedoms total dimension `5`, the
+frozen recurrence dictionary reduces their common kernel family to dimension
+`1`, and the licensed exchange automorphism reduces it to the singleton
+`M=diag(1/2,1/2)`. That singleton passes the held-out rich-spectrum context.
+The primary is therefore
+`CSF-RECURRING-LAW-SELECTED-MODULO-GAUGE`, explicitly qualified as conditional
+on the declared recurrence dictionary and exchange symmetry: an inequivalent
+dictionary moves a gauge-invariant prediction.
+
+The calibrated record fiber is not selected. Two registered factorizations of
+the same selected `M` move the retained first-port probability from `1` to
+`9/25`. Rich-spectrum completeness kills the unconditioned cross moment, not
+every record-conditioned coherence. Extreme-point selection is unstable under
+restriction; flag orthogonality is constructed but permanence is unproved;
+fixed-Bob unconditioned safety passes while conditional steering remains open.
+Elementary transports, catalogue, actualization, arbitrary-`n` dynamics, and
+continuum/QFT/GR consequences remain unselected or untested. Candidate replay,
+mutant, independent-exact, and true off-tree verification are the next lawful
+stage; reviewer dispatch remains separately unauthorized.
 
 ## Successor register
 

@@ -1,0 +1,35 @@
+CSF PAPER 6 EXACT RESULT
+primary: CSF-RECURRING-LAW-SELECTED-MODULO-GAUGE
+qualifiers: ['COMPLETENESS-SPECTRAHEDRON-CONSTRUCTED', 'JCV-UNCONDITIONED-BASE-AND-CALIBRATED-FIBER-EMBEDDED', 'RICH-SPECTRUM-UNCONDITIONED-CROSS-MOMENT-ZERO', 'CALIBRATED-RECORD-FIBER-OPERATIONALLY-NONTRIVIAL', 'SELECTION-CONDITIONAL-ON-EXCHANGE-SYMMETRY', 'RECURRENCE-DOCTRINE-MOVES-PHYSICS', 'EXTREME-POINT-SELECTION-UNSTABLE', 'FLAG-ORTHOGONALITY-CONSTRUCTED-BUT-PERMANENCE-UNPROVED', 'CONDITIONAL-STEERING-OPEN', 'ELEMENTARY-TRANSPORTS-AND-CATALOGUE-UNSELECTED']
+PASS CSF-ANCHORS :: rows=12 freeze=True/True
+PASS CSF-FIXTURE-NEUTRALITY :: keys=[] text=[]
+PASS CSF-HISTORY-INDIVIDUATION :: contexts=5 coordinates=['left-then-right', 'right-then-left']
+PASS CSF-M-FACTORIZATION :: M=[['16/25', '0'], ['0', '9/25']]
+PASS CSF-ALL-INPUT-COMPLETENESS :: complete=True all_input=True psd=True
+PASS CSF-CHANNEL-INDEX-ORIENTATION :: orientation=True
+PASS CSF-JCV-BASE-FIBER :: p0=0,49/625 third_moves=True
+PASS CSF-AFFINE-CONTEXTS :: dims={'phase-sign': 2, 'quarter-sign': 2, 'rich-three': 1, 'held-rich': 1, 'left-calibrated': 2}
+PASS CSF-RICH-SPECTRUM :: cross_zero=True incompatible=True
+PASS CSF-NONNORMAL-DIRECT :: method=full-real-linear-operator-map dim=1
+PASS CSF-RECURRENCE-DICTIONARY :: rephase=True/True exchange=True
+PASS CSF-RECURRENCE-INTERSECTION :: separate=5 recurring=1
+PASS CSF-EXCHANGE-LICENCE :: symmetric=True asymmetric_forbidden=True
+PASS CSF-SELECTED-KERNEL :: dimension=0 kernel=[['1/2', '0'], ['0', '1/2']]
+PASS CSF-HELDOUT-CONTEXT :: heldout=True not_fit=True asym=True
+PASS CSF-DOCTRINE-CONTROL :: polynomials={'identity': [1, 0], 'asymmetric_exchange': [0, 1]}
+PASS CSF-CALIBRATED-RECORD-FIBER :: p0=1,9/25
+PASS CSF-PORT-REFINEMENT :: same_m=True
+PASS CSF-FLAG-SPECTRAL :: overlaps=['1', '3/5', '0'] rich_fail=True
+PASS CSF-ERASER-PERMANENCE :: reconverged=1 durability=False
+PASS CSF-EXTREME-TANGENT :: rank=2 tangents=0/0/1
+PASS CSF-EXTREME-STABILITY :: restriction_breaks=True
+PASS CSF-EXTENSION-CONTROLS :: spectator=True catalogue=True
+PASS CSF-FIXED-BOB-NOSIGNAL :: unchanged=True amplifier=True
+PASS CSF-SCOPE-WALLS :: steering=False all_n=False
+PASS CSF-EXACT-ARITHMETIC :: floats=0 fixture_float=False typed_count=None
+PASS CSF-RUNTIME-READ-SET :: reads=['v12/paper1-composition-defect.md', 'v15/note-homonym-audit.md', 'v16/code/csf_core.py', 'v16/code/csf_fixture.json', 'v16/code/csf_score.py', 'v16/code/ovg_receipt.json', 'v16/note-csf-core-freeze.md', 'v16/note-csf-fixture-freeze.md', 'v16/note-csf-pin.md', 'v16/note-jcv-adjudication.md', 'v16/note-ovg-candidate-verification.md', 'v16/paper-01-joint-relational-history-law.md', 'v16/paper-02-joint-comparison-fixed-point.md', 'v16/paper-03-contextual-pullbacks-permanent-records.md', 'v16/paper-04-support-rewrite-weld.md', 'v16/paper-05-overlap-gram-instrument-variety.md']
+PASS CSF-PRIMARY-EQUALITY :: primary=CSF-RECURRING-LAW-SELECTED-MODULO-GAUGE comparator=CSF-RECURRING-LAW-SELECTED-MODULO-GAUGE
+PASS CSF-CLAIM-COVERAGE :: occurrences={'C1': 1, 'C2': 1, 'C3': 1, 'C4': 1, 'C5': 1, 'C6': 1, 'C7': 1, 'C8': 1, 'C9': 1, 'C10': 1, 'C11': 1, 'C12': 1}
+PASS CSF-PAPER-SCOPE :: limitations=7
+gate-count: 30
+all-pass: true

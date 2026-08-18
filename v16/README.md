@@ -18,9 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `CSF` / Paper 6: **BOUNDED SCORER REPAIR FROZEN BEFORE RE-EXECUTION** at
-  v16 ledger #64. The pin is frozen at #60, generic core at #61,
-  fixture/scorer at #62, and first refusal at #63.
+- `CSF` / Paper 6: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #65. The pin
+  is frozen at #60, generic core at #61, fixture/scorer at #62, first refusal
+  at #63, and bounded scorer repair at #64.
   The user-authorized continuation tests the completeness spectrahedron
   `M=C^dagger C`, separates the unconditioned history law from calibrated
   record-resolving factorizations, reconstructs the rich-spectrum
@@ -29,14 +29,19 @@ theory-selection result.
   recurrence dictionary or exchange symmetry is conditional selection, not
   a derived universal law. The generic exact core must freeze before any
   physical result or Paper 6 exists. The
-  exact public core passes 11/11 gates, reproduces the JCV base/fiber
-  calibration, computes affine intersections and tangent extremality, and is
-  byte-identical under duplicate and alien-CWD copied-source execution.
-  The first ordinary scorer invocation exits at `CSF-ANCHORS` before physical
-  scoring because it requests `erasable` while Paper 3 contains `eraser`.
-  No result path exists. The one-token `erasable -> eraser` repair is now
-  hash-frozen with every scientific object unchanged; no repaired run has
-  occurred.
+  exact public core passes 11/11 gates. After the frozen one-token anchor
+  repair, the one official physical execution passes 30/30 gates. The five
+  independent context freedoms have total dimension `5`; the frozen
+  recurrence dictionary reduces them to dimension `1`, and the licensed
+  exchange automorphism conditionally selects the singleton
+  `M=diag(1/2,1/2)`, which passes the held-out rich context. That is a
+  conditional unconditioned-kernel selection, not a derived universal law:
+  changing the recurrence doctrine moves physics. Calibrated factorizations
+  of the same `M` still move the retained first-port probability from `1` to
+  `9/25`, so the record-resolving law remains unselected. Extreme-point
+  selection is unstable, flag orthogonality is constructed without a
+  permanence theorem, and conditional steering remains open. Candidate
+  verification and hostile review remain pending.
   Papers 3–5 remain frozen and untouched.
 - `OVG` / Paper 5: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #57. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first

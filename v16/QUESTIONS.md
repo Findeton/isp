@@ -133,17 +133,23 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     between two fixed circuit orders is not a quantum switch or a witness of
     causal nonseparability. Paper 5 hard-walls that promotion unless a typed
     higher-order process and process-level witness are actually constructed.
-26. **PINNED — Is the fixed-history law space a completeness spectrahedron
-    with nontrivial record fibers?** Paper 6 will test whether all-input
-    completeness and the unconditioned channel factor through
-    `M=C^dagger C`, while calibrated factorizations `C` can remain
-    operationally different. It must reconstruct JCV's same-`M`/different-
-    record pair and third channel-moving witness, and quotient only admitted
-    history and unobserved-port gauge.
-27. **PINNED — Does recurrence across contexts select the history law?** A
-    single compatibility variety does not select dynamics. Paper 6 freezes a
-    gauge-covariant history-coordinate dictionary before constructing at
-    least three contexts, intersects their exact PSD affine law sets, tests a
-    licensed exchange symmetry and held-out context, and separately scores
-    the remaining calibrated record-law freedom. Empty, unique, reduced, and
-    prediction-moving intersections are all pre-registered outcomes.
+26. **PARTIAL — Is the fixed-history law space a completeness spectrahedron
+    with nontrivial record fibers?** The green-unreviewed Paper 6 candidate
+    constructs the exact affine PSD base `M=C^dagger C`, reconstructs JCV's
+    same-base/different-calibrated-record pair and its channel-moving third
+    witness, and verifies factorization of completeness and the unconditioned
+    channel through `M`. The fiber is physically nontrivial under the frozen
+    calibration: two factorizations of the selected `M` move the retained
+    first-port probability from `1` to `9/25`. Which calibrated port law is
+    physical, and how record permanence and actualization select it, remain
+    open. Replay and hostile review remain.
+27. **PARTIAL — Does recurrence across contexts select the history law?** The
+    green-unreviewed Paper 6 candidate reduces five independent training
+    freedoms of total dimension `5` to a dimension-`1` common family under the
+    frozen recurrence dictionary, then to the singleton
+    `M=diag(1/2,1/2)` under a licensed exchange automorphism; the singleton
+    passes a held-out rich context. This is conditional selection, not a
+    universal derivation: an inequivalent recurrence doctrine moves a
+    gauge-invariant prediction, and elementary transports and catalogue data
+    remain unselected. Extreme-point selection is unstable. Replay and hostile
+    review remain.

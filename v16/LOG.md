@@ -1443,3 +1443,38 @@ equations, gates, mutants, primary vocabulary, claims, renderer, scope walls,
 and CLI are unchanged. The scorer compiles with zero float literals and all
 result paths remain absent. The next event is the repaired official
 invocation; none has run yet.
+
+## 2026-08-18 — CSF CANDIDATE COMMITTED AS GENERATED (v16 LEDGER #65)
+
+The one repaired official invocation passes all `30/30` frozen physical gates
+and generates three candidate artifacts, now committed without hand-editing:
+
+- `v16/code/csf_output.txt` — SHA-256
+  `59077d8ad0f9e9ba4cf5afc0a44fea242d7a6032f1d998e088b3433cf4541785`;
+- `v16/code/csf_receipt.json` — SHA-256
+  `7ae9b4a17fd38883bbff39b212f0edf819e2edf17942c9d54f8cf9f772414fdc`;
+- `v16/paper-06-completeness-spectrahedra-record-fibers.md` — SHA-256
+  `543a2c927ecc7bd184fc758e4d72ebd4d4974327ae5ae2bb279d1fe33086c5d9`.
+
+The primary machine word is
+`CSF-RECURRING-LAW-SELECTED-MODULO-GAUGE`. Exact context dimensions are
+`2,2,1,1,2`; five independent training freedoms total dimension `5`, the
+frozen recurrence dictionary reduces the common family to dimension `1`, and
+the licensed exchange automorphism conditionally selects
+`M=diag(1/2,1/2)`. The selected kernel passes the held-out rich context. An
+inequivalent recurrence doctrine moves a gauge-invariant prediction, so this
+is conditional selection rather than a universal law derivation.
+
+The record-resolving law remains unselected: two calibrated factorizations of
+the same `M` move retained first-port probability from `1` to `9/25`.
+Rich-spectrum completeness kills the unconditioned cross moment but does not
+erase all record-conditioned coherence. Extreme-point selection is unstable;
+flag orthogonality is constructed without a permanence theorem; fixed-Bob
+unconditioned safety passes while conditional steering remains open. No
+catalogue, elementary transport, actualization, arbitrary-`n`, continuum,
+QFT, GR, particle, Hamiltonian, coupling, affine-constant, or empirical-
+deviation result is promoted.
+
+Status is `GREEN-UNREVIEWED CANDIDATE`. Replay, mutant, independent exact, and
+true off-tree verification are next. Papers 3–5 and the unrelated untracked
+v15 SCOUT-T files remain untouched.
