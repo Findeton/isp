@@ -928,3 +928,24 @@ and the selftest refuse before writes, unknown arguments exit 2, compilation
 passes, and the AST has no float literal. The source is now byte-immutable.
 The next authorized event is a separately frozen data-only physical fixture
 and verdict-neutral scorer.
+
+## 2026-08-17 — SRW PHYSICAL FIXTURE AND SCORER FROZEN BEFORE EXECUTION (v16 LEDGER #43)
+
+`v16/code/srw_fixture.json` and `v16/code/srw_score.py` are frozen at SHA-256
+`e40650f04c60635e68fd91938dbba201afec6e426c2e1cfaa0b4f4d8dcefd2e3`
+and `475aee9509b02c5c77d6d9535605c440ef0ff513627fbbadb3bcdee1f43bf20f`.
+The generic core remains byte-identical to #42.
+
+The fixture is data-only: a recursive scan finds no expected/result/verdict/
+outcome key, and all three result paths are absent. It declares the anonymous
+legacy matrices and independently typed graph/rewrite data, two ancestry
+spans, the complete dictionary labels, zero-coupling endpoints, four fiber
+functors, three separately typed coupling occurrences, and the finite phase
+control.
+
+The scorer compiles with warnings treated as errors, its substantive AST has
+no float literal, it exposes all 26 registered mutants, and unknown arguments
+exit 2. It has not been invoked on the physical fixture—not ordinarily, by
+selftest, or under a mutant. The next event is the first official invocation;
+failure must be frozen before repair, while success renders and commits the
+candidate artifacts as-is.

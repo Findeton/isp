@@ -173,6 +173,9 @@ this pin alone.
 The pin is complete at #41. The generic core is frozen at #42 with twelve
 public gates, three public mutants, exact `Q(i)` arithmetic, and byte-identical
 copied-source replay. No physical fixture or result existed at that freeze.
+The data-only physical fixture and verdict-neutral scorer are frozen at #43
+before execution; their 26-mutant CLI and static exactness checks pass, while
+all three result paths remain absent.
 
 ## Successor register
 
