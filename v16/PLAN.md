@@ -384,7 +384,8 @@ adjudication, repair, or terminal promotion is authorized by the protocol.
 
 ## Paper 07 — CEL: creation-event universality and recoverable records
 
-Status: **PIN FROZEN BEFORE CONSTRUCTION (v16 #68)**.
+Status: **GREEN-UNREVIEWED CANDIDATE (v16 #71)**. Pin #68, generic core #69,
+and physical fixture/scorer #70 remain immutable.
 
 The user's 2026-08-18 instruction authorizes Paper 7 as a separate v16
 continuation despite the visible Paper 3–6 hostile-review queue. The immutable
@@ -413,6 +414,18 @@ candidate verification -> hostile protocol. Reviewers remain separately
 unauthorized. No coupling, catalogue, actualization, arbitrary-`n`, steering,
 backreaction, continuum, QFT, GR, particle, Hamiltonian, constant, or
 phenomenological conclusion is authorized.
+
+The one official invocation passes 44/44 gates and emits primary
+`CEL-CREATION-EVENT-LAYER-CONSTRUCTED-BUT-COUPLINGS-AND-CATALOGUE-UNSELECTED`.
+At the finite fixtures, recurrence is propagated by explicit principles and
+token-disjoint universality is priced `2 -> 1`; the reset kills covariance as
+permanence; the redundant flag is all-word recoverable only relative to its
+restricted grammar; retained identity/flip branches recover while their
+coarse mixture does not; both JCV factorizations satisfy the explicit created-
+flag weld but move the calibrated first port `0 -> 49/625`; and the exact
+`LDL^dagger`/four-square construction proves the registered `2r` resource
+bound. Candidate replay, independent reconstruction, and off-tree execution
+remain next; no hostile review has been assigned.
 
 ## Successor register
 

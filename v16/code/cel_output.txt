@@ -1,0 +1,50 @@
+CEL PAPER 7 PHYSICAL SCORING
+schema: cel-result-v1
+PASS CEL-ANCHORS [integrity] :: anchors=11
+PASS CEL-FIXTURE-DATA-ONLY [integrity] :: floats=False forbidden=[]
+PASS CEL-CORE-FROZEN [integrity] :: sha256=f08b880095e71ac79082d2672ec849dc9ffd1ab66c702a85f2b24165a02aedac
+PASS CEL-EXACT-SOURCE [integrity] :: scorer-float-literals=0
+PASS CEL-HISTORY-EVENT-TYPING [recurrence] :: dimension=8 histories-distinct=True
+PASS CEL-R1-LOCAL-SURFACE-NONSELECTION [recurrence] :: screens=16/25,1/2
+PASS CEL-R2-COMPLETENESS-DOES-NOT-FORCE-SPECTATOR-RECURRENCE [recurrence] :: balanced-dressed=1/2
+PASS CEL-R3-LICENSED-SPECTATOR-NATURALITY [recurrence] :: licensed=True restriction=16/25
+PASS CEL-R4-OPERATIONAL-NULL-QUOTIENT [recurrence] :: raw-equal=False channel-equal=True
+PASS CEL-R5-EXCHANGE-SYMMETRY-WITHIN-ORBIT [recurrence] :: licensed=True biased=False balanced=True
+PASS CEL-R6-SHARED-TOKEN-GLUING [recurrence] :: left=3/5,4/5 right=3/5,5/13
+PASS CEL-R7-GLUING-MISMATCH-REFUSED [recurrence] :: joint-shared=3/5 mismatch=1/2
+PASS CEL-R8-UNIVERSALITY-PRICE [recurrence] :: dimensions=2->1
+PASS CEL-R9-TYPE-UNIVERSALITY-IS-A-POSTULATE [recurrence] :: token-disjoint=True postulate=True
+PASS CEL-P1-RESET-KILLS-BARE-COVARIANCE-CRITERION [records] :: complete=True covariant=True recoverable=False representations-agree=True
+PASS CEL-P2-RELABELING-RECOVERS-WITHOUT-FIXED-PROJECTORS [records] :: recoverable=True fixed-projector-commutes=False
+PASS CEL-P3-APPEND-ONLY-ALL-WORD-CERTIFICATE [records] :: words=1
+PASS CEL-P4-INVOLUTIVE-WRITER-IS-ITS-OWN-FLAG-ERASER [records] :: involutive=True flag-recoverable=False
+PASS CEL-P5-REDUNDANT-COPY-SURVIVES-LOCAL-ERASURE [records] :: second-copy-recoverable=True
+PASS CEL-P6-REDUNDANT-GRAMMAR-ALL-WORD-RECOVERY [records] :: words=2 licensed=True
+PASS CEL-P7-CATALOGUE-ENLARGEMENT-DEMOTES-PERMANENCE [records] :: words=4 global=True flag-licensed=False
+PASS CEL-P8-RETAINED-BRANCH-RECOVERY [records] :: branchwise=true,true
+PASS CEL-P9-DISCARDED-BRANCH-LOSES-RECOVERY [records] :: coarse=[['1/2', '1/2'], ['1/2', '1/2']] recoverable=False
+PASS CEL-P10-MATHEMATICAL-VERSUS-LICENSED-RECOVERY [records] :: mathematical=True licensed=False
+PASS CEL-P11-RECOVERY-GRAINS-SEPARATED [records] :: covariance, mathematical recovery, branch recovery, coarse recovery, and licence are independently resolved
+PASS CEL-D1-JCV-SHARED-KERNEL-AND-ISOMETRIES [dilation] :: kernel=[['16/25', '0'], ['0', '9/25']] complete={'first': True, 'second': True}
+PASS CEL-D2-FLAG-COUPLING-VECTORS [dilation] :: first=(0,1)/(24/25,7/25); second=(7/25,24/25)/(1,0)
+PASS CEL-D3-DERIVED-CATALOGUE-AND-ATTACHMENT [dilation] :: dimensions=2->4 attachment=['matter', 'flag']
+PASS CEL-D4-SUPPORT-REWRITE-AND-RELABEL-COVARIANCE [dilation] :: support=[(0, 0), (1, 1), (2, 0), (3, 1)] covariance=True
+PASS CEL-D5-CALIBRATED-FLAG-MOVES-AT-FIXED-CHANNEL [dilation] :: first-port=0->49/625 channel-equal=True
+PASS CEL-D6-ANONYMOUS-ANCILLA-IS-NOT-A-RELATIONAL-FLAG [dilation] :: typed=True anonymous-untyped=True anonymous-weld=False
+PASS CEL-D7-SAME-DILATION-DIFFERENT-DURABILITY-GRAMMARS [dilation] :: append=True erasing=False
+PASS CEL-D8-DILATION-DOES-NOT-DERIVE-ACTUALIZATION [dilation] :: Stinespring creation isometry and conditional port records are constructed; one-outcome actualization is outside the model
+PASS CEL-E1-SCALAR-RESOURCE-WITNESS [resources] :: value=7/5 one-row=False two-row=True
+PASS CEL-E2-RANK-TWO-MINIMUM-THREE-ROW-WITNESS [resources] :: rank=2 determinant=7/5 rows=3
+PASS CEL-E3-GAUSSIAN-RATIONAL-2R-CONSTRUCTION [resources] :: ranks=[2, 2, 1, 2] rows=[2, 2, 1, 2]
+PASS CEL-E4-NONPSD-REFUSAL [resources] :: psd=False refused=True
+PASS CEL-E5-SOME-SPECIFIED-AND-GRAMMAR-REALIZATION-SEPARATED [resources] :: some-factor-rows=2 specified=True relational=True
+PASS CEL-E6-NUMBER-FIELD-IS-RESOURCE-BOOKKEEPING [resources] :: field-role=exact calculation convention; resource accounting only
+PASS CEL-E7-ZERO-PIVOT-CONTROL [resources] :: index=2 rank=1 rows=1
+PASS CEL-SCOPE-WALLS [scope] :: walls=15
+PASS CEL-PRIMARY-COMPARATOR [outcome] :: primary=CEL-CREATION-EVENT-LAYER-CONSTRUCTED-BUT-COUPLINGS-AND-CATALOGUE-UNSELECTED
+PASS CEL-PREWRITE-SEAL [integrity] :: fixture-sha256=8a18a70f1e1b7781806d800c54afd5dcbd10dbac1307db4420bafcb4b57854f2
+PASS CEL-TRANSCRIPT-BINDING-PRECHECK [integrity] :: transcript and paper hashes are added only after deterministic rendering
+gate-count: 44
+all-pass: true
+primary: CEL-CREATION-EVENT-LAYER-CONSTRUCTED-BUT-COUPLINGS-AND-CATALOGUE-UNSELECTED
+qualifiers: RECURRENCE-PROPAGATED-BY-NATURALITY-SYMMETRY-AND-GLUING | TOKEN-DISJOINT-UNIVERSALITY-POSTULATE-PRICED | KERNEL-IDENTITY-ONLY-MODULO-OPERATIONAL-NULL | BARE-ALGEBRA-COVARIANCE-NOT-PERMANENCE | CONTINUATION-STABLE-LICENSED-RECOVERABILITY-CONSTRUCTED | REDUNDANCY-SURVIVES-LOCAL-ERASURE-BUT-REMAINS-GRAMMAR-RELATIVE | PORT-FIBER-RETYPED-AS-CREATION-COUPLING-DATA | FLAG-DILATION-WELDED-BUT-ACTUALIZATION-UNBUILT | GAUSSIAN-RATIONAL-REALIZATION-BOUND-PROVED | NUMBER-FIELD-PRICES-MINIMAL-RESOURCES-NOT-REALIZABILITY | COUPLINGS-CATALOGUE-AND-FUNDAMENTAL-DYNAMICS-UNSELECTED

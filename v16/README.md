@@ -18,9 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `CEL` / Paper 7: **PHYSICAL FIXTURE/SCORER FROZEN BEFORE FIRST OFFICIAL
-  EXECUTION** at v16 ledger #70. The pin is frozen at #68 and generic core at
-  #69.
+- `CEL` / Paper 7: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #71. The pin
+  is frozen at #68, generic core at #69, and fixture/scorer at #70.
   The user-authorized continuation tests the creation-event layer at four
   sharply separated types: recurrence propagated by standing naturality,
   symmetry, and gluing versus token-disjoint universality as a priced
@@ -37,8 +36,15 @@ theory-selection result.
   44-gate scorer, and 41 named mutants bind the recurrence, recoverability,
   relational-flag, and exact-resource arms without embedding a target word or
   solution dimension. Temporary deterministic/mutant checks pass; all three
-  official candidate paths remain absent. The next action is one official
-  execution and an as-generated candidate commit.
+  official invocation passes 44/44 gates and selects
+  `CEL-CREATION-EVENT-LAYER-CONSTRUCTED-BUT-COUPLINGS-AND-CATALOGUE-UNSELECTED`.
+  It measures universality's `2 -> 1` price, covariance-versus-recovery,
+  grammar-relative redundant records, retained-versus-discarded branch
+  recovery, the typed JCV flag weld with calibrated movement `0 -> 49/625`,
+  and the constructive Gaussian-rational `2r` bound. The generated output,
+  receipt, and Paper 7 bytes are committed unchanged. Replay, independent
+  exact reconstruction, true off-tree execution, and a separately frozen
+  hostile protocol remain next.
   Papers 3–6 and their four pending hostile panels remain unchanged review
   debt.
 - `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL

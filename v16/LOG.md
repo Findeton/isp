@@ -1612,3 +1612,48 @@ identical. All 41 registered mutants die without artifacts or tracebacks;
 selftest, unknown-option, and existing-target controls behave as frozen. The
 official output, receipt, and paper paths remain absent. The next authorized
 step is one official run followed by an as-generated candidate commit.
+
+## 2026-08-18 — CEL PAPER 7 CANDIDATE GENERATED (v16 LEDGER #71)
+
+The single official invocation of the frozen #70 scorer passes `44/44` and
+generates the candidate artifacts without any constructor edit:
+
+| artifact | SHA-256 |
+|---|---|
+| `v16/code/cel_output.txt` | `098d6113fb9f3ce0dbf43a28aeec213a5b06235c55556389989e93e1387028f6` |
+| `v16/code/cel_receipt.json` | `a2fe34ccbbc8a1049824fd72020da5806e399f7a50a45e9bdf832e7e45a8eeda` |
+| `v16/paper-07-creation-event-universality-recoverable-records.md` | `acf2dafb165d5ceb82bf4bc532b194f760095ce355b0b5ee7c5996df13878f90` |
+
+The primary machine word is
+`CEL-CREATION-EVENT-LAYER-CONSTRUCTED-BUT-COUPLINGS-AND-CATALOGUE-UNSELECTED`.
+The finite result separates law propagation from law universality, with a
+measured `2 -> 1` price for the token-disjoint postulate and a nonfaithful
+control proving raw kernel identity is stronger than operational identity.
+
+Record permanence is retyped as continuation-stable licensed recoverability:
+the trace-preserving reset is diagonal-algebra covariant but merges records;
+an involutive writer erases its own flag; a redundant copy survives every word
+of the restricted two-element grammar but not the enlarged four-element
+grammar; retained identity/flip branches recover while their coarse mixture
+does not. Mathematical and licensed recovery are separated explicitly.
+
+Both JCV coefficient families have kernel `diag(16/25,9/25)`, exact
+Stinespring isometries, one derived `2 -> 4` catalogue, a matter–flag
+attachment, union support equality, and relabel covariance. Their calibrated
+first-port probability moves `0 -> 49/625` at the same unconditioned channel,
+so the coupling remains unselected. The anonymous ancilla fails the weld, and
+append-only versus reset continuations split conditional port durability.
+
+The exact resource arm proves the registered constructive `2r` bound by
+Hermitian `LDL^dagger` plus four-square pivots. Scalar `7/5` needs two
+Gaussian-rational rows; `diag(7/5,1)` needs at least three because its
+determinant is not a Gaussian norm; real, complex, singular, zero-pivot, and
+non-PSD controls behave exactly. This prices exact resources and does not make
+the number field ontic.
+
+Status is `GREEN-UNREVIEWED CANDIDATE`. Actualization, coupling and catalogue
+selection, arbitrary-`n`, conditional steering, backreaction, continuum,
+Lorentz, QFT, GR, particle species, Hamiltonians, constants, and empirical
+deviations remain outside the result. Replay, mutant, independent exact, and
+true off-tree verification are next. Papers 3–6 and the unrelated untracked
+v15 SCOUT-T files remain untouched.
