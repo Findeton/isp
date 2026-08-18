@@ -2508,3 +2508,31 @@ selection, and WRC regression remain unbuilt. Q30 registers the corrected
 Paper 10 prerequisites. Paper 10 stays held until QSF adjudication or an
 explicitly postulated new base instrument; no physics candidate is created at
 this event.
+
+## 2026-08-18 — EXPLORATORY CONJUGATE-RECORD-LAW AUDIT (v16 LEDGER #118)
+
+The user supplied an external green scratch program proposing a coherent
+`Z_4` record register as the lawful replacement for WRC's classically retained
+CELL-HIT data. `v16/note-conjugate-record-law-exploratory-audit.md` records the
+audit without promoting the proposal to Paper 10 or selecting a QSF branch.
+The source hash and every internal unitary/fraction check reproduce.
+
+The exact positive result is one active, affine joint unitary on matter times
+finite quantum memory: matter shifts the memory and its clock phase enters
+later matter transport. The larger promotions do not survive. The full
+write/transport order holonomy has characteristic polynomial
+`(x-1)^2 (x^2+14x/25+1) (x^2-18x/25+1)^2`, hence five distinct eigenvalues,
+and commutes with neither generator; the bare `CS=iSC` identity is not a
+central curvature theorem. The measured-every-write comparator is a lawful
+collapse instrument, not literal WRC. Its first coherent/measured count split
+moves from tick three to five under seed changes, so tick four is a fixture
+calibration rather than a law-selected prediction.
+
+Global unitarity also does not yield subsystem no-signalling: the exposed
+matter/memory split has exact trace-distance witnesses `6/25` and `1` in the
+two directions. This is allowed local feedback, while remote locality remains
+untyped. The fixture contains no graph-generated operators, spatial loop,
+durable redundant record, division, growth, or WRC regression. The corrected
+status is a promising unitary matter/memory nucleus and explicit possible new
+base-law postulate, not geometry or quantum gravity. Q31 registers the
+successor gates; QSF remains unchanged and Paper 10 remains unpinned.

@@ -207,3 +207,16 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     reconvergent coherent growth, a real event law, E-37 parity adversaries,
     four independent role ablations, and a QSF-adjudicated or explicitly
     postulated base instrument. No Paper 10 pin exists yet.
+31. **HOLD / EXPLORATORY AUDIT — Can a coherent conjugate-record field supply
+    the lawful base dynamics for a relational growth successor?** The exposed
+    `C^2 tensor C^4` toy gives one exact unitary matter/memory feedback law and
+    avoids WRC's density-operator nonaffinity by changing to a joint unitary
+    ontology. Hostile reconstruction finds that its full order holonomy is
+    noncentral with five eigenvalues, the measured shadow is a lawful collapse
+    process rather than WRC, the first split moves across ticks 3–5 with the
+    seed, and global unitarity supplies no spatial no-signalling theorem. The
+    register is not yet a durable record or graph-generated geometry; there is
+    no loop, growth, locality law, WRC regression, or law selection. A future
+    pin may treat CRL only as an explicit new base-law postulate and must join
+    it to Q30's graph-family, curvature, coherent-growth, division, E-37, and
+    held-out parity gates. No Paper 10 pin exists yet.
