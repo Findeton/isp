@@ -88,3 +88,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
 19. **OPEN — What makes one record actual?**  The proposal postulates one actual
     history.  It still owes a preferred, refinement-stable family of compatible
     record partitions and an actualization rule consistent across them.
+20. **OPEN — Is the comparison structure and law a selected joint fixed
+    point?**  JCV is pinned to solve the exact real two-channel variety over two
+    overlapping comparison triangles.  It must distinguish unique pairing,
+    free weights, pure gauge, declaration-indexed holonomy, dark/classical
+    strata, and inconsistency without importing paper 01's weak Z/X control.

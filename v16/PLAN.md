@@ -58,6 +58,32 @@ physical theory.  Its terminal contribution is the exact existence/no-go
 boundary plus a sharply typed list of what a real joint successor law would
 still have to supply.
 
+## JCV — joint comparison/law variety
+
+Status: **PINNED (v16 #17)**.  This is a separate unit; it does not reopen or
+repair paper 01.
+
+JCV replaces a checklist of independent debts with one coupled selection
+problem.  On a calibrated four-chart interface with two overlapping
+comparison triangles, it solves simultaneously for cross-carrier comparison
+maps and a reusable history-weight instrument.  It classifies the exact
+solution variety modulo gauge, with separate full-rank/nonfactorizing and dark
+rank-deficient strata.
+
+The locked chronology is:
+
+1. freeze a generic exact polynomial/sector solver on public calibrations while
+   every physical fixture path is absent;
+2. freeze one physical fixture and verdict-neutral scorer before execution;
+3. run one official solve, render every claim from the sealed receipt, commit
+   as-is, and reproduce off-tree;
+4. freeze the hostile protocol, obtain three independent lenses, adjudicate,
+   repair if ordered, verify, and terminalize or refuse.
+
+The result is limited to a real two-channel interface and its first neighboring
+cocycle extension.  It cannot promote geometry, backreaction, a general
+complex theory, particles, or continuum physics.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

@@ -345,3 +345,34 @@ walk's reconstruction, particles, constants, a continuum limit, or deviations
 from QFT/GR.
 
 Paper 01 and v16 close at that boundary.  No successor unit is authorized.
+
+## 2026-08-17 — JCV SUCCESSOR PIN FROZEN: SOLVE THE COMPARISON STRUCTURE AND HISTORY WEIGHTS JOINTLY (v16 LEDGER #17)
+
+The user's explicit continuation instruction reopens the v16 era without
+reopening terminal paper 01.  `v16/note-jcv-pin.md` charters a separate unit,
+JCV (joint comparison/law variety), against immutable base commit
+`7adc7cbf4897b303077bbfba4e11a7268274a10f`.
+
+JCV asks whether an exact calibrated cross-carrier comparison doctrine and a
+history-weight law are selected jointly by amplitude-level cut equality,
+neighboring cocycle coherence, all-input instrument completeness, and the
+nonfactorizing/full-rank locus.  The arena has two overlapping comparison
+triangles so a local closure cannot stand in for its first extension.  The
+deliverable is an exact polynomial solution variety and gauge quotient, not a
+finite pairing/weight table.
+
+The pin adopts two corrections from the user-supplied exchange.  The weight law
+is an explicit coordinate of the fixed point; the outcome taxonomy separates
+pairing selection from weight selection.  The bare fact of actualization stays
+outside as a postulate.  It also engraves two cautions: paper 01's weak Z/X
+control cannot be imported as evidence that calibrated weight freedom already
+exists, and a base-triangle pass is insufficient without a neighboring
+cocycle gate.
+
+Chronology is strict.  A generic exact solver must be frozen on public
+calibrations while every physical fixture/scorer/output/receipt/paper path is
+absent.  Only then may one fixture and verdict-neutral scorer be frozen and
+run once.  The pin registers seven reachable primary outcomes including a
+stratified variety, exact kill conditions, three later hostile lenses, the
+current template engravings, and the real-slice limitation.  No JCV result is
+citable at PIN status.

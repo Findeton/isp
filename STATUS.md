@@ -5,11 +5,12 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-17 (v16 JRH terminal at #16 after the bounded repair,
-post-commit replay, and true off-tree/no-git verification).
+Updated: 2026-08-17 (v16 JRH remains terminal at #16; the user-authorized JCV
+successor is separately pinned at v16 #17).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
+| JCV (v16 successor) — joint cross-carrier comparison/law variety | **PIN**: exact real two-channel solution variety over two overlapping comparison triangles; comparison and history weights solved jointly modulo gauge; generic solver must freeze before the physical fixture; no result citable | v16 #17 |
 | JRH (paper-01, v16) — joint relational-history law | **TERMINAL: BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED**: original panel two `REJECT`/one `ACCEPT-WITH-FIXES`; delta panel three `ACCEPT-WITH-FIXES`; 38/38 gates, 17/17 mutants, and post-commit off-tree replay exact.  Fixed-boundary instrument, feed-forward no-go, entanglement breaking, interference placement, binary viability/first-loop separation, generator ambiguity, weak-surface nonselection, and the state-relative-decoherence/instrument-completeness gap are exact.  Common-boundary pairing, all-input instrument derivation, nonfactorizing backreaction, stable actualization, all-n extension, weights, geometry, continuum recovery, and law selection remain open | v16 #1–#16 ✓adj |
 | GW1 — metric from deformation closure | terminal negative: blocked at the kernel/deformation interface | v13 #2–#5 |
 | GW2 — regional-descent STEP-0 census | ran (code + receipts committed); see ledger for verdict | v13 LOG |
