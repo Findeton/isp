@@ -2630,3 +2630,25 @@ ray while preserving all nine aggregate families, proving that branch failure
 does not decide aggregate feasibility. It also finds several Arm-A and
 synthesis dispositions hard-coded rather than computed. These remain hostile
 findings pending joint adjudication and the final Seat H report.
+
+## 2026-08-18 — QSF SEAT H HISTORIES REPORT FROZEN (v16 LEDGER #123)
+
+The third mutually blind report is frozen verbatim at
+`v16/review-qsf-histories.md`, ordinary SHA-256
+`5c1d5a65bd5dad283284588c772204e8282085a4299b0fcea688bdfdcda9714e`
+and normalized/self SHA-256
+`1b24a33e0ce395ddbbc83a786d6173d31e0489e31e63a878fd6542178d7bf4bc`.
+It grades the candidate `ACCEPT-WITH-FIXES` and is the third seat to preserve
+`QSF-METHOD-INCONCLUSIVE`.
+
+Seat H independently reproduces every five-window history/count/screen value,
+then finds two material typing defects. A same-density off-diagonal witness
+makes the discarded full state nonaffine already at tick two despite the
+registered diagonal screen remaining blind. And the published S1 quotients
+describe ordered future-trigger suffixes only; once the calibrated final count
+record is included, all six registered complete-grain quotients are discrete
+at `3,3,27,27,486,486`. The fine pure-ray/count law remains a normalized
+stochastic kernel, so Arm C excludes a `rho`-sufficient retained boundary—not
+every stochastic division. All three reports are now immutable. Their claims
+await one joint adjudication; no repair or Paper 10 pin is yet authorized by
+this freeze event alone.
