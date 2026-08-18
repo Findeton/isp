@@ -2574,3 +2574,18 @@ The sampled CRL shadow remains lawful and non-WRC. Finally, the corpus has
 shown nonselection only by registered finite surfaces, not by every possible
 principle; the three proposed contacts would still leave relational growth,
 geometry, continuum recovery, and empirical calibration open.
+
+## 2026-08-18 — QSF PAPER 9 THREE-SEAT PANEL DISPATCHED (v16 LEDGER #120)
+
+The user authorizes the frozen QSF hostile protocol. Three mutually blind
+reviewers are now running against the immutable #115 candidate and #116
+protocol: operator/instrument/completion-family; composite/steering/causality;
+and histories/division/Barandes/predictive-sufficiency. Each reviewer may
+create only its protocol-named report, may not read a sibling report, may not
+edit candidate or protocol bytes, and may not mutate git.
+
+The reports must independently rebuild their seat's load-bearing claims and
+the common CLI/mutant/off-tree integrity surface, then freeze their grade,
+proposed primary, hashes, and repair list. No QSF adjudication, bounded repair,
+terminal verdict, or Paper 10 pin exists at this event. The untracked v15
+SCOUT-T files remain outside the source set and untouched.
