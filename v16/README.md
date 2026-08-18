@@ -50,8 +50,9 @@ theory-selection result.
   committed unchanged. The first replay refused because the authorized Q8
   board update moved a pre-result anchor. A scorer-only provenance repair is
   frozen at #95 for exactly the pre/post board hashes and terminal tokens; it
-  changes no physics or comparator. Regeneration must keep output and paper
-  byte-identical before replay/independent/off-tree verification restarts.
+  changes no physics or comparator. Regeneration #96 keeps output and paper
+  byte-identical; only the truthful scorer/board-bound receipt moves. Full
+  replay/independent/off-tree verification is restarting.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and

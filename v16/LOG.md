@@ -2029,3 +2029,20 @@ and Paper 8 must be byte-identical to #94 or the repair is rejected; the
 receipt is expected to move only because it truthfully records the repaired
 scorer hash and post-result Questions anchor. Full replay/mutant/off-tree
 verification restarts after regeneration.
+
+## 2026-08-18 — WRC REPAIRED CANDIDATE REGENERATED (v16 LEDGER #96)
+
+After #95 froze the bounded repair, one official default invocation regenerated
+the three candidate artifacts. The transcript remains byte-identical to #94 at
+SHA-256 `45d386714b600ae3dc78369e3785cd78788333a3d0b6bdd31917289d03c2c34c`,
+and Paper 8 remains byte-identical at
+`6934297cc2a79a8d7ebfa4dd7c52a58d601d686adf9d91b15c45fe416291e0f5`.
+The receipt alone moves to
+`017debe87508bd91b64fa413870af47c5969b442240bff2fa998a538b2de4fef`:
+its substantive result, target, scope, claim, and transcript/paper seals are
+unchanged; it now records scorer #95 and the authorized post-result Q8 board
+digest. The candidate primary and 31/31 scientific result are unchanged.
+
+This regeneration does not cure or conceal the first replay refusal. It makes
+that refusal and its bounded provenance repair part of the auditable chain.
+Full verification remains next.
