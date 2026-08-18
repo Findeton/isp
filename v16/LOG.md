@@ -1923,3 +1923,12 @@ It is hostile evidence only; no finding is adjudicated or repaired here. The
 records/relational and physics/locality reports were not read by this seat.
 Joint adjudication remains prohibited until all three immutable reports are
 frozen.
+
+## 2026-08-18 — CEL RECORDS/RELATIONAL REVIEW FROZEN (v16 LEDGER #91)
+
+The second isolated Paper 7 report is frozen verbatim as
+`v16/review-cel-records.md`, SHA-256
+`b7fb0a9006b7e38637885af0f51ac35b4572c90e36928f126203447f6c85a6fb`.
+It is hostile evidence only; no finding is adjudicated or repaired here. This
+seat did not read the operator or physics/locality report. The final seat must
+be frozen before joint adjudication begins.
