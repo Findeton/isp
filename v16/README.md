@@ -18,8 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `CSF` / Paper 6: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE** at v16
-  ledger #61. The pin is frozen at #60.
+- `CSF` / Paper 6: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE FIRST
+  EXECUTION** at v16 ledger #62. The pin is frozen at #60 and generic core at
+  #61.
   The user-authorized continuation tests the completeness spectrahedron
   `M=C^dagger C`, separates the unconditioned history law from calibrated
   record-resolving factorizations, reconstructs the rich-spectrum
@@ -27,7 +28,7 @@ theory-selection result.
   decisive law-selection assay. A point obtained only after a declared
   recurrence dictionary or exchange symmetry is conditional selection, not
   a derived universal law. The generic exact core must freeze before any
-  physical recurring-context fixture, scorer, result, or Paper 6 exists. The
+  physical result or Paper 6 exists. The
   exact public core passes 11/11 gates, reproduces the JCV base/fiber
   calibration, computes affine intersections and tangent extremality, and is
   byte-identical under duplicate and alien-CWD copied-source execution.

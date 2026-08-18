@@ -1390,3 +1390,24 @@ Selftest and all three public mutants refuse before writes; unknown options
 exit `2`; the AST contains no float literal. The next lawful stage is a
 data-only recurring-context fixture and verdict-neutral scorer frozen before
 first execution. The generic core is immutable after this commit.
+
+## 2026-08-18 — CSF PHYSICAL FIXTURE AND SCORER FROZEN (v16 LEDGER #62)
+
+`v16/code/csf_fixture.json` and `v16/code/csf_score.py` are frozen before the
+first physical execution at hashes
+`8c10210b6fee0a5477f3f70593cca080c26a4c91d678ad60bf691f6d853fbd37`
+and `cedb423ccd201ebd1b0e49a2264c87f6f9e44b70b6f9fc30cba4cb800245aab4`.
+All official result paths remain absent.
+
+The data-only fixture declares five independently typed contexts, a frozen
+two-history event dictionary, identity/rephase/exchange/asymmetric recurrence
+maps, calibrated ports and flags, a nonnormal growing pair, four extremality
+maps, and fixed-Bob/amplifier controls. It contains no expected field, target
+kernel, selected witness, solution dimension, verdict, or pass count.
+
+The verdict-neutral scorer binds the #61 core hash and all immutable
+antecedents, implements 36 named mutants, and can write only the transcript,
+receipt, and Paper 6 after every gate and promotion seal passes. Compilation,
+JSON/AST exactness, anchor-token presence, strict unknown-option refusal, and
+result-path absence pass. No normal solve, selftest, mutant, classifier, or
+paper render has run. The next event is the first official invocation.

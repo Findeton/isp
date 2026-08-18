@@ -1,0 +1,120 @@
+{
+  "schema": "csf-fixture-v1",
+  "provenance": {
+    "base_commit": "22818f9b4aa3f042f3df86d314bcb66d4ca44c15",
+    "core_sha256": "93a093d6ce72be4167d277719daf37aa7df7704510819f3b2e264546a14362b4",
+    "anchors": [
+      ["v16/note-csf-pin.md", "c953618c66685b20705bef7436ebfa29d4b0370b076493bc1997aea898e1bcba"],
+      ["v16/note-csf-core-freeze.md", "60fc2c5b2174631f33bdb946e6b6c051cac533d9dbbe9fcbbde885d578d4068a"],
+      ["v16/paper-05-overlap-gram-instrument-variety.md", "89a6ad8b10b97351d71a499ebbb36b2cf5a89f32d5ec9d005f9b4a68dab16b31"],
+      ["v16/code/ovg_receipt.json", "4ba954430acd0772da62c8df16b2c6b08bca9e76fd7b25d3b5b72fcc43ce2852"],
+      ["v16/note-ovg-candidate-verification.md", "12774e1a2d9d72d147a67e066679bc6e376e29f4acecc453f3d164ce19ba37e5"],
+      ["v16/paper-02-joint-comparison-fixed-point.md", "e06e7ce1ec59397e05ccafa1e51d3bf78e888d0c0b72c214144deb9ba92e9e39"],
+      ["v16/note-jcv-adjudication.md", "6499650c474c6f8ed6e2701ebf113fbbf956360ccb3f22a426cba3a2a5e859a1"],
+      ["v16/paper-03-contextual-pullbacks-permanent-records.md", "ca7b06e9e5540d81afb4a401beb66cb2834e3e74033fd742ac5257108a19654f"],
+      ["v16/paper-04-support-rewrite-weld.md", "f61dde79e5fc0e10db1e5dbe13dec25dceaff9842d5e0c5c06ba2ae90eb4bcae"],
+      ["v16/paper-01-joint-relational-history-law.md", "98489edb6a83919199c11b14b92c423965d1a08ad7652a1c1915d5402f9e6003"],
+      ["v12/paper1-composition-defect.md", "81bdab5673fb67b63cd10c08fbb80870f8aa01088047718c5b4bf447e1669128"],
+      ["v15/note-homonym-audit.md", "4dbdb8f932e1b4e3d3813c7dcb9d2905f37b4c42819cc14537afa993e2ce51d9"]
+    ]
+  },
+  "history_dictionary": {
+    "coordinates": ["left-then-right", "right-then-left"],
+    "elementary_event_type": "tau-binary-neighbor",
+    "left_support_roles": ["left", "middle"],
+    "right_support_roles": ["middle", "right"],
+    "complete_port_labels": ["port-zero", "port-one"],
+    "admitted_history_gauge": ["common-boundary-frame", "coordinate-rephase", "endpoint-exchange-when-calibration-symmetric"]
+  },
+  "contexts": [
+    {
+      "id": "phase-sign",
+      "role": "training",
+      "actors": ["a0", "b0", "c0"],
+      "relations": [["a0", "b0"], ["b0", "c0"]],
+      "relative_operator": [[[1, 0], [0, 0]], [[0, 0], [-1, 0]]],
+      "exchange_map": {"a0": "c0", "b0": "b0", "c0": "a0"},
+      "calibration": "symmetric"
+    },
+    {
+      "id": "quarter-sign",
+      "role": "training",
+      "actors": ["a1", "b1", "c1"],
+      "relations": [["a1", "b1"], ["b1", "c1"]],
+      "relative_operator": [[[0, 1], [0, 0]], [[0, 0], [0, -1]]],
+      "exchange_map": {"a1": "c1", "b1": "b1", "c1": "a1"},
+      "calibration": "symmetric"
+    },
+    {
+      "id": "rich-three",
+      "role": "training",
+      "actors": ["a2", "b2", "c2"],
+      "relations": [["a2", "b2"], ["b2", "c2"]],
+      "relative_operator": [[[1, 0], [0, 0], [0, 0]], [[0, 0], [0, 1], [0, 0]], [[0, 0], [0, 0], [-1, 0]]],
+      "exchange_map": {"a2": "c2", "b2": "b2", "c2": "a2"},
+      "calibration": "symmetric"
+    },
+    {
+      "id": "held-rich",
+      "role": "heldout",
+      "actors": ["a3", "b3", "c3"],
+      "relations": [["a3", "b3"], ["b3", "c3"]],
+      "relative_operator": [[[1, 0], [0, 0], [0, 0]], [[0, 0], [0, -1], [0, 0]], [[0, 0], [0, 0], [-1, 0]]],
+      "exchange_map": {"a3": "c3", "b3": "b3", "c3": "a3"},
+      "calibration": "symmetric"
+    },
+    {
+      "id": "left-calibrated",
+      "role": "asymmetry-control",
+      "actors": ["source", "hub", "sink"],
+      "relations": [["source", "hub"], ["hub", "sink"]],
+      "relative_operator": [[[1, 0], [0, 0]], [[0, 0], [-1, 0]]],
+      "calibration": "left-source-retained"
+    }
+  ],
+  "recurrence_dictionaries": [
+    {"id": "event-identity", "kind": "identity", "applies_to": ["phase-sign", "quarter-sign", "rich-three", "held-rich", "left-calibrated"]},
+    {"id": "quarter-rephase", "kind": "coordinate-rephase", "context": "quarter-sign", "phases": [[0, 1], [1, 0]]},
+    {"id": "held-exchange", "kind": "coordinate-exchange", "context": "held-rich"},
+    {"id": "asymmetric-exchange", "kind": "calibration-moving-exchange", "context": "left-calibrated"}
+  ],
+  "record_calibration": {
+    "history_test_context": "phase-sign",
+    "preparation_basis_index": 0,
+    "retained_port": "port-zero",
+    "port_rotation": [["3/5", "4/5"], ["-4/5", "3/5"]]
+  },
+  "flag_family": {
+    "first": [[[1, 0]], [[0, 0]]],
+    "identical": [[[1, 0]], [[0, 0]]],
+    "partial": [[["3/5", 0]], [["4/5", 0]]],
+    "orthogonal": [[[0, 0]], [[1, 0]]],
+    "reconvergence_legs": [
+      [[[1, 0], [0, 0]]],
+      [[[0, 0], [1, 0]]]
+    ]
+  },
+  "nonnormal_control": {
+    "source_dimension": 2,
+    "target_dimension": 3,
+    "left_columns": [
+      [[1, 0], [0, 0], [0, 0]],
+      [[0, 0], [1, 0], [0, 0]]
+    ],
+    "right_columns": [
+      [[0, 0], [0, 0], [1, 0]],
+      [["3/5", 0], ["4/5", 0], [0, 0]]
+    ]
+  },
+  "extreme_maps": [
+    {"id": "forget-exchange-calibration", "kind": "constraint-restriction", "from": "training-plus-exchange", "to": "rich-three"},
+    {"id": "port-refinement", "kind": "append-zero-port"},
+    {"id": "idle-spectator", "kind": "tensor-identity", "dimension": 2},
+    {"id": "catalogue-embedding", "kind": "direct-sum-copy", "copies": 2}
+  ],
+  "safety": {
+    "spectator_dimension": 2,
+    "entangled_pair": "bell-zero-zero-plus-one-one",
+    "amplifier_scale": 2
+  }
+}
