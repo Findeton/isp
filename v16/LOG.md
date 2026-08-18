@@ -2090,3 +2090,17 @@ evaluate the proposed class-relative eliminability doctrine and freezes its
 critical qualification: DISC excluded registered memoryless classes, not all
 memory-bearing or geometry-blind laws. Any new carrier family, adversary class,
 or dynamic-geometry construction belongs to a successor, not a WRC repair.
+
+## 2026-08-18 — WRC THREE-SEAT DISPATCH (v16 LEDGER #99)
+
+After protocol #98 froze, the three completed Papers 3--7 workers were
+reassigned independently: operator/instrument -> `review-wrc-operator.md`;
+histories/records/eliminability -> `review-wrc-records.md`; and
+physics/geometry/Barandes -> `review-wrc-physics.md`.
+
+Each assignment forbids reading either sibling WRC report and permits only its
+own report file. All were explicitly notified that record/memory dependence is
+not dynamic geometry, that DISC tested memoryless rather than memory-bearing
+nulls, and that the alleged Paper20/GITER weld must be type-audited rather than
+accepted from vocabulary. No adjudication begins before all three hashes
+freeze.

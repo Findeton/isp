@@ -55,8 +55,9 @@ theory-selection result.
   Verification #97 passes two exact replays, all 34 no-write mutants, an
   independent exact reconstruction, and true off-tree execution. The result
   is green-unreviewed and fixed-carrier only. Hostile protocol #98 freezes
-  operator, records/eliminability, and physics/geometry seats; reviewer
-  assignment is next.
+  operator, records/eliminability, and physics/geometry seats; dispatch #99
+  assigns all three independently, with no adjudication before every report
+  hash freezes.
 - `CEL` / Paper 7: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
   AWAITING JOINT ADJUDICATION** at v16 ledger #92. The pin is frozen at
   #68, generic core at #69, fixture/scorer at #70, candidate at #71, and
