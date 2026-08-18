@@ -1,0 +1,6 @@
+WRC GENERIC CORE — PUBLIC CALIBRATION
+gates=8 passed=8
+born=9/25,16/25
+nonaffinity_delta=[["-1/4","0"],["0","1/4"]]
+histogram=1,1,2
+scope=generic exact machinery; no WRC physical fixture or verdict

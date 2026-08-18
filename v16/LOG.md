@@ -1792,3 +1792,22 @@ This seat did not read the operator or histories/records reports. The PPR
 panel is now complete at three immutable reports. Their findings remain
 hostile allegations until one joint adjudication independently recomputes and
 rules them; no repair or candidate promotion occurs in this event.
+
+## 2026-08-18 — WRC GENERIC CORE FROZEN (v16 LEDGER #79)
+
+`v16/code/wrc_core.py` and its public-only artifacts are frozen before any WRC
+physical fixture, scorer, result, receipt, or Paper 8 candidate exists. Their
+hashes are bound in `v16/note-wrc-core-freeze.md`; the core source is
+`94c74731179c1302254a3b7424dcb66d1154518bcf936c5531b05a52f42fa6b3`.
+
+The core provides independent exact `Q(w)` matrix, state, effect, Kraus,
+instrument, affine-mixture, covariance, and event-histogram machinery. It
+contains no committed walk values or result comparator. All `8/8` public gates
+pass, including the exact public nonaffinity and equal-probability CP-state
+comparison. Duplicate and alien-CWD executions are byte-identical; all six
+mutants and selftest refuse without writes, unknown options and existing
+targets refuse, and no float literal exists.
+
+The core is immutable. The next WRC stage is a data-only physical fixture and
+verdict-neutral scorer frozen before official use. PPR's completed hostile
+panel remains unadjudicated; the other Paper 4–7 panels continue independently.
