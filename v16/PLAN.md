@@ -459,7 +459,7 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **PIN FROZEN; NO RESULT (v16 #130)**.
+Status: **GENERIC CORE FROZEN; NO RESULT (v16 #131)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the
@@ -482,8 +482,10 @@ quantum networks theory already permits coherent node merge, split, and
 reconnection. Paper 11 therefore inherits existing size-changing quantum
 kinematics; its open target is a graph-generated, renaming-covariant history law
 with stable divisions, quantum rewrite concurrency, dynamically defined
-subsystems, and eventual continuum recovery. No RFB artifact beyond the pin is
-authorized or present at this event.
+subsystems, and eventual continuum recovery. The public exact core is now
+frozen after passing 9/9 algebra gates, 11/11 targeted mutant deaths, and a
+true off-tree replay. It contains no physical fixture or answer. The fixture,
+scorer, result, and Paper 10 candidate remain absent.
 
 ## Successor register
 

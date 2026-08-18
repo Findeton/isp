@@ -2793,3 +2793,19 @@ records, quantum rewrite concurrency, dynamic-factorization no-signalling,
 infinite extension, and continuum/QFT/GR recovery. Q32 records the open forcing
 question. No RFB core, fixture, scorer, result, or Paper 10 candidate exists at
 this freeze event.
+
+## 2026-08-18 — RFB GENERIC EXACT CORE FROZEN (v16 LEDGER #131)
+
+`v16/note-rfb-core-freeze.md` freezes the result-independent Paper 10 core.
+It implements exact public algebra for cyclic writers, phase gauge, additive
+readers, writer/reader relabeling orbits, two-history interference, partial
+tags, predictive partitions, and fixed-factor local channels. It contains no
+ISP graph, assumption-matrix row, expected fixture value, result word, or
+candidate-paper claim.
+
+The official invocation passes 9/9 public gates. All 11 targeted mutants
+refuse before artifact creation; self-test, argument, target-collision,
+overwrite, transcript-ledger, and payload-seal controls pass. A git-free copy
+run from `/private/tmp` reproduces the transcript byte-for-byte and the receipt
+as identical JSON. The next event may freeze a result-neutral fixture; no
+physical scorer may run until the fixture and scorer have both been committed.
