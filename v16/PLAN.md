@@ -107,7 +107,7 @@ The user separately authorized it on 2026-08-17 under the Paper 3 pin below.
 
 ## Paper 03 — PPR: contextual pullbacks and permanent records
 
-Status: **GREEN-UNREVIEWED CANDIDATE, REPLAY VERIFIED (v16 #39)**.
+Status: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN (v16 #40)**.
 
 The user's 2026-08-17 instruction authorizes the precise successor that JCV
 left open. The immutable pin is `v16/note-ppr-pin.md`. PPR does not reopen
@@ -138,7 +138,8 @@ The locked order is:
    mutants and byte-identical true no-`.git` execution**;
 5. freeze a three-lens hostile protocol, obtain independent reports only under
    explicit delegation authorization, adjudicate, repair if ordered, and
-   terminalize or stop at the review gate.
+   terminalize or stop at the review gate — **protocol frozen at #40 before any
+   seat is assigned; reviewer delegation is not yet authorized**.
 
 The maximum positive candidate is a record-generated comparison/law fixed
 point at finite exact scope. The honest intermediate outcome is an induced

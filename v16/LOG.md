@@ -854,3 +854,20 @@ frozen three-lens hostile protocol and mutually independent operator,
 histories/congruence, and relational-geometry reviews. Assigning those seats
 requires a separate explicit delegation instruction under the active
 collaboration rule.
+
+## 2026-08-17 — PPR HOSTILE PROTOCOL FROZEN; NO REVIEWER ASSIGNED (v16 LEDGER #40)
+
+`v16/note-ppr-hostile-protocol.md` freezes the three-lens review before any
+seat sees another report. The operator seat must attack representation gauge,
+stable-null/pullback typing, interference, completeness, and no-signalling.
+The histories seat must attack the finite continuation quantifier, quotient
+congruence, record availability, actualization split, and whether null and
+records form one object. The relational-geometry seat must repeat the JRH
+eliminability attack and decide whether the declared dimension-changing
+carrier and the separately heterogeneous process fork are actually linked.
+
+The protocol binds the candidate hashes, exact chronology, extra mutants,
+counterfixtures, twelve adjudication questions, and an earliest-failed-rung
+demotion rule. Candidate artifacts remain immutable. No reviewer is assigned
+by this commit; explicit user authorization to delegate the three independent
+seats is still required.
