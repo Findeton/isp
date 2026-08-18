@@ -150,8 +150,10 @@ theory-selection result.
   were dispatched at #74. The operator report at #84, rewrite/category report
   at #85, and physics/causality report at #86 are immutable hostile evidence;
   their allegations await joint adjudication.
-- `SRW` / Paper 4: **GREEN-UNREVIEWED; THREE HOSTILE REPORTS FROZEN,
-  AWAITING JOINT ADJUDICATION** at v16 ledger #82. The pin is frozen at #41,
+- `SRW` / Paper 4: **PANEL-ADJUDICATED MIXED RESULT** at v16 ledger #101.
+  `SRW-MAP-ONLY-WELD-REFUTED` and the registered-future dictionary
+  distinction survive; the bundle-weld and reciprocal-weld headlines do not.
+  The pin is frozen at #41,
   original generic core at
   #42, physical fixture/scorer at #43, first refusal at #44, bounded text
   repair at #45, candidate at #46, and failed verification at #47.
@@ -179,9 +181,12 @@ theory-selection result.
   Two clean replays, all 27 mutants, all 9 seals, all 12 paper bindings, an
   independent four-finding reconstruction, and a true off-tree/no-git replay
   pass. The #51 protocol freezes independent operator/representation,
-  rewrite/category, and physics/gravity/QFT attacks. The operator report at
-  #80, rewrite/category report at #81, and physics/causality report at #82 are
-  immutable hostile evidence; their allegations await joint adjudication.
+  rewrite/category, and physics/gravity/QFT attacks. The adjudication accepts
+  the real single-step `C^2 -> C^3` isometry and conditional inverse-on-image
+  lemma, but finds no overlap composition/global carrier functor. An exact
+  overlap counterfixture leaves all local gates green while two orders give
+  probabilities 1 and 0; spatial adjacency is also eliminable into typed
+  circuit effects. New successor data are required.
 - `PPR` / Paper 3: **PANEL-ADJUDICATED REJECT AT
   `PPR-BLOCKED-AT-EVENT-ALGEBRA`** at v16 ledger #100. The pin was frozen at #33, generic core at
   #34, physical

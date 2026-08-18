@@ -2127,3 +2127,25 @@ scope. A joint event algebra and family-level graph-irreducibility test require
 new fixture data and are not a bounded Paper 3 repair. Papers 4--7 may inherit
 only the narrowed operator mathematics, not a completed relational-history
 law.
+
+## 2026-08-18 — SRW PAPER 4 PANEL ADJUDICATION (v16 LEDGER #101)
+
+The isolated SRW panel is adjudicated in `v16/note-srw-adjudication.md`,
+SHA-256
+`74811ccf6f8202bc69cb12f464efec419e803de9d29e6d97f56a47b3d7127e2f`.
+Grades were ACCEPT-WITH-FIXES / REJECT / ACCEPT-WITH-FIXES. All registered
+numbers survive.
+
+The adjudicated primary list retains only
+**SRW-MAP-ONLY-WELD-REFUTED** and the narrowed
+**SRW-DICTIONARY-CURRENT-BLIND-BUT-REGISTERED-FUTURE-DISTINGUISHABLE**.
+The bundle-weld and reciprocal-weld headlines are withdrawn. SRW constructs
+single-step typed kinematics and a conditional inverse-on-image lemma, not a
+compositional rewrite bundle.
+
+The rewrite seat's exact overlap arena passes every local SRW gate yet gives
+order-dependent final probabilities 1 versus 0. The law needs an order record,
+associator/holonomy, fusion rule, or chosen causal order. Also, while the
+chosen `C^2 -> C^3` carrier enlargement is real, spatial graph adjacency is
+compilable into typed circuit effects and no backreaction is measured. New
+composition/irreducibility data belong to a successor, not an in-place repair.
