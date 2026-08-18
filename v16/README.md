@@ -18,10 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `CSF` / Paper 6: **PHYSICAL FIXTURE AND SCORER FROZEN BEFORE FIRST
-  REPAIRED EXECUTION; FIRST INVOCATION REFUSED AT ANCHOR TOKEN** at v16 ledger
-  #63. The pin is frozen at #60, generic core at #61, and fixture/scorer at
-  #62.
+- `CSF` / Paper 6: **BOUNDED SCORER REPAIR FROZEN BEFORE RE-EXECUTION** at
+  v16 ledger #64. The pin is frozen at #60, generic core at #61,
+  fixture/scorer at #62, and first refusal at #63.
   The user-authorized continuation tests the completeness spectrahedron
   `M=C^dagger C`, separates the unconditioned history law from calibrated
   record-resolving factorizations, reconstructs the rich-spectrum
@@ -35,7 +34,9 @@ theory-selection result.
   byte-identical under duplicate and alien-CWD copied-source execution.
   The first ordinary scorer invocation exits at `CSF-ANCHORS` before physical
   scoring because it requests `erasable` while Paper 3 contains `eraser`.
-  No result path exists; only that scorer token may be repaired and frozen.
+  No result path exists. The one-token `erasable -> eraser` repair is now
+  hash-frozen with every scientific object unchanged; no repaired run has
+  occurred.
   Papers 3–5 remain frozen and untouched.
 - `OVG` / Paper 5: **GREEN-UNREVIEWED CANDIDATE** at v16 ledger #57. The pin
   is frozen at #52, generic core at #53, physical fixture/scorer at #54, first

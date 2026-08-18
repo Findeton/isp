@@ -1428,3 +1428,18 @@ A bounded scorer-only repair is authorized: replace the requested token
 change no fixture, anchor hash, equation, context, recurrence dictionary,
 gate, mutant, verdict word, claim, renderer, scope wall, or CLI. All result
 paths remain absent.
+
+## 2026-08-18 — CSF BOUNDED ANCHOR-TOKEN REPAIR FROZEN (v16 LEDGER #64)
+
+The #62 scorer is preserved at commit `3546b87` and hash
+`cedb423ccd201ebd1b0e49a2264c87f6f9e44b70b6f9fc30cba4cb800245aab4`.
+The bounded repaired scorer hash is
+`d3adf994e1c89fca5b53a0969cf0eed256488790b361477116b7cd1a76da84ba`.
+
+Exactly one source string changes: the absent Paper 3 request `erasable` is
+replaced by its existing word `eraser`. The fixture, core, anchor paths and
+hashes, all other tokens, index orientation, contexts, recurrence dictionaries,
+equations, gates, mutants, primary vocabulary, claims, renderer, scope walls,
+and CLI are unchanged. The scorer compiles with zero float literals and all
+result paths remain absent. The next event is the repaired official
+invocation; none has run yet.

@@ -6,7 +6,7 @@ Ledger event: v16 #62. Generic-core commit: `22818f9`.
 
 fixture SHA-256: `8c10210b6fee0a5477f3f70593cca080c26a4c91d678ad60bf691f6d853fbd37`
 
-scorer SHA-256: `cedb423ccd201ebd1b0e49a2264c87f6f9e44b70b6f9fc30cba4cb800245aab4`
+scorer SHA-256: `d3adf994e1c89fca5b53a0969cf0eed256488790b361477116b7cd1a76da84ba`
 
 core SHA-256: `93a093d6ce72be4167d277719daf37aa7df7704510819f3b2e264546a14362b4`
 
@@ -73,3 +73,23 @@ existing word `eraser`. It may not change the fixture, anchor paths or hashes,
 matrix/index conventions, context family, recurrence dictionaries, equations,
 gates, mutants, primary vocabulary, claims, renderer, scope walls, or CLI.
 The repair must be hash-frozen before another ordinary invocation.
+
+## Bounded anchor-token repair freeze
+
+The original #62 scorer remains recoverable at commit `3546b87` and SHA-256
+`cedb423ccd201ebd1b0e49a2264c87f6f9e44b70b6f9fc30cba4cb800245aab4`.
+The repaired scorer hash bound at the top of this note is
+`d3adf994e1c89fca5b53a0969cf0eed256488790b361477116b7cd1a76da84ba`.
+
+The source diff contains exactly one replaced string token:
+
+```text
+erasable -> eraser
+```
+
+The fixture, core, anchor paths and hashes, all other anchor tokens, matrix
+index convention, contexts, recurrence maps, affine/PSD equations, gates,
+mutants, primary vocabulary, claims, renderer, scope walls, and CLI are
+unchanged. The repaired scorer compiles, contains zero float literals, and all
+official result paths remain absent. No repaired ordinary solve, selftest,
+mutant, classifier, receipt, or paper render has run.

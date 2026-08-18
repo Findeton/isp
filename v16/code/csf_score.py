@@ -258,7 +258,7 @@ def evaluate(
         "v16/note-ovg-candidate-verification.md": ("REPLAY-VERIFIED GREEN-UNREVIEWED",),
         "v16/paper-02-joint-comparison-fixed-point.md": ("Two exact rational active-locus witnesses",),
         "v16/note-jcv-adjudication.md": ("same unconditioned channel",),
-        "v16/paper-03-contextual-pullbacks-permanent-records.md": ("continuation-stable", "erasable"),
+        "v16/paper-03-contextual-pullbacks-permanent-records.md": ("continuation-stable", "eraser"),
         "v16/paper-04-support-rewrite-weld.md": ("relational rewrite arrow", "coupling"),
         "v16/paper-01-joint-relational-history-law.md": ("all-input", "no-signalling"),
         "v12/paper1-composition-defect.md": ("configuration space", "record"),

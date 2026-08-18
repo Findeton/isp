@@ -276,7 +276,7 @@ relational histories. No review or adjudication is authorized yet.
 
 ## Paper 06 — CSF: completeness spectrahedra and record fibers
 
-Status: **FIRST INVOCATION REFUSED AT ANCHOR TOKEN (v16 #63)**.
+Status: **BOUNDED SCORER REPAIR FROZEN BEFORE RE-EXECUTION (v16 #64)**.
 
 The user's 2026-08-18 instruction authorizes a separate continuation after
 Paper 5's coefficient variety was recognized as the factorized presentation
@@ -331,6 +331,12 @@ physical scoring. One requested Paper 3 token is absent: the scorer asks for
 `erasable`, while the frozen paper uses `eraser`. Every hash and all other
 tokens match; no result path is written. Only that one scorer token may move,
 and the repaired hash must freeze before re-execution.
+
+The one-token repair is frozen at #64. Only the absent request `erasable` is
+replaced by Paper 3's existing token `eraser`; the scorer now has SHA-256
+`d3adf994e1c89fca5b53a0969cf0eed256488790b361477116b7cd1a76da84ba`.
+The fixture and every physical equation, gate, mutant, classifier, renderer,
+and scope wall are unchanged. No repaired run has occurred.
 
 ## Successor register
 
