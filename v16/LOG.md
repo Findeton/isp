@@ -1567,3 +1567,26 @@ unconditional catalogue closure, arbitrary-`n`, continuum/Lorentz, QFT, GR,
 particle species, Hamiltonian reconstruction, affine constant, or empirical
 deviation. Papers 3–6 and the unrelated untracked v15 SCOUT-T files remain
 untouched.
+
+## 2026-08-18 — CEL GENERIC CORE FROZEN (v16 LEDGER #69)
+
+`v16/code/cel_core.py` and its public-only artifacts are frozen before any
+CEL physical fixture, scorer, result, receipt, or Paper 7 candidate exists.
+Their hashes are bound in `v16/note-cel-core-freeze.md`; the core source is
+`f08b880095e71ac79082d2672ec849dc9ffd1ab66c702a85f2b24165a02aedac`.
+
+The self-contained exact core implements Gaussian-rational matrix/channel
+algebra, kernel and dilation operations, finite zero-error and licensed
+recoverability, branch coarse-graining, continuation-semigroup closure,
+zero-pivot-safe Hermitian `LDL^dagger`, and constructive four-square Gram
+factors with the `2r` row bound. It contains no CEL physical contexts,
+recurrence doctrine, relational flag attachment, selected coupling, primary
+word, or Paper 7 prose.
+
+All `9/9` public gates pass. Deterministic duplicate and alien-CWD executions
+are byte-identical; three public mutants and selftest refuse without artifact
+writes; unknown options and existing official targets refuse; no Python float
+literal exists. A separate exact stress battery reconstructs the zero and
+zero-pivot cases plus 32 generated complex PSD matrices of orders one through
+four inside the row bound. The core is now immutable. The next stage is the
+data-only CEL fixture and result-neutral scorer, frozen before official use.

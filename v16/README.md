@@ -18,7 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `CEL` / Paper 7: **PIN FROZEN BEFORE CONSTRUCTION** at v16 ledger #68.
+- `CEL` / Paper 7: **GENERIC CORE FROZEN BEFORE PHYSICAL FIXTURE** at v16
+  ledger #69. The pin is frozen at #68.
   The user-authorized continuation tests the creation-event layer at four
   sharply separated types: recurrence propagated by standing naturality,
   symmetry, and gluing versus token-disjoint universality as a priced
@@ -27,7 +28,12 @@ theory-selection result.
   to typed relational flag-cell creation; and Gaussian-rational restrictions
   as minimal resource costs rather than absolute realizability obstructions.
   External scratchpads are excluded from the runtime read set. A generic
-  exact core must freeze before the result-neutral physical fixture exists.
+  exact core is now frozen: nine public gates pass over exact `Q(i)` algebra,
+  constructive `LDL^dagger`/four-square Gram factors, finite licensed-
+  recovery semantics, branch coarse-graining, continuation closure, and
+  Stinespring stacking. It contains no CEL physical context or verdict. The
+  result-neutral physical fixture/scorer must freeze before the first
+  official physical execution.
   Papers 3–6 and their four pending hostile panels remain unchanged review
   debt.
 - `CSF` / Paper 6: **REPLAY-VERIFIED GREEN-UNREVIEWED; HOSTILE PROTOCOL

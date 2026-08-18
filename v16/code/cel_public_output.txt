@@ -1,0 +1,13 @@
+CEL GENERIC PUBLIC CALIBRATION
+schema: cel-public-v1
+PASS PUB-COMPLEX-LDL-GRAM :: rank=2 rows=2
+PASS PUB-SINGULAR-LDL-GRAM :: rank=1 rows=1
+PASS PUB-NONPSD-REFUSAL :: psd=False refused=True
+PASS PUB-FOUR-SQUARE-NORM :: 5/3=1+2/3i + 1/3+1/3i norms
+PASS PUB-RESET-SEPARATES-COVARIANCE-RECOVERY :: covariant=True recoverable=False
+PASS PUB-RELABEL-RECOVERABLE :: recoverable=True
+PASS PUB-BRANCH-COARSE-GRAIN :: branch=true,true coarse=False
+PASS PUB-SEMIGROUP-CERTIFICATE :: words=2 mathematical=True licensed=True
+PASS PUB-STINESPRING-ISOMETRY :: shape=(4, 2)
+gate-count: 9
+all-pass: true
