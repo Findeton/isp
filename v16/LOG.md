@@ -2353,3 +2353,26 @@ fixed `G0`, not geometry.  The repaired receipt has 37/37 passing gates; all
 two-input, and Q8-evidence-leak controls.  Two clean generations are
 byte-identical.  Status is repaired candidate pending the required post-commit
 off-tree/no-git replay; no terminal claim is made at this event.
+
+## 2026-08-18 — WRC PAPER 8 TERMINAL VERIFICATION (v16 LEDGER #111)
+
+The bounded repair at commit `acd4b3896d71461c5c9e83028c37b0345c3c6d78`
+is terminally verified in `v16/note-wrc-terminal-verification.md`.  A fresh
+`git archive HEAD`, expanded without `.git` and executed from an alien working
+directory, regenerates transcript, receipt, and paper byte-identically.  The
+untracked v15 SCOUT-T files are absent from the archive and remain unread.
+
+Post-commit replay gives 37/37 passing clean gates and 37/37 named mutant
+refusals with zero survivors.  The generic core, physical fixture, exact walk
+numbers, nine observable families, coordinate vector, and primary remain
+unchanged.  WRC is therefore **TERMINAL** at
+**WRC-WALK-REPRESENTABLE-MODULO-CELL-HIT-INSTRUMENT**.
+
+The terminal ontology is deliberately narrow: exact non-inert record feedback
+and transport on fixed `G0`; a literal nonaffine CELL-HIT rule; a classified
+but unselected measure-and-prepare affine-completion family; and a coherent
+pure-ray alternative whose steering safety is untested.  WRC does not provide
+carrier growth, relational rewrite, dynamic geometry, geometry
+irreducibility, actualization, genuine division boundaries, permanence,
+continuum/Lorentz structure, QFT/GR, species, Hamiltonian selection,
+constants, or deviations.
