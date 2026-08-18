@@ -60,8 +60,8 @@ still have to supply.
 
 ## JCV — joint comparison/law variety
 
-Status: **GREEN-UNREVIEWED (v16 #24)**.  This is a separate unit; it does not
-reopen or repair paper 01.
+Status: **ADJUDICATED — BOUNDED REPAIR PENDING (v16 #29)**.  This is a
+separate unit; it does not reopen or repair paper 01.
 
 JCV replaces a checklist of independent debts with one coupled selection
 problem.  On a calibrated four-chart interface with two overlapping
@@ -84,12 +84,23 @@ The locked chronology is:
    worktree/off-tree at #24: `JCV-STRATIFIED`, active locus
    `JCV-PAIRING-SELECTED-WEIGHTS-FREE`**;
 4. freeze the hostile protocol, obtain three independent lenses, adjudicate,
-   repair if ordered, verify, and terminalize or refuse.  **Protocol frozen at
-   #25 against exact candidate hashes; reports pending.**
+   repair if ordered, verify, and terminalize or refuse.  **Complete through
+   adjudication #29: all three seats return `ACCEPT-WITH-FIXES`, reproduce all
+   exact values, and order an interpretive/certificate repair.  The finite
+   classifier survives; `fixed point` and carrier-derived comparison do not.
+   One bounded repair and one terminal verifier remain.**
 
 The result is limited to a real two-channel interface and its first neighboring
 cocycle extension.  It cannot promote geometry, backreaction, a general
 complex theory, particles, or continuum physics.
+
+The adjudicated next mathematical obstruction is a continuation-stable null
+quotient.  JCV proves that every surviving dark mismatch is annihilated by the
+present outcome law, but it does not know whether future compositions can
+reactivate that direction.  A genuine record-generated fixed point would have
+to derive boundary comparison from the law's complete operational null ideal,
+make that ideal a congruence under gluing/refinement, and reproduce it from the
+law's own durable records.  That successor is not authorized by this plan.
 
 ## Successor register
 

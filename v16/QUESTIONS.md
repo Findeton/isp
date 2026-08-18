@@ -89,9 +89,19 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     history.  It still owes a preferred, refinement-stable family of compatible
     record partitions and an actualization rule consistent across them.
 20. **PARTIAL — Is the comparison structure and law a selected joint fixed
-    point?**  At JCV's verified real calibrated fixture, the active locus
-    selects one coherent holonomy class but leaves a two-dimensional weight
-    variety that moves a calibrated probability.  The global variety is
-    stratified because six dark/rank-deficient mismatch sectors survive.  The
-    result is conditional on a still-declared comparison doctrine and is
-    pending hostile adjudication.
+    point?**  JCV's hostile panel confirms the exact local variety but rejects
+    the fixed-point interpretation.  On the registered full-coherent locus,
+    flat holonomy is unique modulo chart-sign gauge while a real
+    two-dimensional boundary-instrument family remains.  Six nontrivial
+    holonomy sectors survive only in columns annihilated by the one-step law.
+    The comparison doctrine, record basis, and extension to a third overlap
+    remain declared or open.
+21. **OPEN — Does the complete operational null quotient generate physical
+    boundary identity?**  Cut equality implies that every comparison acts
+    trivially on the quotient by the present law's kernel, but a currently
+    null history direction may become visible after a future continuation.
+    Can one define the null ideal using all licensed preparations,
+    continuations, and readouts; prove it is a congruence under gluing and
+    refinement; and show that the law's own durable records reproduce the same
+    quotient?  Only that self-consistent construction would earn the
+    record-generated fixed-point label.

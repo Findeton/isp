@@ -22,12 +22,16 @@ theory-selection result.
   `BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED`.
   The original hostile panel, independent delta panel, bounded repair, and
   post-commit/off-tree verification are complete.
-- `JCV`: **GREEN-UNREVIEWED** at v16 ledger #24.  The verified candidate is
-  globally `JCV-STRATIFIED`; its active locus is
-  `JCV-PAIRING-SELECTED-WEIGHTS-FREE`.  Committed, independent, and true
-  off-tree/no-git checks agree at 20/20 gates and 15/15 mutants.  Its
-  three-seat independent hostile protocol is frozen at ledger #25; reports are
-  still pending.  Paper 01 remains frozen.
+- `JCV`: **ADJUDICATED — BOUNDED REPAIR PENDING** at v16 ledger #29.  Three
+  mutually isolated hostile seats return `ACCEPT-WITH-FIXES`, independently
+  reproducing every exact number with zero discrepancies.  The frozen machine
+  words remain exact, but their physical reading is narrowed: this is a local
+  declared-doctrine compatibility variety, with active flat holonomy and a
+  two-dimensional family of boundary-instrument weights.  It is not a
+  record-generated comparison/law fixed point.  Six dark mismatch sectors are
+  one-step law-null; their distinction under all future continuations is open.
+  One bounded paper/scorer repair and one terminal verifier are authorized.
+  Paper 01 remains frozen.
 - The first toy's dynamic-geometry reading is rejected: its alleged geometry
   is eliminable classical feed-forward.  Its exact CP boundary-instrument core
   survives.

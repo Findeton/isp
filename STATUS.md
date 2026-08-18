@@ -5,12 +5,12 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-17 (v16 JRH remains terminal at #16; JCV is
-GREEN-UNREVIEWED with its independent hostile protocol frozen at v16 #25).
+Updated: 2026-08-17 (v16 JRH remains terminal at #16; JCV is adjudicated at
+v16 #29 with one bounded repair and terminal verifier pending).
 
 | cycle | rungs (as adjudicated) | authority |
 |---|---|---|
-| JCV (v16 successor) — joint cross-carrier comparison/law variety | **GREEN-UNREVIEWED — JCV-STRATIFIED; ACTIVE LOCUS JCV-PAIRING-SELECTED-WEIGHTS-FREE**: 20/20 gates, 15/15 mutants, exact independent census/seals, committed and true off-tree/no-git replay byte-identical.  One active coherent holonomy class; weight variety dimension 2 with moving calibrated probability; 6 dark mismatch sectors; independent-triangle control adds 2 mixed handoffs.  Conditional on declared real calibrated comparison doctrine; no geometry/backreaction/actualization/all-n/particles/constants/Hamiltonian/QFT-GR result.  Three-seat hostile protocol frozen, reports pending | v16 #17–#25 |
+| JCV (v16 successor) — joint comparison/law compatibility variety | **ADJUDICATED — BOUNDED REPAIR PENDING**: three independent `ACCEPT-WITH-FIXES` reports reproduce every exact count, dimension, witness, seal, and classifier with zero discrepancies.  The frozen words `JCV-STRATIFIED` / active `JCV-PAIRING-SELECTED-WEIGHTS-FREE` survive only at their registered classifier scope.  Adjudicated reading: local declared-doctrine variety; active flat holonomy; real 2D boundary-instrument weights free; 6 dark mismatch sectors one-step law-null; global continuation/refinement distinction open.  `Fixed point`, carrier-derived comparison, global coherence, geometry, backreaction, and QFT/GR promotion are refused.  One bounded repair and terminal verifier authorized | v16 #17–#29 ✓adj |
 | JRH (paper-01, v16) — joint relational-history law | **TERMINAL: BOUNDARY-INSTRUMENT-CONSISTENT-BUT-FUNDAMENTAL-DYNAMICS-UNSELECTED**: original panel two `REJECT`/one `ACCEPT-WITH-FIXES`; delta panel three `ACCEPT-WITH-FIXES`; 38/38 gates, 17/17 mutants, and post-commit off-tree replay exact.  Fixed-boundary instrument, feed-forward no-go, entanglement breaking, interference placement, binary viability/first-loop separation, generator ambiguity, weak-surface nonselection, and the state-relative-decoherence/instrument-completeness gap are exact.  Common-boundary pairing, all-input instrument derivation, nonfactorizing backreaction, stable actualization, all-n extension, weights, geometry, continuum recovery, and law selection remain open | v16 #1–#16 ✓adj |
 | GW1 — metric from deformation closure | terminal negative: blocked at the kernel/deformation interface | v13 #2–#5 |
 | GW2 — regional-descent STEP-0 census | ran (code + receipts committed); see ledger for verdict | v13 LOG |

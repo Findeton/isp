@@ -542,3 +542,45 @@ sets, exact hashes, and explicit zero-discrepancy statements.
 
 No repair is authorized.  Reports will be frozen verbatim and hidden from one
 another until all three are committed.
+
+## 2026-08-17 — JCV HOSTILE PANEL ADJUDICATED: THE LOCAL VARIETY SURVIVES; THE FIXED POINT DOES NOT (v16 LEDGER #29)
+
+The three isolated hostile reports are now frozen and jointly adjudicated in
+`v16/note-jcv-adjudication.md`.  ALGEBRA, OPERATOR, and GRAVITY each return
+`ACCEPT-WITH-FIXES`; all independently reproduce every candidate hash, seal,
+orbit, sector, dimension, witness, probability, control, classifier, and
+serializer delta with **zero numerical discrepancies**.
+
+The frozen machine primary `JCV-STRATIFIED` and active-locus word
+`JCV-PAIRING-SELECTED-WEIGHTS-FREE` remain exact under their registered
+definitions.  Their physical translation is narrowed.  The unit solves a
+`LOCAL-TWO-TRIANGLE` compatibility variety inside a declared real isometric,
+nondegenerately calibrated chart doctrine.  On the full-coherent locus all
+four holonomies are flat modulo gauge, while the boundary-instrument weights
+form a real two-dimensional `S^1 x S^1` family.  The two registered witnesses
+move an outcome-resolved instrument but share one unconditioned channel; a
+separate exact panel witness shows that another active direction also moves
+the unconditioned channel.
+
+The comparison maps are declared inter-chart dictionaries, not carrier-derived
+physical identifications.  Active flatness does not require numeric reuse of
+one `W`; homogeneity removes only the two dark mixed handoffs.  An explicit
+direct-`03` extension countermodel proves that the tested graph does not
+determine its next overlap.  No record-to-comparison-to-law self-map is defined,
+so `fixed point` is withdrawn.
+
+The adjudicator adds one exact corollary.  From `WQ=W`, with `N=ker W`, the
+comparison preserves `N` and induces the identity on `H/N`.  Every surviving
+dark mismatch is therefore one-step law-null.  Its physical distinction is
+open until equivalence is tested against all licensed future continuations.
+The refined missing object is a complete continuation-stable operational null
+ideal, a quotient/congruence under gluing and refinement, and a law whose own
+durable records reproduce that quotient.  Strong positivity can represent
+such a quotient but does not select its weights or actualize one history.
+
+One bounded forward repair is ordered: remove fixed-point and carrier-rewrite
+overclaims; add the product-of-circles proof, operator/unravelling distinction,
+sector-level dark definition, local-extension countermodel, law-null quotient
+theorem, and exact failure chronology; regenerate and reseal from the renderer;
+then run one full worktree and true off-tree/no-git terminal verifier.  No new
+physics unit is authorized before that closure.
