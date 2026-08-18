@@ -195,6 +195,10 @@ It coerces both `GQ` components through `Fraction`, distinguishes the fixture's
 historical core anchor from the repaired runtime core, adds an explicit runtime
 Gaussian-exactness gate, and adds a twenty-seventh direct scalar-leak mutant.
 The physical fixture and the #46 candidate remain unchanged at this stage.
+The official repaired invocation at #49 passes 37/37 and is committed before
+replay or mutants. Its four findings, measurement object, twelve claims,
+consequence/scope rows, and Paper 4 bytes are identical to #46; only repaired
+provenance, the runtime exactness row, and the 27-mutant contract differ.
 
 ## Successor register
 

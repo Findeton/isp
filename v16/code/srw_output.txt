@@ -1,13 +1,13 @@
 SRW PHYSICAL EXACT INVESTIGATION
 FINDINGS ['SRW-MAP-ONLY-WELD-REFUTED', 'SRW-DICTIONARY-CURRENT-BLIND-BUT-FUTURE-PHYSICAL', 'SRW-BUNDLE-WELD-CONSTRUCTED-BUT-CATALOGUE-AND-COUPLINGS-UNSELECTED', 'SRW-RECIPROCAL-WELD-CONSTRUCTED-BUT-HISTORY-WEIGHTS-FREE']
-GATES 36/36 PASS
+GATES 37/37 PASS
 LEGACY identities=6
 DICTIONARY candidates=12 support=2 current_signatures=1 graph_future=['16/25', '9/25']
 SUPPORT allowed=3 endpoint=2 spans=2
 FIBERS dimensions=[[2, 3], [4, 6], [3, 4], [2, 2]] legacy_exact=1
 ANGLES pairs=25 screens=9 reciprocal=5 full_dim=3 reduced_dim=2
 PHASE connections=64 orbits=4 sizes=[16, 16, 16, 16] screens={'1': '1', 'i': '1/2', '-1': '0', '-i': '1/2'}
-[PASS] SRW-ANCHORS :: fixture=e40650f04c60635e68fd91938dbba201afec6e426c2e1cfaa0b4f4d8dcefd2e3 core=783f71589b2c1d9cee3b20ccf864ae372b480affcf6df4a4181befd5b55f0137 pin=8f91610f93866c9edcc13c4e9add5878f0fa4806d96e4b88024711b7db8b6299
+[PASS] SRW-ANCHORS :: fixture=e40650f04c60635e68fd91938dbba201afec6e426c2e1cfaa0b4f4d8dcefd2e3 core=dd902c37375f87185f693f8b1e4b22ba3ddeaf9de5641e5d7d951cbba1d3c585 pin=8f91610f93866c9edcc13c4e9add5878f0fa4806d96e4b88024711b7db8b6299
 [PASS] SRW-FIXTURE-AND-VOCABULARY :: forbidden_keys=[] vocabulary_count=8
 [PASS] SRW-LEGACY-IDENTITIES :: checks=6/6 screens=[['49/625', '576/625'], ['0', '1']]
 [PASS] SRW-REFERENT-TYPES :: source_internal=2 target_internal=3 ports=1
@@ -35,6 +35,7 @@ PHASE connections=64 orbits=4 sizes=[16, 16, 16, 16] screens={'1': '1', 'i': '1/
 [PASS] SRW-PHASE-ORBITS :: connections=64 orbits=4 sizes=(16, 16, 16, 16)
 [PASS] SRW-PHASE-GAUGE :: before=-i after=-i
 [PASS] SRW-HOLONOMY-SCREEN :: screens={'1': '1', 'i': '1/2', '-1': '0', '-i': '1/2'}
+[PASS] SRW-RUNTIME-GAUSSIAN-EXACT :: values=213 exact=True
 [PASS] SRW-RUNTIME-READ-SET :: reads=['v16/code/ppr_fixture.json', 'v16/code/ppr_receipt.json', 'v16/code/srw_core.py', 'v16/code/srw_fixture.json', 'v16/code/srw_score.py', 'v16/note-srw-pin.md']
 [PASS] SRW-EXACT-ARITHMETIC :: float_literals=0
 [PASS] SRW-OUTCOME-COMPARATOR :: builder=(2, 3, 5, 6) comparator=(2, 3, 5, 6)
@@ -42,5 +43,5 @@ PHASE connections=64 orbits=4 sizes=[16, 16, 16, 16] screens={'1': '1', 'i': '1/
 [PASS] SRW-PAPER-BINDINGS :: claims=12 occurrences={'C1': 1, 'C2': 1, 'C3': 1, 'C4': 1, 'C5': 1, 'C6': 1, 'C7': 1, 'C8': 1, 'C9': 1, 'C10': 1, 'C11': 1, 'C12': 1}
 [PASS] SRW-SCOPE-WALLS :: walls=3/3
 [PASS] SRW-PREWRITE-INTEGRITY :: findings=4 paper=f61dde79e5fc0e10db1e5dbe13dec25dceaff9842d5e0c5c06ba2ae90eb4bcae
-[PASS] SRW-TRANSCRIPT-RECONCILIATION :: rows=35
+[PASS] SRW-TRANSCRIPT-RECONCILIATION :: rows=36
 SEALS sealed=9 unsealed=['seal_manifest']

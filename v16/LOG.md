@@ -1097,3 +1097,26 @@ Both repaired sources compile and contain zero float literals. No repaired
 scorer invocation, result regeneration, replay, or mutant has occurred. No
 fixture equation, scientific gate, numeric comparator, result word, or paper
 claim was changed.
+
+## 2026-08-17 — SRW REPAIRED CANDIDATE GENERATED AND COMMITTED AS-IS (v16 LEDGER #49)
+
+The first official invocation of the precommitted #48 repaired scorer exits
+zero at 37/37 gates. Before any replay or mutant execution, the regenerated
+artifacts are:
+
+| artifact | SHA-256 |
+|---|---|
+| `v16/code/srw_output.txt` | `e52c5573c0c784a83419de368286152302bbbfe02cf0c12fb132bd568f0c8695` |
+| `v16/code/srw_receipt.json` | `c9b036c9d6382bfd8f1402fe5eee39d3a362842b82b1690e28e5a0130a4d5675` |
+| `v16/paper-04-support-rewrite-weld.md` | `f61dde79e5fc0e10db1e5dbe13dec25dceaff9842d5e0c5c06ba2ae90eb4bcae` |
+
+The four primary findings, full measurement object, twelve generated claims,
+consequences, limitations, and paper are identical to candidate #46. The paper
+is byte-identical. Only the repaired-core provenance, one runtime exactness
+gate (`213` inspected Gaussian values, all `Fraction`-typed), and the expanded
+27-mutant contract differ. The public generic measurements and gates also
+reproduce identically after the repair.
+
+This is a repaired **GREEN-UNREVIEWED** candidate, not a terminal result.
+Clean replay, selftest, all 27 mutants, true off-tree/no-git execution,
+seal/paper audit, and hostile review remain.
