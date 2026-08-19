@@ -4211,3 +4211,31 @@ receipt, verification note, candidate paper, outcome rung, or ontology
 promotion exists.  The next authorized work is independent post-freeze
 black-box/source-under-audit reconstruction.  Stage B remains conditional on
 those frozen-byte checks and must use one mutually blind nonce without reroll.
+
+## 2026-08-19 — PAPER 13 STAGE-A PHYSICS/SUPPORT AUDIT REJECTS SOURCE (v16 LEDGER #193)
+
+The first independent post-freeze audit freezes verbatim as
+`v16/review-paper13-stageA-source-physics.md`, SHA-256
+`20a054cd6542fd02f556b461408f48d75ead0c69ec06abd76c9eed3ce3c3d352`.
+It authenticates commit #192 and the source, note, and pin hashes, reproduces
+the canonical self-test, then stops at its first new semantic survivor.
+
+The off-tree `TAUTOLOGICAL-CHILD` source has SHA-256
+`a6cd95e0eb5c917fa3ad2f93441a2f56d9ec69e4f3801ec551dacdfdef4c5668`.
+It changes only `context_extend`: a satisfying parent cell is replaced by its
+child-labelled cell instead of being retained alongside it.  Thus a base with
+cells `(),(A)` becomes `(),(A,N)`, where `A=N` extensionally and the atom/cell
+count remains two.  This violates the pinned horizontal split.
+
+Nevertheless the mutant exits zero, passes 36/36 checks, kills 81/81
+registered attacks, and still prints
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`.  Its deterministic
+stdout SHA-256 is
+`c5dbfe91701e5dd6f5e73a63c818448fa28d01c386f4a2ecc2dfdb0f5b8c28bc`.
+The emitted rows disclose cells `2 -> 2` and roles `1 -> 2`, but call the
+change physical because `configuration_nonisomorphic` tests only inequality
+of the pair `(role_count,cell_count)`.  The report therefore rejects #192 for
+Stage B, with the first directly affected rung
+`P13-SUPPORT-CHANGE-UNPROVEN` and a possible earlier point-free referent
+concern.  No fresh case or official run exists; the #192 source is not edited.
+Independent replay and adjudication are the only authorized next work.

@@ -921,6 +921,17 @@ post-freeze source-under-audit reconstruction; Stage B may generate its single
 nonce-bound fresh family and run the official construction only if those
 frozen-byte checks remain green.
 
+The first independent post-freeze source audit freezes at #193 and rejects
+the #192 evaluator for Stage B.  Its changed-source `TAUTOLOGICAL-CHILD`
+control replaces each satisfying parent cell by its child-labelled cell
+instead of retaining both halves of the required split.  The Boolean-cell
+count therefore stays `2 -> 2`, yet all 36 checks and all 81 registered attacks
+remain green and the capped primary is still awarded because the support gate
+accepts the raw role-count change `1 -> 2`.  Stage B is prohibited.  The
+committed #192 bytes remain immutable while independent replay and joint
+adjudication determine the earliest rung and whether a separately pinned
+forward repair is authorized.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
