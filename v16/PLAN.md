@@ -950,6 +950,18 @@ separate result-neutral forward repair pin requiring an exact split-fiber and
 cell-count certificate plus the frozen tautological-child attack.  No source
 edit or later unit is authorized at #195 itself.
 
+The result-neutral forward repair pin freezes at #196 after two independent
+ACCEPT audits.  It replaces the insufficient role/count discriminator with an
+exhaustive split-fiber object bound to the actual law/source/Arrow/occurrence/
+port/bit/target branch.  It distinguishes CREATE, MERGE, and UNCHANGED rows;
+requires exact target exhaustiveness, proper child fibers, inverse linkage, and
+classifier/lineage consumption; and freezes eleven attacks including the
+adjudicated source mutation, scalar padding, certificate swap, ambient target,
+and contextual Boolean aliases.  The finite census contains 72 nonzero ambient
+representatives but exactly 42 physical contextual classes.  Only the bounded
+repair on the five whitelisted paths is now authorized.  Stage B and every
+scientific or metric-later unit remain closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

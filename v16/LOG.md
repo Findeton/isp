@@ -4289,3 +4289,35 @@ freezes exact split-fiber/properness/cell-count gates and the survivor as a
 mandatory changed-source kill.  No source edit, fresh generation, official
 run, paper, review round, metric, curvature, gravity, or GR work is authorized
 by this adjudication.
+
+## 2026-08-19 — PAPER 13 SUPPORT-SPLIT FORWARD REPAIR PIN FROZEN (v16 LEDGER #196)
+
+`v16/note-paper13-stageA-support-split-forward-repair-pin.md`, SHA-256
+`8ae54ada2a97f347a18b90adcab86dcb2e7c18c04c748cc5e0779b8251449a36`,
+freezes the bounded repair before any source edit.  Two independent read-only
+audits ACCEPT the final bytes after correcting target exhaustiveness,
+branch-bound certificate identity, contextual Boolean counts, live historical
+anchors, and freeze-note chronology.
+
+The new native object is an exhaustive split-fiber certificate.  Every target
+cell must lie in exactly one source-cell fiber; a nonsatisfying cell has child
+bits `{0}`, a satisfying cell has `{0,1}`, and no ambient role/cell is allowed.
+The certificate binds the actual law, source boundary/configuration, complete
+Arrow and occurrence, selected port/bit/sector, actual contextual parent and
+child, operation kind, and literal target.  CREATE, MERGE, and UNCHANGED are
+typed separately.  Role count, inverse merge, total cell count, labels, or a
+supplied boolean cannot substitute.
+
+The exact finite census has 72 nonzero ambient truth-table representatives but
+42 contextual quotient classes with counts `3,15,7,7,7,3`.  Equivalent aliases
+such as `B` and `A and B` on a context lacking the `B`-only cell must share the
+physical parent/Arrow/source key, target, certificate, operator, endpoint law,
+and lineage; raw formula bytes remain provenance only.  Eleven new attacks
+cover the original tautological child, coextensive object, recovery-only,
+scalar padding, role-count source mutation, transport sever, supplied boolean,
+certificate/port swap, old-child reuse, ambient padding, and contextual alias.
+
+This pin authorizes only the forward source repair and new v2 freeze note on
+the five explicit construction paths.  The #192 source, old note, reports, and
+adjudication remain immutable anchors.  No fresh case, official run, paper,
+scientific rung, metric, curvature, gravity, or GR work is authorized.
