@@ -221,8 +221,8 @@ $$
 $$
 
 is also prefix-free and complete, because its dyadic weights sum to one.  It
-is absent from the displayed uniform-depth boundary factory.  This is the
-smallest explicit reminder that an adaptive decision tree does not in general
+is absent from the displayed uniform-depth boundary factory.  This is an
+explicit reminder that an adaptive decision tree does not in general
 have a uniform-depth frontier.
 
 The full depth-three binary tree has `15` vertices and `14` edges.  Three
@@ -233,10 +233,12 @@ open systems whose apices compose by pushout [2].
 
 The positive graph result has a strict scope.  A graph pushout does not itself
 supply a map on valuations, an instrument, or a functor from fillings to
-processes.  In the displayed assignment, only the one-port boundary has an
-active empty-process identity.  The two-, four-, and eight-port boundaries do
-not.  There is also no total filling-to-process assignment, tensor factory, or
-nontrivial vertical-horizontal naturality square.
+processes.  Only B0 carries an active identity-labelled empty graph
+assignment.  Because no filling-to-process map is assigned, this row is not
+yet an earned physical process identity.  No such assignment exists at the
+two-, four-, or eight-port boundaries.  There is also no total
+filling-to-process assignment, tensor factory, or nontrivial
+vertical-horizontal naturality square.
 
 Consequently the tree algebra and graph-cospan algebra remain separate finite
 controls.  Calling their conjunction a process would repeat the error of
@@ -318,8 +320,14 @@ typing failure.
    - active identities at all declared process boundaries;
    - a filling-to-process assignment;
    - tensor composition;
-   - a nontrivial naturality square;
-   - a selector deriving a global law from the overlapping regional data.
+   - a nontrivial naturality square.
+
+Separately, the overlapping regional data contain no one-law provenance or
+law-selection rule selecting a complete global law.  This is not a
+categorical process axiom: under ONE-GAMMA the complete law would be primitive
+and the regional tables would be its derived shadows.  Reclassifying that debt
+does not move the primary, because the process interfaces listed above are
+independently absent.
 
 The strict result is therefore:
 
@@ -387,7 +395,7 @@ factorization need not exist [1].  That precedent does not provide the
 point-free relational catalogue, changing support, record criterion,
 backreaction, or numerical law required here.
 
-## 9. Ontology ledger
+## 9. Ontology table
 
 | Object or claim | Status here | What would be needed for promotion |
 |---|---|---|
