@@ -701,7 +701,9 @@ integrity, independent baseline arithmetic, and the provisional
 active-law provenance battery is not semantically closed. The attempt is
 instrumentation-invalid and cannot support candidate prose or panel review.
 The next event is a result-preserving repair pin followed by a separately
-frozen scorer revision and new, non-overwriting v2 artifacts. No fixture,
+frozen scorer revision and new, non-overwriting v2 artifacts. The repair pin
+is frozen at v16 #164; implementation of `v16/code/apr_score.py` against that
+contract is now the sole authorized construction. No fixture,
 physical law, outcome ladder, or primary-precedence edit is authorized.
 
 ## Successor register

@@ -3660,3 +3660,23 @@ graph-isomorphism canonical. The finite instrument and graph-cospan controls
 are neighboring checks, not one process assignment. The next authorized event
 is a separately frozen bounded repair pin; the fixtures, scientific law,
 outcome ladder, primary precedence, and first-run bytes may not move.
+
+## 2026-08-18 — APR BOUNDED SCORER REPAIR PIN FROZEN (v16 LEDGER #164)
+
+`v16/note-apr-scorer-repair-pin.md` freezes the only authorized response to
+attempt 1's instrumentation audit. Its SHA-256 is
+`14e08b0d2b6ee53fa290849d111579d45ccbe037248cbd086139e600c2668ffc`.
+The repair may modify only `v16/code/apr_score.py`; it may not edit the APR
+pins, core, fixtures, protocols, first-run artifacts, outcome ladder, or any
+physical law/preparation/calibration datum.
+
+The pin requires real changed objects and recomputed predicates for reachable
+mutants, explicit `UNAVAILABLE`/`SCOPE-CONTROL` dispositions when the frozen
+baseline does not exist, semantic record schedules, a reachability-derived
+active-law root, validated provenance paths, actual region-relation erasure,
+and boundary/resource-colored graph-isomorphism canonicalization for E-37.
+It also freezes the distinction between neighboring instrument and graph-
+cospan controls and a true process assignment. The repaired scorer must freeze
+before truth and may publish only to new `apr_output_v2.txt` and
+`apr_receipt_v2.json` paths. No candidate or panel is authorized before an
+independent v2 audit closes.
