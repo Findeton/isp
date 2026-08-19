@@ -691,6 +691,13 @@ undeclared intrinsic-replacement constructor, and empty-tree identity is
 frozen only at B0 rather than every boundary. The scorer must refuse or report
 these absences; it may not repair them by interpretation.
 
+Construction stage 4 is frozen at v16 #162. The result-neutral scorer binds
+all immutable inputs and both forward corrections, passes nine generic suites
+and a 56-ID transformation registry audit, and has not evaluated the fixture.
+The next event is the single official transactional run to the frozen APR
+output/receipt paths; candidate prose follows only after those artifacts and
+their independent integrity replay freeze.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

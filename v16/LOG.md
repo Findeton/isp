@@ -3605,3 +3605,28 @@ at B0, so identity at every boundary and total forest-functor identity remain
 unconstructed. These are typing and construction ceilings, not result moves.
 The addendum's SHA-256 is
 `9b1d7d75526c9b97befd6f016bfc5242162e1e48b259984852b4924950f9acaa`.
+
+## 2026-08-18 — APR SCORER FROZEN BEFORE FIRST EVALUATION (v16 LEDGER #162)
+
+`v16/code/apr_score.py` and `v16/note-apr-scorer-freeze.md` freeze before any
+official APR score, transcript, receipt, paper, or outcome exists. The scorer
+SHA-256 is
+`a145bf619781705b439defaf62177896a069c34a81b90b22e29522cf77528444`.
+The freeze note SHA-256 is
+`1bdb29a2b713d2ca557380c4fa5c7fbd64bd35fbaefe9577c90859e36a818431`.
+
+Nine generic selftest suites pass with
+`scientific_fixture_evaluated:false`; all 56 transformation IDs are reachable;
+all eight immutable bytes and the canonical fixture payload authenticate; and
+the generic test is identical in a true off-tree/no-`.git` copy. CLI refusal,
+paired publication, overwrite preservation, and injected post-first-publish
+rollback controls pass. Root source audit finds no floats, random scientific
+path, Git/network/CWD dependence, expected-answer table, or fixture-side
+measurement call.
+
+The scorer implements both binding addenda and reports missing constructions
+instead of coercing them to passes. Registry coverage is not mutant success;
+the transformations first execute during the official score. The sole next
+event is transactional publication to `v16/apr_output.txt` and
+`v16/apr_receipt.json`, followed by clean/off-tree/integrity replay. No APR
+scientific result is frozen here.
