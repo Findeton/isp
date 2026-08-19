@@ -262,26 +262,28 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     two temporal cuts, and separately build changing-factorization locality.
     Actualization, geometry, growth, QFT, GR, Hamiltonian structure, and
     empirical prediction remain open.
-33. **GREEN-UNREVIEWED / GEOMETRY UNENTERED — Can the fundamental law be
-    point-free and unsliced?** Paper 11 refuses both a discrete lattice and a continuum point
-    manifold as default ontology. The candidate actual world is one compatible
-    web of durable relational facts whose bounded parts are regions; graphs,
-    meshes, cuts, paths, Hilbert spaces, and Hamiltonians are representations.
-    The candidate law assigns a strongly positive regional process functional
-    to alternative relational fillings with common recorded boundary data,
-    requires agreement under arbitrary descriptive refinement and regional
-    gluing, and recovers ordinary probabilities only at continuation-stable
-    record partitions with all-input complete instruments. Representational
-    subdivision and ontic extension are separate types. Its algebraic descent,
-    interference obstruction, all-input division instrument, finite
-    append-only record class, and structural nonselection theorem pass the
-    candidate audit; the exact score is 24/24 with 15/15 mutant refusals and a
-    byte-identical true off-tree replay. The hostile protocol is frozen and
-    explicitly tests whether the character counterfamily also preserves total
-    normalization and whether the history functional, division instrument,
-    and recovery class are one law rather than neighboring fixtures. This earns a regional quantum-law type,
-    not a geometry or selected dynamics. The open decider is
-    whether a nontrivial law can make causal/geometric relations both outputs
-    and inputs while preserving interference and dynamic locality, without a
-    hidden preferred mesh or slicing. Finite computations may authenticate
-    identities or counterexamples but cannot decide the ontology.
+33. **PANEL-ADJUDICATED BLOCK / GEOMETRY UNENTERED — Can the fundamental law
+    be point-free and unsliced?** Paper 11 closes at
+    `RHL-BLOCKED-AT-POINT-FREE-REFERENT`, with conditional ceiling
+    `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. The ontology proposal remains
+    coherent: one partial compatible web of durable relational record facts,
+    no point set/lattice/mesh/global slice/tick, unrecorded alternatives as law
+    arguments, representational Hilbert/history/kernel/Hamiltonian objects, and
+    actualization as a postulate. The paper did not formally construct the
+    causal mereology required to refer to those facts. Parthood, overlap,
+    causal precedence, physical boundaries, and the distinction between
+    descriptive refinement and ontic extension were named rather than joined
+    in one type system. Two exact compatible comparison doctrines on identical
+    local spaces move a marked cross term `1→0`, so the colimit theorem gives
+    representative independence only after prediction-carrying comparison
+    maps are supplied. Conditional algebraic descent, the interference
+    obstruction to exclusive intermediate probabilities, all-input division
+    completeness, finite conditional recovery, fixed-factor no-signalling,
+    and dynamic-subsystem typing survive. A panel-supplied normalized common
+    law shows stable divisions exist and the structural surface remains
+    nonselective. The microscopic law type, comparison selector, dynamic
+    locality, infinite extension, geometry, GR/QFT, and predictions remain
+    open. A successor must construct an atomless causal mereology, type
+    refinement versus extension, derive/price/quotient comparison maps, and
+    join regional law, division, recovery, and changing-boundary locality in
+    one object; no bounded Paper 11 repair can do that.

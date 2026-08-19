@@ -18,36 +18,29 @@ theory-selection result.
 
 ## Live state
 
-- `RHL` / Paper 11: **GREEN-UNREVIEWED; THREE-SEAT HOSTILE PANEL RUNNING AT
-  `RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`** through v16
-  ledger #146. The user-authorized unit removes points, lattices, graph meshes,
-  and ticks from the proposed ontology. Its candidate reality is one actual
-  point-free relational record history; its candidate law is assigned to
-  whole bounded relational regions; decoherence/Hilbert machinery is
-  representational; and ordinary kernels/instruments appear only at stable
-  record divisions. Physical extension is typed separately from descriptive
-  refinement. Finite graphs and matrices may serve only as regulator receipts,
-  never as evidence that spacetime is discrete. The analytical paper proves
-  algebraic arbitrary-refinement descent, an interference obstruction to
-  microscopic positive kernels, all-input division completeness, a finite
-  append-only recovery class, structural law nonselection, and the need for a
-  law-selected subsystem transport after a boundary change. The generic core
-  passes ten exact public gates. The regulator
-  adds nonisomorphic subdivision/cut controls, interference, record erasure and
-  redundancy, structural law nonselection, and changed-boundary ambiguity;
-  its finite matrices remain algebra receipts only. The official scorer passes
-  24/24; two exact replays, 15/15 mutant refusals, and a true off-tree/no-`.git`
-  replay pass. The three-lens protocol now targets point-free refinement,
-  histories/instruments/normalization, and ontology/locality/physical scope.
-  A known mandatory attack is whether the prediction-moving character family
-  can also satisfy total normalization; the delivered receipt does not show
-  that. Geometry, the numerical dynamics, infinite extension, dynamic
-  locality, GR, QFT, and empirical physics remain unentered. Three
-  non-load-bearing title/URL citation mismatches are disclosed for hostile
-  review rather than silently changing the immutable candidate. No reviewer is
-  assigned by the protocol freeze. The user has now authorized three mutually
-  blind point-free/refinement, quantum-history/instrument, and ontology/
-  locality/physics seats; no report or adjudication exists yet.
+- `RHL` / Paper 11: **PANEL-ADJUDICATED REJECT AT
+  `RHL-BLOCKED-AT-POINT-FREE-REFERENT`** through v16 ledger #152, with the
+  conditional ceiling `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. The point-free,
+  no-tick ontology remains coherent as a postulate: one partial compatible web
+  of durable relational record facts may be actual; unrecorded alternatives
+  are law arguments; actualization remains a postulate; Hilbert/history/kernel/
+  Hamiltonian objects are representations. The paper did not construct the
+  causal mereology on which its regional law was claimed to live. Parthood,
+  overlap, causal precedence, physical boundary assignment, and a formal
+  distinction between descriptive refinement and ontic extension were named,
+  not supplied. More decisively, two exact compatible comparison doctrines on
+  the same local spaces move a marked cross term `1 -> 0`, so regulator
+  independence is conditional on prediction-carrying comparison maps. The
+  algebraic colimit/GNS theorem, interference obstruction to exclusive route
+  probabilities, all-input division completeness, conditional finite record
+  recovery, fixed-factor CPTP no-signalling, and subsystem-referent lemma
+  survive at scoped grains. A reviewer-supplied normalized common-law family
+  establishes stable-division existence and nonselection, while the frozen
+  universal character-normalization claim is withdrawn. Microscopic law type
+  remains `METHOD-INCONCLUSIVE`; dynamic locality, geometry, infinite
+  extension, GR, QFT, particles, and predictions remain unentered. No bounded
+  repair is authorized; new regional/comparison/joint-law data require a new
+  candidate and panel.
 - `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
   #141. Two blind seats reject and one accepts with fixes; all independently

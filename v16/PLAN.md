@@ -515,9 +515,10 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **GREEN-UNREVIEWED; THREE-SEAT HOSTILE PANEL RUNNING AT
-`RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`
-(v16 #142--#146)**.
+Status: **PANEL-ADJUDICATED REJECT AT
+`RHL-BLOCKED-AT-POINT-FREE-REFERENT` (v16 #152)**, with the conditional
+ceiling `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY` if the undeveloped regional
+category is treated as primitive.
 
 RHL asks whether the candidate joint quantum--geometric law can be stated on
 whole bounded relational regions without making a point set, lattice, graph
@@ -544,38 +545,38 @@ geometry generated and used by one law. No amplitudes, couplings, vacuum,
 species, scale, manifold, GR, QFT, Hamiltonian, or empirical deviation is
 preselected.
 
-The generic `Q(i)` core is now frozen with ten public algebra gates and no
-physical regulator or verdict data. It authenticates Gram positivity,
-refinement pullback, coarse graining, interference, composition, and all-input
-completeness; its `diag(1,4)` control separates one-state normalization from an
-instrument identity. These finite matrices are receipts only. The next stage
-is a result-neutral family of incompatible descriptions and record controls;
-the arbitrary-region claims still require proofs. The separately frozen
-regulator now binds two nonisomorphic presentations, a descent tamper, the
-`49/625`/`337/625` interference anchor, erasure/redundancy flags, equally
-compositional but prediction-moving character laws, and the fixed- versus
-changing-boundary locality distinction. None is a spacetime discretization.
-The frozen scorer binds fifteen upstream/document mutants and refuses to treat
-finite agreement as proof of the arbitrary-region theorems. The self-contained
-candidate now proves algebraic presentation descent, the no-intermediate-
-kernel theorem, division-instrument completeness, a finite append-only record
-class, structural character-law nonselection, and the dynamic-subsystem
-referent proposition. The official score passes 24/24. Two clean replays,
-15/15 mutant refusals with no artifacts, missing-anchor/no-overwrite controls,
-and a true alien-CWD tree with no `.git` all pass. The verifier separately
-audits every proof and discloses three non-load-bearing title/URL citation
-mismatches without altering the one-run candidate. Dynamic locality, geometry,
-law selection, infinite extension, GR/QFT, and empirical physics remain open.
-The hostile protocol is now frozen with three mutually blind lenses. It makes
-the no-point/no-tick ontology binding and attacks arbitrary refinement,
-comparison-map declaration, infinite extension, the history-to-instrument-to-
-recovery weld, dynamic locality, and every geometry/GR/QFT promotion. Its
-sharpest pre-dispatch target is normalization: the exact character family
-glues and moves one weight but does not supply a complete normalized outcome
-family for every character. No reviewer is assigned and no review or
-adjudication is authorized by the protocol freeze alone. The user has now
-authorized all three mutually blind seats under v16 ledger #148; adjudication
-must wait for three separately frozen reports.
+The three-seat panel preserves the no-point/no-tick objective but rejects the
+claim that its first physical rung was constructed. The candidate's symmetric
+monoidal category does not define parthood, overlap, causal precedence,
+physical boundary assignment, or a two-arrow type system separating
+representational refinement from ontic extension. An exact span
+`C^2 -> C^3 <- C^2` then supplies the decisive second block: two unit-preserving
+isometric comparison systems pass all local compatibility tests while moving
+a marked cross term `1 -> 0`, coherent norm `4 -> 2`, and common-image
+dimension `2 -> 1`. Algebraic presentation descent is therefore correct only
+after a prediction-carrying comparison doctrine is supplied.
+
+The colimit/GNS theorem survives for a fixed directed comparison system,
+including noninjective-null and cofinal cases. The interference obstruction to
+exclusive intermediate probabilities, all-input instrument completeness,
+finite conditional append-only recovery, fixed-factor CPTP no-signalling, and
+the changing-subsystem referent lemma also survive. The frozen character
+counterfamily does not preserve total-event normalization generally and needs
+boundary-naturality for covariance. A quantum reviewer independently provides
+a normalized common-law four-row family, establishing stable-division
+existence and structural law nonselection as panel evidence rather than as a
+retroactive candidate pass.
+
+The ontology is now explicit and conditional: one partial compatible web of
+durable relational record facts may be actual; unrecorded alternatives are
+arguments of the law rather than additional actual worlds; actualization is a
+postulate; and Hilbert, history-functional, kernel, graph, and Hamiltonian
+objects are representations. No microscopic law type is selected. Dynamic
+locality, comparison selection, infinite extension, geometry, GR, QFT,
+particles, and predictions remain open. Repair requires a new causal
+mereology, typed refinement/extension structure, derive-price-quotient ruling
+for comparison maps, and one joint regional/division/recovery/locality law.
+Those are new candidate data, so no bounded Paper 11 repair is authorized.
 
 ## Successor register
 

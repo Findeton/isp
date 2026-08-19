@@ -3285,3 +3285,45 @@ All three hostile reports are now separately frozen. Joint adjudication is
 authorized by the user's review order and must use the strictest supported
 argument rather than the numerical grade split. No repair or terminal verdict
 is recorded by this event alone.
+
+## 2026-08-18 — RHL PAPER 11 PANEL ADJUDICATED (v16 LEDGER #152)
+
+`v16/note-rhl-adjudication.md` jointly adjudicates the three mutually blind
+reports by the earliest decisive rung rather than their one-REJECT/two-
+ACCEPT-WITH-FIXES grade split. The delivered positive primary is withdrawn.
+The registered verdict is
+`RHL-BLOCKED-AT-POINT-FREE-REFERENT`, with the conditional ceiling
+`RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY` if the undeveloped `Reg` category is
+accepted as primitive.
+
+The no-point/no-tick ontology remains coherent but postulated: one partial
+compatible web of durable relational record facts may be actual; unrecorded
+alternatives are arguments of the law, not additional actual worlds; and
+actualization remains a postulate. What failed is the claim that the paper had
+constructed that world's regional causal mereology. Parthood, overlap, causal
+precedence, physical boundary assignment, and the two-arrow distinction
+between descriptive refinement and ontic extension were named rather than
+formally supplied.
+
+The strict counterexample keeps the same local spaces and positive forms while
+two unit-preserving isometric comparison systems move a marked cross term
+`1 -> 0`, a coherent norm `4 -> 2`, and the common-image dimension `2 -> 1`.
+Algebraic descent is therefore exact only after a comparison doctrine is
+declared. The doctrine must be derived, priced as law data, or proved null;
+Paper 11 does none of these.
+
+The adjudication preserves the algebraic colimit/GNS theorem at that
+conditional scope, the interference obstruction to exclusive intermediate
+probabilities, all-input division completeness, finite conditional recovery,
+fixed-factor CPTP no-signalling, and the dynamic-subsystem referent lemma. It
+adopts the quantum seat's exact normalized common-law two-port family as new
+panel evidence for stable-division existence and structural nonselection. It
+rejects the frozen Theorem 5's universal normalization/covariance wording and
+leaves the microscopic law type `METHOD-INCONCLUSIVE`.
+
+Geometry, changing-factorization locality, infinite extension, GR, QFT,
+particles, and empirical prediction remain unentered. Citation, generator, and
+transactional-write corrections are bounded individually, but cannot repair
+the failed physical referent and comparison law. No bounded candidate repair
+is authorized; a successor would require new causal-mereological and joint-law
+data plus a new panel. The unrelated v15 SCOUT-T files remain untouched.
