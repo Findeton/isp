@@ -3216,3 +3216,38 @@ remain unchanged. The report's ordinary SHA-256 is
 
 This event records one hostile seat only. It authorizes no adjudication,
 repair, terminal verdict, or successor construction.
+
+## 2026-08-18 — RHL PAPER 11 QUANTUM SEAT FROZEN (v16 LEDGER #150)
+
+`v16/review-rhl-quantum.md` freezes the mutually blind quantum-histories,
+instrument, and normalization seat against the same immutable candidate and
+protocol. The report grade is **ACCEPT-WITH-FIXES**. Its highest supported rung
+is `RHL-STABLE-DIVISION-SHADOW-CONSTRUCTED`; it does not promote the regional
+or geometric primary.
+
+The Gram/GNS construction and the no-exclusive-intermediate-probability and
+all-input-instrument theorems survive. Append-only recovery survives only for
+the stated factorized/conditional-expectation future class. The character
+twist preserves positivity, gluing, and refinement, but not generally the
+normalization of the total event, and covariance additionally requires a
+boundary-natural character assignment. Thus the frozen Theorem 5 is too broad.
+
+The reviewer independently supplies a normalized exact two-port family in one
+typed law. Its four character rows give probabilities `(1,0)`, `(1/2,1/2)`,
+`(0,1)`, and `(1/2,1/2)` while preserving complete instruments, a common
+decoherence functional, an append isometry, a record algebra, and recovery.
+This preserves existential structural nonselection and the stable-division
+shadow, but it is new review evidence rather than a result of the frozen
+candidate fixture. The microscopic law-type verdict is therefore
+`METHOD-INCONCLUSIVE`: the interference theorem excludes ordinary exclusive
+route probabilities, not every enriched divisible state law and not every
+alternative to a decoherence functional.
+
+All fifteen mutants refuse without artifacts; six independent changed-object
+attacks run; clean and true off-tree/no-`.git` replays reproduce all artifacts;
+and frozen candidate bytes remain unchanged. The same receipt-first partial-
+output defect is confirmed. The report's ordinary SHA-256 is
+`3cb183af4df41b6f1468fffa4cab53f457d5716c07297644121e2fbdf1331f00`.
+
+This event records the second hostile seat only. It authorizes no adjudication,
+repair, terminal verdict, or successor construction.
