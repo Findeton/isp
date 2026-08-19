@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **ONE-GAMMA PAPER/REVIEW GATE FROZEN (v16 #180); NEGATIVE PAPER 12 CANDIDATE/REVIEW AUTHORIZED; PHYSICAL GAMMA CONSTRUCTION UNAUTHORIZED**.
+Status: **NEGATIVE PAPER 12 CANDIDATE PIN FROZEN (v16 #181); EXACT BUNDLE/PAPER CONSTRUCTION AUTHORIZED; PHYSICAL GAMMA CONSTRUCTION UNAUTHORIZED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -831,6 +831,25 @@ physical `Gamma`, new fixtures, a successor scorer, geometry, locality,
 actualization, or a positive successor outcome. Any future `Gamma`-first
 construction needs a separately frozen result-neutral pin and explicit user
 authorization.
+
+The dedicated negative-candidate construction pin freezes at #181 before any
+Paper 12 bundle or candidate file exists. Because the scientific result is
+already known, the pin treats the cycle as a result-known reconstruction and
+blocks conclusion laundering: the standalone exact bundle may authenticate
+the frozen bytes but may not import the scorer, fixtures, or receipt
+conclusions. It must rebuild the prefix algebra, restriction questions,
+frontiers, graph pushouts, active identity census, contextual and atomic
+quotient controls, and the two global `ABC` completions independently before
+running the inherited outcome precedence.
+
+The pin registers fifteen upstream changed-object controls, transactional and
+off-tree publication rules, a 120-second cap, a five-file construction
+whitelist, external-only paper citations, and the paper's load-bearing
+“Indivisibility was not operationalized” section. The next authorized event is
+construction of that exact bundle and negative candidate, followed by a
+separately frozen hostile protocol. No reviewer, adjudication, Gamma
+successor, metric, curvature, or gravity construction is authorized by this
+pin.
 
 ## Successor register
 

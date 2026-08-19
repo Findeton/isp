@@ -4077,3 +4077,29 @@ certifies verifier plumbing only. No physical `Gamma`, successor experiment,
 new fixture, geometry, locality, actualization, or positive law claim is
 authorized. A future Gamma-first construction requires a separately frozen
 result-neutral pin and explicit user authorization.
+
+## 2026-08-19 — PAPER 12 NEGATIVE-CANDIDATE CONSTRUCTION PIN FROZEN (v16 LEDGER #181)
+
+`v16/note-apr-paper12-negative-candidate-pin.md`, SHA-256
+`6341a1184426f3a6be0ad619d9f02340124a76e5484bb94609462d5d765a6ebd`,
+freezes the Paper 12 reconstruction contract before any whitelisted candidate
+or bundle file exists. The cycle is explicitly result-known: it tests whether
+a self-contained scientific paper can rederive the frozen negative without
+reading scorer measurements, fixture truth, or receipt conclusions as
+evidence.
+
+The standalone exact bundle must independently build the prefix-antichain
+Boolean algebra, generic restriction questions with retained zero ports,
+uniform and adaptive record frontiers, three tagged graph-pushout controls,
+the active identity census, contextual-volume and atomic-character quotient
+controls, and both complete `ABC` laws before it runs the inherited primary
+precedence. Fifteen changed-object controls, strict transactionality, true
+off-tree replay, exact arithmetic, external-only paper citations, a
+120-second cap, and a five-file whitelist are frozen.
+
+The candidate must state load-bearingly that indivisibility was not
+operationalized and keep the accepted synthetic executable-law tests outside
+the scientific positive evidence. This pin authorizes construction of the
+negative candidate and bundle only. A hostile protocol must freeze before
+review dispatch; no physical Gamma, successor unit, metric, curvature,
+gravity, or actualization construction is authorized at this event.
