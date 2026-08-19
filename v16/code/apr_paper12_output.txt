@@ -1,0 +1,21 @@
+PAPER 12 EXACT NEGATIVE RECONSTRUCTION
+schema: apr-paper12-negative-v1
+strict primary: APR-BLOCKED-AT-BOUNDARY-GLUING
+Boolean failures: 0
+raw proper splits: 9
+volume before context: 1/2,1/2
+volume after meet context: 1/2,0
+atomic quotient image size: 2
+uniform frontier sizes: 1,2,4,8
+adaptive frontier: 0,10,110,111
+whole tree vertices/edges: 15/14
+registered exact pushouts: 3
+AB cell masses: 1/4
+BC cell masses: 1/4
+P(A=C): 1/2,1
+controls: 15/15
+atomlessness: SYNTAX-ONLY
+process: STATIC-RESPONSE-ONLY
+ontology role: STATIC-RESPONSE
+physical Gamma: UNCONSTRUCTED
+synthetic executable-law controls: EXCLUDED FROM SCIENTIFIC EVIDENCE
