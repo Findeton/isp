@@ -4406,3 +4406,27 @@ scientific coordinates also recompute exactly.  The report returns `ACCEPT`
 with no repair item.  It recommends retaining `REPAIR-GREEN-UNREVIEWED` until
 joint adjudication; no scientific or ontology rung moves at #199, and Stage B
 remains closed until that adjudication explicitly opens it.
+
+## 2026-08-19 — PAPER 13 STAGE-A REPAIR AUDITS ADJUDICATED (v16 LEDGER #200)
+
+`v16/note-paper13-stageA-repair-audit-adjudication.md`, SHA-256
+`e56b477fa1da4269c8a3110b6c1ed4a83d74ae9837a9eb669be884c521c267e6`,
+jointly adjudicates the mutually blind #198 Physics and #199 Records reports.
+Both `ACCEPT` verdicts are adopted without repair or narrowing.
+
+The reports agree on exact authentication and byte-identical replay, the
+72-ambient/42-contextual split census, literal source-cell fibers, the
+468-transition total and branch-bound certificate lineage, the real final-byte
+S1 kill, the assigned S2/S4/S6/S8/S11/freshness/ambient controls, unchanged
+`R/B/C/B2/K` and process anchors, and the permanent ontology walls.  No
+semantic survivor, stale dependency, source-identity collision, integrity
+mismatch, or metric/geometry overpromotion is found.
+
+The governing frozen disposition remains
+`REPAIR-GREEN-UNREVIEWED`, now adjudicated as accepted for Stage-B
+eligibility.  The name is not rewritten after review.  It closes only the
+support-recognition instrumentation debt and awards no scientific rung.  The
+sole next authorized event is one nonce-bound no-reroll fresh generation and
+one official Stage-B construction run from the immutable #197 source to the
+seven absent Stage-B paths.  Stage C, Paper 13 drafting/review, and every
+metric-or-later unit remain closed pending independent receipt verification.

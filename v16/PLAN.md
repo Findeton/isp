@@ -995,6 +995,17 @@ returns `ACCEPT` with no repair item.  Both required audits are now green, but
 Stage B remains closed until their joint adjudication freezes the disposition
 and explicitly authorizes the next stage.
 
+#200 jointly adjudicates #198 and #199 and adopts both `ACCEPT` reports without
+repair or narrowing.  The frozen successful disposition remains the literal
+`REPAIR-GREEN-UNREVIEWED`, now adjudicated as sufficient for Stage-B
+eligibility; the label is not retroactively renamed.  This closes only the
+instrumentation's support-recognition debt and awards no scientific rung.  The
+sole next authorized event is the original Stage B: one SHAKE256 nonce-bound,
+no-reroll fresh generation followed by one official construction run from the
+exact #197 source to the seven absent Stage-B paths.  The evaluator is
+immutable.  Stage C, Paper 13 review, and every metric-or-later unit remain
+closed until the Stage-B receipt is independently verified.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
