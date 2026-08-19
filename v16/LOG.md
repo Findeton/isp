@@ -2933,3 +2933,22 @@ distance `4/5` and optimal recovery `9/10`, making it a proto-record rather
 than a durable fact. All 39 mutants and all replay/integrity controls pass;
 candidate bytes remain unchanged. Joint adjudication remains withheld pending
 the final separately frozen report.
+
+## 2026-08-18 — RFB PAPER 10 LOCALITY/PHYSICS REVIEW FROZEN (v16 LEDGER #139)
+
+`v16/review-rfb-physics.md` freezes the mutually blind locality/physics seat
+at **ACCEPT-WITH-FIXES**. Bell/HJW steering and the general fixed-factor CPTP
+unconditioned-marginal theorem reproduce exactly, including natural affine
+realizations of the registered feedback rows. Relational or changing-factor
+no-signalling remains unphrasable because no composite relational dynamics is
+built.
+
+The global primary is too broad: only nine of the advertised 182 forcing-matrix
+cells are nondefault, eleven compound assays are run, and an unassayed false
+`FORCED` promotion escapes every gate. The outcome-reachability table is
+synthetic, the comparator is not scientifically independent, and chirality is
+visible only relative to an unconstructed hard-coded phase reference. The
+recommended narrowing is **RFB-LOCAL-FORCING-CELLS-MAPPED**. All 39 mutants,
+changed-object controls, clean replay, and true no-`.git` replay pass. Candidate
+bytes remain unchanged; the complete three-seat panel now authorizes joint
+adjudication.
