@@ -515,7 +515,7 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **PIN FROZEN; CONSTRUCTION NOT YET ENTERED (v16 #142)**.
+Status: **PIN AND RESULT-NEUTRAL EXACT CORE FROZEN (v16 #142--#143)**.
 
 RHL asks whether the candidate joint quantum--geometric law can be stated on
 whole bounded relational regions without making a point set, lattice, graph
@@ -541,6 +541,14 @@ general-boundary theory or a formal sum over geometry labels does not count as
 geometry generated and used by one law. No amplitudes, couplings, vacuum,
 species, scale, manifold, GR, QFT, Hamiltonian, or empirical deviation is
 preselected.
+
+The generic `Q(i)` core is now frozen with ten public algebra gates and no
+physical regulator or verdict data. It authenticates Gram positivity,
+refinement pullback, coarse graining, interference, composition, and all-input
+completeness; its `diag(1,4)` control separates one-state normalization from an
+instrument identity. These finite matrices are receipts only. The next stage
+is a result-neutral family of incompatible descriptions and record controls;
+the arbitrary-region claims still require proofs.
 
 ## Successor register
 

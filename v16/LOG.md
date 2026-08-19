@@ -3029,3 +3029,23 @@ QSF law-type coordinate, the v12/v14/v16 anchors, external-framework
 boundaries, E-36/E-37 controls, exact whitelisted chronology, and a future
 three-lens hostile protocol. Construction is now authorized by the user's same
 instruction but has not begun at this ledger event.
+
+## 2026-08-18 — RHL GENERIC EXACT CORE FROZEN (v16 LEDGER #143)
+
+The result-neutral RHL algebra is frozen in `v16/code/rhl_core.py`, with public
+output, receipt, and hashes recorded in `v16/note-rhl-core-freeze.md`. It
+contains no physical regulator or verdict data. Ten exact public gates cover
+Gaussian-rational arithmetic, Gram strong positivity, isometric refinement
+pullback, biadditive coarse graining, a nonzero interference defect, cut
+associativity, disjoint monoidal composition, and all-input instrument
+completeness. The `diag(1,4)` control preserves one prepared norm and fails
+operator completeness, preventing the state-relative normalization error from
+returning.
+
+Two clean generations are byte-identical to the frozen artifacts and the
+upstream-cross-term self-test fails the intended anchor visibly. The finite
+matrices are expressly theorem receipts rather than spacetime atoms; no graph,
+lattice, tick, region catalogue, physical history, geometry, target truth, or
+outcome word is present. The arbitrary-region claims remain analytical theorem
+targets. The next event is the separately frozen result-neutral
+regulator/control family.

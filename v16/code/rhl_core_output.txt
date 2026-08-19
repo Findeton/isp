@@ -1,0 +1,14 @@
+RHL GENERIC CORE — RESULT NEUTRAL
+scope: exact Q(i) theorem receipts; no points, ticks, graph fixture, or physical verdict
+PASS CORE-EXACT-FIELD :: i^2=-1 and conj(i)=-i
+PASS CORE-GRAM-STRONG-POSITIVITY :: principal_minors=['1', '1', '16/25', '1', '0', '16/25', '0']
+PASS CORE-REFINEMENT-ISOMETRY :: JdagJ=[['1', '0'], ['0', '1']]
+PASS CORE-REFINEMENT-PULLBACK :: pullback=[['1', '0'], ['0', '1']]
+PASS CORE-COARSE-BIADDITIVITY :: coarse=[['1']]
+PASS CORE-INTERFERENCE-DEFECT :: defect=1/2
+PASS CORE-CUT-ASSOCIATIVITY :: composite=[['-7/25', '24/25'], ['-24/25i', '-7/25i']]
+PASS CORE-DISJOINT-MONOIDAL :: (R^2) tensor P = (R tensor I)(R tensor P)
+PASS CORE-INSTRUMENT-COMPLETE :: effect=[['1', '0'], ['0', '1']]
+PASS CORE-STATE-NORMALIZATION-NOT-COMPLETE :: prepared_norm=1 effect=[['1', '0'], ['0', '4']]
+SUMMARY 10/10 public gates
+MEASUREMENTS-SHA256 ac86f41a3dc634596ea51f3f73ce46f2835de780f1f3fc265aea3160bb5af2cc
