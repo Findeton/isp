@@ -3467,3 +3467,42 @@ continuation-catalogue completeness, horizontal process, pushout, contact,
 causal order, record division, dynamic locality, geometry, or ontology. Those
 are deliberately left to independently generated fixtures and the semantic
 scorer.
+
+## 2026-08-18 — APR RESULT-NEUTRAL FIXTURES FROZEN (v16 LEDGER #158)
+
+`v16/code/apr_fixtures.py` freezes APR's primitive fixture catalogue before
+the semantic scorer, mutant outcomes, receipt, outcome word, or candidate
+paper exists. Its ordinary SHA-256 is
+`0698d5d413384e43108241a15eb7134fda82deec8bffdc4413edb2c5ea2742bc`;
+the canonical fixture payload SHA-256 is
+`1f55bb4a495fb7d5a76f93c83e39cc72337fbff0f1a31e67b8bda5ccd45816d0`.
+
+The catalogue contains 244 neutral identifiers in 12 sections. It supplies
+the atomless-prefix, stable-null, comparison, predictive-boundary, typed-
+filling, record-tree, replacement, regional-family, overlap-gluing,
+intervention, recovery, and separate coherent-control primitives. The
+classical question law is typed on the full positive finitely additive
+valuation cone; zero branches remain subnormalised ports, decision trees are
+composition-closed, the empty tree is the sole identity, and the two
+Bernoulli rows are preparations rather than the full state space.
+
+Three record-tree factorizations have distinct boundary levels and the same
+direct apex graph. Child swaps remain restricted controls. A separate
+intrinsic relative-complement replacement grammar is conjugation-closed by
+declaration and must still be instantiated and audited by the scorer. The
+six held-out/training regional pairs have identical global component
+catalogues, blind projections, declared resources, and per-node budgets;
+only typed incidence differs. AB/BC data retain two global completions with
+the same local marginals, so gluing selection is not smuggled into the
+fixture.
+
+The validation mode reports 244 IDs and 12 sections, is byte-identical from
+an alien working directory, and refuses no-argument and unknown-argument
+calls with exit 2. Independent checks confirm the two-step stable-null
+exposure, all three record-tree factorizations, both AB/BC marginal
+reductions, regional-pair resource parity, and schema rejection controls.
+
+This is a data freeze, not a result. The catalogue proves no cospan functor,
+complete future grammar, regional congruence, fixed-effect locality,
+recoverability, causal order, quantum process, physical ontology, geometry,
+or gravity. Those remain semantic scorer and hostile-review questions.

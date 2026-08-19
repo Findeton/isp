@@ -656,6 +656,15 @@ promoting them to physical process or ontology. Thirty-six public identities,
 fixtures must now generate horizontal composition, records, locality,
 comparison screens, and held-out family behavior from primitive law data.
 
+Construction stage 2 is frozen at v16 #158. The result-neutral fixture
+catalogue supplies a full-cone classical question instrument, record-tree
+cospan presentations, intrinsic and restricted replacement grammars,
+comparison/boundary/recovery controls, overlap-gluing underdetermination, and
+resource-matched regional train/held-out pairs. It contains no expected
+screen, verdict, outcome word, or computed physics. The next event is a
+separately frozen semantic scorer protocol and mutant catalogue; only after
+that freeze may `apr_score.py` be implemented or any fixture truth computed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
