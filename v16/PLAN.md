@@ -718,7 +718,8 @@ repair pin and a pre-evaluation v3 scorer freeze; no fixture, physical law,
 outcome ladder, or primary-precedence edit is authorized.
 
 The v3 delta contract is frozen at v16 #169. Its sole authorized construction
-is scorer-only implementation without invoking any fixture-evaluating CLI
+and its positive-path/exposure guard addendum at #170. The sole authorized
+construction is scorer-only implementation without invoking any fixture-evaluating CLI
 mode. Source must freeze before a v3 run; the expanded independent verifier
 must close every v2 green row and every failed gate before candidate drafting.
 

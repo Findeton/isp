@@ -3780,3 +3780,21 @@ fixture may not be evaluated through any CLI path; AST/static checks and
 synthetic selftests only. V3 source freezes before truth, then new artifacts
 must use `apr_output_v3.txt` / `apr_receipt_v3.json` and pass the expanded
 black-box verifier. The v2 exposure and failure debt remain permanent.
+
+## 2026-08-19 — APR V3 POSITIVE-PATH/EXPOSURE GUARDS FROZEN (v16 LEDGER #170)
+
+`v16/note-apr-v3-delta-repair-pin-addendum.md`, SHA-256
+`22eb137fc5496a73ae46fadaaba26f98451dbc5f45c266826c135f7542f63e88`,
+binds six pre-freeze clarifications. Result-neutrality now requires positive
+synthetic `HORIZONTAL-CLASSICAL` and `HORIZONTAL-QUANTUM` branches with exact
+gate-by-gate demotions; the active identity domain is semantic B0–B3; missing
+generated contact alone returns the exact law-unselected word; the measured
+ontology-role ladder is independent of the proposal; the sole qualifier is
+`APR-STATIC-RAW-PREFIX-SYNTAX-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT`;
+and v3 receipt/transcript must carry the permanent exposure/blinding fields.
+
+The scorer-blind delta-verifier plan is frozen off-tree at SHA-256
+`deb656ca2de10ae9a8fa87fac480b82672149bdd0734a70590705a77f9fcb78d`;
+its fixture-only preflight harness SHA-256 is
+`ba413d5710264ff368fdd03cd9cd8a4efa44e9758e84d852df5bf1b91dce78b8`
+and passes 16/16. No v3 source or fixture evaluation exists here.
