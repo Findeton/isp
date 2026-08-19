@@ -3935,3 +3935,33 @@ The next authorized event is one transactional committed-byte run to the new
 v4 output/receipt paths, followed by root/alien/off-tree replay and the
 independent black-box verifier. Candidate drafting and panel review remain
 prohibited until that audit is green.
+
+## 2026-08-19 — APR V4 ARTIFACTS PRESERVED; WELD VERIFICATION FAILS (v16 LEDGER #176)
+
+The v4 official artifacts are preserved at SHA-256
+`68374ea18576466ccc40553f8b221360fdfce3fc43d5b555a6eeb0d2827a2f56`
+(output) and
+`ab9ea941fceebf5b57c7955d483730f3a5f0b317bb5a21da9cc0820331919a61`
+(receipt), with canonical payload
+`04a1e370c601f9d7e3d5310f9bf20296d7be5c5428010f0f7af6c073d0b438d8`.
+Root, alien-CWD, and true off-tree/no-git replays are byte-identical;
+transactionality, hashes, exposure fields, and the complete frozen negative
+baseline reconcile.
+
+`v16/note-apr-v4-verification-failure.md`, SHA-256
+`12bee59f5f6a2c4efac36b797d9c5054cc9ec9101fd1e1bb80ac857a67a01a93`,
+records an independent ledger of 319 passes and four failures, collapsing to
+three semantic blockers. The
+shared transition is only nominally referenced and can be replaced by a
+different calibrated stochastic map without moving any component; the
+ontology ladder joins conditioning, writer, and rewrite objects on
+disconnected carriers; and the complex coefficient-conjugation witness is
+phase-blind. Duplicate ontology continuation IDs also report issues without
+blocking promotion.
+
+The scientific primary remains exactly
+`APR-BLOCKED-AT-BOUNDARY-GLUING`, with `STATIC-RESPONSE-ONLY` process and
+`STATIC-RESPONSE` ontology. V4 is preserved as a reproducible scoped negative,
+but its generic positive-path certification fails. The next authorized event
+is a scorer-only v5 weld-repair pin. No fixture, outcome, ontology, candidate,
+or panel work is authorized.

@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V4 SCORER SOURCE FROZEN BEFORE V4 RUN (v16 #175); OFFICIAL RUN AUTHORIZED**.
+Status: **V4 REPRODUCIBLE NEGATIVE BUT POSITIVE-PATH WELD INVALID (v16 #176); V5 PIN REQUIRED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -757,6 +757,19 @@ relational law. The sole authorized next event is one committed-byte
 transactional run to new v4 paths, then independent black-box reconstruction.
 Candidate drafting and panel review remain prohibited until that audit is
 green.
+
+The v4 artifacts and hostile audit freeze at #176. Integrity and the negative
+APR result are exact across every replay, but the positive-path verifier finds
+three roots: component laws only carry a decorative transition reference;
+conditioning, writer, and rewrite live on disconnected carriers; and the
+complex conjugation witness cannot distinguish conjugated from unconjugated
+coefficients. A duplicate continuation ID also leaves ontology promotion
+standing despite a reported issue. The scientific primary remains
+`APR-BLOCKED-AT-BOUNDARY-GLUING`; process and ontology remain static response.
+V4 is noncertifiable as a generic scorer. The only next event is a scorer-only
+v5 weld-repair pin with complete consumed-transition bundles, one composable
+ontology carrier chain, fatal identifier issues, and a phase-bearing exact
+conjugation control. Candidate and panel remain prohibited.
 
 ## Successor register
 
