@@ -3541,3 +3541,49 @@ five frozen inputs and the fixture payload, run with exact arithmetic from
 repo, alien CWD, and true off-tree/no-git copies, and leave no partial artifact
 on refusal. The next authorized construction event is implementation of
 `v16/code/apr_score.py` against this protocol. No APR outcome is yet known.
+
+## 2026-08-18 — APR SCORER INTERFACE/SCOPE CORRECTIONS FROZEN (v16 LEDGER #160)
+
+`v16/note-apr-scorer-protocol-addendum.md` forward-corrects a contradiction
+found before `apr_score.py` existed or any APR fixture truth was computed.
+The fixture types `p=1/2,1/3` as preparation rows inside the full positive
+valuation cone, while scorer protocol #159 twice called `p` law data. The
+addendum withdraws those sentences.
+
+The scorer now keeps separate law, preparation, and calibration roots.
+`mu_p` is an exact preparation family and never part of the law-root hash;
+all-input results remain statements about arbitrary positive finitely
+additive valuations. P4 is retained as a preparation-substitution mutant,
+and E-37 gives both regional and blind rules the same fixed preparation.
+Law selection concerns only nomological grammar, gluing, replacement,
+contact/influence, and genuine process-weight freedom.
+
+The same correction also binds record bits semantically: `Q_C^1` writes `1`
+and `Q_C^0` writes `0`. Neutral port IDs and list order carry no bit meaning;
+missing, duplicate, or contradictory branch-to-bit semantics must refuse.
+
+The separate record-recovery delay-count rows are finite identity-delay
+controls only; only the question process's explicit `qo_005`/`qo_006`
+schedule may support same-law delayed recovery. The base-probe `[00]`/`[01]`
+collision is scoped to the `p=1/2` preparation and must be reported per
+preparation. E-37 freezes dimension/depth/calibration/parameter slots but no
+per-class number-field, precision, or easier-row benchmark; only the analytic
+blind-factorization result may use the absent coordinates, and no exhaustive
+resource exclusion is licensed.
+
+The same forward correction separates three replacement closures, requires
+the relative support quotient rather than the raw fixed algebra, prints the
+hypotheses of the generated-question theorem, and scopes numeric branch rows
+to unit support while retaining the symbolic arbitrary-support theorem. It
+also records that the frozen record trees are finite instrument
+presentations—not a total regional process functor—because adaptive
+frontiers, full record carriers, tensor, mixed forests, vertical naturality,
+and regional-overlap gluing remain unconstructed.
+
+The stable-null mutant is repaired to a four-coordinate paired control with
+a final dimension move `1 -> 0`. No public held-out family generator or
+tensor factory is frozen, so the corresponding tests must report those
+absences rather than manufacture positive baselines. Causal/contact arenas
+remain controls without a same-law schedule. The addendum's SHA-256 is
+`4c64a9c8c79534c6fb0d69fd7a4445d4fc0b8b4c20bd7dc710165d46f080e8fe`.
+No scorer file or APR measurement existed when this correction was made.

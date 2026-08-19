@@ -673,6 +673,18 @@ authorized event is implementation and internal verification of
 `v16/code/apr_score.py`; official scoring follows only after that scorer is
 frozen and committed.
 
+Before scorer implementation, v16 #160 forward-corrects the protocol's
+interfaces and scopes. The Bernoulli rows are preparation states in the full
+valuation cone, not law couplings. Law, preparation, and calibration roots
+must remain separate, and law-selection counts may not include `p`. Branch
+bits are semantic rather than identifier-derived; numeric controls are
+unit-support instances of an arbitrary-support theorem; replacement closures
+and raw-versus-relative fixed spaces remain separate; and the finite record
+trees cannot be promoted to a horizontal regional functor without adaptive
+frontiers, full record carriers, tensor/naturality, and regional gluing.
+Unavailable family-generation, tensor, and causal-schedule interfaces must be
+reported as absences rather than filled in by the scorer.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
