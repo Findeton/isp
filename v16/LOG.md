@@ -4103,3 +4103,45 @@ the scientific positive evidence. This pin authorizes construction of the
 negative candidate and bundle only. A hostile protocol must freeze before
 review dispatch; no physical Gamma, successor unit, metric, curvature,
 gravity, or actualization construction is authorized at this event.
+
+## 2026-08-19 — PAPER 12 TERMINAL: BOUNDARY GLUING IS THE FIRST MISSING OBJECT (v16 LEDGER #190)
+
+The exact source froze at #182 and the result-known negative candidate at
+#183.  The independent bundle passes 13/13 exact checks and reproduces raw
+prefix atomlessness, the atomic-character and contextual-volume controls,
+positive complete restriction questions, three finite tagged pushouts, the
+B0-only assignment census, and the two globally distinct `ABC` completions
+with identical `AB/BC` shadows.  The hostile protocol froze at #184; three
+mutually blind reports froze at #185–#187 with no integrity block or hard
+scientific kill.
+
+The interim adjudication at #188 accepted three editorial repairs and one
+scope reclassification after independent reconstruction.  #189 removed the
+false “smallest” adjective, typed B0 as an identity-labelled graph assignment
+rather than an earned process identity, renamed the ontology table, and
+separated overlap selection from categorical process axioms.  Exact source,
+transcript, receipt, payload, and review bytes did not move.  The repaired
+paper SHA-256 is
+`56cddeacbfe477d1af244b310e9a26b5622ef540b82deea5a96158819ba972f7`;
+its 34 `$$` delimiters remain balanced for Markdown preview.
+
+The final adjudication is
+`v16/note-apr-paper12-final-adjudication.md`, normalized SHA-256
+`cebc13da2564abd28c60eb5a16022ab54612f1f6122709a6e4db1ec372b274ae`,
+ordinary SHA-256
+`5ef1440064b703bd04bf97f1774f7f5e03efe537aeee2669bd1471f0a402799e`.
+Paper grade is **ACCEPT** and the terminal primary is
+`APR-BLOCKED-AT-BOUNDARY-GLUING`.  Raw atomlessness is syntax-only; process
+is static response; the physical quotient, regional congruence, complete
+future profiles, comparison, dynamic locality, lawful divisions, records,
+contact/causal order, and geometry are unconstructed.  ONE-GAMMA remains
+`GAMMA-UNCONSTRUCTED`, law selection remains unselected, and actualization
+remains postulated rather than derived.
+
+Paper 12 is now terminal.  Its constructive methodological result is a hard
+ordering constraint: a successor may not add another neighboring module.  A
+separately pinned Paper 13 investigation must first freeze an explicit family
+`(C_pres,G,C,B,Div,{Gamma_lambda})` and derive regional, instrument, record,
+comparison, and rewrite shadows from that one nomological root.  Metric,
+curvature, and conditional GR remain later separately pinned units.  Paper 12
+itself constructs none of those objects.

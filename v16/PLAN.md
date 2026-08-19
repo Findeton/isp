@@ -851,6 +851,42 @@ separately frozen hostile protocol. No reviewer, adjudication, Gamma
 successor, metric, curvature, or gravity construction is authorized by this
 pin.
 
+The exact Paper 12 bundle and candidate freeze at #182–#183, the hostile
+protocol at #184, and three mutually blind reports at #185–#187.  All three
+reports preserve the scoped mathematics and the strict primary.  #188
+adjudicates their disagreements and authorizes four prose-only changes; #189
+applies and verifies that exact delta.  #190 terminalizes Paper 12 with grade
+`ACCEPT` at `APR-BLOCKED-AT-BOUNDARY-GLUING`.  The physical regional quotient,
+horizontal process, ONE-GAMMA law, divisions, records, reciprocal response,
+metric, curvature, gravity, and actualization remain unconstructed.
+
+The earlier Paper 13 phrase “construct one regional process” is no longer a
+sufficient construction contract by itself.  Before any Paper 13 measurement
+or candidate paper, a separate result-neutral construction pin must freeze an
+explicit analytic family
+
+```text
+(C_pres, G, C, B, Div, {Gamma_lambda : lambda in Lambda})
+```
+
+with the configuration/gauge/division/parameter doctrine fixed before any
+advertised shadow is evaluated.  No regional kernel, instrument, writer,
+reader, comparison dynamics, rewrite law, response table, amplitude, or
+geometry law may enter as independent dynamics.  They must be exact
+restrictions or compositions of the one primitive `Gamma_lambda`.  The first
+design task is therefore not to draft Paper 13, but to exhibit at least one
+fully written normalized point-free `Gamma_lambda` family whose law-first
+derivations and ontology can be preregistered without using the desired
+results as definitions.
+
+Paper 13, if that family can be frozen honestly, contains the law-existence,
+shadow-derivation, lawful-division/nondivision, record, physical-referent,
+reciprocal-response, covariance, locality, and held-out eliminability
+investigation.  Operational order plus extensive valuation, metric
+reconstruction, curvature/response, and conditional GR recovery remain
+separate later units.  A Gamma-first failure does not get repaired by moving
+those later questions into Paper 13.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
