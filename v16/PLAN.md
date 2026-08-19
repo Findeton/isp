@@ -515,7 +515,8 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **PIN AND RESULT-NEUTRAL EXACT CORE FROZEN (v16 #142--#143)**.
+Status: **PIN, EXACT CORE, AND RESULT-NEUTRAL REGULATOR CONTROLS FROZEN
+(v16 #142--#144)**.
 
 RHL asks whether the candidate joint quantum--geometric law can be stated on
 whole bounded relational regions without making a point set, lattice, graph
@@ -548,7 +549,11 @@ refinement pullback, coarse graining, interference, composition, and all-input
 completeness; its `diag(1,4)` control separates one-state normalization from an
 instrument identity. These finite matrices are receipts only. The next stage
 is a result-neutral family of incompatible descriptions and record controls;
-the arbitrary-region claims still require proofs.
+the arbitrary-region claims still require proofs. The separately frozen
+regulator now binds two nonisomorphic presentations, a descent tamper, the
+`49/625`/`337/625` interference anchor, erasure/redundancy flags, equally
+compositional but prediction-moving character laws, and the fixed- versus
+changing-boundary locality distinction. None is a spacetime discretization.
 
 ## Successor register
 

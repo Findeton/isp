@@ -3049,3 +3049,27 @@ lattice, tick, region catalogue, physical history, geometry, target truth, or
 outcome word is present. The arbitrary-region claims remain analytical theorem
 targets. The next event is the separately frozen result-neutral
 regulator/control family.
+
+## 2026-08-18 — RHL RESULT-NEUTRAL REGULATOR CONTROLS FROZEN (v16 LEDGER #144)
+
+`v16/code/rhl_regulator.py` and its exact output/receipt are frozen before any
+scorer, theorem disposition, outcome word, or Paper 11 candidate. The family
+contains two nonisomorphic three- and four-row presentations descending to one
+boundary map, a tampered descent, the exact `49/625` versus `337/625`
+interference anchor, erasable and redundant flag controls, compositional
+character counterlaws, a fixed-factor locality control, and a changed-boundary
+identification ambiguity.
+
+Ten of ten structural controls pass. Two fresh generations are byte-identical
+to the frozen artifacts and removing the upstream history cross term kills the
+interference control. The four character twists pass 196/196 gluing checks but
+move one boundary weight across `1,1/2,0,1/2`. This is frozen as a
+law-nonselection control, not as geometry. Fixed-factor dephasing leaves Bob at
+`I/2`, while two unselected changed-boundary calibrations give `3/4` and `1/4`;
+dynamic-subsystem locality therefore still needs its referent.
+
+Every finite row, bit, and matrix remains a regulator receipt only. The flag
+controls establish erasure and redundancy for their registered continuations,
+not absolute permanence. The scorer must next bind these receipts to general
+proof objects without inferring arbitrary-refinement or ontological conclusions
+from a finite census.
