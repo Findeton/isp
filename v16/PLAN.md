@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V4 REPRODUCIBLE NEGATIVE BUT POSITIVE-PATH WELD INVALID (v16 #176); V5 PIN REQUIRED**.
+Status: **V5 EXECUTABLE-LAW WELD PIN FROZEN (v16 #177); ONE FINAL SCORER REPAIR AUTHORIZED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -770,6 +770,19 @@ V4 is noncertifiable as a generic scorer. The only next event is a scorer-only
 v5 weld-repair pin with complete consumed-transition bundles, one composable
 ontology carrier chain, fatal identifier issues, and a phase-bearing exact
 conjugation control. Candidate and panel remain prohibited.
+
+The final bounded v5 pin freezes at #177 after two independent ACCEPT audits.
+It replaces module-level green-result assembly by one executable primitive-law
+bundle, classifier-consumed arithmetic dependency slices, one shared
+transition with typed occurrences, a single
+`T -> Q -> W -> Theta -> reader/probe` schedule, post-rewrite recovery, and
+`ABC`-owned regional restrictions. A phase-bearing `Q(i)` witness makes
+coefficient conjugation load-bearing. The user-ordered stopping rule is now
+binding: after the final v5 scorer commits, any confirmed semantic false weld
+terminalizes APR at the boundary-gluing result; no v5b/v6 instrumentation
+repair follows. V5 certifies verifier plumbing only. The next physical unit,
+if reached, must begin with one complete relational transition law `Gamma`
+and derive regional, instrument, record, and rewrite objects as its shadows.
 
 ## Successor register
 

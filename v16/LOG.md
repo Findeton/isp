@@ -3965,3 +3965,37 @@ The scientific primary remains exactly
 but its generic positive-path certification fails. The next authorized event
 is a scorer-only v5 weld-repair pin. No fixture, outcome, ontology, candidate,
 or panel work is authorized.
+
+## 2026-08-19 — APR V5 EXECUTABLE-LAW WELD PIN FROZEN (v16 LEDGER #177)
+
+`v16/note-apr-v5-executable-law-weld-pin.md`, SHA-256
+`c20217d263bbbac9d6f2dc94ad1f51938ef3b283c6401c01c6c17e5ed6ccc5e6`,
+freezes the one bounded final instrumentation repair. Two independent hostile
+audits accept the final bytes after closing connectivity-only side
+calculations, common-carrier false edges, post-rewrite continuation typing,
+synthetic `ABC -> AB,BC` derivation, a phase-bearing Gaussian-rational
+conjugation witness, and the post-commit restart loophole.
+
+V5 must evaluate complete executable law bundles, not assemble cached green
+modules. One shared transition primitive is consumed through typed occurrence
+DAGs; one literal schedule
+`P_i=(Theta tensor I_F) o W o Q_tot o T_i` generates the composed map and
+reader contraction; and ontology conditioning, writer, rewrite, continuations,
+and probes live on one carrier chain. Reset-one, noninvolutive, stale-cache,
+clone-ID, severed-occurrence, alien/isomorphic-carrier, removed-bridge,
+duplicate-ID, label-only, downstream-movement, and changed-source conjugation
+controls are binding.
+
+The pin records the user's methodological distinction. V4's kills are ordinary
+one-law typing failures; the deeper scientific error is building `AB`, `BC`,
+instruments, records, and rewrites separately while treating indivisibility as
+interpretation. V5 repairs only the verifier. A physical successor must start
+from one complete relational `Gamma` and derive those objects as shadows;
+Barandes supplies the fixed-space indivisible architecture but not ISP's
+changing relational catalogue, law, locality, geometry, or actualisation.
+
+This is the stopping line. After the final scorer source commits, any
+independently replayed semantic counterexample terminalizes APR at
+`APR-BLOCKED-AT-BOUNDARY-GLUING`; no v5b/v6 instrumentation repair is
+authorized. The next event is scorer-only implementation with fixture-free
+development tests. No candidate or scientific panel is authorized.
