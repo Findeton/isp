@@ -18,7 +18,7 @@ theory-selection result.
 
 ## Live state
 
-- `RHL` / Paper 11: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN AT
+- `RHL` / Paper 11: **GREEN-UNREVIEWED; THREE-SEAT HOSTILE PANEL RUNNING AT
   `RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`** through v16
   ledger #146. The user-authorized unit removes points, lattices, graph meshes,
   and ticks from the proposed ontology. Its candidate reality is one actual
@@ -45,7 +45,9 @@ theory-selection result.
   locality, GR, QFT, and empirical physics remain unentered. Three
   non-load-bearing title/URL citation mismatches are disclosed for hostile
   review rather than silently changing the immutable candidate. No reviewer is
-  assigned by the protocol freeze.
+  assigned by the protocol freeze. The user has now authorized three mutually
+  blind point-free/refinement, quantum-history/instrument, and ontology/
+  locality/physics seats; no report or adjudication exists yet.
 - `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
   #141. Two blind seats reject and one accepts with fixes; all independently

@@ -3163,3 +3163,24 @@ The protocol freezes exact theorem attacks, changed-object tests, all fifteen
 mutants, alien-CWD/no-`.git` replay, and per-seat kill conditions. RHL remains
 **GREEN-UNREVIEWED WITH HOSTILE PROTOCOL FROZEN**. No adjudication, repair,
 geometry successor, continuum unit, or reviewer dispatch is recorded here.
+
+## 2026-08-18 — RHL PAPER 11 THREE-SEAT PANEL DISPATCHED (v16 LEDGER #148)
+
+The user authorizes the frozen RHL hostile protocol. Three mutually blind
+reviewers are now running against immutable candidate commit `b84225f` and
+protocol commit `67e911d`: point-free mathematics/refinement/infinite
+extension; quantum histories/instruments/normalization; and ontology/locality/
+geometry/GR-QFT scope.
+
+Each seat may create only its assigned `review-rhl-*.md` report, may not read a
+sibling report or external scratchpad, may not edit the candidate, protocol,
+sources, receipts, or ledgers, and may not mutate git. Every seat must rebuild
+its analytical claims independently, run all fifteen frozen mutants plus its
+own changed-object attacks, and perform clean and true off-tree/no-`.git`
+integrity checks.
+
+No result is inferred from dispatch. All three reports must freeze before
+joint adjudication; majority vote cannot override the strictest supported
+theorem or scope. No repair, terminal verdict, successor, or continuum unit is
+authorized at this event. The unrelated untracked v15 SCOUT-T files remain
+outside the source set and untouched.

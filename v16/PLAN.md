@@ -515,7 +515,7 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN AT
+Status: **GREEN-UNREVIEWED; THREE-SEAT HOSTILE PANEL RUNNING AT
 `RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`
 (v16 #142--#146)**.
 
@@ -573,7 +573,9 @@ recovery weld, dynamic locality, and every geometry/GR/QFT promotion. Its
 sharpest pre-dispatch target is normalization: the exact character family
 glues and moves one weight but does not supply a complete normalized outcome
 family for every character. No reviewer is assigned and no review or
-adjudication is authorized by the protocol freeze alone.
+adjudication is authorized by the protocol freeze alone. The user has now
+authorized all three mutually blind seats under v16 ledger #148; adjudication
+must wait for three separately frozen reports.
 
 ## Successor register
 
