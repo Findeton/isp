@@ -3699,3 +3699,15 @@ status words, non-duplication of the M15/P5 whitelist evidence, and the full
 physical-referent prerequisite list. The live plan now calls this an
 outcome-neutral instrumentation repair. The sole next event remains scorer-
 only implementation and pre-truth freeze against both repair documents.
+
+## 2026-08-19 — APR MUTATION-EVIDENCE SCHEMA FROZEN (v16 LEDGER #166)
+
+`v16/note-apr-scorer-repair-pin-addendum-2.md`, SHA-256
+`898a49596752b9b7789bd6c6b71d471aac02a81836cf85c558b6b7f3c425fd4d`,
+requires every available transformation to publish a machine-reconstructible
+descriptor: target root/object, typed path or constructor, exact semantic
+before/after payload, reference updates, payload hashes, rerun measurement,
+and shared-evidence links. M35 additionally carries distinct provenance-
+envelope hashes around an invariant scientific payload. Unavailable rows name
+the absent baseline interface and its computed capability witness. This closes
+the last auditability gap before repaired-scorer freeze; no v2 truth exists.

@@ -702,7 +702,8 @@ active-law provenance battery is not semantically closed. The attempt is
 instrumentation-invalid and cannot support candidate prose or panel review.
 The next event is an outcome-neutral instrumentation-repair pin followed by a separately
 frozen scorer revision and new, non-overwriting v2 artifacts. The repair pin
-is frozen at v16 #164 and its capability/ontology guard addendum at #165;
+is frozen at v16 #164, its capability/ontology guard addendum at #165, and
+its reconstructible-mutation evidence schema at #166;
 implementation of `v16/code/apr_score.py` against both contracts is now the
 sole authorized construction. No fixture,
 physical law, outcome ladder, or primary-precedence edit is authorized.
