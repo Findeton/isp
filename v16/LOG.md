@@ -4145,3 +4145,42 @@ separately pinned Paper 13 investigation must first freeze an explicit family
 comparison, and rewrite shadows from that one nomological root.  Metric,
 curvature, and conditional GR remain later separately pinned units.  Paper 12
 itself constructs none of those objects.
+
+## 2026-08-19 — PAPER 13 ONE-GAMMA CONSTRUCTION PIN FROZEN (v16 LEDGER #191)
+
+`v16/note-paper13-one-gamma-construction-pin.md`, SHA-256
+`4b2c6f305430dffa329758e81cf82dd295800359b808136cae9c5f8ca3b94c35`,
+freezes the result-neutral Paper 13 construction contract before any
+authoritative evaluator, fresh case, output, receipt, verification note, or
+candidate-paper path exists.  Three independent read-only pre-pin audits
+accepted the final private analytic design for implementability, totality,
+complete-source identity, scientific scope, and ontology.  Those private
+bytes, their 45 hostile controls, and every displayed finite number are
+permanently result-exposed and are not project evidence.
+
+The pin starts from one explicit arena
+`(C_pres,G,C,B,Div,{Gamma_g})`, with rational
+`g in [1/3,1/2]`, finite typed Boolean zero-pattern presentations, an explicit
+source groupoid, exact boundary and process ASTs, and one contact-Cayley
+whole-filling evaluator.  Regional contact, support change, writer/reader,
+record continuation, reciprocal response, matching-family outputs, and the
+Born shadows must all be derived from that root; independent neighboring
+modules and same-key/different-law routes are hard kills.
+
+The native negative factor is preregistered as a desired nondivision witness,
+not a state-incompleteness result: a definite configuration may be actual at
+the cut, while no positive source-independent native restart kernel exists on
+the declared carrier.  A complementary record-bearing lawful division is
+required under a printed finite generator grammar.  Born squaring remains a
+postulated nomological clause, amplitudes remain representational, and the
+blind-family result is class-relative.
+
+The eligible ceiling is
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`; no rung is
+pre-awarded.  Coupling/law selection, event selection, division doctrine,
+actualization, valuation, metric, curvature, continuum, gravity, and GR remain
+unconstructed or priced.  The sole next event is Stage A implementation and
+source freeze of `v16/code/p13_gamma_exact.py` plus
+`v16/note-paper13-gamma-source-freeze.md`.  Fresh cases, official publication,
+the candidate paper, reviews, and every metric-or-later unit remain prohibited
+until their preceding committed gates.

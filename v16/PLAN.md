@@ -887,6 +887,27 @@ reconstruction, curvature/response, and conditional GR recovery remain
 separate later units.  A Gamma-first failure does not get repaired by moving
 those later questions into Paper 13.
 
+The Paper 13 result-neutral construction pin freezes at #191 after three
+independent pre-pin audits accepted the exact analytic design for
+implementability, totality, source identity, scientific scope, and ontology.
+Those private runs and every printed finite control are permanently exposed
+and are not scientific evidence.  The committed pin fixes one typed
+zero-pattern source groupoid, one rational contact-Cayley whole-filling law
+family, exact public boundary/process types, complementary lawful-division and
+native-nondivision witnesses, a same-root reciprocal raw-relation response,
+and a resource-matched perfect-matching/blind-class assay.  It also freezes the
+earliest-outcome ladder, 45-plus hostile controls, receipt/lineage contract,
+source-freeze and independent-nonce protocol, exact runtime/CLI rules, staged
+whitelists, term bindings, four-gate ontology ledger, and permanent walls.
+
+The eligible ceiling is
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`; it is not
+pre-awarded.  Law/coupling selection, event selection, division doctrine, and
+actualization remain unearned.  The sole next event is Stage A construction
+and commit of `v16/code/p13_gamma_exact.py` plus its source-freeze note.  No
+fresh matching case, official run, candidate paper, review, metric, curvature,
+or gravity work may begin before its preceding committed gate.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
