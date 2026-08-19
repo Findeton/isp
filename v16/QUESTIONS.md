@@ -240,7 +240,7 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     the corresponding rational-coin holonomy has three rather than five
     phases, and `R=I` is an exact all-tick no-split control. Paper 10's RFB pin
     now carries CRL only as one registered conditional family; no result exists.
-32. **VERIFIED GREEN-UNREVIEWED / PARTIAL — Which microscopic law type and record-feedback family are
+32. **HOSTILE PROTOCOL FROZEN / PARTIAL — Which microscopic law type and record-feedback family are
     selected by which principles?** Paper 10 RFB freezes a three-axis forcing
     census: process factorization, record implementation, and mathematical
     representation. It explicitly tests classical, coherent, hybrid,
@@ -269,4 +269,8 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     and active feedback families all survive. All 39 mutants refuse and a true
     no-`.git` replay is identical. A post-commit run, missing-anchor control,
     assigned-gate mutant audit, and independent rational reconstruction now
-    also pass. The candidate is not yet panel-reviewed.
+    also pass. The frozen three-seat protocol now requires direct attacks on
+    the neighboring rather than welded mode constructions, copied predictive
+    census, process laws not actually built, the finite phase subgroup, and
+    the breadth of “mapped.” Reviewers are unassigned; the candidate is not
+    panel-reviewed.

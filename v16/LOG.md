@@ -2877,3 +2877,19 @@ quotients in the sealed receipt. The candidate remains
 microscopic/representation `METHOD-INCONCLUSIVE`. This is verified
 green-unreviewed, not terminal; a separately frozen hostile protocol and panel
 are still required.
+
+## 2026-08-18 — RFB PAPER 10 HOSTILE PROTOCOL FROZEN (v16 LEDGER #136)
+
+`v16/note-rfb-hostile-protocol.md` freezes mutually blind operator/history,
+records/ontology, and locality/physics seats. The protocol treats the green
+gate count as a candidate, not a conclusion. Mandatory attacks include the
+finite `Z_q` phase subgroup versus continuous `U(1)`, the absence of constructed
+enriched-state and indivisible process laws, the classical/coherent instrument
+and hybrid interferometer being neighboring rather than welded fixtures, the
+predictive mode rows copying one interface census, recoverability living in a
+separate grammar, and the synthetic primary/reachability comparators.
+
+The physics seat must also enforce fixed-factor no-signalling scope and the
+complete absence of graph-generated geometry. Candidate bytes remain
+immutable. No reviewer is assigned, no report is authorized by this freeze
+alone, and no adjudication or repair may begin before all three reports exist.

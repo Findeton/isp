@@ -459,8 +459,8 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **VERIFIED GREEN-UNREVIEWED AT `RFB-FORCING-BOUNDARY-MAPPED`
-(v16 #135)**.
+Status: **HOSTILE PROTOCOL FROZEN; REVIEWERS UNASSIGNED AT
+`RFB-FORCING-BOUNDARY-MAPPED` (v16 #136)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the
@@ -498,7 +498,11 @@ representations. Classical, coherent, hybrid, zero-charge, and active feedback
 all survive at their registered scopes. A clean replay, all 39 mutant deaths,
 and a true no-`.git` replay pass. A fresh post-commit generation, all mutant
 gate assignments, missing-anchor refusal, and an independent exact rebuild now
-also pass. Hostile review and terminal status remain withheld.
+also pass. The result-neutral operator/history, records/ontology, and
+locality/physics hostile seats are now frozen with mandatory attacks on the
+unwelded fixtures, copied predictive rows, unconstructed process-law
+survivors, finite phase subgroup, and primary scope. No reviewer is assigned;
+review and terminal status remain withheld.
 
 ## Successor register
 

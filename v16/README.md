@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `RFB` / Paper 10: **VERIFIED GREEN-UNREVIEWED AT
-  `RFB-FORCING-BOUNDARY-MAPPED`** through v16 ledger #135. RFB maps
+- `RFB` / Paper 10: **HOSTILE PROTOCOL FROZEN; REVIEWERS UNASSIGNED** at
+  `RFB-FORCING-BOUNDARY-MAPPED` through v16 ledger #136. RFB maps
   the record-feedback forcing boundary rather than proposing another preferred
   law. It separates process factorization, record implementation, and quantum
   representation; freezes the Barandes-compatible one-history/indivisible-law/
@@ -41,7 +41,10 @@ theory-selection result.
   gates. Post-commit clean and true no-`.git` replays reproduce all artifacts;
   all 39 mutants refuse at their named gates; a missing anchor refuses; and an
   independent rational/combinatorial rebuild matches the headline values. The
-  candidate is not panel-reviewed or terminal.
+  frozen three-lens protocol makes the unwelded mode fixtures, copied
+  predictive census, unconstructed surviving process laws, finite phase
+  subgroup, and primary breadth mandatory attacks. No reviewer is assigned;
+  the candidate is not panel-reviewed or terminal.
 - `QSF` / Paper 9: **TERMINAL AT `QSF-METHOD-INCONCLUSIVE`** through v16 ledger
   #129. Three mutually blind seats independently preserved the cautious primary
   while correcting every arm's type. Record-indexed A0 is false; literal local
