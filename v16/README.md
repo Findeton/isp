@@ -18,6 +18,17 @@ theory-selection result.
 
 ## Live state
 
+- `RHL` / Paper 11: **PIN FROZEN; CONSTRUCTION NOT YET ENTERED** at v16
+  ledger #142. The user-authorized pin removes points, lattices, graph meshes,
+  and ticks from the proposed ontology. Its candidate reality is one actual
+  point-free relational record history; its candidate law is assigned to
+  whole bounded relational regions; decoherence/Hilbert machinery is
+  representational; and ordinary kernels/instruments appear only at stable
+  record divisions. Physical extension is typed separately from descriptive
+  refinement. Finite graphs and matrices may serve only as regulator receipts,
+  never as evidence that spacetime is discrete. The staged investigation must
+  prove arbitrary-refinement consistency, unsliced gluing, stable division,
+  and dynamic locality before any geometry claim.
 - `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
   #141. Two blind seats reject and one accepts with fixes; all independently

@@ -513,6 +513,35 @@ repair is authorized: one common record-process event law, mode-specific
 predictive and recovery continuations, and rival microscopic processes across
 two cuts require new fixture data and a separately frozen successor.
 
+## Paper 11 — RHL: no points, no ticks
+
+Status: **PIN FROZEN; CONSTRUCTION NOT YET ENTERED (v16 #142)**.
+
+RHL asks whether the candidate joint quantum--geometric law can be stated on
+whole bounded relational regions without making a point set, lattice, graph
+mesh, preferred slicing, or elementary tick fundamental. The ontology
+candidate is one actual point-free web of durable relational facts. The
+nomological candidate is an indivisible regional process; a strongly positive
+history/decoherence functional is a possible quantum representation; ordinary
+stochastic kernels and CP instruments belong only at continuation-stable
+record divisions. Actualization remains a postulate.
+
+The pin makes physical growth and representational refinement different
+types. A chart may subdivide or reslice the same region without creating a
+fact; an ontic extension adds a durable relation at a genuine division. Named
+graphs, causal sets, triangulations, spin foams, matrices, and Hilbert spaces
+may authenticate or represent the law, but finite agreement cannot establish
+fundamental discreteness, infinite extension, or continuum physics.
+
+The construction ladder is point-free regional kinematics, an unsliced
+strongly positive law with arbitrary-refinement and gluing theorems, stable
+record divisions with all-input instruments, and only then dynamic
+quantum--geometric locality. The last rung may block: a background
+general-boundary theory or a formal sum over geometry labels does not count as
+geometry generated and used by one law. No amplitudes, couplings, vacuum,
+species, scale, manifold, GR, QFT, Hamiltonian, or empirical deviation is
+preselected.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

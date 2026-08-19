@@ -262,3 +262,18 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     two temporal cuts, and separately build changing-factorization locality.
     Actualization, geometry, growth, QFT, GR, Hamiltonian structure, and
     empirical prediction remain open.
+33. **PINNED / OPEN — Can the fundamental law be point-free and unsliced?**
+    Paper 11's RHL pin refuses both a discrete lattice and a continuum point
+    manifold as default ontology. The candidate actual world is one compatible
+    web of durable relational facts whose bounded parts are regions; graphs,
+    meshes, cuts, paths, Hilbert spaces, and Hamiltonians are representations.
+    The candidate law assigns a strongly positive regional process functional
+    to alternative relational fillings with common recorded boundary data,
+    requires agreement under arbitrary descriptive refinement and regional
+    gluing, and recovers ordinary probabilities only at continuation-stable
+    record partitions with all-input complete instruments. Representational
+    subdivision and ontic extension are separate types. The open decider is
+    whether a nontrivial law can make causal/geometric relations both outputs
+    and inputs while preserving interference and dynamic locality, without a
+    hidden preferred mesh or slicing. Finite computations may authenticate
+    identities or counterexamples but cannot decide the ontology.

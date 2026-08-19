@@ -2997,3 +2997,35 @@ their bytes as evidence. README, PLAN, and Question 32 now agree on terminal
 status. No bounded repair exists; any common record-process law, mode-specific
 predictive/recovery dynamics, or two-cut microscopic comparison requires a new
 successor fixture.
+
+## 2026-08-18 — RHL PAPER 11 NO-POINT/NO-TICK PIN FROZEN (v16 LEDGER #142)
+
+`v16/note-rhl-pin.md` freezes the user-authorized Paper 11 question before any
+RHL core, regulator, scorer, result, or candidate paper exists. The user adds a
+binding correction to the earlier graph-generative proposal: finite vertices,
+lattices, and ticks may be verification instruments but may not be the
+proposed ontology or fundamental law.
+
+The candidate ontology is one actual point-free relational record history;
+bounded regions are parts of that web rather than sets of spacetime points.
+The candidate microscopic law is unsliced and regional, with an indivisible
+process primary in type and a strongly positive decoherence/history functional
+available as quantum representation. Ordinary kernels and CP instruments are
+licensed only at continuation-stable record divisions; actualization remains
+postulated. The pin is neutral between atomic and non-atomic reality.
+
+The decisive two-type doctrine separates representational refinement from
+ontic extension. A mesh subdivision, reslicing, or renaming must change no
+boundary prediction; a genuine extension adds a durable relational fact. The
+five-rung investigation asks for point-free regional kinematics,
+arbitrary-refinement and gluing theorems, stable all-input division
+instruments, and finally one law in which causal/geometric structure is both
+output and input under dynamic locality. Finite charts may authenticate
+identities and counterexamples only; they cannot earn a discreteness,
+continuum, GR, QFT, or ontology theorem.
+
+The pin registers the full negative vocabulary, twelve kill conditions, the
+QSF law-type coordinate, the v12/v14/v16 anchors, external-framework
+boundaries, E-36/E-37 controls, exact whitelisted chronology, and a future
+three-lens hostile protocol. Construction is now authorized by the user's same
+instruction but has not begun at this ledger event.
