@@ -4381,3 +4381,28 @@ The verdict is `ACCEPT` for the bounded repair only.  The report explicitly
 keeps valuation, metric, curvature, continuum, gravity, GR, law selection, and
 actualization unconstructed or postulated.  Stage B remains prohibited because
 the second mutually blind report and joint adjudication are still required.
+
+## 2026-08-19 — PAPER 13 STAGE-A REPAIR RECORDS AUDIT FROZEN (v16 LEDGER #199)
+
+The mutually blind Records / integrity report freezes as
+`v16/review-paper13-stageA-repair-records.md`, SHA-256
+`13b9a1cedc7e546e9d2f0f9937d355831a9fe0de2f28172f5371721f741e520e`.
+It authenticates the #197 commit and exact source/note/pin bytes without
+reading the Physics report, importing the evaluator, or using its measurement
+functions.
+
+Repository-root, alien-CWD, and true no-`.git` off-tree runs are byte-identical
+at 27,380,971 bytes.  The seat independently recomputes all 42 check-evidence
+hashes, all 92 mutation object/evidence hashes, the registry and payload, the
+72/42 census, and the 468-transition total as 156 CREATE + 156 MERGE + 156
+UNCHANGED over 312 source columns.  Every one of the twelve serialized bound
+certificates, its literal fiber proof, and its classifier-consumed hash
+reconstructs exactly.
+
+The real final-byte S1 mutation exits nonzero.  Independent S2, S4, S6, S8,
+S11, freshness, and ambient controls all refuse or demote for the registered
+reason; anchors, read order, whitelist, artifact absence, seal, and unchanged
+scientific coordinates also recompute exactly.  The report returns `ACCEPT`
+with no repair item.  It recommends retaining `REPAIR-GREEN-UNREVIEWED` until
+joint adjudication; no scientific or ontology rung moves at #199, and Stage B
+remains closed until that adjudication explicitly opens it.

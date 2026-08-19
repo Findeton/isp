@@ -984,6 +984,17 @@ no metric, geometry, gravity, or actualization promotion.  This is only the
 first of the two required reviews; Stage B remains closed pending the mutually
 blind Records/integrity report and joint adjudication.
 
+The second mutually blind post-freeze repair audit freezes at #199.  The
+Records / integrity seat independently reproduces the three execution modes,
+all 42 check-evidence hashes, all 92 mutation object/evidence hashes, the
+72/42 quotient, and the 468-transition total as 156 CREATE + 156 MERGE + 156
+UNCHANGED over 312 source columns.  It rebuilds every serialized bound
+certificate and dependency hash, replays real S1, and kills S2, S4, S6, S8,
+S11, freshness, and ambient controls without reading the Physics report.  It
+returns `ACCEPT` with no repair item.  Both required audits are now green, but
+Stage B remains closed until their joint adjudication freezes the disposition
+and explicitly authorizes the next stage.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
