@@ -932,6 +932,14 @@ committed #192 bytes remain immutable while independent replay and joint
 adjudication determine the earliest rung and whether a separately pinned
 forward repair is authorized.
 
+A second blind reconstruction freezes at #194 and reproduces the identical
+mutant source hash, stdout hash, normalized payload, `36/36`, `81/81`, cells
+`2 -> 2`, and capped primary.  It fixes the first directly affected rung at
+`P13-SUPPORT-CHANGE-UNPROVEN`.  The failed #192 freeze cannot be edited or
+rescored in place.  Joint adjudication is now required before any forward
+repair pin; fresh generation, official construction, paper drafting, and all
+metric-or-later units remain closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

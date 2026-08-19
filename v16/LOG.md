@@ -4239,3 +4239,26 @@ Stage B, with the first directly affected rung
 `P13-SUPPORT-CHANGE-UNPROVEN` and a possible earlier point-free referent
 concern.  No fresh case or official run exists; the #192 source is not edited.
 Independent replay and adjudication are the only authorized next work.
+
+## 2026-08-19 — SECOND PAPER 13 STAGE-A AUDIT CONFIRMS SUPPORT SURVIVOR (v16 LEDGER #194)
+
+The mutually blind records/integrity report freezes verbatim as
+`v16/review-paper13-stageA-source-records.md`, SHA-256
+`7c5b14a04f938de05b64750f6c8ae454eb4bbe8d0824e9eaaa0016532ab52ed4`.
+Without importing the evaluator or reading the first report, it independently
+constructs the same single-edit source, authenticates the identical mutant
+SHA-256
+`a6cd95e0eb5c917fa3ad2f93441a2f56d9ec69e4f3801ec551dacdfdef4c5668`,
+and obtains exit zero, 36/36 checks, 81/81 kills, normalized payload SHA-256
+`279bb73a94beca773a998cbf4bb4e6e52cebf3effec89e51d467d414157b7046`,
+and stdout SHA-256
+`c5dbfe91701e5dd6f5e73a63c818448fa28d01c386f4a2ecc2dfdb0f5b8c28bc`.
+All serialized evidence hashes independently recompute.
+
+Both changed support branches retain inverse-merge recovery but report cells
+`2 -> 2` and roles `1 -> 2`; the evaluator nevertheless sets
+`all_support_changed`, `variable_carrier`, and `support_change` true and emits
+the capped primary.  The report therefore independently confirms a real
+hard-kill survivor and fixes the first directly affected outcome at
+`P13-SUPPORT-CHANGE-UNPROVEN`.  Stage B remains prohibited.  The #192 source
+is immutable; joint adjudication, not an in-place patch, is the next event.
