@@ -2840,3 +2840,23 @@ enumeration, unknown-argument refusal, and an AST no-float check have run. The
 scorer has not read the physical fixture through its normal path, and no RFB
 output, receipt, or Paper 10 candidate exists. The next event is the first
 physical run; any refusal must be frozen before a scorer repair.
+
+## 2026-08-18 — RFB PAPER 10 GREEN CANDIDATE GENERATED (v16 LEDGER #134)
+
+`v16/note-rfb-candidate-generation.md` freezes the generated candidate at
+**RFB-FORCING-BOUNDARY-MAPPED**. The final division coordinate is
+`DIVISION-KERNEL-SUFFICIENT`, while both microscopic process and quantum
+representation remain `METHOD-INCONCLUSIVE`. The arena excludes an exclusive
+intermediate rewrite kernel but does not choose between an enriched coherent
+state law and an indivisible multi-time law, or between Hilbert and
+decoherence-functional representations.
+
+Classical feedback, its coherent dilation, a one-dimensional hybrid overlap
+family, zero-charge decoherence-only feedback, and active charge all survive at
+the registered finite scope. The official run passes 49/49 gates. A second
+clean generation is byte-identical; all 39 mutants refuse at their named gates
+without artifacts; and a minimal no-`.git` tree executed from `/private/tmp`
+reproduces transcript, receipt, and paper exactly. The phase census is only the
+registered finite subgroup, predictive/recovery claims are finite, locality is
+fixed-factor, and no relational generative law is built. Hostile review and
+terminal promotion remain withheld.

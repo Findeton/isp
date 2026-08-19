@@ -459,7 +459,7 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **SCORER FROZEN BEFORE FIRST PHYSICAL RUN; NO RESULT (v16 #133)**.
+Status: **GREEN-UNREVIEWED AT `RFB-FORCING-BOUNDARY-MAPPED` (v16 #134)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the
@@ -489,8 +489,14 @@ fourteen assumption toggles, eleven impose/drop cells, three dial rows, record
 modes, history cuts, predictive resources, recovery grammars, and locality
 controls without an expected answer. The separately frozen exact scorer now
 registers 49 ordered gates and 39 targeted mutants. Only compilation,
-public-core self-test, CLI enumeration, and static exactness checks have run;
-the physical fixture has not. The result and Paper 10 candidate remain absent.
+public-core self-test, CLI enumeration, and static exactness checks preceded the
+first run. The frozen scorer now passes 49/49 and maps the conditional boundary:
+the final division kernel is sufficient, but enriched-state and indivisible
+microscopic laws both survive, as do Hilbert and decoherence-functional
+representations. Classical, coherent, hybrid, zero-charge, and active feedback
+all survive at their registered scopes. A clean replay, all 39 mutant deaths,
+and a true no-`.git` replay pass. Hostile review and terminal status remain
+withheld.
 
 ## Successor register
 
