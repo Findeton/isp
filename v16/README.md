@@ -18,24 +18,29 @@ theory-selection result.
 
 ## Live state
 
-- `RHL` / Paper 11: **PIN, RESULT-NEUTRAL CORE/REGULATOR, AND SCORER
-  FROZEN BEFORE CANDIDATE** through v16 ledger #145. The user-authorized pin removes points,
-  lattices, graph meshes,
+- `RHL` / Paper 11: **GREEN-UNREVIEWED AT
+  `RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`** through v16
+  ledger #146. The user-authorized unit removes points, lattices, graph meshes,
   and ticks from the proposed ontology. Its candidate reality is one actual
   point-free relational record history; its candidate law is assigned to
   whole bounded relational regions; decoherence/Hilbert machinery is
   representational; and ordinary kernels/instruments appear only at stable
   record divisions. Physical extension is typed separately from descriptive
   refinement. Finite graphs and matrices may serve only as regulator receipts,
-  never as evidence that spacetime is discrete. The staged investigation must
-  prove arbitrary-refinement consistency, unsliced gluing, stable division,
-  and dynamic locality before any geometry claim. The generic core passes ten
-  exact public gates but contains no physical law or verdict. The regulator
+  never as evidence that spacetime is discrete. The analytical paper proves
+  algebraic arbitrary-refinement descent, an interference obstruction to
+  microscopic positive kernels, all-input division completeness, a finite
+  append-only recovery class, structural law nonselection, and the need for a
+  law-selected subsystem transport after a boundary change. The generic core
+  passes ten exact public gates. The regulator
   adds nonisomorphic subdivision/cut controls, interference, record erasure and
   redundancy, structural law nonselection, and changed-boundary ambiguity;
-  its finite matrices remain algebra receipts only. The scorer registers
-  fifteen upstream/document mutants and explicitly leaves the arbitrary-region
-  proofs to adjudicator and hostile review.
+  its finite matrices remain algebra receipts only. The official scorer passes
+  24/24; two exact replays, 15/15 mutant refusals, and a true off-tree/no-`.git`
+  replay pass. Geometry, the numerical dynamics, infinite extension, dynamic
+  locality, GR, QFT, and empirical physics remain unentered. Three
+  non-load-bearing title/URL citation mismatches are disclosed for hostile
+  review rather than silently changing the immutable candidate.
 - `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
   #141. Two blind seats reject and one accepts with fixes; all independently

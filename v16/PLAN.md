@@ -515,8 +515,9 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **PIN, EXACT CORE, REGULATOR CONTROLS, AND SCORER FROZEN BEFORE
-CANDIDATE (v16 #142--#145)**.
+Status: **GREEN-UNREVIEWED AT
+`RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`
+(v16 #142--#146)**.
 
 RHL asks whether the candidate joint quantum--geometric law can be stated on
 whole bounded relational regions without making a point set, lattice, graph
@@ -555,8 +556,17 @@ regulator now binds two nonisomorphic presentations, a descent tamper, the
 compositional but prediction-moving character laws, and the fixed- versus
 changing-boundary locality distinction. None is a spacetime discretization.
 The frozen scorer binds fifteen upstream/document mutants and refuses to treat
-finite agreement as proof of the arbitrary-region theorems. No candidate paper
-or official outcome exists yet.
+finite agreement as proof of the arbitrary-region theorems. The self-contained
+candidate now proves algebraic presentation descent, the no-intermediate-
+kernel theorem, division-instrument completeness, a finite append-only record
+class, structural character-law nonselection, and the dynamic-subsystem
+referent proposition. The official score passes 24/24. Two clean replays,
+15/15 mutant refusals with no artifacts, missing-anchor/no-overwrite controls,
+and a true alien-CWD tree with no `.git` all pass. The verifier separately
+audits every proof and discloses three non-load-bearing title/URL citation
+mismatches without altering the one-run candidate. Dynamic locality, geometry,
+law selection, infinite extension, GR/QFT, and empirical physics remain open.
+The hostile protocol is the only authorized next event.
 
 ## Successor register
 

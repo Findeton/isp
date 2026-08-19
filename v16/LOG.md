@@ -3095,3 +3095,41 @@ and higher-order process inconclusive.
 
 No official artifact has been generated. The next event is the self-contained
 analytical candidate and its single official score.
+
+## 2026-08-18 — RHL PAPER 11 CANDIDATE GENERATED AND VERIFIED (v16 LEDGER #146)
+
+`v16/paper-11-unsliced-regional-history-law.md` is frozen at the scoped
+candidate primary
+**RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED**. Its ontology
+is one actual compatible web of durable relational facts whose bounded parts
+are regions, not fundamental points. The governing candidate is an unsliced
+regional law; Hilbert/decoherence machinery is representational; ordinary
+probabilities and CP instruments appear only at stable record divisions.
+Finite graphs, matrices, routes, and row counts are theorem receipts, never
+spacetime atoms or ticks.
+
+The analytical candidate proves algebraic presentation descent through an
+arbitrary directed refinement family, the impossibility of an ordinary
+intermediate probability measure in the presence of interference, all-input
+instrument completeness at divisions, finite append-only record recovery, and
+a character-twist nonselection theorem. It also proves that locality after a
+boundary change has no truth value until the law transports the subsystem
+algebra. The law type is therefore grain-dependent: history/decoherence
+functional for unrecorded-region representation, indivisible multi-time law
+for a stochastic fundamental reading, and an ordinary kernel only at stable
+record boundaries.
+
+The frozen score passes 24/24. Two clean replays are byte-identical to the
+official artifacts; 15/15 mutants refuse without artifacts; a minimal alien-
+CWD tree with no `.git` reproduces both official files byte-for-byte; and the
+no-overwrite, missing-anchor, exactness, and CLI controls pass. Theorem proofs
+are audited separately in `v16/note-rhl-candidate-verification.md` rather than
+inferred from finite counts.
+
+Three title/URL citation mismatches are disclosed there without editing the
+immutable candidate after its one official run. They do not move the linked
+conceptual evidence or the mathematics, but any later authorized repair must
+correct them. Geometry, dynamics selection, infinite extension, dynamic
+locality, GR, QFT, particles, and empirical prediction remain unentered. The
+candidate is **GREEN-UNREVIEWED**; only a separately frozen hostile protocol is
+next authorized.
