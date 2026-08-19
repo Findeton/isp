@@ -3876,3 +3876,26 @@ primary, and v1--v3 artifacts remain immutable. Candidate and panel remain
 blocked. The next authorized event is scorer-only v4 implementation using
 AST/static and fixture-free self-tests; no `--run`, mutant, or fixture load may
 occur before a separate v4 source-freeze commit.
+
+## 2026-08-19 — APR/ISP INDIVISIBLE-LAW SCOPE ENGRAVED (v16 LEDGER #174)
+
+`v16/note-apr-indivisible-law-scope.md`, SHA-256
+`87b9774ccf58b5f9b5edd5a3df4df25e1bc331f50c901105c9b38b0ea284cf6b`,
+incorporates the user-raised Barandes distinction after a primary-source
+audit. Ordinary probability remains lawful; arbitrary intermediate
+probabilistic division does not. The sought ISP object is one indivisible
+stochastic law on a law-sufficient relational configuration, while Hilbert/
+history machinery is representational.
+
+The engraving corrects three possible overreads. Barandes division events are
+admissible conditioning times, not automatically durable ISP records; his v1
+configuration space is fixed and explicitly nonrelational, so ISP's point-free
+relational state is an extension target; and the decoherence functional is a
+safe candidate history envelope, not yet welded uniquely to the missing
+transition law. APR's `AB/BC` family is only a simultaneous classical gluing
+diagnostic, never the microscopic dynamics.
+
+This note is interpretive only. It changes no v4 scorer requirement, fixture,
+coordinate, primary, precedence, or ontology ceiling. Synthetic classical/
+quantum laws remain scorer controls and may not enter the APR scientific
+receipt. The candidate indivisible relational law remains unconstructed.

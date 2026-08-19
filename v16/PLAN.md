@@ -736,6 +736,16 @@ a true off-tree/no-fixture replay with reconstructible residuals. Source must
 freeze in a separate commit before any v4 fixture evaluation. Candidate
 drafting and panel review remain prohibited.
 
+The user-raised law-type clarification is engraved at #174 without changing
+the v4 experiment. APR's `AB/BC` table is a simultaneous regional-gluing
+diagnostic, not a transition law or classical microscopic copula. ISP seeks an
+indivisible stochastic law on a law-sufficient relational configuration;
+ordinary probabilities are permitted, but not arbitrary inserted stochastic
+divisions. Barandes division events are not automatically durable records,
+his fixed nonrelational catalogue does not supply ISP's point-free referent,
+and RHL's decoherence functional remains a candidate representation rather
+than a proven weld to the missing law. All of those constructions remain open.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
