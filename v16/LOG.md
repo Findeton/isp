@@ -4046,3 +4046,34 @@ unconstructed. Because the corpus is stronger at rejecting counterfeit unity
 than constructing real unity, candidate/panel authorization is held until a
 separate result-neutral `ONE-GAMMA` paper/review gate makes law-first shadow
 derivation mandatory. No further scorer repair is authorized.
+
+## 2026-08-19 — APR ONE-GAMMA PAPER/REVIEW GATE FROZEN (v16 LEDGER #180)
+
+`v16/note-apr-one-gamma-paper-review-gate.md`, SHA-256
+`06d171a3eea8109e177e2dfa3cb5536fe3785043e676f735c36e91d03834cb51`,
+freezes the methodological correction after two independent ACCEPT audits.
+The immediate v4 defects remain ordinary one-law typing/dataflow failures;
+the deeper scientific debt is now separately binding: no collection of
+regional laws, instruments, records, rewrites, comparisons, or responses may
+be called indivisible merely because its modules share types, carriers,
+containers, hashes, or a dependency graph.
+
+Any future positive physical claim must start from one primitive tuple
+`(C_pres,G,C,B,Div,Gamma)`, with `C=C_pres/G` and one unique nomological
+transition root. Every advertised physical shadow must carry an exact
+derivation ledger from `Gamma`; the mandatory `WRAPPER-GAMMA` adversary kills
+a connected container of separately fitted modules. `Law-sufficient` is
+typed-source sufficiency, not Markov screening at arbitrary cuts. A missing
+native intermediate law yields `NATIVE-CUT-UNDEFINED`; indivisibility beyond
+that typing result requires an exact native or frozen-class factorization
+certificate. Lawful division and nondivision witnesses, delayed record
+recovery, changing relational support, covariance, held-out eliminability,
+law selection, and actualization remain separate gates.
+
+The freeze authorizes a Paper 12 candidate and hostile review only at the
+scoped negative `APR-BLOCKED-AT-BOUNDARY-GLUING`. The paper must state
+load-bearingly that indivisibility was not operationalized and that v5
+certifies verifier plumbing only. No physical `Gamma`, successor experiment,
+new fixture, geometry, locality, actualization, or positive law claim is
+authorized. A future Gamma-first construction requires a separately frozen
+result-neutral pin and explicit user authorization.

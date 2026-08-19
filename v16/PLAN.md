@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V5 VERIFIER ACCEPTED (v16 #179); SCIENTIFIC PRIMARY UNCHANGED; ONE-GAMMA PAPER/REVIEW GATE REQUIRED BEFORE CANDIDATE**.
+Status: **ONE-GAMMA PAPER/REVIEW GATE FROZEN (v16 #180); NEGATIVE PAPER 12 CANDIDATE/REVIEW AUTHORIZED; PHYSICAL GAMMA CONSTRUCTION UNAUTHORIZED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -804,6 +804,33 @@ instruments, records, comparisons, and rewrites derived rather than supplied.
 The gate must include lawful-division and nondivision witnesses, changing-
 carrier and held-out controls, and an explicit ban on container/connectivity
 as evidence of indivisibility.
+
+The binding `ONE-GAMMA` paper/review gate freezes at #180 after two
+independent ACCEPT audits. It makes the methodological correction operational
+without manufacturing the missing physics. A future positive candidate must
+begin from `(C_pres,G,C,B,Div,Gamma)`, with `C=C_pres/G` and one unique
+nomological transition root. Regional laws, instruments, records,
+comparisons, support/rewrite dynamics, contact responses, and representations
+must be computed shadows of that root rather than independent modules sharing
+a carrier, container, graph, or hash. A wrapper around separately fitted
+modules is an explicit adversary.
+
+The gate also refuses two shortcuts. `Law-sufficient` compares only identical
+complete typed `Gamma` source arguments and does not impose Markov screening
+at arbitrary cuts. At a proposed nondivision cut, absence of a native
+intermediate law is reported as `NATIVE-CUT-UNDEFINED`; dynamical
+nonfactorizability requires an exact native or class-relative feasibility
+certificate. Lawful division and nondivision witnesses, delayed records,
+changing-support ontology, gauge covariance, held-out tests, law selection,
+and actualization remain distinct coordinates.
+
+This authorizes drafting and hostile review of Paper 12 only as the frozen
+negative `APR-BLOCKED-AT-BOUNDARY-GLUING`, with a load-bearing section that
+states that indivisibility was not operationalized. It does not authorize a
+physical `Gamma`, new fixtures, a successor scorer, geometry, locality,
+actualization, or a positive successor outcome. Any future `Gamma`-first
+construction needs a separately frozen result-neutral pin and explicit user
+authorization.
 
 ## Successor register
 
