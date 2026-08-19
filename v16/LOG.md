@@ -3184,3 +3184,35 @@ joint adjudication; majority vote cannot override the strictest supported
 theorem or scope. No repair, terminal verdict, successor, or continuum unit is
 authorized at this event. The unrelated untracked v15 SCOUT-T files remain
 outside the source set and untouched.
+
+## 2026-08-18 — RHL PAPER 11 REFINEMENT SEAT FROZEN (v16 LEDGER #149)
+
+`v16/review-rhl-refinement.md` freezes the mutually blind point-free
+mathematics/refinement seat against immutable candidate commit `b84225f` and
+protocol commit `67e911d`. The report grade is **REJECT**. Its strict proposed
+primary is `RHL-BLOCKED-AT-POINT-FREE-REFERENT`; even if the named regional
+category is accepted as primitive, its conditional ceiling is
+`RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`.
+
+The algebraic colimit theorem survives for any fixed declared directed system,
+including the noninjective, null, and cofinal cases. What is absent is the
+physical referent that was Paper 11's first rung: the candidate names causal
+mereology but does not define its parthood, overlap, precedence, boundary, or
+compatibility relations. A new exact counterexample then holds all local
+spaces, laws, units, positivity, and pullback identities fixed while two
+equally lawful comparison doctrines move a marked cross term from `1` to `0`
+and the common-image dimension from `2` to `1`. Presentation independence is
+therefore conditional on prediction-carrying comparison maps, not derived by
+the delivered law.
+
+All fifteen frozen mutants refuse without artifacts; five seat-specific
+changed-object attacks run exactly; clean and true off-tree/no-`.git` replays
+are byte-identical; and all frozen hashes reconcile. The seat also finds that
+all three RHL programs can leave a partial output when the receipt target
+already exists, so their no-overwrite behavior is nontransactional in that
+target order. Candidate, protocol, source, artifact, and sibling-report bytes
+remain unchanged. The report's ordinary SHA-256 is
+`678cdf560d277bf75800c891a207a5ed9a01ff55d8744cd721fec532a1b8cffa`.
+
+This event records one hostile seat only. It authorizes no adjudication,
+repair, terminal verdict, or successor construction.
