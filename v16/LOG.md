@@ -2893,3 +2893,23 @@ The physics seat must also enforce fixed-factor no-signalling scope and the
 complete absence of graph-generated geometry. Candidate bytes remain
 immutable. No reviewer is assigned, no report is authorized by this freeze
 alone, and no adjudication or repair may begin before all three reports exist.
+
+## 2026-08-18 — RFB PAPER 10 OPERATOR/HISTORY REVIEW FROZEN (v16 LEDGER #137)
+
+`v16/review-rfb-operator.md` freezes the mutually blind operator/history seat
+at **REJECT**. The finite writer/reader algebra, complete final instrument,
+real-overlap tag family, exclusive-kernel phase exclusion, positive history
+functionals, and fixed-factor CPTP result reproduce exactly. The load-bearing
+process-law comparison does not: neither alleged surviving microscopic process
+is constructed, and the displayed final-outcome sum is not a second temporal
+cut. The recommended primary is therefore
+**RFB-METHOD-INCONCLUSIVE-AT-PROCESS-LAW**, with the protocol disposition
+`UNENTERED-AT-PROCESS-LAW`.
+
+The report also proves that unrestricted edge phases leave a continuous
+`U(1)` cycle holonomy rather than the frozen finite `Z_q` count, and that the
+hybrid locus is one-dimensional only on the declared real-overlap slice. All
+39 registered mutants refuse without artifacts; clean and true no-`.git`
+replays reproduce the candidate bytes. Candidate files remain unchanged and
+joint adjudication is withheld until the other two reports are separately
+frozen.
