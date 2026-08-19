@@ -515,8 +515,8 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **PANEL-ADJUDICATED REJECT AT
-`RHL-BLOCKED-AT-POINT-FREE-REFERENT` (v16 #152)**, with the conditional
+Status: **TERMINAL REJECT AT
+`RHL-BLOCKED-AT-POINT-FREE-REFERENT` (v16 #153)**, with the conditional
 ceiling `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY` if the undeveloped regional
 category is treated as primitive.
 
@@ -577,6 +577,9 @@ particles, and predictions remain open. Repair requires a new causal
 mereology, typed refinement/extension structure, derive-price-quotient ruling
 for comparison maps, and one joint regional/division/recovery/locality law.
 Those are new candidate data, so no bounded Paper 11 repair is authorized.
+Post-adjudication replay reproduces the frozen transcript and receipt
+byte-for-byte and confirms all immutable candidate/report bytes. Paper 11 is
+terminal at this scoped negative.
 
 ## Successor register
 

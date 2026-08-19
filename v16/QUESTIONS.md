@@ -262,7 +262,7 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     two temporal cuts, and separately build changing-factorization locality.
     Actualization, geometry, growth, QFT, GR, Hamiltonian structure, and
     empirical prediction remain open.
-33. **PANEL-ADJUDICATED BLOCK / GEOMETRY UNENTERED — Can the fundamental law
+33. **TERMINAL BLOCK / GEOMETRY UNENTERED — Can the fundamental law
     be point-free and unsliced?** Paper 11 closes at
     `RHL-BLOCKED-AT-POINT-FREE-REFERENT`, with conditional ceiling
     `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. The ontology proposal remains
@@ -286,4 +286,6 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     open. A successor must construct an atomless causal mereology, type
     refinement versus extension, derive/price/quotient comparison maps, and
     join regional law, division, recovery, and changing-boundary locality in
-    one object; no bounded Paper 11 repair can do that.
+    one object; no bounded Paper 11 repair can do that. A post-adjudication
+    scorer replay is byte-identical, so the unit is terminal at this scoped
+    negative rather than waiting on an integrity repair.

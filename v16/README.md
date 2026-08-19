@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `RHL` / Paper 11: **PANEL-ADJUDICATED REJECT AT
-  `RHL-BLOCKED-AT-POINT-FREE-REFERENT`** through v16 ledger #152, with the
+- `RHL` / Paper 11: **TERMINAL REJECT AT
+  `RHL-BLOCKED-AT-POINT-FREE-REFERENT`** through v16 ledger #153, with the
   conditional ceiling `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. The point-free,
   no-tick ontology remains coherent as a postulate: one partial compatible web
   of durable relational record facts may be actual; unrecorded alternatives

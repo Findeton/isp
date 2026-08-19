@@ -3327,3 +3327,23 @@ transactional-write corrections are bounded individually, but cannot repair
 the failed physical referent and comparison law. No bounded candidate repair
 is authorized; a successor would require new causal-mereological and joint-law
 data plus a new panel. The unrelated v15 SCOUT-T files remain untouched.
+
+## 2026-08-18 — RHL PAPER 11 TERMINAL VERIFIED (v16 LEDGER #153)
+
+`v16/note-rhl-terminal-verification.md` closes Paper 11 at
+`RHL-BLOCKED-AT-POINT-FREE-REFERENT`, with conditional ceiling
+`RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. No bounded repair is performed.
+
+A fresh post-adjudication scorer run into new `/private/tmp` paths exits zero
+and reproduces the official transcript and receipt byte-for-byte at SHA-256
+`5ce9002848affabf91ea7ec46690465ba2d444738fb9beb68f891accd085fdaf`
+and `77528f648954ee30ea36bc69785d5646fc73ca2ef145127bd39e1753638eca98`.
+The scorer self-test exposes all fifteen frozen mutants. Targeted diffs show no
+change to the candidate, sources, official artifacts, or three review reports.
+
+The replay authenticates the frozen 24/24 receipt but cannot override the
+panel's semantic counterexamples. Paper 11 is terminal at its scoped negative;
+any continuation requires a separately pinned successor with new causal-
+mereological, comparison, and joint-law data. The terminal note's ordinary
+SHA-256 is
+`cb37730d30112bf206ea151830e4b55bcffff07ecc1fc0bcd63bbb0be0baedb1`.
