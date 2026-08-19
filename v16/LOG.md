@@ -4023,3 +4023,26 @@ commit no scorer-byte repair is authorized: a confirmed independent semantic
 counterexample terminalizes APR at the frozen boundary-gluing result. The next
 event is one official run to the absent v5 destinations, followed by two
 independent reconstructions. No candidate or panel is authorized.
+
+## 2026-08-19 — APR V5 VERIFIER ACCEPTED; SCIENTIFIC NEGATIVE UNCHANGED (v16 LEDGER #179)
+
+The official v5 output, receipt, and canonical payload are byte-identical to
+v4: respectively `68374ea1...2f56`, `ab9ea941...9a61`, and
+`04a1e370...438d`. A relative-path publication attempt was refused at
+preflight before fixture load and created nothing; the single valid absolute-
+path fixture run then published transactionally.
+
+Two mutually independent post-freeze verifiers accept the bounded repair.
+Seat 1 passes 68/68 exact checks; seat 2 passes 139/139. Both reconstruct the
+complete synthetic law controls, actual backward slices, `P_i/r_i`,
+global-to-regional restrictions, one ontology carrier chain, exact phase
+control, object attacks, and real changed-source kills without importing
+scorer measurement functions. No stopping-rule counterexample survives.
+
+V5 therefore certifies only generic verifier plumbing. APR remains
+`APR-BLOCKED-AT-BOUNDARY-GLUING`, `STATIC-RESPONSE-ONLY`, and measured ontology
+`STATIC-RESPONSE`; the physical indivisible relational `Gamma` remains
+unconstructed. Because the corpus is stronger at rejecting counterfeit unity
+than constructing real unity, candidate/panel authorization is held until a
+separate result-neutral `ONE-GAMMA` paper/review gate makes law-first shadow
+derivation mandatory. No further scorer repair is authorized.

@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V5 SCORER SOURCE FROZEN BEFORE FIXTURE RUN (v16 #178); OFFICIAL RUN THEN TWO INDEPENDENT RECONSTRUCTIONS**.
+Status: **V5 VERIFIER ACCEPTED (v16 #179); SCIENTIFIC PRIMARY UNCHANGED; ONE-GAMMA PAPER/REVIEW GATE REQUIRED BEFORE CANDIDATE**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -792,6 +792,18 @@ immutable. The sole next event is one official transactional run to new v5
 paths, followed by two independent black-box/source reconstructions. A green
 result can certify only verifier plumbing and the frozen APR negative; a
 confirmed semantic counterexample terminalizes APR with no scorer restart.
+
+The official v5 publication and both independent reconstructions close at
+#179. V5 output/receipt bytes equal v4 exactly; the two hostile ledgers pass
+68/68 and 139/139 with no surviving false weld. This accepts the synthetic
+verifier architecture only. It does not construct or select a physical
+indivisible relational law. Before Paper 12 drafting or panel review, freeze a
+separate result-neutral `ONE-GAMMA` gate: one nomological `Gamma` over
+law-sufficient relational configurations/divisions, with regional laws,
+instruments, records, comparisons, and rewrites derived rather than supplied.
+The gate must include lawful-division and nondivision witnesses, changing-
+carrier and held-out controls, and an explicit ban on container/connectivity
+as evidence of indivisibility.
 
 ## Successor register
 
