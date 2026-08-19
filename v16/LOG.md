@@ -4262,3 +4262,30 @@ the capped primary.  The report therefore independently confirms a real
 hard-kill survivor and fixes the first directly affected outcome at
 `P13-SUPPORT-CHANGE-UNPROVEN`.  Stage B remains prohibited.  The #192 source
 is immutable; joint adjudication, not an in-place patch, is the next event.
+
+## 2026-08-19 — PAPER 13 STAGE-A SOURCE AUDITS ADJUDICATED (v16 LEDGER #195)
+
+`v16/note-paper13-stageA-source-audit-adjudication.md` jointly adjudicates the
+two frozen reports and an independent adjudicator replay.  All three
+reconstructions agree on mutant source SHA-256
+`a6cd95e0eb5c917fa3ad2f93441a2f56d9ec69e4f3801ec551dacdfdef4c5668`,
+stdout SHA-256
+`c5dbfe91701e5dd6f5e73a63c818448fa28d01c386f4a2ecc2dfdb0f5b8c28bc`,
+36/36 checks, 81/81 kills, roles `1 -> 2`, cells `2 -> 2`, and the false capped
+promotion.
+
+The finding is accepted as a direct failure of the pinned horizontal-split
+discriminator.  The adjudicated rung is
+`P13-SUPPORT-CHANGE-UNPROVEN`.  The broader
+`P13-REFERENT-PRESENTATION-ONLY` reading is recorded but not adopted because
+this changed object does not by itself refute the entire source groupoid.
+The Cayley, nondivision, division, reciprocal, and matching arithmetic is not
+numerically refuted, but remains provisional and uncitable because the
+authoritative construction failed source audit.
+
+Stage B is refused.  The #192 bytes and both reports remain immutable.  A
+forward repair may be attempted only after a separate result-neutral pin that
+freezes exact split-fiber/properness/cell-count gates and the survivor as a
+mandatory changed-source kill.  No source edit, fresh generation, official
+run, paper, review round, metric, curvature, gravity, or GR work is authorized
+by this adjudication.

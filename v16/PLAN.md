@@ -940,6 +940,16 @@ rescored in place.  Joint adjudication is now required before any forward
 repair pin; fresh generation, official construction, paper drafting, and all
 metric-or-later units remain closed.
 
+#195 jointly adjudicates the two audits and the adjudicator's matching replay.
+It adopts `P13-SUPPORT-CHANGE-UNPROVEN` as the directly forced rung, preserves
+the #192 bytes as the immutable flawed referent, and rejects Stage B.  It does
+not promote the more severe referent-wide reading without an additional
+counterexample, and it does not treat the support discriminator failure as a
+failure of stochastic indivisibility.  The only authorized continuation is a
+separate result-neutral forward repair pin requiring an exact split-fiber and
+cell-count certificate plus the frozen tautological-child attack.  No source
+edit or later unit is authorized at #195 itself.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
