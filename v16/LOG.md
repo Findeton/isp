@@ -3680,3 +3680,22 @@ cospan controls and a true process assignment. The repaired scorer must freeze
 before truth and may publish only to new `apr_output_v2.txt` and
 `apr_receipt_v2.json` paths. No candidate or panel is authorized before an
 independent v2 audit closes.
+
+## 2026-08-19 — APR REPAIR CAPABILITY/ONTOLOGY GUARDS FROZEN (v16 LEDGER #165)
+
+`v16/note-apr-scorer-repair-pin-addendum.md`, SHA-256
+`d6d59a312ccadfd96ff6b4a002dc98e384c6a0e56d41114f16e273fb9dde408a`,
+closes nine pre-implementation loopholes while the repaired scorer remains
+unfrozen and no v2 truth exists. A computed generic capability census—not a
+static absence table—must feed the classifier, with synthetic both-direction
+controls. Mutants and analytical controls cannot create missing positive
+baselines. Dependency roots are scope-indexed and prove ancestry only; the
+fixture has no selected global joint law.
+
+The addendum also freezes the exact `AB/BC` selector ambiguity, candidate-
+regional rather than physical E-37 language, relabel-canonical mathematical
+signatures rather than output sensitivity, detected rather than stipulated
+status words, non-duplication of the M15/P5 whitelist evidence, and the full
+physical-referent prerequisite list. The live plan now calls this an
+outcome-neutral instrumentation repair. The sole next event remains scorer-
+only implementation and pre-truth freeze against both repair documents.
