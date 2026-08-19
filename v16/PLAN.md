@@ -1006,6 +1006,20 @@ exact #197 source to the seven absent Stage-B paths.  The evaluator is
 immutable.  Stage C, Paper 13 review, and every metric-or-later unit remain
 closed until the Stage-B receipt is independently verified.
 
+Stage B freezes at #201 after one externally supplied 32-byte nonce, zero
+rerolls, one deterministic fresh generation, and one official run from the
+immutable #197 evaluator.  The generated size-12 case has queries
+`[1,8,9,10]`, challenge fixed pattern `[false,false,false,true]`, exact blind
+resource parity, and two direct global Gamma calls.  The official output earns
+the capped construction-stage primary
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`; all 92 mutations
+remain killed.  A no-import verifier independently reconstructs the full
+1,296-coordinate laws for both members, all fresh/canonical hashes, the exact
+process anchors, 14 reads, 12 claims, 15 walls, 8 coordinates, and all 178 seal
+entries in 346 checks.  Stage B is `ACCEPT-STAGE-B`.  Stage C is now the sole
+authorized next event; Paper 13 is not citable before its later hostile panel
+and adjudication, and all metric-or-later units remain closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

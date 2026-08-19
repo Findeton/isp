@@ -4430,3 +4430,46 @@ sole next authorized event is one nonce-bound no-reroll fresh generation and
 one official Stage-B construction run from the immutable #197 source to the
 seven absent Stage-B paths.  Stage C, Paper 13 drafting/review, and every
 metric-or-later unit remain closed pending independent receipt verification.
+
+## 2026-08-19 — PAPER 13 STAGE-B OFFICIAL CONSTRUCTION VERIFIED (v16 LEDGER #201)
+
+One reviewer-generated 32-byte nonce,
+`726d0d534da2d57eb97a89f57324d1e923e73b7cbd9130f443cbb8342ac891c1`,
+was consumed without reroll.  The one authorized fresh generation writes
+`v16/code/p13_gamma_fresh_cases.json`, SHA-256
+`2ac664c94a6b29c5b73fd8047e97a2e086ac45defc9c3431bc1ded66f011dd29`,
+with normalized payload SHA-256
+`5d0a3ee2ac368307064ed769bc3d3f514121662a6de759bf6776ec6189a6c1b7`.
+Its deterministic case has size 12, queries `[1,8,9,10]`, challenge
+permutation `[5,11,7,3,2,1,6,4,9,0,10,8]`, fixed pattern
+`[false,false,false,true]`, zero rejections, zero rerolls, peak 37 cells, and
+case SHA-256
+`536fe43eb88137934cc76e12209db297ee5945554f411a49ff5f341a9ba31d61`.
+
+The single official run writes `v16/code/p13_gamma_output.txt`, SHA-256
+`7f544c79f60d91c84e5805541313ec9d7ac068cdf0ee4f6184947cf44f43886f`,
+and `v16/code/p13_gamma_receipt.json`, SHA-256
+`83bd33028c81e9dd555a44e9e7721d5ace298d522e0c069409118bdbf51c6c48`.
+The receipt normalized payload SHA-256 is
+`622b21b914ab5056713fe61916b672f25c95cd9de33d045713619f581c1c00e8`.
+All 12 eligible gates are true; 92/92 mutations remain killed; the strict
+primary equals its cap:
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`.
+
+`v16/note-paper13-gamma-verification.md`, SHA-256
+`faf508650c8d5f4c8691b334ea8877505ac49f2c26cdcc526bc3e309179295b8`,
+freezes the independent no-import verification.  Its clean-room verifier runs
+346 checks and reconstructs the SHAKE derivation, both complete 1,296-target
+laws, common marginals `16/25` at all four queries, challenge marginals
+`0,0,0,16/25`, the exact process controls, 14 reads, 12 claims, 15 walls, 8
+coordinates, all 92 mutations, and all 178 seal entries with no discrepancy.
+
+The construction-stage result is finite, exact, and explicitly class-relative.
+The fresh matching row confirms relation sensitivity but is factorized; native
+indivisibility remains the separate negative-`K` witness.  Event/filling
+selection, catalogue, coupling `g`, division doctrine, Born clause, law
+selection, and actualization remain priced, unselected, typed-candidate, or
+postulated.  No absolute irreducibility, valuation, metric, topology,
+causality, curvature, continuum, gravity, GR, QFT, species, or Hamiltonian is
+derived.  Stage C is now solely authorized; nothing is citable before the
+later hostile panel and adjudication.
