@@ -3073,3 +3073,25 @@ controls establish erasure and redundancy for their registered continuations,
 not absolute permanence. The scorer must next bind these receipts to general
 proof objects without inferring arbitrary-refinement or ontological conclusions
 from a finite census.
+
+## 2026-08-18 — RHL PAPER 11 SCORER FROZEN BEFORE CANDIDATE (v16 LEDGER #145)
+
+`v16/code/rhl_score.py` is frozen before the Paper 11 candidate, official
+transcript, receipt, result, or theorem disposition exists. Its SHA-256 and
+fifteen upstream/document mutants are recorded in
+`v16/note-rhl-scorer-freeze.md`. Compilation, mutant enumeration, and the
+cross-term mutation self-test pass.
+
+The scorer authenticates all frozen pin/core/regulator artifacts, recomputes
+the finite lineages, audits fourteen scoped analytical claim referents and six
+named theorem statements, and keeps human proof review explicitly separate
+from finite receipt validation. It cannot infer arbitrary-refinement truth from
+the two presentations. The registered candidate route stops at a regional
+quantum law with geometry unentered and dynamic locality blocked; any stronger
+geometry or GR promotion is a mutant. Law type is reported by grain:
+decoherence functional for unrecorded-region representation, indivisible law
+for a stochastic fundamental reading, ordinary kernel at stable divisions,
+and higher-order process inconclusive.
+
+No official artifact has been generated. The next event is the self-contained
+analytical candidate and its single official score.

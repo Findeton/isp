@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `RHL` / Paper 11: **PIN, RESULT-NEUTRAL CORE, AND REGULATOR CONTROLS
-  FROZEN** through v16 ledger #144. The user-authorized pin removes points,
+- `RHL` / Paper 11: **PIN, RESULT-NEUTRAL CORE/REGULATOR, AND SCORER
+  FROZEN BEFORE CANDIDATE** through v16 ledger #145. The user-authorized pin removes points,
   lattices, graph meshes,
   and ticks from the proposed ontology. Its candidate reality is one actual
   point-free relational record history; its candidate law is assigned to
@@ -33,7 +33,9 @@ theory-selection result.
   exact public gates but contains no physical law or verdict. The regulator
   adds nonisomorphic subdivision/cut controls, interference, record erasure and
   redundancy, structural law nonselection, and changed-boundary ambiguity;
-  its finite matrices remain algebra receipts only.
+  its finite matrices remain algebra receipts only. The scorer registers
+  fifteen upstream/document mutants and explicitly leaves the arbitrary-region
+  proofs to adjudicator and hostile review.
 - `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
   #141. Two blind seats reject and one accepts with fixes; all independently
