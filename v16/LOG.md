@@ -3587,3 +3587,21 @@ absences rather than manufacture positive baselines. Causal/contact arenas
 remain controls without a same-law schedule. The addendum's SHA-256 is
 `4c64a9c8c79534c6fb0d69fd7a4445d4fc0b8b4c20bd7dc710165d46f080e8fe`.
 No scorer file or APR measurement existed when this correction was made.
+
+## 2026-08-18 — APR MALFORMED-ROW CORRECTION FROZEN (v16 LEDGER #161)
+
+`v16/note-apr-scorer-protocol-addendum-2.md` freezes three final interface
+corrections while `apr_score.py` is absent and before any APR truth is run.
+First, `rw_002` is not a composable sequential recovery word: `ro_004`
+returns one field and `ro_005` requires three. The scorer must refuse the word
+and may test the two readers only as separate prefixes after the common
+writer state.
+
+Second, `mx_007`/`mx_008` use the undeclared constructor
+`intrinsic_replace(...)` although their public mixed grammar declares only
+`replace(...)`; the rows must refuse rather than acquire a guessed alias to
+the separate intrinsic grammar. Third, the empty-tree cospan is assigned only
+at B0, so identity at every boundary and total forest-functor identity remain
+unconstructed. These are typing and construction ceilings, not result moves.
+The addendum's SHA-256 is
+`9b1d7d75526c9b97befd6f016bfc5242162e1e48b259984852b4924950f9acaa`.

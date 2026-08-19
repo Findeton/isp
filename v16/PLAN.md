@@ -685,6 +685,12 @@ frontiers, full record carriers, tensor/naturality, and regional gluing.
 Unavailable family-generation, tensor, and causal-schedule interfaces must be
 reported as absences rather than filled in by the scorer.
 
+V16 #161 freezes the last malformed-row corrections before scorer code:
+`rw_002` is an ill-typed sequential recovery word, two mixed-tree rows use an
+undeclared intrinsic-replacement constructor, and empty-tree identity is
+frozen only at B0 rather than every boundary. The scorer must refuse or report
+these absences; it may not repair them by interpretation.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
