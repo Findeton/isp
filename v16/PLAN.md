@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **PIN FROZEN (v16 #154); construction authorized**.
+Status: **V3 SCORER SOURCE FROZEN (v16 #171); FIRST V3 RUN AUTHORIZED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -717,11 +717,15 @@ guards. V2 is noncertifiable. The next authorized event is a minimal delta-
 repair pin and a pre-evaluation v3 scorer freeze; no fixture, physical law,
 outcome ladder, or primary-precedence edit is authorized.
 
-The v3 delta contract is frozen at v16 #169. Its sole authorized construction
-and its positive-path/exposure guard addendum at #170. The sole authorized
-construction is scorer-only implementation without invoking any fixture-evaluating CLI
-mode. Source must freeze before a v3 run; the expanded independent verifier
-must close every v2 green row and every failed gate before candidate drafting.
+The v3 delta contract is frozen at v16 #169 and its positive-path/exposure
+guard addendum at #170. The scorer-only implementation freezes at #171 before
+any v3 fixture-evaluating CLI mode: 27 synthetic groups and a true off-tree/
+no-git self-test pass on the exact source SHA. The permanent v2 exposure debt
+remains explicit, so this is source-before-v3-run rather than pre-truth. The
+only authorized next event is one committed-byte transactional v3 run to new
+paths, followed by root/alien/off-tree replay and the expanded independent
+verifier. Every v2 green row and failed gate must close before candidate
+drafting or panel review.
 
 ## Successor register
 

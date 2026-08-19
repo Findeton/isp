@@ -78,6 +78,8 @@ IMMUTABLE_HASHES: dict[str, str] = {
     "note-apr-scorer-repair-pin.md": "14e08b0d2b6ee53fa290849d111579d45ccbe037248cbd086139e600c2668ffc",
     "note-apr-scorer-repair-pin-addendum.md": "d6d59a312ccadfd96ff6b4a002dc98e384c6a0e56d41114f16e273fb9dde408a",
     "note-apr-scorer-repair-pin-addendum-2.md": "898a49596752b9b7789bd6c6b71d471aac02a81836cf85c558b6b7f3c425fd4d",
+    "note-apr-v3-delta-repair-pin.md": "88c2941f2fb4c90ed8476a5e814ab116b66369f23661dbacf4f89555ea6dd7f0",
+    "note-apr-v3-delta-repair-pin-addendum.md": "22eb137fc5496a73ae46fadaaba26f98451dbc5f45c266826c135f7542f63e88",
     "code/apr_core.py": "cd51fd36bc26701fdc649ee81f4b048dadde03e645860a7b885c501e2e180ca9",
     "code/apr_fixtures.py": "0698d5d413384e43108241a15eb7134fda82deec8bffdc4413edb2c5ea2742bc",
 }
@@ -92,6 +94,7 @@ BINDING_PROTOCOL_COMMITS = (
     "1956ad5",
     "ff7e4b0",
     "430795a",
+    "bcfdc0a",
 )
 
 PRIMARY_WORDS = (
@@ -107,7 +110,18 @@ PRIMARY_WORDS = (
     "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
     "APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED",
 )
-STATIC_QUALIFIER = "APR-STATIC-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT"
+STATIC_QUALIFIER = (
+    "APR-STATIC-RAW-PREFIX-SYNTAX-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT"
+)
+
+BLINDING_STATUS = "RESULT-KNOWN-BEFORE-V3-IMPLEMENTATION"
+EXPOSURE_DEBT = "PERMANENT-PREFREEZE-M01-AND-ALL-MUTANTS-EXPOSURE"
+REGIONAL_SUPPORT_SCOPE = (
+    "finite regional-support controls only; regional-support coordinate unearned"
+)
+PREFIX_SYNTAX_SCOPE = (
+    "raw prefix-syntax atomlessness only; physical regional referent unconstructed"
+)
 
 MUTANT_IDS = tuple(
     [f"M{index:02d}" for index in range(1, 36)]
@@ -132,7 +146,7 @@ MUTANT_DESCRIPTIONS: dict[str, str] = {
     "M13": "run explicit zero and constant profile laws through the quotient",
     "M14": "compare equal-rank unequal subspaces and supplied-map ancestry",
     "M15": "instantiate syntax-copy, identifier-hash, and finite whitelist oracles",
-    "M16": "erase represented candidate-regional overlap in the region-bearing object",
+    "M16": "substitute c by blind-equivalent d on the first represented interface",
     "M17": "replace the future-profile matrix by a lossy presentation",
     "M18": "split one predictive class redundantly",
     "M19": "apply an invertible change of future-profile basis",
@@ -452,38 +466,83 @@ def question_region_map(
     return result
 
 
-def semantic_branch_binding(data: Mapping[str, object]) -> dict[int, str]:
+_RECORD_APPEND = re.compile(
+    r"^append\(R,\(C,([A-Za-z_][A-Za-z0-9_-]*)\)\)$"
+)
+
+
+def _semantic_transition_ports(
+    data: Mapping[str, object],
+) -> dict[int, dict[str, object]]:
+    """Bind a branch bit from its restriction and carry it through its writer.
+
+    Neutral port identifiers are allowed to change, but the identifier consumed
+    by ``next_record_word`` must be the identifier of the same semantic branch.
+    Thus neither list position nor an identifier suffix can repair a crossed
+    writer reference.
+    """
+
     process = data.get("regional_question_process")
     if not isinstance(process, Mapping):
         raise ScoreRefusal("missing question process")
     transition = process.get("question_transition")
     if not isinstance(transition, Mapping) or not isinstance(transition.get("ports"), list):
         raise ScoreRefusal("missing question ports")
-    found: dict[int, str] = {}
+    found: dict[int, dict[str, object]] = {}
     identifiers: set[str] = set()
     for row in transition["ports"]:
         if not isinstance(row, Mapping):
             raise ScoreRefusal("bad question port")
         formula = row.get("next_valuation")
+        record_update = row.get("next_record_word")
         identifier = row.get("id")
-        if not isinstance(formula, str) or not isinstance(identifier, str):
-            raise ScoreRefusal("question port lacks formula")
+        if (
+            not isinstance(formula, str)
+            or not isinstance(record_update, str)
+            or not isinstance(identifier, str)
+        ):
+            raise ScoreRefusal("question port lacks formula or record update")
         compact = formula.replace(" ", "")
-        if "complement(C)" in compact:
+        has_complement_branch = "meet(A,complement(C))" in compact
+        has_event_branch = "meet(A,C)" in compact
+        if has_complement_branch == has_event_branch:
+            raise ScoreRefusal("question branch formula has ambiguous semantic bit")
+        if has_complement_branch:
             bit = 0
-        elif "meet(A,C)" in compact:
+        elif has_event_branch:
             bit = 1
-        else:
-            raise ScoreRefusal("question branch formula has no semantic bit")
         if bit in found:
             raise ScoreRefusal("question transition does not supply one branch per semantic bit")
         if identifier in identifiers:
             raise ScoreRefusal("question transition repeats a neutral port identifier")
         identifiers.add(identifier)
-        found[bit] = "complement-event" if bit == 0 else "event"
+        record_match = _RECORD_APPEND.fullmatch(record_update.replace(" ", ""))
+        if record_match is None:
+            raise ScoreRefusal("question record update is not a typed append")
+        referenced_identifier = record_match.group(1)
+        if referenced_identifier != identifier:
+            raise ScoreRefusal(
+                "question branch formula contradicts its next_record_word reference"
+            )
+        supplied_bit = row.get("semantic_bit")
+        if supplied_bit is not None and supplied_bit != bit:
+            raise ScoreRefusal("question branch supplies a contradictory semantic bit")
+        found[bit] = {
+            "restriction": "complement-event" if bit == 0 else "event",
+            "neutral_port_role": identifier,
+            "next_record_reference": referenced_identifier,
+            "record_bit": bit,
+        }
     if set(found) != {0, 1}:
         raise ScoreRefusal("question transition must supply Q^0 and Q^1")
     return found
+
+
+def semantic_branch_binding(data: Mapping[str, object]) -> dict[int, str]:
+    return {
+        bit: str(row["restriction"])
+        for bit, row in sorted(_semantic_transition_ports(data).items())
+    }
 
 
 def tree_branch_cells(
@@ -874,7 +933,7 @@ def score_regional_algebra(
         "symbolic_syntax_split": {
             "certificate_count": len(split_certificates),
             "certificates": split_certificates,
-            "scope": "raw finite-prefix syntax only",
+            "scope": PREFIX_SYNTAX_SCOPE,
         },
         "provenance_node": node,
     }
@@ -964,6 +1023,201 @@ def _all_cut_signatures(
     return {"uniform_depth": True, "direct": direct, "alternate_cuts": cuts}
 
 
+def _binary_record_word(token: object) -> str:
+    if token in {"", "epsilon"}:
+        return ""
+    if not isinstance(token, str) or not token or set(token) - {"0", "1"}:
+        raise ScoreRefusal("record boundary contains a nonsemantic port token")
+    return token
+
+
+def semantic_port_chain(
+    data: Mapping[str, object],
+    questions: Mapping[str, PrefixRegion],
+    trees: Mapping[str, Tree],
+    cospans: Mapping[str, FiniteCospan],
+) -> dict[str, object]:
+    """Reconstruct every frozen consumer of the question-branch bit.
+
+    The returned invariant signature contains no neutral transition identifiers.
+    The audit rows retain those identifiers only to make reference transport
+    reconstructible.
+    """
+
+    transition_rows = _semantic_transition_ports(data)
+    process = data.get("regional_question_process")
+    typed = data.get("typed_fillings")
+    if not isinstance(process, Mapping) or not isinstance(typed, Mapping):
+        raise ScoreRefusal("semantic port chain lacks process or boundary data")
+    boundaries = index_rows(typed.get("boundaries"))
+    provenance = process.get("generated_law_provenance")
+    if not isinstance(provenance, Mapping):
+        raise ScoreRefusal("semantic port chain lacks generated provenance")
+    boundary_factory = provenance.get("boundary_factory")
+    filling_factory = provenance.get("filling_factory")
+    if not isinstance(boundary_factory, Mapping) or not isinstance(
+        filling_factory, Mapping
+    ):
+        raise ScoreRefusal("semantic port chain lacks boundary/filling factory")
+
+    boundary_by_depth: dict[int, dict[str, object]] = {}
+    boundary_rows = boundary_factory.get("rows")
+    if not isinstance(boundary_rows, list):
+        raise ScoreRefusal("semantic port boundary factory has no rows")
+    for row in boundary_rows:
+        if not isinstance(row, Mapping):
+            raise ScoreRefusal("bad semantic port boundary row")
+        depth = row.get("tree_depth")
+        boundary_id = row.get("boundary_id")
+        if not isinstance(depth, int) or depth < 0 or not isinstance(boundary_id, str):
+            raise ScoreRefusal("semantic port boundary row is ill typed")
+        if depth in boundary_by_depth or boundary_id not in boundaries:
+            raise ScoreRefusal("duplicate or missing semantic record boundary")
+        generators = boundaries[boundary_id].get("generators")
+        if not isinstance(generators, list):
+            raise ScoreRefusal("semantic record boundary lacks generators")
+        words = tuple(sorted(_binary_record_word(value) for value in generators))
+        if len(words) != len(set(words)):
+            raise ScoreRefusal("semantic record boundary has duplicate ports")
+        expected = leaves_at_depth(depth)
+        if words != expected:
+            raise ScoreRefusal("record boundary ports contradict semantic bit words")
+        boundary_by_depth[depth] = {
+            "boundary_role": boundary_id,
+            "semantic_ports": words,
+        }
+
+    question_rows = filling_factory.get("question_rows")
+    tree_rows = filling_factory.get("tree_rows")
+    if not isinstance(question_rows, list) or not isinstance(tree_rows, list):
+        raise ScoreRefusal("semantic port filling factory lacks rows")
+    question_factory_checks: list[dict[str, object]] = []
+    for row in question_rows:
+        if not isinstance(row, Mapping):
+            raise ScoreRefusal("bad question-filling port row")
+        input_depth = row.get("input_depth")
+        output_depth = row.get("output_depth")
+        filling_id = row.get("filling_id")
+        if (
+            not isinstance(input_depth, int)
+            or not isinstance(output_depth, int)
+            or output_depth != input_depth + 1
+            or not isinstance(filling_id, str)
+            or filling_id not in cospans
+            or input_depth not in boundary_by_depth
+            or output_depth not in boundary_by_depth
+        ):
+            raise ScoreRefusal("question filling does not type one semantic bit append")
+        filling = cospans[filling_id]
+        incoming = tuple(sorted(_binary_record_word(value) for value in filling.incoming))
+        outgoing = tuple(sorted(_binary_record_word(value) for value in filling.outgoing))
+        if (
+            incoming != boundary_by_depth[input_depth]["semantic_ports"]
+            or outgoing != boundary_by_depth[output_depth]["semantic_ports"]
+            or any(
+                word[:-1] not in set(incoming) or word[-1] not in {"0", "1"}
+                for word in outgoing
+            )
+        ):
+            raise ScoreRefusal("question cospan ports contradict semantic append")
+        question_factory_checks.append(
+            {
+                "input_depth": input_depth,
+                "output_depth": output_depth,
+                "incoming_ports": incoming,
+                "outgoing_ports": outgoing,
+            }
+        )
+
+    tree_factory_checks: dict[str, object] = {}
+    for row in tree_rows:
+        if not isinstance(row, Mapping):
+            raise ScoreRefusal("bad tree-filling port row")
+        tree_id = row.get("tree_id")
+        filling_id = row.get("filling_id")
+        if (
+            not isinstance(tree_id, str)
+            or tree_id not in trees
+            or not isinstance(filling_id, str)
+            or filling_id not in cospans
+        ):
+            raise ScoreRefusal("tree-filling port row references a missing object")
+        frontier = tuple(sorted(tree_branch_cells(trees[tree_id], questions)))
+        filling = cospans[filling_id]
+        incoming = tuple(sorted(_binary_record_word(value) for value in filling.incoming))
+        outgoing = tuple(sorted(_binary_record_word(value) for value in filling.outgoing))
+        if incoming != ("",) or outgoing != frontier:
+            raise ScoreRefusal("tree frontier and cospan record ports contradict")
+        tree_factory_checks[tree_id] = {
+            "frontier": frontier,
+            "incoming_ports": incoming,
+            "outgoing_ports": outgoing,
+            "binding_consistent": True,
+        }
+
+    downstream = process.get("port_to_bit_map")
+    downstream_rows: list[dict[str, object]] = []
+    if downstream is not None:
+        if not isinstance(downstream, list):
+            raise ScoreRefusal("downstream port-to-bit map is not a row list")
+        observed: dict[str, int] = {}
+        expected_by_id = {
+            str(row["neutral_port_role"]): bit
+            for bit, row in transition_rows.items()
+        }
+        for row in downstream:
+            if not isinstance(row, Mapping):
+                raise ScoreRefusal("bad downstream port-to-bit row")
+            port_id = row.get("port_id")
+            bit = row.get("bit")
+            if (
+                not isinstance(port_id, str)
+                or type(bit) is not int
+                or bit not in {0, 1}
+                or port_id in observed
+            ):
+                raise ScoreRefusal("downstream port-to-bit map is nonfunctional")
+            observed[port_id] = int(bit)
+        if observed != expected_by_id:
+            raise ScoreRefusal("downstream port-to-bit map contradicts branch formulas")
+        downstream_rows = [
+            {"semantic_bit": bit, "reference_present": True}
+            for bit in sorted(observed.values())
+        ]
+
+    reader_rows = validate_reader_schedules(data)
+    reader_bindings: dict[str, object] = {}
+    for schedule_id, row in sorted(reader_rows.items()):
+        if not row["distinguishes_every_input_port"]:
+            raise ScoreRefusal("delayed reader does not preserve its semantic port binding")
+        reader_bindings[schedule_id] = {
+            "input_ports": row["input_ports"],
+            "reader_outputs": row["reader_outputs"],
+            "distinguishes_every_input_port": True,
+        }
+
+    invariant_signature = {
+        "question_formula_to_bit": {
+            str(bit): row["restriction"] for bit, row in transition_rows.items()
+        },
+        "record_append_bits": tuple(sorted(transition_rows)),
+        "boundaries": {
+            str(depth): row["semantic_ports"]
+            for depth, row in sorted(boundary_by_depth.items())
+        },
+        "question_fillings": question_factory_checks,
+        "tree_frontiers": tree_factory_checks,
+        "reader_bindings": reader_bindings,
+        "downstream_port_to_bit": downstream_rows,
+    }
+    return {
+        "transition_audit": transition_rows,
+        "transport_invariant_signature": invariant_signature,
+        "transport_invariant_sha256": canonical_sha256(invariant_signature),
+        "all_consumers_consistent": True,
+    }
+
+
 def score_cospan_factorizations(
     data: Mapping[str, object], options: MutationOptions
 ) -> dict[str, object]:
@@ -1003,6 +1257,754 @@ def score_cospan_factorizations(
         "all_finite_pushouts_match": bool(rows)
         and all(row.get("boundary_fixed_isomorphic") is True for row in rows),
     }
+
+
+PROCESS_COORDINATES = (
+    "SYNTAX-ONLY",
+    "STATIC-RESPONSE-ONLY",
+    "HORIZONTAL-CLASSICAL",
+    "HORIZONTAL-QUANTUM",
+    "INCONSISTENT",
+)
+
+
+def _substantive(value: object) -> bool:
+    if value is None or value == "":
+        return False
+    if isinstance(value, (Mapping, list, tuple, set, frozenset)) and not value:
+        return False
+    return True
+
+
+def _finite_unique_texts(value: object) -> tuple[str, ...] | None:
+    if (
+        not isinstance(value, list)
+        or not value
+        or any(not isinstance(item, str) or not item for item in value)
+        or len(set(value)) != len(value)
+    ):
+        return None
+    return tuple(value)
+
+
+def _semantic_equation_family(
+    value: object, active_root: str, role: str
+) -> dict[str, object]:
+    if not isinstance(value, list) or not value:
+        return {"valid": False, "contradictory": False, "reason": f"missing {role}"}
+    rows: list[dict[str, object]] = []
+    contradictory = False
+    for row in value:
+        if not isinstance(row, Mapping):
+            return {"valid": False, "contradictory": False, "reason": f"bad {role} row"}
+        lhs = row.get("lhs")
+        rhs = row.get("rhs")
+        connected = row.get("active_root") == active_root
+        substantive = _substantive(lhs) and _substantive(rhs)
+        equal = substantive and canonical_sha256(lhs) == canonical_sha256(rhs)
+        contradictory = contradictory or (substantive and connected and not equal)
+        rows.append(
+            {
+                "lhs": lhs,
+                "rhs": rhs,
+                "connected": connected,
+                "substantive": substantive,
+                "equal": equal,
+            }
+        )
+    return {
+        "valid": all(row["connected"] and row["substantive"] and row["equal"] for row in rows),
+        "contradictory": contradictory,
+        "rows": rows,
+    }
+
+
+def _determinant(value: QMatrix) -> Fraction:
+    if value.nrows != value.ncols:
+        raise ScoreRefusal("determinant needs a square matrix")
+    rows = [list(row) for row in value.data]
+    result = Fraction(1)
+    sign = 1
+    for column in range(value.ncols):
+        pivot = next((index for index in range(column, value.nrows) if rows[index][column]), None)
+        if pivot is None:
+            return Fraction(0)
+        if pivot != column:
+            rows[column], rows[pivot] = rows[pivot], rows[column]
+            sign *= -1
+        pivot_value = rows[column][column]
+        result *= pivot_value
+        for index in range(column + 1, value.nrows):
+            if rows[index][column] == 0:
+                continue
+            factor = rows[index][column] / pivot_value
+            for offset in range(column, value.ncols):
+                rows[index][offset] -= factor * rows[column][offset]
+    return result * sign
+
+
+def _strongly_positive(value: QMatrix) -> bool:
+    if value.nrows != value.ncols or value != qtranspose(value):
+        return False
+    indices = range(value.nrows)
+    for size in range(1, value.nrows + 1):
+        for selected in itertools.combinations(indices, size):
+            principal = QMatrix.from_rows(
+                tuple(tuple(value.data[row][column] for column in selected) for row in selected)
+            )
+            if _determinant(principal) < 0:
+                return False
+    return True
+
+
+def measure_horizontal_process_package(
+    package: object, *, static_response_available: bool
+) -> dict[str, object]:
+    """Validate the complete classical package and optional quantum extension."""
+
+    fallback = "STATIC-RESPONSE-ONLY" if static_response_available else "SYNTAX-ONLY"
+    if not isinstance(package, Mapping) or not package:
+        return {
+            "coordinate": fallback,
+            "classical_valid": False,
+            "quantum_valid": False,
+            "missing": ["horizontal_process_package"],
+            "contradictions": [],
+        }
+    active_root = package.get("active_root")
+    components = package.get("components")
+    equations = package.get("equations")
+    if not isinstance(active_root, str) or not active_root or not isinstance(
+        components, Mapping
+    ) or not isinstance(equations, Mapping):
+        return {
+            "coordinate": fallback,
+            "classical_valid": False,
+            "quantum_valid": False,
+            "missing": ["active_root/components/equations"],
+            "contradictions": [],
+        }
+
+    required_components = (
+        "active_frontier_factory",
+        "filling_positive_map_assignment",
+        "identity_assignments",
+        "typed_tensor_unit_interchange",
+        "vertical_horizontal_squares",
+        "record_effect_semantics",
+    )
+    missing: list[str] = []
+    component_evidence: dict[str, object] = {}
+    for role in required_components:
+        row = components.get(role)
+        connected = isinstance(row, Mapping) and row.get("active_root") == active_root
+        payload = row.get("payload") if isinstance(row, Mapping) else None
+        valid = connected and _substantive(payload)
+        if not valid:
+            missing.append(role)
+        component_evidence[role] = {
+            "connected": connected,
+            "substantive": _substantive(payload),
+            "valid": valid,
+        }
+
+    frontier = components.get("active_frontier_factory")
+    frontier_payload = frontier.get("payload") if isinstance(frontier, Mapping) else None
+    frontier_by_object: dict[str, tuple[str, ...]] = {}
+    if isinstance(frontier_payload, Mapping):
+        domain = _finite_unique_texts(frontier_payload.get("declared_domain"))
+        rows = frontier_payload.get("frontiers")
+        if isinstance(rows, list):
+            for row in rows:
+                if not isinstance(row, Mapping) or not isinstance(row.get("object"), str):
+                    continue
+                ports = _finite_unique_texts(row.get("ports"))
+                if ports is not None and row["object"] not in frontier_by_object:
+                    frontier_by_object[str(row["object"])] = ports
+        total = bool(
+            domain is not None
+            and isinstance(rows, list)
+            and len(rows) == len(domain)
+            and set(frontier_by_object) == set(domain)
+        )
+    else:
+        domain = None
+        total = False
+    component_evidence["active_frontier_factory"]["valid"] = bool(
+        component_evidence["active_frontier_factory"]["valid"] and total
+    )
+    component_evidence["active_frontier_factory"]["total_on_declared_domain"] = total
+    if not total and "active_frontier_factory" not in missing:
+        missing.append("active_frontier_factory.totality")
+
+    assignment = components.get("filling_positive_map_assignment")
+    assignment_payload = assignment.get("payload") if isinstance(assignment, Mapping) else None
+    map_rows = assignment_payload.get("maps") if isinstance(assignment_payload, Mapping) else None
+    maps_valid = isinstance(map_rows, list) and bool(map_rows) and domain is not None
+    map_evidence: list[dict[str, object]] = []
+    map_roles: set[str] = set()
+    if maps_valid:
+        for row in map_rows:
+            if not isinstance(row, Mapping):
+                maps_valid = False
+                continue
+            map_domain = _finite_unique_texts(row.get("domain"))
+            map_codomain = _finite_unique_texts(row.get("codomain"))
+            graph = row.get("graph")
+            input_object = row.get("input_object")
+            output_object = row.get("output_object")
+            role = row.get("role")
+            if (
+                map_domain is None
+                or map_codomain is None
+                or not isinstance(graph, list)
+                or not isinstance(input_object, str)
+                or not isinstance(output_object, str)
+                or input_object not in set(domain or ())
+                or output_object not in set(domain or ())
+                or not isinstance(role, str)
+                or not role
+                or role in map_roles
+            ):
+                valid = False
+            else:
+                map_roles.add(role)
+                pairs = [
+                    (pair[0], pair[1])
+                    for pair in graph
+                    if isinstance(pair, list)
+                    and len(pair) == 2
+                    and isinstance(pair[0], str)
+                    and isinstance(pair[1], str)
+                ]
+                graph_map = dict(pairs)
+                valid = (
+                    len(pairs) == len(graph) == len(graph_map) == len(map_domain)
+                    and set(graph_map) == set(map_domain)
+                    and set(graph_map.values()).issubset(set(map_codomain))
+                    and row.get("positive") is True
+                    and row.get("affine") is True
+                    and row.get("mass_preserving") is True
+                    and row.get("retains_zero_ports") is True
+                )
+            maps_valid = maps_valid and valid
+            map_evidence.append({"map_role": row.get("role"), "valid": valid})
+    component_evidence["filling_positive_map_assignment"]["map_rows"] = map_evidence
+    component_evidence["filling_positive_map_assignment"]["valid"] = bool(
+        component_evidence["filling_positive_map_assignment"]["valid"]
+        and maps_valid
+    )
+    if not maps_valid:
+        missing.append("typed-positive-affine-mass-preserving-assignment")
+
+    identities = components.get("identity_assignments")
+    identity_payload = identities.get("payload") if isinstance(identities, Mapping) else None
+    identity_rows = identity_payload.get("rows") if isinstance(identity_payload, Mapping) else None
+    active_objects = domain
+    identity_checks: list[dict[str, object]] = []
+    identities_valid = bool(
+        isinstance(identity_rows, list)
+        and active_objects is not None
+        and len(identity_rows) == len(active_objects)
+    )
+    identity_objects: set[str] = set()
+    if identities_valid:
+        for row in identity_rows:
+            if not isinstance(row, Mapping):
+                identities_valid = False
+                continue
+            object_role = row.get("object")
+            assignment_row = row.get("assignment")
+            ports = frontier_by_object.get(str(object_role))
+            graph = assignment_row.get("graph") if isinstance(assignment_row, Mapping) else None
+            pairs = [
+                (pair[0], pair[1])
+                for pair in graph
+                if isinstance(pair, list)
+                and len(pair) == 2
+                and isinstance(pair[0], str)
+                and isinstance(pair[1], str)
+            ] if isinstance(graph, list) else []
+            recomputed_identity = bool(
+                isinstance(object_role, str)
+                and object_role in set(active_objects or ())
+                and object_role not in identity_objects
+                and isinstance(assignment_row, Mapping)
+                and assignment_row.get("input_object") == object_role
+                and assignment_row.get("output_object") == object_role
+                and ports is not None
+                and len(pairs) == len(graph or ()) == len(ports)
+                and dict(pairs) == {port: port for port in ports}
+                and row.get("process_word") == []
+            )
+            if isinstance(object_role, str):
+                identity_objects.add(object_role)
+            identities_valid = identities_valid and recomputed_identity
+            identity_checks.append(
+                {"object": object_role, "recomputed_identity": recomputed_identity}
+            )
+        identities_valid = identities_valid and identity_objects == set(active_objects or ())
+    component_evidence["identity_assignments"]["rows"] = identity_checks
+    component_evidence["identity_assignments"]["valid"] = bool(
+        component_evidence["identity_assignments"]["valid"] and identities_valid
+    )
+    component_evidence["identity_assignments"]["all_active_objects"] = identities_valid
+    if not identities_valid:
+        missing.append("identity-at-every-active-object")
+
+    tensor = components.get("typed_tensor_unit_interchange")
+    tensor_payload = tensor.get("payload") if isinstance(tensor, Mapping) else None
+    tensor_valid = False
+    tensor_detail: dict[str, object] = {}
+    if isinstance(tensor_payload, Mapping) and active_objects is not None:
+        unit = tensor_payload.get("unit_object")
+        tensor_rows = tensor_payload.get("object_tensor")
+        interchange_rows = tensor_payload.get("interchange_witnesses")
+        tensor_map: dict[tuple[str, str], str] = {}
+        rows_well_typed = isinstance(tensor_rows, list)
+        if isinstance(tensor_rows, list):
+            for row in tensor_rows:
+                if not isinstance(row, Mapping):
+                    rows_well_typed = False
+                    continue
+                left = row.get("left")
+                right = row.get("right")
+                result = row.get("result")
+                key = (str(left), str(right))
+                if (
+                    not isinstance(left, str)
+                    or not isinstance(right, str)
+                    or not isinstance(result, str)
+                    or left not in active_objects
+                    or right not in active_objects
+                    or result not in active_objects
+                    or key in tensor_map
+                ):
+                    rows_well_typed = False
+                    continue
+                tensor_map[key] = result
+        total_pairs = set(itertools.product(active_objects, repeat=2))
+        unit_valid = bool(
+            isinstance(unit, str)
+            and unit in active_objects
+            and all(
+                tensor_map.get((unit, item)) == item
+                and tensor_map.get((item, unit)) == item
+                for item in active_objects
+            )
+        )
+        associative = bool(
+            set(tensor_map) == total_pairs
+            and all(
+                tensor_map[(tensor_map[(left, middle)], right)]
+                == tensor_map[(left, tensor_map[(middle, right)])]
+                for left, middle, right in itertools.product(
+                    active_objects, repeat=3
+                )
+            )
+        )
+        interchange_valid = isinstance(interchange_rows, list) and bool(interchange_rows)
+        if interchange_valid:
+            for row in interchange_rows:
+                typed_objects = row.get("objects") if isinstance(row, Mapping) else None
+                valid = bool(
+                    isinstance(row, Mapping)
+                    and isinstance(typed_objects, list)
+                    and len(typed_objects) == 4
+                    and all(item in active_objects for item in typed_objects)
+                    and _substantive(row.get("lhs"))
+                    and canonical_sha256(row.get("lhs"))
+                    == canonical_sha256(row.get("rhs"))
+                )
+                interchange_valid = interchange_valid and valid
+        tensor_valid = bool(
+            rows_well_typed
+            and set(tensor_map) == total_pairs
+            and unit_valid
+            and associative
+            and interchange_valid
+        )
+        tensor_detail = {
+            "total_object_tensor": set(tensor_map) == total_pairs,
+            "unit_laws": unit_valid,
+            "associative": associative,
+            "interchange_recomputed": interchange_valid,
+        }
+    component_evidence["typed_tensor_unit_interchange"].update(tensor_detail)
+    component_evidence["typed_tensor_unit_interchange"]["valid"] = bool(
+        component_evidence["typed_tensor_unit_interchange"]["valid"]
+        and tensor_valid
+    )
+    if not tensor_valid:
+        missing.append("typed-tensor-unit-interchange")
+
+    squares = components.get("vertical_horizontal_squares")
+    square_payload = squares.get("payload") if isinstance(squares, Mapping) else None
+    squares_valid = False
+    square_checks: list[dict[str, object]] = []
+    if isinstance(square_payload, Mapping) and active_objects is not None:
+        declared = _finite_unique_texts(square_payload.get("declared_square_roles"))
+        square_rows = square_payload.get("squares")
+        seen: set[str] = set()
+        squares_valid = declared is not None and isinstance(square_rows, list) and bool(square_rows)
+        if isinstance(square_rows, list):
+            for row in square_rows:
+                role = row.get("role") if isinstance(row, Mapping) else None
+                valid = bool(
+                    isinstance(row, Mapping)
+                    and isinstance(role, str)
+                    and role not in seen
+                    and declared is not None
+                    and role in declared
+                    and row.get("source_object") in active_objects
+                    and row.get("target_object") in active_objects
+                    and isinstance(row.get("vertical_source"), str)
+                    and bool(row.get("vertical_source"))
+                    and isinstance(row.get("vertical_target"), str)
+                    and bool(row.get("vertical_target"))
+                    and row.get("vertical_source") != row.get("vertical_target")
+                    and _substantive(row.get("lhs"))
+                    and canonical_sha256(row.get("lhs"))
+                    == canonical_sha256(row.get("rhs"))
+                )
+                if isinstance(role, str):
+                    seen.add(role)
+                squares_valid = squares_valid and valid
+                square_checks.append({"role": role, "valid": valid})
+        squares_valid = squares_valid and declared is not None and seen == set(declared)
+    component_evidence["vertical_horizontal_squares"]["squares"] = square_checks
+    component_evidence["vertical_horizontal_squares"]["valid"] = bool(
+        component_evidence["vertical_horizontal_squares"]["valid"]
+        and squares_valid
+    )
+    if not squares_valid:
+        missing.append("nontrivial-vertical-horizontal-squares")
+
+    record_semantics = components.get("record_effect_semantics")
+    record_payload = (
+        record_semantics.get("payload") if isinstance(record_semantics, Mapping) else None
+    )
+    record_semantics_valid = False
+    if isinstance(record_payload, Mapping) and active_objects is not None:
+        claim = record_payload.get("record_claim")
+        if claim is False:
+            record_semantics_valid = True
+        elif claim is True:
+            writers = record_payload.get("writers")
+            effects = record_payload.get("effects")
+            record_semantics_valid = bool(
+                isinstance(writers, list)
+                and bool(writers)
+                and isinstance(effects, list)
+                and bool(effects)
+                and all(
+                    isinstance(row, Mapping)
+                    and row.get("input_object") in active_objects
+                    and row.get("output_object") in active_objects
+                    and _substantive(row.get("typed_assignment"))
+                    for row in writers
+                )
+                and all(
+                    isinstance(row, Mapping)
+                    and row.get("input_object") in active_objects
+                    and _substantive(row.get("typed_effect"))
+                    for row in effects
+                )
+            )
+    component_evidence["record_effect_semantics"]["valid"] = bool(
+        component_evidence["record_effect_semantics"]["valid"]
+        and record_semantics_valid
+    )
+    component_evidence["record_effect_semantics"]["record_claim_validated"] = (
+        record_semantics_valid
+    )
+    if not record_semantics_valid:
+        missing.append("generated-record-effect-semantics")
+
+    equation_roles = (
+        "identity",
+        "sequential_composition",
+        "alternate_cut",
+        "mass_preservation",
+        "tensor_unit_interchange",
+        "vertical_naturality",
+    )
+    equation_evidence = {
+        role: _semantic_equation_family(equations.get(role), active_root, role)
+        for role in equation_roles
+    }
+    contradictions = [
+        role for role, row in equation_evidence.items() if row["contradictory"]
+    ]
+    missing.extend(role for role, row in equation_evidence.items() if not row["valid"])
+    classical_valid = not missing and not contradictions
+    coordinate = "INCONSISTENT" if contradictions else (
+        "HORIZONTAL-CLASSICAL" if classical_valid else fallback
+    )
+
+    quantum_evidence: dict[str, object] = {"present": False}
+    quantum_valid = False
+    quantum = package.get("quantum")
+    if classical_valid and isinstance(quantum, Mapping) and quantum:
+        connected = quantum.get("active_root") == active_root
+        gram_raw = quantum.get("history_gram")
+        history_basis = _finite_unique_texts(quantum.get("history_basis"))
+        try:
+            gram = gram_raw if isinstance(gram_raw, QMatrix) else matrix_record(gram_raw)
+            strong = bool(
+                history_basis is not None
+                and gram.nrows == gram.ncols == len(history_basis)
+                and _strongly_positive(gram)
+            )
+            interference_terms = tuple(
+                gram.data[row][column]
+                for row in range(gram.nrows)
+                for column in range(gram.ncols)
+                if row != column
+            )
+        except (KeyError, ScoreRefusal, TypeError, ValueError):
+            gram = None
+            strong = False
+            interference_terms = ()
+        nonzero_interference = any(value != 0 for value in interference_terms)
+        instruments = quantum.get("division_instruments")
+        division_rows: list[dict[str, object]] = []
+        divisions_valid = isinstance(instruments, list) and bool(instruments)
+        if divisions_valid:
+            for instrument in instruments:
+                if (
+                    not isinstance(instrument, Mapping)
+                    or instrument.get("active_root") != active_root
+                    or _finite_unique_texts(instrument.get("input_basis"))
+                    != history_basis
+                    or not isinstance(instrument.get("branches"), list)
+                    or not instrument["branches"]
+                ):
+                    divisions_valid = False
+                    continue
+                try:
+                    branches = [
+                        branch if isinstance(branch, QMatrix) else matrix_record(branch)
+                        for branch in instrument["branches"]
+                    ]
+                    total = (
+                        instrument["total"]
+                        if isinstance(instrument.get("total"), QMatrix)
+                        else matrix_record(instrument.get("total"))
+                    )
+                    summed = branches[0]
+                    for branch in branches[1:]:
+                        summed = qadd(summed, branch)
+                    complete = bool(
+                        gram is not None
+                        and total.nrows == total.ncols == gram.nrows
+                        and all(
+                            branch.nrows == branch.ncols == total.nrows
+                            and _strongly_positive(branch)
+                            for branch in branches
+                        )
+                        and summed == total
+                    )
+                except (KeyError, ScoreRefusal, TypeError, ValueError):
+                    complete = False
+                divisions_valid = divisions_valid and complete
+                division_rows.append({"complete_all_input_sum": complete})
+        recovery = _semantic_equation_family(
+            quantum.get("stable_recovery_equations"), active_root, "stable quantum recovery"
+        )
+        coherent = _semantic_equation_family(
+            quantum.get("coherent_cut_equations"), active_root, "coherent quantum cuts"
+        )
+        quantum_valid = (
+            connected
+            and strong
+            and nonzero_interference
+            and divisions_valid
+            and recovery["valid"]
+            and coherent["valid"]
+        )
+        quantum_evidence = {
+            "present": True,
+            "connected": connected,
+            "history_basis": history_basis,
+            "strongly_positive": strong,
+            "interference_witness": interference_terms,
+            "nonzero_interference": nonzero_interference,
+            "division_instruments": division_rows,
+            "all_input_division_complete": divisions_valid,
+            "stable_recovery": recovery,
+            "coherent_coarse_graining_refinement": coherent,
+        }
+        if quantum_valid:
+            coordinate = "HORIZONTAL-QUANTUM"
+
+    if coordinate not in PROCESS_COORDINATES:
+        raise ScoreRefusal("process classifier emitted an unregistered coordinate")
+    return {
+        "coordinate": coordinate,
+        "classical_valid": classical_valid,
+        "quantum_valid": quantum_valid,
+        "active_root": active_root,
+        "component_evidence": component_evidence,
+        "equation_evidence": equation_evidence,
+        "quantum_evidence": quantum_evidence,
+        "missing": sorted(set(missing)),
+        "contradictions": contradictions,
+    }
+
+
+def synthetic_horizontal_process_package(*, quantum: bool = False) -> dict[str, object]:
+    """Complete generic positive package used only by ``--selftest``."""
+
+    root = "synthetic-horizontal-root"
+    package: dict[str, object] = {
+        "active_root": root,
+        "components": {
+            "active_frontier_factory": {
+                "active_root": root,
+                "payload": {
+                    "declared_domain": ["B0", "B1"],
+                    "frontiers": [
+                        {"object": "B0", "ports": ["epsilon"]},
+                        {"object": "B1", "ports": ["0", "1"]},
+                    ],
+                },
+            },
+            "filling_positive_map_assignment": {
+                "active_root": root,
+                "payload": {
+                    "maps": [
+                        {
+                            "role": "synthetic-question",
+                            "input_object": "B0",
+                            "output_object": "B1",
+                            "domain": ["s0", "s1"],
+                            "codomain": ["t0", "t1"],
+                            "graph": [["s0", "t0"], ["s1", "t1"]],
+                            "positive": True,
+                            "affine": True,
+                            "mass_preserving": True,
+                            "retains_zero_ports": True,
+                        }
+                    ]
+                },
+            },
+            "identity_assignments": {
+                "active_root": root,
+                "payload": {
+                    "rows": [
+                        {
+                            "object": boundary,
+                            "assignment": {
+                                "input_object": boundary,
+                                "output_object": boundary,
+                                "graph": (
+                                    [["epsilon", "epsilon"]]
+                                    if boundary == "B0"
+                                    else [["0", "0"], ["1", "1"]]
+                                ),
+                            },
+                            "process_word": [],
+                            "empty_process": True,
+                            "map_is_identity": True,
+                        }
+                        for boundary in ("B0", "B1")
+                    ]
+                },
+            },
+            "typed_tensor_unit_interchange": {
+                "active_root": root,
+                "payload": {
+                    "unit_object": "B0",
+                    "object_tensor": [
+                        {"left": "B0", "right": "B0", "result": "B0"},
+                        {"left": "B0", "right": "B1", "result": "B1"},
+                        {"left": "B1", "right": "B0", "result": "B1"},
+                        {"left": "B1", "right": "B1", "result": "B1"},
+                    ],
+                    "interchange_witnesses": [
+                        {
+                            "objects": ["B0", "B1", "B0", "B1"],
+                            "lhs": {"typed_map": "interchange"},
+                            "rhs": {"typed_map": "interchange"},
+                        }
+                    ],
+                },
+            },
+            "vertical_horizontal_squares": {
+                "active_root": root,
+                "payload": {
+                    "declared_square_roles": ["square-0"],
+                    "squares": [
+                        {
+                            "role": "square-0",
+                            "source_object": "B0",
+                            "target_object": "B1",
+                            "vertical_source": "presentation-v0",
+                            "vertical_target": "presentation-v1",
+                            "lhs": {"typed_map": "naturality"},
+                            "rhs": {"typed_map": "naturality"},
+                        }
+                    ],
+                },
+            },
+            "record_effect_semantics": {
+                "active_root": root,
+                "payload": {"record_claim": False, "generated_unit_effect": "unit"},
+            },
+        },
+        "equations": {
+            role: [
+                {
+                    "active_root": root,
+                    "lhs": {"semantic_value": role},
+                    "rhs": {"semantic_value": role},
+                }
+            ]
+            for role in (
+                "identity",
+                "sequential_composition",
+                "alternate_cut",
+                "mass_preservation",
+                "tensor_unit_interchange",
+                "vertical_naturality",
+            )
+        },
+    }
+    if quantum:
+        package["quantum"] = {
+            "active_root": root,
+            "history_basis": ["h0", "h1"],
+            "history_gram": QMatrix.from_rows(
+                ((Fraction(1), Fraction(1, 2)), (Fraction(1, 2), Fraction(1)))
+            ),
+            "division_instruments": [
+                {
+                    "active_root": root,
+                    "input_basis": ["h0", "h1"],
+                    "branches": [
+                        QMatrix.from_rows(((1, 0), (0, 0))),
+                        QMatrix.from_rows(((0, 0), (0, 1))),
+                    ],
+                    "total": QMatrix.identity(2),
+                }
+            ],
+            "stable_recovery_equations": [
+                {
+                    "active_root": root,
+                    "lhs": {"recovered": ("0", "1")},
+                    "rhs": {"recovered": ("0", "1")},
+                }
+            ],
+            "coherent_cut_equations": [
+                {
+                    "active_root": root,
+                    "lhs": {"coarse": Fraction(3)},
+                    "rhs": {"coarse": Fraction(3)},
+                }
+            ],
+        }
+    return package
 
 
 def score_process(
@@ -1074,6 +2076,7 @@ def score_process(
 
     cospan_result = score_cospan_factorizations(data, options)
     cospans = cospans_from_fixture(data)
+    port_chain = semantic_port_chain(data, questions, trees, cospans)
     law_provenance = process.get("generated_law_provenance")
     if not isinstance(law_provenance, Mapping):
         raise ScoreRefusal("missing generated-law provenance")
@@ -1083,35 +2086,12 @@ def score_process(
     tree_factory_rows = filling_factory.get("tree_rows")
     if not isinstance(tree_factory_rows, list):
         raise ScoreRefusal("bad finite tree factory")
-    b0_identity_controls: list[dict[str, object]] = []
-    for row in tree_factory_rows:
-        if not isinstance(row, Mapping):
-            continue
-        tree_id = row.get("tree_id")
-        filling_id = row.get("filling_id")
-        if not isinstance(tree_id, str) or not isinstance(filling_id, str):
-            continue
-        if tree_id not in trees or not trees[tree_id].is_empty or filling_id not in cospans:
-            continue
-        filling = cospans[filling_id]
-        in_images = dict(filling.in_images)
-        out_images = dict(filling.out_images)
-        is_identity = (
-            filling.incoming == filling.outgoing
-            and not filling.relations
-            and all(in_images[token] == out_images[token] for token in filling.incoming)
-        )
-        b0_identity_controls.append(
-            {
-                "tree": tree_id,
-                "filling": filling_id,
-                "boundary": filling.incoming,
-                "is_identity": is_identity,
-            }
-        )
-    b0_identity_constructed = bool(b0_identity_controls) and all(
-        row["is_identity"] for row in b0_identity_controls
-    )
+    identity_census = _active_identity_census(data)
+    identity_by_level = identity_census["by_level"]
+    b0_identity_controls = identity_by_level["B0"][
+        "empty_process_semantic_witnesses"
+    ]
+    b0_identity_constructed = bool(identity_by_level["B0"]["present"])
     provenance_node = provenance.add(
         "finite_question_instruments",
         roots=[
@@ -1163,33 +2143,49 @@ def score_process(
     # Detect construction interfaces from typed data.  Finite neighboring
     # controls never manufacture a total forest, tensor, naturality square,
     # or filling-to-process assignment.
-    total_frontier_interface = process.get("total_adaptive_frontier_factory")
     assignment_interface = process.get("filling_to_process_assignment")
-    tensor_interface = typed.get("tensor_factory") or process.get("tensor_factory")
-    naturality_interface = typed.get("vertical_horizontal_naturality_squares")
-    total_frontier_present = isinstance(total_frontier_interface, Mapping) and all(
-        key in total_frontier_interface for key in ("constructor", "typing_rule", "composition_rule")
+    static_response_available = all_branch_partitions and all_numeric_controls
+    semantic_package = process.get("horizontal_process_package")
+    if semantic_package is None and isinstance(assignment_interface, Mapping) and (
+        "components" in assignment_interface or "equations" in assignment_interface
+    ):
+        semantic_package = assignment_interface
+    process_package_measurement = measure_horizontal_process_package(
+        semantic_package,
+        static_response_available=static_response_available,
     )
-    assignment_present = isinstance(assignment_interface, Mapping) and all(
-        key in assignment_interface
-        for key in ("assignment", "identity_equation", "composition_equation", "cut_equation")
+    assignment_present = bool(process_package_measurement["classical_valid"])
+    component_evidence = process_package_measurement.get("component_evidence", {})
+    total_frontier_present = bool(
+        isinstance(component_evidence, Mapping)
+        and isinstance(component_evidence.get("active_frontier_factory"), Mapping)
+        and component_evidence["active_frontier_factory"].get("valid")
+        and component_evidence["active_frontier_factory"].get("total_on_declared_domain")
     )
-    tensor_present = isinstance(tensor_interface, Mapping) and all(
-        key in tensor_interface for key in ("object_tensor", "arrow_tensor", "unit", "interchange")
+    tensor_present = bool(
+        isinstance(component_evidence, Mapping)
+        and isinstance(component_evidence.get("typed_tensor_unit_interchange"), Mapping)
+        and component_evidence["typed_tensor_unit_interchange"].get("valid")
+        and assignment_present
     )
-    naturality_present = isinstance(naturality_interface, Mapping) and all(
-        key in naturality_interface
-        for key in ("squares", "horizontal_assignment", "vertical_assignment")
+    naturality_present = bool(
+        isinstance(component_evidence, Mapping)
+        and isinstance(component_evidence.get("vertical_horizontal_squares"), Mapping)
+        and component_evidence["vertical_horizontal_squares"].get("valid")
+        and assignment_present
     )
     construction_ceiling = {
         "B0_identity": (
             "CONSTRUCTED" if b0_identity_constructed else "REFUSED"
         ),
         "B0_identity_evidence": b0_identity_controls,
+        "active_identity_domain": identity_census["active_domain"],
+        "identity_assignments_by_active_level": identity_by_level,
+        "out_of_domain_boundaries": identity_census["out_of_domain_boundaries"],
         "all_boundary_identity": (
             "CONSTRUCTED"
             if all(
-                row["present"] for row in _identity_assignments_by_boundary(data).values()
+                row["present"] for row in identity_by_level.values()
             )
             else "UNCONSTRUCTED"
         ),
@@ -1200,8 +2196,7 @@ def score_process(
             "CONSTRUCTED"
             if total_frontier_present
             and all(
-                row["present"]
-                for row in _identity_assignments_by_boundary(data).values()
+                row["present"] for row in identity_by_level.values()
             )
             else "UNCONSTRUCTED"
         ),
@@ -1226,15 +2221,14 @@ def score_process(
         and all_cut_controls
         and cospan_result["all_finite_pushouts_match"]
     )
-    total_horizontal_process = total_frontier_present and assignment_present
-    process_coordinate = (
-        "HORIZONTAL-PROCESS-CONSTRUCTED"
-        if total_horizontal_process
-        else "STATIC-RESPONSE-ONLY"
-    )
+    total_horizontal_process = bool(process_package_measurement["classical_valid"])
+    process_coordinate = str(process_package_measurement["coordinate"])
+    if process_coordinate not in PROCESS_COORDINATES:
+        raise ScoreRefusal("process coordinate escaped the frozen vocabulary")
     result = {
         "full_cone_question_maps": {
-            "semantic_port_binding": branch_binding,
+            "semantic_branch_restrictions": branch_binding,
+            "semantic_port_binding": port_chain,
             "all_input_identities": arbitrary_question_identities,
             "status": "AFFINE-POSITIVE-NORMALIZED-ON-FULL-CONE",
         },
@@ -1293,6 +2287,7 @@ def score_process(
             else "UNCONSTRUCTED-PASSIVE-PAIR-HAS-NO-NONIDENTITY-HORIZONTAL-SQUARE"
         ),
         "mixed_tree_rows": mixed_rows,
+        "semantic_process_package": process_package_measurement,
         "process_coordinate": process_coordinate,
         "total_horizontal_process": total_horizontal_process,
         "provenance_node": provenance_node,
@@ -1760,22 +2755,9 @@ def score_records(
             raise ScoreRefusal("bad continuation catalogue")
         if any(str(value) not in process_operations for value in operation_ids):
             raise ScoreRefusal("continuation catalogue references an unknown operation")
-        operation_semantics = [
-            process_record_semantics(process_operations[str(value)])
-            for value in operation_ids
-        ]
-        actions = {str(value["action"]) for value in operation_semantics}
-        if "reset" in actions:
-            status = "DESTROYED-BY-RESET"
-        elif "erase_last" in actions:
-            status = "NOT-PERMANENT-UNDER-LAST-TOKEN-ERASURE"
-        else:
-            status = "APPEND-ONLY-RECOVERABLE-AT-DECLARED-SCOPE"
-        continuation_results[identifier] = {
-            "status": status,
-            "operation_semantics": operation_semantics,
-            "typed_subgrammar_only": True,
-        }
+        continuation_results[identifier] = construct_typed_continuation_closure(
+            row, process_operations
+        )
 
     finite_delay_controls = {
         identifier: {
@@ -2018,6 +3000,15 @@ def _intrinsic_exterior_generators(
 def _literal_replacement_generators(
     data: Mapping[str, object], target_id: str, depth: int
 ) -> tuple[tuple[int, ...], ...]:
+    return tuple(
+        row["permutation"]
+        for row in _literal_replacement_generator_rows(data, target_id, depth)
+    )
+
+
+def _literal_replacement_generator_rows(
+    data: Mapping[str, object], target_id: str, depth: int
+) -> tuple[dict[str, object], ...]:
     process = data.get("regional_question_process")
     if not isinstance(process, Mapping):
         raise ScoreRefusal("missing replacement process")
@@ -2032,7 +3023,7 @@ def _literal_replacement_generators(
             if isinstance(values, list):
                 selected.extend(str(value) for value in values)
     regions = regions_from_fixture(data)
-    generators: list[tuple[int, ...]] = []
+    generators: list[dict[str, object]] = []
     for identifier in sorted(set(selected)):
         row = replacements.get(identifier)
         if row is None or row.get("operation") != "swap_children":
@@ -2043,7 +3034,13 @@ def _literal_replacement_generators(
         support = regions[support_id]
         if len(support.words) != 1:
             raise ScoreRefusal("child-swap support is not one cylinder")
-        generators.append(child_swap_permutation(support.words[0], depth))
+        generators.append(
+            {
+                "replacement_role": identifier,
+                "support_region": support,
+                "permutation": child_swap_permutation(support.words[0], depth),
+            }
+        )
     return tuple(generators)
 
 
@@ -2349,7 +3346,10 @@ def score_locality(
             "DYNAMIC-FAITHFUL" if regional_support_promotable else "FAIL"
         ),
         "causal_dynamic": False,
-        "scope": "regional support only; not causal precedence, geometry, or gravity",
+        "scope": REGIONAL_SUPPORT_SCOPE,
+        "FAIL_interpretation": (
+            "promotion failure/unconstructed capability; not observed physical nonlocality"
+        ),
         "provenance_node": node,
     }
 
@@ -2698,6 +3698,215 @@ def score_overlap_gluing(data: Mapping[str, object]) -> dict[str, object]:
     }
 
 
+def _typed_finite_graph(
+    row: object, active_root: object, *, assignment_field: str
+) -> dict[str, object]:
+    if not isinstance(row, Mapping):
+        return {"valid": False}
+    domain = _finite_unique_texts(row.get("domain"))
+    codomain = _finite_unique_texts(row.get("codomain"))
+    assignment = row.get(assignment_field)
+    graph = assignment.get("graph") if isinstance(assignment, Mapping) else None
+    pairs = [
+        (pair[0], pair[1])
+        for pair in graph
+        if isinstance(pair, list)
+        and len(pair) == 2
+        and isinstance(pair[0], str)
+        and isinstance(pair[1], str)
+    ] if isinstance(graph, list) else []
+    graph_map = dict(pairs)
+    valid = bool(
+        row.get("active_root") == active_root
+        and isinstance(row.get("input_carrier"), str)
+        and bool(row.get("input_carrier"))
+        and isinstance(row.get("output_carrier"), str)
+        and bool(row.get("output_carrier"))
+        and domain is not None
+        and codomain is not None
+        and isinstance(graph, list)
+        and len(pairs) == len(graph) == len(graph_map) == len(domain)
+        and set(graph_map) == set(domain)
+        and set(graph_map.values()).issubset(set(codomain))
+    )
+    return {
+        "valid": valid,
+        "input_carrier": row.get("input_carrier"),
+        "output_carrier": row.get("output_carrier"),
+        "domain": domain,
+        "codomain": codomain,
+        "graph": tuple(sorted(graph_map.items())),
+    }
+
+
+def measure_generated_influence_package(
+    package: object, *, require_nonoverlap_contact: bool
+) -> dict[str, object]:
+    role = "generated_contact" if require_nonoverlap_contact else "causal_order"
+    if not isinstance(package, Mapping) or not package:
+        return {"present": False, "role": role, "missing": ["semantic package"]}
+    active_root = package.get("active_root")
+    schedule = package.get("schedule")
+    intervention = package.get("intervention")
+    response = package.get("delayed_response")
+    provenance = package.get("provenance")
+    missing: list[str] = []
+    if not isinstance(active_root, str) or not active_root:
+        missing.append("active_root")
+
+    schedule_valid = isinstance(schedule, Mapping) and schedule.get("active_root") == active_root
+    operations = schedule.get("operations") if isinstance(schedule, Mapping) else None
+    operation_evidence: list[dict[str, object]] = []
+    operation_roles: set[str] = set()
+    if not isinstance(operations, list) or not operations:
+        schedule_valid = False
+    else:
+        for operation in operations:
+            typed_graph = _typed_finite_graph(
+                operation, active_root, assignment_field="process_assignment"
+            )
+            operation_role = operation.get("role") if isinstance(operation, Mapping) else None
+            valid = bool(
+                typed_graph["valid"]
+                and isinstance(operation_role, str)
+                and bool(operation_role)
+                and operation_role not in operation_roles
+            )
+            if isinstance(operation_role, str):
+                operation_roles.add(operation_role)
+            schedule_valid = schedule_valid and valid
+            operation_evidence.append(
+                {
+                    "operation_role": operation_role,
+                    "typing": typed_graph,
+                    "valid": valid,
+                }
+            )
+        for earlier, later in zip(operation_evidence, operation_evidence[1:]):
+            earlier_typing = earlier["typing"]
+            later_typing = later["typing"]
+            composable = bool(
+                earlier_typing.get("output_carrier")
+                == later_typing.get("input_carrier")
+                and earlier_typing.get("codomain") == later_typing.get("domain")
+            )
+            schedule_valid = schedule_valid and composable
+    if not schedule_valid:
+        missing.append("typed generated schedule")
+
+    alternatives = (
+        _finite_unique_texts(intervention.get("alternatives"))
+        if isinstance(intervention, Mapping)
+        else None
+    )
+    intervention_valid = bool(
+        isinstance(intervention, Mapping)
+        and intervention.get("active_root") == active_root
+        and alternatives is not None
+        and len(alternatives) >= 2
+        and intervention.get("operation_role") in operation_roles
+    )
+    nonoverlap = False
+    if isinstance(intervention, Mapping):
+        source = intervention.get("source_region")
+        target = intervention.get("target_region")
+        nonoverlap = (
+            isinstance(source, PrefixRegion)
+            and isinstance(target, PrefixRegion)
+            and source.disjoint(target)
+            and not source.is_zero()
+            and not target.is_zero()
+        )
+    if require_nonoverlap_contact:
+        intervention_valid = intervention_valid and nonoverlap
+    if not intervention_valid:
+        missing.append(
+            "non-overlap/contact intervention"
+            if require_nonoverlap_contact
+            else "typed causal intervention"
+        )
+
+    response_valid = isinstance(response, Mapping) and response.get("active_root") == active_root
+    before = response.get("before") if isinstance(response, Mapping) else None
+    after = response.get("after") if isinstance(response, Mapping) else None
+    reader = response.get("reader") if isinstance(response, Mapping) else None
+    reader_typing = _typed_finite_graph(
+        reader, active_root, assignment_field="effect_assignment"
+    )
+    schedule_output = operation_evidence[-1]["typing"] if operation_evidence else {}
+    reader_attached = bool(
+        reader_typing["valid"]
+        and reader_typing.get("input_carrier") == schedule_output.get("output_carrier")
+        and reader_typing.get("domain") == schedule_output.get("codomain")
+    )
+    if not isinstance(before, Mapping) or not isinstance(after, Mapping) or not reader_attached:
+        response_valid = False
+        before_exact: dict[str, Fraction] = {}
+        after_exact: dict[str, Fraction] = {}
+    else:
+        try:
+            before_exact = {str(key): exact(value) for key, value in before.items()}
+            after_exact = {str(key): exact(value) for key, value in after.items()}
+            response_valid = response_valid and (
+                set(before_exact) == set(after_exact)
+                and all(value >= 0 for value in before_exact.values())
+                and all(value >= 0 for value in after_exact.values())
+                and sum(before_exact.values(), Fraction(0)) == 1
+                and sum(after_exact.values(), Fraction(0)) == 1
+                and before_exact != after_exact
+                and set(before_exact) == set(reader_typing.get("codomain") or ())
+            )
+        except (ScoreRefusal, TypeError, ValueError):
+            before_exact = {}
+            after_exact = {}
+            response_valid = False
+    if not response_valid:
+        missing.append("delayed calibrated response")
+
+    provenance_valid = False
+    provenance_evidence: dict[str, object] = {}
+    if isinstance(provenance, Mapping):
+        edges_raw = provenance.get("typed_edges")
+        if isinstance(edges_raw, list):
+            edges = [
+                tuple(edge)
+                for edge in edges_raw
+                if isinstance(edge, list)
+                and len(edge) == 3
+                and all(isinstance(item, str) and item for item in edge)
+            ]
+            if len(edges) == len(edges_raw) and isinstance(active_root, str) and active_root:
+                provenance_evidence = validate_claim_provenance(
+                    [active_root],
+                    edges,
+                    ["claim:schedule", "claim:intervention", "claim:response"],
+                )
+                provenance_valid = bool(provenance_evidence["all_claims_connected"])
+    if not provenance_valid:
+        missing.append("joint-law provenance")
+    present = schedule_valid and intervention_valid and response_valid and provenance_valid
+    return {
+        "present": present,
+        "role": role,
+        "active_root": active_root,
+        "schedule": {"valid": schedule_valid, "operations": operation_evidence},
+        "intervention": {
+            "valid": intervention_valid,
+            "nonoverlap": nonoverlap,
+        },
+        "delayed_response": {
+            "valid": response_valid,
+            "reader_typing": reader_typing,
+            "reader_attached": reader_attached,
+            "before": before_exact,
+            "after": after_exact,
+        },
+        "provenance": provenance_evidence,
+        "missing": missing,
+        "package_sha256": canonical_sha256(package),
+    }
+
+
 def score_contact_causality(data: Mapping[str, object]) -> tuple[dict[str, object], dict[str, object]]:
     section = data.get("influence_contact")
     if not isinstance(section, Mapping):
@@ -2740,55 +3949,40 @@ def score_contact_causality(data: Mapping[str, object]) -> tuple[dict[str, objec
             "schedule": "NOT-FROZEN",
             "joint_law_provenance": "ABSENT",
         }
-    schedule_rows = section.get("generated_schedules")
-    response_rows = section.get("generated_delayed_responses")
-    schedule_present = isinstance(schedule_rows, list) and bool(schedule_rows)
-    response_present = isinstance(response_rows, list) and bool(response_rows)
-    if schedule_present:
-        for row in schedule_rows:
-            if not isinstance(row, Mapping) or not isinstance(row.get("operation_ids"), list):
-                raise ScoreRefusal("malformed generated influence schedule")
-    if response_present:
-        for row in response_rows:
-            if not isinstance(row, Mapping) or "before" not in row or "after" not in row:
-                raise ScoreRefusal("malformed generated delayed response")
-    joint_provenance = section.get("joint_law_provenance")
-    provenance_present = isinstance(joint_provenance, Mapping) and all(
-        key in joint_provenance for key in ("root", "schedule_edges", "reader_edges")
+    contact_measurement = measure_generated_influence_package(
+        section.get("generated_contact_package"),
+        require_nonoverlap_contact=True,
     )
-    generated_contact = schedule_present and response_present and provenance_present
+    causal_measurement = measure_generated_influence_package(
+        section.get("generated_causal_package"),
+        require_nonoverlap_contact=False,
+    )
+    generated_contact = bool(contact_measurement["present"])
+    generated_causal_order = bool(causal_measurement["present"])
     contact = {
         "static_classification_controls": static_rows,
         "generated_joint_fillings": (
             "CONSTRUCTED"
-            if schedule_present and provenance_present
+            if generated_contact
             else "NOT-CONSTRUCTED"
         ),
         "nonoverlap_contact_response": (
             "CONSTRUCTED"
-            if response_present and provenance_present
+            if generated_contact
             else "NOT-CONSTRUCTED"
         ),
-        "capability_detection": {
-            "generated_schedule": schedule_present,
-            "generated_delayed_response": response_present,
-            "joint_law_provenance": provenance_present,
-        },
+        "capability_detection": contact_measurement,
         "contact_coordinate": "DERIVED" if generated_contact else "PRICED",
     }
     causality = {
         "static_classification_controls": static_rows,
-        "intervention_schedule": "GENERATED" if schedule_present else "NOT-FROZEN",
+        "intervention_schedule": "GENERATED" if generated_causal_order else "NOT-FROZEN",
         "generated_delayed_reader_distribution": (
-            "CONSTRUCTED" if response_present else "NOT-CONSTRUCTED"
+            "CONSTRUCTED" if generated_causal_order else "NOT-CONSTRUCTED"
         ),
         "reversible_replacement_cycles_are_causal": False,
-        "capability_detection": {
-            "generated_schedule": schedule_present,
-            "generated_delayed_reader_distribution": response_present,
-            "joint_law_provenance": provenance_present,
-        },
-        "causality_coordinate": "DERIVED" if generated_contact else "PRICED",
+        "capability_detection": causal_measurement,
+        "causality_coordinate": "DERIVED" if generated_causal_order else "PRICED",
     }
     return contact, causality
 
@@ -2905,11 +4099,14 @@ def _candidate_regional_projection(member: Mapping[str, object]) -> dict[str, ob
         nodes = row.get("node_tokens")
         left_components = row.get("left_component_tokens")
         right_components = row.get("right_component_tokens")
+        interface = row.get("interface_token")
         if (
             not isinstance(nodes, list)
             or len(nodes) != 2
             or not isinstance(left_components, list)
             or not isinstance(right_components, list)
+            or not isinstance(interface, str)
+            or not interface
         ):
             raise ScoreRefusal("ill-typed declared candidate-regional incidence")
         left, right = map(str, nodes)
@@ -2917,6 +4114,10 @@ def _candidate_regional_projection(member: Mapping[str, object]) -> dict[str, ob
             raise ScoreRefusal("declared incidence references an unknown node")
         left_set = {str(value) for value in left_components}
         right_set = {str(value) for value in right_components}
+        if len(left_set) != len(left_components) or len(right_set) != len(
+            right_components
+        ):
+            raise ScoreRefusal("declared incidence repeats a component reference")
         if not left_set.issubset(node_components[left]) or not right_set.issubset(
             node_components[right]
         ):
@@ -2925,8 +4126,16 @@ def _candidate_regional_projection(member: Mapping[str, object]) -> dict[str, ob
         declared_shared = left_set & right_set
         if represented_shared != declared_shared:
             raise ScoreRefusal("declared shared-component incidence is incomplete")
+        projected_left = {projection[component] for component in left_set}
+        projected_right = {projection[component] for component in right_set}
+        if projected_left & projected_right != {interface}:
+            raise ScoreRefusal(
+                "declared incidence contradicts its projected blind interface"
+            )
         declared_crosschecks.append(
             {
+                "nodes": tuple(sorted((left, right))),
+                "interface": interface,
                 "represented_overlap": not regions[left].meet(regions[right]).is_zero(),
                 "shared_component_count": len(represented_shared),
             }
@@ -2947,6 +4156,7 @@ def _candidate_regional_projection(member: Mapping[str, object]) -> dict[str, ob
 
     edge_rows: list[tuple[str, str, str]] = []
     interface_crosschecks: list[dict[str, object]] = []
+    blind_edge_keys: set[tuple[tuple[str, str], str]] = set()
     for row in blind_edges_raw:
         if not isinstance(row, Mapping):
             raise ScoreRefusal("bad blind edge")
@@ -2957,6 +4167,10 @@ def _candidate_regional_projection(member: Mapping[str, object]) -> dict[str, ob
         left, right = map(str, nodes)
         if left not in regions or right not in regions:
             raise ScoreRefusal("blind edge references an unknown node")
+        edge_key = (tuple(sorted((left, right))), interface)
+        if edge_key in blind_edge_keys:
+            raise ScoreRefusal("blind interface repeats an edge")
+        blind_edge_keys.add(edge_key)
         interface_crosschecks.append(
             {
                 "projected_membership_matches_edge": blind_component_nodes.get(interface)
@@ -2967,6 +4181,26 @@ def _candidate_regional_projection(member: Mapping[str, object]) -> dict[str, ob
             }
         )
         edge_rows.append((left, right, interface))
+
+    declared_edge_keys = [
+        (row["nodes"], row["interface"]) for row in declared_crosschecks
+    ]
+    if len(set(declared_edge_keys)) != len(declared_edge_keys) or set(
+        declared_edge_keys
+    ) != {
+        (tuple(sorted((left, right))), interface)
+        for left, right, interface in edge_rows
+    }:
+        raise ScoreRefusal(
+            "declared incidences and frozen blind-interface edges disagree"
+        )
+
+    if not all(
+        row["projected_membership_matches_edge"] for row in interface_crosschecks
+    ):
+        raise ScoreRefusal(
+            "candidate-regional projection contradicts the frozen blind interface"
+        )
 
     # Canonical graph labeling by exhaustive finite isomorphism search.  The
     # frozen members have at most five nodes, so this is exact and cheap.
@@ -3243,6 +4477,281 @@ def process_record_action(row: Mapping[str, object]) -> str:
     return str(process_record_semantics(row)["action"])
 
 
+def construct_typed_continuation_closure(
+    catalogue: Mapping[str, object],
+    operations: Mapping[str, Mapping[str, object]],
+) -> dict[str, object]:
+    """Construct a finite, assigned, carrier-typed continuation semigroup.
+
+    A catalogue is not a word.  This constructor first verifies the complete
+    operation interface, then closes only assigned state transformations under
+    type-correct composition.  Readers/effects are kept outside that semigroup
+    and are attached afterwards to quantify recovery on every closed word.
+    """
+
+    operation_ids = catalogue.get("operation_ids")
+    active_root = catalogue.get("active_root")
+    declared_carriers = _finite_unique_texts(catalogue.get("declared_carriers"))
+    if not isinstance(operation_ids, list) or any(
+        not isinstance(identifier, str) for identifier in operation_ids
+    ):
+        raise ScoreRefusal("continuation catalogue has malformed operation references")
+    if len(set(operation_ids)) != len(operation_ids):
+        raise ScoreRefusal("continuation catalogue repeats an operation reference")
+
+    typing_rows: dict[str, object] = {}
+    state_maps: list[dict[str, object]] = []
+    readers: list[dict[str, object]] = []
+    missing: list[dict[str, object]] = []
+    for identifier in operation_ids:
+        row = operations.get(identifier)
+        if not isinstance(row, Mapping):
+            raise ScoreRefusal("continuation catalogue references a missing operation")
+        required = (
+            "carrier",
+            "domain",
+            "codomain",
+            "semantic_role",
+            "process_assignment",
+            "assignment_root",
+        )
+        absent = [
+            field
+            for field in required
+            if field not in row
+            or row[field] is None
+            or row[field] == ""
+            or row[field] == []
+            or row[field] == {}
+        ]
+        if not isinstance(active_root, str) or not active_root:
+            absent.append("catalogue.active_root")
+        if declared_carriers is None:
+            absent.append("catalogue.declared_carriers")
+        if row.get("assignment_root") != active_root:
+            absent.append("connected_assignment_root")
+        domain = row.get("domain")
+        codomain = row.get("codomain")
+        typed_domain = _finite_unique_texts(domain)
+        typed_codomain = _finite_unique_texts(codomain)
+        assignment = row.get("process_assignment")
+        role = row.get("semantic_role")
+        graph = assignment.get("graph") if isinstance(assignment, Mapping) else None
+        if typed_domain is None:
+            absent.append("finite_unique_domain")
+        if typed_codomain is None:
+            absent.append("finite_unique_codomain")
+        if not isinstance(graph, list):
+            absent.append("process_assignment.graph")
+        if role not in {"state-transformation", "reader-effect"}:
+            absent.append("recognized_semantic_role")
+        if not isinstance(row.get("carrier"), str) or not row.get("carrier"):
+            absent.append("finite_carrier_role")
+        if absent:
+            missing.append({"operation_role": identifier, "missing": sorted(set(absent))})
+            typing_rows[identifier] = {
+                "status": "UNTYPED-OR-UNASSIGNED",
+                "missing": sorted(set(absent)),
+            }
+            continue
+
+        assert typed_domain is not None and typed_codomain is not None
+        assert isinstance(graph, list) and isinstance(role, str)
+        pairs: list[tuple[str, str]] = []
+        for pair in graph:
+            if (
+                not isinstance(pair, list)
+                or len(pair) != 2
+                or not isinstance(pair[0], str)
+                or not isinstance(pair[1], str)
+            ):
+                raise ScoreRefusal("continuation assignment graph has a malformed pair")
+            pairs.append((pair[0], pair[1]))
+        graph_map = dict(pairs)
+        domain_values = typed_domain
+        codomain_values = typed_codomain
+        if len(graph_map) != len(pairs) or set(graph_map) != set(domain_values):
+            raise ScoreRefusal("continuation assignment is not functional and total")
+        if not set(graph_map.values()).issubset(codomain_values):
+            raise ScoreRefusal("continuation assignment escapes its codomain")
+        semantic_map = {
+            "word": (identifier,),
+            "domain_carrier": str(row["carrier"]),
+            "codomain_carrier": str(row["carrier"]),
+            "domain": domain_values,
+            "codomain": codomain_values,
+            "graph": tuple(sorted(graph_map.items())),
+        }
+        # Distinct carrier names may be supplied explicitly without inventing
+        # an identity or transport between them.
+        input_carrier = row.get("input_carrier", row["carrier"])
+        output_carrier = row.get("output_carrier", row["carrier"])
+        if not isinstance(input_carrier, str) or not isinstance(output_carrier, str):
+            raise ScoreRefusal("continuation carrier names are not typed")
+        if (
+            declared_carriers is None
+            or input_carrier not in declared_carriers
+            or output_carrier not in declared_carriers
+        ):
+            missing.append(
+                {
+                    "operation_role": identifier,
+                    "missing": ["carrier-in-declared-continuation-scope"],
+                }
+            )
+            typing_rows[identifier] = {
+                "status": "UNTYPED-OR-UNASSIGNED",
+                "missing": ["carrier-in-declared-continuation-scope"],
+            }
+            continue
+        semantic_map["domain_carrier"] = input_carrier
+        semantic_map["codomain_carrier"] = output_carrier
+        typing_rows[identifier] = {
+            "status": "TYPED-ASSIGNED",
+            "semantic_role": role,
+            "input_carrier": input_carrier,
+            "output_carrier": output_carrier,
+        }
+        if role == "state-transformation":
+            state_maps.append(semantic_map)
+        else:
+            readers.append(semantic_map)
+
+    if missing or not state_maps or not readers:
+        return {
+            "status": "TYPED-CONTINUATION-SUBGRAMMAR-UNCONSTRUCTED",
+            "active_root": active_root,
+            "declared_carriers": declared_carriers,
+            "operation_typing": typing_rows,
+            "missing_or_disconnected": missing,
+            "state_transformations": [row["word"][0] for row in state_maps],
+            "reader_effects": [row["word"][0] for row in readers],
+            "closed_typed_word_set": [],
+            "recovery_scope": "UNCONSTRUCTED",
+        }
+
+    def map_key(row: Mapping[str, object]) -> tuple[object, ...]:
+        return (
+            row["domain_carrier"],
+            row["codomain_carrier"],
+            tuple(row["domain"]),
+            tuple(row["codomain"]),
+            tuple(row["graph"]),
+        )
+
+    closure = {map_key(row): dict(row) for row in state_maps}
+    changed = True
+    while changed:
+        changed = False
+        rows = list(closure.values())
+        for earlier in rows:
+            for later in rows:
+                if (
+                    earlier["codomain_carrier"] != later["domain_carrier"]
+                    or tuple(earlier["codomain"]) != tuple(later["domain"])
+                ):
+                    continue
+                earlier_graph = dict(earlier["graph"])
+                later_graph = dict(later["graph"])
+                composite_graph = tuple(
+                    sorted(
+                        (source, later_graph[earlier_graph[source]])
+                        for source in earlier["domain"]
+                    )
+                )
+                candidate = {
+                    "word": tuple(earlier["word"]) + tuple(later["word"]),
+                    "domain_carrier": earlier["domain_carrier"],
+                    "codomain_carrier": later["codomain_carrier"],
+                    "domain": tuple(earlier["domain"]),
+                    "codomain": tuple(later["codomain"]),
+                    "graph": composite_graph,
+                }
+                key = map_key(candidate)
+                if key not in closure:
+                    closure[key] = candidate
+                    changed = True
+                    if len(closure) > 10000:
+                        raise ScoreRefusal("typed continuation closure exceeded finite bound")
+
+    closed_rows = sorted(closure.values(), key=canonical_json)
+    attached_readers = [
+        reader
+        for reader in readers
+        if any(
+            word["codomain_carrier"] == reader["domain_carrier"]
+            and tuple(word["codomain"]) == tuple(reader["domain"])
+            for word in closed_rows
+        )
+    ]
+    if len(attached_readers) != len(readers):
+        return {
+            "status": "TYPED-CONTINUATION-SUBGRAMMAR-UNCONSTRUCTED",
+            "active_root": active_root,
+            "declared_carriers": declared_carriers,
+            "operation_typing": typing_rows,
+            "missing_or_disconnected": [
+                {
+                    "reader_roles": [row["word"][0] for row in readers if row not in attached_readers],
+                    "missing": ["attached_typed_state_transformation"],
+                }
+            ],
+            "state_transformations": [row["word"][0] for row in state_maps],
+            "reader_effects": [row["word"][0] for row in readers],
+            "closed_typed_word_set": closed_rows,
+            "recovery_scope": "UNCONSTRUCTED",
+        }
+
+    recovery_rows: list[dict[str, object]] = []
+    for word in closed_rows:
+        word_graph = dict(word["graph"])
+        compatible_readers = [
+            reader
+            for reader in attached_readers
+            if word["codomain_carrier"] == reader["domain_carrier"]
+            and tuple(word["codomain"]) == tuple(reader["domain"])
+        ]
+        word_recoverable = False
+        reader_results: list[dict[str, object]] = []
+        for reader in compatible_readers:
+            reader_graph = dict(reader["graph"])
+            outputs = tuple(
+                reader_graph[word_graph[source]] for source in word["domain"]
+            )
+            distinguishes = len(set(outputs)) == len(tuple(word["domain"]))
+            word_recoverable = word_recoverable or distinguishes
+            reader_results.append(
+                {
+                    "reader_role": reader["word"][0],
+                    "outputs": outputs,
+                    "distinguishes_domain": distinguishes,
+                }
+            )
+        recovery_rows.append(
+            {
+                "word": word["word"],
+                "readers": reader_results,
+                "recoverable": word_recoverable,
+            }
+        )
+    return {
+        "status": "TYPED-CONTINUATION-CLOSED",
+        "active_root": active_root,
+        "declared_carriers": declared_carriers,
+        "operation_typing": typing_rows,
+        "missing_or_disconnected": [],
+        "state_transformations": [row["word"][0] for row in state_maps],
+        "reader_effects": [row["word"][0] for row in readers],
+        "closed_typed_word_set": closed_rows,
+        "closed_under_typed_composition": True,
+        "recovery_scope": {
+            "word_count": len(closed_rows),
+            "rows": recovery_rows,
+            "all_words_recoverable": all(row["recoverable"] for row in recovery_rows),
+        },
+    }
+
+
 def validate_reader_schedules(
     data: Mapping[str, object]
 ) -> dict[str, object]:
@@ -3388,6 +4897,7 @@ def build_active_law_roots(data: Mapping[str, object]) -> dict[str, object]:
     operations = index_rows(process.get("operations"))
     schedules = validate_reader_schedules(data)
     transition_binding = semantic_branch_binding(data)
+    port_chain = semantic_port_chain(data, questions, trees, cospans_from_fixture(data))
     transition = process.get("question_transition")
     if not isinstance(transition, Mapping):
         raise ScoreRefusal("missing question transition")
@@ -3434,6 +4944,7 @@ def build_active_law_roots(data: Mapping[str, object]) -> dict[str, object]:
             if key != "id"
         },
         "question_transition": branch_semantics,
+        "end_to_end_port_binding": port_chain["transport_invariant_signature"],
         "registered_tree_semantics": sorted(
             (semantic_tree_payload(tree, questions) for tree in trees.values()),
             key=canonical_json,
@@ -3619,62 +5130,272 @@ def build_law_roots(data: Mapping[str, object]) -> dict[str, object]:
     return build_active_law_roots(data)
 
 
-def _identity_assignments_by_boundary(data: Mapping[str, object]) -> dict[str, object]:
+def _active_identity_census(data: Mapping[str, object]) -> dict[str, object]:
     typed = data.get("typed_fillings")
-    if not isinstance(typed, Mapping):
-        raise ScoreRefusal("capability census lacks typed fillings")
+    process = data.get("regional_question_process")
+    if not isinstance(typed, Mapping) or not isinstance(process, Mapping):
+        raise ScoreRefusal("identity census lacks typed process/fillings")
     boundaries = index_rows(typed.get("boundaries"))
     fillings = index_rows(typed.get("horizontal_fillings"))
-    assignments: dict[str, object] = {}
-    for boundary_id, boundary in sorted(boundaries.items()):
-        generators = tuple(str(value) for value in boundary.get("generators", []))
-        witnesses: list[str] = []
-        for filling_id, row in fillings.items():
-            if row.get("incoming_boundary_id") != boundary_id or row.get(
+    trees, _ = _tree_rows(data)
+    provenance = process.get("generated_law_provenance")
+    if not isinstance(provenance, Mapping):
+        raise ScoreRefusal("identity census lacks generated provenance")
+    boundary_factory = provenance.get("boundary_factory")
+    filling_factory = provenance.get("filling_factory")
+    if not isinstance(boundary_factory, Mapping) or not isinstance(
+        filling_factory, Mapping
+    ):
+        raise ScoreRefusal("identity census lacks active factories")
+
+    active_rows = boundary_factory.get("rows")
+    if not isinstance(active_rows, list):
+        raise ScoreRefusal("identity census lacks active boundary rows")
+    active_by_level: dict[str, str] = {}
+    for row in active_rows:
+        if not isinstance(row, Mapping):
+            raise ScoreRefusal("identity census has a malformed boundary row")
+        depth = row.get("tree_depth")
+        boundary_id = row.get("boundary_id")
+        if not isinstance(depth, int) or not isinstance(boundary_id, str):
+            raise ScoreRefusal("identity census boundary row is ill typed")
+        level = f"B{depth}"
+        if depth in range(4):
+            if level in active_by_level or boundary_id not in boundaries:
+                raise ScoreRefusal("identity census has duplicate/missing B0-B3 boundary")
+            active_by_level[level] = boundary_id
+    if set(active_by_level) != {"B0", "B1", "B2", "B3"}:
+        raise ScoreRefusal("active identity domain must be exactly B0-B3")
+
+    replacement_rows = filling_factory.get("replacement_rows")
+    if not isinstance(replacement_rows, list):
+        raise ScoreRefusal("identity census lacks replacement assignments")
+    replacement_fillings = {
+        str(row["root_filling_id"])
+        for row in replacement_rows
+        if isinstance(row, Mapping) and isinstance(row.get("root_filling_id"), str)
+    }
+    assignment_rows_raw = filling_factory.get("tree_rows")
+    if not isinstance(assignment_rows_raw, list):
+        raise ScoreRefusal("identity census lacks tree assignments")
+    explicit_identity_rows = filling_factory.get("identity_rows", [])
+    if not isinstance(explicit_identity_rows, list):
+        raise ScoreRefusal("identity census identity_rows is not a list")
+    assignment_rows: list[dict[str, object]] = []
+    assignment_keys: set[tuple[str, str, str]] = set()
+    for source, rows in (
+        ("tree_rows", assignment_rows_raw),
+        ("identity_rows", explicit_identity_rows),
+    ):
+        for row in rows:
+            if not isinstance(row, Mapping):
+                raise ScoreRefusal("identity census has a malformed assignment row")
+            tree_id = row.get("tree_id")
+            filling_id = row.get("filling_id")
+            if (
+                not isinstance(tree_id, str)
+                or tree_id not in trees
+                or not isinstance(filling_id, str)
+                or filling_id not in fillings
+            ):
+                raise ScoreRefusal("identity assignment references a missing tree/filling")
+            filling = fillings[filling_id]
+            boundary_id = filling.get("incoming_boundary_id")
+            declared_boundary = row.get("boundary_id", boundary_id)
+            if declared_boundary != boundary_id:
+                raise ScoreRefusal("identity assignment is attached to the wrong boundary")
+            assignment_key = (source, tree_id, str(boundary_id))
+            if assignment_key in assignment_keys:
+                raise ScoreRefusal(
+                    "identity census assignment is nonfunctional at a boundary"
+                )
+            assignment_keys.add(assignment_key)
+            assignment_rows.append(
+                {
+                    "source": source,
+                    "tree_role": tree_id,
+                    "filling_role": filling_id,
+                    "boundary_role": boundary_id,
+                    "empty_process_semantic_witness": trees[tree_id].is_empty,
+                }
+            )
+
+    def structurally_identity(boundary_id: str, row: Mapping[str, object]) -> bool:
+        generators_raw = boundaries[boundary_id].get("generators")
+        incoming = row.get("incoming_images")
+        outgoing = row.get("outgoing_images")
+        relations = row.get("apex_relations", [])
+        if not isinstance(generators_raw, list) or not isinstance(
+            incoming, list
+        ) or not isinstance(outgoing, list) or not isinstance(relations, list):
+            return False
+        generators = tuple(str(value) for value in generators_raw)
+        if (
+            row.get("incoming_boundary_id") != boundary_id
+            or row.get("outgoing_boundary_id") != boundary_id
+            or relations
+        ):
+            return False
+        in_pairs = [pair for pair in incoming if isinstance(pair, list) and len(pair) == 2]
+        out_pairs = [pair for pair in outgoing if isinstance(pair, list) and len(pair) == 2]
+        in_map = {str(pair[0]): str(pair[1]) for pair in in_pairs}
+        out_map = {str(pair[0]): str(pair[1]) for pair in out_pairs}
+        return (
+            len(in_pairs) == len(in_map) == len(generators)
+            and len(out_pairs) == len(out_map) == len(generators)
+            and set(in_map) == set(out_map) == set(generators)
+            and len(set(in_map.values())) == len(generators)
+            and len(set(out_map.values())) == len(generators)
+            and all(in_map[token] == out_map[token] for token in generators)
+        )
+
+    by_level: dict[str, object] = {}
+    for level in ("B0", "B1", "B2", "B3"):
+        boundary_id = active_by_level[level]
+        attached = [
+            dict(row)
+            for row in assignment_rows
+            if row["boundary_role"] == boundary_id
+            and fillings[str(row["filling_role"])].get("outgoing_boundary_id")
+            == boundary_id
+        ]
+        witnesses: list[dict[str, object]] = []
+        for row in attached:
+            filling_id = str(row["filling_role"])
+            structural = structurally_identity(boundary_id, fillings[filling_id])
+            replacement = filling_id in replacement_fillings
+            valid = bool(row["empty_process_semantic_witness"]) and structural and not replacement
+            row.update(
+                {
+                    "structural_identity": structural,
+                    "replacement_or_swap_assignment": replacement,
+                    "counts_as_identity": valid,
+                }
+            )
+            if valid:
+                witnesses.append(dict(row))
+
+        exclusions: list[dict[str, object]] = []
+        for filling_id, filling in sorted(fillings.items()):
+            if filling.get("incoming_boundary_id") != boundary_id or filling.get(
                 "outgoing_boundary_id"
             ) != boundary_id:
                 continue
-            incoming = row.get("incoming_images")
-            outgoing = row.get("outgoing_images")
-            relations = row.get("apex_relations")
-            if not isinstance(incoming, list) or not isinstance(
-                outgoing, list
-            ) or not isinstance(relations, list):
+            structural = structurally_identity(boundary_id, filling)
+            attached_rows = [row for row in attached if row["filling_role"] == filling_id]
+            if any(row["counts_as_identity"] for row in attached_rows):
                 continue
-            in_map = {
-                str(pair[0]): str(pair[1])
-                for pair in incoming
-                if isinstance(pair, list) and len(pair) == 2
-            }
-            out_map = {
-                str(pair[0]): str(pair[1])
-                for pair in outgoing
-                if isinstance(pair, list) and len(pair) == 2
-            }
-            if (
-                set(in_map) == set(generators)
-                and set(out_map) == set(generators)
-                and not relations
-                and all(in_map[token] == out_map[token] for token in generators)
+            reasons: list[str] = []
+            if not attached_rows:
+                reasons.append("raw-but-unassigned")
+            if structural:
+                reasons.append("identity-shaped-only")
+            else:
+                reasons.append("nonidentity-endomorphism")
+            if filling_id in replacement_fillings:
+                reasons.append("replacement-or-swap-assignment")
+            if attached_rows and not any(
+                row["empty_process_semantic_witness"] for row in attached_rows
             ):
-                witnesses.append(filling_id)
-        assignments[boundary_id] = {
+                reasons.append("assigned-to-nonempty-process")
+            exclusions.append(
+                {
+                    "filling_role": filling_id,
+                    "reasons": reasons,
+                    "assignment_rows": attached_rows,
+                }
+            )
+        by_level[level] = {
+            "boundary_role": boundary_id,
+            "registered_assignment_rows": attached,
+            "empty_process_semantic_witnesses": witnesses,
             "present": bool(witnesses),
-            "witness_filling_roles": witnesses,
+            "witness_filling_roles": [row["filling_role"] for row in witnesses],
+            "excluded_endomorphisms": exclusions,
         }
-    return assignments
+
+    active_boundary_ids = set(active_by_level.values())
+    return {
+        "active_domain": ("B0", "B1", "B2", "B3"),
+        "by_level": by_level,
+        "out_of_domain_boundaries": [
+            {
+                "boundary_role": boundary_id,
+                "status": "OUT-OF-ACTIVE-IDENTITY-DOMAIN",
+            }
+            for boundary_id in sorted(set(boundaries) - active_boundary_ids)
+        ],
+    }
+
+
+def _identity_assignments_by_boundary(data: Mapping[str, object]) -> dict[str, object]:
+    return _active_identity_census(data)["by_level"]
 
 
 def _interface_package(
     value: object, required_fields: Sequence[str]
 ) -> dict[str, object]:
-    present = isinstance(value, Mapping) and all(field in value for field in required_fields)
+    present = isinstance(value, Mapping) and all(
+        field in value and _substantive(value[field]) for field in required_fields
+    )
     return {
         "present": present,
         "required_fields": list(required_fields),
         "present_fields": sorted(value) if isinstance(value, Mapping) else [],
         "evidence_kind": "typed-frozen-interface" if present else "missing-interface",
     }
+
+
+def _typed_destructive_reader_witnesses(
+    records_result: Mapping[str, object],
+) -> list[dict[str, object]]:
+    continuation_rows = records_result.get("continuation_reachability")
+    witnesses: list[dict[str, object]] = []
+    if not isinstance(continuation_rows, Mapping):
+        return witnesses
+    for catalogue_role, closure in sorted(continuation_rows.items()):
+        if not isinstance(closure, Mapping) or closure.get("status") != (
+            "TYPED-CONTINUATION-CLOSED"
+        ):
+            continue
+        recovery_scope = closure.get("recovery_scope")
+        recovery_rows = (
+            recovery_scope.get("rows") if isinstance(recovery_scope, Mapping) else None
+        )
+        readers_by_word = {
+            tuple(row.get("word", ())): row.get("readers", [])
+            for row in recovery_rows
+            if isinstance(row, Mapping)
+        } if isinstance(recovery_rows, list) else {}
+        closed_words = closure.get("closed_typed_word_set")
+        if not isinstance(closed_words, list):
+            continue
+        for word in closed_words:
+            if not isinstance(word, Mapping):
+                continue
+            graph = word.get("graph")
+            word_roles = tuple(word.get("word", ()))
+            outputs = [
+                pair[1]
+                for pair in graph
+                if isinstance(pair, (list, tuple)) and len(pair) == 2
+            ] if isinstance(graph, (list, tuple)) else []
+            attached_readers = readers_by_word.get(word_roles, [])
+            if (
+                outputs
+                and len(set(outputs)) < len(outputs)
+                and isinstance(attached_readers, list)
+                and bool(attached_readers)
+            ):
+                witnesses.append(
+                    {
+                        "catalogue_role": catalogue_role,
+                        "active_root": closure.get("active_root"),
+                        "destructive_word": word_roles,
+                        "attached_readers": attached_readers,
+                    }
+                )
+    return witnesses
 
 
 def compute_capability_census(
@@ -3687,6 +5408,7 @@ def compute_capability_census(
     atomlessness_result: Mapping[str, object],
     comparisons_result: Mapping[str, object],
     locality_result: Mapping[str, object],
+    records_result: Mapping[str, object],
     contact_result: Mapping[str, object],
     causality_result: Mapping[str, object],
     overlap_result: Mapping[str, object],
@@ -3730,7 +5452,8 @@ def compute_capability_census(
         "not_registered": adaptive_absent,
     }
 
-    identities = _identity_assignments_by_boundary(data)
+    identity_census = _active_identity_census(data)
+    identities = identity_census["by_level"]
     all_identities = bool(identities) and all(
         bool(row["present"]) for row in identities.values()
     )
@@ -3753,10 +5476,18 @@ def compute_capability_census(
         else None,
         ("rule", "domain", "uniqueness_proof"),
     )
-    filling_process = _interface_package(
-        process.get("filling_to_process_assignment"),
-        ("assignment", "identity_equation", "composition_equation", "cut_equation"),
+    process_package = process_result.get("semantic_process_package")
+    semantic_process_valid = bool(
+        isinstance(process_package, Mapping)
+        and process_package.get("classical_valid")
+        and process_result.get("process_coordinate")
+        in {"HORIZONTAL-CLASSICAL", "HORIZONTAL-QUANTUM"}
     )
+    filling_process = {
+        "present": semantic_process_valid,
+        "evidence_kind": "recomputed-horizontal-process-package",
+        "measurement": process_package,
+    }
     regional_tau = _interface_package(
         family.get("uniform_regional_tau"),
         ("generator", "calibration", "heldout_application"),
@@ -3769,6 +5500,8 @@ def compute_capability_census(
         data.get("causal_schedule"),
         ("operations", "ordering", "delayed_reader"),
     )
+    contact_measurement = contact_result.get("capability_detection")
+    causality_measurement = causality_result.get("capability_detection")
     quantum_law = _interface_package(
         data.get("quantum_interference_law"),
         ("history_space", "decoherence_functional", "division_instrument"),
@@ -3787,20 +5520,14 @@ def compute_capability_census(
         data.get("generated_support_equalizer"),
         ("active_law_root", "support_map", "equalizer_proof"),
     )
-    reader_schedules = validate_reader_schedules(data)
-    destructive_reader_witnesses = [
-        schedule_id
-        for schedule_id, row in reader_schedules.items()
-        if any(
-            action.get("action") in {"reset", "erase_last"}
-            for action in row.get("action_trace", [])
-            if isinstance(action, Mapping)
-        )
-    ]
+    destructive_reader_witnesses = _typed_destructive_reader_witnesses(
+        records_result
+    )
     same_law_reset_reader = {
         "present": bool(destructive_reader_witnesses),
-        "witness_schedule_roles": destructive_reader_witnesses,
-        "evidence_kind": "computed-reader-schedule-semantics",
+        "witness_typed_continuations": destructive_reader_witnesses,
+        "delayed_schedules_do_not_supply_this_capability": True,
+        "evidence_kind": "computed-closed-typed-continuation-semantics",
     }
 
     boundary_package = (
@@ -3838,6 +5565,10 @@ def compute_capability_census(
         },
         "adaptive_frontier_factory": frontier_constructor,
         "identity_assignments_by_boundary": identities,
+        "active_identity_domain": identity_census["active_domain"],
+        "out_of_domain_identity_boundaries": identity_census[
+            "out_of_domain_boundaries"
+        ],
         "all_boundary_identities": {
             "present": all_identities,
             "evidence_kind": "computed-horizontal-fillings",
@@ -3845,6 +5576,11 @@ def compute_capability_census(
         "tensor_process_factory": tensor,
         "nontrivial_vertical_horizontal_naturality": naturality,
         "filling_to_process_assignment": filling_process,
+        "horizontal_process": {
+            "present": semantic_process_valid,
+            "measurement": process_package,
+            "process_coordinate": process_result.get("process_coordinate"),
+        },
         "complete_target_independent_probe_compiler": probe_compiler,
         "regional_overlap_global_selector": selector,
         "regional_tau": regional_tau,
@@ -3898,13 +5634,21 @@ def compute_capability_census(
             "controls_do_not_promote": True,
         },
         "causal_order": {
-            "present": causal_schedule["present"]
-            and causality_result["causality_coordinate"] == "DERIVED",
+            "present": bool(
+                isinstance(causality_measurement, Mapping)
+                and causality_measurement.get("present")
+                and causality_result["causality_coordinate"] == "DERIVED"
+            ),
+            "measurement": causality_measurement,
             "controls_do_not_promote": True,
         },
         "generated_contact": {
-            "present": causal_schedule["present"]
-            and contact_result["contact_coordinate"] == "DERIVED",
+            "present": bool(
+                isinstance(contact_measurement, Mapping)
+                and contact_measurement.get("present")
+                and contact_result["contact_coordinate"] == "DERIVED"
+            ),
+            "measurement": contact_measurement,
             "controls_do_not_promote": True,
         },
         "overlap_selector_kill": overlap_result,
@@ -3928,6 +5672,23 @@ def classify_capability_census(census: Mapping[str, object]) -> tuple[str, list[
         missing = [name for name, value in components.items() if not value]
         return "APR-BLOCKED-AT-BOUNDARY-GLUING", [
             "missing computed capability: " + name for name in missing
+        ]
+    horizontal = census.get("horizontal_process")
+    horizontal_measurement = (
+        horizontal.get("measurement") if isinstance(horizontal, Mapping) else None
+    )
+    horizontal_valid = bool(
+        isinstance(horizontal_measurement, Mapping)
+        and horizontal_measurement.get("classical_valid")
+        and horizontal_measurement.get("coordinate")
+        in {"HORIZONTAL-CLASSICAL", "HORIZONTAL-QUANTUM"}
+        and isinstance(horizontal, Mapping)
+        and horizontal.get("process_coordinate")
+        == horizontal_measurement.get("coordinate")
+    )
+    if not horizontal_valid:
+        return "APR-BLOCKED-AT-TWO-ARROW-TYPING", [
+            "no validated horizontal process package"
         ]
     if not present("nontrivial_vertical_horizontal_naturality"):
         return "APR-BLOCKED-AT-TWO-ARROW-TYPING", [
@@ -3953,9 +5714,33 @@ def classify_capability_census(census: Mapping[str, object]) -> tuple[str, list[
         return "APR-COMPARISON-QUOTIENT-CONSTRUCTED-BUT-DYNAMICAL-LOCALITY-FAILS", [
             "dynamic regional-support requirements fail"
         ]
-    if not present("causal_order"):
+    causal = census.get("causal_order")
+    causal_measurement = causal.get("measurement") if isinstance(causal, Mapping) else None
+    causal_valid = bool(
+        isinstance(causal, Mapping)
+        and causal.get("present")
+        and isinstance(causal_measurement, Mapping)
+        and causal_measurement.get("present")
+        and causal_measurement.get("role") == "causal_order"
+        and not causal_measurement.get("missing")
+    )
+    if not causal_valid:
         return "APR-DYNAMIC-REGIONAL-REFERENT-CONSTRUCTED-BUT-CAUSAL-ORDER-PRICED", [
             "causal schedule and delayed response are not generated"
+        ]
+    contact = census.get("generated_contact")
+    contact_measurement = contact.get("measurement") if isinstance(contact, Mapping) else None
+    contact_valid = bool(
+        isinstance(contact, Mapping)
+        and contact.get("present")
+        and isinstance(contact_measurement, Mapping)
+        and contact_measurement.get("present")
+        and contact_measurement.get("role") == "generated_contact"
+        and not contact_measurement.get("missing")
+    )
+    if not contact_valid:
+        return "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED", [
+            "missing generated_contact"
         ]
     law_selected = census.get("law_selected")
     if not isinstance(law_selected, Mapping) or not law_selected.get("present"):
@@ -3970,6 +5755,184 @@ def classify_primary(receipt: Mapping[str, object]) -> tuple[str, list[str]]:
     if not isinstance(census, Mapping):
         raise ScoreRefusal("primary classifier requires a computed capability census")
     return classify_capability_census(census)
+
+
+ONTOLOGY_ROLES = (
+    "STATIC-RESPONSE",
+    "FIXED-ALGEBRA-CONDITIONING",
+    "RECORD-WRITING-ON-FIXED-ALGEBRA",
+    "REGION-REWRITING",
+)
+
+
+def measure_ontology_role(evidence: Mapping[str, object]) -> dict[str, object]:
+    """Measure a construction role without consulting an ontology proposal."""
+
+    static_response = evidence.get("static_response") is True
+    if not static_response:
+        raise ScoreRefusal("ontology-role measurement lacks a static response baseline")
+    process_measurement = evidence.get("process_measurement")
+    process_valid = bool(
+        isinstance(process_measurement, Mapping)
+        and process_measurement.get("classical_valid")
+        and process_measurement.get("coordinate")
+        in {"HORIZONTAL-CLASSICAL", "HORIZONTAL-QUANTUM"}
+    )
+    active_root = (
+        process_measurement.get("active_root")
+        if isinstance(process_measurement, Mapping)
+        else None
+    )
+    conditioning = evidence.get("conditioning")
+    conditioning_valid = False
+    conditioning_detail: dict[str, object] = {}
+    if process_valid and isinstance(conditioning, Mapping):
+        source = conditioning.get("source_region")
+        event = conditioning.get("event_region")
+        output = conditioning.get("output_region")
+        equation = (
+            isinstance(source, PrefixRegion)
+            and isinstance(event, PrefixRegion)
+            and isinstance(output, PrefixRegion)
+            and source.meet(event) == output
+        )
+        conditioning_valid = (
+            conditioning.get("active_root") == active_root
+            and equation
+            and conditioning.get("output_algebra_sha256")
+            == conditioning.get("input_algebra_sha256")
+            and _substantive(conditioning.get("input_algebra_sha256"))
+        )
+        conditioning_detail = {
+            "connected": conditioning.get("active_root") == active_root,
+            "restriction_recomputed": equation,
+            "same_algebra": conditioning.get("output_algebra_sha256")
+            == conditioning.get("input_algebra_sha256"),
+        }
+
+    record = evidence.get("record")
+    record_valid = False
+    record_detail: dict[str, object] = {}
+    if conditioning_valid and isinstance(record, Mapping):
+        closure = record.get("continuation_closure")
+        recovery = closure.get("recovery_scope") if isinstance(closure, Mapping) else None
+        operation_typing = (
+            closure.get("operation_typing") if isinstance(closure, Mapping) else None
+        )
+        writer = record.get("writer")
+        reader = record.get("delayed_reader")
+        writer_role = writer.get("operation_role") if isinstance(writer, Mapping) else None
+        reader_role = reader.get("operation_role") if isinstance(reader, Mapping) else None
+        writer_typing = (
+            operation_typing.get(writer_role)
+            if isinstance(operation_typing, Mapping) and isinstance(writer_role, str)
+            else None
+        )
+        reader_typing = (
+            operation_typing.get(reader_role)
+            if isinstance(operation_typing, Mapping) and isinstance(reader_role, str)
+            else None
+        )
+        record_valid = (
+            record.get("active_root") == active_root
+            and isinstance(writer, Mapping)
+            and writer.get("active_root") == active_root
+            and writer.get("semantic_action") == "record-write"
+            and _substantive(writer.get("typed_assignment"))
+            and isinstance(writer_typing, Mapping)
+            and writer_typing.get("status") == "TYPED-ASSIGNED"
+            and writer_typing.get("semantic_role") == "state-transformation"
+            and isinstance(reader, Mapping)
+            and reader.get("active_root") == active_root
+            and reader.get("semantic_action") == "delayed-read"
+            and _substantive(reader.get("typed_effect"))
+            and isinstance(reader_typing, Mapping)
+            and reader_typing.get("status") == "TYPED-ASSIGNED"
+            and reader_typing.get("semantic_role") == "reader-effect"
+            and isinstance(closure, Mapping)
+            and closure.get("status") == "TYPED-CONTINUATION-CLOSED"
+            and closure.get("active_root") == active_root
+            and isinstance(recovery, Mapping)
+            and recovery.get("all_words_recoverable") is True
+        )
+        record_detail = {
+            "connected_writer": isinstance(writer, Mapping)
+            and writer.get("active_root") == active_root,
+            "connected_delayed_reader": isinstance(reader, Mapping)
+            and reader.get("active_root") == active_root,
+            "writer_in_closed_typed_scope": isinstance(writer_typing, Mapping)
+            and writer_typing.get("status") == "TYPED-ASSIGNED",
+            "reader_in_closed_typed_scope": isinstance(reader_typing, Mapping)
+            and reader_typing.get("status") == "TYPED-ASSIGNED",
+            "closed_recoverable_continuations": isinstance(recovery, Mapping)
+            and recovery.get("all_words_recoverable") is True,
+        }
+
+    rewrite = evidence.get("region_rewrite")
+    rewrite_valid = False
+    rewrite_detail: dict[str, object] = {}
+    if record_valid and isinstance(rewrite, Mapping):
+        before_region = rewrite.get("before_region")
+        after_region = rewrite.get("after_region")
+        before_response = rewrite.get("response_before")
+        after_response = rewrite.get("response_after")
+        try:
+            before_exact = {
+                str(key): exact(value) for key, value in before_response.items()
+            } if isinstance(before_response, Mapping) else {}
+            after_exact = {
+                str(key): exact(value) for key, value in after_response.items()
+            } if isinstance(after_response, Mapping) else {}
+        except (ScoreRefusal, TypeError, ValueError):
+            before_exact = {}
+            after_exact = {}
+        rewrite_valid = (
+            rewrite.get("active_root") == active_root
+            and isinstance(before_region, PrefixRegion)
+            and isinstance(after_region, PrefixRegion)
+            and before_region != after_region
+            and bool(before_exact)
+            and set(before_exact) == set(after_exact)
+            and all(value >= 0 for value in before_exact.values())
+            and all(value >= 0 for value in after_exact.values())
+            and sum(before_exact.values(), Fraction(0)) == 1
+            and sum(after_exact.values(), Fraction(0)) == 1
+            and before_exact != after_exact
+            and rewrite.get("later_response_root") == active_root
+            and rewrite.get("response_control_region") == after_region
+        )
+        rewrite_detail = {
+            "connected": rewrite.get("active_root") == active_root,
+            "regional_object_changed": isinstance(before_region, PrefixRegion)
+            and isinstance(after_region, PrefixRegion)
+            and before_region != after_region,
+            "later_calibrated_response_changed": before_exact != after_exact,
+            "changed_region_controls_response": rewrite.get(
+                "response_control_region"
+            )
+            == after_region,
+        }
+
+    role = (
+        "REGION-REWRITING"
+        if rewrite_valid
+        else "RECORD-WRITING-ON-FIXED-ALGEBRA"
+        if record_valid
+        else "FIXED-ALGEBRA-CONDITIONING"
+        if conditioning_valid
+        else "STATIC-RESPONSE"
+    )
+    if role not in ONTOLOGY_ROLES:
+        raise ScoreRefusal("ontology role escaped its frozen vocabulary")
+    return {
+        "role": role,
+        "static_response": static_response,
+        "process_valid": process_valid,
+        "conditioning": conditioning_detail,
+        "record": record_detail,
+        "region_rewrite": rewrite_detail,
+        "candidate_consulted": False,
+    }
 
 
 def score_dataset(
@@ -4010,24 +5973,35 @@ def score_dataset(
         atomlessness_result=atomlessness,
         comparisons_result=comparisons,
         locality_result=locality,
+        records_result=records,
         contact_result=contact,
         causality_result=causality,
         overlap_result=overlap,
     )
 
-    ontology_role = {
-        "role": "POSTULATED-CANDIDATE-RELATIONAL-WEB",
-        "reason": (
-            "the ontic web is a proposal, not an APR result; the represented "
-            "question instruments act on one predeclared commutative algebra"
-        ),
-        "constructed_ceiling": (
-            "catalogue-relative record recoverability may be detected; global "
-            "durability and actualization are unproved"
-        ),
-        "valuation_status": "process-state representation; ontic/epistemic/shadow status unselected",
-        "p_status": "preparation label, not law data or coupling",
-        "actualization": "POSTULATE-UNTOUCHED",
+    ontology_evidence: dict[str, object] = {
+        "static_response": bool(process["all_input_normalization"]["symbolic"]),
+        "process_measurement": process["semantic_process_package"],
+    }
+    horizontal_package = data.get("regional_question_process", {}).get(
+        "horizontal_process_package"
+    ) if isinstance(data.get("regional_question_process"), Mapping) else None
+    if isinstance(horizontal_package, Mapping) and isinstance(
+        horizontal_package.get("ontology_evidence"), Mapping
+    ):
+        ontology_evidence.update(horizontal_package["ontology_evidence"])
+    ontology_role = measure_ontology_role(ontology_evidence)
+    ontology_role.update(
+        {
+            "valuation_status": "process-state representation; ontic/epistemic/shadow status unselected",
+            "p_status": "preparation label, not law data or coupling",
+            "actualization": "POSTULATE-UNTOUCHED",
+        }
+    )
+    ontology_candidate = {
+        "candidate": "POSTULATED-CANDIDATE-RELATIONAL-WEB",
+        "measurement_status": "PROPOSAL-NOT-MEASURED-ROLE",
+        "classifier_input": False,
     }
     law_selection = {
         "status": (
@@ -4053,6 +6027,9 @@ def score_dataset(
         "computed missing capability: " + name for name in missing_capabilities
     ] + [
         "analytical controls and dependency roots cannot supply missing positive baselines",
+        REGIONAL_SUPPORT_SCOPE,
+        PREFIX_SYNTAX_SCOPE,
+        "locality=FAIL is promotion failure/unconstructed capability, not observed physical nonlocality",
         "no continuum, metric, Lorentz, GR, QFT, particle, Hamiltonian, or gravity claim",
     ]
     receipt: dict[str, object] = {
@@ -4087,11 +6064,15 @@ def score_dataset(
         "dependency_provenance": provenance.to_data(),
         "one_law_provenance": "UNCONSTRUCTED",
         "ontology_role": ontology_role,
+        "ontology_candidate": ontology_candidate,
         "law_selection": law_selection,
         "scope_walls": scope_walls,
         "mutants": "NOT-RUN" if not include_mutants else {},
         "strict_primary": "UNCLASSIFIED",
         "qualifiers": [],
+        "blinding_status": BLINDING_STATUS,
+        "exposure_debt": EXPOSURE_DEBT,
+        "v3_source_frozen_before_v3_run": True,
     }
     primary, primary_walls = classify_primary(receipt)
     if primary not in PRIMARY_WORDS:
@@ -4109,13 +6090,25 @@ def score_dataset(
 
 
 def attach_payload_hash(receipt: MutableMapping[str, object]) -> None:
+    validate_v3_exposure_fields(receipt)
     if "payload_sha256" in receipt:
         raise ScoreRefusal("payload hash already attached")
     receipt["payload_sha256"] = canonical_sha256(receipt)
 
 
+def validate_v3_exposure_fields(value: Mapping[str, object]) -> None:
+    expected = {
+        "blinding_status": BLINDING_STATUS,
+        "exposure_debt": EXPOSURE_DEBT,
+        "v3_source_frozen_before_v3_run": True,
+    }
+    if any(value.get(key) != expected_value for key, expected_value in expected.items()):
+        raise ScoreRefusal("v3 artifact exposure metadata is missing or changed")
+
+
 def transcript_from_receipt(receipt: Mapping[str, object]) -> dict[str, object]:
-    return {
+    validate_v3_exposure_fields(receipt)
+    transcript = {
         "schema": TRANSCRIPT_SCHEMA,
         "strict_primary": receipt["strict_primary"],
         "qualifiers": receipt["qualifiers"],
@@ -4129,10 +6122,18 @@ def transcript_from_receipt(receipt: Mapping[str, object]) -> dict[str, object]:
         "contact_coordinate": receipt["contact"]["contact_coordinate"],
         "causality_coordinate": receipt["causality"]["causality_coordinate"],
         "ontology_role": receipt["ontology_role"]["role"],
+        "ontology_candidate": receipt["ontology_candidate"]["candidate"],
         "law_selection": receipt["law_selection"]["status"],
         "scope_walls": receipt["scope_walls"],
+        "blinding_status": receipt["blinding_status"],
+        "exposure_debt": receipt["exposure_debt"],
+        "v3_source_frozen_before_v3_run": receipt[
+            "v3_source_frozen_before_v3_run"
+        ],
         "receipt_payload_sha256": receipt["payload_sha256"],
     }
+    validate_v3_exposure_fields(transcript)
+    return transcript
 
 
 def _replace_exact_strings(value: object, replacements: Mapping[str, str]) -> object:
@@ -4238,8 +6239,13 @@ def _alter_reachable_leg(
     raise ScoreRefusal("G2 found no reachable leg with two compatible images")
 
 
-def _erase_represented_candidate_overlap(
-    data: MutableMapping[str, object], options: MutationOptions
+def _substitute_represented_candidate_overlap(
+    data: MutableMapping[str, object],
+    options: MutationOptions,
+    *,
+    expected_member_role: str | None = None,
+    expected_source_component: str | None = None,
+    expected_target_component: str | None = None,
 ) -> None:
     family = data.get("regional_families")
     if not isinstance(family, MutableMapping):
@@ -4250,12 +6256,18 @@ def _erase_represented_candidate_overlap(
     for member in members:
         if not isinstance(member, MutableMapping):
             continue
+        if expected_member_role is not None and member.get("id") != expected_member_role:
+            continue
         incidences = member.get("incidences")
         regions = member.get("regions")
         occurrences = member.get("component_occurrences")
-        if not isinstance(incidences, list) or not isinstance(
-            regions, list
-        ) or not isinstance(occurrences, list):
+        projection_rows = member.get("blind_projection")
+        if (
+            not isinstance(incidences, list)
+            or not isinstance(regions, list)
+            or not isinstance(occurrences, list)
+            or not isinstance(projection_rows, list)
+        ):
             continue
         region_index = {
             str(row.get("node_token")): row
@@ -4267,6 +6279,16 @@ def _erase_represented_candidate_overlap(
             for row in occurrences
             if isinstance(row, Mapping)
         }
+        projection: dict[str, str] = {}
+        for row in projection_rows:
+            if not isinstance(row, Mapping):
+                raise ScoreRefusal("M16 has a malformed frozen blind projection")
+            source = row.get("component_token")
+            target = row.get("blind_component_token")
+            if not isinstance(source, str) or not isinstance(target, str) or source in projection:
+                raise ScoreRefusal("M16 has a nonfunctional frozen blind projection")
+            projection[source] = target
+        pre_projection = _candidate_regional_projection(member)
         for incidence in incidences:
             if not isinstance(incidence, MutableMapping):
                 continue
@@ -4283,39 +6305,113 @@ def _erase_represented_candidate_overlap(
             shared = sorted(set(map(str, left_components)) & set(map(str, right_components)))
             if not shared:
                 continue
-            component = shared[0]
-            occurrence = occurrence_index.get(component)
-            right_node = region_index.get(str(nodes[1]))
-            if not isinstance(occurrence, Mapping) or not isinstance(
-                right_node, MutableMapping
+            source_component = shared[0]
+            if (
+                expected_source_component is not None
+                and source_component != expected_source_component
             ):
                 continue
-            words = occurrence.get("antichain")
-            node_words = right_node.get("antichain")
-            if not isinstance(words, list) or not isinstance(node_words, list):
+            blind_component = projection.get(source_component)
+            alternatives = sorted(
+                component
+                for component, projected in projection.items()
+                if projected == blind_component and component != source_component
+            )
+            if expected_target_component is not None:
+                alternatives = [
+                    component
+                    for component in alternatives
+                    if component == expected_target_component
+                ]
+            if not alternatives:
                 continue
-            removed = [str(word) for word in words if str(word) in node_words]
-            if not removed:
+            target_component = alternatives[0]
+            source_occurrence = occurrence_index.get(source_component)
+            target_occurrence = occurrence_index.get(target_component)
+            right_node = region_index.get(str(nodes[1]))
+            if (
+                not isinstance(source_occurrence, Mapping)
+                or not isinstance(target_occurrence, Mapping)
+                or not isinstance(right_node, MutableMapping)
+            ):
+                continue
+            source_words = source_occurrence.get("antichain")
+            target_words = target_occurrence.get("antichain")
+            node_words = right_node.get("antichain")
+            if (
+                not isinstance(source_words, list)
+                or not isinstance(target_words, list)
+                or len(source_words) != 1
+                or len(target_words) != 1
+                or not isinstance(node_words, list)
+            ):
+                continue
+            old_word = str(source_words[0])
+            new_word = str(target_words[0])
+            if old_word not in set(map(str, node_words)) or new_word in set(
+                map(str, node_words)
+            ):
                 continue
             pre_member = copy.deepcopy(member)
-            right_node["antichain"] = [
-                word for word in node_words if str(word) not in set(removed)
-            ]
+            right_node["antichain"] = sorted(
+                new_word if str(word) == old_word else str(word) for word in node_words
+            )
             incidence["right_component_tokens"] = [
-                value for value in right_components if str(value) != component
+                target_component if str(value) == source_component else str(value)
+                for value in right_components
             ]
+            post_projection = _candidate_regional_projection(member)
+            before_overlap = pre_projection[
+                "represented_candidate_regional_relation"
+            ]["overlap_pair_count"]
+            after_overlap = post_projection[
+                "represented_candidate_regional_relation"
+            ]["overlap_pair_count"]
+            if before_overlap != 2 or after_overlap != 1:
+                raise ScoreRefusal("M16 substitution did not move represented overlap 2 -> 1")
+            if (
+                pre_projection["canonical_blind_sha256"]
+                != post_projection["canonical_blind_sha256"]
+            ):
+                raise ScoreRefusal("M16 substitution changed the frozen blind colored graph")
+            if not post_projection["blind_interface_consistent"]:
+                raise ScoreRefusal("M16 substitution broke projection/interface consistency")
+            if canonical_sha256(pre_member["component_occurrences"]) != canonical_sha256(
+                member["component_occurrences"]
+            ) or canonical_sha256(pre_member["resource_declaration"]) != canonical_sha256(
+                member["resource_declaration"]
+            ) or canonical_sha256(pre_member["blind_projection"]) != canonical_sha256(
+                member["blind_projection"]
+            ):
+                raise ScoreRefusal("M16 altered a frozen catalogue, resource, or projection")
             options.details["M16"] = {
                 "member_role": str(member.get("id", "anonymous-member")),
                 "node_role": str(nodes[1]),
-                "component_role": component,
-                "removed_region_words": removed,
+                "source_component_role": source_component,
+                "target_component_role": target_component,
+                "old_region_word": old_word,
+                "new_region_word": new_word,
+                "incidence_reference_update": {
+                    "old": source_component,
+                    "new": target_component,
+                },
+                "overlap_count_before": before_overlap,
+                "overlap_count_after": after_overlap,
+                "projection_consistent_before": pre_projection[
+                    "blind_interface_consistent"
+                ],
+                "projection_consistent_after": post_projection[
+                    "blind_interface_consistent"
+                ],
+                "blind_sha256_before": pre_projection["canonical_blind_sha256"],
+                "blind_sha256_after": post_projection["canonical_blind_sha256"],
                 "pre_payload": pre_member,
                 "post_payload": copy.deepcopy(member),
                 "pre_sha256": canonical_sha256(pre_member),
                 "post_sha256": canonical_sha256(member),
             }
             return
-    raise ScoreRefusal("M16 found no represented overlap to erase")
+    raise ScoreRefusal("M16 found no exact blind-equivalent c-to-d substitution")
 
 
 def _select_comparison_map(
@@ -4407,9 +6503,21 @@ def apply_mutant(
     elif mutant_id == "M14":
         options.modes.update({"equal_rank_wrong_subspace", "supplied_matrix_shortcut"})
     elif mutant_id == "M15":
-        options.modes.update({"serialization_oracle", "identifier_hash_oracle"})
+        options.modes.update(
+            {
+                "raw_syntax_copy",
+                "identifier_hash_copy",
+                "finite_depth_whitelist",
+            }
+        )
     elif mutant_id == "M16":
-        _erase_represented_candidate_overlap(data, options)
+        _substitute_represented_candidate_overlap(
+            data,
+            options,
+            expected_member_role="rf_000",
+            expected_source_component="edge_0_c",
+            expected_target_component="edge_0_d",
+        )
     elif mutant_id == "M17":
         section = data["predictive_boundaries"]
         assert isinstance(section, MutableMapping)
@@ -4688,6 +6796,169 @@ def conjugation_deletion_control() -> dict[str, object]:
     }
 
 
+def _serialized_permutation_family(
+    *,
+    family_kind: str,
+    target: PrefixRegion,
+    depth: int,
+    generators: Sequence[Mapping[str, object]],
+) -> dict[str, object]:
+    leaves = leaves_at_depth(depth)
+    rows: list[dict[str, object]] = []
+    permutations: list[tuple[int, ...]] = []
+    for index, row in enumerate(generators):
+        permutation = row.get("permutation")
+        if not isinstance(permutation, tuple) or sorted(permutation) != list(
+            range(len(leaves))
+        ):
+            raise ScoreRefusal("serialized replacement family has a bad permutation")
+        permutations.append(permutation)
+        rows.append(
+            {
+                "generator_index": index,
+                "source_role": row.get("replacement_role", f"finite-generator-{index}"),
+                "support_region": row.get("support_region"),
+                "permutation": permutation,
+            }
+        )
+    return {
+        "family_kind": family_kind,
+        "carrier": {"depth": depth, "leaf_basis": leaves},
+        "target_region": target,
+        "generators": rows,
+        "generated_family": permutation_closure(permutations) if permutations else (),
+    }
+
+
+def _permutation_family_measurement(
+    payload: Mapping[str, object],
+) -> dict[str, object]:
+    carrier = payload.get("carrier")
+    target = payload.get("target_region")
+    generator_rows = payload.get("generators")
+    if (
+        not isinstance(carrier, Mapping)
+        or not isinstance(carrier.get("depth"), int)
+        or not isinstance(target, PrefixRegion)
+        or not isinstance(generator_rows, list)
+    ):
+        raise ScoreRefusal("cannot measure malformed serialized permutation family")
+    permutations = [row["permutation"] for row in generator_rows if isinstance(row, Mapping)]
+    reading = _orbit_reading(target, int(carrier["depth"]), permutations)
+    return {
+        "exterior_orbits": reading["exterior_orbits"],
+        "exterior_orbit_count": reading["exterior_orbit_count"],
+        "fixed_effect_dimension": reading["fixed_effect_dimension"],
+        "fixed_effect_constraints": reading["fixed_effect_constraints"],
+        "semigroup_size": reading["semigroup_size"],
+    }
+
+
+def l2_generator_deletion_control(data: Mapping[str, object]) -> dict[str, object]:
+    regions = regions_from_fixture(data)
+    process = data.get("regional_question_process")
+    if not isinstance(process, Mapping) or not isinstance(
+        process.get("changed_object_rows"), list
+    ):
+        raise ScoreRefusal("L2 lacks replacement-control rows")
+    candidates: list[tuple[int, str, PrefixRegion, tuple[dict[str, object], ...]]] = []
+    for row in process["changed_object_rows"]:
+        if not isinstance(row, Mapping) or not isinstance(
+            row.get("target_region_id"), str
+        ):
+            continue
+        target_id = str(row["target_region_id"])
+        if target_id not in regions:
+            continue
+        target = regions[target_id]
+        depth = max(2, max((len(word) for word in target.words), default=0) + 1)
+        generators = _literal_replacement_generator_rows(data, target_id, depth)
+        if len(generators) >= 2:
+            candidates.append((depth, target_id, target, generators))
+    if not candidates:
+        raise ScoreRefusal("L2 has no finite child-swap family with two generators")
+    depth, target_id, target, generators = max(candidates, key=lambda row: (row[0], row[1]))
+    pre_payload = _serialized_permutation_family(
+        family_kind="finite child-swap family from replacement-control rows",
+        target=target,
+        depth=depth,
+        generators=generators,
+    )
+    deleted = generators[-1]
+    post_payload = _serialized_permutation_family(
+        family_kind="finite child-swap family with one serialized generator deleted",
+        target=target,
+        depth=depth,
+        generators=generators[:-1],
+    )
+    before = _permutation_family_measurement(pre_payload)
+    after = _permutation_family_measurement(post_payload)
+    if (
+        before["exterior_orbit_count"] == after["exterior_orbit_count"]
+        or before["fixed_effect_dimension"] == after["fixed_effect_dimension"]
+    ):
+        raise ScoreRefusal("L2 generator deletion did not move orbit/fixed space")
+    return {
+        "scope": "finite analytical replacement control only",
+        "positive_locality_baseline": False,
+        "target_region_role": target_id,
+        "deleted_generator": deleted,
+        "pre_payload": pre_payload,
+        "post_payload": post_payload,
+        "pre_sha256": canonical_sha256(pre_payload),
+        "post_sha256": canonical_sha256(post_payload),
+        "measurement_before": before,
+        "measurement_after": after,
+    }
+
+
+def l4_transitivity_deletion_control(
+    target: PrefixRegion = PrefixRegion.cylinder("00"), depth: int = 3
+) -> dict[str, object]:
+    intrinsic = _intrinsic_exterior_generators(target, depth)
+    if len(intrinsic) < 2:
+        raise ScoreRefusal("L4 finite exterior family has no removable bridge")
+    generator_rows = tuple(
+        {
+            "replacement_role": f"finite-exterior-adjacent-swap-{index}",
+            "support_region": target.complement(),
+            "permutation": permutation,
+        }
+        for index, permutation in enumerate(intrinsic)
+    )
+    bridge_index = len(generator_rows) // 2
+    post_rows = generator_rows[:bridge_index] + generator_rows[bridge_index + 1 :]
+    pre_payload = _serialized_permutation_family(
+        family_kind="finite transitive exterior permutation/mixing family",
+        target=target,
+        depth=depth,
+        generators=generator_rows,
+    )
+    post_payload = _serialized_permutation_family(
+        family_kind="serialized multiple-orbit exterior subfamily",
+        target=target,
+        depth=depth,
+        generators=post_rows,
+    )
+    before = _permutation_family_measurement(pre_payload)
+    after = _permutation_family_measurement(post_payload)
+    if before["exterior_orbit_count"] != 1 or after["exterior_orbit_count"] < 2:
+        raise ScoreRefusal("L4 did not move transitivity to multiple exterior orbits")
+    if before["fixed_effect_dimension"] == after["fixed_effect_dimension"]:
+        raise ScoreRefusal("L4 multiple-orbit subfamily did not move fixed space")
+    return {
+        "scope": "finite analytical transitivity control only",
+        "positive_locality_baseline": False,
+        "deleted_generator": generator_rows[bridge_index],
+        "pre_payload": pre_payload,
+        "post_payload": post_payload,
+        "pre_sha256": canonical_sha256(pre_payload),
+        "post_sha256": canonical_sha256(post_payload),
+        "measurement_before": before,
+        "measurement_after": after,
+    }
+
+
 def profile_collapse_controls(regions: Mapping[str, PrefixRegion]) -> dict[str, object]:
     if not regions:
         raise ScoreRefusal("profile-collapse control needs regions")
@@ -4711,61 +6982,208 @@ def profile_collapse_controls(regions: Mapping[str, PrefixRegion]) -> dict[str, 
     }
 
 
+def raw_syntax_copy(expression: Mapping[str, object]) -> str:
+    """Wrong M15 implementation: copy an unreduced syntax tree verbatim."""
+
+    operation = expression.get("op")
+    if operation == "cyl":
+        word = expression.get("word")
+        if not isinstance(word, str) or set(word) - {"0", "1"}:
+            raise ScoreRefusal("raw-syntax oracle received a malformed cylinder")
+    elif operation == "join":
+        arguments = expression.get("args")
+        if not isinstance(arguments, list) or len(arguments) != 2:
+            raise ScoreRefusal("raw-syntax oracle received a malformed join")
+        for argument in arguments:
+            if not isinstance(argument, Mapping):
+                raise ScoreRefusal("raw-syntax oracle join argument is not syntax")
+            raw_syntax_copy(argument)
+    else:
+        raise ScoreRefusal("raw-syntax oracle received an unknown constructor")
+    return canonical_json(expression)
+
+
+def identifier_hash_copy(identifier: str, region: PrefixRegion) -> str:
+    """Wrong M15 implementation: ignore the region and copy a neutral ID hash."""
+
+    if not isinstance(identifier, str) or not identifier:
+        raise ScoreRefusal("identifier-hash oracle needs a presentation identifier")
+    # Mention ``region`` in the executable signature while deliberately not
+    # consuming it; the family test below detects this disconnected argument.
+    if not isinstance(region, PrefixRegion):
+        raise ScoreRefusal("identifier-hash oracle needs a canonical region argument")
+    return hashlib.sha256(identifier.encode("utf-8")).hexdigest()
+
+
+def finite_whitelist_copy(
+    region: PrefixRegion, registered: Sequence[PrefixRegion]
+) -> str | None:
+    """Wrong M15/P5 implementation: answer only a frozen finite member set."""
+
+    allowed = set(registered)
+    return canonical_json(region) if region in allowed else None
+
+
+def _flip_syntax_expression(expression: Mapping[str, object]) -> dict[str, object]:
+    if expression.get("op") == "cyl":
+        return {"op": "cyl", "word": _flip_binary_word(str(expression["word"]))}
+    arguments = expression.get("args")
+    if expression.get("op") != "join" or not isinstance(arguments, list):
+        raise ScoreRefusal("cannot Boolean-relabel malformed raw syntax")
+    return {
+        "op": "join",
+        "args": [
+            _flip_syntax_expression(argument)
+            for argument in arguments
+            if isinstance(argument, Mapping)
+        ],
+    }
+
+
 def oracle_family_controls(regions: Mapping[str, PrefixRegion]) -> dict[str, object]:
     if not regions:
         raise ScoreRefusal("oracle control needs registered regions")
-    registered = tuple(sorted(regions.values(), key=canonical_json))
-    cutoff = max(
-        (len(word) for region in registered for word in region.words),
-        default=0,
+    registered = tuple(sorted(set(regions.values()), key=canonical_json))
+    fresh = PrefixRegion.cylinder("000")
+    if fresh in set(registered):
+        raise ScoreRefusal("M15/P5 requires fresh [000] outside the whitelist")
+
+    unreduced = {
+        "op": "join",
+        "args": [
+            {"op": "cyl", "word": "000"},
+            {"op": "cyl", "word": "001"},
+        ],
+    }
+    reduced = {"op": "cyl", "word": "00"}
+    canonical_region = PrefixRegion.from_words(("000", "001"))
+    if canonical_region != PrefixRegion.cylinder("00"):
+        raise ScoreRefusal("oracle control failed canonical sibling reduction")
+    raw_unreduced = raw_syntax_copy(unreduced)
+    raw_reduced = raw_syntax_copy(reduced)
+    relabeled_unreduced = _flip_syntax_expression(unreduced)
+    relabeled_reduced = _flip_syntax_expression(reduced)
+
+    sample_name, sample = next(
+        (
+            (name, region)
+            for name, region in sorted(regions.items())
+            if not region.is_zero()
+        ),
+        next(iter(sorted(regions.items()))),
     )
-    fresh = PrefixRegion.cylinder("0" * (cutoff + 1))
-    while fresh in set(registered):
-        fresh = PrefixRegion.cylinder(next(iter(fresh.words)) + "0")
-    sample_name, sample = next(iter(sorted(regions.items())))
-    relabeled = PrefixRegion.from_words(_flip_binary_word(word) for word in sample.words)
-    refined_words = tuple(
+    clone_name = "fresh-clone-of-" + sample_name
+    sample_hash = identifier_hash_copy(sample_name, sample)
+    clone_hash = identifier_hash_copy(clone_name, sample)
+    fresh_identifier = "fresh-region-000"
+    fresh_identifier_output = identifier_hash_copy(fresh_identifier, fresh)
+    relabeled_sample = PrefixRegion.from_words(
+        _flip_binary_word(word) for word in sample.words
+    )
+    refined_sample = PrefixRegion.from_words(
         child
         for word in sample.words
         for child in (word + "0", word + "1")
     )
-    refined = PrefixRegion.from_words(refined_words)
+
     whitelist_payload = {
-        "constructor": "membership in finite canonical region set",
-        "members": registered,
-        "maximum_registered_word_depth": cutoff,
+        "implementation": "finite canonical membership table",
+        "registered_regions": registered,
     }
-    implementations = {
-        "syntax_copy": {
-            "fresh_valid_region": fresh,
-            "accepts_fresh": True,
-            "relabel_covariant": True,
-            "refinement_invariant": refined == sample,
-            "provenance": "symbolic PrefixRegion constructor",
+    whitelist_hash = canonical_sha256(whitelist_payload)
+    whitelist_registered = [
+        finite_whitelist_copy(region, registered) for region in registered
+    ]
+    whitelist_relabel = finite_whitelist_copy(relabeled_sample, registered)
+    whitelist_refinement = finite_whitelist_copy(refined_sample, registered)
+
+    return {
+        "raw_syntax_copy": {
+            "implementation": {
+                "key": "unreduced expression tree",
+                "constructor": "raw_syntax_copy",
+            },
+            "fresh_region_test": {
+                "region": fresh,
+                "accepted": raw_syntax_copy({"op": "cyl", "word": "000"})
+                is not None,
+            },
+            "canonical_reduction_test": {
+                "unreduced_expression": unreduced,
+                "reduced_expression": reduced,
+                "canonical_region": canonical_region,
+                "unreduced_output": raw_unreduced,
+                "reduced_output": raw_reduced,
+                "agrees_on_same_canonical_region": raw_unreduced == raw_reduced,
+            },
+            "Boolean_relabel_test": {
+                "unreduced_output": raw_syntax_copy(relabeled_unreduced),
+                "reduced_output": raw_syntax_copy(relabeled_reduced),
+                "agrees_after_relabel": raw_syntax_copy(relabeled_unreduced)
+                == raw_syntax_copy(relabeled_reduced),
+            },
+            "refinement_test": {
+                "parent": reduced,
+                "children_join": unreduced,
+                "invariant": raw_reduced == raw_unreduced,
+            },
         },
-        "identifier_hash": {
-            "sample_role": sample_name,
-            "sample_hash": hashlib.sha256(sample_name.encode("utf-8")).hexdigest(),
-            "pure_relabel_hash": hashlib.sha256(
-                ("renamed-" + sample_name).encode("utf-8")
-            ).hexdigest(),
-            "accepts_fresh_without_identifier": False,
-            "relabel_covariant": False,
-            "refinement_invariant": False,
-            "provenance": "neutral presentation identifier",
+        "identifier_hash_copy": {
+            "implementation": {
+                "key": "neutral presentation identifier",
+                "constructor": "identifier_hash_copy",
+            },
+            "fresh_region_test": {
+                "region": fresh,
+                "identifier": fresh_identifier,
+                "output": fresh_identifier_output,
+                "returns_canonical_region": fresh_identifier_output
+                == canonical_json(fresh),
+            },
+            "fresh_id_clone_test": {
+                "canonical_region": sample,
+                "source_identifier": sample_name,
+                "clone_identifier": clone_name,
+                "source_hash": sample_hash,
+                "clone_hash": clone_hash,
+                "agrees_on_same_canonical_region": sample_hash == clone_hash,
+            },
+            "Boolean_relabel_test": {
+                "relabeled_region": relabeled_sample,
+                "output": identifier_hash_copy(sample_name, relabeled_sample),
+                "returns_relabeled_region": identifier_hash_copy(
+                    sample_name, relabeled_sample
+                )
+                == canonical_json(relabeled_sample),
+            },
+            "refinement_test": {
+                "refined_region_equals_source": refined_sample == sample,
+                "identifier_output_equal": identifier_hash_copy(sample_name, refined_sample)
+                == sample_hash,
+                "returns_canonical_region": sample_hash == canonical_json(sample),
+            },
         },
         "finite_depth_whitelist": {
             "payload": whitelist_payload,
-            "payload_sha256": canonical_sha256(whitelist_payload),
-            "accepts_registered": all(value in set(registered) for value in registered),
-            "fresh_valid_region": fresh,
-            "accepts_fresh": fresh in set(registered),
-            "relabel_covariant": relabeled in set(registered),
-            "refinement_invariant": refined in set(registered),
-            "provenance": "finite registered table only",
+            "payload_sha256": whitelist_hash,
+            "fresh_region_test": {
+                "region": fresh,
+                "accepted": finite_whitelist_copy(fresh, registered) is not None,
+            },
+            "accepts_registered": all(value is not None for value in whitelist_registered),
+            "Boolean_relabel_test": {
+                "source": sample,
+                "relabeled": relabeled_sample,
+                "accepted": whitelist_relabel is not None,
+            },
+            "refinement_test": {
+                "source": sample,
+                "refined": refined_sample,
+                "same_canonical_region": refined_sample == sample,
+                "accepted": whitelist_refinement is not None,
+            },
         },
     }
-    return implementations
 
 
 def branch_process_mutant_controls(event: PrefixRegion) -> dict[str, object]:
@@ -5292,12 +7710,13 @@ def _generic_algorithm_witness(
         }
     if mutant_id == "P5":
         whitelist = oracle_family_controls(regions)["finite_depth_whitelist"]
+        fresh_test = whitelist["fresh_region_test"]
         return {
             "shared_evidence_with": "M15/finite_depth_whitelist",
             "shared_payload_sha256": whitelist["payload_sha256"],
-            "fresh_region": whitelist["fresh_valid_region"],
-            "symbolic_question_defined": Restriction(whitelist["fresh_valid_region"]),
-            "whitelist_accepts": whitelist["accepts_fresh"],
+            "fresh_region": fresh_test["region"],
+            "symbolic_question_defined": Restriction(fresh_test["region"]),
+            "whitelist_accepts": fresh_test["accepted"],
         }
     if mutant_id == "P6":
         event = next(iter(questions.values()))
@@ -5315,6 +7734,10 @@ def _generic_algorithm_witness(
     if mutant_id == "L3":
         reading = score_locality(data, ProvenanceDAG(), options)
         return {"refinement_conjugation": reading["refinement_conjugation"]}
+    if mutant_id == "L2":
+        return l2_generator_deletion_control(data)
+    if mutant_id == "L4":
+        return l4_transitivity_deletion_control()
     if mutant_id == "L6":
         return {
             "supplied_subspace_root": canonical_sha256(data["regional_support"]),
@@ -5454,7 +7877,9 @@ ANALYTICAL_MUTANTS = {
     "P5",
     "P6",
     "P7",
+    "L2",
     "L3",
+    "L4",
     "L5",
     "G3",
 }
@@ -5599,6 +8024,22 @@ def _finalize_transformation_row(
             ),
             "shared_evidence_link": None,
         }
+    elif mutant_id in {"L2", "L4"} and isinstance(evidence, Mapping):
+        descriptor = {
+            "target_root": "finite-replacement-analytical-control",
+            "target_object": evidence.get("scope"),
+            "constructor_schema": (
+                "serialize complete finite permutation family, delete one explicit "
+                "generator, close both families, and recompute orbit/fixed spaces"
+            ),
+            "pre_payload": evidence.get("pre_payload"),
+            "post_payload": evidence.get("post_payload"),
+            "pre_payload_sha256": evidence.get("pre_sha256"),
+            "post_payload_sha256": evidence.get("post_sha256"),
+            "exact_changes": [{"deleted_generator": evidence.get("deleted_generator")}],
+            "reference_updates": [],
+            "shared_evidence_link": None,
+        }
     elif isinstance(details, Mapping):
         descriptor = {
             "target_root": next(
@@ -5636,7 +8077,7 @@ def _finalize_transformation_row(
             "constructor_input_fixture_sha256": source_hash,
             "constructor_role": mutant_id,
         }
-        post_payload = {"constructed_measurement": constructor_output}
+        post_payload = {"constructed_control_payload": constructor_output}
         descriptor = {
             "target_root": "analytical-or-scope-control",
             "target_object": f"{mutant_id} constructed control",
@@ -5657,9 +8098,13 @@ def _finalize_transformation_row(
         }
     result["mutation_descriptor"] = descriptor
     result["implemented_action"] = (
-        "mutate serialized semantic object and recompute"
-        if differences
-        else "construct registered analytical/scope control and recompute"
+        "construct serialized finite family, delete one generator, and recompute"
+        if mutant_id in {"L2", "L4"}
+        else (
+            "mutate serialized semantic object and recompute"
+            if differences
+            else "construct registered analytical/scope control and recompute"
+        )
     )
 
     baseline_roots = baseline.get("law_roots")
@@ -6152,6 +8597,83 @@ def run_selftests() -> dict[str, object]:
     )
     checks.append("strict-record-reader-typing")
 
+    typed_continuation_operations = {
+        "writer": {
+            "carrier": "record-bit",
+            "domain": ["0", "1"],
+            "codomain": ["0", "1"],
+            "semantic_role": "state-transformation",
+            "process_assignment": {"graph": [["0", "0"], ["1", "1"]]},
+            "assignment_root": "typed-root",
+        },
+        "reader": {
+            "carrier": "record-bit",
+            "domain": ["0", "1"],
+            "codomain": ["0", "1"],
+            "semantic_role": "reader-effect",
+            "process_assignment": {"graph": [["0", "0"], ["1", "1"]]},
+            "assignment_root": "typed-root",
+        },
+        "reset": {
+            "carrier": "record-bit",
+            "domain": ["0", "1"],
+            "codomain": ["0", "1"],
+            "semantic_role": "state-transformation",
+            "process_assignment": {"graph": [["0", "0"], ["1", "0"]]},
+            "assignment_root": "typed-root",
+        },
+    }
+    closed_continuation = construct_typed_continuation_closure(
+        {
+            "active_root": "typed-root",
+            "declared_carriers": ["record-bit"],
+            "operation_ids": ["writer", "reader"],
+        },
+        typed_continuation_operations,
+    )
+    reset_continuation = construct_typed_continuation_closure(
+        {
+            "active_root": "typed-root",
+            "declared_carriers": ["record-bit"],
+            "operation_ids": ["writer", "reset", "reader"],
+        },
+        typed_continuation_operations,
+    )
+    missing_assignment_operations = copy.deepcopy(typed_continuation_operations)
+    missing_assignment_operations["writer"].pop("process_assignment")
+    unconstructed_continuation = construct_typed_continuation_closure(
+        {
+            "active_root": "typed-root",
+            "declared_carriers": ["record-bit"],
+            "operation_ids": ["writer", "reader"],
+        },
+        missing_assignment_operations,
+    )
+    _require(
+        closed_continuation["status"] == "TYPED-CONTINUATION-CLOSED"
+        and closed_continuation["recovery_scope"]["all_words_recoverable"]
+        and reset_continuation["status"] == "TYPED-CONTINUATION-CLOSED"
+        and not reset_continuation["recovery_scope"]["all_words_recoverable"]
+        and not _typed_destructive_reader_witnesses(
+            {"continuation_reachability": {"qc-positive": closed_continuation}}
+        )
+        and bool(
+            _typed_destructive_reader_witnesses(
+                {"continuation_reachability": {"qc-reset": reset_continuation}}
+            )
+        )
+        and not _typed_destructive_reader_witnesses(
+            {
+                "continuation_reachability": {},
+                "delayed_reader": {"same_law_schedules": {"qr_000": {"reset": True}}},
+            }
+        )
+        and unconstructed_continuation["status"]
+        == "TYPED-CONTINUATION-SUBGRAMMAR-UNCONSTRUCTED",
+        "typed continuation closure/absence/reset-to-reader scope",
+    )
+    checks.append("typed-continuation-closure-and-absence")
+
     delay = {
         "operation": "delay_without_record_access",
         "expression": "identity on valuation and record carrier",
@@ -6214,6 +8736,159 @@ def run_selftests() -> dict[str, object]:
     )
     checks.append("expression-driven-record-recovery")
 
+    identity_fixture: dict[str, object] = {
+        "typed_fillings": {
+            "boundaries": [
+                {"id": f"boundary-{index}", "generators": ["epsilon"]}
+                for index in range(4)
+            ]
+            + [{"id": "boundary-outside", "generators": ["x"]}],
+            "horizontal_fillings": [
+                {
+                    "id": "assigned-identity",
+                    "incoming_boundary_id": "boundary-0",
+                    "outgoing_boundary_id": "boundary-0",
+                    "incoming_images": [["epsilon", "i"]],
+                    "outgoing_images": [["epsilon", "i"]],
+                    "apex_relations": [],
+                },
+                {
+                    "id": "raw-identity-shape",
+                    "incoming_boundary_id": "boundary-0",
+                    "outgoing_boundary_id": "boundary-0",
+                    "incoming_images": [["epsilon", "j"]],
+                    "outgoing_images": [["epsilon", "j"]],
+                    "apex_relations": [],
+                },
+                {
+                    "id": "replacement-swap",
+                    "incoming_boundary_id": "boundary-0",
+                    "outgoing_boundary_id": "boundary-0",
+                    "incoming_images": [["epsilon", "swap"]],
+                    "outgoing_images": [["epsilon", "swap"]],
+                    "apex_relations": [],
+                },
+                {
+                    "id": "nonidentity-endomorphism",
+                    "incoming_boundary_id": "boundary-0",
+                    "outgoing_boundary_id": "boundary-0",
+                    "incoming_images": [["epsilon", "left"]],
+                    "outgoing_images": [["epsilon", "right"]],
+                    "apex_relations": [["left", "right"]],
+                },
+                {
+                    "id": "outside-raw-identity",
+                    "incoming_boundary_id": "boundary-outside",
+                    "outgoing_boundary_id": "boundary-outside",
+                    "incoming_images": [["x", "x"]],
+                    "outgoing_images": [["x", "x"]],
+                    "apex_relations": [],
+                },
+            ],
+        },
+        "regional_question_process": {
+            "decision_trees": [
+                {"id": "empty-process", "expression": "empty_tree"},
+                {
+                    "id": "nonempty-process",
+                    "expression": "node(question,empty_tree,empty_tree)",
+                },
+            ],
+            "generated_law_provenance": {
+                "boundary_factory": {
+                    "rows": [
+                        {"tree_depth": index, "boundary_id": f"boundary-{index}"}
+                        for index in range(4)
+                    ]
+                },
+                "filling_factory": {
+                    "tree_rows": [
+                        {
+                            "tree_id": "empty-process",
+                            "filling_id": "assigned-identity",
+                        }
+                    ],
+                    "replacement_rows": [
+                        {"root_filling_id": "replacement-swap"}
+                    ],
+                },
+            },
+        },
+    }
+    identity_census = _active_identity_census(identity_fixture)
+    _require(
+        identity_census["active_domain"] == ("B0", "B1", "B2", "B3")
+        and identity_census["by_level"]["B0"]["present"]
+        and all(
+            not identity_census["by_level"][level]["present"]
+            for level in ("B1", "B2", "B3")
+        )
+        and any(
+            row["filling_role"] == "raw-identity-shape"
+            and "raw-but-unassigned" in row["reasons"]
+            for row in identity_census["by_level"]["B0"]["excluded_endomorphisms"]
+        )
+        and identity_census["out_of_domain_boundaries"]
+        == [
+            {
+                "boundary_role": "boundary-outside",
+                "status": "OUT-OF-ACTIVE-IDENTITY-DOMAIN",
+            }
+        ],
+        "assignment-typed active B0-B3 identity census",
+    )
+    assigned_nonempty = copy.deepcopy(identity_fixture)
+    assigned_nonempty["regional_question_process"]["generated_law_provenance"][
+        "filling_factory"
+    ]["tree_rows"][0]["tree_id"] = "nonempty-process"
+    assigned_swap = copy.deepcopy(identity_fixture)
+    assigned_swap["regional_question_process"]["generated_law_provenance"][
+        "filling_factory"
+    ]["tree_rows"][0]["filling_id"] = "replacement-swap"
+    assigned_nonidentity = copy.deepcopy(identity_fixture)
+    assigned_nonidentity["regional_question_process"]["generated_law_provenance"][
+        "filling_factory"
+    ]["tree_rows"][0]["filling_id"] = "nonidentity-endomorphism"
+    _require(
+        not _active_identity_census(assigned_nonempty)["by_level"]["B0"]["present"]
+        and not _active_identity_census(assigned_swap)["by_level"]["B0"]["present"]
+        and not _active_identity_census(assigned_nonidentity)["by_level"]["B0"][
+            "present"
+        ],
+        "nonempty-tree/replacement/nonidentity attachment witnessed identity",
+    )
+    identity_relabeling = {
+        "boundary-0": "renamed-boundary-0",
+        "boundary-1": "renamed-boundary-1",
+        "boundary-2": "renamed-boundary-2",
+        "boundary-3": "renamed-boundary-3",
+        "boundary-outside": "renamed-boundary-outside",
+        "empty-process": "renamed-empty-process",
+        "nonempty-process": "renamed-nonempty-process",
+        "assigned-identity": "renamed-assigned-identity",
+        "raw-identity-shape": "renamed-raw-identity-shape",
+        "replacement-swap": "renamed-replacement-swap",
+        "nonidentity-endomorphism": "renamed-nonidentity-endomorphism",
+        "outside-raw-identity": "renamed-outside-raw-identity",
+    }
+    relabeled_identity_fixture = _replace_exact_strings(
+        identity_fixture, identity_relabeling
+    )
+    assert isinstance(relabeled_identity_fixture, Mapping)
+    relabeled_identity_census = _active_identity_census(relabeled_identity_fixture)
+    _require(
+        tuple(
+            identity_census["by_level"][level]["present"]
+            for level in identity_census["active_domain"]
+        )
+        == tuple(
+            relabeled_identity_census["by_level"][level]["present"]
+            for level in relabeled_identity_census["active_domain"]
+        ),
+        "consistent identifier/reference relabeling moved identity census",
+    )
+    checks.append("assignment-typed-B0-B3-identity-attacks")
+
     port_fixture_a = {
         "regional_question_process": {
             "question_transition": {
@@ -6221,10 +8896,12 @@ def run_selftests() -> dict[str, object]:
                     {
                         "id": "neutral-left",
                         "next_valuation": "Q_C^1(nu)(A)=nu(meet(A,C))",
+                        "next_record_word": "append(R,(C,neutral-left))",
                     },
                     {
                         "id": "neutral-right",
                         "next_valuation": "Q_C^0(nu)(A)=nu(meet(A,complement(C)))",
+                        "next_record_word": "append(R,(C,neutral-right))",
                     },
                 ]
             }
@@ -6234,7 +8911,9 @@ def run_selftests() -> dict[str, object]:
     ports_b = port_fixture_b["regional_question_process"]["question_transition"]["ports"]
     ports_b.reverse()
     ports_b[0]["id"] = "renamed-zero"
+    ports_b[0]["next_record_word"] = "append(R,(C,renamed-zero))"
     ports_b[1]["id"] = "renamed-one"
+    ports_b[1]["next_record_word"] = "append(R,(C,renamed-one))"
     _require(
         canonical_sha256(port_fixture_a) != canonical_sha256(port_fixture_b),
         "port presentation bytes must move",
@@ -6245,6 +8924,187 @@ def run_selftests() -> dict[str, object]:
     )
     checks.append("semantic-port-id-order-metamorphic")
 
+    port_chain_fixture: dict[str, object] = {
+        "prefix_controls": {
+            "regions": [{"id": "region", "antichain": ["0"]}]
+        },
+        "typed_fillings": {
+            "boundaries": [
+                {"id": "B0-boundary", "generators": ["epsilon"]},
+                {"id": "B1-boundary", "generators": ["0", "1"]},
+            ],
+            "apices": [
+                {"id": "identity-apex", "generators": ["epsilon"]},
+                {"id": "question-apex", "generators": ["root", "zero", "one"]},
+            ],
+            "horizontal_fillings": [
+                {
+                    "id": "empty-filling",
+                    "incoming_boundary_id": "B0-boundary",
+                    "outgoing_boundary_id": "B0-boundary",
+                    "apex_id": "identity-apex",
+                    "incoming_images": [["epsilon", "epsilon"]],
+                    "outgoing_images": [["epsilon", "epsilon"]],
+                    "apex_relations": [],
+                },
+                {
+                    "id": "question-filling",
+                    "incoming_boundary_id": "B0-boundary",
+                    "outgoing_boundary_id": "B1-boundary",
+                    "apex_id": "question-apex",
+                    "incoming_images": [["epsilon", "root"]],
+                    "outgoing_images": [["0", "zero"], ["1", "one"]],
+                    "apex_relations": [["root", "zero"], ["root", "one"]],
+                },
+            ],
+        },
+        "regional_question_process": {
+            "registered_questions": [{"id": "question", "region_id": "region"}],
+            "question_transition": copy.deepcopy(
+                port_fixture_a["regional_question_process"]["question_transition"]
+            ),
+            "port_to_bit_map": [
+                {"port_id": "neutral-left", "bit": 1},
+                {"port_id": "neutral-right", "bit": 0},
+            ],
+            "decision_trees": [
+                {"id": "empty-tree", "expression": "empty_tree"},
+                {
+                    "id": "question-tree",
+                    "expression": "node(question,empty_tree,empty_tree)",
+                },
+            ],
+            "operations": [
+                {
+                    "id": "delay",
+                    "operation": "delay_without_record_access",
+                    "expression": "identity on valuation and record carrier",
+                },
+                {
+                    "id": "reader",
+                    "operation": "read_record_after_delay",
+                    "expression": "read record_word after registered delay operations",
+                },
+            ],
+            "reader_schedules": [
+                {
+                    "id": "reader-schedule",
+                    "tree_id": "question-tree",
+                    "operation_ids": ["delay", "reader"],
+                }
+            ],
+            "generated_law_provenance": {
+                "boundary_factory": {
+                    "rows": [
+                        {"tree_depth": 0, "boundary_id": "B0-boundary"},
+                        {"tree_depth": 1, "boundary_id": "B1-boundary"},
+                    ]
+                },
+                "filling_factory": {
+                    "question_rows": [
+                        {
+                            "input_depth": 0,
+                            "output_depth": 1,
+                            "filling_id": "question-filling",
+                        }
+                    ],
+                    "tree_rows": [
+                        {"tree_id": "empty-tree", "filling_id": "empty-filling"},
+                        {
+                            "tree_id": "question-tree",
+                            "filling_id": "question-filling",
+                        },
+                    ],
+                },
+            },
+        },
+    }
+    port_regions = regions_from_fixture(port_chain_fixture)
+    port_questions = question_region_map(port_chain_fixture, port_regions)
+    port_trees, _ = _tree_rows(port_chain_fixture)
+    port_cospans = cospans_from_fixture(port_chain_fixture)
+    port_chain_a = semantic_port_chain(
+        port_chain_fixture, port_questions, port_trees, port_cospans
+    )
+    transported_port_fixture = copy.deepcopy(port_chain_fixture)
+    transported_ports = transported_port_fixture["regional_question_process"][
+        "question_transition"
+    ]["ports"]
+    transported_ports.reverse()
+    for row in transported_ports:
+        old = row["id"]
+        new = "transported-" + old
+        row["id"] = new
+        row["next_record_word"] = f"append(R,(C,{new}))"
+    for row in transported_port_fixture["regional_question_process"][
+        "port_to_bit_map"
+    ]:
+        row["port_id"] = "transported-" + row["port_id"]
+    transported_regions = regions_from_fixture(transported_port_fixture)
+    transported_questions = question_region_map(
+        transported_port_fixture, transported_regions
+    )
+    transported_trees, _ = _tree_rows(transported_port_fixture)
+    port_chain_b = semantic_port_chain(
+        transported_port_fixture,
+        transported_questions,
+        transported_trees,
+        cospans_from_fixture(transported_port_fixture),
+    )
+    _require(
+        port_chain_a["transport_invariant_sha256"]
+        == port_chain_b["transport_invariant_sha256"],
+        "neutral semantic-port rewrite moved an end-to-end signature",
+    )
+    crossed_record = copy.deepcopy(port_chain_fixture)
+    crossed_record["regional_question_process"]["question_transition"]["ports"][0][
+        "next_record_word"
+    ] = "append(R,(C,neutral-right))"
+    crossed_refused = False
+    try:
+        _semantic_transition_ports(crossed_record)
+    except ScoreRefusal:
+        crossed_refused = True
+    crossed_downstream = copy.deepcopy(port_chain_fixture)
+    crossed_downstream["regional_question_process"]["port_to_bit_map"] = [
+        {"port_id": "neutral-left", "bit": 0},
+        {"port_id": "neutral-right", "bit": 1},
+    ]
+    downstream_refused = False
+    try:
+        semantic_port_chain(
+            crossed_downstream,
+            port_questions,
+            port_trees,
+            port_cospans,
+        )
+    except ScoreRefusal:
+        downstream_refused = True
+    malformed_transition_refusals = []
+    missing_port = copy.deepcopy(port_fixture_a)
+    missing_port["regional_question_process"]["question_transition"]["ports"].pop()
+    duplicate_bit = copy.deepcopy(port_fixture_a)
+    duplicate_bit["regional_question_process"]["question_transition"]["ports"][1][
+        "next_valuation"
+    ] = "Q_C^1(nu)(A)=nu(meet(A,C))"
+    ambiguous_formula = copy.deepcopy(port_fixture_a)
+    ambiguous_formula["regional_question_process"]["question_transition"]["ports"][0][
+        "next_valuation"
+    ] = "nu(meet(A,C))+nu(meet(A,complement(C)))"
+    for malformed_transition in (missing_port, duplicate_bit, ambiguous_formula):
+        try:
+            _semantic_transition_ports(malformed_transition)
+            malformed_transition_refusals.append(False)
+        except ScoreRefusal:
+            malformed_transition_refusals.append(True)
+    _require(
+        crossed_refused
+        and downstream_refused
+        and all(malformed_transition_refusals),
+        "downstream/missing/duplicate/ambiguous port contradictions did not refuse",
+    )
+    checks.append("end-to-end-semantic-port-binding-and-negatives")
+
     synthetic_member: dict[str, object] = {
         "id": "neutral-member",
         "component_occurrences": [
@@ -6252,7 +9112,9 @@ def run_selftests() -> dict[str, object]:
             {"component_token": "p1", "antichain": ["010"]},
             {"component_token": "p2", "antichain": ["100"]},
             {"component_token": "c01", "antichain": ["001"]},
+            {"component_token": "d01", "antichain": ["101"]},
             {"component_token": "c12", "antichain": ["011"]},
+            {"component_token": "d12", "antichain": ["111"]},
         ],
         "regions": [
             {"node_token": "n0", "antichain": ["000", "001"]},
@@ -6278,7 +9140,9 @@ def run_selftests() -> dict[str, object]:
             {"component_token": "p1", "blind_component_token": "bp1"},
             {"component_token": "p2", "blind_component_token": "bp2"},
             {"component_token": "c01", "blind_component_token": "i01"},
+            {"component_token": "d01", "blind_component_token": "i01"},
             {"component_token": "c12", "blind_component_token": "i12"},
+            {"component_token": "d12", "blind_component_token": "i12"},
         ],
         "blind_interface": {
             "node_tokens": ["n0", "n1", "n2"],
@@ -6312,18 +9176,62 @@ def run_selftests() -> dict[str, object]:
         "regional_families": {"members": [copy.deepcopy(synthetic_member)]}
     }
     relation_options = MutationOptions(mutant_id="M16")
-    _erase_represented_candidate_overlap(relation_data, relation_options)
+    _substitute_represented_candidate_overlap(relation_data, relation_options)
     changed_member = relation_data["regional_families"]["members"][0]
     projection_changed = _candidate_regional_projection(changed_member)
     _require(
         projection_changed["canonical_blind_sha256"]
-        != projection_a["canonical_blind_sha256"],
-        "represented candidate-regional incidence change did not move blind hash",
+        == projection_a["canonical_blind_sha256"]
+        and projection_a["represented_candidate_regional_relation"][
+            "overlap_pair_count"
+        ]
+        == 2
+        and projection_changed["represented_candidate_regional_relation"][
+            "overlap_pair_count"
+        ]
+        == 1,
+        "M16 c-to-d substitution did not preserve blind hash while moving overlap 2 -> 1",
     )
     _require(
         relation_options.details["M16"]["pre_sha256"]
         != relation_options.details["M16"]["post_sha256"],
         "M16 changed-object evidence is inert",
+    )
+    deletion_member = copy.deepcopy(synthetic_member)
+    deletion_regions = {
+        str(row["node_token"]): row for row in deletion_member["regions"]
+    }
+    deletion_regions["n1"]["antichain"].remove("001")
+    deletion_member["incidences"][0]["right_component_tokens"] = []
+    deletion_refused = False
+    try:
+        _candidate_regional_projection(deletion_member)
+    except ScoreRefusal:
+        deletion_refused = True
+    malformed_projection_members = []
+    missing_projection_member = copy.deepcopy(synthetic_member)
+    missing_projection_member["blind_projection"].pop()
+    malformed_projection_members.append(missing_projection_member)
+    nonfunctional_projection_member = copy.deepcopy(synthetic_member)
+    nonfunctional_projection_member["blind_projection"].append(
+        copy.deepcopy(nonfunctional_projection_member["blind_projection"][0])
+    )
+    malformed_projection_members.append(nonfunctional_projection_member)
+    contradictory_projection_member = copy.deepcopy(synthetic_member)
+    contradictory_projection_member["blind_projection"][3][
+        "blind_component_token"
+    ] = "contradictory-interface"
+    malformed_projection_members.append(contradictory_projection_member)
+    malformed_projection_refusals = []
+    for malformed_member in malformed_projection_members:
+        try:
+            _candidate_regional_projection(malformed_member)
+            malformed_projection_refusals.append(False)
+        except ScoreRefusal:
+            malformed_projection_refusals.append(True)
+    _require(
+        deletion_refused and all(malformed_projection_refusals),
+        "M16 deletion/missing/nonfunctional/contradictory projection did not refuse",
     )
     checks.append("candidate-regional-projection-and-relabel-canonicalization")
 
@@ -6482,6 +9390,312 @@ def run_selftests() -> dict[str, object]:
     )
     checks.append("overlap-selector-nonuniqueness")
 
+    classical_package = synthetic_horizontal_process_package()
+    quantum_package = synthetic_horizontal_process_package(quantum=True)
+    classical_measurement = measure_horizontal_process_package(
+        classical_package, static_response_available=True
+    )
+    quantum_measurement = measure_horizontal_process_package(
+        quantum_package, static_response_available=True
+    )
+    _require(
+        classical_measurement["coordinate"] == "HORIZONTAL-CLASSICAL"
+        and quantum_measurement["coordinate"] == "HORIZONTAL-QUANTUM"
+        and set(PROCESS_COORDINATES)
+        == {
+            "SYNTAX-ONLY",
+            "STATIC-RESPONSE-ONLY",
+            "HORIZONTAL-CLASSICAL",
+            "HORIZONTAL-QUANTUM",
+            "INCONSISTENT",
+        },
+        "positive process branches or frozen vocabulary",
+    )
+    for component_name in classical_package["components"]:
+        for empty_value in (None, "", {}, []):
+            dropped = copy.deepcopy(classical_package)
+            dropped["components"][component_name] = empty_value
+            _require(
+                measure_horizontal_process_package(
+                    dropped, static_response_available=True
+                )["coordinate"]
+                == "STATIC-RESPONSE-ONLY",
+                f"empty process component promoted: {component_name}",
+            )
+        stubbed = copy.deepcopy(classical_package)
+        stubbed["components"][component_name]["payload"] = {"stub": True}
+        _require(
+            measure_horizontal_process_package(
+                stubbed, static_response_available=True
+            )["coordinate"]
+            == "STATIC-RESPONSE-ONLY",
+            f"nonsemantic process stub promoted: {component_name}",
+        )
+        disconnected_process = copy.deepcopy(classical_package)
+        disconnected_process["components"][component_name][
+            "active_root"
+        ] = "disconnected-root"
+        _require(
+            measure_horizontal_process_package(
+                disconnected_process, static_response_available=True
+            )["coordinate"]
+            == "STATIC-RESPONSE-ONLY",
+            f"disconnected process component promoted: {component_name}",
+        )
+    for equation_name in classical_package["equations"]:
+        for empty_value in (None, "", {}, []):
+            dropped = copy.deepcopy(classical_package)
+            dropped["equations"][equation_name] = empty_value
+            _require(
+                measure_horizontal_process_package(
+                    dropped, static_response_available=True
+                )["coordinate"]
+                == "STATIC-RESPONSE-ONLY",
+                f"missing semantic equation promoted: {equation_name}",
+            )
+        disconnected_equation = copy.deepcopy(classical_package)
+        disconnected_equation["equations"][equation_name][0][
+            "active_root"
+        ] = "disconnected-root"
+        _require(
+            measure_horizontal_process_package(
+                disconnected_equation, static_response_available=True
+            )["coordinate"]
+            == "STATIC-RESPONSE-ONLY",
+            f"disconnected semantic equation promoted: {equation_name}",
+        )
+    contradictory_process = copy.deepcopy(classical_package)
+    contradictory_process["equations"]["sequential_composition"][0]["rhs"] = {
+        "semantic_value": "different"
+    }
+    _require(
+        measure_horizontal_process_package(
+            contradictory_process, static_response_available=True
+        )["coordinate"]
+        == "INCONSISTENT",
+        "contradictory process equation did not refuse",
+    )
+    no_interference = copy.deepcopy(quantum_package)
+    no_interference["quantum"]["history_gram"] = QMatrix.identity(2)
+    nonpositive = copy.deepcopy(quantum_package)
+    nonpositive["quantum"]["history_gram"] = QMatrix.from_rows(((1, 2), (2, 1)))
+    no_division = copy.deepcopy(quantum_package)
+    no_division["quantum"]["division_instruments"] = []
+    no_history_basis = copy.deepcopy(quantum_package)
+    no_history_basis["quantum"]["history_basis"] = []
+    disconnected_division = copy.deepcopy(quantum_package)
+    disconnected_division["quantum"]["division_instruments"][0][
+        "active_root"
+    ] = "disconnected-root"
+    _require(
+        all(
+            measure_horizontal_process_package(
+                candidate, static_response_available=True
+            )["coordinate"]
+            == "HORIZONTAL-CLASSICAL"
+            for candidate in (
+                no_interference,
+                nonpositive,
+                no_division,
+                no_history_basis,
+                disconnected_division,
+            )
+        ),
+        "quantum ingredient deletion failed to demote to classical",
+    )
+    checks.append("semantic-classical-quantum-positive-and-drop-branches")
+
+    ontology_static_evidence = {
+        "static_response": True,
+        "process_measurement": measure_horizontal_process_package(
+            None, static_response_available=True
+        ),
+    }
+    ontology_conditioning_evidence = {
+        "static_response": True,
+        "process_measurement": classical_measurement,
+        "conditioning": {
+            "active_root": classical_measurement["active_root"],
+            "source_region": PrefixRegion.one(),
+            "event_region": PrefixRegion.cylinder("0"),
+            "output_region": PrefixRegion.cylinder("0"),
+            "input_algebra_sha256": "fixed-algebra",
+            "output_algebra_sha256": "fixed-algebra",
+        },
+    }
+    ontology_record_evidence = copy.deepcopy(ontology_conditioning_evidence)
+    ontology_continuation_operations = copy.deepcopy(typed_continuation_operations)
+    for operation in ontology_continuation_operations.values():
+        operation["assignment_root"] = classical_measurement["active_root"]
+    ontology_continuation = construct_typed_continuation_closure(
+        {
+            "active_root": classical_measurement["active_root"],
+            "declared_carriers": ["record-bit"],
+            "operation_ids": ["writer", "reader"],
+        },
+        ontology_continuation_operations,
+    )
+    ontology_record_evidence["record"] = {
+        "active_root": classical_measurement["active_root"],
+        "writer": {
+            "active_root": classical_measurement["active_root"],
+            "operation_role": "writer",
+            "semantic_action": "record-write",
+            "typed_assignment": {"write": "append-bit"},
+        },
+        "delayed_reader": {
+            "active_root": classical_measurement["active_root"],
+            "operation_role": "reader",
+            "semantic_action": "delayed-read",
+            "typed_effect": {"read": "delayed-bit"},
+        },
+        "continuation_closure": ontology_continuation,
+    }
+    ontology_rewrite_evidence = copy.deepcopy(ontology_record_evidence)
+    ontology_rewrite_evidence["region_rewrite"] = {
+        "active_root": classical_measurement["active_root"],
+        "before_region": PrefixRegion.cylinder("0"),
+        "after_region": PrefixRegion.cylinder("1"),
+        "response_before": {"0": Fraction(1), "1": Fraction(0)},
+        "response_after": {"0": Fraction(0), "1": Fraction(1)},
+        "later_response_root": classical_measurement["active_root"],
+        "response_control_region": PrefixRegion.cylinder("1"),
+    }
+    ontology_roles = tuple(
+        measure_ontology_role(evidence)["role"]
+        for evidence in (
+            ontology_static_evidence,
+            ontology_conditioning_evidence,
+            ontology_record_evidence,
+            ontology_rewrite_evidence,
+        )
+    )
+    _require(
+        ontology_roles == ONTOLOGY_ROLES,
+        "semantic ontology-role positive ladder",
+    )
+    no_writer = copy.deepcopy(ontology_record_evidence)
+    no_writer["record"]["writer"] = None
+    no_conditioning = copy.deepcopy(ontology_conditioning_evidence)
+    no_conditioning["conditioning"] = None
+    no_reader = copy.deepcopy(ontology_record_evidence)
+    no_reader["record"]["delayed_reader"] = None
+    no_later_response = copy.deepcopy(ontology_rewrite_evidence)
+    no_later_response["region_rewrite"]["later_response_root"] = "disconnected"
+    _require(
+        measure_ontology_role(no_conditioning)["role"] == "STATIC-RESPONSE"
+        and measure_ontology_role(no_writer)["role"]
+        == "FIXED-ALGEBRA-CONDITIONING"
+        and measure_ontology_role(no_reader)["role"]
+        == "FIXED-ALGEBRA-CONDITIONING"
+        and measure_ontology_role(no_later_response)["role"]
+        == "RECORD-WRITING-ON-FIXED-ALGEBRA",
+        "ontology-role ingredient deletion did not demote",
+    )
+    candidate_a = copy.deepcopy(ontology_rewrite_evidence)
+    candidate_a["ontology_candidate"] = {
+        "candidate": "POSTULATED-CANDIDATE-RELATIONAL-WEB"
+    }
+    candidate_b = copy.deepcopy(ontology_rewrite_evidence)
+    candidate_b["ontology_candidate"] = {"candidate": "renamed-proposal"}
+    candidate_removed = copy.deepcopy(ontology_rewrite_evidence)
+    _require(
+        candidate_a != candidate_b
+        and measure_ontology_role(candidate_a)
+        == measure_ontology_role(candidate_b)
+        == measure_ontology_role(candidate_removed),
+        "ontology candidate leaked into measured role",
+    )
+    checks.append("ontology-role-ladder-demotion-and-candidate-invariance")
+
+    influence_root = "synthetic-influence-root"
+    influence_package = {
+        "active_root": influence_root,
+        "schedule": {
+            "active_root": influence_root,
+            "operations": [
+                {
+                    "active_root": influence_root,
+                    "role": "generated-intervention-operation",
+                    "input_carrier": "boundary",
+                    "output_carrier": "record",
+                    "domain": ["0", "1"],
+                    "codomain": ["0", "1"],
+                    "process_assignment": {"graph": [["0", "0"], ["1", "1"]]},
+                }
+            ],
+        },
+        "intervention": {
+            "active_root": influence_root,
+            "source_region": PrefixRegion.cylinder("0"),
+            "target_region": PrefixRegion.cylinder("1"),
+            "operation_role": "generated-intervention-operation",
+            "alternatives": ["set-0", "set-1"],
+        },
+        "delayed_response": {
+            "active_root": influence_root,
+            "reader": {
+                "active_root": influence_root,
+                "input_carrier": "record",
+                "output_carrier": "outcome",
+                "domain": ["0", "1"],
+                "codomain": ["0", "1"],
+                "effect_assignment": {"graph": [["0", "0"], ["1", "1"]]},
+            },
+            "before": {"0": Fraction(1), "1": Fraction(0)},
+            "after": {"0": Fraction(0), "1": Fraction(1)},
+        },
+        "provenance": {
+            "typed_edges": [
+                ["claim:schedule", influence_root, "generated-by"],
+                ["claim:intervention", influence_root, "generated-by"],
+                ["claim:response", influence_root, "read-by"],
+            ]
+        },
+    }
+    contact_measurement = measure_generated_influence_package(
+        influence_package, require_nonoverlap_contact=True
+    )
+    causal_measurement = measure_generated_influence_package(
+        influence_package, require_nonoverlap_contact=False
+    )
+    disconnected_contact_package = copy.deepcopy(influence_package)
+    disconnected_contact_package["provenance"]["typed_edges"] = []
+    empty_schedule_package = copy.deepcopy(influence_package)
+    empty_schedule_package["schedule"]["operations"] = []
+    missing_intervention_package = copy.deepcopy(influence_package)
+    missing_intervention_package["intervention"] = None
+    unchanged_response_package = copy.deepcopy(influence_package)
+    unchanged_response_package["delayed_response"]["after"] = copy.deepcopy(
+        unchanged_response_package["delayed_response"]["before"]
+    )
+    overlapping_influence_package = copy.deepcopy(influence_package)
+    overlapping_influence_package["intervention"][
+        "target_region"
+    ] = PrefixRegion.cylinder("0")
+    _require(
+        contact_measurement["present"]
+        and causal_measurement["present"]
+        and all(
+            not measure_generated_influence_package(
+                candidate, require_nonoverlap_contact=True
+            )["present"]
+            for candidate in (
+                disconnected_contact_package,
+                empty_schedule_package,
+                missing_intervention_package,
+                unchanged_response_package,
+            )
+        )
+        and not measure_generated_influence_package(
+            overlapping_influence_package, require_nonoverlap_contact=True
+        )["present"]
+        and measure_generated_influence_package(
+            overlapping_influence_package, require_nonoverlap_contact=False
+        )["present"],
+        "semantic generated-contact package/provenance gate",
+    )
+
     capability_template = {
         name: {"present": True}
         for name in (
@@ -6495,8 +9709,22 @@ def run_selftests() -> dict[str, object]:
             "comparison_selected",
             "dynamic_locality",
             "causal_order",
+            "generated_contact",
             "law_selected",
         )
+    }
+    capability_template["horizontal_process"] = {
+        "present": True,
+        "measurement": classical_measurement,
+        "process_coordinate": "HORIZONTAL-CLASSICAL",
+    }
+    capability_template["causal_order"] = {
+        "present": True,
+        "measurement": causal_measurement,
+    }
+    capability_template["generated_contact"] = {
+        "present": True,
+        "measurement": contact_measurement,
     }
     past_boundary = copy.deepcopy(capability_template)
     past_boundary["future_profile_complete"]["present"] = False
@@ -6513,6 +9741,17 @@ def run_selftests() -> dict[str, object]:
         classify_capability_census(missing_two_arrow)[0]
         == "APR-BLOCKED-AT-TWO-ARROW-TYPING",
         "two-arrow capability block is unreachable",
+    )
+    literal_process_bypass = copy.deepcopy(capability_template)
+    literal_process_bypass["horizontal_process"] = {"present": True}
+    literal_causal_bypass = copy.deepcopy(capability_template)
+    literal_causal_bypass["causal_order"] = {"present": True}
+    _require(
+        classify_capability_census(literal_process_bypass)[0]
+        == "APR-BLOCKED-AT-TWO-ARROW-TYPING"
+        and classify_capability_census(literal_causal_bypass)[0]
+        == "APR-DYNAMIC-REGIONAL-REFERENT-CONSTRUCTED-BUT-CAUSAL-ORDER-PRICED",
+        "capability literal bypassed the semantic process/causal package",
     )
     missing_boundary = copy.deepcopy(capability_template)
     missing_boundary["boundary_gluing_package"] = {
@@ -6539,6 +9778,22 @@ def run_selftests() -> dict[str, object]:
         and classify_capability_census(missing_atomlessness)[0]
         == "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA",
         "earlier capability failures did not take precedence",
+    )
+    contact_only_missing = copy.deepcopy(capability_template)
+    contact_only_missing["generated_contact"] = {
+        "present": False,
+        "measurement": {
+            "present": False,
+            "role": "generated_contact",
+            "missing": ["generated contact"],
+        },
+    }
+    contact_primary, contact_walls = classify_capability_census(contact_only_missing)
+    _require(
+        contact_primary
+        == "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED"
+        and contact_walls == ["missing generated_contact"],
+        "generated-contact-only gate did not return the exact law-unselected word",
     )
     checks.append("result-neutral-capability-classifier-both-directions")
 
@@ -6589,6 +9844,57 @@ def run_selftests() -> dict[str, object]:
 
     l5 = conjugation_deletion_control()
     _require(l5["pre_closed"] and not l5["post_closed"], "L5 deletion did not break closure")
+    finite_replacement_fixture = {
+        "prefix_controls": {
+            "regions": [
+                {"id": "target", "antichain": ["00"]},
+                {"id": "sibling", "antichain": ["01"]},
+                {"id": "exterior", "antichain": ["1"]},
+            ]
+        },
+        "regional_question_process": {
+            "replacement_primitives": [
+                {
+                    "id": "swap-sibling",
+                    "operation": "swap_children",
+                    "support_region_id": "sibling",
+                },
+                {
+                    "id": "swap-exterior",
+                    "operation": "swap_children",
+                    "support_region_id": "exterior",
+                },
+            ],
+            "changed_object_rows": [
+                {
+                    "id": "control",
+                    "target_region_id": "target",
+                    "restricted_replacement_ids": [
+                        "swap-sibling",
+                        "swap-exterior",
+                    ],
+                }
+            ],
+        },
+    }
+    l2 = l2_generator_deletion_control(finite_replacement_fixture)
+    l4 = l4_transitivity_deletion_control()
+    _require(
+        l2["pre_sha256"] != l2["post_sha256"]
+        and l2["measurement_before"]["exterior_orbit_count"]
+        != l2["measurement_after"]["exterior_orbit_count"]
+        and l2["measurement_before"]["fixed_effect_dimension"]
+        != l2["measurement_after"]["fixed_effect_dimension"],
+        "L2 serialized generator deletion did not move orbit/fixed space",
+    )
+    _require(
+        l4["pre_sha256"] != l4["post_sha256"]
+        and l4["measurement_before"]["exterior_orbit_count"] == 1
+        and l4["measurement_after"]["exterior_orbit_count"] >= 2
+        and l4["measurement_before"]["fixed_effect_dimension"]
+        != l4["measurement_after"]["fixed_effect_dimension"],
+        "L4 serialized multiple-orbit family did not move transitivity/fixed space",
+    )
     profile_controls = profile_collapse_controls(
         {"zero": PrefixRegion.zero(), "left": PrefixRegion.cylinder("0"), "right": PrefixRegion.cylinder("1")}
     )
@@ -6598,11 +9904,45 @@ def run_selftests() -> dict[str, object]:
         "M13 actual quotient laws did not collapse",
     )
     oracle = oracle_family_controls(
-        {"left": PrefixRegion.cylinder("0"), "right": PrefixRegion.cylinder("1")}
+        {
+            "left": PrefixRegion.cylinder("0"),
+            "right": PrefixRegion.cylinder("1"),
+            "left-left": PrefixRegion.cylinder("00"),
+        }
     )
     _require(
-        not oracle["finite_depth_whitelist"]["accepts_fresh"],
-        "M15/P5 whitelist accepted a fresh valid deeper region",
+        not oracle["raw_syntax_copy"]["canonical_reduction_test"][
+            "agrees_on_same_canonical_region"
+        ]
+        and oracle["raw_syntax_copy"]["fresh_region_test"]["accepted"]
+        and not oracle["raw_syntax_copy"]["Boolean_relabel_test"][
+            "agrees_after_relabel"
+        ]
+        and not oracle["raw_syntax_copy"]["refinement_test"]["invariant"]
+        and not oracle["identifier_hash_copy"]["fresh_id_clone_test"][
+            "agrees_on_same_canonical_region"
+        ]
+        and not oracle["identifier_hash_copy"]["fresh_region_test"][
+            "returns_canonical_region"
+        ]
+        and not oracle["identifier_hash_copy"]["Boolean_relabel_test"][
+            "returns_relabeled_region"
+        ]
+        and oracle["identifier_hash_copy"]["refinement_test"][
+            "identifier_output_equal"
+        ]
+        and not oracle["identifier_hash_copy"]["refinement_test"][
+            "returns_canonical_region"
+        ]
+        and oracle["finite_depth_whitelist"]["accepts_registered"]
+        and oracle["finite_depth_whitelist"]["Boolean_relabel_test"]["accepted"]
+        and oracle["finite_depth_whitelist"]["refinement_test"]["accepted"]
+        and oracle["finite_depth_whitelist"]["payload_sha256"]
+        == canonical_sha256(oracle["finite_depth_whitelist"]["payload"])
+        and not oracle["finite_depth_whitelist"]["fresh_region_test"]["accepted"]
+        and oracle["finite_depth_whitelist"]["fresh_region_test"]["region"]
+        == PrefixRegion.cylinder("000"),
+        "M15 actual oracle family did not expose all three wrong implementations",
     )
     branch_mutants = branch_process_mutant_controls(PrefixRegion.cylinder("0"))
     _require(
@@ -6753,6 +10093,63 @@ def run_selftests() -> dict[str, object]:
     ), "mutant registry coverage")
     _require(set(MUTANT_DESCRIPTIONS) == set(MUTANT_IDS), "mutant description coverage")
     checks.append("mutant-registry-coverage")
+
+    _require(
+        STATIC_QUALIFIER
+        == "APR-STATIC-RAW-PREFIX-SYNTAX-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT"
+        and REGIONAL_SUPPORT_SCOPE
+        == "finite regional-support controls only; regional-support coordinate unearned"
+        and PREFIX_SYNTAX_SCOPE
+        == "raw prefix-syntax atomlessness only; physical regional referent unconstructed",
+        "exact qualifier or scope strings",
+    )
+    exposure_payload = {
+        "blinding_status": BLINDING_STATUS,
+        "exposure_debt": EXPOSURE_DEBT,
+        "v3_source_frozen_before_v3_run": True,
+    }
+    validate_v3_exposure_fields(exposure_payload)
+    synthetic_exposure_receipt = {
+        "strict_primary": "APR-BLOCKED-AT-BOUNDARY-GLUING",
+        "qualifiers": [STATIC_QUALIFIER],
+        "process": {"process_coordinate": "STATIC-RESPONSE-ONLY"},
+        "probes": {"completeness_scope": "FINITE-CATALOGUE"},
+        "quotients": {"regional_congruence": {"coordinate": "UNCONSTRUCTED"}},
+        "atomlessness": {"atomless_coordinate": "SYNTAX-ONLY"},
+        "locality": {"locality_coordinate": "FAIL"},
+        "comparisons": {"comparison_coordinate": "PRICED"},
+        "boundaries": {"boundary_coordinate": "DECLARED"},
+        "contact": {"contact_coordinate": "PRICED"},
+        "causality": {"causality_coordinate": "PRICED"},
+        "ontology_role": {"role": "STATIC-RESPONSE"},
+        "ontology_candidate": {
+            "candidate": "POSTULATED-CANDIDATE-RELATIONAL-WEB"
+        },
+        "law_selection": {"status": "UNSELECTED"},
+        "scope_walls": [REGIONAL_SUPPORT_SCOPE, PREFIX_SYNTAX_SCOPE],
+        "payload_sha256": "synthetic-receipt-hash",
+        **exposure_payload,
+    }
+    exposure_transcript = transcript_from_receipt(synthetic_exposure_receipt)
+    tampered_exposure = dict(exposure_payload)
+    tampered_exposure["blinding_status"] = "BLIND"
+    tamper_refused = False
+    try:
+        validate_v3_exposure_fields(tampered_exposure)
+    except ScoreRefusal:
+        tamper_refused = True
+    _require(
+        tamper_refused
+        and all(
+            exposure_transcript[key] == value
+            for key, value in exposure_payload.items()
+        )
+        and BLINDING_STATUS == "RESULT-KNOWN-BEFORE-V3-IMPLEMENTATION"
+        and EXPOSURE_DEBT
+        == "PERMANENT-PREFREEZE-M01-AND-ALL-MUTANTS-EXPOSURE",
+        "v3 exposure integrity metadata",
+    )
+    checks.append("exact-qualifier-scope-and-exposure-fields")
 
     with tempfile.TemporaryDirectory(prefix="apr-generic-selftest-") as raw_directory:
         directory = Path(raw_directory)

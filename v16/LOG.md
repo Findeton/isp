@@ -3798,3 +3798,26 @@ The scorer-blind delta-verifier plan is frozen off-tree at SHA-256
 its fixture-only preflight harness SHA-256 is
 `ba413d5710264ff368fdd03cd9cd8a4efa44e9758e84d852df5bf1b91dce78b8`
 and passes 16/16. No v3 source or fixture evaluation exists here.
+
+## 2026-08-19 — APR V3 SCORER SOURCE FROZEN BEFORE V3 RUN (v16 LEDGER #171)
+
+`v16/code/apr_score.py` freezes at SHA-256
+`3284484d91f83440f9472ba9e9605b90065bfa0c30094b9225806ee01724fef8`
+(10,260 lines). Its source-freeze note,
+`v16/note-apr-v3-scorer-freeze.md`, has SHA-256
+`968c955bf7c2727b7bc2e540ecd08085cd4bf56271be90034bbc5ec9458ab08f`.
+No v3 `--run`, `--mutant`, or `--mutants-all` invocation occurred before
+these bytes froze.
+
+AST, static-token, and diff checks pass. The repository and true off-tree/
+no-git synthetic self-tests are byte-identical, pass 27 named groups, and
+report `scientific_fixture_evaluated:false`. The scorer implements the ten v3
+repairs plus the positive classical/quantum, B0--B3 identity, ontology-role,
+generated-contact, qualifier, and exposure guards. Synthetic packages remain
+controls and do not add APR physics.
+
+This is source-before-v3-run, not pre-truth: the permanent v2 M01/all-mutants
+exposure remains attached and the required artifact metadata says so. The
+next authorized event is one committed-byte transactional run to new v3
+paths, followed by root/alien/off-tree replay and the expanded independent
+black-box verifier. No candidate or panel is authorized yet.
