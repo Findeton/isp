@@ -3251,3 +3251,37 @@ output defect is confirmed. The report's ordinary SHA-256 is
 
 This event records the second hostile seat only. It authorizes no adjudication,
 repair, terminal verdict, or successor construction.
+
+## 2026-08-18 — RHL PAPER 11 ONTOLOGY SEAT FROZEN (v16 LEDGER #151)
+
+`v16/review-rhl-ontology.md` freezes the mutually blind ontology, locality,
+geometry, and GR/QFT seat. The report grade is **ACCEPT-WITH-FIXES**. It supports
+`RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED` only as an
+abstract law-type/nonempty-realization statement and retains
+`RHL-BLOCKED-AT-DYNAMIC-LOCALITY`.
+
+No hidden point set, lattice atom, mesh, global slice, or elementary tick is
+needed. “One actual history” is coherent only as a partial compatible family
+of actual facts on commutative record algebras; its compatible extension and
+actualization remain postulates, not a maximally fine path or global valuation.
+Fixed-factor CPTP no-signalling survives, while changing-factorization Bob is
+unconstructed and Proposition 6 remains a typing/underdetermination lemma.
+
+A resource-matched family-level comparator over 3,279 words deletes the causal
+and containment names while preserving all supplied-generator predictions,
+including the held-out length-seven family. The first regional rung is thus a
+point-free categorical schema, not yet a physically calibrated causal
+mereology, and geometry remains unentered. The Hamiltonian discussion remains
+representational but needs the usual continuity and trace-preserving
+qualifiers before invoking a GKSL generator. The report also independently
+confirms all three disclosed title/URL citation mismatches.
+
+All fifteen mutants refuse without artifacts; six ontology/locality attacks
+run; clean and minimal off-tree/no-`.git` replays are byte-identical; and the
+immutable candidate is untouched. The report's ordinary SHA-256 is
+`af33ace19fa4bd05b5e47ee465d30bdf1c2d82ae49051f7eb91006039e30c130`.
+
+All three hostile reports are now separately frozen. Joint adjudication is
+authorized by the user's review order and must use the strictest supported
+argument rather than the numerical grade split. No repair or terminal verdict
+is recorded by this event alone.
