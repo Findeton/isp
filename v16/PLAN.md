@@ -710,8 +710,12 @@ disclosed prefreeze fixture exposure: stdout-only mutant commands evaluated
 the fixture, but no v2 artifact or post-exposure edit occurred. The scorer is
 not pre-truth and requires independent black-box reconstruction. The next
 authorized event is one committed-byte run to new v2 paths, then clean/offtree
-replay and the independent verifier. No fixture, physical law, outcome ladder,
-or primary-precedence edit is authorized.
+replay and the independent verifier. That run is preserved at v16 #168:
+integrity and the boundary-gluing primary reproduce, but independent checking
+passes 197 controls and fails seven mandatory gates plus three generic-source
+guards. V2 is noncertifiable. The next authorized event is a minimal delta-
+repair pin and a pre-evaluation v3 scorer freeze; no fixture, physical law,
+outcome ladder, or primary-precedence edit is authorized.
 
 ## Successor register
 

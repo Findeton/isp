@@ -3734,3 +3734,30 @@ true off-tree/no-git Python-3.13 copy produces byte-identical self-test JSON.
 The next authorized event is the single committed-byte v2 run to new absent
 paths, followed by clean/off-tree replay and the independent descriptor-level
 verifier. No APR v2 result is frozen here.
+
+## 2026-08-19 — APR V2 ARTIFACTS PRESERVED; BLACK-BOX VERIFICATION FAILS (v16 LEDGER #168)
+
+`v16/apr_output_v2.txt` and `v16/apr_receipt_v2.json` are preserved at
+SHA-256 `32371e37fabeeecef1de942f6084f97f4f5ff5383838792e18909e981a31a79f`
+and `812cdff8dba7fbb11b1e25afd49ac7e1337ad15caf4ae6396a81bfdd9788aec5`;
+their failure audit `v16/note-apr-v2-verification-failure.md` has SHA-256
+`85639af6fdfc3d568855c14b642ad317d6964fa24eb6ad6fa5b1ac86f710a418`.
+All three execution environments are byte-identical and the canonical payload
+digest `39c9bb883d91dc61c7480cdc850f6310095b8e04c061089d8c8301c3a8012984`
+recomputes.
+
+The independent black-box verifier (off-tree SHA-256
+`5f1d5b1df3ef12b86791662ffcb92842666c4e1bd83739b657534732c1db92c6`)
+passes 197 checks and fails seven mandatory gates: M16 leaves an inconsistent
+blind projection; M15 does not instantiate the syntax-copy oracle; L2/L4 have
+no serialized changed object; continuation catalogues are not a constructed
+typed closed subgrammar; downstream port/record bindings are unaudited; the
+ontology proposal replaces the measured process role; and the identity census
+uses raw fillings instead of assignments. A generic process branch also uses
+an illegal key-only promotion, the highest classifier ignores generated
+contact, and two scope strings overstate support/atomlessness.
+
+Independent arithmetic still returns
+`APR-BLOCKED-AT-BOUNDARY-GLUING`, but v2 is not certifiable and cannot support
+candidate prose or panel review. The next authorized event is a separately
+frozen minimal delta-repair pin; v2 bytes remain immutable.
