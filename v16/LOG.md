@@ -3383,3 +3383,27 @@ decorative regional metadata, and premature metric/GR promotion refuse.
 Backreaction, continuum, metric, curvature, and GR are successor contracts,
 not Paper 12 claims. The unrelated v15 SCOUT-T working files are outside the
 whitelist and remain untouched.
+
+## 2026-08-18 — APR REGIONAL-CONGRUENCE PIN ADDENDUM FROZEN (v16 LEDGER #155)
+
+`v16/note-apr-pin-addendum.md` freezes two corrections found by the
+first independent hostile design pass before the generic core exists.
+
+First, the linear predictive quotient `V/kernel(Phi)` is permanently
+separated from a quotient of the regional Boolean/distributive algebra. A
+physical region quotient requires equality in every licensed one-hole regional
+context and must be a congruence for meet, join, complement, gluing, tensor,
+refinement, and registered continuation. The exact volume-only control equates
+the disjoint half-regions `[0]` and `[1]` at value `1/2` but
+their meet-with-`[0]` contexts give `1/2` and `0`. A scorer that
+promotes the restricted scalar profile to a region algebra must refuse.
+
+Second, minimal predictive boundary now means the canonical complete-profile
+quotient with a universal factorization property. Literal deletion-minimality
+is insufficient because duplicate reachable labels with one constant future
+profile must merge.
+
+The outcome `APR-BLOCKED-AT-REGIONAL-CONGRUENCE` is inserted after
+the future-profile-completeness block, and the receipt gains the coordinate
+`regional_quotient`. No positive physical-referent rung is reachable
+unless that coordinate is `CONGRUENCE`.

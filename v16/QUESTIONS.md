@@ -305,3 +305,10 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     postulate. Even the strongest APR result leaves the law weights,
     reciprocal backreaction, continuum, metric, curvature, GR/QFT, particles,
     and predictions to separately gated successors.
+    Pin addendum #155 further requires a contextual regional congruence:
+    `V/kernel(Phi)` is only a linear/history quotient. The scalar
+    volume profile equates `[0]` and `[1]` at `1/2` while the
+    meet-with-`[0]` context separates them, so a physical region algebra
+    exists only when complete contextual equivalence respects meet, join,
+    complement, gluing, tensor, and continuation. Boundary minimality is the
+    universal complete-profile quotient, not deletion of literal labels.

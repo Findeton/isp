@@ -626,6 +626,16 @@ Paper 12 does not enter reciprocal backreaction, calibrated volume, continuum,
 metric, tangent transport, curvature, GR, QFT, particles, or empirical
 predictions. It supplies explicit input contracts for those successor units.
 
+APR pin addendum #155 separates two quotient types before construction. A
+linear future-map quotient does not automatically preserve Boolean regional
+operations. Physical region equality must be contextual and form a congruence
+for every operation claimed to descend. The mandatory counterexample gives
+both disjoint half-regions the same scalar volume `1/2` while a meet
+context separates them. Minimal predictive boundaries are canonical
+complete-profile quotients with a universal factorization property, not
+literal deletion-minimal port lists. The new strict block is
+`APR-BLOCKED-AT-REGIONAL-CONGRUENCE`.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
