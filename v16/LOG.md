@@ -3761,3 +3761,22 @@ Independent arithmetic still returns
 `APR-BLOCKED-AT-BOUNDARY-GLUING`, but v2 is not certifiable and cannot support
 candidate prose or panel review. The next authorized event is a separately
 frozen minimal delta-repair pin; v2 bytes remain immutable.
+
+## 2026-08-19 — APR V3 MINIMAL DELTA REPAIR PIN FROZEN (v16 LEDGER #169)
+
+`v16/note-apr-v3-delta-repair-pin.md`, SHA-256
+`88c2941f2fb4c90ed8476a5e814ab116b66369f23661dbacf4f89555ea6dd7f0`,
+freezes a scorer-only correction of the ten v2 failures. It requires an
+assignment-typed identity census; semantically validated legal process
+coordinates; consistent M16 `c -> d` substitution plus refusal of the old
+deletion; actual syntax/ID/depth oracle implementations; serialized L2/L4
+finite control families; constructed typed continuation closure or explicit
+absence; end-to-end formula/record/cospan/reader port binding; separation of
+the measured `STATIC-RESPONSE` role from the postulated ontology candidate;
+an independent generated-contact classifier gate; and exact scope wording.
+
+Only `v16/code/apr_score.py` may move. During implementation the frozen
+fixture may not be evaluated through any CLI path; AST/static checks and
+synthetic selftests only. V3 source freezes before truth, then new artifacts
+must use `apr_output_v3.txt` / `apr_receipt_v3.json` and pass the expanded
+black-box verifier. The v2 exposure and failure debt remain permanent.
