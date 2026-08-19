@@ -28,8 +28,35 @@ from typing import Any, Iterable, Mapping, Sequence
 
 SCHEMA = "p13-gamma-exact-v1"
 PIN_SHA256 = "4b2c6f305430dffa329758e81cf82dd295800359b808136cae9c5f8ca3b94c35"
+FORWARD_REPAIR_PIN_SHA256 = (
+    "8ae54ada2a97f347a18b90adcab86dcb2e7c18c04c748cc5e0779b8251449a36"
+)
 RUNBOOK_SHA256 = "5629dd083da923e216143c249ce0246da3238ddb9475bd6d67954ce0aa8aac58"
 PREDECESSOR_SHA256 = "06d171a3eea8109e177e2dfa3cb5536fe3785043e676f735c36e91d03834cb51"
+OLD_STAGE_A_SOURCE_SHA256 = (
+    "c699fc0316295e230c2cd0ef50601f631b195ad2237bebc2c42a75a2163f1aaf"
+)
+OLD_STAGE_A_FREEZE_SHA256 = (
+    "d717f97832efe05996ae5f94249629376ddbe916fc837e0d5d16984bd7a13ad5"
+)
+STAGE_A_PHYSICS_REPORT_SHA256 = (
+    "20a054cd6542fd02f556b461408f48d75ead0c69ec06abd76c9eed3ce3c3d352"
+)
+STAGE_A_RECORDS_REPORT_SHA256 = (
+    "7c5b14a04f938de05b64750f6c8ae454eb4bbe8d0824e9eaaa0016532ab52ed4"
+)
+STAGE_A_ADJUDICATION_SHA256 = (
+    "bd089458ef1d4c4fe8f9dc13fc21134695aba552b95b20f023e4d2f9f34dfb74"
+)
+HISTORICAL_OLD_SOURCE_PROVENANCE = {
+    "sha256": OLD_STAGE_A_SOURCE_SHA256,
+    "observation": "historical-unobserved",
+    "live_disk_anchor": False,
+    "cross_checked_from": (
+        "v16/note-paper13-gamma-source-freeze.md",
+        "v16/note-paper13-stageA-source-audit-adjudication.md",
+    ),
+}
 PAPER12_SHA256 = "56cddeacbfe477d1af244b310e9a26b5622ef540b82deea5a96158819ba972f7"
 PAPER12_ADJUDICATION_SHA256 = (
     "5ef1440064b703bd04bf97f1774f7f5e03efe537aeee2669bd1471f0a402799e"
@@ -361,6 +388,26 @@ def formula_nonzero(context: Context, formula: Formula) -> bool:
     return any(formula_evaluate(formula, cell) for cell in context.cells)
 
 
+def contextual_formula_truth(
+    context: Context, formula: Formula
+) -> tuple[bool, ...]:
+    """Return the physical Boolean element on the context's nonzero cells."""
+
+    _require_exact(context, Context, "contextual Boolean context")
+    _require_exact(formula, Formula, "contextual Boolean formula")
+    if not formula_is_total_on(formula, context_role_names(context)):
+        raise Refusal("contextual Boolean formula is not total")
+    return tuple(formula_evaluate(formula, cell) for cell in context.cells)
+
+
+def contextual_formula_key(context: Context, formula: Formula) -> tuple[Any, ...]:
+    return (
+        "CONTEXTUAL-BOOLEAN-ELEMENT-v1",
+        context_semantic_key(context),
+        contextual_formula_truth(context, formula),
+    )
+
+
 def query_nonzero(context: Context, formula: Formula) -> bool:
     """Evaluate a boundary-total query on one status-dependent context.
 
@@ -405,6 +452,304 @@ def context_forget(context: Context, child_name: str) -> Context:
         )
     )
     return Context(roles, cells, context.neutral_label)
+
+
+@dataclass(frozen=True, slots=True)
+class SplitFiberRow:
+    source_cell: tuple[str, ...]
+    parent_value: bool
+    expected_target_cells: tuple[tuple[str, ...], ...]
+    observed_target_cells: tuple[tuple[str, ...], ...]
+    expected_child_bits: tuple[int, ...]
+    observed_child_bits: tuple[int, ...]
+    exact: bool
+
+    def __post_init__(self) -> None:
+        _require_exact_tuple(self.source_cell, "split source cell")
+        _require_exact(self.parent_value, bool, "split parent value")
+        _require_exact_tuple(self.expected_target_cells, "expected split fiber")
+        _require_exact_tuple(self.observed_target_cells, "observed split fiber")
+        _require_exact_tuple(self.expected_child_bits, "expected child bits")
+        _require_exact_tuple(self.observed_child_bits, "observed child bits")
+        _require_exact(self.exact, bool, "split fiber equality")
+        if any(type(name) is not str for name in self.source_cell):
+            raise Refusal("split source cell is malformed")
+        for cells, label in (
+            (self.expected_target_cells, "expected"),
+            (self.observed_target_cells, "observed"),
+        ):
+            if any(
+                type(cell) is not tuple
+                or any(type(name) is not str for name in cell)
+                for cell in cells
+            ):
+                raise Refusal(f"{label} split fiber is malformed")
+        if any(type(bit) is not int or bit not in (0, 1) for bit in self.expected_child_bits):
+            raise Refusal("expected child-bit fiber is malformed")
+        if any(type(bit) is not int or bit not in (0, 1) for bit in self.observed_child_bits):
+            raise Refusal("observed child-bit fiber is malformed")
+
+    def to_data(self) -> dict[str, Any]:
+        return {
+            "type": "SplitFiberRow",
+            "source_cell": self.source_cell,
+            "parent_value": self.parent_value,
+            "expected_target_cells": self.expected_target_cells,
+            "observed_target_cells": self.observed_target_cells,
+            "expected_child_bits": self.expected_child_bits,
+            "observed_child_bits": self.observed_child_bits,
+            "exact": self.exact,
+        }
+
+
+def _derive_context_split_fields(
+    source: Context,
+    target: Context,
+    parent_truth: tuple[bool, ...],
+    child: Role,
+) -> dict[str, Any]:
+    _require_exact(source, Context, "split-proof source")
+    _require_exact(target, Context, "split-proof target")
+    _require_exact_tuple(parent_truth, "split-proof parent truth")
+    _require_exact(child, Role, "split-proof child")
+    if len(parent_truth) != len(source.cells) or any(
+        type(value) is not bool for value in parent_truth
+    ):
+        raise Refusal("split-proof parent truth does not cover the source")
+    source_set = set(source.cells)
+    observed: dict[tuple[str, ...], list[tuple[str, ...]]] = {
+        cell: [] for cell in source.cells
+    }
+    unexpected: list[tuple[str, ...]] = []
+    for target_cell in target.cells:
+        projected = tuple(name for name in target_cell if name != child.name)
+        if projected in source_set:
+            observed[projected].append(target_cell)
+        else:
+            unexpected.append(target_cell)
+    rows: list[SplitFiberRow] = []
+    for source_cell, parent_value in zip(source.cells, parent_truth, strict=True):
+        expected = [source_cell]
+        expected_bits = [0]
+        if parent_value:
+            expected.append(tuple(sorted(source_cell + (child.name,))))
+            expected_bits.append(1)
+        target_names = context_role_names(target)
+        expected_tuple = tuple(
+            sorted(
+                set(expected),
+                key=lambda cell: (_cell_key(cell, target_names), cell),
+            )
+        )
+        observed_tuple = tuple(
+            sorted(
+                set(observed[source_cell]),
+                key=lambda cell: (_cell_key(cell, target_names), cell),
+            )
+        )
+        observed_bits = tuple(
+            sorted(int(child.name in cell) for cell in observed_tuple)
+        )
+        expected_bits_tuple = tuple(expected_bits)
+        rows.append(
+            SplitFiberRow(
+                source_cell,
+                parent_value,
+                expected_tuple,
+                observed_tuple,
+                expected_bits_tuple,
+                observed_bits,
+                expected_tuple == observed_tuple
+                and expected_bits_tuple == observed_bits,
+            )
+        )
+    source_roles = tuple((role.name, role.kind) for role in source.roles)
+    target_roles = tuple((role.name, role.kind) for role in target.roles)
+    expected_roles = tuple(
+        sorted(source_roles + ((child.name, child.kind),), key=lambda row: (row[1], row[0]))
+    )
+    satisfying_count = sum(int(value) for value in parent_truth)
+    expected_count = len(source.cells) + satisfying_count
+    actual_count = len(target.cells)
+    exact_fibers = all(row.exact for row in rows)
+    target_exhaustive = not unexpected and sum(
+        len(row.observed_target_cells) for row in rows
+    ) == len(target.cells)
+    disjoint_union = target_exhaustive and len(
+        {
+            cell
+            for row in rows
+            for cell in row.observed_target_cells
+        }
+    ) == len(target.cells)
+    try:
+        forgotten = context_forget(target, child.name)
+        forget_exact = context_semantic_key(forgotten) == context_semantic_key(source)
+    except Refusal:
+        forget_exact = False
+    parent_nonzero = satisfying_count > 0
+    satisfying_rows = tuple(row for row in rows if row.parent_value)
+    p_and_child_nonzero = any(1 in row.observed_child_bits for row in satisfying_rows)
+    p_and_not_child_nonzero = any(0 in row.observed_child_bits for row in satisfying_rows)
+    split_inside_every_satisfying_cell = bool(satisfying_rows) and all(
+        row.observed_child_bits == (0, 1) for row in satisfying_rows
+    )
+    roles_exact = target_roles == expected_roles
+    old_types_preserved = all(item in target_roles for item in source_roles)
+    child_fresh = child.name not in context_role_names(source)
+    child_relation = child.kind == "RELATION"
+    count_residual = actual_count - expected_count
+    final = all(
+        (
+            parent_nonzero,
+            child_fresh,
+            child_relation,
+            roles_exact,
+            old_types_preserved,
+            target_exhaustive,
+            disjoint_union,
+            exact_fibers,
+            count_residual == 0,
+            forget_exact,
+            p_and_child_nonzero,
+            p_and_not_child_nonzero,
+            split_inside_every_satisfying_cell,
+        )
+    )
+    return {
+        "rows": tuple(rows),
+        "unexpected_target_cells": tuple(unexpected),
+        "satisfying_cell_count": satisfying_count,
+        "expected_target_cell_count": expected_count,
+        "actual_target_cell_count": actual_count,
+        "count_residual": count_residual,
+        "target_exhaustive": target_exhaustive,
+        "disjoint_fiber_union": disjoint_union,
+        "exact_fibers": exact_fibers,
+        "forget_exact": forget_exact,
+        "roles_exact": roles_exact,
+        "old_types_preserved": old_types_preserved,
+        "child_fresh": child_fresh,
+        "child_relation": child_relation,
+        "parent_nonzero": parent_nonzero,
+        "p_and_child_nonzero": p_and_child_nonzero,
+        "p_and_not_child_nonzero": p_and_not_child_nonzero,
+        "child_distinct_from_parent": split_inside_every_satisfying_cell,
+        "child_distinct_from_every_old_boolean": split_inside_every_satisfying_cell,
+        "final": final,
+    }
+
+
+@dataclass(frozen=True, slots=True)
+class ContextSplitProof:
+    source: Context
+    target: Context
+    parent_truth: tuple[bool, ...]
+    contextual_parent_key: tuple[Any, ...]
+    child: Role
+    rows: tuple[SplitFiberRow, ...]
+    unexpected_target_cells: tuple[tuple[str, ...], ...]
+    satisfying_cell_count: int
+    expected_target_cell_count: int
+    actual_target_cell_count: int
+    count_residual: int
+    target_exhaustive: bool
+    disjoint_fiber_union: bool
+    exact_fibers: bool
+    forget_exact: bool
+    roles_exact: bool
+    old_types_preserved: bool
+    child_fresh: bool
+    child_relation: bool
+    parent_nonzero: bool
+    p_and_child_nonzero: bool
+    p_and_not_child_nonzero: bool
+    child_distinct_from_parent: bool
+    child_distinct_from_every_old_boolean: bool
+    final: bool
+
+    def __post_init__(self) -> None:
+        _require_exact(self.source, Context, "context-split source")
+        _require_exact(self.target, Context, "context-split target")
+        _require_exact_tuple(self.parent_truth, "context-split parent truth")
+        _require_exact_tuple(self.contextual_parent_key, "contextual parent key")
+        _require_exact(self.child, Role, "context-split child")
+        _require_exact_tuple(self.rows, "context-split rows")
+        if any(type(row) is not SplitFiberRow for row in self.rows):
+            raise Refusal("context-split rows contain a foreign object")
+        derived = _derive_context_split_fields(
+            self.source, self.target, self.parent_truth, self.child
+        )
+        expected_key = (
+            "CONTEXTUAL-BOOLEAN-ELEMENT-v1",
+            context_semantic_key(self.source),
+            self.parent_truth,
+        )
+        if self.contextual_parent_key != expected_key:
+            raise Refusal("context-split parent key is forged")
+        for name, value in derived.items():
+            if getattr(self, name) != value:
+                raise Refusal(f"context-split derived field is forged: {name}")
+
+    def to_data(self) -> dict[str, Any]:
+        return {
+            "type": "ContextSplitProof",
+            "source_semantic_key": context_semantic_key(self.source),
+            "target_semantic_key": context_semantic_key(self.target),
+            "parent_truth": self.parent_truth,
+            "contextual_parent_key": self.contextual_parent_key,
+            "child": self.child,
+            "rows": self.rows,
+            "unexpected_target_cells": self.unexpected_target_cells,
+            "satisfying_cell_count": self.satisfying_cell_count,
+            "expected_target_cell_count": self.expected_target_cell_count,
+            "actual_target_cell_count": self.actual_target_cell_count,
+            "count_residual": self.count_residual,
+            "target_exhaustive": self.target_exhaustive,
+            "disjoint_fiber_union": self.disjoint_fiber_union,
+            "exact_fibers": self.exact_fibers,
+            "forget_exact": self.forget_exact,
+            "roles_exact": self.roles_exact,
+            "old_types_preserved": self.old_types_preserved,
+            "child_fresh": self.child_fresh,
+            "child_relation": self.child_relation,
+            "parent_nonzero": self.parent_nonzero,
+            "p_and_child_nonzero": self.p_and_child_nonzero,
+            "p_and_not_child_nonzero": self.p_and_not_child_nonzero,
+            "child_distinct_from_parent": self.child_distinct_from_parent,
+            "child_distinct_from_every_old_boolean": (
+                self.child_distinct_from_every_old_boolean
+            ),
+            "final": self.final,
+        }
+
+
+def build_context_split_proof(
+    source: Context, target: Context, parent: Formula, child: Role
+) -> ContextSplitProof:
+    truth = contextual_formula_truth(source, parent)
+    return build_context_split_proof_from_truth(source, target, truth, child)
+
+
+def build_context_split_proof_from_truth(
+    source: Context,
+    target: Context,
+    truth: tuple[bool, ...],
+    child: Role,
+) -> ContextSplitProof:
+    derived = _derive_context_split_fields(source, target, truth, child)
+    return ContextSplitProof(
+        source,
+        target,
+        truth,
+        (
+            "CONTEXTUAL-BOOLEAN-ELEMENT-v1",
+            context_semantic_key(source),
+            truth,
+        ),
+        child,
+        **derived,
+    )
 
 
 def context_product(left: Context, right: Context) -> Context:
@@ -692,6 +1037,18 @@ def tensor_boundary(left: Boundary, right: Boundary) -> Boundary:
     )
 
 
+def port_contextual_key(base: Context, port: Port) -> tuple[Any, ...]:
+    _require_exact(base, Context, "port contextual base")
+    _require_exact(port, Port, "contextual port")
+    return (
+        port.name,
+        port.child.name,
+        port.child.kind,
+        contextual_formula_key(base, port.parent0),
+        contextual_formula_key(base, port.parent1),
+    )
+
+
 def boundary_semantic_key(boundary: Boundary) -> tuple[Any, ...]:
     _require_exact(boundary, Boundary, "boundary")
     if boundary.kind == "TENSOR":
@@ -710,10 +1067,7 @@ def boundary_semantic_key(boundary: Boundary) -> tuple[Any, ...]:
         context_semantic_key(boundary.base),
         tuple(
             (
-                decl.port.name,
-                decl.port.child.name,
-                decl.port.parent0.to_data(),
-                decl.port.parent1.to_data(),
+                port_contextual_key(boundary.base, decl.port),
                 decl.mode,
             )
             for decl in boundary.ports
@@ -773,6 +1127,35 @@ def matter_dict(configuration: Configuration) -> dict[str, int]:
 
 def sector_dict(configuration: Configuration) -> dict[str, str]:
     return dict(configuration.sectors)
+
+
+def boundary_formula_profile(
+    boundary: Boundary, formula: Formula
+) -> tuple[tuple[Any, ...], ...]:
+    _require_exact(boundary, Boundary, "formula-profile boundary")
+    _require_exact(formula, Formula, "formula-profile formula")
+    rows: dict[tuple[Any, ...], tuple[bool, ...]] = {}
+    for configuration in boundary.catalogue:
+        context_key = context_semantic_key(configuration.context)
+        rows[context_key] = tuple(
+            formula_evaluate(formula, cell) for cell in configuration.context.cells
+        )
+    return tuple((key, rows[key]) for key in sorted(rows, key=canonical_bytes))
+
+
+def occurrence_semantic_key(
+    source: Boundary, occurrence: Occurrence
+) -> tuple[Any, ...]:
+    _require_exact(source, Boundary, "occurrence semantic source")
+    _require_exact(occurrence, Occurrence, "semantic occurrence")
+    return (
+        occurrence.occurrence_id,
+        occurrence.matter_role,
+        occurrence.port_name,
+        boundary_formula_profile(source, occurrence.query),
+        occurrence.target_mode,
+        occurrence.seal,
+    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -1176,7 +1559,11 @@ def arrow_key(arrow: Arrow) -> tuple[Any, ...]:
     _require_exact(arrow, Arrow, "arrow")
     validate_arrow(arrow)
     if arrow.kind == "GENERATOR":
-        body: Any = arrow.occurrence.to_data() if arrow.occurrence is not None else None
+        body: Any = (
+            occurrence_semantic_key(arrow.source, arrow.occurrence)
+            if arrow.occurrence is not None
+            else None
+        )
     elif arrow.children:
         body = tuple(arrow_key(child) for child in arrow.children)
     else:
@@ -1715,6 +2102,267 @@ def gamma_evaluate(
         sum(probabilities, Fraction(0)),
         linear_map.derivation,
     )
+
+
+@dataclass(frozen=True, slots=True)
+class BoundSplitCertificate:
+    law_identity: str
+    source_boundary_sha256: str
+    source_configuration_sha256: str
+    arrow_sha256: str
+    occurrence_sha256: str
+    port_sha256: str
+    presentation_source_key_sha256: str
+    input_matter_bit: int
+    output_matter_bit: int
+    source_sector: str
+    target_sector: str
+    branch_parent_key: tuple[Any, ...]
+    child_key: tuple[str, str]
+    target_boundary_sha256: str
+    target_configuration_sha256: str
+    operation_kind: str
+    coefficient: Fraction
+    context_proof: ContextSplitProof
+    inverse_creation_proof_sha256: str
+    binding_exact: bool
+    operation_exact: bool
+    final: bool
+    classifier_consumed_sha256: str
+
+    def __post_init__(self) -> None:
+        for value, label in (
+            (self.law_identity, "bound law identity"),
+            (self.source_boundary_sha256, "bound source boundary hash"),
+            (self.source_configuration_sha256, "bound source configuration hash"),
+            (self.arrow_sha256, "bound arrow hash"),
+            (self.occurrence_sha256, "bound occurrence hash"),
+            (self.port_sha256, "bound port hash"),
+            (self.presentation_source_key_sha256, "bound presentation key hash"),
+            (self.target_boundary_sha256, "bound target boundary hash"),
+            (self.target_configuration_sha256, "bound target configuration hash"),
+            (self.inverse_creation_proof_sha256, "bound inverse proof hash"),
+            (self.classifier_consumed_sha256, "bound classifier hash"),
+        ):
+            _require_exact(value, str, label)
+            if not _is_lower_hex(value, 32):
+                raise Refusal(f"{label} is not SHA-256")
+        for value, label in (
+            (self.input_matter_bit, "bound input matter bit"),
+            (self.output_matter_bit, "bound output matter bit"),
+        ):
+            _require_exact(value, int, label)
+            if value not in (0, 1):
+                raise Refusal(f"{label} is not Boolean")
+        _require_exact(self.source_sector, str, "bound source sector")
+        _require_exact(self.target_sector, str, "bound target sector")
+        if self.source_sector not in CANONICAL_SECTORS or self.target_sector not in CANONICAL_SECTORS:
+            raise Refusal("bound split sector is not canonical")
+        _require_exact_tuple(self.branch_parent_key, "bound branch parent key")
+        _require_exact_tuple(self.child_key, "bound child key")
+        if (
+            len(self.child_key) != 2
+            or type(self.child_key[0]) is not str
+            or type(self.child_key[1]) is not str
+        ):
+            raise Refusal("bound child key is malformed")
+        _require_exact(self.operation_kind, str, "bound split operation")
+        if self.operation_kind not in ("CREATE", "MERGE", "UNCHANGED"):
+            raise Refusal("unknown bound split operation")
+        _require_exact(self.coefficient, Fraction, "bound transition coefficient")
+        _require_exact(self.context_proof, ContextSplitProof, "bound context proof")
+        for value, label in (
+            (self.binding_exact, "bound split binding"),
+            (self.operation_exact, "bound split operation evidence"),
+            (self.final, "bound split conjunction"),
+        ):
+            _require_exact(value, bool, label)
+        base = self.to_data(include_classifier=False)
+        if canonical_hash(base) != self.classifier_consumed_sha256:
+            raise Refusal("bound split classifier hash is forged")
+        expected_final = (
+            self.coefficient != 0
+            and self.binding_exact
+            and self.operation_exact
+            and self.context_proof.final
+        )
+        if self.final != expected_final:
+            raise Refusal("bound split final conjunction is forged")
+
+    def to_data(self, include_classifier: bool = True) -> dict[str, Any]:
+        data = {
+            "type": "BoundSplitCertificate",
+            "law_identity": self.law_identity,
+            "source_boundary_sha256": self.source_boundary_sha256,
+            "source_configuration_sha256": self.source_configuration_sha256,
+            "arrow_sha256": self.arrow_sha256,
+            "occurrence_sha256": self.occurrence_sha256,
+            "port_sha256": self.port_sha256,
+            "presentation_source_key_sha256": self.presentation_source_key_sha256,
+            "input_matter_bit": self.input_matter_bit,
+            "output_matter_bit": self.output_matter_bit,
+            "source_sector": self.source_sector,
+            "target_sector": self.target_sector,
+            "branch_parent_key": self.branch_parent_key,
+            "child_key": self.child_key,
+            "target_boundary_sha256": self.target_boundary_sha256,
+            "target_configuration_sha256": self.target_configuration_sha256,
+            "operation_kind": self.operation_kind,
+            "coefficient": self.coefficient,
+            "context_proof": self.context_proof,
+            "inverse_creation_proof_sha256": self.inverse_creation_proof_sha256,
+            "binding_exact": self.binding_exact,
+            "operation_exact": self.operation_exact,
+            "final": self.final,
+        }
+        if include_classifier:
+            data["classifier_consumed_sha256"] = self.classifier_consumed_sha256
+        return data
+
+
+def _selected_port(source: Boundary, port_name: str) -> Port:
+    matches = tuple(
+        declaration.port
+        for declaration in source.ports
+        if declaration.port.name == port_name
+    )
+    if len(matches) != 1:
+        raise Refusal("bound split occurrence does not select one exact port")
+    return matches[0]
+
+
+def _branch_index(sector: str) -> int:
+    if sector == "branch0":
+        return 0
+    if sector == "branch1":
+        return 1
+    raise Refusal("split branch sector has no parent index")
+
+
+def build_bound_split_certificate(
+    law: GammaLaw,
+    arrow: Arrow,
+    source_state: Configuration,
+    target_state: Configuration,
+) -> BoundSplitCertificate:
+    _require_exact(law, GammaLaw, "bound split law")
+    _require_exact(arrow, Arrow, "bound split arrow")
+    _require_exact(source_state, Configuration, "bound split source state")
+    _require_exact(target_state, Configuration, "bound split target state")
+    validate_candidate_law(law)
+    validate_arrow_deep(arrow)
+    if arrow.kind != "GENERATOR" or type(arrow.occurrence) is not Occurrence:
+        raise Refusal("bound split certificate requires one actual generator")
+    occurrence = arrow.occurrence
+    validate_configuration(arrow.source, source_state)
+    validate_configuration(arrow.target, target_state)
+    source_column = configuration_index(arrow.source, source_state)
+    target_row = configuration_index(arrow.target, target_state)
+    linear_map = evaluate_arrow(law, arrow)
+    coefficient = map_coefficient(linear_map, target_row, source_column)
+    if coefficient == 0:
+        raise Refusal("zero transition cannot carry a bound split certificate")
+    port = _selected_port(arrow.source, occurrence.port_name)
+    source_sector = sector_dict(source_state)[port.name]
+    target_sector = sector_dict(target_state)[port.name]
+    input_bit = matter_dict(source_state)[occurrence.matter_role]
+    output_bit = matter_dict(target_state)[occurrence.matter_role]
+    expected_sector = _rho_sector(
+        source_sector, output_bit, law.primitive.rho_mode
+    )
+    binding_exact = (
+        expected_sector == target_sector
+        and all(
+            matter_dict(source_state)[name] == matter_dict(target_state)[name]
+            for name in arrow.source.matter_roles
+            if name != occurrence.matter_role
+        )
+    )
+    if source_sector == "empty":
+        operation_kind = "CREATE"
+        branch = _branch_index(target_sector)
+        parent = port.parent0 if branch == 0 else port.parent1
+        proof_source = source_state.context
+        proof_target = target_state.context
+        operation_exact = target_sector == f"branch{output_bit}"
+    elif target_sector == "empty":
+        operation_kind = "MERGE"
+        branch = _branch_index(source_sector)
+        parent = port.parent0 if branch == 0 else port.parent1
+        proof_source = target_state.context
+        proof_target = source_state.context
+        operation_exact = source_sector == f"branch{output_bit}"
+    elif target_sector == source_sector:
+        operation_kind = "UNCHANGED"
+        branch = _branch_index(source_sector)
+        parent = port.parent0 if branch == 0 else port.parent1
+        proof_source = context_forget(source_state.context, port.child.name)
+        proof_target = source_state.context
+        operation_exact = (
+            output_bit != branch
+            and context_semantic_key(source_state.context)
+            == context_semantic_key(target_state.context)
+        )
+    else:
+        raise Refusal("transition is not CREATE, MERGE, or UNCHANGED")
+    proof = build_context_split_proof(proof_source, proof_target, parent, port.child)
+    operation_exact = operation_exact and (
+        (operation_kind == "CREATE"
+         and context_semantic_key(proof.source) == context_semantic_key(source_state.context)
+         and context_semantic_key(proof.target) == context_semantic_key(target_state.context))
+        or (operation_kind == "MERGE"
+            and context_semantic_key(proof.source) == context_semantic_key(target_state.context)
+            and context_semantic_key(proof.target) == context_semantic_key(source_state.context))
+        or (operation_kind == "UNCHANGED"
+            and context_semantic_key(proof.target) == context_semantic_key(source_state.context)
+            and context_semantic_key(source_state.context) == context_semantic_key(target_state.context))
+    )
+    fields: dict[str, Any] = {
+        "law_identity": law_identity(law),
+        "source_boundary_sha256": canonical_hash(boundary_semantic_key(arrow.source)),
+        "source_configuration_sha256": canonical_hash(configuration_key(source_state)),
+        "arrow_sha256": canonical_hash(arrow_key(arrow)),
+        "occurrence_sha256": canonical_hash(
+            occurrence_semantic_key(arrow.source, occurrence)
+        ),
+        "port_sha256": canonical_hash(port_contextual_key(arrow.source.base, port)),
+        "presentation_source_key_sha256": canonical_hash(
+            presentation_key(law, arrow, source_state)
+        ),
+        "input_matter_bit": input_bit,
+        "output_matter_bit": output_bit,
+        "source_sector": source_sector,
+        "target_sector": target_sector,
+        "branch_parent_key": contextual_formula_key(proof_source, parent),
+        "child_key": (port.child.name, port.child.kind),
+        "target_boundary_sha256": canonical_hash(boundary_semantic_key(arrow.target)),
+        "target_configuration_sha256": canonical_hash(configuration_key(target_state)),
+        "operation_kind": operation_kind,
+        "coefficient": coefficient,
+        "context_proof": proof,
+        "inverse_creation_proof_sha256": canonical_hash(proof),
+        "binding_exact": binding_exact,
+        "operation_exact": operation_exact,
+        "final": coefficient != 0 and binding_exact and operation_exact and proof.final,
+    }
+    classifier_hash = canonical_hash(
+        {"type": "BoundSplitCertificate", **fields}
+    )
+    return BoundSplitCertificate(
+        **fields, classifier_consumed_sha256=classifier_hash
+    )
+
+
+def validate_bound_split_certificate(
+    law: GammaLaw,
+    arrow: Arrow,
+    source_state: Configuration,
+    target_state: Configuration,
+    certificate: BoundSplitCertificate,
+) -> bool:
+    _require_exact(certificate, BoundSplitCertificate, "bound split certificate")
+    rebuilt = build_bound_split_certificate(law, arrow, source_state, target_state)
+    return canonical_bytes(certificate) == canonical_bytes(rebuilt) and rebuilt.final
 
 
 def check_isometry(linear_map: LinearMap) -> tuple[bool, Fraction]:
@@ -2683,6 +3331,317 @@ def measure_reciprocal_response(law: GammaLaw) -> dict[str, Any]:
     }
 
 
+def _split_diagnostic_artifacts(
+    law: GammaLaw, proof: ContextSplitProof
+) -> dict[str, Any]:
+    rows: list[tuple[int, int, Fraction]] = []
+    endpoint_rows: list[tuple[int, tuple[Fraction, ...]]] = []
+    target_index = {cell: index for index, cell in enumerate(proof.target.cells)}
+    for source_index, fiber in enumerate(proof.rows):
+        weight = Fraction(1, len(fiber.observed_target_cells))
+        probabilities = [Fraction(0) for _ in proof.target.cells]
+        for cell in fiber.observed_target_cells:
+            index = target_index[cell]
+            rows.append((index, source_index, weight))
+            probabilities[index] = weight
+        endpoint_rows.append((source_index, tuple(probabilities)))
+    process_key = (
+        "CONTEXT-SPLIT-DIAGNOSTIC-NOT-GAMMA-v1",
+        law_identity(law),
+        context_semantic_key(proof.source),
+        context_semantic_key(proof.target),
+        proof.contextual_parent_key,
+        (proof.child.name, proof.child.kind),
+    )
+    return {
+        "physical_source_key_sha256": canonical_hash(
+            (context_semantic_key(proof.source), proof.contextual_parent_key)
+        ),
+        "contextual_process_key_sha256": canonical_hash(process_key),
+        "operator_coordinates": tuple(rows),
+        "operator_sha256": canonical_hash(tuple(rows)),
+        "endpoint_rows": tuple(endpoint_rows),
+        "endpoint_law_sha256": canonical_hash(tuple(endpoint_rows)),
+        "classifier_lineage_sha256": canonical_hash(
+            (law_identity(law), canonical_hash(proof), process_key)
+        ),
+        "normalizations": tuple(
+            sum(probabilities, Fraction(0))
+            for _, probabilities in endpoint_rows
+        ),
+        "diagnostic_only_not_promotive": True,
+    }
+
+
+def _split_census_contexts() -> tuple[tuple[str, Context], ...]:
+    a = Role("A", "RELATION")
+    b = Role("B", "RELATION")
+    return (
+        ("C1", Context((a,), ((), ("A",)))),
+        ("C2", Context((a, b), ((), ("A",), ("B",), ("A", "B")))),
+        ("C3", Context((a, b), ((), ("A",), ("A", "B")))),
+        ("C4", Context((a, b), ((), ("B",), ("A", "B")))),
+        ("C5", Context((a, b), ((), ("A",), ("B",)))),
+        ("C6", Context((a, b), ((), ("A", "B")))),
+    )
+
+
+def _measure_contextual_alias(law: GammaLaw) -> dict[str, Any]:
+    context = dict(_split_census_contexts())["C3"]
+    b = formula_atom("B")
+    a_and_b = formula_and(formula_atom("A"), b)
+    child = Role("alias_N", "RELATION")
+
+    def member(parent: Formula) -> dict[str, Any]:
+        port = Port("alias_p", child, formula_not(parent), parent)
+        boundary = atomic_boundary(("alias_c",), context, (PortDecl(port, "ACTIVE"),))
+        occurrence = Occurrence(
+            "alias_occurrence", "alias_c", "alias_p", parent, "ACTIVE"
+        )
+        arrow = generator_arrow(boundary, occurrence)
+        source = _empty_state(boundary, {"alias_c": 0})
+        target = _empty_state(
+            arrow.target,
+            {"alias_c": 1},
+            {"alias_p": "branch1"},
+        )
+        linear_map = evaluate_arrow(law, arrow)
+        evaluation = gamma_evaluate(law, arrow, source)
+        certificate = build_bound_split_certificate(
+            law, arrow, source, target
+        )
+        return {
+            "raw_formula_sha256": canonical_hash(parent.to_data()),
+            "contextual_parent_key": contextual_formula_key(context, parent),
+            "source_boundary_sha256": canonical_hash(boundary_semantic_key(boundary)),
+            "arrow_sha256": canonical_hash(arrow_key(arrow)),
+            "presentation_key_sha256": canonical_hash(
+                presentation_key(law, arrow, source)
+            ),
+            "target_context_sha256": canonical_hash(
+                context_semantic_key(target.context)
+            ),
+            "operator_entries_sha256": canonical_hash(linear_map.entries),
+            "endpoint_law_sha256": canonical_hash(evaluation.probabilities),
+            "lineage_sha256": canonical_hash(linear_map.derivation),
+            "certificate": certificate,
+            "certificate_sha256": canonical_hash(certificate),
+        }
+
+    left = member(b)
+    right = member(a_and_b)
+    physical_fields = (
+        "contextual_parent_key",
+        "source_boundary_sha256",
+        "arrow_sha256",
+        "presentation_key_sha256",
+        "target_context_sha256",
+        "operator_entries_sha256",
+        "endpoint_law_sha256",
+        "lineage_sha256",
+        "certificate_sha256",
+    )
+    return {
+        "left": left,
+        "right": right,
+        "raw_ambient_formulas_distinct": left["raw_formula_sha256"]
+        != right["raw_formula_sha256"],
+        "physical_fields_equal": {
+            field: left[field] == right[field] for field in physical_fields
+        },
+        "all_physical_fields_equal": all(
+            left[field] == right[field] for field in physical_fields
+        ),
+    }
+
+
+def measure_context_split_census(law: GammaLaw) -> dict[str, Any]:
+    expected = {
+        "C1": (3, 3),
+        "C2": (15, 15),
+        "C3": (14, 7),
+        "C4": (14, 7),
+        "C5": (14, 7),
+        "C6": (12, 3),
+    }
+    context_rows: list[dict[str, Any]] = []
+    ambient_total = 0
+    class_total = 0
+    replay_total = 0
+    for name, context in _split_census_contexts():
+        role_names = context_role_names(context)
+        representatives: list[dict[str, Any]] = []
+        grouped: dict[tuple[bool, ...], list[dict[str, Any]]] = {}
+        for table in itertools.product(
+            (False, True), repeat=2 ** len(role_names)
+        ):
+            formula = Formula(role_names, tuple(table))
+            truth = contextual_formula_truth(context, formula)
+            if not any(truth):
+                continue
+            child = Role(f"N_{name}", "RELATION")
+            target = context_extend(context, child, formula)
+            proof = build_context_split_proof(context, target, formula, child)
+            diagnostic = _split_diagnostic_artifacts(law, proof)
+            row = {
+                "ambient_roles": role_names,
+                "ambient_truth_table": tuple(table),
+                "ambient_formula_sha256": canonical_hash(
+                    {"roles": role_names, "table": tuple(table)}
+                ),
+                "canonical_formula_provenance_sha256": canonical_hash(formula),
+                "contextual_truth": truth,
+                "contextual_parent_key": proof.contextual_parent_key,
+                "target_semantic_sha256": canonical_hash(
+                    context_semantic_key(target)
+                ),
+                "proof": proof,
+                "proof_sha256": canonical_hash(proof),
+                **diagnostic,
+            }
+            representatives.append(row)
+            grouped.setdefault(truth, []).append(row)
+        classes: list[dict[str, Any]] = []
+        invariant_fields = (
+            "contextual_parent_key",
+            "target_semantic_sha256",
+            "proof_sha256",
+            "physical_source_key_sha256",
+            "contextual_process_key_sha256",
+            "operator_sha256",
+            "endpoint_law_sha256",
+            "classifier_lineage_sha256",
+        )
+        for truth in sorted(grouped):
+            members = grouped[truth]
+            reference = members[0]
+            invariance = {
+                field: all(member[field] == reference[field] for member in members)
+                for field in invariant_fields
+            }
+            classes.append(
+                {
+                    "contextual_truth": truth,
+                    "contextual_parent_key": reference["contextual_parent_key"],
+                    "representative_count": len(members),
+                    "ambient_formula_sha256s": tuple(
+                        member["ambient_formula_sha256"] for member in members
+                    ),
+                    "native_proof": reference["proof"],
+                    "native_proof_sha256": reference["proof_sha256"],
+                    "invariance": invariance,
+                    "all_invariant": all(invariance.values()),
+                }
+            )
+        ambient_count = len(representatives)
+        class_count = len(classes)
+        ambient_total += ambient_count
+        class_total += class_count
+        replay_total += sum(len(grouped[row["contextual_truth"]]) for row in classes)
+        context_rows.append(
+            {
+                "name": name,
+                "context": context,
+                "ambient_assignment_count": 2 ** len(role_names),
+                "ambient_nonzero_representative_count": ambient_count,
+                "contextual_class_count": class_count,
+                "expected_counts": expected[name],
+                "counts_exact": (ambient_count, class_count) == expected[name],
+                "representatives": tuple(representatives),
+                "classes": tuple(classes),
+                "all_representative_proofs_exact": all(
+                    row["proof"].final for row in representatives
+                ),
+                "all_class_invariance_exact": all(
+                    row["all_invariant"] for row in classes
+                ),
+            }
+        )
+    minimal_source = dict(_split_census_contexts())["C1"]
+    minimal_child = Role("N", "RELATION")
+    minimal_controls: dict[str, Any] = {}
+    for label, parent in (
+        ("A", formula_atom("A")),
+        ("NOT-A", formula_not(formula_atom("A"))),
+    ):
+        target = context_extend(minimal_source, minimal_child, parent)
+        proof = build_context_split_proof(
+            minimal_source, target, parent, minimal_child
+        )
+        minimal_controls[label] = {
+            "source_cells": minimal_source.cells,
+            "target_cells": target.cells,
+            "fiber_sizes": tuple(
+                len(row.observed_target_cells) for row in proof.rows
+            ),
+            "cell_count_transition": (
+                len(minimal_source.cells),
+                len(target.cells),
+            ),
+            "proof": proof,
+            "proof_sha256": canonical_hash(proof),
+        }
+    minimal_controls_exact = (
+        minimal_controls["A"]["target_cells"]
+        == ((), ("A",), ("A", "N"))
+        and minimal_controls["A"]["fiber_sizes"] == (1, 2)
+        and minimal_controls["NOT-A"]["target_cells"]
+        == ((), ("N",), ("A",))
+        and minimal_controls["NOT-A"]["fiber_sizes"] == (2, 1)
+        and all(row["proof"].final for row in minimal_controls.values())
+    )
+    alias = _measure_contextual_alias(law)
+    return {
+        "minimal_controls": minimal_controls,
+        "minimal_controls_exact": minimal_controls_exact,
+        "contexts": tuple(context_rows),
+        "ambient_nonzero_total": ambient_total,
+        "contextual_class_total": class_total,
+        "ambient_replay_total": replay_total,
+        "expected_ambient_total": sum(row[0] for row in expected.values()),
+        "expected_contextual_total": sum(row[1] for row in expected.values()),
+        "counts_exact": ambient_total == 72 and class_total == 42,
+        "all_replayed": replay_total == ambient_total == 72,
+        "all_context_proofs_exact": all(
+            row["all_representative_proofs_exact"] for row in context_rows
+        ),
+        "all_within_class_invariance_exact": all(
+            row["all_class_invariance_exact"] for row in context_rows
+        ),
+        "context_proofs_are_nonpromotive": True,
+        "contextual_alias": alias,
+        "all_exact": ambient_total == 72
+        and class_total == 42
+        and replay_total == ambient_total
+        and all(row["counts_exact"] for row in context_rows)
+        and all(row["all_representative_proofs_exact"] for row in context_rows)
+        and all(row["all_class_invariance_exact"] for row in context_rows)
+        and minimal_controls_exact
+        and alias["raw_ambient_formulas_distinct"]
+        and alias["all_physical_fields_equal"],
+    }
+
+
+def _all_generator_split_certificates(
+    law: GammaLaw, arrow: Arrow
+) -> tuple[BoundSplitCertificate, ...]:
+    linear_map = evaluate_arrow(law, arrow)
+    certificates: list[BoundSplitCertificate] = []
+    for row, column, coefficient in linear_map.entries:
+        if coefficient == 0:
+            continue
+        certificate = build_bound_split_certificate(
+            law,
+            arrow,
+            arrow.source.catalogue[column],
+            arrow.target.catalogue[row],
+        )
+        if certificate.coefficient != coefficient:
+            raise IntegrityFailure("bound split coefficient disagrees with the law")
+        certificates.append(certificate)
+    return tuple(certificates)
+
+
 def measure_support_change(law: GammaLaw) -> dict[str, Any]:
     control = build_coherent_control("sup_")
     rotate = control["first_pair"].children[0]
@@ -2695,33 +3654,81 @@ def measure_support_change(law: GammaLaw) -> dict[str, Any]:
         if probability == 0:
             continue
         target = rotate.target.catalogue[index]
-        sector = sector_dict(target)[control["port"]]
-        forgotten = context_forget(
-            target.context, rotate.source.ports[0].port.child.name
-        )
+        certificate = build_bound_split_certificate(law, rotate, source, target)
         changed.append(
             {
-                "sector": sector,
+                "sector": certificate.target_sector,
                 "probability": probability,
                 "source_role_count": len(source.context.roles),
                 "target_role_count": len(target.context.roles),
                 "source_cell_count": len(source.context.cells),
                 "target_cell_count": len(target.context.cells),
-                "inverse_merge_exact": context_semantic_key(forgotten)
-                == context_semantic_key(source.context),
-                "configuration_nonisomorphic": (
+                "inverse_merge_exact": certificate.context_proof.forget_exact,
+                "configuration_nonisomorphic_observation_only": (
                     len(source.context.roles), len(source.context.cells)
                 )
                 != (len(target.context.roles), len(target.context.cells)),
-                "target_context_hash": canonical_hash(context_semantic_key(target.context)),
+                "target_context_hash": canonical_hash(
+                    context_semantic_key(target.context)
+                ),
+                "bound_certificate": certificate,
+                "bound_certificate_sha256": canonical_hash(certificate),
+                "classifier_consumed_sha256": certificate.classifier_consumed_sha256,
+                "proper_split": certificate.operation_kind == "CREATE"
+                and certificate.final,
             }
         )
+    all_certificates = _all_generator_split_certificates(law, rotate)
+    operation_counts = {
+        operation: sum(
+            int(certificate.operation_kind == operation)
+            for certificate in all_certificates
+        )
+        for operation in ("CREATE", "MERGE", "UNCHANGED")
+    }
+    create_certificates = tuple(
+        certificate
+        for certificate in all_certificates
+        if certificate.operation_kind == "CREATE"
+    )
+    merge_certificates = tuple(
+        certificate
+        for certificate in all_certificates
+        if certificate.operation_kind == "MERGE"
+    )
+    unchanged_certificates = tuple(
+        certificate
+        for certificate in all_certificates
+        if certificate.operation_kind == "UNCHANGED"
+    )
     return {
         "branches": tuple(changed),
-        "all_inverse_merge": all(row["inverse_merge_exact"] for row in changed),
-        "all_support_changed": all(
-            row["configuration_nonisomorphic"] for row in changed
+        "bound_transition_certificates": all_certificates,
+        "bound_transition_count": len(all_certificates),
+        "operation_counts": operation_counts,
+        "all_bound_certificates_exact": all(
+            certificate.final for certificate in all_certificates
         ),
+        "all_create_certificates_exact": bool(create_certificates)
+        and all(certificate.final for certificate in create_certificates),
+        "all_merge_certificates_exact": bool(merge_certificates)
+        and all(certificate.final for certificate in merge_certificates),
+        "all_unchanged_certificates_exact": bool(unchanged_certificates)
+        and all(certificate.final for certificate in unchanged_certificates),
+        "all_inverse_merge": all(
+            certificate.context_proof.forget_exact
+            for certificate in create_certificates + merge_certificates
+        ),
+        "all_support_changed": bool(changed)
+        and all(row["proper_split"] for row in changed),
+        "classifier_consumed_certificate_sha256": canonical_hash(
+            tuple(
+                certificate.classifier_consumed_sha256
+                for certificate in all_certificates
+            )
+        ),
+        "context_proof_alone_is_promotive": False,
+        "legacy_role_cell_inequality_is_promotive": False,
         "meta_catalogue_state_count": len(rotate.target.catalogue),
         "meta_catalogue_is_physical_support": False,
         "lineage": evaluation.derivation,
@@ -3033,6 +4040,14 @@ def measure_totality_certificate(law: GammaLaw) -> dict[str, Any]:
         isometry, residual = check_isometry(linear_map)
         if type(arrow.occurrence) is not Occurrence:
             raise IntegrityFailure("totality battery contains a nongenerator")
+        split_certificates = _all_generator_split_certificates(law, arrow)
+        split_operation_counts = {
+            operation: sum(
+                int(certificate.operation_kind == operation)
+                for certificate in split_certificates
+            )
+            for operation in ("CREATE", "MERGE", "UNCHANGED")
+        }
         rows.append(
             {
                 "occurrence_id": arrow.occurrence.occurrence_id,
@@ -3043,6 +4058,16 @@ def measure_totality_certificate(law: GammaLaw) -> dict[str, Any]:
                 "isometry": isometry,
                 "isometry_residual": residual,
                 "all_source_columns_checked": len(arrow.source.catalogue),
+                "bound_split_certificate_count": len(split_certificates),
+                "bound_split_operation_counts": split_operation_counts,
+                "bound_split_classifier_sha256": canonical_hash(
+                    tuple(
+                        certificate.classifier_consumed_sha256
+                        for certificate in split_certificates
+                    )
+                ),
+                "all_nonzero_transitions_bound": bool(split_certificates)
+                and all(certificate.final for certificate in split_certificates),
             }
         )
     rho_involutions = {
@@ -3081,6 +4106,12 @@ def measure_totality_certificate(law: GammaLaw) -> dict[str, Any]:
         ),
         "all_generator_isometries": all(
             row["isometry"] and row["isometry_residual"] == 0 for row in rows
+        ),
+        "all_nonzero_generator_transitions_bound": all(
+            row["all_nonzero_transitions_bound"] for row in rows
+        ),
+        "total_bound_split_certificate_count": sum(
+            row["bound_split_certificate_count"] for row in rows
         ),
         "rho_involutions": rho_involutions,
         "all_rho_involutions": all(rho_involutions.values()),
@@ -3336,6 +4367,19 @@ def relabel_context(context: Context, witness: SourceGroupoidWitness) -> Context
     return Context(roles, cells, context.neutral_label)
 
 
+def relabel_context_split_proof(
+    proof: ContextSplitProof, witness: SourceGroupoidWitness
+) -> ContextSplitProof:
+    _require_exact(proof, ContextSplitProof, "transported context split proof")
+    _require_exact(witness, SourceGroupoidWitness, "split-proof groupoid witness")
+    return build_context_split_proof_from_truth(
+        relabel_context(proof.source, witness),
+        relabel_context(proof.target, witness),
+        proof.parent_truth,
+        Role(_rename(witness.role_map, proof.child.name), proof.child.kind),
+    )
+
+
 def relabel_port(port: Port, witness: SourceGroupoidWitness) -> Port:
     return Port(
         _rename(witness.port_map, port.name),
@@ -3501,9 +4545,128 @@ def covariance_residual(
     }
 
 
+def split_certificate_covariance(
+    law: GammaLaw,
+    arrow: Arrow,
+    first: SourceGroupoidWitness,
+    second: SourceGroupoidWitness,
+) -> dict[str, Any]:
+    if arrow.kind != "GENERATOR" or type(arrow.occurrence) is not Occurrence:
+        raise Refusal("split covariance requires an actual generator")
+    occurrence = arrow.occurrence
+    port = _selected_port(arrow.source, occurrence.port_name)
+    source = _empty_state(arrow.source)
+    target = _empty_state(
+        arrow.target,
+        {occurrence.matter_role: 1},
+        {port.name: "branch1"},
+    )
+    original = build_bound_split_certificate(law, arrow, source, target)
+    first_arrow = relabel_arrow(arrow, first)
+    first_source = relabel_configuration(arrow.source, first_arrow.source, source, first)
+    first_target = relabel_configuration(arrow.target, first_arrow.target, target, first)
+    transported = build_bound_split_certificate(
+        law, first_arrow, first_source, first_target
+    )
+    expected_proof = relabel_context_split_proof(original.context_proof, first)
+    identity = SourceGroupoidWitness((), (), (), ())
+    identity_arrow_value = relabel_arrow(arrow, identity)
+    identity_source = relabel_configuration(
+        arrow.source, identity_arrow_value.source, source, identity
+    )
+    identity_target = relabel_configuration(
+        arrow.target, identity_arrow_value.target, target, identity
+    )
+    identity_certificate = build_bound_split_certificate(
+        law, identity_arrow_value, identity_source, identity_target
+    )
+    inverse = inverse_witness(first)
+    roundtrip_arrow = relabel_arrow(first_arrow, inverse)
+    roundtrip_source = relabel_configuration(
+        first_arrow.source, roundtrip_arrow.source, first_source, inverse
+    )
+    roundtrip_target = relabel_configuration(
+        first_arrow.target, roundtrip_arrow.target, first_target, inverse
+    )
+    roundtrip_certificate = build_bound_split_certificate(
+        law, roundtrip_arrow, roundtrip_source, roundtrip_target
+    )
+    sequential_arrow = relabel_arrow(first_arrow, second)
+    sequential_source = relabel_configuration(
+        first_arrow.source, sequential_arrow.source, first_source, second
+    )
+    sequential_target = relabel_configuration(
+        first_arrow.target, sequential_arrow.target, first_target, second
+    )
+    sequential_certificate = build_bound_split_certificate(
+        law, sequential_arrow, sequential_source, sequential_target
+    )
+    composite = compose_witnesses(first, second)
+    composite_arrow = relabel_arrow(arrow, composite)
+    composite_source = relabel_configuration(
+        arrow.source, composite_arrow.source, source, composite
+    )
+    composite_target = relabel_configuration(
+        arrow.target, composite_arrow.target, target, composite
+    )
+    composite_certificate = build_bound_split_certificate(
+        law, composite_arrow, composite_source, composite_target
+    )
+    proof_transport_exact = canonical_bytes(expected_proof) == canonical_bytes(
+        transported.context_proof
+    )
+    scalar_fields = (
+        "input_matter_bit",
+        "output_matter_bit",
+        "source_sector",
+        "target_sector",
+        "operation_kind",
+        "coefficient",
+        "binding_exact",
+        "operation_exact",
+        "final",
+    )
+    scalar_transport = all(
+        getattr(original, field) == getattr(transported, field)
+        for field in scalar_fields
+    )
+    return {
+        "original": original,
+        "transported": transported,
+        "expected_transported_context_proof": expected_proof,
+        "proof_transport_exact": proof_transport_exact,
+        "scalar_transport_exact": scalar_transport,
+        "identity_exact": canonical_bytes(identity_certificate)
+        == canonical_bytes(original),
+        "inverse_roundtrip_exact": canonical_bytes(roundtrip_certificate)
+        == canonical_bytes(original),
+        "composition_exact": canonical_bytes(sequential_certificate)
+        == canonical_bytes(composite_certificate),
+        "uncached_certificate_constructions": len(
+            (
+                original,
+                transported,
+                identity_certificate,
+                roundtrip_certificate,
+                sequential_certificate,
+                composite_certificate,
+            )
+        ),
+        "all_exact": original.final
+        and transported.final
+        and proof_transport_exact
+        and scalar_transport
+        and canonical_bytes(identity_certificate) == canonical_bytes(original)
+        and canonical_bytes(roundtrip_certificate) == canonical_bytes(original)
+        and canonical_bytes(sequential_certificate)
+        == canonical_bytes(composite_certificate),
+    }
+
+
 def measure_groupoid_covariance(law: GammaLaw) -> dict[str, Any]:
     model = build_coherent_control("cov_")
     arrow = model["two_pairs"]
+    split_arrow = model["first_pair"].children[0]
     occurrence_ids: list[str] = []
 
     def collect(current: Arrow) -> None:
@@ -3555,6 +4718,9 @@ def measure_groupoid_covariance(law: GammaLaw) -> dict[str, Any]:
     ) + len(("roundtrip-original", "roundtrip-transformed")) + len(
         ("sequential", "composite")
     )
+    split_covariance = split_certificate_covariance(
+        law, split_arrow, first, second
+    )
     return {
         "identity_residual": identity_residual,
         "nontrivial_residual": first_residual,
@@ -3567,6 +4733,7 @@ def measure_groupoid_covariance(law: GammaLaw) -> dict[str, Any]:
         "uncached_evaluations": uncached_evaluations,
         "cache_hits": uncached_evaluations - uncached_evaluations,
         "cache_implementation_present": False,
+        "split_certificate_covariance": split_covariance,
         "witnesses": {
             "identity": identity,
             "nontrivial": first,
@@ -3584,6 +4751,7 @@ def measure_groupoid_covariance(law: GammaLaw) -> dict[str, Any]:
                 composed_evidence["endpoint_probability_residual"] == 0,
                 roundtrip,
                 sequential,
+                split_covariance["all_exact"],
             )
         ),
     }
@@ -3627,6 +4795,7 @@ def measure_source_identity(law: GammaLaw) -> dict[str, Any]:
     )
     labelled_source = _empty_state(labelled_boundary)
     labelled = gamma_evaluate(law, labelled_pair, labelled_source)
+    contextual_alias = _measure_contextual_alias(law)
     return {
         "equal_key_equal_profile": first.presentation_key == repeated.presentation_key
         and first.probabilities == repeated.probabilities,
@@ -3639,6 +4808,11 @@ def measure_source_identity(law: GammaLaw) -> dict[str, Any]:
         == equivalent.probabilities
         and boundary_semantic_key(labelled_pair.source)
         == boundary_semantic_key(equivalent_pair.source),
+        "contextual_boolean_alias": contextual_alias,
+        "contextual_boolean_alias_exact": contextual_alias[
+            "raw_ambient_formulas_distinct"
+        ]
+        and contextual_alias["all_physical_fields_equal"],
         "source_key_hash": canonical_hash(first.presentation_key),
         "distinct_key_hash": canonical_hash(distinct.presentation_key),
         "profile_hash": canonical_hash(first.probabilities),
@@ -3721,6 +4895,8 @@ PUBLIC_NODE_TYPES = (
     Formula,
     Role,
     Context,
+    SplitFiberRow,
+    ContextSplitProof,
     Port,
     PortDecl,
     Configuration,
@@ -3732,6 +4908,7 @@ PUBLIC_NODE_TYPES = (
     Derivation,
     LinearMap,
     GammaEvaluation,
+    BoundSplitCertificate,
     ContinuationGrammar,
     MatchingPresentation,
     SourceGroupoidWitness,
@@ -3871,6 +5048,57 @@ def validate_public_exact_node(value: Any) -> None:
         _require_reconstruction_equal(value, Role(value.name, value.kind), "role")
     elif type(value) is Context:
         validate_context_deep(value)
+    elif type(value) is SplitFiberRow:
+        _require_reconstruction_equal(
+            value,
+            SplitFiberRow(
+                value.source_cell,
+                value.parent_value,
+                value.expected_target_cells,
+                value.observed_target_cells,
+                value.expected_child_bits,
+                value.observed_child_bits,
+                value.exact,
+            ),
+            "split fiber row",
+        )
+    elif type(value) is ContextSplitProof:
+        validate_context_deep(value.source)
+        validate_context_deep(value.target)
+        validate_public_exact_node(value.child)
+        for row in value.rows:
+            validate_public_exact_node(row)
+        _require_reconstruction_equal(
+            value,
+            ContextSplitProof(
+                value.source,
+                value.target,
+                value.parent_truth,
+                value.contextual_parent_key,
+                value.child,
+                value.rows,
+                value.unexpected_target_cells,
+                value.satisfying_cell_count,
+                value.expected_target_cell_count,
+                value.actual_target_cell_count,
+                value.count_residual,
+                value.target_exhaustive,
+                value.disjoint_fiber_union,
+                value.exact_fibers,
+                value.forget_exact,
+                value.roles_exact,
+                value.old_types_preserved,
+                value.child_fresh,
+                value.child_relation,
+                value.parent_nonzero,
+                value.p_and_child_nonzero,
+                value.p_and_not_child_nonzero,
+                value.child_distinct_from_parent,
+                value.child_distinct_from_every_old_boolean,
+                value.final,
+            ),
+            "context split proof",
+        )
     elif type(value) is Port:
         validate_port_deep(value)
     elif type(value) is PortDecl:
@@ -3933,6 +5161,37 @@ def validate_public_exact_node(value: Any) -> None:
                 value.derivation,
             ),
             "Gamma evaluation",
+        )
+    elif type(value) is BoundSplitCertificate:
+        validate_public_exact_node(value.context_proof)
+        _require_reconstruction_equal(
+            value,
+            BoundSplitCertificate(
+                value.law_identity,
+                value.source_boundary_sha256,
+                value.source_configuration_sha256,
+                value.arrow_sha256,
+                value.occurrence_sha256,
+                value.port_sha256,
+                value.presentation_source_key_sha256,
+                value.input_matter_bit,
+                value.output_matter_bit,
+                value.source_sector,
+                value.target_sector,
+                value.branch_parent_key,
+                value.child_key,
+                value.target_boundary_sha256,
+                value.target_configuration_sha256,
+                value.operation_kind,
+                value.coefficient,
+                value.context_proof,
+                value.inverse_creation_proof_sha256,
+                value.binding_exact,
+                value.operation_exact,
+                value.final,
+                value.classifier_consumed_sha256,
+            ),
+            "bound split certificate",
         )
     elif type(value) is ContinuationGrammar:
         for query in value.queries:
@@ -5108,6 +6367,357 @@ def _groupoid_attacks(identifier: str) -> dict[str, Any]:
     )
 
 
+def _minimal_split_attack_objects() -> dict[str, Any]:
+    source = Context((Role("A", "RELATION"),), ((), ("A",)))
+    parent = formula_atom("A")
+    child = Role("N", "RELATION")
+    lawful_target = context_extend(source, child, parent)
+    lawful_proof = build_context_split_proof(
+        source, lawful_target, parent, child
+    )
+    return {
+        "source": source,
+        "parent": parent,
+        "child": child,
+        "lawful_target": lawful_target,
+        "lawful_proof": lawful_proof,
+    }
+
+
+def _minimal_bound_split_application(law: GammaLaw) -> dict[str, Any]:
+    context = Context((Role("A", "RELATION"),), ((), ("A",)))
+    parent = formula_atom("A")
+    port = Port(
+        "split_attack_port",
+        Role("N", "RELATION"),
+        formula_not(parent),
+        parent,
+    )
+    boundary = atomic_boundary(
+        ("split_attack_matter",), context, (PortDecl(port, "ACTIVE"),)
+    )
+    occurrence = Occurrence(
+        "split_attack_occurrence",
+        "split_attack_matter",
+        "split_attack_port",
+        parent,
+        "ACTIVE",
+    )
+    arrow = generator_arrow(boundary, occurrence)
+    source = _empty_state(boundary, {"split_attack_matter": 0})
+    branch0 = _empty_state(
+        arrow.target,
+        {"split_attack_matter": 0},
+        {"split_attack_port": "branch0"},
+    )
+    branch1 = _empty_state(
+        arrow.target,
+        {"split_attack_matter": 1},
+        {"split_attack_port": "branch1"},
+    )
+    return {
+        "boundary": boundary,
+        "arrow": arrow,
+        "source": source,
+        "branch0": branch0,
+        "branch1": branch1,
+        "branch0_certificate": build_bound_split_certificate(
+            law, arrow, source, branch0
+        ),
+        "branch1_certificate": build_bound_split_certificate(
+            law, arrow, source, branch1
+        ),
+    }
+
+
+def _all_true_gate_surface() -> dict[str, bool]:
+    return {
+        "specification": True,
+        "referent": True,
+        "complete_gamma": True,
+        "source_sufficiency": True,
+        "anti_wrapper": True,
+        "shadow_weld": True,
+        "variable_carrier": True,
+        "support_change": True,
+        "reciprocal": True,
+        "division": True,
+        "native_nondivision": True,
+        "blind_class": True,
+    }
+
+
+def _split_support_attacks(identifier: str) -> dict[str, Any]:
+    law = GammaLaw(Fraction(1, 2))
+    objects = _minimal_split_attack_objects()
+    source = objects["source"]
+    parent = objects["parent"]
+    child = objects["child"]
+    lawful = objects["lawful_proof"]
+    old: Any = lawful
+    changed_path = "context_split.target"
+    drop = "P13-SUPPORT-CHANGE-UNPROVEN"
+    if identifier in ("TAUTOLOGICAL-CHILD", "COEXTENSIVE-CHILD-OBJECT"):
+        target = Context(
+            (Role("A", "RELATION"), child),
+            ((), ("A", "N")),
+        )
+        mutant = build_context_split_proof(source, target, parent, child)
+        new = mutant
+        degraded = _all_true_gate_surface()
+        degraded["support_change"] = False
+        passed = (
+            lawful.final
+            and mutant.forget_exact
+            and not mutant.exact_fibers
+            and not mutant.final
+            and mutant.rows[1].observed_child_bits == (1,)
+            and classify_primary(degraded) == "P13-SUPPORT-CHANGE-UNPROVEN"
+        )
+        evidence = {
+            "lawful_certificate_sha256": canonical_hash(lawful),
+            "mutant_certificate_sha256": canonical_hash(mutant),
+            "satisfying_fiber": mutant.rows[1],
+            "count_residual": mutant.count_residual,
+            "forget_exact": mutant.forget_exact,
+            "native_support_gate": mutant.final,
+            "rendered_rung": classify_primary(degraded),
+            "source_mutation_target": identifier == "TAUTOLOGICAL-CHILD",
+        }
+        changed_path = (
+            "context_extend.parent_cell_retention"
+            if identifier == "TAUTOLOGICAL-CHILD"
+            else "context_split.supplied_coextensive_target"
+        )
+    elif identifier == "FORGET-ONLY":
+        target = Context(
+            (Role("A", "RELATION"), child),
+            ((), ("N",), ("A",)),
+        )
+        mutant = build_context_split_proof(source, target, parent, child)
+        new = mutant
+        passed = mutant.forget_exact and not mutant.exact_fibers and not mutant.final
+        evidence = {
+            "forget_exact": mutant.forget_exact,
+            "fiber_rows": mutant.rows,
+            "count_residual": mutant.count_residual,
+            "final": mutant.final,
+        }
+    elif identifier == "CELL-COUNT-PADDING":
+        target = Context(
+            (Role("A", "RELATION"), child),
+            ((), ("N",), ("A", "N")),
+        )
+        mutant = build_context_split_proof(source, target, parent, child)
+        new = mutant
+        passed = (
+            mutant.actual_target_cell_count == mutant.expected_target_cell_count == 3
+            and mutant.forget_exact
+            and not mutant.exact_fibers
+            and not mutant.final
+        )
+        evidence = {
+            "scalar_count_equal": mutant.actual_target_cell_count
+            == mutant.expected_target_cell_count,
+            "forget_exact": mutant.forget_exact,
+            "fiber_rows": mutant.rows,
+            "final": mutant.final,
+        }
+    elif identifier == "ROLE-COUNT-ONLY":
+        target = Context(
+            (Role("A", "RELATION"), child),
+            ((), ("A", "N")),
+        )
+        mutant = build_context_split_proof(source, target, parent, child)
+        legacy_predicate = (
+            len(source.roles), len(source.cells)
+        ) != (len(target.roles), len(target.cells))
+        native_predicate = mutant.final
+        degraded = _all_true_gate_surface()
+        degraded["support_change"] = native_predicate
+        old = {
+            "native_certificate": lawful,
+            "promotive_predicate": lawful.final,
+        }
+        new = {
+            "coextensive_certificate": mutant,
+            "legacy_role_cell_inequality": legacy_predicate,
+        }
+        measurement_old = canonical_hash(lawful)
+        measurement_new = canonical_hash(mutant)
+        lineage_old = canonical_hash(
+            (law_identity(law), canonical_hash(lawful), lawful.final)
+        )
+        lineage_new = canonical_hash(
+            (law_identity(law), canonical_hash(mutant), legacy_predicate)
+        )
+        claim_old = canonical_hash(("support_change", lawful.final, measurement_old))
+        claim_new = canonical_hash(("support_change", native_predicate, measurement_new))
+        seal_old = canonical_hash((measurement_old, lineage_old, claim_old))
+        seal_new = canonical_hash((measurement_new, lineage_new, claim_new))
+        passed = (
+            legacy_predicate
+            and not native_predicate
+            and measurement_old != measurement_new
+            and lineage_old != lineage_new
+            and claim_old != claim_new
+            and seal_old != seal_new
+            and classify_primary(degraded) == "P13-SUPPORT-CHANGE-UNPROVEN"
+        )
+        evidence = {
+            "legacy_predicate": legacy_predicate,
+            "native_predicate": native_predicate,
+            "measurement_hashes": (measurement_old, measurement_new),
+            "lineage_hashes": (lineage_old, lineage_new),
+            "claim_hashes": (claim_old, claim_new),
+            "seal_hashes": (seal_old, seal_new),
+            "rendered_rung": classify_primary(degraded),
+            "source_mutation_target": True,
+        }
+        changed_path = "support_promotion_predicate"
+    elif identifier == "TRANSPORT-SPLIT-SEVER":
+        witness = SourceGroupoidWitness(
+            (("A", "transport_A"), ("N", "transport_N")), (), (), ()
+        )
+        transported = relabel_context_split_proof(lawful, witness)
+        severed = build_context_split_proof_from_truth(
+            transported.source,
+            transported.target,
+            transported.parent_truth,
+            Role("N", "RELATION"),
+        )
+        old = transported
+        new = severed
+        passed = transported.final and not severed.final
+        evidence = {
+            "transported_sha256": canonical_hash(transported),
+            "severed_sha256": canonical_hash(severed),
+            "unexpected_target_cells": severed.unexpected_target_cells,
+            "count_residual": severed.count_residual,
+            "final": severed.final,
+        }
+        changed_path = "source_groupoid.split_child_transport"
+    elif identifier == "SUPPLIED-SPLIT-BOOLEAN":
+        application = _minimal_bound_split_application(law)
+        supplied = {
+            "split_valid": True,
+            "context_proof": lawful,
+            "attached_to": "coextensive-target",
+        }
+        caught, error = _capture_refusal(
+            lambda: validate_bound_split_certificate(
+                law,
+                application["arrow"],
+                application["source"],
+                application["branch1"],
+                supplied,
+            )
+        )
+        old = application["branch1_certificate"]
+        new = supplied
+        passed = caught
+        evidence = {
+            "typed_refusal": error,
+            "context_proof_alone_promotive": False,
+            "supplied_boolean_inert": True,
+        }
+        changed_path = "classifier.supplied_split_valid"
+    elif identifier == "CERTIFICATE-PORT-SWAP":
+        application = _minimal_bound_split_application(law)
+        attached = application["branch1_certificate"]
+        accepted = validate_bound_split_certificate(
+            law,
+            application["arrow"],
+            application["source"],
+            application["branch0"],
+            attached,
+        )
+        correct = application["branch0_certificate"]
+        old = correct
+        new = attached
+        passed = not accepted and canonical_bytes(correct) != canonical_bytes(attached)
+        evidence = {
+            "attached_parent_key": attached.branch_parent_key,
+            "actual_parent_key": correct.branch_parent_key,
+            "attached_target_hash": attached.target_configuration_sha256,
+            "actual_target_hash": correct.target_configuration_sha256,
+            "validation_predicate": accepted,
+        }
+        changed_path = "classifier.bound_certificate.branch_attachment"
+    elif identifier == "OLD-CHILD-REUSE":
+        same_name_caught, same_name_error = _capture_refusal(
+            lambda: context_extend(
+                source, Role("A", "RELATION"), parent
+            )
+        )
+        changed_type_caught, changed_type_error = _capture_refusal(
+            lambda: context_extend(
+                source, Role("A", "SPECTATOR"), parent
+            )
+        )
+        old = child
+        new = {
+            "same_name": Role("A", "RELATION"),
+            "changed_type": Role("A", "SPECTATOR"),
+        }
+        passed = same_name_caught and changed_type_caught
+        evidence = {
+            "same_name_refusal": same_name_error,
+            "changed_type_refusal": changed_type_error,
+        }
+        changed_path = "context_split.child_identity"
+    elif identifier == "AMBIENT-TARGET-PADDING":
+        extra = Role("X", "RELATION")
+        target = Context(
+            (Role("A", "RELATION"), child, extra),
+            ((), ("A",), ("A", "N", "X")),
+        )
+        mutant = build_context_split_proof(source, target, parent, child)
+        new = mutant
+        passed = (
+            mutant.actual_target_cell_count == mutant.expected_target_cell_count
+            and (not mutant.target_exhaustive or not mutant.roles_exact)
+            and not mutant.final
+        )
+        evidence = {
+            "scalar_count_equal": mutant.actual_target_cell_count
+            == mutant.expected_target_cell_count,
+            "unexpected_target_cells": mutant.unexpected_target_cells,
+            "target_exhaustive": mutant.target_exhaustive,
+            "roles_exact": mutant.roles_exact,
+            "final": mutant.final,
+        }
+    elif identifier == "CONTEXTUAL-BOOLEAN-ALIAS":
+        alias = _measure_contextual_alias(law)
+        old = alias["left"]["raw_formula_sha256"]
+        new = alias["right"]["raw_formula_sha256"]
+        passed = alias["raw_ambient_formulas_distinct"] and alias[
+            "all_physical_fields_equal"
+        ]
+        evidence = {
+            "raw_ambient_formulas_distinct": alias[
+                "raw_ambient_formulas_distinct"
+            ],
+            "physical_fields_equal": alias["physical_fields_equal"],
+            "left_certificate_sha256": alias["left"]["certificate_sha256"],
+            "right_certificate_sha256": alias["right"]["certificate_sha256"],
+        }
+        changed_path = "formula.ambient_provenance_only"
+        drop = "CONTROL-CONTEXTUAL-IDENTITY-INVARIANT"
+    else:
+        raise Refusal("unknown split-support development mutation")
+    return _attack_record(
+        old,
+        new,
+        changed_path,
+        "POINT-FREE-HORIZONTAL-SPLIT",
+        "EXHAUSTIVE-BOUND-SPLIT-CERTIFICATE",
+        passed,
+        evidence,
+        drop,
+    )
+
+
 OUTCOME_LADDER = (
     "P13-SPECIFICATION-INCONSISTENT",
     "P13-REFERENT-PRESENTATION-ONLY",
@@ -5180,6 +6790,7 @@ def recompute_shadow_predicates(
     native = measurements["native_nondivision"]
     reciprocal = measurements["reciprocal"]
     blind = measurements["blind_family"]
+    support = measurements["support_change"]
     recomputed_b2 = tuple(
         tuple(
             sum(
@@ -5242,6 +6853,12 @@ def recompute_shadow_predicates(
         "matching_second": blind["second"]["direct_vs_analytic_exact"],
         "blind_projection": blind["resource_parity"]
         and blind["blind_prefix_equal"],
+        "support_split_certificates": support["all_bound_certificates_exact"]
+        and support["all_create_certificates_exact"]
+        and support["all_merge_certificates_exact"]
+        and support["all_unchanged_certificates_exact"]
+        and not support["context_proof_alone_is_promotive"]
+        and not support["legacy_role_cell_inequality_is_promotive"],
     }
     return shadow_recomputation
 
@@ -5295,6 +6912,100 @@ def assert_exposed_controls(measurements: Mapping[str, Any]) -> tuple[str, ...]:
     return tuple(label for label, _, _ in anchors) + ("interval-lower-bound",)
 
 
+def build_result_neutral_regression_wall(
+    measurements: Mapping[str, Any], source_text: str
+) -> dict[str, Any]:
+    _require_exact(source_text, str, "regression-wall source")
+    tree = ast.parse(source_text)
+    function_names = {
+        node.name for node in ast.walk(tree) if type(node) is ast.FunctionDef
+    }
+    coherent = measurements["coherent"]
+    division = measurements["division"]
+    native = measurements["native_nondivision"]
+    reciprocal = measurements["reciprocal"]
+    blind = measurements["blind_family"]
+    predicates = {
+        "rational_domain_exact": measurements["g_domain"]
+        == {
+            "number_system": "RATIONAL",
+            "lower_closed": Fraction(1, 3),
+            "upper_closed": Fraction(1, 2),
+        },
+        "one_contact_cayley_primitive_exact": measurements["law"].primitive
+        == CANONICAL_PRIMITIVE
+        and measurements["law"].implementation
+        == "CONTACT-CAYLEY-WHOLE-FILLING-v1",
+        "R_exact": coherent["R"]
+        == ((Fraction(3, 5), Fraction(-4, 5)), (Fraction(4, 5), Fraction(3, 5))),
+        "B_exact": coherent["B"]
+        == ((Fraction(9, 25), Fraction(16, 25)), (Fraction(16, 25), Fraction(9, 25))),
+        "C_exact": coherent["C"]
+        == ((Fraction(49, 625), Fraction(576, 625)), (Fraction(576, 625), Fraction(49, 625))),
+        "B2_exact": division["B2"]
+        == ((Fraction(337, 625), Fraction(288, 625)), (Fraction(288, 625), Fraction(337, 625))),
+        "K_exact": native["K"]
+        == ((Fraction(351, 175), Fraction(-176, 175)), (Fraction(-176, 175), Fraction(351, 175))),
+        "interval_527_over_175_exact": native["interval_certificate"][
+            "absolute_factor_lower_bound"
+        ]
+        == Fraction(527, 175),
+        "reciprocal_joint_exact": reciprocal["joint"]
+        == {
+            "00": Fraction(9, 25),
+            "01": Fraction(0),
+            "10": Fraction(144, 625),
+            "11": Fraction(256, 625),
+        },
+        "native_wording_exact": NATIVE_NONDIVISION_SENTENCE.startswith(
+            "The cut is not a lawful stochastic division"
+        ),
+        "history_positive_control_exact": native["history_joint_normalizations"]
+        == (Fraction(1), Fraction(1))
+        and native["history_joint_nonnegative"],
+        "continuation_and_cut_exact": division["continuation_grammar_exact"]
+        and division["all_generator_intertwining"]
+        and division["alternate_cut_all_input_residual"] == 0
+        and division["active_reuse_eraser"]["inverse_toggle_exact"],
+        "matching_class_exact": blind["resource_parity"]
+        and blind["blind_prefix_equal"]
+        and blind["direct_factorization_exact"]
+        and blind["response_unequal"],
+        "source_groupoid_doctrine_exact": measurements["groupoid"]["all_exact"],
+        "source_identity_exact": measurements["source_identity"][
+            "equal_key_equal_profile"
+        ],
+        "fresh_generator_preserved_uninvoked": {
+            "derive_fresh_payload",
+            "generate_fresh_mode",
+            "run_official_mode",
+            "transactional_publish",
+        }
+        <= function_names,
+        "outcome_vocabulary_and_cap_exact": ELIGIBLE_CAP == OUTCOME_LADDER[12]
+        and len(OUTCOME_LADDER) == 15,
+        "scope_surface_exact": measurements["scope_coordinates"]
+        == SCOPE_COORDINATES
+        and measurements["scope_walls"] == SCOPE_WALLS,
+    }
+    return {
+        "predicates": predicates,
+        "predicate_count": len(predicates),
+        "all_exact": all(predicates.values()),
+        "value_sha256s": {
+            "R": canonical_hash(coherent["R"]),
+            "B": canonical_hash(coherent["B"]),
+            "C": canonical_hash(coherent["C"]),
+            "B2": canonical_hash(division["B2"]),
+            "K": canonical_hash(native["K"]),
+            "reciprocal_joint": canonical_hash(reciprocal["joint"]),
+            "matching": canonical_hash(
+                (blind["first"]["marginals"], blind["second"]["marginals"])
+            ),
+        },
+    }
+
+
 def _lineage_gate(law: GammaLaw, measurements: Mapping[str, Any]) -> dict[str, Any]:
     derivations = {
         "B": measurements["coherent"]["first_lineage"],
@@ -5315,6 +7026,19 @@ def _lineage_gate(law: GammaLaw, measurements: Mapping[str, Any]) -> dict[str, A
             "all_same_root": bool(roots) and set(roots) == {law_identity(law)},
             "derivation_hash": canonical_hash(derivation),
         }
+    support = measurements["support_change"]
+    support_roots = derivation_roots(support["lineage"])
+    rows["bound_split_classifier"] = {
+        "primitive_roots": support_roots,
+        "root_count": len(support_roots),
+        "all_same_root": bool(support_roots)
+        and set(support_roots) == {law_identity(law)}
+        and support["all_bound_certificates_exact"],
+        "derivation_hash": canonical_hash(support["lineage"]),
+        "classifier_consumed_certificate_sha256": support[
+            "classifier_consumed_certificate_sha256"
+        ],
+    }
     return {
         "rows": rows,
         "all_complete": all(row["all_same_root"] for row in rows.values()),
@@ -5329,6 +7053,7 @@ def build_shadow_lineages(measurements: Mapping[str, Any]) -> dict[str, Any]:
     native = measurements["native_nondivision"]
     reciprocal = measurements["reciprocal"]
     blind = measurements["blind_family"]
+    support = measurements["support_change"]
     shadow_recomputation = recompute_shadow_predicates(measurements)
     rows: dict[str, Any] = {
         "primitive": {
@@ -5461,6 +7186,25 @@ def build_shadow_lineages(measurements: Mapping[str, Any]) -> dict[str, Any]:
             ),
             "primitive_ids": (),
         },
+        "support_split_certificates": {
+            "operation": "BOUND-CREATE-MERGE-UNCHANGED-SPLIT-CLASSIFIER",
+            "inputs": (
+                support["classifier_consumed_certificate_sha256"],
+                canonical_hash(
+                    tuple(
+                        certificate.context_proof
+                        for certificate in support[
+                            "bound_transition_certificates"
+                        ]
+                    )
+                ),
+            ),
+            "output_sha256": support[
+                "classifier_consumed_certificate_sha256"
+            ],
+            "type_dag": support["lineage"],
+            "primitive_ids": derivation_roots(support["lineage"]),
+        },
     }
     fresh = measurements.get("fresh_confirmation")
     if fresh is not None:
@@ -5534,6 +7278,78 @@ def build_shadow_lineages(measurements: Mapping[str, Any]) -> dict[str, Any]:
     }
 
 
+def support_promotion_predicate(
+    support: Mapping[str, Any], split_groupoid: Mapping[str, Any]
+) -> bool:
+    """The sole promotive support predicate; source-mutation target S5."""
+
+    return (
+        support["all_inverse_merge"]
+        and support["all_support_changed"]
+        and support["all_create_certificates_exact"]
+        and support["all_merge_certificates_exact"]
+        and support["all_unchanged_certificates_exact"]
+        and support["all_bound_certificates_exact"]
+        and not support["context_proof_alone_is_promotive"]
+        and not support["legacy_role_cell_inequality_is_promotive"]
+        and split_groupoid["all_exact"]
+    )
+
+
+def support_promotion_source_scan(source: str) -> dict[str, Any]:
+    _require_exact(source, str, "support-promotion source")
+    tree = ast.parse(source)
+    matches = tuple(
+        node
+        for node in ast.walk(tree)
+        if type(node) is ast.FunctionDef
+        and node.name == "support_promotion_predicate"
+    )
+    if len(matches) != 1:
+        return {
+            "one_function": False,
+            "required_keys_present": False,
+            "legacy_keys_absent": False,
+            "ast_sha256": canonical_hash(()),
+            "all_exact": False,
+        }
+    function = matches[0]
+    literals = tuple(
+        node.value
+        for node in ast.walk(function)
+        if type(node) is ast.Constant and type(node.value) is str
+    )
+    required = {
+        "all_inverse_merge",
+        "all_support_changed",
+        "all_create_certificates_exact",
+        "all_merge_certificates_exact",
+        "all_unchanged_certificates_exact",
+        "all_bound_certificates_exact",
+        "context_proof_alone_is_promotive",
+        "legacy_role_cell_inequality_is_promotive",
+        "all_exact",
+    }
+    legacy = {
+        "source_role_count",
+        "target_role_count",
+        "source_cell_count",
+        "target_cell_count",
+        "configuration_nonisomorphic",
+    }
+    required_exact = required <= set(literals)
+    legacy_absent = not (legacy & set(literals))
+    return {
+        "one_function": True,
+        "required_keys": tuple(sorted(required)),
+        "observed_key_literals": tuple(sorted(set(literals))),
+        "required_keys_present": required_exact,
+        "legacy_keys_absent": legacy_absent,
+        "ast_sha256": canonical_hash(ast.dump(function, include_attributes=False)),
+        "all_exact": required_exact and legacy_absent,
+    }
+
+
 def build_gate_table(measurements: Mapping[str, Any]) -> dict[str, bool]:
     coherent = measurements["coherent"]
     category = measurements["category"]
@@ -5549,9 +7365,13 @@ def build_gate_table(measurements: Mapping[str, Any]) -> dict[str, bool]:
     fresh_exact = fresh is None or fresh["all_confirmed"]
     return {
         "specification": measurements["scope_valid"]
-        and measurements["static_scan"]["clean"],
+        and measurements["static_scan"]["clean"]
+        and measurements["support_promotion_static"]["all_exact"]
+        and measurements["regression_wall"]["all_exact"],
         "referent": measurements["referent_census"]["all_exact"]
-        and source_identity["inessential_formula_equal"],
+        and source_identity["inessential_formula_equal"]
+        and source_identity["contextual_boolean_alias_exact"]
+        and measurements["context_split_census"]["all_exact"],
         "complete_gamma": category["all_exact"]
         and coherent["first_isometry"]
         and coherent["second_isometry"]
@@ -5564,10 +7384,12 @@ def build_gate_table(measurements: Mapping[str, Any]) -> dict[str, bool]:
             "positive_for_every_rational_x"
         ]
         and measurements["totality"]["endpoint_domain_controls_normalized"]
+        and measurements["totality"]["all_nonzero_generator_transitions_bound"]
         and full_target["all_full"],
         "source_sufficiency": source_identity["equal_key_equal_profile"]
         and source_identity["distinct_filling_distinct_key"]
-        and source_identity["neutral_label_and_status_order_invariant"],
+        and source_identity["neutral_label_and_status_order_invariant"]
+        and source_identity["contextual_boolean_alias_exact"],
         "anti_wrapper": lineage["all_complete"]
         and measurements["shadow_lineages"]["all_outputs_bound"]
         and measurements["shadow_lineages"][
@@ -5579,9 +7401,14 @@ def build_gate_table(measurements: Mapping[str, Any]) -> dict[str, bool]:
         and measurements["shadow_lineages"]["all_arithmetic_recomputed"],
         "shadow_weld": coherent["B"] == native["B"]
         and coherent["C"] == native["C"],
-        "variable_carrier": bool(support["branches"]),
-        "support_change": support["all_inverse_merge"]
-        and support["all_support_changed"],
+        "variable_carrier": bool(support["branches"])
+        and support["all_bound_certificates_exact"]
+        and support["all_create_certificates_exact"]
+        and not support["context_proof_alone_is_promotive"]
+        and not support["legacy_role_cell_inequality_is_promotive"],
+        "support_change": support_promotion_predicate(
+            support, measurements["groupoid"]["split_certificate_covariance"]
+        ),
         "reciprocal": reciprocal["normalization"] == 1
         and reciprocal["counterfactual_probe_one"] == 0
         and reciprocal["contact_true_branch"]
@@ -5653,9 +7480,14 @@ def independent_outcome_index(measurements: Mapping[str, Any]) -> int:
     fresh = measurements.get("fresh_confirmation")
     fresh_exact = fresh is None or fresh["all_confirmed"]
     predicates = (
-        measurements["scope_valid"] and measurements["static_scan"]["clean"],
+        measurements["scope_valid"]
+        and measurements["static_scan"]["clean"]
+        and measurements["support_promotion_static"]["all_exact"]
+        and measurements["regression_wall"]["all_exact"],
         measurements["referent_census"]["all_exact"]
-        and measurements["source_identity"]["inessential_formula_equal"],
+        and measurements["source_identity"]["inessential_formula_equal"]
+        and measurements["source_identity"]["contextual_boolean_alias_exact"]
+        and measurements["context_split_census"]["all_exact"],
         measurements["category"]["all_exact"]
         and measurements["coherent"]["first_isometry"]
         and measurements["coherent"]["second_isometry"]
@@ -5668,10 +7500,12 @@ def independent_outcome_index(measurements: Mapping[str, Any]) -> int:
             "positive_for_every_rational_x"
         ]
         and measurements["totality"]["endpoint_domain_controls_normalized"]
+        and measurements["totality"]["all_nonzero_generator_transitions_bound"]
         and measurements["full_target"]["all_full"],
         measurements["source_identity"]["equal_key_equal_profile"]
         and measurements["source_identity"]["distinct_filling_distinct_key"]
-        and measurements["source_identity"]["neutral_label_and_status_order_invariant"],
+        and measurements["source_identity"]["neutral_label_and_status_order_invariant"]
+        and measurements["source_identity"]["contextual_boolean_alias_exact"],
         measurements["lineage"]["all_complete"]
         and measurements["shadow_lineages"]["all_outputs_bound"]
         and measurements["shadow_lineages"][
@@ -5683,9 +7517,19 @@ def independent_outcome_index(measurements: Mapping[str, Any]) -> int:
         and measurements["shadow_lineages"]["all_arithmetic_recomputed"],
         measurements["coherent"]["B"] == measurements["native_nondivision"]["B"]
         and measurements["coherent"]["C"] == measurements["native_nondivision"]["C"],
-        bool(measurements["support_change"]["branches"]),
+        bool(measurements["support_change"]["branches"])
+        and measurements["support_change"]["all_bound_certificates_exact"]
+        and measurements["support_change"]["all_create_certificates_exact"]
+        and not measurements["support_change"]["context_proof_alone_is_promotive"]
+        and not measurements["support_change"][
+            "legacy_role_cell_inequality_is_promotive"
+        ],
         measurements["support_change"]["all_inverse_merge"]
-        and measurements["support_change"]["all_support_changed"],
+        and measurements["support_change"]["all_support_changed"]
+        and measurements["support_change"]["all_create_certificates_exact"]
+        and measurements["support_change"]["all_merge_certificates_exact"]
+        and measurements["support_change"]["all_unchanged_certificates_exact"]
+        and measurements["groupoid"]["split_certificate_covariance"]["all_exact"],
         measurements["reciprocal"]["normalization"] == 1
         and measurements["reciprocal"]["counterfactual_probe_one"] == 0
         and measurements["reciprocal"]["contact_true_branch"]
@@ -5747,6 +7591,29 @@ def verify_outcome_rendering(measurements: Mapping[str, Any], rendered: str) -> 
     return rendered == independently_rebuilt
 
 
+def classify_repair_disposition(
+    measurements: Mapping[str, Any], attacks: Mapping[str, Any]
+) -> str:
+    if (
+        not measurements["static_scan"]["clean"]
+        or not measurements["support_promotion_static"]["all_exact"]
+        or not measurements["regression_wall"]["all_exact"]
+    ):
+        return "REPAIR-SPECIFICATION-INCONSISTENT"
+    if (
+        not measurements["context_split_census"]["all_exact"]
+        or not measurements["source_identity"]["contextual_boolean_alias_exact"]
+    ):
+        return "P13-REFERENT-PRESENTATION-ONLY"
+    if (
+        not measurements["gates"]["variable_carrier"]
+        or not measurements["gates"]["support_change"]
+        or any(not attacks["rows"][name]["pass"] for name in SPLIT_SUPPORT_ATTACKS)
+    ):
+        return "P13-SUPPORT-CHANGE-UNPROVEN"
+    return "REPAIR-GREEN-UNREVIEWED"
+
+
 def measure_scientific_core(source_text: str) -> dict[str, Any]:
     law = GammaLaw(Fraction(1, 2))
     representative = build_coherent_control("receipt_")
@@ -5771,13 +7638,22 @@ def measure_scientific_core(source_text: str) -> dict[str, Any]:
         "scope_walls": SCOPE_WALLS,
         "scope_valid": True,
         "static_scan": static_source_scan(source_text),
+        "support_promotion_static": support_promotion_source_scan(source_text),
         "measurement_programme": MEASUREMENT_PROGRAMME,
+        "historical_old_source_provenance": dict(
+            HISTORICAL_OLD_SOURCE_PROVENANCE
+        ),
     }
     validate_scope_surface(measurements["scope_coordinates"], measurements["scope_walls"])
     measurements["boolean_quotient"] = measure_boolean_quotient()
+    measurements["context_split_census"] = measure_context_split_census(law)
     measurements["source_identity"] = measure_source_identity(law)
     measurements["groupoid"] = measure_groupoid_covariance(law)
     measurements["full_target"] = measure_full_target_retyping(law)
+    measurements["category"] = measure_category_laws(law)
+    measurements["coherent"] = measure_coherent_controls(law)
+    measurements["totality"] = measure_totality_certificate(law)
+    measurements["support_change"] = measure_support_change(law)
     measurements["public_language"] = _public_language_selfcheck(measurements)
     measurements["referent_census"] = {
         "essential_boolean_support_exact": measurements["boolean_quotient"][
@@ -5795,22 +7671,38 @@ def measure_scientific_core(source_text: str) -> dict[str, Any]:
         == measurements["full_target"]["first_returned_coordinate_count"],
         "complete_source_identity": measurements["source_identity"][
             "equal_key_equal_profile"
+        ]
+        and measurements["source_identity"]["contextual_boolean_alias_exact"],
+        "contextual_boolean_census_exact": measurements["context_split_census"][
+            "all_exact"
+        ],
+        "context_proof_nonpromotive": measurements["context_split_census"][
+            "context_proofs_are_nonpromotive"
+        ]
+        and not measurements["support_change"]["context_proof_alone_is_promotive"],
+        "bound_split_classifier_exact": measurements["support_change"][
+            "all_bound_certificates_exact"
         ],
         "groupoid_transport_exact": measurements["groupoid"]["all_exact"]
+        and measurements["groupoid"]["split_certificate_covariance"]["all_exact"]
         and measurements["groupoid"]["cache_hits"] == 0
         and not measurements["groupoid"]["cache_implementation_present"],
+        "bound_split_classifier_sha256": measurements["support_change"][
+            "classifier_consumed_certificate_sha256"
+        ],
     }
     measurements["referent_census"]["all_exact"] = all(
-        measurements["referent_census"].values()
+        value
+        for key, value in measurements["referent_census"].items()
+        if key != "bound_split_classifier_sha256"
     )
-    measurements["category"] = measure_category_laws(law)
-    measurements["coherent"] = measure_coherent_controls(law)
-    measurements["totality"] = measure_totality_certificate(law)
-    measurements["support_change"] = measure_support_change(law)
     measurements["reciprocal"] = measure_reciprocal_response(law)
     measurements["division"] = measure_record_division(law)
     measurements["native_nondivision"] = measure_native_nondivision(law)
     measurements["blind_family"] = measure_blind_family(law)
+    measurements["regression_wall"] = build_result_neutral_regression_wall(
+        measurements, source_text
+    )
     measurements["lineage"] = _lineage_gate(law, measurements)
     measurements["shadow_lineages"] = build_shadow_lineages(measurements)
     measurements["exposed_anchor_assertions"] = assert_exposed_controls(measurements)
@@ -5943,6 +7835,19 @@ SCOPE_ATTACKS = (
     "NORMALIZATION-TO-ACTUALIZATION",
 )
 GROUPID_ATTACKS = ("RELABEL-RAW-NAME", "RELABEL-ORIENTATION")
+SPLIT_SUPPORT_ATTACKS = (
+    "TAUTOLOGICAL-CHILD",
+    "COEXTENSIVE-CHILD-OBJECT",
+    "FORGET-ONLY",
+    "CELL-COUNT-PADDING",
+    "ROLE-COUNT-ONLY",
+    "TRANSPORT-SPLIT-SEVER",
+    "SUPPLIED-SPLIT-BOOLEAN",
+    "CERTIFICATE-PORT-SWAP",
+    "OLD-CHILD-REUSE",
+    "AMBIENT-TARGET-PADDING",
+    "CONTEXTUAL-BOOLEAN-ALIAS",
+)
 MUTANT_IDS = (
     BOUNDARY_ATTACKS
     + LANGUAGE_ATTACKS
@@ -5956,6 +7861,7 @@ MUTANT_IDS = (
     + SCOPE_ATTACKS
     + ("FLOAT-OR-EXPECTED-TABLE", "ANCHOR-CORRUPTION", "OUTCOME-FLIP")
     + GROUPID_ATTACKS
+    + SPLIT_SUPPORT_ATTACKS
 )
 
 
@@ -5996,6 +7902,8 @@ def run_attack(
         return _outcome_flip_attack(measurements)
     if identifier in GROUPID_ATTACKS:
         return _groupoid_attacks(identifier)
+    if identifier in SPLIT_SUPPORT_ATTACKS:
+        return _split_support_attacks(identifier)
     raise Refusal("unreachable mutant dispatcher branch")
 
 
@@ -6011,6 +7919,11 @@ def run_all_attacks(measurements: Mapping[str, Any]) -> dict[str, Any]:
 
 
 ANCHOR_SPECS = (
+    (
+        "v16/note-paper13-stageA-support-split-forward-repair-pin.md",
+        FORWARD_REPAIR_PIN_SHA256,
+        "support-split-forward-repair-contract",
+    ),
     (
         "v16/note-paper13-one-gamma-construction-pin.md",
         PIN_SHA256,
@@ -6042,10 +7955,30 @@ ANCHOR_SPECS = (
         PAPER12_RECEIPT_SHA256,
         "authentication-only-never-scientific-input",
     ),
+    (
+        "v16/note-paper13-gamma-source-freeze.md",
+        OLD_STAGE_A_FREEZE_SHA256,
+        "historical-flawed-freeze-authentication-only",
+    ),
+    (
+        "v16/review-paper13-stageA-source-physics.md",
+        STAGE_A_PHYSICS_REPORT_SHA256,
+        "source-audit-physics-report-authentication-only",
+    ),
+    (
+        "v16/review-paper13-stageA-source-records.md",
+        STAGE_A_RECORDS_REPORT_SHA256,
+        "source-audit-records-report-authentication-only",
+    ),
+    (
+        "v16/note-paper13-stageA-source-audit-adjudication.md",
+        STAGE_A_ADJUDICATION_SHA256,
+        "source-audit-adjudication-authentication-only",
+    ),
 )
 STAGE_A_TASK_PATHS = (
     "v16/code/p13_gamma_exact.py",
-    "v16/note-paper13-gamma-source-freeze.md",
+    "v16/note-paper13-gamma-source-freeze-v2.md",
 )
 STAGE_B_PUBLICATION_PATHS = (
     "v16/code/p13_gamma_fresh_cases.json",
@@ -6116,6 +8049,7 @@ def authenticate_committed_inputs(
         raise IntegrityFailure("read-set start index is invalid")
     root = repository_root()
     reads: list[dict[str, Any]] = []
+    anchor_payloads: dict[str, bytes] = {}
     if source_payload is None:
         source_payload = source_path().read_bytes()
     _require_exact(source_payload, bytes, "evaluator source payload")
@@ -6134,6 +8068,7 @@ def authenticate_committed_inputs(
         ANCHOR_SPECS, start=start_index + 1
     ):
         payload = (root / logical_path).read_bytes()
+        anchor_payloads[logical_path] = payload
         authentication = authenticate_payload(payload, expected, logical_path)
         reads.append(
             {
@@ -6149,6 +8084,12 @@ def authenticate_committed_inputs(
         raise IntegrityFailure("anchor consumption keys are not unique")
     if not all(row["consumed"] for row in reads):
         raise IntegrityFailure("an authenticated anchor was not consumed")
+    historical_token = OLD_STAGE_A_SOURCE_SHA256.encode("ascii")
+    for logical_path in HISTORICAL_OLD_SOURCE_PROVENANCE["cross_checked_from"]:
+        if historical_token not in anchor_payloads[logical_path]:
+            raise IntegrityFailure(
+                "historical unobserved source hash is absent from provenance"
+            )
     return tuple(reads)
 
 
@@ -6549,6 +8490,19 @@ def _public_language_selfcheck(measurements: Mapping[str, Any]) -> dict[str, Any
     source = representative["source_state"]
     linear_map = evaluate_arrow(measurements["law"], arrow)
     gamma = gamma_evaluate(measurements["law"], arrow, source)
+    first_evaluation = gamma_evaluate(measurements["law"], first_generator, source)
+    first_target_index = next(
+        index
+        for index, probability in enumerate(first_evaluation.probabilities)
+        if probability != 0
+    )
+    split_certificate = build_bound_split_certificate(
+        measurements["law"],
+        first_generator,
+        source,
+        first_generator.target.catalogue[first_target_index],
+    )
+    split_proof = split_certificate.context_proof
     record = build_record_control("closure_")
     matching = MatchingPresentation(
         3, (0, 2, 1), (0, 1), "EXPOSED-CONTROL"
@@ -6558,6 +8512,8 @@ def _public_language_selfcheck(measurements: Mapping[str, Any]) -> dict[str, Any
         formula_constant(False),
         boundary.base.roles[0],
         boundary.base,
+        split_proof.rows[0],
+        split_proof,
         boundary.ports[0].port,
         boundary.ports[0],
         source,
@@ -6569,6 +8525,7 @@ def _public_language_selfcheck(measurements: Mapping[str, Any]) -> dict[str, Any
         linear_map.derivation,
         linear_map,
         gamma,
+        split_certificate,
         record["grammar"],
         matching,
         witness,
@@ -6683,14 +8640,18 @@ def _read_ledger_selfcheck() -> dict[str, Any]:
             "consumption_key": "authoritative-evaluator-and-generator",
             "consumed": True,
         },
+    ) + tuple(
         {
-            "open_index": 2,
-            "path": "RUNBOOK.md",
-            "expected_sha256": RUNBOOK_SHA256,
-            "observed_sha256": RUNBOOK_SHA256,
-            "consumption_key": "process-integrity-contract",
+            "open_index": index,
+            "path": path,
+            "expected_sha256": expected,
+            "observed_sha256": expected,
+            "consumption_key": consumption_key,
             "consumed": True,
-        },
+        }
+        for index, (path, expected, consumption_key) in enumerate(
+            ANCHOR_SPECS, start=2
+        )
     )
     shifted_rows = tuple(
         dict(row) | {"open_index": row["open_index"] + 1}
@@ -6709,6 +8670,24 @@ def _read_ledger_selfcheck() -> dict[str, Any]:
     manifest_invariant = authentication_manifest_hash(
         semantic_rows
     ) == authentication_manifest_hash(shifted_rows)
+    expected_anchor_paths = tuple(path for path, _, _ in ANCHOR_SPECS)
+    observed_anchor_paths = tuple(row["path"] for row in semantic_rows[1:])
+    required_forward_paths = (
+        "v16/note-paper13-stageA-support-split-forward-repair-pin.md",
+        "v16/note-paper13-gamma-source-freeze.md",
+        "v16/review-paper13-stageA-source-physics.md",
+        "v16/review-paper13-stageA-source-records.md",
+        "v16/note-paper13-stageA-source-audit-adjudication.md",
+    )
+    historical_unobserved_exact = (
+        HISTORICAL_OLD_SOURCE_PROVENANCE["sha256"]
+        == OLD_STAGE_A_SOURCE_SHA256
+        and HISTORICAL_OLD_SOURCE_PROVENANCE["observation"]
+        == "historical-unobserved"
+        and HISTORICAL_OLD_SOURCE_PROVENANCE["live_disk_anchor"] is False
+        and OLD_STAGE_A_SOURCE_SHA256
+        not in {row["expected_sha256"] for row in semantic_rows}
+    )
     return {
         "generator_open_order": tuple(row["path"] for row in semantic_rows),
         "official_open_order": tuple(row["path"] for row in official_rows),
@@ -6717,8 +8696,19 @@ def _read_ledger_selfcheck() -> dict[str, Any]:
         == "v16/code/p13_gamma_fresh_cases.json"
         and official_rows[1]["path"] == "v16/code/p13_gamma_exact.py",
         "anchor_manifest_ignores_only_open_position": manifest_invariant,
+        "anchor_paths_two_way_equal": observed_anchor_paths
+        == expected_anchor_paths,
+        "required_forward_anchor_paths": required_forward_paths,
+        "required_forward_anchor_paths_live": all(
+            path in observed_anchor_paths for path in required_forward_paths
+        ),
+        "historical_old_source": HISTORICAL_OLD_SOURCE_PROVENANCE,
+        "historical_old_source_unobserved_exact": historical_unobserved_exact,
         "all_consumed": all(row["consumed"] for row in official_rows),
         "all_exact": manifest_invariant
+        and observed_anchor_paths == expected_anchor_paths
+        and all(path in observed_anchor_paths for path in required_forward_paths)
+        and historical_unobserved_exact
         and tuple(row["open_index"] for row in official_rows)
         == tuple(range(1, len(official_rows) + 1))
         and all(row["consumed"] for row in official_rows),
@@ -6757,6 +8747,7 @@ def run_selftest() -> dict[str, Any]:
         attacks = run_all_attacks(measurements)
     finally:
         sys.meta_path.remove(denial)
+    repair_disposition = classify_repair_disposition(measurements, attacks)
     public_language = measurements["public_language"]
     cli_parser = _cli_parser_selfcheck()
     read_ledger = _read_ledger_selfcheck()
@@ -6824,6 +8815,27 @@ def run_selftest() -> dict[str, Any]:
             },
         ),
         _selftest_check(
+            "CONTEXT-SPLIT-CENSUS-72-AMBIENT-42-CONTEXTUAL",
+            measurements["context_split_census"]["counts_exact"]
+            and measurements["context_split_census"]["all_replayed"]
+            and measurements["context_split_census"]["all_context_proofs_exact"]
+            and measurements["context_split_census"][
+                "all_within_class_invariance_exact"
+            ]
+            and measurements["context_split_census"][
+                "context_proofs_are_nonpromotive"
+            ],
+            measurements["context_split_census"],
+        ),
+        _selftest_check(
+            "CONTEXTUAL-BOOLEAN-ALIAS-PHYSICAL-IDENTITY",
+            measurements["source_identity"]["contextual_boolean_alias_exact"]
+            and measurements["context_split_census"]["contextual_alias"][
+                "all_physical_fields_equal"
+            ],
+            measurements["context_split_census"]["contextual_alias"],
+        ),
+        _selftest_check(
             "PUBLIC-PRIMITIVE-LANGUAGE-CLOSED",
             public_language["all_registered_visited"],
             public_language,
@@ -6869,7 +8881,14 @@ def run_selftest() -> dict[str, Any]:
             ]
             and measurements["totality"][
                 "endpoint_domain_controls_normalized"
-            ],
+            ]
+            and measurements["totality"][
+                "all_nonzero_generator_transitions_bound"
+            ]
+            and measurements["totality"][
+                "total_bound_split_certificate_count"
+            ]
+            > 0,
             measurements["totality"],
         ),
         _selftest_check(
@@ -6891,6 +8910,13 @@ def run_selftest() -> dict[str, Any]:
             measurements["groupoid"],
         ),
         _selftest_check(
+            "BOUND-SPLIT-GROUPOID-IDENTITY-INVERSE-COMPOSITION",
+            measurements["groupoid"]["split_certificate_covariance"][
+                "all_exact"
+            ],
+            measurements["groupoid"]["split_certificate_covariance"],
+        ),
+        _selftest_check(
             "ONE-PRIMITIVE-ROOT-LINEAGE",
             measurements["lineage"]["all_complete"]
             and measurements["shadow_lineages"]["all_outputs_bound"]
@@ -6909,7 +8935,25 @@ def run_selftest() -> dict[str, Any]:
         _selftest_check(
             "ACTIVE-SUPPORT-CHANGE-AND-INVERSE-MERGE",
             measurements["support_change"]["all_inverse_merge"]
-            and measurements["support_change"]["all_support_changed"],
+            and measurements["support_change"]["all_support_changed"]
+            and measurements["support_change"]["all_bound_certificates_exact"],
+            measurements["support_change"],
+        ),
+        _selftest_check(
+            "BOUND-SPLIT-CREATE-MERGE-UNCHANGED-EXHAUSTIVE",
+            measurements["support_change"]["operation_counts"]
+            == {"CREATE": 4, "MERGE": 4, "UNCHANGED": 4}
+            and measurements["support_change"]["all_create_certificates_exact"]
+            and measurements["support_change"]["all_merge_certificates_exact"]
+            and measurements["support_change"][
+                "all_unchanged_certificates_exact"
+            ]
+            and not measurements["support_change"][
+                "context_proof_alone_is_promotive"
+            ]
+            and not measurements["support_change"][
+                "legacy_role_cell_inequality_is_promotive"
+            ],
             measurements["support_change"],
         ),
         _selftest_check(
@@ -7042,14 +9086,27 @@ def run_selftest() -> dict[str, Any]:
             {"measurement_programme": measurements["measurement_programme"]},
         ),
         _selftest_check(
+            "RESULT-NEUTRAL-SCIENTIFIC-REGRESSION-WALL",
+            measurements["regression_wall"]["all_exact"]
+            and measurements["support_promotion_static"]["all_exact"],
+            {
+                "regression_wall": measurements["regression_wall"],
+                "support_promotion_static": measurements[
+                    "support_promotion_static"
+                ],
+            },
+        ),
+        _selftest_check(
             "OUTCOME-LADDER-CAP-AND-INDEPENDENT-COMPARATOR",
             measurements["strict_primary"] == ELIGIBLE_CAP
-            and measurements["outcome_comparator"],
+            and measurements["outcome_comparator"]
+            and repair_disposition == "REPAIR-GREEN-UNREVIEWED",
             {
                 "strict_primary": measurements["strict_primary"],
                 "eligible_cap": ELIGIBLE_CAP,
                 "independent_index": independent_outcome_index(measurements),
                 "render_trace": measurements["outcome_render_trace"],
+                "repair_disposition": repair_disposition,
             },
         ),
         _selftest_check(
@@ -7068,6 +9125,19 @@ def run_selftest() -> dict[str, Any]:
             "ALL-REGISTERED-MUTATIONS-KILLED",
             attacks["all_pass"] and attacks["killed"] == len(MUTANT_IDS),
             attacks,
+        ),
+        _selftest_check(
+            "S1-THROUGH-S11-SPLIT-ATTACKS-KILLED",
+            all(attacks["rows"][name]["pass"] for name in SPLIT_SUPPORT_ATTACKS)
+            and tuple(name for name in MUTANT_IDS if name in SPLIT_SUPPORT_ATTACKS)
+            == SPLIT_SUPPORT_ATTACKS,
+            {
+                "names": SPLIT_SUPPORT_ATTACKS,
+                "rows": {
+                    name: attacks["rows"][name]
+                    for name in SPLIT_SUPPORT_ATTACKS
+                },
+            },
         ),
         _selftest_check(
             "SYNTHETIC-ANCHOR-CORRUPTION-IS-INTEGRITY-ONLY",
@@ -7108,7 +9178,7 @@ def run_selftest() -> dict[str, Any]:
             STAGE_A_TASK_PATHS
             == (
                 "v16/code/p13_gamma_exact.py",
-                "v16/note-paper13-gamma-source-freeze.md",
+                "v16/note-paper13-gamma-source-freeze-v2.md",
             )
             and STAGE_B_PUBLICATION_PATHS
             == (
@@ -7163,6 +9233,7 @@ def run_selftest() -> dict[str, Any]:
             "registry_sha256": canonical_hash(MUTANT_IDS),
         },
         "mutations": attacks["rows"],
+        "repair_disposition": repair_disposition,
         "scientific_fixture_evaluated": False,
         "fresh_cases_read": False,
         "official_artifacts_read": False,
@@ -7172,14 +9243,38 @@ def run_selftest() -> dict[str, Any]:
 
 
 CLAIM_FALSIFIERS = {
-    "specification": ("FLOAT-OR-EXPECTED-TABLE", "ANCHOR-CORRUPTION"),
-    "referent": ("RELABEL-RAW-NAME", "RELABEL-ORIENTATION"),
+    "specification": (
+        "FLOAT-OR-EXPECTED-TABLE",
+        "ANCHOR-CORRUPTION",
+        "ROLE-COUNT-ONLY",
+    ),
+    "referent": (
+        "RELABEL-RAW-NAME",
+        "RELABEL-ORIENTATION",
+        "OLD-CHILD-REUSE",
+        "CONTEXTUAL-BOOLEAN-ALIAS",
+    ),
     "complete_gamma": ("RESET-ONE", "FORGED-COMPOSE-TARGET"),
     "source_sufficiency": ("SOURCE-KEY-OMITS-FILLING", "POSTINIT-LAW-IDENTITY"),
     "anti_wrapper": ("WRAPPER-GAMMA", "OCCURRENCE-SEVER"),
     "shadow_weld": ("CACHED-G-OR-SHADOW", "PHASE-REFLECTION-MUTATION"),
-    "variable_carrier": ("META-CATALOGUE-AS-SUPPORT", "MOVE-DOWNSTREAM"),
-    "support_change": ("SUPPORT-FILTERED-TARGET", "FULL-TARGET-RETYPE"),
+    "variable_carrier": (
+        "META-CATALOGUE-AS-SUPPORT",
+        "MOVE-DOWNSTREAM",
+        "COEXTENSIVE-CHILD-OBJECT",
+        "SUPPLIED-SPLIT-BOOLEAN",
+    ),
+    "support_change": (
+        "SUPPORT-FILTERED-TARGET",
+        "FULL-TARGET-RETYPE",
+        "TAUTOLOGICAL-CHILD",
+        "FORGET-ONLY",
+        "CELL-COUNT-PADDING",
+        "ROLE-COUNT-ONLY",
+        "TRANSPORT-SPLIT-SEVER",
+        "CERTIFICATE-PORT-SWAP",
+        "AMBIENT-TARGET-PADDING",
+    ),
     "reciprocal": ("DELAYED-READER-SEVER", "QUERY-FORMULA-MUTATION"),
     "division": ("RESET-WRITER-CHAIN", "HIDDEN-ERASER"),
     "native_nondivision": (
@@ -7189,7 +9284,13 @@ CLAIM_FALSIFIERS = {
     "blind_class": ("LEAKED-INCIDENCE-BIT", "CONSTANT-BLIND-TOKEN"),
 }
 CLAIM_INPUT_PATHS = {
-    "specification": ("static_scan", "scope_coordinates", "scope_walls"),
+    "specification": (
+        "static_scan",
+        "support_promotion_static",
+        "scope_coordinates",
+        "scope_walls",
+        "regression_wall",
+    ),
     "referent": (
         "referent_census",
         "boolean_quotient",
@@ -7197,13 +9298,19 @@ CLAIM_INPUT_PATHS = {
         "full_target",
         "groupoid",
         "source_identity",
+        "context_split_census",
+        "support_change",
     ),
     "complete_gamma": ("category", "coherent", "full_target", "totality"),
-    "source_sufficiency": ("source_identity", "representative_application"),
+    "source_sufficiency": (
+        "source_identity",
+        "context_split_census",
+        "representative_application",
+    ),
     "anti_wrapper": ("lineage", "shadow_lineages"),
     "shadow_weld": ("coherent", "native_nondivision"),
-    "variable_carrier": ("support_change",),
-    "support_change": ("support_change",),
+    "variable_carrier": ("support_change", "context_split_census"),
+    "support_change": ("support_change", "groupoid", "context_split_census"),
     "reciprocal": ("reciprocal",),
     "division": ("division",),
     "native_nondivision": ("native_nondivision",),
@@ -7312,6 +9419,7 @@ def render_output_payload(measurements: Mapping[str, Any]) -> dict[str, Any]:
     base = {
         "schema": "p13-gamma-output-v1",
         "strict_primary": measurements["strict_primary"],
+        "repair_disposition": measurements.get("repair_disposition"),
         "outcome_render_trace": measurements["outcome_render_trace"],
         "eligible_cap": ELIGIBLE_CAP,
         "future_rungs_ineligible": OUTCOME_LADDER[13:],
@@ -7445,6 +9553,7 @@ def build_receipt(
     claims = build_claim_table(measurements, attacks)
     fresh = measurements["fresh_confirmation"]
     artifacts = {
+        "forward_repair_pin_sha256": FORWARD_REPAIR_PIN_SHA256,
         "pin_sha256": PIN_SHA256,
         "runbook_sha256": RUNBOOK_SHA256,
         "predecessor_sha256": PREDECESSOR_SHA256,
@@ -7452,6 +9561,11 @@ def build_receipt(
         "paper12_adjudication_sha256": PAPER12_ADJUDICATION_SHA256,
         "paper12_evaluator_sha256": PAPER12_EVALUATOR_SHA256,
         "paper12_receipt_sha256": PAPER12_RECEIPT_SHA256,
+        "old_stage_a_freeze_sha256": OLD_STAGE_A_FREEZE_SHA256,
+        "stage_a_physics_report_sha256": STAGE_A_PHYSICS_REPORT_SHA256,
+        "stage_a_records_report_sha256": STAGE_A_RECORDS_REPORT_SHA256,
+        "stage_a_adjudication_sha256": STAGE_A_ADJUDICATION_SHA256,
+        "historical_old_source": HISTORICAL_OLD_SOURCE_PROVENANCE,
         "source_sha256": source_sha256,
         "fresh_case_file_sha256": fresh_file_sha256,
         "fresh_case_payload_sha256": fresh_payload["normalized_payload_sha256"],
@@ -7467,6 +9581,8 @@ def build_receipt(
         "apr_scientific_input": False,
         "private_exploratory_input": False,
         "scientific_fixture_evaluated": False,
+        "old_source_observation": "historical-unobserved",
+        "old_freeze_and_audits_scientific_input": False,
     }
     freshness_ledger = {
         "domain_ascii": fresh_payload["domain_ascii"],
@@ -7489,6 +9605,7 @@ def build_receipt(
     sealed = {
         "schema": SCHEMA,
         "strict_primary": measurements["strict_primary"],
+        "repair_disposition": measurements["repair_disposition"],
         "eligible_cap": ELIGIBLE_CAP,
         "outcome_ladder": OUTCOME_LADDER,
         "outcome_comparator": measurements["outcome_comparator"],
@@ -7637,6 +9754,9 @@ def run_official_mode(parsed: Mapping[str, str]) -> dict[str, Any]:
     if not measurements["outcome_comparator"]:
         raise IntegrityFailure("official outcome comparator disagrees")
     attacks = run_all_attacks(measurements)
+    measurements["repair_disposition"] = classify_repair_disposition(
+        measurements, attacks
+    )
 
     output_payload = render_output_payload(measurements)
     output_bytes = (canonical_json(output_payload) + "\n").encode("ascii")
@@ -7664,6 +9784,7 @@ def run_official_mode(parsed: Mapping[str, str]) -> dict[str, Any]:
         "mode": "run",
         "status": "PASS",
         "strict_primary": measurements["strict_primary"],
+        "repair_disposition": measurements["repair_disposition"],
         "eligible_cap": ELIGIBLE_CAP,
         "source_sha256": source_sha,
         "fresh_file_sha256": fresh_file_sha,

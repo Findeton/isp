@@ -962,6 +962,18 @@ representatives but exactly 42 physical contextual classes.  Only the bounded
 repair on the five whitelisted paths is now authorized.  Stage B and every
 scientific or metric-later unit remain closed.
 
+The repaired Stage-A evaluator source and its v2 freeze note freeze at #197 as
+`REPAIR-GREEN-UNREVIEWED`.  The evaluator recomputes 72 ambient Boolean
+representatives as 42 contextual classes, binds all 468 nonzero transitions
+across 12 generator families to exact CREATE/MERGE/UNCHANGED split
+certificates, passes 42/42 checks, and kills 92/92 registered attacks.  Root,
+alien-CWD, and true source-only off-tree/no-`.git` selftests are byte-identical.
+Real post-freeze S1 and S5 source mutations both fail and move the registered
+certificate/gate/dependency evidence for their prescribed reasons.  This is
+an instrumentation freeze only: no scientific rung is awarded, no fresh or
+official mode has run, and Stage B remains closed until at least two
+independent no-import post-freeze audits accept the #197 bytes.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

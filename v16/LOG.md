@@ -4321,3 +4321,41 @@ This pin authorizes only the forward source repair and new v2 freeze note on
 the five explicit construction paths.  The #192 source, old note, reports, and
 adjudication remain immutable anchors.  No fresh case, official run, paper,
 scientific rung, metric, curvature, gravity, or GR work is authorized.
+
+## 2026-08-19 — PAPER 13 STAGE-A SUPPORT-SPLIT REPAIR SOURCE FROZEN (v16 LEDGER #197)
+
+`v16/code/p13_gamma_exact.py`, SHA-256
+`3da3161c7eef63b90da9c6cb85f7bc918d6e5c99fa431f07d273efd1f18e519e`,
+and `v16/note-paper13-gamma-source-freeze-v2.md`, SHA-256
+`216ffd6ad9559f68d54dedc46cc4be82146619659f0493b120689a814965f9f6`,
+freeze the bounded #196 repair.  The source is 9,913 lines / 389,487 bytes;
+the note is 315 lines / 14,340 bytes.
+
+The fixture-free selftest passes 42/42 checks and kills 92/92 registered
+attacks.  Its registry SHA-256 is
+`7f60ecd06c85c4b4a3eb18ceb7b86470201904cfcd27c7f9c14392c58ea54aeb`,
+normalized payload SHA-256 is
+`0894a736dd27ac2be619c0c4e9f24e79ac897b1d8675e2176096df40e7d307fa`,
+and exact 27,380,971-byte stdout SHA-256 is
+`8ce3c4afbf1cb99be5f5408155af9a3123a6cdf485a8221248b5f31ec893d3e1`.
+Repository-root, alien-CWD, and true source-only off-tree/no-`.git` replays are
+byte-identical.  The exact census is 72 ambient representatives / 42
+contextual classes / 72 replays.  Twelve generator families expose 312 source
+columns and 468 nonzero transitions, every one carrying a bound split
+certificate; the representative CREATE/MERGE/UNCHANGED counts are 4/4/4.
+
+Real post-freeze source-only S1 `TAUTOLOGICAL-CHILD` and S5
+`ROLE-COUNT-ONLY` mutations both exit nonzero.  S1 removes the required
+two-point fiber and moves the measurement, operator/shadow lineage,
+claim-input DAG, receipt slice, support gates, and outcome index.  S5 replaces
+the promotion predicate with the legacy role/count inequality and is stopped
+by the source AST, regression wall, independent comparator, specification
+gate, outcome index, and seal; the registered certificate-object companion
+also moves measurement, lineage, claim, and seal.  No stale final Boolean can
+earn promotion.
+
+The disposition is strictly `REPAIR-GREEN-UNREVIEWED`.  No
+`--generate-fresh`, official `--run`, fixture import, publication write,
+output, receipt, verification note, paper, or Stage-B/C bundle exists.  Stage B
+remains blocked until the two required independent post-freeze source audits
+accept these exact bytes.  No scientific or ontology rung moves at #197.
