@@ -3999,3 +3999,27 @@ independently replayed semantic counterexample terminalizes APR at
 `APR-BLOCKED-AT-BOUNDARY-GLUING`; no v5b/v6 instrumentation repair is
 authorized. The next event is scorer-only implementation with fixture-free
 development tests. No candidate or scientific panel is authorized.
+
+## 2026-08-19 — APR V5 SCORER SOURCE FROZEN (v16 LEDGER #178)
+
+`v16/code/apr_score.py` freezes at SHA-256
+`c2a9f467d5f2403021634c4b056b63769b5a0e8003fff8e472d5f2a1236ec205`
+before any v5 fixture evaluation. The scorer is 19,368 lines / 757,632 bytes;
+only that source moved from #177. The companion freeze note records the exact
+pin/core/fixture hashes, permanent exposure debt, absent v5 artifact paths,
+and the immutable v4 scientific hashes.
+
+Repository and true off-tree/no-git final-byte self-tests are byte-identical:
+47 checks, 24 semantic attacks, zero fixture import attempts,
+`scientific_fixture_evaluated=false`, witness SHA
+`4256f6db060acc7fa2aec4b10cf8674029ab4f92fb9cb08d0345f978d336f1de`,
+and stdout SHA
+`17c636328cf25de41a1abb3444bab26755fdbfb287f5470d7df40d5599dd1cec`.
+Real one-token off-tree source mutations of coefficient conjugation, history
+adjoint, and `z` adjoint all return nonzero at the quantum gate.
+
+This remains verifier plumbing, not a physical indivisible law. After this
+commit no scorer-byte repair is authorized: a confirmed independent semantic
+counterexample terminalizes APR at the frozen boundary-gluing result. The next
+event is one official run to the absent v5 destinations, followed by two
+independent reconstructions. No candidate or panel is authorized.

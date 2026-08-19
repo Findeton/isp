@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V5 EXECUTABLE-LAW WELD PIN FROZEN (v16 #177); ONE FINAL SCORER REPAIR AUTHORIZED**.
+Status: **V5 SCORER SOURCE FROZEN BEFORE FIXTURE RUN (v16 #178); OFFICIAL RUN THEN TWO INDEPENDENT RECONSTRUCTIONS**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -783,6 +783,15 @@ terminalizes APR at the boundary-gluing result; no v5b/v6 instrumentation
 repair follows. V5 certifies verifier plumbing only. The next physical unit,
 if reached, must begin with one complete relational transition law `Gamma`
 and derive regional, instrument, record, and rewrite objects as its shadows.
+
+The final v5 scorer bytes freeze at #178 before any fixture load. Repository
+and true off-tree/no-git runs of the exact source pass 47 reconstructible
+checks and 24 attacks with byte-identical stdout; three real private
+one-token source mutations each fail at the quantum gate. The scorer is now
+immutable. The sole next event is one official transactional run to new v5
+paths, followed by two independent black-box/source reconstructions. A green
+result can certify only verifier plumbing and the frozen APR negative; a
+confirmed semantic counterexample terminalizes APR with no scorer restart.
 
 ## Successor register
 
