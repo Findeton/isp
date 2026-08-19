@@ -3506,3 +3506,38 @@ This is a data freeze, not a result. The catalogue proves no cospan functor,
 complete future grammar, regional congruence, fixed-effect locality,
 recoverability, causal order, quantum process, physical ontology, geometry,
 or gravity. Those remain semantic scorer and hostile-review questions.
+
+## 2026-08-18 — APR SEMANTIC SCORER PROTOCOL FROZEN (v16 LEDGER #159)
+
+`v16/note-apr-scorer-protocol.md` freezes the semantic reconstruction rules,
+mutant transformations, receipt schema, and integrity contract before
+`apr_score.py`, fixture truth, official artifacts, candidate prose, or a
+preferred APR outcome exists. Its SHA-256 is
+`0ff8687231a99edb3264b2a24c10cec49e2e52c4e5c7720e7a7089983c227e31`.
+
+The scorer must reconstruct full-cone question instruments, decision-tree
+branch cells, cospan pushouts, process functoriality, tensor, vertical
+naturality, generated probes, three different quotient types, post-quotient
+atomlessness, record recovery, predictive boundaries, comparison screens,
+contact/influence, overlap gluing, family-level E-37 behavior, and one-law
+provenance. Fixture identifiers, textual roles, supplied subspaces, and
+typing-only cospan receipts are never scientific results.
+
+The locality gate separately computes the restricted child-swap fixed space
+and the intrinsic relative-complement fixed space. The `[00]` exterior-orbit
+residual and depth-two regrouping are mandatory kills; only an explicitly
+generated, transitive, conjugation-closed intrinsic grammar may reach
+REGIONAL-SUPPORT. Questions alone are nonselective identities and cannot be
+retyped as exterior dynamics.
+
+The executable transformation battery freezes M01–M30 and M33–M35, process
+mutants P1–P8, locality mutants L1–L6, and gluing mutants G1–G7. M31 is a
+resource-class sensitivity test and M32 is mandatory for any quantum
+promotion. Every mutant is a primitive transformation judged by a generic
+semantic/metamorphic predicate; no expected result table is allowed.
+
+The scorer must publish output and receipt transactionally, authenticate all
+five frozen inputs and the fixture payload, run with exact arithmetic from
+repo, alien CWD, and true off-tree/no-git copies, and leave no partial artifact
+on refusal. The next authorized construction event is implementation of
+`v16/code/apr_score.py` against this protocol. No APR outcome is yet known.

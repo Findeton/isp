@@ -665,6 +665,14 @@ screen, verdict, outcome word, or computed physics. The next event is a
 separately frozen semantic scorer protocol and mutant catalogue; only after
 that freeze may `apr_score.py` be implemented or any fixture truth computed.
 
+Construction stage 3 is frozen at v16 #159. The semantic scorer protocol
+binds independent reconstruction, provenance, outcome precedence, receipt
+structure, transactional publication, and the complete M/P/L/G mutant
+battery. It contains no fixture measurement or expected verdict. The next
+authorized event is implementation and internal verification of
+`v16/code/apr_score.py`; official scoring follows only after that scorer is
+frozen and committed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
