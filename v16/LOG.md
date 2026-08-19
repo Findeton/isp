@@ -3821,3 +3821,32 @@ exposure remains attached and the required artifact metadata says so. The
 next authorized event is one committed-byte transactional run to new v3
 paths, followed by root/alien/off-tree replay and the expanded independent
 black-box verifier. No candidate or panel is authorized yet.
+
+## 2026-08-19 — APR V3 ARTIFACTS PRESERVED; SEMANTIC VERIFICATION FAILS (v16 LEDGER #172)
+
+`v16/apr_output_v3.txt` and `v16/apr_receipt_v3.json` are preserved at
+SHA-256 `d8efb23720fb38188b3ecd4ed38b2e15a16b20e18a525f8627676edae7f6b122`
+and `925681dfa1adc688bf36920d064483ccadcf7940fd6ff6bf177d55d96733c70c`;
+their canonical payload digest is
+`07090a2c420bae91f003cecae030ca2832dd365324cade7decfe6d696963d67c`.
+The failure note `v16/note-apr-v3-verification-failure.md` has SHA-256
+`856458f713342c59f372aaa2743c3e394b23a5f1c84e082e4567ccb7e7ae064e`.
+Root, alien-CWD, and true off-tree/no-git replays are byte-identical; hashes,
+self-digest, transcript projection, CLI, transactionality, all seven scoped
+v3 repairs, and all 56 descriptors are green.
+
+The independent verifier (off-tree SHA-256
+`f3ca964721b51bd9071a80a5a817d624e0d092f35ef1b70b7af6f0f71ce02685`)
+returns `307 PASS / 4 FAIL`. The four failures are the mandatory semantic
+positive paths: classical composition accepts frontier-disconnected maps and
+opaque equal equation objects; quantum completeness accepts a supplied
+`2I` total; contact supplies rather than derives changed distributions; and
+record/rewrite ontology promotions are label/table driven. The result-neutral
+classifier therefore remains uncertified.
+
+Independent reconstruction still returns
+`APR-BLOCKED-AT-BOUNDARY-GLUING`, and the baseline ontology remains correctly
+`STATIC-RESPONSE`. V3 can document that robust scoped negative but cannot
+support candidate prose or the panel. The next authorized event is a new
+scorer-only semantic-repair pin; no APR fixture, law, ontology, outcome word,
+or primary precedence may move.

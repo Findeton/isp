@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V3 SCORER SOURCE FROZEN (v16 #171); FIRST V3 RUN AUTHORIZED**.
+Status: **V3 REPRODUCIBLE BUT NONCERTIFIABLE (v16 #172); V4 PIN REQUIRED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -722,10 +722,13 @@ guard addendum at #170. The scorer-only implementation freezes at #171 before
 any v3 fixture-evaluating CLI mode: 27 synthetic groups and a true off-tree/
 no-git self-test pass on the exact source SHA. The permanent v2 exposure debt
 remains explicit, so this is source-before-v3-run rather than pre-truth. The
-only authorized next event is one committed-byte transactional v3 run to new
-paths, followed by root/alien/off-tree replay and the expanded independent
-verifier. Every v2 green row and failed gate must close before candidate
-drafting or panel review.
+v3 artifacts and verification failure freeze at #172. Replays and every
+baseline/descriptor repair pass, but four mandatory semantic positive paths
+fail: classical and quantum process promotion, generated influence, and the
+record/rewrite ontology ladder still accept disconnected declared evidence.
+The robust boundary-gluing primary does not move. The only authorized next
+event is a separately frozen scorer-only semantic-repair pin; candidate
+drafting and panel review remain prohibited.
 
 ## Successor register
 
