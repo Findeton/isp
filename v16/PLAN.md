@@ -515,7 +515,7 @@ two cuts require new fixture data and a separately frozen successor.
 
 ## Paper 11 — RHL: no points, no ticks
 
-Status: **GREEN-UNREVIEWED AT
+Status: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN AT
 `RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`
 (v16 #142--#146)**.
 
@@ -566,7 +566,14 @@ and a true alien-CWD tree with no `.git` all pass. The verifier separately
 audits every proof and discloses three non-load-bearing title/URL citation
 mismatches without altering the one-run candidate. Dynamic locality, geometry,
 law selection, infinite extension, GR/QFT, and empirical physics remain open.
-The hostile protocol is the only authorized next event.
+The hostile protocol is now frozen with three mutually blind lenses. It makes
+the no-point/no-tick ontology binding and attacks arbitrary refinement,
+comparison-map declaration, infinite extension, the history-to-instrument-to-
+recovery weld, dynamic locality, and every geometry/GR/QFT promotion. Its
+sharpest pre-dispatch target is normalization: the exact character family
+glues and moves one weight but does not supply a complete normalized outcome
+family for every character. No reviewer is assigned and no review or
+adjudication is authorized by the protocol freeze alone.
 
 ## Successor register
 

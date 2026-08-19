@@ -18,7 +18,7 @@ theory-selection result.
 
 ## Live state
 
-- `RHL` / Paper 11: **GREEN-UNREVIEWED AT
+- `RHL` / Paper 11: **GREEN-UNREVIEWED; HOSTILE PROTOCOL FROZEN AT
   `RHL-REGIONAL-QUANTUM-LAW-CONSTRUCTED-BUT-GEOMETRY-UNENTERED`** through v16
   ledger #146. The user-authorized unit removes points, lattices, graph meshes,
   and ticks from the proposed ontology. Its candidate reality is one actual
@@ -37,10 +37,15 @@ theory-selection result.
   redundancy, structural law nonselection, and changed-boundary ambiguity;
   its finite matrices remain algebra receipts only. The official scorer passes
   24/24; two exact replays, 15/15 mutant refusals, and a true off-tree/no-`.git`
-  replay pass. Geometry, the numerical dynamics, infinite extension, dynamic
+  replay pass. The three-lens protocol now targets point-free refinement,
+  histories/instruments/normalization, and ontology/locality/physical scope.
+  A known mandatory attack is whether the prediction-moving character family
+  can also satisfy total normalization; the delivered receipt does not show
+  that. Geometry, the numerical dynamics, infinite extension, dynamic
   locality, GR, QFT, and empirical physics remain unentered. Three
   non-load-bearing title/URL citation mismatches are disclosed for hostile
-  review rather than silently changing the immutable candidate.
+  review rather than silently changing the immutable candidate. No reviewer is
+  assigned by the protocol freeze.
 - `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
   #141. Two blind seats reject and one accepts with fixes; all independently

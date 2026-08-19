@@ -276,7 +276,10 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     interference obstruction, all-input division instrument, finite
     append-only record class, and structural nonselection theorem pass the
     candidate audit; the exact score is 24/24 with 15/15 mutant refusals and a
-    byte-identical true off-tree replay. This earns a regional quantum-law type,
+    byte-identical true off-tree replay. The hostile protocol is frozen and
+    explicitly tests whether the character counterfamily also preserves total
+    normalization and whether the history functional, division instrument,
+    and recovery class are one law rather than neighboring fixtures. This earns a regional quantum-law type,
     not a geometry or selected dynamics. The open decider is
     whether a nontrivial law can make causal/geometric relations both outputs
     and inputs while preserving interference and dynamic locality, without a
