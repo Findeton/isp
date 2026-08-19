@@ -3436,3 +3436,34 @@ Bernoulli `mu_p` family proves the valuation is unselected law data.
 The strict qualifier
 `APR-STATIC-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT` is
 available; no static response can reach the dynamic-referent rungs.
+
+## 2026-08-18 — APR GENERIC EXACT CORE FROZEN (v16 LEDGER #157)
+
+`v16/code/apr_core.py` freezes the result-neutral APR algebra before
+any physical fixture, selected process, scorer, outcome word, receipt, or
+candidate paper exists. Its ordinary SHA-256 is
+`cd51fd36bc26701fdc649ee81f4b048dadde03e645860a7b885c501e2e180ca9`.
+
+The core implements canonical finite-prefix Boolean operations and symbolic
+nonzero splitting; exact dimension-retaining rational matrices and subspaces;
+linear future quotients and continuation-stable nulls; a separate canonical
+configuration-boundary quotient; a separate Boolean regional-congruence
+audit; comparison-family invariants; typed cospan/gluing validation; and
+independently constructed noncausal regional-support locality and support-
+faithfulness signatures. Cospans are validation-only: the core neither
+constructs a pushout nor calls one a physical process.
+
+The public self-test passes 36/36 exact algebraic identities with payload hash
+`49abf57c22c86c878909fc0e46497b4b19adafc8b633b40c1b9cc7500a10bd2e`.
+An independent exhaustive check covers all 65,536 ordered pairs in the
+depth-three prefix presentation and all 256 complements/nonzero splits.
+Another covers all 729 `{-1,0,1}` two-by-three matrices for
+rank-nullity, kernel annihilation, and quotient normalization. A fresh
+absolute-path run from `/private/tmp` is byte-identical; no-argument and
+unknown-argument calls refuse with exit 2.
+
+Finite words and matrices remain representations. The core proves no
+continuation-catalogue completeness, horizontal process, pushout, contact,
+causal order, record division, dynamic locality, geometry, or ontology. Those
+are deliberately left to independently generated fixtures and the semantic
+scorer.

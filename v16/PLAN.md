@@ -647,6 +647,15 @@ causal-dynamic locality; contact and probe completeness are independent
 coordinates. The all-B probe family must be generated uniformly rather than
 adaptively supplied, and the valuation remains an unselected law family.
 
+Construction stage 1 is frozen at v16 #157. The generic exact core has no
+fixture truth or outcome vocabulary. It keeps linear-null, configuration-
+boundary, and Boolean-regional quotients distinct; validates rather than
+constructs cospans; and supplies noncausal regional-support signatures without
+promoting them to physical process or ontology. Thirty-six public identities,
+65,536 prefix-pair checks, and 729 small rational-matrix checks pass. Physical
+fixtures must now generate horizontal composition, records, locality,
+comparison screens, and held-out family behavior from primitive law data.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
