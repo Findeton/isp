@@ -908,6 +908,19 @@ and commit of `v16/code/p13_gamma_exact.py` plus its source-freeze note.  No
 fresh matching case, official run, candidate paper, review, metric, curvature,
 or gravity work may begin before its preceding committed gate.
 
+Stage A freezes at #192.  The authoritative evaluator SHA-256 is
+`c699fc0316295e230c2cd0ef50601f631b195ad2237bebc2c42a75a2163f1aaf`;
+the source-freeze note SHA-256 is
+`d717f97832efe05996ae5f94249629376ddbe916fc837e0d5d16984bd7a13ad5`.
+The fixture-denied development self-test passes 36/36 checks and kills 81/81
+registered attacks.  Repository-root, alien-CWD, and true source-only
+off-tree/no-`.git` executions are byte-identical.  This is a source and
+instrumentation freeze only: no fresh case, official output, receipt, Paper 13
+rung, or ontology promotion exists.  The next authorized work is independent
+post-freeze source-under-audit reconstruction; Stage B may generate its single
+nonce-bound fresh family and run the official construction only if those
+frozen-byte checks remain green.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

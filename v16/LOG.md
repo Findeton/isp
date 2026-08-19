@@ -4184,3 +4184,30 @@ source freeze of `v16/code/p13_gamma_exact.py` plus
 `v16/note-paper13-gamma-source-freeze.md`.  Fresh cases, official publication,
 the candidate paper, reviews, and every metric-or-later unit remain prohibited
 until their preceding committed gates.
+
+## 2026-08-19 — PAPER 13 ONE-GAMMA STAGE-A SOURCE FROZEN (v16 LEDGER #192)
+
+The authoritative evaluator `v16/code/p13_gamma_exact.py` freezes at SHA-256
+`c699fc0316295e230c2cd0ef50601f631b195ad2237bebc2c42a75a2163f1aaf`
+(303,528 bytes; 7,792 lines).  Its development-only freeze note
+`v16/note-paper13-gamma-source-freeze.md` freezes at SHA-256
+`d717f97832efe05996ae5f94249629376ddbe916fc837e0d5d16984bd7a13ad5`.
+
+The exact fixture-denied `--selftest` passes 36/36 registered checks and kills
+81/81 registered attacks.  Its mutation-registry SHA-256 is
+`1607b2888b2d25eacedf0fa1f0f1e6ce927937abd6aca915165a6de697a3c077`;
+canonical stdout SHA-256 is
+`a217f96d3d8bb92c214a4235ed7ac3e7a9c5a954557a01820176f489c778c6a2`;
+normalized payload SHA-256 is
+`d2ab9fef21119c769418697349e619130f850b58260539280d6f08596ce38b76`.
+Repository-root, alien-CWD, and true source-only off-tree/no-`.git` runs are
+byte-identical.  Independent adjudicator replay reproduced the frozen stdout
+hash; all committed anchors authenticate, AST parsing passes with no float
+literals, and every Stage-B/C artifact remains absent.
+
+This event freezes source bytes and development evidence only.  Neither
+`--generate-fresh` nor official `--run` was invoked; no fresh case, output,
+receipt, verification note, candidate paper, outcome rung, or ontology
+promotion exists.  The next authorized work is independent post-freeze
+black-box/source-under-audit reconstruction.  Stage B remains conditional on
+those frozen-byte checks and must use one mutually blind nonce without reroll.
