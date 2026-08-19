@@ -2913,3 +2913,23 @@ hybrid locus is one-dimensional only on the declared real-overlap slice. All
 replays reproduce the candidate bytes. Candidate files remain unchanged and
 joint adjudication is withheld until the other two reports are separately
 frozen.
+
+## 2026-08-18 — RFB PAPER 10 RECORDS/ONTOLOGY REVIEW FROZEN (v16 LEDGER #138)
+
+`v16/review-rfb-records.md` freezes the mutually blind records/ontology seat
+at **REJECT**. The scorer computes one cyclic `Z_3` predictive census and copies
+it across four record-mode names; a separately implemented common tag-law
+continuation instead gives exact quotient sizes `1,2,2` for classical,
+hybrid, and coherent rows. This triggers the registered predictive-mode kill.
+The classical reset instrument and its dilation are one construction, the MZI
+hybrid family is another, and recoverability is a third abstract label grammar,
+so no common record-feedback event law has been classified. The recommended
+primary is **RFB-METHOD-INCONCLUSIVE-AT-record-mode-event-law**.
+
+The exact reset/dilation equivalence, complete plus/minus instrument,
+one-dimensional real MZI overlap family, cyclic predictor, reader-cardinality
+reduction, and actualization wall survive. A tag of overlap `3/5` has trace
+distance `4/5` and optimal recovery `9/10`, making it a proto-record rather
+than a durable fact. All 39 mutants and all replay/integrity controls pass;
+candidate bytes remain unchanged. Joint adjudication remains withheld pending
+the final separately frozen report.
