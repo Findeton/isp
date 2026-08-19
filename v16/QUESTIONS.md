@@ -240,37 +240,25 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     the corresponding rational-coin holonomy has three rather than five
     phases, and `R=I` is an exact all-tick no-split control. Paper 10's RFB pin
     now carries CRL only as one registered conditional family; no result exists.
-32. **HOSTILE PROTOCOL FROZEN / PARTIAL — Which microscopic law type and record-feedback family are
-    selected by which principles?** Paper 10 RFB freezes a three-axis forcing
-    census: process factorization, record implementation, and mathematical
-    representation. It explicitly tests classical, coherent, hybrid,
-    decoherence-only, and active feedback; divisible, enriched-state,
-    indivisible multi-time, and higher-order laws; and kernel, Hilbert,
-    decoherence-functional, and process representations. Every selection needs
-    an impose test and a return-on-drop control. The candidate ontology is one
-    actual named relational configuration in a fixed meta-catalogue, an
-    indivisible history law, representational quantum machinery, and ordinary
-    instruments at stable divisions. That hierarchy is not selected. Quantum
-    networks theory already supplies coherent size-changing network kinematics,
-    so the future Paper 11 gap is the graph-generated history law, stable
-    records, overlap composition, dynamic-factorization no-signalling, and the
-    continuum phase. The exact generic core now recognizes writer/reader
-    gauge, two-history interference, hybrid tags, predictive partitions, and
-    fixed-factor locality, with 9/9 public gates and 11/11 mutant deaths. It
-    contains no physical answer. A data-only fixture now freezes all fourteen
-    assumption toggles, eleven impose/drop cells, three record modes, the
-    two-history assay, equal-resource predictive rows, recovery controls, and
-    fixed-factor locality without a verdict. The 49-gate, 39-mutant scorer is
-    now passes 49/49 gates at `RFB-FORCING-BOUNDARY-MAPPED`. A division kernel
-    is sufficient at the stable final ports, but the microscopic process and
-    its quantum representation remain `METHOD-INCONCLUSIVE`: enriched-state
-    and indivisible laws both survive, as do Hilbert and decoherence-functional
-    descriptions. Classical, coherent, one-dimensional hybrid, zero-charge,
-    and active feedback families all survive. All 39 mutants refuse and a true
-    no-`.git` replay is identical. A post-commit run, missing-anchor control,
-    assigned-gate mutant audit, and independent rational reconstruction now
-    also pass. The frozen three-seat protocol now requires direct attacks on
-    the neighboring rather than welded mode constructions, copied predictive
-    census, process laws not actually built, the finite phase subgroup, and
-    the breadth of “mapped.” Reviewers are unassigned; the candidate is not
-    panel-reviewed.
+32. **PANEL-ADJUDICATED NEGATIVE / OPEN — Which microscopic law type and
+    record-feedback family are selected by which principles?** Paper 10 closes
+    at `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`. The exact local
+    writer/reader classifications, complete final PVM, reset/dilation
+    equivalence, real MZI overlap family, exclusive-kernel phase exclusion,
+    positive boundary functionals, and fixed-factor CPTP no-signalling survive.
+    The global map does not. The reset construction, MZI tag family, and
+    recovery grammar are neighboring fixtures; the scorer copied one cyclic
+    predictive dictionary across all mode names; and neither enriched-state
+    nor indivisible microscopic process was constructed across two genuine
+    cuts. A common tag-law continuation instead gives predictive quotient
+    sizes `1,2,2`. Of 182 forcing cells, 173 are unassayed defaults. The
+    finite `Z_q` phase census is a subgroup of a continuous `U(1)` theta, the
+    hybrid dimension is real-slice only, and the complete final instrument is
+    not yet a continuation-stable record division. Thus only
+    `RFB-LOCAL-FORCING-CELLS-MAPPED` survives as a qualifier. No bounded repair
+    can construct the missing common law. A future unit must generate every
+    mode and history from one event/process algebra, compute its predictive
+    quotient and record recovery, compare rival microscopic factorizations at
+    two temporal cuts, and separately build changing-factorization locality.
+    Actualization, geometry, growth, QFT, GR, Hamiltonian structure, and
+    empirical prediction remain open.

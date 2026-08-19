@@ -459,8 +459,8 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **HOSTILE PROTOCOL FROZEN; REVIEWERS UNASSIGNED AT
-`RFB-FORCING-BOUNDARY-MAPPED` (v16 #136)**.
+Status: **PANEL-ADJUDICATED REJECT AT
+`RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW` (v16 #140)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the
@@ -491,18 +491,27 @@ modes, history cuts, predictive resources, recovery grammars, and locality
 controls without an expected answer. The separately frozen exact scorer now
 registers 49 ordered gates and 39 targeted mutants. Only compilation,
 public-core self-test, CLI enumeration, and static exactness checks preceded the
-first run. The frozen scorer now passes 49/49 and maps the conditional boundary:
-the final division kernel is sufficient, but enriched-state and indivisible
-microscopic laws both survive, as do Hilbert and decoherence-functional
-representations. Classical, coherent, hybrid, zero-charge, and active feedback
-all survive at their registered scopes. A clean replay, all 39 mutant deaths,
-and a true no-`.git` replay pass. A fresh post-commit generation, all mutant
-gate assignments, missing-anchor refusal, and an independent exact rebuild now
-also pass. The result-neutral operator/history, records/ontology, and
-locality/physics hostile seats are now frozen with mandatory attacks on the
-unwelded fixtures, copied predictive rows, unconstructed process-law
-survivors, finite phase subgroup, and primary scope. No reviewer is assigned;
-review and terminal status remain withheld.
+first run. The frozen scorer passes 49/49 and all 39 mutants refuse, but the
+three-seat panel shows that this integrity does not establish the advertised
+scientific joins. The reset instrument/dilation and MZI tag family are
+different channels; recoverability is a third abstract label grammar. The
+scorer copies one cyclic predictive census across all mode names, while a
+separately derived common tag continuation gives quotient sizes `1,2,2`. It
+also marks enriched-state and indivisible laws as surviving without
+constructing either process or two genuine temporal cuts. Of the advertised
+182 matrix cells, 173 are default and only nine nondefault; the honest
+surviving qualifier is `RFB-LOCAL-FORCING-CELLS-MAPPED`.
+
+The adjudication preserves the exact writer/reader censuses, continuous
+`U(1)` cycle theta with the finite `Z_q` rows as a subgroup census, complete
+final PVM, reset/dilation equivalence, real-slice MZI overlap family,
+exclusive-kernel phase exclusion, positive boundary Gram functionals, and
+fixed-factor affine no-signalling. It withdraws the global primary,
+mode-family nonselection, microscopic-law survival comparison,
+genuine-division claim, and dimension-one universality price. No bounded
+repair is authorized: one common record-process event law, mode-specific
+predictive and recovery continuations, and rival microscopic processes across
+two cuts require new fixture data and a separately frozen successor.
 
 ## Successor register
 

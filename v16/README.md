@@ -18,33 +18,26 @@ theory-selection result.
 
 ## Live state
 
-- `RFB` / Paper 10: **HOSTILE PROTOCOL FROZEN; REVIEWERS UNASSIGNED** at
-  `RFB-FORCING-BOUNDARY-MAPPED` through v16 ledger #136. RFB maps
-  the record-feedback forcing boundary rather than proposing another preferred
-  law. It separates process factorization, record implementation, and quantum
-  representation; freezes the Barandes-compatible one-history/indivisible-law/
-  representational-Hilbert/division-kernel ontology as a candidate rather than
-  a verdict; and requires impose/drop controls for every claimed selection.
-  The literature guardrail incorporates quantum networks theory, which already
-  permits coherent node merge/split/reconnection, so the genuinely open target
-  is the graph-generated history law with stable divisions, rewrite concurrency,
-  dynamic-factorization no-signalling, and continuum recovery. The separately
-  frozen exact public core passes 9/9 generic algebra gates, all 11 targeted
-  mutants refuse without artifacts, and true off-tree replay is identical.
-  The data-only fixture now freezes fourteen assumption toggles, eleven
-  impose/drop cells, the `q=2,3,4` rows, three record modes, two-history
-  reconvergence, predictive-resource controls, recovery grammars, and
-  fixed-factor locality. It contains no expected answer or verdict. The exact
-  scorer passes 49/49 gates and emits separate coordinates:
-  `DIVISION-KERNEL-SUFFICIENT`, microscopic `METHOD-INCONCLUSIVE`, and
-  representation `METHOD-INCONCLUSIVE`. All 39 mutants refuse at their named
-  gates. Post-commit clean and true no-`.git` replays reproduce all artifacts;
-  all 39 mutants refuse at their named gates; a missing anchor refuses; and an
-  independent rational/combinatorial rebuild matches the headline values. The
-  frozen three-lens protocol makes the unwelded mode fixtures, copied
-  predictive census, unconstructed surviving process laws, finite phase
-  subgroup, and primary breadth mandatory attacks. No reviewer is assigned;
-  the candidate is not panel-reviewed or terminal.
+- `RFB` / Paper 10: **PANEL-ADJUDICATED REJECT AT
+  `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
+  #140. Two blind seats reject and one accepts with fixes; all independently
+  preserve the finite writer/reader algebra, complete final instrument,
+  real-overlap MZI family, exclusive-kernel phase exclusion, positive boundary
+  functionals, and fixed-factor CPTP no-signalling theorem. The frozen positive
+  primary is withdrawn. The reset instrument/dilation, MZI tag family, and
+  recoverability grammar are neighboring constructions rather than one event
+  law; the predictive dictionaries were copied from one cyclic interface; and
+  neither alleged surviving microscopic process was constructed across two
+  genuine temporal cuts. The exact common tag continuation instead gives
+  predictive quotient sizes `1,2,2`. Of 182 forcing cells, 173 are defaults;
+  only local assayed cells are mapped. `DIVISION-KERNEL-SUFFICIENT` is narrowed
+  to a candidate complete final instrument without a continuation-stable record.
+  The finite phase count is a `Z_q` subcensus of a continuous `U(1)` theta, and
+  the one-dimensional hybrid claim is real-slice only. No bounded repair can
+  supply the missing joint law; the candidate bytes remain frozen and the
+  adjudication is the binding result. Geometry, growth, dynamic subsystems,
+  actualization, QFT, GR, Hamiltonian structure, and empirical prediction remain
+  absent.
 - `QSF` / Paper 9: **TERMINAL AT `QSF-METHOD-INCONCLUSIVE`** through v16 ledger
   #129. Three mutually blind seats independently preserved the cautious primary
   while correcting every arm's type. Record-indexed A0 is false; literal local

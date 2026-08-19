@@ -2952,3 +2952,30 @@ recommended narrowing is **RFB-LOCAL-FORCING-CELLS-MAPPED**. All 39 mutants,
 changed-object controls, clean replay, and true no-`.git` replay pass. Candidate
 bytes remain unchanged; the complete three-seat panel now authorizes joint
 adjudication.
+
+## 2026-08-18 — RFB PAPER 10 PANEL ADJUDICATION (v16 LEDGER #140)
+
+The three mutually blind reports are jointly adjudicated in
+`v16/note-rfb-adjudication.md`. Grades are REJECT / REJECT /
+ACCEPT-WITH-FIXES. Every exact finite writer/reader, instrument, tag-overlap,
+exclusive-kernel, boundary-functional, and fixed-factor CPTP calculation
+survives at its narrowed scope. The frozen positive primary does not.
+
+The binding registered outcome is
+**RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW**, with
+`RFB-LOCAL-FORCING-CELLS-MAPPED` retained only as a qualifier. The reset
+instrument/dilation, MZI tag family, and recoverability grammar are neighboring
+constructions, not one event law. The scorer copies one cyclic predictive
+census across all record-mode names; a common tag-law continuation instead
+gives quotient sizes `1,2,2`. Neither alleged surviving microscopic process is
+constructed across two genuine cuts. `DIVISION-KERNEL-SUFFICIENT` is narrowed
+to a candidate complete final instrument without a continuation-stable record.
+
+The finite `Z_q` phase count is a subgroup census of a continuous `U(1)` theta;
+the hybrid dimension is real-slice only; and 173 of 182 forcing cells are
+defaults rather than measured nonselection results. The post-freeze external
+review is accepted for its methodological cautions but overruled on its two
+positive headlines. No bounded repair is authorized: the missing common
+record-process law is new scientific data. Candidate bytes remain immutable;
+geometry, growth, dynamic factorization, actualization, QFT, GR, Hamiltonian
+structure, and empirical prediction remain absent.
