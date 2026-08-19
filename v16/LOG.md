@@ -2979,3 +2979,21 @@ positive headlines. No bounded repair is authorized: the missing common
 record-process law is new scientific data. Candidate bytes remain immutable;
 geometry, growth, dynamic factorization, actualization, QFT, GR, Hamiltonian
 structure, and empirical prediction remain absent.
+
+## 2026-08-18 — RFB PAPER 10 TERMINAL VERIFICATION (v16 LEDGER #141)
+
+`v16/note-rfb-terminal-verification.md` closes Paper 10 at the adjudicated
+negative primary
+**RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW**, retaining only
+`RFB-LOCAL-FORCING-CELLS-MAPPED` as a qualifier. All three separately committed
+review hashes and the adjudication hash reverify exactly.
+
+A fresh true off-tree tree with no `.git`, launched from `/private/tmp`, passes
+the immutable scorer's original 49/49 gates and reproduces the committed
+transcript, receipt, and generated paper byte-for-byte. This authenticates the
+failed candidate rather than reviving its positive primary: the adjudication
+supersedes the sealed scientific predicates while deliberately preserving
+their bytes as evidence. README, PLAN, and Question 32 now agree on terminal
+status. No bounded repair exists; any common record-process law, mode-specific
+predictive/recovery dynamics, or two-cut microscopic comparison requires a new
+successor fixture.

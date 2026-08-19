@@ -240,7 +240,7 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     the corresponding rational-coin holonomy has three rather than five
     phases, and `R=I` is an exact all-tick no-split control. Paper 10's RFB pin
     now carries CRL only as one registered conditional family; no result exists.
-32. **PANEL-ADJUDICATED NEGATIVE / OPEN — Which microscopic law type and
+32. **TERMINAL PAPER-10 NEGATIVE / OPEN THEORY DEBT — Which microscopic law type and
     record-feedback family are selected by which principles?** Paper 10 closes
     at `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`. The exact local
     writer/reader classifications, complete final PVM, reset/dilation

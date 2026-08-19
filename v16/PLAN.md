@@ -459,8 +459,8 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **PANEL-ADJUDICATED REJECT AT
-`RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW` (v16 #140)**.
+Status: **TERMINAL PANEL-ADJUDICATED REJECT AT
+`RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW` (v16 #141)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the

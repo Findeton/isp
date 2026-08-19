@@ -18,9 +18,9 @@ theory-selection result.
 
 ## Live state
 
-- `RFB` / Paper 10: **PANEL-ADJUDICATED REJECT AT
+- `RFB` / Paper 10: **TERMINAL PANEL-ADJUDICATED REJECT AT
   `RFB-METHOD-INCONCLUSIVE-AT-JOINT-RECORD-PROCESS-LAW`** through v16 ledger
-  #140. Two blind seats reject and one accepts with fixes; all independently
+  #141. Two blind seats reject and one accepts with fixes; all independently
   preserve the finite writer/reader algebra, complete final instrument,
   real-overlap MZI family, exclusive-kernel phase exclusion, positive boundary
   functionals, and fixed-factor CPTP no-signalling theorem. The frozen positive
