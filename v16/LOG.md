@@ -3630,3 +3630,33 @@ the transformations first execute during the official score. The sole next
 event is transactional publication to `v16/apr_output.txt` and
 `v16/apr_receipt.json`, followed by clean/off-tree/integrity replay. No APR
 scientific result is frozen here.
+
+## 2026-08-18 — APR FIRST RUN PRESERVED AS INSTRUMENTATION-INVALID (v16 LEDGER #163)
+
+The first official APR run is preserved byte-for-byte in
+`v16/apr_output.txt` and `v16/apr_receipt.json`; its independent audit is
+frozen in `v16/note-apr-attempt1-instrumentation-audit.md`. Their SHA-256
+digests are respectively
+`54bc80878ae3ef5769337d00e33d9ed174933181e25ac1433a9e2c0ae70c7b88`,
+`6876d1ff2e844db5101a76b5e230566a1f566bfcbe7fe6cc512442d56106eb33`,
+and `fe48a17e8ff36dbb078a2620ac83731892c7f7fe663f31a56e3912dcf28601c1`.
+The receipt payload self-digest is
+`eb21acec9a47c57cf5bb289b895d1f9344903af572e2712ffa4f31444881b73c`.
+
+Integrity and baseline arithmetic are clean: clean and true off-tree/no-git
+replays are byte-identical, and independent calculations reproduce branch
+weights, graph pushouts, null ranks, boundary ranks, replacement orbit counts,
+comparison screens, and the two underdetermined `AB/BC` completions. The
+provisional strict primary `APR-BLOCKED-AT-BOUNDARY-GLUING` is independently
+reproduced and does not depend on the defective transformations.
+
+The attempt is nevertheless prohibited from supporting a candidate or panel.
+Registry reachability was incorrectly allowed to stand for semantic mutant
+execution. Seven transformations are vacuous or false, nine more are partial
+relative to their registered descriptions, the active-law root omits record
+semantics while including unreachable declarations, provenance paths are not
+validated, and the E-37 projection/hash is neither consumed nor
+graph-isomorphism canonical. The finite instrument and graph-cospan controls
+are neighboring checks, not one process assignment. The next authorized event
+is a separately frozen bounded repair pin; the fixtures, scientific law,
+outcome ladder, primary precedence, and first-run bytes may not move.

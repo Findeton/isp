@@ -693,10 +693,16 @@ these absences; it may not repair them by interpretation.
 
 Construction stage 4 is frozen at v16 #162. The result-neutral scorer binds
 all immutable inputs and both forward corrections, passes nine generic suites
-and a 56-ID transformation registry audit, and has not evaluated the fixture.
-The next event is the single official transactional run to the frozen APR
-output/receipt paths; candidate prose follows only after those artifacts and
-their independent integrity replay freeze.
+and a 56-ID transformation registry audit.
+
+The first official run and its audit are preserved at v16 #163. Artifact
+integrity, independent baseline arithmetic, and the provisional
+`APR-BLOCKED-AT-BOUNDARY-GLUING` result survive, but the transformation and
+active-law provenance battery is not semantically closed. The attempt is
+instrumentation-invalid and cannot support candidate prose or panel review.
+The next event is a result-preserving repair pin followed by a separately
+frozen scorer revision and new, non-overwriting v2 artifacts. No fixture,
+physical law, outcome ladder, or primary-precedence edit is authorized.
 
 ## Successor register
 
