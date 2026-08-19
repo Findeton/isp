@@ -23,7 +23,7 @@ import os
 import re
 import sys
 import tempfile
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from fractions import Fraction
 from pathlib import Path
 from typing import Callable, Iterable, Mapping, MutableMapping, Sequence
@@ -51,6 +51,8 @@ from apr_core import (  # noqa: E402
     exact,
     fraction_text,
     qadd,
+    qcolumnspace,
+    qhstack,
     qkernel,
     qmultiply,
     qrank,
@@ -58,6 +60,7 @@ from apr_core import (  # noqa: E402
     qscale,
     qsubtract,
     qsubspace_inclusion_residual,
+    qsubspace_intersection,
     qtranspose,
     qvstack,
     regional_profile_equivalence,
@@ -80,6 +83,7 @@ IMMUTABLE_HASHES: dict[str, str] = {
     "note-apr-scorer-repair-pin-addendum-2.md": "898a49596752b9b7789bd6c6b71d471aac02a81836cf85c558b6b7f3c425fd4d",
     "note-apr-v3-delta-repair-pin.md": "88c2941f2fb4c90ed8476a5e814ab116b66369f23661dbacf4f89555ea6dd7f0",
     "note-apr-v3-delta-repair-pin-addendum.md": "22eb137fc5496a73ae46fadaaba26f98451dbc5f45c266826c135f7542f63e88",
+    "note-apr-v4-semantic-repair-pin.md": "3b0737e3f9a37966659f32a521f56df892cba8d9194530ea4560bc3bbc1d313d",
     "code/apr_core.py": "cd51fd36bc26701fdc649ee81f4b048dadde03e645860a7b885c501e2e180ca9",
     "code/apr_fixtures.py": "0698d5d413384e43108241a15eb7134fda82deec8bffdc4413edb2c5ea2742bc",
 }
@@ -95,6 +99,7 @@ BINDING_PROTOCOL_COMMITS = (
     "ff7e4b0",
     "430795a",
     "bcfdc0a",
+    "61953d5",
 )
 
 PRIMARY_WORDS = (
@@ -114,7 +119,7 @@ STATIC_QUALIFIER = (
     "APR-STATIC-RAW-PREFIX-SYNTAX-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT"
 )
 
-BLINDING_STATUS = "RESULT-KNOWN-BEFORE-V3-IMPLEMENTATION"
+BLINDING_STATUS = "RESULT-KNOWN-BEFORE-V4-IMPLEMENTATION"
 EXPOSURE_DEBT = "PERMANENT-PREFREEZE-M01-AND-ALL-MUTANTS-EXPOSURE"
 REGIONAL_SUPPORT_SCOPE = (
     "finite regional-support controls only; regional-support coordinate unearned"
@@ -1363,648 +1368,53 @@ def measure_horizontal_process_package(
     """Validate the complete classical package and optional quantum extension."""
 
     fallback = "STATIC-RESPONSE-ONLY" if static_response_available else "SYNTAX-ONLY"
-    if not isinstance(package, Mapping) or not package:
-        return {
-            "coordinate": fallback,
-            "classical_valid": False,
-            "quantum_valid": False,
-            "missing": ["horizontal_process_package"],
-            "contradictions": [],
+    if isinstance(package, QuantumPrimitiveLaw):
+        measured_quantum = measure_quantum_primitive_law(package)
+        payload = measured_quantum.to_data()
+        if not measured_quantum.valid:
+            payload["coordinate"] = (
+                "HORIZONTAL-CLASSICAL"
+                if measured_quantum.classical.valid
+                else fallback
+            )
+        payload["active_root"] = package.root
+        return payload
+    if isinstance(package, ClassicalPrimitiveLaw):
+        measured = measure_classical_primitive_law(package)
+        payload = measured.to_data()
+        if not measured.valid:
+            payload["coordinate"] = fallback
+        payload["active_root"] = package.root
+        payload["component_evidence"] = {
+            "active_frontier_factory": {
+                "valid": measured.valid,
+                "total_on_declared_domain": measured.valid,
+            },
+            "filling_positive_map_assignment": {"valid": measured.valid},
+            "identity_assignments": {"valid": measured.valid},
+            "typed_tensor_unit_interchange": {"valid": measured.valid},
+            "vertical_horizontal_squares": {"valid": measured.valid},
+            "record_effect_semantics": {"valid": measured.valid},
         }
-    active_root = package.get("active_root")
-    components = package.get("components")
-    equations = package.get("equations")
-    if not isinstance(active_root, str) or not active_root or not isinstance(
-        components, Mapping
-    ) or not isinstance(equations, Mapping):
-        return {
-            "coordinate": fallback,
-            "classical_valid": False,
-            "quantum_valid": False,
-            "missing": ["active_root/components/equations"],
-            "contradictions": [],
-        }
-
-    required_components = (
-        "active_frontier_factory",
-        "filling_positive_map_assignment",
-        "identity_assignments",
-        "typed_tensor_unit_interchange",
-        "vertical_horizontal_squares",
-        "record_effect_semantics",
-    )
-    missing: list[str] = []
-    component_evidence: dict[str, object] = {}
-    for role in required_components:
-        row = components.get(role)
-        connected = isinstance(row, Mapping) and row.get("active_root") == active_root
-        payload = row.get("payload") if isinstance(row, Mapping) else None
-        valid = connected and _substantive(payload)
-        if not valid:
-            missing.append(role)
-        component_evidence[role] = {
-            "connected": connected,
-            "substantive": _substantive(payload),
-            "valid": valid,
-        }
-
-    frontier = components.get("active_frontier_factory")
-    frontier_payload = frontier.get("payload") if isinstance(frontier, Mapping) else None
-    frontier_by_object: dict[str, tuple[str, ...]] = {}
-    if isinstance(frontier_payload, Mapping):
-        domain = _finite_unique_texts(frontier_payload.get("declared_domain"))
-        rows = frontier_payload.get("frontiers")
-        if isinstance(rows, list):
-            for row in rows:
-                if not isinstance(row, Mapping) or not isinstance(row.get("object"), str):
-                    continue
-                ports = _finite_unique_texts(row.get("ports"))
-                if ports is not None and row["object"] not in frontier_by_object:
-                    frontier_by_object[str(row["object"])] = ports
-        total = bool(
-            domain is not None
-            and isinstance(rows, list)
-            and len(rows) == len(domain)
-            and set(frontier_by_object) == set(domain)
-        )
-    else:
-        domain = None
-        total = False
-    component_evidence["active_frontier_factory"]["valid"] = bool(
-        component_evidence["active_frontier_factory"]["valid"] and total
-    )
-    component_evidence["active_frontier_factory"]["total_on_declared_domain"] = total
-    if not total and "active_frontier_factory" not in missing:
-        missing.append("active_frontier_factory.totality")
-
-    assignment = components.get("filling_positive_map_assignment")
-    assignment_payload = assignment.get("payload") if isinstance(assignment, Mapping) else None
-    map_rows = assignment_payload.get("maps") if isinstance(assignment_payload, Mapping) else None
-    maps_valid = isinstance(map_rows, list) and bool(map_rows) and domain is not None
-    map_evidence: list[dict[str, object]] = []
-    map_roles: set[str] = set()
-    if maps_valid:
-        for row in map_rows:
-            if not isinstance(row, Mapping):
-                maps_valid = False
-                continue
-            map_domain = _finite_unique_texts(row.get("domain"))
-            map_codomain = _finite_unique_texts(row.get("codomain"))
-            graph = row.get("graph")
-            input_object = row.get("input_object")
-            output_object = row.get("output_object")
-            role = row.get("role")
-            if (
-                map_domain is None
-                or map_codomain is None
-                or not isinstance(graph, list)
-                or not isinstance(input_object, str)
-                or not isinstance(output_object, str)
-                or input_object not in set(domain or ())
-                or output_object not in set(domain or ())
-                or not isinstance(role, str)
-                or not role
-                or role in map_roles
-            ):
-                valid = False
-            else:
-                map_roles.add(role)
-                pairs = [
-                    (pair[0], pair[1])
-                    for pair in graph
-                    if isinstance(pair, list)
-                    and len(pair) == 2
-                    and isinstance(pair[0], str)
-                    and isinstance(pair[1], str)
-                ]
-                graph_map = dict(pairs)
-                valid = (
-                    len(pairs) == len(graph) == len(graph_map) == len(map_domain)
-                    and set(graph_map) == set(map_domain)
-                    and set(graph_map.values()).issubset(set(map_codomain))
-                    and row.get("positive") is True
-                    and row.get("affine") is True
-                    and row.get("mass_preserving") is True
-                    and row.get("retains_zero_ports") is True
-                )
-            maps_valid = maps_valid and valid
-            map_evidence.append({"map_role": row.get("role"), "valid": valid})
-    component_evidence["filling_positive_map_assignment"]["map_rows"] = map_evidence
-    component_evidence["filling_positive_map_assignment"]["valid"] = bool(
-        component_evidence["filling_positive_map_assignment"]["valid"]
-        and maps_valid
-    )
-    if not maps_valid:
-        missing.append("typed-positive-affine-mass-preserving-assignment")
-
-    identities = components.get("identity_assignments")
-    identity_payload = identities.get("payload") if isinstance(identities, Mapping) else None
-    identity_rows = identity_payload.get("rows") if isinstance(identity_payload, Mapping) else None
-    active_objects = domain
-    identity_checks: list[dict[str, object]] = []
-    identities_valid = bool(
-        isinstance(identity_rows, list)
-        and active_objects is not None
-        and len(identity_rows) == len(active_objects)
-    )
-    identity_objects: set[str] = set()
-    if identities_valid:
-        for row in identity_rows:
-            if not isinstance(row, Mapping):
-                identities_valid = False
-                continue
-            object_role = row.get("object")
-            assignment_row = row.get("assignment")
-            ports = frontier_by_object.get(str(object_role))
-            graph = assignment_row.get("graph") if isinstance(assignment_row, Mapping) else None
-            pairs = [
-                (pair[0], pair[1])
-                for pair in graph
-                if isinstance(pair, list)
-                and len(pair) == 2
-                and isinstance(pair[0], str)
-                and isinstance(pair[1], str)
-            ] if isinstance(graph, list) else []
-            recomputed_identity = bool(
-                isinstance(object_role, str)
-                and object_role in set(active_objects or ())
-                and object_role not in identity_objects
-                and isinstance(assignment_row, Mapping)
-                and assignment_row.get("input_object") == object_role
-                and assignment_row.get("output_object") == object_role
-                and ports is not None
-                and len(pairs) == len(graph or ()) == len(ports)
-                and dict(pairs) == {port: port for port in ports}
-                and row.get("process_word") == []
-            )
-            if isinstance(object_role, str):
-                identity_objects.add(object_role)
-            identities_valid = identities_valid and recomputed_identity
-            identity_checks.append(
-                {"object": object_role, "recomputed_identity": recomputed_identity}
-            )
-        identities_valid = identities_valid and identity_objects == set(active_objects or ())
-    component_evidence["identity_assignments"]["rows"] = identity_checks
-    component_evidence["identity_assignments"]["valid"] = bool(
-        component_evidence["identity_assignments"]["valid"] and identities_valid
-    )
-    component_evidence["identity_assignments"]["all_active_objects"] = identities_valid
-    if not identities_valid:
-        missing.append("identity-at-every-active-object")
-
-    tensor = components.get("typed_tensor_unit_interchange")
-    tensor_payload = tensor.get("payload") if isinstance(tensor, Mapping) else None
-    tensor_valid = False
-    tensor_detail: dict[str, object] = {}
-    if isinstance(tensor_payload, Mapping) and active_objects is not None:
-        unit = tensor_payload.get("unit_object")
-        tensor_rows = tensor_payload.get("object_tensor")
-        interchange_rows = tensor_payload.get("interchange_witnesses")
-        tensor_map: dict[tuple[str, str], str] = {}
-        rows_well_typed = isinstance(tensor_rows, list)
-        if isinstance(tensor_rows, list):
-            for row in tensor_rows:
-                if not isinstance(row, Mapping):
-                    rows_well_typed = False
-                    continue
-                left = row.get("left")
-                right = row.get("right")
-                result = row.get("result")
-                key = (str(left), str(right))
-                if (
-                    not isinstance(left, str)
-                    or not isinstance(right, str)
-                    or not isinstance(result, str)
-                    or left not in active_objects
-                    or right not in active_objects
-                    or result not in active_objects
-                    or key in tensor_map
-                ):
-                    rows_well_typed = False
-                    continue
-                tensor_map[key] = result
-        total_pairs = set(itertools.product(active_objects, repeat=2))
-        unit_valid = bool(
-            isinstance(unit, str)
-            and unit in active_objects
-            and all(
-                tensor_map.get((unit, item)) == item
-                and tensor_map.get((item, unit)) == item
-                for item in active_objects
-            )
-        )
-        associative = bool(
-            set(tensor_map) == total_pairs
-            and all(
-                tensor_map[(tensor_map[(left, middle)], right)]
-                == tensor_map[(left, tensor_map[(middle, right)])]
-                for left, middle, right in itertools.product(
-                    active_objects, repeat=3
-                )
-            )
-        )
-        interchange_valid = isinstance(interchange_rows, list) and bool(interchange_rows)
-        if interchange_valid:
-            for row in interchange_rows:
-                typed_objects = row.get("objects") if isinstance(row, Mapping) else None
-                valid = bool(
-                    isinstance(row, Mapping)
-                    and isinstance(typed_objects, list)
-                    and len(typed_objects) == 4
-                    and all(item in active_objects for item in typed_objects)
-                    and _substantive(row.get("lhs"))
-                    and canonical_sha256(row.get("lhs"))
-                    == canonical_sha256(row.get("rhs"))
-                )
-                interchange_valid = interchange_valid and valid
-        tensor_valid = bool(
-            rows_well_typed
-            and set(tensor_map) == total_pairs
-            and unit_valid
-            and associative
-            and interchange_valid
-        )
-        tensor_detail = {
-            "total_object_tensor": set(tensor_map) == total_pairs,
-            "unit_laws": unit_valid,
-            "associative": associative,
-            "interchange_recomputed": interchange_valid,
-        }
-    component_evidence["typed_tensor_unit_interchange"].update(tensor_detail)
-    component_evidence["typed_tensor_unit_interchange"]["valid"] = bool(
-        component_evidence["typed_tensor_unit_interchange"]["valid"]
-        and tensor_valid
-    )
-    if not tensor_valid:
-        missing.append("typed-tensor-unit-interchange")
-
-    squares = components.get("vertical_horizontal_squares")
-    square_payload = squares.get("payload") if isinstance(squares, Mapping) else None
-    squares_valid = False
-    square_checks: list[dict[str, object]] = []
-    if isinstance(square_payload, Mapping) and active_objects is not None:
-        declared = _finite_unique_texts(square_payload.get("declared_square_roles"))
-        square_rows = square_payload.get("squares")
-        seen: set[str] = set()
-        squares_valid = declared is not None and isinstance(square_rows, list) and bool(square_rows)
-        if isinstance(square_rows, list):
-            for row in square_rows:
-                role = row.get("role") if isinstance(row, Mapping) else None
-                valid = bool(
-                    isinstance(row, Mapping)
-                    and isinstance(role, str)
-                    and role not in seen
-                    and declared is not None
-                    and role in declared
-                    and row.get("source_object") in active_objects
-                    and row.get("target_object") in active_objects
-                    and isinstance(row.get("vertical_source"), str)
-                    and bool(row.get("vertical_source"))
-                    and isinstance(row.get("vertical_target"), str)
-                    and bool(row.get("vertical_target"))
-                    and row.get("vertical_source") != row.get("vertical_target")
-                    and _substantive(row.get("lhs"))
-                    and canonical_sha256(row.get("lhs"))
-                    == canonical_sha256(row.get("rhs"))
-                )
-                if isinstance(role, str):
-                    seen.add(role)
-                squares_valid = squares_valid and valid
-                square_checks.append({"role": role, "valid": valid})
-        squares_valid = squares_valid and declared is not None and seen == set(declared)
-    component_evidence["vertical_horizontal_squares"]["squares"] = square_checks
-    component_evidence["vertical_horizontal_squares"]["valid"] = bool(
-        component_evidence["vertical_horizontal_squares"]["valid"]
-        and squares_valid
-    )
-    if not squares_valid:
-        missing.append("nontrivial-vertical-horizontal-squares")
-
-    record_semantics = components.get("record_effect_semantics")
-    record_payload = (
-        record_semantics.get("payload") if isinstance(record_semantics, Mapping) else None
-    )
-    record_semantics_valid = False
-    if isinstance(record_payload, Mapping) and active_objects is not None:
-        claim = record_payload.get("record_claim")
-        if claim is False:
-            record_semantics_valid = True
-        elif claim is True:
-            writers = record_payload.get("writers")
-            effects = record_payload.get("effects")
-            record_semantics_valid = bool(
-                isinstance(writers, list)
-                and bool(writers)
-                and isinstance(effects, list)
-                and bool(effects)
-                and all(
-                    isinstance(row, Mapping)
-                    and row.get("input_object") in active_objects
-                    and row.get("output_object") in active_objects
-                    and _substantive(row.get("typed_assignment"))
-                    for row in writers
-                )
-                and all(
-                    isinstance(row, Mapping)
-                    and row.get("input_object") in active_objects
-                    and _substantive(row.get("typed_effect"))
-                    for row in effects
-                )
-            )
-    component_evidence["record_effect_semantics"]["valid"] = bool(
-        component_evidence["record_effect_semantics"]["valid"]
-        and record_semantics_valid
-    )
-    component_evidence["record_effect_semantics"]["record_claim_validated"] = (
-        record_semantics_valid
-    )
-    if not record_semantics_valid:
-        missing.append("generated-record-effect-semantics")
-
-    equation_roles = (
-        "identity",
-        "sequential_composition",
-        "alternate_cut",
-        "mass_preservation",
-        "tensor_unit_interchange",
-        "vertical_naturality",
-    )
-    equation_evidence = {
-        role: _semantic_equation_family(equations.get(role), active_root, role)
-        for role in equation_roles
-    }
-    contradictions = [
-        role for role, row in equation_evidence.items() if row["contradictory"]
-    ]
-    missing.extend(role for role, row in equation_evidence.items() if not row["valid"])
-    classical_valid = not missing and not contradictions
-    coordinate = "INCONSISTENT" if contradictions else (
-        "HORIZONTAL-CLASSICAL" if classical_valid else fallback
-    )
-
-    quantum_evidence: dict[str, object] = {"present": False}
-    quantum_valid = False
-    quantum = package.get("quantum")
-    if classical_valid and isinstance(quantum, Mapping) and quantum:
-        connected = quantum.get("active_root") == active_root
-        gram_raw = quantum.get("history_gram")
-        history_basis = _finite_unique_texts(quantum.get("history_basis"))
-        try:
-            gram = gram_raw if isinstance(gram_raw, QMatrix) else matrix_record(gram_raw)
-            strong = bool(
-                history_basis is not None
-                and gram.nrows == gram.ncols == len(history_basis)
-                and _strongly_positive(gram)
-            )
-            interference_terms = tuple(
-                gram.data[row][column]
-                for row in range(gram.nrows)
-                for column in range(gram.ncols)
-                if row != column
-            )
-        except (KeyError, ScoreRefusal, TypeError, ValueError):
-            gram = None
-            strong = False
-            interference_terms = ()
-        nonzero_interference = any(value != 0 for value in interference_terms)
-        instruments = quantum.get("division_instruments")
-        division_rows: list[dict[str, object]] = []
-        divisions_valid = isinstance(instruments, list) and bool(instruments)
-        if divisions_valid:
-            for instrument in instruments:
-                if (
-                    not isinstance(instrument, Mapping)
-                    or instrument.get("active_root") != active_root
-                    or _finite_unique_texts(instrument.get("input_basis"))
-                    != history_basis
-                    or not isinstance(instrument.get("branches"), list)
-                    or not instrument["branches"]
-                ):
-                    divisions_valid = False
-                    continue
-                try:
-                    branches = [
-                        branch if isinstance(branch, QMatrix) else matrix_record(branch)
-                        for branch in instrument["branches"]
-                    ]
-                    total = (
-                        instrument["total"]
-                        if isinstance(instrument.get("total"), QMatrix)
-                        else matrix_record(instrument.get("total"))
-                    )
-                    summed = branches[0]
-                    for branch in branches[1:]:
-                        summed = qadd(summed, branch)
-                    complete = bool(
-                        gram is not None
-                        and total.nrows == total.ncols == gram.nrows
-                        and all(
-                            branch.nrows == branch.ncols == total.nrows
-                            and _strongly_positive(branch)
-                            for branch in branches
-                        )
-                        and summed == total
-                    )
-                except (KeyError, ScoreRefusal, TypeError, ValueError):
-                    complete = False
-                divisions_valid = divisions_valid and complete
-                division_rows.append({"complete_all_input_sum": complete})
-        recovery = _semantic_equation_family(
-            quantum.get("stable_recovery_equations"), active_root, "stable quantum recovery"
-        )
-        coherent = _semantic_equation_family(
-            quantum.get("coherent_cut_equations"), active_root, "coherent quantum cuts"
-        )
-        quantum_valid = (
-            connected
-            and strong
-            and nonzero_interference
-            and divisions_valid
-            and recovery["valid"]
-            and coherent["valid"]
-        )
-        quantum_evidence = {
-            "present": True,
-            "connected": connected,
-            "history_basis": history_basis,
-            "strongly_positive": strong,
-            "interference_witness": interference_terms,
-            "nonzero_interference": nonzero_interference,
-            "division_instruments": division_rows,
-            "all_input_division_complete": divisions_valid,
-            "stable_recovery": recovery,
-            "coherent_coarse_graining_refinement": coherent,
-        }
-        if quantum_valid:
-            coordinate = "HORIZONTAL-QUANTUM"
-
-    if coordinate not in PROCESS_COORDINATES:
-        raise ScoreRefusal("process classifier emitted an unregistered coordinate")
+        payload["equation_evidence"] = measured.residuals
+        payload["quantum_evidence"] = {"present": False}
+        return payload
     return {
-        "coordinate": coordinate,
-        "classical_valid": classical_valid,
-        "quantum_valid": quantum_valid,
-        "active_root": active_root,
-        "component_evidence": component_evidence,
-        "equation_evidence": equation_evidence,
-        "quantum_evidence": quantum_evidence,
-        "missing": sorted(set(missing)),
-        "contradictions": contradictions,
+        "coordinate": fallback,
+        "classical_valid": False,
+        "quantum_valid": False,
+        "missing": ["typed ClassicalPrimitiveLaw"],
+        "contradictions": [],
+        "rejected_asserted_mapping": isinstance(package, Mapping),
     }
 
 
-def synthetic_horizontal_process_package(*, quantum: bool = False) -> dict[str, object]:
+def synthetic_horizontal_process_package(
+    *, quantum: bool = False
+) -> ClassicalPrimitiveLaw | QuantumPrimitiveLaw:
     """Complete generic positive package used only by ``--selftest``."""
 
-    root = "synthetic-horizontal-root"
-    package: dict[str, object] = {
-        "active_root": root,
-        "components": {
-            "active_frontier_factory": {
-                "active_root": root,
-                "payload": {
-                    "declared_domain": ["B0", "B1"],
-                    "frontiers": [
-                        {"object": "B0", "ports": ["epsilon"]},
-                        {"object": "B1", "ports": ["0", "1"]},
-                    ],
-                },
-            },
-            "filling_positive_map_assignment": {
-                "active_root": root,
-                "payload": {
-                    "maps": [
-                        {
-                            "role": "synthetic-question",
-                            "input_object": "B0",
-                            "output_object": "B1",
-                            "domain": ["s0", "s1"],
-                            "codomain": ["t0", "t1"],
-                            "graph": [["s0", "t0"], ["s1", "t1"]],
-                            "positive": True,
-                            "affine": True,
-                            "mass_preserving": True,
-                            "retains_zero_ports": True,
-                        }
-                    ]
-                },
-            },
-            "identity_assignments": {
-                "active_root": root,
-                "payload": {
-                    "rows": [
-                        {
-                            "object": boundary,
-                            "assignment": {
-                                "input_object": boundary,
-                                "output_object": boundary,
-                                "graph": (
-                                    [["epsilon", "epsilon"]]
-                                    if boundary == "B0"
-                                    else [["0", "0"], ["1", "1"]]
-                                ),
-                            },
-                            "process_word": [],
-                            "empty_process": True,
-                            "map_is_identity": True,
-                        }
-                        for boundary in ("B0", "B1")
-                    ]
-                },
-            },
-            "typed_tensor_unit_interchange": {
-                "active_root": root,
-                "payload": {
-                    "unit_object": "B0",
-                    "object_tensor": [
-                        {"left": "B0", "right": "B0", "result": "B0"},
-                        {"left": "B0", "right": "B1", "result": "B1"},
-                        {"left": "B1", "right": "B0", "result": "B1"},
-                        {"left": "B1", "right": "B1", "result": "B1"},
-                    ],
-                    "interchange_witnesses": [
-                        {
-                            "objects": ["B0", "B1", "B0", "B1"],
-                            "lhs": {"typed_map": "interchange"},
-                            "rhs": {"typed_map": "interchange"},
-                        }
-                    ],
-                },
-            },
-            "vertical_horizontal_squares": {
-                "active_root": root,
-                "payload": {
-                    "declared_square_roles": ["square-0"],
-                    "squares": [
-                        {
-                            "role": "square-0",
-                            "source_object": "B0",
-                            "target_object": "B1",
-                            "vertical_source": "presentation-v0",
-                            "vertical_target": "presentation-v1",
-                            "lhs": {"typed_map": "naturality"},
-                            "rhs": {"typed_map": "naturality"},
-                        }
-                    ],
-                },
-            },
-            "record_effect_semantics": {
-                "active_root": root,
-                "payload": {"record_claim": False, "generated_unit_effect": "unit"},
-            },
-        },
-        "equations": {
-            role: [
-                {
-                    "active_root": root,
-                    "lhs": {"semantic_value": role},
-                    "rhs": {"semantic_value": role},
-                }
-            ]
-            for role in (
-                "identity",
-                "sequential_composition",
-                "alternate_cut",
-                "mass_preservation",
-                "tensor_unit_interchange",
-                "vertical_naturality",
-            )
-        },
-    }
-    if quantum:
-        package["quantum"] = {
-            "active_root": root,
-            "history_basis": ["h0", "h1"],
-            "history_gram": QMatrix.from_rows(
-                ((Fraction(1), Fraction(1, 2)), (Fraction(1, 2), Fraction(1)))
-            ),
-            "division_instruments": [
-                {
-                    "active_root": root,
-                    "input_basis": ["h0", "h1"],
-                    "branches": [
-                        QMatrix.from_rows(((1, 0), (0, 0))),
-                        QMatrix.from_rows(((0, 0), (0, 1))),
-                    ],
-                    "total": QMatrix.identity(2),
-                }
-            ],
-            "stable_recovery_equations": [
-                {
-                    "active_root": root,
-                    "lhs": {"recovered": ("0", "1")},
-                    "rhs": {"recovered": ("0", "1")},
-                }
-            ],
-            "coherent_cut_equations": [
-                {
-                    "active_root": root,
-                    "lhs": {"coarse": Fraction(3)},
-                    "rhs": {"coarse": Fraction(3)},
-                }
-            ],
-        }
-    return package
+    return build_quantum_existence_law() if quantum else build_classical_existence_law()
 
 
 def score_process(
@@ -3743,167 +3153,18 @@ def measure_generated_influence_package(
     package: object, *, require_nonoverlap_contact: bool
 ) -> dict[str, object]:
     role = "generated_contact" if require_nonoverlap_contact else "causal_order"
-    if not isinstance(package, Mapping) or not package:
-        return {"present": False, "role": role, "missing": ["semantic package"]}
-    active_root = package.get("active_root")
-    schedule = package.get("schedule")
-    intervention = package.get("intervention")
-    response = package.get("delayed_response")
-    provenance = package.get("provenance")
-    missing: list[str] = []
-    if not isinstance(active_root, str) or not active_root:
-        missing.append("active_root")
-
-    schedule_valid = isinstance(schedule, Mapping) and schedule.get("active_root") == active_root
-    operations = schedule.get("operations") if isinstance(schedule, Mapping) else None
-    operation_evidence: list[dict[str, object]] = []
-    operation_roles: set[str] = set()
-    if not isinstance(operations, list) or not operations:
-        schedule_valid = False
-    else:
-        for operation in operations:
-            typed_graph = _typed_finite_graph(
-                operation, active_root, assignment_field="process_assignment"
-            )
-            operation_role = operation.get("role") if isinstance(operation, Mapping) else None
-            valid = bool(
-                typed_graph["valid"]
-                and isinstance(operation_role, str)
-                and bool(operation_role)
-                and operation_role not in operation_roles
-            )
-            if isinstance(operation_role, str):
-                operation_roles.add(operation_role)
-            schedule_valid = schedule_valid and valid
-            operation_evidence.append(
-                {
-                    "operation_role": operation_role,
-                    "typing": typed_graph,
-                    "valid": valid,
-                }
-            )
-        for earlier, later in zip(operation_evidence, operation_evidence[1:]):
-            earlier_typing = earlier["typing"]
-            later_typing = later["typing"]
-            composable = bool(
-                earlier_typing.get("output_carrier")
-                == later_typing.get("input_carrier")
-                and earlier_typing.get("codomain") == later_typing.get("domain")
-            )
-            schedule_valid = schedule_valid and composable
-    if not schedule_valid:
-        missing.append("typed generated schedule")
-
-    alternatives = (
-        _finite_unique_texts(intervention.get("alternatives"))
-        if isinstance(intervention, Mapping)
-        else None
-    )
-    intervention_valid = bool(
-        isinstance(intervention, Mapping)
-        and intervention.get("active_root") == active_root
-        and alternatives is not None
-        and len(alternatives) >= 2
-        and intervention.get("operation_role") in operation_roles
-    )
-    nonoverlap = False
-    if isinstance(intervention, Mapping):
-        source = intervention.get("source_region")
-        target = intervention.get("target_region")
-        nonoverlap = (
-            isinstance(source, PrefixRegion)
-            and isinstance(target, PrefixRegion)
-            and source.disjoint(target)
-            and not source.is_zero()
-            and not target.is_zero()
-        )
-    if require_nonoverlap_contact:
-        intervention_valid = intervention_valid and nonoverlap
-    if not intervention_valid:
-        missing.append(
-            "non-overlap/contact intervention"
-            if require_nonoverlap_contact
-            else "typed causal intervention"
-        )
-
-    response_valid = isinstance(response, Mapping) and response.get("active_root") == active_root
-    before = response.get("before") if isinstance(response, Mapping) else None
-    after = response.get("after") if isinstance(response, Mapping) else None
-    reader = response.get("reader") if isinstance(response, Mapping) else None
-    reader_typing = _typed_finite_graph(
-        reader, active_root, assignment_field="effect_assignment"
-    )
-    schedule_output = operation_evidence[-1]["typing"] if operation_evidence else {}
-    reader_attached = bool(
-        reader_typing["valid"]
-        and reader_typing.get("input_carrier") == schedule_output.get("output_carrier")
-        and reader_typing.get("domain") == schedule_output.get("codomain")
-    )
-    if not isinstance(before, Mapping) or not isinstance(after, Mapping) or not reader_attached:
-        response_valid = False
-        before_exact: dict[str, Fraction] = {}
-        after_exact: dict[str, Fraction] = {}
-    else:
-        try:
-            before_exact = {str(key): exact(value) for key, value in before.items()}
-            after_exact = {str(key): exact(value) for key, value in after.items()}
-            response_valid = response_valid and (
-                set(before_exact) == set(after_exact)
-                and all(value >= 0 for value in before_exact.values())
-                and all(value >= 0 for value in after_exact.values())
-                and sum(before_exact.values(), Fraction(0)) == 1
-                and sum(after_exact.values(), Fraction(0)) == 1
-                and before_exact != after_exact
-                and set(before_exact) == set(reader_typing.get("codomain") or ())
-            )
-        except (ScoreRefusal, TypeError, ValueError):
-            before_exact = {}
-            after_exact = {}
-            response_valid = False
-    if not response_valid:
-        missing.append("delayed calibrated response")
-
-    provenance_valid = False
-    provenance_evidence: dict[str, object] = {}
-    if isinstance(provenance, Mapping):
-        edges_raw = provenance.get("typed_edges")
-        if isinstance(edges_raw, list):
-            edges = [
-                tuple(edge)
-                for edge in edges_raw
-                if isinstance(edge, list)
-                and len(edge) == 3
-                and all(isinstance(item, str) and item for item in edge)
-            ]
-            if len(edges) == len(edges_raw) and isinstance(active_root, str) and active_root:
-                provenance_evidence = validate_claim_provenance(
-                    [active_root],
-                    edges,
-                    ["claim:schedule", "claim:intervention", "claim:response"],
-                )
-                provenance_valid = bool(provenance_evidence["all_claims_connected"])
-    if not provenance_valid:
-        missing.append("joint-law provenance")
-    present = schedule_valid and intervention_valid and response_valid and provenance_valid
+    if isinstance(package, InfluencePrimitiveLaw):
+        measured = measure_influence_primitive_law(package)
+        payload = measured.to_data()
+        if measured.role != role:
+            payload["present"] = False
+            payload["missing"] = ("requested influence role does not match typed law",)
+        return payload
     return {
-        "present": present,
+        "present": False,
         "role": role,
-        "active_root": active_root,
-        "schedule": {"valid": schedule_valid, "operations": operation_evidence},
-        "intervention": {
-            "valid": intervention_valid,
-            "nonoverlap": nonoverlap,
-        },
-        "delayed_response": {
-            "valid": response_valid,
-            "reader_typing": reader_typing,
-            "reader_attached": reader_attached,
-            "before": before_exact,
-            "after": after_exact,
-        },
-        "provenance": provenance_evidence,
-        "missing": missing,
-        "package_sha256": canonical_sha256(package),
+        "missing": ["typed InfluencePrimitiveLaw"],
+        "rejected_asserted_mapping": isinstance(package, Mapping),
     }
 
 
@@ -5398,6 +4659,24 @@ def _typed_destructive_reader_witnesses(
     return witnesses
 
 
+class ComputedCapabilityCensus(dict[str, object]):
+    """Sealed output of the scientific census constructor, never caller evidence."""
+
+    __slots__ = ("measurement_sha256",)
+
+    def __init__(self, payload: Mapping[str, object]) -> None:
+        super().__init__(payload)
+        self.measurement_sha256 = canonical_sha256(dict(self))
+
+    def intact(self) -> bool:
+        return self.measurement_sha256 == canonical_sha256(dict(self))
+
+    def __deepcopy__(self, memo: dict[int, object]) -> "ComputedCapabilityCensus":
+        copied = ComputedCapabilityCensus(copy.deepcopy(dict(self), memo))
+        memo[id(self)] = copied
+        return copied
+
+
 def compute_capability_census(
     data: Mapping[str, object],
     *,
@@ -5412,7 +4691,7 @@ def compute_capability_census(
     contact_result: Mapping[str, object],
     causality_result: Mapping[str, object],
     overlap_result: Mapping[str, object],
-) -> dict[str, object]:
+) -> ComputedCapabilityCensus:
     """Inspect interfaces; analytical controls are never positive capabilities."""
 
     typed = data.get("typed_fillings")
@@ -5547,7 +4826,7 @@ def compute_capability_census(
     post_quotient_atomless = (
         atomlessness_result.get("atomless_coordinate") == "PHYSICAL-IMAGE-ATOMLESS"
     )
-    return {
+    return ComputedCapabilityCensus({
         "raw_boolean_normalization": {
             "present": bool(process_result["all_input_normalization"]["symbolic"])
             and regional_algebra_result["Boolean_identities"]["failure_count"] == 0,
@@ -5652,10 +4931,15 @@ def compute_capability_census(
             "controls_do_not_promote": True,
         },
         "overlap_selector_kill": overlap_result,
-    }
+    })
 
 
-def classify_capability_census(census: Mapping[str, object]) -> tuple[str, list[str]]:
+def classify_capability_census(census: object) -> tuple[str, list[str]]:
+    if type(census) is not ComputedCapabilityCensus or not census.intact():
+        raise ScoreRefusal(
+            "primary classifier requires an intact internally computed capability census"
+        )
+
     def present(name: str) -> bool:
         row = census.get(name)
         return isinstance(row, Mapping) and bool(row.get("present"))
@@ -5765,172 +5049,22 @@ ONTOLOGY_ROLES = (
 )
 
 
-def measure_ontology_role(evidence: Mapping[str, object]) -> dict[str, object]:
+def measure_ontology_role(evidence: object) -> dict[str, object]:
     """Measure a construction role without consulting an ontology proposal."""
 
-    static_response = evidence.get("static_response") is True
-    if not static_response:
+    if isinstance(evidence, OntologyPrimitiveLaw):
+        return measure_ontology_primitive_law(evidence).to_data()
+    if not isinstance(evidence, Mapping):
         raise ScoreRefusal("ontology-role measurement lacks a static response baseline")
-    process_measurement = evidence.get("process_measurement")
-    process_valid = bool(
-        isinstance(process_measurement, Mapping)
-        and process_measurement.get("classical_valid")
-        and process_measurement.get("coordinate")
-        in {"HORIZONTAL-CLASSICAL", "HORIZONTAL-QUANTUM"}
-    )
-    active_root = (
-        process_measurement.get("active_root")
-        if isinstance(process_measurement, Mapping)
-        else None
-    )
-    conditioning = evidence.get("conditioning")
-    conditioning_valid = False
-    conditioning_detail: dict[str, object] = {}
-    if process_valid and isinstance(conditioning, Mapping):
-        source = conditioning.get("source_region")
-        event = conditioning.get("event_region")
-        output = conditioning.get("output_region")
-        equation = (
-            isinstance(source, PrefixRegion)
-            and isinstance(event, PrefixRegion)
-            and isinstance(output, PrefixRegion)
-            and source.meet(event) == output
-        )
-        conditioning_valid = (
-            conditioning.get("active_root") == active_root
-            and equation
-            and conditioning.get("output_algebra_sha256")
-            == conditioning.get("input_algebra_sha256")
-            and _substantive(conditioning.get("input_algebra_sha256"))
-        )
-        conditioning_detail = {
-            "connected": conditioning.get("active_root") == active_root,
-            "restriction_recomputed": equation,
-            "same_algebra": conditioning.get("output_algebra_sha256")
-            == conditioning.get("input_algebra_sha256"),
-        }
-
-    record = evidence.get("record")
-    record_valid = False
-    record_detail: dict[str, object] = {}
-    if conditioning_valid and isinstance(record, Mapping):
-        closure = record.get("continuation_closure")
-        recovery = closure.get("recovery_scope") if isinstance(closure, Mapping) else None
-        operation_typing = (
-            closure.get("operation_typing") if isinstance(closure, Mapping) else None
-        )
-        writer = record.get("writer")
-        reader = record.get("delayed_reader")
-        writer_role = writer.get("operation_role") if isinstance(writer, Mapping) else None
-        reader_role = reader.get("operation_role") if isinstance(reader, Mapping) else None
-        writer_typing = (
-            operation_typing.get(writer_role)
-            if isinstance(operation_typing, Mapping) and isinstance(writer_role, str)
-            else None
-        )
-        reader_typing = (
-            operation_typing.get(reader_role)
-            if isinstance(operation_typing, Mapping) and isinstance(reader_role, str)
-            else None
-        )
-        record_valid = (
-            record.get("active_root") == active_root
-            and isinstance(writer, Mapping)
-            and writer.get("active_root") == active_root
-            and writer.get("semantic_action") == "record-write"
-            and _substantive(writer.get("typed_assignment"))
-            and isinstance(writer_typing, Mapping)
-            and writer_typing.get("status") == "TYPED-ASSIGNED"
-            and writer_typing.get("semantic_role") == "state-transformation"
-            and isinstance(reader, Mapping)
-            and reader.get("active_root") == active_root
-            and reader.get("semantic_action") == "delayed-read"
-            and _substantive(reader.get("typed_effect"))
-            and isinstance(reader_typing, Mapping)
-            and reader_typing.get("status") == "TYPED-ASSIGNED"
-            and reader_typing.get("semantic_role") == "reader-effect"
-            and isinstance(closure, Mapping)
-            and closure.get("status") == "TYPED-CONTINUATION-CLOSED"
-            and closure.get("active_root") == active_root
-            and isinstance(recovery, Mapping)
-            and recovery.get("all_words_recoverable") is True
-        )
-        record_detail = {
-            "connected_writer": isinstance(writer, Mapping)
-            and writer.get("active_root") == active_root,
-            "connected_delayed_reader": isinstance(reader, Mapping)
-            and reader.get("active_root") == active_root,
-            "writer_in_closed_typed_scope": isinstance(writer_typing, Mapping)
-            and writer_typing.get("status") == "TYPED-ASSIGNED",
-            "reader_in_closed_typed_scope": isinstance(reader_typing, Mapping)
-            and reader_typing.get("status") == "TYPED-ASSIGNED",
-            "closed_recoverable_continuations": isinstance(recovery, Mapping)
-            and recovery.get("all_words_recoverable") is True,
-        }
-
-    rewrite = evidence.get("region_rewrite")
-    rewrite_valid = False
-    rewrite_detail: dict[str, object] = {}
-    if record_valid and isinstance(rewrite, Mapping):
-        before_region = rewrite.get("before_region")
-        after_region = rewrite.get("after_region")
-        before_response = rewrite.get("response_before")
-        after_response = rewrite.get("response_after")
-        try:
-            before_exact = {
-                str(key): exact(value) for key, value in before_response.items()
-            } if isinstance(before_response, Mapping) else {}
-            after_exact = {
-                str(key): exact(value) for key, value in after_response.items()
-            } if isinstance(after_response, Mapping) else {}
-        except (ScoreRefusal, TypeError, ValueError):
-            before_exact = {}
-            after_exact = {}
-        rewrite_valid = (
-            rewrite.get("active_root") == active_root
-            and isinstance(before_region, PrefixRegion)
-            and isinstance(after_region, PrefixRegion)
-            and before_region != after_region
-            and bool(before_exact)
-            and set(before_exact) == set(after_exact)
-            and all(value >= 0 for value in before_exact.values())
-            and all(value >= 0 for value in after_exact.values())
-            and sum(before_exact.values(), Fraction(0)) == 1
-            and sum(after_exact.values(), Fraction(0)) == 1
-            and before_exact != after_exact
-            and rewrite.get("later_response_root") == active_root
-            and rewrite.get("response_control_region") == after_region
-        )
-        rewrite_detail = {
-            "connected": rewrite.get("active_root") == active_root,
-            "regional_object_changed": isinstance(before_region, PrefixRegion)
-            and isinstance(after_region, PrefixRegion)
-            and before_region != after_region,
-            "later_calibrated_response_changed": before_exact != after_exact,
-            "changed_region_controls_response": rewrite.get(
-                "response_control_region"
-            )
-            == after_region,
-        }
-
-    role = (
-        "REGION-REWRITING"
-        if rewrite_valid
-        else "RECORD-WRITING-ON-FIXED-ALGEBRA"
-        if record_valid
-        else "FIXED-ALGEBRA-CONDITIONING"
-        if conditioning_valid
-        else "STATIC-RESPONSE"
-    )
-    if role not in ONTOLOGY_ROLES:
-        raise ScoreRefusal("ontology role escaped its frozen vocabulary")
+    if evidence.get("static_response") is not True:
+        raise ScoreRefusal("ontology-role measurement lacks a static response baseline")
     return {
-        "role": role,
-        "static_response": static_response,
-        "process_valid": process_valid,
-        "conditioning": conditioning_detail,
-        "record": record_detail,
-        "region_rewrite": rewrite_detail,
+        "role": "STATIC-RESPONSE",
+        "static_response": True,
+        "process_valid": False,
+        "conditioning": {"valid": False, "rejected_asserted_mapping": True},
+        "record": {"valid": False, "rejected_asserted_mapping": True},
+        "region_rewrite": {"valid": False, "rejected_asserted_mapping": True},
         "candidate_consulted": False,
     }
 
@@ -6072,7 +5206,7 @@ def score_dataset(
         "qualifiers": [],
         "blinding_status": BLINDING_STATUS,
         "exposure_debt": EXPOSURE_DEBT,
-        "v3_source_frozen_before_v3_run": True,
+        "v4_source_frozen_before_v4_run": True,
     }
     primary, primary_walls = classify_primary(receipt)
     if primary not in PRIMARY_WORDS:
@@ -6090,24 +5224,24 @@ def score_dataset(
 
 
 def attach_payload_hash(receipt: MutableMapping[str, object]) -> None:
-    validate_v3_exposure_fields(receipt)
+    validate_v4_exposure_fields(receipt)
     if "payload_sha256" in receipt:
         raise ScoreRefusal("payload hash already attached")
     receipt["payload_sha256"] = canonical_sha256(receipt)
 
 
-def validate_v3_exposure_fields(value: Mapping[str, object]) -> None:
+def validate_v4_exposure_fields(value: Mapping[str, object]) -> None:
     expected = {
         "blinding_status": BLINDING_STATUS,
         "exposure_debt": EXPOSURE_DEBT,
-        "v3_source_frozen_before_v3_run": True,
+        "v4_source_frozen_before_v4_run": True,
     }
     if any(value.get(key) != expected_value for key, expected_value in expected.items()):
-        raise ScoreRefusal("v3 artifact exposure metadata is missing or changed")
+        raise ScoreRefusal("v4 artifact exposure metadata is missing or changed")
 
 
 def transcript_from_receipt(receipt: Mapping[str, object]) -> dict[str, object]:
-    validate_v3_exposure_fields(receipt)
+    validate_v4_exposure_fields(receipt)
     transcript = {
         "schema": TRANSCRIPT_SCHEMA,
         "strict_primary": receipt["strict_primary"],
@@ -6127,12 +5261,12 @@ def transcript_from_receipt(receipt: Mapping[str, object]) -> dict[str, object]:
         "scope_walls": receipt["scope_walls"],
         "blinding_status": receipt["blinding_status"],
         "exposure_debt": receipt["exposure_debt"],
-        "v3_source_frozen_before_v3_run": receipt[
-            "v3_source_frozen_before_v3_run"
+        "v4_source_frozen_before_v4_run": receipt[
+            "v4_source_frozen_before_v4_run"
         ],
         "receipt_payload_sha256": receipt["payload_sha256"],
     }
-    validate_v3_exposure_fields(transcript)
+    validate_v4_exposure_fields(transcript)
     return transcript
 
 
@@ -8454,34 +7588,5733 @@ def run_all_mutants_cli() -> dict[str, object]:
     }
 
 
-def _require(condition: bool, message: str) -> None:
-    if not condition:
-        raise AssertionError(message)
+# ---------------------------------------------------------------------------
+# V4 fixture-free exact semantic laws
 
 
-def run_selftests() -> dict[str, object]:
+V4_INTERNAL_ROOT = "v4:internal-reachability-control"
+
+
+def _q_kron(left: QMatrix, right: QMatrix) -> QMatrix:
+    return QMatrix.from_rows(
+        (
+            (
+                left.data[left_row][left_col]
+                * right.data[right_row][right_col]
+                for left_col in range(left.ncols)
+                for right_col in range(right.ncols)
+            )
+            for left_row in range(left.nrows)
+            for right_row in range(right.nrows)
+        ),
+        ncols=left.ncols * right.ncols,
+    )
+
+
+def _q_nonzero_count(value: QMatrix) -> int:
+    return sum(item != 0 for row in value.data for item in row)
+
+
+def _q_residual(left: QMatrix, right: QMatrix) -> dict[str, object]:
+    if left.shape != right.shape:
+        return {
+            "shape_match": False,
+            "left_shape": left.shape,
+            "right_shape": right.shape,
+            "nonzero_count": None,
+        }
+    difference = qsubtract(left, right)
+    return {
+        "shape_match": True,
+        "left_shape": left.shape,
+        "right_shape": right.shape,
+        "difference": difference,
+        "nonzero_count": _q_nonzero_count(difference),
+    }
+
+
+def _q_column_residual(value: QMatrix, target: Fraction = Fraction(1)) -> tuple[Fraction, ...]:
+    return tuple(
+        sum((value.data[row][column] for row in range(value.nrows)), Fraction(0))
+        - target
+        for column in range(value.ncols)
+    )
+
+
+def _q_is_permutation(value: QMatrix) -> tuple[bool, QMatrix | None]:
+    if value.nrows != value.ncols:
+        return False, None
+    permitted = {Fraction(0), Fraction(1)}
+    entrywise = all(item in permitted for row in value.data for item in row)
+    rows = all(sum(row, Fraction(0)) == 1 for row in value.data)
+    columns = all(
+        sum((value.data[row][column] for row in range(value.nrows)), Fraction(0))
+        == 1
+        for column in range(value.ncols)
+    )
+    inverse = qtranspose(value)
+    inverse_valid = (
+        qmultiply(value, inverse) == QMatrix.identity(value.nrows)
+        and qmultiply(inverse, value) == QMatrix.identity(value.nrows)
+    )
+    return entrywise and rows and columns and inverse_valid, inverse
+
+
+def _q_permutation_from_images(images: Sequence[int]) -> QMatrix:
+    size = len(images)
+    if sorted(images) != list(range(size)):
+        raise ScoreRefusal("permutation images are not bijective")
+    return QMatrix.from_rows(
+        (
+            (Fraction(1) if row == images[column] else Fraction(0) for column in range(size))
+            for row in range(size)
+        ),
+        ncols=size,
+    )
+
+
+def _tensor_frontier(left: Sequence[str], right: Sequence[str]) -> tuple[str, ...]:
+    return tuple(f"({first},{second})" for first in left for second in right)
+
+
+def _symmetry_permutation(left_size: int, right_size: int) -> QMatrix:
+    images = [
+        right * left_size + left
+        for left in range(left_size)
+        for right in range(right_size)
+    ]
+    return _q_permutation_from_images(images)
+
+
+def _associator_permutation(first: int, second: int, third: int) -> QMatrix:
+    images = [
+        left * (second * third) + middle * third + right
+        for left in range(first)
+        for middle in range(second)
+        for right in range(third)
+    ]
+    return _q_permutation_from_images(images)
+
+
+@dataclass(frozen=True, slots=True)
+class TypedBoundary:
+    root: str
+    identifier: str
+    frontier: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {"root": self.root, "id": self.identifier, "frontier": self.frontier}
+
+
+@dataclass(frozen=True, slots=True)
+class TypedArrow:
+    root: str
+    identifier: str
+    generator_id: str
+    source_id: str
+    target_id: str
+    matrix: QMatrix
+    process_word: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "generator_id": self.generator_id,
+            "source_id": self.source_id,
+            "target_id": self.target_id,
+            "matrix": self.matrix,
+            "process_word": self.process_word,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class TypedInstrument:
+    root: str
+    identifier: str
+    source_id: str
+    target_id: str
+    flags: tuple[str, ...]
+    branch_matrices: tuple[QMatrix, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_id": self.source_id,
+            "target_id": self.target_id,
+            "flags": self.flags,
+            "branch_matrices": self.branch_matrices,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class TypedFactorization:
+    root: str
+    identifier: str
+    whole_arrow_id: str
+    arrow_occurrence_ids: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "whole_arrow_id": self.whole_arrow_id,
+            "arrow_occurrence_ids": self.arrow_occurrence_ids,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class TypedVerticalMap:
+    root: str
+    identifier: str
+    source_id: str
+    target_id: str
+    matrix: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_id": self.source_id,
+            "target_id": self.target_id,
+            "matrix": self.matrix,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class TensorBoundaryClaim:
+    left_boundary_id: str
+    right_boundary_id: str
+    product_boundary_id: str
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "left_boundary_id": self.left_boundary_id,
+            "right_boundary_id": self.right_boundary_id,
+            "product_boundary_id": self.product_boundary_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class TensorArrowClaim:
+    left_arrow_id: str
+    right_arrow_id: str
+    product_arrow_id: str
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "left_arrow_id": self.left_arrow_id,
+            "right_arrow_id": self.right_arrow_id,
+            "product_arrow_id": self.product_arrow_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class TensorPrimitive:
+    root: str
+    identifier: str
+    unit_boundary_id: str
+    boundary_claims: tuple[TensorBoundaryClaim, ...]
+    arrow_claims: tuple[TensorArrowClaim, ...]
+    associator_boundary_ids: tuple[str, str, str]
+    associator_matrix: QMatrix
+    symmetry_boundary_ids: tuple[str, str]
+    symmetry_matrix: QMatrix
+    associativity_arrow_ids: tuple[str, str, str]
+    interchange_arrow_ids: tuple[str, str, str, str]
+    interchange_tensor_arrow_ids: tuple[str, str]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "unit_boundary_id": self.unit_boundary_id,
+            "boundary_claims": self.boundary_claims,
+            "arrow_claims": self.arrow_claims,
+            "associator_boundary_ids": self.associator_boundary_ids,
+            "associator_matrix": self.associator_matrix,
+            "symmetry_boundary_ids": self.symmetry_boundary_ids,
+            "symmetry_matrix": self.symmetry_matrix,
+            "associativity_arrow_ids": self.associativity_arrow_ids,
+            "interchange_arrow_ids": self.interchange_arrow_ids,
+            "interchange_tensor_arrow_ids": self.interchange_tensor_arrow_ids,
+            "ordering": "left-major-lexicographic",
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class NaturalityPrimitive:
+    root: str
+    identifier: str
+    arrow_id: str
+    transported_arrow_id: str
+    source_vertical_id: str
+    target_vertical_id: str
+    calibrated_state: QMatrix
+    calibrated_effect: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "arrow_id": self.arrow_id,
+            "transported_arrow_id": self.transported_arrow_id,
+            "source_vertical_id": self.source_vertical_id,
+            "target_vertical_id": self.target_vertical_id,
+            "calibrated_state": self.calibrated_state,
+            "calibrated_effect": self.calibrated_effect,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ClassicalPrimitiveLaw:
+    root: str
+    identifier: str
+    active_boundary_ids: tuple[str, ...]
+    boundaries: tuple[TypedBoundary, ...]
+    tensor_boundaries: tuple[TypedBoundary, ...]
+    arrows: tuple[TypedArrow, ...]
+    instruments: tuple[TypedInstrument, ...]
+    identity_arrow_ids: tuple[str, ...]
+    factorizations: tuple[TypedFactorization, ...]
+    two_step_factorization_id: str
+    alternate_cut_ids: tuple[str, ...]
+    tensor: TensorPrimitive
+    vertical_maps: tuple[TypedVerticalMap, ...]
+    naturality: NaturalityPrimitive
+    opaque_proofs: tuple[tuple[str, str], ...] = ()
+    transition_reference_id: str | None = "shared-transition-X"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "ClassicalPrimitiveLaw",
+            "root": self.root,
+            "id": self.identifier,
+            "active_boundary_ids": self.active_boundary_ids,
+            "boundaries": self.boundaries,
+            "tensor_boundaries": self.tensor_boundaries,
+            "arrows": self.arrows,
+            "instruments": self.instruments,
+            "identity_arrow_ids": self.identity_arrow_ids,
+            "factorizations": self.factorizations,
+            "two_step_factorization_id": self.two_step_factorization_id,
+            "alternate_cut_ids": self.alternate_cut_ids,
+            "tensor": self.tensor,
+            "vertical_maps": self.vertical_maps,
+            "naturality": self.naturality,
+            "opaque_proofs": self.opaque_proofs,
+            "transition_reference_id": self.transition_reference_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ClassicalLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    coordinate: str
+    valid: bool
+    residuals: Mapping[str, object]
+    issues: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "ClassicalLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "coordinate": self.coordinate,
+            "classical_valid": self.valid,
+            "quantum_valid": False,
+            "residuals": self.residuals,
+            "issues": self.issues,
+            "missing": self.issues,
+            "contradictions": (),
+        }
+
+
+def _unique_index(values: Sequence[object], role: str) -> tuple[dict[str, object], list[str]]:
+    result: dict[str, object] = {}
+    issues: list[str] = []
+    for value in values:
+        identifier = getattr(value, "identifier", None)
+        if not isinstance(identifier, str) or not identifier:
+            issues.append(f"{role}:missing-id")
+        elif identifier in result:
+            issues.append(f"{role}:duplicate:{identifier}")
+        else:
+            result[identifier] = value
+    return result, issues
+
+
+def measure_classical_primitive_law(law: object) -> ClassicalLawMeasurement:
+    if not isinstance(law, ClassicalPrimitiveLaw):
+        raise ScoreRefusal("classical promotion requires ClassicalPrimitiveLaw")
+    payload_hash = canonical_sha256(law.to_data())
+    issues: list[str] = []
+    residuals: dict[str, object] = {}
+    if not law.root or not law.identifier:
+        issues.append("law-root-or-id")
+
+    boundary_index_raw, boundary_issues = _unique_index(
+        law.boundaries + law.tensor_boundaries, "boundary"
+    )
+    boundary_index = {
+        key: value for key, value in boundary_index_raw.items() if isinstance(value, TypedBoundary)
+    }
+    issues.extend(boundary_issues)
+    active_ids = tuple(law.active_boundary_ids)
+    if (
+        not active_ids
+        or len(set(active_ids)) != len(active_ids)
+        or set(active_ids) != {row.identifier for row in law.boundaries}
+    ):
+        issues.append("frontier-constructor-not-total-on-declared-domain")
+    for boundary in boundary_index.values():
+        if (
+            boundary.root != law.root
+            or not boundary.frontier
+            or len(set(boundary.frontier)) != len(boundary.frontier)
+            or any(not isinstance(port, str) or not port for port in boundary.frontier)
+        ):
+            issues.append(f"boundary-typing:{boundary.identifier}")
+
+    arrow_index_raw, arrow_issues = _unique_index(law.arrows, "arrow")
+    arrow_index = {
+        key: value for key, value in arrow_index_raw.items() if isinstance(value, TypedArrow)
+    }
+    issues.extend(arrow_issues)
+    arrow_rows: dict[str, object] = {}
+    for arrow_id, arrow in sorted(arrow_index.items()):
+        source = boundary_index.get(arrow.source_id)
+        target = boundary_index.get(arrow.target_id)
+        shape_expected = (
+            (len(target.frontier), len(source.frontier))
+            if isinstance(source, TypedBoundary) and isinstance(target, TypedBoundary)
+            else None
+        )
+        dimensioned = shape_expected is not None and arrow.matrix.shape == shape_expected
+        nonnegative = all(item >= 0 for row in arrow.matrix.data for item in row)
+        column_residual = _q_column_residual(arrow.matrix)
+        mass_preserving = all(item == 0 for item in column_residual)
+        connected = arrow.root == law.root
+        if not (dimensioned and nonnegative and mass_preserving and connected):
+            issues.append(f"arrow-law:{arrow_id}")
+        arrow_rows[arrow_id] = {
+            "declared_shape": shape_expected,
+            "actual_shape": arrow.matrix.shape,
+            "dimension_residual": 0 if dimensioned else 1,
+            "negative_entry_count": sum(
+                item < 0 for row in arrow.matrix.data for item in row
+            ),
+            "column_sum_residual": column_residual,
+            "zero_vector_retained": True,
+            "output_frontier_retained": (
+                target.frontier if isinstance(target, TypedBoundary) else ()
+            ),
+            "connected": connected,
+        }
+    residuals["arrows"] = arrow_rows
+
+    instrument_rows: dict[str, object] = {}
+    instrument_index_raw, instrument_issues = _unique_index(law.instruments, "instrument")
+    instrument_index = {
+        key: value
+        for key, value in instrument_index_raw.items()
+        if isinstance(value, TypedInstrument)
+    }
+    issues.extend(instrument_issues)
+    for instrument_id, instrument in sorted(instrument_index.items()):
+        source = boundary_index.get(instrument.source_id)
+        target = boundary_index.get(instrument.target_id)
+        expected_shape = (
+            (len(target.frontier), len(source.frontier))
+            if isinstance(source, TypedBoundary) and isinstance(target, TypedBoundary)
+            else None
+        )
+        branches_typed = bool(
+            expected_shape is not None
+            and instrument.root == law.root
+            and instrument.flags
+            and len(instrument.flags) == len(set(instrument.flags))
+            and len(instrument.flags) == len(instrument.branch_matrices)
+            and all(branch.shape == expected_shape for branch in instrument.branch_matrices)
+            and all(
+                item >= 0
+                for branch in instrument.branch_matrices
+                for row in branch.data
+                for item in row
+            )
+        )
+        branch_sum = (
+            instrument.branch_matrices[0]
+            if instrument.branch_matrices
+            else QMatrix.zero(0, 0)
+        )
+        for branch in instrument.branch_matrices[1:]:
+            if branch.shape == branch_sum.shape:
+                branch_sum = qadd(branch_sum, branch)
+        completeness = (
+            _q_column_residual(branch_sum)
+            if branches_typed
+            else (Fraction(1),)
+        )
+        flagged = (
+            qvstack(instrument.branch_matrices, ncols=expected_shape[1])
+            if branches_typed and expected_shape is not None
+            else QMatrix.zero(0, 0)
+        )
+        flagged_residual = (
+            _q_column_residual(flagged) if branches_typed else (Fraction(1),)
+        )
+        valid = branches_typed and all(value == 0 for value in completeness) and all(
+            value == 0 for value in flagged_residual
+        )
+        if not valid:
+            issues.append(f"instrument-law:{instrument_id}")
+        instrument_rows[instrument_id] = {
+            "branch_shapes": tuple(branch.shape for branch in instrument.branch_matrices),
+            "branch_sum_column_residual": completeness,
+            "stacked_flagged_arrow": flagged,
+            "stacked_column_residual": flagged_residual,
+            "individual_branches_subnormalized": tuple(
+                any(value != 0 for value in _q_column_residual(branch))
+                for branch in instrument.branch_matrices
+            ),
+            "valid": valid,
+        }
+    residuals["instruments"] = instrument_rows
+
+    identity_rows: dict[str, object] = {}
+    identity_boundaries: list[str] = []
+    for identity_id in law.identity_arrow_ids:
+        arrow = arrow_index.get(identity_id)
+        valid = False
+        boundary_id: str | None = None
+        identity_residual: dict[str, object] = {"nonzero_count": None}
+        if isinstance(arrow, TypedArrow) and arrow.source_id == arrow.target_id:
+            boundary_id = arrow.source_id
+            boundary = boundary_index.get(boundary_id)
+            if isinstance(boundary, TypedBoundary):
+                identity_residual = _q_residual(
+                    arrow.matrix, QMatrix.identity(len(boundary.frontier))
+                )
+                valid = bool(
+                    arrow.root == law.root
+                    and arrow.process_word == ()
+                    and identity_residual["nonzero_count"] == 0
+                )
+        if boundary_id is not None:
+            identity_boundaries.append(boundary_id)
+        if not valid:
+            issues.append(f"identity-law:{identity_id}")
+        identity_rows[str(identity_id)] = {
+            "boundary_id": boundary_id,
+            "empty_process_attached": bool(
+                isinstance(arrow, TypedArrow) and arrow.process_word == ()
+            ),
+            "matrix_residual": identity_residual,
+            "valid": valid,
+        }
+    identity_exact = (
+        len(identity_boundaries) == len(active_ids)
+        and len(set(identity_boundaries)) == len(active_ids)
+        and set(identity_boundaries) == set(active_ids)
+    )
+    if not identity_exact:
+        issues.append("active-identity-domain")
+    residuals["identities"] = {
+        "rows": identity_rows,
+        "active_domain": active_ids,
+        "exactly_one_per_active_object": identity_exact,
+    }
+
+    factor_index_raw, factor_issues = _unique_index(law.factorizations, "factorization")
+    factor_index = {
+        key: value
+        for key, value in factor_index_raw.items()
+        if isinstance(value, TypedFactorization)
+    }
+    issues.extend(factor_issues)
+    factor_rows: dict[str, object] = {}
+    factor_products: dict[str, QMatrix] = {}
+    for factor_id, factor in sorted(factor_index.items()):
+        whole = arrow_index.get(factor.whole_arrow_id)
+        occurrences = [arrow_index.get(identifier) for identifier in factor.arrow_occurrence_ids]
+        typed = bool(
+            factor.root == law.root
+            and isinstance(whole, TypedArrow)
+            and occurrences
+            and all(isinstance(item, TypedArrow) for item in occurrences)
+        )
+        composable = typed
+        product: QMatrix | None = None
+        if typed:
+            first = occurrences[0]
+            assert isinstance(first, TypedArrow)
+            product = first.matrix
+            prior_target = first.target_id
+            for occurrence in occurrences[1:]:
+                assert isinstance(occurrence, TypedArrow)
+                if occurrence.source_id != prior_target:
+                    composable = False
+                    break
+                try:
+                    product = qmultiply(occurrence.matrix, product)
+                except ValueError:
+                    composable = False
+                    break
+                prior_target = occurrence.target_id
+            if isinstance(whole, TypedArrow) and (
+                first.source_id != whole.source_id or prior_target != whole.target_id
+            ):
+                composable = False
+        residual = (
+            _q_residual(product, whole.matrix)
+            if composable and product is not None and isinstance(whole, TypedArrow)
+            else {"shape_match": False, "nonzero_count": None}
+        )
+        valid = composable and residual.get("nonzero_count") == 0
+        if not valid:
+            issues.append(f"factorization-law:{factor_id}")
+        if product is not None:
+            factor_products[factor_id] = product
+        factor_rows[factor_id] = {
+            "occurrence_count": len(factor.arrow_occurrence_ids),
+            "occurrence_ids": factor.arrow_occurrence_ids,
+            "composable": composable,
+            "recomputed_product": product,
+            "whole_residual": residual,
+            "valid": valid,
+        }
+    two_step = factor_index.get(law.two_step_factorization_id)
+    two_step_valid = False
+    if isinstance(two_step, TypedFactorization) and len(two_step.arrow_occurrence_ids) == 2:
+        two_arrows = [arrow_index.get(identifier) for identifier in two_step.arrow_occurrence_ids]
+        two_step_valid = bool(
+            len(set(two_step.arrow_occurrence_ids)) == 2
+            and factor_rows.get(two_step.identifier, {}).get("valid")
+            and all(
+                isinstance(arrow, TypedArrow)
+                and (
+                    arrow.source_id != arrow.target_id
+                    or arrow.matrix
+                    != QMatrix.identity(arrow.matrix.nrows)
+                )
+                for arrow in two_arrows
+            )
+        )
+    if not two_step_valid:
+        issues.append("missing-two-nonidentity-occurrences")
+    cut_wholes = {
+        factor_index[identifier].whole_arrow_id
+        for identifier in law.alternate_cut_ids
+        if identifier in factor_index
+    }
+    cuts_valid = bool(
+        len(law.alternate_cut_ids) >= 2
+        and len(set(law.alternate_cut_ids)) == len(law.alternate_cut_ids)
+        and all(
+            identifier in factor_rows and factor_rows[identifier]["valid"]
+            for identifier in law.alternate_cut_ids
+        )
+        and len(cut_wholes) == 1
+    )
+    if not cuts_valid:
+        issues.append("alternate-cut-equality")
+    residuals["factorizations"] = {
+        "rows": factor_rows,
+        "two_nonidentity_occurrences": two_step_valid,
+        "alternate_cuts_same_whole": cuts_valid,
+    }
+
+    tensor = law.tensor
+    tensor_rows: dict[str, object] = {}
+    tensor_valid = tensor.root == law.root
+    product_boundaries: dict[tuple[str, str], str] = {}
+    for claim in tensor.boundary_claims:
+        left = boundary_index.get(claim.left_boundary_id)
+        right = boundary_index.get(claim.right_boundary_id)
+        product = boundary_index.get(claim.product_boundary_id)
+        expected = (
+            _tensor_frontier(left.frontier, right.frontier)
+            if isinstance(left, TypedBoundary) and isinstance(right, TypedBoundary)
+            else None
+        )
+        valid = bool(
+            isinstance(product, TypedBoundary)
+            and expected is not None
+            and product.frontier == expected
+            and product.root == law.root
+        )
+        key = (claim.left_boundary_id, claim.right_boundary_id)
+        if key in product_boundaries:
+            valid = False
+        product_boundaries[key] = claim.product_boundary_id
+        tensor_valid = tensor_valid and valid
+        tensor_rows[f"boundary:{claim.product_boundary_id}"] = {
+            "expected_frontier": expected,
+            "actual_frontier": (
+                product.frontier if isinstance(product, TypedBoundary) else None
+            ),
+            "residual": 0 if valid else 1,
+        }
+    arrow_claim_by_pair: dict[tuple[str, str], TypedArrow] = {}
+    for claim in tensor.arrow_claims:
+        left = arrow_index.get(claim.left_arrow_id)
+        right = arrow_index.get(claim.right_arrow_id)
+        product = arrow_index.get(claim.product_arrow_id)
+        expected_matrix: QMatrix | None = None
+        valid = False
+        if isinstance(left, TypedArrow) and isinstance(right, TypedArrow):
+            expected_matrix = _q_kron(left.matrix, right.matrix)
+            expected_source = product_boundaries.get((left.source_id, right.source_id))
+            expected_target = product_boundaries.get((left.target_id, right.target_id))
+            valid = bool(
+                isinstance(product, TypedArrow)
+                and product.source_id == expected_source
+                and product.target_id == expected_target
+                and product.matrix == expected_matrix
+                and product.root == law.root
+            )
+        tensor_valid = tensor_valid and valid
+        if isinstance(product, TypedArrow):
+            arrow_claim_by_pair[(claim.left_arrow_id, claim.right_arrow_id)] = product
+        tensor_rows[f"arrow:{claim.product_arrow_id}"] = {
+            "expected_matrix": expected_matrix,
+            "actual_matrix": product.matrix if isinstance(product, TypedArrow) else None,
+            "residual": (
+                _q_residual(product.matrix, expected_matrix)
+                if isinstance(product, TypedArrow) and expected_matrix is not None
+                else {"shape_match": False, "nonzero_count": None}
+            ),
+            "valid": valid,
+        }
+    unit_boundary = boundary_index.get(tensor.unit_boundary_id)
+    unit_valid = isinstance(unit_boundary, TypedBoundary) and len(unit_boundary.frontier) == 1
+    assoc_boundaries = [boundary_index.get(item) for item in tensor.associator_boundary_ids]
+    associator_expected = (
+        _associator_permutation(*(len(item.frontier) for item in assoc_boundaries))
+        if all(isinstance(item, TypedBoundary) for item in assoc_boundaries)
+        else None
+    )
+    associator_residual = (
+        _q_residual(tensor.associator_matrix, associator_expected)
+        if associator_expected is not None
+        else {"shape_match": False, "nonzero_count": None}
+    )
+    associator_valid = associator_residual.get("nonzero_count") == 0
+    symmetry_boundaries = [boundary_index.get(item) for item in tensor.symmetry_boundary_ids]
+    symmetry_expected = (
+        _symmetry_permutation(
+            len(symmetry_boundaries[0].frontier), len(symmetry_boundaries[1].frontier)
+        )
+        if all(isinstance(item, TypedBoundary) for item in symmetry_boundaries)
+        else None
+    )
+    symmetry_residual = (
+        _q_residual(tensor.symmetry_matrix, symmetry_expected)
+        if symmetry_expected is not None
+        else {"shape_match": False, "nonzero_count": None}
+    )
+    symmetry_valid = symmetry_residual.get("nonzero_count") == 0
+    associativity_arrows = [arrow_index.get(item) for item in tensor.associativity_arrow_ids]
+    associativity_residual: dict[str, object] = {"shape_match": False, "nonzero_count": None}
+    if all(isinstance(item, TypedArrow) for item in associativity_arrows):
+        first_arrow, second_arrow, third_arrow = associativity_arrows
+        assert isinstance(first_arrow, TypedArrow)
+        assert isinstance(second_arrow, TypedArrow)
+        assert isinstance(third_arrow, TypedArrow)
+        left_assoc = _q_kron(_q_kron(first_arrow.matrix, second_arrow.matrix), third_arrow.matrix)
+        right_assoc = _q_kron(first_arrow.matrix, _q_kron(second_arrow.matrix, third_arrow.matrix))
+        if associator_expected is not None and left_assoc.shape == associator_expected.shape:
+            transported = qmultiply(
+                associator_expected,
+                qmultiply(left_assoc, qtranspose(associator_expected)),
+            )
+            associativity_residual = _q_residual(transported, right_assoc)
+    associativity_valid = associativity_residual.get("nonzero_count") == 0
+    interchange_arrows = [arrow_index.get(item) for item in tensor.interchange_arrow_ids]
+    interchange_residual: dict[str, object] = {"shape_match": False, "nonzero_count": None}
+    claimed_interchange_residual: dict[str, object] = {
+        "shape_match": False,
+        "nonzero_count": None,
+    }
+    if all(isinstance(item, TypedArrow) for item in interchange_arrows):
+        first, second, spectator_first, spectator_second = interchange_arrows
+        assert isinstance(first, TypedArrow)
+        assert isinstance(second, TypedArrow)
+        assert isinstance(spectator_first, TypedArrow)
+        assert isinstance(spectator_second, TypedArrow)
+        if (
+            second.source_id == first.target_id
+            and spectator_second.source_id == spectator_first.target_id
+        ):
+            try:
+                left_interchange = qmultiply(
+                    _q_kron(second.matrix, spectator_second.matrix),
+                    _q_kron(first.matrix, spectator_first.matrix),
+                )
+                right_interchange = _q_kron(
+                    qmultiply(second.matrix, first.matrix),
+                    qmultiply(spectator_second.matrix, spectator_first.matrix),
+                )
+                interchange_residual = _q_residual(
+                    left_interchange, right_interchange
+                )
+                claimed_first = arrow_index.get(
+                    tensor.interchange_tensor_arrow_ids[0]
+                )
+                claimed_second = arrow_index.get(
+                    tensor.interchange_tensor_arrow_ids[1]
+                )
+                if isinstance(claimed_first, TypedArrow) and isinstance(
+                    claimed_second, TypedArrow
+                ):
+                    claimed_interchange_residual = _q_residual(
+                        qmultiply(claimed_second.matrix, claimed_first.matrix),
+                        right_interchange,
+                    )
+            except ValueError:
+                pass
+    interchange_valid = bool(
+        interchange_residual.get("nonzero_count") == 0
+        and claimed_interchange_residual.get("nonzero_count") == 0
+    )
+    tensor_valid = bool(
+        tensor_valid
+        and unit_valid
+        and associator_valid
+        and symmetry_valid
+        and associativity_valid
+        and interchange_valid
+    )
+    if not tensor_valid:
+        issues.append("tensor-unit-associator-symmetry-interchange")
+    residuals["tensor"] = {
+        "ordering": "left-major-lexicographic",
+        "claims": tensor_rows,
+        "unit_valid": unit_valid,
+        "associator_residual": associator_residual,
+        "symmetry_residual": symmetry_residual,
+        "associativity_transport_residual": associativity_residual,
+        "interchange_residual": interchange_residual,
+        "claimed_interchange_residual": claimed_interchange_residual,
+        "valid": tensor_valid,
+    }
+
+    vertical_index_raw, vertical_issues = _unique_index(law.vertical_maps, "vertical-map")
+    vertical_index = {
+        key: value
+        for key, value in vertical_index_raw.items()
+        if isinstance(value, TypedVerticalMap)
+    }
+    issues.extend(vertical_issues)
+    vertical_rows: dict[str, object] = {}
+    vertical_valid = True
+    for vertical_id, vertical in sorted(vertical_index.items()):
+        source = boundary_index.get(vertical.source_id)
+        target = boundary_index.get(vertical.target_id)
+        expected_shape = (
+            (len(target.frontier), len(source.frontier))
+            if isinstance(source, TypedBoundary) and isinstance(target, TypedBoundary)
+            else None
+        )
+        permutation, inverse = _q_is_permutation(vertical.matrix)
+        valid = bool(
+            vertical.root == law.root
+            and expected_shape == vertical.matrix.shape
+            and permutation
+        )
+        vertical_valid = vertical_valid and valid
+        vertical_rows[vertical_id] = {
+            "expected_shape": expected_shape,
+            "permutation_entrywise": permutation,
+            "inverse": inverse,
+            "rank": qrank(vertical.matrix),
+            "valid": valid,
+        }
+    naturality = law.naturality
+    arrow = arrow_index.get(naturality.arrow_id)
+    transported_arrow = arrow_index.get(naturality.transported_arrow_id)
+    source_vertical = vertical_index.get(naturality.source_vertical_id)
+    target_vertical = vertical_index.get(naturality.target_vertical_id)
+    naturality_residual: dict[str, object] = {"shape_match": False, "nonzero_count": None}
+    state_movement = False
+    effect_movement = False
+    if all(
+        isinstance(item, expected)
+        for item, expected in (
+            (arrow, TypedArrow),
+            (transported_arrow, TypedArrow),
+            (source_vertical, TypedVerticalMap),
+            (target_vertical, TypedVerticalMap),
+        )
+    ):
+        assert isinstance(arrow, TypedArrow)
+        assert isinstance(transported_arrow, TypedArrow)
+        assert isinstance(source_vertical, TypedVerticalMap)
+        assert isinstance(target_vertical, TypedVerticalMap)
+        if (
+            source_vertical.source_id == arrow.source_id
+            and source_vertical.target_id == transported_arrow.source_id
+            and target_vertical.source_id == arrow.target_id
+            and target_vertical.target_id == transported_arrow.target_id
+        ):
+            try:
+                naturality_residual = _q_residual(
+                    qmultiply(target_vertical.matrix, arrow.matrix),
+                    qmultiply(transported_arrow.matrix, source_vertical.matrix),
+                )
+                state_movement = (
+                    qmultiply(source_vertical.matrix, naturality.calibrated_state)
+                    != naturality.calibrated_state
+                )
+                target_inverse = qtranspose(target_vertical.matrix)
+                effect_movement = (
+                    qmultiply(naturality.calibrated_effect, target_inverse)
+                    != naturality.calibrated_effect
+                )
+            except ValueError:
+                pass
+    source_nonidentity = bool(
+        isinstance(source_vertical, TypedVerticalMap)
+        and source_vertical.matrix
+        != QMatrix.identity(source_vertical.matrix.nrows)
+    )
+    target_nonidentity = bool(
+        isinstance(target_vertical, TypedVerticalMap)
+        and target_vertical.matrix
+        != QMatrix.identity(target_vertical.matrix.nrows)
+    )
+    naturality_valid = bool(
+        naturality.root == law.root
+        and vertical_valid
+        and source_nonidentity
+        and target_nonidentity
+        and state_movement
+        and effect_movement
+        and naturality_residual.get("nonzero_count") == 0
+    )
+    if not naturality_valid:
+        issues.append("nonidentity-permutation-naturality")
+    residuals["naturality"] = {
+        "vertical_maps": vertical_rows,
+        "square_residual": naturality_residual,
+        "source_nonidentity": source_nonidentity,
+        "target_nonidentity": target_nonidentity,
+        "calibrated_state_moved": state_movement,
+        "calibrated_effect_moved": effect_movement,
+        "valid": naturality_valid,
+    }
+
+    consumed_ids = tuple(
+        sorted(
+            {law.identifier, law.tensor.identifier, law.naturality.identifier}
+            | set(boundary_index)
+            | set(arrow_index)
+            | set(instrument_index)
+            | set(factor_index)
+            | set(vertical_index)
+            | ({law.transition_reference_id} if law.transition_reference_id else set())
+        )
+    )
+    valid = not issues
+    return ClassicalLawMeasurement(
+        primitive_payload_sha256=payload_hash,
+        consumed_primitive_ids=consumed_ids,
+        coordinate="HORIZONTAL-CLASSICAL" if valid else "STATIC-RESPONSE-ONLY",
+        valid=valid,
+        residuals=residuals,
+        issues=tuple(sorted(set(issues))),
+    )
+
+
+def build_classical_existence_law(fault: str | None = None) -> ClassicalPrimitiveLaw:
+    root = V4_INTERNAL_ROOT
+    two = ("0", "1")
+    boundary_rows = [
+        TypedBoundary(root, "A", two),
+        TypedBoundary(root, "B", ("0",) if fault == "dropped-zero-port" else two),
+        TypedBoundary(root, "C", two),
+        TypedBoundary(root, "U", ("u0", "u1") if fault == "wrong-unit" else ("unit",)),
+    ]
+    product_specs = (
+        ("A", "A", "AA"),
+        ("B", "B", "BB"),
+        ("C", "C", "CC"),
+        ("A", "U", "AU"),
+        ("B", "U", "BU"),
+    )
+    base_index = {row.identifier: row for row in boundary_rows}
+    tensor_boundaries: list[TypedBoundary] = []
+    for left_id, right_id, product_id in product_specs:
+        left = base_index[left_id]
+        right = base_index[right_id]
+        frontier = _tensor_frontier(left.frontier, right.frontier)
+        if fault == "wrong-tensor-frontier" and product_id == "AA":
+            frontier = tuple(reversed(frontier))
+        tensor_boundaries.append(TypedBoundary(root, product_id, frontier))
+
+    identity = QMatrix.identity(2)
+    flip = QMatrix.from_rows(((0, 1), (1, 0)))
+    unit_identity = QMatrix.identity(len(base_index["U"].frontier))
+    f_matrix = flip
+    f_source = "A"
+    f_target = "B"
+    if fault == "frontier-domain-mismatch":
+        f_matrix = QMatrix.from_rows(((1,), (0,)))
+    elif fault == "frontier-codomain-mismatch":
+        f_matrix = QMatrix.from_rows(((1, 0),), ncols=2)
+    elif fault == "negative-entry":
+        f_matrix = QMatrix.from_rows(((2, 0), (-1, 1)))
+    elif fault == "nonconserving":
+        f_matrix = QMatrix.from_rows(((1, 0), (0, 2)))
+    g_source = "MISSING" if fault == "missing-intermediate" else "B"
+    whole_matrix = flip if fault == "wrong-whole" else identity
+    r2_matrix = flip if fault == "altered-cut" else identity
+    arrows = [
+        TypedArrow(root, "id_A", "identity", "A", "A", identity, ()),
+        TypedArrow(root, "id_B", "identity", "B", "B", QMatrix.identity(len(base_index["B"].frontier)), ()),
+        TypedArrow(root, "id_C", "identity", "C", "C", identity, ()),
+        TypedArrow(root, "id_U", "identity", "U", "U", unit_identity, ()),
+        TypedArrow(root, "f_occ", "X", f_source, f_target, f_matrix, ("X:first",)),
+        TypedArrow(root, "g_occ", "X", g_source, "C", flip, ("X:second",)),
+        TypedArrow(root, "r1_occ", "I-route", "A", "B", identity, ("I:first",)),
+        TypedArrow(root, "r2_occ", "I-route", "B", "C", r2_matrix, ("I:second",)),
+        TypedArrow(root, "whole_h", "whole", "A", "C", whole_matrix, ("whole",)),
+        TypedArrow(root, "x_A", "X", "A", "A", flip, ("X:endomorphism",)),
+        TypedArrow(root, "k_occ", "X", "A", "B", flip, ("X:spectator-first",)),
+        TypedArrow(root, "h_occ", "X", "B", "C", flip, ("X:spectator-second",)),
+        TypedArrow(root, "f_prime", "X-conjugate", "A", "B", flip, ("conjugated",)),
+    ]
+    product_boundary_index = {row.identifier: row for row in tensor_boundaries}
+    tfk_matrix = QMatrix.identity(4) if fault == "wrong-interchange" else _q_kron(flip, flip)
+    arrows.extend(
+        [
+            TypedArrow(root, "tensor_fk", "tensor", "AA", "BB", tfk_matrix, ("tensor",)),
+            TypedArrow(root, "tensor_gh", "tensor", "BB", "CC", _q_kron(flip, flip), ("tensor",)),
+            TypedArrow(
+                root,
+                "tensor_f_unit",
+                "tensor",
+                "AU",
+                "BU",
+                _q_kron(flip, unit_identity),
+                ("tensor-unit",),
+            ),
+        ]
+    )
+    if fault == "opaque-replacement":
+        arrows = []
+
+    q0 = QMatrix.from_rows(((1, 0), (0, 0)))
+    q1 = QMatrix.from_rows(((0, 0), (0, 1)))
+    instruments = (
+        TypedInstrument(root, "question_instrument", "A", "A", ("0", "1"), (q0, q1)),
+    )
+    factors = [
+        TypedFactorization(
+            root,
+            "cut_flip_flip",
+            "whole_h",
+            ("f_occ",) if fault == "one-standalone-occurrence" else ("f_occ", "g_occ"),
+        ),
+        TypedFactorization(root, "cut_identity_route", "whole_h", ("r1_occ", "r2_occ")),
+    ]
+    if fault == "opaque-replacement":
+        factors = []
+
+    boundary_claims = tuple(
+        TensorBoundaryClaim(left, right, product)
+        for left, right, product in product_specs
+    )
+    arrow_claims = (
+        TensorArrowClaim("f_occ", "k_occ", "tensor_fk"),
+        TensorArrowClaim("g_occ", "h_occ", "tensor_gh"),
+        TensorArrowClaim("f_occ", "id_U", "tensor_f_unit"),
+    )
+    associator = _associator_permutation(2, 2, len(base_index["U"].frontier))
+    if fault == "wrong-associator":
+        associator = _q_permutation_from_images(tuple(reversed(range(associator.nrows))))
+    symmetry = _symmetry_permutation(2, 2)
+    if fault == "wrong-symmetry":
+        symmetry = QMatrix.identity(4)
+    tensor = TensorPrimitive(
+        root=root,
+        identifier="tensor_primitive",
+        unit_boundary_id="U",
+        boundary_claims=boundary_claims,
+        arrow_claims=arrow_claims,
+        associator_boundary_ids=("A", "A", "U"),
+        associator_matrix=associator,
+        symmetry_boundary_ids=("A", "A"),
+        symmetry_matrix=symmetry,
+        associativity_arrow_ids=("f_occ", "k_occ", "id_U"),
+        interchange_arrow_ids=("f_occ", "g_occ", "k_occ", "h_occ"),
+        interchange_tensor_arrow_ids=("tensor_fk", "tensor_gh"),
+    )
+    vertical_matrix = flip
+    target_vertical_matrix = flip
+    naturality_root = root
+    if fault == "identity-naturality":
+        vertical_matrix = identity
+        target_vertical_matrix = identity
+    elif fault == "changed-target-vertical":
+        target_vertical_matrix = identity
+    elif fault == "rank-deficient-vertical":
+        target_vertical_matrix = QMatrix.zero(2, 2)
+    elif fault == "disconnected-naturality":
+        naturality_root = "v4:disconnected"
+    vertical_maps = (
+        TypedVerticalMap(root, "J_A", "A", "A", vertical_matrix),
+        TypedVerticalMap(root, "J_B", "B", "B", target_vertical_matrix),
+    )
+    naturality = NaturalityPrimitive(
+        root=naturality_root,
+        identifier="naturality_square",
+        arrow_id="f_occ",
+        transported_arrow_id="f_prime",
+        source_vertical_id="J_A",
+        target_vertical_id="J_B",
+        calibrated_state=QMatrix.from_rows(((1,), (0,))),
+        calibrated_effect=QMatrix.from_rows(((1, 0),), ncols=2),
+    )
+    identities = ["id_A", "id_B", "id_C", "id_U"]
+    if fault == "duplicate-identity":
+        identities.append("id_A")
+    elif fault == "missing-identity":
+        identities.remove("id_C")
+    opaque = (
+        (("copy-oracle", "same opaque equation bytes"),)
+        if fault == "opaque-replacement"
+        else (("unused", "changed but inert"),)
+        if fault == "unused-proof-change"
+        else ()
+    )
+    return ClassicalPrimitiveLaw(
+        root=root,
+        identifier="classical_existence_law",
+        active_boundary_ids=("A", "B", "C", "U"),
+        boundaries=tuple(boundary_rows),
+        tensor_boundaries=tuple(tensor_boundaries),
+        arrows=tuple(arrows),
+        instruments=instruments,
+        identity_arrow_ids=tuple(identities),
+        factorizations=tuple(factors),
+        two_step_factorization_id="cut_flip_flip",
+        alternate_cut_ids=("cut_flip_flip", "cut_identity_route"),
+        tensor=tensor,
+        vertical_maps=vertical_maps,
+        naturality=naturality,
+        opaque_proofs=opaque,
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class GaussianRational:
+    real: Fraction = Fraction(0)
+    imag: Fraction = Fraction(0)
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "real", exact(self.real))
+        object.__setattr__(self, "imag", exact(self.imag))
+
+    @classmethod
+    def coerce(cls, value: object) -> "GaussianRational":
+        if isinstance(value, cls):
+            return value
+        return cls(exact(value), Fraction(0))
+
+    def __add__(self, other: object) -> "GaussianRational":
+        right = self.coerce(other)
+        return GaussianRational(self.real + right.real, self.imag + right.imag)
+
+    def __radd__(self, other: object) -> "GaussianRational":
+        return self + other
+
+    def __neg__(self) -> "GaussianRational":
+        return GaussianRational(-self.real, -self.imag)
+
+    def __sub__(self, other: object) -> "GaussianRational":
+        return self + (-self.coerce(other))
+
+    def __rsub__(self, other: object) -> "GaussianRational":
+        return self.coerce(other) - self
+
+    def __mul__(self, other: object) -> "GaussianRational":
+        right = self.coerce(other)
+        return GaussianRational(
+            self.real * right.real - self.imag * right.imag,
+            self.real * right.imag + self.imag * right.real,
+        )
+
+    def __rmul__(self, other: object) -> "GaussianRational":
+        return self * other
+
+    def __truediv__(self, other: object) -> "GaussianRational":
+        right = self.coerce(other)
+        denominator = right.real * right.real + right.imag * right.imag
+        if denominator == 0:
+            raise ZeroDivisionError("Gaussian-rational division by zero")
+        numerator = self * right.conjugate()
+        return GaussianRational(numerator.real / denominator, numerator.imag / denominator)
+
+    def conjugate(self) -> "GaussianRational":
+        return GaussianRational(self.real, -self.imag)
+
+    def is_zero(self) -> bool:
+        return self.real == 0 and self.imag == 0
+
+    def to_data(self) -> dict[str, str]:
+        return {"real": fraction_text(self.real), "imag": fraction_text(self.imag)}
+
+
+GI = GaussianRational(0, 1)
+GZERO = GaussianRational()
+GONE = GaussianRational(1)
+
+
+@dataclass(frozen=True, slots=True)
+class GMatrix:
+    data: tuple[tuple[GaussianRational, ...], ...]
+    ncols: int
+
+    @classmethod
+    def from_rows(
+        cls, rows: Iterable[Iterable[object]], *, ncols: int | None = None
+    ) -> "GMatrix":
+        converted = tuple(
+            tuple(GaussianRational.coerce(item) for item in row) for row in rows
+        )
+        width = ncols if not converted and ncols is not None else (
+            len(converted[0]) if converted else 0
+        )
+        if width < 0 or any(len(row) != width for row in converted):
+            raise ValueError("Gaussian matrix has ragged rows")
+        return cls(converted, width)
+
+    @classmethod
+    def zero(cls, nrows: int, ncols: int) -> "GMatrix":
+        return cls.from_rows(
+            ((GZERO for _ in range(ncols)) for _ in range(nrows)), ncols=ncols
+        )
+
+    @classmethod
+    def identity(cls, size: int) -> "GMatrix":
+        return cls.from_rows(
+            (
+                (GONE if row == column else GZERO for column in range(size))
+                for row in range(size)
+            ),
+            ncols=size,
+        )
+
+    @property
+    def nrows(self) -> int:
+        return len(self.data)
+
+    @property
+    def shape(self) -> tuple[int, int]:
+        return self.nrows, self.ncols
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "shape": self.shape,
+            "rows": tuple(tuple(item.to_data() for item in row) for row in self.data),
+        }
+
+
+def _g_from_q(value: QMatrix) -> GMatrix:
+    return GMatrix.from_rows(value.data, ncols=value.ncols)
+
+
+def _g_add(left: GMatrix, right: GMatrix) -> GMatrix:
+    if left.shape != right.shape:
+        raise ValueError("Gaussian matrix-add shape mismatch")
+    return GMatrix.from_rows(
+        (
+            (left.data[row][column] + right.data[row][column] for column in range(left.ncols))
+            for row in range(left.nrows)
+        ),
+        ncols=left.ncols,
+    )
+
+
+def _g_scale(coefficient: object, value: GMatrix) -> GMatrix:
+    factor = GaussianRational.coerce(coefficient)
+    return GMatrix.from_rows(
+        ((factor * item for item in row) for row in value.data), ncols=value.ncols
+    )
+
+
+def _g_subtract(left: GMatrix, right: GMatrix) -> GMatrix:
+    return _g_add(left, _g_scale(-1, right))
+
+
+def _g_multiply(left: GMatrix, right: GMatrix) -> GMatrix:
+    if left.ncols != right.nrows:
+        raise ValueError("Gaussian matrix-product shape mismatch")
+    return GMatrix.from_rows(
+        (
+            (
+                sum(
+                    (
+                        left.data[row][middle] * right.data[middle][column]
+                        for middle in range(left.ncols)
+                    ),
+                    GZERO,
+                )
+                for column in range(right.ncols)
+            )
+            for row in range(left.nrows)
+        ),
+        ncols=right.ncols,
+    )
+
+
+def _g_transpose(value: GMatrix) -> GMatrix:
+    return GMatrix.from_rows(
+        (
+            (value.data[row][column] for row in range(value.nrows))
+            for column in range(value.ncols)
+        ),
+        ncols=value.nrows,
+    )
+
+
+def _g_adjoint(value: GMatrix) -> GMatrix:
+    return GMatrix.from_rows(
+        (
+            (value.data[row][column].conjugate() for row in range(value.nrows))
+            for column in range(value.ncols)
+        ),
+        ncols=value.nrows,
+    )
+
+
+def _g_kron(left: GMatrix, right: GMatrix) -> GMatrix:
+    return GMatrix.from_rows(
+        (
+            (
+                left.data[left_row][left_column]
+                * right.data[right_row][right_column]
+                for left_column in range(left.ncols)
+                for right_column in range(right.ncols)
+            )
+            for left_row in range(left.nrows)
+            for right_row in range(right.nrows)
+        ),
+        ncols=left.ncols * right.ncols,
+    )
+
+
+def _g_vstack(values: Sequence[GMatrix]) -> GMatrix:
+    if not values or any(value.ncols != values[0].ncols for value in values):
+        raise ValueError("Gaussian row-stack shape mismatch")
+    return GMatrix.from_rows(
+        (row for value in values for row in value.data), ncols=values[0].ncols
+    )
+
+
+def _g_trace(value: GMatrix) -> GaussianRational:
+    if value.nrows != value.ncols:
+        raise ValueError("Gaussian trace needs a square matrix")
+    return sum((value.data[index][index] for index in range(value.nrows)), GZERO)
+
+
+def _g_nonzero_count(value: GMatrix) -> int:
+    return sum(not item.is_zero() for row in value.data for item in row)
+
+
+def _g_residual(left: GMatrix, right: GMatrix) -> dict[str, object]:
+    if left.shape != right.shape:
+        return {
+            "shape_match": False,
+            "left_shape": left.shape,
+            "right_shape": right.shape,
+            "nonzero_count": None,
+        }
+    difference = _g_subtract(left, right)
+    return {
+        "shape_match": True,
+        "difference": difference,
+        "nonzero_count": _g_nonzero_count(difference),
+    }
+
+
+def _g_determinant(value: GMatrix) -> GaussianRational:
+    if value.nrows != value.ncols:
+        raise ValueError("Gaussian determinant needs a square matrix")
+    rows = [list(row) for row in value.data]
+    result = GONE
+    sign = 1
+    for column in range(value.ncols):
+        pivot = next(
+            (row for row in range(column, value.nrows) if not rows[row][column].is_zero()),
+            None,
+        )
+        if pivot is None:
+            return GZERO
+        if pivot != column:
+            rows[column], rows[pivot] = rows[pivot], rows[column]
+            sign *= -1
+        pivot_value = rows[column][column]
+        result = result * pivot_value
+        for row in range(column + 1, value.nrows):
+            if rows[row][column].is_zero():
+                continue
+            factor = rows[row][column] / pivot_value
+            for offset in range(column, value.ncols):
+                rows[row][offset] = rows[row][offset] - factor * rows[column][offset]
+    return result * sign
+
+
+def _g_positive_semidefinite(value: GMatrix) -> tuple[bool, tuple[dict[str, object], ...]]:
+    if value.nrows != value.ncols or value != _g_adjoint(value):
+        return False, ()
+    rows: list[dict[str, object]] = []
+    valid = True
+    for size in range(1, value.nrows + 1):
+        for selected in itertools.combinations(range(value.nrows), size):
+            principal = GMatrix.from_rows(
+                (
+                    (value.data[row][column] for column in selected)
+                    for row in selected
+                ),
+                ncols=size,
+            )
+            determinant = _g_determinant(principal)
+            nonnegative_real = determinant.imag == 0 and determinant.real >= 0
+            valid = valid and nonnegative_real
+            rows.append(
+                {
+                    "indices": selected,
+                    "determinant": determinant,
+                    "nonnegative_real": nonnegative_real,
+                }
+            )
+    return valid, tuple(rows)
+
+
+@dataclass(frozen=True, slots=True)
+class AmplitudeArrow:
+    root: str
+    identifier: str
+    source_id: str
+    target_id: str
+    classical_arrow_id: str
+    scale: GaussianRational
+    matrix: GMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_id": self.source_id,
+            "target_id": self.target_id,
+            "classical_arrow_id": self.classical_arrow_id,
+            "scale": self.scale,
+            "matrix": self.matrix,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class QuantumHistory:
+    root: str
+    identifier: str
+    amplitude_arrow_ids: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "amplitude_arrow_ids": self.amplitude_arrow_ids,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class DivisionPort:
+    root: str
+    identifier: str
+    coefficients: tuple[GaussianRational, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {"root": self.root, "id": self.identifier, "coefficients": self.coefficients}
+
+
+@dataclass(frozen=True, slots=True)
+class QuantumCut:
+    root: str
+    identifier: str
+    history_id: str
+    alternate_amplitude_arrow_ids: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "history_id": self.history_id,
+            "alternate_amplitude_arrow_ids": self.alternate_amplitude_arrow_ids,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class FlagContinuation:
+    root: str
+    identifier: str
+    matrix: GMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {"root": self.root, "id": self.identifier, "matrix": self.matrix}
+
+
+@dataclass(frozen=True, slots=True)
+class QuantumPrimitiveLaw:
+    root: str
+    identifier: str
+    classical_law: ClassicalPrimitiveLaw
+    amplitude_arrows: tuple[AmplitudeArrow, ...]
+    histories: tuple[QuantumHistory, ...]
+    divisions: tuple[DivisionPort, ...]
+    cuts: tuple[QuantumCut, ...]
+    input_state: GMatrix
+    flag_continuations: tuple[FlagContinuation, ...]
+    phase_control: GMatrix
+    gram_test_coefficients: tuple[GaussianRational, ...]
+    opaque_free_gram: GMatrix | None = None
+    opaque_recovery_payload: tuple[tuple[str, str], ...] = ()
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "QuantumPrimitiveLaw",
+            "root": self.root,
+            "id": self.identifier,
+            "classical_law": self.classical_law,
+            "amplitude_arrows": self.amplitude_arrows,
+            "histories": self.histories,
+            "divisions": self.divisions,
+            "cuts": self.cuts,
+            "input_state": self.input_state,
+            "flag_continuations": self.flag_continuations,
+            "phase_control": self.phase_control,
+            "gram_test_coefficients": self.gram_test_coefficients,
+            "opaque_free_gram": self.opaque_free_gram,
+            "opaque_recovery_payload": self.opaque_recovery_payload,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class QuantumLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    coordinate: str
+    valid: bool
+    classical: ClassicalLawMeasurement
+    residuals: Mapping[str, object]
+    issues: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "QuantumLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "coordinate": self.coordinate,
+            "classical_valid": self.classical.valid,
+            "quantum_valid": self.valid,
+            "classical_measurement": self.classical,
+            "residuals": self.residuals,
+            "issues": self.issues,
+            "missing": self.issues,
+            "contradictions": (),
+        }
+
+
+def _compose_amplitude_path(
+    identifiers: Sequence[str], arrows: Mapping[str, AmplitudeArrow]
+) -> tuple[GMatrix | None, str | None, str | None, bool]:
+    if not identifiers:
+        return None, None, None, False
+    rows = [arrows.get(identifier) for identifier in identifiers]
+    if not all(isinstance(row, AmplitudeArrow) for row in rows):
+        return None, None, None, False
+    first = rows[0]
+    assert isinstance(first, AmplitudeArrow)
+    result = first.matrix
+    source = first.source_id
+    target = first.target_id
+    for row in rows[1:]:
+        assert isinstance(row, AmplitudeArrow)
+        if row.source_id != target:
+            return None, source, target, False
+        try:
+            result = _g_multiply(row.matrix, result)
+        except ValueError:
+            return None, source, target, False
+        target = row.target_id
+    return result, source, target, True
+
+
+def measure_quantum_primitive_law(law: object) -> QuantumLawMeasurement:
+    if not isinstance(law, QuantumPrimitiveLaw):
+        raise ScoreRefusal("quantum promotion requires QuantumPrimitiveLaw")
+    classical = measure_classical_primitive_law(law.classical_law)
+    payload_hash = canonical_sha256(law.to_data())
+    issues: list[str] = []
+    residuals: dict[str, object] = {}
+    if law.root != law.classical_law.root or not law.root:
+        issues.append("quantum-root-disconnected")
+    classical_arrows = {arrow.identifier: arrow for arrow in law.classical_law.arrows}
+    amplitude_index_raw, amplitude_issues = _unique_index(law.amplitude_arrows, "amplitude-arrow")
+    amplitude_index = {
+        key: value
+        for key, value in amplitude_index_raw.items()
+        if isinstance(value, AmplitudeArrow)
+    }
+    issues.extend(amplitude_issues)
+    amplitude_rows: dict[str, object] = {}
+    for arrow_id, arrow in sorted(amplitude_index.items()):
+        classical_arrow = classical_arrows.get(arrow.classical_arrow_id)
+        expected = (
+            _g_scale(arrow.scale, _g_from_q(classical_arrow.matrix))
+            if isinstance(classical_arrow, TypedArrow)
+            else None
+        )
+        residual = (
+            _g_residual(arrow.matrix, expected)
+            if expected is not None
+            else {"shape_match": False, "nonzero_count": None}
+        )
+        valid = bool(
+            arrow.root == law.root
+            and isinstance(classical_arrow, TypedArrow)
+            and arrow.source_id == classical_arrow.source_id
+            and arrow.target_id == classical_arrow.target_id
+            and residual.get("nonzero_count") == 0
+        )
+        if not valid:
+            issues.append(f"amplitude-derivation:{arrow_id}")
+        amplitude_rows[arrow_id] = {
+            "classical_arrow_id": arrow.classical_arrow_id,
+            "scale": arrow.scale,
+            "derivation_residual": residual,
+            "valid": valid,
+        }
+    residuals["amplitude_arrows"] = amplitude_rows
+
+    history_index_raw, history_issues = _unique_index(law.histories, "history")
+    history_index = {
+        key: value
+        for key, value in history_index_raw.items()
+        if isinstance(value, QuantumHistory)
+    }
+    issues.extend(history_issues)
+    history_operators: dict[str, GMatrix] = {}
+    history_rows: dict[str, object] = {}
+    common_endpoints: set[tuple[str | None, str | None]] = set()
+    for history_id, history in sorted(history_index.items()):
+        operator, source, target, composable = _compose_amplitude_path(
+            history.amplitude_arrow_ids, amplitude_index
+        )
+        valid = bool(history.root == law.root and composable and operator is not None)
+        if not valid:
+            issues.append(f"history-composition:{history_id}")
+        if operator is not None:
+            history_operators[history_id] = operator
+        common_endpoints.add((source, target))
+        history_rows[history_id] = {
+            "arrow_ids": history.amplitude_arrow_ids,
+            "source_id": source,
+            "target_id": target,
+            "operator": operator,
+            "composable": composable,
+            "valid": valid,
+        }
+    if not history_operators or len(common_endpoints) != 1:
+        issues.append("typed-history-family")
+    residuals["histories"] = history_rows
+
+    state_positive, state_minors = _g_positive_semidefinite(law.input_state)
+    state_trace = _g_trace(law.input_state) if law.input_state.nrows == law.input_state.ncols else GZERO
+    state_valid = state_positive and state_trace == GONE
+    if not state_valid:
+        issues.append("positive-unit-input-state")
+    residuals["input_state"] = {
+        "principal_minors": state_minors,
+        "trace": state_trace,
+        "positive_unit_state": state_valid,
+    }
+
+    history_ids = tuple(history_index)
+    gram: GMatrix | None = None
+    gram_psd = False
+    gram_minors: tuple[dict[str, object], ...] = ()
+    gram_operator_identity: dict[str, object] = {"nonzero_count": None}
+    gram_scalar_left = GZERO
+    gram_scalar_right = GZERO
+    universal_positive_operator: GMatrix | None = None
+    universal_positive_minors: tuple[dict[str, object], ...] = ()
+    universal_positive = False
+    if (
+        state_valid
+        and history_ids
+        and all(identifier in history_operators for identifier in history_ids)
+    ):
+        gram = GMatrix.from_rows(
+            (
+                (
+                    _g_trace(
+                        _g_multiply(
+                            _g_multiply(history_operators[left], law.input_state),
+                            _g_adjoint(history_operators[right]),
+                        )
+                    )
+                    for right in history_ids
+                )
+                for left in history_ids
+            ),
+            ncols=len(history_ids),
+        )
+        gram_psd, gram_minors = _g_positive_semidefinite(gram)
+        z = law.gram_test_coefficients
+        if len(z) == len(history_ids):
+            z_column = GMatrix.from_rows(((value,) for value in z), ncols=1)
+            gram_scalar_left = _g_trace(
+                _g_multiply(_g_adjoint(z_column), _g_multiply(gram, z_column))
+            )
+            abar = GMatrix.zero(
+                next(iter(history_operators.values())).nrows,
+                next(iter(history_operators.values())).ncols,
+            )
+            for coefficient, identifier in zip(z, history_ids):
+                abar = _g_add(
+                    abar,
+                    _g_scale(coefficient.conjugate(), history_operators[identifier]),
+                )
+            gram_scalar_right = _g_trace(
+                _g_multiply(
+                    _g_multiply(abar, law.input_state), _g_adjoint(abar)
+                )
+            )
+            universal_positive_operator = _g_multiply(_g_adjoint(abar), abar)
+            universal_positive, universal_positive_minors = _g_positive_semidefinite(
+                universal_positive_operator
+            )
+            gram_operator_identity = {
+                "left_z_adjoint_D_z": gram_scalar_left,
+                "right_trace_Abar_rho_Abar_adjoint": gram_scalar_right,
+                "nonzero_count": 0 if gram_scalar_left == gram_scalar_right else 1,
+                "Abar": abar,
+                "Abar_adjoint_Abar": universal_positive_operator,
+                "Abar_adjoint_Abar_principal_minors": universal_positive_minors,
+                "positive_for_every_positive_input": universal_positive,
+                "uses_conjugated_history_coefficients": True,
+            }
+    gram_valid = bool(
+        gram is not None
+        and gram_psd
+        and gram_operator_identity.get("nonzero_count") == 0
+        and universal_positive
+    )
+    if not gram_valid:
+        issues.append("derived-strong-positive-history-gram")
+    residuals["gram_operator_proof"] = {
+        "derived_gram": gram,
+        "principal_minors": gram_minors,
+        "operator_identity": gram_operator_identity,
+        "universal_positive_operator": universal_positive_operator,
+        "universal_positive_principal_minors": universal_positive_minors,
+        "strong_positivity_for_every_positive_input": universal_positive,
+        "free_gram_ignored": law.opaque_free_gram is not None,
+        "valid": gram_valid,
+    }
+
+    division_index_raw, division_issues = _unique_index(law.divisions, "division-port")
+    division_index = {
+        key: value
+        for key, value in division_index_raw.items()
+        if isinstance(value, DivisionPort)
+    }
+    issues.extend(division_issues)
+    division_operators: dict[str, GMatrix] = {}
+    division_rows: dict[str, object] = {}
+    for division_id, division in sorted(division_index.items()):
+        valid = bool(
+            division.root == law.root
+            and len(division.coefficients) == len(history_ids)
+            and all(identifier in history_operators for identifier in history_ids)
+        )
+        operator: GMatrix | None = None
+        if valid:
+            prototype = next(iter(history_operators.values()))
+            operator = GMatrix.zero(prototype.nrows, prototype.ncols)
+            for coefficient, history_id in zip(division.coefficients, history_ids):
+                operator = _g_add(
+                    operator, _g_scale(coefficient, history_operators[history_id])
+                )
+            division_operators[division_id] = operator
+        if not valid:
+            issues.append(f"division-derivation:{division_id}")
+        division_rows[division_id] = {
+            "coefficients": division.coefficients,
+            "derived_operator": operator,
+            "valid": valid,
+        }
+    completeness: GMatrix | None = None
+    completeness_residual: dict[str, object] = {"nonzero_count": None}
+    dilation: GMatrix | None = None
+    dilation_residual: dict[str, object] = {"nonzero_count": None}
+    flag_projector_residuals: list[dict[str, object]] = []
+    if division_operators:
+        input_size = next(iter(division_operators.values())).ncols
+        completeness = GMatrix.zero(input_size, input_size)
+        for operator in division_operators.values():
+            completeness = _g_add(
+                completeness, _g_multiply(_g_adjoint(operator), operator)
+            )
+        completeness_residual = _g_residual(completeness, GMatrix.identity(input_size))
+        dilation = _g_vstack(tuple(division_operators.values()))
+        dilation_residual = _g_residual(
+            _g_multiply(_g_adjoint(dilation), dilation), GMatrix.identity(input_size)
+        )
+        output_size = next(iter(division_operators.values())).nrows
+        total_flagged_size = output_size * len(division_operators)
+        projectors: list[GMatrix] = []
+        for flag_index in range(len(division_operators)):
+            projector = GMatrix.from_rows(
+                (
+                    (
+                        GONE
+                        if row == column
+                        and row // output_size == flag_index
+                        else GZERO
+                        for column in range(total_flagged_size)
+                    )
+                    for row in range(total_flagged_size)
+                ),
+                ncols=total_flagged_size,
+            )
+            projectors.append(projector)
+        for left_index, left in enumerate(projectors):
+            for right_index, right in enumerate(projectors):
+                expected = left if left_index == right_index else GMatrix.zero(
+                    total_flagged_size, total_flagged_size
+                )
+                flag_projector_residuals.append(
+                    {
+                        "left": left_index,
+                        "right": right_index,
+                        "residual": _g_residual(_g_multiply(left, right), expected),
+                    }
+                )
+    division_valid = bool(
+        division_operators
+        and completeness_residual.get("nonzero_count") == 0
+        and dilation_residual.get("nonzero_count") == 0
+        and all(
+            row["residual"].get("nonzero_count") == 0
+            for row in flag_projector_residuals
+        )
+    )
+    if not division_valid:
+        issues.append("unit-normalized-division-dilation-flags")
+    residuals["division"] = {
+        "ports": division_rows,
+        "sum_L_adjoint_L": completeness,
+        "completeness_residual": completeness_residual,
+        "dilation_W": dilation,
+        "dilation_isometry_residual": dilation_residual,
+        "flag_projector_residuals": flag_projector_residuals,
+        "valid": division_valid,
+    }
+
+    continuation_index_raw, continuation_issues = _unique_index(
+        law.flag_continuations, "flag-continuation"
+    )
+    continuation_index = {
+        key: value
+        for key, value in continuation_index_raw.items()
+        if isinstance(value, FlagContinuation)
+    }
+    issues.extend(continuation_issues)
+    flag_size = len(division_operators)
+    closure: dict[str, GMatrix] = {}
+    for continuation_id, continuation in sorted(continuation_index.items()):
+        continuation_typed = bool(
+            continuation.root != law.root
+            or continuation.matrix.shape != (flag_size, flag_size)
+        )
+        if continuation_typed:
+            issues.append(f"flag-continuation-typing:{continuation_id}")
+        else:
+            closure[canonical_sha256(continuation.matrix)] = continuation.matrix
+    changed = True
+    while changed and len(closure) <= 64:
+        changed = False
+        for left in tuple(closure.values()):
+            for right in tuple(closure.values()):
+                product = _g_multiply(left, right)
+                key = canonical_sha256(product)
+                if key not in closure:
+                    closure[key] = product
+                    changed = True
+    closure_complete = not changed
+    nonidentity_continuation = any(
+        value != GMatrix.identity(flag_size) for value in closure.values()
+    ) if flag_size else False
+    recovery_rows: list[dict[str, object]] = []
+    recovery_valid = bool(
+        closure and closure_complete and nonidentity_continuation
+    )
+    for word_hash, continuation in sorted(closure.items()):
+        recovered: list[int] = []
+        for flag in range(flag_size):
+            column = tuple(continuation.data[row][flag] for row in range(flag_size))
+            support = [index for index, value in enumerate(column) if not value.is_zero()]
+            if len(support) == 1:
+                recovered.append(support[0])
+            else:
+                recovered.append(-1)
+        word_valid = recovered == list(range(flag_size))
+        recovery_valid = recovery_valid and word_valid
+        recovery_rows.append(
+            {
+                "word_sha256": word_hash,
+                "matrix": continuation,
+                "reader_outputs": tuple(recovered),
+                "recovers_flag": word_valid,
+            }
+        )
+    if not recovery_valid:
+        issues.append("closed-nonidentity-flag-recovery")
+    residuals["flag_recovery"] = {
+        "closure_size": len(closure),
+        "closure_complete": closure_complete,
+        "nonidentity_word_present": nonidentity_continuation,
+        "rows": recovery_rows,
+        "valid": recovery_valid,
+    }
+
+    cut_rows: dict[str, object] = {}
+    cuts_valid = bool(law.cuts)
+    for cut in law.cuts:
+        direct = history_operators.get(cut.history_id)
+        alternate, source, target, composable = _compose_amplitude_path(
+            cut.alternate_amplitude_arrow_ids, amplitude_index
+        )
+        residual = (
+            _g_residual(direct, alternate)
+            if direct is not None and alternate is not None
+            else {"shape_match": False, "nonzero_count": None}
+        )
+        valid = bool(
+            cut.root == law.root
+            and composable
+            and residual.get("nonzero_count") == 0
+        )
+        cuts_valid = cuts_valid and valid
+        cut_rows[cut.identifier] = {
+            "history_id": cut.history_id,
+            "alternate_arrow_ids": cut.alternate_amplitude_arrow_ids,
+            "source_id": source,
+            "target_id": target,
+            "residual": residual,
+            "valid": valid,
+        }
+    if not cuts_valid:
+        issues.append("coherent-cuts-from-same-arrows")
+    residuals["coherent_cuts"] = {"rows": cut_rows, "valid": cuts_valid}
+
+    coherent_probability = GZERO
+    incoherent_probability = GZERO
+    cross_operator: GMatrix | None = None
+    interference_valid = False
+    if division_operators and len(history_ids) >= 2 and state_valid:
+        plus_operator = division_operators.get(
+            "flag_plus", next(iter(division_operators.values()))
+        )
+        coherent_probability = _g_trace(
+            _g_multiply(
+                _g_multiply(plus_operator, law.input_state),
+                _g_adjoint(plus_operator),
+            )
+        )
+        incoherent_probability = sum(
+            (
+                _g_trace(
+                    _g_multiply(
+                        _g_multiply(history_operators[identifier], law.input_state),
+                        _g_adjoint(history_operators[identifier]),
+                    )
+                )
+                for identifier in history_ids
+            ),
+            GZERO,
+        )
+        first = history_operators[history_ids[0]]
+        second = history_operators[history_ids[1]]
+        cross_operator = _g_add(
+            _g_multiply(_g_multiply(first, law.input_state), _g_adjoint(second)),
+            _g_multiply(_g_multiply(second, law.input_state), _g_adjoint(first)),
+        )
+        interference_valid = bool(
+            coherent_probability != incoherent_probability
+            and _g_nonzero_count(cross_operator) > 0
+        )
+    if not interference_valid:
+        issues.append("operational-interference")
+    residuals["interference"] = {
+        "coherent_probability": coherent_probability,
+        "incoherent_history_sum": incoherent_probability,
+        "probability_difference": coherent_probability - incoherent_probability,
+        "cross_operator": cross_operator,
+        "cross_operator_nonzero_count": (
+            _g_nonzero_count(cross_operator) if cross_operator is not None else 0
+        ),
+        "valid": interference_valid,
+    }
+
+    phase_adjoint_residual = _g_residual(
+        _g_multiply(_g_adjoint(law.phase_control), law.phase_control),
+        GMatrix.identity(law.phase_control.ncols),
+    )
+    phase_transpose_residual = _g_residual(
+        _g_multiply(_g_transpose(law.phase_control), law.phase_control),
+        GMatrix.identity(law.phase_control.ncols),
+    )
+    phase_valid = bool(
+        phase_adjoint_residual.get("nonzero_count") == 0
+        and isinstance(phase_transpose_residual.get("nonzero_count"), int)
+        and phase_transpose_residual["nonzero_count"] > 0
+    )
+    if not phase_valid:
+        issues.append("conjugate-transpose-phase-control")
+    residuals["phase_conjugation_control"] = {
+        "P": law.phase_control,
+        "P_adjoint_P_residual": phase_adjoint_residual,
+        "P_transpose_P_residual": phase_transpose_residual,
+        "valid": phase_valid,
+    }
+
+    consumed_ids = tuple(
+        sorted(
+            set(classical.consumed_primitive_ids)
+            | {law.identifier}
+            | set(amplitude_index)
+            | set(history_index)
+            | set(division_index)
+            | {cut.identifier for cut in law.cuts}
+            | set(continuation_index)
+        )
+    )
+    valid = classical.valid and not issues
+    return QuantumLawMeasurement(
+        primitive_payload_sha256=payload_hash,
+        consumed_primitive_ids=consumed_ids,
+        coordinate=(
+            "HORIZONTAL-QUANTUM"
+            if valid
+            else "HORIZONTAL-CLASSICAL"
+            if classical.valid
+            else "STATIC-RESPONSE-ONLY"
+        ),
+        valid=valid,
+        classical=classical,
+        residuals=residuals,
+        issues=tuple(sorted(set(issues))),
+    )
+
+
+def build_quantum_existence_law(fault: str | None = None) -> QuantumPrimitiveLaw:
+    classical = build_classical_existence_law()
+    root = classical.root
+    classical_arrows = {arrow.identifier: arrow for arrow in classical.arrows}
+    half = GaussianRational(Fraction(1, 2))
+    amp_i = AmplitudeArrow(
+        root,
+        "amp_I_half",
+        "A",
+        "A",
+        "id_A",
+        half,
+        _g_scale(half, _g_from_q(classical_arrows["id_A"].matrix)),
+    )
+    x_scale = GaussianRational(0) if fault == "zero-cross" else half
+    amp_x_root = "v4:other-root" if fault == "different-root-history" else root
+    amp_x_source = "C" if fault == "different-frontier-history" else "A"
+    amp_x = AmplitudeArrow(
+        amp_x_root,
+        "amp_X_half",
+        amp_x_source,
+        "A",
+        "x_A",
+        x_scale,
+        _g_scale(x_scale, _g_from_q(classical_arrows["x_A"].matrix)),
+    )
+    amp_id = AmplitudeArrow(
+        root,
+        "amp_identity",
+        "A",
+        "A",
+        "id_A",
+        GaussianRational(1),
+        _g_from_q(classical_arrows["id_A"].matrix),
+    )
+    histories = (
+        QuantumHistory(root, "history_I", ("amp_I_half",)),
+        QuantumHistory(root, "history_X", ("amp_X_half",)),
+    )
+    if fault == "free-gram-no-histories":
+        histories = ()
+    divisions = (
+        DivisionPort(root, "flag_plus", (GONE, GONE)),
+        DivisionPort(root, "flag_minus", (GONE, GaussianRational(-1))),
+    )
+    if fault == "total-2I":
+        divisions = divisions + (
+            DivisionPort(root, "flag_plus_2", (GONE, GONE)),
+            DivisionPort(root, "flag_minus_2", (GONE, GaussianRational(-1))),
+        )
+    elif fault in {"nonunit-total", "missing-flags"}:
+        divisions = divisions[:1] if fault == "nonunit-total" else ()
+    cuts = (
+        QuantumCut(root, "cut_I", "history_I", ("amp_I_half", "amp_identity")),
+        QuantumCut(root, "cut_X", "history_X", ("amp_X_half", "amp_identity")),
+    )
+    if fault == "different-cut-arrows":
+        cuts = (
+            QuantumCut(root, "cut_I", "history_I", ("amp_X_half", "amp_identity")),
+            cuts[1],
+        )
+    elif fault == "arbitrary-equal-payload":
+        cuts = ()
+    rho_plus = GMatrix.from_rows(
+        (
+            (GaussianRational(Fraction(1, 2)), GaussianRational(Fraction(1, 2))),
+            (GaussianRational(Fraction(1, 2)), GaussianRational(Fraction(1, 2))),
+        )
+    )
+    if fault == "nonpositive-state":
+        rho_plus = GMatrix.from_rows(((2, 0), (0, -1)))
+    elif fault == "no-probability-difference":
+        rho_plus = GMatrix.from_rows(((Fraction(1, 2), 0), (0, Fraction(1, 2))))
+    continuation_root = "v4:other-root" if fault == "disconnected-recovery" else root
+    continuations = (
+        FlagContinuation(continuation_root, "flag_I", GMatrix.identity(2)),
+        FlagContinuation(
+            continuation_root,
+            "flag_Z",
+            GMatrix.from_rows(((1, 0), (0, -1))),
+        ),
+    )
+    if fault == "no-nonidentity-continuation":
+        continuations = continuations[:1]
+    elif fault == "nonclosed-continuation-semigroup":
+        continuations = (
+            continuations[0],
+            FlagContinuation(
+                root,
+                "flag-nonclosed-scaling",
+                GMatrix.from_rows(((1, 0), (0, Fraction(1, 2)))),
+            ),
+        )
+    elif fault == "arbitrary-equal-payload":
+        continuations = ()
+    phase = (
+        GMatrix.identity(2)
+        if fault == "transpose-phase-control"
+        else GMatrix.from_rows(((GONE, GZERO), (GZERO, GI)))
+    )
+    negative_free_gram = GMatrix.from_rows(((1, 2), (2, 1)))
+    return QuantumPrimitiveLaw(
+        root=root,
+        identifier="quantum_existence_law",
+        classical_law=classical,
+        amplitude_arrows=(amp_i, amp_x, amp_id),
+        histories=histories,
+        divisions=divisions,
+        cuts=cuts,
+        input_state=rho_plus,
+        flag_continuations=continuations,
+        phase_control=phase,
+        gram_test_coefficients=(GONE, GI),
+        opaque_free_gram=(
+            negative_free_gram
+            if fault in {"negative-free-gram", "free-gram-no-histories"}
+            else None
+        ),
+        opaque_recovery_payload=(
+            (("lhs", "same"), ("rhs", "same"))
+            if fault == "arbitrary-equal-payload"
+            else ()
+        ),
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class CarrierPrimitive:
+    root: str
+    identifier: str
+    states: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {"root": self.root, "id": self.identifier, "states": self.states}
+
+
+@dataclass(frozen=True, slots=True)
+class ProductCarrierPrimitive:
+    root: str
+    identifier: str
+    source_states: tuple[str, ...]
+    target_states: tuple[str, ...]
+    states: tuple[str, ...]
+    source_factor_id: str = "source-factor"
+    target_factor_id: str = "target-factor"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_states": self.source_states,
+            "target_states": self.target_states,
+            "states": self.states,
+            "source_factor_id": self.source_factor_id,
+            "target_factor_id": self.target_factor_id,
+            "ordering": "left-major-lexicographic",
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ScheduledTransitionPrimitive:
+    root: str
+    identifier: str
+    source_carrier_id: str
+    target_carrier_id: str
+    matrix: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_carrier_id": self.source_carrier_id,
+            "target_carrier_id": self.target_carrier_id,
+            "matrix": self.matrix,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class InterventionAlternativePrimitive:
+    root: str
+    identifier: str
+    carrier_id: str
+    matrix: QMatrix
+    source_factor_matrix: QMatrix | None = None
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "carrier_id": self.carrier_id,
+            "matrix": self.matrix,
+            "source_factor_matrix": self.source_factor_matrix,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class InterventionPrimitive:
+    root: str
+    identifier: str
+    carrier_id: str
+    slot: int
+    alternatives: tuple[InterventionAlternativePrimitive, ...]
+    registered_alternative_ids: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "carrier_id": self.carrier_id,
+            "slot": self.slot,
+            "alternatives": self.alternatives,
+            "registered_alternative_ids": self.registered_alternative_ids,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ReaderPrimitive:
+    root: str
+    identifier: str
+    carrier_id: str
+    outcomes: tuple[str, ...]
+    matrix: QMatrix
+    schedule_position: int
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "carrier_id": self.carrier_id,
+            "outcomes": self.outcomes,
+            "matrix": self.matrix,
+            "schedule_position": self.schedule_position,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class InfluencePrimitiveLaw:
+    root: str
+    identifier: str
+    carrier: CarrierPrimitive
+    initial_state: QMatrix
+    pre_schedule: tuple[ScheduledTransitionPrimitive, ...]
+    intervention: InterventionPrimitive
+    post_schedule: tuple[ScheduledTransitionPrimitive, ...]
+    reader: ReaderPrimitive
+    product_carrier: ProductCarrierPrimitive | None = None
+    contact_required: bool = False
+    opaque_before_after: tuple[tuple[str, tuple[Fraction, ...]], ...] = ()
+    opaque_provenance: tuple[tuple[str, str, str], ...] = ()
+    transition_reference_id: str | None = "shared-transition-X"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "InfluencePrimitiveLaw",
+            "root": self.root,
+            "id": self.identifier,
+            "carrier": self.carrier,
+            "initial_state": self.initial_state,
+            "pre_schedule": self.pre_schedule,
+            "intervention": self.intervention,
+            "post_schedule": self.post_schedule,
+            "reader": self.reader,
+            "product_carrier": self.product_carrier,
+            "contact_required": self.contact_required,
+            "opaque_before_after": self.opaque_before_after,
+            "opaque_provenance": self.opaque_provenance,
+            "transition_reference_id": self.transition_reference_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class InfluenceLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    role: str
+    present: bool
+    responses: tuple[tuple[str, QMatrix], ...]
+    residuals: Mapping[str, object]
+    issues: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "InfluenceLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "role": self.role,
+            "present": self.present,
+            "responses": self.responses,
+            "residuals": self.residuals,
+            "missing": self.issues,
+            "issues": self.issues,
+        }
+
+
+def _stochastic_matrix_measurement(
+    value: QMatrix, *, expected_shape: tuple[int, int]
+) -> dict[str, object]:
+    shape_valid = value.shape == expected_shape
+    negative_count = sum(item < 0 for row in value.data for item in row)
+    column_residual = _q_column_residual(value) if value.ncols else ()
+    return {
+        "expected_shape": expected_shape,
+        "actual_shape": value.shape,
+        "shape_residual": 0 if shape_valid else 1,
+        "negative_entry_count": negative_count,
+        "column_sum_residual": column_residual,
+        "valid": shape_valid
+        and negative_count == 0
+        and all(item == 0 for item in column_residual),
+    }
+
+
+def _compose_q_schedule(
+    initial: QMatrix,
+    carrier_id: str,
+    schedule: Sequence[ScheduledTransitionPrimitive],
+    *,
+    root: str,
+    carrier_sizes: Mapping[str, int],
+) -> tuple[QMatrix | None, str, tuple[dict[str, object], ...], bool]:
+    state = initial
+    active_carrier = carrier_id
+    rows: list[dict[str, object]] = []
+    valid = True
+    for transition in schedule:
+        source_size = carrier_sizes.get(transition.source_carrier_id)
+        target_size = carrier_sizes.get(transition.target_carrier_id)
+        stochastic = (
+            _stochastic_matrix_measurement(
+                transition.matrix,
+                expected_shape=(target_size, source_size),
+            )
+            if source_size is not None and target_size is not None
+            else {"valid": False, "shape_residual": 1}
+        )
+        typed = bool(
+            transition.root == root
+            and transition.source_carrier_id == active_carrier
+            and stochastic["valid"]
+        )
+        row: dict[str, object] = {
+            "transition_id": transition.identifier,
+            "input_carrier_id": active_carrier,
+            "declared_source_carrier_id": transition.source_carrier_id,
+            "declared_target_carrier_id": transition.target_carrier_id,
+            "stochastic": stochastic,
+            "composable": typed,
+        }
+        if typed:
+            try:
+                state = qmultiply(transition.matrix, state)
+                active_carrier = transition.target_carrier_id
+                row["output_state"] = state
+            except ValueError:
+                typed = False
+                row["composable"] = False
+        valid = valid and typed
+        rows.append(row)
+    return (state if valid else None), active_carrier, tuple(rows), valid
+
+
+def _source_reader_matrix(source_size: int, target_size: int) -> QMatrix:
+    return QMatrix.from_rows(
+        (
+            (
+                Fraction(1) if source == output else Fraction(0)
+                for source in range(source_size)
+                for _target in range(target_size)
+            )
+            for output in range(source_size)
+        ),
+        ncols=source_size * target_size,
+    )
+
+
+def _target_reader_matrix(source_size: int, target_size: int) -> QMatrix:
+    return QMatrix.from_rows(
+        (
+            (
+                Fraction(1) if target == output else Fraction(0)
+                for _source in range(source_size)
+                for target in range(target_size)
+            )
+            for output in range(target_size)
+        ),
+        ncols=source_size * target_size,
+    )
+
+
+def measure_influence_primitive_law(law: object) -> InfluenceLawMeasurement:
+    if not isinstance(law, InfluencePrimitiveLaw):
+        raise ScoreRefusal("influence promotion requires InfluencePrimitiveLaw")
+    payload_hash = canonical_sha256(law.to_data())
+    role = "generated_contact" if law.contact_required else "causal_order"
+    issues: list[str] = []
+    residuals: dict[str, object] = {}
+    carrier = law.carrier
+    carrier_valid = bool(
+        carrier.root == law.root
+        and carrier.states
+        and len(set(carrier.states)) == len(carrier.states)
+    )
+    if not carrier_valid:
+        issues.append("typed-carrier")
+    carrier_sizes: dict[str, int] = {carrier.identifier: len(carrier.states)}
+    product = law.product_carrier
+    product_valid = not law.contact_required
+    if product is not None:
+        expected_states = tuple(
+            f"({source},{target})"
+            for source in product.source_states
+            for target in product.target_states
+        )
+        product_valid = bool(
+            product.root == law.root
+            and product.identifier == carrier.identifier
+            and product.source_states
+            and product.target_states
+            and len(set(product.source_states)) == len(product.source_states)
+            and len(set(product.target_states)) == len(product.target_states)
+            and bool(product.source_factor_id)
+            and bool(product.target_factor_id)
+            and product.source_factor_id != product.target_factor_id
+            and product.states == expected_states
+            and carrier.states == expected_states
+        )
+        carrier_sizes[product.identifier] = len(product.states)
+    if law.contact_required and not product_valid:
+        issues.append("typed-disjoint-product-carrier")
+    residuals["carrier"] = {
+        "carrier_valid": carrier_valid,
+        "product_required": law.contact_required,
+        "product_valid": product_valid,
+        "source_factor_nonempty": bool(product and product.source_states),
+        "target_factor_nonempty": bool(product and product.target_states),
+        "source_factor_id": product.source_factor_id if product else None,
+        "target_factor_id": product.target_factor_id if product else None,
+        "factor_roles_distinct": bool(
+            product
+            and product.source_states
+            and product.target_states
+            and product.source_factor_id != product.target_factor_id
+        ),
+        "ordering": "left-major-lexicographic",
+    }
+
+    initial_measurement = _stochastic_matrix_measurement(
+        law.initial_state, expected_shape=(len(carrier.states), 1)
+    )
+    if not initial_measurement["valid"]:
+        issues.append("normalized-initial-state")
+    pre_state, pre_carrier, pre_rows, pre_valid = _compose_q_schedule(
+        law.initial_state,
+        carrier.identifier,
+        law.pre_schedule,
+        root=law.root,
+        carrier_sizes=carrier_sizes,
+    )
+    if not pre_valid:
+        issues.append("typed-before-schedule")
+    residuals["initial_and_before_schedule"] = {
+        "initial": initial_measurement,
+        "operations": pre_rows,
+        "output_carrier_id": pre_carrier,
+    }
+
+    intervention = law.intervention
+    alternatives = intervention.alternatives
+    alternative_ids = tuple(row.identifier for row in alternatives)
+    registered_exact = bool(
+        len(alternatives) >= 2
+        and len(set(alternative_ids)) == len(alternative_ids)
+        and intervention.registered_alternative_ids == alternative_ids
+    )
+    intervention_typed = bool(
+        pre_state is not None
+        and intervention.root == law.root
+        and intervention.carrier_id == pre_carrier
+        and intervention.slot == len(law.pre_schedule)
+        and registered_exact
+    )
+    alternative_rows: dict[str, object] = {}
+    local_source_matrices: list[QMatrix] = []
+    for alternative in alternatives:
+        stochastic = _stochastic_matrix_measurement(
+            alternative.matrix,
+            expected_shape=(len(carrier.states), len(carrier.states)),
+        )
+        typed = bool(
+            alternative.root == law.root
+            and alternative.carrier_id == carrier.identifier
+            and stochastic["valid"]
+        )
+        locality_residual: dict[str, object] | None = None
+        local = not law.contact_required
+        if law.contact_required and product is not None:
+            factor = alternative.source_factor_matrix
+            factor_measurement = (
+                _stochastic_matrix_measurement(
+                    factor,
+                    expected_shape=(
+                        len(product.source_states), len(product.source_states)
+                    ),
+                )
+                if isinstance(factor, QMatrix)
+                else {"valid": False}
+            )
+            expected_local = (
+                _q_kron(factor, QMatrix.identity(len(product.target_states)))
+                if isinstance(factor, QMatrix) and factor_measurement["valid"]
+                else None
+            )
+            locality_residual = (
+                _q_residual(alternative.matrix, expected_local)
+                if expected_local is not None
+                else {"shape_match": False, "nonzero_count": None}
+            )
+            local = bool(
+                factor_measurement["valid"]
+                and locality_residual.get("nonzero_count") == 0
+            )
+            if isinstance(factor, QMatrix):
+                local_source_matrices.append(factor)
+        typed = typed and local
+        intervention_typed = intervention_typed and typed
+        alternative_rows[alternative.identifier] = {
+            "stochastic": stochastic,
+            "source_local_factorization_residual": locality_residual,
+            "source_local": local,
+            "valid": typed,
+        }
+    distinct_alternatives = any(
+        left.matrix != right.matrix
+        for left, right in itertools.combinations(alternatives, 2)
+    )
+    if not intervention_typed or not distinct_alternatives:
+        issues.append("distinct-used-typed-interventions")
+    residuals["intervention"] = {
+        "slot": intervention.slot,
+        "expected_slot": len(law.pre_schedule),
+        "registered_alternative_ids": intervention.registered_alternative_ids,
+        "actual_alternative_ids": alternative_ids,
+        "registered_exactly": registered_exact,
+        "alternatives_distinct": distinct_alternatives,
+        "rows": alternative_rows,
+        "valid": intervention_typed and distinct_alternatives,
+    }
+
+    response_rows: list[tuple[str, QMatrix]] = []
+    path_rows: dict[str, object] = {}
+    all_paths_valid = intervention_typed and pre_state is not None
+    for alternative in alternatives:
+        if pre_state is None:
+            all_paths_valid = False
+            continue
+        try:
+            intervened = qmultiply(alternative.matrix, pre_state)
+        except ValueError:
+            all_paths_valid = False
+            continue
+        post_state, post_carrier, post_rows, post_valid = _compose_q_schedule(
+            intervened,
+            alternative.carrier_id,
+            law.post_schedule,
+            root=law.root,
+            carrier_sizes=carrier_sizes,
+        )
+        reader_measurement = _stochastic_matrix_measurement(
+            law.reader.matrix,
+            expected_shape=(len(law.reader.outcomes), len(carrier.states)),
+        )
+        reader_after = law.reader.schedule_position == (
+            len(law.pre_schedule) + 1 + len(law.post_schedule)
+        )
+        reader_typed = bool(
+            post_state is not None
+            and law.reader.root == law.root
+            and law.reader.carrier_id == post_carrier
+            and law.reader.outcomes
+            and len(set(law.reader.outcomes)) == len(law.reader.outcomes)
+            and reader_measurement["valid"]
+            and reader_after
+        )
+        response: QMatrix | None = None
+        if reader_typed and post_state is not None:
+            try:
+                response = qmultiply(law.reader.matrix, post_state)
+            except ValueError:
+                reader_typed = False
+        path_valid = post_valid and reader_typed and response is not None
+        all_paths_valid = all_paths_valid and path_valid
+        if response is not None:
+            response_rows.append((alternative.identifier, response))
+        path_rows[alternative.identifier] = {
+            "intervened_state": intervened,
+            "post_schedule": post_rows,
+            "post_carrier_id": post_carrier,
+            "reader_stochastic": reader_measurement,
+            "reader_after_intervention": reader_after,
+            "derived_response": response,
+            "valid": path_valid,
+        }
+    changed_response = any(
+        left[1] != right[1] for left, right in itertools.combinations(response_rows, 2)
+    )
+    if not all_paths_valid or not changed_response:
+        issues.append("derived-delayed-response")
+    residuals["derived_response_paths"] = {
+        "rows": path_rows,
+        "changed_response": changed_response,
+        "opaque_before_after_ignored": bool(law.opaque_before_after),
+        "valid": all_paths_valid and changed_response,
+    }
+
+    contact_valid = not law.contact_required
+    if law.contact_required and product is not None:
+        expected_reader = _target_reader_matrix(
+            len(product.source_states), len(product.target_states)
+        )
+        target_reader_residual = _q_residual(law.reader.matrix, expected_reader)
+        post_nonidentity = bool(
+            law.post_schedule
+            and any(
+                transition.matrix
+                != QMatrix.identity(transition.matrix.nrows)
+                for transition in law.post_schedule
+                if transition.matrix.nrows == transition.matrix.ncols
+            )
+        )
+        target_changes = False
+        if len(response_rows) >= 2:
+            target_changes = response_rows[0][1] != response_rows[1][1]
+        contact_valid = bool(
+            product_valid
+            and intervention_typed
+            and len(local_source_matrices) == len(alternatives)
+            and target_reader_residual.get("nonzero_count") == 0
+            and post_nonidentity
+            and target_changes
+        )
+        residuals["generated_contact"] = {
+            "source_local_interventions": len(local_source_matrices)
+            == len(alternatives),
+            "target_reader_factorization_residual": target_reader_residual,
+            "nonidentity_propagation": post_nonidentity,
+            "derived_target_response_changes": target_changes,
+            "valid": contact_valid,
+        }
+        if not contact_valid:
+            issues.append("generated-contact-factor-chain")
+    else:
+        residuals["generated_contact"] = {
+            "required": False,
+            "causal_order_not_aliased_to_contact": True,
+        }
+
+    consumed_ids = tuple(
+        sorted(
+            {
+                law.identifier,
+                carrier.identifier,
+                intervention.identifier,
+                law.reader.identifier,
+                *(row.identifier for row in law.pre_schedule),
+                *(row.identifier for row in law.post_schedule),
+                *(row.identifier for row in alternatives),
+                *((product.identifier,) if product is not None else ()),
+                *((law.transition_reference_id,) if law.transition_reference_id else ()),
+            }
+        )
+    )
+    present = bool(
+        carrier_valid
+        and product_valid
+        and initial_measurement["valid"]
+        and pre_valid
+        and intervention_typed
+        and distinct_alternatives
+        and all_paths_valid
+        and changed_response
+        and contact_valid
+        and not issues
+    )
+    residuals["computed_chain_provenance"] = {
+        "primitive_ids": consumed_ids,
+        "opaque_provenance_ignored": bool(law.opaque_provenance),
+        "chain_connected_by_typed_composition": present,
+    }
+    return InfluenceLawMeasurement(
+        primitive_payload_sha256=payload_hash,
+        consumed_primitive_ids=consumed_ids,
+        role=role,
+        present=present,
+        responses=tuple(response_rows),
+        residuals=residuals,
+        issues=tuple(sorted(set(issues))),
+    )
+
+
+def _cnot_matrix() -> QMatrix:
+    return _q_permutation_from_images((0, 1, 3, 2))
+
+
+def build_influence_existence_law(
+    *, contact: bool, fault: str | None = None
+) -> InfluencePrimitiveLaw:
+    root = V4_INTERNAL_ROOT
+    zero_reset = QMatrix.from_rows(((1, 1), (0, 0)))
+    one_reset = QMatrix.from_rows(((0, 0), (1, 1)))
+    if not contact:
+        carrier = CarrierPrimitive(root, "system", ("0", "1"))
+        alternative_matrices = (zero_reset, one_reset)
+        if fault == "identical-alternatives":
+            alternative_matrices = (zero_reset, zero_reset)
+        alternatives = tuple(
+            InterventionAlternativePrimitive(
+                root,
+                f"reset_{index}",
+                carrier.identifier,
+                matrix,
+            )
+            for index, matrix in enumerate(alternative_matrices)
+        )
+        registered = tuple(row.identifier for row in alternatives)
+        if fault == "unused-alternative":
+            registered = registered[:1]
+        intervention = InterventionPrimitive(
+            root,
+            "reset-slot",
+            carrier.identifier,
+            0,
+            alternatives,
+            registered,
+        )
+        continuation_root = "v4:disconnected" if fault == "disconnected-root" else root
+        continuation = ScheduledTransitionPrimitive(
+            continuation_root,
+            "identity-continuation",
+            carrier.identifier,
+            carrier.identifier,
+            QMatrix.identity(2),
+        )
+        if fault == "noncomposable-carrier":
+            continuation = ScheduledTransitionPrimitive(
+                root,
+                "identity-continuation",
+                "alien-carrier",
+                carrier.identifier,
+                QMatrix.identity(2),
+            )
+        reader_position = 0 if fault in {"reader-before", "supplied-tables"} else 2
+        reader = ReaderPrimitive(
+            root,
+            "later-bit-reader",
+            carrier.identifier,
+            ("0", "1"),
+            QMatrix.identity(2),
+            reader_position,
+        )
+        causal_post_schedule = () if fault == "provenance-only" else (continuation,)
+        return InfluencePrimitiveLaw(
+            root=root,
+            identifier="causal-existence-law",
+            carrier=carrier,
+            initial_state=QMatrix.from_rows(((1,), (0,))),
+            pre_schedule=(),
+            intervention=intervention,
+            post_schedule=causal_post_schedule,
+            reader=reader,
+            opaque_before_after=(
+                ("before", (Fraction(1), Fraction(0))),
+                ("after", (Fraction(0), Fraction(1))),
+            )
+            if fault in {"supplied-tables", "reader-before"}
+            else (),
+            opaque_provenance=(
+                ("root", "claim", "asserts"),
+            )
+            if fault == "provenance-only"
+            else (),
+        )
+
+    source_states = ("0", "1")
+    target_states = ("0", "1")
+    product_states = tuple(
+        f"({source},{target})" for source in source_states for target in target_states
+    )
+    if fault == "overlapping-or-labeled-supports":
+        product_states = ("source", "target", "both", "labeled")
+    product = ProductCarrierPrimitive(
+        root,
+        "source_x_target",
+        source_states,
+        target_states,
+        product_states,
+        source_factor_id="same-labeled-factor"
+        if fault == "overlapping-or-labeled-supports"
+        else "source-factor",
+        target_factor_id="same-labeled-factor"
+        if fault == "overlapping-or-labeled-supports"
+        else "target-factor",
+    )
+    carrier = CarrierPrimitive(root, product.identifier, product_states)
+    local_matrices = (
+        _q_kron(zero_reset, QMatrix.identity(2)),
+        _q_kron(one_reset, QMatrix.identity(2)),
+    )
+    if fault == "identical-alternatives":
+        local_matrices = (local_matrices[0], local_matrices[0])
+    if fault == "target-acting-intervention":
+        local_matrices = (
+            _q_kron(zero_reset, QMatrix.identity(2)),
+            _q_kron(one_reset, QMatrix.from_rows(((0, 1), (1, 0)))),
+        )
+    alternatives = tuple(
+        InterventionAlternativePrimitive(
+            root,
+            f"source_reset_{index}",
+            carrier.identifier,
+            matrix,
+            (zero_reset, one_reset)[index],
+        )
+        for index, matrix in enumerate(local_matrices)
+    )
+    registered = tuple(row.identifier for row in alternatives)
+    if fault == "unused-alternative":
+        registered = registered[:1]
+    intervention = InterventionPrimitive(
+        root,
+        "source-reset-slot",
+        carrier.identifier,
+        0,
+        alternatives,
+        registered,
+    )
+    propagation_matrix = (
+        QMatrix.identity(4) if fault == "identity-propagation" else _cnot_matrix()
+    )
+    propagation_root = "v4:disconnected" if fault == "disconnected-root" else root
+    propagation_source = (
+        "alien-product" if fault == "noncomposable-carrier" else carrier.identifier
+    )
+    propagation = ScheduledTransitionPrimitive(
+        propagation_root,
+        "cnot-source-to-target",
+        propagation_source,
+        carrier.identifier,
+        propagation_matrix,
+    )
+    reader_matrix = (
+        _source_reader_matrix(2, 2)
+        if fault == "source-consuming-reader"
+        else _target_reader_matrix(2, 2)
+    )
+    reader = ReaderPrimitive(
+        root,
+        "target-reader",
+        carrier.identifier,
+        ("0", "1"),
+        reader_matrix,
+        0 if fault in {"reader-before", "supplied-tables"} else 2,
+    )
+    post_schedule = () if fault == "provenance-only" else (propagation,)
+    return InfluencePrimitiveLaw(
+        root=root,
+        identifier="contact-existence-law",
+        carrier=carrier,
+        initial_state=QMatrix.from_rows(((1,), (0,), (0,), (0,))),
+        pre_schedule=(),
+        intervention=intervention,
+        post_schedule=post_schedule,
+        reader=reader,
+        product_carrier=product,
+        contact_required=True,
+        opaque_before_after=(
+            ("reset_0", (Fraction(1), Fraction(0))),
+            ("reset_1", (Fraction(0), Fraction(1))),
+        )
+        if fault in {"identity-propagation", "supplied-tables", "reader-before"}
+        else (),
+        opaque_provenance=(
+            ("source", "target", "asserted-contact"),
+        )
+        if fault == "provenance-only"
+        else (),
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class RecordWriterPrimitive:
+    root: str
+    identifier: str
+    source_carrier: CarrierPrimitive
+    target_carrier: ProductCarrierPrimitive
+    matrix: QMatrix
+    semantic_label: str = "writer"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_carrier": self.source_carrier,
+            "target_carrier": self.target_carrier,
+            "matrix": self.matrix,
+            "semantic_label": self.semantic_label,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class RewritePrimitive:
+    root: str
+    identifier: str
+    source_carrier: CarrierPrimitive
+    target_carrier: CarrierPrimitive
+    source_region_id: str
+    target_region_id: str
+    created_support_state: str
+    matrix: QMatrix
+    passive_inclusion: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "source_carrier": self.source_carrier,
+            "target_carrier": self.target_carrier,
+            "source_region_id": self.source_region_id,
+            "target_region_id": self.target_region_id,
+            "created_support_state": self.created_support_state,
+            "matrix": self.matrix,
+            "passive_inclusion": self.passive_inclusion,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class OntologyPrimitiveLaw:
+    root: str
+    identifier: str
+    classical_law: ClassicalPrimitiveLaw | None
+    conditioning_instrument_id: str | None
+    writer: RecordWriterPrimitive | None
+    delayed_flag_reader: ReaderPrimitive | None
+    record_continuations: tuple[ScheduledTransitionPrimitive, ...]
+    rewrite: RewritePrimitive | None
+    rewrite_input_state: QMatrix | None
+    compiler_mode: str
+    ontology_candidate: str | None = None
+    opaque_role_tables: tuple[tuple[str, str], ...] = ()
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "OntologyPrimitiveLaw",
+            "root": self.root,
+            "id": self.identifier,
+            "classical_law": self.classical_law,
+            "conditioning_instrument_id": self.conditioning_instrument_id,
+            "writer": self.writer,
+            "delayed_flag_reader": self.delayed_flag_reader,
+            "record_continuations": self.record_continuations,
+            "rewrite": self.rewrite,
+            "rewrite_input_state": self.rewrite_input_state,
+            "compiler_mode": self.compiler_mode,
+            "ontology_candidate": self.ontology_candidate,
+            "opaque_role_tables": self.opaque_role_tables,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class OntologyLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    role: str
+    residuals: Mapping[str, object]
+    issues: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "OntologyLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "role": self.role,
+            "residuals": self.residuals,
+            "issues": self.issues,
+            "candidate_consulted": False,
+        }
+
+
+def _compile_carrier_state_effect(
+    compiler_mode: str, carrier: CarrierPrimitive, state: str
+) -> QMatrix | None:
+    if compiler_mode != "target-independent-uniform" or state not in carrier.states:
+        return None
+    index = carrier.states.index(state)
+    return QMatrix.from_rows(
+        (
+            tuple(
+                Fraction(1) if column == index else Fraction(0)
+                for column in range(len(carrier.states))
+            ),
+        ),
+        ncols=len(carrier.states),
+    )
+
+
+def measure_ontology_primitive_law(law: object) -> OntologyLawMeasurement:
+    if not isinstance(law, OntologyPrimitiveLaw):
+        raise ScoreRefusal("ontology promotion requires OntologyPrimitiveLaw")
+    payload_hash = canonical_sha256(law.to_data())
+    residuals: dict[str, object] = {
+        "static_response": {
+            "present": True,
+            "source": "generic-static-baseline-control",
+        }
+    }
+    issues: list[str] = []
+    consumed_ids: set[str] = {law.identifier}
+    conditioning_valid = False
+    classical_measurement: ClassicalLawMeasurement | None = None
+    instrument: TypedInstrument | None = None
+    if isinstance(law.classical_law, ClassicalPrimitiveLaw):
+        classical_measurement = measure_classical_primitive_law(law.classical_law)
+        consumed_ids.update(classical_measurement.consumed_primitive_ids)
+        instrument = next(
+            (
+                row
+                for row in law.classical_law.instruments
+                if row.identifier == law.conditioning_instrument_id
+            ),
+            None,
+        )
+        instrument_measurement = (
+            classical_measurement.residuals.get("instruments", {}).get(
+                instrument.identifier
+            )
+            if isinstance(instrument, TypedInstrument)
+            and isinstance(classical_measurement.residuals.get("instruments"), Mapping)
+            else None
+        )
+        branches_subnormalized = bool(
+            isinstance(instrument_measurement, Mapping)
+            and instrument_measurement.get("individual_branches_subnormalized")
+            and all(instrument_measurement["individual_branches_subnormalized"])
+        )
+        conditioning_valid = bool(
+            classical_measurement.valid
+            and isinstance(instrument, TypedInstrument)
+            and isinstance(instrument_measurement, Mapping)
+            and instrument_measurement.get("valid")
+            and branches_subnormalized
+        )
+        if isinstance(instrument, TypedInstrument):
+            consumed_ids.add(instrument.identifier)
+        residuals["conditioning"] = {
+            "classical_coordinate": classical_measurement.coordinate,
+            "instrument_id": law.conditioning_instrument_id,
+            "derived_instrument_measurement": instrument_measurement,
+            "individual_selected_branch_is_subnormalized": branches_subnormalized,
+            "same_fixed_algebra": bool(
+                isinstance(instrument, TypedInstrument)
+                and instrument.source_id == instrument.target_id
+            ),
+            "valid": conditioning_valid,
+        }
+    else:
+        residuals["conditioning"] = {
+            "instrument_id": law.conditioning_instrument_id,
+            "valid": False,
+        }
+
+    record_valid = False
+    writer = law.writer
+    reader = law.delayed_flag_reader
+    if conditioning_valid and isinstance(writer, RecordWriterPrimitive):
+        consumed_ids.add(writer.identifier)
+        source = writer.source_carrier
+        target = writer.target_carrier
+        expected_target_states = tuple(
+            f"({state},{flag})"
+            for state in target.source_states
+            for flag in target.target_states
+        )
+        carriers_valid = bool(
+            writer.root == law.root
+            and source.root == law.root
+            and target.root == law.root
+            and target.source_states == source.states
+            and target.target_states == source.states
+            and target.states == expected_target_states
+        )
+        expected_writer = QMatrix.from_rows(
+            (
+                (
+                    Fraction(1)
+                    if row == column * len(source.states) + column
+                    else Fraction(0)
+                    for column in range(len(source.states))
+                )
+                for row in range(len(target.states))
+            ),
+            ncols=len(source.states),
+        )
+        writer_residual = _q_residual(writer.matrix, expected_writer)
+        writer_stochastic = _stochastic_matrix_measurement(
+            writer.matrix,
+            expected_shape=(len(target.states), len(source.states)),
+        )
+        expected_reader = _target_reader_matrix(
+            len(target.source_states), len(target.target_states)
+        )
+        reader_residual = (
+            _q_residual(reader.matrix, expected_reader)
+            if isinstance(reader, ReaderPrimitive)
+            else {"shape_match": False, "nonzero_count": None}
+        )
+        reader_valid = bool(
+            isinstance(reader, ReaderPrimitive)
+            and reader.root == law.root
+            and reader.carrier_id == target.identifier
+            and reader.schedule_position == 2
+            and reader.outcomes == source.states
+            and reader_residual.get("nonzero_count") == 0
+        )
+        if isinstance(reader, ReaderPrimitive):
+            consumed_ids.add(reader.identifier)
+
+        continuation_index_raw, continuation_issues = _unique_index(
+            law.record_continuations, "ontology-continuation"
+        )
+        issues.extend(continuation_issues)
+        continuation_index = {
+            key: value
+            for key, value in continuation_index_raw.items()
+            if isinstance(value, ScheduledTransitionPrimitive)
+        }
+        continuation_closure: dict[str, QMatrix] = {}
+        continuation_rows: dict[str, object] = {}
+        for continuation_id, continuation in sorted(continuation_index.items()):
+            consumed_ids.add(continuation_id)
+            stochastic = _stochastic_matrix_measurement(
+                continuation.matrix,
+                expected_shape=(len(target.states), len(target.states)),
+            )
+            typed = bool(
+                continuation.root == law.root
+                and continuation.source_carrier_id == target.identifier
+                and continuation.target_carrier_id == target.identifier
+                and stochastic["valid"]
+            )
+            if typed:
+                continuation_closure[canonical_sha256(continuation.matrix)] = (
+                    continuation.matrix
+                )
+            continuation_rows[continuation_id] = {
+                "stochastic": stochastic,
+                "typed": typed,
+            }
+        changed = True
+        while changed and len(continuation_closure) <= 64:
+            changed = False
+            for left in tuple(continuation_closure.values()):
+                for right in tuple(continuation_closure.values()):
+                    product_matrix = qmultiply(left, right)
+                    key = canonical_sha256(product_matrix)
+                    if key not in continuation_closure:
+                        continuation_closure[key] = product_matrix
+                        changed = True
+        closure_complete = not changed
+        identity = QMatrix.identity(len(target.states))
+        nonidentity = any(row != identity for row in continuation_closure.values())
+        recovery_rows: list[dict[str, object]] = []
+        all_recover = bool(
+            continuation_closure
+            and closure_complete
+            and nonidentity
+            and reader_valid
+        )
+        if reader_valid:
+            for word_hash, continuation in sorted(continuation_closure.items()):
+                recovered = qmultiply(
+                    reader.matrix,
+                    qmultiply(continuation, writer.matrix),
+                )
+                recovery_residual = _q_residual(
+                    recovered, QMatrix.identity(len(source.states))
+                )
+                word_valid = recovery_residual.get("nonzero_count") == 0
+                all_recover = all_recover and word_valid
+                recovery_rows.append(
+                    {
+                        "word_sha256": word_hash,
+                        "continuation": continuation,
+                        "reader_after_word_after_writer": recovered,
+                        "recovery_residual": recovery_residual,
+                        "recovers_original_flag": word_valid,
+                    }
+                )
+        record_valid = bool(
+            carriers_valid
+            and writer_stochastic["valid"]
+            and writer_residual.get("nonzero_count") == 0
+            and reader_valid
+            and all_recover
+        )
+        residuals["record_writing"] = {
+            "writer_label_ignored": writer.semantic_label,
+            "carrier_typing": carriers_valid,
+            "writer_stochastic": writer_stochastic,
+            "writer_W_residual": writer_residual,
+            "target_flag_reader_residual": reader_residual,
+            "continuation_generators": continuation_rows,
+            "closure_size": len(continuation_closure),
+            "closure_complete": closure_complete,
+            "nonidentity_word_present": nonidentity,
+            "recovery_rows": recovery_rows,
+            "valid": record_valid,
+        }
+    else:
+        residuals["record_writing"] = {
+            "writer_present": isinstance(writer, RecordWriterPrimitive),
+            "reader_present": isinstance(reader, ReaderPrimitive),
+            "valid": False,
+        }
+
+    rewrite_valid = False
+    rewrite = law.rewrite
+    if record_valid and isinstance(rewrite, RewritePrimitive):
+        consumed_ids.add(rewrite.identifier)
+        source = rewrite.source_carrier
+        target = rewrite.target_carrier
+        input_state = law.rewrite_input_state
+        rewrite_measurement = _stochastic_matrix_measurement(
+            rewrite.matrix,
+            expected_shape=(len(target.states), len(source.states)),
+        )
+        passive_measurement = _stochastic_matrix_measurement(
+            rewrite.passive_inclusion,
+            expected_shape=(len(target.states), len(source.states)),
+        )
+        effect = _compile_carrier_state_effect(
+            law.compiler_mode, target, rewrite.created_support_state
+        )
+        output_state: QMatrix | None = None
+        passive_state: QMatrix | None = None
+        response: QMatrix | None = None
+        passive_response: QMatrix | None = None
+        if (
+            isinstance(input_state, QMatrix)
+            and input_state.shape == (len(source.states), 1)
+            and rewrite_measurement["valid"]
+            and passive_measurement["valid"]
+            and effect is not None
+        ):
+            output_state = qmultiply(rewrite.matrix, input_state)
+            passive_state = qmultiply(rewrite.passive_inclusion, input_state)
+            response = qmultiply(effect, output_state)
+            passive_response = qmultiply(effect, passive_state)
+        expected_created = QMatrix.from_rows(
+            (
+                (
+                    Fraction(1)
+                    if row == target.states.index(rewrite.created_support_state)
+                    else Fraction(0)
+                ,)
+                for row in range(len(target.states))
+            ),
+            ncols=1,
+        ) if rewrite.created_support_state in target.states else None
+        state_transport_residual = (
+            _q_residual(output_state, expected_created)
+            if output_state is not None and expected_created is not None
+            else {"shape_match": False, "nonzero_count": None}
+        )
+        rewrite_valid = bool(
+            rewrite.root == law.root
+            and source.root == law.root
+            and target.root == law.root
+            and source.states == ("0", "1")
+            and target.states == ("0", "1", "n")
+            and rewrite.source_region_id != rewrite.target_region_id
+            and rewrite.created_support_state == "n"
+            and rewrite_measurement["valid"]
+            and passive_measurement["valid"]
+            and state_transport_residual.get("nonzero_count") == 0
+            and response == QMatrix.from_rows(((1,),))
+            and passive_response == QMatrix.from_rows(((0,),))
+        )
+        residuals["region_rewriting"] = {
+            "source_region_id": rewrite.source_region_id,
+            "output_region_id": rewrite.target_region_id,
+            "regional_object_changed": rewrite.source_region_id
+            != rewrite.target_region_id,
+            "rewrite_stochastic": rewrite_measurement,
+            "passive_inclusion_stochastic": passive_measurement,
+            "transported_state": output_state,
+            "created_support_state": rewrite.created_support_state,
+            "state_transport_residual": state_transport_residual,
+            "compiled_new_support_effect": effect,
+            "composed_rewrite_response": response,
+            "passive_inclusion_control_response": passive_response,
+            "compiler_target_independent": law.compiler_mode
+            == "target-independent-uniform",
+            "valid": rewrite_valid,
+        }
+    else:
+        residuals["region_rewriting"] = {
+            "rewrite_present": isinstance(rewrite, RewritePrimitive),
+            "opaque_tables_ignored": bool(law.opaque_role_tables),
+            "valid": False,
+        }
+
+    role = (
+        "REGION-REWRITING"
+        if rewrite_valid
+        else "RECORD-WRITING-ON-FIXED-ALGEBRA"
+        if record_valid
+        else "FIXED-ALGEBRA-CONDITIONING"
+        if conditioning_valid
+        else "STATIC-RESPONSE"
+    )
+    if role not in ONTOLOGY_ROLES:
+        raise ScoreRefusal("ontology role escaped its frozen vocabulary")
+    residuals["candidate_invariance"] = {
+        "candidate_consulted": False,
+        "candidate_value_not_a_measurement": True,
+    }
+    return OntologyLawMeasurement(
+        primitive_payload_sha256=payload_hash,
+        consumed_primitive_ids=tuple(sorted(consumed_ids)),
+        role=role,
+        residuals=residuals,
+        issues=tuple(sorted(set(issues))),
+    )
+
+
+def build_ontology_existence_law(
+    level: str, *, fault: str | None = None, candidate: str | None = None
+) -> OntologyPrimitiveLaw:
+    if level not in ONTOLOGY_ROLES:
+        raise ValueError("unknown ontology control level")
+    root = V4_INTERNAL_ROOT
+    classical = (
+        build_classical_existence_law()
+        if level != "STATIC-RESPONSE"
+        else None
+    )
+    conditioning_id = "question_instrument" if classical is not None else None
+    source = CarrierPrimitive(root, "record-source", ("0", "1"))
+    product_states = tuple(
+        f"({state},{flag})" for state in source.states for flag in source.states
+    )
+    target = ProductCarrierPrimitive(
+        root,
+        "record-source_x_flag",
+        source.states,
+        source.states,
+        product_states,
+    )
+    writer_matrix = QMatrix.from_rows(((1, 0), (0, 0), (0, 0), (0, 1)))
+    writer = RecordWriterPrimitive(
+        root,
+        "deterministic-writer",
+        source,
+        target,
+        writer_matrix,
+    )
+    reader = ReaderPrimitive(
+        root,
+        "delayed-flag-reader",
+        target.identifier,
+        source.states,
+        _target_reader_matrix(2, 2),
+        2,
+    )
+    continuations = (
+        ScheduledTransitionPrimitive(
+            root,
+            "record-I",
+            target.identifier,
+            target.identifier,
+            QMatrix.identity(4),
+        ),
+        ScheduledTransitionPrimitive(
+            root,
+            "record-X-source",
+            target.identifier,
+            target.identifier,
+            _q_kron(QMatrix.from_rows(((0, 1), (1, 0))), QMatrix.identity(2)),
+        ),
+    )
+    if fault == "nonclosed-continuation-semigroup":
+        source_mixing = QMatrix.from_rows(
+            ((1, Fraction(1, 2)), (0, Fraction(1, 2)))
+        )
+        continuations = (
+            continuations[0],
+            ScheduledTransitionPrimitive(
+                root,
+                "record-nonclosed-source-mixing",
+                target.identifier,
+                target.identifier,
+                _q_kron(source_mixing, QMatrix.identity(2)),
+            ),
+        )
+    if level in {"STATIC-RESPONSE", "FIXED-ALGEBRA-CONDITIONING"}:
+        writer = None
+        reader = None
+        continuations = ()
+    if fault == "missing-writer":
+        writer = None
+    elif fault == "missing-reader":
+        reader = None
+    elif fault == "missing-continuation":
+        continuations = ()
+    elif fault == "identity-writer-label":
+        writer = RecordWriterPrimitive(
+            root,
+            "identity-labeled-writer",
+            source,
+            ProductCarrierPrimitive(
+                root,
+                source.identifier,
+                source.states,
+                ("unit",),
+                source.states,
+            ),
+            QMatrix.identity(2),
+            semantic_label="record-write",
+        )
+
+    rewrite_source = CarrierPrimitive(root, "G2", ("0", "1"))
+    rewrite_target = CarrierPrimitive(root, "G3", ("0", "1", "n"))
+    rewrite = RewritePrimitive(
+        root,
+        "two-to-three-rewrite",
+        rewrite_source,
+        rewrite_target,
+        "region-G2",
+        "region-G3-created-n",
+        "n",
+        QMatrix.from_rows(((1, 0), (0, 0), (0, 1))),
+        QMatrix.from_rows(((1, 0), (0, 1), (0, 0))),
+    )
+    rewrite_input = QMatrix.from_rows(((0,), (1,)))
+    if level != "REGION-REWRITING":
+        rewrite = None
+        rewrite_input = None
+    if fault == "missing-rewrite":
+        rewrite = None
+    elif fault == "changed-table-no-rewrite":
+        rewrite = None
+    elif fault == "identity-rewrite-label":
+        rewrite = RewritePrimitive(
+            root,
+            "identity-labeled-rewrite",
+            rewrite_source,
+            rewrite_source,
+            "region-G2",
+            "renamed-region-G2",
+            "1",
+            QMatrix.identity(2),
+            QMatrix.identity(2),
+        )
+    return OntologyPrimitiveLaw(
+        root=root,
+        identifier=f"ontology-{level.lower()}",
+        classical_law=classical,
+        conditioning_instrument_id=(
+            None if fault == "missing-conditioning" else conditioning_id
+        ),
+        writer=writer,
+        delayed_flag_reader=reader,
+        record_continuations=continuations,
+        rewrite=rewrite,
+        rewrite_input_state=rewrite_input,
+        compiler_mode=(
+            "target-specific-whitelist"
+            if fault == "target-specific-compiler"
+            else "target-independent-uniform"
+        ),
+        ontology_candidate=candidate,
+        opaque_role_tables=(
+            ("before", "0"), ("after", "1")
+        )
+        if fault in {"changed-table-no-rewrite", "identity-writer-label"}
+        else (),
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class PrefixCompilerPrimitive:
+    root: str
+    identifier: str
+    mode: str
+    seed_regions: tuple[PrefixRegion, ...]
+    whitelist_regions: tuple[PrefixRegion, ...] = ()
+    split_mode: str = "symbolic-prefix-split"
+    transition_reference_id: str | None = "shared-transition-X"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "mode": self.mode,
+            "seed_regions": self.seed_regions,
+            "whitelist_regions": self.whitelist_regions,
+            "split_mode": self.split_mode,
+            "transition_reference_id": self.transition_reference_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class CompilerLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    normalization_valid: bool
+    raw_atomless_valid: bool
+    future_complete: bool
+    congruence_valid: bool
+    quotient_atomless_valid: bool
+    residuals: Mapping[str, object]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "CompilerLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "normalization_valid": self.normalization_valid,
+            "raw_atomless_valid": self.raw_atomless_valid,
+            "future_complete": self.future_complete,
+            "congruence_valid": self.congruence_valid,
+            "quotient_atomless_valid": self.quotient_atomless_valid,
+            "residuals": self.residuals,
+        }
+
+
+def _binary_atoms(depth: int) -> tuple[str, ...]:
+    return tuple("".join(bits) for bits in itertools.product("01", repeat=depth))
+
+
+def _prefix_effect(
+    compiler: PrefixCompilerPrimitive, region: PrefixRegion, atoms: Sequence[str]
+) -> QMatrix | None:
+    if compiler.mode == "uniform-prefix-compiler":
+        accepted = True
+    elif compiler.mode == "seed-whitelist-compiler":
+        accepted = region in compiler.whitelist_regions
+    elif compiler.mode == "scalar-volume-compiler":
+        mass = bernoulli_mass(region, Fraction(1, 2))
+        return QMatrix.from_rows(((mass for _atom in atoms),), ncols=len(atoms))
+    else:
+        accepted = False
+    if not accepted:
+        return None
+    return QMatrix.from_rows(
+        (
+            (
+                Fraction(1)
+                if PrefixRegion.cylinder(atom).is_part_of(region)
+                else Fraction(0)
+                for atom in atoms
+            ),
+        ),
+        ncols=len(atoms),
+    )
+
+
+def measure_prefix_compiler(
+    compiler: object, *, quotient_mode: str = "literal-prefix-algebra"
+) -> CompilerLawMeasurement:
+    if not isinstance(compiler, PrefixCompilerPrimitive):
+        raise ScoreRefusal("compiler promotion requires PrefixCompilerPrimitive")
+    payload_hash = canonical_sha256(compiler.to_data())
+    atoms = _binary_atoms(3)
+    identity = QMatrix.identity(len(atoms))
+    regions = tuple(
+        dict.fromkeys(
+            compiler.seed_regions
+            + (
+                PrefixRegion.zero(),
+                PrefixRegion.one(),
+                PrefixRegion.cylinder("0"),
+                PrefixRegion.cylinder("1"),
+            )
+        )
+    )
+    normalization_rows: list[dict[str, object]] = []
+    normalization_valid = compiler.mode in {
+        "uniform-prefix-compiler",
+        "seed-whitelist-compiler",
+    }
+    atomless_rows: list[dict[str, object]] = []
+    raw_atomless_valid = bool(
+        compiler.mode in {"uniform-prefix-compiler", "seed-whitelist-compiler"}
+        and compiler.split_mode == "symbolic-prefix-split"
+    )
+    for region in regions:
+        effect = _prefix_effect(compiler, region, atoms)
+        complement_effect = _prefix_effect(compiler, region.complement(), atoms)
+        if effect is None or complement_effect is None:
+            normalization_valid = False
+            normalization_rows.append(
+                {
+                    "region": region,
+                    "compiled": False,
+                    "normalization_residual": {"nonzero_count": None},
+                }
+            )
+        else:
+            question_yes = QMatrix.from_rows(
+                (
+                    (
+                        effect.data[0][row]
+                        if row == column
+                        else Fraction(0)
+                        for column in range(len(atoms))
+                    )
+                    for row in range(len(atoms))
+                ),
+                ncols=len(atoms),
+            )
+            question_no = QMatrix.from_rows(
+                (
+                    (
+                        complement_effect.data[0][row]
+                        if row == column
+                        else Fraction(0)
+                        for column in range(len(atoms))
+                    )
+                    for row in range(len(atoms))
+                ),
+                ncols=len(atoms),
+            )
+            residual = _q_residual(qadd(question_yes, question_no), identity)
+            valid = residual.get("nonzero_count") == 0
+            normalization_valid = normalization_valid and valid
+            normalization_rows.append(
+                {
+                    "region": region,
+                    "Q_A": question_yes,
+                    "Q_notA": question_no,
+                    "both_ports_retained": True,
+                    "normalization_residual": residual,
+                    "valid": valid,
+                }
+            )
+        if not region.is_zero():
+            left, right = region.atomless_bipartition()
+            split_valid = bool(
+                not left.is_zero()
+                and not right.is_zero()
+                and left != region
+                and right != region
+                and left.disjoint(right)
+                and left.join(right) == region
+            )
+            raw_atomless_valid = raw_atomless_valid and split_valid
+            atomless_rows.append(
+                {
+                    "region": region,
+                    "left": left,
+                    "right": right,
+                    "proper_nonzero_partition": split_valid,
+                }
+            )
+
+    fresh = PrefixRegion.cylinder("000")
+    fresh_not_seed = fresh not in compiler.seed_regions
+    fresh_effect = _prefix_effect(compiler, fresh, atoms)
+    separation_profile: tuple[Fraction, ...] | None = None
+    if fresh_effect is not None:
+        separation_profile = tuple(fresh_effect.data[0])
+    future_complete = bool(
+        compiler.mode == "uniform-prefix-compiler"
+        and fresh_not_seed
+        and fresh_effect is not None
+        and len(set(separation_profile or ())) == 2
+    )
+
+    profile_rows: list[tuple[PrefixRegion, tuple[Fraction, ...]]] = []
+    for region in regions:
+        effect = _prefix_effect(compiler, region, atoms)
+        if effect is not None:
+            profile_rows.append((region, tuple(effect.data[0])))
+    literal_injective = len({profile for _region, profile in profile_rows}) == len(
+        {region for region, _profile in profile_rows}
+    )
+    symbolic_separation_rows: list[dict[str, object]] = []
+    symbolic_separation_valid = compiler.mode == "uniform-prefix-compiler"
+    for first_region, second_region in itertools.combinations(regions, 2):
+        if first_region == second_region:
+            continue
+        first_only = first_region.difference(second_region)
+        second_only = second_region.difference(first_region)
+        symmetric_difference = first_only.join(second_only)
+        directional_witness = first_only if not first_only.is_zero() else second_only
+        witness_prefix = (
+            directional_witness.words[0]
+            if directional_witness.words
+            else None
+        )
+        faithful_preparation = (
+            PrefixRegion.cylinder(witness_prefix)
+            if isinstance(witness_prefix, str)
+            else PrefixRegion.zero()
+        )
+        first_response = faithful_preparation.is_part_of(first_region)
+        second_response = faithful_preparation.is_part_of(second_region)
+        separates = bool(
+            witness_prefix is not None
+            and not symmetric_difference.is_zero()
+            and first_response != second_response
+        )
+        symbolic_separation_valid = symbolic_separation_valid and separates
+        symbolic_separation_rows.append(
+            {
+                "first_region": first_region,
+                "second_region": second_region,
+                "symmetric_difference": symmetric_difference,
+                "directional_difference_used": directional_witness,
+                "canonical_witness_prefix": witness_prefix,
+                "faithful_support_preparation": faithful_preparation,
+                "first_response": first_response,
+                "second_response": second_response,
+                "separates": separates,
+            }
+        )
+    operation_rows: list[dict[str, object]] = []
+    operation_valid = True
+    operation_regions = (
+        PrefixRegion.cylinder("0"),
+        PrefixRegion.cylinder("00"),
+        PrefixRegion.cylinder("1"),
+    )
+    for left in operation_regions:
+        for right in operation_regions:
+            left_effect = _prefix_effect(compiler, left, atoms)
+            right_effect = _prefix_effect(compiler, right, atoms)
+            meet_effect = _prefix_effect(compiler, left.meet(right), atoms)
+            join_effect = _prefix_effect(compiler, left.join(right), atoms)
+            complement_effect = _prefix_effect(compiler, left.complement(), atoms)
+            if any(
+                value is None
+                for value in (
+                    left_effect,
+                    right_effect,
+                    meet_effect,
+                    join_effect,
+                    complement_effect,
+                )
+            ):
+                valid = False
+                row = {"left": left, "right": right, "compiled": False}
+            else:
+                assert left_effect is not None
+                assert right_effect is not None
+                assert meet_effect is not None
+                assert join_effect is not None
+                assert complement_effect is not None
+                pointwise_meet = QMatrix.from_rows(
+                    (
+                        (
+                            min(left_effect.data[0][index], right_effect.data[0][index])
+                            for index in range(len(atoms))
+                        ),
+                    ),
+                    ncols=len(atoms),
+                )
+                pointwise_join = QMatrix.from_rows(
+                    (
+                        (
+                            max(left_effect.data[0][index], right_effect.data[0][index])
+                            for index in range(len(atoms))
+                        ),
+                    ),
+                    ncols=len(atoms),
+                )
+                pointwise_complement = QMatrix.from_rows(
+                    (
+                        (
+                            1 - left_effect.data[0][index]
+                            for index in range(len(atoms))
+                        ),
+                    ),
+                    ncols=len(atoms),
+                )
+                meet_residual = _q_residual(meet_effect, pointwise_meet)
+                join_residual = _q_residual(join_effect, pointwise_join)
+                complement_residual = _q_residual(
+                    complement_effect, pointwise_complement
+                )
+                left_question = QMatrix.from_rows(
+                    (
+                        (
+                            left_effect.data[0][row]
+                            if row == column
+                            else Fraction(0)
+                            for column in range(len(atoms))
+                        )
+                        for row in range(len(atoms))
+                    ),
+                    ncols=len(atoms),
+                )
+                right_question = QMatrix.from_rows(
+                    (
+                        (
+                            right_effect.data[0][row]
+                            if row == column
+                            else Fraction(0)
+                            for column in range(len(atoms))
+                        )
+                        for row in range(len(atoms))
+                    ),
+                    ncols=len(atoms),
+                )
+                meet_question = QMatrix.from_rows(
+                    (
+                        (
+                            meet_effect.data[0][row]
+                            if row == column
+                            else Fraction(0)
+                            for column in range(len(atoms))
+                        )
+                        for row in range(len(atoms))
+                    ),
+                    ncols=len(atoms),
+                )
+                process_composition_row_residual = _q_residual(
+                    qmultiply(left_question, right_question), meet_question
+                )
+                valid = all(
+                    residual.get("nonzero_count") == 0
+                    for residual in (
+                        meet_residual,
+                        join_residual,
+                        complement_residual,
+                        process_composition_row_residual,
+                    )
+                )
+                row = {
+                    "left": left,
+                    "right": right,
+                    "meet_residual": meet_residual,
+                    "join_residual": join_residual,
+                    "complement_residual": complement_residual,
+                    "process_composition_residual": process_composition_row_residual,
+                    "valid": valid,
+                }
+            operation_valid = operation_valid and valid
+            operation_rows.append(row)
+    process_composition_residual = _q_residual(
+        qmultiply(identity, identity), identity
+    )
+    scalar_volume_control = quotient_mode == "scalar-volume-equivalence"
+    congruence_valid = bool(
+        compiler.mode == "uniform-prefix-compiler"
+        and literal_injective
+        and symbolic_separation_valid
+        and operation_valid
+        and process_composition_residual.get("nonzero_count") == 0
+        and not scalar_volume_control
+    )
+    quotient_atomless_valid = bool(
+        congruence_valid
+        and quotient_mode == "literal-prefix-algebra"
+        and raw_atomless_valid
+    )
+    return CompilerLawMeasurement(
+        primitive_payload_sha256=payload_hash,
+        consumed_primitive_ids=tuple(
+            identifier
+            for identifier in (compiler.identifier, compiler.transition_reference_id)
+            if identifier is not None
+        ),
+        normalization_valid=normalization_valid,
+        raw_atomless_valid=raw_atomless_valid,
+        future_complete=future_complete,
+        congruence_valid=congruence_valid,
+        quotient_atomless_valid=quotient_atomless_valid,
+        residuals={
+            "normalization": {
+                "generic_constructor": compiler.mode,
+                "rows": normalization_rows,
+                "valid": normalization_valid,
+            },
+            "raw_atomlessness": {
+                "constructor": "PrefixRegion.atomless_bipartition",
+                "rows": atomless_rows,
+                "valid": raw_atomless_valid,
+            },
+            "heldout_future": {
+                "region": fresh,
+                "not_in_seed_list": fresh_not_seed,
+                "compiled_effect": fresh_effect,
+                "separation_profile": separation_profile,
+                "valid": future_complete,
+            },
+            "regional_congruence": {
+                "profile_rows": profile_rows,
+                "contextual_equality_is_literal_equality": literal_injective,
+                "symbolic_faithful_separation_rule": (
+                    "for A!=B choose the first canonical cylinder in A symmetric-difference B"
+                ),
+                "symbolic_faithful_separation_rows": symbolic_separation_rows,
+                "symbolic_faithful_separation_valid": symbolic_separation_valid,
+                "finite_leaf_census_used_as_theorem": False,
+                "scalar_volume_control": scalar_volume_control,
+                "equal_volume_distinct_regions": {
+                    "left": PrefixRegion.cylinder("0"),
+                    "right": PrefixRegion.cylinder("1"),
+                    "both_mass": Fraction(1, 2),
+                    "identified_by_control": scalar_volume_control,
+                },
+                "operation_descent_rows": operation_rows,
+                "process_composition_residual": process_composition_residual,
+                "valid": congruence_valid,
+            },
+            "physical_image_atomlessness": {
+                "quotient_mode": quotient_mode,
+                "finite_leaf_census_used_as_proof": False,
+                "symbolic_split_constructor_reused_after_quotient": True,
+                "valid": quotient_atomless_valid,
+            },
+        },
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class OverlapCandidatePrimitive:
+    root: str
+    identifier: str
+    probabilities: tuple[Fraction, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "probabilities": self.probabilities,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class OverlapPrimitiveLaw:
+    root: str
+    identifier: str
+    configurations: tuple[str, ...]
+    candidates: tuple[OverlapCandidatePrimitive, ...]
+    transition_reference_id: str | None = "shared-transition-X"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "configurations": self.configurations,
+            "candidates": self.candidates,
+            "transition_reference_id": self.transition_reference_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class OverlapLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    valid: bool
+    selected_candidate_id: str | None
+    residuals: Mapping[str, object]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "OverlapLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "valid": self.valid,
+            "selected_candidate_id": self.selected_candidate_id,
+            "residuals": self.residuals,
+        }
+
+
+def measure_overlap_primitive_law(law: object) -> OverlapLawMeasurement:
+    if not isinstance(law, OverlapPrimitiveLaw):
+        raise ScoreRefusal("overlap promotion requires OverlapPrimitiveLaw")
+    expected_configurations = tuple(
+        "".join(bits) for bits in itertools.product("01", repeat=3)
+    )
+    configuration_valid = law.configurations == expected_configurations
+    candidate_ids = tuple(candidate.identifier for candidate in law.candidates)
+    candidate_family_exact = bool(
+        len(law.candidates) == 2
+        and len(set(candidate_ids)) == len(candidate_ids)
+        and all(candidate_ids)
+    )
+    candidate_rows: dict[str, object] = {}
+    zero_residual_candidates: list[str] = []
+    marginal_signatures: list[tuple[tuple[Fraction, ...], tuple[Fraction, ...]]] = []
+    for candidate in law.candidates:
+        probabilities = candidate.probabilities
+        distribution_valid = bool(
+            candidate.root == law.root
+            and len(probabilities) == len(law.configurations)
+            and all(value >= 0 for value in probabilities)
+            and sum(probabilities, Fraction(0)) == 1
+        )
+        probability = {
+            configuration: probabilities[index]
+            for index, configuration in enumerate(law.configurations)
+        } if len(probabilities) == len(law.configurations) else {}
+        p_ab = {
+            ab: sum(
+                (
+                    probability.get(ab[0] + ab[1] + c, Fraction(0))
+                    for c in "01"
+                ),
+                Fraction(0),
+            )
+            for ab in ("00", "01", "10", "11")
+        }
+        p_bc = {
+            bc: sum(
+                (
+                    probability.get(a + bc[0] + bc[1], Fraction(0))
+                    for a in "01"
+                ),
+                Fraction(0),
+            )
+            for bc in ("00", "01", "10", "11")
+        }
+        p_b = {
+            b: sum(
+                (
+                    probability.get(a + b + c, Fraction(0))
+                    for a in "01"
+                    for c in "01"
+                ),
+                Fraction(0),
+            )
+            for b in "01"
+        }
+        markov_residuals = {
+            configuration: probability.get(configuration, Fraction(0))
+            * p_b[configuration[1]]
+            - p_ab[configuration[:2]] * p_bc[configuration[1:]]
+            for configuration in law.configurations
+        }
+        markov_zero = distribution_valid and all(
+            value == 0 for value in markov_residuals.values()
+        )
+        if markov_zero:
+            zero_residual_candidates.append(candidate.identifier)
+        marginal_signatures.append(
+            (
+                tuple(p_ab[key] for key in ("00", "01", "10", "11")),
+                tuple(p_bc[key] for key in ("00", "01", "10", "11")),
+            )
+        )
+        endpoint_equal = sum(
+            value
+            for configuration, value in probability.items()
+            if configuration[0] == configuration[2]
+        )
+        candidate_rows[candidate.identifier] = {
+            "distribution_valid": distribution_valid,
+            "P_AB": p_ab,
+            "P_BC": p_bc,
+            "P_B": p_b,
+            "markov_cell_residuals": markov_residuals,
+            "markov_zero": markov_zero,
+            "P_A_equals_C": endpoint_equal,
+        }
+    identical_marginals = bool(marginal_signatures) and len(set(marginal_signatures)) == 1
+    uniform_signature = (
+        tuple(Fraction(1, 4) for _ in range(4)),
+        tuple(Fraction(1, 4) for _ in range(4)),
+    )
+    uniform_marginals = bool(marginal_signatures) and all(
+        signature == uniform_signature for signature in marginal_signatures
+    )
+    endpoint_values = {
+        row["P_A_equals_C"] for row in candidate_rows.values()
+    }
+    endpoint_control_exact = endpoint_values == {
+        Fraction(1, 2),
+        Fraction(1),
+    }
+    valid = bool(
+        configuration_valid
+        and candidate_family_exact
+        and identical_marginals
+        and uniform_marginals
+        and endpoint_control_exact
+        and len(zero_residual_candidates) == 1
+    )
+    return OverlapLawMeasurement(
+        primitive_payload_sha256=canonical_sha256(law.to_data()),
+        consumed_primitive_ids=tuple(
+            sorted(
+                {
+                    law.identifier,
+                    *(row.identifier for row in law.candidates),
+                    *((law.transition_reference_id,) if law.transition_reference_id else ()),
+                }
+            )
+        ),
+        valid=valid,
+        selected_candidate_id=(
+            zero_residual_candidates[0]
+            if len(zero_residual_candidates) == 1
+            else None
+        ),
+        residuals={
+            "configuration_order": law.configurations,
+            "configuration_order_valid": configuration_valid,
+            "candidate_ids": candidate_ids,
+            "exactly_two_unique_candidates": candidate_family_exact,
+            "candidates": candidate_rows,
+            "identical_AB_BC_marginals": identical_marginals,
+            "identical_uniform_AB_BC_marginals": (
+                identical_marginals and uniform_marginals
+            ),
+            "each_AB_BC_marginal_cell_is_one_quarter": uniform_marginals,
+            "endpoint_correlation_values": tuple(sorted(endpoint_values)),
+            "endpoint_control_exact_half_versus_one": endpoint_control_exact,
+            "zero_markov_residual_candidates": tuple(zero_residual_candidates),
+            "selected_by_order_hash_or_sparsity": False,
+            "valid": valid,
+        },
+    )
+
+
+def build_overlap_existence_law(fault: str | None = None) -> OverlapPrimitiveLaw:
+    root = V4_INTERNAL_ROOT
+    configurations = tuple(
+        "".join(bits) for bits in itertools.product("01", repeat=3)
+    )
+    uniform = tuple(Fraction(1, 8) for _ in configurations)
+    correlated = tuple(
+        Fraction(1, 4) if row[0] == row[2] else Fraction(0)
+        for row in configurations
+    )
+    candidates: tuple[OverlapCandidatePrimitive, ...] = (
+        OverlapCandidatePrimitive(root, "uniform-independent", uniform),
+        OverlapCandidatePrimitive(root, "A-equals-C", correlated),
+    )
+    if fault == "missing-markov-selector":
+        candidates = candidates[:1]
+    elif fault == "both-markov-survive":
+        candidates = (
+            candidates[0],
+            OverlapCandidatePrimitive(root, "uniform-independent-clone", uniform),
+        )
+    elif fault == "extra-overlap-candidate":
+        candidates = candidates + (
+            OverlapCandidatePrimitive(root, "A-equals-C-clone", correlated),
+        )
+    elif fault == "nonuniform-shared-marginals":
+        independent_b_zero = tuple(
+            Fraction(1, 4) if row[1] == "0" else Fraction(0)
+            for row in configurations
+        )
+        correlated_b_zero = tuple(
+            Fraction(1, 2)
+            if row[1] == "0" and row[0] == row[2]
+            else Fraction(0)
+            for row in configurations
+        )
+        candidates = (
+            OverlapCandidatePrimitive(
+                root, "B-zero-conditionally-independent", independent_b_zero
+            ),
+            OverlapCandidatePrimitive(
+                root, "B-zero-A-equals-C", correlated_b_zero
+            ),
+        )
+    return OverlapPrimitiveLaw(
+        root=root,
+        identifier="ABC-overlap-family",
+        configurations=configurations,
+        candidates=candidates,
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class ComparisonCutPrimitive:
+    root: str
+    identifier: str
+    whole_transition_id: str
+    factor_matrices: tuple[QMatrix, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "whole_transition_id": self.whole_transition_id,
+            "factor_matrices": self.factor_matrices,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ComparisonPrimitiveLaw:
+    root: str
+    identifier: str
+    transition_id: str
+    transition: QMatrix
+    transported_transition_id: str
+    transported_transition: QMatrix
+    comparison_id: str
+    comparison: QMatrix
+    calibrated_state: QMatrix
+    calibrated_effect: QMatrix
+    cuts: tuple[ComparisonCutPrimitive, ...]
+    transition_reference_id: str | None = "shared-transition-X"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "transition_id": self.transition_id,
+            "transition": self.transition,
+            "transported_transition_id": self.transported_transition_id,
+            "transported_transition": self.transported_transition,
+            "comparison_id": self.comparison_id,
+            "comparison": self.comparison,
+            "calibrated_state": self.calibrated_state,
+            "calibrated_effect": self.calibrated_effect,
+            "cuts": self.cuts,
+            "transition_reference_id": self.transition_reference_id,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ComparisonLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    valid: bool
+    residuals: Mapping[str, object]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "ComparisonLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "valid": self.valid,
+            "residuals": self.residuals,
+        }
+
+
+def measure_comparison_primitive_law(law: object) -> ComparisonLawMeasurement:
+    if not isinstance(law, ComparisonPrimitiveLaw):
+        raise ScoreRefusal("comparison promotion requires ComparisonPrimitiveLaw")
+    permutation_valid, inverse = _q_is_permutation(law.comparison)
+    carrier_size = law.comparison.nrows
+    transition_measurement = _stochastic_matrix_measurement(
+        law.transition, expected_shape=(carrier_size, carrier_size)
+    )
+    transported_transition_measurement = _stochastic_matrix_measurement(
+        law.transported_transition,
+        expected_shape=(carrier_size, carrier_size),
+    )
+    state_measurement = _stochastic_matrix_measurement(
+        law.calibrated_state, expected_shape=(carrier_size, 1)
+    )
+    effect_valid = bool(
+        law.calibrated_effect.shape == (1, carrier_size)
+        and all(
+            Fraction(0) <= entry <= Fraction(1)
+            for row in law.calibrated_effect.data
+            for entry in row
+        )
+    )
+    typed_transition_control = bool(
+        transition_measurement["valid"]
+        and transported_transition_measurement["valid"]
+        and state_measurement["valid"]
+        and effect_valid
+    )
+    nonidentity = bool(
+        permutation_valid
+        and law.comparison != QMatrix.identity(law.comparison.nrows)
+    )
+    transported_expected: QMatrix | None = None
+    naturality_residual: dict[str, object] = {"nonzero_count": None}
+    conjugation_residual: dict[str, object] = {"nonzero_count": None}
+    transported_state: QMatrix | None = None
+    transported_effect: QMatrix | None = None
+    state_moved = False
+    effect_moved = False
+    calibration_left: QMatrix | None = None
+    calibration_right: QMatrix | None = None
+    calibration_residual: dict[str, object] = {"nonzero_count": None}
+    if permutation_valid and inverse is not None and typed_transition_control:
+        transported_expected = qmultiply(
+            law.comparison, qmultiply(law.transition, inverse)
+        )
+        conjugation_residual = _q_residual(
+            law.transported_transition, transported_expected
+        )
+        naturality_residual = _q_residual(
+            qmultiply(law.comparison, law.transition),
+            qmultiply(law.transported_transition, law.comparison),
+        )
+        transported_state = qmultiply(law.comparison, law.calibrated_state)
+        transported_effect = qmultiply(law.calibrated_effect, inverse)
+        state_moved = transported_state != law.calibrated_state
+        effect_moved = transported_effect != law.calibrated_effect
+        calibration_left = qmultiply(
+            law.calibrated_effect,
+            qmultiply(law.transition, law.calibrated_state),
+        )
+        calibration_right = qmultiply(
+            transported_effect,
+            qmultiply(law.transported_transition, transported_state),
+        )
+        calibration_residual = _q_residual(calibration_left, calibration_right)
+    cut_rows: dict[str, object] = {}
+    cut_ids = tuple(cut.identifier for cut in law.cuts)
+    cut_signatures = tuple(
+        canonical_sha256(cut.factor_matrices) for cut in law.cuts
+    )
+    cuts_registered_exactly = bool(
+        len(law.cuts) == 2
+        and len(set(cut_ids)) == 2
+        and all(cut_ids)
+        and len(set(cut_signatures)) == 2
+    )
+    cuts_valid = cuts_registered_exactly
+    for cut in law.cuts:
+        product: QMatrix | None = None
+        factors_typed = bool(
+            cut.factor_matrices
+            and all(
+                _stochastic_matrix_measurement(
+                    factor, expected_shape=(carrier_size, carrier_size)
+                )["valid"]
+                for factor in cut.factor_matrices
+            )
+        )
+        composable = factors_typed
+        if cut.factor_matrices:
+            product = cut.factor_matrices[0]
+            for factor in cut.factor_matrices[1:]:
+                try:
+                    product = qmultiply(factor, product)
+                except ValueError:
+                    composable = False
+                    product = None
+                    break
+        residual = (
+            _q_residual(product, law.transition)
+            if product is not None
+            else {"shape_match": False, "nonzero_count": None}
+        )
+        valid = bool(
+            cut.root == law.root
+            and cut.whole_transition_id == law.transition_id
+            and factors_typed
+            and composable
+            and residual.get("nonzero_count") == 0
+        )
+        cuts_valid = cuts_valid and valid
+        cut_rows[cut.identifier] = {
+            "factor_matrices": cut.factor_matrices,
+            "factors_typed_stochastic": factors_typed,
+            "recomposed_product": product,
+            "residual": residual,
+            "valid": valid,
+        }
+    valid = bool(
+        law.root
+        and permutation_valid
+        and typed_transition_control
+        and nonidentity
+        and conjugation_residual.get("nonzero_count") == 0
+        and naturality_residual.get("nonzero_count") == 0
+        and state_moved
+        and effect_moved
+        and calibration_residual.get("nonzero_count") == 0
+        and cuts_valid
+    )
+    return ComparisonLawMeasurement(
+        primitive_payload_sha256=canonical_sha256(law.to_data()),
+        consumed_primitive_ids=tuple(
+            sorted(
+                {
+                    law.identifier,
+                    law.transition_id,
+                    law.transported_transition_id,
+                    law.comparison_id,
+                    *(cut.identifier for cut in law.cuts),
+                    *((law.transition_reference_id,) if law.transition_reference_id else ()),
+                }
+            )
+        ),
+        valid=valid,
+        residuals={
+            "comparison_matrix": law.comparison,
+            "permutation_entrywise_with_inverse": permutation_valid,
+            "inverse": inverse,
+            "genuinely_nonidentity": nonidentity,
+            "transition_stochastic": transition_measurement,
+            "transported_transition_stochastic": transported_transition_measurement,
+            "calibrated_state": state_measurement,
+            "calibrated_effect_typed": effect_valid,
+            "conjugated_transition": transported_expected,
+            "conjugation_residual": conjugation_residual,
+            "naturality_residual": naturality_residual,
+            "transported_state": transported_state,
+            "transported_effect": transported_effect,
+            "calibrated_state_moved": state_moved,
+            "calibrated_effect_moved": effect_moved,
+            "calibration_left": calibration_left,
+            "calibration_right": calibration_right,
+            "calibration_residual": calibration_residual,
+            "cuts": cut_rows,
+            "exactly_two_distinct_registered_cuts": cuts_registered_exactly,
+            "two_registered_cuts": cuts_valid,
+            "valid": valid,
+        },
+    )
+
+
+def build_comparison_existence_law(
+    fault: str | None = None,
+) -> ComparisonPrimitiveLaw:
+    root = V4_INTERNAL_ROOT
+    transition = QMatrix.from_rows(((1, 1), (0, 0)))
+    comparison = QMatrix.from_rows(((0, 1), (1, 0)))
+    if fault == "negative-comparison-transition":
+        transition = QMatrix.from_rows(((2, 0), (-1, 1)))
+    transported = qmultiply(
+        comparison, qmultiply(transition, qtranspose(comparison))
+    )
+    if fault == "altered-comparison-permutation":
+        comparison = QMatrix.identity(2)
+    elif fault == "rank-deficient-comparison":
+        comparison = QMatrix.from_rows(((1, 0), (0, 0)))
+    if fault == "changed-transported-transition":
+        transported = transition
+    cuts = (
+        ComparisonCutPrimitive(
+            root,
+            "comparison-cut-left",
+            "comparison-T",
+            (transition, QMatrix.identity(2)),
+        ),
+        ComparisonCutPrimitive(
+            root,
+            "comparison-cut-right",
+            "comparison-T",
+            (QMatrix.identity(2), transition),
+        ),
+    )
+    if fault == "altered-comparison-cut":
+        cuts = (
+            cuts[0],
+            ComparisonCutPrimitive(
+                root,
+                "comparison-cut-right",
+                "comparison-T",
+                (QMatrix.identity(2), QMatrix.identity(2)),
+            ),
+        )
+    elif fault == "duplicate-comparison-cut":
+        cuts = (
+            cuts[0],
+            ComparisonCutPrimitive(
+                root,
+                "comparison-cut-duplicate",
+                "comparison-T",
+                cuts[0].factor_matrices,
+            ),
+        )
+    calibrated_state = QMatrix.from_rows(((1,), (0,)))
+    if fault == "nonstate-comparison-calibration":
+        calibrated_state = QMatrix.from_rows(((2,), (-1,)))
+    return ComparisonPrimitiveLaw(
+        root=root,
+        identifier="comparison-control",
+        transition_id="comparison-T",
+        transition=transition,
+        transported_transition_id="comparison-T-prime",
+        transported_transition=transported,
+        comparison_id="comparison-P",
+        comparison=comparison,
+        calibrated_state=calibrated_state,
+        calibrated_effect=QMatrix.from_rows(((1, 0),)),
+        cuts=cuts,
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class ReplacementPrimitive:
+    root: str
+    identifier: str
+    matrix: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {"root": self.root, "id": self.identifier, "matrix": self.matrix}
+
+
+@dataclass(frozen=True, slots=True)
+class LocalityRegionPrimitive:
+    root: str
+    identifier: str
+    effect_generators: tuple[QMatrix, ...]
+    exterior_replacement_ids: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "effect_generators": self.effect_generators,
+            "exterior_replacement_ids": self.exterior_replacement_ids,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class LocalityPrimitiveLaw:
+    root: str
+    identifier: str
+    carrier_states: tuple[str, ...]
+    regions: tuple[LocalityRegionPrimitive, ...]
+    replacements: tuple[ReplacementPrimitive, ...]
+    opaque_row_spaces: tuple[tuple[str, QMatrix], ...] = ()
+    transition_reference_id: str | None = "shared-transition-X"
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "carrier_states": self.carrier_states,
+            "regions": self.regions,
+            "replacements": self.replacements,
+            "opaque_row_spaces": self.opaque_row_spaces,
+            "transition_reference_id": self.transition_reference_id,
+            "ordering": "left-major-lexicographic",
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class LocalityLawMeasurement:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    valid: bool
+    residuals: Mapping[str, object]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "LocalityLawMeasurement",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "valid": self.valid,
+            "residuals": self.residuals,
+        }
+
+
+def _fixed_space_from_replacements(
+    replacements: Sequence[QMatrix], ambient: int
+) -> QMatrix:
+    if not replacements:
+        return QMatrix.identity(ambient)
+    spaces = tuple(
+        qkernel(qsubtract(replacement, QMatrix.identity(ambient)))
+        for replacement in replacements
+    )
+    result = spaces[0]
+    for space in spaces[1:]:
+        result = qsubspace_intersection(result, space)
+    return qcolumnspace(result)
+
+
+def measure_locality_primitive_law(law: object) -> LocalityLawMeasurement:
+    if not isinstance(law, LocalityPrimitiveLaw):
+        raise ScoreRefusal("locality promotion requires LocalityPrimitiveLaw")
+    ambient = len(law.carrier_states)
+    carrier_valid = bool(
+        law.root
+        and law.carrier_states == ("(0,0)", "(0,1)", "(1,0)", "(1,1)")
+    )
+    replacement_index_raw, replacement_issues = _unique_index(
+        law.replacements, "locality-replacement"
+    )
+    replacement_index = {
+        key: value
+        for key, value in replacement_index_raw.items()
+        if isinstance(value, ReplacementPrimitive)
+    }
+    replacement_rows: dict[str, object] = {}
+    replacements_valid = not replacement_issues
+    for replacement_id, replacement in sorted(replacement_index.items()):
+        permutation_valid, inverse = _q_is_permutation(replacement.matrix)
+        typed = bool(
+            replacement.root == law.root
+            and replacement.matrix.shape == (ambient, ambient)
+            and permutation_valid
+        )
+        replacements_valid = replacements_valid and typed
+        replacement_rows[replacement_id] = {
+            "permutation_valid": permutation_valid,
+            "inverse": inverse,
+            "typed": typed,
+        }
+    region_index_raw, region_issues = _unique_index(law.regions, "locality-region")
+    region_index = {
+        key: value
+        for key, value in region_index_raw.items()
+        if isinstance(value, LocalityRegionPrimitive)
+    }
+    rows: dict[str, object] = {}
+    spaces: dict[str, QMatrix] = {}
+    dynamic_spaces: dict[str, QMatrix] = {}
+    regions_valid = not region_issues and set(region_index) == {"S", "T", "ST"}
+    for region_id, region in sorted(region_index.items()):
+        generators_typed = bool(
+            region.root == law.root
+            and region.effect_generators
+            and all(
+                generator.nrows == ambient and generator.ncols == 1
+                for generator in region.effect_generators
+            )
+        )
+        kin = (
+            qcolumnspace(qhstack(region.effect_generators, nrows=ambient))
+            if generators_typed
+            else QMatrix.zero(ambient, 0)
+        )
+        replacement_values = tuple(
+            replacement_index[identifier].matrix
+            for identifier in region.exterior_replacement_ids
+            if identifier in replacement_index
+        )
+        references_total = len(replacement_values) == len(
+            region.exterior_replacement_ids
+        )
+        dyn = _fixed_space_from_replacements(replacement_values, ambient)
+        kin_outside_dyn = qsubspace_inclusion_residual(kin, dyn)
+        dyn_outside_kin = qsubspace_inclusion_residual(dyn, kin)
+        equality = kin_outside_dyn == 0 and dyn_outside_kin == 0
+        region_valid = generators_typed and references_total and equality
+        regions_valid = regions_valid and region_valid
+        spaces[region_id] = kin
+        dynamic_spaces[region_id] = dyn
+        rows[region_id] = {
+            "generated_effect_columns": region.effect_generators,
+            "Kin": kin,
+            "exterior_replacement_ids": region.exterior_replacement_ids,
+            "Dyn_equalizer": dyn,
+            "Kin_outside_Dyn": kin_outside_dyn,
+            "Dyn_outside_Kin": dyn_outside_kin,
+            "equal": equality,
+            "valid": region_valid,
+        }
+    inclusion_rows: dict[str, object] = {}
+    inclusion_valid = False
+    if set(spaces) == {"S", "T", "ST"}:
+        s_in_st = qsubspace_inclusion_residual(spaces["S"], spaces["ST"])
+        t_in_st = qsubspace_inclusion_residual(spaces["T"], spaces["ST"])
+        st_in_s = qsubspace_inclusion_residual(spaces["ST"], spaces["S"])
+        st_in_t = qsubspace_inclusion_residual(spaces["ST"], spaces["T"])
+        s_in_t = qsubspace_inclusion_residual(spaces["S"], spaces["T"])
+        t_in_s = qsubspace_inclusion_residual(spaces["T"], spaces["S"])
+        inclusion_valid = bool(
+            s_in_st == 0
+            and t_in_st == 0
+            and st_in_s > 0
+            and st_in_t > 0
+            and s_in_t > 0
+            and t_in_s > 0
+        )
+        inclusion_rows = {
+            "Kin_S_subset_Kin_ST_residual": s_in_st,
+            "Kin_T_subset_Kin_ST_residual": t_in_st,
+            "Kin_ST_outside_Kin_S": st_in_s,
+            "Kin_ST_outside_Kin_T": st_in_t,
+            "Kin_S_outside_Kin_T": s_in_t,
+            "Kin_T_outside_Kin_S": t_in_s,
+            "strict_inclusions_and_noninclusions": inclusion_valid,
+        }
+    full_rank = qrank(spaces.get("ST", QMatrix.zero(ambient, 0))) == ambient
+    nonconstant = bool(
+        qrank(spaces.get("S", QMatrix.zero(ambient, 0))) > 1
+        and qrank(spaces.get("T", QMatrix.zero(ambient, 0))) > 1
+    )
+    faithful = full_rank
+    valid = bool(
+        carrier_valid
+        and replacements_valid
+        and regions_valid
+        and inclusion_valid
+        and nonconstant
+        and faithful
+    )
+    return LocalityLawMeasurement(
+        primitive_payload_sha256=canonical_sha256(law.to_data()),
+        consumed_primitive_ids=tuple(
+            sorted(
+                {
+                    law.identifier,
+                    *region_index,
+                    *replacement_index,
+                    *((law.transition_reference_id,) if law.transition_reference_id else ()),
+                }
+            )
+        ),
+        valid=valid,
+        residuals={
+            "carrier_states": law.carrier_states,
+            "carrier_valid": carrier_valid,
+            "replacement_rows": replacement_rows,
+            "regions": rows,
+            "inclusions": inclusion_rows,
+            "nonconstant": nonconstant,
+            "faithful": faithful,
+            "opaque_row_spaces_ignored": bool(law.opaque_row_spaces),
+            "valid": valid,
+        },
+    )
+
+
+def build_locality_existence_law(fault: str | None = None) -> LocalityPrimitiveLaw:
+    root = V4_INTERNAL_ROOT
+    states = ("(0,0)", "(0,1)", "(1,0)", "(1,1)")
+    s_generators = (
+        QMatrix.from_rows(((1,), (1,), (0,), (0,))),
+        QMatrix.from_rows(((0,), (0,), (1,), (1,))),
+    )
+    t_generators = (
+        QMatrix.from_rows(((1,), (0,), (1,), (0,))),
+        QMatrix.from_rows(((0,), (1,), (0,), (1,))),
+    )
+    st_generators = tuple(
+        QMatrix.from_rows(
+            (
+                (Fraction(1) if row == column else Fraction(0),)
+                for row in range(4)
+            ),
+            ncols=1,
+        )
+        for column in range(4)
+    )
+    flip_target = ReplacementPrimitive(
+        root, "replace-outside-S", _q_permutation_from_images((1, 0, 3, 2))
+    )
+    flip_source = ReplacementPrimitive(
+        root, "replace-outside-T", _q_permutation_from_images((2, 3, 0, 1))
+    )
+    s_replacements = (flip_target.identifier,)
+    t_replacements = (flip_source.identifier,)
+    if fault == "delete-exterior-replacement":
+        s_replacements = ()
+    if fault == "merge-exterior-replacements":
+        s_generators = t_generators
+        s_replacements = t_replacements
+    if fault == "supplied-row-spaces":
+        s_replacements = ()
+    regions = (
+        LocalityRegionPrimitive(root, "S", s_generators, s_replacements),
+        LocalityRegionPrimitive(root, "T", t_generators, t_replacements),
+        LocalityRegionPrimitive(root, "ST", st_generators, ()),
+    )
+    return LocalityPrimitiveLaw(
+        root=root,
+        identifier="two-bit-locality-control",
+        carrier_states=states,
+        regions=regions,
+        replacements=(flip_target, flip_source),
+        opaque_row_spaces=(
+            ("S", qcolumnspace(qhstack(s_generators, nrows=4))),
+        )
+        if fault == "supplied-row-spaces"
+        else (),
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class SharedTransitionPrimitive:
+    root: str
+    identifier: str
+    matrix: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {"root": self.root, "id": self.identifier, "matrix": self.matrix}
+
+
+@dataclass(frozen=True, slots=True)
+class ComponentTransitionUse:
+    root: str
+    component_id: str
+    transition_id: str
+    input_state: QMatrix
+    expected_output_state: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "component_id": self.component_id,
+            "transition_id": self.transition_id,
+            "input_state": self.input_state,
+            "expected_output_state": self.expected_output_state,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class LawCandidatePrimitive:
+    root: str
+    identifier: str
+    schema_id: str
+    transition_id: str
+    measured_component_ids: tuple[str, ...]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "schema_id": self.schema_id,
+            "transition_id": self.transition_id,
+            "measured_component_ids": self.measured_component_ids,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class LawCalibrationPrimitive:
+    root: str
+    identifier: str
+    input_state: QMatrix
+    observed_output_state: QMatrix
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "root": self.root,
+            "id": self.identifier,
+            "input_state": self.input_state,
+            "observed_output_state": self.observed_output_state,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class CapabilityPrimitiveLaw:
+    root: str
+    identifier: str
+    compiler: PrefixCompilerPrimitive
+    quotient_mode: str
+    overlap: OverlapPrimitiveLaw
+    classical: ClassicalPrimitiveLaw
+    comparison: ComparisonPrimitiveLaw
+    locality: LocalityPrimitiveLaw
+    causal: InfluencePrimitiveLaw
+    contact: InfluencePrimitiveLaw
+    transitions: tuple[SharedTransitionPrimitive, ...]
+    transition_uses: tuple[ComponentTransitionUse, ...]
+    candidates: tuple[LawCandidatePrimitive, ...]
+    calibration: LawCalibrationPrimitive
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "CapabilityPrimitiveLaw",
+            "root": self.root,
+            "id": self.identifier,
+            "compiler": self.compiler,
+            "quotient_mode": self.quotient_mode,
+            "overlap": self.overlap,
+            "classical": self.classical,
+            "comparison": self.comparison,
+            "locality": self.locality,
+            "causal": self.causal,
+            "contact": self.contact,
+            "transitions": self.transitions,
+            "transition_uses": self.transition_uses,
+            "candidates": self.candidates,
+            "calibration": self.calibration,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class CapabilityEntry:
+    name: str
+    present: bool
+    measurement_payload_sha256: str
+    coordinate: str
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "name": self.name,
+            "present": self.present,
+            "measurement_payload_sha256": self.measurement_payload_sha256,
+            "coordinate": self.coordinate,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class CapabilityCensus:
+    primitive_payload_sha256: str
+    entries: tuple[CapabilityEntry, ...]
+    dependency_graph: Mapping[str, object]
+    law_selection: Mapping[str, object]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "CapabilityCensus",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "entries": self.entries,
+            "dependency_graph": self.dependency_graph,
+            "law_selection": self.law_selection,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class PrimitiveClassification:
+    primitive_payload_sha256: str
+    consumed_primitive_ids: tuple[str, ...]
+    primary: str
+    walls: tuple[str, ...]
+    census: CapabilityCensus
+    measurements: Mapping[str, object]
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "measurement_type": "PrimitiveClassification",
+            "primitive_payload_sha256": self.primitive_payload_sha256,
+            "consumed_primitive_ids": self.consumed_primitive_ids,
+            "primary": self.primary,
+            "walls": self.walls,
+            "census": self.census,
+            "measurements": self.measurements,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class ForgedCapabilityCensus:
+    """Negative control: nominal census fields never enter the classifier."""
+
+    present: bool
+    valid: bool
+    primary: str
+
+    def to_data(self) -> dict[str, object]:
+        return {
+            "type": "ForgedCapabilityCensus",
+            "present": self.present,
+            "valid": self.valid,
+            "primary": self.primary,
+        }
+
+
+def _measurement_hash(value: object) -> str:
+    if hasattr(value, "to_data"):
+        return canonical_sha256(value.to_data())
+    return canonical_sha256(value)
+
+
+def _connected_components(
+    nodes: Sequence[str], edges: Sequence[tuple[str, str]]
+) -> tuple[tuple[str, ...], ...]:
+    adjacency = {node: set() for node in nodes}
+    for left, right in edges:
+        if left in adjacency and right in adjacency:
+            adjacency[left].add(right)
+            adjacency[right].add(left)
+    components: list[tuple[str, ...]] = []
+    unseen = set(adjacency)
+    while unseen:
+        start = min(unseen)
+        stack = [start]
+        reached: set[str] = set()
+        while stack:
+            node = stack.pop()
+            if node in reached:
+                continue
+            reached.add(node)
+            stack.extend(sorted(adjacency[node] - reached, reverse=True))
+        unseen -= reached
+        components.append(tuple(sorted(reached)))
+    return tuple(sorted(components))
+
+
+def _measure_dependency_graph(
+    law: CapabilityPrimitiveLaw,
+    component_measurements: Mapping[str, object],
+) -> dict[str, object]:
+    transition_index_raw, transition_issues = _unique_index(
+        law.transitions, "shared-transition"
+    )
+    transition_index = {
+        key: value
+        for key, value in transition_index_raw.items()
+        if isinstance(value, SharedTransitionPrimitive)
+    }
+    component_ids = tuple(sorted(component_measurements))
+    component_primitives: dict[str, object] = {
+        law.compiler.identifier: law.compiler,
+        law.overlap.identifier: law.overlap,
+        law.classical.identifier: law.classical,
+        law.comparison.identifier: law.comparison,
+        law.locality.identifier: law.locality,
+        law.causal.identifier: law.causal,
+        law.contact.identifier: law.contact,
+    }
+    use_rows: dict[str, object] = {}
+    uses_by_component: dict[str, list[ComponentTransitionUse]] = {
+        component_id: [] for component_id in component_ids
+    }
+    edges: list[tuple[str, str]] = []
+    nodes: set[str] = set(component_ids)
+    valid = not transition_issues
+    for use in law.transition_uses:
+        transition = transition_index.get(use.transition_id)
+        component_known = use.component_id in component_measurements
+        transition_known = isinstance(transition, SharedTransitionPrimitive)
+        component_primitive = component_primitives.get(use.component_id)
+        component_root_matches = bool(
+            component_known
+            and getattr(component_primitive, "root", None) == law.root
+        )
+        root_connected = bool(
+            use.root == law.root
+            and transition_known
+            and transition.root == law.root
+        )
+        actual_reference_id = getattr(
+            component_primitive,
+            "transition_reference_id",
+            None,
+        )
+        residual: dict[str, object] = {"nonzero_count": None}
+        transition_stochastic: dict[str, object] = {"valid": False}
+        input_state_valid: dict[str, object] = {"valid": False}
+        expected_output_state_valid: dict[str, object] = {"valid": False}
+        if transition_known:
+            transition_stochastic = _stochastic_matrix_measurement(
+                transition.matrix,
+                expected_shape=(transition.matrix.nrows, transition.matrix.nrows),
+            )
+            input_state_valid = _stochastic_matrix_measurement(
+                use.input_state,
+                expected_shape=(transition.matrix.ncols, 1),
+            )
+            expected_output_state_valid = _stochastic_matrix_measurement(
+                use.expected_output_state,
+                expected_shape=(transition.matrix.nrows, 1),
+            )
+            try:
+                residual = _q_residual(
+                    qmultiply(transition.matrix, use.input_state),
+                    use.expected_output_state,
+                )
+            except ValueError:
+                residual = {"shape_match": False, "nonzero_count": None}
+        use_valid = bool(
+            component_known
+            and component_root_matches
+            and transition_known
+            and root_connected
+            and actual_reference_id == use.transition_id
+            and transition_stochastic["valid"]
+            and input_state_valid["valid"]
+            and expected_output_state_valid["valid"]
+            and residual.get("nonzero_count") == 0
+        )
+        valid = valid and use_valid
+        if component_known:
+            uses_by_component[use.component_id].append(use)
+        if component_known and transition_known:
+            nodes.add(use.transition_id)
+            edges.append((use.component_id, use.transition_id))
+        use_key = f"{use.component_id}->{use.transition_id}"
+        use_rows[use_key] = {
+            "input_state": use.input_state,
+            "expected_output_state": use.expected_output_state,
+            "component_root_matches": component_root_matches,
+            "component_actual_transition_reference_id": actual_reference_id,
+            "transition_stochastic": transition_stochastic,
+            "input_state_normalized": input_state_valid,
+            "expected_output_state_normalized": expected_output_state_valid,
+            "recomputed_residual": residual,
+            "valid": use_valid,
+        }
+    exactly_one_use = all(len(rows) == 1 for rows in uses_by_component.values())
+    valid = valid and exactly_one_use
+    containment_rows: dict[str, tuple[str, ...]] = {}
+    for component_id, measurement in sorted(component_measurements.items()):
+        consumed = tuple(getattr(measurement, "consumed_primitive_ids", ()))
+        containment_rows[component_id] = consumed
+        for primitive_id in consumed:
+            nodes.add(primitive_id)
+            if primitive_id != component_id:
+                edges.append((component_id, primitive_id))
+    components = _connected_components(tuple(sorted(nodes)), tuple(edges))
+    connected = bool(nodes) and len(components) == 1
+    valid = valid and connected
+    return {
+        "nodes": tuple(sorted(nodes)),
+        "edges": tuple(sorted(set(edges))),
+        "component_consumed_primitive_ids": containment_rows,
+        "transition_use_rows": use_rows,
+        "exactly_one_actual_transition_use_per_component": exactly_one_use,
+        "connected_components": components,
+        "connected": connected,
+        "hash_equality_used_as_edge": False,
+        "valid": valid,
+    }
+
+
+def _measure_candidate_selection(
+    law: CapabilityPrimitiveLaw, component_ids: Sequence[str]
+) -> dict[str, object]:
+    transition_index_raw, transition_issues = _unique_index(
+        law.transitions, "candidate-transition"
+    )
+    transition_index = {
+        key: value
+        for key, value in transition_index_raw.items()
+        if isinstance(value, SharedTransitionPrimitive)
+    }
+    expected_components = tuple(sorted(component_ids))
+    calibration_size = law.calibration.input_state.nrows
+    calibration_input = _stochastic_matrix_measurement(
+        law.calibration.input_state, expected_shape=(calibration_size, 1)
+    )
+    calibration_output = _stochastic_matrix_measurement(
+        law.calibration.observed_output_state,
+        expected_shape=(calibration_size, 1),
+    )
+    calibration_valid = bool(
+        law.calibration.root == law.root
+        and bool(law.calibration.identifier)
+        and calibration_input["valid"]
+        and calibration_output["valid"]
+    )
+    transition_rows: dict[str, object] = {}
+    transitions_valid = not transition_issues and bool(transition_index)
+    for transition_id, transition in sorted(transition_index.items()):
+        stochastic = _stochastic_matrix_measurement(
+            transition.matrix,
+            expected_shape=(calibration_size, calibration_size),
+        )
+        valid = bool(transition.root == law.root and stochastic["valid"])
+        transitions_valid = transitions_valid and valid
+        transition_rows[transition_id] = {
+            "stochastic": stochastic,
+            "root_matches": transition.root == law.root,
+            "valid": valid,
+        }
+    candidate_rows: dict[str, object] = {}
+    survivors: list[str] = []
+    schemas: set[str] = set()
+    identifiers: set[str] = set()
+    candidate_transition_ids: list[str] = []
+    family_typed = bool(
+        len(law.candidates) == 2
+        and calibration_valid
+        and transitions_valid
+    )
+    for candidate in law.candidates:
+        transition = transition_index.get(candidate.transition_id)
+        candidate_transition_ids.append(candidate.transition_id)
+        references_complete = tuple(sorted(candidate.measured_component_ids)) == (
+            expected_components
+        ) and len(set(candidate.measured_component_ids)) == len(
+            candidate.measured_component_ids
+        )
+        identifier_unique = candidate.identifier not in identifiers
+        identifiers.add(candidate.identifier)
+        schemas.add(candidate.schema_id)
+        residual: dict[str, object] = {"nonzero_count": None}
+        predicted: QMatrix | None = None
+        if isinstance(transition, SharedTransitionPrimitive):
+            try:
+                predicted = qmultiply(
+                    transition.matrix, law.calibration.input_state
+                )
+                residual = _q_residual(
+                    predicted, law.calibration.observed_output_state
+                )
+            except ValueError:
+                pass
+        valid = bool(
+            candidate.root == law.root
+            and isinstance(transition, SharedTransitionPrimitive)
+            and transition.root == law.root
+            and bool(candidate.schema_id)
+            and references_complete
+            and identifier_unique
+            and transition_rows.get(candidate.transition_id, {}).get("valid")
+            and residual.get("nonzero_count") is not None
+        )
+        zero_residual = valid and residual.get("nonzero_count") == 0
+        if zero_residual:
+            survivors.append(candidate.identifier)
+        family_typed = family_typed and valid
+        candidate_rows[candidate.identifier] = {
+            "schema_id": candidate.schema_id,
+            "transition_id": candidate.transition_id,
+            "measured_component_ids": candidate.measured_component_ids,
+            "references_every_measured_component": references_complete,
+            "predicted_output_state": predicted,
+            "observed_output_state": law.calibration.observed_output_state,
+            "recomputed_residual": residual,
+            "zero_residual": zero_residual,
+            "valid": valid,
+        }
+    same_schema = len(schemas) == 1
+    distinct_candidate_transitions = len(set(candidate_transition_ids)) == 2
+    unique_survivor = bool(
+        family_typed
+        and same_schema
+        and distinct_candidate_transitions
+        and len(survivors) == 1
+    )
+    return {
+        "calibration_id": law.calibration.identifier,
+        "calibration_input_state": law.calibration.input_state,
+        "calibration_observed_output_state": law.calibration.observed_output_state,
+        "calibration_input_normalized": calibration_input,
+        "calibration_output_normalized": calibration_output,
+        "calibration_valid": calibration_valid,
+        "transition_registry_issues": tuple(transition_issues),
+        "transition_rows": transition_rows,
+        "transitions_valid": transitions_valid,
+        "finite_printed_candidate_family": tuple(
+            candidate.to_data() for candidate in law.candidates
+        ),
+        "candidates": candidate_rows,
+        "same_frozen_schema": same_schema,
+        "candidate_transition_ids_distinct": distinct_candidate_transitions,
+        "zero_residual_survivors": tuple(survivors),
+        "literal_law_selected_field_consumed": False,
+        "unique_zero_residual_survivor": unique_survivor,
+        "selected_candidate_id": survivors[0] if unique_survivor else None,
+        "valid": unique_survivor,
+    }
+
+
+def classify_primitive_law(law: object) -> PrimitiveClassification:
+    if not isinstance(law, CapabilityPrimitiveLaw):
+        raise ScoreRefusal(
+            "capability classifier requires one immutable CapabilityPrimitiveLaw"
+        )
+    primitive_hash = canonical_sha256(law.to_data())
+    compiler = measure_prefix_compiler(law.compiler, quotient_mode=law.quotient_mode)
+    overlap = measure_overlap_primitive_law(law.overlap)
+    classical = measure_classical_primitive_law(law.classical)
+    comparison = measure_comparison_primitive_law(law.comparison)
+    locality = measure_locality_primitive_law(law.locality)
+    causal = measure_influence_primitive_law(law.causal)
+    contact = measure_influence_primitive_law(law.contact)
+    roots_valid = bool(
+        law.root
+        and law.identifier
+        and all(
+            root == law.root
+            for root in (
+                law.compiler.root,
+                law.overlap.root,
+                law.classical.root,
+                law.comparison.root,
+                law.locality.root,
+                law.causal.root,
+                law.contact.root,
+                law.calibration.root,
+            )
+        )
+    )
+    component_measurements: dict[str, object] = {
+        law.compiler.identifier: compiler,
+        law.overlap.identifier: overlap,
+        law.classical.identifier: classical,
+        law.comparison.identifier: comparison,
+        law.locality.identifier: locality,
+        law.causal.identifier: causal,
+        law.contact.identifier: contact,
+    }
+    dependency_graph = _measure_dependency_graph(law, component_measurements)
+    law_selection = _measure_candidate_selection(
+        law, tuple(component_measurements)
+    )
+    entries = (
+        CapabilityEntry(
+            "raw_boolean_normalization",
+            compiler.normalization_valid,
+            _measurement_hash(compiler),
+            "NORMALIZED" if compiler.normalization_valid else "INCONSISTENT",
+        ),
+        CapabilityEntry(
+            "raw_atomlessness",
+            compiler.raw_atomless_valid,
+            _measurement_hash(compiler),
+            "RAW-ATOMLESS" if compiler.raw_atomless_valid else "UNCONSTRUCTED",
+        ),
+        CapabilityEntry(
+            "boundary_gluing_package",
+            overlap.valid and roots_valid and dependency_graph["valid"],
+            _measurement_hash(overlap),
+            "GLUING-DIAGNOSTIC-SELECTED"
+            if overlap.valid and roots_valid and dependency_graph["valid"]
+            else "UNCONSTRUCTED",
+        ),
+        CapabilityEntry(
+            "horizontal_process",
+            classical.valid,
+            _measurement_hash(classical),
+            classical.coordinate,
+        ),
+        CapabilityEntry(
+            "future_profile_complete",
+            compiler.future_complete,
+            _measurement_hash(compiler),
+            "COMPLETE-GENERATED"
+            if compiler.future_complete
+            else "FINITE-CATALOGUE",
+        ),
+        CapabilityEntry(
+            "regional_congruence",
+            compiler.congruence_valid,
+            _measurement_hash(compiler),
+            "CONGRUENCE" if compiler.congruence_valid else "UNCONSTRUCTED",
+        ),
+        CapabilityEntry(
+            "post_quotient_atomlessness",
+            compiler.quotient_atomless_valid,
+            _measurement_hash(compiler),
+            "PHYSICAL-IMAGE-ATOMLESS"
+            if compiler.quotient_atomless_valid
+            else "UNCONSTRUCTED",
+        ),
+        CapabilityEntry(
+            "comparison_selected",
+            comparison.valid,
+            _measurement_hash(comparison),
+            "DERIVED" if comparison.valid else "PRICED",
+        ),
+        CapabilityEntry(
+            "dynamic_locality",
+            locality.valid,
+            _measurement_hash(locality),
+            "DYNAMIC-FAITHFUL" if locality.valid else "FAIL",
+        ),
+        CapabilityEntry(
+            "causal_order",
+            causal.present and causal.role == "causal_order",
+            _measurement_hash(causal),
+            "DERIVED" if causal.present else "PRICED",
+        ),
+        CapabilityEntry(
+            "generated_contact",
+            contact.present and contact.role == "generated_contact",
+            _measurement_hash(contact),
+            "DERIVED" if contact.present else "PRICED",
+        ),
+        CapabilityEntry(
+            "law_selected",
+            bool(law_selection["valid"]),
+            canonical_sha256(law_selection),
+            "SELECTED" if law_selection["valid"] else "UNSELECTED",
+        ),
+    )
+    census = CapabilityCensus(
+        primitive_payload_sha256=primitive_hash,
+        entries=entries,
+        dependency_graph=dependency_graph,
+        law_selection=law_selection,
+    )
+    present = {entry.name: entry.present for entry in entries}
+    if not present["raw_boolean_normalization"]:
+        primary = "APR-INCONSISTENT"
+        walls = ("full-cone normalization is absent or inconsistent",)
+    elif not present["raw_atomlessness"]:
+        primary = "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA"
+        walls = ("no nonzero raw regional split was constructed",)
+    elif not present["boundary_gluing_package"]:
+        primary = "APR-BLOCKED-AT-BOUNDARY-GLUING"
+        walls = (
+            "missing computed simultaneous-gluing diagnostic selector or connected primitive graph",
+        )
+    elif not present["horizontal_process"]:
+        primary = "APR-BLOCKED-AT-TWO-ARROW-TYPING"
+        walls = ("no validated typed horizontal reachability-control process",)
+    elif not present["future_profile_complete"]:
+        primary = "APR-BLOCKED-AT-FUTURE-PROFILE-COMPLETENESS"
+        walls = ("no complete target-independent probe compiler",)
+    elif not present["regional_congruence"]:
+        primary = "APR-BLOCKED-AT-REGIONAL-CONGRUENCE"
+        walls = ("profile equivalence is not a generated regional congruence",)
+    elif not present["post_quotient_atomlessness"]:
+        primary = "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA"
+        walls = ("the claimed quotient has no nonzero proper split certificate",)
+    elif not present["comparison_selected"]:
+        primary = "APR-ATOMLESS-KINEMATICS-CONSTRUCTED-COMPARISON-PRICED"
+        walls = ("comparison system remains law data",)
+    elif not present["dynamic_locality"]:
+        primary = (
+            "APR-COMPARISON-QUOTIENT-CONSTRUCTED-BUT-DYNAMICAL-LOCALITY-FAILS"
+        )
+        walls = ("dynamic regional-support requirements fail",)
+    elif not present["causal_order"]:
+        primary = (
+            "APR-DYNAMIC-REGIONAL-REFERENT-CONSTRUCTED-BUT-CAUSAL-ORDER-PRICED"
+        )
+        walls = ("causal schedule and delayed response are not generated",)
+    elif not present["generated_contact"]:
+        primary = (
+            "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED"
+        )
+        walls = ("missing generated_contact",)
+    elif not present["law_selected"]:
+        primary = (
+            "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED"
+        )
+        walls = ("one joint law remains unselected",)
+    else:
+        primary = "APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED"
+        walls = ()
+    consumed = tuple(
+        sorted(
+            {
+                law.identifier,
+                law.calibration.identifier,
+                *(identifier for measurement in component_measurements.values() for identifier in getattr(measurement, "consumed_primitive_ids", ())),
+                *(transition.identifier for transition in law.transitions),
+                *(candidate.identifier for candidate in law.candidates),
+            }
+        )
+    )
+    return PrimitiveClassification(
+        primitive_payload_sha256=primitive_hash,
+        consumed_primitive_ids=consumed,
+        primary=primary,
+        walls=walls,
+        census=census,
+        measurements={
+            "compiler": compiler,
+            "overlap_simultaneous_gluing_diagnostic": overlap,
+            "classical_internal_reachability_control": classical,
+            "comparison": comparison,
+            "locality": locality,
+            "causal_order": causal,
+            "generated_contact": contact,
+            "dependency_graph": dependency_graph,
+            "law_selection_within_finite_test_family": law_selection,
+            "candidate_fundamental_law_status": (
+                "UNCONSTRUCTED-INDIVISIBLE-STOCHASTIC-RELATIONAL-TRANSITION-LAW"
+            ),
+        },
+    )
+
+
+def build_capability_primitive_law(
+    fault: str | None = None,
+) -> CapabilityPrimitiveLaw:
+    root = V4_INTERNAL_ROOT
+    compiler_mode = "uniform-prefix-compiler"
+    split_mode = "symbolic-prefix-split"
+    if fault == "missing-normalization":
+        compiler_mode = "missing-normalization-constructor"
+    elif fault == "seed-whitelist":
+        compiler_mode = "seed-whitelist-compiler"
+    elif fault == "missing-raw-atomlessness":
+        split_mode = "missing-symbolic-split"
+    seed_regions = (
+        PrefixRegion.cylinder("0"),
+        PrefixRegion.cylinder("1"),
+        PrefixRegion.cylinder("00"),
+    )
+    whitelist_regions = tuple(
+        dict.fromkeys(
+            seed_regions
+            + tuple(region.complement() for region in seed_regions)
+            + (PrefixRegion.zero(), PrefixRegion.one())
+        )
+    )
+    compiler = PrefixCompilerPrimitive(
+        root=root,
+        identifier="uniform-prefix-compiler",
+        mode=compiler_mode,
+        seed_regions=seed_regions,
+        whitelist_regions=whitelist_regions,
+        split_mode=split_mode,
+    )
+    quotient_mode = "literal-prefix-algebra"
+    if fault == "scalar-volume-noncongruence":
+        quotient_mode = "scalar-volume-equivalence"
+    elif fault == "ultrafilter-atomic-quotient":
+        quotient_mode = "ultrafilter-two-element-atomic-quotient"
+    overlap_fault = fault if fault in {
+        "missing-markov-selector",
+        "both-markov-survive",
+        "extra-overlap-candidate",
+        "nonuniform-shared-marginals",
+    } else None
+    classical_fault = (
+        "opaque-replacement" if fault == "missing-classical-witness" else None
+    )
+    comparison_fault = fault if fault in {
+        "altered-comparison-permutation",
+        "negative-comparison-transition",
+        "nonstate-comparison-calibration",
+        "duplicate-comparison-cut",
+    } else None
+    locality_fault = fault if fault in {
+        "delete-exterior-replacement", "merge-exterior-replacements"
+    } else None
+    causal_fault = (
+        "identical-alternatives" if fault == "missing-causal-order" else None
+    )
+    contact_fault = (
+        "identity-propagation" if fault == "missing-generated-contact" else None
+    )
+    overlap = build_overlap_existence_law(overlap_fault)
+    classical = build_classical_existence_law(classical_fault)
+    comparison = build_comparison_existence_law(comparison_fault)
+    locality = build_locality_existence_law(locality_fault)
+    causal = build_influence_existence_law(contact=False, fault=causal_fault)
+    contact = build_influence_existence_law(contact=True, fault=contact_fault)
+    components = (
+        compiler.identifier,
+        overlap.identifier,
+        classical.identifier,
+        comparison.identifier,
+        locality.identifier,
+        causal.identifier,
+        contact.identifier,
+    )
+    transition_i_matrix = QMatrix.identity(2)
+    if fault == "negative-candidate-transition":
+        transition_i_matrix = QMatrix.from_rows(((1, -1), (0, 2)))
+    transition_i = SharedTransitionPrimitive(
+        root, "candidate-transition-I", transition_i_matrix
+    )
+    transition_x = SharedTransitionPrimitive(
+        root, "shared-transition-X", QMatrix.from_rows(((0, 1), (1, 0)))
+    )
+    transitions: tuple[SharedTransitionPrimitive, ...] = (
+        transition_i, transition_x
+    )
+    uses = tuple(
+        ComponentTransitionUse(
+            root,
+            component_id,
+            transition_x.identifier,
+            QMatrix.from_rows(((1,), (0,))),
+            QMatrix.from_rows(((0,), (1,))),
+        )
+        for component_id in components
+    )
+    if fault == "disconnected-byte-identical-transition":
+        clone = SharedTransitionPrimitive(
+            root, "byte-identical-distinct-transition-X", transition_x.matrix
+        )
+        transitions = transitions + (clone,)
+        contact = replace(contact, transition_reference_id=clone.identifier)
+        uses = tuple(
+            ComponentTransitionUse(
+                row.root,
+                row.component_id,
+                clone.identifier if row.component_id == contact.identifier else row.transition_id,
+                row.input_state,
+                row.expected_output_state,
+            )
+            for row in uses
+        )
+    candidate_schema = (
+        "" if fault == "empty-candidate-schema" else "complete-v4-test-law-bundle"
+    )
+    candidates = (
+        LawCandidatePrimitive(
+            root,
+            "L_I",
+            candidate_schema,
+            transition_i.identifier,
+            tuple(sorted(components)),
+        ),
+        LawCandidatePrimitive(
+            root,
+            "L_X",
+            candidate_schema,
+            transition_x.identifier,
+            tuple(sorted(components)),
+        ),
+    )
+    if fault == "zero-zero-residual-candidates":
+        candidates = (
+            candidates[0],
+            LawCandidatePrimitive(
+                root,
+                "L_I_2",
+                "complete-v4-test-law-bundle",
+                transition_i.identifier,
+                tuple(sorted(components)),
+            ),
+        )
+    elif fault == "two-zero-residual-candidates":
+        candidates = (
+            candidates[1],
+            LawCandidatePrimitive(
+                root,
+                "L_X_2",
+                "complete-v4-test-law-bundle",
+                transition_x.identifier,
+                tuple(sorted(components)),
+            ),
+        )
+    elif fault == "candidate-missing-component-reference":
+        candidates = (
+            candidates[0],
+            LawCandidatePrimitive(
+                root,
+                "L_X",
+                "complete-v4-test-law-bundle",
+                transition_x.identifier,
+                tuple(sorted(components[:-1])),
+            ),
+        )
+    calibration_input = QMatrix.from_rows(((1,), (0,)))
+    calibration_output = QMatrix.from_rows(((0,), (1,)))
+    if fault == "nonstate-law-calibration":
+        calibration_input = QMatrix.from_rows(((2,), (-1,)))
+        calibration_output = qmultiply(transition_x.matrix, calibration_input)
+    calibration = LawCalibrationPrimitive(
+        root,
+        "delta-zero-to-delta-one-calibration",
+        calibration_input,
+        calibration_output,
+    )
+    return CapabilityPrimitiveLaw(
+        root=root,
+        identifier="complete-v4-internal-capability-law",
+        compiler=compiler,
+        quotient_mode=quotient_mode,
+        overlap=overlap,
+        classical=classical,
+        comparison=comparison,
+        locality=locality,
+        causal=causal,
+        contact=contact,
+        transitions=transitions,
+        transition_uses=uses,
+        candidates=candidates,
+        calibration=calibration,
+    )
+
+
+def _v4_witness_record(primitive: object, measurement: object) -> dict[str, object]:
+    primitive_data = primitive.to_data() if hasattr(primitive, "to_data") else primitive
+    measurement_data = (
+        measurement.to_data() if hasattr(measurement, "to_data") else measurement
+    )
+    coordinate = None
+    for name in ("coordinate", "role", "primary", "present", "valid"):
+        if hasattr(measurement, name):
+            coordinate = getattr(measurement, name)
+            break
+    return {
+        "primitive": primitive_data,
+        "primitive_sha256": canonical_sha256(primitive_data),
+        "measurement": measurement_data,
+        "measurement_sha256": canonical_sha256(measurement_data),
+        "derived_coordinate_or_status": coordinate,
+    }
+
+
+def run_v4_selftests() -> dict[str, object]:
     checks: list[str] = []
+    witnesses: dict[str, object] = {}
 
     region = PrefixRegion.from_words(("00", "01", "1"))
-    _require(region.is_one(), "prefix canonicalization")
     left, right = PrefixRegion.cylinder("0").atomless_bipartition()
-    _require(left.disjoint(right) and left.join(right) == PrefixRegion.cylinder("0"), "split")
-    _require(bernoulli_mass(PrefixRegion.one(), Fraction(1, 3)) == 1, "valuation unit")
+    _require(
+        region.is_one()
+        and left.disjoint(right)
+        and left.join(right) == PrefixRegion.cylinder("0")
+        and bernoulli_mass(PrefixRegion.one(), Fraction(1, 3)) == 1,
+        "exact prefix Boolean/valuation control",
+    )
     checks.append("exact-prefix-boolean-and-valuation")
 
     tree = expression_to_tree(parse_expression("node(q,empty_tree,empty_tree)"))
     event = PrefixRegion.cylinder("0")
     cells = tree_branch_cells(tree, {"q": event}, support=event)
     partition = branch_partition_evidence(cells, event)
-    _require(partition["is_partition"], "arbitrary-support tree partition")
-    _require(cells["0"].is_zero() and cells["1"] == event, "semantic branch bits")
+    _require(
+        partition["is_partition"]
+        and cells["0"].is_zero()
+        and cells["1"] == event,
+        "semantic branch partition/zero port",
+    )
+    witnesses["semantic_branch_partition"] = {
+        "cells": cells,
+        "partition": partition,
+    }
     checks.append("semantic-tree-partition-and-zero-port")
 
-    malformed = parse_expression("intrinsic_replace(r,node(q,empty_tree,empty_tree))")
-    refused = False
+    refused_mixed = False
     try:
         validate_mixed_expression(
-            malformed,
+            parse_expression("intrinsic_replace(r,node(q,empty_tree,empty_tree))"),
             (
                 "mixed_tree := empty_tree",
                 "mixed_tree := replace(replacement,mixed_tree)",
@@ -8489,11 +13322,11 @@ def run_selftests() -> dict[str, object]:
             ),
         )
     except ScoreRefusal:
-        refused = True
-    _require(refused, "undeclared intrinsic mixed constructor must refuse")
+        refused_mixed = True
+    _require(refused_mixed, "undeclared mixed constructor accepted")
     checks.append("mixed-constructor-refusal")
 
-    first = FiniteCospan(
+    first_cospan = FiniteCospan(
         "first",
         ("a",),
         ("b",),
@@ -8502,7 +13335,7 @@ def run_selftests() -> dict[str, object]:
         (("b", "mid"),),
         (("ain", "mid"),),
     )
-    second = FiniteCospan(
+    second_cospan = FiniteCospan(
         "second",
         ("b",),
         ("c",),
@@ -8511,7 +13344,7 @@ def run_selftests() -> dict[str, object]:
         (("c", "cout"),),
         (("mid2", "cout"),),
     )
-    whole = FiniteCospan(
+    whole_cospan = FiniteCospan(
         "whole",
         ("a",),
         ("c",),
@@ -8520,1701 +13353,606 @@ def run_selftests() -> dict[str, object]:
         (("c", "cout"),),
         (("ain", "mid"), ("mid", "cout")),
     )
-    composed = compose_cospans((first, second))
+    composed_cospan = compose_cospans((first_cospan, second_cospan))
     _require(
-        boundary_fixed_isomorphic(composed, singleton_quotient(whole)),
-        "constructed cospan pushout",
+        boundary_fixed_isomorphic(composed_cospan, singleton_quotient(whole_cospan)),
+        "finite cospan pushout was not constructed",
     )
-    tagged_union_apex = tuple(
-        (index, generator)
-        for index, step in enumerate((first, second))
-        for generator in step.nodes
-    )
-    _require(
-        len(tagged_union_apex) > composed.node_count,
-        "typed tagged union was silently identified with a pushout",
-    )
+    witnesses["finite_pushout"] = {
+        "composed": composed_cospan,
+        "whole": singleton_quotient(whole_cospan),
+    }
     checks.append("finite-pushout-vs-validation-and-tagged-union")
 
-    m06 = m06_stable_null_control()
-    _require(m06["baseline_nullity"] == 1, "M06 baseline stable null")
-    _require(m06["reactivated_nullity"] == 0, "M06 reactivation")
-    checks.append("paired-four-coordinate-stable-null")
-
-    target = PrefixRegion.cylinder("00")
-    depth = 3
-    literal = (
-        child_swap_permutation("01", depth),
-        child_swap_permutation("1", depth),
-    )
-    generic = _recursive_child_generators(target, depth)
-    intrinsic = _intrinsic_exterior_generators(target, depth)
-    literal_reading = _orbit_reading(target, depth, literal)
-    generic_reading = _orbit_reading(target, depth, generic)
-    intrinsic_reading = _orbit_reading(target, depth, intrinsic)
-    _require(literal_reading["exterior_orbit_count"] == 3, "literal orbits")
-    _require(generic_reading["exterior_orbit_count"] == 2, "generic orbits")
-    _require(intrinsic_reading["exterior_orbit_count"] == 1, "intrinsic orbit")
+    classical_positive = build_classical_existence_law()
+    classical_measurement = measure_classical_primitive_law(classical_positive)
     _require(
-        _relative_support_comparison(target, depth, literal_reading)["fixed_in_kin_residual"] == 2,
-        "literal relative-support residual",
-    )
-    _require(
-        _relative_support_comparison(target, depth, generic_reading)["fixed_in_kin_residual"] == 1,
-        "generic relative-support residual",
-    )
-    _require(
-        _relative_support_comparison(target, depth, intrinsic_reading)["fixed_in_kin_residual"] == 0,
-        "intrinsic relative-support equality",
-    )
-    checks.append("three-replacement-closures")
-
-    record_operations = {
-        "write": {
-            "id": "write",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["source", "source", "flag1"],
-        },
-        "read": {
-            "id": "read",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["flag0"],
-        },
-        "read_again": {
-            "id": "read_again",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["flag1"],
-        },
-    }
-    _require(
-        _word_recovery_signature(record_operations, ["write", "read"])["status"] == "TYPED",
-        "single reader typing",
-    )
-    _require(
-        _word_recovery_signature(record_operations, ["write", "read", "read_again"])["status"]
-        == "ILL-TYPED-REFUSED",
-        "sequential reader refusal",
-    )
-    checks.append("strict-record-reader-typing")
-
-    typed_continuation_operations = {
-        "writer": {
-            "carrier": "record-bit",
-            "domain": ["0", "1"],
-            "codomain": ["0", "1"],
-            "semantic_role": "state-transformation",
-            "process_assignment": {"graph": [["0", "0"], ["1", "1"]]},
-            "assignment_root": "typed-root",
-        },
-        "reader": {
-            "carrier": "record-bit",
-            "domain": ["0", "1"],
-            "codomain": ["0", "1"],
-            "semantic_role": "reader-effect",
-            "process_assignment": {"graph": [["0", "0"], ["1", "1"]]},
-            "assignment_root": "typed-root",
-        },
-        "reset": {
-            "carrier": "record-bit",
-            "domain": ["0", "1"],
-            "codomain": ["0", "1"],
-            "semantic_role": "state-transformation",
-            "process_assignment": {"graph": [["0", "0"], ["1", "0"]]},
-            "assignment_root": "typed-root",
-        },
-    }
-    closed_continuation = construct_typed_continuation_closure(
-        {
-            "active_root": "typed-root",
-            "declared_carriers": ["record-bit"],
-            "operation_ids": ["writer", "reader"],
-        },
-        typed_continuation_operations,
-    )
-    reset_continuation = construct_typed_continuation_closure(
-        {
-            "active_root": "typed-root",
-            "declared_carriers": ["record-bit"],
-            "operation_ids": ["writer", "reset", "reader"],
-        },
-        typed_continuation_operations,
-    )
-    missing_assignment_operations = copy.deepcopy(typed_continuation_operations)
-    missing_assignment_operations["writer"].pop("process_assignment")
-    unconstructed_continuation = construct_typed_continuation_closure(
-        {
-            "active_root": "typed-root",
-            "declared_carriers": ["record-bit"],
-            "operation_ids": ["writer", "reader"],
-        },
-        missing_assignment_operations,
-    )
-    _require(
-        closed_continuation["status"] == "TYPED-CONTINUATION-CLOSED"
-        and closed_continuation["recovery_scope"]["all_words_recoverable"]
-        and reset_continuation["status"] == "TYPED-CONTINUATION-CLOSED"
-        and not reset_continuation["recovery_scope"]["all_words_recoverable"]
-        and not _typed_destructive_reader_witnesses(
-            {"continuation_reachability": {"qc-positive": closed_continuation}}
-        )
-        and bool(
-            _typed_destructive_reader_witnesses(
-                {"continuation_reachability": {"qc-reset": reset_continuation}}
-            )
-        )
-        and not _typed_destructive_reader_witnesses(
-            {
-                "continuation_reachability": {},
-                "delayed_reader": {"same_law_schedules": {"qr_000": {"reset": True}}},
-            }
-        )
-        and unconstructed_continuation["status"]
-        == "TYPED-CONTINUATION-SUBGRAMMAR-UNCONSTRUCTED",
-        "typed continuation closure/absence/reset-to-reader scope",
-    )
-    checks.append("typed-continuation-closure-and-absence")
-
-    delay = {
-        "operation": "delay_without_record_access",
-        "expression": "identity on valuation and record carrier",
-    }
-    mislabeled_reset = {
-        "operation": "delay_without_record_access",
-        "expression": "empty_sequence",
-    }
-    _require(process_record_semantics(delay)["action"] == "identity", "delay semantics")
-    _require(
-        process_record_semantics(mislabeled_reset)["action"] == "reset"
-        and not process_record_semantics(mislabeled_reset)[
-            "declaration_expression_consistent"
-        ],
-        "expression-driven reset under retained label",
-    )
-    schedule_fixture: dict[str, object] = {
-        "prefix_controls": {
-            "regions": [{"id": "region", "antichain": ["0"]}]
-        },
-        "regional_question_process": {
-            "registered_questions": [{"id": "question", "region_id": "region"}],
-            "decision_trees": [
-                {
-                    "id": "tree",
-                    "expression": "node(question,empty_tree,empty_tree)",
-                }
-            ],
-            "operations": [
-                {
-                    "id": "delay",
-                    "operation": "delay_without_record_access",
-                    "expression": "identity on valuation and record carrier",
-                },
-                {
-                    "id": "reader",
-                    "operation": "read_record_after_delay",
-                    "expression": "read record_word after registered delay operations",
-                },
-            ],
-            "reader_schedules": [
-                {
-                    "id": "schedule",
-                    "tree_id": "tree",
-                    "operation_ids": ["delay", "reader"],
-                }
-            ],
-        },
-    }
-    schedule_before = validate_reader_schedules(schedule_fixture)["schedule"]
-    schedule_fixture["regional_question_process"]["operations"][0][
-        "expression"
-    ] = "empty_sequence"
-    schedule_after = validate_reader_schedules(schedule_fixture)["schedule"]
-    _require(
-        schedule_before["distinguishes_every_input_port"]
-        and not schedule_after["distinguishes_every_input_port"]
-        and not schedule_after["declarations_match_expressions"],
-        "identity-delay-to-reset mutation did not move recovery",
-    )
-    checks.append("expression-driven-record-recovery")
-
-    identity_fixture: dict[str, object] = {
-        "typed_fillings": {
-            "boundaries": [
-                {"id": f"boundary-{index}", "generators": ["epsilon"]}
-                for index in range(4)
-            ]
-            + [{"id": "boundary-outside", "generators": ["x"]}],
-            "horizontal_fillings": [
-                {
-                    "id": "assigned-identity",
-                    "incoming_boundary_id": "boundary-0",
-                    "outgoing_boundary_id": "boundary-0",
-                    "incoming_images": [["epsilon", "i"]],
-                    "outgoing_images": [["epsilon", "i"]],
-                    "apex_relations": [],
-                },
-                {
-                    "id": "raw-identity-shape",
-                    "incoming_boundary_id": "boundary-0",
-                    "outgoing_boundary_id": "boundary-0",
-                    "incoming_images": [["epsilon", "j"]],
-                    "outgoing_images": [["epsilon", "j"]],
-                    "apex_relations": [],
-                },
-                {
-                    "id": "replacement-swap",
-                    "incoming_boundary_id": "boundary-0",
-                    "outgoing_boundary_id": "boundary-0",
-                    "incoming_images": [["epsilon", "swap"]],
-                    "outgoing_images": [["epsilon", "swap"]],
-                    "apex_relations": [],
-                },
-                {
-                    "id": "nonidentity-endomorphism",
-                    "incoming_boundary_id": "boundary-0",
-                    "outgoing_boundary_id": "boundary-0",
-                    "incoming_images": [["epsilon", "left"]],
-                    "outgoing_images": [["epsilon", "right"]],
-                    "apex_relations": [["left", "right"]],
-                },
-                {
-                    "id": "outside-raw-identity",
-                    "incoming_boundary_id": "boundary-outside",
-                    "outgoing_boundary_id": "boundary-outside",
-                    "incoming_images": [["x", "x"]],
-                    "outgoing_images": [["x", "x"]],
-                    "apex_relations": [],
-                },
-            ],
-        },
-        "regional_question_process": {
-            "decision_trees": [
-                {"id": "empty-process", "expression": "empty_tree"},
-                {
-                    "id": "nonempty-process",
-                    "expression": "node(question,empty_tree,empty_tree)",
-                },
-            ],
-            "generated_law_provenance": {
-                "boundary_factory": {
-                    "rows": [
-                        {"tree_depth": index, "boundary_id": f"boundary-{index}"}
-                        for index in range(4)
-                    ]
-                },
-                "filling_factory": {
-                    "tree_rows": [
-                        {
-                            "tree_id": "empty-process",
-                            "filling_id": "assigned-identity",
-                        }
-                    ],
-                    "replacement_rows": [
-                        {"root_filling_id": "replacement-swap"}
-                    ],
-                },
-            },
-        },
-    }
-    identity_census = _active_identity_census(identity_fixture)
-    _require(
-        identity_census["active_domain"] == ("B0", "B1", "B2", "B3")
-        and identity_census["by_level"]["B0"]["present"]
-        and all(
-            not identity_census["by_level"][level]["present"]
-            for level in ("B1", "B2", "B3")
-        )
-        and any(
-            row["filling_role"] == "raw-identity-shape"
-            and "raw-but-unassigned" in row["reasons"]
-            for row in identity_census["by_level"]["B0"]["excluded_endomorphisms"]
-        )
-        and identity_census["out_of_domain_boundaries"]
-        == [
-            {
-                "boundary_role": "boundary-outside",
-                "status": "OUT-OF-ACTIVE-IDENTITY-DOMAIN",
-            }
-        ],
-        "assignment-typed active B0-B3 identity census",
-    )
-    assigned_nonempty = copy.deepcopy(identity_fixture)
-    assigned_nonempty["regional_question_process"]["generated_law_provenance"][
-        "filling_factory"
-    ]["tree_rows"][0]["tree_id"] = "nonempty-process"
-    assigned_swap = copy.deepcopy(identity_fixture)
-    assigned_swap["regional_question_process"]["generated_law_provenance"][
-        "filling_factory"
-    ]["tree_rows"][0]["filling_id"] = "replacement-swap"
-    assigned_nonidentity = copy.deepcopy(identity_fixture)
-    assigned_nonidentity["regional_question_process"]["generated_law_provenance"][
-        "filling_factory"
-    ]["tree_rows"][0]["filling_id"] = "nonidentity-endomorphism"
-    _require(
-        not _active_identity_census(assigned_nonempty)["by_level"]["B0"]["present"]
-        and not _active_identity_census(assigned_swap)["by_level"]["B0"]["present"]
-        and not _active_identity_census(assigned_nonidentity)["by_level"]["B0"][
-            "present"
-        ],
-        "nonempty-tree/replacement/nonidentity attachment witnessed identity",
-    )
-    identity_relabeling = {
-        "boundary-0": "renamed-boundary-0",
-        "boundary-1": "renamed-boundary-1",
-        "boundary-2": "renamed-boundary-2",
-        "boundary-3": "renamed-boundary-3",
-        "boundary-outside": "renamed-boundary-outside",
-        "empty-process": "renamed-empty-process",
-        "nonempty-process": "renamed-nonempty-process",
-        "assigned-identity": "renamed-assigned-identity",
-        "raw-identity-shape": "renamed-raw-identity-shape",
-        "replacement-swap": "renamed-replacement-swap",
-        "nonidentity-endomorphism": "renamed-nonidentity-endomorphism",
-        "outside-raw-identity": "renamed-outside-raw-identity",
-    }
-    relabeled_identity_fixture = _replace_exact_strings(
-        identity_fixture, identity_relabeling
-    )
-    assert isinstance(relabeled_identity_fixture, Mapping)
-    relabeled_identity_census = _active_identity_census(relabeled_identity_fixture)
-    _require(
-        tuple(
-            identity_census["by_level"][level]["present"]
-            for level in identity_census["active_domain"]
-        )
-        == tuple(
-            relabeled_identity_census["by_level"][level]["present"]
-            for level in relabeled_identity_census["active_domain"]
-        ),
-        "consistent identifier/reference relabeling moved identity census",
-    )
-    checks.append("assignment-typed-B0-B3-identity-attacks")
-
-    port_fixture_a = {
-        "regional_question_process": {
-            "question_transition": {
-                "ports": [
-                    {
-                        "id": "neutral-left",
-                        "next_valuation": "Q_C^1(nu)(A)=nu(meet(A,C))",
-                        "next_record_word": "append(R,(C,neutral-left))",
-                    },
-                    {
-                        "id": "neutral-right",
-                        "next_valuation": "Q_C^0(nu)(A)=nu(meet(A,complement(C)))",
-                        "next_record_word": "append(R,(C,neutral-right))",
-                    },
-                ]
-            }
-        }
-    }
-    port_fixture_b = copy.deepcopy(port_fixture_a)
-    ports_b = port_fixture_b["regional_question_process"]["question_transition"]["ports"]
-    ports_b.reverse()
-    ports_b[0]["id"] = "renamed-zero"
-    ports_b[0]["next_record_word"] = "append(R,(C,renamed-zero))"
-    ports_b[1]["id"] = "renamed-one"
-    ports_b[1]["next_record_word"] = "append(R,(C,renamed-one))"
-    _require(
-        canonical_sha256(port_fixture_a) != canonical_sha256(port_fixture_b),
-        "port presentation bytes must move",
-    )
-    _require(
-        semantic_branch_binding(port_fixture_a) == semantic_branch_binding(port_fixture_b),
-        "port identifiers/list order leaked into semantic bits",
-    )
-    checks.append("semantic-port-id-order-metamorphic")
-
-    port_chain_fixture: dict[str, object] = {
-        "prefix_controls": {
-            "regions": [{"id": "region", "antichain": ["0"]}]
-        },
-        "typed_fillings": {
-            "boundaries": [
-                {"id": "B0-boundary", "generators": ["epsilon"]},
-                {"id": "B1-boundary", "generators": ["0", "1"]},
-            ],
-            "apices": [
-                {"id": "identity-apex", "generators": ["epsilon"]},
-                {"id": "question-apex", "generators": ["root", "zero", "one"]},
-            ],
-            "horizontal_fillings": [
-                {
-                    "id": "empty-filling",
-                    "incoming_boundary_id": "B0-boundary",
-                    "outgoing_boundary_id": "B0-boundary",
-                    "apex_id": "identity-apex",
-                    "incoming_images": [["epsilon", "epsilon"]],
-                    "outgoing_images": [["epsilon", "epsilon"]],
-                    "apex_relations": [],
-                },
-                {
-                    "id": "question-filling",
-                    "incoming_boundary_id": "B0-boundary",
-                    "outgoing_boundary_id": "B1-boundary",
-                    "apex_id": "question-apex",
-                    "incoming_images": [["epsilon", "root"]],
-                    "outgoing_images": [["0", "zero"], ["1", "one"]],
-                    "apex_relations": [["root", "zero"], ["root", "one"]],
-                },
-            ],
-        },
-        "regional_question_process": {
-            "registered_questions": [{"id": "question", "region_id": "region"}],
-            "question_transition": copy.deepcopy(
-                port_fixture_a["regional_question_process"]["question_transition"]
-            ),
-            "port_to_bit_map": [
-                {"port_id": "neutral-left", "bit": 1},
-                {"port_id": "neutral-right", "bit": 0},
-            ],
-            "decision_trees": [
-                {"id": "empty-tree", "expression": "empty_tree"},
-                {
-                    "id": "question-tree",
-                    "expression": "node(question,empty_tree,empty_tree)",
-                },
-            ],
-            "operations": [
-                {
-                    "id": "delay",
-                    "operation": "delay_without_record_access",
-                    "expression": "identity on valuation and record carrier",
-                },
-                {
-                    "id": "reader",
-                    "operation": "read_record_after_delay",
-                    "expression": "read record_word after registered delay operations",
-                },
-            ],
-            "reader_schedules": [
-                {
-                    "id": "reader-schedule",
-                    "tree_id": "question-tree",
-                    "operation_ids": ["delay", "reader"],
-                }
-            ],
-            "generated_law_provenance": {
-                "boundary_factory": {
-                    "rows": [
-                        {"tree_depth": 0, "boundary_id": "B0-boundary"},
-                        {"tree_depth": 1, "boundary_id": "B1-boundary"},
-                    ]
-                },
-                "filling_factory": {
-                    "question_rows": [
-                        {
-                            "input_depth": 0,
-                            "output_depth": 1,
-                            "filling_id": "question-filling",
-                        }
-                    ],
-                    "tree_rows": [
-                        {"tree_id": "empty-tree", "filling_id": "empty-filling"},
-                        {
-                            "tree_id": "question-tree",
-                            "filling_id": "question-filling",
-                        },
-                    ],
-                },
-            },
-        },
-    }
-    port_regions = regions_from_fixture(port_chain_fixture)
-    port_questions = question_region_map(port_chain_fixture, port_regions)
-    port_trees, _ = _tree_rows(port_chain_fixture)
-    port_cospans = cospans_from_fixture(port_chain_fixture)
-    port_chain_a = semantic_port_chain(
-        port_chain_fixture, port_questions, port_trees, port_cospans
-    )
-    transported_port_fixture = copy.deepcopy(port_chain_fixture)
-    transported_ports = transported_port_fixture["regional_question_process"][
-        "question_transition"
-    ]["ports"]
-    transported_ports.reverse()
-    for row in transported_ports:
-        old = row["id"]
-        new = "transported-" + old
-        row["id"] = new
-        row["next_record_word"] = f"append(R,(C,{new}))"
-    for row in transported_port_fixture["regional_question_process"][
-        "port_to_bit_map"
-    ]:
-        row["port_id"] = "transported-" + row["port_id"]
-    transported_regions = regions_from_fixture(transported_port_fixture)
-    transported_questions = question_region_map(
-        transported_port_fixture, transported_regions
-    )
-    transported_trees, _ = _tree_rows(transported_port_fixture)
-    port_chain_b = semantic_port_chain(
-        transported_port_fixture,
-        transported_questions,
-        transported_trees,
-        cospans_from_fixture(transported_port_fixture),
-    )
-    _require(
-        port_chain_a["transport_invariant_sha256"]
-        == port_chain_b["transport_invariant_sha256"],
-        "neutral semantic-port rewrite moved an end-to-end signature",
-    )
-    crossed_record = copy.deepcopy(port_chain_fixture)
-    crossed_record["regional_question_process"]["question_transition"]["ports"][0][
-        "next_record_word"
-    ] = "append(R,(C,neutral-right))"
-    crossed_refused = False
-    try:
-        _semantic_transition_ports(crossed_record)
-    except ScoreRefusal:
-        crossed_refused = True
-    crossed_downstream = copy.deepcopy(port_chain_fixture)
-    crossed_downstream["regional_question_process"]["port_to_bit_map"] = [
-        {"port_id": "neutral-left", "bit": 0},
-        {"port_id": "neutral-right", "bit": 1},
-    ]
-    downstream_refused = False
-    try:
-        semantic_port_chain(
-            crossed_downstream,
-            port_questions,
-            port_trees,
-            port_cospans,
-        )
-    except ScoreRefusal:
-        downstream_refused = True
-    malformed_transition_refusals = []
-    missing_port = copy.deepcopy(port_fixture_a)
-    missing_port["regional_question_process"]["question_transition"]["ports"].pop()
-    duplicate_bit = copy.deepcopy(port_fixture_a)
-    duplicate_bit["regional_question_process"]["question_transition"]["ports"][1][
-        "next_valuation"
-    ] = "Q_C^1(nu)(A)=nu(meet(A,C))"
-    ambiguous_formula = copy.deepcopy(port_fixture_a)
-    ambiguous_formula["regional_question_process"]["question_transition"]["ports"][0][
-        "next_valuation"
-    ] = "nu(meet(A,C))+nu(meet(A,complement(C)))"
-    for malformed_transition in (missing_port, duplicate_bit, ambiguous_formula):
-        try:
-            _semantic_transition_ports(malformed_transition)
-            malformed_transition_refusals.append(False)
-        except ScoreRefusal:
-            malformed_transition_refusals.append(True)
-    _require(
-        crossed_refused
-        and downstream_refused
-        and all(malformed_transition_refusals),
-        "downstream/missing/duplicate/ambiguous port contradictions did not refuse",
-    )
-    checks.append("end-to-end-semantic-port-binding-and-negatives")
-
-    synthetic_member: dict[str, object] = {
-        "id": "neutral-member",
-        "component_occurrences": [
-            {"component_token": "p0", "antichain": ["000"]},
-            {"component_token": "p1", "antichain": ["010"]},
-            {"component_token": "p2", "antichain": ["100"]},
-            {"component_token": "c01", "antichain": ["001"]},
-            {"component_token": "d01", "antichain": ["101"]},
-            {"component_token": "c12", "antichain": ["011"]},
-            {"component_token": "d12", "antichain": ["111"]},
-        ],
-        "regions": [
-            {"node_token": "n0", "antichain": ["000", "001"]},
-            {"node_token": "n1", "antichain": ["001", "010", "011"]},
-            {"node_token": "n2", "antichain": ["011", "100"]},
-        ],
-        "incidences": [
-            {
-                "interface_token": "i01",
-                "node_tokens": ["n0", "n1"],
-                "left_component_tokens": ["c01"],
-                "right_component_tokens": ["c01"],
-            },
-            {
-                "interface_token": "i12",
-                "node_tokens": ["n1", "n2"],
-                "left_component_tokens": ["c12"],
-                "right_component_tokens": ["c12"],
-            },
-        ],
-        "blind_projection": [
-            {"component_token": "p0", "blind_component_token": "bp0"},
-            {"component_token": "p1", "blind_component_token": "bp1"},
-            {"component_token": "p2", "blind_component_token": "bp2"},
-            {"component_token": "c01", "blind_component_token": "i01"},
-            {"component_token": "d01", "blind_component_token": "i01"},
-            {"component_token": "c12", "blind_component_token": "i12"},
-            {"component_token": "d12", "blind_component_token": "i12"},
-        ],
-        "blind_interface": {
-            "node_tokens": ["n0", "n1", "n2"],
-            "edges": [
-                {"interface_token": "i01", "node_tokens": ["n0", "n1"]},
-                {"interface_token": "i12", "node_tokens": ["n1", "n2"]},
-            ],
-        },
-        "resource_declaration": {
-            "state_dimension": 6,
-            "history_depth": 2,
-            "calibration_slots": 3,
-            "parameter_slots": 1,
-        },
-    }
-    projection_a = _candidate_regional_projection(synthetic_member)
-    relabeled_member = _relabel_candidate_member_nodes(
-        synthetic_member, {"n0": "z2", "n1": "z0", "n2": "z1"}
-    )
-    projection_b = _candidate_regional_projection(relabeled_member)
-    _require(
-        canonical_sha256(synthetic_member) != canonical_sha256(relabeled_member),
-        "E37 relabel must move neutral presentation bytes",
-    )
-    _require(
-        projection_a["canonical_blind_sha256"]
-        == projection_b["canonical_blind_sha256"],
-        "E37 canonical blind hash is not node-relabel invariant",
-    )
-    relation_data: dict[str, object] = {
-        "regional_families": {"members": [copy.deepcopy(synthetic_member)]}
-    }
-    relation_options = MutationOptions(mutant_id="M16")
-    _substitute_represented_candidate_overlap(relation_data, relation_options)
-    changed_member = relation_data["regional_families"]["members"][0]
-    projection_changed = _candidate_regional_projection(changed_member)
-    _require(
-        projection_changed["canonical_blind_sha256"]
-        == projection_a["canonical_blind_sha256"]
-        and projection_a["represented_candidate_regional_relation"][
-            "overlap_pair_count"
-        ]
-        == 2
-        and projection_changed["represented_candidate_regional_relation"][
-            "overlap_pair_count"
-        ]
-        == 1,
-        "M16 c-to-d substitution did not preserve blind hash while moving overlap 2 -> 1",
-    )
-    _require(
-        relation_options.details["M16"]["pre_sha256"]
-        != relation_options.details["M16"]["post_sha256"],
-        "M16 changed-object evidence is inert",
-    )
-    deletion_member = copy.deepcopy(synthetic_member)
-    deletion_regions = {
-        str(row["node_token"]): row for row in deletion_member["regions"]
-    }
-    deletion_regions["n1"]["antichain"].remove("001")
-    deletion_member["incidences"][0]["right_component_tokens"] = []
-    deletion_refused = False
-    try:
-        _candidate_regional_projection(deletion_member)
-    except ScoreRefusal:
-        deletion_refused = True
-    malformed_projection_members = []
-    missing_projection_member = copy.deepcopy(synthetic_member)
-    missing_projection_member["blind_projection"].pop()
-    malformed_projection_members.append(missing_projection_member)
-    nonfunctional_projection_member = copy.deepcopy(synthetic_member)
-    nonfunctional_projection_member["blind_projection"].append(
-        copy.deepcopy(nonfunctional_projection_member["blind_projection"][0])
-    )
-    malformed_projection_members.append(nonfunctional_projection_member)
-    contradictory_projection_member = copy.deepcopy(synthetic_member)
-    contradictory_projection_member["blind_projection"][3][
-        "blind_component_token"
-    ] = "contradictory-interface"
-    malformed_projection_members.append(contradictory_projection_member)
-    malformed_projection_refusals = []
-    for malformed_member in malformed_projection_members:
-        try:
-            _candidate_regional_projection(malformed_member)
-            malformed_projection_refusals.append(False)
-        except ScoreRefusal:
-            malformed_projection_refusals.append(True)
-    _require(
-        deletion_refused and all(malformed_projection_refusals),
-        "M16 deletion/missing/nonfunctional/contradictory projection did not refuse",
-    )
-    checks.append("candidate-regional-projection-and-relabel-canonicalization")
-
-    covariance_source: dict[str, object] = {
-        "prefix_controls": {
-            "regions": [{"id": "region", "antichain": ["0"]}]
-        },
-        "regional_question_process": {
-            "valuation_family": {
-                "parameter_rows": [{"id": "preparation", "p": "1/3"}]
-            }
-        },
-        "regional_families": {"sentinel": {"untransported": True}},
-        "overlap_gluing": {"sentinel": {"untransported": True}},
-    }
-    covariance_mutant, covariance_options = apply_mutant(covariance_source, "M27")
-    original_region = PrefixRegion.from_words(("0",))
-    transported_region = PrefixRegion.from_words(
-        covariance_mutant["prefix_controls"]["regions"][0]["antichain"]
-    )
-    transported_parameter = exact(
-        covariance_mutant["regional_question_process"]["valuation_family"][
-            "parameter_rows"
-        ][0]["p"]
-    )
-    _require(
-        bernoulli_mass(original_region, Fraction(1, 3))
-        == bernoulli_mass(transported_region, transported_parameter),
-        "M27 failed at its transported Boolean/preparation scope",
-    )
-    _require(
-        covariance_mutant["regional_families"]
-        == covariance_source["regional_families"]
-        and covariance_mutant["overlap_gluing"]
-        == covariance_source["overlap_gluing"]
-        and "E37 family" in covariance_options.details["M27"]["excluded_scopes"],
-        "M27 silently promoted covariance outside its transported scope",
-    )
-    checks.append("m27-scoped-boolean-preparation-covariance")
-
-    reachable_data: dict[str, object] = {
-        "typed_fillings": {
-            "horizontal_fillings": [
-                {
-                    "id": "used",
-                    "outgoing_images": [["x", "u"], ["y", "v"]],
-                },
-                {
-                    "id": "unused",
-                    "outgoing_images": [["x", "u"], ["y", "v"]],
-                },
-            ],
-            "factorizations": [
-                {
-                    "id": "factor",
-                    "whole_filling_id": "used",
-                    "step_ids": [],
-                }
-            ],
-        }
-    }
-    reachable_options = MutationOptions(mutant_id="G2")
-    _alter_reachable_leg(reachable_data, reachable_options)
-    _require(
-        reachable_options.details["G2"]["changed_filling_role"] == "used"
-        and reachable_options.details["G2"]["affected_factorization_roles"]
-        == ["factor"],
-        "G2 did not select a reachable factorization leg",
-    )
-    checks.append("reachable-g2-leg-mutation")
-
-    scoped_a = _scoped_dependency_roots(
-        {"writer": "append"},
-        {"c0": {"operations": ["delay"]}, "c1": {"operations": ["erase"]}},
-        {"reader": {"operations": ["delay", "read"]}},
-    )
-    scoped_b = _scoped_dependency_roots(
-        {"writer": "append"},
-        {"c0": {"operations": ["reset"]}, "c1": {"operations": ["erase"]}},
-        {"reader": {"operations": ["delay", "read"]}},
-    )
-    _require(
-        scoped_a["continuation_catalogue_roots"]["c0"]["sha256"]
-        != scoped_b["continuation_catalogue_roots"]["c0"]["sha256"]
-        and scoped_a["continuation_catalogue_roots"]["c1"]["sha256"]
-        == scoped_b["continuation_catalogue_roots"]["c1"]["sha256"]
-        and scoped_a["delayed_reader_roots"] == scoped_b["delayed_reader_roots"],
-        "reachable reset did not move only its selected continuation root",
-    )
-    unrelated_declaration = {"unreachable": "edited"}
-    _require(
-        scoped_a
-        == _scoped_dependency_roots(
-            {"writer": "append"},
-            {"c0": {"operations": ["delay"]}, "c1": {"operations": ["erase"]}},
-            {"reader": {"operations": ["delay", "read"]}},
-        )
-        and unrelated_declaration,
-        "unreachable declaration entered a scoped root",
-    )
-    _require(
-        scoped_a["global_joint_root_status"] == "NO-GLOBAL-JOINT-ROOT",
-        "scoped roots were promoted to one global root",
-    )
-    checks.append("scope-indexed-active-roots")
-
-    provenance_before = validate_claim_provenance(
-        ["root"],
-        [("claim", "middle", "derived-from"), ("middle", "root", "typed-by")],
-        ["claim"],
-    )
-    provenance_after = validate_claim_provenance(
-        ["root"], [("claim", "middle", "derived-from")], ["claim"]
-    )
-    _require(
-        provenance_before["all_claims_connected"]
-        and not provenance_after["all_claims_connected"],
-        "typed provenance severing was not detected",
-    )
-    checks.append("typed-provenance-path-and-sever")
-
-    variables = ("A", "B", "C")
-    all_configurations = tuple("".join(bits) for bits in itertools.product("01", repeat=3))
-    uniform_weights = tuple(Fraction(1, 8) for _ in all_configurations)
-    correlated_configurations = ("000", "010", "101", "111")
-    correlated_weights = tuple(Fraction(1, 4) for _ in correlated_configurations)
-    uniform_ab = _marginal_distribution(
-        variables, all_configurations, uniform_weights, ("A", "B")
-    )
-    uniform_bc = _marginal_distribution(
-        variables, all_configurations, uniform_weights, ("B", "C")
-    )
-    correlated_ab = _marginal_distribution(
-        variables, correlated_configurations, correlated_weights, ("A", "B")
-    )
-    correlated_bc = _marginal_distribution(
-        variables, correlated_configurations, correlated_weights, ("B", "C")
-    )
-    uniform_equal = sum(
-        weight
-        for configuration, weight in zip(all_configurations, uniform_weights)
-        if configuration[0] == configuration[2]
-    )
-    correlated_equal = sum(
-        weight
-        for configuration, weight in zip(correlated_configurations, correlated_weights)
-        if configuration[0] == configuration[2]
-    )
-    _require(
-        uniform_ab == correlated_ab
-        and uniform_bc == correlated_bc
-        and set(uniform_ab.values()) == {Fraction(1, 4)}
-        and uniform_equal == Fraction(1, 2)
-        and correlated_equal == Fraction(1),
-        "AB/BC overlap selector kill was not reproduced",
-    )
-    checks.append("overlap-selector-nonuniqueness")
-
-    classical_package = synthetic_horizontal_process_package()
-    quantum_package = synthetic_horizontal_process_package(quantum=True)
-    classical_measurement = measure_horizontal_process_package(
-        classical_package, static_response_available=True
-    )
-    quantum_measurement = measure_horizontal_process_package(
-        quantum_package, static_response_available=True
-    )
-    _require(
-        classical_measurement["coordinate"] == "HORIZONTAL-CLASSICAL"
-        and quantum_measurement["coordinate"] == "HORIZONTAL-QUANTUM"
-        and set(PROCESS_COORDINATES)
-        == {
-            "SYNTAX-ONLY",
-            "STATIC-RESPONSE-ONLY",
-            "HORIZONTAL-CLASSICAL",
-            "HORIZONTAL-QUANTUM",
-            "INCONSISTENT",
-        },
-        "positive process branches or frozen vocabulary",
-    )
-    for component_name in classical_package["components"]:
-        for empty_value in (None, "", {}, []):
-            dropped = copy.deepcopy(classical_package)
-            dropped["components"][component_name] = empty_value
-            _require(
-                measure_horizontal_process_package(
-                    dropped, static_response_available=True
-                )["coordinate"]
-                == "STATIC-RESPONSE-ONLY",
-                f"empty process component promoted: {component_name}",
-            )
-        stubbed = copy.deepcopy(classical_package)
-        stubbed["components"][component_name]["payload"] = {"stub": True}
-        _require(
-            measure_horizontal_process_package(
-                stubbed, static_response_available=True
-            )["coordinate"]
-            == "STATIC-RESPONSE-ONLY",
-            f"nonsemantic process stub promoted: {component_name}",
-        )
-        disconnected_process = copy.deepcopy(classical_package)
-        disconnected_process["components"][component_name][
-            "active_root"
-        ] = "disconnected-root"
-        _require(
-            measure_horizontal_process_package(
-                disconnected_process, static_response_available=True
-            )["coordinate"]
-            == "STATIC-RESPONSE-ONLY",
-            f"disconnected process component promoted: {component_name}",
-        )
-    for equation_name in classical_package["equations"]:
-        for empty_value in (None, "", {}, []):
-            dropped = copy.deepcopy(classical_package)
-            dropped["equations"][equation_name] = empty_value
-            _require(
-                measure_horizontal_process_package(
-                    dropped, static_response_available=True
-                )["coordinate"]
-                == "STATIC-RESPONSE-ONLY",
-                f"missing semantic equation promoted: {equation_name}",
-            )
-        disconnected_equation = copy.deepcopy(classical_package)
-        disconnected_equation["equations"][equation_name][0][
-            "active_root"
-        ] = "disconnected-root"
-        _require(
-            measure_horizontal_process_package(
-                disconnected_equation, static_response_available=True
-            )["coordinate"]
-            == "STATIC-RESPONSE-ONLY",
-            f"disconnected semantic equation promoted: {equation_name}",
-        )
-    contradictory_process = copy.deepcopy(classical_package)
-    contradictory_process["equations"]["sequential_composition"][0]["rhs"] = {
-        "semantic_value": "different"
-    }
-    _require(
-        measure_horizontal_process_package(
-            contradictory_process, static_response_available=True
+        classical_measurement.valid
+        and classical_measurement.coordinate == "HORIZONTAL-CLASSICAL"
+        and measure_horizontal_process_package(
+            classical_positive, static_response_available=True
         )["coordinate"]
-        == "INCONSISTENT",
-        "contradictory process equation did not refuse",
+        == "HORIZONTAL-CLASSICAL",
+        "typed classical positive did not reach its coordinate",
     )
-    no_interference = copy.deepcopy(quantum_package)
-    no_interference["quantum"]["history_gram"] = QMatrix.identity(2)
-    nonpositive = copy.deepcopy(quantum_package)
-    nonpositive["quantum"]["history_gram"] = QMatrix.from_rows(((1, 2), (2, 1)))
-    no_division = copy.deepcopy(quantum_package)
-    no_division["quantum"]["division_instruments"] = []
-    no_history_basis = copy.deepcopy(quantum_package)
-    no_history_basis["quantum"]["history_basis"] = []
-    disconnected_division = copy.deepcopy(quantum_package)
-    disconnected_division["quantum"]["division_instruments"][0][
-        "active_root"
-    ] = "disconnected-root"
-    _require(
-        all(
-            measure_horizontal_process_package(
-                candidate, static_response_available=True
-            )["coordinate"]
-            == "HORIZONTAL-CLASSICAL"
-            for candidate in (
-                no_interference,
-                nonpositive,
-                no_division,
-                no_history_basis,
-                disconnected_division,
+    witnesses["classical_positive"] = _v4_witness_record(
+        classical_positive, classical_measurement
+    )
+    checks.append("typed-classical-positive-coordinate")
+
+    classical_fault_groups = {
+        "frontier_composition": (
+            "frontier-domain-mismatch",
+            "frontier-codomain-mismatch",
+            "dropped-zero-port",
+            "missing-intermediate",
+            "one-standalone-occurrence",
+            "wrong-whole",
+            "altered-cut",
+        ),
+        "stochastic": ("negative-entry", "nonconserving"),
+        "tensor": (
+            "wrong-tensor-frontier",
+            "wrong-unit",
+            "wrong-associator",
+            "wrong-symmetry",
+            "wrong-interchange",
+        ),
+        "naturality_identity": (
+            "identity-naturality",
+            "changed-target-vertical",
+            "rank-deficient-vertical",
+            "disconnected-naturality",
+            "duplicate-identity",
+            "missing-identity",
+        ),
+    }
+    classical_drop_rows: dict[str, object] = {}
+    for fault_group, fault_names in classical_fault_groups.items():
+        for fault_name in fault_names:
+            primitive = build_classical_existence_law(fault_name)
+            measurement = measure_classical_primitive_law(primitive)
+            _require(not measurement.valid, f"classical fault survived: {fault_name}")
+            classical_drop_rows[fault_name] = _v4_witness_record(
+                primitive, measurement
             )
-        ),
-        "quantum ingredient deletion failed to demote to classical",
-    )
-    checks.append("semantic-classical-quantum-positive-and-drop-branches")
-
-    ontology_static_evidence = {
-        "static_response": True,
-        "process_measurement": measure_horizontal_process_package(
-            None, static_response_available=True
-        ),
-    }
-    ontology_conditioning_evidence = {
-        "static_response": True,
-        "process_measurement": classical_measurement,
-        "conditioning": {
-            "active_root": classical_measurement["active_root"],
-            "source_region": PrefixRegion.one(),
-            "event_region": PrefixRegion.cylinder("0"),
-            "output_region": PrefixRegion.cylinder("0"),
-            "input_algebra_sha256": "fixed-algebra",
-            "output_algebra_sha256": "fixed-algebra",
-        },
-    }
-    ontology_record_evidence = copy.deepcopy(ontology_conditioning_evidence)
-    ontology_continuation_operations = copy.deepcopy(typed_continuation_operations)
-    for operation in ontology_continuation_operations.values():
-        operation["assignment_root"] = classical_measurement["active_root"]
-    ontology_continuation = construct_typed_continuation_closure(
-        {
-            "active_root": classical_measurement["active_root"],
-            "declared_carriers": ["record-bit"],
-            "operation_ids": ["writer", "reader"],
-        },
-        ontology_continuation_operations,
-    )
-    ontology_record_evidence["record"] = {
-        "active_root": classical_measurement["active_root"],
-        "writer": {
-            "active_root": classical_measurement["active_root"],
-            "operation_role": "writer",
-            "semantic_action": "record-write",
-            "typed_assignment": {"write": "append-bit"},
-        },
-        "delayed_reader": {
-            "active_root": classical_measurement["active_root"],
-            "operation_role": "reader",
-            "semantic_action": "delayed-read",
-            "typed_effect": {"read": "delayed-bit"},
-        },
-        "continuation_closure": ontology_continuation,
-    }
-    ontology_rewrite_evidence = copy.deepcopy(ontology_record_evidence)
-    ontology_rewrite_evidence["region_rewrite"] = {
-        "active_root": classical_measurement["active_root"],
-        "before_region": PrefixRegion.cylinder("0"),
-        "after_region": PrefixRegion.cylinder("1"),
-        "response_before": {"0": Fraction(1), "1": Fraction(0)},
-        "response_after": {"0": Fraction(0), "1": Fraction(1)},
-        "later_response_root": classical_measurement["active_root"],
-        "response_control_region": PrefixRegion.cylinder("1"),
-    }
-    ontology_roles = tuple(
-        measure_ontology_role(evidence)["role"]
-        for evidence in (
-            ontology_static_evidence,
-            ontology_conditioning_evidence,
-            ontology_record_evidence,
-            ontology_rewrite_evidence,
+        checks.append(
+            {
+                "frontier_composition": "typed-classical-frontier-and-composition-drops",
+                "stochastic": "typed-classical-stochastic-and-zero-port-drops",
+                "tensor": "typed-classical-tensor-law-drops",
+                "naturality_identity": "typed-classical-naturality-and-identity-drops",
+            }[fault_group]
         )
+    opaque_replacement = build_classical_existence_law("opaque-replacement")
+    opaque_measurement = measure_classical_primitive_law(opaque_replacement)
+    unused_proof = build_classical_existence_law("unused-proof-change")
+    unused_measurement = measure_classical_primitive_law(unused_proof)
+    mapping_measurement = measure_horizontal_process_package(
+        {"present": True, "valid": True, "lhs": "same", "rhs": "same"},
+        static_response_available=True,
     )
     _require(
-        ontology_roles == ONTOLOGY_ROLES,
-        "semantic ontology-role positive ladder",
+        not opaque_measurement.valid
+        and unused_measurement.valid
+        and mapping_measurement["coordinate"] == "STATIC-RESPONSE-ONLY"
+        and mapping_measurement["rejected_asserted_mapping"],
+        "opaque copy oracle or mapping bypassed classical typing",
     )
-    no_writer = copy.deepcopy(ontology_record_evidence)
-    no_writer["record"]["writer"] = None
-    no_conditioning = copy.deepcopy(ontology_conditioning_evidence)
-    no_conditioning["conditioning"] = None
-    no_reader = copy.deepcopy(ontology_record_evidence)
-    no_reader["record"]["delayed_reader"] = None
-    no_later_response = copy.deepcopy(ontology_rewrite_evidence)
-    no_later_response["region_rewrite"]["later_response_root"] = "disconnected"
-    _require(
-        measure_ontology_role(no_conditioning)["role"] == "STATIC-RESPONSE"
-        and measure_ontology_role(no_writer)["role"]
-        == "FIXED-ALGEBRA-CONDITIONING"
-        and measure_ontology_role(no_reader)["role"]
-        == "FIXED-ALGEBRA-CONDITIONING"
-        and measure_ontology_role(no_later_response)["role"]
-        == "RECORD-WRITING-ON-FIXED-ALGEBRA",
-        "ontology-role ingredient deletion did not demote",
+    classical_drop_rows["opaque-replacement"] = _v4_witness_record(
+        opaque_replacement, opaque_measurement
     )
-    candidate_a = copy.deepcopy(ontology_rewrite_evidence)
-    candidate_a["ontology_candidate"] = {
-        "candidate": "POSTULATED-CANDIDATE-RELATIONAL-WEB"
-    }
-    candidate_b = copy.deepcopy(ontology_rewrite_evidence)
-    candidate_b["ontology_candidate"] = {"candidate": "renamed-proposal"}
-    candidate_removed = copy.deepcopy(ontology_rewrite_evidence)
-    _require(
-        candidate_a != candidate_b
-        and measure_ontology_role(candidate_a)
-        == measure_ontology_role(candidate_b)
-        == measure_ontology_role(candidate_removed),
-        "ontology candidate leaked into measured role",
+    classical_drop_rows["unused-proof-change-inert"] = _v4_witness_record(
+        unused_proof, unused_measurement
     )
-    checks.append("ontology-role-ladder-demotion-and-candidate-invariance")
+    witnesses["classical_drops"] = classical_drop_rows
+    checks.append("typed-classical-opaque-proof-inert-and-copy-refusal")
 
-    influence_root = "synthetic-influence-root"
-    influence_package = {
-        "active_root": influence_root,
-        "schedule": {
-            "active_root": influence_root,
-            "operations": [
-                {
-                    "active_root": influence_root,
-                    "role": "generated-intervention-operation",
-                    "input_carrier": "boundary",
-                    "output_carrier": "record",
-                    "domain": ["0", "1"],
-                    "codomain": ["0", "1"],
-                    "process_assignment": {"graph": [["0", "0"], ["1", "1"]]},
-                }
-            ],
-        },
-        "intervention": {
-            "active_root": influence_root,
-            "source_region": PrefixRegion.cylinder("0"),
-            "target_region": PrefixRegion.cylinder("1"),
-            "operation_role": "generated-intervention-operation",
-            "alternatives": ["set-0", "set-1"],
-        },
-        "delayed_response": {
-            "active_root": influence_root,
-            "reader": {
-                "active_root": influence_root,
-                "input_carrier": "record",
-                "output_carrier": "outcome",
-                "domain": ["0", "1"],
-                "codomain": ["0", "1"],
-                "effect_assignment": {"graph": [["0", "0"], ["1", "1"]]},
-            },
-            "before": {"0": Fraction(1), "1": Fraction(0)},
-            "after": {"0": Fraction(0), "1": Fraction(1)},
-        },
-        "provenance": {
-            "typed_edges": [
-                ["claim:schedule", influence_root, "generated-by"],
-                ["claim:intervention", influence_root, "generated-by"],
-                ["claim:response", influence_root, "read-by"],
-            ]
-        },
-    }
-    contact_measurement = measure_generated_influence_package(
-        influence_package, require_nonoverlap_contact=True
-    )
-    causal_measurement = measure_generated_influence_package(
-        influence_package, require_nonoverlap_contact=False
-    )
-    disconnected_contact_package = copy.deepcopy(influence_package)
-    disconnected_contact_package["provenance"]["typed_edges"] = []
-    empty_schedule_package = copy.deepcopy(influence_package)
-    empty_schedule_package["schedule"]["operations"] = []
-    missing_intervention_package = copy.deepcopy(influence_package)
-    missing_intervention_package["intervention"] = None
-    unchanged_response_package = copy.deepcopy(influence_package)
-    unchanged_response_package["delayed_response"]["after"] = copy.deepcopy(
-        unchanged_response_package["delayed_response"]["before"]
-    )
-    overlapping_influence_package = copy.deepcopy(influence_package)
-    overlapping_influence_package["intervention"][
-        "target_region"
-    ] = PrefixRegion.cylinder("0")
+    quantum_positive = build_quantum_existence_law()
+    quantum_measurement = measure_quantum_primitive_law(quantum_positive)
     _require(
-        contact_measurement["present"]
-        and causal_measurement["present"]
-        and all(
-            not measure_generated_influence_package(
-                candidate, require_nonoverlap_contact=True
-            )["present"]
-            for candidate in (
-                disconnected_contact_package,
-                empty_schedule_package,
-                missing_intervention_package,
-                unchanged_response_package,
-            )
-        )
-        and not measure_generated_influence_package(
-            overlapping_influence_package, require_nonoverlap_contact=True
-        )["present"]
-        and measure_generated_influence_package(
-            overlapping_influence_package, require_nonoverlap_contact=False
-        )["present"],
-        "semantic generated-contact package/provenance gate",
+        quantum_measurement.valid
+        and quantum_measurement.coordinate == "HORIZONTAL-QUANTUM"
+        and quantum_measurement.residuals["division"]["completeness_residual"][
+            "nonzero_count"
+        ]
+        == 0
+        and quantum_measurement.residuals["division"][
+            "dilation_isometry_residual"
+        ]["nonzero_count"]
+        == 0,
+        "typed quantum positive/completeness/dilation failed",
     )
+    witnesses["quantum_positive"] = _v4_witness_record(
+        quantum_positive, quantum_measurement
+    )
+    checks.append("typed-quantum-positive-coordinate-and-unit-normalization")
 
-    capability_template = {
-        name: {"present": True}
-        for name in (
-            "raw_boolean_normalization",
-            "raw_atomlessness",
-            "boundary_gluing_package",
-            "nontrivial_vertical_horizontal_naturality",
-            "future_profile_complete",
-            "regional_congruence",
-            "post_quotient_atomlessness",
-            "comparison_selected",
-            "dynamic_locality",
-            "causal_order",
-            "generated_contact",
-            "law_selected",
-        )
-    }
-    capability_template["horizontal_process"] = {
-        "present": True,
-        "measurement": classical_measurement,
-        "process_coordinate": "HORIZONTAL-CLASSICAL",
-    }
-    capability_template["causal_order"] = {
-        "present": True,
-        "measurement": causal_measurement,
-    }
-    capability_template["generated_contact"] = {
-        "present": True,
-        "measurement": contact_measurement,
-    }
-    past_boundary = copy.deepcopy(capability_template)
-    past_boundary["future_profile_complete"]["present"] = False
-    missing_two_arrow = copy.deepcopy(capability_template)
-    missing_two_arrow["nontrivial_vertical_horizontal_naturality"]["present"] = False
-    _require(
-        classify_capability_census(capability_template)[0]
-        == "APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED"
-        and classify_capability_census(past_boundary)[0]
-        == "APR-BLOCKED-AT-FUTURE-PROFILE-COMPLETENESS",
-        "complete abstract boundary package did not move classifier beyond gluing",
+    quantum_history_faults = (
+        "free-gram-no-histories",
+        "different-root-history",
+        "different-frontier-history",
+        "nonpositive-state",
     )
-    _require(
-        classify_capability_census(missing_two_arrow)[0]
-        == "APR-BLOCKED-AT-TWO-ARROW-TYPING",
-        "two-arrow capability block is unreachable",
+    quantum_division_faults = (
+        "total-2I",
+        "nonunit-total",
+        "missing-flags",
+        "disconnected-recovery",
+        "no-nonidentity-continuation",
+        "nonclosed-continuation-semigroup",
+        "different-cut-arrows",
+        "arbitrary-equal-payload",
     )
-    literal_process_bypass = copy.deepcopy(capability_template)
-    literal_process_bypass["horizontal_process"] = {"present": True}
-    literal_causal_bypass = copy.deepcopy(capability_template)
-    literal_causal_bypass["causal_order"] = {"present": True}
-    _require(
-        classify_capability_census(literal_process_bypass)[0]
-        == "APR-BLOCKED-AT-TWO-ARROW-TYPING"
-        and classify_capability_census(literal_causal_bypass)[0]
-        == "APR-DYNAMIC-REGIONAL-REFERENT-CONSTRUCTED-BUT-CAUSAL-ORDER-PRICED",
-        "capability literal bypassed the semantic process/causal package",
+    quantum_interference_faults = (
+        "zero-cross",
+        "no-probability-difference",
+        "transpose-phase-control",
     )
-    missing_boundary = copy.deepcopy(capability_template)
-    missing_boundary["boundary_gluing_package"] = {
-        "present": False,
-        "component_evidence": {
-            "adaptive_frontier_factory": True,
-            "all_boundary_identities": True,
-            "tensor_factory": False,
-            "filling_to_process_assignment": True,
-            "regional_overlap_selector": True,
-        },
-    }
-    _require(
-        classify_capability_census(missing_boundary)[0]
-        == "APR-BLOCKED-AT-BOUNDARY-GLUING",
-        "missing boundary/gluing package did not block",
-    )
-    missing_normalization = copy.deepcopy(capability_template)
-    missing_normalization["raw_boolean_normalization"]["present"] = False
-    missing_atomlessness = copy.deepcopy(capability_template)
-    missing_atomlessness["raw_atomlessness"]["present"] = False
-    _require(
-        classify_capability_census(missing_normalization)[0] == "APR-INCONSISTENT"
-        and classify_capability_census(missing_atomlessness)[0]
-        == "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA",
-        "earlier capability failures did not take precedence",
-    )
-    contact_only_missing = copy.deepcopy(capability_template)
-    contact_only_missing["generated_contact"] = {
-        "present": False,
-        "measurement": {
-            "present": False,
-            "role": "generated_contact",
-            "missing": ["generated contact"],
-        },
-    }
-    contact_primary, contact_walls = classify_capability_census(contact_only_missing)
-    _require(
-        contact_primary
-        == "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED"
-        and contact_walls == ["missing generated_contact"],
-        "generated-contact-only gate did not return the exact law-unselected word",
-    )
-    checks.append("result-neutral-capability-classifier-both-directions")
-
-    boundary_base: dict[str, object] = {
-        "predictive_boundaries": {
-            "labels": ["left", "right"],
-            "future_profile": {
-                "matrix": {"shape": [1, 2], "rows": [["1", "0"]]}
-            },
-            "label_partitions": [],
-            "presentations": [],
-            "basis_changes": [],
-            "future_extensions": [],
-        }
-    }
-    declared_boundary = score_boundaries(boundary_base, ProvenanceDAG())
-    sufficient_boundary_data = copy.deepcopy(boundary_base)
-    sufficient_section = sufficient_boundary_data["predictive_boundaries"]
-    assert isinstance(sufficient_section, MutableMapping)
-    sufficient_section["generated_future_profile_system"] = {
-        "active_law_root": "synthetic-root",
-        "future_effect_compiler": "synthetic-compiler",
-        "completeness_proof": "synthetic-proof",
-        "factorization_proof": "synthetic-proof",
-    }
-    sufficient_boundary = score_boundaries(
-        sufficient_boundary_data, ProvenanceDAG()
-    )
-    minimal_boundary_data = copy.deepcopy(sufficient_boundary_data)
-    minimal_section = minimal_boundary_data["predictive_boundaries"]
-    assert isinstance(minimal_section, MutableMapping)
-    generated_system = minimal_section["generated_future_profile_system"]
-    assert isinstance(generated_system, MutableMapping)
-    generated_system.update(
-        {
-            "minimality_proof": "synthetic-proof",
-            "natural_isomorphism_rule": "synthetic-rule",
-        }
-    )
-    minimal_boundary = score_boundaries(minimal_boundary_data, ProvenanceDAG())
-    _require(
-        declared_boundary["boundary_coordinate"] == "DECLARED"
-        and sufficient_boundary["boundary_coordinate"] == "SUFFICIENT"
-        and minimal_boundary["boundary_coordinate"] == "MINIMAL-AT-CATALOGUE",
-        "predictive-boundary coordinate is not interface-detected",
-    )
-    checks.append("result-neutral-boundary-coordinate-detection")
-
-    l5 = conjugation_deletion_control()
-    _require(l5["pre_closed"] and not l5["post_closed"], "L5 deletion did not break closure")
-    finite_replacement_fixture = {
-        "prefix_controls": {
-            "regions": [
-                {"id": "target", "antichain": ["00"]},
-                {"id": "sibling", "antichain": ["01"]},
-                {"id": "exterior", "antichain": ["1"]},
-            ]
-        },
-        "regional_question_process": {
-            "replacement_primitives": [
-                {
-                    "id": "swap-sibling",
-                    "operation": "swap_children",
-                    "support_region_id": "sibling",
-                },
-                {
-                    "id": "swap-exterior",
-                    "operation": "swap_children",
-                    "support_region_id": "exterior",
-                },
-            ],
-            "changed_object_rows": [
-                {
-                    "id": "control",
-                    "target_region_id": "target",
-                    "restricted_replacement_ids": [
-                        "swap-sibling",
-                        "swap-exterior",
-                    ],
-                }
-            ],
-        },
-    }
-    l2 = l2_generator_deletion_control(finite_replacement_fixture)
-    l4 = l4_transitivity_deletion_control()
-    _require(
-        l2["pre_sha256"] != l2["post_sha256"]
-        and l2["measurement_before"]["exterior_orbit_count"]
-        != l2["measurement_after"]["exterior_orbit_count"]
-        and l2["measurement_before"]["fixed_effect_dimension"]
-        != l2["measurement_after"]["fixed_effect_dimension"],
-        "L2 serialized generator deletion did not move orbit/fixed space",
-    )
-    _require(
-        l4["pre_sha256"] != l4["post_sha256"]
-        and l4["measurement_before"]["exterior_orbit_count"] == 1
-        and l4["measurement_after"]["exterior_orbit_count"] >= 2
-        and l4["measurement_before"]["fixed_effect_dimension"]
-        != l4["measurement_after"]["fixed_effect_dimension"],
-        "L4 serialized multiple-orbit family did not move transitivity/fixed space",
-    )
-    profile_controls = profile_collapse_controls(
-        {"zero": PrefixRegion.zero(), "left": PrefixRegion.cylinder("0"), "right": PrefixRegion.cylinder("1")}
-    )
-    _require(
-        len(profile_controls["zero_classes"]) == 1
-        and len(profile_controls["constant_classes"]) == 1,
-        "M13 actual quotient laws did not collapse",
-    )
-    oracle = oracle_family_controls(
-        {
-            "left": PrefixRegion.cylinder("0"),
-            "right": PrefixRegion.cylinder("1"),
-            "left-left": PrefixRegion.cylinder("00"),
-        }
-    )
-    _require(
-        not oracle["raw_syntax_copy"]["canonical_reduction_test"][
-            "agrees_on_same_canonical_region"
-        ]
-        and oracle["raw_syntax_copy"]["fresh_region_test"]["accepted"]
-        and not oracle["raw_syntax_copy"]["Boolean_relabel_test"][
-            "agrees_after_relabel"
-        ]
-        and not oracle["raw_syntax_copy"]["refinement_test"]["invariant"]
-        and not oracle["identifier_hash_copy"]["fresh_id_clone_test"][
-            "agrees_on_same_canonical_region"
-        ]
-        and not oracle["identifier_hash_copy"]["fresh_region_test"][
-            "returns_canonical_region"
-        ]
-        and not oracle["identifier_hash_copy"]["Boolean_relabel_test"][
-            "returns_relabeled_region"
-        ]
-        and oracle["identifier_hash_copy"]["refinement_test"][
-            "identifier_output_equal"
-        ]
-        and not oracle["identifier_hash_copy"]["refinement_test"][
-            "returns_canonical_region"
-        ]
-        and oracle["finite_depth_whitelist"]["accepts_registered"]
-        and oracle["finite_depth_whitelist"]["Boolean_relabel_test"]["accepted"]
-        and oracle["finite_depth_whitelist"]["refinement_test"]["accepted"]
-        and oracle["finite_depth_whitelist"]["payload_sha256"]
-        == canonical_sha256(oracle["finite_depth_whitelist"]["payload"])
-        and not oracle["finite_depth_whitelist"]["fresh_region_test"]["accepted"]
-        and oracle["finite_depth_whitelist"]["fresh_region_test"]["region"]
-        == PrefixRegion.cylinder("000"),
-        "M15 actual oracle family did not expose all three wrong implementations",
-    )
-    branch_mutants = branch_process_mutant_controls(PrefixRegion.cylinder("0"))
-    _require(
-        branch_mutants["baseline_measurement"]["all_ordinary_gates"]
-        and all(
-            not row["measurement"]["all_ordinary_gates"]
-            for row in branch_mutants["variants"].values()
-        ),
-        "M33 branch/process mutations did not traverse ordinary gates",
-    )
-    overwrite = overwrite_record_family_control(2)
-    _require(
-        overwrite["lost_reader_distinctions"] and len(overwrite["collisions"]) == 2,
-        "P3 actual overwrite did not collapse generated records",
-    )
-    first = QMatrix.from_rows(((1,), (0,), (0,)))
-    second = QMatrix.from_rows(((0,), (1,), (0,)))
-    _require(
-        qrank(first) == qrank(second)
-        and qsubspace_inclusion_residual(first, second) == 1
-        and qsubspace_inclusion_residual(second, first) == 1,
-        "M14 equal-rank unequal-subspace residuals",
-    )
-    redundant_operations = {
-        "write_two": {
-            "id": "write_two",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["source", "source", "source"],
-        },
-        "erase_first": {
-            "id": "erase_first",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["source", "0", "flag1"],
-        },
-        "erase_both": {
-            "id": "erase_both",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["source", "0", "0"],
-        },
-        "read_second": {
-            "id": "read_second",
-            "input_fields": ["source", "flag0", "flag1"],
-            "output_fields": ["flag1"],
-        },
-    }
-    one_copy = _word_recovery_signature(
-        redundant_operations, ["write_two", "erase_first", "read_second"]
-    )
-    both_copies = _word_recovery_signature(
-        redundant_operations, ["write_two", "erase_both", "read_second"]
-    )
-    _require(
-        one_copy["recovers_source_for_all_carrier_inputs"]
-        and not both_copies["recovers_source_for_all_carrier_inputs"],
-        "M24 redundant-copy recovery control",
-    )
-    checks.append("repaired-analytical-mutant-constructors")
-
-    descriptor_baseline = {
-        "strict_primary": "APR-BLOCKED-AT-BOUNDARY-GLUING",
-        "capability_census": {
-            name: {"present": False, "witness": "synthetic absence"}
-            for name, _ in UNAVAILABLE_MUTANT_CAPABILITY.values()
-        },
-        "law_roots": scoped_a,
-    }
-    descriptor_source = {"root": {"value": 1}}
-    descriptor_after = {"root": {"value": 2}}
-    descriptor_result: dict[str, object] = {
-        "status": "RECOMPUTED",
-        "transformation_modes": ["synthetic"],
-        "evidence": {"measurement": [1, 2]},
-    }
-    finalized = _finalize_transformation_row(
-        "G6",
-        descriptor_source,
-        descriptor_after,
-        MutationOptions(mutant_id="G6"),
-        descriptor_baseline,
-        descriptor_result,
-    )
-    _require(
-        finalized["classification"] == "SEMANTIC-MUTATION"
-        and finalized["mutation_descriptor"]["exact_changes"][0]["old"] == 1
-        and finalized["mutation_descriptor"]["exact_changes"][0]["new"] == 2,
-        "machine-reconstructible mutation descriptor",
-    )
-    for unavailable_id in sorted(UNAVAILABLE_MUTANT_CAPABILITY):
-        unavailable_result: dict[str, object] = {"status": "UNAVAILABLE"}
-        unavailable = _finalize_transformation_row(
-            unavailable_id,
-            descriptor_source,
-            descriptor_source,
-            MutationOptions(mutant_id=unavailable_id),
-            descriptor_baseline,
-            unavailable_result,
-        )
+    quantum_drop_rows: dict[str, object] = {}
+    for fault_name in quantum_history_faults:
+        primitive = build_quantum_existence_law(fault_name)
+        measurement = measure_quantum_primitive_law(primitive)
         _require(
-            unavailable["classification"] == "UNAVAILABLE"
-            and unavailable["mutation_descriptor"][
-                "capability_census_witness"
-            ]["present"]
-            is False,
-            f"{unavailable_id} descriptor lacks computed absence witness",
+            not measurement.valid
+            and measurement.coordinate == "HORIZONTAL-CLASSICAL",
+            f"quantum history fault survived: {fault_name}",
         )
-    provenance_payload = {"screen": (Fraction(1), Fraction(2))}
-    pre_envelope = {
-        "scientific_payload": provenance_payload,
-        "edges": [("claim", "root", "typed-by")],
+        quantum_drop_rows[fault_name] = _v4_witness_record(primitive, measurement)
+    negative_free = build_quantum_existence_law("negative-free-gram")
+    negative_free_measurement = measure_quantum_primitive_law(negative_free)
+    _require(
+        negative_free_measurement.valid
+        and negative_free_measurement.residuals["gram_operator_proof"][
+            "free_gram_ignored"
+        ],
+        "free negative Gram was consumed instead of ignored",
+    )
+    quantum_drop_rows["negative-free-gram-ignored"] = _v4_witness_record(
+        negative_free, negative_free_measurement
+    )
+    checks.append("typed-quantum-history-gram-and-state-drops")
+
+    for fault_name in quantum_division_faults:
+        primitive = build_quantum_existence_law(fault_name)
+        measurement = measure_quantum_primitive_law(primitive)
+        _require(not measurement.valid, f"quantum division fault survived: {fault_name}")
+        quantum_drop_rows[fault_name] = _v4_witness_record(primitive, measurement)
+    checks.append("typed-quantum-division-flag-and-cut-drops")
+
+    for fault_name in quantum_interference_faults:
+        primitive = build_quantum_existence_law(fault_name)
+        measurement = measure_quantum_primitive_law(primitive)
+        _require(
+            not measurement.valid,
+            f"quantum interference/phase fault survived: {fault_name}",
+        )
+        quantum_drop_rows[fault_name] = _v4_witness_record(primitive, measurement)
+    _require(
+        quantum_measurement.residuals["interference"]["probability_difference"]
+        == GONE / GaussianRational(2)
+        and quantum_measurement.residuals["gram_operator_proof"][
+            "operator_identity"
+        ]["nonzero_count"]
+        == 0
+        and quantum_measurement.residuals["phase_conjugation_control"][
+            "P_adjoint_P_residual"
+        ]["nonzero_count"]
+        == 0
+        and quantum_measurement.residuals["phase_conjugation_control"][
+            "P_transpose_P_residual"
+        ]["nonzero_count"]
+        > 0,
+        "quantum interference/conjugation controls were not load-bearing",
+    )
+    witnesses["quantum_drops"] = quantum_drop_rows
+    checks.append("typed-quantum-interference-phase-conjugation-controls")
+
+    causal_positive = build_influence_existence_law(contact=False)
+    causal_measurement = measure_influence_primitive_law(causal_positive)
+    causal_faults = (
+        "identical-alternatives",
+        "unused-alternative",
+        "reader-before",
+        "supplied-tables",
+        "noncomposable-carrier",
+        "disconnected-root",
+        "provenance-only",
+    )
+    causal_drop_rows: dict[str, object] = {}
+    for fault_name in causal_faults:
+        primitive = build_influence_existence_law(contact=False, fault=fault_name)
+        measurement = measure_influence_primitive_law(primitive)
+        _require(not measurement.present, f"causal fault survived: {fault_name}")
+        causal_drop_rows[fault_name] = _v4_witness_record(primitive, measurement)
+    _require(
+        causal_measurement.present
+        and causal_measurement.role == "causal_order"
+        and len({canonical_sha256(row) for _name, row in causal_measurement.responses})
+        == 2,
+        "generated causal-order positive failed",
+    )
+    witnesses["causal_positive"] = _v4_witness_record(
+        causal_positive, causal_measurement
+    )
+    witnesses["causal_drops"] = causal_drop_rows
+    checks.append("generated-causal-order-positive-and-drops")
+
+    contact_positive = build_influence_existence_law(contact=True)
+    contact_measurement = measure_influence_primitive_law(contact_positive)
+    _require(
+        contact_measurement.present
+        and contact_measurement.role == "generated_contact"
+        and contact_measurement.responses[0][1]
+        == QMatrix.from_rows(((1,), (0,)))
+        and contact_measurement.responses[1][1]
+        == QMatrix.from_rows(((0,), (1,)))
+        and contact_measurement.residuals["generated_contact"][
+            "target_reader_factorization_residual"
+        ]["nonzero_count"]
+        == 0,
+        "CNOT target-reader contact chain failed",
+    )
+    witnesses["contact_positive"] = _v4_witness_record(
+        contact_positive, contact_measurement
+    )
+    checks.append("generated-contact-cnot-target-reader-positive")
+
+    contact_faults = (
+        "identical-alternatives",
+        "unused-alternative",
+        "reader-before",
+        "supplied-tables",
+        "noncomposable-carrier",
+        "disconnected-root",
+        "overlapping-or-labeled-supports",
+        "target-acting-intervention",
+        "source-consuming-reader",
+        "identity-propagation",
+        "provenance-only",
+    )
+    contact_drop_rows: dict[str, object] = {}
+    for fault_name in contact_faults:
+        primitive = build_influence_existence_law(contact=True, fault=fault_name)
+        measurement = measure_influence_primitive_law(primitive)
+        _require(not measurement.present, f"contact fault survived: {fault_name}")
+        contact_drop_rows[fault_name] = _v4_witness_record(primitive, measurement)
+    _require(
+        not measure_generated_influence_package(
+            causal_positive, require_nonoverlap_contact=True
+        )["present"]
+        and not measure_generated_influence_package(
+            contact_positive, require_nonoverlap_contact=False
+        )["present"],
+        "causal order aliased generated contact",
+    )
+    witnesses["contact_drops"] = contact_drop_rows
+    checks.append("generated-contact-locality-propagation-and-provenance-drops")
+
+    capability_positive = build_capability_primitive_law()
+    capability_measurement = classify_primitive_law(capability_positive)
+    compiler_measurement = capability_measurement.measurements["compiler"]
+    _require(
+        isinstance(compiler_measurement, CompilerLawMeasurement)
+        and compiler_measurement.normalization_valid
+        and compiler_measurement.raw_atomless_valid
+        and compiler_measurement.future_complete
+        and compiler_measurement.residuals["heldout_future"]["not_in_seed_list"],
+        "uniform compiler normalization/atomlessness/heldout failed",
+    )
+    witnesses["capability_positive"] = _v4_witness_record(
+        capability_positive, capability_measurement
+    )
+    checks.append("primitive-compiler-normalization-atomlessness-heldout")
+
+    classifier_drop_expectations = {
+        "missing-normalization": "APR-INCONSISTENT",
+        "missing-raw-atomlessness": "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA",
+        "missing-markov-selector": "APR-BLOCKED-AT-BOUNDARY-GLUING",
+        "both-markov-survive": "APR-BLOCKED-AT-BOUNDARY-GLUING",
+        "extra-overlap-candidate": "APR-BLOCKED-AT-BOUNDARY-GLUING",
+        "nonuniform-shared-marginals": "APR-BLOCKED-AT-BOUNDARY-GLUING",
+        "missing-classical-witness": "APR-BLOCKED-AT-TWO-ARROW-TYPING",
+        "seed-whitelist": "APR-BLOCKED-AT-FUTURE-PROFILE-COMPLETENESS",
+        "scalar-volume-noncongruence": "APR-BLOCKED-AT-REGIONAL-CONGRUENCE",
+        "ultrafilter-atomic-quotient": "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA",
+        "altered-comparison-permutation": "APR-ATOMLESS-KINEMATICS-CONSTRUCTED-COMPARISON-PRICED",
+        "negative-comparison-transition": "APR-ATOMLESS-KINEMATICS-CONSTRUCTED-COMPARISON-PRICED",
+        "nonstate-comparison-calibration": "APR-ATOMLESS-KINEMATICS-CONSTRUCTED-COMPARISON-PRICED",
+        "duplicate-comparison-cut": "APR-ATOMLESS-KINEMATICS-CONSTRUCTED-COMPARISON-PRICED",
+        "delete-exterior-replacement": "APR-COMPARISON-QUOTIENT-CONSTRUCTED-BUT-DYNAMICAL-LOCALITY-FAILS",
+        "merge-exterior-replacements": "APR-COMPARISON-QUOTIENT-CONSTRUCTED-BUT-DYNAMICAL-LOCALITY-FAILS",
+        "disconnected-byte-identical-transition": "APR-BLOCKED-AT-BOUNDARY-GLUING",
+        "missing-causal-order": "APR-DYNAMIC-REGIONAL-REFERENT-CONSTRUCTED-BUT-CAUSAL-ORDER-PRICED",
+        "missing-generated-contact": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
+        "zero-zero-residual-candidates": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
+        "two-zero-residual-candidates": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
+        "candidate-missing-component-reference": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
+        "negative-candidate-transition": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
+        "nonstate-law-calibration": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
+        "empty-candidate-schema": "APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED",
     }
-    post_envelope = {"scientific_payload": provenance_payload, "edges": []}
-    m35_result: dict[str, object] = {
-        "status": "RECOMPUTED-SPECIAL-CONTROL",
-        "transformation_modes": ["disconnected_provenance"],
-        "evidence": {
-            "scientific_payload_sha256": canonical_sha256(provenance_payload),
-            "pre_provenance_envelope": pre_envelope,
-            "post_provenance_envelope": post_envelope,
-            "pre_envelope_sha256": canonical_sha256(pre_envelope),
-            "post_envelope_sha256": canonical_sha256(post_envelope),
-            "deleted_typed_edge": ("claim", "root", "typed-by"),
-            "pre_reachability": provenance_before,
-            "post_reachability": provenance_after,
-        },
+    classifier_drop_rows: dict[str, object] = {}
+    classifier_drop_measurements: dict[str, PrimitiveClassification] = {}
+    for fault_name, expected_primary in classifier_drop_expectations.items():
+        primitive = build_capability_primitive_law(fault_name)
+        measurement = classify_primitive_law(primitive)
+        _require(
+            measurement.primary == expected_primary,
+            f"classifier drop {fault_name} gave {measurement.primary}",
+        )
+        classifier_drop_rows[fault_name] = _v4_witness_record(
+            primitive, measurement
+        )
+        classifier_drop_measurements[fault_name] = measurement
+    overlap_positive = capability_measurement.measurements[
+        "overlap_simultaneous_gluing_diagnostic"
+    ]
+    _require(
+        isinstance(overlap_positive, OverlapLawMeasurement)
+        and overlap_positive.valid
+        and overlap_positive.selected_candidate_id == "uniform-independent"
+        and len(
+            overlap_positive.residuals["zero_markov_residual_candidates"]
+        )
+        == 1,
+        "Markov overlap selector did not select uniquely by cell residuals",
+    )
+    checks.append("primitive-overlap-markov-selector-drops")
+
+    _require(
+        classifier_drop_measurements["scalar-volume-noncongruence"].primary
+        == "APR-BLOCKED-AT-REGIONAL-CONGRUENCE"
+        and classifier_drop_measurements["ultrafilter-atomic-quotient"].primary
+        == "APR-BLOCKED-AT-ATOMLESS-REGION-ALGEBRA"
+        and classifier_drop_measurements["altered-comparison-permutation"].primary
+        == "APR-ATOMLESS-KINEMATICS-CONSTRUCTED-COMPARISON-PRICED",
+        "congruence/quotient/comparison precedence moved",
+    )
+    checks.append("primitive-congruence-quotient-comparison-drops")
+
+    locality_positive = capability_measurement.measurements["locality"]
+    _require(
+        isinstance(locality_positive, LocalityLawMeasurement)
+        and locality_positive.valid
+        and locality_positive.residuals["inclusions"][
+            "strict_inclusions_and_noninclusions"
+        ],
+        "generated Kin/Dyn locality ladder failed",
+    )
+    checks.append("primitive-locality-generated-space-drops")
+
+    dependency_positive = capability_measurement.measurements["dependency_graph"]
+    _require(
+        dependency_positive["valid"]
+        and dependency_positive["connected"]
+        and not classifier_drop_measurements[
+            "disconnected-byte-identical-transition"
+        ].census.dependency_graph["connected"],
+        "connected consumed-ID graph failed to reject cloned transition ID",
+    )
+    forgery_refusals: list[dict[str, object]] = []
+    for forged in (
+        {"present": True, "valid": True, "law_selected": True},
+        ForgedCapabilityCensus(
+            True, True, "APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED"
+        ),
+    ):
+        refused = False
+        reason = ""
+        try:
+            classify_primitive_law(forged)
+        except ScoreRefusal as exc:
+            refused = True
+            reason = str(exc)
+        _require(refused, "forged primitive census reached classifier")
+        forgery_refusals.append(
+            {
+                "forged_payload": (
+                    forged.to_data() if hasattr(forged, "to_data") else forged
+                ),
+                "forged_payload_sha256": canonical_sha256(
+                    forged.to_data() if hasattr(forged, "to_data") else forged
+                ),
+                "refused": refused,
+                "reason": reason,
+            }
+        )
+    bare_census_refused = False
+    try:
+        classify_capability_census({"raw_boolean_normalization": {"present": True}})
+    except ScoreRefusal:
+        bare_census_refused = True
+    _require(bare_census_refused, "plain mapping entered legacy census classifier")
+    witnesses["classifier_forgery_refusals"] = forgery_refusals
+    checks.append("primitive-dependency-graph-and-forgery-refusals")
+
+    _require(
+        capability_measurement.primary
+        == "APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED"
+        and classifier_drop_measurements["missing-generated-contact"].walls
+        == ("missing generated_contact",)
+        and classifier_drop_measurements[
+            "zero-zero-residual-candidates"
+        ].census.law_selection["zero_residual_survivors"]
+        == (),
+        "law selection or generated-contact-only primary failed",
+    )
+    witnesses["classifier_drops"] = classifier_drop_rows
+    checks.append("primitive-law-selection-and-contact-only-primary")
+
+    ontology_rows: dict[str, object] = {}
+    observed_roles: list[str] = []
+    for level in ONTOLOGY_ROLES:
+        primitive = build_ontology_existence_law(level)
+        measurement = measure_ontology_primitive_law(primitive)
+        observed_roles.append(measurement.role)
+        ontology_rows[level] = _v4_witness_record(primitive, measurement)
+    _require(
+        tuple(observed_roles) == ONTOLOGY_ROLES,
+        f"ontology ladder not reachable: {observed_roles}",
+    )
+    ontology_demotion_expectations = {
+        "missing-conditioning": "STATIC-RESPONSE",
+        "missing-writer": "FIXED-ALGEBRA-CONDITIONING",
+        "missing-reader": "FIXED-ALGEBRA-CONDITIONING",
+        "missing-continuation": "FIXED-ALGEBRA-CONDITIONING",
+        "nonclosed-continuation-semigroup": "FIXED-ALGEBRA-CONDITIONING",
+        "missing-rewrite": "RECORD-WRITING-ON-FIXED-ALGEBRA",
+        "target-specific-compiler": "RECORD-WRITING-ON-FIXED-ALGEBRA",
     }
-    m35 = _finalize_transformation_row(
-        "M35",
-        descriptor_source,
-        descriptor_source,
-        MutationOptions(mutant_id="M35"),
-        descriptor_baseline,
-        m35_result,
+    ontology_drop_rows: dict[str, object] = {}
+    for fault_name, expected_role in ontology_demotion_expectations.items():
+        primitive = build_ontology_existence_law(
+            "REGION-REWRITING", fault=fault_name
+        )
+        measurement = measure_ontology_primitive_law(primitive)
+        _require(
+            measurement.role == expected_role,
+            f"ontology deletion {fault_name} gave {measurement.role}",
+        )
+        ontology_drop_rows[fault_name] = _v4_witness_record(
+            primitive, measurement
+        )
+    checks.append("ontology-role-ladder-and-load-bearing-demotions")
+
+    ontology_attack_expectations = {
+        "identity-writer-label": "FIXED-ALGEBRA-CONDITIONING",
+        "changed-table-no-rewrite": "RECORD-WRITING-ON-FIXED-ALGEBRA",
+        "identity-rewrite-label": "RECORD-WRITING-ON-FIXED-ALGEBRA",
+    }
+    for fault_name, expected_role in ontology_attack_expectations.items():
+        primitive = build_ontology_existence_law(
+            "REGION-REWRITING", fault=fault_name
+        )
+        measurement = measure_ontology_primitive_law(primitive)
+        _require(
+            measurement.role == expected_role,
+            f"ontology forged action {fault_name} promoted",
+        )
+        ontology_drop_rows[fault_name] = _v4_witness_record(
+            primitive, measurement
+        )
+    candidate_a = build_ontology_existence_law(
+        "REGION-REWRITING", candidate="POSTULATED-CANDIDATE-RELATIONAL-WEB"
+    )
+    candidate_b = build_ontology_existence_law(
+        "REGION-REWRITING", candidate="RENAMED-UNMEASURED-PROPOSAL"
+    )
+    candidate_none = build_ontology_existence_law("REGION-REWRITING")
+    candidate_measurements = tuple(
+        measure_ontology_primitive_law(row)
+        for row in (candidate_a, candidate_b, candidate_none)
     )
     _require(
-        m35["mutation_descriptor"]["pre_payload_sha256"]
-        != m35["mutation_descriptor"]["post_payload_sha256"]
-        and m35["mutation_descriptor"]["invariant_scientific_payload_sha256"]
-        == canonical_sha256(provenance_payload),
-        "M35 provenance envelope hashes are not reconstructible",
+        len({row.primitive_payload_sha256 for row in candidate_measurements}) == 3
+        and len({row.role for row in candidate_measurements}) == 1
+        and len(
+            {
+                canonical_sha256(row.residuals)
+                for row in candidate_measurements
+            }
+        )
+        == 1,
+        "ontology candidate changed measured coordinate/residuals",
     )
-    checks.append("transformation-descriptor-schema")
+    ontology_rows["candidate_invariance"] = tuple(
+        _v4_witness_record(primitive, measurement)
+        for primitive, measurement in zip(
+            (candidate_a, candidate_b, candidate_none), candidate_measurements
+        )
+    )
+    witnesses["ontology_positive_ladder"] = ontology_rows
+    witnesses["ontology_drops"] = ontology_drop_rows
+    checks.append("ontology-writer-rewrite-attacks-and-candidate-invariance")
 
-    _require(set(MUTANT_IDS) == set(
-        [f"M{index:02d}" for index in range(1, 36)]
-        + [f"P{index}" for index in range(1, 9)]
-        + [f"L{index}" for index in range(1, 7)]
-        + [f"G{index}" for index in range(1, 8)]
-    ), "mutant registry coverage")
-    _require(set(MUTANT_DESCRIPTIONS) == set(MUTANT_IDS), "mutant description coverage")
-    checks.append("mutant-registry-coverage")
-
+    exposure_payload = {
+        "blinding_status": BLINDING_STATUS,
+        "exposure_debt": EXPOSURE_DEBT,
+        "v4_source_frozen_before_v4_run": True,
+    }
+    validate_v4_exposure_fields(exposure_payload)
+    tampered_exposure = dict(exposure_payload)
+    tampered_exposure["blinding_status"] = "BLIND"
+    exposure_refused = False
+    try:
+        validate_v4_exposure_fields(tampered_exposure)
+    except ScoreRefusal:
+        exposure_refused = True
+    law_scope = (
+        "ISP's candidate ontology is one actual, law-sufficient relational "
+        "configuration; its missing fundamental dynamics is an indivisible "
+        "stochastic law between admissible division configurations; "
+        "Hilbert/history machinery is representational, and APR's AB/BC table "
+        "is only a simultaneous gluing diagnostic—not that law."
+    )
     _require(
-        STATIC_QUALIFIER
+        exposure_refused
+        and BLINDING_STATUS == "RESULT-KNOWN-BEFORE-V4-IMPLEMENTATION"
+        and STATIC_QUALIFIER
         == "APR-STATIC-RAW-PREFIX-SYNTAX-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT"
         and REGIONAL_SUPPORT_SCOPE
         == "finite regional-support controls only; regional-support coordinate unearned"
         and PREFIX_SYNTAX_SCOPE
         == "raw prefix-syntax atomlessness only; physical regional referent unconstructed",
-        "exact qualifier or scope strings",
+        "exact qualifier/scope/exposure fields changed",
     )
-    exposure_payload = {
-        "blinding_status": BLINDING_STATUS,
-        "exposure_debt": EXPOSURE_DEBT,
-        "v3_source_frozen_before_v3_run": True,
+    witnesses["scope_and_exposure"] = {
+        "artifact_fields": exposure_payload,
+        "static_qualifier": STATIC_QUALIFIER,
+        "regional_support_scope": REGIONAL_SUPPORT_SCOPE,
+        "prefix_syntax_scope": PREFIX_SYNTAX_SCOPE,
+        "candidate_law_scope": law_scope,
+        "internal_classical_role": "SCORER-REACHABILITY-CONTROL-NOT-CANDIDATE-LAW",
+        "overlap_role": "SIMULTANEOUS-GLUING-DIAGNOSTIC-NOT-TRANSITION-LAW",
     }
-    validate_v3_exposure_fields(exposure_payload)
-    synthetic_exposure_receipt = {
-        "strict_primary": "APR-BLOCKED-AT-BOUNDARY-GLUING",
-        "qualifiers": [STATIC_QUALIFIER],
-        "process": {"process_coordinate": "STATIC-RESPONSE-ONLY"},
-        "probes": {"completeness_scope": "FINITE-CATALOGUE"},
-        "quotients": {"regional_congruence": {"coordinate": "UNCONSTRUCTED"}},
-        "atomlessness": {"atomless_coordinate": "SYNTAX-ONLY"},
-        "locality": {"locality_coordinate": "FAIL"},
-        "comparisons": {"comparison_coordinate": "PRICED"},
-        "boundaries": {"boundary_coordinate": "DECLARED"},
-        "contact": {"contact_coordinate": "PRICED"},
-        "causality": {"causality_coordinate": "PRICED"},
-        "ontology_role": {"role": "STATIC-RESPONSE"},
-        "ontology_candidate": {
-            "candidate": "POSTULATED-CANDIDATE-RELATIONAL-WEB"
-        },
-        "law_selection": {"status": "UNSELECTED"},
-        "scope_walls": [REGIONAL_SUPPORT_SCOPE, PREFIX_SYNTAX_SCOPE],
-        "payload_sha256": "synthetic-receipt-hash",
-        **exposure_payload,
-    }
-    exposure_transcript = transcript_from_receipt(synthetic_exposure_receipt)
-    tampered_exposure = dict(exposure_payload)
-    tampered_exposure["blinding_status"] = "BLIND"
-    tamper_refused = False
-    try:
-        validate_v3_exposure_fields(tampered_exposure)
-    except ScoreRefusal:
-        tamper_refused = True
-    _require(
-        tamper_refused
-        and all(
-            exposure_transcript[key] == value
-            for key, value in exposure_payload.items()
-        )
-        and BLINDING_STATUS == "RESULT-KNOWN-BEFORE-V3-IMPLEMENTATION"
-        and EXPOSURE_DEBT
-        == "PERMANENT-PREFREEZE-M01-AND-ALL-MUTANTS-EXPOSURE",
-        "v3 exposure integrity metadata",
-    )
-    checks.append("exact-qualifier-scope-and-exposure-fields")
+    checks.append("exact-qualifier-scope-exposure-and-law-scope")
 
-    with tempfile.TemporaryDirectory(prefix="apr-generic-selftest-") as raw_directory:
+    with tempfile.TemporaryDirectory(prefix="apr-v4-generic-publish-") as raw_directory:
         directory = Path(raw_directory)
         output = directory / "out.json"
         receipt = directory / "receipt.json"
         publish_pair(output, receipt, b"output\n", b"receipt\n")
-        _require(output.read_bytes() == b"output\n", "paired output bytes")
-        _require(receipt.read_bytes() == b"receipt\n", "paired receipt bytes")
         prior_output = output.read_bytes()
         prior_receipt = receipt.read_bytes()
-        refused_overwrite = False
+        overwrite_refused = False
         try:
-            publish_pair(output, directory / "new.json", b"x", b"y")
+            publish_pair(output, receipt, b"changed\n", b"changed\n")
         except ScoreRefusal:
-            refused_overwrite = True
-        _require(refused_overwrite, "overwrite refusal")
-        _require(output.read_bytes() == prior_output and receipt.read_bytes() == prior_receipt, "overwrite preservation")
-        receipt_only = directory / "receipt-only.json"
-        receipt_only.write_bytes(b"existing\n")
-        absent_output = directory / "absent-output.json"
-        refused_receipt_only = False
-        try:
-            publish_pair(absent_output, receipt_only, b"x", b"y")
-        except ScoreRefusal:
-            refused_receipt_only = True
+            overwrite_refused = True
         _require(
-            refused_receipt_only
-            and not absent_output.exists()
-            and receipt_only.read_bytes() == b"existing\n",
-            "receipt-only overwrite refusal",
-        )
-        refused_both = False
-        try:
-            publish_pair(output, receipt, b"x", b"y")
-        except ScoreRefusal:
-            refused_both = True
-        _require(
-            refused_both
+            overwrite_refused
             and output.read_bytes() == prior_output
             and receipt.read_bytes() == prior_receipt,
-            "both-existing overwrite refusal",
+            "transactional no-overwrite publish changed existing bytes",
         )
-        fail_output = directory / "fail-output.json"
-        fail_receipt = directory / "fail-receipt.json"
-        failed = False
-        try:
-            publish_pair(
-                fail_output,
-                fail_receipt,
-                b"x",
-                b"y",
-                fail_after_first_publish=True,
-            )
-        except ScoreRefusal:
-            failed = True
-        _require(failed and not fail_output.exists() and not fail_receipt.exists(), "paired rollback")
-    checks.append("transactional-no-overwrite-publish")
+    witnesses["publish_control"] = {
+        "first_output_sha256": sha256_bytes(b"output\n"),
+        "first_receipt_sha256": sha256_bytes(b"receipt\n"),
+        "overwrite_refused": True,
+    }
+    checks.append("machine-reconstructible-witnesses-and-transactional-publish")
 
+    _require(len(checks) == 27 and len(set(checks)) == 27, "v4 check registry")
+    witness_hash = canonical_sha256(witnesses)
     return {
-        "schema": "apr-generic-selftest-v1",
+        "schema": "apr-generic-selftest-v4",
         "scientific_fixture_evaluated": False,
         "check_count": len(checks),
         "checks": checks,
+        "semantic_witnesses": witnesses,
+        "semantic_witness_sha256": witness_hash,
         "status": "PASS",
     }
+
+
+def _require(condition: bool, message: str) -> None:
+    if not condition:
+        raise AssertionError(message)
+
+
+def run_selftests() -> dict[str, object]:
+    return run_v4_selftests()
 
 
 def parse_args(argv: Sequence[str]) -> argparse.Namespace:

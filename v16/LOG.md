@@ -3899,3 +3899,39 @@ This note is interpretive only. It changes no v4 scorer requirement, fixture,
 coordinate, primary, precedence, or ontology ceiling. Synthetic classical/
 quantum laws remain scorer controls and may not enter the APR scientific
 receipt. The candidate indivisible relational law remains unconstructed.
+
+## 2026-08-19 — APR V4 SCORER SOURCE FROZEN BEFORE V4 RUN (v16 LEDGER #175)
+
+`v16/code/apr_score.py` freezes at SHA-256
+`a7167e21e0a3e6b582acd8ebc8b7464476964cc09131a9721721a4dc99009e80`
+(13,998 lines). Its source-freeze note,
+`v16/note-apr-v4-scorer-freeze.md`, has SHA-256
+`b223da8b2a0755bcdbc04e55efb5665f74e2e0c7a687d27a06fc1a7e4c01d698`
+and records the exact semantic and exposure contract. No v4 `--run`,
+`--mutant`, `--mutants-all`, fixture import, or
+fixture evaluation occurred before these bytes froze; the v4 output and
+receipt paths remain absent.
+
+Repository and true off-tree/no-git self-tests are byte-identical and pass
+27/27 exact groups with `scientific_fixture_evaluated:false`. Their 3,912,631
+stdout bytes hash to
+`0e633936c47d5baf4c5349fac7f5a49e00da04c0848418ff87ad1a4f712721b5`;
+the semantic witness hashes to
+`2dd13cc3f2a8e0850ce09b764e147cf37130bdc32d1c93d336f3da932a25cc90`.
+All 206 embedded primitive/measurement payload hashes independently
+recompute with zero mismatches. An import-denial fixture sentinel remains
+untouched in the off-tree run, and the self-test call graph reaches none of
+the fixture, official, mutant, or scientific scoring functions.
+
+V4 now recognises exact frontier-typed stochastic arrows and instruments,
+recomputed composition/cuts/tensor/naturality, unit-normalised same-history
+quantum divisions and interference, intervention-through-reader influence,
+primitive-witness classifier rungs, and concrete same-law ontology maps.
+These are scorer-reachability controls only. They add no APR process,
+physical referent, causal structure, or law. The permanent v2 exposure debt
+remains explicit, so this is source-before-v4-run rather than pre-truth.
+
+The next authorized event is one transactional committed-byte run to the new
+v4 output/receipt paths, followed by root/alien/off-tree replay and the
+independent black-box verifier. Candidate drafting and panel review remain
+prohibited until that audit is green.

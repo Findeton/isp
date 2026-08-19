@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V4 SEMANTIC-REPAIR PIN FROZEN (v16 #173); SCORER IMPLEMENTATION AUTHORIZED**.
+Status: **V4 SCORER SOURCE FROZEN BEFORE V4 RUN (v16 #175); OFFICIAL RUN AUTHORIZED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -745,6 +745,18 @@ divisions. Barandes division events are not automatically durable records,
 his fixed nonrelational catalogue does not supply ISP's point-free referent,
 and RHL's decoherence functional remains a candidate representation rather
 than a proven weld to the missing law. All of those constructions remain open.
+
+The v4 scorer source freezes at #175 before any v4 fixture load. Its 27 exact
+fixture-free groups expose reconstructible classical, quantum, influence,
+classifier, dependency, law-selection, and ontology witnesses; all 206
+embedded primitive/measurement hashes independently reconcile. Repository
+and true off-tree/no-git runs are byte-identical under a fixture-import denial
+sentinel. These synthetic packages certify the scorer's positive paths only;
+they add no APR evidence and do not instantiate the missing indivisible
+relational law. The sole authorized next event is one committed-byte
+transactional run to new v4 paths, then independent black-box reconstruction.
+Candidate drafting and panel review remain prohibited until that audit is
+green.
 
 ## Successor register
 
