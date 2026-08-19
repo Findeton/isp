@@ -974,6 +974,16 @@ an instrumentation freeze only: no scientific rung is awarded, no fresh or
 official mode has run, and Stage B remains closed until at least two
 independent no-import post-freeze audits accept the #197 bytes.
 
+The first independent post-freeze repair audit freezes at #198.  The Physics /
+ontology seat authenticates #197, obtains byte-identical root, alien-CWD, and
+source-only off-tree replays, independently reconstructs the split theorem,
+the 72/42 quotient, the twelve representative branch-bound certificates, and
+the preserved exact process anchors, and kills a real final-byte S1 mutation
+plus S4, S6, S8--S11 and fresh branch/type controls.  It returns `ACCEPT` with
+no metric, geometry, gravity, or actualization promotion.  This is only the
+first of the two required reviews; Stage B remains closed pending the mutually
+blind Records/integrity report and joint adjudication.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

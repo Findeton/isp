@@ -4359,3 +4359,25 @@ The disposition is strictly `REPAIR-GREEN-UNREVIEWED`.  No
 output, receipt, verification note, paper, or Stage-B/C bundle exists.  Stage B
 remains blocked until the two required independent post-freeze source audits
 accept these exact bytes.  No scientific or ontology rung moves at #197.
+
+## 2026-08-19 — PAPER 13 STAGE-A REPAIR PHYSICS AUDIT FROZEN (v16 LEDGER #198)
+
+The mutually blind Physics / ontology report freezes as
+`v16/review-paper13-stageA-repair-physics.md`, SHA-256
+`f51d4213c2b440a54ea17d5c9d28ee078de16a9b57f03d9381cfdfb7ed5faaf2`.
+It authenticates commit #197, the source, v2 note, repair pin, and RUNBOOK;
+then reproduces byte-identical repository-root, alien-CWD, and true
+source-only off-tree/no-`.git` selftests.
+
+The seat independently reconstructs the exhaustive split fibers, exact 72/42
+contextual quotient, twelve branch-bound certificates, and the preserved
+`R/B/C/B2/K`, `527/175`, division, reciprocal, and matching-family anchors.  A
+real final-byte S1 mutation exits nonzero, and independently built S4, S6, S8,
+S9, S10, S11, and additional branch/type/merge controls all fail for their
+registered semantic reasons.  It finds no survivor, stale dependency, or
+source-identity collision.
+
+The verdict is `ACCEPT` for the bounded repair only.  The report explicitly
+keeps valuation, metric, curvature, continuum, gravity, GR, law selection, and
+actualization unconstructed or postulated.  Stage B remains prohibited because
+the second mutually blind report and joint adjudication are still required.
