@@ -583,7 +583,7 @@ terminal at this scoped negative.
 
 ## Paper 12 — APR: atomless predictive regions
 
-Status: **V3 REPRODUCIBLE BUT NONCERTIFIABLE (v16 #172); V4 PIN REQUIRED**.
+Status: **V4 SEMANTIC-REPAIR PIN FROZEN (v16 #173); SCORER IMPLEMENTATION AUTHORIZED**.
 
 APR is the separately pinned successor required by RHL. Its one question is
 whether a genuinely point-free, atomless physical regional referent can be
@@ -727,7 +727,13 @@ baseline/descriptor repair pass, but four mandatory semantic positive paths
 fail: classical and quantum process promotion, generated influence, and the
 record/rewrite ontology ladder still accept disconnected declared evidence.
 The robust boundary-gluing primary does not move. The only authorized next
-event is a separately frozen scorer-only semantic-repair pin; candidate
+event is the scorer-only v4 implementation frozen at #173: it must replace
+declared/copy evidence by exact typed maps, instruments, compositions,
+unit-normalized quantum divisions, intervention-through-reader influence,
+primitive-witness classifier rungs, and same-law ontology maps. During
+implementation only AST/static and fixture-free self-tests may run, including
+a true off-tree/no-fixture replay with reconstructible residuals. Source must
+freeze in a separate commit before any v4 fixture evaluation. Candidate
 drafting and panel review remain prohibited.
 
 ## Successor register

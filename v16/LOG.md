@@ -3850,3 +3850,29 @@ Independent reconstruction still returns
 support candidate prose or the panel. The next authorized event is a new
 scorer-only semantic-repair pin; no APR fixture, law, ontology, outcome word,
 or primary precedence may move.
+
+## 2026-08-19 — APR V4 TYPED SEMANTIC-REPAIR PIN FROZEN (v16 LEDGER #173)
+
+`v16/note-apr-v4-semantic-repair-pin.md`, SHA-256
+`3b0737e3f9a37966659f32a521f56df892cba8d9194530ea4560bc3bbc1d313d`,
+freezes the only authorized response to v3's four positive-path failures. Two
+independent pre-commit audits accept the exact bytes after correcting the
+contact carrier, instrument/arrow split, tensor associators, complex Gram
+conjugation, rational interference witness, comparison admissibility,
+nonvacuous locality lattice, connected consumed-ID dependency graph, and
+same-law ontology witnesses.
+
+V4 may change only `v16/code/apr_score.py` during implementation. Its
+fixture-free self-test must build exact typed stochastic maps and instruments,
+recomputed composites/cuts/tensor/naturality, unit-normalized same-law quantum
+divisions and interference, a two-factor intervention-propagation-reader
+contact chain, every classifier rung from primitive witnesses, and concrete
+record/rewrite ontology maps. Plain booleans, copied equations, hashes,
+labels, or provenance cannot promote. A true off-tree self-test with no
+fixture module must publish reconstructible witnesses and residuals.
+
+APR fixtures, law data, outcome precedence, the robust boundary-gluing
+primary, and v1--v3 artifacts remain immutable. Candidate and panel remain
+blocked. The next authorized event is scorer-only v4 implementation using
+AST/static and fixture-free self-tests; no `--run`, mutant, or fixture load may
+occur before a separate v4 source-freeze commit.
