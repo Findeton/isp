@@ -18,8 +18,8 @@ theory-selection result.
 
 ## Live state
 
-- `RFB` / Paper 10: **RESULT-NEUTRAL FIXTURE FROZEN; NO RESULT** through v16
-  ledger #132. RFB maps
+- `RFB` / Paper 10: **SCORER FROZEN BEFORE FIRST PHYSICAL RUN; NO RESULT**
+  through v16 ledger #133. RFB maps
   the record-feedback forcing boundary rather than proposing another preferred
   law. It separates process factorization, record implementation, and quantum
   representation; freezes the Barandes-compatible one-history/indivisible-law/
@@ -34,8 +34,10 @@ theory-selection result.
   The data-only fixture now freezes fourteen assumption toggles, eleven
   impose/drop cells, the `q=2,3,4` rows, three record modes, two-history
   reconvergence, predictive-resource controls, recovery grammars, and
-  fixed-factor locality. It contains no expected answer or verdict. No RFB
-  scorer, result, or candidate paper exists at this event.
+  fixed-factor locality. It contains no expected answer or verdict. The exact
+  scorer is now frozen with 49 ordered gates and 39 targeted mutants after
+  compilation and public-only self-test; it has not been run on the fixture.
+  No RFB result or candidate paper exists at this event.
 - `QSF` / Paper 9: **TERMINAL AT `QSF-METHOD-INCONCLUSIVE`** through v16 ledger
   #129. Three mutually blind seats independently preserved the cautious primary
   while correcting every arm's type. Record-indexed A0 is false; literal local

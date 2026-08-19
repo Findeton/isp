@@ -459,7 +459,7 @@ event; Paper 10 construction is not authorized by QSF itself.
 
 ## Paper 10 — RFB: the record-feedback forcing boundary
 
-Status: **RESULT-NEUTRAL FIXTURE FROZEN; NO RESULT (v16 #132)**.
+Status: **SCORER FROZEN BEFORE FIRST PHYSICAL RUN; NO RESULT (v16 #133)**.
 
 RFB asks which pieces of a lawful record-feedback dynamics follow from which
 named principles. It does not ask whether CRL or any other exposed toy is the
@@ -487,8 +487,10 @@ frozen after passing 9/9 algebra gates, 11/11 targeted mutant deaths, and a
 true off-tree replay. The separately frozen data-only fixture now binds the
 fourteen assumption toggles, eleven impose/drop cells, three dial rows, record
 modes, history cuts, predictive resources, recovery grammars, and locality
-controls without an expected answer. The scorer, result, and Paper 10 candidate
-remain absent.
+controls without an expected answer. The separately frozen exact scorer now
+registers 49 ordered gates and 39 targeted mutants. Only compilation,
+public-core self-test, CLI enumeration, and static exactness checks have run;
+the physical fixture has not. The result and Paper 10 candidate remain absent.
 
 ## Successor register
 

@@ -2824,3 +2824,19 @@ allowed result schema, and scope walls—no expected count, selected word,
 primary, verdict, or candidate prose. The physical scorer and all three result
 artifacts are absent. The scorer may now be constructed and committed, but it
 may not run against this fixture before that separate freeze event.
+
+## 2026-08-18 — RFB PHYSICAL SCORER FROZEN (v16 LEDGER #133)
+
+`v16/note-rfb-scorer-freeze.md` freezes `v16/code/rfb_score.py` at SHA-256
+`4a2c9590e1d64f9e40c6e5828d132b9b746aa8938e18aee95a484caabc8c87ff`
+before its first physical invocation. The source binds the committed core and
+fixture hashes and registers 49 ordered gates, 39 targeted mutants, audited
+source reads, exact transcript/receipt/paper seals, primary outcome
+reachability, and separate coordinates for division, microscopic process,
+representation, higher order, and record mode.
+
+Only compilation, a public-core/synthetic-truth-table self-test, CLI
+enumeration, unknown-argument refusal, and an AST no-float check have run. The
+scorer has not read the physical fixture through its normal path, and no RFB
+output, receipt, or Paper 10 candidate exists. The next event is the first
+physical run; any refusal must be frozen before a scorer repair.
