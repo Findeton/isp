@@ -3407,3 +3407,32 @@ The outcome `APR-BLOCKED-AT-REGIONAL-CONGRUENCE` is inserted after
 the future-profile-completeness block, and the receipt gains the coordinate
 `regional_quotient`. No positive physical-referent rung is reachable
 unless that coordinate is `CONGRUENCE`.
+
+## 2026-08-18 — APR PROCESS/LOCALITY PIN ADDENDUM FROZEN (v16 LEDGER #156)
+
+`v16/note-apr-pin-addendum-2.md` freezes the second pre-core
+correction. The exact overlap kernel
+`D(A,B)=mu(A meet B)` is a lawful static classical Gram response, but
+not a horizontal process: it has no typed successive fillings, cut
+composition, generated output instrument, exterior replacement, or record.
+
+APR now requires one typed process object with vertical passive maps,
+horizontal fillings, identity, two nonidentity compositions, disjoint tensor,
+refinement naturality, generated effects, stable future closure, independent
+exterior replacements, and writer/reader/eraser/spectator/overlap controls.
+The receipt separates linear-null, contextual-process, and regional-
+congruence quotients; static response, horizontal classical, and horizontal
+quantum process grades; regional-support from causal-dynamic locality; and
+DERIVED/OVERLAP-ONLY/PRICED/NULL contact.
+
+The all-probe faithfulness theorem must come from a uniform generated effect
+grammar. Otherwise it is complete tomography by postulate. The finite control
+equates `[00]` and `[01]` until probe `[00]` is appended. A
+serialization oracle, constant law, abstract-isomorphism substitute,
+finite-depth law, and static-D-with-composition-deleted mutant must refuse.
+
+The correct atomic quotient control is an ultrafilter character, and the
+Bernoulli `mu_p` family proves the valuation is unselected law data.
+The strict qualifier
+`APR-STATIC-ATOMLESS-RESPONSE-CONSTRUCTED-PROCESS-UNBUILT` is
+available; no static response can reach the dynamic-referent rungs.

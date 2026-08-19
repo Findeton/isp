@@ -636,6 +636,17 @@ complete-profile quotients with a universal factorization property, not
 literal deletion-minimal port lists. The new strict block is
 `APR-BLOCKED-AT-REGIONAL-CONGRUENCE`.
 
+APR pin addendum #156 further separates an atomless response pairing from an
+actual process. The static kernel `D(A,B)=mu(A meet B)` is a valid
+classical Gram response but cannot earn horizontal dynamics. A positive
+process rung now requires typed boundaries, vertical passive maps, horizontal
+fillings, exact two-cut composition, disjoint tensor, naturality, generated
+effects/records, stable future closure, and independently built exterior
+replacements in one object. Regional-support locality is distinct from
+causal-dynamic locality; contact and probe completeness are independent
+coordinates. The all-B probe family must be generated uniformly rather than
+adaptively supplied, and the valuation remains an unselected law family.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
