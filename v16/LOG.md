@@ -3711,3 +3711,26 @@ and shared-evidence links. M35 additionally carries distinct provenance-
 envelope hashes around an invariant scientific payload. Unavailable rows name
 the absent baseline interface and its computed capability witness. This closes
 the last auditability gap before repaired-scorer freeze; no v2 truth exists.
+
+## 2026-08-19 — APR REPAIRED SCORER FROZEN WITH PREFREEZE EXPOSURE (v16 LEDGER #167)
+
+The repaired `v16/code/apr_score.py` freezes at SHA-256
+`29834a15289ef64b6727a86a609bc5cbbf2b432420afc027b8f58617db7ea285`;
+`v16/note-apr-repaired-scorer-freeze.md`, SHA-256
+`cef4f4a74162065a96f5bcf14dd0f1bc4b786ab7bc4f3f19989fcf6f9b819f89`,
+records both the repair coverage and a mandatory process violation.
+
+During final CLI refusal testing, the worker mistakenly invoked stdout-only
+`--mutant M01` and `--mutants-all`. Both loaded the frozen fixture and exposed
+the baseline plus mutant results before the source commit. No official `--run`
+or v2 artifact occurred, and the worker stopped immediately with no
+post-exposure edit; the frozen bytes equal the exposed bytes. The scorer is
+therefore not described as pre-truth or mutually blind. The violation remains
+attached and forces independent black-box reconstruction before any candidate.
+
+On the exact frozen bytes, 21 generic suites pass with
+`scientific_fixture_evaluated:false`; AST/diff/source audits are clean; and a
+true off-tree/no-git Python-3.13 copy produces byte-identical self-test JSON.
+The next authorized event is the single committed-byte v2 run to new absent
+paths, followed by clean/off-tree replay and the independent descriptor-level
+verifier. No APR v2 result is frozen here.

@@ -705,8 +705,13 @@ frozen scorer revision and new, non-overwriting v2 artifacts. The repair pin
 is frozen at v16 #164, its capability/ontology guard addendum at #165, and
 its reconstructible-mutation evidence schema at #166;
 implementation of `v16/code/apr_score.py` against both contracts is now the
-sole authorized construction. No fixture,
-physical law, outcome ladder, or primary-precedence edit is authorized.
+sole authorized construction. The repaired bytes freeze at v16 #167 with a
+disclosed prefreeze fixture exposure: stdout-only mutant commands evaluated
+the fixture, but no v2 artifact or post-exposure edit occurred. The scorer is
+not pre-truth and requires independent black-box reconstruction. The next
+authorized event is one committed-byte run to new v2 paths, then clean/offtree
+replay and the independent verifier. No fixture, physical law, outcome ladder,
+or primary-precedence edit is authorized.
 
 ## Successor register
 
