@@ -581,6 +581,51 @@ Post-adjudication replay reproduces the frozen transcript and receipt
 byte-for-byte and confirms all immutable candidate/report bytes. Paper 11 is
 terminal at this scoped negative.
 
+## Paper 12 — APR: atomless predictive regions
+
+Status: **PIN FROZEN (v16 #154); construction authorized**.
+
+APR is the separately pinned successor required by RHL. Its one question is
+whether a genuinely point-free, atomless physical regional referent can be
+selected jointly with one compositional process law. It does not treat a
+locale, lattice, graph, or category as physical merely because it is
+point-free.
+
+The candidate ontology is one actual partial compatible web of durable
+relational facts. Regions are its bounded parts. Unrecorded alternatives are
+arguments of the law; actualization remains a postulate. Points, meshes,
+ticks, matrices, Hilbert spaces, history kernels, and Hamiltonians are
+representations. The exact finite-prefix Boolean algebra is an atomless
+existence model, not an ontic discretization.
+
+APR's central operation is the complete future-profile quotient. Candidate
+regional distinctions are physically identical when every licensed future
+filling and calibrated stable record treats them identically. The physical
+regional algebra is the faithful image of the resulting support functor, not
+the raw syntax. Atomlessness must survive this quotient: an explicit
+two-element quotient is the mandatory negative control.
+
+The unit formally types parthood, overlap, disjointness, contact, operational
+causal influence, structured-cospan boundary gluing, vertical passive
+refinement, horizontal physical extension, stable nulls, and minimal
+predictive boundaries. Dynamic locality is paired with support faithfulness so
+that a constant law cannot pass vacuously. Comparison maps are classified as
+DERIVED, NULL-QUOTIENT, PRICED, or INCONSISTENT; the RHL coherent screen
+`1 versus 1/2` is rebuilt as a mandatory discriminator.
+
+The outcome ladder runs from atomless-algebra and boundary/type blocks through
+physical-quotient, dynamic-locality, and causal-order rungs to the ceiling
+`APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED`. The serious
+pre-run expectation is
+`APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED`,
+possibly with comparison or causality priced. Sixteen hard kills and twelve
+drop controls bind ontology, completeness, comparison, gluing, constant-law,
+E-37, and no-smuggling claims.
+
+Paper 12 does not enter reciprocal backreaction, calibrated volume, continuum,
+metric, tangent transport, curvature, GR, QFT, particles, or empirical
+predictions. It supplies explicit input contracts for those successor units.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

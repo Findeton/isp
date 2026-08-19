@@ -289,3 +289,19 @@ Status words: OPEN, PARTIAL, REFUSED, TERMINAL.
     one object; no bounded Paper 11 repair can do that. A post-adjudication
     scorer replay is byte-identical, so the unit is terminal at this scoped
     negative rather than waiting on an integrity repair.
+34. **PINNED / ACTIVE — Can an atomless point-free regional referent be
+    selected jointly with one compositional law?** APR Paper 12 is frozen at
+    v16 #154. It must construct parthood, overlap, contact, typed boundary
+    gluing, passive refinement versus physical extension, complete future
+    profiles, stable nulls, minimal predictive boundaries, dynamic locality,
+    and operational causal influence. Candidate distinctions become physical
+    only in the faithful future-profile image. Atomlessness must be rechecked
+    after that quotient; an atomless syntax with an atomic two-element
+    quotient is the registered kill. Comparison maps are classified
+    DERIVED, NULL-QUOTIENT, PRICED, or INCONSISTENT, with RHL's exact coherent
+    screen `1 versus 1/2` mandatory. One partial compatible record web
+    is the ontology candidate; points, ticks, graphs, Hilbert/history objects,
+    and Hamiltonians remain representations; actualization remains a
+    postulate. Even the strongest APR result leaves the law weights,
+    reciprocal backreaction, continuum, metric, curvature, GR/QFT, particles,
+    and predictions to separately gated successors.

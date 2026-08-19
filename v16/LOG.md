@@ -3347,3 +3347,39 @@ any continuation requires a separately pinned successor with new causal-
 mereological, comparison, and joint-law data. The terminal note's ordinary
 SHA-256 is
 `cb37730d30112bf206ea151830e4b55bcffff07ecc1fc0bcd63bbb0be0baedb1`.
+
+## 2026-08-18 — APR PAPER 12 ATOMLESS-PREDICTIVE-REGION PIN FROZEN (v16 LEDGER #154)
+
+`v16/note-apr-pin.md` freezes the user-authorized successor to RHL
+before any APR core, fixture, scorer, result, candidate paper, or review
+protocol exists. APR asks whether an atomless point-free physical regional
+referent can be selected jointly with one compositional process law rather
+than supplied as decorative kinematics.
+
+The ontology is binding: one partial compatible web of durable relational
+facts may be actual; bounded parts are candidate regions; unrecorded
+alternatives are law arguments; ideal points, graphs, Hilbert objects,
+decoherence functionals, Hamiltonians, and receipt indices are
+representations; actualization remains a postulate. A finite prefix algebra is
+only an atomless existence representation. Physical atomlessness must be
+retested after the complete future-profile quotient.
+
+The pin constructs the required target types: parthood, overlap, disjointness,
+contact, operational causal influence, structured-cospan gluing, passive
+vertical refinement, physical horizontal extension, complete future profiles,
+stable nulls, minimal predictive boundaries, dynamic locality, and support
+faithfulness. Comparison maps receive exactly four possible diagnoses:
+DERIVED, NULL-QUOTIENT, PRICED, or INCONSISTENT. The exact RHL screen
+`1 versus 1/2` is a mandatory gate.
+
+The positive ceiling is
+`APR-JOINT-POINT-FREE-REGIONAL-LAW-CONSTRUCTED`; the serious
+pre-run expectation is the lower
+`APR-DYNAMIC-ATOMLESS-REGIONAL-REFERENT-CONSTRUCTED-LAW-UNSELECTED`.
+Sixteen hard kills and twelve drop controls make a constant law, atomic
+operational quotient, incomplete future catalogue, untyped comparison,
+decorative regional metadata, and premature metric/GR promotion refuse.
+
+Backreaction, continuum, metric, curvature, and GR are successor contracts,
+not Paper 12 claims. The unrelated v15 SCOUT-T working files are outside the
+whitelist and remain untouched.
