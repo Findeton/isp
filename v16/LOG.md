@@ -2860,3 +2860,20 @@ reproduces transcript, receipt, and paper exactly. The phase census is only the
 registered finite subgroup, predictive/recovery claims are finite, locality is
 fixed-factor, and no relational generative law is built. Hostile review and
 terminal promotion remain withheld.
+
+## 2026-08-18 — RFB PAPER 10 CANDIDATE VERIFICATION (v16 LEDGER #135)
+
+`v16/note-rfb-candidate-verification.md` verifies the committed candidate
+without changing it. A fresh post-commit generation and a true no-`.git` copy
+run from `/private/tmp` reproduce all three artifacts byte-for-byte. All 39
+mutants refuse at their assigned named gates without artifacts; self-test,
+unknown arguments, existing targets, target collisions, and a deleted-anchor
+control pass.
+
+An independent rational/combinatorial rebuild matches the writer counts,
+reader counts, two-history port contrast, hybrid probabilities, and predictive
+quotients in the sealed receipt. The candidate remains
+**RFB-FORCING-BOUNDARY-MAPPED** with `DIVISION-KERNEL-SUFFICIENT` and
+microscopic/representation `METHOD-INCONCLUSIVE`. This is verified
+green-unreviewed, not terminal; a separately frozen hostile protocol and panel
+are still required.
