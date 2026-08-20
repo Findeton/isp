@@ -6095,3 +6095,30 @@ gravity, GR, continuum, or QFT coordinate is promoted.
 The result vector is `GREEN-UNREVIEWED`. No code exists. The sole next event
 is a separately frozen mathematical hostile-review protocol; only semantic
 review and adjudication can authorize a later Rust pin.
+
+## 2026-08-20 — PAPER 13B MATHEMATICAL HOSTILE PROTOCOL (v16 LEDGER #253)
+
+The implementation-free semantic review protocol is frozen at
+`v16/note-paper13b-pointfree-gamma-math-review-protocol.md`, SHA-256
+`034fbe56a79a91860812bfbe4322e635a4a579f79f2b9b135877db2536e6a409`.
+
+It binds the immutable pin and mathematical-law commits, separates software
+conformance from scientific semantics, and assigns three mutually blind
+lenses: groupoid/referent, probability/intervention, and physics/ontology.
+Every seat must reconstruct the law without importing an implementation,
+complete the 26 common hostile attacks, add at least four mathematical
+countermodels, and return a full product outcome vector.
+
+The attack surface includes representative mass, automorphism multiplicity,
+fixed-point orbits, naked symmetric interventions, incomplete packet
+transport, graph enumeration and endpoint severing, per-size replacement,
+deletion projectivity, hidden order/fixed carriers, conditioning versus
+intervention, incomplete readers, mediation, context reversal, bond response,
+reversible swaps versus erasure, stable-record/division independence, native
+nondivision, state enlargement, mode and parameter retuning, geometry leakage,
+and actuality smuggling.
+
+The protocol authorizes no code and no mathematical repair. Only a later
+adjudication of all three frozen reports may authorize a separate Rust pin.
+Any changed probability, definition, action, grammar, or parameter is a new
+law and requires user authority; there is no automatic repair chain.
