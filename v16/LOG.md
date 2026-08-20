@@ -6159,3 +6159,25 @@ This positive report does not adjudicate the physics seat's independently
 frozen factorization objection. The probability seat remained blind to both
 sibling reports. Freeze the remaining groupoid report before resolving the
 disagreement against the immutable law.
+
+## 2026-08-20 — PAPER 13B GROUPOID/REFERENT REPORT (v16 LEDGER #256)
+
+The mutually blind groupoid/referent report is frozen at
+`v16/review-paper13b-pointfree-gamma-groupoid.md`, SHA-256
+`622f92fe5d6d787a61b83c682d0413e36ebd354b5c4ad268f8c3033dc48f9291`.
+
+The seat returns `REJECT`. Its first independent semantic counterexample is
+the universal experiment interface: the paper does not define the admissible
+intervention-slot set or how changing a mechanism selector replaces its
+dependent kernel. In particular, `do(w=R)` admits incompatible readings that
+retain the mode-`U` value `C_00=49/625` or activate the recorded value
+`(B^2)_00=337/625`. The marked presentation orbit cannot repair an undefined
+mechanism action.
+
+The seat independently preserves the point-free history referent, normalized
+static law, record theorem, complete divisions, its scoped `B`-cut
+calculation, varying-size family, and explicit reciprocal-response
+subinterface. It nevertheless rejects the promoted universal experiment
+coordinate. All three blind reports are now frozen. Joint semantic
+adjudication against the unchanged paper is the next and only event; Rust
+remains prohibited.
