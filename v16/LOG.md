@@ -4587,3 +4587,28 @@ No report result is recorded by this dispatch entry.  Paper 13 remains
 hash independently; only after all three exist may adjudication begin.  No
 paper repair, metric investigation, curvature/response unit, GR unit, or
 other successor is authorized while the panel runs.
+
+## 2026-08-20 — PAPER 13 SEAT A OPERATOR/CATEGORY REPORT FROZEN (v16 LEDGER #205)
+
+The mutually blind Seat A report is frozen verbatim at
+`v16/review-paper13-operator-category.md`, ordinary SHA-256
+`1b4d566143837c8614bf4aa44469fe87061ce45055fe9aa9ca348057020dc702`
+and normalized SHA-256
+`9556b5bce364d63b9c0d9fe55440929a093f819c0fc888cf89618379a09d4a91`.
+It contains 387 lines and 45,612 bytes.  Seat A authenticated the candidate and
+protocol before #204 bookkeeping, preserved sibling blindness, used no
+evaluator scientific import, and reauthenticated the immutable corpus after
+the authorized dispatch-ledger commit.
+
+The report grades the candidate `REJECT-AS-WRITTEN` and recommends earliest
+rung `P13-REFERENT-PRESENTATION-ONLY`.  Its first decisive independently built
+counterexample uses the identity witness and one nontrivial relabeling
+`w=(A->B)`: the frozen `compose_witnesses` returns the empty identity witness
+for `compose_witnesses(id,w)`, so its induced action fixes `A` rather than
+sending it to `B`.  The report therefore says the implemented source-groupoid
+composition fails left identity and triggers the groupoid hard kill.
+
+This entry records one hostile report only.  The finding is not adjudicated,
+the candidate and report remain immutable, and no repair is authorized.
+Seats I and R must freeze in separate commits before any joint adjudication;
+metric-or-later work remains closed.

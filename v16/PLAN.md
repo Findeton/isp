@@ -1061,6 +1061,20 @@ only after all three hashes exist by joint adjudication.  No repair,
 paper edit, metric successor, or later unit is authorized while the panel is
 running.
 
+Seat A freezes at #205 without access to sibling work.  The exact
+operator/category report, ordinary SHA-256
+`1b4d566143837c8614bf4aa44469fe87061ce45055fe9aa9ca348057020dc702`
+and normalized SHA-256
+`9556b5bce364d63b9c0d9fe55440929a093f819c0fc888cf89618379a09d4a91`,
+returns `REJECT-AS-WRITTEN` with earliest rung
+`P13-REFERENT-PRESENTATION-ONLY`.  Its first decisive fresh object reports
+that left identity fails for the implemented source-groupoid witness
+composition: `compose_witnesses(id,w)` returns the empty identity witness for
+a nontrivial `w`.  This is a frozen hostile finding, not yet an adjudicated
+fact and not authorization to repair.  Seats I and R remain separately frozen
+in the worktree pending their own commits; joint adjudication remains barred
+until all three report commits exist.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
