@@ -6221,3 +6221,30 @@ law as its identity experiment, plus a genuinely native typed
 `B0 -> B1 -> B2` candidate cut. This changes the mathematical law and is not a
 Rust or prose repair. Under the one-shot/no-automatic-chain authority, no
 successor or Rust implementation begins without explicit new user approval.
+
+## 2026-08-20 — PAPER 13C EXECUTABLE-GAMMA PHYSICS PIN (v16 LEDGER #258)
+
+The user explicitly authorizes Paper 13C. Its new result-neutral physics pin
+is frozen at `v16/note-paper13c-interventional-gamma-physics-pin.md`, SHA-256
+`6f6acdfdc3065e7376eabb118adcf9c9b09cc89770f3616d31927366e7ab4c4f`.
+
+Paper 13C replaces the rejected static-law intervention claim with one
+primitive executable map
+`GammaBold: Experiment -> Prob(CompleteHistories)`. The observational static
+law is only the identity experiment. The exact experiment category, admitted
+mechanism slots, alternatives, contexts, readers, composition, refusals, and
+one uniform global evaluator are physical law data; chain-rule
+refactorizations that move `do` are different laws.
+
+The pin also makes `B0 -> B1 -> B2` a native typed interface. The identity
+experiment has whole endpoint law `C`; a native `B1` query has first-leg law
+`B`; and the registered question is only whether a positive normalized second
+leg completes that stipulated native cut. The negative `CB^-1` result is
+explicitly cut-relative, while `C=CI=IC` remains a nonkill for other cuts.
+
+The new law may construct an operational manipulation interface and derived
+response, but not chronology, dimension, geometry, metric, or actuality.
+Every constant and mechanism freezes before evaluation. No Rust or Python is
+authorized until the mathematical law survives three independent semantic
+reviews and adjudication. The sole next event is Stage B mathematical
+construction on the two exact whitelisted paths.
