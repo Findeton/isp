@@ -5981,3 +5981,36 @@ surviving abstract input: a locally finite unlabeled bundle poset with unit
 occurrence measure. No point-free probability law, intrinsic unequal weight,
 actuality, chronology, dimension, metric, or continuum is inherited. Paper
 16 remains closed.
+
+## 2026-08-20 — PAPER 15 RESULT-NEUTRAL SPACETIME PIN (v16 LEDGER #250)
+
+The Paper 15 pin is frozen at
+`v16/note-paper15-spacetime-reconstruction-pin.md`, SHA-256
+`06d8fc6df408e9fac767e0401b055565bea26b5e7d2da6fddc275d3aff4af3b6`.
+It binds only the terminal Paper 14 structural survivor: a locally finite
+unlabeled bundle poset with unit occurrence measure. It imports no point-free
+probability law, intrinsic unequal weight, actuality, chronology, dimension,
+signature, density, continuum, metric, curvature, gravity, or GR.
+
+Stable records are landmarks, not assumed metric atoms, and complete division
+frontiers remain distinct stochastic-conditioning objects. Because the live
+input has no accepted interventional `Gamma`, native operational influence is
+untested and structural dependency is not chronology. The pin nevertheless
+freezes a full signed response-tensor contract and exact declared controls for
+direct/mediated response, common cause, co-onset, cycles, clocks, radar,
+capacity, propagation, and three-route metric agreement.
+
+The native descendant-chain family is tested only against a frozen
+scale-homogeneous diamond regime; compact-cylinder long intervals are an
+explicit non-kill against any universal scaling no-go. Declared product-order
+and stochastic controls, finite-order nonidentifiability, conformal-density
+degeneracy, and 54 mathematical hostile controls remain separate evidence
+products. The pre-pin Paper 15 research draft and ledger #224--#239 are
+exposed nonbinding preparation and pre-award no coordinate. The construction
+is bounded to one exact source of at most 1,500 nonblank lines and 60 seconds
+per mode; no automatic verifier-repair chain is authorized.
+
+The sole next event is Stage B analytical construction and source freeze.
+Fresh cases and official results are forbidden before that commit. Paper 13
+and Paper 14 source work remain closed, and Paper 16 remains closed pending a
+terminal Paper 15 adjudication that explicitly authorizes it.
