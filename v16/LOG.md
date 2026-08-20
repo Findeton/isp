@@ -4527,3 +4527,35 @@ causality, curvature, continuum, gravity, GR/QFT, species, Hamiltonian, or
 phenomenology is derived.  The sole next authorized event is a separately
 frozen three-seat hostile protocol; reviewers have not been dispatched and
 all metric-or-later work remains closed.
+
+## 2026-08-19 — PAPER 13 HOSTILE-REVIEW PROTOCOL FROZEN (v16 LEDGER #203)
+
+The result-neutral pre-review protocol is frozen at
+`v16/note-paper13-hostile-review-protocol.md`, ordinary SHA-256
+`1914ef55118c8261f55d271a7431cf5bc7e5aa90689d39f4b927e6c39fe8bd58`
+and normalized SHA-256
+`a425fb70a6e0b2b93a02558e32557ab4d92e1e4b1bcf58384a446492b1e985d9`.
+It binds candidate commit
+`317f3b58627a06539a470509b07259aebe15be7f`, the Stage-A and Stage-B
+artifacts, the Paper 13 paper/bundle, and the 21-file master-manifest closure.
+
+Three mutually blind seats are predeclared: exact operator/category/totality
+and anti-wrapper; stochastic indivisibility/division/records and Barandes
+scope; and source-groupoid/point-free referent/reciprocal-family eliminability.
+Every seat independently reconstructs the one-Gamma packet before specialized
+work.  The protocol assigns all 92 frozen registered mutations exactly once,
+requires at least three additional reviewer-invented attacks per seat, and
+separates the desired native nondivision theorem from the positive
+history-conditioned and enlarged-carrier Markovization non-kills.
+
+The exact fifteen-rung outcome ladder, eligible cap, 30 scientific kills,
+integrity blocks, evidence grades, report hashes, and no-majority adjudication
+rule are frozen before dispatch.  The protocol preserves the candidate's
+permanent walls: no absolute irreducibility, selected coupling/law/catalogue,
+actualization, valuation, metric, topology, causality, curvature, continuum,
+gravity, GR/QFT, particles, Hamiltonian, or phenomenology is earned.
+
+No reviewer has been dispatched by this event.  Paper 13 remains
+`GREEN-UNREVIEWED` and noncitable.  The sole next authorized event is the
+three-seat read-only dispatch under these exact protocol bytes; no paper
+repair, adjudication, metric investigation, or later unit may begin first.

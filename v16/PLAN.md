@@ -1035,6 +1035,20 @@ separately committed three-seat hostile-review protocol; no review dispatch,
 paper adjudication, metric successor, or later unit may begin before that
 protocol freezes.
 
+The result-neutral Paper 13 hostile protocol freezes at #203, ordinary SHA-256
+`1914ef55118c8261f55d271a7431cf5bc7e5aa90689d39f4b927e6c39fe8bd58`
+and normalized SHA-256
+`a425fb70a6e0b2b93a02558e32557ab4d92e1e4b1bcf58384a446492b1e985d9`.
+It assigns all 92 registered mutations exactly once and binds three mutually
+blind seats: exact operator/category/anti-wrapper; stochastic
+indivisibility/division/Barandes scope; and source-groupoid/point-free
+ontology/relational-family eliminability.  The protocol pre-registers the
+complete outcome ladder, 30 hard scientific kills, integrity blocks, exact
+non-kill controls, report schema, and adjudication boundary.  No reviewer is
+dispatched by #203.  The sole next authorized event is the three-seat dispatch
+against immutable commit `317f3b5` under the frozen protocol; metric-or-later
+work remains closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
