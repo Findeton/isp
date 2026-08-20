@@ -6416,3 +6416,34 @@ type mechanism stages, make the history quotient reader-independent, type
 all marks, and construct or withdraw the external tensor. These changes are
 new mathematics, not a Rust repair. No Paper 13D starts without explicit user
 authorization.
+
+## 2026-08-20 — PAPER 13D TYPED EXECUTABLE-GAMMA PHYSICS PIN (v16 LEDGER #265)
+
+The user explicitly authorizes one clean Paper 13D successor. Its
+implementation-free physics pin is frozen at
+`v16/note-paper13d-typed-executable-gamma-physics-pin.md`, SHA-256
+`722dc3bfe528fc3a52f2d2f5afcaba2c7858250e63d24439e43d0a17ab5c049e`
+(459 LF lines / 14,240 bytes).
+
+Paper 13D must construct one genuinely typed packet containing finite-set
+boundary species, stage-typed controls, an exact execution category, a
+trace-valued global evaluator, a reader-independent physical-history
+quotient, exact marks, an internal independent tensor, simultaneous n-ary
+fusion, a closed stable-future category, an executable eraser outside that
+subcategory, complete divisions, and full response tensors. Every arrow must
+map every legal source value into its declared target; tested-depth or
+zero-probability excuses are prohibited.
+
+The pin preserves only the independently surviving rational kernels,
+cut-relative native nondivision, positive queried divisions, unmarked
+varying-size family, and labeled response precursors. It does not inherit
+Paper 13C's defective control category, reader-dependent quotient, external
+tensor, probe prose, future grammar, informal eraser, or point-free response
+promotion. Stable record and complete division remain distinct predicates.
+Tensor and physical fusion remain distinct operations. No law parameter,
+dimension, geometry, or desired result may be selected post hoc.
+
+The complete mathematical law must freeze before three independent semantic
+lenses review it. Only terminal mathematical acceptance can authorize a
+separate Rust pin. No Rust/Python evaluator, generated result, fixture, or
+official artifact exists, and no automatic Paper 13E follows a rejection.
