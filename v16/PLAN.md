@@ -1099,6 +1099,27 @@ counterexample to the calibrated family claim.  All three reports are now
 committed and hashed.  The sole next authorized event is joint adjudication;
 no repair, paper edit, metric successor, or later unit may begin first.
 
+The hostile panel is jointly adjudicated at #208 in
+`v16/note-paper13-hostile-review-adjudication.md`, ordinary SHA-256
+`9546729fce24ce8a4a08239c881814b9526232a33151324c1b2e98b9daa61e49`
+and normalized SHA-256
+`bea277684ef0cacbebcce0464bf2bfc77a1629bf7dbd0e156e2e63263d755ec4`.
+The adjudicator independently reproduces Seat A's directional sparse-map
+counterexample: the untyped empty witness passes as identity under direct
+relabeling but `compose_witnesses(id,w)` omits every row of a nontrivial `w`.
+The current paper is therefore `REJECT-AS-WRITTEN` at strict primary
+`P13-REFERENT-PRESENTATION-ONLY`.  This kills the implemented point-free
+quotient, not the presentation-indexed one-Gamma construction, native
+nondivision, grammar-relative division, reciprocal calculation, or frozen
+blind-class theorem at their narrowed scopes.  One result-neutral typed-
+groupoid forward pin is authorized: witnesses must be typed arrows between
+complete finite presentations, totalized and checked as bijections, and must
+pass both identities, both inverses, associativity, composability, and
+naturality on every transported scientific object.  Any repair requires new
+source, fresh cases, artifacts, receipt, paper, bundle, and independent
+hostile review.  The sole next authorized event is that forward-repair pin;
+no code edit, metric successor, or later unit may begin first.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

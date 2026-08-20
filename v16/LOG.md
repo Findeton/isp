@@ -4669,3 +4669,54 @@ disagreement is not resolved by majority vote.  The sole next authorized
 event is independent joint adjudication of the frozen reports and smallest
 decisive objects.  Candidate and reports remain immutable; no repair or
 successor is authorized first.
+
+## 2026-08-20 — PAPER 13 HOSTILE PANEL ADJUDICATED (v16 LEDGER #208)
+
+The joint adjudication freezes at
+`v16/note-paper13-hostile-review-adjudication.md`, ordinary SHA-256
+`9546729fce24ce8a4a08239c881814b9526232a33151324c1b2e98b9daa61e49`
+and normalized SHA-256
+`bea277684ef0cacbebcce0464bf2bfc77a1629bf7dbd0e156e2e63263d755ec4`.
+It contains 287 LF-terminated lines and 15,441 bytes.  All three reports are
+preserved byte-for-byte and the disagreement is resolved by independent
+reconstruction, not majority vote.
+
+The adjudicator reproduces the exact minimal object accepted from Seat A.
+The frozen source interprets absent sparse-map rows as identity but composes
+by enumerating only the first witness.  For the empty identity `e=()` and a
+one-row relabeling `w=(A->B)`, `compose_witnesses(e,w)=e`; its action fixes
+`A` rather than mapping it to `B`.  This is the ordinary `w o id_X = w` law
+under the evaluator's application order.  The receipt tests identity action
+and one nontrivial chain, but never this directional composition law.
+
+The accepted strict primary is `P13-REFERENT-PRESENTATION-ONLY`, and the
+candidate grade is `REJECT-AS-WRITTEN`.  The implemented point-free quotient
+is withdrawn.  The adjudication expressly does not refute the exact
+presentation-indexed Gamma evaluator, the split theorem, native no-positive-
+restart result, grammar-relative record division, finite reciprocal response,
+or class-relative global family calculation.  Those survive only at their
+printed and adjudicated presentation-indexed scopes.  History-conditioned and
+enlarged-state Markovizations remain required non-kills; native nondivision is
+not recast as ontological configuration incompleteness.
+
+The additional bounded findings are adopted: correct or rename the sign-
+equivalent half-derivative receipt field; diversify two duplicated mutation
+objects; replace internal `fixture` wording; relay sixty-second master-runner
+progress; and retain the unqueried-incidence narrowing.  None changes the
+strict rung.
+
+Exactly one forward path is authorized, and only after a separate result-
+neutral pin: a witness is a typed arrow `w:X->Y` between complete finite
+presentations, sparse rows are totalized over every source label and checked
+as a type-preserving bijection onto the complete target, and composition is
+defined only for matching middle presentations.  Both identity laws, both
+inverse laws, three-witness associativity, tensor/naturality, and the action on
+formulas, contexts, ports, boundaries, configurations, fillings, source keys,
+split certificates, operators, and endpoint laws must be independently
+verified.  The repaired source must regenerate the nonce-bound fresh cases,
+artifacts, receipt, paper, and bundle and pass a separately frozen hostile
+review.  No current artifact is relabeled as repaired evidence.
+
+The sole next authorized event is the typed-groupoid forward-repair pin.  No
+source edit, metric, curvature, gravity, continuum, GR/QFT, or later paper is
+authorized before that pin and the eventual terminal Paper 13 adjudication.
