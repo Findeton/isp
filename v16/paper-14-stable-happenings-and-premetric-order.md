@@ -2,16 +2,25 @@
 
 ## Durable local facts, complete stochastic frontiers, and the gates for an extensive event measure
 
-### Research-draft status
+### Pinned analytical candidate — source-frozen, result unknown
 
 Date: 2026-08-20
 
-This is a scientific Paper 14 draft. It develops the mathematics of stable
+This analytical candidate is bound to the result-neutral pin committed at
+`9687d59` and to exact source
+`v16/code/p14_premetric_exact.py`, SHA-256
+`1a1d9a7acc3ef4ba62a9e9b0f6101263dde3b72dd9d407918ea0be653d5d628e`.
+The source is frozen before fresh controls and before any official result
+artifact. The displayed positive coordinates remain candidate theorems until
+the Stage C result is independently verified; terminal status additionally
+requires the frozen three-lens hostile round and adjudication.
+
+The paper develops the mathematics of stable
 happenings without treating every happening as a Markov checkpoint and without
 assuming a background space, time coordinate, causal graph, metric, event
-counter, or clock. It does not report an authoritative evaluation of a frozen
-Paper 13 implementation. Its strongest claims are conditional structural
-theorems with their hypotheses printed below.
+counter, or clock. It imports no Paper 13 implementation or accepted result.
+Its strongest claims are conditional structural theorems of one newly
+declared history law, with their hypotheses printed below.
 
 The intended terminal object is premetric:
 
@@ -228,7 +237,7 @@ for every generator and every admitted source. Also require that admitted
 continuations are normalized on every reached branch, so conditional reader
 probabilities are defined.
 
-### Theorem 1 — finite-word record persistence
+### Theorem 1 — finite-word record persistence (sealed-grammar scope)
 
 For every finite licensed word $U$,
 
@@ -275,7 +284,7 @@ $$
 
 ∎
 
-### Corollary 1 — grammar-relative division
+### Corollary 1 — grammar-relative division (complete-record-boundary scope)
 
 At a complete record boundary, direct endpoint evaluation agrees with cutting
 at the record and summing the mutually exclusive alternatives. Interference
@@ -307,6 +316,45 @@ $$
 \mathfrak I=(\mathcal C,\mathcal G,\Gamma,\operatorname{Div},\mathcal B,\rho).
 $$
 
+Its law provenance is
+
+```text
+DECLARED-NEW-LAW-POSTULATE
+```
+
+No accepted Paper 13 law is inherited. The exact finite and uniform laws
+constructed below are new declared model laws. Every theorem depending on
+them is therefore a theorem of that declared model, not a derivation or
+selection of Nature's law.
+
+The ontology and sample spaces are separated before any happening is defined:
+
+| term | sample space | status | actuality |
+|---|---|---|---|
+| $\mathcal C$ | complete typed boundaries and continuations | declared language | possible |
+| $\mathcal G$ | complete presentation isomorphisms | representational gauge | neither history nor event |
+| $\Gamma$ | complete histories | declared probability law | possible histories only |
+| $\operatorname{Div}$ | typed candidate cuts | candidates requiring tests | possible interfaces |
+| $\mathcal B$ | semantic record events | declared/derived record algebra | possible facts |
+| $\mathsf T$ | record transports along licensed futures | derived functorial action | possible facts |
+| $\rho$ | complete-history selections | external actualization postulate | at most one actual history |
+| onset germ | complete local law/record changes | derived | possible occurrence type |
+| stable happening | persistent onset class | derived type; actual only under $\rho$ | possible or actual as stated |
+| hash, label, address | serializations | provenance only | nonphysical |
+
+Every new object also passes the four-gate audit:
+
+| object | referent | necessity | no-smuggling | discriminator |
+|---|---|---|---|---|
+| onset germ | complete local law change | rows overcount presentation | no label/address identity | clone and refinement |
+| stable type | persistent onset class | paths need not become facts | no actuality flag | eraser and reconvergence |
+| actual happening | $\rho$-selected stable occurrence | one history may be actual | no probability-as-selection | possible/actual table |
+| division frontier | complete sufficient cut | a record need not restart the law | no hidden past ID | four-product frontier family |
+| dependency edge | essential operational/law dependence | order cannot be textual | no rank or sequence index | diamond and common-cause controls |
+| happening bundle | mutual-dependence class | symmetric co-creation is unoriented | no chosen representative | exchange symmetry |
+| unit measure | physical bundle occurrences | minimal extensive valuation | no orbit/label count | clone and equal-count controls |
+| unequal weight | descended conditional factor | law intensity can differ | no entered weight | strong-diamond controls |
+
 For each source $x$, the contract supplies a complete-history space
 $\Omega_x$ and a declared Boolean or sigma algebra $\mathcal A_x$ of
 classical history events. The record algebra $\mathcal B_x$ is a typed Boolean
@@ -324,24 +372,26 @@ ordinary event algebra.
 - $\operatorname{Div}$ supplies candidate frontiers; it does not certify
   them.
 - $\mathcal B_x$ is a Boolean algebra of record events at boundary $x$.
-- for $u:x\to y$, $\rho_u$ transports the persistent record subalgebra of
+- for $u:x\to y$, $\mathsf T_u$ transports the persistent record subalgebra of
   $\mathcal B_x$ injectively into $\mathcal B_y$.
+- $\rho$ is the external actualization postulate. It may select one complete
+  possible history; it is not a transition kernel or record-transport map.
 
 The transport is functorial:
 
 $$
-\rho_{\operatorname{id}_x}=\operatorname{id}_{\mathcal B_x},
+\mathsf T_{\operatorname{id}_x}=\operatorname{id}_{\mathcal B_x},
 \qquad
-\rho_{v\circ u}=\rho_v\circ\rho_u.
+\mathsf T_{v\circ u}=\mathsf T_v\circ\mathsf T_u.
 $$
 
-Continuation transport $\rho$ and presentation transport by $\mathcal G$ are
+Continuation transport $\mathsf T$ and presentation transport by $\mathcal G$ are
 different operations. Their naturality is a theorem obligation, not an
 identification.
 
-An actual history $\omega_*$ is not contained in $\mathfrak I$. It must be
-adjoined as an actualization fact or supplied by a later rule. Positive
-probability alone does not select it.
+The postulate $\rho$ may supply an actual history $\omega_*$, but no property
+of $\Gamma$ determines that selection. Positive probability alone does not
+select a history, and this paper supplies no further actualization mechanism.
 
 ## 5. From a record onset to a physical happening
 
@@ -453,7 +503,7 @@ $z$ to which every record event transports, the transported events belong to
 the same Boolean algebra $\mathcal B_z$, and their meet
 
 $$
-E_H^{(z)}=\bigwedge_{i=1}^n\rho_{u_i}(E_{e_i})
+E_H^{(z)}=\bigwedge_{i=1}^n\mathsf T_{u_i}(E_{e_i})
 $$
 
 has positive support.
@@ -464,7 +514,7 @@ independence condition. In an operator representation, products of record
 projectors are permitted only after this common-boundary typing and
 commutation have been established.
 
-### Theorem 2 — persistent compatible meet
+### Theorem 2 — persistent compatible meet (declared-interface scope)
 
 Suppose the record transports are injective Boolean homomorphisms, functorial,
 and path independent on common cocones. Then the meet of a compatible finite
@@ -476,9 +526,9 @@ future continuation.
 A Boolean homomorphism preserves finite meets. Hence for $v:z\to z'$,
 
 $$
-\rho_v(E_H^{(z)})
-=\bigwedge_i\rho_v\rho_{u_i}(E_{e_i})
-=\bigwedge_i\rho_{v\circ u_i}(E_{e_i}).
+\mathsf T_v(E_H^{(z)})
+=\bigwedge_i\mathsf T_v\mathsf T_{u_i}(E_{e_i})
+=\bigwedge_i\mathsf T_{v\circ u_i}(E_{e_i}).
 $$
 
 Functoriality and path independence make the right-hand side independent of
@@ -560,7 +610,7 @@ $$
 
 An element $[e]_\simeq$ is an **indivisible stable-happening bundle**.
 
-### Theorem 3 — dependency quotient poset
+### Theorem 3 — dependency quotient poset (semantic-preorder scope)
 
 If $\precsim$ is a presentation-invariant preorder on stable record facts,
 then $\simeq$ is an equivalence relation and
@@ -599,7 +649,7 @@ requires the additional separation theorem that distinct stable facts are
 never mutually dependent; the countermodel shows that statement is false in
 general.
 
-### Theorem 4 — no hidden global clock
+### Theorem 4 — no hidden global clock (commuting-diamond scope)
 
 Suppose two incomparable happening bundles $e$ and $f$ form a commuting diamond:
 both linearizations $ef$ and $fe$ have the same composite typed data, history
@@ -669,7 +719,7 @@ following.
 Any native context is an explicit typed field declared before the test. There
 is no optional post-hoc history payload.
 
-### Theorem 5 — complete-frontier kernel
+### Theorem 5 — complete-frontier kernel (certified-frontier scope)
 
 For reachable $s\in S_F$, future sufficiency defines
 
@@ -745,7 +795,7 @@ is finite for every comparable pair of bundles. This must be proved directly
 for semantic mutual-dependence classes. It cannot be inferred from finite test
 depth, stability, or the existence of complete frontiers.
 
-### Theorem 6 — fixed-memory obstruction
+### Theorem 6 — fixed-memory obstruction (independent-binary-record scope)
 
 If $n$ independently persistent binary happenings have occurred, their
 records distinguish at least $2^n$ histories. No fixed carrier with $M$
@@ -872,7 +922,7 @@ $$
 But the allocations to $A$ and $B$ differ. The chain rule protects the
 history total, not intrinsic weights on incomparable atoms.
 
-### Theorem 7 — atomic extensive valuation
+### Theorem 7 — atomic extensive valuation (descended-weight scope)
 
 Suppose an intrinsic nonnegative finite weight $w(e)$ has descended to every
 happening-bundle class and is invariant under presentation, neutral
@@ -895,7 +945,7 @@ Different happening bundles may have different weights. Those weights may
 encode real nonuniform structure only if their provenance and descent are proved.
 Inserting unequal values by hand merely adds a measure beside $\Gamma$.
 
-### Theorem 8 — strong-diamond descent
+### Theorem 8 — strong-diamond descent (finite-positive-law scope)
 
 Let $(V,\preceq)$ be a finite happening-bundle poset with finite nonempty
 outcome fibers $X_v$, and let $\Gamma$ be a strictly positive normalized law
@@ -1362,7 +1412,7 @@ $$
 descend to complete typed occurrence provenance. Grafts on distinct open ports
 commute, so their construction order is not a physical clock.
 
-### Theorem 9 — uniform local finiteness and genuine carrier growth
+### Theorem 9 — uniform local finiteness and genuine carrier growth (declared-graft-law scope)
 
 Every finite graft shape with $n$ cells has $4n$ happening bundles, $5n$ raw
 stable record components, and $16^n$ positive outcome histories. The direct

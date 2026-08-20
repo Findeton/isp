@@ -5803,3 +5803,34 @@ and may not be staged, modified, imported, or cited. The only authorized next
 event is the Paper 14 Stage B construction and source freeze. Paper 15 and
 Paper 16 authoritative work remains closed until a terminal Paper 14
 adjudication explicitly opens a successor pin.
+
+## 2026-08-20 — PAPER 14 PREMETRIC CONSTRUCTION AND SOURCE FREEZE (v16 LEDGER #243)
+
+Stage B is complete under the exact whitelist in the committed Paper 14 pin.
+The analytical candidate is frozen at
+`v16/code/p14_premetric_exact.py`, SHA-256
+`1a1d9a7acc3ef4ba62a9e9b0f6101263dde3b72dd9d407918ea0be653d5d628e`,
+with 1,411 lines, 56,229 bytes, and 1,267 nonblank lines. The corresponding
+paper is frozen at
+`v16/paper-14-stable-happenings-and-premetric-order.md`, SHA-256
+`ffc3dca2863bf9f36c9fe62e8dff80628c59c8837b3d96006e449329dee05ec1`.
+The construction record is
+`v16/note-paper14-premetric-construction.md`, SHA-256
+`e6d59fd49e5af805df96f8b3a4c2db5676dafaa3c552ecadb0779ca690887253`.
+
+The source imports no Paper 13 object and prints law provenance
+`DECLARED-NEW-LAW-POSTULATE`. Its source-only selftest is green at 16/16
+scientific checks and 26/26 registered scientific attacks, with 38 uniform
+finite rows and 12 shape-census rows. Repository-root, alien-CWD, and true
+one-file/no-`.git` executions are byte-identical at stdout SHA-256
+`36bda0de588ce4ffdd37b549b581a1b436466f4351e6ddd5714c857a789110d2`;
+their runtimes are 10.54, 13.15, and 13.02 seconds. The normalized payload
+SHA-256 is
+`6c5a3c10615cb7a14ecb679c70856222cf24a86600a17186c43eb03a69e0efed`.
+
+This is not a scientific result. `fresh_cases_evaluated` remains false and
+the provisional status is `FRESH-CONTROLS-NOT-EVALUATED`. The fresh file,
+official output, receipt, and verification note are absent. The next and only
+authorized event is Stage C: generate the fresh cases once after this source
+commit, execute the frozen source in official mode, independently reconstruct
+the result, and commit the exact artifacts. The source may not be edited.
