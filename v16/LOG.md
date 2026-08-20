@@ -6567,3 +6567,28 @@ full provisional product survives with actuality unconstructed. Its wording
 clarifications on cylinders, the empty record word, and tensor/orbit
 identification are scope-only. Rust remains prohibited pending the third
 report and joint adjudication.
+
+## 2026-08-20 — PAPER 13D PHYSICS/ONTOLOGY REPORT (v16 LEDGER #270)
+
+The independent physics/ontology/intervention report is frozen at
+`v16/review-paper13d-typed-executable-gamma-physics.md`, SHA-256
+`60eaff32be938006e84df124986e3ae4f72c60399380316b7a14b67034676647`
+(571 LF lines / 25,370 bytes).
+
+The seat returns `ACCEPT-WITH-SCOPE` with no semantic counterexample. It
+independently reconstructs the primitive executable-law identity, typed
+boundaries and controls, point-free marked quotient, tensor/fusion
+distinction, arbitrary-depth stable future, executable eraser, native
+nondivision, division square, finite-set family, reciprocal response, and all
+permanent ontology walls. All O1–O22 attacks pass.
+
+Three bounded quantifier restrictions are required but change no mathematical
+object or probability: the unit $X\to z_Y$ mediation response is a fixed-$E$
+coordinate; eraser reachability chooses a positive-support relational packet
+rather than every type-admitted packet; and nontrivial record-sector language
+applies only to nonempty occurrence sets. The frozen context-indexed response
+tensor, reachable erasure witness, and empty monoidal unit already determine
+these values uniquely. The seat retains the full provisional product with
+actuality unconstructed. All three reports are now frozen; joint adjudication
+against unchanged mathematical bytes is the sole next event, and Rust remains
+prohibited until it accepts.
