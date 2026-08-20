@@ -6248,3 +6248,44 @@ Every constant and mechanism freezes before evaluation. No Rust or Python is
 authorized until the mathematical law survives three independent semantic
 reviews and adjudication. The sole next event is Stage B mathematical
 construction on the two exact whitelisted paths.
+
+## 2026-08-20 — PAPER 13C MATHEMATICAL LAW (v16 LEDGER #259)
+
+The implementation-free candidate law is frozen at
+`v16/paper-13c-executable-pointfree-gamma.md`, SHA-256
+`51c16c5bf85bb7dd0db44e3477233a6f331a0efe01f306600379165fcf932bed`
+(946 LF lines / 31,376 bytes). Its construction note is frozen at
+`v16/note-paper13c-interventional-gamma-mathematical-construction.md`,
+SHA-256
+`c93e0ca95ba3bf75601a7dd1d258167f545fb60c733cdff6ad1d7e1b5ffc2a7f`
+(104 LF lines / 3,858 bytes).
+
+The candidate defines one exact global evaluator on typed boundary paths,
+source and mediator mechanism programs, complete source contexts, transported
+marks, and the full finite reader catalogue. Program composition,
+postselection, independent trial tensoring, physical fusion, and stochastic
+division are separate operations. Program metadata are not inserted into
+physical histories. Instead the point-free law uses diagonal
+experiment--history orbits and stabilizer-orbit mass, preserving the physical
+relation between a marked manipulation and its outcome without naked labels
+or representative mass.
+
+The native nonempty-size interface has unqueried endpoint kernel `C`, queried
+first leg `B`, and positive queried continuation `B`. The unique continuation
+candidate for the unqueried law is `CB^-1=[[351,-176],[-176,351]]/175`, and
+its tensor powers retain negative entries. This earns only a provisional
+cut-relative obstruction; carriers enlarged by the source input and identity
+factorizations remain explicit nonkills.
+
+The same frozen law provisionally gives all-size covariance and deletion
+projectivity, all four stable-record/complete-division combinations, an exact
+finite future grammar with reversible-swap and eraser controls, and complete
+signed response tensors with common-cause, mediation, reader-cancellation,
+context-reversal, symmetry, and spectator controls. Actualization,
+chronology, dimension, topology, volume, duration, metric, curvature, gravity,
+continuum physics, and QFT remain unconstructed.
+
+The result is `GREEN-UNREVIEWED`, not terminal or citable. No Rust, Python,
+fixture, or generated result exists. The next authorized stage is a frozen
+mathematical hostile-review protocol; only terminal semantic acceptance may
+open a separate Rust pin.
