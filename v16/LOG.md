@@ -6522,3 +6522,25 @@ serialization, CLI, transaction, memory, and performance cannot reject this
 mathematical stage. A changed boundary, probability, generator, hom-set,
 group action, mark, reader, fusion, grammar, eraser, or parameter is a new law.
 Reports remain evidence; only a separate adjudication can authorize Rust.
+
+## 2026-08-20 — PAPER 13D CATEGORY/GROUPOID REPORT (v16 LEDGER #268)
+
+The independent category/groupoid/readers/tensor/fusion report is frozen at
+`v16/review-paper13d-typed-executable-gamma-category.md`, SHA-256
+`190f6ea125b0d8319714f74cd104ad3b6464fce7c816f08eb2d597ecb8cf64d9`
+(434 LF lines / 20,097 bytes).
+
+The seat returns `ACCEPT` with no semantic counterexample. All C1–C18 attacks
+pass. Fresh controls cover nontrivial automorphism multiplicity,
+alternative-dependent stabilizers, unanchored versus landmark readers,
+three-component nested tensor/fusion, whole-component deletion, and equality
+of differently associated but lawfully typed control words.
+
+The review independently reconstructs the complete control hom-table and
+associativity, string-diagram intervention addresses, reader-free quotient,
+orbit-profile reader descent, contrast intersection stabilizer, internal
+tensor unit/braiding, simultaneous fusion, and deletion naturality. It retains
+the full provisional product with actuality unconstructed. Optional requests
+to print semidirect composition and zero/one fusion clauses are explanatory
+only and require no mathematical repair. Sibling reports remain separately
+frozen evidence; Rust is not authorized by this report.
