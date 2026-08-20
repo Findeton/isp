@@ -5834,3 +5834,43 @@ official output, receipt, and verification note are absent. The next and only
 authorized event is Stage C: generate the fresh cases once after this source
 commit, execute the frozen source in official mode, independently reconstruct
 the result, and commit the exact artifacts. The source may not be edited.
+
+## 2026-08-20 — PAPER 14 OFFICIAL RESULT AND INDEPENDENT VERIFICATION (v16 LEDGER #244)
+
+After the Stage B commit `dda7a01`, one nonce was generated at
+`2026-08-20T17:12:43Z` with one `openssl rand -hex 32` invocation and no
+reroll. The fresh file is
+`v16/p14_premetric_fresh_cases.json`, SHA-256
+`4f5d8d21bb66d5e7c41a9c34a35a26ec955b03497d9682564efd23df681126c7`.
+It contains six unique cases across all six preregistered kinds and binds the
+frozen source SHA exactly.
+
+The single official publication run completed in 9.16 seconds. It produced
+`v16/p14_premetric_output.json`, SHA-256
+`95a38ebbb6d2e9c85c2a2f66ca3275fd1f4205761dfcc5eae6a1d9ea2b233993`,
+and `v16/p14_premetric_receipt.json`, SHA-256
+`2d320edc0eb152d5fcb6ffdf1444e8071d9466c5773c13be51ad438036c2fa4c`.
+The normalized payload SHA is
+`292b9c9dad12785cdb0b233a7d56237500fd716e38b740ad3772a1f6969e8ecf`;
+the receipt-core SHA is
+`0d71fd0eed5a2fe399fc7b6f9321c46c91b06e03c68f878dd626407175937914`.
+
+The no-import verifier at private SHA
+`076dece93991f410bf7a2d184f601b40077e7baaa06e91114bb6fe9fa27b5f6d`
+independently reconstructs canonical bytes, all input and output bindings, all
+17 scientific and nine receipt-core seals, the six complete measurement
+objects, all 26 changed-object preimages and hashes, the six fresh controls,
+and the outcome dependency chain. Its result SHA is
+`6602d819952fbb4a7ec38efb604f835bf2c4afcc627d5d47d77b9722089e75e8`.
+The committed verification note is
+`v16/note-paper14-premetric-verification.md`, SHA-256
+`c8aec2827778a0f31645a374eebfa03c82563da9a7395ef6b5af708c1ee9ae42`.
+
+Disposition is `ELIGIBLE-GREEN-UNREVIEWED`: 16/16 scientific checks, 26/26
+registered attacks, and 6/6 fresh controls pass. The eligible ceiling is
+`P14-PREMETRIC-ORDER-AND-INTERVAL-MEASURE` within
+`DECLARED-NEW-LAW-POSTULATE`. This is not terminal acceptance and does not
+construct chronology, dimension, signature, scale, metric, curvature,
+gravity, actualization, or law selection. Per the pin, construction now
+halts. The next and only authorized event is Stage D hostile-protocol freeze;
+Paper 15 remains closed.
