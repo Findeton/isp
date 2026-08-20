@@ -6141,3 +6141,21 @@ native nondivision statement: mode `U` contains `C` but no native intermediate
 `B` boundary, so negativity of `CB^-1` proves only obstruction through an
 externally stipulated `B` leg. This report is evidence, not adjudication; the
 other blind reports remain unread by the seat and must be frozen separately.
+
+## 2026-08-20 — PAPER 13B PROBABILITY/INTERVENTION REPORT (v16 LEDGER #255)
+
+The mutually blind probability/intervention report is frozen at
+`v16/review-paper13b-pointfree-gamma-probability.md`, SHA-256
+`9245c620d3f5299b5ff640a4474362c2c65a716ba46d84bb12781e247cda836b`.
+
+The seat returns `ACCEPT`. It independently reproduces local and all-size
+normalization, orbit pushforward, bond laws, response tensors, complete and
+incomplete frontier rows, stable records, and the negative `CB^-1` candidate.
+It finds no semantic counterexample in H12--H24 or six added controls and
+promotes the paper's full provisional product vector while leaving actuality
+unconstructed.
+
+This positive report does not adjudicate the physics seat's independently
+frozen factorization objection. The probability seat remained blind to both
+sibling reports. Freeze the remaining groupoid report before resolving the
+disagreement against the immutable law.
