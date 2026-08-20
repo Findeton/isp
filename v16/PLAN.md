@@ -1277,6 +1277,41 @@ The sole next authorized event is construction and freeze of the standalone
 fresh case, official artifact, paper, Paper 14 construction, Paper 15
 construction, or geometry work may begin first.
 
+#218 freezes the standalone v4 source at
+`v16/code/p13_gamma_exact_v4.py`, SHA-256
+`272b64972e3eb620867cf6ad0decf8db1fcc03092adfd1d69d77aa10e2605910`,
+with source-freeze note SHA-256
+`5bf797eae6a80690a27bcad59c8e3b2206f008f1ce2039d4b6883d22a82d38c7`.
+Root, alien-CWD, and true one-file/no-`.git` selftests are byte-identical at
+50/50 checks and 153/153 killed attacks.  Exact stdout is 242,830,641 bytes,
+SHA-256
+`95d7975c643a0bd95e60cc1420ef0b0bcb6f157ffbe1a3cd6c70a70b6dc62880`,
+with normalized payload
+`3041d9f26f33903ad3554dd18eda915f728c7a956dda49065408a00633d3cba7`
+and registry SHA-256
+`443f70a2b61c00fc0c0ed5bb6ab4175ca0fa363a224d861917548e3fa2da1972`.
+Measured root/alien/one-file runtimes are 199.19/267.36/258.44 seconds and
+peak RSS is 856,850,432/913,489,920/1,107,476,480 bytes, all inside the frozen
+300-second gate.
+
+The source emits all 34 abstract bijections and 14,050 composable triples; 13
+native rows; 12 generator families, 312 source columns, and 468 certificate-
+bound transitions split CREATE/MERGE/UNCHANGED as 156/156/156; 468 identity
+certificate actions and 12 nontrivial actions; and three tensor cases whose
+factor-certificate multiplicities are 24/12/24.  Six exact post-freeze
+source-only mutations independently demonstrate caller-target, deleted-target-
+assertion, copied promotion, hash/registry action, internal tensor-root, and
+whole-target-packet attachment failures, then die at the pre-science static
+backward-slice gate.  Each separate semantic probe moves measurement, gate,
+outcome index 12 to 1, lineage, claim, and seal.
+
+The disposition is strictly `REPAIR-GREEN-UNREVIEWED`.  No nonce, fresh case,
+official artifact, paper, or bundle exists.  The sole next authorized event is
+two mutually blind source audits of the exact #218 bytes, followed by a
+separate adjudication.  Nonbinding private Paper 14 definition/literature
+preparation has no evidentiary or construction status and binds no v4 byte;
+authoritative Paper 14 and every Paper 15/geometry step remain closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

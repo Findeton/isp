@@ -5097,3 +5097,56 @@ next authorized event is construction and freeze of
 `v16/note-paper13-typed-groupoid-source-freeze-v4.md`.  No nonce, publication
 mode, paper, Paper 14, Paper 15, metric, curvature, gravity, continuum, or
 GR/QFT work may begin first.
+
+## 2026-08-20 — PAPER 13 V4 SOURCE FROZEN (v16 LEDGER #218)
+
+The standalone exact source freezes at
+`v16/code/p13_gamma_exact_v4.py`, ordinary SHA-256
+`272b64972e3eb620867cf6ad0decf8db1fcc03092adfd1d69d77aa10e2605910`,
+16,564 LF-terminated lines and 656,207 bytes.  Its source-freeze note is
+`v16/note-paper13-typed-groupoid-source-freeze-v4.md`, ordinary SHA-256
+`5bf797eae6a80690a27bcad59c8e3b2206f008f1ce2039d4b6883d22a82d38c7`,
+292 LF-terminated lines and 14,206 bytes.
+
+The source closes both #216 defects at the pinned implementation surface.  It
+requires exact tensor factor root source/derived-target nodes and retains a
+separate address-keyed zero/one/many generator-certificate lineage.  Every
+complete certificate-action row carries independently reconstructible
+original, literal-action, rebuilt-action, and pairing-key bytes.  The static
+pre-science backward slice binds the complete-action producer through
+promotion, lineage, claims, and seal.
+
+The final selftest is `PASS`: 50/50 checks and all 153 registered attacks
+killed, registry SHA-256
+`443f70a2b61c00fc0c0ed5bb6ab4175ca0fa363a224d861917548e3fa2da1972`.
+Repository-root, alien-CWD, and true one-file/no-`.git` runs produce the same
+242,830,641-byte stdout, SHA-256
+`95d7975c643a0bd95e60cc1420ef0b0bcb6f157ffbe1a3cd6c70a70b6dc62880`,
+with normalized payload SHA-256
+`3041d9f26f33903ad3554dd18eda915f728c7a956dda49065408a00633d3cba7`.
+Independent resource-timed replays take 199.19/267.36/258.44 seconds with peak
+RSS 856,850,432/913,489,920/1,107,476,480 bytes, all below the 300-second cap.
+
+The complete census contains 34 abstract bijections and 14,050 triples; 13
+native rows; 12 generator families, 312 source columns, and 468 bound
+transitions split 156/156/156 across CREATE/MERGE/UNCHANGED; 468 identity plus
+12 nontrivial certificate actions; and three tensor cases with 24/12/24
+address-keyed factor certificates.  The 72 ambient / 42 contextual Boolean
+census and every frozen `R/B/C/B2/K`, native nondivision, division, reciprocal,
+and matching coordinate remain exact.
+
+Six real source-only mutations cover the two earlier action repairs plus
+tensor-root and target-packet attachment.  Independent probes exhibit each
+forbidden semantic object and move measurement, gate, outcome index 12 to 1,
+lineage, claim, and seal.  Each full mutant then exits 1 before scientific
+evaluation because the bound static backward slice changes; no crash is the
+sole evidence.
+
+No nonce exists; neither fresh generation nor official run mode has executed.
+All v4 fresh/output/receipt/verification/paper/bundle paths are absent.  The
+disposition is only `REPAIR-GREEN-UNREVIEWED`, not a restored scientific rung.
+The sole next authorized event is two mutually blind source audits of these
+exact bytes followed by source-audit adjudication.  Nonbinding private Paper
+14 preparation carries no evidentiary status and binds no v4 byte;
+authoritative Paper 14, Paper 15, metric, curvature, gravity, continuum, and
+GR/QFT work remain closed.
