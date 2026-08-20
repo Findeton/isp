@@ -1020,6 +1020,21 @@ entries in 346 checks.  Stage B is `ACCEPT-STAGE-B`.  Stage C is now the sole
 authorized next event; Paper 13 is not citable before its later hostile panel
 and adjudication, and all metric-or-later units remain closed.
 
+Stage C freezes the result-known Paper 13 candidate and its self-contained
+byte-bound bundle at #202.  The paper states seven consecutively scoped
+results from one whole-filling law: contextual support extension,
+normalization, support covariance, native nondivision, grammar-relative
+division, reciprocal raw-relational response, and incidence-blind-class
+exclusion.  Its scanner covers 12 claim blocks, 29 receipt bindings, and all
+164 numeric tokens.  The master runner authenticates 21 exact files and
+regenerates the nonce case, official output, and 43.36 MB receipt byte for byte
+from the frozen evaluator in repository-root and true no-`.git` copies.  It
+contains no second scientific implementation.  The paper remains
+`GREEN-UNREVIEWED` and noncitable.  The sole next authorized event is a
+separately committed three-seat hostile-review protocol; no review dispatch,
+paper adjudication, metric successor, or later unit may begin before that
+protocol freezes.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

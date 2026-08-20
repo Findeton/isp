@@ -1,0 +1,141 @@
+{
+  "schema": "p13-paper-bundle-manifest-v1",
+  "normalized_payload_sha256": "2c748cdf7437f4b18a9b9a6c7964d0f7fc3061dfc5ceb885083d3a325736660a",
+  "source_freeze_commit": "f77e184b3ff6067c8014e5ff790df5cae806857a",
+  "construction_commit": "93fcad0b86b40b79651a558168ab830564cbf5e1",
+  "nonce_hex": "726d0d534da2d57eb97a89f57324d1e923e73b7cbd9130f443cbb8342ac891c1",
+  "files": [
+    {
+      "path": "RUNBOOK.md",
+      "role": "paper-and-integrity-rules",
+      "sha256": "5629dd083da923e216143c249ce0246da3238ddb9475bd6d67954ce0aa8aac58",
+      "size": 119844
+    },
+    {
+      "path": "v16/note-apr-one-gamma-paper-review-gate.md",
+      "role": "methodology-and-ontology-gate",
+      "sha256": "06d171a3eea8109e177e2dfa3cb5536fe3785043e676f735c36e91d03834cb51",
+      "size": 23123
+    },
+    {
+      "path": "v16/paper-12-atomless-regions-and-the-missing-gluing-law.md",
+      "role": "predecessor-negative-and-scope-anchor",
+      "sha256": "56cddeacbfe477d1af244b310e9a26b5622ef540b82deea5a96158819ba972f7",
+      "size": 19039
+    },
+    {
+      "path": "v16/note-apr-paper12-final-adjudication.md",
+      "role": "predecessor-disposition-anchor",
+      "sha256": "5ef1440064b703bd04bf97f1774f7f5e03efe537aeee2669bd1471f0a402799e",
+      "size": 13669
+    },
+    {
+      "path": "v16/code/apr_paper12_exact.py",
+      "role": "predecessor-authentication-only-source",
+      "sha256": "c209486a94016c00921c3b9edfeb2f53eef7d005180eb3c1d95153e56fec86a7",
+      "size": 50150
+    },
+    {
+      "path": "v16/code/apr_paper12_receipt.json",
+      "role": "predecessor-authentication-only-receipt",
+      "sha256": "d4e16c262d1c929d6e0507ef482eef4c2ff26c7f41f9dc4bf0bc58b708adfd39",
+      "size": 24687
+    },
+    {
+      "path": "v16/note-paper13-one-gamma-construction-pin.md",
+      "role": "result-neutral-construction-contract",
+      "sha256": "4b2c6f305430dffa329758e81cf82dd295800359b808136cae9c5f8ca3b94c35",
+      "size": 37592
+    },
+    {
+      "path": "v16/note-paper13-stageA-support-split-forward-repair-pin.md",
+      "role": "support-split-forward-repair-contract",
+      "sha256": "8ae54ada2a97f347a18b90adcab86dcb2e7c18c04c748cc5e0779b8251449a36",
+      "size": 16297
+    },
+    {
+      "path": "v16/note-paper13-gamma-source-freeze.md",
+      "role": "historical-source-freeze-authentication-only",
+      "sha256": "d717f97832efe05996ae5f94249629376ddbe916fc837e0d5d16984bd7a13ad5",
+      "size": 6802
+    },
+    {
+      "path": "v16/review-paper13-stageA-source-physics.md",
+      "role": "historical-source-audit-authentication-only",
+      "sha256": "20a054cd6542fd02f556b461408f48d75ead0c69ec06abd76c9eed3ce3c3d352",
+      "size": 3649
+    },
+    {
+      "path": "v16/review-paper13-stageA-source-records.md",
+      "role": "historical-records-audit-authentication-only",
+      "sha256": "7c5b14a04f938de05b64750f6c8ae454eb4bbe8d0824e9eaaa0016532ab52ed4",
+      "size": 3622
+    },
+    {
+      "path": "v16/note-paper13-stageA-source-audit-adjudication.md",
+      "role": "historical-source-audit-adjudication-anchor",
+      "sha256": "bd089458ef1d4c4fe8f9dc13fc21134695aba552b95b20f023e4d2f9f34dfb74",
+      "size": 5258
+    },
+    {
+      "path": "v16/code/p13_gamma_exact.py",
+      "role": "frozen-master-evaluator",
+      "sha256": "3da3161c7eef63b90da9c6cb85f7bc918d6e5c99fa431f07d273efd1f18e519e",
+      "size": 389487
+    },
+    {
+      "path": "v16/code/p13_gamma_fresh_cases.json",
+      "role": "nonce-bound-fresh-input",
+      "sha256": "2ac664c94a6b29c5b73fd8047e97a2e086ac45defc9c3431bc1ded66f011dd29",
+      "size": 2406
+    },
+    {
+      "path": "v16/code/p13_gamma_output.txt",
+      "role": "official-construction-output",
+      "sha256": "7f544c79f60d91c84e5805541313ec9d7ac068cdf0ee4f6184947cf44f43886f",
+      "size": 6632
+    },
+    {
+      "path": "v16/code/p13_gamma_receipt.json",
+      "role": "official-machine-reconstructible-receipt",
+      "sha256": "83bd33028c81e9dd555a44e9e7721d5ace298d522e0c069409118bdbf51c6c48",
+      "size": 43360610
+    },
+    {
+      "path": "v16/note-paper13-gamma-verification.md",
+      "role": "independent-no-import-verification",
+      "sha256": "faf508650c8d5f4c8691b334ea8877505ac49f2c26cdcc526bc3e309179295b8",
+      "size": 6779
+    },
+    {
+      "path": "v16/paper-13-one-relational-gamma.md",
+      "role": "result-known-paper-candidate",
+      "sha256": "db2f9f9a84f423bd8d23429ce567bc2e9236ea8deb3076f113c6aa692bd32446",
+      "size": 23473
+    },
+    {
+      "path": "v16/paper13_code/run_all.py",
+      "role": "master-authentication-and-replay-runner",
+      "sha256": "b99a458f76c90be19e396b5f332db8219298e8d3f875cb97328f89aa83d595a4",
+      "size": 18626
+    },
+    {
+      "path": "v16/paper13_code/receipts_table.json",
+      "role": "paper-number-and-claim-lineage-table",
+      "sha256": "60430a794a87d8478f69205e97d637eb9751c21a53da1959f0b3e9155b7d8206",
+      "size": 10193
+    },
+    {
+      "path": "v16/paper13_code/RUN.txt",
+      "role": "clean-and-off-tree-regeneration-instructions",
+      "sha256": "9296b317bdfe468d31ad7025ce807534a5ff9ae6a142cea4a8b9e6714188ff47",
+      "size": 2559
+    }
+  ],
+  "replay": {
+    "source": "v16/code/p13_gamma_exact.py",
+    "fresh": "v16/code/p13_gamma_fresh_cases.json",
+    "output": "v16/code/p13_gamma_output.txt",
+    "receipt": "v16/code/p13_gamma_receipt.json"
+  }
+}

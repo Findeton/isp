@@ -1,0 +1,181 @@
+{
+  "schema": "p13-paper-receipts-table-v1",
+  "paper": {
+    "path": "v16/paper-13-one-relational-gamma.md",
+    "sha256": "db2f9f9a84f423bd8d23429ce567bc2e9236ea8deb3076f113c6aa692bd32446"
+  },
+  "receipt": {
+    "path": "v16/code/p13_gamma_receipt.json",
+    "sha256": "83bd33028c81e9dd555a44e9e7721d5ace298d522e0c069409118bdbf51c6c48"
+  },
+  "claim_order": [
+    "ABSTRACT",
+    "MOTIVATION",
+    "KINEMATICS",
+    "LAW",
+    "SUPPORT",
+    "NONDIVISION",
+    "DIVISION",
+    "RECIPROCAL",
+    "FAMILY",
+    "ONTOLOGY",
+    "CONCLUSION",
+    "REFERENCES"
+  ],
+  "claims": {
+    "ABSTRACT": {
+      "kind": "receipt-and-scope-summary",
+      "scope": "finite exact class-relative candidate",
+      "block_sha256": "21e46441793c1ef810213df56e193a546c76e1833717ba6a0a114abec80fb0c9",
+      "number_token_count": 0,
+      "number_multiset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "receipt_bindings": [
+        {"pointer": "/sealed/strict_primary", "value_sha256": "dc5fdd3ffe2365b384762fb5bbc647cdaddd07525b0d017469981336bb55f170"},
+        {"pointer": "/sealed/scope", "value_sha256": "714d38a569b9a642bbc79326f450d12bf1be117ce93d28d06e7566ae9aa4e570"},
+        {"pointer": "/sealed/law_and_measurements/support_change", "value_sha256": "cad779bb03daa221ea9b20d5811898a4f390b8015247e965f856a8845760a13d"},
+        {"pointer": "/sealed/law_and_measurements/division", "value_sha256": "ede0ccba6dd5ec57bc93248ac9c3641f9a44bbe7fe9ca21496b7eb924407005d"},
+        {"pointer": "/sealed/law_and_measurements/reciprocal", "value_sha256": "61470c4b747d4c4fb821df4e0f49bfe4558e722038b53310387383078b6526b2"},
+        {"pointer": "/sealed/law_and_measurements/blind_family", "value_sha256": "90bbcb127e88bb9ad9692f598a7499e39d17665502b4829c8f6d3952a4c37a8d"}
+      ],
+      "result_labels": []
+    },
+    "MOTIVATION": {
+      "kind": "receipt-and-external-context",
+      "scope": "architectural and stochastic-indivisibility distinction",
+      "block_sha256": "e65b52d664c6bec1d74ddf26b09e5495b03cc738a9839646df0ec3bbcd694889",
+      "number_token_count": 0,
+      "number_multiset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "receipt_bindings": [
+        {"pointer": "/sealed/scope/native_nondivision_sentence", "value_sha256": "c030c0d6d38605b5fcb95d75a5b5ee3e38780f366bcbe872d64cc9784393e871"},
+        {"pointer": "/sealed/claims/complete_gamma", "value_sha256": "7d564f9562e43bed4292fa2dc2326e3e721512fa68ed054af28405cb48ddf58e"},
+        {"pointer": "/sealed/claims/shadow_weld", "value_sha256": "3b2bed42adbd9e8cd8e266a59b30ebe1a573d62a994e69bb3acbdc8682adbbd7"}
+      ],
+      "result_labels": []
+    },
+    "KINEMATICS": {
+      "kind": "receipt-plus-in-text-proof",
+      "scope": "finite typed Boolean zero patterns",
+      "block_sha256": "a6ebaac157ec8cf76257542bcb82cb4dec48d356d75f0824a9243f5e21f017fc",
+      "number_token_count": 7,
+      "number_multiset_sha256": "2953f5c148d26cdefe83a25f38d232f77ec7b204699cd9ae8e0bd63ed491545b",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/boolean_quotient", "value_sha256": "39acf306a29f1c8ddbc99f676469a5df4bcf2067f7c489b3e98874485d277a55"},
+        {"pointer": "/sealed/law_and_measurements/context_split_census", "value_sha256": "9365b45a9d9fc24de98e111fd2c0328abcee4e64d5a451b32013621445877889"},
+        {"pointer": "/sealed/law_and_measurements/groupoid", "value_sha256": "fab9f7ea36ebabe0902b340a0c11d61de539edefde81a2073ee7b78438d7d20a"}
+      ],
+      "result_labels": ["A"]
+    },
+    "LAW": {
+      "kind": "receipt-plus-in-text-proof",
+      "scope": "all admitted finite fillings of the typed process grammar",
+      "block_sha256": "4cda794b4280d025c39a76f7ca1951ab86b0dc9d3b15c23b555a450e303992cd",
+      "number_token_count": 23,
+      "number_multiset_sha256": "3fc2544e40976f699ea03dda29fe69ab4e5accb99c670786fba6dd3e17cfad5b",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/g_domain", "value_sha256": "bd0cb98cd1c0f255bb5119b6fb7302d91d9ad1fa7020cc32f4cbb1b6b8b19bdc"},
+        {"pointer": "/sealed/law_and_measurements/category", "value_sha256": "c6f8f775c778daa0c8f4973099039c43a3d4c52c7bb69cf78bc12e524329a487"},
+        {"pointer": "/sealed/law_and_measurements/coherent", "value_sha256": "f05b18ced7f7a6957c9fd70622071101dab887096b77b8cd2a5153c8666ee502"},
+        {"pointer": "/sealed/law_and_measurements/source_identity", "value_sha256": "d74e55b52e21d3c1de55ab397a0c8edfc5dea061b1fc445b62c1eeefb6147ce2"}
+      ],
+      "result_labels": ["B"]
+    },
+    "SUPPORT": {
+      "kind": "receipt-plus-general-lemma",
+      "scope": "registered finite generator family with all-context split lemma",
+      "block_sha256": "9b090003b55d83d7695c274d2752aec01ef64987dbaf3c04199b49d57acf9933",
+      "number_token_count": 9,
+      "number_multiset_sha256": "59c54344ae054d091d739b74afe9c5e6410e0089bb8d136f4033e1e9bc4fb07f",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/context_split_census", "value_sha256": "9365b45a9d9fc24de98e111fd2c0328abcee4e64d5a451b32013621445877889"},
+        {"pointer": "/sealed/law_and_measurements/support_change", "value_sha256": "cad779bb03daa221ea9b20d5811898a4f390b8015247e965f856a8845760a13d"},
+        {"pointer": "/sealed/law_and_measurements/totality", "value_sha256": "6df2150c1472fa89df94cd41b4b07f8679dccb2cbc444ea4de90deee244670a2"}
+      ],
+      "result_labels": ["C"]
+    },
+    "NONDIVISION": {
+      "kind": "receipt-plus-in-text-proof",
+      "scope": "native declared cut carrier and rational coupling interval",
+      "block_sha256": "d038e7a4afac8e52b352920f561c02e3df6f36cea13f3afcf908e7bdc3efe675",
+      "number_token_count": 54,
+      "number_multiset_sha256": "8d74f4aeb45b1aa6fedf277798e03a04da42f63a849761da9bda1b83d0fd47ec",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/native_nondivision", "value_sha256": "e2e107319ad8661fcf8e093f902ed0d112cf3e2ef860414a764ca783570c6a4c"}
+      ],
+      "result_labels": ["D"]
+    },
+    "DIVISION": {
+      "kind": "receipt-plus-in-text-proof",
+      "scope": "finite words of the declared continuation grammar",
+      "block_sha256": "e95d15ee1f7ae849cbd02df531cad7b451c805ae34b1b5dfe331118e473d659f",
+      "number_token_count": 6,
+      "number_multiset_sha256": "02d12a2ca46506fbb4c4a073294f913761e6c84a36991fc91d00ac8093988fea",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/division", "value_sha256": "ede0ccba6dd5ec57bc93248ac9c3641f9a44bbe7fe9ca21496b7eb924407005d"}
+      ],
+      "result_labels": ["E"]
+    },
+    "RECIPROCAL": {
+      "kind": "receipt-plus-scope-proof",
+      "scope": "finite writer-reader fixture and same-boundary incidence comparison",
+      "block_sha256": "c4147272c1213c05070f41ffaa6563edb90f28cf7fce5db48d1e5dec2c12fd9c",
+      "number_token_count": 16,
+      "number_multiset_sha256": "60fbee4b881d48467675bd5384f70c3fac774862bad906d18f5f6cefbe14742f",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/reciprocal", "value_sha256": "61470c4b747d4c4fb821df4e0f49bfe4558e722038b53310387383078b6526b2"}
+      ],
+      "result_labels": ["F"]
+    },
+    "FAMILY": {
+      "kind": "receipt-plus-in-text-proof",
+      "scope": "predeclared incidence-blind stochastic transducer class",
+      "block_sha256": "d139ed8783e563f10a938e891be247141056f8a46dfe205bc0cf4c066f1c18f8",
+      "number_token_count": 36,
+      "number_multiset_sha256": "cd022aa5010986df67ce8624bded87656243710f52e516b29be3e94f6dedd449",
+      "receipt_bindings": [
+        {"pointer": "/sealed/law_and_measurements/blind_family", "value_sha256": "90bbcb127e88bb9ad9692f598a7499e39d17665502b4829c8f6d3952a4c37a8d"},
+        {"pointer": "/sealed/law_and_measurements/fresh_confirmation", "value_sha256": "e7cb94ce82c2c972149e8f7bb7bb3b7bdedc439ddaba339544ed0b96503fa67e"},
+        {"pointer": "/sealed/freshness_ledger", "value_sha256": "4fe46e313f985adc7a759d5248eb0109d6ee40da0946354eeae47ce1016de802"}
+      ],
+      "result_labels": ["G"]
+    },
+    "ONTOLOGY": {
+      "kind": "receipt-scope-table",
+      "scope": "permanent ontology and non-claim walls",
+      "block_sha256": "6fa54e1beffa6bbbeb1e3e471c3c4ba935432f4207171a1e183112dbdd02f09b",
+      "number_token_count": 0,
+      "number_multiset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "receipt_bindings": [
+        {"pointer": "/sealed/scope", "value_sha256": "714d38a569b9a642bbc79326f450d12bf1be117ce93d28d06e7566ae9aa4e570"}
+      ],
+      "result_labels": []
+    },
+    "CONCLUSION": {
+      "kind": "receipt-outcome-and-scope",
+      "scope": "finite exact class-relative candidate ceiling",
+      "block_sha256": "d0fd9da2e14d66e7a1304cd7d222b8bc721fcd54fd2ae92828f3c6f4b821e034",
+      "number_token_count": 0,
+      "number_multiset_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "receipt_bindings": [
+        {"pointer": "/sealed/strict_primary", "value_sha256": "dc5fdd3ffe2365b384762fb5bbc647cdaddd07525b0d017469981336bb55f170"},
+        {"pointer": "/sealed/eligible_cap", "value_sha256": "dc5fdd3ffe2365b384762fb5bbc647cdaddd07525b0d017469981336bb55f170"},
+        {"pointer": "/sealed/scope", "value_sha256": "714d38a569b9a642bbc79326f450d12bf1be117ce93d28d06e7566ae9aa4e570"}
+      ],
+      "result_labels": []
+    },
+    "REFERENCES": {
+      "kind": "external",
+      "scope": "external literature only",
+      "block_sha256": "1080ef0a63be7b0cdf5f9e53a3f1b250c1a5dd1c4e80a98da908611584b967fb",
+      "number_token_count": 13,
+      "number_multiset_sha256": "58d717ddc911cd133b2d23a837dd60cf3eeb3a480e17b48be2088c59ad56aaf6",
+      "receipt_bindings": [],
+      "result_labels": []
+    }
+  },
+  "external_references": [
+    {"author_token": "Barandes", "source_url": "https://doi.org/10.48550/arXiv.2507.21192"},
+    {"author_token": "Sorkin", "source_url": "https://doi.org/10.1142/S021773239400294X"},
+    {"author_token": "Sikorski", "source_url": "https://books.google.com/books?id=ICMxwgEACAAJ"},
+    {"author_token": "Selinger", "source_url": "https://doi.org/10.1007/978-3-642-12821-9_4"}
+  ]
+}

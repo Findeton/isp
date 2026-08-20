@@ -4473,3 +4473,57 @@ postulated.  No absolute irreducibility, valuation, metric, topology,
 causality, curvature, continuum, gravity, GR, QFT, species, or Hamiltonian is
 derived.  Stage C is now solely authorized; nothing is citable before the
 later hostile panel and adjudication.
+
+## 2026-08-19 — PAPER 13 RESULT-KNOWN CANDIDATE AND BUNDLE FROZEN (v16 LEDGER #202)
+
+The result-known candidate is frozen at
+`v16/paper-13-one-relational-gamma.md`, SHA-256
+`db2f9f9a84f423bd8d23429ce567bc2e9236ea8deb3076f113c6aa692bd32446`.
+It begins with one whole-filling `Gamma_g` on complete typed contextual
+arguments and derives support change, coherent screens, the native
+nondivision witness, one grammar-relative carried-record division, a
+same-law reciprocal raw-relation response, and the resource-matched blind
+family from that root.  Results A--G are consecutively scoped.  The paper
+preserves the exact distinction between a definite configuration at a
+nondivision cut and an impermissible autonomous Markov restart; it does not
+recast native nondivisibility as missing classical state.
+
+The accompanying bundle contains no second scientific implementation:
+
+- `v16/paper13_code/run_all.py`, SHA-256
+  `b99a458f76c90be19e396b5f332db8219298e8d3f875cb97328f89aa83d595a4`;
+- `v16/paper13_code/manifest.json`, ordinary SHA-256
+  `373406f606ed495baffed160d233ef65d56cec96ba6423bac95b8e72ddcd3430`
+  and normalized payload SHA-256
+  `2c748cdf7437f4b18a9b9a6c7964d0f7fc3061dfc5ceb885083d3a325736660a`;
+- `v16/paper13_code/receipts_table.json`, SHA-256
+  `60430a794a87d8478f69205e97d637eb9751c21a53da1959f0b3e9155b7d8206`;
+- `v16/paper13_code/RUN.txt`, SHA-256
+  `9296b317bdfe468d31ad7025ce807534a5ff9ae6a142cea4a8b9e6714188ff47`.
+
+The fast gates authenticate 21 byte-bound files, 12 paper claim blocks, 29
+receipt bindings, all 164 numeric tokens, seven consecutive result labels,
+and the deliberate anchor-failure path.  Final repository-root and true
+off-tree/no-`.git` master runs independently regenerate the fresh case,
+official output, and 43,360,610-byte receipt to byte equality; temporary
+destinations are removed.
+
+Two development defects were found and closed before this freeze.  The first
+replay used generic temporary basenames and was refused by the frozen
+publication whitelist before scientific evaluation.  After the exact
+basenames were restored, the first no-`.git` copy revealed that the bundle had
+omitted ten authentication-only evaluator anchors.  The manifest and RUN
+instructions were expanded to the complete 21-file closure, after which both
+root and no-`.git` full replays passed.  Neither correction changed the paper,
+evaluator, fresh case, official output, official receipt, or any scientific
+coordinate.
+
+The paper remains `GREEN-UNREVIEWED` and noncitable.  Its ceiling is one finite
+exact class-relative candidate Gamma with event grammar priced.  Coupling,
+catalogue, event selection, division doctrine, endpoint squaring, law
+selection, and actualization remain unselected, priced, postulated, or typed
+candidates.  No absolute irreducibility, valuation, metric, topology,
+causality, curvature, continuum, gravity, GR/QFT, species, Hamiltonian, or
+phenomenology is derived.  The sole next authorized event is a separately
+frozen three-seat hostile protocol; reviewers have not been dispatched and
+all metric-or-later work remains closed.

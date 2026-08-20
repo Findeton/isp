@@ -1,0 +1,68 @@
+PAPER 13 EXACT REGENERATION
+
+Requirements
+------------
+
+- Python 3.11 or later.
+- Python standard library only.
+- Run from the repository root for the first three commands.
+- No network access and no package installation are required.
+
+Fast bundle and paper checks
+----------------------------
+
+python3 v16/paper13_code/run_all.py --selftest
+python3 v16/paper13_code/run_all.py --verify-only
+
+The first command authenticates every byte-bound file, checks every paper
+claim/number block, and proves that an in-memory anchor corruption exits only
+through the failure path.  The second performs the same checks without the
+deliberate failure probe.  Neither command runs the scientific evaluator or
+writes a publication artifact.
+
+Full exact replay
+-----------------
+
+python3 v16/paper13_code/run_all.py
+
+The master runner authenticates the manifest, evaluator, paper, fresh case,
+official output, official receipt, and verification note.  It creates absent
+destinations in a temporary directory, regenerates the fresh case from the
+recorded nonce and source hash, runs the byte-frozen evaluator once, and
+requires byte-for-byte equality with all three frozen Stage-B artifacts.  The
+temporary directory is removed automatically.  A mismatch exits 1 and emits
+no replacement artifact.
+
+True off-tree replay
+--------------------
+
+P13_REPLAY_DIR="$(mktemp -d)"
+rsync -R \
+  RUNBOOK.md \
+  v16/note-apr-one-gamma-paper-review-gate.md \
+  v16/paper-12-atomless-regions-and-the-missing-gluing-law.md \
+  v16/note-apr-paper12-final-adjudication.md \
+  v16/code/apr_paper12_exact.py \
+  v16/code/apr_paper12_receipt.json \
+  v16/note-paper13-one-gamma-construction-pin.md \
+  v16/note-paper13-stageA-support-split-forward-repair-pin.md \
+  v16/note-paper13-gamma-source-freeze.md \
+  v16/review-paper13-stageA-source-physics.md \
+  v16/review-paper13-stageA-source-records.md \
+  v16/note-paper13-stageA-source-audit-adjudication.md \
+  v16/code/p13_gamma_exact.py \
+  v16/code/p13_gamma_fresh_cases.json \
+  v16/code/p13_gamma_output.txt \
+  v16/code/p13_gamma_receipt.json \
+  v16/note-paper13-gamma-verification.md \
+  v16/paper-13-one-relational-gamma.md \
+  v16/paper13_code/run_all.py \
+  v16/paper13_code/manifest.json \
+  v16/paper13_code/receipts_table.json \
+  v16/paper13_code/RUN.txt \
+  "$P13_REPLAY_DIR/"
+(cd "$P13_REPLAY_DIR" && python3 v16/paper13_code/run_all.py)
+
+The off-tree directory contains no .git directory.  The full replay result is
+a single canonical JSON line.  Timing diagnostics are deliberately absent;
+the result is byte-deterministic.
