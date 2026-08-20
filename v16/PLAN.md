@@ -1188,6 +1188,24 @@ must use a new versioned identity and repeat both blind audits.  No source
 edit, nonce, paper, Paper 14 pin, metric work, or later unit is authorized
 before that delta pin freezes.
 
+#214 freezes the result-neutral v3 source-delta pin at
+`v16/note-paper13-typed-groupoid-source-delta-pin.md`, ordinary SHA-256
+`44fe6f86eeb6990537b36760eda68da5ccdc31fd8d15dfe003b42e6d4324a154`
+and normalized SHA-256
+`354b28c183622d61dcf643df4e1c654130f50e8c2ab5be9b34bbe4da357ab76a`.
+It closes the specification layer for the two adjudicated defects without
+pre-awarding their repair: configuration action is node-typed and target-free,
+with a separately tested exact assertion surface; certificate action receives
+a complete literal binding packet rather than attempting to relabel hashes.
+Identity, inverse, composition, associativity, tensor where typed, address
+provenance, independent rebuild, keyed total pairing, promotion lineage, 149
+attacks, and four real source mutations are pinned.  Two mutually blind
+read-only pin audits accept the same 784-line snapshot.  The sole next
+authorized event is construction and freeze of
+`v16/code/p13_gamma_exact_v3.py` and its v3 source-freeze note.  No nonce,
+official artifact, paper, Paper 14 construction, or metric work may begin
+first.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
@@ -1201,3 +1219,11 @@ Nothing below is authorized by this plan alone.
   law-selected rather than declared.
 - A phenomenology unit, only after at least one dimensionless deviation is
   fixed across the surviving law family.
+- Paper 14 stable happenings/pre-metric construction, only after Paper 13
+  earns terminal acceptance: presentation-independent stable happenings,
+  complete division frontiers, local partial order, and a Gamma-derived
+  positive extensive valuation whose unit-count case is not assumed.
+- Paper 15 spacetime reconstruction, only after Paper 14 earns its order and
+  valuation gates: dimension, Lorentzian signature, manifoldlikeness, scale,
+  local duration, and metric reconstruction, with failure recorded at the
+  earliest unsupported rung.

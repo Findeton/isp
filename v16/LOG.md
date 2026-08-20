@@ -4911,3 +4911,42 @@ facts directly.  A new versioned source must repeat all 112 attacks plus the
 two adjudicated objects and pass two new blind audits.  No source edit, nonce,
 official run, paper, Paper 14, metric, curvature, gravity, continuum, GR/QFT,
 or later work is authorized before the delta pin.
+
+## 2026-08-20 — PAPER 13 V3 SOURCE-DELTA PIN FROZEN (v16 LEDGER #214)
+
+The result-neutral pin freezes at
+`v16/note-paper13-typed-groupoid-source-delta-pin.md`, ordinary SHA-256
+`44fe6f86eeb6990537b36760eda68da5ccdc31fd8d15dfe003b42e6d4324a154`
+and normalized SHA-256
+`354b28c183622d61dcf643df4e1c654130f50e8c2ab5be9b34bbe4da357ab76a`.
+It contains 784 LF-terminated lines and 39,364 bytes.  All immutable authority
+hashes reauthenticate.
+
+The pin gives configuration action an exact three-argument target-free core
+on address-typed `BoundaryNode` objects, a distinct assertion-only target
+gate, and separately typed identity/inverse/composition/associativity/tensor
+law rows.  The inherited hash-bearing `BoundSplitCertificate` is unchanged;
+a new complete `CertificateActionInput` binds it to literal law, enclosing
+presentation, generator address and subpresentation, nodes, Arrow,
+configurations, and proof/classifier data.  Its closed action returns a
+complete bound input, while an independent rebuild supplies keyed pairwise
+evidence.  Promotion must consume literal input/triple/law-row bytes.  The
+registry is 112 inherited attacks plus A1--A16 and C1--C21 = 149, with two
+configuration and two certificate real post-freeze source mutations.
+
+Two mutually blind read-only audits independently authenticate and
+`ACCEPT-FOR-COMMIT` the same frozen bytes after earlier draft defects were
+repaired.  This is specification acceptance only.  The v2 source remains
+`NO-GO` at `P13-REFERENT-PRESENTATION-ONLY`; no scientific rung is restored,
+and no nonce, official artifact, paper, or later unit exists.  The sole next
+authorized event is construction and freeze of
+`v16/code/p13_gamma_exact_v3.py` and
+`v16/note-paper13-typed-groupoid-source-freeze-v3.md`.
+
+The user authorizes continuation through Paper 14 and Paper 15 after Paper 13,
+but the gates remain ordered.  Paper 14 may begin only after terminal Paper 13
+acceptance and must derive stable happenings, complete frontiers, local order,
+and weighted extensive valuation from the same Gamma.  Paper 15 may begin only
+after those gates and must test dimension, Lorentzian signature,
+manifoldlikeness, scale, and metric reconstruction rather than assume
+spacetime.
