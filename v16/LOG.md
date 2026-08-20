@@ -5874,3 +5874,24 @@ construct chronology, dimension, signature, scale, metric, curvature,
 gravity, actualization, or law selection. Per the pin, construction now
 halts. The next and only authorized event is Stage D hostile-protocol freeze;
 Paper 15 remains closed.
+
+## 2026-08-20 — PAPER 14 HOSTILE-REVIEW PROTOCOL FREEZE (v16 LEDGER #245)
+
+The result-neutral hostile protocol is frozen at
+`v16/note-paper14-premetric-hostile-protocol.md`, SHA-256
+`7eba533fea4bb96370ed27aa46f9f6c933b207317495d9a4955c7868f89f5fed`.
+It binds the pin, source, paper, construction note, fresh cases, output,
+receipt, verification note, and the three chronology commits exactly.
+
+Three mutually blind seats are fixed: referent/ontology,
+probability/stability/division, and dependency/order/valuation. Every seat
+must freeze a no-import reconstruction before source inspection, reconstruct
+the complete finite law and receipt rather than trust booleans, cover C1--C14
+and H1--H26 semantically, and add at least four new mathematical controls.
+The protocol expressly excludes Python/API/cache/serialization trivia from
+scientific demotion unless it changes a mathematical object or promotive
+evidence. No source repair or law retuning is permitted.
+
+The report paths and separate-commit discipline are exact. Paper 14 remains
+`GREEN-UNREVIEWED`; Paper 15 remains closed until all three reports and a
+terminal Stage F adjudication explicitly authorize a successor pin.
