@@ -4830,3 +4830,84 @@ authorized event is two mutually blind independent source audits against the
 exact #210 bytes, followed by a separate source-audit adjudication.  Fresh
 generation, official construction, paper/bundle work, metric work, and every
 later unit remain closed first.
+
+## 2026-08-20 — PAPER 13 TYPED-GROUPOID OPERATOR SOURCE AUDIT FROZEN (v16 LEDGER #211)
+
+The mutually blind operator/category source report freezes at
+`v16/review-paper13-typed-groupoid-source-operator.md`, ordinary SHA-256
+`884337d385d0997d7fddcf748297544869c9effc537c46017a6db018c7f4da5a`
+and normalized SHA-256
+`64444496857f22868215e85c920f369b855b43dc2bc1a1e9a15cc92d8e4cf0b2`.
+It contains 365 lines and 22,779 bytes.  The report authenticates the exact
+#210 bytes, freezes an independent no-import groupoid reconstruction, and
+replays root and true source-only selftests plus all G1--G20 modes.
+
+It returns `NO-GO` at `P13-REFERENT-PRESENTATION-ONLY`.  Its first fresh
+counterexample supplies an identity witness, a valid `ACTIVE` source, and an
+otherwise exact same-catalogue `CARRIED` target.  The target is not the witness
+image, yet `relabel_configuration` returns a configuration instead of
+refusing because it validates assignments and context but never binds the
+supplied target boundary to `relabel_boundary(source,witness)`.  The universal
+complete-object groupoid action is therefore false.  This report alone bars
+fresh generation, but the second blind audit remains to freeze independently
+before adjudication.
+
+## 2026-08-20 — PAPER 13 TYPED-GROUPOID RECORDS SOURCE AUDIT FROZEN (v16 LEDGER #212)
+
+The mutually blind records/integrity source report freezes at
+`v16/review-paper13-typed-groupoid-source-records.md`, ordinary SHA-256
+`c90a16072084896da248a53551a54dc44eb0f7c668c401395b2c1d1b49c0cf07`
+and normalized SHA-256
+`3baf9c6fb42c0595be22d7610ec54aeed360b765b563139c20676f83ddad6a82`.
+It contains 414 lines and 20,562 bytes.  The report preserves mutual
+blindness, independently replays root, alien-CWD, and true off-tree selftests,
+reconstructs every registered value without importing the evaluator, and
+checks the G1/G18 real source controls.
+
+It independently returns `NO-GO` at
+`P13-REFERENT-PRESENTATION-ONLY`.  Native CREATE/MERGE/UNCHANGED rows call
+certificate transport exact when both collections are final and equipotent,
+but serialize no paired original/transported/rebuilt certificate bytes and
+leave their classifier-hash lists outside the promotion predicate.  Replacing
+all transformed hashes by malformed strings moves measurement, claim, and
+seal while native promotion remains true.  Hash coverage is not evidence of
+the claimed functorial certificate action.  Both source reports are now
+frozen; only joint adjudication may authorize a response.
+
+## 2026-08-20 — PAPER 13 TYPED-GROUPOID SOURCE AUDITS ADJUDICATED (v16 LEDGER #213)
+
+The joint adjudication freezes at
+`v16/note-paper13-typed-groupoid-source-audit-adjudication.md`, ordinary
+SHA-256
+`92466ffa960ce0c3590b4d64707a9dc72fa61a6c76a623e492854c1d7ac3cb50`.
+It contains 287 lines and 13,190 bytes.  Both report hashes and the frozen
+source reauthenticate exactly.
+
+An independent no-import static/semantic adjudicator, SHA-256
+`412bdd6cb567c8e49661ee5a3bb2341d3ce1d3a254a15a27b49b48044dc50119`,
+reproduces both smallest objects with normalized payload SHA-256
+`dc97ca94d27b07869fb54a9994c4601cda45c5bbae8f959f2dd0406b9fb3d325`.
+The operator action contains no target-boundary equality or
+`relabel_boundary` call.  The native certificate predicate consumes only
+finality and equal counts, while promotion ignores both classifier-hash lists
+and no paired certificate bytes exist.
+
+The adjudicated source disposition is `NO-GO`, strict primary
+`P13-REFERENT-PRESENTATION-ONLY`.  This is not an integrity failure and does
+not refute the preserved presentation-indexed `R/B/C/B2/K`, native
+no-positive-restart theorem, history controls, grammar-relative division,
+reciprocal response, or class-relative matching calculation.  It does prevent
+point-free promotion, fresh generation, official artifacts, and paper
+regeneration from the #210 bytes.
+
+One bounded next event is authorized: a result-neutral delta pin must freeze
+configuration-action closure and complete certificate-action closure before
+any new source byte.  The configuration action must derive or exactly validate
+the target witness image and close alien boundary/matter/port cases.  Every
+native split certificate must serialize keyed original, literal transport,
+and independent rebuild bytes and prove identity, inverse, composition,
+associativity, and classifier lineage; promotion must consume those pairwise
+facts directly.  A new versioned source must repeat all 112 attacks plus the
+two adjudicated objects and pass two new blind audits.  No source edit, nonce,
+official run, paper, Paper 14, metric, curvature, gravity, continuum, GR/QFT,
+or later work is authorized before the delta pin.

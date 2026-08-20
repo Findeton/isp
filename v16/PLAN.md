@@ -1162,6 +1162,32 @@ these exact source bytes followed by source-audit adjudication.  Fresh nonce
 generation, official artifacts, paper/bundle regeneration, metric work, and
 later units remain closed until that adjudication accepts.
 
+The two mutually blind source audits freeze separately at #211 and #212.  The
+operator/category report, ordinary SHA-256
+`884337d385d0997d7fddcf748297544869c9effc537c46017a6db018c7f4da5a`,
+finds that identity-witness configuration transport accepts an exact
+`CARRIED` target although the actual witness image is `ACTIVE`.  The
+records/integrity report, ordinary SHA-256
+`c90a16072084896da248a53551a54dc44eb0f7c668c401395b2c1d1b49c0cf07`,
+finds that native CREATE/MERGE/UNCHANGED certificate transport is promoted
+from finality and equal counts without paired transported certificate bytes.
+Both return `NO-GO` at `P13-REFERENT-PRESENTATION-ONLY`.
+
+#213 jointly adjudicates both reports in
+`v16/note-paper13-typed-groupoid-source-audit-adjudication.md`, SHA-256
+`92466ffa960ce0c3590b4d64707a9dc72fa61a6c76a623e492854c1d7ac3cb50`.
+An independent no-import checker reproduces both failures.  Fresh generation
+and every v2 publication path remain barred; the old paper remains rejected.
+The preserved presentation-indexed arithmetic, native nondivision,
+grammar-relative division, reciprocal response, and class-relative matching
+rows are not refuted.  One further result-neutral delta pin is authorized for
+two exact closures only: derive or validate every configuration target as the
+witness image, and serialize/pair/rebuild every native split certificate with
+the promotion gate consuming its complete transported bytes.  The next source
+must use a new versioned identity and repeat both blind audits.  No source
+edit, nonce, paper, Paper 14 pin, metric work, or later unit is authorized
+before that delta pin freezes.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
