@@ -1075,6 +1075,17 @@ fact and not authorization to repair.  Seats I and R remain separately frozen
 in the worktree pending their own commits; joint adjudication remains barred
 until all three report commits exist.
 
+Seat I freezes independently at #206, ordinary SHA-256
+`8153eda3ff440712d30483dfa12b6c20e7109d91a2785b1577f3374ebe1fd636`
+and normalized SHA-256
+`4afd10431b25e19f806ac8ccacedd4dfcece27ae60b96d086559ca202e2466e1`.
+It reports no scientific kill, preserves the native no-positive-restart result
+and grammar-relative division, and grades the paper `ACCEPT-WITH-FIXES` at the
+eligible cap.  Its history-conditioned and enlarged-carrier Markovizations are
+explicit non-kills.  This report neither overrides nor adjudicates Seat A's
+groupoid counterexample.  Seat R remains to be committed; joint adjudication
+is still barred and no repair or successor is authorized.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

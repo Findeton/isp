@@ -4612,3 +4612,29 @@ This entry records one hostile report only.  The finding is not adjudicated,
 the candidate and report remain immutable, and no repair is authorized.
 Seats I and R must freeze in separate commits before any joint adjudication;
 metric-or-later work remains closed.
+
+## 2026-08-20 — PAPER 13 SEAT I INDIVISIBILITY/RECORD REPORT FROZEN (v16 LEDGER #206)
+
+The mutually blind Seat I report is frozen verbatim at
+`v16/review-paper13-indivisibility-records.md`, ordinary SHA-256
+`8153eda3ff440712d30483dfa12b6c20e7109d91a2785b1577f3374ebe1fd636`
+and normalized SHA-256
+`4afd10431b25e19f806ac8ccacedd4dfcece27ae60b96d086559ca202e2466e1`.
+It contains 667 lines and 44,692 bytes.  Seat I preserved mutual blindness,
+used no evaluator-function import, and independently rebuilt the common law,
+native factorization test, complete record grammar, and assigned attacks.
+
+The report finds no scientific kill and recommends the capped rung
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`, with paper grade
+`ACCEPT-WITH-FIXES`.  A pre-commit mechanical pass removed five Markdown
+header hard-break spaces and refreshed only the report self-hash; its
+scientific text and verdict did not change.  It reports that the native nondivision survives the full
+positive two-state kernel test and that the lawful record division survives
+the declared grammar.  History-conditioned and enlarged-carrier
+Markovizations remain explicit scope controls rather than native restart
+kernels or evidence of ontological incompleteness.  Its fixes concern
+certificate/audit wording rather than a scientific rung.
+
+This entry freezes one report only and does not adjudicate its disagreement
+with Seat A.  Seat R must freeze before joint adjudication.  Candidate and
+reports remain immutable; no repair or successor is authorized.
