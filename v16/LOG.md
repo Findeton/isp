@@ -6317,3 +6317,25 @@ boundary field, generator, reader, group action, evaluator rule, grammar, or
 parameter is a new mathematical law and stops the unit. Only terminal
 semantic acceptance after three separately frozen reports and adjudication
 may authorize a Rust pin.
+
+## 2026-08-20 — PAPER 13C PROBABILITY REPORT (v16 LEDGER #261)
+
+The mutually blind probability/query/division report is frozen at
+`v16/review-paper13c-interventional-gamma-probability.md`, SHA-256
+`14a417e87abeb20f91b2a0d0cd76a6143c7dfa7e6a42597fc8c566b667a5a240`
+(425 LF lines / 18,654 bytes).
+
+The seat returns `REJECT`. Its first decisive semantic counterexample is
+typed rather than computational: the boundary definition requires $t=h$ on
+every recorded endpoint, while licensed future generator $F_t$ toggles $t$
+without transporting $h$. It therefore maps a legal state such as
+$(h,t)=(0,0)$ outside the declared boundary and cannot be the claimed exact
+bijection. The stable-future grammar and record theorem do not promote.
+
+The report also finds that the prose calls $E_r$ an admitted eraser control,
+but $E_r$ is not a typed arrow or experiment in the frozen executable law.
+The seat independently reconstructs the normalized kernels, queried direct
+and cut laws, negative native restart, nonempty tensor obstruction, complete
+divisions, varying-size law, and relational response. This report is
+evidence, not adjudication; sibling reviews remain independent and Rust stays
+prohibited.
