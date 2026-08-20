@@ -6544,3 +6544,26 @@ the full provisional product with actuality unconstructed. Optional requests
 to print semidirect composition and zero/one fusion clauses are explanatory
 only and require no mathematical repair. Sibling reports remain separately
 frozen evidence; Rust is not authorized by this report.
+
+## 2026-08-20 — PAPER 13D PROBABILITY/DIVISION REPORT (v16 LEDGER #269)
+
+The independent probability/global-evaluation/cuts/records report is frozen at
+`v16/review-paper13d-typed-executable-gamma-probability.md`, SHA-256
+`4110f2149c3a424104bd526433314c5370431674ace1e097d9782f9eaf26ed4c`
+(424 LF lines / 20,890 bytes).
+
+The seat returns `ACCEPT` with no semantic counterexample and passes all
+P1–P22 attacks. It independently reconstructs exact $B,C,B^2,CB^{-1}$;
+normalization of every generator, tensor, fusion, quotient, and contrast;
+trace-valued convolution; all-n native-cut negativity; full-field queried
+divisions; stochastic record-projector transport through arbitrary stable
+words; reachable positive-mass erasure; deletion; and every response control.
+
+Fresh countermodels verify alternative-dependent stabilizers, residual
+statistical inference after perfect record erasure, the positive enlarged
+carrier, observational-postselection counterfeit, coarse-reader
+annihilation, representative-mass loss, and support-only false equality. The
+full provisional product survives with actuality unconstructed. Its wording
+clarifications on cylinders, the empty record word, and tensor/orbit
+identification are scope-only. Rust remains prohibited pending the third
+report and joint adjudication.
