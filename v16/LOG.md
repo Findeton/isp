@@ -4559,3 +4559,31 @@ No reviewer has been dispatched by this event.  Paper 13 remains
 `GREEN-UNREVIEWED` and noncitable.  The sole next authorized event is the
 three-seat read-only dispatch under these exact protocol bytes; no paper
 repair, adjudication, metric investigation, or later unit may begin first.
+
+## 2026-08-19 — PAPER 13 THREE-SEAT HOSTILE PANEL DISPATCHED (v16 LEDGER #204)
+
+After protocol commit
+`73dd8326a20abe802cec021e5d1f7e7c6cb03332`, three fresh mutually blind
+review tasks were actually dispatched against immutable candidate commit
+`317f3b58627a06539a470509b07259aebe15be7f`:
+
+- `/root/p13_seat_a` owns exact operator/category/totality and anti-wrapper,
+  writing only `v16/review-paper13-operator-category.md`;
+- `/root/p13_seat_i` owns stochastic indivisibility/division/records and
+  Barandes scope, writing only
+  `v16/review-paper13-indivisibility-records.md`;
+- `/root/p13_seat_r` owns source-groupoid/point-free referent/reciprocal-family
+  eliminability and ontology, writing only
+  `v16/review-paper13-relational-ontology.md`.
+
+All three tasks were forked without prior conversation context.  Each received
+the exact candidate/protocol hashes, the complete read-order rule, a sibling-
+report prohibition, a no-import/no-Git rule, and one exclusive report path.
+The previous evaluator builder and Stage-B auditors were not reused as these
+reviewers.  There is no inter-seat discussion and no majority rule.
+
+No report result is recorded by this dispatch entry.  Paper 13 remains
+`GREEN-UNREVIEWED`, noncitable, and immutable.  Each report must freeze and
+hash independently; only after all three exist may adjudication begin.  No
+paper repair, metric investigation, curvature/response unit, GR unit, or
+other successor is authorized while the panel runs.

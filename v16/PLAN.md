@@ -1049,6 +1049,18 @@ dispatched by #203.  The sole next authorized event is the three-seat dispatch
 against immutable commit `317f3b5` under the frozen protocol; metric-or-later
 work remains closed.
 
+The three-seat hostile panel is dispatched at #204 against candidate commit
+`317f3b5` under protocol commit `73dd832`.  Fresh mutually blind tasks own the
+exact operator/category report, the indivisibility/division/records report,
+and the source-groupoid/relational-ontology report.  Each task may write only
+its assigned report, may not read or list a sibling report, and must rebuild
+the common one-Gamma packet before its specialized audit.  Candidate,
+evaluator, artifacts, bundle, protocol, and ledger authority remain immutable.
+The next permitted events are the three separate report freezes, followed
+only after all three hashes exist by joint adjudication.  No repair,
+paper edit, metric successor, or later unit is authorized while the panel is
+running.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
