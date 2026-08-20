@@ -1381,9 +1381,48 @@ receipt and v5 source-freeze note.  Root, alien-CWD and true one-file/no-`.git`
 selftests retain the hard 300-second cap.  No nonce, fresh case, official
 artifact, paper, authoritative Paper 14, Paper 15 or geometry work may begin.
 
+## 2026-08-20 — Paper 13 verifier stop and Paper 14 physics opening (v16 ledger #221)
+
+The user's explicit direction supersedes #220's next-event ordering.  Paper 13
+v5 verifier/evidence construction stops immediately.  The uncommitted v5
+source is abandoned in place and is neither an accepted evaluator nor a new
+scientific result.  No v6/v7-style verifier-repair chain, v5 official run,
+fresh case, paper regeneration, bundle, or further Paper 13 code audit is
+authorized.  The accepted scientific distinction remains provisional input:
+native nondivision excludes a positive source-independent restart kernel on
+the declared cut/carrier, not the reality or completeness of an actual
+configuration; a stable record is not automatically a complete division
+frontier.
+
+Paper 14 scientific work is now authorized without waiting for terminal Paper
+13 certification, but it may not pretend to bind an accepted Paper 13 byte
+object or restore a Paper 13 rung.  Its live research draft is
+`v16/paper-14-stable-happenings-and-premetric-order.md`.  The draft begins from
+the abstract one-law/record interface and develops real mathematics: typed
+finite-word record persistence, presentation/refinement quotienting,
+indivisible mutual-dependency bundles, no-hidden-clock diamonds, exact
+complete-frontier kernels, direct local-finiteness obligations, and unit
+versus Gamma-derived valuation discrimination.
+
+Paper 14 reports independent coordinates rather than a single ladder:
+stable-record identity, the dependency preorder and bundle-poset quotient,
+frontier-by-frontier division status, valuation status, actuality status, and
+the permanently closed geometric coordinate.  The symmetric co-creation
+transition `(0,0) -> (1,1)` is a mandatory mathematical control: its two
+persistent record facts form one mutual-dependence bundle, and no arbitrary
+orientation may be imported.  A contextual or history surprisal becomes an
+intrinsic unequal event weight only after complete-frontier, presentation,
+and neutral-relinearization descent.
+
+Paper 15 remains closed.  It may begin only if Paper 14 actually earns a
+presentation-independent locally finite bundle order and interval-finite
+atomic measure.  Dimension, Lorentzian signature, manifoldlikeness, scale,
+proper time, topology, metric, curvature, gravity, energy flux, entropy,
+continuum, and QFT remain unconstructed.
+
 ## Successor register
 
-Nothing below is authorized by this plan alone.
+Authorization is governed by the latest explicit ledger entry above.
 
 - A history-action selection unit, only if paper 01 exposes a finite set of
   law-selection debts rather than an unrestricted family.
@@ -1394,10 +1433,10 @@ Nothing below is authorized by this plan alone.
   law-selected rather than declared.
 - A phenomenology unit, only after at least one dimensionless deviation is
   fixed across the surviving law family.
-- Paper 14 stable happenings/pre-metric construction, only after Paper 13
-  earns terminal acceptance: presentation-independent stable happenings,
-  complete division frontiers, local partial order, and a Gamma-derived
-  positive extensive valuation whose unit-count case is not assumed.
+- Paper 14 stable happenings/pre-metric construction is active under #221,
+  without an accepted Paper 13 byte binding: presentation-independent stable
+  record facts, indivisible happening bundles, complete-frontier statuses,
+  locally finite dependency order, and honest unit/Gamma-weight separation.
 - Paper 15 spacetime reconstruction, only after Paper 14 earns its order and
   valuation gates: dimension, Lorentzian signature, manifoldlikeness, scale,
   local duration, and metric reconstruction, with failure recorded at the

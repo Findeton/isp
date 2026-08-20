@@ -5250,3 +5250,55 @@ the exact v5 source, mutation specification, replay program, replay receipt and
 source-freeze note, with root/alien/one-file parity under 300 seconds.  No
 nonce, fresh case, official artifact, paper, authoritative Paper 14, Paper 15,
 metric, curvature, gravity, continuum or GR/QFT work is authorized.
+
+## 2026-08-20 — PAPER 13 VERIFIER STOPPED; PAPER 14 PHYSICS OPENED (v16 LEDGER #221)
+
+The user explicitly stops the Paper 13 verifier-repair chain.  The already
+authorized v5 delta was mechanical evidence plumbing, not a new physical
+test, and no indefinite v6/v7 succession is permitted.  The uncommitted
+`v16/code/p13_gamma_exact_v5.py` is abandoned in place.  It was not promoted,
+run officially, or treated as evidence.  No further Paper 13 code audit,
+mutation-evidence construction, nonce, fresh case, artifact, paper
+regeneration, or bundle is authorized.
+
+This stop does not convert Paper 13 into an accepted result.  Its v4 status
+remains `NO-GO` at `P13-SPECIFICATION-INCONSISTENT`, and the point-free source
+quotient remains uncertified.  The exact two-state arithmetic and the scoped
+physical distinctions remain provisional regressions: the native cut has no
+positive source-independent restart kernel on its declared carrier; a
+configuration may nevertheless be actual and definite there; history or
+carrier enlargement may Markovize a representation; and a stable record is
+not by itself a complete restart frontier.
+
+The same user direction opens Paper 14 scientific work immediately.  The
+research draft is
+`v16/paper-14-stable-happenings-and-premetric-order.md`.  It does not bind an
+accepted Paper 13 byte object.  It proves conditional structural mathematics
+for typed finite-word record persistence, common-boundary record transport,
+complete stochastic frontiers, dependency, growth, and atomic measures, and
+it registers exact physical countermodels rather than software attacks.
+
+The first new mathematical correction is already incorporated.  A symmetric
+indivisible transition `(0,0) -> (1,1)` can create two distinct persistent
+record facts together.  Necessary/structural dependence is mutual, so the
+components carry a preorder rather than an antisymmetric order.  The correct
+order atoms are mutual-dependence classes: indivisible stable-happening
+bundles.  The bundle quotient is a poset; orienting the two components would
+violate their swap symmetry, while calling them independent would discard the
+joint indivisibility.
+
+Paper 14 therefore reports a product of independent coordinates: record-fact
+identity and stability, dependency-preorder/bundle-poset status,
+frontier-by-frontier division status, actuality status, and valuation status.
+A unit bundle count is a control.  A contextual `-log Gamma` is a history or
+frontier-edge weight unless it descends through every complete predecessor
+frontier and every neutral relinearization; a correlated diamond shows that
+the total history surprisal can be invariant while individual allocations
+move.
+
+The strongest honest ceiling is
+`P14-PREMETRIC-ORDER-AND-INTERVAL-MEASURE`.  Paper 15 remains closed until a
+presentation-independent locally finite bundle order and interval-finite
+measure are actually earned.  No causal-spacetime identification, dimension,
+Lorentzian signature, manifoldlikeness, scale, proper time, topology, metric,
+curvature, gravity, entropy, energy flux, continuum, or QFT is constructed.
