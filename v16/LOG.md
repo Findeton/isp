@@ -5945,3 +5945,39 @@ atom-surprisal weights do not survive that quotient. Seat O preserves the
 locally finite bundle poset and unit occurrence measure as conditional
 mathematics. All three blind reports are now frozen; Stage F adjudication is
 the next and only scientific event.
+
+## 2026-08-20 — PAPER 14 TERMINAL HOSTILE ADJUDICATION (v16 LEDGER #249)
+
+The terminal adjudication is frozen at
+`v16/note-paper14-premetric-hostile-adjudication.md`, SHA-256
+`0c77cebdc56bd28006dcef4adadb979b88c57666f14ff0b4a917e80516749cf6`.
+The proposed full ceiling is rejected on two independently reconstructed
+scientific counterexamples.
+
+First, H4's `X tensor I` is a reversible record-sector swap, not an eraser:
+with `Q_r=E P_r E^dagger`, `Q_r E=E P_r` and branch orthogonality survives.
+Second, the `A <-> B` whole-history quotient has 12 classes, not 16 labeled
+rows. Representative mass is `3/4`; pushforward normalization doubles
+off-diagonal orbit mass (`36/625 -> 72/625`) and destroys the claimed
+intrinsic atom-factor descent.
+
+Terminal coordinates are product-valued. The point-free history-law referent
+is unbound; record promotion stops at presentation-only onset germs, though
+the six-word grammar-stable record theorem remains exact. Full root-pair and
+root-pair-plus-`g` division frontiers, marked one-root insufficiency, and the
+native nonpositive restart kernel survive. The locally finite structural
+bundle poset and unit occurrence measure survive. Intrinsic `Gamma` atomic
+weights and the physical `P14-PREMETRIC-ORDER-AND-INTERVAL-MEASURE` ceiling
+do not.
+
+For arithmetic clarity, the native restart candidate is
+`CB^-1=[[351,-176],[-176,351]]/175`; the often-copied
+`[[-9,16],[16,-9]]/7` matrix is `B^-1`, not `CB^-1`. Both descriptions agree
+on native nonpositivity only after this correction.
+
+Paper 14 is closed without repair. Pursuant to the user's continuation
+direction, a Paper 15 result-neutral pin is now authorized on only the
+surviving abstract input: a locally finite unlabeled bundle poset with unit
+occurrence measure. No point-free probability law, intrinsic unequal weight,
+actuality, chronology, dimension, metric, or continuum is inherited. Paper
+16 remains closed.
