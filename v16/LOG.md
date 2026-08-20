@@ -6289,3 +6289,31 @@ The result is `GREEN-UNREVIEWED`, not terminal or citable. No Rust, Python,
 fixture, or generated result exists. The next authorized stage is a frozen
 mathematical hostile-review protocol; only terminal semantic acceptance may
 open a separate Rust pin.
+
+## 2026-08-20 — PAPER 13C MATHEMATICAL HOSTILE PROTOCOL (v16 LEDGER #260)
+
+The semantic protocol is frozen at
+`v16/note-paper13c-interventional-gamma-math-review-protocol.md`, SHA-256
+`392a6d3497e3ea2b6e7116d462da35cbec8c8445f210e7943785d01e114eea64`
+(285 LF lines / 11,396 bytes).
+
+It binds the immutable Paper 13C pin and mathematical law and assigns three
+mutually blind lenses: category/groupoid and native-boundary typing;
+probability, query/division, and nondivision; and physics/ontology,
+intervention identity, response, and scope. All seats must reconstruct the
+law without an implementation and complete 32 semantic attacks plus at least
+four new countermodels.
+
+The protocol directly targets the two Paper 13B failures and the new 13C
+surfaces: static-law refactorization, program metadata masquerading as
+response, history-only versus diagonal quotient, source-history smuggling at
+$B_1$, standalone continuation typing, full-history rather than marginal
+division, composition versus postselection, tensor versus fusion, complete
+response coordinates, record/division independence, and all no-geometry and
+actuality walls.
+
+No reviewer may repair or implement the law. Any changed probability,
+boundary field, generator, reader, group action, evaluator rule, grammar, or
+parameter is a new mathematical law and stops the unit. Only terminal
+semantic acceptance after three separately frozen reports and adjudication
+may authorize a Rust pin.
