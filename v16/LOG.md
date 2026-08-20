@@ -6362,3 +6362,24 @@ the cut-relative native nondivision, record/division controls, and unmarked
 varying-size family, but demotes the executable-law referent and physical
 response. This is independent evidence pending the physics report and joint
 adjudication; no implementation is authorized.
+
+## 2026-08-20 — PAPER 13C PHYSICS/ONTOLOGY REPORT (v16 LEDGER #263)
+
+The mutually blind physics/ontology report is frozen at
+`v16/review-paper13c-interventional-gamma-physics.md`, SHA-256
+`73c12d395b0f18a51fe4e3eb41d4097ee371ca97a4b0094c93a45912aa189838`
+(540 LF lines / 23,375 bytes).
+
+The seat returns `REJECT` and independently reproduces the same typed future
+counterexample as the probability seat: legal recorded endpoints obey $t=h$,
+whereas licensed $F_t$ changes $t$ alone and exits the declared state space.
+The advertised stable-record theorem is therefore not a theorem of the frozen
+law. It also independently finds that the named many-to-one reset is not a
+typed admitted experiment.
+
+The seat otherwise preserves the executable intervention identity, native
+cut-relative nondivision, complete queried divisions, varying-size family,
+and reciprocal relational response, with actuality and every chronology or
+geometry coordinate closed. All three blind reports are now frozen in the
+worktree sequence. Joint adjudication against unchanged mathematical bytes is
+the next and only event; Rust remains prohibited.
