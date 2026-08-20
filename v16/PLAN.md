@@ -1253,6 +1253,30 @@ bind the complete-action producer into the promotion backward slice; retain
 all 149 attacks; and add A17--A18 plus C22--C23, including real post-freeze
 source-only mutations.  No v4 evaluator source byte may precede that pin.
 
+#217 freezes the result-neutral v4 source-delta pin at
+`v16/note-paper13-typed-groupoid-v4-source-delta-pin.md`, ordinary SHA-256
+`ae1283784bdcb274ff16cc2f06288f27258e0ada0dd8efe2f84084339941acb0`
+and normalized SHA-256
+`24ab3fc9072b39c2e128158a20352c1ffe1375ee46c5c40fb9e0988c4c447263`.
+It contains 687 LF-terminated lines and 28,743 bytes.  Two mutually blind
+read-only audits accept the same final snapshot after earlier provisional
+snapshots were revised for factor-certificate cardinality and an incomplete
+Stage-F whitelist.
+
+The pin requires exact tensor factor root source/target nodes; a separate
+0/1/many address-keyed factor-certificate lineage with no structural pseudo-
+certificates; complete raw-byte decoding and independent rebuild of every
+certificate action; per-key identity/nonidentity attachment; and a static
+producer-to-promotion slice.  All 149 v3 attacks remain live, A17--A18 and
+C22--C23 raise the minimum to 153, and six real post-freeze source mutations
+are mandatory.  The 300-second cap is an empirical source-freeze gate and may
+not be evaded by dropping evidence.
+
+The sole next authorized event is construction and freeze of the standalone
+`v16/code/p13_gamma_exact_v4.py` and its v4 source-freeze note.  No nonce,
+fresh case, official artifact, paper, Paper 14 construction, Paper 15
+construction, or geometry work may begin first.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

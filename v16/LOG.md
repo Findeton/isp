@@ -5047,3 +5047,53 @@ bytes, including the producer in the promotion backward slice.  All 149 v3
 attacks remain live; A17--A18 and C22--C23 raise the minimum registry to 153,
 and both decisive objects require real source-only mutation evidence.  No v4
 source edit is authorized before that pin freezes.
+
+## 2026-08-20 — PAPER 13 V4 SOURCE-DELTA PIN FROZEN (v16 LEDGER #217)
+
+The result-neutral pin freezes at
+`v16/note-paper13-typed-groupoid-v4-source-delta-pin.md`, ordinary SHA-256
+`ae1283784bdcb274ff16cc2f06288f27258e0ada0dd8efe2f84084339941acb0`
+and normalized SHA-256
+`24ab3fc9072b39c2e128158a20352c1ffe1375ee46c5c40fb9e0988c4c447263`.
+It contains 687 LF-terminated lines and 28,743 bytes.  All named v4
+source/artifact/review paths are absent.
+
+The pin closes the specification surface for both #216 counterexamples
+without pre-awarding their repair.  Tensor law construction must bind each
+factor to its exact root source node and derived root target node; semantic
+membership or an equal configuration cannot replace AST-address provenance.
+Generator-certificate lineage is separately typed as a canonical
+address-keyed tuple of zero, one, or many ordinary certificates, so units and
+structural factors contribute none and nested factors contribute every
+generator leaf without inventing a tensor certificate.
+
+Every complete certificate-action row carries witness, original, literal
+action, independent rebuild, and both pairing keys as raw reconstructible
+bytes.  An independent decoder recomputes the closed action and key attachment
+for identity, nonidentity, inverse, composition, and associativity rows.  The
+static backward slice binds the complete-action producer through promotion,
+claim, lineage, and seal.  A whole target-packet swap must fail while a pure
+enumeration reorder remains a non-kill.
+
+All 149 v3 attacks remain live.  A17--A18 and C22--C23 raise the minimum v4
+registry to 153; six real source-only mutations cover both earlier action
+repairs plus tensor-root and producer-packet regressions.  Root, alien-CWD,
+and true one-file selftests remain subject to a hard 300-second cap with
+60-second progress and exact byte parity.  Optimization may reuse or stream
+complete evidence but cannot trim it.
+
+Two mutually blind read-only audits authenticate and `ACCEPT-FOR-COMMIT` the
+same final snapshot.  Their first provisional audit found that unit/nested
+tensor coverage conflicted with an unconditional two-certificate clause; the
+pin was revised to the 0/1/many receipt-only lineage above.  A later snapshot
+was revised because Stage F required a new protocol and reports without legal
+paths.  The final pin enumerates one protocol commit, three one-report commits,
+and one adjudication commit, all at absent versioned paths.
+
+This remains specification acceptance only.  The v3 source stays `NO-GO` at
+`P13-REFERENT-PRESENTATION-ONLY`; no scientific rung is restored.  The sole
+next authorized event is construction and freeze of
+`v16/code/p13_gamma_exact_v4.py` and
+`v16/note-paper13-typed-groupoid-source-freeze-v4.md`.  No nonce, publication
+mode, paper, Paper 14, Paper 15, metric, curvature, gravity, continuum, or
+GR/QFT work may begin first.
