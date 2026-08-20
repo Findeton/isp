@@ -6014,3 +6014,38 @@ The sole next event is Stage B analytical construction and source freeze.
 Fresh cases and official results are forbidden before that commit. Paper 13
 and Paper 14 source work remain closed, and Paper 16 remains closed pending a
 terminal Paper 15 adjudication that explicitly authorizes it.
+
+## 2026-08-20 — PAPER 13B CLEAN-SHEET PHYSICS PIN (v16 LEDGER #251)
+
+The user authorizes one clean-sheet, physics-first point-free whole-history
+Gamma construction and explicitly ends the earlier Python/verifier-repair
+pattern. The result-neutral mathematical pin is frozen at
+`v16/note-paper13b-pointfree-gamma-physics-pin.md`, SHA-256
+`df2c60be816e2aaf5261f954d6e1d12142ad528f572f7c77c1ff5a91464b4f47`.
+
+Paper 13B is a new foundational unit; it does not reopen, repair, import, or
+rescore the rejected Paper 13 sources or the terminal Paper 14 law candidate.
+Its target is one fixed, exact, normalized law on physical whole-history
+orbits, together with the action-groupoid semantics of complete marked
+experiments, same-law interventions and readers, grammar-stable records,
+complete division frontiers, a genuine incomplete nondivision cut,
+varying-size covariance, and a reciprocal matter--relation response seed.
+
+The pin forbids a parameter menu, post-hoc selection, hidden clock, fixed
+lattice, dimension, geometry, metric, curvature, actualization smuggling, and
+representative-mass quotienting. Outcomes are product-valued and include
+honest unconstructed and no-go coordinates. Three mathematical review lenses
+must accept the frozen law before any implementation is authorized.
+
+Rust is deliberately absent from this stage. After mathematical acceptance,
+it may implement only the unchanged frozen law under a separately committed
+conformance pin. Pure ownership, mutability, iterator, serialization, CLI,
+transaction, memory, or performance defects may then receive bounded
+forward conformance repairs without reopening physics; a defect that exposes
+a mathematical ambiguity is semantic and returns to user authority. There is
+no automatic repair chain.
+
+The sole next event is Stage B mathematical construction at the two exact
+whitelisted Paper 13B paths. No Rust, Python evaluator, generated fixture, or
+official result is authorized before the mathematical law is frozen and
+semantically reviewed.
