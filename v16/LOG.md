@@ -5895,3 +5895,17 @@ evidence. No source repair or law retuning is permitted.
 The report paths and separate-commit discipline are exact. Paper 14 remains
 `GREEN-UNREVIEWED`; Paper 15 remains closed until all three reports and a
 terminal Stage F adjudication explicitly authorize a successor pin.
+
+## 2026-08-20 — PAPER 14 HOSTILE SEAT R: REFERENT AND ONTOLOGY (v16 LEDGER #246)
+
+The mutually blind referent report is frozen at
+`v16/review-paper14-premetric-referent.md`, ordinary SHA-256
+`b8d7e244425dbb044f5e71b5929a3a27d3d3d525d4cab8a399a944fa5c4724ac`
+and normalized self-SHA-256
+`af8dac38a543c4362c01f93b4771aa576d90a95a5282b1bbe8754304410cc5c1`.
+
+Seat R returns `ACCEPT-WITH-FIXES`: C1--C14 pass; H1--H26, N1--N12,
+and seven new controls are complete; no exact scientific counterexample is
+found. The seat supports the declared point-free history-law coordinate and
+the proposed premetric ceiling, while requesting only bounded ontology and
+certificate wording repairs. This is one blind seat, not adjudication.
