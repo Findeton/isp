@@ -6181,3 +6181,43 @@ subinterface. It nevertheless rejects the promoted universal experiment
 coordinate. All three blind reports are now frozen. Joint semantic
 adjudication against the unchanged paper is the next and only event; Rust
 remains prohibited.
+
+## 2026-08-20 — PAPER 13B MATHEMATICAL ADJUDICATION (v16 LEDGER #257)
+
+The joint adjudication is frozen at
+`v16/note-paper13b-pointfree-gamma-math-adjudication.md`, SHA-256
+`95e97c139efcc0aa7591192d7aa54791208d5e17a6bbc315eb8203a337a25a37`.
+It accepts the two
+independent semantic rejections and closes the current candidate `REJECT`.
+
+First, the static joint history law does not determine `do` semantics. An
+exact chain-rule refactorization leaves every observational and orbit mass
+unchanged but moves `P(Y=1|do(X=1))` from `1/2` to `337/625`. Treating the
+displayed structural factorization as primitive would add directed mechanism
+data that the paper calls representational and that its ontology firewall
+does not admit.
+
+Second, the total experiment category is not defined. In particular,
+`do(w=R)` on a `U` atom can naturally retain `C_00=49/625`, retype the atom
+and use `(B^2)_00=337/625`, or be refused. The marked-packet group action
+cannot select among undefined mechanism actions.
+
+Third, `CB^-1` is exactly negative but mode `U` contains no native typed
+intermediate `B` boundary. The surviving theorem is cut-relative: no positive
+second leg completes the stipulated first leg `B` to `C`. Native indivisibility
+is unproven.
+
+The exact normalized point-free static history measure, orbit pushforward,
+automorphism multiplicity, all-size atom-and-bond law, deletion projectivity,
+grammar-stable record theorem, positive `R/D` division controls, and scoped
+`B`-specific obstruction survive. Intervention-derived reciprocal response
+does not promote, and actuality/chronology/dimension/geometry/metric/gravity
+remain unconstructed.
+
+The user's supplied solution is adopted as the correct possible successor:
+one primitive boundary-indexed executable law
+`GammaBold: Experiment -> Prob(CompleteHistories)`, with the observational
+law as its identity experiment, plus a genuinely native typed
+`B0 -> B1 -> B2` candidate cut. This changes the mathematical law and is not a
+Rust or prose repair. Under the one-shot/no-automatic-chain authority, no
+successor or Rust implementation begins without explicit new user approval.
