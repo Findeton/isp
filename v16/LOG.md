@@ -5926,3 +5926,22 @@ does not exhibit the claimed eraser/reconvergence discriminator, and stable
 happening promotion is capped at `P14-ONSET-GERMS-PRESENTATION-ONLY` in this
 seat. The complete-frontier, direct/cut, and native-nondivision results remain
 independently valid. This finding awaits cross-seat adjudication.
+
+## 2026-08-20 — PAPER 14 HOSTILE SEAT O: ORDER AND VALUATION (v16 LEDGER #248)
+
+The mutually blind order/valuation report is frozen at
+`v16/review-paper14-premetric-order-measure.md`, ordinary SHA-256
+`c7e851badb6f89d77be043ceb4c4f288f5f8fa392aa2696728a124ed96739c41`
+and normalized self-SHA-256
+`d34a8287a935fa402e4919b88bc68c031682175316ea5dcc9894024aa89d0971`.
+
+Seat O returns `REJECT`. Its first counterexample exposes a conflict between
+the claimed `A <-> B` presentation symmetry and the printed 16-row history
+law. The whole-history quotient has 12 classes: invariant representative mass
+sums to `3/4`, whereas normalized pushforward doubles the four off-diagonal
+orbit masses, for example `36/625 -> 72/625`. The declared labeled law thus
+does not descend unchanged to the proposed point-free quotient, and intrinsic
+atom-surprisal weights do not survive that quotient. Seat O preserves the
+locally finite bundle poset and unit occurrence measure as conditional
+mathematics. All three blind reports are now frozen; Stage F adjudication is
+the next and only scientific event.
