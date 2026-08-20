@@ -4720,3 +4720,52 @@ review.  No current artifact is relabeled as repaired evidence.
 The sole next authorized event is the typed-groupoid forward-repair pin.  No
 source edit, metric, curvature, gravity, continuum, GR/QFT, or later paper is
 authorized before that pin and the eventual terminal Paper 13 adjudication.
+
+## 2026-08-20 — PAPER 13 TYPED-GROUPOID FORWARD REPAIR PIN FROZEN (v16 LEDGER #209)
+
+The result-neutral pin freezes at
+`v16/note-paper13-typed-groupoid-forward-repair-pin.md`, ordinary SHA-256
+`08f7f64efca6210eee356852ad9e9b59487ea62a55aeaf85a483f6a70b85b004`
+and normalized SHA-256
+`25710e084dc5539ab9d615e9baa833c46b93f27f681fee34df5cee6d31c2b7b1`.
+It contains 556 LF-terminated lines and 23,788 bytes.  No source, fresh case,
+artifact, paper, bundle, or review byte changes in this ledger event.
+
+The pin adopts the user's exact repair architecture and strengthens it at the
+type boundary.  Each witness is an immutable typed arrow `w:X->Y` between
+complete finite presentations.  It retains complete typed role, matter,
+port, and occurrence carriers plus the full source/target process
+presentations.  Missing sparse rows act identically only when the same typed
+label exists in the target.  Completion must be a total type-preserving
+bijection onto the whole target, and transporting the literal source must
+produce the literal target.
+
+Composition is allowed only for matching middle presentations, is evaluated
+on every source label, is revalidated as a total bijection, and is sparsified
+only afterward.  The pinned laws are both identities, both inverses, and
+three-witness associativity, extensionally and canonically.  The action must
+be functorial on formulas, contexts, ports, boundaries, configurations,
+fillings, source keys, split certificates, complete operators, endpoint laws,
+record/division objects, reciprocal chains, and global matching rows.  Tensor
+compatibility and coefficient-zero targets remain load-bearing.
+
+The old `e=()` / `w=(A->B)` survivor plus nineteen adjacent changed objects
+cover the two identity directions, inverse directions, associativity,
+composability, totality, surjectivity, collision, typing, namespaces, forged
+target presentations, sparse canonicalization, order, transport severing,
+caches, copied pass booleans, tensor conflict, and fresh global relabeling.
+All 92 prior mutations remain live.  After source freeze, the old composition
+helper and copied-promotion predicate also run as real source-only mutations.
+
+The rejected source and artifacts remain immutable.  The repair uses new
+versioned paths beginning with `v16/code/p13_gamma_exact_v2.py`, a distinct
+SHAKE domain separator, a new blind nonce, absent v2 artifact paths, a new
+paper/bundle, and a separately frozen three-seat hostile protocol.  Existing
+scientific values and scope walls are a regression wall; presentation and
+receipt identities may change, but retuning the law is forbidden.  Passing
+the groupoid gate restores only eligibility to test later rungs.
+
+The sole next authorized event is Stage B construction and source freeze at
+the two exact paths listed in the pin.  No fresh generation, official run,
+paper or bundle edit, hostile dispatch, metric, curvature, gravity, continuum,
+GR/QFT, or later unit is authorized first.

@@ -1120,6 +1120,25 @@ source, fresh cases, artifacts, receipt, paper, bundle, and independent
 hostile review.  The sole next authorized event is that forward-repair pin;
 no code edit, metric successor, or later unit may begin first.
 
+The result-neutral typed-groupoid forward-repair pin freezes at #209 in
+`v16/note-paper13-typed-groupoid-forward-repair-pin.md`, ordinary SHA-256
+`08f7f64efca6210eee356852ad9e9b59487ea62a55aeaf85a483f6a70b85b004`
+and normalized SHA-256
+`25710e084dc5539ab9d615e9baa833c46b93f27f681fee34df5cee6d31c2b7b1`.
+It preserves the rejected corpus at its old paths and opens a new versioned
+chain only.  A physical witness is now pinned as a typed arrow `w:X->Y`
+between complete finite presentations; sparse rows are totalized over every
+source label, checked as a type-preserving bijection onto the complete target,
+and composed only across equal middle presentations.  The source must prove
+both identities, both inverses, associativity, tensor compatibility, and
+naturality on every transported scientific object, with the old empty-left-
+identity survivor and nineteen adjacent attacks registered.  A new source,
+source audit, nonce/fresh set, artifacts, receipt, paper, bundle, three-seat
+hostile review, and adjudication are mandatory.  No outcome is pre-awarded.
+The sole next authorized event is construction and freeze of
+`v16/code/p13_gamma_exact_v2.py` plus its typed-groupoid source-freeze note;
+fresh generation, paper work, metric work, and later units remain closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
