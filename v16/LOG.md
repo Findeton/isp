@@ -6049,3 +6049,49 @@ The sole next event is Stage B mathematical construction at the two exact
 whitelisted Paper 13B paths. No Rust, Python evaluator, generated fixture, or
 official result is authorized before the mathematical law is frozen and
 semantically reviewed.
+
+## 2026-08-20 — PAPER 13B MATHEMATICAL LAW FREEZE (v16 LEDGER #252)
+
+The clean-sheet mathematical candidate is frozen at
+`v16/paper-13b-pointfree-whole-history-gamma.md`, SHA-256
+`5f55d1249e68e9b019790dda52254f819b68917637752cc32f0580ea07f7ff18`.
+Its construction note is frozen at
+`v16/note-paper13b-pointfree-gamma-mathematical-construction.md`, SHA-256
+`ad13c0ba07110f608047a48a7b3cf921dac66c4beb4e857b000dc7d127c8f9f7`.
+
+The candidate fixes one law before evaluation. Its numerical transition seed
+is the least primitive rational rotation, giving exact one-step `B`,
+unrecorded whole-step `C`, recorded `B^2`, and the unique native restart
+candidate `CB^-1=[[351,-176],[-176,351]]/175`. No later test may change the
+seed, priors, three typed modes, cardinality law, relational equations,
+quotient, or experiment interface.
+
+Complete histories are finite atom-decorated relational bond structures. The
+whole-history presentation group is the wreath product of internal
+`X <-> Y` exchange with atom permutations, and physical probability is the
+exact orbit pushforward, including graph automorphisms and occurrence
+multiplicity. Endpoint-generated bonds use the already fixed `B` entries and
+introduce no lattice or dimension. The fair geometric cardinality law is
+normalized on all finite sizes, while the conditional atom-and-bond family is
+exchangeable and projectively consistent under uniform deletion.
+
+A physical experiment is the complete marked-packet action-groupoid orbit:
+history, regional argument, marked slot and value, complete reader, and
+exterior context transport together. This prevents a naked intervention at a
+symmetric history from masquerading as point-free. Same-law intervention
+rows distinguish reciprocal matter--relation response, exact mediation,
+common-cause observation, restricted-reader cancellation, context reversal,
+and a spectator zero.
+
+The same fixed law realizes the four record/division combinations. Recorded
+mode has a finite-word stable-record theorem; its complete frontier is a
+positive division while its record-only frontier omits a future-relevant
+context. Division mode has a complete frontier without a new record.
+Unrecorded mode has a normalized whole transition but no positive restart on
+the declared two-state cut. Actualization remains unconstructed, and no
+chronology, dimension, topology, volume, duration, metric, curvature,
+gravity, GR, continuum, or QFT coordinate is promoted.
+
+The result vector is `GREEN-UNREVIEWED`. No code exists. The sole next event
+is a separately frozen mathematical hostile-review protocol; only semantic
+review and adjudication can authorize a later Rust pin.
