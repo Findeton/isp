@@ -5909,3 +5909,20 @@ and seven new controls are complete; no exact scientific counterexample is
 found. The seat supports the declared point-free history-law coordinate and
 the proposed premetric ceiling, while requesting only bounded ontology and
 certificate wording repairs. This is one blind seat, not adjudication.
+
+## 2026-08-20 — PAPER 14 HOSTILE SEAT P: PROBABILITY AND DIVISION (v16 LEDGER #247)
+
+The mutually blind probability report is frozen at
+`v16/review-paper14-premetric-probability.md`, ordinary SHA-256
+`29fe49d6bc9db3094e87a99e87f5d2a55e6e4972af54e484d10cf6127df2f9e4`
+and normalized self-SHA-256
+`ebdf6a2883ed4535b485b9643041610ca8101e8deff47ac6fe298c12db3a5188`.
+
+Seat P returns `REJECT`. Its first scientific counterexample is exact: the
+published H4 map `X tensor I` is a reversible record-sector swap, not an
+eraser. With transported output projectors `Q_r = E P_r E^dagger`, both
+`Q_r E = E P_r` and branch orthogonality survive. The candidate therefore
+does not exhibit the claimed eraser/reconvergence discriminator, and stable
+happening promotion is capped at `P14-ONSET-GERMS-PRESENTATION-ONLY` in this
+seat. The complete-frontier, direct/cut, and native-nondivision results remain
+independently valid. This finding awaits cross-seat adjudication.
