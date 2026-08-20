@@ -6339,3 +6339,26 @@ and cut laws, negative native restart, nonempty tensor obstruction, complete
 divisions, varying-size law, and relational response. This report is
 evidence, not adjudication; sibling reviews remain independent and Rust stays
 prohibited.
+
+## 2026-08-20 — PAPER 13C CATEGORY/GROUPOID REPORT (v16 LEDGER #262)
+
+The mutually blind category/groupoid/referent report is frozen at
+`v16/review-paper13c-interventional-gamma-category.md`, SHA-256
+`38c3a9738da62c6c325fd79bfc91e7d32d0ad674a5b83b6ae14ce3fdf5a4d175`
+(486 LF lines / 20,888 bytes).
+
+The seat returns `REJECT`. Its first decisive counterexample is internal to
+the claimed mechanism category: individually admitted source- and
+mediator-stage writes can concatenate in the forbidden reverse stage order.
+The text simultaneously requires morphism composition and refusal of that
+word, without stage-typed intermediate objects that could make the composite
+undefined. Thus the promoted experiment category is not a category as frozen.
+
+Independent findings are that changing a diagnostic reader changes the
+stabilizer and hence the alleged physical-history quotient, the external
+tensor is outside the declared experiment domain and has no Gamma evaluator,
+and additional probe marks lack an exact catalogue/action. The seat preserves
+the cut-relative native nondivision, record/division controls, and unmarked
+varying-size family, but demotes the executable-law referent and physical
+response. This is independent evidence pending the physics report and joint
+adjudication; no implementation is authorized.
