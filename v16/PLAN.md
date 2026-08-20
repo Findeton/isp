@@ -1206,6 +1206,24 @@ authorized event is construction and freeze of
 official artifact, paper, Paper 14 construction, or metric work may begin
 first.
 
+#215 freezes the standalone v3 source at
+`v16/code/p13_gamma_exact_v3.py`, SHA-256
+`cecf46061df95f57e63b491c380f015fdce297b6ac52dd78f79792495eafb111`,
+with source-freeze note SHA-256
+`02e22f32ce44d46104377d77469cefc1e7c3ca82445f119ede2056c9b8d16028`.
+Root, alien-CWD, and true source-only/no-`.git` selftests are byte-identical at
+49/49 checks and 149/149 killed attacks.  The source directly emits 34 total
+bijections, 14,050 triples, 13 native presentations, complete configuration
+action over 66 boundary-node occurrences and 988 configuration rows, and
+complete certificate action over 12 families, 312 source columns, and 468
+bound transitions split 156/156/156.  Four real changed-source mutations
+independently kill caller-target, deleted-assertion, copied-promotion, and
+hash-registry backdoors; each moves measurement, gate, outcome, lineage,
+claim, and seal.  The disposition is only `REPAIR-GREEN-UNREVIEWED`.  No
+nonce, fresh case, official artifact, paper, or bundle exists.  The sole next
+authorized event is two mutually blind source audits of the exact #215 bytes,
+followed by a separate adjudication; Paper 14 and Paper 15 remain closed.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

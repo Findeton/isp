@@ -4950,3 +4950,55 @@ and weighted extensive valuation from the same Gamma.  Paper 15 may begin only
 after those gates and must test dimension, Lorentzian signature,
 manifoldlikeness, scale, and metric reconstruction rather than assume
 spacetime.
+
+## 2026-08-20 — PAPER 13 V3 TYPED-GROUPOID SOURCE FROZEN (v16 LEDGER #215)
+
+The standalone evaluator freezes at
+`v16/code/p13_gamma_exact_v3.py`, SHA-256
+`cecf46061df95f57e63b491c380f015fdce297b6ac52dd78f79792495eafb111`,
+14,941 lines and 595,989 bytes.  Its source-freeze note is
+`v16/note-paper13-typed-groupoid-source-freeze-v3.md`, ordinary SHA-256
+`02e22f32ce44d46104377d77469cefc1e7c3ca82445f119ede2056c9b8d16028`,
+380 lines and 18,271 bytes.
+
+The v3 action is closed over exact address-typed boundary nodes and derives
+configuration targets internally.  The assertion surface separately enforces
+exact witness-image equality.  Each inherited split certificate is bound to
+its complete literal law/presentation/node/Arrow/configuration/proof packet;
+certificate action has no registry or hash-preimage input, and independent
+rebuild plus keyed total pairing supplies the promotive evidence.  Identity,
+inverse, composition, associativity, tensor action, address provenance, and
+raw-byte lineage are direct checks.
+
+The exhaustive census contains 34 total bijections and 14,050 triples; 13
+native presentation rows; 66 boundary-node occurrences and 988 complete
+configuration-action rows; and 12 generator families, 312 source columns, and
+468 certificate-bound transitions split CREATE/MERGE/UNCHANGED as
+156/156/156.  The public exact language visits 27/27 types.  The 72 ambient / 42
+contextual Boolean census and every preserved `R/B/C/B2/K`, nondivision,
+division, reciprocal, and matching coordinate remain exact.
+
+Repository-root, alien-CWD, and true one-file/no-`.git` selftests produce the
+same 234,018,261-byte stdout, SHA-256
+`d81fe81c497471a0e8c87c5729f592f7ec5be614616f51dec768f7b2d1f4df52`,
+with normalized payload
+`43aa7476d76315329bb7bd464131c8f3ac35e797c1fef249decc63b4c29d7955`.
+Runtimes are 234.02, 281.65, and 280.61 seconds, all under the 300-second cap;
+49/49 checks and all 149 attacks pass.
+
+Four exact real source mutations are killed outside the repository.  A direct
+caller-selected target, deleted target assertion, copied final/count promotion
+predicate, and hash/registry certificate action each return child exit 1 with
+empty stdout.  Independent semantic probes demonstrate the forbidden behavior
+before the static refusal, and dependency probes move the promotion AST,
+measurement slice, specification gate, outcome index 12 to 0, operator
+lineage, shadow DAG, specification claim, and seal.  No crash is used as the
+sole evidence.
+
+No nonce exists; neither `--generate-fresh` nor official `--run` ran.  Every
+v3 fresh/output/receipt/verification/paper/bundle path is absent.  The source
+status is strictly `REPAIR-GREEN-UNREVIEWED`, not a restored scientific rung.
+The sole next authorized event is two mutually blind source audits of these
+exact bytes followed by source-audit adjudication.  Paper 14 stable-happening
+work and Paper 15 spacetime reconstruction remain barred until the ordered
+Paper-13 gates accept.
