@@ -4638,3 +4638,34 @@ certificate/audit wording rather than a scientific rung.
 This entry freezes one report only and does not adjudicate its disagreement
 with Seat A.  Seat R must freeze before joint adjudication.  Candidate and
 reports remain immutable; no repair or successor is authorized.
+
+## 2026-08-20 — PAPER 13 SEAT R RELATIONAL-ONTOLOGY REPORT FROZEN (v16 LEDGER #207)
+
+The mutually blind Seat R report is frozen verbatim at
+`v16/review-paper13-relational-ontology.md`, ordinary SHA-256
+`340a7b7c2e5a24526486244106eb3ec8ba5de485cc585769ad7ca9c878efb314`
+and normalized SHA-256
+`30da3fae252435cee70823721f3e3dc6f82ce3c30501de7e14bf2237a6e0997d`.
+It contains 499 lines and 34,624 bytes.  A pre-commit mechanical pass removed
+four Markdown header hard-break spaces and refreshed only the report
+self-hash; scientific text and verdict did not change.
+
+Seat R finds no scientific kill or corpus-integrity block, recommends the
+capped rung
+`P13-RELATIONAL-GAMMA-CLASS-RELATIVE-EVENT-GRAMMAR-PRICED`, and grades the
+paper `ACCEPT-WITH-FIXES`.  It independently reconstructs the point-free
+presentation/groupoid data, reciprocal same-law chain, both complete
+size-twelve laws, and the incidence-blind-class theorem.  It narrows the
+family result by noting unqueried-incidence drift, consistent with the printed
+calibrated scope.
+
+Its bounded repair finding is procedural: during full master runs longer than
+sixty seconds, `run_all.py` captures and does not relay the underlying
+evaluator progress messages; direct evaluator runs emit the required progress
+records.  This is not reported as a scientific kill.
+
+All three mutually blind reports are now committed and hashed.  Their
+disagreement is not resolved by majority vote.  The sole next authorized
+event is independent joint adjudication of the frozen reports and smallest
+decisive objects.  Candidate and reports remain immutable; no repair or
+successor is authorized first.

@@ -1086,6 +1086,19 @@ explicit non-kills.  This report neither overrides nor adjudicates Seat A's
 groupoid counterexample.  Seat R remains to be committed; joint adjudication
 is still barred and no repair or successor is authorized.
 
+Seat R freezes independently at #207, ordinary SHA-256
+`340a7b7c2e5a24526486244106eb3ec8ba5de485cc585769ad7ca9c878efb314`
+and normalized SHA-256
+`30da3fae252435cee70823721f3e3dc6f82ce3c30501de7e14bf2237a6e0997d`.
+It reports no scientific kill, supports the eligible cap with strict
+class-relative scope, and grades the paper `ACCEPT-WITH-FIXES`.  Its bounded
+repair is that the outer master runner suppresses the evaluator's sixty-second
+progress records during long full replays; direct evaluator progress remains
+correct.  Its unqueried-incidence drift is a scope narrowing, not a
+counterexample to the calibrated family claim.  All three reports are now
+committed and hashed.  The sole next authorized event is joint adjudication;
+no repair, paper edit, metric successor, or later unit may begin first.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
