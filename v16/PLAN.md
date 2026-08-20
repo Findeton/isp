@@ -1312,6 +1312,41 @@ separate adjudication.  Nonbinding private Paper 14 definition/literature
 preparation has no evidentiary or construction status and binds no v4 byte;
 authoritative Paper 14 and every Paper 15/geometry step remain closed.
 
+#219 jointly adjudicates the mutually blind v4 source audits in
+`v16/note-paper13-typed-groupoid-v4-source-audit-adjudication.md`, ordinary
+SHA-256
+`5acd5c43ead4a4a7ded8698f331328261c918f9ac0d6dc23ad515755306cf075`.
+Both exact blockers are accepted.  Deleting the complete 24-entry factor-
+certificate lineage from the first tensor case while retaining its store,
+stored count, and diagnostics leaves both tensor verification and the actual
+promotion predicate true.  The verifier checks only retained entries and does
+not reconstruct the expected generator leaves, complete inputs, certificates,
+or pairing keys.  Separately, the six mandatory real source-mutation records
+print hashes and prose but commit none of the exact patch, probe-program, or
+capture preimages required by the v4 pin, so their mutant-source and seven-
+object dependency-movement claims cannot be independently replayed.
+
+An independent adjudicator authenticates the pin/source/note/reports,
+reconstructs the complete groupoid measurement, reproduces the 24→0 lineage
+survivor with promotion still true, and confirms the mutation preimages are
+absent.  The ordered strict disposition is `NO-GO` at
+`P13-SPECIFICATION-INCONSISTENT`; the operator finding independently caps the
+quotient at `P13-REFERENT-PRESENTATION-ONLY`.
+
+All presentation-indexed support-split, `R/B/C/B2/K`, native nondivision,
+history/enlarged-carrier control, grammar-relative record division, reciprocal,
+and matching coordinates remain exact regressions only.  Native nondivision
+is not a state-defect result, and stable happenings remain distinct from
+complete division frontiers.
+
+The sole next authorized event is a result-neutral, independently audited v5
+source-delta pin at
+`v16/note-paper13-typed-groupoid-v5-source-delta-pin.md`.  It must require
+independent no-drop reconstruction of every tensor factor certificate and
+commit replayable exact mutation-spec/probe/capture preimages under explicit
+future whitelists.  No v5 source, nonce, official artifact, authoritative
+Paper 14, Paper 15, or geometry work may precede that pin.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

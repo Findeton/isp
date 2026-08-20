@@ -5150,3 +5150,56 @@ exact bytes followed by source-audit adjudication.  Nonbinding private Paper
 14 preparation carries no evidentiary status and binds no v4 byte;
 authoritative Paper 14, Paper 15, metric, curvature, gravity, continuum, and
 GR/QFT work remain closed.
+
+## 2026-08-20 — PAPER 13 V4 SOURCE AUDITS ADJUDICATED NO-GO (v16 LEDGER #219)
+
+The joint adjudication freezes at
+`v16/note-paper13-typed-groupoid-v4-source-audit-adjudication.md`, ordinary
+SHA-256
+`5acd5c43ead4a4a7ded8698f331328261c918f9ac0d6dc23ad515755306cf075`,
+220 LF-terminated lines and 10,295 bytes.  It authenticates the v4 source,
+freeze note, delta pin, and the two separately committed mutually blind audit
+reports.
+
+Both findings are accepted.  The operator/category seat deletes the entire
+24-entry `factor_certificate_lineage` from tensor case 0 while preserving the
+content store, stored count 24, uniqueness flag, law and tensor transport
+bytes.  Both `_tensor_configuration_action_exact` and
+`groupoid_promotion_predicate` remain true because their retained-entry loops
+are vacuous and neither derives the expected generator-leaf manifest,
+certificate binding, or pairing key.
+
+The records/integrity seat independently finds that all six mandatory real
+source-mutant records are hash-only attestations.  The authenticated Stage-B
+corpus prints patch, mutant-source, probe-program, and probe-result hashes but
+contains no exact patch bytes, probe/capture program bytes, result preimages,
+or authenticated artifact path.  The changed sources and claimed seven-object
+dependency movements are therefore not independently reconstructible as the
+pin requires.
+
+The coordinator adjudicator at `/private/tmp/p13_v4_source_adjudicator.py`,
+SHA-256
+`3dac0f1319517e27e6db7ac71aaf44b4b954cc0c136a8d36db196e242fb97b69`,
+reproduces both findings with canonical result SHA-256
+`30b4f719687d82d0744458c1cba5d854da306a0ff59d88845934e2c2c04edd07`.
+The changed lineage is 24→0 with stored count 24, tensor exact true and
+promotion true before and after; all six patch hashes and the probe hash are
+printed while exact preimage fields and bound artifact paths are absent.
+
+The ordered strict disposition is `NO-GO` at
+`P13-SPECIFICATION-INCONSISTENT`; independently, the semantic survivor caps
+the claimed quotient at `P13-REFERENT-PRESENTATION-ONLY`.  The exact
+presentation-indexed support-split theorem, `R/B/C/B2/K`, native no-positive-
+restart result, positive history/enlarged-carrier control, grammar-relative
+record division, reciprocal response and class-relative matching calculation
+remain preserved regressions.  Native nondivision does not mean that an actual
+configuration is unreal or incomplete, and a stable happening is not by
+itself a complete Markov checkpoint.
+
+Fresh generation, official artifacts, paper regeneration, authoritative
+Paper 14, and Paper 15 remain barred.  The sole authorized next event is a
+separately frozen and independently audited result-neutral v5 source-delta pin
+at `v16/note-paper13-typed-groupoid-v5-source-delta-pin.md`.  It must require
+raw no-drop tensor-lineage reconstruction and commit the exact mutation-spec,
+probe and capture preimages under explicit stage whitelists before any v5
+source byte.
