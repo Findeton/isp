@@ -4769,3 +4769,64 @@ The sole next authorized event is Stage B construction and source freeze at
 the two exact paths listed in the pin.  No fresh generation, official run,
 paper or bundle edit, hostile dispatch, metric, curvature, gravity, continuum,
 GR/QFT, or later unit is authorized first.
+
+## 2026-08-20 — PAPER 13 TYPED-GROUPOID SOURCE REPAIR FROZEN (v16 LEDGER #210)
+
+The new versioned evaluator freezes at
+`v16/code/p13_gamma_exact_v2.py`, SHA-256
+`b56383236a2aa0ff484aaa4c9082393beb4e4dd3ceb4d2724e4332bf68b6cba1`.
+It contains 11,790 lines and 464,013 bytes.  Its source-freeze note is
+`v16/note-paper13-typed-groupoid-source-freeze.md`, ordinary SHA-256
+`33ff983e6c9b8f4bab6aa98abfea18f0f27d609b572c7980e05e7e63e80e51f7`,
+397 lines and 17,731 bytes.  The rejected evaluator remains byte-identical at
+SHA-256
+`3da3161c7eef63b90da9c6cb85f7bc918d6e5c99fa431f07d273efd1f18e519e`.
+
+The repair implements an immutable complete `SourcePresentation` and typed
+`SourceGroupoidWitness` `w:X->Y`.  Sparse rows are completed over every source
+label in the role, matter, port, and occurrence namespaces; omitted rows are
+identity only when the same typed target label exists.  Every witness is
+total, injective, surjective, type- and namespace-preserving, and transports
+the literal complete Arrow.  Composition requires equal middle
+presentations, evaluates `v(w(x))` for every source label, revalidates the
+total map, and sparsifies only afterward.  Both identities, both inverses,
+associativity, action order, tensor compatibility, complete-object transport,
+operator covariance, endpoint covariance, and split-certificate covariance
+are direct exact checks.
+
+The abstract census exhausts `34` bijections and `14050` composable triples.
+The 13-row native census includes the exact hostile `A->B` object, each
+namespace separately and together, contextual aliases, CREATE/MERGE/UNCHANGED
+certificates, record and reciprocal fillings, one complete size-twelve global
+matching presentation, and a two-factor tensor.  The unchanged scientific
+wall recomputes the 72/42 Boolean census, 12 families, 312 source columns, 468
+bound transitions split 156/156/156, exact `R/B/C/B2/K`, the `527/175`
+certificate, native nondivision and history controls, grammar-relative
+division, reciprocal response, and class-relative matching result.
+
+Repository-root, alien-CWD, and true source-only/no-`.git` selftests are
+byte-identical: `46/46` checks and `112/112` killed attacks, registry SHA-256
+`3397140b241465181b73434a6798f971492801aff2a38b1488a4109544ddbee6`,
+stdout SHA-256
+`23b10056e99432471dabe6dfc8f502b58e9e0cc9857eab4809040899a23e8938`,
+and normalized payload SHA-256
+`2b7372afe4dd63b72ad8da0c58293e6f6b88128ebd7da495bfc44e950a31afbf`.
+The three runtimes are 53.877, 62.846, and 63.046 seconds.
+
+Two real source-only off-tree mutations are frozen as semantic controls.  G1
+restores the old explicit-first-row composition, moves the native
+measurement, lineage, claim, seal, and outcome, and renders
+`P13-REFERENT-PRESENTATION-ONLY`.  G18 replaces the native-law conjunction by
+a copied aggregate Boolean, fails the promotion AST and specification gate,
+and renders `P13-SPECIFICATION-INCONSISTENT`.  Thus the original decisive
+counterexample and the adjacent promotion bypass are both killed through
+their actual dependency paths.
+
+No fresh nonce or case was generated.  No `--generate-fresh` or official
+`--run` mode ran.  Every v2 fresh/output/receipt/verification/paper/bundle path
+remains absent.  The disposition is strictly `REPAIR-GREEN-UNREVIEWED`, not a
+scientific verdict and not restoration of the rejected paper.  The sole next
+authorized event is two mutually blind independent source audits against the
+exact #210 bytes, followed by a separate source-audit adjudication.  Fresh
+generation, official construction, paper/bundle work, metric work, and every
+later unit remain closed first.

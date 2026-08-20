@@ -1139,6 +1139,29 @@ The sole next authorized event is construction and freeze of
 `v16/code/p13_gamma_exact_v2.py` plus its typed-groupoid source-freeze note;
 fresh generation, paper work, metric work, and later units remain closed.
 
+The typed-groupoid source repair freezes at #210 in
+`v16/code/p13_gamma_exact_v2.py`, SHA-256
+`b56383236a2aa0ff484aaa4c9082393beb4e4dd3ceb4d2724e4332bf68b6cba1`,
+with source-freeze note SHA-256
+`33ff983e6c9b8f4bab6aa98abfea18f0f27d609b572c7980e05e7e63e80e51f7`.
+Sparse witnesses now have complete typed source and target presentations,
+total type-preserving bijections in four namespaces, matching-middle
+composition evaluated over every source label, both identities, both
+inverses, associativity, tensor compatibility, and direct transport of the
+complete scientific objects.  The abstract census exhausts 34 bijections and
+14,050 composable triples; 13 native rows include the original `A->B`
+counterexample, split certificates, record, reciprocal, global matching, and
+tensor cases.  Root, alien-CWD, and true source-only no-`.git` selftests are
+byte-identical at 46/46 checks and 112/112 killed attacks.  Real off-tree G1
+and G18 source mutations independently demote the groupoid and specification
+gates, so neither the old first-row-only composition nor a copied aggregate
+pass Boolean survives.  The disposition is only
+`REPAIR-GREEN-UNREVIEWED`; the rejected paper remains rejected and noncitable.
+The sole next authorized event is two mutually blind independent audits of
+these exact source bytes followed by source-audit adjudication.  Fresh nonce
+generation, official artifacts, paper/bundle regeneration, metric work, and
+later units remain closed until that adjudication accepts.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.
