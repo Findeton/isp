@@ -6447,3 +6447,50 @@ The complete mathematical law must freeze before three independent semantic
 lenses review it. Only terminal mathematical acceptance can authorize a
 separate Rust pin. No Rust/Python evaluator, generated result, fixture, or
 official artifact exists, and no automatic Paper 13E follows a rejection.
+
+## 2026-08-20 — PAPER 13D TYPED EXECUTABLE-GAMMA MATHEMATICS (v16 LEDGER #266)
+
+The implementation-free mathematical candidate is frozen at
+`v16/paper-13d-typed-executable-gamma.md`, SHA-256
+`3b91766fe269e8145766f4622f99e9009c3270530670119735e6045a473de5c9`
+(1,285 LF lines / 42,928 bytes). Its construction certificate is frozen at
+`v16/note-paper13d-typed-executable-gamma-mathematical-construction.md`,
+SHA-256
+`93f1e84444d60365fe729d73058dae1f3dede63a87bf1663d4865511255b50bb`
+(203 LF lines / 9,792 bytes).
+
+The new control category has three type phases, exact hom-sets, associative
+right-biased override, and explicit write-free transitions. A mediator write
+followed by a source write now meets an empty hom-set. The execution category
+is a separate free symmetric-monoidal typed syntax containing primitive
+unqueried and queried arrows, internal tensor objects, simultaneous n-ary
+fusion, a stable post-endpoint category, and an executable eraser.
+
+The old endpoint invariant is repaired semantically rather than hidden:
+$B_2$ carries both $t$ and $h$ with $t=h$, while a new $B_3^r$ carries a
+separate mutable $t^+$. The stable category begins at the recorded $B_1^r$
+frontier, includes its record-carrying continuation, arbitrary finite future
+words, tensor, and record-carrying fusion. The eraser maps a reachable
+positive-mass cross-sector pair to one $B_3^e$ target and is outside the
+stable category.
+
+The physical quotient is reader-independent. Exact target landmarks may
+orient a reader without making the reader part of the stabilizer; unanchored
+coordinates are read only through invariant orbit-profiles. Intervention
+response uses a separately typed ordered contrast and its intersection
+stabilizer, so alternative-dependent automorphisms cannot change the
+comparison quotient. Complete readers remain beside every coarse reader.
+
+The candidate re-derives the exact $B,C,B^2$ laws and
+$CB^{-1}=[[351,-176],[-176,351]]/175$, the nonempty native-cut obstruction,
+positive queried divisions, all four record/division combinations,
+finite-set deletion, independent tensor versus physical fusion, and exact
+matter--relation response controls. All 17 pre-freeze gates are closed in the
+construction certificate.
+
+The product is only `GREEN-UNREVIEWED`. Actualization and every chronology,
+dimension, topology, volume, duration, metric, curvature, gravity, continuum,
+and QFT coordinate remain unconstructed. No Rust/Python source, fixture,
+generated result, receipt, or official artifact exists. The sole next stage
+is a frozen mathematical hostile-review protocol followed by three independent
+semantic reports and adjudication.
