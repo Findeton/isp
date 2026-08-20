@@ -6592,3 +6592,35 @@ these values uniquely. The seat retains the full provisional product with
 actuality unconstructed. All three reports are now frozen; joint adjudication
 against unchanged mathematical bytes is the sole next event, and Rust remains
 prohibited until it accepts.
+
+## 2026-08-20 — PAPER 13D TERMINAL MATHEMATICAL ADJUDICATION (v16 LEDGER #271)
+
+The joint mathematical adjudication is frozen at
+`v16/note-paper13d-typed-executable-gamma-math-adjudication.md`, SHA-256
+`ae2c4ef066335c39a0b8057c897c947b06e4270be67d1ed3ec59bf8d6d0a00c9`
+(230 LF lines / 10,395 bytes).
+
+The verdict is terminal `ACCEPT-WITH-SCOPE`. The three mutually blind reports
+complete all 62 registered attacks plus nineteen fresh countermodels and find
+no semantic counterexample. Paper 13D therefore accepts the point-free
+executable referent, one typed candidate Gamma, the typed experiment category,
+native `B1` nondivision, the generated stable-future category, executable
+eraser control, complete queried divisions, varying-size covariant family, and
+reciprocal relational response. Actualization remains unconstructed.
+
+Three uniquely determined scope clauses bind the result: the unit
+`X -> z_Y` response is indexed at fixed `E`; the reachable erasure witness
+uses a positive-support relational packet; and the empty occurrence set has
+the unique empty record word, so nontrivial two-sector language applies only
+to nonempty occurrence sets. The adjudication also prints the semidirect
+presentation-groupoid composition and zero/one fusion unit conventions.
+
+No operational chronology, causal order, dimension, topology, measure,
+duration, clock, metric, curvature, gravity, continuum, QFT, or actuality is
+promoted. One separately frozen Rust realization pin is now authorized. Rust
+may repair ownership, serialization, CLI, transaction, memory, and performance
+defects only while preserving every accepted mathematical object and output.
+A changed boundary, probability, seed law, generator, hom-set, group action,
+mark, reader, contrast, fusion, future map, eraser, division, or parameter is a
+semantic change and stops implementation. There is no automatic Paper 13E and
+no post-hoc selection of parameters, dimension, geometry, or desired result.
