@@ -6383,3 +6383,36 @@ and reciprocal relational response, with actuality and every chronology or
 geometry coordinate closed. All three blind reports are now frozen in the
 worktree sequence. Joint adjudication against unchanged mathematical bytes is
 the next and only event; Rust remains prohibited.
+
+## 2026-08-20 — PAPER 13C MATHEMATICAL ADJUDICATION (v16 LEDGER #264)
+
+The terminal adjudication is frozen at
+`v16/note-paper13c-interventional-gamma-math-adjudication.md`, SHA-256
+`f9a36eb8d59996627e6aff68f52eaf5c0526be181cc80b8fc3550a0b4e930cd9`
+(228 LF lines / 9,148 bytes). It returns `TERMINAL REJECT / NO RUST`.
+
+Two seats independently establish that licensed $F_t$ violates the frozen
+endpoint invariant $t=h$ and therefore is not a typed future morphism. The
+named eraser is also absent from the executable category. The category seat
+independently establishes that source- and mediator-stage writes do not form
+the claimed category, because reverse-stage concatenation is both required to
+compose and required to refuse. It further shows that diagnostic readers
+change the physical quotient through the experiment stabilizer, while the
+external tensor and extra probe marks lack exact domain objects and actions.
+
+The adjudication preserves the exact threshold kernels, genuinely native
+cut-relative negative restart, positive queried divisions, unmarked
+varying-size family, and labeled response precursors. It demotes the complete
+executable referent, law, experiment category, grammar-stable record, and
+point-free reciprocal-response coordinates. Actuality and all chronology,
+dimension, geometry, metric, curvature, gravity, continuum, and QFT
+coordinates remain unconstructed.
+
+The proposed future-grammar diagnosis is accepted: a successor may either
+remove $F_t$ with an explicit physical exclusion or introduce a new typed
+post-endpoint boundary, and must make erasure an executable arrow outside the
+stable subcategory. That is not sufficient alone; any successor must also
+type mechanism stages, make the history quotient reader-independent, type
+all marks, and construct or withdraw the external tensor. These changes are
+new mathematics, not a Rust repair. No Paper 13D starts without explicit user
+authorization.
