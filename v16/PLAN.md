@@ -1224,6 +1224,35 @@ nonce, fresh case, official artifact, paper, or bundle exists.  The sole next
 authorized event is two mutually blind source audits of the exact #215 bytes,
 followed by a separate adjudication; Paper 14 and Paper 15 remain closed.
 
+#216 jointly adjudicates the two mutually blind v3 source audits in
+`v16/note-paper13-typed-groupoid-v3-source-audit-adjudication.md`, ordinary
+SHA-256
+`1dd09ef639d96c973a3991890e96695692d89249e4033c61579ff5bdbdd93326`.
+Both exact counterexamples are accepted.  The tensor action admits an internal
+factor node in place of the factor's root `SOURCE` node because it checks only
+presentation membership.  Separately, the complete certificate-action
+promotion accepts a whole target-packet swap between distinct identity inputs
+because it proves target self-equality and store membership without proving
+the per-key original-to-target action; its static slice also omits the
+complete-action producer.  An independent no-import adjudicator reproduces
+both objects.  The v3 source disposition is `NO-GO`, strict earliest rung
+`P13-REFERENT-PRESENTATION-ONLY`.
+
+The presentation-indexed Gamma arithmetic, split theorem, native
+no-positive-restart result, positive history/enlarged-carrier controls,
+grammar-relative record division, reciprocal response, and class-relative
+matching values are preserved at their prior scopes.  Native nondivision is
+not configuration incompleteness, and a stable record is not automatically a
+complete Markov checkpoint.  Fresh generation, official artifacts, paper
+regeneration, Paper 14, and Paper 15 remain barred.
+
+Only one result-neutral v4 source-delta pin is authorized next.  It must bind
+tensor factors to exact root source and derived root target nodes; validate
+the complete per-input certificate action and pairing keys from raw bytes;
+bind the complete-action producer into the promotion backward slice; retain
+all 149 attacks; and add A17--A18 plus C22--C23, including real post-freeze
+source-only mutations.  No v4 evaluator source byte may precede that pin.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

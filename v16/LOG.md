@@ -5002,3 +5002,48 @@ The sole next authorized event is two mutually blind source audits of these
 exact bytes followed by source-audit adjudication.  Paper 14 stable-happening
 work and Paper 15 spacetime reconstruction remain barred until the ordered
 Paper-13 gates accept.
+
+## 2026-08-20 — PAPER 13 V3 SOURCE AUDITS ADJUDICATED NO-GO (v16 LEDGER #216)
+
+The joint adjudication freezes at
+`v16/note-paper13-typed-groupoid-v3-source-audit-adjudication.md`, ordinary
+SHA-256
+`1dd09ef639d96c973a3991890e96695692d89249e4033c61579ff5bdbdd93326`,
+361 LF-terminated lines and 16,070 bytes.  It authenticates the v3 source,
+freeze note, delta pin, and both independently committed audit reports.
+
+Both blind findings are accepted.  The operator/category audit supplies an
+exact internal-factor-node counterexample: `tensor_action_row` accepts a
+factor node at address `(1,)` instead of the required factor root `SOURCE` at
+`()`, despite distinct semantic boundary hashes, and returns `exact=true`.
+The records/integrity audit supplies an independent keyed-attachment
+counterexample: swapping the complete literal/rebuild/transported-key target
+packet between two distinct identity inputs preserves the object store,
+target multiset, counts, and every current promotion clause while making both
+identity actions false.  The complete-action producer is absent from the
+static promotion slice.
+
+A standard-library-only no-import adjudicator at
+`/private/tmp/p13_v3_source_adjudicator.py`, SHA-256
+`7311b972695ec11a940accdd353d87ce43b8e25aee8fdc592a9b26d8bcb2d622`,
+reproduces both failures with canonical payload SHA-256
+`572432205a74ca0e1b1bad4c4c7d9ab1c2239c3de4ac2ea13399b6eef08ea138`.
+The adjudicated v3 source disposition is `NO-GO`, strict earliest rung
+`P13-REFERENT-PRESENTATION-ONLY`.
+
+The preserved presentation-indexed facts remain exact but cannot promote the
+point-free quotient: the 72/42 split theorem, `R/B/C/B2/K`, native
+no-positive-restart result, positive history/enlarged-carrier controls,
+grammar-relative record division, reciprocal response, and frozen
+incidence-blind-class calculation.  Native nondivision is not an ontological
+state-defect claim, and record persistence does not turn every happening into
+a complete Markov checkpoint.
+
+Fresh generation, official v3 artifacts, paper regeneration, Paper 14, and
+Paper 15 remain barred.  The sole authorized next event is a result-neutral
+v4 source-delta pin.  It must bind tensor factors to exact root source/target
+nodes and prove complete certificate target attachment per input key from raw
+bytes, including the producer in the promotion backward slice.  All 149 v3
+attacks remain live; A17--A18 and C22--C23 raise the minimum registry to 153,
+and both decisive objects require real source-only mutation evidence.  No v4
+source edit is authorized before that pin freezes.
