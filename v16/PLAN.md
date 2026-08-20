@@ -1441,3 +1441,536 @@ Authorization is governed by the latest explicit ledger entry above.
   valuation gates: dimension, Lorentzian signature, manifoldlikeness, scale,
   local duration, and metric reconstruction, with failure recorded at the
   earliest unsupported rung.
+
+## 2026-08-20 — Paper 14 exact finite witness and Paper 15 preparation boundary (v16 ledger #222)
+
+Paper 14 now contains an exact finite point-free construction rather than
+only an abstract theorem package.  Point-free identity is the isomorphism
+class of the complete incidence-and-bundle structure, not a set of individual
+node orbits; an automorphism may exchange two anonymous happenings without
+collapsing their multiplicity.  A minimal persistent-set frame has four raw
+facts, three onset classes and five reachable states.  It co-creates two
+symmetric facts in one indivisible bundle, realizes an independent commuting
+diamond, and places both upstream bundles below a distinct downstream bundle.
+
+A one-law stochastic extension has four happening bundles
+`A || B`, `A,B < G < Y` and sixteen positive histories
+
+`Gamma(a,b,g,y) = (1/4) B[g,a xor b] B[y,g]`.
+
+It exactly separates stable records from complete frontiers, satisfies the
+strong-diamond criterion for linearization-independent local factors, and
+derives unequal atomic weights from Gamma rather than inserting them.  With
+the law held fixed, matter parity changes the relational bundle by `7/25`,
+the relational bundle changes the later matter response by `7/25`, and the
+integrated response changes by `49/625`.  This is pre-geometric reciprocal
+response, not curvature or gravity.
+
+The current construction reaches only `P14-FINITE-PREMETRIC-WITNESS`.  Paper
+14 still owes a uniform varying-size family, direct local-finiteness control,
+accepted-input binding, and the full presentation/frontier/valuation hostile
+programme before it can reach
+`P14-PREMETRIC-ORDER-AND-INTERVAL-MEASURE`.
+
+Nonbinding Paper 15 preparation is now open in
+`v16/paper-15-conditional-spacetime-reconstruction.md` because the exact
+finite witness supplies a concrete order-and-measure input on which to
+formulate failure tests.  Its first task is not to infer a metric, but to
+declare a comparison ensemble and test several independent interval
+statistics across size, selection and thinning.  Finite compatibility cannot
+establish uniqueness; Gamma surprisal is not volume without a separate
+quadrature/intensity theorem.
+No authoritative Paper 15 evaluator or metric, dimension, signature,
+duration, topology, curvature, stress-energy, gravity, continuum or QFT claim
+is authorized by this entry.
+
+## 2026-08-20 — Paper 14 uniform fresh-port family (v16 ledger #223)
+
+The exact four-bundle Paper 14 cell is extended by one uniform local graft
+rule.  A cell consumes one open typed successor port, creates fresh
+`A,B,G,Y` happening bundles, preserves all earlier records, and exposes a
+fixed finite number `q` of fresh ports at `Y`.  `A` and `B` commute; `G`
+co-creates two individually readable exchange-symmetric record components;
+`Y` carries the response into descendant cells.  Printed port addresses and
+sibling order are presentation data, and the groupoid acts on the whole
+decorated graft tree without collapsing sibling multiplicity.
+
+Every local cell uses the same exact conditional law
+
+`gamma_s(a,b,g,y) = B[a,s] B[b,s] B[g,a xor b] B[y,g]`.
+
+For each finite prefix-closed graft shape, the global law is the product of
+these local factors.  Reverse leaf elimination proves normalization; complete
+ancestor conditioning proves every strong diamond; and disjoint grafts commute.
+With `n` cells there are `4n` bundles, `5n` raw stable components and `16^n`
+positive recorded histories, so no fixed finite dormant carrier can simulate
+unbounded growth.
+
+The prefix limit is locally finite: dependency rank strictly increases along
+every edge, out-degree is finitely bounded by `q`, and every interval lies
+within finitely many forward layers between its fixed endpoints.  Unit and
+intrinsic Gamma atomic measures are therefore interval finite.  This reaches
+`P14-PREMETRIC-ORDER-AND-INTERVAL-MEASURE` inside the declared abstract model.
+
+The result is conditional, not an accepted ISP base-law result.  The graft
+grammar and branching capacity are declared, shape selection and actualization
+remain external, and `q` is not interpreted as spatial dimension.  Required
+next physics is whole-structure hostile review and a decision whether this
+grammar is a new postulate or descends from an accepted point-free law.  Paper
+15 remains at conditional reconstruction-gate preparation; no metric or
+curvature claim follows.
+
+## 2026-08-20 — First Paper 15 test: thin-interval obstruction (v16 ledger #224)
+
+The uniform Paper 14 graft family is tested analytically rather than promoted
+by analogy.  Along any descendant branch, the closed interval from a parent
+`Y0` through `d` complete cells contains `N=4d+1` bundles.  All cross-cell
+pairs are comparable and the only incomparable pair in each cell is `A_i ||
+B_i`, giving
+
+`R = choose(4d+1,2)-d`,
+
+`r = 1 - 1/[2(4d+1)] -> 1`,
+
+`H = 3d+1`, and width `2`.
+
+Both unit mass and intrinsic Gamma mass are linear in `d`, because every
+Gamma atom weight lies between `kappa log(25/16)` and
+`kappa log(25/9)`.  Hence height is linear in interval mass.  This fails the
+sublinear height-volume scaling required of a faithful fixed-dimensional
+Lorentzian sprinkling for dimension at least two.  Raising the declared
+branching capacity `q` does not repair the failure: siblings never reconverge
+and therefore never enter one root-to-descendant interval.
+
+The exact outcome is
+`P15-GRAFT-FAMILY-FAILS-MANIFOLDLIKE-INTERVAL-SCALING`.  Paper 14's premetric
+order/measure theorem survives; the spacetime interpretation does not.  The
+next physical successor must generate cross-branch mergers or another source
+of thick causal intervals from the same point-free law.  It may not import a
+grid, coordinate directions, global layer number, arbitrary weights, or a
+post-hoc dimension.
+
+## 2026-08-20 — Paper 15 square-completion calibration (v16 ledger #225)
+
+The minimal cross-branch-merger control is constructed as the unlabeled
+product-order family `P_(m,n)=[m]x[n]`.  Printed coordinates are proof
+addresses; the physical object is the complete incidence poset with two
+exchange-symmetric local channels.  Each site consumes its two predecessor
+records, writes one fresh persistent bit, and uses the same exact kernel
+
+`B[z_ij, z_(i-1,j) xor z_(i,j-1)]`.
+
+Reverse maximal-site elimination proves global normalization, complete-parent
+screening proves strong-diamond descent, and arbitrary topological
+serializations agree.  For the square family,
+
+`N=n^2`, `H=2n-1`, `W=n`,
+
+`R=n^2(n-1)(n+3)/4`,
+
+`r=(n+3)/(2(n+1)) -> 1/2`.
+
+Bounded positive Gamma weights preserve `H=Theta(mu^(1/2))`.  The same local
+law retains the exact `7/25` source-response residual.  This demonstrates
+that merger, rather than branching or reweighting, repairs the thin-interval
+obstruction.
+
+The outcome is only
+`P15-DECLARED-TWO-CHANNEL-1+1-KINEMATIC-COMPATIBILITY`.  Two channel types,
+the rectangular boundary family, square completion, regularity and source
+boundary are declared.  No dimension has emerged, and no Poisson sampling,
+Lorentz invariance, thinning stability, continuum limit, scale, metric or
+curvature is established.  The next task is to derive or price the merger
+grammar, then test stochastic/thinned interval ensembles with independent
+estimators.
+
+## 2026-08-20 — Neutral thinning of the merger calibration (v16 ledger #226)
+
+Each site of `P_(n,n)` is retained independently with fixed probability
+`p>0`, producing an induced suborder used only for analysis.  This does not
+erase physical records.  The retention law is invariant under every
+automorphism of the unlabeled poset.
+
+Exact first moments give `E[N_p]=p n^2` and `E[R_p]=p^2 R`.  A retained main
+diagonal supplies a binomial lower bound on height, and a retained reverse
+diagonal supplies the same lower bound on width.  Together with the exact
+unthinned upper bounds, Chernoff concentration gives
+
+`N_p=Theta(n^2)`, `H_p=Theta(n)`, `W_p=Theta(n)`
+
+with high probability.  Comparable-pair variance is `O(n^6)` against squared
+mean `Theta(n^8)`, so the ordering fraction converges in probability to
+`1/2`.  Bounded positive Gamma weights preserve the exponents.
+
+The calibration advances to `P15-DECLARED-GRID-THINNING-SCALING-STABLE`.
+This is still not Lorentz invariance: thinning a regular two-channel lattice
+retains its preferred null skeleton.  The next candidate must replace or
+derive that skeleton, not merely randomize node deletion.
+
+## 2026-08-20 — Exact random two-order shape ensemble (v16 ledger #227)
+
+The preferred grid skeleton is removed by an exchangeable order law.  On an
+anonymous `n`-element carrier, choose two independent uniform total orders and
+retain only their intersection poset.  The latent orders are integrated
+representation data, not clocks or coordinates.  The induced unlabeled law
+`pi_n` is invariant under every relabeling and channel swap.
+
+In flat `1+1` null coordinates, `n` i.i.d. volume-uniform points have two
+independent uniform coordinate-rank orders with probability one.  Their causal
+order is the intersection.  Thus `pi_n` exactly equals the complete unlabeled
+Poisson-sprinkling order law conditional on cardinality, not merely selected
+moments.  Restricting two uniform orders to a neutral retained subset gives
+the same family, so the shape law is projectively consistent.
+
+For each realized order, a separately declared record law
+
+`Gamma_hat(P,z|s0) = pi_n(P) product_v B[z_v, parity(cover predecessors)]`
+
+is normalized by reverse maximal-element elimination and satisfies strong-
+diamond descent.  Every node writes a fresh record, and an essential parent
+toggle retains the `7/25` local response.
+
+The exact outcome is
+`P15-DECLARED-RANDOM-2D-ORDER-EXACT-FLAT-1+1-SPRINKLING-SHAPE-LAW`.  It is an
+exact finite flat-ensemble reconstruction with declared dimension, not a
+derived spacetime.  Two latent order factors, the flat target, the shape
+factor and record coupling are new inputs; conditioning on `n` loses density
+and absolute scale.  Shape thinning consistency does not imply physical
+record-deletion consistency.
+
+## 2026-08-20 — Flat `1+1` Poisson order-and-number completion (v16 ledger #228)
+
+The conditional shape laws are mixed with
+
+`Pr(N=n)=exp(-lambda) lambda^n/n!`.
+
+The resulting unlabeled law is exactly a homogeneous Poisson sprinkling into
+a flat `1+1` causal diamond, including cardinality.  Independent neutral
+thinning maps the family to the same law with `lambda -> p lambda`; counts on
+declared disjoint regions are independent and additive; and
+`E[N]=Var[N]=lambda`.
+
+This reaches `P15-DECLARED-FLAT-1+1-POISSON-ORDER-AND-NUMBER-LAW`.  It is the
+first exact order-plus-number comparison, but `lambda=rho V` identifies only
+the intensity-volume product.  An independently calibrated density would make
+`N/rho` an unbiased volume estimator.  Without it, conformal-density
+degeneracy leaves absolute scale and proper duration open.  The Poisson
+cardinality law, density and shape factor remain new kinematic inputs rather
+than consequences of the local `B` record law.
+
+## 2026-08-20 — Same-$B$ dyadic permuton obstruction (v16 ledger #229)
+
+The first attempt to derive the random-order shape directly from the recorded
+`g=1/2` kernel uses its unique fair stationary input and one output digit per
+binary scale.  The digit-pair law is
+
+`q00=q11=9/50`, `q01=q10=16/50`.
+
+Both infinite binary coordinates are uniform marginally, so the result is an
+exact permuton and supplies an exchangeable, presentation-independent,
+all-cardinality order law.  Its local dimension is
+
+`1 + h2(9/25) = 1.9426831893... < 2`.
+
+Hence the measure is singular with respect to area and cannot be the smooth
+volume form of a nondegenerate Lorentzian square.  A direct recursive
+concordance calculation gives `tau=-175/913` and ordering fraction
+`369/913`.  The result is
+`P15-B-DIGIT-PERMUTON-SINGULAR-NONMANIFOLDLIKE`: repeated dyadic use of the
+same local law is an exact nonflat order ensemble, but the cross-scale decoder
+is multifractal rather than spacetime.
+
+## 2026-08-20 — Same-$B$ smooth copula and curved control (v16 ledger #230)
+
+The singularity is isolated to the dyadic decoder.  Keep the same stationary
+`B` bit pair, but decode bit `0` and bit `1` through the extremal affine
+densities `2(1-u)` and `2u`.  Marginalization gives
+
+`c_B(u,v)=1-(7/25)(1-2u)(1-2v)`.
+
+The coefficient `-7/25` is exactly the `B` parity correlation, not a fit;
+the density is smooth, has uniform marginals, and lies between `18/25` and
+`32/25`.  In the declared family
+`c_theta=1+theta(1-2u)(1-2v)`, order comparability is
+`r=1/2+theta/9`, hence the `B` row gives `r=211/450`.
+
+On a declared null-coordinate diamond the metric
+
+`g_(A,theta)=-2 A c_theta du dv`
+
+has volume `A` and scalar curvature
+`R=8 theta/(A c_theta^3)`.  The `B` row therefore has
+`R_B=-56/(25 A c_B^3)`, while feeding the second sector from an independent
+fair parent gives the exact flat control.  The order difference is `7/225`;
+a later calibrated `B` reader moves by `49/5625`.
+
+This reaches only
+`P15-B-SHADOW-DECLARED-AFFINE-DECODER-CURVED-1+1-ORDER-AND-NUMBER-LAW`.
+It is the programme's first exact curved conditional metric candidate and a
+same-kernel pre-Einstein two-way discriminator.  The affine decoder, two null
+channels, continuum region, Poisson sampling, density calibration and probe
+wiring remain declared.  The next task is to derive or select that decoder
+and sampling grammar from the point-free law, then compare the continuum
+curvature profile against an independent causal-set curvature estimator.
+
+## 2026-08-20 — Exact local order-volume curvature identity (v16 ledger #231)
+
+For every causal subdiamond of the declared affine-copula family, write its
+null rectangle about the center as half-widths `a,b`.  Bilinearity makes the
+normalized local density exactly
+
+`(1/4)(1 + alpha x + beta y + gamma x y)`.
+
+Direct integration gives local Kendall concordance
+
+`tau_I=(2/9)(gamma-alpha beta)`
+
+and the interval volume is `V(I)=4 A a b c(center)`.  Combining these with
+the independently differentiated metric gives the exact family-wide identity
+
+`R(center)=36 tau_I/V(I)=36(2 r_I-1)/V(I)`.
+
+For the whole same-`B` diamond, `tau=-14/225`, hence both routes return
+`R(center)=-56/(25A)`.  This reaches
+`P15-DECLARED-AFFINE-COPULA-ORDER-VOLUME-CURVATURE-IDENTITY` and supports a
+conditional scalar-curvature candidate.  It is not a general copula theorem
+and not yet a discrete-curvature result.  A held-out chain-abundance or
+inclusive-interval estimator must recover the same subdiamond profile without
+consuming the affine formula before any autonomous curvature promotion.
+
+## 2026-08-20 — Centered chain-abundance curvature cross-check (v16 ledger #232)
+
+For the smooth affine-copula ensemble, the exact normalized nested-chain
+integrals are
+
+`I2=1/4+theta/18`,
+
+`I3=1/36+theta/72+theta^2/600`,
+
+`I4=1/576+theta/720+23 theta^2/64800+theta^3/35280`.
+
+The derivative of `I3` is positive throughout `|theta|<1`, so the three-chain
+abundance alone identifies the registered parameter without consuming the
+relation fraction.  At `theta=-7/25`, the exact values are
+
+`I2=211/900`, `I3=13511/562500`,
+`I4=556643/405000000`.
+
+The unique admissible root reconstructed from `I3` gives the same centered
+curvature `-56/(25A)`; `I4` is a held-out prediction.  This reaches
+`P15-DECLARED-AFFINE-COPULA-CHAIN-CURVATURE-CROSSCHECK` at the exact ensemble
+level.  A finite-sample error analysis and profile-wide inclusive-interval or
+discrete-operator comparison remain open.
+
+## 2026-08-20 — Finite-sample curvature consistency (v16 ledger #233)
+
+For every fixed intrinsic subdiamond, conditional-on-count chain frequencies
+are bounded U-statistics.  With
+
+`Ihat_k=C_k/(N)_k` and `rhat=2 C_2/[N(N-1)]`,
+
+their variance is `O(1/N)` and they converge to the registered affine-copula
+integrals.  At calibrated density `rho -> infinity`, `N/rho -> V`, so
+
+`Rhat_I = 36 rho (2 rhat_I - 1)/N_I`
+
+converges in probability to the exact center curvature of every fixed
+registered subdiamond.  Independently, the unique admissible root of the
+three-chain equation gives `thetahat_3 -> theta`, while the four-chain
+residual remains held out.
+
+This reaches
+`P15-DECLARED-AFFINE-COPULA-FINITE-SAMPLE-CURVATURE-CONSISTENCY`.  It is a
+real discrete consistency theorem inside the declared Poisson family, not a
+model-robust reconstruction theorem.  Adaptive/shrinking interval selection,
+unknown density, decoder misspecification, and an independent
+inclusive-interval or discrete-operator route remain open.
+
+## 2026-08-20 — Longest-chain duration consistency (v16 ledger #234)
+
+The declared smooth copula family now has an exact discrete duration route.
+For a strictly positive `C1` density `p`, the Deuschel--Zeitouni theorem gives
+
+`H_n/sqrt(n) -> 2 J[p]`,
+
+where `J[p]` is the supremum of the increasing-curve variational integral.
+For the declared metric `g=-2 A c_theta du dv`, the same integral is maximal
+proper time divided by `sqrt(2A)`.  With the declared Poisson law
+`N_rho/(rho A) -> 1`, the constants cancel exactly:
+
+`H_rho/sqrt(2 rho) -> T_max(A,theta)`.
+
+The theorem holds on every fixed preregistered subdiamond after affine
+normalization.  The flat control returns `sqrt(2A)`.  The same-`B` affine row
+meets the strict positivity hypothesis and has the rigorous bound
+
+`6 sqrt(A)/5 <= T_max(A,-7/25) <= 8 sqrt(A)/5`.
+
+No diagonal maximizer is assumed.  The scoped outcome is
+`P15-DECLARED-SMOOTH-COPULA-LONGEST-CHAIN-DURATION-CONSISTENCY`.  It is an
+intrinsic order-statistic/declared-metric consistency theorem, not a derivation
+of the copula, Poisson process, density calibration, or absolute clock scale.
+An independent held-out local-clock construction remains required.
+
+## 2026-08-20 — Conditional spacetime synthesis (v16 ledger #235)
+
+The affine-copula results now close into one conditional reconstruction
+theorem.  With the smooth `1+1` diamond, copula family, Poisson law and density
+fixed before sampling:
+
+- `det(g)=-A^2 c_theta^2<0` gives Lorentzian signature;
+- the physical intersection order is exactly the metric causal order;
+- strict order intervals form the diamond's Alexandrov topology;
+- `N/rho -> A` reconstructs total volume;
+- the unique admissible `I3` root reconstructs `theta`, with `I4` held out;
+- longest chains reconstruct maximal proper time;
+- order-volume, metric-differential and centered-chain routes reconstruct the
+  same scalar-curvature profile.
+
+This reaches
+`P15-DECLARED-AFFINE-COPULA-CONDITIONAL-1+1-SPACETIME-RECONSTRUCTION`.
+It is the programme's first coherent spacetime object, but it is explicitly a
+target-family theorem.  Dimension, signature, smoothness, the affine decoder,
+Poisson sampling and intensity calibration are hypotheses, not outputs of
+Gamma.  Finite uniqueness, autonomous dynamics and gravity remain closed.
+
+## 2026-08-20 — Exact affine-family maximal duration (v16 ledger #236)
+
+The affine-copula longest-chain variational problem is solved exactly.  For
+`c_theta(u,v)=1+theta(1-2u)(1-2v)`, weighted AM--GM with
+`w(u)=sqrt(c_theta(u,u))` turns the path functional's upper bound into an
+exact boundary identity.  Equality forces
+
+`v' = c_theta(u,v)/c_theta(u,u)`,
+
+whose unique solution through the lower corner is `v(u)=u`.  Therefore the
+diagonal is the unique maximizer for every `|theta|<1`, and the variational
+constant is an elementary `asinh` branch for positive `theta` and an `asin`
+branch for negative `theta`.
+
+At the same-`B` value,
+
+`T_max/sqrt(A) = 3/5 + [5 sqrt(2)/(2 sqrt(7))] asin(sqrt(7)/5)`
+
+`= 1.345122774563...`.
+
+This strengthens #234 from bounded duration consistency to an explicit
+maximal-duration prediction while retaining the same declared-decoder,
+Poisson-density and absolute-scale caveats.
+
+## 2026-08-20 — Decoder nonselection theorem (v16 ledger #237)
+
+The local `B` kernel cannot select the conditional spacetime decoder.  Every
+smooth mean-zero `phi:[0,1]->[-1,1]` defines normalized outcome densities
+`f_a=1+(-1)^a phi` and the same-`B` copula
+
+`c_(B,phi)=1-(7/25) phi(u) phi(v)`.
+
+Its conditional curvature is
+
+`R_(B,phi)=2 theta_B phi'(u)phi'(v)/(A c_(B,phi)^3)`.
+
+The affine profile and `cos(pi u)` already give different curvature with the
+same `B`.  More strongly, the explicit monotone polynomial perturbation
+
+`phi_*=x+(7/8)x(1-x^2)(x^2-3/7)`, `x=1-2u`,
+
+has the same first moment as the affine profile.  Therefore both have exactly
+the same Kendall concordance and comparability `211/450`, while their center
+curvatures are `-56/(25A)` and `-7/(8A)`.
+
+This reaches
+`P15-B-AND-TWO-POINT-ORDER-UNDERDETERMINE-DECODER-AND-CURVATURE`.
+The next physics gate is a full-law rigidity theorem or a Gamma-derived
+decoder/probe principle; smoothness or aesthetic preference cannot supply it.
+
+## 2026-08-20 — Higher-order decoder discriminator (v16 ledger #238)
+
+The explicit `phi_*` counterdecoder survives `B` and the complete two-point
+order statistic, but it does not survive the existing independent chain gate.
+Exact polynomial integration gives
+
+`I3(phi_affine)=13511/562500`,
+
+`I3(phi_*)=11933657/496910700`,
+
+with exact difference `-299557/77642296875`.
+
+This reaches
+`P15-THREE-CHAIN-DISTINGUISHES-EXPLICIT-SAME-B-DECODER-PAIR`.
+The conditional reconstruction therefore does not misclassify this hostile
+decoder when the higher-order law is consumed.  The remaining open question is
+whether Gamma generates and selects the required complete all-size probe law,
+and whether that law is rigid over the full admissible decoder class.
+
+## 2026-08-20 — Conditional full-pattern decoder rigidity (v16 ledger #239)
+
+The full oriented pattern law supplies a rigorous sufficient selector.  By the
+permutation-limit theorem, all finite oriented rank-pattern densities determine
+the permuton almost everywhere.  Smooth absolute continuity then determines
+its density `c`.  In the same-`B` decoder class the centered kernel is
+
+`K=c-1=theta_B phi tensor phi`.
+
+Its integral operator has one nonzero eigenspace and eigenvalue
+`lambda=theta_B ||phi||_2^2`, so `phi` is reconstructed up to a global sign.
+That sign only swaps the bit labels and leaves the metric unchanged.  Any
+additional singular value, wrong sign, nonsmooth measure or held-out pattern
+failure refuses the rank-one model.
+
+This reaches
+`P15-ORIENTED-FULL-PATTERN-LAW-RIGIDLY-SELECTS-RANK-ONE-DECODER-GEOMETRY`.
+The word `ORIENTED` is load-bearing: the physical input is an unlabeled poset,
+not a supplied pair of null realizers.  Deriving that pair covariantly from
+Gamma, or proving unlabeled-law metric rigidity without it, is now the exact
+open emergence gate.
+
+## 2026-08-20 — Paper 16 dimensional obstruction and joint control (v16 ledger #240)
+
+Paper 15's conditional $1+1$ spacetime cannot carry ordinary Einstein
+backreaction: $R_{ab}=Rg_{ab}/2$ makes $G_{ab}=0$ identically. The
+programme must not rename nonzero scalar curvature as a nonzero Einstein
+tensor or manufacture matter by defining $T=G/(8\pi G_N)$.
+
+A nonbinding Paper 16 control therefore declares a spatially flat $3+1$
+FLRW carrier, a canonical massless scalar, and the covariant
+Einstein--Hilbert plus scalar action. Independent variation yields the stress
+tensor and the Friedmann/Raychaudhuri/Klein--Gordon system. On complete
+homogeneous frontiers $Z=(V,\phi,P)$, with $P=V\dot\phi$, the exact
+expanding update is
+
+`V(tau)=V0+sqrt(12*pi*G_N)|P|tau`
+
+and
+
+`phi(tau)=phi0+sgn(P)/sqrt(12*pi*G_N) log(V(tau)/V0)`.
+
+It composes as a proper-duration semigroup only across those complete
+frontiers. Matter magnitude changes expansion while geometry changes the
+later scalar rate `P/V`; the sign flip `P -> -P` is a required geometry
+non-kill and matter-orientation change. This reaches only the declared
+coordinate `P16-DECLARED-3+1-EINSTEIN-SCALAR-JOINT-CLOSURE`.
+
+## 2026-08-20 — Paper 16 dynamical curvature and conditional GR sector (v16 ledger #241)
+
+The same exact control predicts
+
+`R=-8*pi*G_N*P^2/V^2`,
+
+`Rdot+6*H*R=0`,
+
+`Kretschmann=(20/27)(12*pi*G_N)^2 P^4/V^4`,
+
+and null-probe redshift `1+z=(V2/V1)^(1/3)`. A fit-once estimator
+`G_F=Vdot^2/(12*pi*P^2)` must agree on held-out frontiers and changed matter
+inputs with `G_R=-R*V^2/(8*pi*P^2)`, Raychaudhuri, scalar conservation, the
+finite semigroup, and redshift. Bianchi-linked consequences are disclosed as
+dependent rather than counted as independent confirmations.
+
+This earns the mathematical target
+`P16-CONDITIONAL-GR-HOMOGENEOUS-MASSLESS-SCALAR-SECTOR-RECOVERED`, while the
+physical coordinate remains `P16-CONDITIONAL-GR-BRIDGE-NOT-YET-PHYSICAL`.
+Dimension, carrier, volume, proper time, scalar stress, $G_N$, continuum
+action, and symmetry reduction are hypotheses. Physical promotion requires
+one point-free construction deriving them, reciprocal response, and
+constraint/no-hidden-clock closure from the same law.
