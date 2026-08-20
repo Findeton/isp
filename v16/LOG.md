@@ -6494,3 +6494,31 @@ and QFT coordinate remain unconstructed. No Rust/Python source, fixture,
 generated result, receipt, or official artifact exists. The sole next stage
 is a frozen mathematical hostile-review protocol followed by three independent
 semantic reports and adjudication.
+
+## 2026-08-20 — PAPER 13D MATHEMATICAL HOSTILE PROTOCOL (v16 LEDGER #267)
+
+The result-neutral mathematical protocol is frozen at
+`v16/note-paper13d-typed-executable-gamma-math-review-protocol.md`, SHA-256
+`4754f89b01c7975ef79de2d9465e54304bbcf2d6e02b942f9957062a63c9eba3`
+(301 LF lines / 13,009 bytes).
+
+It binds the exact Stage-A pin and Stage-B law/certificate bytes and assigns
+three mutually blind semantic lenses: category/groupoid/readers/tensor/fusion;
+probability/global evaluation/cuts/records/eraser; and physics/ontology/
+intervention/scope. The seats must complete 62 registered attacks and at
+least twelve new countermodels in total, return all ten product coordinates,
+and classify each finding as semantic or code-only.
+
+The protocol directly attacks every Paper 13C failure and every new 13D
+surface: full control hom-set associativity; string-diagram intervention
+addresses; reader-independent quotient with anchored versus orbit-profile
+readers; alternative-dependent contrast stabilizers; tensor/fusion nesting;
+stochastic record-carrying projector transport; reachable erasure; all-field
+division; native-carrier smuggling; response cancellation; and every
+no-chronology/no-geometry wall.
+
+Reviewers may not repair or implement the law. Rust ownership, mutation,
+serialization, CLI, transaction, memory, and performance cannot reject this
+mathematical stage. A changed boundary, probability, generator, hom-set,
+group action, mark, reader, fusion, grammar, eraser, or parameter is a new law.
+Reports remain evidence; only a separate adjudication can authorize Rust.
