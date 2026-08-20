@@ -1347,6 +1347,40 @@ commit replayable exact mutation-spec/probe/capture preimages under explicit
 future whitelists.  No v5 source, nonce, official artifact, authoritative
 Paper 14, Paper 15, or geometry work may precede that pin.
 
+#220 freezes that result-neutral v5 source-delta pin at
+`v16/note-paper13-typed-groupoid-v5-source-delta-pin.md`, ordinary SHA-256
+`8cee9dabc4dbafc88df460512b9f41cae3884a19dd1e006e3341cf6eb7cf865b`
+and normalized SHA-256
+`f17927da751e41854bd30062a22b07d7ba49461ec25e25e6cddedae3c3c8c056`.
+It contains 537 LF-terminated lines and 21,852 bytes.  Three mutually blind
+read-only audits accept the same immutable snapshot: two required
+implementability/records seats and an independent physics/ontology scope
+seat.
+
+The pin requires an immutable content-addressed tensor-factor lineage manifest
+whose expected generator leaves, complete certificate-action inputs,
+certificates and pairing keys are independently reconstructed from decoded law,
+presentation and witness bytes.  Full tuple equality, per-case counts and the
+top-level 24/12/24 flattening equality are promotive; retained-entry loops,
+stored counts and hashes alone are not evidence.  All 153 v4 attacks remain
+live and L1--L8 raise the minimum to 161.
+
+The prior six real source mutations plus two new lineage producer/verifier
+mutations must be committed as exact canonical replacement specifications,
+one no-import replay program and a complete replay receipt.  R1--R8 require
+every patch, program, capture and dependency preimage to be independently
+reconstructible.  The candidate evaluator is forbidden from reading those
+evidence artifacts, preserving the separation between science and audit
+evidence.
+
+This remains specification acceptance only.  The v4 source stays `NO-GO` at
+`P13-SPECIFICATION-INCONSISTENT`; no scientific rung is restored.  The sole
+next authorized event is Stage-B construction and joint freeze of the
+standalone v5 source, exact mutation specification, replay program, replay
+receipt and v5 source-freeze note.  Root, alien-CWD and true one-file/no-`.git`
+selftests retain the hard 300-second cap.  No nonce, fresh case, official
+artifact, paper, authoritative Paper 14, Paper 15 or geometry work may begin.
+
 ## Successor register
 
 Nothing below is authorized by this plan alone.

@@ -5203,3 +5203,50 @@ at `v16/note-paper13-typed-groupoid-v5-source-delta-pin.md`.  It must require
 raw no-drop tensor-lineage reconstruction and commit the exact mutation-spec,
 probe and capture preimages under explicit stage whitelists before any v5
 source byte.
+
+## 2026-08-20 — PAPER 13 V5 SOURCE-DELTA PIN FROZEN (v16 LEDGER #220)
+
+The result-neutral pin freezes at
+`v16/note-paper13-typed-groupoid-v5-source-delta-pin.md`, ordinary SHA-256
+`8cee9dabc4dbafc88df460512b9f41cae3884a19dd1e006e3341cf6eb7cf865b`
+and normalized SHA-256
+`f17927da751e41854bd30062a22b07d7ba49461ec25e25e6cddedae3c3c8c056`.
+It contains 537 LF-terminated lines and 21,852 bytes.  The v4 adjudication at
+ordinary SHA-256
+`5acd5c43ead4a4a7ded8698f331328261c918f9ac0d6dc23ad515755306cf075`
+is its sole scientific authority.
+
+The pin closes the two accepted v4 audit defects at the specification layer.
+Each tensor case must carry a content-addressed immutable factor-lineage
+manifest.  An independent raw-byte route decodes and re-encodes the law,
+factor presentations and witnesses; derives the expected generator leaves and
+all nonzero complete certificate-action inputs; rebuilds certificates and
+pairing keys; and requires exact tuple, per-case count and global flattening
+equality.  Dropping every entry, one entry, duplicating or swapping entries,
+using a foreign input, severing a certificate or key, and bypassing the
+producer are mandatory killed changed objects.
+
+Exact source-mutation evidence is now part of the future committed corpus, not
+a prose/hash attestation.  One canonical mutation specification contains
+base64 old/new bytes, a one-match replacement rule and all source identities;
+one no-import replay program derives eight changed sources and full semantic
+captures; one replay receipt retains all patch/program/capture and dependency
+preimages.  The candidate source may not read those artifacts.  R1--R8 attack
+missing or altered patch, program, capture and dependency bytes.  The complete
+registry minimum is 153 inherited attacks plus L1--L8, or 161.
+
+Three mutually blind read-only audits authenticate and accept the identical
+pin snapshot.  The required implementability seat confirms finite
+0/unit/nested/many lineage coverage and executable whitelists.  The required
+records seat confirms the exact-replacement, self-hash, replay-preimage and
+raw-manifest contracts.  A third physics/ontology seat confirms that the delta
+is result-neutral and preserves every scope wall.
+
+This commit restores no Paper 13 rung.  The v4 adjudicated state remains
+`NO-GO` at `P13-SPECIFICATION-INCONSISTENT`; the semantic quotient ceiling
+remains no higher than `P13-REFERENT-PRESENTATION-ONLY` until constructed and
+audited.  The sole next authorized event is Stage-B construction and freeze of
+the exact v5 source, mutation specification, replay program, replay receipt and
+source-freeze note, with root/alien/one-file parity under 300 seconds.  No
+nonce, fresh case, official artifact, paper, authoritative Paper 14, Paper 15,
+metric, curvature, gravity, continuum or GR/QFT work is authorized.
