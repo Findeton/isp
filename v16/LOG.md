@@ -6122,3 +6122,22 @@ The protocol authorizes no code and no mathematical repair. Only a later
 adjudication of all three frozen reports may authorize a separate Rust pin.
 Any changed probability, definition, action, grammar, or parameter is a new
 law and requires user authority; there is no automatic repair chain.
+
+## 2026-08-20 — PAPER 13B PHYSICS/ONTOLOGY REPORT (v16 LEDGER #254)
+
+The mutually blind physics/ontology report is frozen at
+`v16/review-paper13b-pointfree-gamma-physics.md`, SHA-256
+`8cf32b6831f60839a3c55b269207916b6a9994cca201411722fa6e081f5fc507`.
+
+The seat returns `REJECT`. Its first decisive semantic counterexample is
+factorization nonidentifiability: one static joint history distribution admits
+distinct chain-rule mechanism factorizations with different `do(X)` laws.
+The paper's truncated-factor intervention therefore depends on undeclared
+mechanism/orientation data not determined by the promoted static
+`Gamma_*`. This is a physics defect, not an implementation issue.
+
+The seat also finds the experiment/reader referents incomplete and narrows the
+native nondivision statement: mode `U` contains `C` but no native intermediate
+`B` boundary, so negativity of `CB^-1` proves only obstruction through an
+externally stipulated `B` leg. This report is evidence, not adjudication; the
+other blind reports remain unread by the seat and must be frozen separately.
