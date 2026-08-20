@@ -6624,3 +6624,36 @@ A changed boundary, probability, seed law, generator, hom-set, group action,
 mark, reader, contrast, fusion, future map, eraser, division, or parameter is a
 semantic change and stops implementation. There is no automatic Paper 13E and
 no post-hoc selection of parameters, dimension, geometry, or desired result.
+
+## 2026-08-20 — PAPER 13D RUST REALIZATION PIN (v16 LEDGER #272)
+
+The separately governed Rust implementation contract is frozen at
+`v16/note-paper13d-rust-implementation-pin.md`, SHA-256
+`f9e710b6f739bc159f741858ebf2993631a823bf23c3dec32eb97a5bbfd83e49`
+(371 LF lines / 16,530 bytes).
+
+The pin binds the terminal mathematical law and adjudication without changing
+them. It authorizes one standard-library-only Rust 2021 crate with exact
+checked rational arithmetic, distinct private boundary types, typestaged
+controls, checked execution syntax, one trace-valued evaluator, full
+presentation-orbit pushforward, independent tensor, simultaneous fusion,
+typed stable futures, an executable eraser outside the stable grammar,
+complete-division and native-nondivision tests, and the complete signed
+response controls.
+
+Twenty fidelity groups and twelve semantic regression controls are frozen.
+They include the Paper 13C failures, representative-mass and reader-stabilizer
+counterfeits, ordered-fold fusion, native-carrier smuggling, primitive/query
+confusion, and alternative-dependent contrast alignment. Bounded execution is
+regression evidence only; all-finite claims remain the accepted mathematical
+theorems.
+
+The pin fixes deterministic canonical JSON, a strict three-mode CLI, exact
+Stage-B source paths, paired no-overwrite Stage-C publication, and root,
+alien-CWD, and true source-only parity. Code-only Rust, serialization, CLI,
+transaction, memory, and performance defects may be repaired while preserving
+the mathematical objects and canonical scientific bytes. Any change to a
+boundary, probability, seed law, generator, hom-set, action, mark, reader,
+contrast, tensor, fusion, future, eraser, division, response, or parameter is
+semantic and stops. No Rust source or official artifact exists at this commit;
+Stage-B source construction is the sole next event.
