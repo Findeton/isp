@@ -6736,3 +6736,39 @@ The exact accepted Gamma interface may become a future input to Paper 17, but
 no operational chronology, causal order, dimension, topology, measure,
 duration, clock, metric, curvature, gravity, actuality, continuum, or QFT is
 awarded here.
+
+## 2026-08-20 — PAPER 17 RESULT-NEUTRAL PHYSICS PIN (v16 LEDGER #275)
+
+Paper 17 opens under the frozen pin
+`v16/note-paper17-operational-chronology-dimension-pin.md`, ordinary SHA-256
+`90a3dac7a1a7cf9eec063ae67475da908d9298d961635c3eb53d9152ad4b34bb`
+(490 LF lines / 21,247 bytes).
+
+The sole live law input is terminal Paper 13D at commit
+`6ced7ca3c57d6791ad73520533da164f426ce5d2`. The pin binds its exact
+mathematical law, adjudication, experiment groupoid, complete histories,
+typed interventions and readers, native nondivision and complete-division
+certificates, stable-future and eraser categories, varying-size covariance,
+complete signed response objects, Rust source, official result, and receipt.
+No parameter, dimension, geometry, or replacement regional law is introduced.
+
+The first scientific question is whether complete direct response under the
+same Gamma produces operational chronology. The central firewall is now
+explicit: Paper 13D permits interventions at declared source-generator
+vertices but not at every later candidate happening. An unavailable reverse
+intervention means `UNTESTED`, never zero, and source/mediator/reader staging
+is experiment typing rather than time. Direct, mediated, common-cause,
+cancelled, and co-onset coordinates must be proved separately before taking a
+locally finite transitive closure.
+
+Only after chronology passes may the same whole-history law generate a
+covariant varying-size ensemble. Only after that ensemble passes may a
+held-out multi-estimator battery report no stable dimension, scale-dependent
+dimension, total dimension 2/3/4, or target-relative nonmanifoldlikeness.
+Dimension four does not imply Lorentzian 3+1, scale, metric, curvature, or
+gravity. Actualization remains unconstructed.
+
+The next event is implementation-free mathematical construction at the two
+exact Stage-B paths. Mathematical review and adjudication precede any separate
+Rust pin. Python is not an authoritative implementation language, and no
+Paper 17 source, fresh case, result, receipt, or dimension run is authorized.
