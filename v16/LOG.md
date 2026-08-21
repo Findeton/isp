@@ -6702,3 +6702,37 @@ been invoked. Status is `RUST-SOURCE-GREEN-UNOFFICIAL`; one paired run against
 the exact committed source is the sole next event. Actualization and every
 chronology, dimension, geometry, metric, curvature, gravity, continuum, and
 QFT coordinate remain unconstructed.
+
+## 2026-08-20 — PAPER 13D OFFICIAL RUST CONFORMANCE (v16 LEDGER #274)
+
+The single authorized frozen-source run creates exactly:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v16/paper13d-rust-result.json` | `8dbb5c94f1a2f93454a01ddd1f09603c3c972476f8f67710e721afde8c161b6f` | 1 LF / 3,308 bytes |
+| `v16/paper13d-rust-receipt.json` | `2aad4dd2ec498be885db3f2c562eae3f32403bb4f8e64b72cd8b3e138dbcc2c1` | 1 LF / 840 bytes |
+
+Both artifacts are canonical single-line JSON with a final LF. The receipt
+binds the result's exact SHA and 3,308-byte length, all four committed Rust
+source/Cargo hashes, the mathematical law, adjudication, and implementation
+pin, plus 133 exact checks in 22 groups. Source hashes recomputed from commit
+`2c6514d` match the receipt exactly.
+
+The official result reports `PASS`, zero failures, all ten adjudicated product
+coordinates, and the permanent no-actualization/no-chronology/no-dimension/
+no-geometry/no-metric/no-gravity/no-continuum/no-QFT walls. It is executable
+conformance evidence for the accepted law, not a new law-selection or physics
+result.
+
+The immediately repeated official command refuses with exit code 2 and
+`official artifacts are no-overwrite`; both hashes remain unchanged. Canonical
+re-encoding is byte-identical. No temporary publication path remains. The
+disposable Cargo `target/` directory was removed after verification and is not
+part of the corpus.
+
+Paper 13D therefore closes as terminal mathematical `ACCEPT-WITH-SCOPE` and
+terminal `RUST-CONFORMANT`. There is no automatic Paper 13E or repair chain.
+The exact accepted Gamma interface may become a future input to Paper 17, but
+no operational chronology, causal order, dimension, topology, measure,
+duration, clock, metric, curvature, gravity, actuality, continuum, or QFT is
+awarded here.
