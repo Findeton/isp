@@ -6657,3 +6657,48 @@ boundary, probability, seed law, generator, hom-set, action, mark, reader,
 contrast, tensor, fusion, future, eraser, division, response, or parameter is
 semantic and stops. No Rust source or official artifact exists at this commit;
 Stage-B source construction is the sole next event.
+
+## 2026-08-20 — PAPER 13D RUST SOURCE FREEZE (v16 LEDGER #273)
+
+The standard-library-only Rust realization freezes at:
+
+| path | SHA-256 | size |
+|---|---|---:|
+| `v16/rust/p13d_gamma/Cargo.toml` | `0294f5e15e2c28514e1374451bcd59624fdfe889abe78c2b2cafe6a7c656d710` | 19 LF / 262 bytes |
+| `v16/rust/p13d_gamma/Cargo.lock` | `5c6ea04a904bd1a03bd049e5bd9e66aff9c10a32a200a19c213e2ae1437f889e` | 7 LF / 154 bytes |
+| `v16/rust/p13d_gamma/src/lib.rs` | `779d2e669e9848992c7e8b9d3b210f35150d248ea737359effd59e761e57afcd` | 3,366 LF / 105,342 bytes |
+| `v16/rust/p13d_gamma/src/main.rs` | `702cc6c0bb3a643124f30e101de43799bc7f71635ed6e93db4ca674790157a7f` | 37 LF / 1,024 bytes |
+| construction freeze note | `32af43df364546422943ebd52bf98c23062ecbcf81192d00359f5158e813a837` | 232 LF / 10,492 bytes |
+
+The implementation makes the Paper 13C failure unrepresentable: `B2` derives
+`t=h`, `B3Recorded` owns the distinct `t_plus`, and `Ft` accepts only
+`B3Recorded`. Typestaged controls make a mediator-to-source write unavailable;
+the compile-fail test verifies that negative hom-set. Erasure has the exact
+type `B2Recorded -> B3Erased` and cannot enter the stable endomorphism enum.
+
+One structural evaluator realizes the frozen finite seed law, complete typed
+traces, checked composition, tensor product, simultaneous n-ary fusion,
+presentation-orbit mass pushforward, stable futures, erasure, complete
+divisions, native nondivision, deletion, and context-indexed response. The
+fixed-context unit response and genuinely fair-epsilon zero response are both
+retained. No floating point, unsafe code, dependency, system randomness,
+network, shell execution, reader-defined quotient, cache, or hidden history
+identifier enters the scientific path.
+
+The release source passes 133/133 exact checks in 22 groups, including thirteen
+explicit semantic counterfeits, four unit tests, one compile-fail typestate
+test, `cargo fmt --check`, and Clippy warnings-as-errors. Canonical selftest
+stdout SHA-256 is
+`c8cc4e9f4749e62f2b7af4b2c8f99d651eeaf124932c7c93f4d533e77b38a80d`;
+root, alien CWD, and a true no-`.git`/no-prebuilt-target source-only build are
+byte-identical. Runtime is approximately 0.01 s. The paired writer succeeds in
+the positive test and rolls back a newly published first link when the second
+link collides, while preserving the foreign path.
+
+Four compiler/harness defects and two weak tests were repaired without
+changing any scientific object; they are enumerated in the construction note.
+The official Stage-C result and receipt remain absent, and `--run` has never
+been invoked. Status is `RUST-SOURCE-GREEN-UNOFFICIAL`; one paired run against
+the exact committed source is the sole next event. Actualization and every
+chronology, dimension, geometry, metric, curvature, gravity, continuum, and
+QFT coordinate remain unconstructed.

@@ -1,0 +1,19 @@
+[package]
+name = "p13d-gamma"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "p13d_gamma"
+path = "src/lib.rs"
+
+[[bin]]
+name = "p13d-gamma"
+path = "src/main.rs"
+
+[profile.release]
+overflow-checks = true
+lto = true
+codegen-units = 1
+strip = true
