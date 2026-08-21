@@ -6772,3 +6772,54 @@ The next event is implementation-free mathematical construction at the two
 exact Stage-B paths. Mathematical review and adjudication precede any separate
 Rust pin. Python is not an authoritative implementation language, and no
 Paper 17 source, fresh case, result, receipt, or dimension run is authorized.
+
+## 2026-08-20 — PAPER 17 MATHEMATICAL CONSTRUCTION (v16 LEDGER #276)
+
+The implementation-free Paper 17 construction freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v16/paper-17-operational-chronology-from-gamma.md` | `d90a20dc475a19834c1b0bcb9e33354aae987052a5e59ea229e26b5364c18a24` | 500 LF / 21,396 bytes |
+| `v16/note-paper17-operational-chronology-construction.md` | `667195be58a2ea1079f1b3bac6cd4ae5a5e9541c57c0135ea118ba78d9a9621f` | 145 LF / 5,931 bytes |
+
+The construction uses no evaluator. It derives directly from the accepted
+Paper 13D hom-sets, intervention addresses, complete readers, execution
+category, tensor/fusion distinction, futures, eraser, divisions, nondivision,
+and all-size law.
+
+The exact response atlas separates four effects. Internal `X/Y/E/E'`
+response and mediation occur inside one primitive generator onset. Independent
+tensor factors have complete zero response in both directions and commute,
+giving a real incomparability control. Carried packet changes at a queried
+continuation are persistence rather than newly generated `q2` response. A
+component intervention changes a newly drawn later fusion cross bond from
+`9/25` to `16/25` or conversely, an exact `7/25` forward response between
+distinct primitive transition occurrences.
+
+The decisive stopping theorem is experiment completeness. Paper 13D attaches
+localized intervention programs only to `B0`-source generator vertices;
+continuations, fusion, stable futures, and erasure have no such address. The
+fusion pair therefore has known nonzero forward response but unavailable
+reverse experiment. That reverse coordinate is `UNTESTED`, never zero. Using
+the typed string-diagram direction, validation stages, carried record, or API
+absence as an arrow of time is prohibited.
+
+The provisional product is consequently:
+
+```text
+input       P17-INPUT-P13D-TERMINAL-GAMMA-BOUND
+quotient    P17-POINT-FREE-ONSET-AND-RESPONSE-DESCENT-CONSTRUCTED
+experiment  P17-BIDIRECTIONAL-EXPERIMENT-CENSUS-INCOMPLETE
+response    P17-COMPLETE-ACCEPTED-RESPONSE-ATLAS-CONSTRUCTED
+co-onset    P17-PRIMITIVE-GENERATOR-ONSET-BUNDLES-CONSTRUCTED
+chronology  P17-OPERATIONAL-CHRONOLOGY-UNTESTED
+ensemble    P17-CHRONOLOGY-VALUED-ENSEMBLE-NONE
+dimension   P17-DIMENSION-NONE-CHRONOLOGY-GATE-UNPASSED
+signature   P17-SIGNATURE-UNCONSTRUCTED
+metric      P17-METRIC-UNCONSTRUCTED
+actuality   P17-ACTUALIZATION-UNCONSTRUCTED
+```
+
+This is `GREEN-UNREVIEWED`, not terminal. The next event is frozen
+mathematical review. No Python or Rust source, fresh case, result, receipt,
+dimension artifact, or prior-paper edit was created or invoked.
