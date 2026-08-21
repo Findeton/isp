@@ -6844,3 +6844,47 @@ independence theorem can orient an edge without a complete reverse contrast.
 
 The provisional product is not an expected verdict. Reports remain absent and
 undispatched. Rust remains barred until mathematical adjudication.
+
+## 2026-08-20 — PAPER 17 THREE-SEAT MATHEMATICAL PANEL (v16 LEDGER #278–#280)
+
+| seat | commit | verdict | report SHA-256 |
+|---|---|---|---|
+| category/experiment | `2b8c7a9` | `REVISE` | `150045f1a377f004ebe01f05c1e9961f7547a4a6a8ab5c8857282ffe0f66ff3e` |
+| probability/identifiability | `cda97e3` | `REVISE` | `270277e55a8a853edfeb6a2c2bc9cdc99966a97f9994fb5aad8b51fe4a7189f7` |
+| physics/ontology | `7d227d2` | `REVISE` | `6652359b57ba9fbb8980df09c3ea8177a418b1ac7ec75c9d4be7118e8ef12244` |
+
+All three reviews were mutually blind and contain no implementation audit.
+They converge on two semantic findings. First, the construction's chronology
+stop is too strong: normalized suffix convolution proves exact complete-prefix
+autonomy after every certified division. Combined with the forward `7/25`
+new-write fusion signal, it supports scoped partial Γ-relative operational
+precedence while leaving the reverse localized fusion contrast `UNTESTED`.
+Second, taking a set of onset-germ orbits loses multiplicity when braiding
+exchanges two identical tensor vertices.
+
+The probability seat additionally finds a `7/25` newly written endpoint-bond
+response at the queried continuations for at least two occurrences. The
+registered controls leave new `q2` response zero, while packet fields are
+carried.
+
+## 2026-08-20 — PAPER 17 MATHEMATICAL ADJUDICATION (v16 LEDGER #281)
+
+The adjudication freezes at
+`v16/note-paper17-operational-chronology-adjudication.md`, SHA-256
+`35ce97672fef9bb7d391943caf3d08502aee95ee38446c07c1ad21dbfe0907c4`
+(204 LF / 8,400 bytes).
+
+The panel is adjudicated `REVISE`. The Barandes-aligned correction is accepted:
+universal bidirectional local intervention is not necessary for a scoped
+precedence edge when positive signaling is paired with an independent
+all-suffix prefix-autonomy theorem. The result remains relative to the accepted
+typed process orientation and is not autonomous time.
+
+The onset multiplicity counterexample is also accepted. The exact bounded
+repair is a finite stabilizer action/incidence object `(V(f), kappa_H)` rather
+than the set of its germ orbits. This retains two symmetric occurrences even
+when they have one orbit type.
+
+One bounded mathematical revision is authorized. It changes no Paper 13D
+object and opens no implementation. Complete chronology, ensemble, dimension,
+signature, metric, and actuality remain closed.
