@@ -6888,3 +6888,33 @@ when they have one orbit type.
 One bounded mathematical revision is authorized. It changes no Paper 13D
 object and opens no implementation. Complete chronology, ensemble, dimension,
 signature, metric, and actuality remain closed.
+
+## 2026-08-20 — PAPER 17 BOUNDED MATHEMATICAL REVISION (v16 LEDGER #282)
+
+The one adjudicated revision freezes as:
+
+| artifact | SHA-256 | size |
+|---|---|---|
+| `v16/paper-17-operational-chronology-from-gamma.md` | `10b7c67eefa4cb364ec95660ca21444a078c045b96078337fcb640e18ce64fa8` | 618 LF / 26,936 bytes |
+| `v16/note-paper17-operational-chronology-construction.md` | `1d4c9088e4db059fec4016111023027388148b2707a562ab58dab41275554e8d` | 189 LF / 8,193 bytes |
+| `v16/note-paper17-operational-chronology-revision.md` | `9549d5f0b9715eb074b9938d1b668115750ca047c03d8262b81b3c764106621c` | 150 LF / 5,664 bytes |
+
+The onset object now retains the finite stabilizer action on the complete
+generator-vertex incidence family, so braiding-related occurrences keep their
+multiplicity even when they have one germ orbit type. Exact trace convolution
+and suffix normalization prove complete-prefix autonomy for every finite
+lawful suffix word after a certified division, including nontrivial same-typed
+suffix choices.
+
+That theorem is paired only with complete newly written response. Fusion and,
+for at least two occurrences, queried endpoint bonds supply signed magnitude
+`7/25`. Registered controls leave newly written `q2` unchanged; packet field
+`a` is carried. The unavailable localized reverse contrasts remain `UNTESTED`.
+The exact promoted coordinate is therefore
+`P17-GAMMA-RELATIVE-PARTIAL-OPERATIONAL-PRECEDENCE-CONSTRUCTED`, explicitly
+relative to the accepted `Exec_D` process orientation.
+
+The bidirectional experiment census remains incomplete. There is no accepted
+all-size law over complete multi-transition chronology objects, so ensemble
+and dimension stay closed. The revision is `REVISED-GREEN-UNREVIEWED`; no
+Python, Rust, fresh case, result, receipt, or dimension run is authorized.

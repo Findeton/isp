@@ -1,6 +1,6 @@
 # Operational chronology from an indivisible relational law
 
-## The experiment-completeness obstruction
+## Partial operational precedence and its exact stopping line
 
 ### Abstract
 
@@ -12,30 +12,29 @@ or sequential-growth process.
 The accepted law supplies exact point-free experiments, source interventions,
 complete readers, native nondivision, complete queried divisions, stable
 records, an eraser, fusion, varying size, and complete signed response tensors.
-We use those objects to construct a point-free response atlas. The atlas
-distinguishes three physically different phenomena:
+We use those objects to construct a multiplicity-preserving point-free onset
+incidence object and response atlas. The atlas distinguishes three physically
+different phenomena:
 
 1. directed functional response among fields written by one primitive
    transition;
 2. exact mutual nonresponse between independent tensor components; and
 3. a nonzero response of a later fusion bond to an earlier component control.
 
-The first is internal structure of one co-onset, not chronology between two
+The first is internal structure of one co-onset, not precedence between two
 happenings. The second certifies incomparability. The third is a genuine
-forward operational effect, but the accepted experiment class contains no
-localized reverse intervention at the fusion vertex. The reverse coordinate
-is therefore untested rather than zero. More generally, Paper 13D attaches
-program interventions only to generator vertices whose atomic source is
-$B_0(I)$; continuations, fusion, stable futures, and erasure have no localized
-intervention address.
+forward operational effect. Independently, exact trace convolution proves an
+all-suffix prefix-autonomy theorem at every complete division: every lawful
+normalized suffix leaves the complete prefix-history law unchanged. Positive
+new-write response in one direction plus this no-backwards theorem constructs
+a scoped, $\Gamma$-relative partial operational precedence.
 
-Consequently the same law presently supplies a nontrivial point-free response
-atlas but not a separating bidirectional experiment census on its happening
-bundles. Operational chronology is untested, not refuted. The varying-size
-observational law survives, but no chronology-valued ensemble exists on which
-dimension selection could honestly run. The exact Paper 17 result is therefore
-an experiment-completeness obstruction, not a negative result about spacetime
-and not an invitation to infer time from the evaluator's stage order.
+The accepted experiment class still contains no localized reverse
+intervention at the fusion vertex. That coordinate remains `UNTESTED`, never
+zero. Thus the result is relative to the source--target orientation already
+present in $\mathsf{Exec}_D$; it is not an autonomous derivation of time. The
+experiment census remains incomplete, and no complete chronology-valued
+varying-size ensemble exists on which dimension selection could honestly run.
 
 ## 1. Binding input and scope
 
@@ -84,8 +83,10 @@ contexts, alternatives, complete and coarse readers, and reader outputs.
 Total variation is only a derived summary.
 
 This response object does not by itself say that $A$ and $B$ are distinct
-happenings. Nor does one nonzero direction establish asymmetry. Before
-chronology, we must determine:
+happenings. Nor does one nonzero direction by itself establish precedence. In
+this paper it can contribute to a scoped precedence edge only when paired with
+an independent all-suffix prefix-autonomy theorem. Before any promotion, we
+must determine:
 
 - whether $A$ and $B$ lie inside one primitive transition or in distinct
   primitive transition occurrences;
@@ -98,11 +99,11 @@ chronology, we must determine:
 
 An absent experiment is not an exact zero.
 
-## 3. Point-free primitive transition occurrences
+## 3. Point-free onset incidence with multiplicity
 
-Let $f$ be a typed execution diagram. Its generator-vertex set is the finite
-typed string-diagram vertex set retained by Paper 13D. It is not the order in
-which a program enumerates those vertices.
+Let $f$ be a typed execution diagram and $V(f)$ its finite generator-vertex
+set. This is a family of occurrence slots in the typed string diagram, not the
+order in which a program enumerates them.
 
 For a complete physical history cell $[H]_{\widehat e}$ and generator vertex
 $v$, define the presented onset germ to be the complete restriction of the
@@ -113,10 +114,25 @@ history to:
 - its incident typed diagram legs; and
 - every field, bond, record, and physical mark written by that generator.
 
-The experiment action groupoid transports this entire object. A **primitive
-transition occurrence** is its diagonal orbit. Symmetric-monoidal equations
-and component braidings change no occurrence; a staged composition with an
-extra traversed boundary does.
+Write $\kappa_H(v)$ for this germ. Let $G_H$ be the finite stabilizer of the
+presented complete diagram and history. It acts on $V(f)$ and on the germ
+family, and $\kappa_H$ is equivariant. The physical onset-incidence object is
+the isomorphism class
+
+$$
+\mathcal O([H]_{\widehat e})
+=
+[(V(f),\kappa_H)]
+$$
+
+in the finite action groupoid. It is not the set of germ orbits.
+
+A primitive transition occurrence is one incidence slot in this covariant
+finite family. Physical statements about a slot must be $G_H$-invariant or
+equivariant; no representative label is physical. If a braiding exchanges two
+identical tensor vertices, the two slots can have one orbit type while the
+incidence object still has cardinality two. The multiplicity of a germ type is
+the cardinality of its full fibre in $V(f)$, not the number of orbits.
 
 All fields written by one generator occurrence form one provisional co-onset
 bundle. This is conservative: Paper 13D supplies no finer physical arrows
@@ -126,23 +142,33 @@ transition unless a separately typed factorization into physical arrows is
 present in $\mathsf{Exec}_D$.
 
 This convention does not fuse distinct generator occurrences merely because
-they are symmetric or mutually responsive. A multi-vertex bundle would need
-an additional theorem that they are one minimal nonfactorizable transition.
+they are symmetric or mutually responsive. Symmetric occurrences may be
+individually unnameable while still having multiplicity. A multi-vertex bundle
+would need an additional theorem that the vertices are one minimal
+nonfactorizable transition.
 
-### Theorem 1 — point-free onset descent
+### Theorem 1 — point-free onset-incidence descent
 
-Primitive transition occurrences descend under the complete Paper 13D
-presentation action and are independent of reader choice and serialization.
+The finite action-incidence object $\mathcal O([H]_{\widehat e})$ descends
+under the complete Paper 13D presentation action, preserves occurrence
+multiplicity, and is independent of reader choice and serialization.
 
 #### Proof
 
 Paper 13D transports the typed execution diagram, complete history, fields,
 bonds, records, intervention marks, and probe addresses together. Its physical
-history quotient is formed before selecting a reader. Restriction to a typed
-generator vertex commutes with that diagonal action. The free symmetric
-monoidal equations change only parenthesization and braiding, while the vertex
-and its typed incident legs transport functorially. Hence the orbit of the
-restricted complete object is well defined. ∎
+history quotient is formed before selecting a reader. Restriction to all typed
+generator vertices commutes with that diagonal action. Therefore a change of
+presentation gives an equivariant bijection of $V(f)$ and carries
+$\kappa_H$ to the corresponding germ assignment. An equivariant bijection
+preserves every fibre cardinality. Reader choice occurs only after the
+physical quotient, and serialization changes neither the finite action nor
+the assignment. Hence the isomorphism class above is well defined. ∎
+
+The word *onset* remains generator-relative. This theorem does not prove that
+every generator is an absolutely minimal physical event; it proves a
+point-free, multiplicity-correct occurrence object at the resolution of the
+accepted $\mathsf{Exec}_D$ generators.
 
 ## 4. Exact domain of localized interventions
 
@@ -278,16 +304,27 @@ fixed is absent. Its response coordinate is `UNTESTED`, not zero.
 
 In $D\circ Q_J^0$ and $R_c\circ Q_J^r$, an earlier program may change the
 relational packet carried into and through the continuation. A complete final
-reader then sees that carried difference. Carried persistence is not by itself
-a response of the continuation's newly generated $q_2$ field.
+reader then sees that carried difference. Packet field $a$ is carried rather
+than newly written. Carried persistence is not by itself a response of the
+continuation's newly generated fields.
 
 The process kernel for $q_2$ depends on $m$ and fresh $u_2$. The accepted
 $X,Y,E,E'$ program does not change $m$, so it produces no new-write response
-in $q_2$. No localized intervention at the continuation vertex is available
-to test the reverse or to construct a direct inter-onset response certificate.
+in $q_2$.
 
-Thus the complete trace response is retained, but it is classified as carried
-response rather than a new chronological edge.
+There is nevertheless a separate new-write response when $|I|\geq2$. The
+endpoint bond is generated at $D$ or $R_c$ from the carried endpoint colours
+$d$. Holding all other data fixed, an earlier legal control that toggles one
+$d_i$ changes a fresh bond probability from $9/25$ to $16/25$ or conversely.
+Its signed magnitude is again $7/25$. Thus the continuation row contains:
+
+- exact zero newly written $q_2$ response under the registered controls;
+- carried packet response in $a$ and other retained fields; and
+- a genuine newly written endpoint-bond response for at least two
+  occurrences.
+
+No localized intervention at the continuation vertex is available to test the
+reverse. The reverse coordinate remains `UNTESTED`.
 
 ### 5.5 Stable futures and erasure
 
@@ -309,20 +346,22 @@ For candidate primitive transition occurrences, the accepted law gives:
 |---|---|---|---|
 | fields inside one generator occurrence | yes | often yes | internal response; one co-onset, no inter-happening edge |
 | independent tensor occurrences | yes | yes | exact zero both ways; incomparable |
-| component occurrence to later fusion occurrence | nonzero $7/25$ control | unavailable | forward total response; asymmetry untested |
-| $B_0$ generator to queried continuation | carried response; new-write response zero for registered controls | unavailable | no direct inter-onset certificate |
+| component occurrence to later fusion occurrence | nonzero new-bond $7/25$ control | unavailable | scoped forward precedence after prefix-autonomy theorem; reverse untested |
+| $B_0$ generator to queried continuation | carried $a$; $q_2$ new-write zero; endpoint-bond response $7/25$ for $|I|\geq2$ | unavailable | scoped forward precedence for the newly written bond; reverse untested |
 | recorded boundary to stable future | persistence theorem | unavailable | stability, not chronology |
 | recorded boundary to eraser | sector loss under a distinct typed arrow | unavailable | erasure control, not chronology |
 
-No row supplies a nonzero direct response between distinct onset bundles plus
-a complete reverse test. The tensor row supplies genuine incomparability but
-cannot orient the rest of the network.
+No row supplies a complete bidirectional intervention census. The tensor row
+supplies genuine incomparability. The two new-bond rows supply positive
+forward response and will be oriented only after an independent no-backwards
+theorem.
 
-## 7. Experiment-completeness obstruction
+## 7. Prefix autonomy and partial operational precedence
 
-Let $\mathcal H$ be the set of primitive transition occurrences from Section
-3. A **separating operational census** on $\mathcal H$ requires, for every
-pair whose orientation would enter chronology:
+Let $\mathcal H_H=(V(f),\kappa_H)$ be the finite onset-incidence family from
+Section 3. A **separating operational census** on $\mathcal H_H$ requires, for
+every equivariant pair of incidence slots whose orientation would enter
+chronology:
 
 1. a lawful localized intervention family at each proposed source;
 2. a complete separating reader at the opposite target;
@@ -330,49 +369,111 @@ pair whose orientation would enter chronology:
 4. direct/mediated/carried classification; and
 5. presentation-covariant forward and reverse results.
 
-### Theorem 4 — no complete chronology census
+### Theorem 4 — no complete bidirectional experiment census
 
 The accepted Paper 13D experiment class does not provide a separating
-operational census on its primitive transition occurrences.
+bidirectional census on its primitive transition occurrences.
 
 #### Proof
 
 Take a component occurrence followed by a fusion occurrence. Section 5.3
 constructs a nonzero forward response in a newly written cross bond. By
 Theorem 2, the fusion vertex has no localized intervention address, so the
-reverse experiment is absent. Hence this pair belongs to $\mathcal H^2$ but
-does not have the required bidirectional census. The same obstruction occurs
-for continuation and future vertices. Therefore the census is incomplete. ∎
+reverse experiment is absent. Hence this incidence pair is retained by
+$\mathcal H_H\times\mathcal H_H$ but does not have the required bidirectional
+census. The same obstruction occurs for continuation and future vertices.
+Therefore the census is incomplete. ∎
 
-### Corollary 4.1 — chronology remains untested
+### Theorem 5 — all-suffix prefix autonomy
 
-The nonzero fusion response cannot be promoted to an asymmetric chronology
-edge. The relation obtained by orienting the string diagram would merely copy
-the already directed execution syntax. The relation obtained by treating an
-unavailable reverse experiment as zero would convert interface absence into
-physics. Both are prohibited.
+Let $f:S\to D$ be any accepted prefix ending at a certified complete division
+and let $w:D\to T$ be any accepted normalized suffix word. For every complete
+prefix history $H_f$ ending at boundary value $y$,
 
-The empty relation is also not promoted as a successful chronology: the
-candidate set contains a pair with known nonzero forward response whose
-orientation is unresolved. Vacuous irreflexivity and local finiteness do not
-solve an incomplete experiment.
+$$
+\sum_{H_w}
+\Gamma_{w\circ f}(H_f\star H_w)
+=
+\Gamma_f(H_f).
+$$
 
-The exact outcome is
+The equality holds at every finite suffix depth and after the physical
+presentation quotient.
+
+#### Proof
+
+At a complete division, Paper 13D structural recursion gives
+
+$$
+\Gamma_{w\circ f}(H_f\star H_w)
+=
+\Gamma_f(H_f)\,\Gamma_w(y)(H_w).
+$$
+
+The suffix law is normalized, so summing over all complete $H_w$ gives one in
+the second factor. Diagonal presentation transport maps concatenated cells
+bijectively and orbit pushforward sums their masses; therefore the same
+identity holds on physical classes. Induction on word length proves the claim
+for every finite accepted suffix. ∎
+
+This is not vacuous. After one shared recorded prefix, both $\iota$ and
+$F_q^A\circ\iota$ are same-typed lawful suffixes; they may differ in their
+future fields while leaving the complete prefix distribution exactly fixed.
+The theorem applies to every other normalized lawful suffix choice as well.
+
+### Definition 6 — scoped $\Gamma$-relative operational precedence
+
+For distinct onset-incidence slots $a,b$ in one complete typed execution,
+write
+
+$$
+a\mathrel{\triangleleft_\Gamma}b
+$$
+
+when:
+
+1. a certified complete division separates a prefix containing $a$ from a
+   suffix containing $b$;
+2. an accepted localized contrast at $a$ changes a complete reader on a field
+   newly written at $b$, in a fixed complete context; and
+3. Theorem 5 proves prefix autonomy for every accepted suffix choice at that
+   division.
+
+The relation is transported equivariantly with the incidence family. Its
+strict transitive closure is taken only among occurrence slots of the same
+complete finite execution. Independent tensor occurrences have no edge
+because every complete cross-factor response is zero. Fusion and the queried
+endpoint-bond controls supply positive examples with signed magnitude $7/25$.
+
+Because every generating edge crosses a strict prefix--suffix cut, the closure
+is irreflexive within a finite execution and gives a partial operational
+precedence. The unavailable localized fusion-to-component experiment remains
+`UNTESTED`; it is not replaced by a zero. Rather, Theorem 5 independently says
+that no *accepted lawful suffix choice* changes the complete prefix law.
+
+This precedence is explicitly relative to $\mathbf\Gamma_D$, its certified
+divisions, and the source--target orientation of $\mathsf{Exec}_D$. It does not
+derive that orientation, actualize an occurrence, or establish autonomous
+spacetime chronology. It is stronger than response alone and weaker than the
+complete chronology targeted by Paper 17.
+
+The exact outcomes are
 
 ```text
 P17-BIDIRECTIONAL-EXPERIMENT-CENSUS-INCOMPLETE
-P17-OPERATIONAL-CHRONOLOGY-UNTESTED
+P17-GAMMA-RELATIVE-PARTIAL-OPERATIONAL-PRECEDENCE-CONSTRUCTED
 ```
 
-This does not say `NO CHRONOLOGY`. It says the accepted law has not yet made
-the decisive reverse interventions into physical experiments.
+This does not say `COMPLETE CHRONOLOGY`. It says the accepted law supports
+some oriented operational edges while leaving later-source reverse contrasts
+and many candidate pairs untested.
 
-## 8. What would close the obstruction
+## 8. What remains unconstructed
 
-The obstruction cannot be repaired by adding a Python or Rust method. A
+The remaining gap cannot be repaired by adding a Python or Rust method. A
 future physical extension would have to define, before seeing responses, a
-point-free intervention-complete experiment class on candidate onset bundles.
-It would need:
+point-free intervention-complete experiment class on candidate onset bundles
+and a law over complete multi-transition diagrams. It would need:
 
 - localized typed interventions at later generator sources or an independently
   justified operational equivalent;
@@ -385,7 +486,10 @@ It would need:
 
 Such an extension changes the mathematical experiment interface and requires
 explicit authority. It is not a code-only conformance repair and is not
-constructed here.
+constructed here. Universal bidirectional manipulability is not imposed as a
+metaphysical requirement; it is required only for pairs whose reverse response
+the paper claims to have measured. Theorem 5 already supplies the exact
+no-backwards statement for the accepted suffix grammar.
 
 ## 9. Consequence for the varying-size law
 
@@ -398,9 +502,11 @@ $$
 with presentation covariance, natural deletion, and order-independent fresh
 extension. This is a valid varying-size law of possible complete histories.
 
-However, Paper 17 requires an ensemble of operational chronology objects.
-Since the map from a complete history to a separating chronology is untested,
-there is no accepted pushforward
+However, Paper 17 requires an ensemble of complete operational chronology
+objects. Paper 13D's all-size law is a law of unmarked primitive $U$ histories;
+it is not a law over multiplicity-correct multi-transition diagrams containing
+all possible fusions, queried continuations, divisions, and certified
+precedence edges. There is therefore no accepted pushforward
 
 $$
 \Gamma_D\longrightarrow
@@ -409,10 +515,13 @@ $$
 
 Using generator order, boundary stage, latent seed exposure, or a chosen
 linear extension to manufacture that map would insert the time Paper 17 is
-supposed to derive.
+supposed to derive. The finite precedence relation constructed in Section 7
+is a real upstream coordinate, but it is not yet sampled by one covariant
+varying-size chronology law.
 
 Therefore the observational size law is retained as an upstream coordinate,
-while the chronology-valued ensemble is `NONE` at this stopping line.
+while the complete chronology-valued ensemble is `NONE` at this stopping
+line.
 
 ## 10. Consequence for dimension
 
@@ -440,19 +549,25 @@ The construction resolves the pin's central attacks as follows:
 3. histories, interventions, readers, and outcomes transport diagonally;
 4. conditioning is separated from intervention;
 5. incomplete-reader zero is separated from complete-reader response;
-6. unavailable reverse response is `UNTESTED`;
+6. unavailable reverse response is `UNTESTED`, while all-suffix prefix
+   autonomy is proved independently;
 7. control validation stages are not chronology;
 8. internal mediation is not an inter-happening edge;
-9. carried persistence is not a newly written response;
+9. carried packet field $a$ is not a newly written response;
 10. independent tensors give exact mutual zero and commute physically;
 11. a fusion bond gives a nonzero later new-write control;
-12. fusion lacks the reverse intervention needed to orient that pair;
+12. fusion and queried endpoint bonds support scoped precedence only when
+    paired with prefix autonomy;
 13. stable record and complete division remain independent;
 14. the eraser stays outside the stable grammar;
 15. native nondivision is never Markovized;
 16. no hidden history ID, clock, or cache is added;
 17. no ensemble is replaced by a regional kernel; and
-18. no dimension or geometry control is executed after the chronology stop.
+18. no dimension or geometry control is executed after the complete-chronology
+    stop;
+19. onset incidence retains symmetric occurrence multiplicity rather than
+    collapsing to orbit types; and
+20. process-relative precedence is not promoted to autonomous time.
 
 The remaining dimension attacks are deliberately dormant because their
 prerequisite object does not exist.
@@ -464,11 +579,11 @@ to independent review:
 
 ```text
 input       P17-INPUT-P13D-TERMINAL-GAMMA-BOUND
-quotient    P17-POINT-FREE-ONSET-AND-RESPONSE-DESCENT-CONSTRUCTED
+quotient    P17-POINT-FREE-ONSET-INCIDENCE-AND-RESPONSE-DESCENT-CONSTRUCTED
 experiment  P17-BIDIRECTIONAL-EXPERIMENT-CENSUS-INCOMPLETE
 response    P17-COMPLETE-ACCEPTED-RESPONSE-ATLAS-CONSTRUCTED
-co-onset    P17-PRIMITIVE-GENERATOR-ONSET-BUNDLES-CONSTRUCTED
-chronology  P17-OPERATIONAL-CHRONOLOGY-UNTESTED
+co-onset    P17-GENERATOR-RELATIVE-ONSET-BUNDLES-ONLY
+chronology  P17-GAMMA-RELATIVE-PARTIAL-OPERATIONAL-PRECEDENCE-CONSTRUCTED
 ensemble    P17-CHRONOLOGY-VALUED-ENSEMBLE-NONE
 dimension   P17-DIMENSION-NONE-CHRONOLOGY-GATE-UNPASSED
 signature   P17-SIGNATURE-UNCONSTRUCTED
@@ -476,10 +591,11 @@ metric      P17-METRIC-UNCONSTRUCTED
 actuality   P17-ACTUALIZATION-UNCONSTRUCTED
 ```
 
-The strongest positive new statement is not chronology. It is the exact
-classification of Paper 13D response into internal co-onset response,
-bidirectionally tested tensor incomparability, carried persistence, and a
-genuine forward new-write fusion response.
+The strongest positive statement is a scoped process-relative precedence, not
+autonomous chronology. It combines a multiplicity-correct onset incidence
+object, exact response classification, bidirectionally tested tensor
+incomparability, genuine forward new-write responses, and the independent
+all-suffix prefix-autonomy theorem.
 
 The first blocker is physical experiment completeness, not software
 mutability or performance.
@@ -487,14 +603,16 @@ mutability or performance.
 ## 13. Interpretation
 
 Paper 13D succeeds in supplying a point-free indivisible law with real
-interventional structure. Paper 17 shows why that is necessary but not yet
-sufficient for time.
+interventional structure. Paper 17 now extracts a limited operational
+direction from it without pretending to have derived time in full.
 
-The law can say that changing one component changes a later shared bond. It
-can also say that two independent components do not affect one another. But a
-chronology is more demanding: the same physical experiment language must let
-us distinguish an asymmetric influence from an asymmetric ability to perform
-experiments.
+The law can say that changing one component changes a later shared bond, that
+no lawful suffix changes its complete prefix, and that two independent
+components do not affect one another. Those facts define partial precedence
+relative to the accepted process category. But a complete emergent chronology
+is more demanding: it requires a complete covariant occurrence-and-experiment
+census and a law that samples the resulting objects without borrowing the
+category's presentation order.
 
 That distinction is the present frontier. It is a physics question about which
 operations the law makes possible, not a request for more elaborate code.

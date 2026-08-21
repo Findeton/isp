@@ -2,7 +2,7 @@
 
 Date: 2026-08-20
 
-Status: **MATHEMATICAL CONSTRUCTION / GREEN-UNREVIEWED / NO IMPLEMENTATION**
+Status: **REVISED MATHEMATICAL CONSTRUCTION / GREEN-UNREVIEWED / NO IMPLEMENTATION**
 
 ## 1. Authority
 
@@ -19,7 +19,10 @@ The construction is bound to:
   `8dbb5c94f1a2f93454a01ddd1f09603c3c972476f8f67710e721afde8c161b6f`;
   and
 - Paper 13D Rust receipt SHA-256
-  `2aad4dd2ec498be885db3f2c562eae3f32403bb4f8e64b72cd8b3e138dbcc2c1`.
+  `2aad4dd2ec498be885db3f2c562eae3f32403bb4f8e64b72cd8b3e138dbcc2c1`;
+  and
+- Paper 17 adjudication commit `afbb0bf`, note SHA-256
+  `35ce97672fef9bb7d391943caf3d08502aee95ee38446c07c1ad21dbfe0907c4`.
 
 No Paper 13D byte was changed. No Paper 15 or Paper 16 candidate was imported.
 
@@ -40,15 +43,20 @@ exact domain of the experiment functor, not from sample coverage.
 
 ## 3. Main derivations
 
-### 3.1 Primitive onset
+### 3.1 Multiplicity-correct onset incidence
 
-A primitive onset is the diagonal orbit of one typed generator vertex and its
-complete local source/target history restriction. All fields written by one
-generator form one provisional bundle because the accepted law supplies no
-finer physical arrow inside the generator mechanism.
+A presented complete history supplies the finite generator-vertex family
+$V(f)$ and an equivariant complete-germ assignment $\kappa_H$. The physical
+onset object is the isomorphism class of the finite stabilizer action
+$(V(f),\kappa_H)$, not the set of germ orbits. All fields written at one
+incidence slot form one provisional bundle because the accepted law supplies
+no finer physical arrow inside the generator mechanism.
 
 This definition descends under the full presentation action and is independent
-of reader choice, tensor parenthesization, braiding, and serialization.
+of reader choice, tensor parenthesization, braiding, and serialization. Two
+identical tensor vertices exchanged by braiding remain two occurrences even
+when they have one orbit type. The construction is generator-relative; it is
+not a proof of absolute physical minimality.
 
 ### 3.2 Intervention-support theorem
 
@@ -68,13 +76,29 @@ contrast object.
   in both cross-factor directions.
 - Fusion new-write response: toggling $d_i$ changes a fresh cross-bond
   probability from $9/25$ to $16/25$ or conversely, magnitude $7/25$.
+- Queried-continuation response: registered controls leave newly written
+  $q_2$ unchanged and carry $a$, while for $|I|\geq2$ they change a freshly
+  generated endpoint bond by magnitude $7/25$ through carried $d$.
 
-### 3.4 Obstruction
+### 3.4 Prefix autonomy and the remaining obstruction
 
-The fusion response is between distinct primitive transition occurrences, but
-fusion has no localized reverse intervention. This supplies an explicit pair
-with nonzero forward response and untested reverse response. Therefore the
-experiment census required to orient the occurrence set is incomplete.
+For every prefix $f$ ending at a complete division and every normalized lawful
+suffix $w$, trace convolution gives
+
+$$
+\sum_{H_w}\Gamma_{w\circ f}(H_f\star H_w)=\Gamma_f(H_f).
+$$
+
+The equality survives orbit pushforward and holds at all finite suffix depths.
+It is a nonvacuous no-backwards theorem because distinct same-typed suffix
+choices can alter future fields while leaving the complete prefix law fixed.
+
+Positive newly written response plus this independent prefix-autonomy theorem
+constructs scoped $\Gamma$-relative partial operational precedence. The
+fusion response is between distinct transition occurrences, but fusion has no
+localized reverse intervention. The reverse coordinate remains `UNTESTED`, so
+the bidirectional experiment census is incomplete and no complete autonomous
+chronology is constructed.
 
 The proof is all-size and structural. A finite test suite cannot repair or
 weaken it.
@@ -85,23 +109,28 @@ weaken it.
 - Source/mediator validation phases are not time.
 - A carried changed field at a later boundary is persistence, not necessarily
   a new write by the continuation.
+- A fresh endpoint bond generated from carried $d$ is a new write and may
+  support scoped precedence.
 - Stable-record transport is not chronology.
 - Erasure is not reverse influence.
 - A missing reverse intervention is `UNTESTED`, not zero.
-- Vacuous empty-order axioms do not close an incomplete response census.
+- Prefix autonomy quantifies all accepted suffix choices; it does not assert
+  impossibility for operations outside the accepted law.
+- The resulting precedence inherits $\mathsf{Exec}_D$'s process orientation;
+  it is not autonomous time.
 - The Paper 13D size law remains accepted, but no chronology-valued pushforward
-  is constructed.
+  over complete multi-transition histories is constructed.
 - No dimension estimator is run.
 
 ## 5. Provisional product
 
 ```text
 input       P17-INPUT-P13D-TERMINAL-GAMMA-BOUND
-quotient    P17-POINT-FREE-ONSET-AND-RESPONSE-DESCENT-CONSTRUCTED
+quotient    P17-POINT-FREE-ONSET-INCIDENCE-AND-RESPONSE-DESCENT-CONSTRUCTED
 experiment  P17-BIDIRECTIONAL-EXPERIMENT-CENSUS-INCOMPLETE
 response    P17-COMPLETE-ACCEPTED-RESPONSE-ATLAS-CONSTRUCTED
-co-onset    P17-PRIMITIVE-GENERATOR-ONSET-BUNDLES-CONSTRUCTED
-chronology  P17-OPERATIONAL-CHRONOLOGY-UNTESTED
+co-onset    P17-GENERATOR-RELATIVE-ONSET-BUNDLES-ONLY
+chronology  P17-GAMMA-RELATIVE-PARTIAL-OPERATIONAL-PRECEDENCE-CONSTRUCTED
 ensemble    P17-CHRONOLOGY-VALUED-ENSEMBLE-NONE
 dimension   P17-DIMENSION-NONE-CHRONOLOGY-GATE-UNPASSED
 signature   P17-SIGNATURE-UNCONSTRUCTED
@@ -109,15 +138,26 @@ metric      P17-METRIC-UNCONSTRUCTED
 actuality   P17-ACTUALIZATION-UNCONSTRUCTED
 ```
 
-These coordinates are `GREEN-UNREVIEWED`. They are not terminal or citable.
+These revised coordinates are `GREEN-UNREVIEWED`. They are not terminal or
+citable.
 
-## 6. Review requirements
+## 6. Resolved review findings and remaining verification
 
-The frozen mathematical object must be reviewed before any implementation.
-The review must test at least:
+The three-seat panel found and adjudication accepted:
 
-1. whether primitive generator occurrences are the correct minimal co-onset
-   objects under the accepted category equations;
+1. the orbit-set multiplicity failure and its finite action-incidence repair;
+2. the all-suffix prefix-autonomy theorem;
+3. the partial-precedence promotion when that theorem is paired with a
+   positive newly written response;
+4. the continued `UNTESTED` status of missing reverse localized contrasts;
+   and
+5. the queried endpoint-bond response omitted by the first construction.
+
+The revised mathematical bytes require independent semantic verification
+before any implementation. Verification must test at least:
+
+1. whether the finite action-incidence object preserves symmetric occurrence
+   multiplicity under every accepted category equation;
 2. whether whole-boundary preparations can supply a noncircular operational
    substitute for missing local interventions without changing Paper 13D;
 3. whether the fusion $7/25$ response is a genuine new-write response after
@@ -127,19 +167,23 @@ The review must test at least:
    missed by this construction;
 6. whether carried persistence is correctly separated from continuation
    response;
-7. whether an operational chronology could be nontrivially defined without
-   copying typed-arrow direction; and
-8. whether the dimension stop follows once chronology is untested.
+7. whether the scoped precedence is exactly process-relative and does not
+   overclaim autonomous chronology; and
+8. whether the dimension stop follows from absence of a complete
+   chronology-valued ensemble.
 
-Any counterexample to the obstruction or onset definition is semantic and
-changes the mathematical product. Rust is not authorized before adjudication.
+Any counterexample to the revised theorem or onset definition is semantic and
+changes the mathematical product. No implementation is authorized before
+semantic verification.
 
 ## 7. Artifact and mode statement
 
-Exactly two Stage-B repository paths are created by this construction:
+The bounded revision changes the two existing construction paths and creates
+one revision note:
 
 - `v16/paper-17-operational-chronology-from-gamma.md`; and
-- `v16/note-paper17-operational-chronology-construction.md`.
+- `v16/note-paper17-operational-chronology-construction.md`;
+- `v16/note-paper17-operational-chronology-revision.md`.
 
 No Python or Rust source, fresh cases, official result, receipt, dimension
 artifact, metric object, or prior-paper edit was created or invoked.
