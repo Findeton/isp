@@ -7834,3 +7834,14 @@ Exactness checks (audit scaffolding, $TMPDIR/p23c/check.py,
 /opt/homebrew/bin/python3.13): P(all-flat cell, n=3)=2/125;
 transposition-fixed order-pairs none for n=2..5; witness densities
 0 vs 1/6. Next event: three-seat blind review.
+
+## 2026-08-22 — #325 AMENDED IN PLACE PRE-REVIEW — CITATION ANCHOR ADDED (v16 LEDGER #326)
+
+Construction not yet consumed downstream; a citation anchor was added
+after Prop A's proof naming the 13D §14 "no canonical order on $I$ is
+used" clause, Theorem 2's exchangeability argument, and the §3.1
+port-swap groupoid. No claim moved. Post-amendment ordinary SHA-256
+`7e90aba64c4abf5585d409f8d9696c76e0308007da3f81607e8e187cf709f126`
+(235 LF); pre-amendment bytes recoverable at
+`c50fa59652bb2fe0fc4f5d938bdc5dc729900e5d56d1197bff605a69557bc185`.
+All later references to "#325 construction" mean this post-amendment hash.

@@ -82,6 +82,11 @@ Derivability fails if any clause is provably unsatisfiable.
 > simultaneously. Verified exhaustively for $n=2,\dots,5$ over all
 > $(n!)^2$ pairs. ∎
 
+*(Citation anchor for the stabilizer claim: 13D §14 — unmarked
+$U_\varnothing$ grand experiment, "no canonical order on $I$ is used"
+— with Theorem 2's exchangeability argument (§10 of file) and the
+port-swap groupoid of §3.1.)*
+
 > **Proposition B (no covariant single order).** Even before
 > quotienting: there is no assignment associating to *every* finite set
 > $I$ a total order $<_I$, natural under all bijections. Hence no
