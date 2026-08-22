@@ -2,7 +2,8 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 pin frozen**
+Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 construction
+green-unreviewed**
 
 ## 0. Authority and workflow
 
@@ -100,9 +101,11 @@ can upgrade these coordinates.
 
 Opens only if Paper 01 constructs at least process-level equivalence.
 
-**Opening state.** The condition is satisfied and the result-neutral
-mathematics-only pin is frozen. The next event is the self-contained Paper 02
-construction; no result or ontology coordinate is pre-awarded.
+**Opening state.** The condition is satisfied. The result-neutral
+mathematics-only pin and self-contained construction are frozen. The
+construction is GREEN-UNREVIEWED and awards no result or ontology coordinate.
+The next event is a three-lens hostile-review protocol bound to the immutable
+manuscript bytes.
 
 **Question.** Across all stochastic realizers satisfying the Paper 01
 contract, what is invariant, and what is gauge, contingent state, or genuine
@@ -122,6 +125,14 @@ extra ontology?
 **Controls.** Alternative dilations, Kraus gauges, basis changes, hidden
 Hilbert wrapper, unrestricted lookup, finite precision, and empirically idle
 latent variables.
+
+**Construction boundary.** The manuscript constructs the reachable
+all-continuation operational quotient and classifies explicit ontology-fiber
+freedoms. It forces phase-complete predictive structure while leaving complex
+scalar ontology, microscopic actuality, and a preferred configuration
+ontology unselected. This is an author construction, not a terminal result.
+The author-audit ceiling is
+`P02-CANONICAL-QUOTIENT-WITH-UNSELECTED-ONTOLOGY-FIBERS`.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 

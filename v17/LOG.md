@@ -340,3 +340,31 @@ independence and Montina Markovianity hypotheses.
 
 This is an author audit, not independent review. It awards no Paper 02 result
 and changes no frozen pin byte. Construction remains the sole next action.
+
+## 2026-08-22 — PAPER 02 CONSTRUCTION GREEN-UNREVIEWED (v17 LEDGER #12)
+
+The self-contained mathematics manuscript and its author audit are frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/paper-02-operational-quotient-ontology-residue.md` | `55edf811b2d80a628cae1d871994383e0013ec58dd77b70d340eebb836c93eec` | 1,456 LF / 63,328 bytes |
+| `v17/note-paper02-construction-audit.md` | `6d3b63dad6866c725ee8cc621e2d5792c1532683de295b6fec3c45b72283627c` | 169 LF / 7,494 bytes |
+
+The manuscript constructs the reachable all-continuation operational
+quotient, explicit finite/countable/standard-Borel ontology-fiber inflations,
+a conditional representation-natural no-selection theorem, phase-complete
+predictive structure, exact realification costs, contextuality and Bell
+premise controls, restricted resource minima, and the operational-record
+versus microscopic-actuality boundary.
+
+The author-audit ceiling is:
+
+```text
+P02-CANONICAL-QUOTIENT-WITH-UNSELECTED-ONTOLOGY-FIBERS
+```
+
+This is GREEN-UNREVIEWED mathematics, not a physical result. It does not select
+a microscopic ontology, fundamental scalar field, one actual microtrajectory,
+clock, spacetime, or gravity. No implementation was created. The sole next
+action is to freeze a result-neutral three-lens hostile-review protocol bound
+to these exact bytes.

@@ -112,6 +112,19 @@ No Paper 02 construction result exists at pin freeze. In particular, neither a
 canonical microscopic ontology nor fundamental complex amplitudes are entered
 as derived facts.
 
+## Paper 02 green-unreviewed construction balance
+
+| Constructed object | Upstream inputs | Provisional status | Debt retained |
+|---|---|---|---|
+| reachable all-continuation quotient | Paper 01 operational category, adequate-representation contract | `GREEN-UNREVIEWED MATHEMATICS` | canonical only on the reachable operational image |
+| finite/countable/standard-Borel fiber inflations | declared fiber controls and forgetting morphisms | `GREEN-UNREVIEWED MATHEMATICS` | fibers are possibilities, not discovered beables |
+| representation-natural no-selection theorem | quotient plus explicit refinement/reduction category | `GREEN-UNREVIEWED CONDITIONAL THEOREM` | nature need not respect every declared reduction |
+| phase-complete predictive residue | complete quantum continuation testers | `GREEN-UNREVIEWED OPERATIONAL RESULT` | does not select fundamental complex scalars |
+| contextuality and Bell premise ledger | standard quantum controls and explicit ontological premises | `GREEN-UNREVIEWED FOUNDATIONS RESULT` | positive contextual histories survive; Bell locality absent |
+| restricted resource minima | fixed channel/task/cut/Markov/tensor classes | `GREEN-UNREVIEWED CLASS INVARIANTS` | no universal microscopic-size inference |
+| operational record invariant | registered record events | `GREEN-UNREVIEWED OPERATIONAL RESULT` | microscopic trajectory and actuality unselected |
+| preferred ontology or empirical discriminator | none | `UNCONSTRUCTED` | new physical principle or observation required |
+
 ## Derivation balance
 
 The live adjudicated balance is:
@@ -119,7 +132,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0
+green-unreviewed mathematical constructions: Paper 02 canonical-quotient package
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3
