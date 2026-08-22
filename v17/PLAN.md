@@ -2,8 +2,8 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 hostile-review
-protocol frozen**
+Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 adjudicated
+REVISE at a surviving rung-4 ceiling**
 
 ## 0. Authority and workflow
 
@@ -133,6 +133,22 @@ scalar ontology, microscopic actuality, and a preferred configuration
 ontology unselected. This is an author construction, not a terminal result.
 The author-audit ceiling is
 `P02-CANONICAL-QUOTIENT-WITH-UNSELECTED-ONTOLOGY-FIBERS`.
+
+**Adjudicated result.** The reachable canonical quotient, phase-complete
+predictive residue, positive contextual record laws, scoped scalar
+nonuniqueness, and class-relative resource results survive. The full
+adequate-representation contract is defective for contextual ontology:
+$\mathcal Q$ identifies operationally equivalent laboratory procedures before
+$J_R$ acts, so $J_R$ cannot retain which equal procedure occurred. The
+surviving ceiling is
+`P02-CANONICAL-QUOTIENT-WITH-PHASE-COMPLETE-RESIDUE`.
+
+One bounded semantic repair is available but not automatic: introduce a
+prequotient procedure category $\mathcal P$, prove
+$q:\mathcal P\to\mathcal Q$, define ontological representations on
+$\mathcal P$, and restate contextuality as failure to factor through $q$.
+Paper 03 remains closed pending explicit authorization and terminal review of
+that repair, or a user decision to accept the rung-4 stopping point.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 

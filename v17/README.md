@@ -20,9 +20,10 @@ cleanly if nature does not support it.
 - Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
 - Paper 01 status: **TERMINAL ACCEPT-WITH-SCOPE — COMPOSITIONAL OPERATIONAL
   EQUIVALENCE WITH ONTOLOGY DEBT**.
-- Paper 02 status: **HOSTILE-REVIEW PROTOCOL FROZEN — THREE BLIND REVIEWS
-  NEXT**. Its canonical-quotient construction remains GREEN-UNREVIEWED and no
-  physical result is awarded.
+- Paper 02 status: **ADJUDICATED REVISE — CANONICAL QUOTIENT AND
+  PHASE-COMPLETE RESIDUE SURVIVE**. The contextual-ontology bridge is
+  ill-typed because the source category quotients laboratory procedures before
+  their ontic representations may distinguish them.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -49,6 +50,15 @@ The next question is therefore:
 > Across all stochastic representations satisfying the accepted Paper 01
 > contract, what is forced by complete operational equivalence, what is
 > gauge, and what is genuine additional ontology?
+
+Paper 02 answers this only partially. Complete future profiles define a
+canonical reachable operational quotient and force phase-complete predictive
+structure. Static and dynamical idle fibers establish scoped
+nonidentifiability. A full contextual-fiber classification requires a
+prequotient laboratory-procedure category
+$\mathcal P\to\mathcal Q$ that the frozen construction lacks. Paper 03 remains
+closed unless that semantic repair is explicitly authorized and terminally
+reviewed.
 
 ## Reality constraints
 
@@ -126,6 +136,12 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   control, attack, and overclaim surface; not an adjudication.
 - `note-paper02-hostile-review-protocol.md` — immutable mathematics,
   quantum-foundations, and ontology/Barandes review duties.
+- `review-paper02-mathematics-quotient.md` — frozen Seat M report.
+- `review-paper02-quantum-foundations.md` — frozen Seat Q report.
+- `review-paper02-ontology-barandes.md` — frozen Seat O report and decisive
+  procedure-category counterexample.
+- `note-paper02-hostile-review-adjudication.md` — adjudicated mixed product,
+  surviving rung-4 ceiling, and exact semantic-repair boundary.
 
 ## Permanent honesty wall
 

@@ -391,3 +391,66 @@ non-kill rules, and the full mixed product. Candidate edits, code,
 implementation, Paper 03, clocks, QFT, spacetime, and gravity remain forbidden.
 No reviewer report or Paper 02 coordinate exists at #13. The sole next action
 is the three independent blind reviews.
+
+## 2026-08-22 — PAPER 02 QUANTUM REVIEW FROZEN (v17 LEDGER #14)
+
+| artifact | SHA-256 | verdict | size |
+|---|---|---|---:|
+| `v17/review-paper02-quantum-foundations.md` | `d526a67599bc948254bf3e939834690e4fde5aa30f6f7ec30d33cc69e1d840ab` | `ACCEPT-WITH-SCOPE` | 534 LF / 26,859 bytes |
+
+Seat Q reconstructs the phase, exact realification, contextuality, Bell,
+positivity, and resource controls. It binds the global composition/source cost
+of realification and the preparation-noncontextuality/perfect-prediction bridge
+needed for sharp Peres--Mermin outcome determinism. No decisive semantic
+counterexample was found in that lens.
+
+## 2026-08-22 — PAPER 02 MATHEMATICS REVIEW FROZEN (v17 LEDGER #15)
+
+| artifact | SHA-256 | verdict | size |
+|---|---|---|---:|
+| `v17/review-paper02-mathematics-quotient.md` | `a9f34846e9690feabf0aaef0c2026b1caf882e4e55eb3b4767727fbbeb4085d3` | `ACCEPT-WITH-SCOPE` | 436 LF / 24,834 bytes |
+
+Seat M reconstructs typed congruence, the reachable-image quotient, idle-fiber
+inflations, conditional factorization, and restricted resource minima. It
+binds measurable decoder/profile scope, causal-prefix coherence, and the fact
+that a common quotient cospan is not microscopic equivalence.
+
+## 2026-08-22 — PAPER 02 ONTOLOGY REVIEW FROZEN (v17 LEDGER #16)
+
+| artifact | SHA-256 | verdict | size |
+|---|---|---|---:|
+| `v17/review-paper02-ontology-barandes.md` | `64519518c26e371347790e2fd47c9f89bde2edd423d2ff490e259d12e400e622` | `REVISE` | 481 LF / 26,854 bytes |
+
+Seat O gives the first decisive semantic counterexample. The candidate makes
+operationally equivalent laboratory procedures equal in $\mathcal Q$ before
+$J_R$ acts, yet its contextual-fiber control asks $J_R$ to retain which equal
+procedure occurred. A functor cannot distinguish equal source arrows. The
+report also demotes the Barandes row from represented to admissible but
+unconstructed and unselected.
+
+## 2026-08-22 — PAPER 02 ADJUDICATED REVISE (v17 LEDGER #17)
+
+Joint adjudication is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02-hostile-review-adjudication.md` | `ae4add57e067d45e44c2b6d79dc745ccf321990da914c31cf809fc9935221fb2` | 334 LF / 14,156 bytes |
+
+The adjudicator independently reproduces the procedure-category
+counterexample and reconciles all three seats. The canonical reachable
+quotient, phase-complete predictive residue, scoped scalar nonuniqueness,
+positive contextual record laws, premise-indexed Bell/contextuality no-gos,
+class-relative resources, and idle-fiber nonidentifiability survive. The full
+contextual-fiber and Barandes-completion claims do not.
+
+The adjudicated ceiling is:
+
+```text
+P02-CANONICAL-QUOTIENT-WITH-PHASE-COMPLETE-RESIDUE
+```
+
+Paper 02 is `REVISE`, not terminally accepted. The smallest repair requires a
+prequotient laboratory-procedure category
+$q:\mathcal P\to\mathcal Q$ and ontological representations on $\mathcal P$.
+That change is semantic and requires explicit user authorization. No candidate
+edit, code, Paper 03, clock, spacetime, or gravity unit opens automatically.

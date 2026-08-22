@@ -125,14 +125,29 @@ as derived facts.
 | operational record invariant | registered record events | `GREEN-UNREVIEWED OPERATIONAL RESULT` | microscopic trajectory and actuality unselected |
 | preferred ontology or empirical discriminator | none | `UNCONSTRUCTED` | new physical principle or observation required |
 
+## Paper 02 adjudicated balance
+
+| Coordinate | Adjudicated status | Exact boundary |
+|---|---|---|
+| operational quotient | `DERIVED-MATHEMATICALLY — SCOPED` | reachable operational image; measurable packets where measurable reduction is claimed |
+| phase-complete predictive residue | `DERIVED-MATHEMATICALLY` | complete registered continuation family |
+| scalar ontology | `REPRESENTATION-NONUNIQUE` | realification retains global composition/source costs |
+| idle fibers | `CONSTRUCTED CONTROLS` | finite/countable/Borel fibers ignored by the frozen interface |
+| no-selection | `DERIVED CONDITIONALLY — SCOPED` | invariants natural under explicitly admitted idle-fiber reductions |
+| procedure-context fibers | `UNCONSTRUCTED` | missing prequotient procedure category $\mathcal P\to\mathcal Q$ |
+| positivity/contextuality | `POSITIVE RECORDS SURVIVE; PREMISE NO-GOS SURVIVE` | contextual representation bridge to the submitted packet fails |
+| Barandes completion | `ADMISSIBLE BUT UNCONSTRUCTED AND UNSELECTED` | no complete configuration law/trajectory packet supplied |
+| microscopic actuality | `UNCONSTRUCTED` | actual record postulate does not select a microtrajectory |
+| Paper 02 overall | `REVISE` | surviving rung `P02-CANONICAL-QUOTIENT-WITH-PHASE-COMPLETE-RESIDUE` |
+
 ## Derivation balance
 
 The live adjudicated balance is:
 
 ```text
-adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation
+adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; canonical reachable operational quotient; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: Paper 02 canonical-quotient package
+green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3
