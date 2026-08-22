@@ -7755,3 +7755,27 @@ fixture scope (depends only on associativity failure). Terminal status
 remains ACCEPT-WITH-SCOPE under the corrected coordinate set. One-strike
 not triggered. No seat reopened; no repair to frozen bytes ordered; no
 v3 authorized. No automatic successor.
+
+## 2026-08-22 — CLARIFICATION TO #322 — CLOSURE MECHANISM RE-SPLIT, DUALS COORDINATE REPLACED (v16 LEDGER #323)
+
+User-ordered forward-only clarification
+`v16/note-paper23a-v2-clarification.md` (ordinary SHA-256
+`7f13dd5de12d2b9106066e167b5877911b0016bf30219d7f2cb0ad5a85737e15`,
+82 LF). No candidate reconstruction; frozen bytes untouched at
+`eca8e1670ecf0c02739c6f94c81e9eefe84b1809240efd8ea9bba94bb886820f`.
+
+(1) Finite-closure failure re-split: carrier-monotonic failure is
+restricted to subfamilies containing a positive-carrier class; the
+empty-carrier corner escapes by a separate trace-vertex grading — every
+product traverses one fusion generator, $v(x\otimes y)=v(x)+v(y)+1$,
+and Def 2.3/Prop B separate different vertex counts. Global finite
+closure still fails for all nontrivial subfamilies, now by
+carrier-or-trace monotonicity rather than carrier monotonicity alone;
+`P23AV2-FINITE-CLOSURE-FAILS-BY-CARRIER-MONOTONICITY` is read under
+this narrowed mechanism attribution. (2) `P23AV2-DUALS-ABSENT` is
+replaced by `P23AV2-DUAL-STRUCTURE-INAPPLICABLE (UNCONSTRUCTED)`:
+after unit withdrawal no duality predicate is defined on the class
+family. Retained unchanged: commutativity, nonassociativity,
+fixture-scoped FP-route closure, corrected algebra tag without unit,
+all scope walls, Paper 17 gate CLOSED. One-strike not triggered; no v3;
+no automatic successor. Unit C opens next through its own fresh freeze.
