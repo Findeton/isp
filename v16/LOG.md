@@ -8071,3 +8071,35 @@ subfamilies P_unif/P_v/P_size checked existentially: none distinguishes
 the #330 witnesses (identical v(χ), size). Quantifier ledger engraved;
 Paper 17 and dimension stay closed; no automatic successor. Next event:
 three-seat blind review.
+
+## 2026-08-22 — PAPER 23D THREE-SEAT BLIND REVIEWS FROZEN (v16 LEDGER #334)
+
+Three mutually blind delta seats against pin #332 and construction
+#333 (`699fe5b7…`), all ACCEPT-WITH-FIXES, no structural defect:
+
+- Seat P (probability/instrument) `v16/review-paper23d-probability.md`
+  SHA-256
+  `5dcff03ac540ba34c37a7f5d3bf4be2c12711225b32a376d7c3838872968bf35`
+  (54 LF): F-P1 Lemma B near-vacuous — restate as joint-law decoration
+  blindness (MAJOR); F-P2 projective consistency unused — print the
+  stronger all-measures extension (MODERATE); F-P3 garbled counting
+  formula (MINOR).
+- Seat C (category/structure) `v16/review-paper23d-category.md`
+  SHA-256
+  `e56703763b816c832386d6555f5f6b086f4a56bb5e589e1ce3d893b4a350c363`
+  (51 LF): F-C1 Q1 restriction needs full-subcategory sentence
+  (MAJOR); F-C2 Definition 1.1 ambiguous between external decoration
+  space and law-recoverable readings — must be the former (MODERATE);
+  F-C3 split §7.1/§8/§3.1–3.2 citations (MINOR). Seat independently
+  attempted a refined-σ-algebra smuggle and confirmed pin §2 bars it.
+- Seat Q (quantum/emergence) `v16/review-paper23d-emergence.md`
+  SHA-256
+  `9005f0e9bcb9eb4748cbf7125fa71db3b5860f357c413c8eb840842b135d487e`
+  (55 LF): F-Q1 Theorem C uniqueness clause needs the pinned-
+  σ-algebra qualifier (MAJOR); F-Q2 §6 second attribution overreaches
+  to history-side weights outside pinned spaces — scope it (MODERATE);
+  F-Q3 outcome-name convention: NOT EARNED, not superseded (MINOR).
+
+All seats confirm the deep negative form (no measurable copy of
+orientation in the typed joint space), the Q2 reopening-route closure,
+and quantifier honesty. Next event: adjudication.
