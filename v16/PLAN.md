@@ -2051,26 +2051,27 @@ Successor register, current:
   residual retained; `P23C-EQUIVARIANT-FIXED-POINT-OBSTRUCTION`
   withdrawn. Paper 15 rigidity CONDITIONAL, bridge missing for the
   present law; dimension firewall intact.
-- Orientation-descent gate (Paper 23d): **RAN AND CLOSED — TERMINAL
-  ACCEPT-WITH-SCOPE at #336** (`2501d316…`, post-repair). Pin #332 →
-  construction #333 → seats P/C/Q #334 (all ACCEPT-WITH-FIXES; nine
-  findings confirmed; none structural) → adjudication #335 → repair
-  verified byte-exact #336. Result `P23D-ORIENTATION-FIBER-INERT`
-  (universal): the #308-form joint law Γ_struct = Π·Γ_D(dH|χ) cannot
-  determine, select, or make unique the exchangeable oriented realizer
-  class for |I|≥2 — within-fiber multiplicity (Lemma A) times joint-law
-  decoration blindness (Lemma B); no measurable copy of orientation
-  exists in the typed joint space; failure is both fiber-inertness and
-  inherited conditional blindness. Smuggling audit clean. The positive
-  state-induced branch was correctly not earned. This resolves the
-  synthesis §3 door-(b) question for scalar/state weights: orientation
-  does NOT enter through Π_phys over process complexes as typed.
-  Remaining doors all need new authorization: law-level symmetry
-  breaking, history-side refinement (new postulate), or non-scalar
-  conditional-retuning extensions.
+- Orientation-descent gate (Paper 23d): **RAN; TERMINAL WITHDRAWN at
+  #337** (`2501d316…` bytes frozen, not terminal). Pin #332 →
+  construction #333 → seats #334 → adjudication #335 → repair #336 →
+  user-ordered correction #337 withdrawing `P23D-ORIENTATION-FIBER-
+  INERT` and terminal acceptance on three structural defects: Q1
+  misapplied a #330-refuted implication to class-valued extractors;
+  Lemma A ignored the realizer intersection condition (parallel vs
+  antiparallel realize chain vs antichain); Lemma B weighted external
+  decorations outside the pinned probability space (underdetermination,
+  not uniform weighting). The pin's §3 input wall also pre-excluded
+  orientation-bearing root variables, so the state/root door was never
+  tested. Standing: `P23D-SCALAR-REWEIGHTING-INERT`,
+  `P23D-STATE-EXTENSION-UNTESTED`, and #330's non-determination.
+  Open genuine next gate: latent extension p:C̃px→Cpx with
+  (p,id)_*Γ̃ = Π(dχ)Γ_D(dH|χ), preserving all accepted predictions,
+  carrying a covariant state variable — must be shown physically
+  selected, dependency-realizing, and operationally readable;
+  label-based/idle/post-hoc/dimension-selected orientations rejected
+  in advance. Distinct from changing Γ_D, changing histories, or
+  retuning the conditional (forbidden).
 - Tier-2 declared-input ensemble calibration study (Unit D): authorized
-  in principle at #308 but superseded in priority by the completed
-  Paper 23d gate; any run now needs a fresh user decision and freeze —
-  it remains calibration rehearsal only and does not resolve the
-  missing physics (#331 §3).
+  in principle at #308; any run needs a fresh user decision and freeze —
+  calibration rehearsal only, does not resolve the missing physics.
 - Ordering of B/C/D is a user decision; no pin freezes without asking.

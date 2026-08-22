@@ -75,19 +75,21 @@ theory-selection result.
   counterexample: every transport-saturated swap class is stabilizer-
   fixed). Paper 15 rigidity stays CONDITIONAL; dimension firewall
   intact; ensemble gate closed.
-- Orientation-descent gate (Paper 23d, user-authorized) ran and closed:
-  pin #332 (`112684d6…`, four frozen objects) → construction #333 →
-  three blind seats #334 (all ACCEPT-WITH-FIXES, nine findings, none
-  structural) → adjudication #335 → verified repair #336: **TERMINAL
-  ACCEPT-WITH-SCOPE** at `2501d316…`. Primary coordinate
-  `P23D-ORIENTATION-FIBER-INERT` (universal): no whole-process law of
-  the #308 form Γ_struct = Π·Γ_D(dH|χ) — indeed no probability measure
-  on the pinned complex space — determines, selects, or makes unique
-  the exchangeable oriented realizer class for |I|≥2, because the
-  typed joint space contains no measurable copy of orientation. Weights
-  fail by fiber-inertness AND inherited conditional blindness; the
-  smuggling audit is clean. Paper 17 and dimension stay closed. Routes
-  past it require explicit user authorization.
+- Orientation-descent gate (Paper 23d) ran: pin #332 → construction
+  #333 → seats #334 → adjudication #335 → repair #336 → **correction
+  #337: terminal WITHDRAWN**. The universal fiber-inertness claim fell
+  to three structural defects (class-valued Q1 misapplication of a
+  #330-refuted implication; Lemma A ignoring the realizer intersection
+  condition; Lemma B weighting decorations outside the pinned space).
+  Standing coordinates: `P23D-SCALAR-REWEIGHTING-INERT` (scalar
+  reweighting of the unchanged orientation-forgetting measurable space
+  cannot create a missing measurable) and `P23D-STATE-EXTENSION-
+  UNTESTED`; #330's non-determination stands. The open door is the
+  latent state-space extension p:C̃px→Cpx preserving all accepted
+  predictions while carrying a covariant state variable — its physical
+  selection, dependency realization, and operational readout are the
+  genuine next gate; label-based, idle, post-hoc, and
+  dimension-selected orientations are rejected in advance.
 - No unit is authorized-but-unpinned at this time; every next step
   needs a fresh user decision and freeze.
 - `RHL` / Paper 11: **TERMINAL REJECT AT
