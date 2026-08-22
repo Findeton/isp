@@ -1984,7 +1984,19 @@ one-strike rule was live and is not triggered.
 
 Successor register, current:
 
-- Paper 23a fusion-closure pin (Unit B): **FROZEN at #309**
+- Paper 23a fusion-closure unit (Unit B): **RAN AND REJECTED at #314.**
+  Pin frozen #309 (`aafb3559...`), construction #310 (`9cab8d2e...`),
+  seats C/P/F #311–#313 (REJECT / ACCEPT-WITH-FIXES / REJECT),
+  adjudication #314: stage 3 unsound — fusion complexes were
+  identified with primitive classes against the candidate's own
+  Proposition A.2; associativity unavailable at class level;
+  semiring/character conclusions voided. Stage 1–2 machinery and
+  fixture tables survive as reviewed salvage input, not accepted
+  physics. One-strike NOT triggered. Successor options, each needing
+  explicit user authorization and a fresh freeze: Paper 23a v2 over
+  the honest class set (finite-closure failure re-earnable by carrier
+  monotonicity), Unit C, or Unit D.
+- Original Unit B pin record (superseded): **FROZEN at #309**
   (`note-paper23a-fusion-closure-pin.md`, `aafb3559...`, 212 LF, ten
   verified bindings). Construction is the next separate event; review
   and adjudication follow as their own events. The pin consumes only
