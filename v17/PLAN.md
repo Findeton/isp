@@ -2,7 +2,7 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 pin next**
+Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 pin frozen**
 
 ## 0. Authority and workflow
 
@@ -100,8 +100,9 @@ can upgrade these coordinates.
 
 Opens only if Paper 01 constructs at least process-level equivalence.
 
-**Opening state.** The condition is now satisfied. The next event is a fresh
-result-neutral mathematics-only pin; no Paper 02 construction is yet frozen.
+**Opening state.** The condition is satisfied and the result-neutral
+mathematics-only pin is frozen. The next event is the self-contained Paper 02
+construction; no result or ontology coordinate is pre-awarded.
 
 **Question.** Across all stochastic realizers satisfying the Paper 01
 contract, what is invariant, and what is gauge, contingent state, or genuine

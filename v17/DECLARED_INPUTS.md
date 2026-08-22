@@ -92,6 +92,26 @@ A unit stops for scope review if any of the following occurs:
 - a representation redundancy is counted as new ontology;
 - a source, clock, or calibration is reused as held-out evidence.
 
+## Paper 02 preregistered dependency table
+
+| Object | Status | Source/choice | What it may establish | What it cannot establish |
+|---|---|---|---|---|
+| accepted Paper 01 operational category | `ADJUDICATED INPUT` | Paper 01 terminal product | exact comparator and quotient target | microscopic ontology truth |
+| adequate-representation class | `DECLARED MATHEMATICAL TEST CLASS` | Paper 02 pin | universal quantifier domain | that every member is physically plausible |
+| all-continuation operational equivalence | `DERIVED FROM REGISTERED INTERFACE` / formal definition | process tomography and complete continuations | canonical predictive quotient | ontology beyond the quotient |
+| representation morphisms | `DECLARED MATHEMATICAL TEST INTERFACE` | probability/composition-preserving maps | gauge/refinement/coarse-graining tests | physical identity by fiat |
+| finite/countable/continuous fiber inflations | `CONTROL` | exact product extensions | underdetermination and no-selection attacks | existence of a real hidden fiber |
+| preparation/measurement/transformation noncontextuality | `HYPOTHESIS FAMILY` | Spekkens-style ontological-model premises | exact contextuality no-go scope | impossibility of positive contextual histories |
+| Bell factorization and measurement independence | `HYPOTHESIS FAMILY` / operational assumption | registered Bell ledger | locality cost | relativistic causal explanation |
+| real/complex/quaternionic/Jordan representations | `STANDARD/CONTROL FAMILIES` | quantum representation literature | scalar and composition comparison | fundamental scalar ontology without a discriminator |
+| local tomography and source independence | `EXPLICIT COMPOSITION ASSUMPTIONS` | comparator-dependent | distinguish operational theories under matched definitions | automatic laws of nature |
+| minimal Stinespring/statistical resources | `RESTRICTED-CLASS INVARIANTS` | channel/statistical experiment theorems | minima inside declared representation classes | universal ontic minima |
+| simplicity, maximum entropy, implementation size | `UNACCEPTED SELECTORS` | none | nothing without a new physical principle | selection of nature's ontology |
+
+No Paper 02 construction result exists at pin freeze. In particular, neither a
+canonical microscopic ontology nor fundamental complex amplitudes are entered
+as derived facts.
+
 ## Derivation balance
 
 The live adjudicated balance is:

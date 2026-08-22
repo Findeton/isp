@@ -20,9 +20,8 @@ cleanly if nature does not support it.
 - Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
 - Paper 01 status: **TERMINAL ACCEPT-WITH-SCOPE — COMPOSITIONAL OPERATIONAL
   EQUIVALENCE WITH ONTOLOGY DEBT**.
-- Paper 02 is the next open scientific gate: representation uniqueness and
-  ontology residue. It requires a fresh mathematics-only pin before
-  construction.
+- Paper 02 status: **MATHEMATICS-ONLY PIN FROZEN — CONSTRUCTION NOT STARTED**.
+  Its gate is representation uniqueness and ontology residue.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -114,6 +113,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper01-ontology-physics.md` — frozen Seat O report.
 - `note-paper01-hostile-review-adjudication.md` — terminal Paper 01 product,
   scope, ontology debt, and Paper 02 opening condition.
+- `note-paper02-operational-quotient-ontology-residue-pin.md` — frozen
+  result-neutral contract for the canonical quotient, ontology fibers,
+  contextuality, scalar representation, and discriminator tests.
 
 ## Permanent honesty wall
 

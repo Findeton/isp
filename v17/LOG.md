@@ -290,3 +290,35 @@ Paper 02's opening condition is now satisfied. Its next legitimate event is a
 fresh mathematics-only pin on representation uniqueness and ontology residue.
 Paper 03, internal clocks, spacetime, gravity, and implementation remain
 closed.
+
+## 2026-08-22 — PAPER 02 OPERATIONAL-QUOTIENT PIN FROZEN (v17 LEDGER #10)
+
+The result-neutral Paper 02 mathematics pin is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02-operational-quotient-ontology-residue-pin.md` | `e26b91b7126046d4b9c8f579fa6147f48922dc7fb711851b5a0fe3501a2c49cf` | 654 LF / 29,191 bytes |
+
+It binds the terminal Paper 01 product and asks what is invariant across every
+adequate stochastic representation. The mandatory package separates:
+
+1. the all-continuation operational quotient;
+2. coordinate/dilation gauge from empirically idle or contingent ontology
+   fibers;
+3. fiber refinements and reductions;
+4. phase-complete predictive structure from complex-scalar ontology;
+5. positivity from preparation, measurement, transformation, and Bell
+   noncontextuality premises;
+6. restricted-class resource minima from universal ontic minima;
+7. operational records from microscopic actuality; and
+8. exact empirical discriminators from simplicity-based preference.
+
+The pin contains 18 registered controls, 42 hostile attacks, a full product,
+and an outcome ladder ranging from quotient failure to an empirically
+discriminated ontology. It keeps the recent conflicting real-versus-complex
+network claims as an adversarial pair whose different composition and source-
+independence premises must be reconstructed rather than chosen by citation.
+
+No ontology, scalar field, hidden fiber, selector, implementation, clock,
+spacetime, or gravity coordinate is awarded at #10. The sole next action is
+the self-contained Paper 02 mathematics construction.
