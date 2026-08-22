@@ -7611,3 +7611,30 @@ FP-closure overstatement); mandatory regressions 3, 14, 15, 16, 17,
 19, 20, 21, 22.
 
 No construction begins in this entry.
+
+## 2026-08-22 — PAPER 23A V2 CONSTRUCTION FREEZE (v16 LEDGER #316)
+
+Unit B-v2 construction complete, bound to the #315 pin. Candidate:
+`v16/paper-23a-v2-trace-sensitive-sector-algebra.md`, ordinary
+SHA-256 `c4503bd309bcc54f0c20de2d8f1a28b4b4742c02c5f9eb7d7b2918deb5889209`
+(387 LF). Construction note: `v16/note-paper23a-v2-construction.md`,
+ordinary SHA-256 `26d2134a839f79905a0374690df6592412fc1c30352a7cac81bd3103c3ce2085` (     102 LF). Both hashed before this entry; the
+pin hash is unchanged.
+
+Constructed at certified-fixture scope, from terminal Paper 13D alone,
+under every binding constraint of the authorization: trace-sensitive
+congruence (#314 Definition 2.1 form) with trace-shape separation
+(Theorems/Props A, B, C — bracketing classes distinct); repaired
+multiplicity descent (all six #314 replacements verbatim; fixture
+tables reproduced exactly); honest stage-3 classification with each
+clause proved or refuted on its own — well-defined (D), finite
+closure fails by carrier monotonicity (E, F), commutative (G),
+NONASSOCIATIVE at class level (H), unital (I), no duals (J);
+algebra tag `P23AV2-ALGEBRA-COMMUTATIVE-UNITAL-GRADED-NONASSOCIATIVE-
+MAGMA`; FP fusion-bootstrap route CLOSED for present Gamma_D fixtures
+with scope engraved and parent control 40 respected. No rescue
+quotient; no code; no new postulate. Eight pre-registered outcomes
+earned exactly as named. All twenty-two hostile controls disposed.
+Status: CONSTRUCTION COMPLETE — SUBMITTED FOR THREE-SEAT BLIND REVIEW
+(category; probability/multiplicity; algebra; regressions 3, 14, 15,
+16, 17, 19–22). Review is the next separate event.
