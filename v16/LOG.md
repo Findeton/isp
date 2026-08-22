@@ -7011,3 +7011,14 @@ chronology, dimension, and geometry outside the claim.
 
 This commit freezes the predecessor question only. The candidate, review
 protocol, reports, and adjudication remain separate subsequent events.
+
+## 2026-08-21 — PAPER 22 MATHEMATICAL CANDIDATE (v16 LEDGER #289)
+
+The original Paper 22 candidate freezes at
+`v16/paper-22-reversible-structural-instrument.md`, ordinary SHA-256
+`6d75a072fb3c51c5c267448fd329895f94cd4f9ee4ba4d96ea9660be80c1c6b7`.
+It constructs a reversible structural query with explicit no-hiding
+complement, uncomputation before recombination, an outcome-indexed commit,
+and the exact `R`, `B`, and phase-kickback `C_phi` laws. It is a new local
+candidate instrument, not an inherited Paper 13D operation or an autonomous
+occurrence law. Its total source typing remains subject to independent review.
