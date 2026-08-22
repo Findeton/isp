@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
-semantic repair pin frozen and awaiting its result-neutral author audit**
+semantic repair pin and author audit frozen; mathematics construction next**
 
 ## 0. Authority and workflow
 
@@ -167,7 +167,9 @@ It explicitly prevents convex decoding identities from collapsing physical
 mixture procedures inside $\mathcal P$. A positive predictive-object model is
 registered only as an existence control; Barandes ontology, ontology
 selection, actuality, QFT, clocks, spacetime, and gravity remain
-unconstructed. The sole next event is the pin's result-neutral author audit.
+unconstructed. The result-neutral author audit passes without awarding any
+coordinate. The sole next event is the self-contained mathematics
+construction.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 

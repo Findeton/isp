@@ -510,3 +510,29 @@ fundamental ontology. The Barandes row remains admissible-but-unconstructed;
 no law, actuality mechanism, clock, QFT, spacetime, dimension, geometry, or
 gravity is added. All future Paper 02 v2 paths were absent at freeze. The sole
 next event is a result-neutral author audit of this pin.
+
+## 2026-08-22 — PAPER 02 V2 PIN AUTHOR AUDIT PASSES (v17 LEDGER #20)
+
+The result-neutral internal audit is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02v2-pin-audit.md` | `a8b65bf252f5ec76f4552d18172ba44ffdd21847ce945acef7946d515417d6c8` | 371 LF / 15,567 bytes |
+
+The audit reconstructs the three required levels—procedure presentations,
+physical procedures $\mathcal P$, and operational classes $\mathcal Q$—and
+finds the quotient congruence, optional ontological-model interface, scoped
+idle-fiber theorem, and Barandes demotion feasible.
+
+It also reconstructs the mandatory positive contextual control explicitly:
+direct preparations use point measures on normalized predictive objects,
+trusted mixtures use affine mixtures of those measures, channels push the
+objects forward, and instruments use substochastic Born-weighted update
+kernels. Distinct decompositions of $I/2$ then yield unequal ontic measures
+without an appended procedure tag. The cost is binding: this reifies the
+quantum predictive object and may be global and memory-bearing; it is an
+existence proof, not an explanation or selected ontology.
+
+No Paper 02 v2 coordinate is awarded. No code or Paper 03 unit opens. The sole
+next action is the self-contained mathematics construction under the frozen
+pin.

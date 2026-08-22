@@ -25,11 +25,11 @@ cleanly if nature does not support it.
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
 - Paper 02 v2 status: **MATHEMATICAL REPAIR PIN FROZEN — RESULT-NEUTRAL
-  AUTHOR AUDIT NEXT**. Its exact scope is the prequotient procedure
-  architecture $\mathcal P\to\mathcal Q$, trusted physical-randomization
-  constructors, system-facing contextuality as a descent obstruction, and
-  the Barandes-row correction. It adds no physical postulate and pre-awards
-  no successor.
+  AUTHOR AUDIT PASSED; CONSTRUCTION NEXT**. Its exact scope is the prequotient
+  procedure architecture $\mathcal P\to\mathcal Q$, trusted
+  physical-randomization constructors, system-facing contextuality as a
+  descent obstruction, and the Barandes-row correction. It adds no physical
+  postulate and pre-awards no successor.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -150,6 +150,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   surviving rung-4 ceiling, and exact semantic-repair boundary.
 - `note-paper02v2-procedure-quotient-repair-pin.md` — frozen, result-neutral
   procedures-first repair contract; construction has not begun.
+- `note-paper02v2-pin-audit.md` — result-neutral feasibility audit; it
+  authorizes mathematics-only construction but awards no coordinate.
 
 ## Permanent honesty wall
 
