@@ -8154,3 +8154,43 @@ One-strike n/a. The orientation-descent gate closes. Routes past it
 (law-level symmetry breaking; history-side refinement as a new
 postulate; non-scalar conditional-retuning extensions) all require
 explicit user authorization and a fresh freeze; no automatic successor.
+
+## 2026-08-22 — ADJUDICATION CORRECTION TO #336 — TERMINAL WITHDRAWN, SCALAR-REWEIGHTING SCOPE RESTORED (v16 LEDGER #337)
+
+User-ordered forward-only correction
+`v16/note-paper23d-adjudication-correction.md` (ordinary SHA-256
+`8d1069b077b00b8d67a3c45ba2c95e3fdcb67de004a07e2e23081ca3406587e5`,
+137 LF). Frozen bytes untouched (`2501d316…`). **#336 is not terminal
+as of this entry.**
+
+Three structural defects confirmed: (D1) Q1 applied the no-covariant-
+single-order theorem to an exchangeable-CLASS-valued extractor — the
+exact implication #330 refuted; the restriction argument bars only
+order-valued extractors, so Q1's NO is unproven. (D2) Lemma A counted
+all external decorations ignoring the realizer intersection condition:
+parallel (L,L) and antiparallel (L, rev∘L) realize different dependency
+relations (verified n=3: chain vs antichain), so "both realize over
+every complex" fails and the 2/5/17 counts do not measure realizable
+fibers. (D3) Lemma B assigned equal probability to external
+decorations that are not points of the pinned probability space — an
+omitted latent variable is UNDERDETERMINED, not uniformly weighted.
+Also recorded: pin §3 pre-excluded orientation-bearing root variables,
+so the gate tested scalar reweighting of an orientation-forgetting
+measurable space, never the full state/root door of #331 §3(b).
+
+WITHDRAWN: `P23D-ORIENTATION-FIBER-INERT`, terminal acceptance,
+Theorem C, Lemmas A/B as printed, Q1 verdict. PRESERVED: Γ_D does not
+determine the realizer class (#330); scalar reweighting of the
+unchanged measurable space cannot create a missing measurable. Earned:
+`P23D-SCALAR-REWEIGHTING-INERT`, `P23D-STATE-EXTENSION-UNTESTED`.
+
+Corrected successor map: the state/root door is OPEN and distinct from
+changing Γ_D, changing histories, and conditional-retuning (forbidden).
+Latent extension p: C̃px→Cpx with (p,id)_*Γ̃ = Π(dχ)Γ_D(dH|χ) preserves
+all accepted predictions while carrying a covariant state variable;
+whether it is physically selected, realizes the dependency relation,
+and has an operational readout is the genuine next gate. Binding
+admissibility wall: containing an order is not physical — label-based,
+idle, post-hoc, and dimension-selected orientations rejected in
+advance. One-strike not triggered; no automatic successor; every route
+needs explicit user authorization and a fresh freeze.
