@@ -6934,3 +6934,26 @@ select a unique physical propensity, and any selector still requires an
 independently physical structural experiment, base measure, boundary/root
 law, or equivalent new nomological input. No selector, chronology, dimension,
 metric, or actuality coordinate is awarded by this archival event.
+
+## 2026-08-21 — PAPER 18 MATHEMATICAL CHAIN ARCHIVE (v16 LEDGER #284)
+
+The complete Paper 18 mathematical chain is archived at its frozen bytes:
+the rejected version-1 candidate, the version-2 base, the version-3 through
+version-6 amendments, every construction note, every frozen three-seat
+protocol and report, each intermediate adjudication, and the terminal
+version-6 adjudication. The selector-constraint investigation is included as
+the declared input to Paper 19.
+
+This is an explicit recovery after the signing outage, not a claim that the
+commit chronology preceded the already completed mathematics. The reports'
+ordinary hashes and mutually blind provenance remain recorded in the terminal
+adjudication, but their path separation is archival rather than a retroactive
+reenactment of dispatch.
+
+The accepted product is the version-2 base plus amendments 3--6 at ordinary
+SHA-256 values listed in
+`v16/note-paper18-operational-structural-sectors-terminal-math-adjudication.md`.
+It constructs a dimension-neutral contract for point-free structural sectors,
+resolved channels, restriction, deletion, conditional channel laws, and the
+selector residue. It constructs no physical channel measure, occurrence law,
+root law, chronology, dimension, metric, gravity, or actuality.
