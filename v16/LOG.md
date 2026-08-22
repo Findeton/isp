@@ -7045,3 +7045,15 @@ Verdict: `REVISE`. The local unitary, no-hiding, uncomputation, phase-kickback,
 record, erasure, and factorization mathematics survive, but the candidate's
 positive source domain admits active components of different Paper 13D atomic
 sorts even though simultaneous fusion is defined only at one common sort.
+
+## 2026-08-21 — PAPER 22 CATEGORY/GROUPOID REPORT (v16 LEDGER #292)
+
+The mutually blind category/groupoid report freezes at
+`v16/review-paper22-reversible-structural-instrument-category.md`, ordinary
+SHA-256
+`2f705622de629cbac3dabcc16d0ab02fc51db7ceb6e8487a92c5575c5571ec93`.
+Verdict: `REVISE`. It independently finds the same heterogeneous-active-sort
+counterexample and also scopes restriction and tensor composition: branchwise
+restriction and external products of already typed instruments are valid,
+whereas a naive internal union of active marks need not preserve one fusion
+sort or one common source fiber.
