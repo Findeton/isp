@@ -606,11 +606,13 @@ $$
 where `r_{jT}`, `r_{jF}` denote the entries of `R`. The baseline terms are
 `gamma`-independent sums of squared moduli and evaluate, for both inputs,
 to `337/625` on the diagonal detector and `288/625` on the crossed detector.
-The interference term carries the product
-`(b_Tr_{jT})(b_Fr_{jF})=\pm12/25`, whose phase-free magnitude gives exactly
-the coefficient `288/625`; substituting (16), it contributes
-`(288\,q_\phi)/625` with sign pattern `(-,+;+,-)` on the diagonal and
-`(+,+)` off the diagonal. Collecting terms for both inputs gives (17).
+The interference term carries the route-amplitude product
+`(b_Tr_{jT})(b_Fr_{jF})=\pm144/625`, whose magnitude with the leading
+factor `2\operatorname{Re}(\cdot)` gives exactly the coefficient
+`288/625`; substituting (16), it contributes
+`-(288\,q_\phi)/625` to each diagonal entry and
+`+(288\,q_\phi)/625` to each off-diagonal entry. Collecting terms for
+both inputs gives (17).
 Normalization: each column equals the `gamma=0` baseline plus `q_phi` times
 a signed matrix whose columns sum to zero, so every column of (17) sums to
 one for every admissible `gamma`. Entrywise positivity: for `|q_phi|<=1`
@@ -644,13 +646,15 @@ $$
 $$
 
 Every input mode returns deterministically from its own detector. The
-environment states `|e_T> = i|e_0>`, `|e_F> = |e_0>` represent the same ray
-and retain no which-route information; the interference is maximal, and its
-phase shift cancels the route phase exactly at this setting.
+environment states `|e_T> = i|e_0>`, `|e_F> = -|e_0>` represent the same
+ray and retain no which-route information; their overlap is
+`gamma=<e_T|e_F>=i`, and the interference phase cancels the route phase
+exactly at this setting.
 The rejected candidate's rule `Re(v) = 0` instead left the law
 phase-dependent at `B^2` here, which is false. More generally, along
-`gamma = e^{i\theta}` the law is (15) with `phi` shifted by `+theta`: a pure
-fringe displacement with unit visibility on both rows.
+`gamma = e^{i\theta}` the law is (15) with `phi` shifted by `+theta`: a
+pure fringe displacement preserving the coherent-row visibilities
+`(288/337)` and `1`.
 
 ### Corollary 7.2 — endpoint laws
 
@@ -728,22 +732,24 @@ inaccessible after the declared commit boundary.
 
 ### Theorem 9 — joint law, normalization, and child recovery
 
-For mode input `j`, phase `phi`, and fixed admitted source `X`, the
-accessible joint law is
+For mode input `j`, phase `phi`, fixed admitted source `X`, and residual
+overlap `gamma`, the accessible joint law is
 
 $$
-\widehat\Gamma_{\phi,X}(m,[H]\mid j)
+\widehat\Gamma_{\phi,\gamma,X}(m,[H]\mid j)
 =
-C_\phi(m\mid j)\Gamma_m([H]\mid[X]).
+C_{\phi,\gamma}(m\mid j)\Gamma_m([H]\mid[X]).
 \tag{20}
 $$
 
-It normalizes, and conditioning on `m` recovers the exact accepted child
-law.
+For the constructed instrument `gamma=1` by exact closure (11), which
+recovers the printed `C_phi` form. It normalizes, and conditioning on
+`m` recovers the exact accepted child law.
 
 **Proof.** Summing first over histories gives `1` for each selected child;
-summing over modes gives the column normalization of (C_\phi). Division by
-the positive mode marginal cancels that factor and leaves (Gamma_m).
+summing over modes gives the column normalization of (C_{phi,gamma}).
+Division by the positive mode marginal cancels that factor and leaves
+(Gamma_m).
 (square)
 
 For tensor input and neutral phase,

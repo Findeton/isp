@@ -111,6 +111,12 @@ correct values.
 - Construction-stage writes were scoped to
   `v16/paper-22-reversible-structural-instrument-v3.md` and this note.
 - Line counts at freeze: pin 379 LF; candidate 1024 LF.
+  Forward-only chronology correction (post-adjudication): the ordered
+  bounded prose repair (#306) moved the candidate to 1030 LF / new
+  ordinary SHA-256 `be0822c81d58eee487925191b3156e22172bcc372012fd6cfc4f23b2ca890349`.
+  Four replacement sentences only; no number, definition, control, or
+  scope wall moved. The pre-repair bytes remain recoverable from hash
+  `4064f66b8bcf8750a7a7a908e76ccbca840e3c3c30c42a14352e478077fd7963`.
 
 ## 6. Review request
 

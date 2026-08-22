@@ -7376,3 +7376,42 @@ and a bounded single-pass repair is ordered with numbers frozen. The
 calibrated-lift gauge reading is bound as precedent. Terminal
 ACCEPT-WITH-SCOPE takes effect on the repaired bytes after adjudicator
 verification.
+
+## 2026-08-22 — PAPER 22 V3 BOUNDED PROSE REPAIR VERIFIED; TERMINAL (v16 LEDGER #307)
+
+The #306 repair order is executed and verified. The candidate moves from
+`4064f66b...` (1024 LF) to ordinary SHA-256
+`be0822c81d58eee487925191b3156e22172bcc372012fd6cfc4f23b2ca890349`
+(1030 LF): exactly the four ordered replacement sentences (Theorem 7
+interference scalar `±144/625` with explicit per-cell signs; Corollary
+7.1 exemplar kets `|e_T>=i|e_0>`, `|e_F>=-|e_0>` giving `gamma=i`; the
+fringe-shift visibility sentence now `(288/337)` and `1`; Theorem 9
+restated at general `gamma` with the `gamma=1` closure reduction). No
+number, definition, theorem result, control value, or scope wall moved;
+the diff against the pre-repair bytes contains nothing else. The
+construction note records the post-repair hash forward-only (now
+`0f4b96226b31f30b64bf12cc38cf5a5645223013d837c64cabbcf1e3a25bfed7`,
+126 LF); the pre-repair candidate bytes remain recoverable at
+`4064f66b...`.
+
+`TERMINAL — ACCEPT-WITH-SCOPE` is conferred on
+`v16/paper-22-reversible-structural-instrument-v3.md` at the pinned
+scope: the complete triggered local structural instrument on homogeneous
+source fibers, on the bound uniform fine-seed apparatus, with the exact
+partial-visibility family `q_phi = Re(gamma e^{i phi})`. All nine
+pre-registered coordinates stand CONSTRUCTED; the six declared
+UNCONSTRUCTED walls (same-source multi-mark composition,
+simultaneous-fusion algebra, activity/root, physical regional referent,
+chronology/dimension/metric/GR, actualization) remain unclaimed.
+
+Provenance chain: pin #303 (freeze `703784ec...`) -> candidate #303
+(`4064f66b...`) -> seats #303/#304/#305 (C/P/Q, all
+ACCEPT-WITH-FIXES) -> adjudication #306 (`52178483...`) -> repair #307
+(`be0822c8...`). One strike NOT triggered; the Paper 22 line continues.
+
+Paper 23 binding status: the twice-adjudicated-unaccepted input
+coordinate of #302 is superseded for this instrument only by the
+terminal chain above; the Paper 23 preparation pin may now be corrected
+forward-only to record an accepted-successor option, and binds v3 only
+through its own fresh hash-bound freeze. No Paper 23 construction begins
+without its own authorized unit.
