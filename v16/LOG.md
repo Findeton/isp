@@ -7163,3 +7163,17 @@ unauthorized change from the bound uniform 25-state seed purification to a
 biased qubit, without the coarse-bin isometry and complement needed to relate
 the two carriers. The report also independently finds the complex-overlap
 partial-visibility error.
+
+## 2026-08-21 — PAPER 22 V2 PROBABILITY REPORT (v16 LEDGER #299)
+
+The mutually blind probability/instrument report freezes at
+`v16/review-paper22-reversible-structural-instrument-v2-probability.md`,
+ordinary SHA-256
+`98156514295e40a35d987597ed6b78f1cb6d67a2e915707eca928091f898d0b5`
+(562 LF / 20,555 bytes). Verdict: `REVISE`.
+
+The principal `B`, `R`, `C_phi`, `B^2`, `K_phi`, commit normalization, and
+supported child-recovery calculations pass. The first decisive counterexample
+is the general partial-coherence law: for complex environment overlap `v`,
+the interference coordinate is `Re(v e^{i phi})`, not `Re(v)`. The biased
+two-state seed is independently identified as outside the authorized delta.
