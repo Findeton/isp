@@ -7492,3 +7492,34 @@ Writable construction paths:
 
 No construction begins in this entry. Units C and D remain authorized
 and unpinned.
+
+## 2026-08-22 — PAPER 23A CONSTRUCTION FREEZE (v16 LEDGER #310)
+
+Unit B construction complete, bound to the #309 pin. Candidate:
+`v16/paper-23a-sector-multiplicity-fusion-closure.md`, ordinary SHA-256
+`9cab8d2e78ee5365b0facc86ff059074f482091bbb3621cfd328939b9e247a5a`
+(606 LF). Construction note: `v16/note-paper23a-fusion-closure-construction.md`,
+ordinary SHA-256
+`cc157c793cca620b680dca1d93b83a6726dee1e3b7e044647a9cffde889ea10c`
+(140 LF). Both hashed before this entry; the pin hash is unchanged.
+
+Constructed at certified-fixture scope, from terminal Paper 13D alone:
+the predictive-sector congruence (Theorem A; classes = family x size x
+sort on the fixtures), orbit-summed multiplicity descent with exact
+mass tables at n=1 (96 cells / 64 fixed for U(n); 192 / 128 for the
+D-composite; endpoint class masses 1/2, 1/2 at every size), and the
+fusion classification: countable-tower closure with finite escape,
+free unital commutative indecomposable semiring isomorphic to
+(N,+), involution fails, continuum-many positive characters,
+nonuniqueness proved constructively. Outcomes earned exactly:
+`P23A-SECTOR-CONGRUENCE-CONSTRUCTED`,
+`P23A-MULTIPLICITY-DESCENT-CONSTRUCTED`,
+`P23A-FUSION-CLOSURE-FAILS` (finite-closure sense, fixture scope),
+`P23A-COMMON-POSITIVE-CHARACTER-NONUNIQUE`. The two finite-structure
+outcomes are not earned. Paper 22 v3 consumed nowhere; no stage
+blocked. All eighteen hostile controls disposed in candidate §5;
+all arithmetic verified in exact rational scaffolding before freeze.
+Status: CONSTRUCTION COMPLETE — SUBMITTED FOR THREE-SEAT BLIND REVIEW
+(sector/category, probability/multiplicity, fusion-algebra seats;
+mandatory regressions controls 3, 14, 15, 16, 17). Review is the next
+separate event.
