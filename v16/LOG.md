@@ -7318,10 +7318,16 @@ repair, plus one inherited rendering note and one precedent request.
 
 ## 2026-08-22 — PAPER 22 V3 PROBABILITY REPORT (v16 LEDGER #304)
 
+Forward-only correction, recorded first: the initially committed #304
+entry contained a placeholder string where the report digest belongs. The
+correct ordinary SHA-256 of the frozen report is
+`55e07cec4897443ddc5dc32e2432d52c7be13b4fd50f604a3459bf3492e8f87a`; the
+placeholder was never the digest of any on-disk bytes and is void.
+
 The mutually blind probability/instrument seat freezes at
 `v16/review-paper22-v3-probability.md`, ordinary SHA-256
-`e0d5c8f0b6a2c4a4bd7e9db1a4a2b6a4f0e2e0a1c8f0e0a4a2b6a4f0e2e0a1c8`
-(size recorded at adjudication). Verdict: `ACCEPT-WITH-FIXES`.
+`55e07cec4897443ddc5dc32e2432d52c7be13b4fd50f604a3459bf3492e8f87a`
+(246 LF / 11,956 bytes). Verdict: `ACCEPT-WITH-FIXES`.
 
 All anchors (`B`, `R`, `C_phi`, `B^2`, `K_phi` with endpoint
 factorization, neutral odds) were rebuilt exactly and match. Law (V) was
