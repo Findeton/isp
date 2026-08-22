@@ -7878,3 +7878,23 @@ All seats independently confirm the three-obstruction architecture,
 the landmark closure, exact arithmetic, control rows 1–10, and the
 earned outcome `P23C-ORIENTED-PAIR-NOT-DERIVABLE` modulo repairs.
 Next event: adjudication.
+
+## 2026-08-22 — PAPER 23C ADJUDICATION — ACCEPT-WITH-FIXES, REPAIR ORDERED (v16 LEDGER #328)
+
+`v16/note-paper23c-adjudication.md` frozen (ordinary SHA-256
+`48e0d881eb373b376d826138bbbc59fa90d9d05a22b3fb390d3ee94b91a5a149`,
+75 LF). All nine findings from the three blind seats confirmed by the
+adjudicator's own rebuild; none structural. Nine bounded prose repairs
+ordered: Def 2.3 quantifier restricted to admissible morphisms; Prop A
+restated over transposition-stabilized experiment classes; Prop D proof
+artifact deleted; §5 uniqueness sentence supplied or word dropped;
+Lemma C restated as carrier-relabeling invariance with coupling content
+in Prop D; general no-fixed-order argument made primary with finite
+checks marked audit-only; Prop F restricted to equivariantly
+extendible assignments (assignment and rank swap both qualify);
+fixture-scope engraving added to §6; "$\pi_n$" replaced by explicit
+exchangeability-quotient naming. On byte-exact repair verification:
+TERMINAL ACCEPT-WITH-SCOPE with `P23C-ORIENTED-PAIR-NOT-DERIVABLE`
+(primary, present-Γ_D fixture scope) plus five sub-coordinates.
+Dimension firewall intact. One-strike not applicable. Next event:
+execute ordered repair and verify.
