@@ -2,7 +2,7 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 awaits three frozen blind reviews**
+Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 pin next**
 
 ## 0. Authority and workflow
 
@@ -83,20 +83,25 @@ time scope.
 **Cannot earn.** Background independence, QFT, spacetime, gravity, ontology
 uniqueness, or empirical novelty.
 
-**Current construction boundary.** The mathematics constructs a uniform
-positive record-history representation for Q0--Q3 at causally ordered
-finite-process scope, including composition, instruments, Bell/contextuality,
-memory, and the record/eraser/uncompute triad. It also proves that licensed
-first-order laws do not select a unique microscopic Kolmogorov realizer and
-that phase-complete continuation structure cannot be reduced to diagonal
-probabilities. Proposed ceiling:
-`P01-COMPOSITIONAL-OPERATIONAL-EQUIVALENCE-WITH-ONTOLOGY-DEBT`. This remains
-unawarded until the frozen mathematics/composition, quantum-foundations, and
-ontology/physics reviews and their separate adjudication.
+**Terminal result.** Three blind lenses and joint adjudication accept a
+uniform positive record-history representation for Q0--Q3 at
+finite-dimensional, definite-laboratory-order process scope. It preserves
+composition, instruments, Bell/contextuality, memory, and the
+record/eraser/uncompute triad. Licensed first-order laws do not select a unique
+microscopic Kolmogorov realizer, and phase-complete continuation structure
+cannot be reduced to diagonal probabilities. Accepted ceiling:
+`P01-COMPOSITIONAL-OPERATIONAL-EQUIVALENCE-WITH-ONTOLOGY-DEBT`.
+
+Indefinite causal order, microscopic trajectories, Bell locality, actuality,
+internal time, spacetime, and gravity remain unconstructed. No implementation
+can upgrade these coordinates.
 
 ### Paper 02 — representation uniqueness and ontology residue
 
 Opens only if Paper 01 constructs at least process-level equivalence.
+
+**Opening state.** The condition is now satisfied. The next event is a fresh
+result-neutral mathematics-only pin; no Paper 02 construction is yet frozen.
 
 **Question.** Across all stochastic realizers satisfying the Paper 01
 contract, what is invariant, and what is gauge, contingent state, or genuine

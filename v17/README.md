@@ -18,29 +18,37 @@ cleanly if nature does not support it.
 ## Live state
 
 - Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
-- Paper 01 status: **MATHEMATICS CONSTRUCTED — GREEN-UNREVIEWED; THREE-LENS
-  REVIEW PROTOCOL FROZEN**.
-- No v17 physical coordinate is earned.
+- Paper 01 status: **TERMINAL ACCEPT-WITH-SCOPE — COMPOSITIONAL OPERATIONAL
+  EQUIVALENCE WITH ONTOLOGY DEBT**.
+- Paper 02 is the next open scientific gate: representation uniqueness and
+  ontology residue. It requires a fresh mathematics-only pin before
+  construction.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
 - v16 Papers 14–16 are retained as structural and conditional diagnostic
   laboratories, not inherited spacetime or gravity.
 
-The only authorized scientific unit is Paper 01:
+Paper 01 answered:
 
 > Can a Barandes-style configuration ontology and indivisible stochastic law
 > reproduce the complete compositional finite-dimensional quantum process
 > interface—not merely a selected two-state kernel—while keeping law, state,
 > intervention, record, and actual history physically distinct?
 
-The construction proves an exact positive record-history representation for
-finite-dimensional causally ordered quantum processes, while proving that the
-microscopic trajectory realizer and preferred configuration ontology remain
-underdetermined. Its proposed ceiling is compositional operational equivalence
-with ontology debt. No coordinate is awarded until the frozen three-lens
-review and adjudication close. Rust or any other implementation begins only
-after the mathematics is accepted.
+The terminal adjudication accepts an exact positive record-history
+representation for finite-dimensional, definite-laboratory-order quantum
+processes, while preserving the facts that the microscopic trajectory
+realizer and preferred configuration ontology remain underdetermined. The
+result is a representation theorem using the retained phase-complete quantum
+process, not a derivation of quantum physics from independent stochastic
+microdynamics.
+
+The next question is therefore:
+
+> Across all stochastic representations satisfying the accepted Paper 01
+> contract, what is forced by complete operational equivalence, what is
+> gauge, and what is genuine additional ontology?
 
 ## Reality constraints
 
@@ -101,6 +109,11 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   surface for the future independent review; not an adjudication.
 - `note-paper01-hostile-review-protocol.md` — immutable mathematics,
   quantum-foundations, and ontology/physics review duties.
+- `review-paper01-mathematics-composition.md` — frozen Seat M report.
+- `review-paper01-quantum-foundations.md` — frozen Seat Q report.
+- `review-paper01-ontology-physics.md` — frozen Seat O report.
+- `note-paper01-hostile-review-adjudication.md` — terminal Paper 01 product,
+  scope, ontology debt, and Paper 02 opening condition.
 
 ## Permanent honesty wall
 

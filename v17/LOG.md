@@ -219,3 +219,74 @@ Updated live pointers before this entry:
 No reviewer was dispatched, no review path was created, no implementation was
 opened, and no Paper 01 coordinate was awarded at #5. No Paper 02 or later
 physical unit is authorized by this protocol.
+
+## 2026-08-22 — PAPER 01 MATHEMATICS REVIEW FROZEN (v17 LEDGER #6)
+
+The mutually blind mathematics/composition report was frozen separately:
+
+| artifact | SHA-256 | verdict | size |
+|---|---|---|---:|
+| `v17/review-paper01-mathematics-composition.md` | `8eaabe53a2d5be18c8b7a31fc452c2a95e3b7da892626c57ea2a181322fbbd9e` | `ACCEPT-WITH-SCOPE` | 404 LF / 23,889 bytes |
+
+The report reconstructs the finite comb dilation, positive pushforward,
+whole-program sequential composition, tensor/ancilla/discard laws, and the
+standard-Borel extension. It binds the result to definite laboratory-order
+combs, measurable adaptive policies, and operational-quotient naturality.
+No candidate byte was edited and no code was used.
+
+## 2026-08-22 — PAPER 01 QUANTUM REVIEW FROZEN (v17 LEDGER #7)
+
+The mutually blind quantum-foundations report was frozen separately:
+
+| artifact | SHA-256 | verdict | size |
+|---|---|---|---:|
+| `v17/review-paper01-quantum-foundations.md` | `f106f8deb102744adcc649df04500bbdc57033d53bbd21138af745a076745b12` | `ACCEPT-WITH-SCOPE` | 415 LF / 23,263 bytes |
+
+The report reconstructs complete instruments, continuous phase, CHSH,
+Peres--Mermin, process memory, nondivision, and record/uncompute controls. It
+accepts exact operational representation while withholding independent
+stochastic microphysics, Bell locality, and null-event point conditioning.
+No candidate byte was edited and no code was used.
+
+## 2026-08-22 — PAPER 01 ONTOLOGY REVIEW FROZEN (v17 LEDGER #8)
+
+The mutually blind ontology/physics report was frozen separately:
+
+| artifact | SHA-256 | verdict | size |
+|---|---|---|---:|
+| `v17/review-paper01-ontology-physics.md` | `8018134b40021e4a9e85933783e25980f6ffdbb64159222af456cbb1fcc5665a` | `ACCEPT-WITH-SCOPE` | 463 LF / 25,493 bytes |
+
+The report confirms that positive record strings are not complete microscopic
+trajectories, that one actual record is a postulate rather than a selector,
+and that supplied laboratory order is not emergent time. It accepts the
+candidate only at its printed representation ceiling. No candidate byte was
+edited and no code was used.
+
+## 2026-08-22 — PAPER 01 TERMINAL ACCEPT-WITH-SCOPE (v17 LEDGER #9)
+
+Joint adjudication is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper01-hostile-review-adjudication.md` | `3320414cb8161da33fbce3b1b8d3838cd3989d315de792c24cf24c0c322c2bb1` | 314 LF / 13,844 bytes |
+
+The adjudicator independently rebuilt the positive record law, whole-program
+composition, instrument/tensor/Borel extensions, Bell/contextuality controls,
+memory distinctions, record triad, and microscopic-realizer no-go. No
+semantic counterexample survives. The terminal ceiling is:
+
+```text
+P01-COMPOSITIONAL-OPERATIONAL-EQUIVALENCE-WITH-ONTOLOGY-DEBT
+```
+
+The accepted domain is every finite-dimensional, definite-laboratory-order
+finite-slot comb/process tensor, with finite outcomes and measurable
+standard-Borel extensions. Equivalence is on the record/operational quotient,
+not a complete ontic category. The construction begins with the complete
+phase-sensitive quantum process and Born rule; it does not derive quantum
+physics from independent stochastic microdynamics.
+
+Paper 02's opening condition is now satisfied. Its next legitimate event is a
+fresh mathematics-only pin on representation uniqueness and ontology residue.
+Paper 03, internal clocks, spacetime, gravity, and implementation remain
+closed.
