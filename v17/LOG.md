@@ -368,3 +368,26 @@ a microscopic ontology, fundamental scalar field, one actual microtrajectory,
 clock, spacetime, or gravity. No implementation was created. The sole next
 action is to freeze a result-neutral three-lens hostile-review protocol bound
 to these exact bytes.
+
+## 2026-08-22 — PAPER 02 HOSTILE-REVIEW PROTOCOL FROZEN (v17 LEDGER #13)
+
+The immutable review protocol is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02-hostile-review-protocol.md` | `4c032bc72696bc17375fb7b05e07771301205e1f7990c3cf847925580c7da532` | 371 LF / 16,417 bytes |
+
+It binds construction commit
+`bfaddd50a5006ea90933a5a6eb6f89e345a98315` and requires three mutually blind
+lenses:
+
+1. quotient mathematics, categories, and resources;
+2. quantum foundations, contextuality, and scalar structure; and
+3. ontology, gauge, actuality, and Barandes scope.
+
+The protocol binds all 13 candidate claims, C1--C18, hostile attacks 1--42,
+ten mandatory fresh attacks per seat, complete lineages, exact kill and
+non-kill rules, and the full mixed product. Candidate edits, code,
+implementation, Paper 03, clocks, QFT, spacetime, and gravity remain forbidden.
+No reviewer report or Paper 02 coordinate exists at #13. The sole next action
+is the three independent blind reviews.

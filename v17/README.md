@@ -20,9 +20,9 @@ cleanly if nature does not support it.
 - Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
 - Paper 01 status: **TERMINAL ACCEPT-WITH-SCOPE — COMPOSITIONAL OPERATIONAL
   EQUIVALENCE WITH ONTOLOGY DEBT**.
-- Paper 02 status: **CONSTRUCTION GREEN-UNREVIEWED — NO PHYSICAL RESULT
-  AWARDED**. Its canonical-quotient and ontology-residue manuscript is frozen;
-  the next event is an immutable three-lens hostile-review protocol.
+- Paper 02 status: **HOSTILE-REVIEW PROTOCOL FROZEN — THREE BLIND REVIEWS
+  NEXT**. Its canonical-quotient construction remains GREEN-UNREVIEWED and no
+  physical result is awarded.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -124,6 +124,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   contextuality costs, and resource/actuality boundaries.
 - `note-paper02-construction-audit.md` — author audit of the exact theorem,
   control, attack, and overclaim surface; not an adjudication.
+- `note-paper02-hostile-review-protocol.md` — immutable mathematics,
+  quantum-foundations, and ontology/Barandes review duties.
 
 ## Permanent honesty wall
 

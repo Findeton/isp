@@ -2,8 +2,8 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 construction
-green-unreviewed**
+Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 hostile-review
+protocol frozen**
 
 ## 0. Authority and workflow
 
@@ -102,10 +102,10 @@ can upgrade these coordinates.
 Opens only if Paper 01 constructs at least process-level equivalence.
 
 **Opening state.** The condition is satisfied. The result-neutral
-mathematics-only pin and self-contained construction are frozen. The
-construction is GREEN-UNREVIEWED and awards no result or ontology coordinate.
-The next event is a three-lens hostile-review protocol bound to the immutable
-manuscript bytes.
+mathematics-only pin, self-contained construction, and three-lens hostile-
+review protocol are frozen. The construction is GREEN-UNREVIEWED and awards no
+result or ontology coordinate. The next event is the three mutually blind
+reviews specified by the protocol.
 
 **Question.** Across all stochastic realizers satisfying the Paper 01
 contract, what is invariant, and what is gauge, contingent state, or genuine
