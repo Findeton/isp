@@ -18,6 +18,24 @@ theory-selection result.
 
 ## Live state
 
+- `RSI` / Paper 22: **TERMINAL ACCEPT-WITH-SCOPE (v3)** through v16 ledger
+  #307. The one-strike completion unit restores the bound uniform
+  fine-seed apparatus on the adjudicated homogeneous domain and states/
+  proves the exact partial-visibility law `q_phi = Re(gamma e^{i phi})`
+  with the `gamma=i, phi=pi/2 -> I_2` control and the pure-fringe family.
+  Three blind seats ACCEPT-WITH-FIXES on four MINOR prose defects;
+  repaired, verified, terminal. All nine pre-registered coordinates
+  CONSTRUCTED; occurrence/activity/root/chronology/dimension/metric/
+  gravity/actuality and same-source multi-mark composition remain
+  UNCONSTRUCTED walls. Provenance: pins/candidates #288–#296,
+  reviews/adjudications #290–#294 (v1 REVISE), #297–#301 (v2 REVISE),
+  v3 chain #303–#307. Paper 23 may bind v3 only through its own fresh
+  hash-bound freeze (#308).
+- Authorized next units, pending their own freezes (user holds ordering):
+  (B) Paper 23a fusion-closure pin consuming only terminal Paper 13D;
+  (C) oriented-pair side gate — theorem or no-go on deriving the
+  exchangeable oriented null-realizer pair; (D) Tier-2 declared-input
+  ensemble calibration study, all results conditional.
 - `RHL` / Paper 11: **TERMINAL REJECT AT
   `RHL-BLOCKED-AT-POINT-FREE-REFERENT`** through v16 ledger #153, with the
   conditional ceiling `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. The point-free,

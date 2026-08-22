@@ -1974,3 +1974,33 @@ Dimension, carrier, volume, proper time, scalar stress, $G_N$, continuum
 action, and symmetry reduction are hypotheses. Physical promotion requires
 one point-free construction deriving them, reciprocal response, and
 constraint/no-hidden-clock closure from the same law.
+
+## 2026-08-22 — Paper 22 v3 terminal; successor register update (v16 ledgers #303–#308)
+
+Paper 22 closes TERMINAL ACCEPT-WITH-SCOPE at v3 (#307): the complete
+triggered local structural instrument on homogeneous source fibers, on the
+bound fine-seed apparatus, with the exact partial-visibility law. The
+one-strike rule was live and is not triggered.
+
+Successor register, current:
+
+- Paper 23a fusion-closure pin (Unit B): authorized, pin not yet frozen.
+  Consumes only terminal Paper 13D (`3b91766f...`), never Paper 22 as
+  accepted input for its own claims; carries the twelve hostile controls
+  from `note-paper22-semantic-input-audit.md` Section 7 and the
+  semiring-vs-fusion-ring and FP-odds cautions from
+  `note-paper23-pin-internal-audit.md` Sections 4.1–4.2. Must implement
+  the disintegration typing correction recorded at #308: act on the joint
+  law `Gamma_struct(dchi,dH)`, chi-marginal `Pi_phys`, regular conditional
+  of H given chi equal to `Gamma_D`. Stage partition per #308's external
+  feedback record.
+- Oriented-pair side gate (Unit C): authorized, pin not yet frozen.
+  Question: can Gamma_D derive the exchangeable oriented null-realizer
+  pair consumed by Paper 15's rigidity theorem, or is it provably not
+  derivable? Both outcomes are wins. Smoothness/aesthetic selection
+  remains forbidden (decoder nonselection wall, #237).
+- Tier-2 declared-input ensemble calibration study (Unit D): authorized,
+  pin not yet frozen. Openly declared `Pi_phys` family, every result
+  conditional, no derivation claims; rehearses the dimension-selection
+  battery and exposes obstructions early.
+- Ordering of B/C/D is a user decision; no pin freezes without asking.
