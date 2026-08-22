@@ -7177,3 +7177,18 @@ supported child-recovery calculations pass. The first decisive counterexample
 is the general partial-coherence law: for complex environment overlap `v`,
 the interference coordinate is `Re(v e^{i phi})`, not `Re(v)`. The biased
 two-state seed is independently identified as outside the authorized delta.
+
+## 2026-08-21 — PAPER 22 V2 QUANTUM REPORT (v16 LEDGER #300)
+
+The mutually blind quantum/no-hiding report freezes at
+`v16/review-paper22-reversible-structural-instrument-v2-quantum.md`, ordinary
+SHA-256
+`3868771ac7b517fef90898b65f12ee203b70e8131f2d3d5475185e331db10cfb`
+(582 LF / 23,036 bytes). Verdict: `REVISE`.
+
+The homogeneous source, no-hiding results, coherent `C_phi`, stable record,
+commit, restriction, and external-composition boundary survive. The decisive
+counterexample is again complex residual coherence: `v=i` produces a fully
+visible phase-shifted fringe, while the printed `Re(v)` rule predicts no
+interference. The full pinned visibility coordinate therefore fails even
+though its coherent and fully recorded endpoints remain exact.
