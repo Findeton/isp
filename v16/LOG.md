@@ -7664,3 +7664,16 @@ remark reworded). All stage-2 tables reproduced elementwise; the six
 #314 replacements verified verbatim; composite normalization checked.
 Regressions in mandate PASS. Status: frozen before adjudication;
 Seat F is the next separate event.
+
+## 2026-08-22 — PAPER 23A V2 SEAT F REVIEW FREEZE (v16 LEDGER #319)
+
+Seat F (algebra), blind and independent, repo read-only. Report:
+`v16/review-paper23a-v2-fusion.md`, ordinary SHA-256 `c9e69c23c7773668638320d1e0919f848ce668bb1ef4ec555d2bc3bdaf236af3` (     117 LF).
+Verdict: **ACCEPT-WITH-FIXES** — F-F2.1 (Prop G commutativity proof
+gap: circular last step; replacement supplied), F-F2.2 (record the
+trivial-only associative submagmas in §4.1), F-F2.3 (name the
+not-earned -OPEN coordinate). Every stage-3 clause independently
+rebuilt and confirmed; all eight earned outcome names match the pin
+verbatim; regressions 19–22 PASS (21 conditional on F-F2.1).
+Status: frozen before adjudication; adjudication is the next separate
+event.
