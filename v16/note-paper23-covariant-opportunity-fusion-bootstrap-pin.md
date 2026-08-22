@@ -9,10 +9,20 @@ Status: **FROZEN RESULT-NEUTRAL MATHEMATICAL PIN — SCIENTIFICALLY INACTIVE**
 No implementation, numerical search, Paper 17 dimension run, or selector fit
 is authorized by this document.
 
-The first live stopping condition is procedural and semantic-input related,
-and it is now stronger than "pending review": both Paper 22 attempts have
-been independently reviewed and adjudicated, and the complete local
-instrument was not accepted. The original candidate was adjudicated
+> Forward-only chronology correction (2026-08-22, ledger #308): the input
+> status recorded below is superseded by the terminal acceptance of the
+> Paper 22 v3 completion unit (#303–#307, `TERMINAL ACCEPT-WITH-SCOPE`,
+> candidate SHA-256 `be0822c8...`). An accepted-successor option now
+> exists. The first live stopping condition becomes: this pin binds that
+> accepted successor only through its own fresh hash-bound freeze, and no
+> Paper 23 construction begins without its own explicitly authorized unit.
+> The pre-correction bytes of this pin remain recoverable at SHA-256
+> `1a9bd4d1d624d4cd8f7cf553420c453aff67dd732fbae02ecf7e6eb0927bea85`.
+> The scientific content of this pin is unchanged.
+
+The first live stopping condition as originally frozen: both Paper 22
+attempts had been independently reviewed and adjudicated, and the complete
+local instrument was not accepted. The original candidate was adjudicated
 `REVISE` (v16 ledger #294, heterogeneous-source totality counterexample),
 and its one bounded homogeneous-source replacement was adjudicated
 `REVISE` (v16 ledger #301, biased-seed substitution and wrong complex
@@ -532,7 +542,9 @@ choice cannot move a scientific coordinate.
 ```text
 input
   P23-INPUT-P22-LINE-BOTH-ATTEMPTS-REVIEWED-NOT-ACCEPTED
+    (superseded 2026-08-22, ledger #308, by:)
   P23-INPUT-P22-SUCCESSOR-INSTRUMENT-BOUND
+    (v3 TERMINAL #307; bindable only via this pin's own fresh freeze)
   P23-INPUT-P22-FRAGMENTS-CONDITIONAL-ONLY
 
 sector identity

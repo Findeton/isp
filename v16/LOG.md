@@ -7415,3 +7415,48 @@ terminal chain above; the Paper 23 preparation pin may now be corrected
 forward-only to record an accepted-successor option, and binds v3 only
 through its own fresh hash-bound freeze. No Paper 23 construction begins
 without its own authorized unit.
+
+## 2026-08-22 — PAPER 23 PREPARATION PIN INPUT COORDINATE CORRECTED FORWARD (v16 LEDGER #308)
+
+Following the #307 terminal acceptance, the Paper 23 preparation pin's
+stale input chronology is corrected forward-only, per the correction
+protocol used at #302. The pin
+`v16/note-paper23-covariant-opportunity-fusion-bootstrap-pin.md` moves
+from `1a9bd4d1...` (674 LF) to ordinary SHA-256
+`7ea147879dff9334fed241e628feec7b3bb3bece0e4b60e992ff2fc57ec36674`
+(686 LF). Changes are chronology only: a forward-correction header
+recording the #303–#307 terminal chain and the pre-correction hash, and
+the outcome-product input block now naming
+`P23-INPUT-P22-SUCCESSOR-INSTRUMENT-BOUND` as superseding the
+both-attempts-reviewed coordinate. No mathematical content, control,
+gate, or scope clause of the pin changed; its science remains frozen and
+inactive.
+
+Live state after this entry:
+
+```text
+Paper 22 v3: TERMINAL ACCEPT-WITH-SCOPE (#307)
+P23-INPUT-P22-SUCCESSOR-INSTRUMENT-BOUND (via fresh P23 freeze only)
+P23 construction: still BLOCKED pending its own authorized unit
+Paper 17 ensemble gate: CLOSED (unchanged)
+Open decision (user): authorize Units B/C/D pins and their ordering.
+```
+
+Also recorded here: an external reviewer's feedback on the Paper 23
+preparation pin was relayed by the user during the v3 review cycle. Its
+substantive points are logged for the future Unit B pin: (i) a real
+mathematical typing correction — disintegration must act on the joint
+law `Gamma_struct(dchi,dH)` (chi-marginal `Pi_phys`, regular conditional
+of `H` given `chi` equal to `Gamma_D`), not on the marginal `Pi_phys`
+alone; (ii) a stage partition of the P23 programme (sector identity and
+multiplicity from terminal Paper 13D first; fusion classification;
+channel odds conditional on an accepted instrument; opportunity/activity/
+root law; only then the Paper 17 gate) — matching the already-authorized
+Units B/C/D structure; (iii) the internal audit's hash binding predates
+the #302/#308 corrections and must be refreshed at any new freeze.
+No byte of the present pin implements these; they bind the next freeze.
+
+The worktree also carries the handoff prompt note
+(`v16/note-handoff-prompt-2026-08-22.md`, untracked session artifact,
+left uncommitted) and unrelated dirty state outside this entry, left
+untouched.
