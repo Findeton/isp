@@ -7677,3 +7677,19 @@ rebuilt and confirmed; all eight earned outcome names match the pin
 verbatim; regressions 19–22 PASS (21 conditional on F-F2.1).
 Status: frozen before adjudication; adjudication is the next separate
 event.
+
+## 2026-08-22 — PAPER 23A V2 ADJUDICATION: ACCEPT-WITH-FIXES, BOUNDED REPAIR ORDERED (v16 LEDGER #320)
+
+Adjudication: `v16/note-paper23a-v2-adjudication.md`, ordinary
+SHA-256 `87d6c290724c6f0e0273bce173a0d1e6941344c448f5a0e9f35a96cfee161828` (      90 LF). Seats: C ACCEPT-WITH-FIXES (#317), P
+ACCEPT-WITH-FIXES (#318), F ACCEPT-WITH-FIXES (#319). All eight
+findings confirmed by the adjudicator's own rebuild, including the
+circular last step of the commutativity proof (F-F2.1); none
+structural. Ordered repair: exactly eight replacement sentences in
+candidate §§2–4, prose only, no number/definition/outcome-name/scope
+movement; pre-repair bytes recoverable at `c4503bd3...`. On verified
+byte-exact repair this unit closes TERMINAL — ACCEPT-WITH-SCOPE with
+the eight earned coordinates at certified-fixture scope; FP closure
+fixture-scoped per parent control 40; one-strike not applicable; no
+automatic successor. Repair execution and verification are the next
+separate events.
