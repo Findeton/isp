@@ -7652,3 +7652,15 @@ mandatory regressions PASS, including 19–22. Trace-sensitive rebuild
 confirmed structurally sound; bracketing/frontier arithmetic
 reproduced exactly. Status: frozen before adjudication; Seats P and
 F are the next separate events.
+
+## 2026-08-22 — PAPER 23A V2 SEAT P REVIEW FREEZE (v16 LEDGER #318)
+
+Seat P (probability/multiplicity), blind and independent, repo
+read-only. Report: `v16/review-paper23a-v2-probability.md`, ordinary
+SHA-256 `d569bb3b3cc6ec3ea05f52bc1e4120c7eb3491552a6110136140c930a73d8b79` (      87 LF). Verdict: **ACCEPT-WITH-FIXES** — F-P2.1
+(composite-class mass sentence must be an orbit-sum statement, not a
+kernel-level one; replacement supplied), F-P2.2 (chain-collapse
+remark reworded). All stage-2 tables reproduced elementwise; the six
+#314 replacements verified verbatim; composite normalization checked.
+Regressions in mandate PASS. Status: frozen before adjudication;
+Seat F is the next separate event.
