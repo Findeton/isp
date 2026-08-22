@@ -7108,3 +7108,27 @@ Paper 13D.
 Only the two versioned construction paths named by the pin are now writable.
 No automatic v3 exists; occurrence, root, chronology, dimension, metric,
 gravity, and actuality remain outside the unit.
+
+## 2026-08-21 — PAPER 22 V2 MATHEMATICAL CONSTRUCTION (v16 LEDGER #296)
+
+The bounded homogeneous-source construction freezes as:
+
+| artifact | ordinary SHA-256 | size |
+|---|---|---:|
+| `v16/paper-22-reversible-structural-instrument-v2.md` | `30340295ccd5f8371a9020cb76c0a93cc24ab14cbbf78f05c01a85ca5ce86468` | 867 LF / 26,923 bytes |
+| `v16/note-paper22-reversible-structural-instrument-v2-construction.md` | `e90bdd14ca04742bb09eb3c9ec928b4aea04ff6429b0896158ce83170280a0ae` | 191 LF / 6,448 bytes |
+
+The source is now the coproduct of homogeneous active-sort groupoids.
+Heterogeneous active families and sort-changing arrows are refused before any
+child or probability is evaluated. Tensor and simultaneous-fusion children,
+the no-hiding query/uncomputation block, source-indexed commit, exact local
+mode law, positive restriction, branchwise degenerate restriction, and
+external tensor composition are constructed on that domain.
+
+All frozen numerical anchors remain exact, including `R`, `B`, `C_phi`,
+`B^2`, the `K_phi` interval, and neutral odds `49/625` and `576/625`. The paper
+contains fifteen proofs and all twenty-two pinned controls. No code or
+generated evidence was used. Same-source multi-mark composition, fusion
+algebra, occurrence/activity/root, physical regions, chronology, dimension,
+metric, gravity, and actuality remain unconstructed. Status is
+`GREEN-UNREVIEWED`; no acceptance is conferred.
