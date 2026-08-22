@@ -7721,3 +7721,37 @@ Provenance: pin #315 → construction #316 → seats #317/#318/#319 →
 adjudication #320 → repair #321. Scope walls unchanged; Paper 17 gate
 CLOSED; FP closure fixture-scoped (parent control 40); Paper 22 v3
 untouched at #307. No automatic successor exists.
+
+## 2026-08-22 — ADJUDICATION CORRECTION TO #321 — UNITAL WITHDRAWN (v16 LEDGER #322)
+
+User-ordered read-only semantic recheck of Proposition I of
+`v16/paper-23a-v2-trace-sensitive-sector-algebra.md` against Paper 13D
+§§5.2/7.1/10.2 CONFIRMED the counterexample: the class product is
+defined by traversing the fusion generator, so fusing with an empty
+component yields a fusion history whose trace shape (Def 2.3) differs
+from the unfused complex; Proposition B separates them, and Exec_D
+carries no fusion-unit equation (§5.2), retains generator
+source/target boundaries in complete histories (§7.1), and never
+silently identifies distinct execution traces (§10.2). Hence
+$[\Phi_s(\chi\boxtimes U_\varnothing)]\neq[\chi]$: unital fails;
+Prop I is false as proved; $\{\mathbf 1\}$ is not even closed under
+$\otimes$.
+
+Correction `v16/note-paper23a-v2-adjudication-correction.md`
+(ordinary SHA-256
+`7420231c00d931969344cc7c3d9321a33cd1bf71aa178d3da82a9e8a531d7055`,
+160 LF) withdraws forward-only, editing no frozen bytes (candidate
+unchanged at `eca8e1670ecf0c02739c6f94c81e9eefe84b1809240efd8ea9bba94bb886820f`):
+Prop I; the UNITAL tag component (corrected tag
+`P23AV2-ALGEBRA-COMMUTATIVE-GRADED-NONASSOCIATIVE-MAGMA-WITHOUT-UNIT`);
+§4.3 row 3e (unit EXISTS → ABSENT); §4.1's empty-corner "trivially
+associative" sentence; all unit clauses in §§4.1/§6. Retained with
+independent support: trace-sensitive congruence, repaired descent,
+Prop D well-definedness, Lemma E/Thm F carrier-monotonic finite-closure
+failure (strengthened — no nontrivial subfamily closes), Prop G
+commutativity, Prop H nonassociativity, Prop J duals absent, and
+`P23AV2-FP-BOOTSTRAP-ROUTE-CLOSED-FOR-PRESENT-GAMMA` at unchanged
+fixture scope (depends only on associativity failure). Terminal status
+remains ACCEPT-WITH-SCOPE under the corrected coordinate set. One-strike
+not triggered. No seat reopened; no repair to frozen bytes ordered; no
+v3 authorized. No automatic successor.
