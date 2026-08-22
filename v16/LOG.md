@@ -7930,3 +7930,46 @@ remains CONDITIONAL; its missing bridge is proved missing for the
 present law. Dimension firewall intact; ensemble gate closed; #237
 wall respected; Paper 22 v3 consumed nowhere. One-strike not
 applicable. Unit C closes. Unit D remains authorized-but-unpinned.
+
+## 2026-08-22 — ADJUDICATION CORRECTION TO #329 — PAPER 23C NO-GO RE-DERIVED ON THE CORRECT QUOTIENT (v16 LEDGER #330)
+
+User-ordered read-only semantic correction
+`v16/note-paper23c-adjudication-correction.md` (ordinary SHA-256
+`a462a10d1f590c7581951db609fdaa66ea1aced17f1f92889540c9f6bd4b503e`,
+130 LF). Frozen candidate bytes unchanged at `9f106e45…`.
+
+The target of Def 2.3 is an exchangeable class — ordered pairs modulo
+simultaneous transport AND rank swap. Proposition A as printed tested
+fixed points of ordered pairs, not swap classes: the user's n=2
+counterexample ($L_1\colon1<2$, $L_2\colon2<1$; carrier transposition
+exchanges them; the class is fixed) stands, and in fact every
+transport-saturated swap class is stabilizer-fixed at every size, so
+class-valued equivariant outputs are trivially fixed — Prop A is VOID
+as proved and excludes nothing. Proposition F's witness pair (assignment
+vs rank swap) does not differ as target values. Three seats and #328
+all checked against the ordered-pair reading and missed this.
+
+Corrected analysis (exact recomputation): existence of class-valued
+covariant assignments on symmetric experiments is NOT excluded;
+the no-go survives as a DETERMINATION failure — the antiparallel
+class $[(L,\mathrm{rev}\,L)]$ and parallel class $[(L,L)]$ are distinct
+exchangeable classes (verified n=2..4) carrying one identical Γ_D law
+(Lemma C relabeling invariance) with oriented-pattern densities 0 vs
+1/6 (Prop D), so no admissible assignment is law-selected (C2); on
+rigid experiments antiparallel- and parallel-class assignments are both
+admissible and genuinely non-equivalent (C3). Prop B survives
+untouched.
+
+Coordinate changes: WITHDRAWN
+`P23C-EQUIVARIANT-FIXED-POINT-OBSTRUCTION`;
+RENAMED/RE-EARNED `P23C-RIGID-EXPERIMENT-UNIQUENESS-FAILURE` →
+`P23C-REALIZER-CLASS-UNIQUENESS-FAILURE`; PRIMARY renamed
+`P23C-ORIENTED-PAIR-NOT-DETERMINED-BY-GAMMA` (present-Γ_D fixture
+scope). Retained unchanged: `P23C-NO-COVARIANT-SINGLE-ORDER`,
+`P23C-LAW-RANK-INVARIANCE`, `P23C-UNORIENTED-BOND-STRUCTURE-DERIVED`.
+Paper 15 gate outcome unchanged: rigidity CONDITIONAL, bridge missing
+for the present law. Dimension firewall intact; ensemble gate closed.
+No new construction; no v2; Unit D stays closed pending user
+authorization; one-strike not triggered. Scoped synthesis (present-Γ_D
+only; law-level vs root/state/Π_phys-level symmetry breaking explicitly
+distinguished) separately authorized as the next event.
