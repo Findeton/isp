@@ -49,10 +49,11 @@ seed, control phase, or history identifier.
 **Definition 2.3 (covariant assignment).** A rule $\mathcal A$
 assigning to each presented experiment an equivalence class of ordered
 pairs $(L_1,L_2)$ of total orders on its occurrence carrier, such that
-for every presentation morphism $h$, $\mathcal A(h\widehat e)
-=h\,\mathcal A(\widehat e)$ (naturality under the groupoid action),
-and whose values factor through the physical quotient of Definition
-2.1.
+for every *admissible* presentation morphism $h$ — one for which
+$h\widehat e$ is defined and presented — $\mathcal A(h\widehat e)
+=h\,\mathcal A(\widehat e)$ (naturality under the groupoid action on
+its domain), and whose values factor through the physical quotient of
+Definition 2.1.
 
 **Definition 2.4 (derivability).** The exchangeable oriented
 null-realizer pair is *derived from $\Gamma_D$* iff there exists a
@@ -63,24 +64,28 @@ Derivability fails if any clause is provably unsatisfiable.
 
 ## 3. Three obstructions
 
-> **Proposition A (fixed-point obstruction).** For any presented
-> experiment with $|{\mathcal G}_{\widehat e}|$ acting transitively-
-> containing a transposition of two occurrences ($|I|\ge2$, unmarked
-> or mark-symmetric), no admissible observable outputs an ordered pair
-> of total orders on $I$.
+> **Proposition A (fixed-point obstruction).** Over the class of
+> presented experiments whose stabilizer contains a transposition of
+> two occurrences — in particular every unmarked experiment of size
+> $|I|\ge2$, and every experiment whose marks are invariant under some
+> transposition $(i\ j)$ — no admissible observable outputs an ordered
+> pair of total orders on $I$. Experiments outside this class are
+> deferred to §4.
 >
-> **Proof.** Let $g\in{\mathcal G}_{\widehat e}$. By Definition 2.1 the
-> cell map $[H]\mapsto[gH]$ is the identity on orbit cells, so the
-> equivariance law gives $R_{\widehat e}([H])=gR_{\widehat e}([H])$:
-> every emitted value is fixed by $g$. The unmarked grand experiment at
-> size $n$ has stabilizer containing the full symmetric group (13D §12:
-> exchangeable source and seed laws; "no canonical order on $I$ is
-> used"), and likewise every experiment whose marks are invariant under
-> some transposition $(i\ j)$ admits one. But no ordered pair of total
+> **Proof.** Let $g\in{\mathcal G}_{\widehat e}$ be such a
+> transposition. By Definition 2.1 the cell map $[H]\mapsto[gH]$ is the
+> identity on orbit cells, so the equivariance law gives
+> $R_{\widehat e}([H])=gR_{\widehat e}([H])$: every emitted value is
+> fixed by $g$. The unmarked grand experiment at size $n$ has
+> stabilizer containing the full symmetric group (13D §14: "no
+> canonical order on $I$ is used"; Theorem 2's exchangeability
+> argument), which supplies such transpositions. But no ordered pair of
+> total
 > orders on a set of size $\ge2$ is fixed by a transposition acting on
 > coordinates: a fixed order would need $x<_{L_i}y$ and $y<_{L_i}x$
-> simultaneously. Verified exhaustively for $n=2,\dots,5$ over all
-> $(n!)^2$ pairs. ∎
+> simultaneously. (This general argument is primary; the exhaustive
+> finite verifications for $n=2,\dots,5$ are audit scaffolding only,
+> not part of the constructed object.) ∎
 
 *(Citation anchor for the stabilizer claim: 13D §14 — unmarked
 $U_\varnothing$ grand experiment, "no canonical order on $I$ is used"
@@ -103,16 +108,19 @@ port-swap groupoid of §3.1.)*
 > **Lemma C (bond-law rank blindness).** On the unmarked primitive
 > $U_\varnothing(I)$: the joint law of all physical fields — packets,
 > colors $d_i=e'_i$, records, and endpoint bonds $\ell_{ij}$ — is
-> invariant under any relabeling or independent reversal of the two
-> hypothetical ranks. Every field is a function of fair bits, uniforms,
-> and the fresh pair seeds $v_{ij}$; the bond law (13D §6.3) depends
-> only on color equality and $v_{ij}$. In particular the law contains
-> no rank-correlated object whose orientation could be read off.
+> invariant under all carrier relabelings. Every field is a function of
+> fair bits, uniforms, and the fresh pair seeds $v_{ij}$; the bond law
+> (13D §6.3) depends only on color equality and $v_{ij}$. In particular
+> the law contains no rank-correlated object whose orientation could be
+> read off.
 >
 > **Proof.** Each packet coordinate is a bitwise function (13D §6.2) of
 > exchangeable inputs; $\ell_{ij}=\mathbb 1[v_{ij}<16\text{ or }9]$
-> conditioned on $d_i,d_j$ only. Reversing a hypothetical rank changes
-> no input distribution and no kernel. ∎
+> conditioned on $d_i,d_j$ only. Hence the complete physical-field law
+> is invariant under all carrier relabelings; the hypothetical ranks
+> are not $\Gamma_D$ variables, and any decoration law over them (as in
+> Proposition D) pushes forward to this one relabeling-invariant law.
+> ∎
 
 > **Proposition D (informational obstruction).** There exist two rank
 > couplings with identical complete $\Gamma_D$ law but different
@@ -121,8 +129,8 @@ port-swap groupoid of §3.1.)*
 > quotient.
 >
 > **Proof.** Fix three occurrences. Coupling A draws $L$ uniformly and
-> sets $(L_1,L_2)=(L,\mathrm{rev}\circ L)$; coupling B draws $L$
-> uniformly twice independently… specialize B to $(L,L)$. Under both
+> sets $(L_1,L_2)=(L,\mathrm{rev}\circ L)$; coupling B is defined as
+> $(L,L)$ with $L$ uniform. Under both
 > couplings the induced joint law of $(d_i)_{i},(\ell_{ij})_{ij}$ is
 > identical by Lemma C (colors and bonds do not see ranks), so the
 > physical quotient cells and masses coincide — $\Gamma_D$ assigns the
@@ -152,17 +160,19 @@ experiment has trivial stabilizer, where Proposition A's fixed-point
 demand is empty. This does not reopen derivability:
 
 > **Proposition F (rigid-experiment uniqueness failure).** On any
-> trivial-stabilizer experiment, every function from history cells to
-> order-pairs is admissible (equivariance is vacuous). Given any two
-> candidates producing different oriented-pattern laws — they exist,
-> since both constant-on-cells assignments and their swaps are
-> admissible and differ — $\Gamma_D$ provides no datum selecting
-> between them. Choosing one would require smoothness, aesthetics, or
-> apparatus preference, all forbidden (#237 decoder-nonselection wall,
-> pin control 1). Derivability therefore fails on uniqueness, exactly
-> where it fails on existence elsewhere.
+> trivial-stabilizer experiment, every assignment extendible to an
+> equivariant family on the presentation orbit is admissible
+> (self-equivariance is vacuous); both an assignment and its rank swap
+> $L_1\leftrightarrow L_2$ qualify, and they differ. $\Gamma_D$
+> provides no datum selecting between them. Choosing one would require
+> smoothness, aesthetics, or apparatus preference, all forbidden (#237
+> decoder-nonselection wall, pin control 1). Derivability therefore
+> fails on uniqueness, exactly where it fails on existence elsewhere.
 >
-> **Proof.** Vacuous equivariance makes all assignments admissible;
+> **Proof.** With trivial stabilizer the equivariance constraint is
+> vacuous at $\widehat e$, so any two assignments that transport
+> coherently along the presentation orbit — in particular an
+> assignment and its $L_1\leftrightarrow L_2$ swap — are admissible;
 > Lemma C shows the law is blind to the distinction any choice would
 > encode; the pin forbids extra-legal selection principles. ∎
 
@@ -177,12 +187,15 @@ Exactly this much order content descends covariantly:
 
 - the **undirected endpoint-bond graph** $\{i,j\}\mapsto\ell_{ij}$:
   equivariant by Lemma C's proof, defined at every size, the unique
-  maximal $\Gamma_D$-native binary relation (`P23C-UNORIENTED-BOND-
-  STRUCTURE-DERIVED`);
+  maximal $\Gamma_D$-native binary relation — unique because every
+  equivariant binary relation is constant on stabilizer orbits, and the
+  bonds are the only nontrivial native pairwise field carried at every
+  size (`P23C-UNORIENTED-BOND-STRUCTURE-DERIVED`);
 - the **exchangeability class** of any externally supplied pair:
-  Paper 15's $\pi_n$ invariances (simultaneous transport, rank swap)
-  match $\Gamma_D$'s groupoid action, so the contract's quotient is
-  coherent — but coherence is not supply.
+  Paper 15's exchangeability quotient of its poset laws (simultaneous
+  presentation transport and rank swap) matches $\Gamma_D$'s groupoid
+  action, so the contract's quotient is coherent — but coherence is not
+  supply.
 
 This residual is precisely Paper 14/Paper 15's unlabeled structural
 poset situation: dependency-without-direction. The gate closes the way
@@ -192,7 +205,9 @@ of its dichotomy.
 ## 6. Outcomes earned
 
 ```text
-P23C-ORIENTED-PAIR-NOT-DERIVABLE              (primary, pin §5)
+P23C-ORIENTED-PAIR-NOT-DERIVABLE              (primary, pin §5;
+    scope: certified fixtures of terminal Γ_D only — this no-go does
+    not preclude derivation from any future enlarged accepted law)
 P23C-EQUIVARIANT-FIXED-POINT-OBSTRUCTION      (Prop A)
 P23C-NO-COVARIANT-SINGLE-ORDER                (Prop B)
 P23C-LAW-RANK-INVARIANCE                      (Lemma C + Prop D)

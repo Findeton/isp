@@ -7898,3 +7898,35 @@ TERMINAL ACCEPT-WITH-SCOPE with `P23C-ORIENTED-PAIR-NOT-DERIVABLE`
 (primary, present-Γ_D fixture scope) plus five sub-coordinates.
 Dimension firewall intact. One-strike not applicable. Next event:
 execute ordered repair and verify.
+
+## 2026-08-22 — PAPER 23C REPAIR EXECUTED AND VERIFIED — TERMINAL ACCEPT-WITH-SCOPE (v16 LEDGER #329)
+
+The nine ordered repairs (#328) were executed on
+`v16/paper-23c-oriented-pair-underdetermination.md` and verified
+byte-exact: the diff against the frozen #326 bytes
+(`7e90aba64c4abf5585d409f8d9696c76e0308007da3f81607e8e187cf709f126`)
+contains exactly the nine replacement sentences located by the seats
+and nothing else — Def 2.3 admissible-morphism quantifier; Prop A
+restated over transposition-stabilized classes with §14 anchor; Prop D
+artifact deleted; Prop A finite checks marked audit-only; Lemma C
+restated as carrier-relabeling invariance with pushforward clause;
+Lemma C proof coupling clause; Prop F extendible-assignment restriction
+(statement + proof); §5 uniqueness justification; §5 exchangeability-
+quotient naming; §6 fixture-scope engraving. No number, definition,
+outcome name, control disposition, or scope wall moved otherwise.
+Post-repair ordinary SHA-256
+`9f106e4526065593b3ab7cdd1b0202bee9bef2428b4bd0646abd428dc70fa3ca`
+(250 LF).
+
+Disposition: **TERMINAL — ACCEPT-WITH-SCOPE.** Earned coordinates at
+certified-fixture scope of terminal Paper 13D:
+`P23C-ORIENTED-PAIR-NOT-DERIVABLE` (primary; present-Γ_D fixtures
+only, no preclusion against future enlarged laws),
+`P23C-EQUIVARIANT-FIXED-POINT-OBSTRUCTION`,
+`P23C-NO-COVARIANT-SINGLE-ORDER`, `P23C-LAW-RANK-INVARIANCE`,
+`P23C-RIGID-EXPERIMENT-UNIQUENESS-FAILURE`,
+`P23C-UNORIENTED-BOND-STRUCTURE-DERIVED`. Paper 15's rigidity theorem
+remains CONDITIONAL; its missing bridge is proved missing for the
+present law. Dimension firewall intact; ensemble gate closed; #237
+wall respected; Paper 22 v3 consumed nowhere. One-strike not
+applicable. Unit C closes. Unit D remains authorized-but-unpinned.
