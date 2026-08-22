@@ -6999,3 +6999,15 @@ route needed to instantiate the interferometer.
 The exact construction therefore motivates Paper 22's typed reversible local
 instrument but does not select its occurrence, a cosmological root, chronology,
 dimension, metric, gravity, or actuality.
+
+## 2026-08-21 — PAPER 22 REVERSIBLE-INSTRUMENT PIN FREEZE (v16 LEDGER #288)
+
+The original Paper 22 mathematical pin is committed at
+`v16/note-paper22-reversible-structural-instrument-pin.md`, ordinary SHA-256
+`de32c02ee1be613eef4a867dadf9bc1c84fc8ed492b764f7545bb54fb91a5ae4`.
+It asks for one typed reversible tensor/fusion query, coherent recombination,
+and a later dependent-output commit while keeping occurrence, activity, root,
+chronology, dimension, and geometry outside the claim.
+
+This commit freezes the predecessor question only. The candidate, review
+protocol, reports, and adjudication remain separate subsequent events.
