@@ -7069,3 +7069,23 @@ independently reconstructs the `R`, `B`, `C_phi`, record, erasure,
 factorization, and accessible-child probabilities while retaining the walls
 against occurrence, chronology, dimension, and geometry. Its acceptance does
 not answer the total source-typing defect found by the other two seats.
+
+## 2026-08-21 — PAPER 22 INDEPENDENT ADJUDICATION (v16 LEDGER #294)
+
+The three-seat panel is adjudicated at
+`v16/note-paper22-reversible-structural-instrument-adjudication.md`, ordinary
+SHA-256
+`c261520aa142bf07a489f87cd0364628f094794c7523c03d8ba3dde05d824a07`.
+Disposition: `REVISE — LOCAL MATHEMATICAL CORE SURVIVES / CANDIDATE NOT
+ACCEPTED`.
+
+The decisive counterexample is semantic, not computational: the source
+definition admits two active complete Paper 13D components of different
+atomic boundary sorts, but simultaneous fusion, the fusion query, fused
+projector, and `F` commit require one common sort. The local homogeneous-source
+unitary/probability core survives unchanged. A single bounded successor may
+restrict the source to homogeneous active-sort fibers, refuse heterogeneous
+families before evaluation, define zero/one-active restrictions branchwise,
+and allow only external tensor products of already typed instruments. Paper 22
+remains unaccepted; Paper 23, occurrence, chronology, dimension, metric, and
+gravity remain closed.
