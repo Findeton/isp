@@ -17,13 +17,17 @@ cleanly if nature does not support it.
 
 ## Live state
 
-- Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
+- Era status: **ACTIVE — PROGRAMME-WIDE REALITY-FIRST AUTHORIZATION RECORDED**.
 - Paper 01 status: **TERMINAL ACCEPT-WITH-SCOPE — COMPOSITIONAL OPERATIONAL
   EQUIVALENCE WITH ONTOLOGY DEBT**.
 - Paper 02 status: **ADJUDICATED REVISE — CANONICAL QUOTIENT AND
   PHASE-COMPLETE RESIDUE SURVIVE**. The contextual-ontology bridge is
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
+- Paper 02 v2 status: **AUTHORIZED — FRESH SEMANTIC PIN NEXT**. Its exact
+  scope is the prequotient procedure architecture
+  $\mathcal P\to\mathcal Q$ and the Barandes-row correction; it may add no
+  physical postulate or pre-award a successor.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

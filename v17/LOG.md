@@ -454,3 +454,30 @@ prequotient laboratory-procedure category
 $q:\mathcal P\to\mathcal Q$ and ontological representations on $\mathcal P$.
 That change is semantic and requires explicit user authorization. No candidate
 edit, code, Paper 03, clock, spacetime, or gravity unit opens automatically.
+
+## 2026-08-22 — PROGRAMME-WIDE V17 AUTHORIZATION RECORDED (v17 LEDGER #18)
+
+The user explicitly authorizes fully developing v17 along its reality-first
+plan, including everything scientifically required to pursue a full theory of
+reality. This is research authority, not evidence and not a pre-awarded
+theory.
+
+The authorization permits sequential frozen mathematical pins,
+constructions, independent reviews, adjudications, bounded semantic repairs,
+and scientifically justified successors throughout the registered v17 plan.
+It does not authorize any of the following shortcuts:
+
+1. treating a desired quantum-gravity conclusion as an input;
+2. weakening a failed gate after its result is known;
+3. replacing physics with code conformance;
+4. calling declared spacetime, dimension, metric, action, state, or selector
+   derived;
+5. bypassing independent review or the declared-input ledger; or
+6. claiming a full theory merely because the programme is authorized to seek
+   one.
+
+The first live cycle is the bounded Paper 02 v2 repair named at #17. It must
+freeze a fresh result-neutral pin before construction, introduce the
+prequotient procedure architecture $q:\mathcal P\to\mathcal Q$, and correct
+the Barandes row without adding a physical postulate. Paper 03 and every later
+unit remain gated by terminal predecessor results.

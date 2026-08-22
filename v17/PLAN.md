@@ -2,8 +2,8 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 terminal, Paper 02 adjudicated
-REVISE at a surviving rung-4 ceiling**
+Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
+semantic repair authorized and awaiting its fresh pin**
 
 ## 0. Authority and workflow
 
@@ -149,6 +149,13 @@ $q:\mathcal P\to\mathcal Q$, define ontological representations on
 $\mathcal P$, and restate contextuality as failure to factor through $q$.
 Paper 03 remains closed pending explicit authorization and terminal review of
 that repair, or a user decision to accept the rung-4 stopping point.
+
+**Authorization state.** The user has now explicitly authorized the full v17
+programme and everything scientifically required to pursue it. This supplies
+the go-ahead for one Paper 02 v2 semantic cycle at the exact adjudicated scope.
+It does not weaken pins, hostile review, result neutrality, declared-input
+accounting, empirical gates, or the prohibition on pre-awarding later physics.
+Paper 03 still opens only after Paper 02 v2 earns a terminal scoped result.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 
