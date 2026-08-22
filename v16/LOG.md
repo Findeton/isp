@@ -7339,3 +7339,22 @@ intermediate-scalar slip in the Theorem 7 proof, a visibility
 contradiction between Corollaries 7.1 and 7.3, an exemplar sign error at
 the control point, and the unscoped `gamma=1` form of the joint law)
 are ordered as bounded prose repair.
+
+## 2026-08-22 — PAPER 22 V3 QUANTUM REPORT (v16 LEDGER #305)
+
+The mutually blind quantum/no-hiding seat freezes at
+`v16/review-paper22-v3-quantum.md`, ordinary SHA-256
+`4892baa59db0adf2b8a9803637731c7ffe9f5edca9936a82ef496579be6cb66d`
+(255 LF / 13,201 bytes). Verdict: `ACCEPT-WITH-FIXES`.
+
+The apparatus chain (purification, controlled witness computations,
+closure, kickback with its held-out discriminator) was rebuilt and matches
+the v1 restoration source; law (V) was re-derived from the
+residual-environment Born rule and both mandatory visibility regressions
+pass — `gamma=i, phi=pi/2` yields `I_2`, and the pure-fringe family
+`gamma=e^{i theta}` shifts the fringe by `+theta`. All v2 quantum
+survivors pass. The same four MINOR prose defects found independently by
+the other seats (Theorem 7 intermediate scalar, Corollary 7.1/7.3
+visibility contradiction, control-point exemplar sign, unscoped Theorem 9
+joint law) are ordered as bounded prose repair. No third independent
+semantic counterexample was found.
