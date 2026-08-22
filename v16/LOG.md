@@ -8039,3 +8039,35 @@ post-hoc family ban, support gerrymander, rank smuggle, conditional
 mutation (any H-dependent term retunes physics). No code; no new
 primitive orientation; no automatic successor. Next events:
 construction → three-seat blind review → adjudication.
+
+## 2026-08-22 — PAPER 23D CONSTRUCTED — ORIENTATION FIBER-INERT (v16 LEDGER #333)
+
+Under pin #332, `v16/paper-23d-orientation-descent.md` frozen (ordinary
+SHA-256 `699fe5b72037f47a6ef93b51af548a7b476a400a94230eb3d3c606bdf95a52e8`,
+182 LF). Primary outcome: **`P23D-ORIENTATION-FIBER-INERT`** (universal,
+∀Π∈P), plus `P23D-CLEAN` on the smuggling audit. Architecture: Lemma A
+(within-fiber multiplicity ≥2 for every |I|≥2 complex; unmarked counts
+2/5/17 at n=2/3/4, exact) places the orientation ambiguity INSIDE each
+fiber; Lemma B (weight inertia — every Π∈P is fiber-constant by pin
+construction) makes all joint laws of the #308 form identical across
+that ambiguity. Four-way classification: Q1 NO (restriction of a
+χ-measurable extractor to the free-carrier subcategory inherits
+P23C-NO-COVARIANT-SINGLE-ORDER); Q2 NO for every Π with nontrivial
+content (support acts between fibers; marks forgotten in Cpx so landmark
+rigidity invisible at weight input; asymmetric-program complexes still
+rank-blind field-by-field, e.g. 21 swap classes over a trivial-groupoid
+n=3 complex; single-class fibers only at |I|≤1, trivial); Q3 YES in the
+deep form — no well-definedness without fiat, and under fiat the output
+law is identical for every Π,Π'∈P: scalar weights cannot create new
+measurables; Q4 CLEAN (no rank/label/root/support/σ-algebra smuggling).
+Theorem C: no admissible whole-process law of the #308 disintegration
+form determines the exchangeable oriented null-realizer class on any
+carrier of size ≥2. Failure attribution (pin §7 requirement): weights
+fail BOTH by fiber-inertness AND by inherited conditional blindness —
+13D histories contain no occurrence-order datum at all (occurrence data
+in finite sets; trace order is per-generator source/target kinds), so
+the obstruction is not an artifact of scalar weighting. Named
+subfamilies P_unif/P_v/P_size checked existentially: none distinguishes
+the #330 witnesses (identical v(χ), size). Quantifier ledger engraved;
+Paper 17 and dimension stay closed; no automatic successor. Next event:
+three-seat blind review.
