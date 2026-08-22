@@ -6986,3 +6986,16 @@ point-free, deletion-projective law on predictive endpoint classes. The same
 experiment still has a Dirac whole-process marginal: it supplies no activity
 law, no occurrence selector over execution architectures, and no global
 chronology or dimension law.
+
+## 2026-08-21 — PAPER 21 STRUCTURAL-INTERFEROMETER ARCHIVE (v16 LEDGER #287)
+
+The result-neutral recombination investigation, frozen interferometer pin,
+and exact Paper 21 mathematical construction are archived at their existing
+bytes. The experiment separates an open structural route, a stable which-route
+record, coherent recombination, and direct-versus-cut laws. It is a conditional
+new-law discriminator: Paper 13D does not itself contain the reversible fusion
+route needed to instantiate the interferometer.
+
+The exact construction therefore motivates Paper 22's typed reversible local
+instrument but does not select its occurrence, a cosmological root, chronology,
+dimension, metric, gravity, or actuality.
