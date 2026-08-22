@@ -7845,3 +7845,36 @@ port-swap groupoid. No claim moved. Post-amendment ordinary SHA-256
 (235 LF); pre-amendment bytes recoverable at
 `c50fa59652bb2fe0fc4f5d938bdc5dc729900e5d56d1197bff605a69557bc185`.
 All later references to "#325 construction" mean this post-amendment hash.
+
+## 2026-08-22 — PAPER 23C THREE-SEAT BLIND REVIEWS FROZEN (v16 LEDGER #327)
+
+Three mutually blind delta seats against pin #324 and construction
+#325/#326 (`7e90aba6…`), all ACCEPT-WITH-FIXES, no structural defect
+found:
+
+- Seat C (category/structure) `v16/review-paper23c-category.md`,
+  SHA-256
+  `e945a8ae36fe2b9dbd15ea0389e4adc7b5d71ddafe86a0ca1f41610fc2df83dd`
+  (67 LF): F-C1 Def 2.3 quantifier ill-typed over non-admissible
+  morphisms (MAJOR); F-C2 Prop A stabilizer hypothesis conflates
+  unmarked and arbitrary experiments (MAJOR); F-C3 editing artifact in
+  Prop D proof (MODERATE); F-C4 "unique maximal" unproved (MINOR).
+- Seat P (probability/instrument) `v16/review-paper23c-probability.md`,
+  SHA-256
+  `bf676fb2f1d406918abcae0d0e5aeba7c2c683b50f52ce6cce1a11929f6d7936`
+  (55 LF): F-P1 Lemma C "independent reversal" vacuous — restate as
+  carrier-relabeling invariance (MAJOR); F-P2 exhaustive finite checks
+  redundant given Prop A's general argument; mark as scaffolding
+  (MODERATE).
+- Seat Q (quantum/emergence) `v16/review-paper23c-emergence.md`,
+  SHA-256
+  `c546f849a2a6c595748663273c693977db8cac99421b30330078b35a1dceac20`
+  (62 LF): F-Q1 Prop F "every function admissible" overreaches —
+  restrict to equivariantly extendible assignments; no-go survives
+  (MAJOR); F-Q2 engrave fixture scope of the no-go (MODERATE); F-Q3
+  undefined "π_n" name (MINOR).
+
+All seats independently confirm the three-obstruction architecture,
+the landmark closure, exact arithmetic, control rows 1–10, and the
+earned outcome `P23C-ORIENTED-PAIR-NOT-DERIVABLE` modulo repairs.
+Next event: adjudication.
