@@ -7089,3 +7089,22 @@ families before evaluation, define zero/one-active restrictions branchwise,
 and allow only external tensor products of already typed instruments. Paper 22
 remains unaccepted; Paper 23, occurrence, chronology, dimension, metric, and
 gravity remain closed.
+
+## 2026-08-21 — PAPER 22 V2 HOMOGENEOUS-SOURCE PIN (v16 LEDGER #295)
+
+The one authorized bounded replacement freezes at
+`v16/note-paper22-reversible-structural-instrument-v2-pin.md`, ordinary
+SHA-256
+`a4c1c2ecd10edad73ed64b12f699c09d7cfd169d4cd264939990589554693627`.
+
+The immutable scientific core is unchanged. The replacement makes the source
+a coproduct of homogeneous active-sort groupoids, refuses heterogeneous active
+families before query/fusion/commit evaluation, treats zero- and one-active
+restrictions branchwise, and permits disjoint composition only as an external
+tensor product of already typed instruments. It does not alter `R`, `B`,
+`C_phi`, the no-hiding theorem, query, uncomputation, commit probabilities, or
+Paper 13D.
+
+Only the two versioned construction paths named by the pin are now writable.
+No automatic v3 exists; occurrence, root, chronology, dimension, metric,
+gravity, and actuality remain outside the unit.
