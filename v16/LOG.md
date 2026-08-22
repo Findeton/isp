@@ -7779,3 +7779,32 @@ family. Retained unchanged: commutativity, nonassociativity,
 fixture-scoped FP-route closure, corrected algebra tag without unit,
 all scope walls, Paper 17 gate CLOSED. One-strike not triggered; no v3;
 no automatic successor. Unit C opens next through its own fresh freeze.
+
+## 2026-08-22 — UNIT C PIN FROZEN — PAPER 23C ORIENTED-PAIR SIDE GATE (v16 LEDGER #324)
+
+User authorized Unit C: one mathematics-only theorem/no-go on whether
+terminal Γ_D derives the exchangeable oriented null-realizer pair
+consumed by Paper 15 §4.8's conditional full-pattern rigidity theorem
+(#239's exact open emergence gate), or provably does not. Both outcomes
+are wins.
+
+Pin `v16/note-paper23c-oriented-pair-pin.md` frozen (ordinary SHA-256
+`d50dc41c7a7cf4f42b5caf3489b790990f9d899c113020a495844fbcac5dfcd2`,
+153 LF). Bound corpus: Paper 13D `3b91766f…` (sole scientific source),
+Paper 15 `254178e1…` (target contract ONLY), Paper 14 `ffc3dca2…`
+(provenance record), #322/#323 notes, PLAN at
+`8279b922eda007ab3ee55843fd6d467bbed054f4f82184f1ff8f6bd34e4b89c2`.
+Not importable from Paper 15: Poisson/Palm sampling, copula/decoder,
+orientation conventions, smoothness (#237 wall verbatim), any metric/
+dimension/chronology conclusion; Paper 14 poset remains a structural
+referent only. Authorized outcomes pre-registered:
+`P23C-ORIENTED-PAIR-DERIVED-COVARIANTLY`,
+`P23C-ORIENTED-PAIR-NOT-DERIVABLE`, `P23C-ORIENTED-PAIR-GATE-BLOCKED`
+(hybrid, scope engraved). Ten hostile controls including smuggled-
+smoothness, representative-choice, local-X/Y-swap blindness,
+naked-coordinate reader, uniqueness-assumed. Dimension firewall: Unit C
+alone cannot open dimension selection; the ensemble gate stays closed;
+Paper 15 rigidity remains CONDITIONAL regardless of outcome. No code;
+no new physical postulate; no automatic repair or successor unit.
+
+Next events: construction → three-seat blind review → adjudication.
