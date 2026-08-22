@@ -7148,3 +7148,18 @@ adjudicated domain failures are mandatory regressions. Each seat must add at
 least four fresh attacks and return the full product vector. Reports must
 freeze separately before joint adjudication. No implementation or successor
 physics is authorized by this protocol.
+
+## 2026-08-21 — PAPER 22 V2 CATEGORY REPORT (v16 LEDGER #298)
+
+The mutually blind source/category/functor report freezes at
+`v16/review-paper22-reversible-structural-instrument-v2-category.md`, ordinary
+SHA-256
+`880f1135a2d781e1978c9f38d0ffb056bed2825c8bb200ff4b184d5eb0bf9cba`
+(512 LF / 22,405 bytes). Verdict: `REVISE`.
+
+The homogeneous source, total child pair, restriction, source-indexed commit,
+and external tensor repairs pass. The first decisive failure is an
+unauthorized change from the bound uniform 25-state seed purification to a
+biased qubit, without the coarse-bin isometry and complement needed to relate
+the two carriers. The report also independently finds the complex-overlap
+partial-visibility error.
