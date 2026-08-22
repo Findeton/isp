@@ -62,15 +62,19 @@ theory-selection result.
   closed: pin #324 (`d50dc41c…`) → construction #325/#326 → three blind
   seats #327 (all ACCEPT-WITH-FIXES, nine findings, none structural) →
   adjudication #328 → verified repair #329: **TERMINAL ACCEPT-WITH-
-  SCOPE** at `9f106e45…`. Primary coordinate
-  `P23C-ORIENTED-PAIR-NOT-DERIVABLE` (present-Γ_D fixture scope): the
-  exchangeable oriented null-realizer pair consumed by Paper 15 §4.8's
-  rigidity theorem is provably not derivable from terminal Γ_D — fixed-
-  point obstruction (Prop A), no covariant single order (Prop B),
-  law-rank invariance witness densities 0 vs 1/6 (Lemma C + Prop D),
-  and uniqueness failure on landmark-rigid experiments (Prop F). Only
-  the undirected endpoint-bond graph descends. Paper 15 rigidity stays
-  CONDITIONAL; dimension firewall intact; ensemble gate closed.
+  SCOPE** at `9f106e45…`, corrected forward-only at #330. Corrected
+  primary coordinate `P23C-ORIENTED-PAIR-NOT-DETERMINED-BY-GAMMA`
+  (present-Γ_D fixture scope): Γ_D does not determine the exchangeable
+  oriented null-realizer-pair class — antiparallel [(L, rev∘L)] and
+  parallel [(L,L)] classes are distinct targets with one identical law
+  and oriented-pattern densities 0 vs 1/6, and rigid-experiment
+  assignments to genuinely distinct classes are both admissible and
+  non-equivalent. Prop B (no covariant single order) and the undirected
+  bond residual retained; Prop A's fixed-point obstruction WITHDRAWN at
+  #330 (it tested ordered pairs, not swap classes — user n=2
+  counterexample: every transport-saturated swap class is stabilizer-
+  fixed). Paper 15 rigidity stays CONDITIONAL; dimension firewall
+  intact; ensemble gate closed.
 - Authorized next unit (user holds ordering): (D) Tier-2 declared-input
   ensemble calibration study, all results conditional.
 - `RHL` / Paper 11: **TERMINAL REJECT AT

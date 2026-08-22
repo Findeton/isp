@@ -2032,22 +2032,25 @@ Successor register, current:
   of H given chi equal to `Gamma_D`. Stage partition per #308's external
   feedback record.
 - Oriented-pair side gate (Unit C): **RAN AND CLOSED — TERMINAL ACCEPT-
-  WITH-SCOPE at #329** (`9f106e45…`, post-repair). Pin #324 →
-  construction #325/#326 → seats C/P/Q #327 (all ACCEPT-WITH-FIXES;
-  nine findings confirmed; none structural) → adjudication #328 (nine
-  prose repairs ordered) → repair verified byte-exact #329. Result: the
-  exchangeable oriented null-realizer pair consumed by Paper 15 §4.8's
-  rigidity theorem is **provably not derivable** from terminal Γ_D at
-  present-Γ_D fixture scope (`P23C-ORIENTED-PAIR-NOT-DERIVABLE`):
-  equivariant fixed-point obstruction under stabilizer transpositions
-  (Prop A), no covariant single order on free carriers (Prop B),
-  law-rank invariance — couplings (L, rev∘L) vs (L,L) share one Γ_D law
-  with oriented-pattern densities 0 vs 1/6 (Lemma C + Prop D) — and
-  uniqueness failure on landmark-rigid experiments (Prop F). Only the
-  undirected endpoint-bond graph and quotient coherence descend (§5).
-  Paper 15 rigidity remains CONDITIONAL with its missing bridge proved
-  missing for the present law; scope walls per pin §324 unchanged; #237
-  wall respected; dimension firewall intact.
+  WITH-SCOPE at #329, CORRECTED at #330** (`9f106e45…` bytes unchanged).
+  Pin #324 → construction #325/#326 → seats C/P/Q #327 (all ACCEPT-WITH-
+  FIXES; nine findings confirmed; none structural) → adjudication #328 →
+  repair verified byte-exact #329 → user-ordered correction #330.
+  Corrected result `P23C-ORIENTED-PAIR-NOT-DETERMINED-BY-GAMMA`
+  (present-Γ_D fixture scope): the target is the exchangeable realizer-
+  pair CLASS (mod transport and rank swap); Prop A's fixed-point
+  obstruction as printed was void for quotient-valued targets (user n=2
+  counterexample: transport-saturated swap classes are always stabilizer-
+  fixed), so class-valued covariant EXISTENCE is not excluded; the no-go
+  survives as a determination failure — antiparallel [(L, rev∘L)] vs
+  parallel [(L,L)] are distinct classes with one identical Γ_D law and
+  oriented densities 0 vs 1/6, so no admissible assignment is law-
+  selected; on rigid experiments both assignments are admissible and
+  genuinely non-equivalent (`P23C-REALIZER-CLASS-UNIQUENESS-FAILURE`).
+  Prop B (no covariant single order) and the undirected endpoint-bond
+  residual retained; `P23C-EQUIVARIANT-FIXED-POINT-OBSTRUCTION`
+  withdrawn. Paper 15 rigidity CONDITIONAL, bridge missing for the
+  present law; dimension firewall intact.
 - Tier-2 declared-input ensemble calibration study (Unit D): authorized,
   pin not yet frozen. Openly declared `Pi_phys` family, every result
   conditional, no derivation claims; rehearses the dimension-selection
