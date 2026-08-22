@@ -7551,3 +7551,18 @@ definitions verified exactly and stand as printed after repair.
 Stage 3 defects observed but out of mandate, referred to Seats C/F.
 Mandatory regressions within mandate: 3 PASS, 14 PASS, 17 PASS.
 Status: frozen before adjudication; Seat F is the next separate event.
+
+## 2026-08-22 — PAPER 23A SEAT F REVIEW FREEZE (v16 LEDGER #313)
+
+Seat F (fusion-algebra/representation), blind and independent, repo
+read-only. Report: `v16/review-paper23a-fusion.md`, ordinary SHA-256
+`705a47aeac07b6c774fd0aeae695cefc658da19442ee37e5a5f86879f128e9da` (     162 LF). Verdict: **REJECT**. Critical findings F-F1/F-F2: the
+derived multiplication is not well defined on the printed class set
+(fusion complexes are incongruent to primitive classes by the
+candidate's own Proposition A.2; bracketing and commutativity fail at
+class level), so the semiring, character, and involution conclusions
+stand on an unproved structure. Robust salvage noted: finite-closure
+failure is re-earnable via carrier monotonicity. Mandatory
+regressions: 3 PASS, 14 PASS, 15 FAIL, 16 CONDITIONAL-FAIL, 17 PASS.
+Status: frozen before adjudication; adjudication is the next separate
+event.
