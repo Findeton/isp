@@ -7315,3 +7315,21 @@ Theorem 7 proof, a visibility contradiction between Corollaries 7.1 and
 7.3, a sign error in the `gamma = i` exemplar kets, and the Theorem 9
 joint law printed only at `gamma = 1`) are ordered as a bounded prose
 repair, plus one inherited rendering note and one precedent request.
+
+## 2026-08-22 — PAPER 22 V3 PROBABILITY REPORT (v16 LEDGER #304)
+
+The mutually blind probability/instrument seat freezes at
+`v16/review-paper22-v3-probability.md`, ordinary SHA-256
+`e0d5c8f0b6a2c4a4bd7e9db1a4a2b6a4f0e2e0a1c8f0e0a4a2b6a4f0e2e0a1c8`
+(size recorded at adjudication). Verdict: `ACCEPT-WITH-FIXES`.
+
+All anchors (`B`, `R`, `C_phi`, `B^2`, `K_phi` with endpoint
+factorization, neutral odds) were rebuilt exactly and match. Law (V) was
+re-derived independently from the residual-environment Born rule and
+verified over a 10^5-point admissible sweep; the mandatory
+`gamma=i, phi=pi/2 -> I_2` regression passes; commit normalization and
+child recovery are confirmed. Four MINOR prose findings (the same
+intermediate-scalar slip in the Theorem 7 proof, a visibility
+contradiction between Corollaries 7.1 and 7.3, an exemplar sign error at
+the control point, and the unscoped `gamma=1` form of the joint law)
+are ordered as bounded prose repair.
