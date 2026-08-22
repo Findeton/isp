@@ -481,3 +481,32 @@ freeze a fresh result-neutral pin before construction, introduce the
 prequotient procedure architecture $q:\mathcal P\to\mathcal Q$, and correct
 the Barandes row without adding a physical postulate. Paper 03 and every later
 unit remain gated by terminal predecessor results.
+
+## 2026-08-22 — PAPER 02 V2 PROCEDURES-FIRST REPAIR PIN FROZEN (v17 LEDGER #19)
+
+The bounded semantic repair is frozen before construction at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02v2-procedure-quotient-repair-pin.md` | `4e69b1ee1155632d443631ec4dec0780ebba4b9823301fbdc06966e226d00d58` | 866 LF / 40,808 bytes |
+
+The pin corrects the v1 typing defect by separating concrete physical
+laboratory procedures $\mathcal P$ from their complete operational quotient
+$q:\mathcal P\to\mathcal Q$. Contextuality is the exact failure of a
+system-facing ontological assignment to factor through $q$; it is not a
+request that the entire apparatus world be identical. General whole-history
+packets are not silently Markovized.
+
+A pre-freeze audit found and removed one further collapse risk: $\mathcal P$
+is equipped with explicit trusted physical-randomization constructors rather
+than quotienting procedure arrows by convex identities. Operational decoding
+and the applicable system-facing assignment obey the affine equations; the
+underlying physical mixture procedures remain available to the contextuality
+test.
+
+The registered predictive-object ontological model is only a positive
+existence control. It may be global and memory-bearing and cannot select a
+fundamental ontology. The Barandes row remains admissible-but-unconstructed;
+no law, actuality mechanism, clock, QFT, spacetime, dimension, geometry, or
+gravity is added. All future Paper 02 v2 paths were absent at freeze. The sole
+next event is a result-neutral author audit of this pin.

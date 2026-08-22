@@ -24,10 +24,12 @@ cleanly if nature does not support it.
   PHASE-COMPLETE RESIDUE SURVIVE**. The contextual-ontology bridge is
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
-- Paper 02 v2 status: **AUTHORIZED — FRESH SEMANTIC PIN NEXT**. Its exact
-  scope is the prequotient procedure architecture
-  $\mathcal P\to\mathcal Q$ and the Barandes-row correction; it may add no
-  physical postulate or pre-award a successor.
+- Paper 02 v2 status: **MATHEMATICAL REPAIR PIN FROZEN — RESULT-NEUTRAL
+  AUTHOR AUDIT NEXT**. Its exact scope is the prequotient procedure
+  architecture $\mathcal P\to\mathcal Q$, trusted physical-randomization
+  constructors, system-facing contextuality as a descent obstruction, and
+  the Barandes-row correction. It adds no physical postulate and pre-awards
+  no successor.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -60,9 +62,9 @@ canonical reachable operational quotient and force phase-complete predictive
 structure. Static and dynamical idle fibers establish scoped
 nonidentifiability. A full contextual-fiber classification requires a
 prequotient laboratory-procedure category
-$\mathcal P\to\mathcal Q$ that the frozen construction lacks. Paper 03 remains
-closed unless that semantic repair is explicitly authorized and terminally
-reviewed.
+$\mathcal P\to\mathcal Q$ that the frozen construction lacks. The bounded v2
+repair is now authorized and pinned, but Paper 03 remains closed unless that
+repair is constructed and terminally reviewed.
 
 ## Reality constraints
 
@@ -146,6 +148,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   procedure-category counterexample.
 - `note-paper02-hostile-review-adjudication.md` — adjudicated mixed product,
   surviving rung-4 ceiling, and exact semantic-repair boundary.
+- `note-paper02v2-procedure-quotient-repair-pin.md` — frozen, result-neutral
+  procedures-first repair contract; construction has not begun.
 
 ## Permanent honesty wall
 

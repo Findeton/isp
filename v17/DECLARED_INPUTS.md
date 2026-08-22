@@ -140,6 +140,23 @@ as derived facts.
 | microscopic actuality | `UNCONSTRUCTED` | actual record postulate does not select a microtrajectory |
 | Paper 02 overall | `REVISE` | surviving rung `P02-CANONICAL-QUOTIENT-WITH-PHASE-COMPLETE-RESIDUE` |
 
+## Paper 02 v2 frozen-input balance
+
+| Object | Status at pin freeze | Source/choice | What it may establish | What it cannot establish |
+|---|---|---|---|---|
+| physical procedure category $\mathcal P$ | `DECLARED MATHEMATICAL REFERENT UNDER TEST` | bounded v2 repair | a domain on which context can remain before operational quotienting | that every apparatus detail is system ontology |
+| procedure presentation groupoid | `DECLARED GAUGE CONTRACT` | harmless naming/serialization quotient | presentation independence before procedure formation | operational equivalence or microscopic gauge by fiat |
+| trusted physical-randomization constructor | `DECLARED LABORATORY ASSUMPTION` | calibrated independent randomizer with no undeclared system/future correlation | exact affine decoding and ontological-mixture equations | a fundamental stochastic law or independence beyond the registered device |
+| $q:\mathcal P\to\mathcal Q$ | `TARGET DERIVATION` | complete compatible tester domain | procedure-to-prediction quotient and its universal property | microscopic equivalence of procedures |
+| standard system-ontological interface | `OPTIONAL TEST SUBCLASS` | typed $\Lambda_A$, preparation measures, transformation kernels, measurement responses | exact preparation/transformation/measurement contextuality predicates | that every whole-history representation is boundary-Markovian |
+| predictive-object ontological model | `POSITIVE EXISTENCE CONTROL` | operational states/conditional combs used as ontic variables | positivity and contextual-model existence if all lineage gates pass | locality, explanatory depth, uniqueness, or fundamental ontology |
+| contextuality as nonfactorization through $q$ | `TARGET THEOREM` | Spekkens-style sort-specific definitions | structural obstruction to universal noncontextual assignments under printed premises | selection of one contextual ontology |
+| complete Barandes ontology | `UNCONSTRUCTED` | none | nothing at this stage | may not be inferred from a positive record law |
+
+No Paper 02 v2 result exists at pin freeze. In particular, the pin does not
+award contextuality factorization, positive-model adequacy, ontology
+selection, or a Barandes completion.
+
 ## Derivation balance
 
 The live adjudicated balance is:

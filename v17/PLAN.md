@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
-semantic repair authorized and awaiting its fresh pin**
+semantic repair pin frozen and awaiting its result-neutral author audit**
 
 ## 0. Authority and workflow
 
@@ -156,6 +156,18 @@ the go-ahead for one Paper 02 v2 semantic cycle at the exact adjudicated scope.
 It does not weaken pins, hostile review, result neutrality, declared-input
 accounting, empirical gates, or the prohibition on pre-awarding later physics.
 Paper 03 still opens only after Paper 02 v2 earns a terminal scoped result.
+
+**Paper 02 v2 frozen state.** The result-neutral pin at
+`v17/note-paper02v2-procedure-quotient-repair-pin.md` introduces a physical
+procedure category $\mathcal P$, a separately presentation-quotiented
+procedure referent, trusted physical-randomization constructors, the complete
+operational quotient $q:\mathcal P\to\mathcal Q$, optional system-facing
+ontological interfaces, and contextuality as failure to factor through $q$.
+It explicitly prevents convex decoding identities from collapsing physical
+mixture procedures inside $\mathcal P$. A positive predictive-object model is
+registered only as an existence control; Barandes ontology, ontology
+selection, actuality, QFT, clocks, spacetime, and gravity remain
+unconstructed. The sole next event is the pin's result-neutral author audit.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 
