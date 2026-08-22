@@ -7523,3 +7523,18 @@ Status: CONSTRUCTION COMPLETE — SUBMITTED FOR THREE-SEAT BLIND REVIEW
 (sector/category, probability/multiplicity, fusion-algebra seats;
 mandatory regressions controls 3, 14, 15, 16, 17). Review is the next
 separate event.
+
+## 2026-08-22 — PAPER 23A SEAT C REVIEW FREEZE (v16 LEDGER #311)
+
+Seat C (sector/category), blind and independent, repo read-only,
+rebuilding from published prose. Report:
+`v16/review-paper23a-sector.md`, ordinary SHA-256
+`8af0942fa88519363c62ddfd06fe7d81fd05e001d12698576c61ca8252b80372` (     192 LF). Verdict: **REJECT**. Critical findings F-C1/F-C2:
+Theorems C/D identify fusion-complex classes with primitive classes
+and assert class-level associativity, both contradicting the
+candidate's own Proposition A.2 trace-shape separation; structural,
+not prose-repairable. Stages 1–2 verified sound up to repairs
+F-C3 (Definition 2.1 vacuous quantification — replacement supplied),
+F-C5, F-C6. Mandatory regressions: 3 PASS, 14 PASS, 15 FAIL,
+16 CONDITIONAL-FAIL, 17 PASS. Status: frozen before adjudication;
+Seats P and F are the next separate events.
