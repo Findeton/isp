@@ -7296,3 +7296,22 @@ No implementation begins. No automatic repair chain exists. The worktree
 additionally carries unrelated dirty state (paper 15 reflow, paper 17
 compatible-extension theorem, scoutt fixtures) which is not part of this
 entry and is left untouched.
+
+## 2026-08-22 — PAPER 22 V3 CATEGORY REPORT (v16 LEDGER #303)
+
+The mutually blind source/category/functor seat freezes at
+`v16/review-paper22-v3-category.md`, ordinary SHA-256
+`0d611e8aaa8b2b6a59d0e3587b827f519994e5977d8969602b0c629590851472`
+(279 LF / 15,097 bytes). Verdict: `ACCEPT-WITH-FIXES`.
+
+The seat confirms both repairs: the restored fine-seed apparatus is
+content-identical to the v1 candidate Sections 5.1–5.3 on the homogeneous
+domain, and the general partial-visibility law (V) with
+`q_phi = Re(gamma e^{i phi})` was rebuilt from the Born rule and matches
+(17) with all four registered consequences. Every adjudicated v2 survivor
+passes the regression sweep; no third independent semantic counterexample
+was found. Four MINOR prose findings (wrong intermediate scalar in the
+Theorem 7 proof, a visibility contradiction between Corollaries 7.1 and
+7.3, a sign error in the `gamma = i` exemplar kets, and the Theorem 9
+joint law printed only at `gamma = 1`) are ordered as a bounded prose
+repair, plus one inherited rendering note and one precedent request.
