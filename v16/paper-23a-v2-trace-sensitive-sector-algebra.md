@@ -57,7 +57,11 @@ that v1 silently identified.
 > functorial in the aligning morphism. ∎
 
 > **Theorem A (congruence).** With Definition 2.1, $\sim$ is
-> compatible with: (1) tensor; (2) single simultaneous fusion;
+> compatible with: (1) tensor; (2) single simultaneous fusion — if
+> $\chi_\alpha\sim\chi'_\alpha$ for a finite family all of whose
+> members share one atomic boundary sort $s$ admitting $\Phi_s$, then
+> $\Phi_s(\boxtimes_\alpha\chi_\alpha)\sim
+> \Phi_s(\boxtimes_\alpha\chi'_\alpha)$;
 > (3) futures and composition; (4) paired restriction/deletion — if
 > $\chi\sim\chi'$ are aligned by $g$, then for each occurrence $i$ of
 > $\chi$, the deletions at $i$ and at $g(i)$ give congruent
@@ -108,9 +112,12 @@ factorization the composite classes:
 
 $$
 [\mathrm{T}_2(n)]\ (\text{tensor of two primitives}),\quad
-[\Phi_2(n)]\ (\text{one simultaneous binary fusion}),\quad
-[\Phi(\mathrm{T})](n)\ \text{etc.}
+[\Phi_2(n)]\ (\text{one simultaneous binary fusion}),
 $$
+
+plus the closure of these five families under tensor, single
+simultaneous fusion, and staged words thereof, each such well-typed
+composite counted as one certified fixture class;
 
 > **Proposition C (bracketing separation).** For three one-occurrence
 > sources, the left-bracketed staged word
@@ -141,8 +148,10 @@ replacement sentences applied verbatim:
 
 - chain proof (F-P1): constancy on classes follows by composing the
   per-pair transport argument along any congruence chain; on the
-  certified fixtures each class is a single family-size-sort-trace
-  cell, so chains collapse, but the proof covers them anyway;
+  certified fixtures each congruence class consists of exactly
+  one family-size-sort-trace cell, so no nontrivial chain has
+  distinct endpoints inside a class, and the chain clause is available
+  though never needed there;
 - arithmetic sentence (F-C6/F-P2): the labeled support of
   $U_{\varnothing}(1)$ has $16\times4\times2=128$ positive traces
   (sixteen source tuples, four packets compatible with each
@@ -166,11 +175,14 @@ $9216/390625^{\times16}$, $10368/390625^{\times16}$);
 $D\circ Q^0_{\varnothing}(1)$: 192 / 128 / eight masses; endpoint
 conditional $=B^2$ entrywise; bond marginals
 $P(\ell_{ij}{=}1)=\tfrac12$ and the uniform three-pair pattern. New
-under trace sensitivity: the composite classes above inherit masses
-by the same descent — e.g. $[\Phi_2(1)]$ carries the joint law of
-(tensor source, fused target) pairs, which is the product structure
-of §10.2 with fresh cross-bond seeds; its total mass is $1$ by
-normalization of the fusion kernel.
+under trace sensitivity: the composite classes above descend by
+the same Theorem B — their congruence classes are fixed (Prop B of
+§2), and their physical masses are the full-orbit sums of their
+presented laws. In particular $[\Phi_2(1)]$ has as its complete
+reader the identity on the (tensor source, fused target) outcome
+fiber, and its total mass is the stabilizer-orbit sum of a
+normalized presented law, hence exactly $1$ (Paper 13D §9.1);
+representative mass is nowhere used.
 
 Outcome: **`P23AV2-MULTIPLICITY-DESCENT-REPAIRED-CONSTRUCTED`**.
 
@@ -231,9 +243,13 @@ across trace shapes.
 > braiding (Paper 13D §10.2); braiding is an isomorphism in
 > $\mathsf{Exec}_D$ (§5.2). The braiding map transports the diagonal
 > comparison object of $(\Phi(\chi\boxtimes\chi'),\,
-> \Phi(\chi'\boxtimes\chi))$ identically componentwise, so both sides
-> satisfy the same comparisons against every third complex; being
-> congruent to each other, they are equal classes. ∎
+> \Phi(\chi'\boxtimes\chi))$ identically
+> componentwise, so the two pushed laws have identical comparison
+> profiles against every aligned third complex and reader. Since the
+> diagonal comparison separates any two complexes that are not
+> congruent — by definition, incongruence means some comparison cell
+> distinguishes them — equal profiles force congruence:
+> $[\chi]\otimes[\chi']=[\chi']\otimes[\chi]$. ∎
 
 Outcome: **`P23AV2-CLASS-PRODUCT-COMMUTATIVE`**.
 
@@ -262,10 +278,12 @@ Outcome: **`P23AV2-CLASS-PRODUCT-NONASSOCIATIVE`**.
 > both retain identical field content, and the added vertex carries
 > no address, no seed, and no bond.
 >
-> **Proof sketch made exact:** the fusion kernel over an empty second
-> component draws zero seeds and applies the identity on fields; the
-> resulting history equals the original history pointwise; hence the
-> presented laws coincide before quotienting, a fortiori after. ∎
+> **Proof.** The fusion kernel over an empty second component draws
+> zero seeds and acts as the identity on every physical field; the
+> resulting history agrees with the original in all carried fields
+> under the canonical identification of Paper 13D Section 10.2's
+> target with its unfused carrier, so no stabilizer translate or
+> comparison cell separates them; hence the classes coincide. ∎
 
 > **Proposition J (duals absent).** No class $x$ with nonempty
 > carrier admits $y$ with $\mathbf 1$ inside $x\otimes y$ in the
@@ -288,7 +306,12 @@ not a semiring (associativity fails; there is not even an addition),
 not a fusion ring (no involution possible), and supports no character
 equation. The free such structures exist abstractly, but nothing
 here needs or uses freeness: every clause above was checked on the
-certified fixtures.
+certified fixtures. The only associative submagmas are trivial: any
+submagma in which associativity can fail must contain two
+nonempty-carrier classes, and bracketing then separates by
+Proposition H; the empty-carrier corner $\{\mathbf 1\}$ is trivially
+associative, and no nontrivial associative quotient or substructure
+exists on the certified fixtures.
 
 Tag: **`P23AV2-ALGEBRA-COMMUTATIVE-UNITAL-GRADED-NONASSOCIATIVE-MAGMA`**.
 
@@ -307,7 +330,11 @@ has **no subject matter** on the present $\Gamma_D$ fixtures:
 > nor that a different congruence justified by new physics could
 > change the verdict — only that no accepted object today supplies
 > one, and none may be introduced to rescue fusion (control 19).
-> Parent control 40 respected verbatim.
+> Parent control 40 respected verbatim. The coordinate
+> `P23AV2-FP-BOOTSTRAP-ROUTE-OPEN` is not earned: no associative
+> class product exists on the certified fixtures, so there is no ring
+> for a character to live on, and no accepted or proposed object
+> before this unit supplies one.
 
 ### 4.3 Classification table
 

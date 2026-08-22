@@ -7693,3 +7693,31 @@ the eight earned coordinates at certified-fixture scope; FP closure
 fixture-scoped per parent control 40; one-strike not applicable; no
 automatic successor. Repair execution and verification are the next
 separate events.
+
+## 2026-08-22 — PAPER 23A V2 REPAIR EXECUTED AND VERIFIED — TERMINAL ACCEPT-WITH-SCOPE (v16 LEDGER #321)
+
+The ordered bounded repair (#320) was executed on
+`v16/paper-23a-v2-trace-sensitive-sector-algebra.md` and verified
+byte-exact: the diff against the frozen #316 bytes contains exactly
+the eight replacement sentences located by the seats and nothing
+else. No number, definition, outcome name, control disposition, or
+scope wall moved. Pre-repair bytes recoverable at SHA-256
+`c4503bd309bcc54f0c20de2d8f1a28b4b4742c02c5f9eb7d7b2918deb5889209`
+(387 LF); post-repair ordinary SHA-256
+`eca8e1670ecf0c02739c6f94c81e9eefe84b1809240efd8ea9bba94bb886820f`
+(414 LF).
+
+Disposition: **TERMINAL — ACCEPT-WITH-SCOPE.** Earned coordinates,
+certified-fixture scope of terminal Paper 13D under the
+trace-sensitive congruence:
+`P23AV2-SECTOR-CONGRUENCE-TRACE-SENSITIVE-CONSTRUCTED`,
+`P23AV2-MULTIPLICITY-DESCENT-REPAIRED-CONSTRUCTED`,
+`P23AV2-FINITE-CLOSURE-FAILS-BY-CARRIER-MONOTONICITY`,
+`P23AV2-CLASS-PRODUCT-NONASSOCIATIVE`,
+`P23AV2-CLASS-PRODUCT-COMMUTATIVE`, `P23AV2-DUALS-ABSENT`,
+`P23AV2-ALGEBRA-COMMUTATIVE-UNITAL-GRADED-NONASSOCIATIVE-MAGMA`,
+`P23AV2-FP-BOOTSTRAP-ROUTE-CLOSED-FOR-PRESENT-GAMMA`.
+Provenance: pin #315 → construction #316 → seats #317/#318/#319 →
+adjudication #320 → repair #321. Scope walls unchanged; Paper 17 gate
+CLOSED; FP closure fixture-scoped (parent control 40); Paper 22 v3
+untouched at #307. No automatic successor exists.
