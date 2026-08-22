@@ -18,8 +18,8 @@ cleanly if nature does not support it.
 ## Live state
 
 - Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
-- Paper 01 status: **MATHEMATICS CONSTRUCTED — GREEN-UNREVIEWED; REVIEW
-  PROTOCOL NOT YET FROZEN**.
+- Paper 01 status: **MATHEMATICS CONSTRUCTED — GREEN-UNREVIEWED; THREE-LENS
+  REVIEW PROTOCOL FROZEN**.
 - No v17 physical coordinate is earned.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
@@ -99,6 +99,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   exact operational record-history equivalence and its ontology no-go.
 - `note-paper01-construction-audit.md` — author audit and explicit attack
   surface for the future independent review; not an adjudication.
+- `note-paper01-hostile-review-protocol.md` — immutable mathematics,
+  quantum-foundations, and ontology/physics review duties.
 
 ## Permanent honesty wall
 

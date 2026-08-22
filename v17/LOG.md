@@ -177,3 +177,45 @@ No code, evaluator, generated artifact, fit, later paper, spacetime model, or
 gravity model was created. No v17 physical coordinate is awarded at #4. The
 next legitimate event is a result-neutral independent-review protocol frozen
 against the manuscript bytes.
+
+## 2026-08-22 — PAPER 01 THREE-LENS REVIEW PROTOCOL FROZEN (v17 LEDGER #5)
+
+The result-neutral review protocol is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper01-hostile-review-protocol.md` | `e059de0988d54d67ebc069cbb79f24c0dd7584d1861c5bf42a15e1b0e78ab2b0` | 319 LF / 12,494 bytes |
+
+It binds construction commit
+`93da0c2813f8c767a9ef96bb133013ba038a5bea` and the exact pin, manuscript,
+author-audit, quantum-target, and era-charter hashes. The protocol creates
+three mutually blind mathematical lenses only:
+
+1. mathematics/composition;
+2. quantum information/foundations;
+3. ontology/physics.
+
+Each lens has eight mandatory fresh attacks, full probability lineages,
+C1--C12 and relevant attack 1--42 disposition, the complete 17-coordinate
+product, and an exact semantic-versus-wording distinction. Decisive kills,
+scoped non-kills, verdict vocabulary, report paths, separate-report commits,
+and the later independent adjudication boundary are frozen before any report.
+
+The protocol explicitly makes hidden-Hilbert use a priced non-kill because the
+candidate claims representation rather than elimination; microscopic
+ontology incompleteness is likewise not a kill because it is the printed
+negative result. It does make terminal lookup, failed program naturality,
+instrument/effect collapse, false Bell locality, environment-record omission,
+gauge/beable contradiction, target-domain mismatch, or emergent-time
+overclaim decisive.
+
+Updated live pointers before this entry:
+
+| artifact | SHA-256 | status |
+|---|---|---|
+| `v17/README.md` | `dbbaf5087ee0b734dc21ae58a926b593f546b079edaefb51811b76299361bba6` | review protocol frozen |
+| `v17/PLAN.md` | `71036a3dedca47eb8295dd2aad45a58e6c0c068c815ec296ac03d2ff7a13afd4` | three blind reviews next |
+
+No reviewer was dispatched, no review path was created, no implementation was
+opened, and no Paper 01 coordinate was awarded at #5. No Paper 02 or later
+physical unit is authorized by this protocol.

@@ -2,7 +2,7 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; Paper 01 construction is GREEN-UNREVIEWED**
+Status: **ORDERED RESEARCH PLAN; Paper 01 awaits three frozen blind reviews**
 
 ## 0. Authority and workflow
 
@@ -91,7 +91,8 @@ first-order laws do not select a unique microscopic Kolmogorov realizer and
 that phase-complete continuation structure cannot be reduced to diagonal
 probabilities. Proposed ceiling:
 `P01-COMPOSITIONAL-OPERATIONAL-EQUIVALENCE-WITH-ONTOLOGY-DEBT`. This remains
-unawarded until independent review and adjudication.
+unawarded until the frozen mathematics/composition, quantum-foundations, and
+ontology/physics reviews and their separate adjudication.
 
 ### Paper 02 — representation uniqueness and ontology residue
 
