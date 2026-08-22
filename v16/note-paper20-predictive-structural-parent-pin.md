@@ -1,0 +1,269 @@
+# Paper 20 predictive structural parent mathematical pin
+
+Date: 2026-08-21
+
+Status: **FROZEN BEFORE PAPER CONSTRUCTION — RESULT NEUTRAL**
+
+## 1. Purpose
+
+Paper 20 asks whether the phrase "one common parent experiment" can be made
+into a precise, point-free physical object that produces inequivalent
+relational structures as outcomes of one indivisible law.
+
+The investigation must separate:
+
+1. a law over realized target configurations of one fixed process;
+2. a resolved-channel law within one structural opportunity;
+3. an activity law over whether a structural operation occurs;
+4. a law over inequivalent whole-process complexes; and
+5. a cosmological root or initial structural state.
+
+Success at an earlier level may not be reported as success at a later one.
+In particular, a target-sector pushforward of the accepted Paper 13D law is
+not automatically a selector over execution syntax.
+
+## 2. Bound input
+
+| artifact | role | ordinary SHA-256 |
+|---|---|---|
+| `v16/paper-13d-typed-executable-gamma.md` | accepted typed conditional law | `3b91766fe269e8145766f4622f99e9009c3270530670119735e6045a473de5c9` |
+| `v16/note-paper13d-typed-executable-gamma-math-adjudication.md` | terminal Paper 13D scope | `ae2c4ef066335c39a0b8057c897c947b06e4270be67d1ed3ec59bf8d6d0a00c9` |
+| `v16/note-paper18-operational-structural-sectors-terminal-math-adjudication.md` | accepted Paper 18 composite verdict | `a8b32b995fa7ec3d2211196bd6bd9ca0570cae04097057c2bd73fdb2ac091180` |
+| `v16/paper-18-operational-structural-sectors-v2.md` | Paper 18 base | `b9dbcbd40e4f2e2eb1b18c4b5e98ba4d33eb491a5af791e9106369a53c51e614` |
+| `v16/paper-18-operational-structural-sectors-v3.md` | Paper 18 amendment | `496942b2a742ee2fe81561790e185aba6a3fcc865630c23ca278c3067c80f6dd` |
+| `v16/paper-18-operational-structural-sectors-v4.md` | Paper 18 amendment | `33f1e9a05bdc16b7aa96831fe1e8bc4c3bd4ca5095d2f79cbbe0c6d32abe8137` |
+| `v16/paper-18-operational-structural-sectors-v5.md` | Paper 18 amendment | `d3bb5b6f20941319b650ba78a7d55e3e298090c1c7ba7d5647f1789da54ca41a` |
+| `v16/paper-18-operational-structural-sectors-v6.md` | Paper 18 amendment | `60a4f0735d967623193f7579fb35fbace3428d7172c1b8f356ff95b304f07bea` |
+| `v16/paper-19-endogenous-structural-selection.md` | fixed-syntax and selector no-go input | `2ef98ae106f41012e613697abd094b83f25e3cb43bff839c394c90bb1ee5539e` |
+| `v16/note-paper19-endogenous-structural-selection-adjudication.md` | Paper 19 internal scope | `2bdfcf588b9e8c6ccc47071fc49a1aba47cbba7d19e5f3dd788429701525a954` |
+
+The Paper 18 input is the ordered version-2 through version-6 composite.
+Paper 19 has internal hostile acceptance only; this pin consumes its proved
+mathematical statements conservatively and does not promote its review status.
+
+## 3. Ontology firewall
+
+No primitive lattice, graph, causal set, event web, topology, dimension,
+geometry, global time, spacetime, or continuum is assumed.
+
+The parent outcome support may be finite, countable, continuous, hybrid,
+contextual, or non-standard measurable. A finite control is evidence only for
+that control. A dependent sum of possible target sectors is a type of random
+outcome, not a claim that every sector exists simultaneously as dormant
+physical hardware.
+
+Stable records are not assumed to be spacetime atoms. Bonds are not assumed
+to be spatial adjacency. Execution order is not assumed to be chronology.
+
+## 4. Required parent object
+
+For a complete point-free structural input `x`, a candidate parent must have
+one source and one total dependent target bundle
+
+\[
+ \Sigma_x:S_x\longrightarrow
+ \bigsqcup_{\kappa\in\mathcal C_x}T_{\kappa,x}.
+\]
+
+For a non-discrete branch, the displayed coproduct means a measurable field
+or another explicitly typed measurable bundle. It does not assume counting
+measure or a global channel enumeration.
+
+The parent law is one normalized indivisible kernel
+
+\[
+ \widehat\Gamma_x(d\kappa,dH).
+\]
+
+No factorization into a marginal selector and a child law may be assumed.
+The selector marginal, if it exists, must be derived by pushforward.
+
+Exactly one target fiber is realized in each history. A Cartesian product
+containing one live field for every alternative is not an acceptable parent.
+
+## 5. Predictive structural descent
+
+For each complete realized parent endpoint `y`, define its complete future
+behavior from every lawful typed continuation, intervention, complete reader,
+and reader outcome admitted by the frozen grammar. Metadata, program names,
+serialization order, and unavailable interventions are excluded.
+
+Two endpoints may be identified only if a point-free type transport aligns
+their complete future experiments and every aligned future probability.
+The resulting equivalence relation is the predictive relation
+
+\[
+ y\sim_{\rm pred}y'.
+\]
+
+The predictive structural outcome is
+
+\[
+ \kappa(y)=[y]_{\rm pred}.
+\]
+
+The quotient must use the sigma algebra generated by the frozen physical
+future tests. Standard-Borel regular conditional probabilities may be used
+only on a branch where their hypotheses are proved.
+
+## 6. Mandatory target theorems
+
+The paper must prove, refute, or leave explicitly unconstructed each item.
+
+### T1 — predictive equivalence
+
+Prove that `~_pred` is an equivalence relation after exact type and groupoid
+transport.
+
+### T2 — minimal future sufficiency
+
+Prove that predictive classes preserve every frozen future probability and
+that every other future-sufficient statistic refines the predictive quotient.
+
+### T3 — covariance
+
+Prove the quotient and its complete behavior are invariant under every
+accepted presentation change, including automorphisms and tensor braidings.
+
+### T4 — endogenous pushforward
+
+For an independently fixed parent, prove that
+
+\[
+ \mu_x=\kappa_*\widehat\Gamma_x
+\]
+
+is a normalized physical target-sector law.
+
+### T5 — exact child recovery
+
+State the appropriate child object and prove the accepted Paper 13D future
+law is recovered conditionally for almost every supported child. Generation
+of a child and lawful futures from the realized child must not be conflated.
+
+### T6 — representation no-go
+
+Prove that an arbitrary desired selector can be represented by a formal
+parent and therefore that parent representation alone is not derivation.
+
+### T7 — structural-phase criterion
+
+Prove that relative complex phases between structural sectors are
+operationally idle when every lawful effect is sector diagonal. A quantum
+claim requires one typed recombiner or another effect with physical
+off-diagonal sensitivity.
+
+### T8 — current-Gamma target specialization
+
+Determine whether the accepted grand observational `U_empty` law or a fixed
+fusion law yields a nontrivial predictive target-sector distribution without
+selecting execution syntax.
+
+### T9 — whole-process obstruction
+
+Determine whether any accepted Paper 13D parent has positive probability on
+two inequivalent whole execution classes. Do not use random history values as
+surrogate process branches.
+
+### T10 — Paper 17 consequence
+
+State separately what becomes testable for target configurations, resolved
+channels, activity, whole-process ensembles, operational chronology, and
+dimension. No Paper 17 output may choose the parent, quotient, measure, or
+coarse graining.
+
+## 7. Candidate routes to evaluate
+
+1. Predictive pushforward of the grand observational Paper 13D law.
+2. Predictive pushforward of one fixed simultaneous fusion law.
+3. A binary wrapper that applies the accepted numerical matrix `R` to a new
+   structural bit.
+4. A support or connectivity decoder applied to realized bond values.
+5. A physical symmetry with a unique invariant channel law.
+6. A branching operational algebra or measurable fusion hypergroup.
+7. A higher-order quantum instrument or process transformation.
+8. A quantal history measure with structural interference.
+9. A reversible structural transition operator with a stationary law.
+10. An explicitly contingent cosmological structural state.
+
+Every route must disclose its base measure, boundary state, couplings,
+symmetry, activity law, and root law where applicable.
+
+## 8. Hostile controls
+
+The paper must address at least the following controls.
+
+1. Identity-parent representation of an arbitrary desired selector.
+2. A fair or biased bit renamed `tensor` versus `fusion`.
+3. Swapping that naming while leaving inherited Gamma unchanged.
+4. A binary decision tree whose probabilities depend on leaf bracketing.
+5. A direct-sum Hilbert state with arbitrarily chosen amplitudes.
+6. Relative structural phases with no physical recombiner.
+7. A formal dilation whose added sectors are Barandes-style gauge baggage.
+8. A product parent containing every child as dormant machinery.
+9. A dependent-sum parent realizing exactly one fiber.
+10. A complete reader that makes the predictive quotient maximally fine.
+11. An incomplete reader that falsely collapses distinguishable states.
+12. A later grammar extension that splits an earlier relative quotient.
+13. A label change or automorphism that changes class probability.
+14. Representative mass used instead of orbit pushforward.
+15. Post-hoc refinement of the physical outcome sigma algebra.
+16. Post-hoc coarse graining that hides a failed parent.
+17. Connectivity, threshold, or motif choices not derived from operations.
+18. A zero bond treated alternately as absent and as dormant machinery.
+19. Conditioning on connectivity that changes the accepted child kernel.
+20. Random bond values reported as alternative execution syntax.
+21. A transitive mathematical group with no physical channel action.
+22. A unique invariant measure on presentation labels only.
+23. Detailed balance with rates reverse-engineered from a desired law.
+24. A Gibbs or maximum-entropy law with an unfixed base measure.
+25. A path integral with an unfixed action, measure, or boundary state.
+26. Decoherence reported as selection of prior weights.
+27. Gleason or Born normalization reported as selection of a state.
+28. Fusion quantum dimensions used without a physical branching algebra.
+29. A structure-changing forward move with no independently typed reverse or
+    open-system environment.
+30. Size conditioning confused with a cosmological size law.
+31. A target-sector law promoted to a resolved-channel law.
+32. A resolved-channel law promoted to an activity law.
+33. An activity law promoted to a root state.
+34. One actual structure used to claim ensemble typicality.
+35. Dimension or manifoldlikeness used to select a parent parameter.
+36. A finite graph control promoted to a discrete ontology.
+37. A projective finite family with a nonatomic inverse limit.
+38. A projective family whose deletion does not descend through the proposed
+    predictive quotient.
+39. A tensor spectator changing local odds through automorphism multiplicity.
+40. A downstream Paper 17 statistic changing over the surviving parent-law
+    residue.
+
+## 9. Outcome coordinates
+
+The product result must report at least:
+
+```text
+P20-PARENT-TYPE-UNCONSTRUCTED / CONSTRUCTED
+P20-PREDICTIVE-QUOTIENT-UNCONSTRUCTED / CONSTRUCTED
+P20-PREDICTIVE-QUOTIENT-MEASURABILITY-UNPROVEN / CONSTRUCTED
+P20-CURRENT-GAMMA-TARGET-LAW-UNCONSTRUCTED / CONSTRUCTED
+P20-CURRENT-GAMMA-RESOLVED-BRANCHING-UNCONSTRUCTED / CONSTRUCTED
+P20-CURRENT-GAMMA-WHOLE-PROCESS-PARENT-UNCONSTRUCTED / CONSTRUCTED
+P20-STRUCTURAL-INTERFERENCE-UNCONSTRUCTED / CONSTRUCTED
+P20-PHYSICAL-PARENT-PROBABILITIES-UNCONSTRUCTED / CONSTRUCTED
+P20-P17-RESTRICTED-TARGET-TEST-CLOSED / OPEN
+P20-P17-ORIGINAL-GLOBAL-GATE-CLOSED / OPEN
+P20-ACTUALIZATION-UNCONSTRUCTED / CONSTRUCTED
+P20-METRIC-UNCONSTRUCTED / CONSTRUCTED
+```
+
+A complete negative or partial result is an admissible successful paper.
+
+## 10. Permanent walls
+
+No result in this investigation selects an actual outcome, dimension,
+signature, topology, metric, scale, curvature, stress tensor, gravity,
+general relativity, continuum, quantum field theory, or phenomenology unless
+the corresponding object is separately constructed and reviewed.
+
+No implementation, sampler, fit, Paper 17 dimension run, or post-hoc
+parameter selection belongs to this mathematical stage.
