@@ -31,14 +31,20 @@ theory-selection result.
   reviews/adjudications #290–#294 (v1 REVISE), #297–#301 (v2 REVISE),
   v3 chain #303–#307. Paper 23 may bind v3 only through its own fresh
   hash-bound freeze (#308).
-- Unit B (Paper 23a) ran and closed: pin #309 → construction #310 →
+- Unit B (Paper 23a v1) ran and closed: pin #309 → construction #310 →
   seats #311–#313 (REJECT / ACCEPT-WITH-FIXES / REJECT) → adjudication
   #314 **REJECT, terminal refused** — stage-3 class identifications
   contradicted the candidate's own congruence separation; stage 1–2
-  salvage recorded. One-strike not triggered; unit investigable only
-  through a fresh user-authorized freeze.
-- Authorized next units (user holds ordering): (B-v2) Paper 23a v2 over
-  the honest class set;
+  salvage recorded.
+- Unit B-v2 (Paper 23a v2, user-authorized): pin #315 → construction
+  #316 → seats #317–#319 (all ACCEPT-WITH-FIXES) → adjudication #320 →
+  verified bounded repair #321: **TERMINAL ACCEPT-WITH-SCOPE** at
+  `eca8e167...`. The certified Γ_D fixtures carry a commutative unital
+  carrier-graded **nonassociative** magma of trace-sensitive sector
+  classes; finite closure fails by carrier monotonicity; duals absent;
+  the FP fusion-bootstrap route is CLOSED for the present Γ_D
+  (fixture-scoped). Paper 17 gate CLOSED.
+- Authorized next units (user holds ordering):
   (C) oriented-pair side gate — theorem or no-go on deriving the
   exchangeable oriented null-realizer pair; (D) Tier-2 declared-input
   ensemble calibration study, all results conditional.

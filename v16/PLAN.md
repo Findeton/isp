@@ -1984,7 +1984,16 @@ one-strike rule was live and is not triggered.
 
 Successor register, current:
 
-- Paper 23a fusion-closure unit (Unit B): **RAN AND REJECTED at #314.**
+- Paper 23a v2 (Unit B-v2, user-authorized): **TERMINAL ACCEPT-WITH-SCOPE
+  at #321** (`eca8e167...`, post-repair). Pin #315 → construction #316 →
+  seats #317–#319 all ACCEPT-WITH-FIXES → adjudication #320 (eight
+  findings confirmed, eight replacement sentences ordered) → repair
+  verified byte-exact #321. Result: the certified Γ_D fixtures carry a
+  commutative unital carrier-graded nonassociative magma of
+  trace-sensitive sector classes; finite closure fails by carrier
+  monotonicity; duals absent; FP fusion-bootstrap route CLOSED for the
+  present Γ_D, fixture-scoped. Salvage from v1 (#314) fully used.
+- Paper 23a fusion-closure unit v1 (Unit B): **RAN AND REJECTED at #314.**
   Pin frozen #309 (`aafb3559...`), construction #310 (`9cab8d2e...`),
   seats C/P/F #311–#313 (REJECT / ACCEPT-WITH-FIXES / REJECT),
   adjudication #314: stage 3 unsound — fusion complexes were
