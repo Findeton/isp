@@ -7022,3 +7022,15 @@ complement, uncomputation before recombination, an outcome-indexed commit,
 and the exact `R`, `B`, and phase-kickback `C_phi` laws. It is a new local
 candidate instrument, not an inherited Paper 13D operation or an autonomous
 occurrence law. Its total source typing remains subject to independent review.
+
+## 2026-08-21 — PAPER 22 THREE-SEAT REVIEW PROTOCOL (v16 LEDGER #290)
+
+The independent semantic-review protocol freezes at
+`v16/note-paper22-reversible-structural-instrument-review-protocol.md`,
+ordinary SHA-256
+`157531a09b1d90ae878bfc82cdfc325fa2642cbee4df4601afc865c1f529e907`.
+It binds the exact #288 pin and #289 candidate, separates quantum/instrument,
+category/groupoid, and probability/identifiability lenses, and requires each
+report to freeze independently before joint adjudication. It authorizes no
+implementation, Paper 23 construction, occurrence law, chronology, or
+dimension result.
