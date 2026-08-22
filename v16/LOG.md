@@ -7808,3 +7808,29 @@ Paper 15 rigidity remains CONDITIONAL regardless of outcome. No code;
 no new physical postulate; no automatic repair or successor unit.
 
 Next events: construction → three-seat blind review → adjudication.
+
+## 2026-08-22 — PAPER 23C CONSTRUCTED — ORIENTED PAIR UNDERDETERMINED (v16 LEDGER #325)
+
+Under pin #324, `v16/paper-23c-oriented-pair-underdetermination.md`
+frozen (ordinary SHA-256
+`c50fa59652bb2fe0fc4f5d938bdc5dc729900e5d56d1197bff605a69557bc185`,
+230 LF). Primary outcome earned:
+**`P23C-ORIENTED-PAIR-NOT-DERIVABLE`**. Three independent
+obstructions: Prop A (equivariance under a stabilizer transposition
+forces fixed-point values; no ordered order-pair on |I|≥2 is
+transposition-fixed — verified exhaustively n=2..5), Prop B (no natural
+total order on free finite carriers), Lemma C + Prop D (rank couplings
+(L, rev∘L) vs (L, L) induce identical complete Γ_D law by the bond-law
+rank blindness of 13D §6.3/§6.2 yet oriented increasing-increasing
+pattern densities 0 vs 1/6 — the pair is not a functional of the law).
+Prop F closes the landmark loophole: trivial-stabilizer experiments
+make equivariance vacuous, all assignments admissible, and Γ_D selects
+none (#237 wall) — uniqueness failure where existence fails elsewhere.
+Positive residual §5: only the undirected endpoint-bond graph and the
+coherence of Paper 15's exchangeability quotient descend. Dimension
+firewall intact; ensemble gate closed; Paper 15 rigidity CONDITIONAL
+with its missing bridge now proved missing for the present law.
+Exactness checks (audit scaffolding, $TMPDIR/p23c/check.py,
+/opt/homebrew/bin/python3.13): P(all-flat cell, n=3)=2/125;
+transposition-fixed order-pairs none for n=2..5; witness densities
+0 vs 1/6. Next event: three-seat blind review.
