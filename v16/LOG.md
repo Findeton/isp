@@ -7057,3 +7057,15 @@ counterexample and also scopes restriction and tensor composition: branchwise
 restriction and external products of already typed instruments are valid,
 whereas a naive internal union of active marks need not preserve one fusion
 sort or one common source fiber.
+
+## 2026-08-21 — PAPER 22 PROBABILITY/IDENTIFIABILITY REPORT (v16 LEDGER #293)
+
+The mutually blind probability/identifiability report freezes at
+`v16/review-paper22-reversible-structural-instrument-probability.md`, ordinary
+SHA-256
+`ae688ea56e3705467ee48d01a8bf8408037ee45df5035810765eedc424cc5590`.
+Verdict: `ACCEPT-WITH-SCOPE` for the fixed-source numerical law. It
+independently reconstructs the `R`, `B`, `C_phi`, record, erasure,
+factorization, and accessible-child probabilities while retaining the walls
+against occurrence, chronology, dimension, and geometry. Its acceptance does
+not answer the total source-typing defect found by the other two seats.
