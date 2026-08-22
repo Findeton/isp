@@ -2051,8 +2051,26 @@ Successor register, current:
   residual retained; `P23C-EQUIVARIANT-FIXED-POINT-OBSTRUCTION`
   withdrawn. Paper 15 rigidity CONDITIONAL, bridge missing for the
   present law; dimension firewall intact.
-- Tier-2 declared-input ensemble calibration study (Unit D): authorized,
-  pin not yet frozen. Openly declared `Pi_phys` family, every result
-  conditional, no derivation claims; rehearses the dimension-selection
-  battery and exposes obstructions early.
+- Orientation-descent gate (Paper 23d): **RAN AND CLOSED — TERMINAL
+  ACCEPT-WITH-SCOPE at #336** (`2501d316…`, post-repair). Pin #332 →
+  construction #333 → seats P/C/Q #334 (all ACCEPT-WITH-FIXES; nine
+  findings confirmed; none structural) → adjudication #335 → repair
+  verified byte-exact #336. Result `P23D-ORIENTATION-FIBER-INERT`
+  (universal): the #308-form joint law Γ_struct = Π·Γ_D(dH|χ) cannot
+  determine, select, or make unique the exchangeable oriented realizer
+  class for |I|≥2 — within-fiber multiplicity (Lemma A) times joint-law
+  decoration blindness (Lemma B); no measurable copy of orientation
+  exists in the typed joint space; failure is both fiber-inertness and
+  inherited conditional blindness. Smuggling audit clean. The positive
+  state-induced branch was correctly not earned. This resolves the
+  synthesis §3 door-(b) question for scalar/state weights: orientation
+  does NOT enter through Π_phys over process complexes as typed.
+  Remaining doors all need new authorization: law-level symmetry
+  breaking, history-side refinement (new postulate), or non-scalar
+  conditional-retuning extensions.
+- Tier-2 declared-input ensemble calibration study (Unit D): authorized
+  in principle at #308 but superseded in priority by the completed
+  Paper 23d gate; any run now needs a fresh user decision and freeze —
+  it remains calibration rehearsal only and does not resolve the
+  missing physics (#331 §3).
 - Ordering of B/C/D is a user decision; no pin freezes without asking.

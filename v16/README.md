@@ -75,8 +75,21 @@ theory-selection result.
   counterexample: every transport-saturated swap class is stabilizer-
   fixed). Paper 15 rigidity stays CONDITIONAL; dimension firewall
   intact; ensemble gate closed.
-- Authorized next unit (user holds ordering): (D) Tier-2 declared-input
-  ensemble calibration study, all results conditional.
+- Orientation-descent gate (Paper 23d, user-authorized) ran and closed:
+  pin #332 (`112684d6…`, four frozen objects) → construction #333 →
+  three blind seats #334 (all ACCEPT-WITH-FIXES, nine findings, none
+  structural) → adjudication #335 → verified repair #336: **TERMINAL
+  ACCEPT-WITH-SCOPE** at `2501d316…`. Primary coordinate
+  `P23D-ORIENTATION-FIBER-INERT` (universal): no whole-process law of
+  the #308 form Γ_struct = Π·Γ_D(dH|χ) — indeed no probability measure
+  on the pinned complex space — determines, selects, or makes unique
+  the exchangeable oriented realizer class for |I|≥2, because the
+  typed joint space contains no measurable copy of orientation. Weights
+  fail by fiber-inertness AND inherited conditional blindness; the
+  smuggling audit is clean. Paper 17 and dimension stay closed. Routes
+  past it require explicit user authorization.
+- No unit is authorized-but-unpinned at this time; every next step
+  needs a fresh user decision and freeze.
 - `RHL` / Paper 11: **TERMINAL REJECT AT
   `RHL-BLOCKED-AT-POINT-FREE-REFERENT`** through v16 ledger #153, with the
   conditional ceiling `RHL-BLOCKED-AT-REFINEMENT-CONSISTENCY`. The point-free,
