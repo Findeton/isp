@@ -18,8 +18,7 @@ cleanly if nature does not support it.
 ## Live state
 
 - Era status: **INITIALIZED — REALITY-FIRST CHARTER RECORDED**.
-- Paper 01 status: **MATHEMATICS-ONLY PIN DRAFT NEXT; CONSTRUCTION NOT
-  STARTED**.
+- Paper 01 status: **MATHEMATICS-ONLY PIN FROZEN; CONSTRUCTION NOT STARTED**.
 - No v17 physical coordinate is earned.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
@@ -88,8 +87,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   object, with downstream consumers.
 - `PLAN.md` — ordered units, gates, stopping rules, and later gravity route.
 - `LOG.md` — append-only v17 event ledger.
-- `note-paper01-relational-quantum-process-pin.md` — the first-unit pin once
-  frozen in the next separate event.
+- `note-paper01-relational-quantum-process-pin.md` — the frozen first-unit pin.
+- `note-paper01-pin-audit.md` — result-neutral author audit of the frozen pin;
+  not a substitute for post-construction independent review.
 
 ## Permanent honesty wall
 

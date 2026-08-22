@@ -63,3 +63,52 @@ No formula body, claim, input, outcome, programme order, or scientific scope
 changed. A full v17 scan finds no remaining standalone `\[` or `\]` delimiter.
 The uncommitted Paper 01 pin draft was normalized at the same time and will
 bind only these corrected committed parents after this correction lands.
+
+## 2026-08-22 — PAPER 01 COMPLETE QUANTUM-PROCESS PIN FROZEN (v17 LEDGER #3)
+
+The mathematics-only pin
+`v17/note-paper01-relational-quantum-process-pin.md` is frozen before any
+construction at SHA-256
+`33a7dbb3cc615978024b683588ce66c9f19deb418d8f663e3ee4db937b509bbc`,
+609 LF / 26,260 bytes. It binds the corrected v17 charter bundle through
+commit `03faae7f83f8be2e295383ce389f9c8ace3dd7ef` and Paper 13D only as a
+nonpromotive v16 regression control.
+
+The result-neutral internal audit
+`v17/note-paper01-pin-audit.md` freezes at SHA-256
+`139a03eae4cc51f9b9e01156943639380ddb432eede195b5a3526ffc544a81b4`,
+106 LF / 4,454 bytes. It is an author audit, not an independent review. It
+verifies one question, 7 stages, 12 registered controls, 42 continuous
+hostile attacks, 17 product coordinates, 6 descriptive ceilings, and 3 future
+independent review lenses. It confirms that the quantum target is
+operational, incompatible experiments need no global counterfactual joint
+distribution, “one architecture” does not mean one numerical Hamiltonian,
+Bell premise costs are result-neutral, state/law/actuality are separate, and
+no spacetime input leaks into the live unit.
+
+The frozen question is whether one uniform relational stochastic-history
+architecture is naturally operationally equivalent to the complete
+finite-dimensional quantum process interface over Q0–Q3. Required axes are
+single systems in arbitrary finite dimension, complete instruments,
+sequential/tensor composition, mixtures, ancillas/discard, entanglement,
+CHSH/no-signalling with an explicit Bell-premise ledger, Peres–Mermin
+contextuality, arbitrary finite-slot process tensors, operational memory,
+decoherence, stable records, sector transport, irreversible loss, and coherent
+uncomputation.
+
+The pin expressly permits correspondence failure, single-system-only success,
+representation without composition, compositional equivalence with ontology
+debt, or coherent stochastic ontology with printed costs. It cannot earn QFT,
+external-time removal, spacetime, dimension, gravity, law selection,
+cosmological state, empirical novelty, or ontology uniqueness. No v17 physical
+coordinate is earned at #3.
+
+Updated live files:
+
+| artifact | SHA-256 | status |
+|---|---|---|
+| `v17/README.md` | `c35c8bd89d74a7ee9792273cc5b6f575703e2cd3aa3167c6a43e88670f4813bd` | pin frozen; construction not started |
+| `v17/PLAN.md` | `d8f82835093efcb7679eab1afddc7170fb1803191c09523f1d9015fa9c15b831` | only Paper 01 mathematics construction open |
+
+Next event: construct the self-contained Stages A–G theorem package from
+`QProc_fd`. No code or later paper is authorized.

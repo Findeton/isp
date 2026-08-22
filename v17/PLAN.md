@@ -374,13 +374,12 @@ Era charter                         RECORDED
 v16 inheritance balance             RECORDED
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
-Paper 01 mathematical pin           DRAFT NEXT / NOT YET FROZEN
+Paper 01 mathematical pin           FROZEN
 Paper 01 construction               NOT STARTED
 Paper 01 review                      NOT DISPATCHED
 Paper 01 implementation             NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is to draft, audit, and freeze the Paper 01 pin in
-a separate commit. Construction of the theorem package follows only after
-that freeze.
+The next scientific action is the Paper 01 mathematics-only theorem
+construction under the frozen pin. No implementation or later phase is open.
