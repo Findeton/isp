@@ -7638,3 +7638,17 @@ earned exactly as named. All twenty-two hostile controls disposed.
 Status: CONSTRUCTION COMPLETE — SUBMITTED FOR THREE-SEAT BLIND REVIEW
 (category; probability/multiplicity; algebra; regressions 3, 14, 15,
 16, 17, 19–22). Review is the next separate event.
+
+## 2026-08-22 — PAPER 23A V2 SEAT C REVIEW FREEZE (v16 LEDGER #317)
+
+Seat C (category), blind and independent, repo read-only. Report:
+`v16/review-paper23a-v2-category.md`, ordinary SHA-256 `9dbad9be6e1174d25ddff4ee6de84116148b23e1126e3c33529c1529ae417184` (     100 LF).
+Verdict: **ACCEPT-WITH-FIXES** — F-C2.1 (Prop I "pointwise equality"
+overstates across canonically identified type annotations;
+replacement supplied), F-C2.2 (Thm A(2) sort hypothesis made
+explicit), F-C2.3 (fixture-inventory closure rule named). All six
+#314 replacement sentences verified verbatim in place; all nine
+mandatory regressions PASS, including 19–22. Trace-sensitive rebuild
+confirmed structurally sound; bracketing/frontier arithmetic
+reproduced exactly. Status: frozen before adjudication; Seats P and
+F are the next separate events.
