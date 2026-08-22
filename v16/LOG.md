@@ -7566,3 +7566,23 @@ failure is re-earnable via carrier monotonicity. Mandatory
 regressions: 3 PASS, 14 PASS, 15 FAIL, 16 CONDITIONAL-FAIL, 17 PASS.
 Status: frozen before adjudication; adjudication is the next separate
 event.
+
+## 2026-08-22 — PAPER 23A ADJUDICATION: REJECT, TERMINAL REFUSED (v16 LEDGER #314)
+
+Adjudication: `v16/note-paper23a-fusion-closure-adjudication.md`,
+ordinary SHA-256 `68a10261fa0bbc71cf4b19d61acf5c97a2b9a53a26094a94786e7bf3e6b443f1` (     107 LF). Seats: C REJECT (#311), P
+ACCEPT-WITH-FIXES (#312), F REJECT (#313). All findings confirmed
+except F-F1(3) (commutativity), refuted by the adjudicator — the
+generator is family-indexed and the category symmetric monoidal —
+leaving the REJECT grounds unchanged. Verdict: **REJECT**; terminal
+status refused; bounded repair refused (stage 3 needs the honest
+class set rebuilt, new apparatus, not prose). Voided as earned:
+`P23A-FUSION-CLOSURE-FAILS`,
+`P23A-COMMON-POSITIVE-CHARACTER-NONUNIQUE`; finite-closure failure
+re-earnable by carrier monotonicity in a successor. Stage 1–2
+machinery and fixture tables survive as reviewed salvage input, not
+accepted physics. One-strike rule NOT triggered (Paper 22-line rule;
+pin §10/§1 keep the unit investigable). Scope walls held; Paper 17
+gate CLOSED; Paper 22 v3 terminal bytes untouched. Any successor
+(Unit B v2, C, or D) requires explicit user authorization and a
+fresh freeze. No automatic successor exists.
