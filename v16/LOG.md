@@ -7034,3 +7034,14 @@ category/groupoid, and probability/identifiability lenses, and requires each
 report to freeze independently before joint adjudication. It authorizes no
 implementation, Paper 23 construction, occurrence law, chronology, or
 dimension result.
+
+## 2026-08-21 — PAPER 22 QUANTUM/INSTRUMENT REPORT (v16 LEDGER #291)
+
+The mutually blind quantum/instrument report freezes at
+`v16/review-paper22-reversible-structural-instrument-quantum.md`, ordinary
+SHA-256
+`73f62cfb7245425a710b523ffbaf3bedd47028981a696c3fa644c0124fe2fb24`.
+Verdict: `REVISE`. The local unitary, no-hiding, uncomputation, phase-kickback,
+record, erasure, and factorization mathematics survive, but the candidate's
+positive source domain admits active components of different Paper 13D atomic
+sorts even though simultaneous fusion is defined only at one common sort.
