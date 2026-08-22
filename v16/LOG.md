@@ -6918,3 +6918,19 @@ The bidirectional experiment census remains incomplete. There is no accepted
 all-size law over complete multi-transition chronology objects, so ensemble
 and dimension stay closed. The revision is `REVISED-GREEN-UNREVIEWED`; no
 Python, Rust, fresh case, result, receipt, or dimension run is authorized.
+
+## 2026-08-21 — SELECTOR-INVESTIGATION ARCHIVE RECOVERY (v16 LEDGER #283)
+
+The Paper 17B through Paper 17F selector investigations are frozen at their
+existing bytes in one path-isolated archival commit. They were completed in
+private working-tree state while repository signing was unavailable; this
+entry records the real chronology and does not pretend that their pins or
+drafts had been committed before construction.
+
+The archive establishes a sequence of scoped negative and conditional
+results: the accepted conditional Gamma does not by itself select whole
+process occurrence, generic stationary/Gibbs/Hilbert representations do not
+select a unique physical propensity, and any selector still requires an
+independently physical structural experiment, base measure, boundary/root
+law, or equivalent new nomological input. No selector, chronology, dimension,
+metric, or actuality coordinate is awarded by this archival event.
