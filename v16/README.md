@@ -31,8 +31,10 @@ theory-selection result.
   reviews/adjudications #290–#294 (v1 REVISE), #297–#301 (v2 REVISE),
   v3 chain #303–#307. Paper 23 may bind v3 only through its own fresh
   hash-bound freeze (#308).
-- Authorized next units, pending their own freezes (user holds ordering):
-  (B) Paper 23a fusion-closure pin consuming only terminal Paper 13D;
+- Authorized next units (user holds ordering): (B) Paper 23a
+  fusion-closure pin **FROZEN at #309**
+  (`note-paper23a-fusion-closure-pin.md`, `aafb3559...`), construction
+  next;
   (C) oriented-pair side gate — theorem or no-go on deriving the
   exchangeable oriented null-realizer pair; (D) Tier-2 declared-input
   ensemble calibration study, all results conditional.

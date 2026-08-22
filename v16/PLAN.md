@@ -1984,8 +1984,11 @@ one-strike rule was live and is not triggered.
 
 Successor register, current:
 
-- Paper 23a fusion-closure pin (Unit B): authorized, pin not yet frozen.
-  Consumes only terminal Paper 13D (`3b91766f...`), never Paper 22 as
+- Paper 23a fusion-closure pin (Unit B): **FROZEN at #309**
+  (`note-paper23a-fusion-closure-pin.md`, `aafb3559...`, 212 LF, ten
+  verified bindings). Construction is the next separate event; review
+  and adjudication follow as their own events. The pin consumes only
+  terminal Paper 13D (`3b91766f...`), never Paper 22 as
   accepted input for its own claims; carries the twelve hostile controls
   from `note-paper22-semantic-input-audit.md` Section 7 and the
   semiring-vs-fusion-ring and FP-odds cautions from
