@@ -8001,3 +8001,41 @@ the missing whole-process object Γ_struct(dχ,dH) with χ-marginal
 by design. (§4) consequence map per gate; emergence route OPEN through
 Γ_struct/Π_phys only. (§5) standing walls unchanged; Unit D decision
 rests with the user.
+
+## 2026-08-22 — PAPER 23D ORIENTATION-DESCENT GATE PIN FROZEN (v16 LEDGER #332)
+
+User authorized one mathematics-only orientation-descent
+theorem/no-go. Pin `v16/note-paper23d-orientation-descent-pin.md`
+frozen (ordinary SHA-256
+`112684d6eaf4f68489742fc1e046ca9b5af6fafb41f9f6e8e908425431b965ba`,
+158 LF), freezing BEFORE construction the four binding objects:
+(1) process-complex space Cpx with presentation-invariant σ-algebra Σ_χ
+(colimit of finite-subcomplex restrictions); (2) allowed root/boundary
+variables (finite diagram invariants only — occurrence/component
+counts, vertex multisets, bond counts, fusion-vertex count v(χ);
+orders/ranks/port orientations/seeds barred at input);
+(3) admissible projective family P of Π_phys (finite-support finite
+restrictions, deletion-projective consistency per 13D §14, covariance,
+scheduler independence) with exactly three pre-registered subfamilies:
+P_unif, P_v, P_size; (4) candidate orientation extractor = admissible
+observable valued in exchangeable realizer-pair classes (#330 target
+type). Joint law constrained to the #308 disintegration form
+Γ_struct = Π_phys · Γ_D(dH|χ) with exact covariance, normalization,
+projective consistency, scheduler independence.
+
+Four-way classification pinned: Q1 orientation already χ-measurable;
+Q2 support restriction alone selects; Q3 distinct orientations within
+one χ-fiber ⇒ scalar reweighting cannot distinguish them; Q4 smuggling
+audit. Pre-registered outcomes P23D-ORIENTATION-CHI-MEASURABLE /
+-SUPPORT-SELECTED / -FIBER-INERT / -NOT-SELECTED plus
+P23D-CLEAN/-SMUGGLED. Quantifier discipline: every clause labeled
+universal (∀Π∈P) / existential (named subfamily) / not-selected.
+Positive result earns ONLY conditional state-induced orientation under
+the declared family — Paper 17 and dimension stay closed pending
+complete varying-size ensemble gates. Negative must state whether
+weights fail by fiber-inertness, by orientation-blindness of all
+admissible weights as functions, or both. Ten hostile controls incl.
+post-hoc family ban, support gerrymander, rank smuggle, conditional
+mutation (any H-dependent term retunes physics). No code; no new
+primitive orientation; no automatic successor. Next events:
+construction → three-seat blind review → adjudication.
