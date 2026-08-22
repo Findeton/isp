@@ -7219,3 +7219,80 @@ The registered no-automatic-v3 rule now fires. No implementation or automatic
 repair begins. Paper 23 and the private regional/metric programme cannot bind
 Paper 22 v2 as accepted input. Any successor requires a separately motivated,
 explicitly authorized pin.
+
+## 2026-08-21 — PAPER 23 PREPARATION NOTES REBOUND TO ADJUDICATED PAPER 22 LINE (v16 LEDGER #302)
+
+The four uncommitted Paper 23 preparation notes were written against the
+original Paper 22 candidate and describe it as pending independent semantic
+review. That chronology is stale: HEAD f452f89 already contains both Paper 22
+adjudications (#294 v1 `REVISE`; #301 v2 `REVISE`, complete instrument not
+accepted). Forward-only corrections are now applied; the original bytes of
+each note remain recoverable from this entry's pre-correction hashes.
+
+Corrections, by file:
+
+1. `v16/note-paper23-covariant-opportunity-fusion-bootstrap-pin.md`
+   (pre-correction SHA-256
+   `fe0b3b901773fba9e858caf526742d1cc4faf7e28e217b6bc499b616bdba9b67`,
+   post-correction
+   `1a9bd4d1d624d4cd8f7cf553420c453aff67dd732fbae02ecf7e6eb0927bea85`).
+   Status block states the stronger live blocker: both attempts reviewed,
+   neither accepted. Section 2 evidence table now binds the full chain —
+   v1 pin `de32c02e...`, v1 candidate `6d75a072...`, v1 adjudication
+   `c261520a...`, v2 pin `a4c1c2ec...`, v2 candidate `30340295...`, v2
+   adjudication `31c0d7ca...`. Activation requires either a separately
+   authorized accepted successor bound by fresh hash, or an explicit user
+   decision to proceed on accepted fragments conditionally. Input coordinate
+   renamed `P23-INPUT-P22-LINE-BOTH-ATTEMPTS-REVIEWED-NOT-ACCEPTED`.
+   Congruence gate and Theorem 16 references rephrased for the adjudicated
+   line. Section 15 step 1 marked complete-and-failed.
+
+2. `v16/note-paper22-semantic-input-audit.md`
+   (pre-correction
+   `133a0c755b12c652fa236493434ba8ebee39f79be830184f44f64595b8699805`,
+   post-correction
+   `9f33516c001be921178189577ae9435308da00b84a101cf33a4507d351df88b6`).
+   Chronology correction header added; bound-bytes table extended with the
+   four post-freeze artifacts (marked as appended, not retroactive);
+   precondition coordinate updated to the both-attempts-reviewed form;
+   conclusion restated over the twice-adjudicated line.
+
+3. `v16/note-frontier-dependency-census.md`
+   (pre-correction
+   `b4aa4c9b516688d1da4d8f8ac0c061cd5106a13d7ec8f09a7c46cab745f45eef`,
+   post-correction
+   `4d779c2ae0e5132391abe94434ae53267de93071bde7e11eb2691034ac4d43f2`).
+   New status vocabulary `twice-adjudicated unaccepted`; Paper 22 row and
+   narrative corrections updated to #294/#301 with the no-automatic-v3 rule
+   noted; dependency graph node relabeled.
+
+4. `v16/note-paper23-pin-internal-audit.md`
+   (pre-correction
+   `d0c8da09720476c0ec85fbfca2716170993136fe648401e2728ccd9e4ed01c3d`,
+   post-correction
+   `97cabd7a7446508f06843828fb6f05e178eea7bd2bc104a33d6fc857457694ce`).
+   First-live-blocker section corrected forward to the stronger condition;
+   correct-next-action step 1 marked complete-and-failed; conditional
+   phrasing moved to successor-instrument acceptance.
+
+The scientific content of all four notes is unchanged. The mathematical
+questions, hostile controls, sector/multiplicity gates, FP-odds caution,
+no-discrete-web clause, and one-enlarged-law framing stand as frozen. What
+changes is only the input status: Paper 22 is no longer a pending candidate
+but a twice-adjudicated unaccepted line whose survivors carry local scope
+only.
+
+Live state after this entry:
+
+```text
+P23-INPUT-P22-LINE-BOTH-ATTEMPTS-REVIEWED-NOT-ACCEPTED
+P23 construction: BLOCKED at input (unchanged)
+Paper 17 ensemble gate: CLOSED (unchanged)
+Open decision (user): authorize a motivated successor instrument, proceed on
+accepted fragments conditionally, or hold.
+```
+
+No implementation begins. No automatic repair chain exists. The worktree
+additionally carries unrelated dirty state (paper 15 reflow, paper 17
+compatible-extension theorem, scoutt fixtures) which is not part of this
+entry and is left untouched.

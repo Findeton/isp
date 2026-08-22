@@ -35,6 +35,11 @@ zero. Thus the result is relative to the source--target orientation already
 present in $\mathsf{Exec}_D$; it is not an autonomous derivation of time. The
 experiment census remains incomplete, and no complete chronology-valued
 varying-size ensemble exists on which dimension selection could honestly run.
+An exact compatible-extension theorem identifies the missing physics: a
+separate marginal on unmarked process complexes. Covariance, deletion,
+tensor locality, and normalization do not select that marginal. The ensemble
+is therefore underdetermined by $\mathbf\Gamma_D$, not absent because of a
+software limitation.
 
 ## 1. Binding input and scope
 
@@ -519,11 +524,164 @@ supposed to derive. The finite precedence relation constructed in Section 7
 is a real upstream coordinate, but it is not yet sampled by one covariant
 varying-size chronology law.
 
-Therefore the observational size law is retained as an upstream coordinate,
-while the complete chronology-valued ensemble is `NONE` at this stopping
-line.
+Therefore the observational size law is retained as an upstream coordinate.
+No selected complete chronology-valued ensemble exists at this stopping line;
+Section 10 shows that its compatible extensions are underdetermined.
 
-## 10. Consequence for dimension
+## 10. Joint process--history law and its underdetermination
+
+### 10.1 Do not randomize the intervention knob
+
+A complete Paper 13D experiment contains two physically different kinds of
+data. Define $[\chi]$ by forgetting only its preparation, intervention, and
+reader marks while retaining the complete typed execution diagram, boundary
+sorts, generators, and physical carrier. Let $[a]$ be the transported fibre of
+those forgotten marks, including their typed addresses and values. The pair
+reconstructs the experiment up to the accepted action groupoid. Write
+
+$$
+[e]=([\chi],[a]),
+$$
+
+where $[\chi]$ is its unmarked point-free process complex and $[a]$ is its
+typed preparation, intervention, and reader protocol. If $[a]$ is selected by
+an external investigator, its sampling distribution is experimental design,
+not a fundamental law. The physical generative target is therefore
+
+$$
+\widehat\Gamma([\chi],[H]\mid[a]),
+$$
+
+not an unconditional law that mistakes the investigator's knob choice for a
+random physical output. In a closed-universe treatment the setting apparatus
+must instead be included as a physical subsystem inside $[\chi]$ and $[H]$.
+
+### Theorem 6 -- compatible-extension theorem
+
+On every unmarked process class with positive marginal mass, a joint law
+preserves the accepted Paper 13D conditional history law exactly if and only
+if
+
+$$
+\widehat\Gamma([\chi],[H]\mid[a])
+=
+\Pi([\chi]\mid[a])
+\mathbf\Gamma_D([H]\mid[\chi],[a])
+$$
+
+for a normalized point-free marginal $\Pi(\cdot\mid[a])$ on unmarked process
+complexes compatible with the protocol. If the intervention protocol is
+exogenous and does not dynamically select which physical complex exists, the
+additional no-selection condition is restriction of one protocol-independent
+law to the compatible support:
+
+$$
+\Pi([\chi]\mid[a])
+=
+\frac{
+\mathbf 1_{[a]\in\mathsf A([\chi])}\Pi_{\rm phys}([\chi])
+}{
+\sum_{[\chi']}
+\mathbf 1_{[a]\in\mathsf A([\chi'])}\Pi_{\rm phys}([\chi'])
+}.
+$$
+
+Here $\mathsf A([\chi])$ is the typed protocol fibre. When two protocols have
+the same compatible support, neither may reweight it.
+
+Indeed, summing the displayed expression over complete physical history
+classes gives $\Pi([\chi]\mid[a])$ because the accepted conditional law is
+normalized. Conversely, every compatible joint law has that marginal, and
+the definition of conditional probability recovers the factorization. Thus
+the accepted conditional law fixes none of the relative weights between
+different unmarked process complexes.
+
+Under the exogeneity condition, equivalently, any compatible extension
+introduces a process-selection action
+
+$$
+S_{\rm proc}([\chi])=-\log\Pi_{\rm phys}([\chi])+\text{constant},
+$$
+
+with $S_{\rm proc}=+\infty$ on zero-mass classes.
+
+An additional history-dependent term would retune the accepted conditional
+physics rather than merely extend it.
+
+This is the same logical separation as a transition law versus a standalone
+distribution. If $\Pi_{\rm phys}$ is contingent preparation data, it cannot
+support a universal dimension prediction. If it is fixed for the universe,
+it is additional nomological content beyond $\mathbf\Gamma_D$.
+
+### 10.2 Exact nonuniqueness witness
+
+At every component count $n\geq2$, let $e_n^\otimes$ be the point-free tensor of
+$n$ independent singleton experiments and let $e_n^\star$ be the same family
+followed by one simultaneous $n$-ary fusion. Their onset precedence objects
+are respectively an $n$-element antichain and a height-two star. Both are
+constructed from the accepted category and retain the exact
+$\mathbf\Gamma_D$ conditional law.
+
+For every $\lambda>0$, define at fixed $n$
+
+$$
+\Pi_\lambda(e_n^\otimes\mid n)=\frac{1}{1+\lambda},
+\qquad
+\Pi_\lambda(e_n^\star\mid n)=\frac{\lambda}{1+\lambda}.
+$$
+
+Using the same $\lambda$ at every size gives a covariant component-deletion
+family. It has no label clock, the relative fusion activity is independent of
+remote tensor factors, and every conditional history law remains exactly the
+accepted law. Nevertheless, if $R$ is the number of comparable onset pairs,
+
+$$
+\mathbb E_\lambda[R]=\frac{\lambda}{1+\lambda}n.
+$$
+
+Height, ordering fraction, and interval profiles also vary with $\lambda$.
+Therefore covariance, projective deletion, tensor locality, and exact
+conditional recovery do not select a unique chronology ensemble. Leaving all
+such couplings free and asking for a universal dimension does not help: this
+one allowed family already changes the statistics used by the dimension
+battery.
+
+### 10.3 Why familiar principles do not close the gap
+
+- Uniform counting and groupoid-cardinality weights are point-free but do not
+  normalize on the category's arbitrarily long distinct finite traces.
+- Maximum entropy or maximum caliber requires a base measure and physical
+  constraints such as expected depth or fusion density; those are the missing
+  process data, not consequences of $\mathbf\Gamma_D$.
+- Exchangeability and projective consistency characterize allowed random
+  structures but do not choose their finite marginals.
+- Classical sequential growth would add a Markov birth dynamics and new
+  coupling constants, contrary to deriving the ensemble from the accepted
+  indivisible law alone.
+- A sum over process complexes requires relative amplitudes or a decoherence
+  functional between distinct complexes. Paper 13D supplies neither.
+- Invariance under every lawful process insertion is nonnormalizable: the
+  distinct orbit $e,F\circ e,F^2\circ e,\ldots$ would have equal positive mass,
+  or else zero mass throughout.
+
+No conservation law, anomaly, experimentally calibrated activity, or
+self-consistency equation presently selects $S_{\rm proc}$. Actualization of
+one history does not select its process complex; extending actualization to
+the pair $([\chi],[H])$ presupposes the joint law being sought.
+
+The exact outcomes are therefore
+
+```text
+P17-PROCESS-SELECTION-ACTION-UNCONSTRUCTED
+P17-JOINT-LAW-NOT-DERIVABLE-FROM-GAMMA-D-ALONE
+P17-CHRONOLOGY-VALUED-ENSEMBLE-UNDERDETERMINED
+```
+
+This is an identifiability theorem, not a theorem that no deeper physical
+principle can exist. Any future $S_{\rm proc}$ must be frozen as new physics,
+independently of chronology and dimension outputs, before it is evaluated.
+
+## 11. Consequence for dimension
 
 The dimension battery is not executed. Ordering fraction, height, higher-chain
 counts, midpoint scaling, interval abundance, and small-poset frequencies
@@ -533,14 +691,14 @@ Neither can be substituted by the typed execution diagram.
 The exact dimension outcome is
 
 ```text
-P17-DIMENSION-NONE-CHRONOLOGY-GATE-UNPASSED
+P17-DIMENSION-NONE-ENSEMBLE-SELECTION-UNBOUND
 ```
 
 This is not evidence for or against dimensions two, three, or four. It is not
 a nonmanifoldlike verdict. No estimator was fit and no held-out target was
 opened.
 
-## 11. Hostile controls resolved mathematically
+## 12. Hostile controls resolved mathematically
 
 The construction resolves the pin's central attacks as follows:
 
@@ -567,12 +725,15 @@ The construction resolves the pin's central attacks as follows:
     stop;
 19. onset incidence retains symmetric occurrence multiplicity rather than
     collapsing to orbit types; and
-20. process-relative precedence is not promoted to autonomous time.
+20. process-relative precedence is not promoted to autonomous time;
+21. intervention sampling is not promoted to a fundamental process law;
+22. covariance and locality are not treated as a unique process selector; and
+23. no process activity is fitted to a dimension or manifold score.
 
 The remaining dimension attacks are deliberately dormant because their
 prerequisite object does not exist.
 
-## 12. Product result
+## 13. Product result
 
 The mathematical construction supports the following result vector, subject
 to independent review:
@@ -584,8 +745,9 @@ experiment  P17-BIDIRECTIONAL-EXPERIMENT-CENSUS-INCOMPLETE
 response    P17-COMPLETE-ACCEPTED-RESPONSE-ATLAS-CONSTRUCTED
 co-onset    P17-GENERATOR-RELATIVE-ONSET-BUNDLES-ONLY
 chronology  P17-GAMMA-RELATIVE-PARTIAL-OPERATIONAL-PRECEDENCE-CONSTRUCTED
-ensemble    P17-CHRONOLOGY-VALUED-ENSEMBLE-NONE
-dimension   P17-DIMENSION-NONE-CHRONOLOGY-GATE-UNPASSED
+selector    P17-PROCESS-SELECTION-ACTION-UNCONSTRUCTED
+ensemble    P17-CHRONOLOGY-VALUED-ENSEMBLE-UNDERDETERMINED
+dimension   P17-DIMENSION-NONE-ENSEMBLE-SELECTION-UNBOUND
 signature   P17-SIGNATURE-UNCONSTRUCTED
 metric      P17-METRIC-UNCONSTRUCTED
 actuality   P17-ACTUALIZATION-UNCONSTRUCTED
@@ -597,10 +759,10 @@ object, exact response classification, bidirectionally tested tensor
 incomparability, genuine forward new-write responses, and the independent
 all-suffix prefix-autonomy theorem.
 
-The first blocker is physical experiment completeness, not software
-mutability or performance.
+The blockers are physical experiment completeness and process-ensemble
+selection, not software mutability or performance.
 
-## 13. Interpretation
+## 14. Interpretation
 
 Paper 13D succeeds in supplying a point-free indivisible law with real
 interventional structure. Paper 17 now extracts a limited operational
@@ -615,4 +777,5 @@ census and a law that samples the resulting objects without borrowing the
 category's presentation order.
 
 That distinction is the present frontier. It is a physics question about which
-operations the law makes possible, not a request for more elaborate code.
+operations the law makes possible and which unmarked process complexes it
+weights, not a request for more elaborate code.

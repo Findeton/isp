@@ -2,44 +2,47 @@
 
 ## Ensemble compatibility, scale degeneracy, and the gates from premetric order to curvature
 
-### Research-preparation status
+### Construction-stage status
 
 Date: 2026-08-20
 
-This is a nonbinding Paper 15 research draft. Paper 14 now supplies a declared
-uniform varying-size abstract family, but that family is not an accepted
-physical base-law object. This draft does not assume that record dependency
-has become chronology or that a spacetime metric follows from it. It first
-asks what would have to be true for a presentation-independent stable-
-happening order and interval measure to carry Lorentzian metric information,
-then separates an exact failure of the graft family from a successful
-conditional reconstruction inside a separately declared smooth $1+1$ model.
-
-The draft begins only with the conditional input
+This analytical candidate is constructed under the committed result-neutral
+pin `fef4bc9080c0f27118a2ca501ea6e51c72135847`, SHA-256
+`06d8fc6df408e9fac767e0401b055565bea26b5e7d2da6fddc275d3aff4af3b6`.
+It is not an official result until the source is frozen, fresh cases are
+generated once, and the hostile cycle terminates. Paper 14 supplies only the
+structural input
 
 $$
-\mathfrak P
-=
-\left[
-(\mathsf B,\prec,\mu;\Gamma_{\rm hist})
-\right]_{\mathcal G},
+\mathfrak S=(\mathcal P,\mu_1),
 $$
 
-where $\mathsf B$ is a locally finite set of actual stable-happening bundles,
-$\prec$ is their intrinsic dependency order, $\mu$ is an interval-finite
-positive atomic measure, and $\Gamma_{\rm hist}$ is the law over possible
-bundle histories when one is available. Actuality remains supplied by the
-actualization postulate. An exact premetric family is useful for falsifying
-bad reconstruction rules, but it is not itself a spacetime.
+where $\mathcal P$ is a locally finite unlabeled structural bundle poset and
+$\mu_1$ counts bundle occurrences. No point-free probability law, intrinsic
+unequal weight, actuality map, chronology, clock, signal, density, continuum,
+or metric is inherited. Stable records are therefore treated as possible
+landmarks, not spacetime atoms; complete division frontiers remain distinct
+conditioning objects.
 
 ## Abstract
 
-Order and number contain metric information only after a demanding bridge has
-been crossed. In smooth causally distinguishing Lorentzian spacetimes, causal
-order fixes conformal information; a compatible volume measure can then fix
-the conformal scale. Those are reconstruction theorems inside a declared
-continuum category. They do not imply that an arbitrary finite dependency
-poset is chronological, manifoldlike, or uniquely embeddable.
+The first spacetime gate is operational, not combinatorial. A future accepted
+whole-history law must supply complete typed boundary arguments, same-law
+preparations, complete readers, and a presentation-covariant signed response
+tensor. Total intervention response must be separated from correlation,
+mediation, cancellation, indivisible co-onset, and multi-division feedback.
+The accepted input has no such law. Its native status is consequently
+`P15-GAMMA-OPERATIONAL-INFLUENCE-UNTESTED` and
+`P15-DEPENDENCY-NOT-CHRONOLOGY`, not a negative chronology theorem.
+
+Order and number contain metric information only after further bridges. In
+smooth causally distinguishing Lorentzian dimension $d>2$, the
+Hawking--King--McCarthy--Malament route lets chronology fix conformal
+information and a compatible volume form fix conformal scale. This theorem is
+not applied to $1+1$. The affine $1+1$ control below instead declares its
+smooth null chart and metric family and uses direct family-specific algebra.
+Neither route turns an arbitrary finite dependency poset or count into
+chronology, volume, or metric.
 
 We formulate the first honest reconstruction target as finite-ensemble
 compatibility. A candidate must declare its spacetime class, dimension,
@@ -53,46 +56,47 @@ zero to one; conformal metric rescaling can be hidden by compensating the
 sampling density; and finite order laws can fail to distinguish continuum
 geometries separated by arbitrarily large Lorentzian distance.
 
-The exact constructions separate two routes. Repeating the stationary
-$g=1/2$ kernel $B$ independently through binary scales produces a
-projectively consistent order law, but its permuton has dimension
-$1+h_2(9/25)<2$ and is singular. By contrast, an explicitly declared affine
-decoder turns the same $B$ correlation $-7/25$ into a smooth positive copula.
-Inside a declared $1+1$ null-coordinate category this gives an exact curved
-order-and-number law, a conditional scalar-curvature profile, a flat
-incidence-erased control, and a later-reader residual $49/5625$. Intrinsic
-longest chains converge with exact normalization to maximal proper time, while
-pair, local-volume, and independent chain-abundance routes recover the same
-curvature. These pieces form a conditional $1+1$ spacetime reconstruction
-theorem inside the registered affine-copula/Poisson family. The decoder,
-continuum category, dimension, signature, sampling law, density and probe
-remain inputs; no finite fit earns unique or Gamma-derived spacetime,
-autonomous curvature, gravity, or GR.
+The native descendant-chain family has exact
+$N_d=4d+1$, $H_d=3d+1$, $W_d=2$, and ordering fraction tending to one. It
+therefore fails the preregistered scale-homogeneous regular-diamond profile,
+but not manifoldlikeness universally: long diamonds on a compact flat
+cylinder are an explicit Lorentzian non-kill. Product-order, random-two-order,
+and affine-copula families are declared controls, not descendants of
+$\mathfrak S$.
 
-An explicit smooth decoder counterfamily makes the remaining gap exact. The
-same $B$, uniform marginals, reflection symmetry, and even the same two-point
-comparability can yield different curvature profiles. The affine spacetime is
-therefore conditionally reconstructed but not selected by the presently
-available law data.
+Inside a declared smooth $1+1$ affine-copula/Poisson family, exact order,
+number, chain, duration, metric, and curvature formulas agree. This is a
+conditional spacetime reconstruction theorem inside that family. It neither
+selects the family nor supplies an ISP physical metric. Local clocks, radar
+signals, diamond capacity, and propagation remain unconstructed natively;
+three-route agreement is untested.
 
-## 1. What must descend from Paper 14
+An explicit smooth decoder counterfamily makes the remaining gap exact. A
+fixed rank-one coefficient, uniform marginals, reflection symmetry, and even
+the same two-point comparability can yield different curvature profiles. The
+affine spacetime is conditionally reconstructed but not selected by the
+native structural input or by one low-order shadow.
 
-### 1.1 Physical nodes, not presentation rows
+## 1. What actually descends from Paper 14
+
+### 1.1 Structural occurrences, not presentation rows
 
 The input order is the isomorphism class of the complete bundle incidence
-structure. It is not obtained by counting groupoid orbits of nodes. If an
-automorphism exchanges two anonymous incomparable bundles, the unlabeled
-history still contains two bundles. Every Paper 15 statistic must be invariant
-under whole-structure isomorphism while preserving incidence multiplicity.
+structure. If an automorphism exchanges two anonymous incomparable bundles,
+the unlabeled structure still contains two occurrences. Every Paper 15
+statistic must be invariant under whole-structure isomorphism while preserving
+incidence multiplicity. This is a structural referent only: the failed Paper
+14 probability descent means it is not an accepted point-free history law or
+a set of actual stable happenings.
 
 ### 1.2 Dependency is not yet chronology
 
-Paper 14's relation $e\prec f$ means that $f$ has an essential typed
-dependence on $e$ after mutual-dependence bundles have been formed. A
-chronological interpretation additionally requires:
+Paper 14's relation $e\prec f$ is structural dependency after certified
+mutual-dependence bundles have been formed. A chronological interpretation
+would additionally require:
 
-1. **operational influence:** a permitted source variation at $e$ changes a
-   calibrated possible response at $f$;
+1. **operational influence:** a same-law source intervention at $e$ changes a
+   complete reader distribution at $f$;
 2. **directionality:** no corresponding reverse response exists under the
    same admissibility conditions;
 3. **screening:** common-cause correlation alone does not create an edge;
@@ -100,24 +104,64 @@ chronological interpretation additionally requires:
 5. **presentation covariance:** the relation descends under $\mathcal G$;
 6. **local finiteness:** every closed order interval is finite.
 
-Until these pass, $\prec$ remains a dependency order. Using the word
-``causal'' does not make it chronological.
+The current input contains no accepted $\Gamma$, preparation interface, or
+complete reader family, so these tests cannot be populated natively. Until a
+future terminal law supplies them, $\prec$ remains a dependency order. Using
+the word ``causal'' does not make it chronological.
 
 ### 1.3 The measure is not yet volume
 
-The unit measure counts physical bundles. An intrinsic $\Gamma$ measure, when
-strong-diamond descent holds, sums local surprisals. Neither interpretation is
-automatically spacetime volume. A candidate measure becomes volumetric only
-after an independently declared sampling or quadrature theorem relates it to
-a continuum volume form on every tested region and scale.
+The inherited unit measure counts structural bundle occurrences. Paper 14's
+intrinsic $\Gamma$ weight failed and is not available here. Unit count is not
+automatically spacetime volume. A candidate becomes volumetric only after an
+independently declared sampling or quadrature theorem relates it to a
+continuum volume form on every tested region and scale.
 
-## 2. Conditional order-plus-volume theorem
+### 1.4 Stable records and complete divisions remain independent
 
-Assume, rather than infer, that there exists a $d$-dimensional smooth
-causally distinguishing Lorentzian spacetime $(M,g)$ and a faithful map
+A stable record is a durable readable fact under a declared future grammar. A
+complete division frontier is a causal-break/future-sufficiency property of a
+complete boundary argument. Neither predicate implies the other. Exact
+controls must retain all four combinations: stable+division, stable without
+division, division without a new record, and neither. This prevents a local
+record from being promoted to a universal Markov checkpoint or spacetime atom.
+
+## 2. Operational chronology contract and conditional continuum theorem
+
+For a future accepted finite whole-history law, complete exterior context
+$c$, same-law preparations $\alpha,\beta$ at $A$, complete reader $R_B$, and
+reader outcome $r$, define the signed response tensor
 
 $$
-\iota:\mathsf B\longrightarrow M
+\Delta^\Gamma_{A\to B}[c;\alpha,\beta;R_B](r)
+=P_\Gamma(R_B=r\mid I_A^\alpha,c)
+-P_\Gamma(R_B=r\mid I_A^\beta,c).
+$$
+
+This tensor, not its total-variation norm, is the primitive evidence. Positive
+response establishes allowed-intervention signaling or total influence, not
+automatically a direct edge. Mediator interventions, complete-probe
+quantifiers, context reversal, cancellation, presentation covariance, and
+co-onset provenance are separate gates. Minimal nonfactorizable joint onsets
+are bundled before reachability. A separately manipulable multi-division
+cycle is a chronology refusal unless an exact external-interface-preserving
+macro quotient exists. Composition is used only at certified complete
+divisions.
+
+The declared controls in this paper demonstrate that this contract separates
+serial response, common cause, co-onset, commuting independence, mediation,
+cancellation, feedback, stable-not-division, division-without-happening, and
+delayed non-Markov response. They are not a native $\Gamma$ for
+$\mathfrak S$.
+
+### 2.1 Conditional order-plus-volume theorem
+
+Assume, rather than infer, that there exists a $d$-dimensional smooth
+causally distinguishing Lorentzian spacetime $(M,g)$ with $d>2$ and a sequence of
+faithful maps
+
+$$
+\iota_n:\mathsf B_n\longrightarrow M
 $$
 
 such that
@@ -125,31 +169,45 @@ such that
 $$
 e\prec f
 \quad\Longleftrightarrow\quad
-\iota(e)\in I^-(\iota(f)),
+\iota_n(e)\in I^-(\iota_n(f)).
 $$
 
-and that the atomic measure converges on a declared class of intrinsic regions
-to
+Require the images to become order-dense in a convergence-determining sense:
+the limiting discrete relations must determine the full continuum relation
+$I^+$, not merely its restriction to one finite image. Also require the
+rescaled atomic measures to converge to the limiting Borel measure on a
+convergence-determining basis of arbitrarily small relatively compact
+Alexandrov regions:
 
 $$
-\mu(A)\longrightarrow \rho\int_{\iota(A)}dV_g
+\mu_n(A)/\rho_n\longrightarrow \int_A dV_g
 $$
 
-with known positive density $\rho$. Under the usual continuum causality
-hypotheses, chronological order determines the conformal structure. If
+for a calibrated intensity sequence $\rho_n\to\infty$, equivalently with
+atomic volume weight $1/\rho_n\to0$. Under the continuum causality hypotheses,
+the recovered chronological relation determines the conformal structure. If
 $g'=\Omega^2g$, then
 
 $$
 dV_{g'}=\Omega^d dV_g.
 $$
 
-Consequently a known compatible volume density determines $\Omega$ and fixes
-the metric within the declared gauge and category.
+Consequently equality of the limiting Borel volume measures fixes $\Omega=1$
+almost everywhere, and smoothness fixes it everywhere. Order plus that
+convergence-determining volume measure therefore fixes the metric within the
+declared gauge and category. Agreement only on total volume or on a coarse
+finite region list is insufficient.
 
-This is a conditional theorem. The map $\iota$, dimension $d$, smoothness,
-chronological equivalence, density calibration, and convergence are its
-hypotheses. Paper 15 must test them; it cannot cite the conclusion to create
-the hypotheses.
+This is a conditional theorem. The maps $\iota_n$, dimension $d>2$, smoothness,
+chronological equivalence, order-dense limit, the calibrated sequence
+$\{\rho_n\}$, and
+convergence on a local measure-determining basis are its hypotheses. Paper 15
+must test them; it cannot cite the conclusion to create the hypotheses.
+
+The later affine $1+1$ theorem does not invoke this generic reconstruction
+route. Its smooth null coordinates, decoder, differentiable structure,
+signature, and metric family are declared hypotheses, after which direct
+order-and-number identities reconstruct parameters only inside that family.
 
 ## 3. Exact finite order observables
 
@@ -207,13 +265,11 @@ The converse is false. Order dimension at most two supplies an order-theoretic
 representation, not a faithful Poisson sprinkling, a volume law, smoothness,
 or a Lorentzian metric.
 
-## 4. Exact thin-interval obstruction for the Paper 14 graft family
+## 4. Target-relative thin-interval result for the native structural family
 
-The uniform Paper 14 family passes its premetric obligations but fails the
-first manifoldlike scaling test. Consider $d\ge1$ successive graft cells along
-one descendant branch. Let $x=Y_0$ be the owner bundle immediately before the
-first cell and $y=Y_d$ the response bundle of the last cell. The closed interval
-$[x,y]$ contains $x$ and all four bundles from each cell, so
+Consider $d\ge1$ successive structural cells in the surviving uniform family.
+The closed interval contains one initial bundle and all four occurrences from
+each cell, so
 
 $$
 N_d=4d+1.
@@ -237,8 +293,8 @@ r_d
 \longrightarrow1.
 $$
 
-A longest chain chooses either $A_i$ or $B_i$ and then passes through
-$G_i,Y_i$ in every cell. Hence
+A longest chain chooses either member of each incomparable pair and then the
+two later occurrences in that cell. Hence
 
 $$
 H_d=3d+1,
@@ -246,76 +302,40 @@ H_d=3d+1,
 W_d=2.
 $$
 
-Thus height grows linearly with unit interval mass rather than as a
-sublinear power. The same conclusion holds for the intrinsic Gamma measure.
-Every local factor is either $9/25$ or $16/25$, so for $\kappa>0$
+Thus height grows linearly with inherited unit interval mass, ordering fraction
+tends to one, and width stays two. No unequal $\Gamma$ weight is licensed.
 
-$$
-m=\kappa\log\frac{25}{16}
-\le w(e)\le
-\kappa\log\frac{25}{9}=M.
-$$
-
-Apart from the fixed endpoint contribution,
-
-$$
-4dm\le\mu_\Gamma([x,y])\le4dM.
-$$
-
-Consequently $H_d=\Theta(N_d)=\Theta(\mu_\Gamma([x,y]))$ for every
-branching bound $q$. Increasing $q$ adds incomparable sibling subtrees, but a
-root-to-descendant interval contains only the selected ancestral branch
-because the siblings never reconverge.
-
-For a faithful fixed-dimensional Poisson sprinkling in dimension $D\ge2$,
-longest-chain scaling is sublinear in interval volume. The graft family
-therefore fails that necessary manifoldlike profile and approaches a total
-order on its intrinsic intervals. It is a valid premetric stable-happening
-network, but it is effectively one-dimensional at the tested scale.
+This profile is compared only with the preregistered regime: either a fixed
+regular Alexandrov diamond at increasing Poisson density, or homothetic
+diamonds in uncompactified flat dimension $D\ge2$ at fixed density. In those
+regimes $H=\Theta(N^{1/D})$, so the native family fails the registered profile.
+This is not a universal manifoldlikeness no-go. For example, sufficiently
+long Alexandrov intervals on flat $\mathbb R\times S^1_L$ at fixed $L$ have
+volume, height, and count all linear in duration, with ordering fraction
+tending to one. That compact-cylinder family is a required non-kill.
 
 This is the first Paper 15 scientific outcome:
 
 ```text
-P15-GRAFT-FAMILY-FAILS-MANIFOLDLIKE-INTERVAL-SCALING
+P15-NATIVE-BUNDLE-FAMILY-FAILS-REGISTERED-DIAMOND-SCALING
 ```
 
-The failure does not call for relabeling $q$ as dimension or altering the
-weights. A successor must create law-derived cross-branch mergers or other
-thick causal intervals while retaining presentation covariance, fresh
-records, local finiteness, and no hidden global clock.
+The result says only that this structural family does not match that declared
+scale-homogeneous target. It does not infer a physical dimension, chronology,
+or spacetime from the mismatch.
 
-### 4.1 Square-completion calibration family
+### 4.1 Product-order calibration family
 
-There is an exact minimal way to test whether cross-branch merger repairs the
-scaling. Let
+There is an exact structural control for thick intervals. Let
 
 $$
 P_{m,n}=[m]\times[n]
 $$
 
 with the coordinatewise product order. The coordinates are proof addresses,
-not physical locations. A presentation consists of a finite unlabeled poset
-whose local incidence has two exchange-symmetric successor channels; the
-groupoid includes every incidence-preserving relabeling and interchange of
-the two channels. Each nonboundary site consumes the two immediate predecessor
-records, writes one fresh persistent binary record, and exposes its two
-successor incidences. Different enabled sites commute.
-
-For fixed binary source-boundary values $z_{i,0},z_{0,j}$, use the same local
-law at every site:
-
-$$
-\Gamma_{m,n}(z\mid\partial z)
-=
-\prod_{i=1}^{m}\prod_{j=1}^{n}
-B_{z_{ij}\mid z_{i-1,j}\oplus z_{i,j-1}}.
-$$
-
-The product is independent of topological serialization. Reverse maximal-site
-elimination proves normalization, and complete-parent screening proves every
-strong diamond. Each site is a fresh stable happening, every order-ideal
-stopping line gives a complete frontier when its full boundary records are
-retained, and every finite or $\mathbb N^2$ interval is finite.
+not physical locations or clocks. Transposition exchanges the two coordinate
+factors and is a required physical non-kill. The control supplies no native
+transition law, record theorem, or complete division frontier.
 
 For the square $P_{n,n}$,
 
@@ -354,37 +374,28 @@ $$
 H_n=\Theta(N_n^{1/2}),
 $$
 
-and bounded positive Gamma weights leave the same exponent. Unlike the graft
-tree, this family has thick intervals and passes the basic relation-fraction,
-height-volume, width-growth, and trace-invariance controls expected of a
-$1+1$ product-order calibration. Controlled thinning and finite-size
-fluctuations remain separate tests.
-
-Matter or relational source bits change the next record probability by the
-same exact $7/25$ residual, and the written record changes both future channel
-laws. Thus the merger network retains one-law reciprocal response while
-creating thick intervals.
+Unlike the native thin family, this family has thick intervals and passes the
+relation-fraction, height/count, width-growth, and transposition controls
+expected of a declared $1+1$ product-order calibration. Controlled thinning
+and finite-size fluctuations remain separate tests.
 
 The honest outcome is nevertheless only
 
 ```text
-P15-DECLARED-TWO-CHANNEL-1+1-KINEMATIC-COMPATIBILITY
+P15-DECLARED-PRODUCT-ORDER-KINEMATIC-COMPATIBILITY
 ```
 
-The two incidence channels, rectangular boundary family, and local square-
-completion rule are declared grammar. The regular grid is not a Poisson
-sprinkling, supplies no Lorentz invariance or continuum convergence, and has
-no physical scale. It is a positive calibration showing what the missing
-mergers must accomplish; it does not derive dimension or spacetime from the
-original graft law.
+The two coordinate orders and rectangular family are declared representation.
+The regular grid is not a Poisson sprinkling, supplies no Lorentz invariance or
+continuum convergence, and has no physical scale. It is a positive structural
+calibration, not a derived successor law.
 
 ### 4.2 Presentation-covariant thinning theorem
 
 Retain each node of $P_{n,n}$ independently with a fixed probability
 $p\in(0,1]$ and use the induced order. This is an analysis coarse-graining,
-not a licensed future eraser: the physical history and its records remain
-unchanged. Independent retention is invariant under every automorphism of the
-unlabeled poset.
+not a physical future operation. Independent retention is invariant under
+every automorphism of the unlabeled poset.
 
 Let $N_n^{(p)},R_n^{(p)},H_n^{(p)},W_n^{(p)}$ denote the thinned statistics.
 Then
@@ -426,17 +437,12 @@ N_n^{(p)}(N_n^{(p)}-1)
 \frac12.
 $$
 
-Thus neutral thinning preserves the square-root height/mass exponent, linear
-width, and limiting relation fraction. Bounded intrinsic Gamma weights
-preserve the same scaling by comparison with unit mass.
+Thus neutral thinning preserves the square-root height/count exponent, linear
+width, and limiting relation fraction.
 
-This strengthens the calibration to
-
-```text
-P15-DECLARED-GRID-THINNING-SCALING-STABLE
-```
-
-It still does not supply Lorentz invariance. Bernoulli thinning of a regular
+This strengthens the evidence inside the declared product-order coordinate,
+but does not create a new physical coordinate. It still does not supply
+Lorentz invariance. Bernoulli thinning of a regular
 two-channel lattice retains its preferred null-channel skeleton; it is not a
 homogeneous Poisson sprinkling and is not invariant under continuum boosts.
 
@@ -456,7 +462,7 @@ $$
 
 Push this labeled law forward to unlabeled poset isomorphism classes and call
 the result $\pi_n$. The latent total orders are integrated representation
-variables, not physical clocks or coordinates. The physical random object is
+variables, not physical clocks or coordinates. The declared random object is
 only the unlabeled intersection poset. Its law is invariant under every
 permutation of the input labels and under $L_1\leftrightarrow L_2$.
 
@@ -489,49 +495,12 @@ random-permutation scaling law. Relation fraction converges to $1/2$, and the
 complete interval-abundance distribution agrees with flat $1+1$ sprinkling by
 the exact law equivalence, not merely by matching a few moments.
 
-One can attach stable binary records without changing the shape theorem. For
-each realized $P$, let
-
-$$
-\chi_v=
-\begin{cases}
-s_0,&v\text{ minimal},\\
-\displaystyle\bigoplus_{u\lessdot v}z_u,&\text{otherwise},
-\end{cases}
-$$
-
-and define the joint shape-and-record law
-
-$$
-\widehat\Gamma_n(P,z\mid s_0)
-=
-\pi_n(P)
-\prod_{v\in P}B_{z_v\mid\chi_v}.
-$$
-
-For every fixed $P$, reverse maximal-element elimination normalizes the record
-factors and complete-parent conditioning gives strong-diamond descent. Summing
-over $P$ then proves normalization of the joint law. Each actual node writes a
-fresh stable record, and toggling one essential parent parity moves its local
-response by $7/25$.
-
-The $\pi_n$ shape family is projectively consistent; the cover-based record
-law is not claimed to be unchanged when physical nodes are deleted, because
-deletion changes cover sets. Analysis thinning must not be confused with a
-licensed record eraser.
-
-This earns the exact conditional statement
-
-```text
-P15-DECLARED-RANDOM-2D-ORDER-EXACT-FLAT-1+1-SPRINKLING-SHAPE-LAW
-```
-
 It removes the grid and reproduces the complete finite flat-$1+1$ order
 ensemble, but it still declares two latent order factors and the flat target
 class. Conditioning on $n$ removes the intensity scale; no absolute duration,
 curvature, topology beyond the declared diamond, or higher-dimensional law is
-derived. The shape factor $\pi_n$ is a new kinematic law component, not a
-consequence of the Paper 14 $B$ kernel.
+derived. The shape factor $\pi_n$ is a declared kinematic component, not a
+consequence of the Paper 14 structural input.
 
 ### 4.4 Exact order-and-number completion
 
@@ -567,7 +536,7 @@ $$
 This reaches
 
 ```text
-P15-DECLARED-FLAT-1+1-POISSON-ORDER-AND-NUMBER-LAW
+P15-DECLARED-FLAT-1PLUS1-ORDER-AND-NUMBER-CONTROL
 ```
 
 and is the first exact order-plus-number spacetime comparison in the
@@ -576,9 +545,9 @@ $\lambda$, not $\rho$ and $V$ separately. If $\rho$ is independently
 calibrated, $N/\rho$ is an unbiased volume estimator; without that calibration,
 Theorem 1's conformal-density degeneracy leaves absolute length and duration
 undetermined. Neither $\lambda$ nor the Poisson cardinality law follows from
-the local $B$ kernel.
+the native structural input.
 
-### 4.5 The direct $B$-digit route is exactly singular
+### 4.5 A declared binary-digit decoder is exactly singular
 
 There is a natural attempt to remove the independently declared flat shape
 factor. At $g=1/2$, use the unique stationary distribution of the positive
@@ -609,9 +578,8 @@ $$
 Both marginals are uniform, so the joint law $\nu_B$ is a permuton. Sampling
 independently from $\nu_B$ and intersecting the two rank orders gives an
 exchangeable, presentation-independent, all-cardinality order family. It is
-also exactly projective under neutral deletion. In that restricted sense the
-shape law is now built from repeated uses of $B$ rather than inserted as an
-independent uniform-permutation factor.
+also exactly projective under neutral deletion. This is a declared cross-scale
+decoder for the binary calibration, not a law inherited from $\mathfrak S$.
 
 The construction nevertheless fails the smooth-volume gate. Its four dyadic
 similarities have weights $q_{xy}$ and contraction ratio $1/2$. Consequently
@@ -660,22 +628,22 @@ $$
 r_B=\frac{1+\tau_B}{2}=\frac{369}{913}.
 $$
 
-This earns a negative but genuinely law-linked result:
+This is the exact singular-support control required by M23. Independent
+dyadic repetition is the wrong smooth-volume decoder: it produces a
+multifractal measure rather than a smooth spacetime volume. The binary matrix
+and refinement tree are both declared calibration data.
 
-```text
-P15-B-DIGIT-PERMUTON-SINGULAR-NONMANIFOLDLIKE
-```
+### 4.6 A declared smooth affine-copula calibration
 
-It is not a failure of the local transition law. It says that independent
-dyadic repetition is the wrong continuum decoder: it produces a multifractal
-measure rather than a smooth spacetime volume. The binary refinement tree is
-itself still a declared cross-scale grammar.
+For this calibration only, declare
 
-### 4.6 A smooth same-$B$ copula calibration
+$$
+B=\frac1{25}\begin{pmatrix}9&16\\16&9\end{pmatrix},
+\qquad \theta=-\frac7{25}.
+$$
 
-The singularity is not forced by the one-step $B$ correlation. It is forced
-by reusing that correlation independently at every binary scale. A different
-decoder yields an exact smooth control while keeping the same local kernel.
+Neither object is inherited from Paper 14. They expose how two decoders with
+one declared binary correlation can have different continuum behavior.
 
 Let $A$ be fair and let $D$ be obtained from $A$ through $B$, so
 
@@ -702,7 +670,8 @@ c_B(u,v)
 \end{aligned}
 $$
 
-The coefficient is not fitted. It is the stationary $B$ correlation
+Within this declared control, the coefficient is the stationary $B$
+correlation
 
 $$
 \mathbb E[(-1)^{A+D}]
@@ -753,8 +722,8 @@ $$
 This does **not** make one scalar sufficient outside the registered family.
 The complete all-size law remains the object. The permutation-limit theorem
 of Hoppen et al. [14] shows that all finite oriented rank-pattern densities
-determine the underlying permuton almost everywhere. The physical
-unlabeled-poset pushforward is coarser: Janson's exchangeable-poset theory
+determine the underlying permuton almost everywhere. The unlabeled-poset
+pushforward is coarser: Janson's exchangeable-poset theory
 [15] determines a poset-limit class, not automatically a unique pair of
 null-coordinate realizers. Any reconstruction that needs the oriented
 realizers must declare them or prove the missing rigidity theorem.
@@ -779,7 +748,7 @@ $$
 \frac{8\theta}{A c_\theta^3}.
 $$
 
-Thus the same-$B$ control has the nonzero curvature profile
+Thus the declared affine control has the nonzero curvature profile
 
 $$
 \mathcal R_B(u,v)
@@ -793,7 +762,8 @@ determines $\theta_B$, $A=\lambda/\rho$, and the displayed metric and scalar
 curvature profile. Without $\rho$, the conformal shape is fixed inside the
 family but the absolute curvature scale remains free.
 
-There is an exact incidence-erased control using the same resources. Feed
+There is an exact correlation-erased control using the same declared
+resources. Feed
 $D$ from an independent fair bit rather than from $A$ through $B$. Then $A$
 and $D$ are independent, $c(u,v)=1$, $r=1/2$, and the conditional metric is
 flat. The correlated and blind rows differ in comparability by
@@ -802,23 +772,14 @@ $$
 \frac12-\frac{211}{450}=\frac7{225}.
 $$
 
-If that comparability bit is passed to a later calibrated $B$ reader, the
-reader probability moves by
-
-$$
-\frac7{25}\frac7{225}=\frac{49}{5625}.
-$$
-
-This is a same-kernel two-way discriminator: relational incidence changes the
-conditional geometry, and the changed order changes a later record response.
-It is still only a declared-decoder, pre-Einstein reciprocal response. The
-affine decoder, two null channels, continuum square, Poisson sampling, density
-calibration, and probe wiring are not selected by $B$.
+The affine decoder, two null channels, continuum square, Poisson sampling,
+density calibration, and binary calibration are all hypotheses. This control
+contains no native matter--geometry response.
 
 The exact scoped outcome is
 
 ```text
-P15-B-SHADOW-DECLARED-AFFINE-DECODER-CURVED-1+1-ORDER-AND-NUMBER-LAW
+P15-FINITE-COMPATIBILITY-WITH-DECLARED-MANIFOLDLIKE-ENSEMBLE
 ```
 
 with conditional coordinates
@@ -826,12 +787,11 @@ with conditional coordinates
 ```text
 P15-CONFORMAL-CAUSAL-DATA-CONDITIONAL
 P15-CONDITIONAL-LORENTZIAN-METRIC-CANDIDATE
-P15-CONDITIONAL-SCALAR-CURVATURE-CANDIDATE
-P15-PRE-EINSTEIN-GEOMETRIC-RECIPROCAL-RESPONSE
+P15-CONDITIONAL-CURVATURE-CONTROL
 ```
 
-only inside the explicitly declared family. This is the first curved metric
-candidate in the programme, not a derivation of spacetime from $\Gamma$ alone.
+only inside the explicitly declared family. This is a curved metric control,
+not a derivation of spacetime from $\mathfrak S$ or from a native $\Gamma$.
 
 ### 4.7 Exact decoder-nonselection theorem
 
@@ -891,7 +851,8 @@ is strictly monotone because
 $$
 \frac{d\phi_*}{dx}
 =
-\frac1{16}\left(13+30x^2-35x^4\right)
+\frac18\left(5+30x^2-35x^4\right)
+=\frac58(1-x^2)(1+7x^2)
 >0
 \qquad(-1<x<1).
 $$
@@ -931,11 +892,7 @@ $$
 \ne-\frac{56}{25A}.
 $$
 
-This proves the negative coordinate
-
-```text
-P15-B-AND-TWO-POINT-ORDER-UNDERDETERMINE-DECODER-AND-CURVATURE
-```
+This is the exact fixed-low-order-shadow nonselection required by M22.
 
 The already registered higher-order order law does distinguish this explicit
 pair. Direct polynomial integration gives
@@ -955,15 +912,13 @@ I_3(\phi_*)
 $$
 
 Thus the independent three-chain gate refuses $\phi_*$ even though $B$ and
-$I_2$ agree. This earns the narrower positive discriminator
-
-```text
-P15-THREE-CHAIN-DISTINGUISHES-EXPLICIT-SAME-B-DECODER-PAIR
-```
+$I_2$ agree. Thus the held-out three-chain observable distinguishes this
+explicit decoder pair.
 
 The full all-size order law can in principle distinguish still broader
-decoder classes; $B$ and one relation fraction cannot. Therefore selecting the
-affine model requires either a Gamma-derived higher-order continuum probe
+decoder classes; the binary calibration and one relation fraction cannot.
+Therefore selecting the affine model requires either a future law-derived
+higher-order continuum probe
 family, an independently motivated decoder principle, or a full-law rigidity
 theorem. Merely preferring the smoothest-looking profile would insert geometry
 by hand.
@@ -971,7 +926,7 @@ by hand.
 ### 4.8 Conditional full-pattern rigidity
 
 There is a precise sufficient selection theorem, but its input is stronger
-than the currently derived physical order. Suppose a probe supplies the
+than the accepted structural poset. Suppose a probe supplies the
 density of every finite **oriented permutation pattern** of the two declared
 null ranks. The permutation-limit theorem [14] then determines the permuton
 measure uniquely up to equality almost everywhere. If the accepted measure
@@ -1007,17 +962,12 @@ value, the wrong eigenvalue sign, loss of smooth absolute continuity, or a
 failed reconstruction of any held-out pattern is a refusal, not permission to
 project onto rank one.
 
-This conditional result is
-
-```text
-P15-ORIENTED-FULL-PATTERN-LAW-RIGIDLY-SELECTS-RANK-ONE-DECODER-GEOMETRY
-```
-
 It identifies the missing bridge exactly. Oriented permutation patterns retain
-the two null realizers. The physical Paper 14 object is only an unlabeled
+the two null realizers. The accepted Paper 14 input is only an unlabeled
 bundle poset, whose realizer pair need not be unique. Consequently the theorem
-does not yet close decoder selection. Paper 15 must either derive a covariant
-realizer pair/probe pair from Gamma, or prove that the unlabeled all-size poset
+does not yet close decoder selection. A successor must either derive a
+covariant realizer pair/probe pair from a future accepted law, or prove that
+the unlabeled all-size poset
 law determines the same metric class without choosing one. Feeding the latent
 orders from a sampling algorithm into this theorem would merely rename a
 global representation as geometry.
@@ -1079,8 +1029,8 @@ r_w=\frac1{2t+1}\longrightarrow0.
 $$
 
 The order is fixed throughout. Therefore arbitrary positive weights can tune
-a weighted relation statistic across almost its whole range. A
-$\Gamma$-derived weight may enter a geometric estimator only after a physical
+a weighted relation statistic across almost its whole range. A future
+law-derived weight may enter a geometric estimator only after a physical
 volume/intensity theorem, not merely because the weight is invariant and
 additive.
 
@@ -1231,10 +1181,17 @@ T_{\max}(A,\theta)
 }.
 $$
 
-The same cancellation holds on every fixed preregistered causal subdiamond:
-conditioning on that interval normalizes its coordinate density, while its
-Poisson count contributes the corresponding physical volume. Thus no
-coordinate area or global execution index is needed by the estimator.
+For local tests, the observation protocol preregisters two distinguished
+boundary events $p\prec q$ as Palm marks and does not choose them adaptively
+from the same interior sample. Slivnyak's theorem [26] leaves the open interior
+$I(p,q)$ as an independent Poisson process with the restricted intensity.
+Membership is then recoverable from the marked order by
+$p\prec x\prec q$. The same cancellation holds on every such fixed marked
+subdiamond: its conditional coordinate density is normalized, while its
+Poisson count supplies its declared physical volume. No coordinate area or
+global execution index enters the estimator after the boundary marks are
+given. Generic intervals selected from sampled endpoints are outside this
+theorem unless their selection rule receives a separate consistency proof.
 
 The flat control is exact. At $\theta=0$, Cauchy--Schwarz gives
 $\mathcal J[1]=1$, hence
@@ -1246,7 +1203,8 @@ T_{\max}(A,0)=\sqrt{2A},
 \longrightarrow \sqrt{2A}.
 $$
 
-The same-$B$ affine density also satisfies the theorem's hypotheses because
+The declared $\theta=-7/25$ affine density also satisfies the theorem's
+hypotheses because
 
 $$
 \frac{18}{25}\le c_B(u,v)\le\frac{32}{25}.
@@ -1263,34 +1221,28 @@ c_0(u)=1+\theta x^2,
 w(u)=\sqrt{c_0(u)}.
 $$
 
-Every absolutely continuous increasing path can be written as $v=v(u)$ with
-$v(0)=0$ and $v(1)=1$. Weighted AM--GM gives
+For a general absolutely continuous increasing parametrization
+$t\mapsto(u(t),v(t))$, weighted AM--GM gives
 
 $$
-\sqrt{c(u,v)v'}
+\sqrt{c(u,v)\dot u\dot v}
 \le
-\frac12\left(\frac{c(u,v)}{w(u)}+w(u)v'\right).
+\frac12\left(\frac{c(u,v)}{w(u)}\dot u+w(u)\dot v\right).
 $$
 
-The integrated excess over the diagonal value vanishes identically:
+Let $h=v-u$. Since
+$c-c_0=-2\theta xh$ and
+$dw/du=-2\theta x/w$, the excess of the right side over the
+diagonal integrand $w\dot u$ is an exact boundary derivative:
 
 $$
-\begin{aligned}
-&\int_0^1
-\left[
-\frac{c-c_0}{w}+w(v'-1)
-\right]du\\
-&=
-\int_0^1
-\left[
--\frac{2\theta x}{w}(v-u)
--w'(v-u)
-\right]du
-=0,
-\end{aligned}
+\frac12\left[
+\left(\frac{c}{w}-w\right)\dot u+w(\dot v-\dot u)
+\right]
+=\frac12\frac{d}{dt}(wh).
 $$
 
-because $w'=-2\theta x/w$ and the endpoint term vanishes. Therefore
+The endpoints have $h=0$, so its integral vanishes. Therefore
 
 $$
 \mathcal J[c_\theta]
@@ -1298,13 +1250,15 @@ $$
 \int_0^1\sqrt{1+\theta(1-2u)^2}\,du.
 $$
 
-Equality in AM--GM requires
+Equality excludes nonconstant vertical or horizontal segments and, wherever
+the curve moves, requires
 
 $$
-v'=\frac{c(u,v)}{c_0(u)}.
+\frac{\dot v}{\dot u}=\frac{c(u,v)}{c_0(u)}.
 $$
 
-The right side is Lipschitz in $v$, and $v(u)=u$ is its solution through
+The right side is Lipschitz in $v$. Thus an equality curve is a graph almost
+everywhere; $v(u)=u$ is its solution through
 $v(0)=0$; uniqueness makes the diagonal the unique maximizing curve. Hence
 
 $$
@@ -1325,7 +1279,7 @@ $$
 \end{cases}
 $$
 
-For the same-$B$ value this gives the exact duration
+For the declared $\theta=-7/25$ value this gives the exact duration
 
 $$
 \boxed{
@@ -1350,10 +1304,10 @@ This value lies strictly inside the earlier density-only bounds
 $6\sqrt A/5$ and $8\sqrt A/5$. Its proof uses the affine form, not symmetry
 alone; a different smooth decoder must solve its own variational problem.
 
-The scoped outcome is
+The scoped coordinate is
 
 ```text
-P15-DECLARED-SMOOTH-COPULA-LONGEST-CHAIN-DURATION-CONSISTENCY
+P15-LOCAL-DURATION-CANDIDATE
 ```
 
 This is stronger than calling height an analogy for time: it is a consistency
@@ -1375,10 +1329,63 @@ Required clock controls include:
 - documented finite-size and boundary bias; and
 - refusal when candidate dimension estimators disagree.
 
-The longest-chain theorem supplies one calibrated clock route. A standalone
-proper-time claim still requires a second local construction, agreement on
-held-out intervals, and a scale calibration that was not inferred from the
-same chain heights.
+The longest-chain theorem supplies a conditional maximal-duration estimator,
+not a clock construction. A clock claim requires two independently
+constructed persistent typed phase systems, their exact transport and
+readability, agreement on held-out same-path intervals, and a scale
+calibration not inferred from the same chain heights.
+
+### 8.3 Native clock and radar gates
+
+A local clock must be a persistent typed subsystem with distinguishable
+phases, exact phase transport between complete divisions, and readable phase
+records. Two independently constructed clock species must agree up to one
+preregistered affine calibration when co-transported on the same influence
+chain and physical path. A growth counter or list rank is not a clock.
+
+Given calibrated emitter readings $\tau_1,\tau_2$, a universal signal sector,
+and either zero retransmission latency or an independently calibrated and
+subtracted turnaround delay, radar data may define
+
+$$
+\tau_{\rm event}=\frac{\tau_1+\tau_2}{2},
+\qquad
+d_{\rm radar}=\frac{\tau_2-\tau_1}{2}
+$$
+
+after calibrating the common limiting signal speed to one. Different lawful
+signal species must agree on held-out cones and intervals. Disagreement is a
+multimetric or no-unique-metric result, not an invitation to average them.
+The native input supplies neither clocks nor signals, so these gates are
+currently untested.
+
+### 8.4 Capacity and propagation are separate valuation routes
+
+For frozen encoders, readers, error criterion, and resource budget
+$\mathcal R$, let $N_0^{\mathcal R}(D)$ be the maximum zero-error record family
+recoverable in a complete diamond. The information valuation
+$\log N_0^{\mathcal R}(D)$ is only a candidate. Independent product codes give
+a product lower bound, not equality; unrestricted joint codes may be
+superadditive. Tensor behavior also does not prove finite additivity on
+disjoint regions. Even a genuinely additive capacity may scale like area or
+entropy rather than spacetime volume.
+
+The propagation route must separate retarded intervention response from state
+correlation. Arrival distributions, support cones, phase transport, and return
+laws retain their complete source/detector/species dependence. Spectral
+dimension additionally requires a chosen positive diffusion kernel, measure,
+boundary convention, and scale window. For the undirected simple random walk
+with a uniform unit-occurrence start, define the averaged two-step return by
+$\bar p_2=|V|^{-1}\operatorname{tr}(P^2)$. On the same four-element diamond,
+the Hasse graph and transitive-closure graph give respectively $1/2$ and
+$7/18$; a stationary-degree average would give a different scalar. Order
+alone chooses none of these protocols.
+
+A physical metric would require held-out agreement, modulo frozen gauge,
+among order-plus-measure, clocks-plus-radar, and propagation, with disjoint
+calibration data and cross-route predictions. The native Paper 15 input
+cannot run that comparison. The affine metric below remains a declared-family
+internal consistency theorem.
 
 ## 9. From compatible metric data to curvature
 
@@ -1478,13 +1485,8 @@ dimension and curvature require more than the flat Myrheim–Meyer statistic.
 The boxed identity must not be extrapolated to arbitrary copulas: higher
 mixed derivatives add terms that the bilinear derivation does not contain.
 
-This establishes
-
-```text
-P15-DECLARED-AFFINE-COPULA-ORDER-VOLUME-CURVATURE-IDENTITY
-```
-
-and supports the conditional scalar-curvature **candidate**. It does not yet
+This exact identity supports the conditional scalar-curvature **candidate**.
+It does not yet
 pass the independent discrete-operator/chain-abundance gate.
 
 ### 9.4 Independent centered chain-abundance route
@@ -1548,22 +1550,19 @@ $$
 
 agreeing with both metric differentiation and the local order-volume identity.
 
-This earns
-
-```text
-P15-DECLARED-AFFINE-COPULA-CHAIN-CURVATURE-CROSSCHECK
-```
-
-at the ensemble-expectation level. It is not yet a finite-sample error theorem
+The chain route agrees at the ensemble-expectation level. It is not yet a
+finite-sample error theorem
 or a profile-wide inclusive-interval/Benincasa–Dowker reconstruction. Those
 remain required before the curvature coordinate can be called autonomous.
 
-### 9.5 Finite-sample consistency inside the declared family
+### 9.5 Fixed marked-boundary finite-sample consistency
 
 The Poisson model turns the preceding identities into consistent discrete
-estimators without adding coordinates to the observed causet. For an intrinsic
-subdiamond $I$, let $N_I$ be its element count and $C_{k,I}$ its number of
-$k$-element chains. When $N_I\ge k$, define
+estimators under the preregistered Palm boundary protocol. Let
+$I=I(p,q)$ be the open interval between the two distinguished marks, let
+$N_I$ count only its unmarked interior elements, and let $C_{k,I}$ be its
+number of $k$-element chains. The observed order identifies membership by
+$p\prec x\prec q$. When $N_I\ge k$, define
 
 $$
 \widehat I_{k,I}
@@ -1581,8 +1580,10 @@ $$
 \frac{2C_{2,I}}{N_I(N_I-1)}.
 $$
 
-Conditional on $N_I=n$, $k!\widehat I_{k,I}$ is the bounded U-statistic for
-the indicator that a uniformly selected $k$-subset is a chain. Hence
+By Slivnyak's theorem, conditional on $N_I=n$, the interior points are iid
+from the restricted normalized volume law. Thus $k!\widehat I_{k,I}$ is the
+bounded U-statistic for the indicator that a uniformly selected $k$-subset is
+a chain. Hence
 
 $$
 \widehat I_{k,I}\xrightarrow[]{p}I_{k,I},
@@ -1590,7 +1591,7 @@ $$
 \widehat r_I\xrightarrow[]{p}r_I,
 $$
 
-with variance $O(n^{-1})$ for every fixed $k$. If the physical interval and
+with variance $O(n^{-1})$ for every fixed $k$. If the declared interval and
 metric are held fixed while the calibrated sprinkling density
 $\rho\to\infty$, then
 
@@ -1598,7 +1599,8 @@ $$
 \frac{N_I}{\rho}\xrightarrow[]{p}V(I).
 $$
 
-Therefore the point-free local estimator
+Therefore the order-intrinsic estimator, conditional on the declared boundary
+marks,
 
 $$
 \widehat{\mathcal R}_I
@@ -1614,8 +1616,8 @@ $$
 \mathcal R_{A,\theta}(\operatorname{center}I)
 $$
 
-for every fixed registered subdiamond. The event $N_I<2$ is a declared
-refusal and has probability tending to zero.
+for every fixed registered Palm-marked subdiamond. The event $N_I<2$ is a
+declared refusal and has probability tending to zero.
 
 At the whole-diamond center, define $\widehat\theta_3$ as the unique root in
 $(-1,1)$ of
@@ -1645,17 +1647,13 @@ $$
 $$
 
 converges to zero and remains a held-out model check. These statements extend
-jointly to any preregistered finite collection of subdiamonds. They do not
-establish uniform convergence over adaptively selected or shrinking regions.
+jointly to any preregistered finite collection of fixed Palm-marked
+subdiamonds. They do not establish uniform convergence over adaptively
+selected, sample-endpoint-selected, or shrinking regions.
 
-This reaches
-
-```text
-P15-DECLARED-AFFINE-COPULA-FINITE-SAMPLE-CURVATURE-CONSISTENCY
-```
-
-inside the declared Poisson family. It is still conditional on the target
-category, decoder, density calibration, and correct interval identification.
+This yields finite-sample consistency inside the declared Poisson family. It
+is still conditional on the target
+category, decoder, density calibration, and valid boundary-mark protocol.
 An inclusive-interval or discrete-operator route remains necessary to test
 family misspecification rather than merely estimate a correct registered
 family.
@@ -1682,7 +1680,7 @@ Indeed:
 1. $\det g_{A,\theta}=-A^2c_\theta^2<0$, so the declared metric is smooth and
    Lorentzian with signature $(1,1)$.
 2. Future causal curves have nondecreasing $u$ and $v$. Hence their causal
-   order is exactly the physical intersection order used by the samples.
+   order is exactly the sampled intersection order.
 3. Strict Alexandrov intervals are coordinate rectangles. They form a basis
    for the ordinary topology of the diamond; no latent linear extension is
    needed.
@@ -1693,19 +1691,21 @@ Indeed:
    marginal null gauge. Smooth increasing reparameterizations change the
    coordinates, not the reconstructed geometry.
 7. Intrinsic longest chains converge to maximal proper time by Section 8.1.
-8. Pair abundance, local volume, metric differentiation, and the independent
-   centered chain route give the same scalar-curvature profile.
+8. Pair abundance with local volume and metric differentiation give the same
+   scalar-curvature profile. The independent centered chain route agrees at
+   the whole-diamond center; no profile-wide chain inversion is claimed.
 
-Thus the registered model reaches
+Thus the registered model reaches only
 
 ```text
-P15-DECLARED-AFFINE-COPULA-CONDITIONAL-1+1-SPACETIME-RECONSTRUCTION
+P15-CONDITIONAL-LORENTZIAN-METRIC-CANDIDATE
+P15-CONDITIONAL-CURVATURE-CONTROL
 ```
 
-This is the precise sense in which Paper 15 gets to spacetime: all of the
-Lorentzian structures are mutually compatible and consistently recoverable
-from intrinsic order-and-number observables **inside one declared smooth
-family**. It is not yet spacetime emergence from $\Gamma$. Dimension,
+All of the Lorentzian structures are mutually compatible and consistently
+recoverable from intrinsic order-and-number observables **inside one declared
+smooth family**. This is not spacetime emergence from the native input.
+Dimension,
 signature, continuum differentiability, the affine decoder, Poisson sampling,
 and the calibration $\rho$ were fixed before the reconstruction. The theorem
 does not select that family against other continuum or noncontinuum models,
@@ -1726,7 +1726,7 @@ conditional candidate, metric compatibility, or premetric order.
 
 ## 10. Reciprocal response is not yet gravity
 
-Paper 14's exact finite law already supplies
+A presentation-bound declared Paper 14 control exhibited
 
 $$
 \text{matter input}
@@ -1736,10 +1736,13 @@ $$
 \text{later matter response}.
 $$
 
-Paper 15 may call this geometric backreaction only if the middle object has
+That rejected law is not inherited by Paper 15. A future accepted typed law
+would first have to reproduce this chain. Only then may a successor call the
+response geometric backreaction, and only if the middle object has
 independently passed the chronology, manifoldlike, metric, and curvature
-gates. The required test holds the microscopic law, sampling calibration, and
-selection rules fixed while varying a typed matter input. It must show:
+gates. Given such an accepted law, the required test holds that law, sampling
+calibration, and selection rules fixed while varying a typed matter input. It
+must show:
 
 1. a reproducible change in retained order/measure observables;
 2. a corresponding change in independently reconstructed metric or curvature
@@ -1767,9 +1770,7 @@ paper cannot by itself support ordinary Einstein backreaction. Reading it as
 a nonzero Einstein tensor, or defining stress-energy from it after the fact,
 would be a category error. A successor using ordinary GR must derive or
 declare a higher-dimensional carrier; a successor remaining in $1+1$ must
-declare a different gravitational theory. Paper 16 records the smallest
-honest ordinary-GR control as a declared $3+1$ Einstein--massless-scalar
-sector.
+declare a different gravitational theory.
 
 A conditional GR claim would require, at minimum:
 
@@ -1792,7 +1793,12 @@ equation is curve fitting, not recovery of GR.
 ### Chronology
 
 ```text
+P15-STRUCTURAL-ORDER-UNIT-MEASURE-BOUND
 P15-DEPENDENCY-NOT-CHRONOLOGY
+P15-NO-ACCEPTED-INTERVENTIONAL-LAW
+P15-GAMMA-OPERATIONAL-INFLUENCE-UNTESTED
+P15-GAMMA-NO-OPERATIONAL-CHRONOLOGY
+P15-GAMMA-OPERATIONAL-INFLUENCE-PREORDER
 P15-OPERATIONAL-CHRONOLOGY-CANDIDATE
 P15-LOCALLY-FINITE-CHRONOLOGICAL-ORDER
 ```
@@ -1800,20 +1806,14 @@ P15-LOCALLY-FINITE-CHRONOLOGICAL-ORDER
 ### Manifoldlikeness
 
 ```text
-P15-NO-MANIFOLDLIKE-MODEL
-P15-GRAFT-FAMILY-FAILS-MANIFOLDLIKE-INTERVAL-SCALING
-P15-DECLARED-TWO-CHANNEL-1+1-KINEMATIC-COMPATIBILITY
-P15-DECLARED-GRID-THINNING-SCALING-STABLE
-P15-DECLARED-RANDOM-2D-ORDER-EXACT-FLAT-1+1-SPRINKLING-SHAPE-LAW
-P15-DECLARED-FLAT-1+1-POISSON-ORDER-AND-NUMBER-LAW
-P15-B-DIGIT-PERMUTON-SINGULAR-NONMANIFOLDLIKE
-P15-B-AND-TWO-POINT-ORDER-UNDERDETERMINE-DECODER-AND-CURVATURE
-P15-THREE-CHAIN-DISTINGUISHES-EXPLICIT-SAME-B-DECODER-PAIR
-P15-ORIENTED-FULL-PATTERN-LAW-RIGIDLY-SELECTS-RANK-ONE-DECODER-GEOMETRY
-P15-B-SHADOW-DECLARED-AFFINE-DECODER-CURVED-1+1-ORDER-AND-NUMBER-LAW
-P15-DECLARED-AFFINE-COPULA-CONDITIONAL-1+1-SPACETIME-RECONSTRUCTION
-P15-FINITE-ENSEMBLE-COMPATIBILITY
-P15-MULTISCALE-MANIFOLDLIKE-COMPATIBILITY
+P15-NATIVE-PROFILE-UNTESTED
+P15-NATIVE-BUNDLE-FAMILY-FAILS-REGISTERED-DIAMOND-SCALING
+P15-NATIVE-MULTISCALE-MANIFOLDLIKE-COMPATIBILITY
+P15-NO-MANIFOLDLIKE-CONTROL
+P15-DECLARED-PRODUCT-ORDER-KINEMATIC-COMPATIBILITY
+P15-DECLARED-FLAT-1PLUS1-ORDER-AND-NUMBER-CONTROL
+P15-FINITE-COMPATIBILITY-WITH-DECLARED-MANIFOLDLIKE-ENSEMBLE
+P15-MULTISCALE-COMPATIBILITY-WITH-DECLARED-MANIFOLDLIKE-ENSEMBLE
 ```
 
 ### Dimension and scale
@@ -1822,35 +1822,30 @@ P15-MULTISCALE-MANIFOLDLIKE-COMPATIBILITY
 P15-DIMENSION-UNIDENTIFIED
 P15-DIMENSION-COMPATIBILITY-RANGE
 P15-SIGNATURE-UNIDENTIFIED
-P15-LORENTZIAN-ENSEMBLE-COMPATIBILITY
-P15-VOLUME-INTENSITY-CALIBRATED
+P15-VOLUME-INTENSITY-UNCALIBRATED
 P15-ABSOLUTE-SCALE-UNIDENTIFIED
-P15-LOCAL-SCALE-CANDIDATE
 ```
 
 ### Duration and metric
 
 ```text
 P15-ORDER-DEPTH-ONLY
+P15-LOCAL-CLOCKS-UNCONSTRUCTED
+P15-RADAR-SIGNAL-GEOMETRY-UNCONSTRUCTED
+P15-DIAMOND-CAPACITY-MEASURE-UNCONSTRUCTED
 P15-LOCAL-DURATION-CANDIDATE
-P15-DECLARED-SMOOTH-COPULA-LONGEST-CHAIN-DURATION-CONSISTENCY
 P15-CONFORMAL-CAUSAL-DATA-CONDITIONAL
-P15-TOPOLOGY-UNIDENTIFIED
-P15-ALEXANDROV-TOPOLOGY-CANDIDATE
 P15-CONDITIONAL-LORENTZIAN-METRIC-CANDIDATE
 P15-METRIC-UNIQUENESS-UNPROVEN
+P15-MULTIMETRIC-AGREEMENT-UNTESTED
+P15-THREE-ROUTE-METRIC-AGREEMENT
 ```
 
 ### Curvature and response
 
 ```text
 P15-CURVATURE-UNCONSTRUCTED
-P15-DECLARED-AFFINE-COPULA-ORDER-VOLUME-CURVATURE-IDENTITY
-P15-DECLARED-AFFINE-COPULA-CHAIN-CURVATURE-CROSSCHECK
-P15-DECLARED-AFFINE-COPULA-FINITE-SAMPLE-CURVATURE-CONSISTENCY
-P15-CONDITIONAL-SCALAR-CURVATURE-CANDIDATE
-P15-PRE-EINSTEIN-GEOMETRIC-RECIPROCAL-RESPONSE
-P15-EINSTEIN-DYNAMICS-UNPROVEN
+P15-CONDITIONAL-CURVATURE-CONTROL
 ```
 
 These coordinates are reported together. A success in one does not silently
@@ -1858,177 +1853,171 @@ promote the others.
 
 ## 13. Hostile scientific controls
 
-| ID | changed mathematical object | required result |
+These controls change mathematical objects, physical hypotheses, or
+operational interfaces. They do not award credit for detecting Python-level
+tampering. Each changed object must move the relevant scientific measurement
+and be refused, demoted, or retained as the registered non-kill.
+
+| ID | changed object | required result |
 |---|---|---|
-| M1 | replace chronological influence by mere record dependency | chronology gate fails |
-| M2 | feed a serialization index into duration | no-global-clock gate fails |
-| M3 | compare the nonisomorphic four-posets with equal relation fraction | one-statistic dimension claim fails |
-| M4 | use $\dim_{\rm DM}\le2$ as proof of a $1+1$ sprinkling | sufficiency claim fails |
-| M5 | use $\dim_{\rm DM}>2$ for an exact conformally flat $1+1$ embedding | embedding is refused |
-| M6 | rescale $g\mapsto c^2g$ and $\rho\mapsto\rho/c^d$ | order/intensity unchanged; absolute scale moves |
-| M7 | tune positive weights on the three-node one-edge poset | weighted dimension statistic moves while order does not |
-| M8 | change the target manifold class after seeing an estimator | preregistration gate fails |
-| M9 | fit only the whole sample and omit intrinsic subintervals | manifoldlike claim fails |
-| M10 | select favorable intervals using embedding coordinates | point-free selection gate fails |
-| M11 | thin the sample and obtain incompatible calibrated dimension | stability gate fails |
-| M12 | call longest chain proper time without density/dimension calibration | duration remains order depth |
-| M13 | call Gamma surprisal volume without a quadrature theorem | volume gate fails |
-| M14 | use one curvature estimator with no independent route | curvature remains unconstructed |
-| M15 | change matter and see a relational response before geometry passes | pre-geometric response only, not gravity |
-| M16 | fit an Einstein trace coefficient without tensor/conservation controls | GR claim fails |
-| M17 | use one finite order as a unique continuum identifier | finite non-identifiability control kills uniqueness |
-| M18 | clone labels or collapse automorphic nodes before the census | whole-structure identity/count gate fails |
-| M19 | increase graft branching $q$ without adding mergers | descendant intervals and their thin scaling are unchanged |
-| M20 | replace unit mass by bounded positive Gamma mass on the graft chain | mass stays linear in depth; dimension failure survives |
-| M21 | rename the two declared square-completion channels as an emergent dimension | derivation claim fails; only conditional $1+1$ calibration survives |
-| M22 | transpose the square family and swap its two channel types | identical physical order, law, counts, and response |
-| M23 | use label-dependent or outcome-conditioned thinning | covariance/neutrality gate fails; no coarse-graining evidence |
-| M24 | retain either latent total order as a physical execution clock | representation firewall fails; only the intersection poset is physical |
-| M25 | delete physical record nodes and claim the cover-based record law is projectively unchanged | shape consistency survives; record-law claim is refused |
-| M26 | claim the random two-order shape factor follows from the local $B$ kernel | provenance claim fails; $\pi_n$ is a separately declared kinematic factor |
-| M27 | identify the Poisson mean $\lambda$ with geometric volume without fixing density $\rho$ | only the product $\rho V$ is identified; scale claim fails |
-| M28 | independently repeat the stationary $B$ channel at every dyadic scale | exact permuton survives, but dimension $1+h_2(9/25)<2$ kills smooth volume |
-| M29 | use full topological support of the dyadic permuton as evidence of an area density | singularity gate fails despite support equal to the square |
-| M30 | replace the affine decoder by another admissible binary decoder after seeing the curvature | decoder-preregistration gate fails; metric profile is decoder-relative |
-| M31 | feed the second latent sector from an independent fair source | copula becomes exactly uniform, comparability becomes $1/2$, and curvature becomes zero |
-| M32 | infer a unique copula from the unlabeled finite-poset law without a rigidity theorem | only the exchangeable poset-limit class is licensed |
-| M33 | retain the two oriented null realizers as physical clocks | representation firewall fails |
-| M34 | use $\theta_B=-7/25$ to claim the affine decoder was selected by $B$ | provenance claim fails; $B$ fixes the correlation coefficient only after the decoder is declared |
-| M35 | omit density calibration while reporting the absolute curvature $\mathcal R_B$ | only conformal shape is identified; the $1/A$ scale remains free |
-| M36 | call the exact $49/5625$ reader response Einstein backreaction | claim is demoted to declared-decoder pre-geometric reciprocal response |
-| M37 | apply $36(2r_I-1)/V(I)$ to a non-bilinear copula | family gate refuses the extrapolation |
-| M38 | use the same whole-diamond relation fraction as both metric and curvature evidence | route-independence gate fails; held-out subdiamonds and chain/inclusive-interval estimators remain required |
-| M39 | fit $\theta$ from $I_2$ and silently reuse it as the $I_3/I_4$ result | independence gate fails; $I_3$ must recover the unique root and $I_4$ remains held out |
-| M40 | apply the finite-sample estimator when the observed $I_3$ lies outside the registered family | estimator refuses rather than clipping or retuning $\theta$ |
-| M41 | choose favorable subdiamonds after seeing their curvature estimates | preregistered-family convergence theorem no longer applies |
-| M42 | apply the longest-chain formula to the singular dyadic $B$ permuton | positive-$C^1$ density gate fails; height remains uncalibrated order depth |
-| M43 | compute chains using either latent total order rather than the physical intersection order | representation firewall fails; the statistic is not intrinsic |
-| M44 | rescale $g\mapsto c^2g$ and $\rho\mapsto\rho/c^2$ while claiming an order-only absolute duration | sampled order law is unchanged while the reported duration moves |
-| M45 | normalize the longest chain as $H/\sqrt\rho$ rather than $H/\sqrt{2\rho}$ | flat control misses proper time by $\sqrt2$ and the duration gate fails |
-| M46 | call the affine decoder, dimension, or continuum differentiability outputs of the reconstruction | provenance gate fails; they are theorem hypotheses |
-| M47 | replace $c_\theta$ by a non-affine copula matching only the fitted $I_3$ | held-out full-law/$I_4$ family gate must refuse or detect the substitution |
-| M48 | infer one unique continuum from a single finite order-and-number sample | finite non-identifiability control kills uniqueness |
-| M49 | replace the affine profile by $\phi_*$ while retaining $B$ and comparability $211/450$ | curvature moves from $-56/(25A)$ to $-7/(8A)$; decoder-selection claim fails |
-| M50 | retain only unlabeled poset patterns but invoke oriented-permuton uniqueness | realizer-descent gate fails; decoder remains unselected |
-| M51 | fit a rank-one profile to a centered kernel with two nonzero singular values | spectral gate refuses instead of truncating |
-| M52 | use only finitely many oriented pattern densities as if they fixed the permuton | finite-pattern non-identifiability gate fails |
-| M53 | replace $\phi$ by $-\phi$ | required non-kill: bit labels swap, while copula, metric, duration, and curvature stay identical |
+| M1 | replace dependency by chronological influence | chronology gate refuses |
+| M2 | use serialization rank as time | no-hidden-clock gate refuses |
+| M3 | equal relation fraction on nonisomorphic four-posets | one-statistic inference fails |
+| M4 | use order dimension `<=2` as a sufficient `1+1` proof | sufficiency fails |
+| M5 | use order dimension `>2` for exact global-null `1+1` embedding | embedding refuses |
+| M6 | conformally rescale metric and compensate density | order/intensity unchanged; scale moves |
+| M7 | tune positive node weights at fixed order | weighted statistic moves; unit input unchanged |
+| M8 | change target manifold class after seeing data | preregistration fails |
+| M9 | fit only the whole interval | multiscale claim fails |
+| M10 | select intervals using embedding coordinates | intrinsic selection fails |
+| M11 | incompatible dimension after independent thinning | stability fails |
+| M12 | call height proper time without density/dimension calibration | duration remains order depth |
+| M13 | import Paper 14 intrinsic Gamma weight | input contract refuses |
+| M14 | use one curvature route only | curvature remains unconstructed |
+| M15 | use one finite order as a unique continuum identifier | uniqueness fails |
+| M16 | clone labels or collapse automorphic occurrence nodes | complete-poset identity/count fails |
+| M17 | increase native branching without mergers | descendant thin scaling unchanged |
+| M18 | call product-order coordinates physical null clocks | representation firewall fails |
+| M19 | claim random two-order shape follows from the native family | provenance fails |
+| M20 | identify Poisson mean with volume without density | only `rho V` is identified |
+| M21 | fit an affine decoder after seeing curvature | decoder preregistration fails |
+| M22 | replace smooth decoder at fixed low-order shadow | metric/curvature selection fails |
+| M23 | use full support as proof of smooth density | singular-support control fails |
+| M24 | infer unique decoder from finitely many unlabeled patterns | finite nonidentifiability fails |
+| M25 | use outcome-dependent thinning | covariance/neutrality fails |
+| M26 | transpose the product square | required physical non-kill |
+| M27 | simultaneously flip both rank-one factors, or flip one factor and its coefficient | exact factorization-gauge non-kill; density bytes unchanged |
+| M28 | apply a family-specific curvature identity out of family | family gate refuses |
+| M29 | call conditional curvature gravity | gravity wall refuses |
+| M30 | use unit count as already calibrated spatial volume | volume gate refuses |
+| M31 | serial whole-law intervention | one directed influence edge is recovered without an inserted cut |
+| M32 | common-cause correlation with intervention-neutral marginals | no directed edge is inferred |
+| M33 | symmetric co-creation in one indivisible transition | one co-onset bundle, not an arbitrary orientation |
+| M34 | serialize the two arms of a commuting diamond in either order | same physical law and incomparable arms |
+| M35 | reconvergent interference with an attempted intermediate kernel | intermediate division refuses; whole law retained |
+| M36 | stable readable record with an incomplete boundary state | persistence passes; division/future-sufficiency fails |
+| M37 | complete division frontier with no newly written record | division passes; happening creation remains false |
+| M38 | delayed response across a nondivisible intermediate cut | influence passes from whole law; Markovization remains forbidden |
+| M39 | persistent bidirectional influence between distinct bundles | partial-order promotion refuses unless a justified co-onset quotient removes it |
+| M40 | total response through a complete mediator | reachability survives; direct-edge claim fails |
+| M41 | downstream cancellation makes pairwise $A\to C$ response zero along an $A\to B\to C$ producer path | tensor is not made transitive; reachability and total response stay distinct |
+| M42 | collapse two occurrence nodes sharing one reusable type name | false type-level cycle refuses; occurrence chain survives |
+| M43 | opposite influence directions in two admissible exterior contexts | context-independent chronology refuses |
+| M44 | parity-only reader hides a changing two-bit target | incomplete-reader separation claim refuses |
+| M45 | replace a same-law intervention by observational conditioning in a common-cause model | false directed edge refuses |
+| M46 | omit any same-law preparation alternative | influence is untested, not zero and not directed |
+| M47 | substitute a global iteration counter for a transported clock phase | clock gate refuses |
+| M48 | fit two clock species on calibration readings but make them disagree on a held-out reading | common local-duration claim fails |
+| M49 | two lawful signal species produce incompatible support cones or radar intervals | unique metric refuses; multimetric status recorded |
+| M50 | infer $N_0(D\otimes E)=N_0(D)N_0(E)$ from the product-code lower bound alone | capacity additivity remains unproved |
+| M51 | use an additive capacity with boundary/area rather than bulk scaling | volume identification fails |
+| M52 | derive propagation distance from the same order statistic used by the order route | route-independence and three-route agreement fail |
+| M53 | change the diffusion kernel on one fixed four-element diamond order | return law/spectral dimension moves; order and unit measure do not select the kernel |
+| M54 | use state correlation without retarded intervention response as a signal edge | propagation chronology refuses |
+
+All 54 controls are binding. In particular, M31--M46 prevent total response
+from being mistaken for direct influence or a Markov cut; M47--M54 keep
+clocks, radar, capacity, and propagation separate from structural order.
+M26 and M27 are required physical gauges, not kills.
 
 ## 14. Current scientific boundary
 
-Paper 14 now supplies a uniform varying-size abstract family, so the first
-Paper 15 interval test can be evaluated without waiting for code or a metric
-ansatz. It fails exactly: height and both licensed masses grow linearly,
-ordering fraction tends to one, and width stays two. A declared local
-square-completion successor repairs precisely that defect: its product-order
-intervals have $N=n^2$, $H=2n-1$, $W=n$, and $r\to1/2$. The current result is
-therefore a two-coordinate statement:
+The accepted input to this construction is only the unlabeled locally finite
+dependency poset with unit occurrence count,
+
+$$
+\mathfrak S=(\mathcal P,\mu_1).
+$$
+
+It contains no accepted interventional \(\Gamma\), actuality map, chronology,
+clock, signal sector, continuum sampling law, density, or metric. The native
+chronology coordinates are therefore
 
 ```text
-original graft family:
-  P15-GRAFT-FAMILY-FAILS-MANIFOLDLIKE-INTERVAL-SCALING
-
-declared square-completion calibration:
-  P15-DECLARED-GRID-THINNING-SCALING-STABLE
-
-declared exchangeable shape ensemble:
-  P15-DECLARED-FLAT-1+1-POISSON-ORDER-AND-NUMBER-LAW
-
-direct same-B dyadic refinement:
-  P15-B-DIGIT-PERMUTON-SINGULAR-NONMANIFOLDLIKE
-
-same-B affine-decoder control:
-  P15-B-SHADOW-DECLARED-AFFINE-DECODER-CURVED-1+1-ORDER-AND-NUMBER-LAW
-
-declared-family synthesis:
-  P15-DECLARED-AFFINE-COPULA-CONDITIONAL-1+1-SPACETIME-RECONSTRUCTION
+P15-STRUCTURAL-ORDER-UNIT-MEASURE-BOUND
+P15-DEPENDENCY-NOT-CHRONOLOGY
+P15-NO-ACCEPTED-INTERVENTIONAL-LAW
+P15-GAMMA-OPERATIONAL-INFLUENCE-UNTESTED
 ```
 
-The calibration shows that law-derived merger can create the needed thick
-interval scaling while preserving stable records, strong diamonds, local
-finiteness, and trace invariance. Independent neutral thinning preserves its
-square-root height/mass exponent and relation fraction but not its lattice
-skeleton. The random-two-order replacement removes that skeleton and exactly
-reproduces the complete flat-$1+1$ sprinkled order law conditional on
-cardinality. It still declares two order factors, the flat target class, and
-an independent shape law $\pi_n$. Poisson mixing restores the extensive number
-parameter $\lambda=\rho V$ and is exactly stable under neutral thinning, but
-does not separate density from volume.
+This is an untested-input statement, not a theorem that operational chronology
+is impossible. A future accepted law must populate the full signed response
+tensor and pass the twelve promotion gates before dependency may be read as
+chronological influence.
 
-The first attempt to derive the shape from repeated $B$ transitions produces
-an exact all-size permuton but fails decisively: its measure dimension is
-$1+h_2(9/25)<2$, so it is singular rather than a smooth volume form. The
-affine decoder then isolates what is missing. It turns the same stationary
-$B$ correlation into the smooth copula
-$c_B=1-(7/25)(1-2u)(1-2v)$, while the incidence-erased row is exactly flat.
-Inside the declared smooth-$1+1$ category this gives a nonzero conditional
-curvature profile and an exact $49/5625$ two-way probe response. Every
-intrinsic subdiamond also satisfies the independent analytic identity
-$\mathcal R=36(2r_I-1)/V(I)$, so order-plus-number and metric differentiation
-agree throughout the registered affine family. At the diamond center, the
-normalized $3$-chain abundance independently recovers $\theta=-7/25$ and the
-$4$-chain abundance matches the held-out rational prediction. Conditional
-bounded-U-statistic arguments then give consistent pair- and chain-based
-curvature estimators at increasing calibrated density for every fixed
-preregistered subdiamond family.
+The native structural family has the exact profile
 
-The intrinsic longest chain supplies a complementary duration observable. For
-every fixed interval in the declared positive smooth copula model, the
-Deuschel--Zeitouni variational limit and Poisson number law combine to give
-$H_\rho/\sqrt{2\rho}\to T_{\max}$. The flat row returns $\sqrt{2A}$ exactly;
-weighted AM--GM proves that the same-$B$ row has the unique diagonal maximizer
-and exact value
-$T_{\max}=\sqrt A[3/5+(5\sqrt2/(2\sqrt7))\arcsin(\sqrt7/5)]$. This earns
-conditional longest-chain duration consistency, not an order-only clock: the
-density calibration and smooth decoder remain declared.
+$$
+N_d=4d+1,\qquad
+H_d=3d+1,\qquad
+W_d=2,\qquad
+r_d=1-\frac{1}{2(4d+1)}.
+$$
 
-Taken together, these results now constitute a conditional $1+1$ spacetime
-reconstruction theorem. Within the preregistered affine-copula/Poisson family,
-order gives the causal relation and topology, number gives $A$, chain
-abundances give $\theta$, longest chains give maximal proper time, and the
-order-volume plus chain routes give the same curvature. This is the first
-coherent spacetime object in the programme. It remains a calibrated target
-model, not a derivation of the target family from the primitive law.
+That profile fails the preregistered fixed-dimension regular-diamond
+density-scaling or homothetic uncompactified-flat-diamond control: height is
+linear in \(N_d\), width stays two, and the ordering fraction tends to one.
+It does not fail every Lorentzian target. Long Alexandrov intervals on a flat
+spatially compact cylinder can show the same qualitative linear-height and
+near-total-order behavior. The native coordinate is therefore exactly
 
-An exact decoder counterfamily now marks that boundary sharply. Every smooth
-mean-zero profile $\phi$ defines a valid same-$B$ copula
-$1-(7/25)\phi(u)\phi(v)$. The affine profile and the explicit polynomial
-$\phi_*$ have the same one-step $B$, uniform marginals, and comparability
-$211/450$, yet their center curvatures are respectively $-56/(25A)$ and
-$-7/(8A)$. Thus neither $B$ nor the two-point order law selects the
-conditional spacetime. A full-law rigidity or Gamma-derived decoder principle
-is the next genuine physics gate.
+```text
+P15-NATIVE-BUNDLE-FAMILY-FAILS-REGISTERED-DIAMOND-SCALING
+```
 
-The explicit polynomial counterdecoder is nevertheless killed by the existing
-three-chain coordinate: its exact $I_3$ differs from the affine prediction by
-$-299557/77642296875$. So the architecture already contains a genuine
-higher-order decoder discriminator. What remains open is not whether this one
-counterexample can be told apart, but whether the primitive law supplies and
-selects a complete continuum probe family with a rigidity theorem.
+and no broader nonmanifoldlikeness claim is licensed.
 
-If every oriented finite pattern density is supplied, a conditional rigidity
-theorem is available: the complete pattern law fixes the permuton, and the
-rank-one centered kernel fixes the decoder profile up to an irrelevant global
-sign. This is a sufficient mathematical selector inside the declared two-null-
-realizer class. The physical gap is now narrower and sharper: the unlabeled
-Paper 14 order has not derived those two oriented realizers. They cannot be
-borrowed from the sampling algorithm without reintroducing hidden coordinate
-structure.
+The product square, random-two-order ensemble, and smooth affine-copula
+families are declared calibration controls. The product square supplies exact
+thick scaling. The random-two-order law supplies the finite flat \(1+1\)
+order-and-number control conditional on its declared ensemble. The positive
+affine-copula/Poisson family supplies a conditional smooth \(1+1\) model in
+which order, number, higher-chain abundances, a density-calibrated
+longest-chain duration estimator, metric differentiation, and curvature
+identities agree on preregistered regions and held-out observables.
 
-That is real progress toward spacetime, but it is not an autonomous emergence
-claim. The affine decoder, two null channels, continuum diamond, Poisson law,
-density calibration, and probe wiring remain inputs. The next legitimate
-candidate must derive or select the decoder and sampling grammar from the
-same point-free law, then pass multiregion and independent discrete-curvature
-tests. In particular, an inclusive-interval or discrete-operator route must
-recover the same profile without assuming the affine family, and the decoder
-must survive a genuine family-misspecification control.
+That affine theorem is a consistency and identifiability result inside the
+declared family. The affine decoder, two oriented null coordinates, dimension,
+signature, smooth continuum, Poisson law, density, and calibration regions are
+hypotheses. A polynomial profile with the same low-order shadow but different
+higher-chain and curvature data shows why the decoder is not selected by
+\(\mathfrak S\). Finite samples and conformal-density rescaling additionally
+block unique continuum and absolute-scale claims.
 
-No Gamma-derived dimension, Lorentzian signature, absolute scale, topology,
-unique metric, autonomous curvature dynamics, stress-energy, gravity, Einstein
-dynamics, continuum limit, QFT, or phenomenology has been obtained. Proper
-time is recovered only conditionally inside the declared smooth Poisson model;
-it is not selected or absolutely calibrated by the point-free law.
+Longest-chain depth is not a clock. A physical clock requires a persistent
+phase system transported between complete divisions and independent
+same-path clock-species agreement on held-out readings. Radar additionally
+requires a universal signal sector, a separately calibrated common limiting
+speed, and zero or independently calibrated turnaround latency.
+Distinguishable-record capacity and propagation are independent routes:
+capacity may scale like area or entropy, while a spectral result depends on a
+justified positive diffusion kernel. None is present in the native input.
+
+Accordingly the maximum construction-stage ceiling is the product
+
+```text
+chronology   P15-NO-ACCEPTED-INTERVENTIONAL-LAW
+native       P15-NATIVE-BUNDLE-FAMILY-FAILS-REGISTERED-DIAMOND-SCALING
+conditional  P15-MULTISCALE-COMPATIBILITY-WITH-DECLARED-MANIFOLDLIKE-ENSEMBLE
+scale        P15-ABSOLUTE-SCALE-UNIDENTIFIED
+metric       P15-CONDITIONAL-LORENTZIAN-METRIC-CANDIDATE
+uniqueness   P15-METRIC-UNIQUENESS-UNPROVEN
+physical     P15-MULTIMETRIC-AGREEMENT-UNTESTED
+```
+
+The conditional metric coordinate applies only to the declared affine
+control. It does not promote the native Paper 14 substrate or select a
+physical metric. No Gamma-derived chronology, physical clocks, universal
+signals, absolute scale, unique metric, autonomous curvature, stress-energy,
+gravity, Einstein dynamics, continuum limit, QFT, or phenomenology has been
+obtained.
+
+The next genuine physics gate is not another structural statistic. It is an
+accepted point-free interventional law that can supply typed interventions,
+complete readers, divisions, clocks, signals, and propagation without
+inserting a background coordinate system. Only held-out agreement among
+order-plus-measure, clocks-plus-radar, and propagation could then promote a
+physical metric.
 
 ## References
 
@@ -2075,3 +2064,24 @@ it is not selected or absolutely calibrated by the point-free law.
     diamond” (2012)](https://arxiv.org/abs/1212.0631).
 17. J.-D. Deuschel and O. Zeitouni, [“On increasing subsequences of i.i.d.
     samples” (1998)](https://arxiv.org/abs/math/9803035).
+18. B. Bollobás and G. Brightwell, [“Box-spaces and random partial orders,”
+    *Transactions of the American Mathematical Society* 324, 59–72
+    (1991)](https://doi.org/10.1090/S0002-9947-1991-0986685-9).
+19. J. Pearl, [“Causal diagrams for empirical research,” *Biometrika* 82,
+    669–688 (1995)](https://doi.org/10.1093/biomet/82.4.669).
+20. P. Perinotti, [“Causal influence in operational probabilistic theories”
+    (2020)](https://arxiv.org/abs/2012.15213).
+21. J. Ehlers, F. A. E. Pirani, and A. Schild, [“The geometry of free fall and
+    light propagation” (2012 republication)](https://doi.org/10.1007/s10714-012-1353-4).
+22. V. Perlick, [“Characterization of standard clocks by means of light rays
+    and freely falling particles,” *General Relativity and Gravitation* 19,
+    1059–1073 (1987)](https://doi.org/10.1007/BF00759142).
+23. V. Perlick, [“On the radar method in general-relativistic spacetimes”
+    (2007)](https://arxiv.org/abs/0708.0170).
+24. C. E. Shannon, [“The zero error capacity of a noisy channel,” *IRE
+    Transactions on Information Theory* 2, 8–19
+    (1956)](https://doi.org/10.1109/TIT.1956.1056798).
+25. A. Eichhorn and S. Mizera, [“Spectral dimension in causal set quantum
+    gravity” (2013)](https://arxiv.org/abs/1311.2530).
+26. G. Last and M. Penrose, [*Lectures on the Poisson Process*
+    (2017)](https://doi.org/10.1017/9781316104477).

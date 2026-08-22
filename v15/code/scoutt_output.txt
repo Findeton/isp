@@ -1,0 +1,85 @@
+SCOUT-T delivery transcript
+pin 3f35573d88d8 (v15 ledger #82) + the #87 addendum 15d763633293 + the #68 addendum 3a1e5a649537; unit note v15/note-scoutt.md
+object under test (the note): sha256-12 36fd0a0efaee
+instrument source: sha256-12 ce895faf6124
+parent apparatus: SCOUT-K #74 code 38c3f6cb288e + receipt 5af53face093 via byte-verified snapshots (the live scoutk files are mid-repair); walk snapshot edb60bccd22e
+
+GATE G-SRC-CLEAN        PASS  the instrument's own syntax tree carries no float literal, no builtin hash call, and no import outside the declared whitelist
+GATE G-AST-DETERMINISM  PASS  the determinism leg: no bare iteration over a set display, set comprehension or set()/frozenset() call and no os.listdir outside a direct sorted() wrapper -- every iterated collection can reach the sealed artifacts, so unsorted iteration is refused at the source, deterministically at every hash seed
+GATE G-PIN-DIGESTS      PASS  the frozen pin, the #68 addendum, both parent snapshots, the scout walk snapshot and paper-20 are read at their pinned digests; the parent is bound snapshot-only (the live scoutk files are mid-repair); LOG.md is anchor-only and its digest is never recorded
+GATE G-ANCHORS          PASS  every declared source anchor is located verbatim (whitespace-collapsed) in its file: the pin's two arm definitions, the #68 mode freeze with its relaxation refusal, the #82 trigger-erasure mechanism and precise parent formulation, the #84 W-REPRESENTATION and arity split, the parent-code write-time line and paper-20
+GATE G-ARENA            PASS  the committed chart rebuilt from constructors: 27 cells in bijection with the linked pairs, 27 triangles among 84 triples, 9 declared lines of 12, every cell in exactly 3 blocks
+GATE G-GAMMA            PASS  the relabelling group is rebuilt at order 108 (12 linear x 9 translations), closed on the block class; the cell stabilizer (order 4) swaps the two non-line incident blocks -- the measured fact behind the first-event boundary
+GATE G-WALK             PASS  the delivered walk rebuilt: first-trigger weights (1/9, 4/9, 4/9) on cells 0,1,2; second-trigger support the 9 cells of the three shifted sites, unit mass
+GATE G-BLIND            PASS  the depth-2 blindness licence re-measured: 11 record variants, one Born vector; mechanism single-link site support
+GATE G-ARMS-COVARIANT   PASS  the parent's four pre-registered proximity arms and the global reference are re-measured relabelling-covariant (N(gc,gR) = g N(c,R) for all 108 elements); neighborhood sizes 11 / record-cluster / 27 / 15 / 27; no new predicate is introduced by this unit
+GATE G-KREACH           PASS  the parent's T-blind reach census is reproduced inside this instrument and matches the pinned delivered receipt field-by-field: 63 contexts / 189 tuples / 7 first events, orbit variables 16/16/25/19/25, coincidences SA=RD and MC=GLOBAL with CN strictly between
+GATE G-TREACH           PASS  the trace reach census: 81 raw contexts / 243 raw tuples over 9 (trigger, first-event) pairs; at every arm the trace-orbit partition REFINES the parent partition (every trace orbit lies inside exactly one T-blind orbit)
+GATE G-TCOINCIDE        PASS  trace-partition coincidences measured and the representative grouping is exactly the measured partition equality
+GATE G-STEP1T           PASS  the step-one census with the trace slot: the empty trace collapses step one to the parent's 2 orbit variables (line / non-line), dim 1 after normalization -- the exact seat of the conditional-mode linearization
+GATE G-D2T              PASS  the depth-2 window: consistency is vacuous under the measured blindness at both arms and every grain -- the covariant family is the one-parameter line-weight segment, dim 1; the trace is empty at step one, so depth 2 cannot distinguish the trace-carrying kernel from the parent's
+GATE G-TBLIND           PASS  the MANDATORY cross-check binds: the T-blind subfamily reproduces SCOUT-K's depth-3 refusal byte-exactly against the pinned delivered receipt (18 of 18 runs: status, row count, gap string) and the literal tied-trace route refuses identically
+GATE G-TBLIND-CERT      PASS  every parent-pipeline refusal carries a Farkas certificate verified by this instrument (y.A <= 0 columnwise, y <= 1, y.b = gap), independently of the parent's own verification
+GATE G-A1-WELLDEF       PASS  trace-orbit bookkeeping is self-consistent at every ladder grain of every solved system: line-ness is constant on every trace orbit and relabelling-equivalent trace contexts carry identical candidate variable multisets
+GATE G-LADDER           PASS  the minimality ladder is structurally sound by measurement: every trace grain's partition refines the no-trace partition, SUFFIX2 refines PREV1, FULL refines every other grain, and the NONE-grain verdicts agree with the byte-bound parent reproduction at all samples
+GATE G-A1-SAMPLES       PASS  every arm-1 system is decided (FEASIBLE or INFEASIBLE, never silent) at all 6 declared samples of the first-step line weight, at every ladder grain of one representative per measured distinct partition, and every published status word MATCHES the solver object (INFEASIBLE exactly when the solver's gap is positive) -- the #102 wiring fix: a forged status dies HERE, not downstream
+GATE G-A1-CERT          PASS  every arm-1 status carries its verified exact object: a Farkas certificate on INFEASIBLE (y.A <= 0, y <= 1, y.b = gap > 0), a nonnegative exact witness on FEASIBLE, branchwise runs included
+GATE G-A1-FREE          PASS  the free-relaxation lemma is decided at every (c1,c2) branch pair and every sampled line weight (162 exact solves), each status carrying its verified certificate or witness
+GATE G-A1-CONSIST       PASS  logical consistency across relaxation levels: wherever the covariant trace system is feasible, every branch pair of the free relaxation is feasible too (a covariant solution restricts to a free one); no violation observed
+GATE G-A1-UNIFORM       PASS  every solved all-empty arm-1 ladder system carries one verified uniform-in-a Farkas certificate closing the whole first-step line-weight segment (inherited systems are covered by their byte-identical solved representative)
+GATE G-CLASH-T          PASS  the clash-T probe stands: both parent witness rows are located in the trace system at a = 0, their delivered walk values match the pinned parent receipt (16/729 and 64/729), and the separation question is answered by measurement, not assumption
+GATE G-A2-COLLAPSE      PASS  the measured collapse: the ordered-raw marginal-history verdict coincides with the conditional-mode verdict at every system and sample (rows are positive scalings), so arm 2's genuinely new content is the count-field and Gamma-quotient grains
+GATE G-A2-SAMPLES       PASS  every arm-2 grain system is decided at all 6 samples at all three distinct conditional systems and all four disclosed grains, and every published status word MATCHES the solver object (INFEASIBLE exactly when the solver's gap is positive) -- the #102 wiring fix: a forged status dies HERE, not downstream
+GATE G-A2-CERT          PASS  every arm-2 status carries its verified exact certificate or witness
+GATE G-A2-UNIFORM       PASS  every all-empty arm-2 grain system carries one verified uniform-in-a Farkas certificate closing the whole line weight segment
+GATE G-CONTROLS         PASS  all four synthetic controls fire through the real builders and solver, both arms forced both ways: kernel-generated targets FEASIBLE with nonnegative witnesses, shifted targets INFEASIBLE with verified certificates
+GATE G-A1-DIM           PASS  every published polytope dimension (arm 1, arm 2 and the feasible control) is re-verified: the interior point is an exact feasible witness, strictly positive off the proven always-zero set, and the stacked-nullity recomputation equals the published dimension
+GATE G-KERNEL-WALL      PASS  the kernel-scope wall fires on the retired overclaim family (verbatim, hyphen, paraphrase and unscoped-widening variants) and stays silent on the licensed scoped forms; all permanent controls behave as declared on this build
+GATE G-REP-WALL         PASS  the fork-neutral representation wall fires on promotion-by-convenience and on either-direction presupposition (doubt-consumed negations included) and stays silent on the licensed admissibility and feasibility forms; all permanent controls behave as declared on this build
+GATE G-SAMPLE-SPACE     PASS  every probability-typed measurement row in this receipt declares its sample space from the seven declared names (248 declarations); no claim changes sample space silently
+GATE G-NUM-BIND         PASS  numeral-field binding: every load-bearing prose numeral is bound to its SPECIFIC receipt field and each binding resolves to the claimed value; the note-side totality sweep is enforced at note verification
+GATE G-NUM-TOTAL        PASS  the numeral-totality classifier refuses the planted unbacked numerals and passes the measurement-backed twin; the sweep inventory is measurement-subtrees-only, so control and audit values cannot legitimize invented prose (the class SCOUT-K repaired at its #93)
+GATE G-ENV-EXCLUSION    PASS  the serialized receipt payload carries no digest of any unpinned live read: environment-dependent bytes are excluded from the artifacts and checked in-run only
+GATE G-DIGEST-INVENTORY PASS  the receipt-wide hex-digest inventory closes: every hex-12 token in the serialized receipt is classified pinned or self, the re-scan with the inventory folded in reaches a fixed point with no new tokens, and an arbitrary unpinned-read plant dies here by registered mutant
+
+VERDICTS
+  SCOUTT-TRACE-CENSUS-PUBLISHED<81-CONTEXTS-243-TUPLES-9-TRIGGER-EVENT-PAIRS; FULL-GRAIN-ORBIT-VARIABLES-37-37-46-43-46-PER-ARM-VS-PARENT-16-16-25-19-25; EVERY-TRACE-PARTITION-REFINES-THE-PARENT>
+  SCOUTT-TRACE-SUFFICIENT-1-AT-2<CONDITIONAL-MODE; VACUOUS-BY-BLINDNESS; TRACE-EMPTY-AT-STEP-ONE>; SCOUTT-MARGINAL-AGREES-AT-2-ALL-GRAINS<MARGINAL-HISTORY-MODE-EXACT-FACTORIZATION; VACUOUS-BY-BLINDNESS: the window-2 observable-history distribution is q1 x q2 for EVERY normalized kernel, equal to the walk's>
+  SCOUTT-TRACE-INSUFFICIENT-AT-3-SA<ALL-FIVE-GRAINS-EMPTY; CONDITIONAL-MODE; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; CERTIFICATES-PUBLISHED-AND-VERIFIED>; SCOUTT-TRACE-INSUFFICIENT-AT-3-MC<ALL-FIVE-GRAINS-EMPTY; CONDITIONAL-MODE; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; CERTIFICATES-PUBLISHED-AND-VERIFIED>; SCOUTT-TRACE-INSUFFICIENT-AT-3-CN<ALL-FIVE-GRAINS-EMPTY; CONDITIONAL-MODE; UNIFORM-IN-THE-FIRST-STEP-LINE-WEIGHT; CERTIFICATES-PUBLISHED-AND-VERIFIED>
+  SCOUTT-MARGINAL-DISAGREES-AT-3-SA-RD-ORD-RAW; SCOUTT-MARGINAL-DISAGREES-AT-3-SA-RD-CNT-RAW; SCOUTT-MARGINAL-DISAGREES-AT-3-SA-RD-ORD-GAM; SCOUTT-MARGINAL-DISAGREES-AT-3-SA-RD-CNT-GAM; SCOUTT-MARGINAL-DISAGREES-AT-3-CN-ORD-RAW; SCOUTT-MARGINAL-DISAGREES-AT-3-CN-CNT-RAW; SCOUTT-MARGINAL-DISAGREES-AT-3-CN-ORD-GAM; SCOUTT-MARGINAL-DISAGREES-AT-3-CN-CNT-GAM; SCOUTT-MARGINAL-DISAGREES-AT-3-MC-GLOBAL-ORD-RAW; SCOUTT-MARGINAL-DISAGREES-AT-3-MC-GLOBAL-CNT-RAW; SCOUTT-MARGINAL-DISAGREES-AT-3-MC-GLOBAL-ORD-GAM; SCOUTT-MARGINAL-DISAGREES-AT-3-MC-GLOBAL-CNT-GAM<MARGINAL-HISTORY-MODE-EXACT-FACTORIZATION; ORDERED-RAW-COLLAPSES-ONTO-THE-CONDITIONAL-SYSTEM; NO-LINEAR-RELAXATION-OVER-HISTORY-FLOWS>
+  SCOUTT-TBLIND-REPRODUCES-PARENT<18-OF-18-BYTE-EQUAL-GAPS; TIED-ROUTE-REFUSED; MANDATORY-CROSS-CHECK-BOUND>
+  SCOUTT-TRIGGER-AND-TRACE-STAY-CANDIDATE-MARKED<FEASIBILITY-NEVER-NATURE; FORK-NEUTRAL-PER-87; EVENT-SELECTION-ONLY-TRANSPORT-STILL-OPEN>
+
+KEY CLAIMS
+  trace census: 81 contexts / 243 tuples / 9 trigger-event pairs; FULL-grain orbit variables SA 37, RD 37, MC 46, CN 43, GLOBAL 46 (parent: 16/16/25/19/25)
+  arm1 CN NONE (nv 19): I/I/I/I/I/I
+  arm1 CN PREV1 (nv 43): I/I/I/I/I/I
+  arm1 CN COUNTS (nv 43) [= PREV1]: I/I/I/I/I/I
+  arm1 CN SUFFIX2 (nv 43) [= PREV1]: I/I/I/I/I/I
+  arm1 CN FULL (nv 43) [= PREV1]: I/I/I/I/I/I
+  arm1 MC NONE (nv 25): I/I/I/I/I/I
+  arm1 MC PREV1 (nv 46): I/I/I/I/I/I
+  arm1 MC COUNTS (nv 46) [= PREV1]: I/I/I/I/I/I
+  arm1 MC SUFFIX2 (nv 46) [= PREV1]: I/I/I/I/I/I
+  arm1 MC FULL (nv 46) [= PREV1]: I/I/I/I/I/I
+  arm1 SA NONE (nv 16): I/I/I/I/I/I
+  arm1 SA PREV1 (nv 37): I/I/I/I/I/I
+  arm1 SA COUNTS (nv 37) [= PREV1]: I/I/I/I/I/I
+  arm1 SA SUFFIX2 (nv 37) [= PREV1]: I/I/I/I/I/I
+  arm1 SA FULL (nv 37) [= PREV1]: I/I/I/I/I/I
+  arm2 SA-RD ORD-RAW (729 rows): I/I/I/I/I/I
+  arm2 SA-RD CNT-RAW (594 rows): I/I/I/I/I/I
+  arm2 SA-RD ORD-GAM (138 rows): I/I/I/I/I/I
+  arm2 SA-RD CNT-GAM (45 rows): I/I/I/I/I/I
+  arm2 CN ORD-RAW (729 rows): I/I/I/I/I/I
+  arm2 CN CNT-RAW (594 rows): I/I/I/I/I/I
+  arm2 CN ORD-GAM (138 rows): I/I/I/I/I/I
+  arm2 CN CNT-GAM (45 rows): I/I/I/I/I/I
+  arm2 MC-GLOBAL ORD-RAW (729 rows): I/I/I/I/I/I
+  arm2 MC-GLOBAL CNT-RAW (594 rows): I/I/I/I/I/I
+  arm2 MC-GLOBAL ORD-GAM (138 rows): I/I/I/I/I/I
+  arm2 MC-GLOBAL CNT-GAM (45 rows): I/I/I/I/I/I
+  free lemma refused pairs per sample: a=0:0, a=1:25, a=1/2:25, a=1/3:25, a=1/6:25, a=2/3:25
+  clash-T separation: False
+  falsifiers: 35 registered; gates: 37
+
