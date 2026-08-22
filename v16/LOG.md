@@ -7538,3 +7538,16 @@ F-C3 (Definition 2.1 vacuous quantification — replacement supplied),
 F-C5, F-C6. Mandatory regressions: 3 PASS, 14 PASS, 15 FAIL,
 16 CONDITIONAL-FAIL, 17 PASS. Status: frozen before adjudication;
 Seats P and F are the next separate events.
+
+## 2026-08-22 — PAPER 23A SEAT P REVIEW FREEZE (v16 LEDGER #312)
+
+Seat P (probability/multiplicity), blind and independent, repo
+read-only. Report: `v16/review-paper23a-probability.md`, ordinary
+SHA-256 `0c6c470fe50eaacd4cc9096c54e6175b91b9a3fb7596c0257a0131b8040eb8f4` (     135 LF). Verdict: **ACCEPT-WITH-FIXES** (F-P1 chain-
+descent gap in Theorem B's proof — replacement supplied; F-P2 false
+arithmetic sentence; F-P3 unprinted hypotheses for the endpoint mass
+formula; F-P4 alignment-independence clause). Stage 2 tables and
+definitions verified exactly and stand as printed after repair.
+Stage 3 defects observed but out of mandate, referred to Seats C/F.
+Mandatory regressions within mandate: 3 PASS, 14 PASS, 17 PASS.
+Status: frozen before adjudication; Seat F is the next separate event.
