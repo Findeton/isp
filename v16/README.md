@@ -39,11 +39,19 @@ theory-selection result.
 - Unit B-v2 (Paper 23a v2, user-authorized): pin #315 → construction
   #316 → seats #317–#319 (all ACCEPT-WITH-FIXES) → adjudication #320 →
   verified bounded repair #321: **TERMINAL ACCEPT-WITH-SCOPE** at
-  `eca8e167...`. The certified Γ_D fixtures carry a commutative unital
-  carrier-graded **nonassociative** magma of trace-sensitive sector
-  classes; finite closure fails by carrier monotonicity; duals absent;
-  the FP fusion-bootstrap route is CLOSED for the present Γ_D
-  (fixture-scoped). Paper 17 gate CLOSED.
+  `eca8e167...`, corrected forward-only at #322 (unit withdrawn — see
+  below; frozen bytes untouched). The certified Γ_D fixtures carry a
+  commutative carrier-graded **nonassociative** magma WITHOUT unit of
+  trace-sensitive sector classes; finite closure fails by carrier
+  monotonicity (strengthened at #322: no nontrivial subfamily closes);
+  duals absent; the FP fusion-bootstrap route is CLOSED for the present
+  Γ_D (fixture-scoped). Paper 17 gate CLOSED.
+- Correction #322 (user-ordered): the recheck of Proposition I against
+  Paper 13D §§5.2/7.1/10.2 confirmed that fusing with an empty
+  component traverses a fusion vertex, so its trace shape differs from
+  the unfused complex and Prop B separates them — unital fails, no
+  fusion-unit equation exists in Exec_D. Corrected tag:
+  `P23AV2-ALGEBRA-COMMUTATIVE-GRADED-NONASSOCIATIVE-MAGMA-WITHOUT-UNIT`.
 - Authorized next units (user holds ordering):
   (C) oriented-pair side gate — theorem or no-go on deriving the
   exchangeable oriented null-realizer pair; (D) Tier-2 declared-input
