@@ -8103,3 +8103,24 @@ Three mutually blind delta seats against pin #332 and construction
 All seats confirm the deep negative form (no measurable copy of
 orientation in the typed joint space), the Q2 reopening-route closure,
 and quantifier honesty. Next event: adjudication.
+
+## 2026-08-22 — PAPER 23D ADJUDICATION — ACCEPT-WITH-FIXES, REPAIR ORDERED (v16 LEDGER #335)
+
+`v16/note-paper23d-adjudication.md` frozen (ordinary SHA-256
+`cc2857134abacaa72f7bf9ef817da5b86ac03dabab184637ef50e1ce81a70d37`,
+76 LF). All nine findings confirmed by own rebuild; none structural.
+Nine bounded prose repairs ordered: Lemma B restated as joint-law
+decoration blindness; all-measures extension printed; Lemma A counting
+formula replaced by verified saturation statement; Q1 full-subcategory
+sentence; Def 1.1 fixed to the external decoration-space reading;
+citations split §7.1/§8/§3.1–3.2; Theorem C uniqueness clause given
+the pinned-σ-algebra qualifier; §6 second attribution scoped to
+admissible observables of the pinned joint space; `-NOT-SELECTED`
+marked NOT EARNED. On byte-exact verification: TERMINAL
+ACCEPT-WITH-SCOPE with `P23D-ORIENTATION-FIBER-INERT` (primary,
+universal) and `P23D-CLEAN`; corrected reading engraved — no
+probability measure on the pinned complex space determines, selects,
+or makes unique the oriented realizer class for |I|≥2 because the
+typed joint space contains no measurable copy of orientation. Paper 17
+and dimension stay CLOSED. Next event: execute ordered repair and
+verify.
