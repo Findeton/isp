@@ -26,21 +26,23 @@ $\Gamma_{\rm struct}(d[\chi],dH)=\Pi(d[\chi])\,\Gamma_D(dH\mid[\chi])$
 observable valued in exchangeable realizer-pair classes (the #330
 target).
 
-**Definition 1.1 (fiber).** For $[\chi]\in\mathsf{Cpx}$, the fiber
-$\mathcal F_{[\chi]}$ is the set of exchangeable realizer-pair classes
-realizable over that complex — ordered pairs of total orders on its
-carrier modulo simultaneous transport and rank swap.
+**Definition 1.1 (fiber, external reading).** For
+$[\chi]\in\mathsf{Cpx}$ with carrier $I$, the fiber
+$\mathcal F_{[\chi]}$ is the *external decoration space*: the set of
+ordered pairs $(L_1,L_2)$ of total orders on $I$, modulo simultaneous
+transport and rank swap — pairs that could be paired with the complex,
+not pairs recoverable from it. Γ_D assigns no internal structure
+distinguishing these (rank-blindness); Lemma A counts them.
 
 ## 2. The fiber-multiplicity lemma
 
 > **Lemma A (within-fiber multiplicity).** For every complex whose
 > carrier has $|I|=n\ge2$, the fiber hosts at least two distinct
-> exchangeable classes; for the unmarked primitive this number is
-> $\frac12\big((n!)^2 + \text{self-swap count}\big)$ restricted to
-> transport-orbit classes — computed as $2,5,17$ for $n=2,3,4$
-> (exact enumeration). Only $|I|\le1$ fibers are singletons, and those
-> carry no nontrivial orientation content (the intersection condition
-> is vacuous or forced).
+> exchangeable classes; exhaustive transport+swap saturation gives
+> exactly $2,5,17$ classes for $n=2,3,4$ (exact enumeration; no closed
+> form is needed for what follows). Only $|I|\le1$ fibers are
+> singletons, and those carry no nontrivial orientation content (the
+> intersection condition is vacuous or forced).
 >
 > **Proof.** Antiparallel $[(L,\mathrm{rev}\circ L)]$ and parallel
 > $[(L,L)]$ are never transport+swap related for $n\ge2$: a transport
@@ -48,39 +50,54 @@ carrier modulo simultaneous transport and rank swap.
 > two pairs agree nowhere versus everywhere. Both realize over every
 > complex (the decoration is not part of the diagram class). ∎
 
-> **Lemma B (weight inertia).** Every $\Pi\in\mathcal P$ is constant on
-> fibers by construction: it assigns one mass to $[\chi]$, and no
-> member of $\mathcal P$ may condition on anything inside
-> $\mathcal F_{[\chi]}$ (root variables are diagram invariants; the
-> σ-algebra is presentation-invariant; scheduler independence bars
-> trace-level distinctions beyond points of $\mathsf{Cpx}$).
+> **Lemma B (joint-law decoration blindness).** For every
+> $\Pi\in\mathcal P$ and any two realizations lying in the same fiber
+> $\mathcal F_{[\chi]}$, the joint law
+> $\Gamma_{\rm struct}=\Pi\cdot\Gamma_D$ assigns equal mass to every
+> jointly measurable event containing them: Π is constant on
+> $\mathsf{Cpx}$ (one mass per complex), and the conditional Γ_D is
+> field-blind across decorations (Lemma C of P23c, restated here as
+> the engine). No member of $\mathcal P$ may condition on anything
+> inside $\mathcal F_{[\chi]}$: root variables are diagram invariants,
+> the σ-algebra is presentation-invariant, and scheduler independence
+> bars trace-level distinctions beyond points of $\mathsf{Cpx}$.
 >
-> **Proof.** Immediate from pin §§2–4. ∎
+> **Proof.** Pin §§2–4 make Π a function of $[\chi]$ alone; Lemma C's
+> relabeling invariance makes every field-value distribution identical
+> across same-fiber decorations, so no measurable event separates
+> them. ∎
 
 ## 3. The four-way classification
 
 **(Q1 — orientation already χ-measurable? NO.)**
 Suppose a measurable covariant $E:\mathsf{Cpx}\to$ exchangeable
-classes realizes the intersection condition nontrivially. Restrict to
-the singleton-diagram subcategory (complexes with empty generator set,
-free carriers): $E$ becomes an assignment of total orders natural under
-all bijections of finite sets — impossible for $|I|\ge2$ by
-`P23C-NO-COVARIANT-SINGLE-ORDER` (Prop B), which the restriction
-inherits verbatim. Hence **no** such function exists: ∀Π verdict, and
-Π is irrelevant because the extractor has nothing to read.
+classes realizes the intersection condition nontrivially. The
+singleton-diagram complexes (empty generator set, free carriers) form
+a *full* subcategory of $\mathsf{Cpx}$'s groupoid quotient, and every
+presentation morphism between them stays within it; covariance of $E$
+on all of $\mathsf{Cpx}$ therefore restricts to naturality under all
+bijections of finite sets on this subcategory, where $E$ reads as an
+assignment of total orders — impossible for $|I|\ge2$ by
+`P23C-NO-COVARIANT-SINGLE-ORDER` (Prop B). Hence **no** such function
+exists: ∀Π verdict, and Π is irrelevant because the extractor has
+nothing to read.
 
 **(Q2 — support selection? NO for every Π∈P except trivial supports.)**
 Support restriction can zero complexes but acts *between* fibers;
 Lemma A shows the ambiguity lives *inside* every fiber with
 $|I|\ge2$. A support of only $|I|\le1$ complexes selects nothing
-nontrivial. The sharpest objection — landmark-rigid experiments have
-trivial stabilizers — fails twice: marks are forgotten when forming
-$[\chi]$ (Paper 17 note §2), so rigidity is invisible at the weight's
-own input space; and even granting asymmetric-program complexes
-(trivial automorphism groupoid, labeled cells survive), Lemma C
-rank-blindness persists field-by-field, so the fiber still hosts all
-$n!^2$ labeled decorations — e.g. 21 swap classes over a trivial-
-groupoid $n{=}3$ complex. **∀Π: no.**
+nontrivial. (Admissibility here uses projective consistency and the
+other pin-§4 clauses to define $\mathcal P$; Theorem C itself holds
+for *every* probability measure on $(\mathsf{Cpx},\Sigma_\chi)$, an
+extension by monotonicity, since its proof uses only fiber-constancy
+and conditional blindness.) The sharpest objection — landmark-rigid
+experiments have trivial stabilizers — fails twice: marks are
+forgotten when forming $[\chi]$ (Paper 17 note §2), so rigidity is
+invisible at the weight's own input space; and even granting
+asymmetric-program complexes (trivial automorphism groupoid, labeled
+cells survive), Lemma C rank-blindness persists field-by-field, so the
+fiber still hosts all $n!^2$ labeled decorations — e.g. 21 swap
+classes over a trivial-groupoid $n{=}3$ complex. **∀Π: no.**
 
 **(Q3 — distinct orientations within one fiber? YES — the deep form.)**
 By Lemmas A+B: the witness classes $[(L,\mathrm{rev}\circ L)]$ and
@@ -112,12 +129,15 @@ the pinned spaces.
 > across each fiber $\mathcal F_{[\chi]}$. Consequently no admissible
 > whole-process law of the #308 form determines the exchangeable
 > oriented null-realizer class on any carrier of size $\ge2$; the
-> orientation observable is not created, selected, or made unique by
-> any state weight over process complexes.
+> orientation observable is not created or selected by any state
+> weight over process complexes, and its uniqueness fails relative to
+> the pinned σ-algebra — no two well-defined extractors with distinct
+> fiber values are separated by any event measurable in the joint
+> space, so no $\Pi\in\mathcal P$ selects between them.
 >
-> **Proof.** Q1 rules out χ-measurable supply; Lemma B makes every Π
-> fiber-constant; Lemma A places the ambiguity inside fibers; Q3(i)
-–(ii)
+> **Proof.** Q1 rules out χ-measurable supply; Lemma A places the
+> ambiguity inside fibers; joint-law decoration blindness (Lemma B)
+> makes every jointly measurable event fiber-uniform; Q3(i)–(ii)
 > convert this to non-well-definedness and, under fiat declaration, to
 > output-law identity across $\mathcal P$. ∎
 
@@ -128,9 +148,10 @@ P23D-ORIENTATION-FIBER-INERT      (primary, universal: ∀Π∈P)
 P23D-CLEAN                        (Q4 audit passed)
 ```
 
-Not earned: `-CHI-MEASURABLE`, `-SUPPORT-SELECTED`,
-`-NOT-SELECTED` (superseded by the sharper positive negative:
-fiber-inertness is proved, not merely non-selection).
+Not earned: `-CHI-MEASURABLE`, `-SUPPORT-SELECTED` (both refuted
+above); `-NOT-SELECTED` **NOT EARNED** — the sharper fiber-inertness
+result was proved in its place, per pin §7's convention that outcomes
+are earned or not earned, never superseded.
 
 ## 5. Quantifier ledger
 
@@ -151,10 +172,12 @@ Weights fail for **both** pinned reasons, now precisely separated:
    the target varies within fibers (Lemmas A+B).
 2. **Orientation-blindness of the conditional** (inherited): Γ_D's
    fields carry no occurrence-order datum anywhere — occurrence data
-   live in finite sets ($I$, $\binom I2$, orbit cells) and the trace's
-   only ordered structures are per-generator source/target kinds, not
-   occurrence orders (13D §7.1/§8) — so even a fiber-varying weight
-   over histories could not read an order out of H.
+   live in finite sets ($I$, $\binom I2$, orbit cells; 13D §3.1–3.2),
+   the trace's only ordered structures are per-generator
+   source/target kinds, not occurrence orders (§7.1), and generator
+   vertices form a set, never a serialization (§8) — so within this
+   unit's scope: no admissible observable of the pinned joint space
+   reads an order out of H.
 
 Hence the obstruction is not an artifact of scalar weighting alone: it
 reflects that the joint space, typed per #308, contains no measurable

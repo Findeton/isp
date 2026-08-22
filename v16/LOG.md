@@ -8124,3 +8124,33 @@ or makes unique the oriented realizer class for |I|≥2 because the
 typed joint space contains no measurable copy of orientation. Paper 17
 and dimension stay CLOSED. Next event: execute ordered repair and
 verify.
+
+## 2026-08-22 — PAPER 23D REPAIR EXECUTED AND VERIFIED — TERMINAL ACCEPT-WITH-SCOPE (v16 LEDGER #336)
+
+The nine ordered repairs (#335) were executed on
+`v16/paper-23d-orientation-descent.md` and verified byte-exact: the
+diff against the frozen #333 bytes (`699fe5b7…`) contains exactly the
+nine ordered replacement sentences and nothing else — Def 1.1 external
+reading; Lemma A saturation statement; Lemma B joint-law decoration
+blindness with proof; Q1 full-subcategory sentence; Q2 all-measures
+extension note; Theorem C pinned-σ-algebra uniqueness qualifier (and
+its proof reordered); outcome block NOT EARNED convention; §6 scoped
+attribution with split §3.1–3.2/§7.1/§8 citations. Post-repair ordinary
+SHA-256 `2501d316fb9071062a7e50d32ec8fd64af2fdf660f6ca037a1a8a837fc34408a`
+(205 LF).
+
+Disposition: **TERMINAL — ACCEPT-WITH-SCOPE.** Earned coordinates:
+`P23D-ORIENTATION-FIBER-INERT` (primary; universal — holds for every
+probability measure on the pinned complex space), `P23D-CLEAN`.
+Corrected reading engraved: no admissible whole-process law of the
+#308 disintegration form determines, selects, or makes unique the
+exchangeable oriented null-realizer class on any carrier of size ≥2,
+because the typed joint space contains no measurable copy of the
+orientation; weights fail by fiber-inertness AND inherited conditional
+blindness. `-CHI-MEASURABLE`, `-SUPPORT-SELECTED`, `-NOT-SELECTED`
+correctly not earned. Positive branch correctly not claimed. Paper 17
+CLOSED; ensemble gate CLOSED; dimension unopened. Walls per pin §8.
+One-strike n/a. The orientation-descent gate closes. Routes past it
+(law-level symmetry breaking; history-side refinement as a new
+postulate; non-scalar conditional-retuning extensions) all require
+explicit user authorization and a fresh freeze; no automatic successor.
