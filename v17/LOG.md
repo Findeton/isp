@@ -112,3 +112,68 @@ Updated live files:
 
 Next event: construct the self-contained Stages A–G theorem package from
 `QProc_fd`. No code or later paper is authorized.
+
+## 2026-08-22 — PAPER 01 MATHEMATICS CONSTRUCTED (v17 LEDGER #4)
+
+The frozen Paper 01 pin was authenticated at SHA-256
+`33a7dbb3cc615978024b683588ce66c9f19deb418d8f663e3ee4db937b509bbc`
+before construction. The self-contained mathematics manuscript is now
+GREEN-UNREVIEWED:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/paper-01-positive-record-histories.md` | `c60bea9d9d9ade2f30f4f88366cac11599835e9d5cac1e4f4660292b15606ee9` | 1,242 LF / 49,693 bytes |
+| `v17/note-paper01-construction-audit.md` | `83a7cc2e33f9447f377519c300182501d8431a7a32560c1dbfa94ae563262008` | 157 LF / 6,548 bytes |
+
+The construction proves a uniform ordinary-positive representation of every
+finite-dimensional, causally ordered finite-slot quantum process on physical
+setting/outcome record histories. It starts from CP instruments and process
+memory, builds one reversible dilation of the complete experiment, and pushes
+the squared-amplitude measure to physical records. It proves exact
+probability equality, whole-program sequential naturality, tensor
+composition, mixtures, conditioning, ancilla/discard compatibility,
+ignored-slot consistency, finite process-memory completeness, and a
+standard-Borel outcome extension.
+
+The registered exact controls are all dispositioned. The manuscript derives
+instrument disturbance beyond POVM effects, the $2\sqrt2$ CHSH record law and
+no-signalling marginals with a global-contextual Bell cost, the six
+Peres--Mermin product constraints without counterfactual values, causal-break
+memory distinct from CP divisibility, two-Hadamard stochastic nondivision
+distinct from process memory, and one common record/sector-transport/coherent-
+uncompute/environment-leak model.
+
+The construction also proves the limiting theorem. Two distinct positive
+Kolmogorov realizers can have exactly the same licensed first-order
+indivisible laws while carrying opposite two-time correlations. Therefore the
+minimalist first-order process does not select one microscopic path measure.
+Equal-diagonal different-phase states additionally prove that phase-complete
+continuation structure cannot be removed from the complete operational input.
+The result is an exact record-history representation, not a derivation of a
+preferred configuration algebra or complete microscopic ontology.
+
+The proposed, unawarded ceiling is:
+
+```text
+P01-COMPOSITIONAL-OPERATIONAL-EQUIVALENCE-WITH-ONTOLOGY-DEBT
+```
+
+The proposed product preserves Bell-locality, configuration-basis,
+microscopic-realizer, actuality, and external-laboratory-order debts as
+separate coordinates. Hilbert variables need not be beables, but
+phase-complete continuation structure remains required. One actual record
+history may be postulated; no selection mechanism or microscopic actual
+trajectory is derived.
+
+Updated live ledgers before this event entry:
+
+| artifact | SHA-256 | status |
+|---|---|---|
+| `v17/README.md` | `12a2cb69b2461c21e9076ec617aba4c6d8b7ea824ca0d8c4261073a8acc51c99` | construction green-unreviewed |
+| `v17/PLAN.md` | `45f9145dac076556ba030bd58739f6ff5cc434bfc6333f1da7112f84e4d95798` | Paper 01 review next |
+| `v17/DECLARED_INPUTS.md` | `c4e9b20f72cd47cbcd720f0034de2149a643e86c5ff34b6c7a401c3bc67400e8` | derived/debt balance updated |
+
+No code, evaluator, generated artifact, fit, later paper, spacetime model, or
+gravity model was created. No v17 physical coordinate is awarded at #4. The
+next legitimate event is a result-neutral independent-review protocol frozen
+against the manuscript bytes.

@@ -61,6 +61,21 @@ Status: **LIVE APPEND-ONLY SCIENTIFIC ACCOUNTING TABLE**
 | process time slots | laboratory clock records | multi-time consistency | fundamental time |
 | stable records | candidate construction | full grammar theorem plus eraser/uncompute controls | actualization |
 
+## Paper 01 construction balance — GREEN-UNREVIEWED
+
+| Constructed object | Upstream inputs | Proposed status | Debt retained |
+|---|---|---|---|
+| positive record-history law | E01, E02, typed dilation rule | `DERIVED-MATHEMATICALLY`, unreviewed | begins with complete quantum process input |
+| whole-program sequential naturality | process wiring, indivisible evaluation | `DERIVED-MATHEMATICALLY`, unreviewed | not kernel factorization at every slot |
+| tensor/mixture/conditioning compatibility | standard operational composition | `DERIVED-MATHEMATICALLY`, unreviewed | laboratory ports/order supplied |
+| CHSH/no-signalling record law | E02, E08 | `DERIVED-MATHEMATICALLY`, unreviewed | Bell-local completion absent |
+| physical contextuality typing | E02, context apparatus | `DERIVED-MATHEMATICALLY`, unreviewed | no noncontextual value ontology |
+| finite process-memory representation | E02, comb realization | `DERIVED-MATHEMATICALLY`, unreviewed | memory resource process-dependent |
+| record/transport/uncompute triad | E02, system-record-environment control | `DERIVED-MATHEMATICALLY`, unreviewed | outcome actuality not derived |
+| microscopic-realizer nonuniqueness | first-order law definition | `DERIVED-MATHEMATICALLY`, unreviewed | no unique path measure |
+| preferred configuration algebra | none | `UNDERDETERMINED` | new physical principle/discriminator required |
+| one actual record history | E04 | `POSTULATE AVAILABLE`, not derived | microscopic actual trajectory incomplete |
+
 ## Accretion alarms
 
 A unit stops for scope review if any of the following occurs:
@@ -79,10 +94,12 @@ A unit stops for scope review if any of the following occurs:
 
 ## Derivation balance
 
-No v17 derivation has yet been adjudicated. The initial balance is therefore:
+No v17 derivation has yet been adjudicated. The live construction balance is
+therefore:
 
 ```text
-derived v17 physical structures: 0
+adjudicated v17 physical structures: 0
+green-unreviewed mathematical constructions: positive record-history Q0--Q3 representation
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3

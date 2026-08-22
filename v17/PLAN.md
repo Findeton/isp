@@ -2,7 +2,7 @@
 
 Date opened: 2026-08-22
 
-Status: **ORDERED RESEARCH PLAN; only Paper 01 pin is live**
+Status: **ORDERED RESEARCH PLAN; Paper 01 construction is GREEN-UNREVIEWED**
 
 ## 0. Authority and workflow
 
@@ -82,6 +82,16 @@ time scope.
 
 **Cannot earn.** Background independence, QFT, spacetime, gravity, ontology
 uniqueness, or empirical novelty.
+
+**Current construction boundary.** The mathematics constructs a uniform
+positive record-history representation for Q0--Q3 at causally ordered
+finite-process scope, including composition, instruments, Bell/contextuality,
+memory, and the record/eraser/uncompute triad. It also proves that licensed
+first-order laws do not select a unique microscopic Kolmogorov realizer and
+that phase-complete continuation structure cannot be reduced to diagonal
+probabilities. Proposed ceiling:
+`P01-COMPOSITIONAL-OPERATIONAL-EQUIVALENCE-WITH-ONTOLOGY-DEBT`. This remains
+unawarded until independent review and adjudication.
 
 ### Paper 02 — representation uniqueness and ontology residue
 
