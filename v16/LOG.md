@@ -7460,3 +7460,35 @@ The worktree also carries the handoff prompt note
 (`v16/note-handoff-prompt-2026-08-22.md`, untracked session artifact,
 left uncommitted) and unrelated dirty state outside this entry, left
 untouched.
+
+## 2026-08-22 — PAPER 23A FUSION-CLOSURE PIN FREEZE — UNIT B OPENS (v16 LEDGER #309)
+
+The user authorized Unit B. The pin freezes at
+`v16/note-paper23a-fusion-closure-pin.md`, ordinary SHA-256
+`aafb35591bcc5e87417b8d2ee91e13d42935f9f75e9191a0e9dff60cd9d16b0c`
+(212 LF). It binds ten inputs (all hashes verified on disk), led by the
+terminal Paper 13D law `3b91766f...`; Paper 22 v3 is bound at its #307
+bytes as optional downstream instantiation only, never a source of this
+unit's claims.
+
+The unit asks three staged questions from terminal 13D alone:
+predictive-sector congruence, orbit-summed multiplicity descent, and
+the fusion-closure classification (finite closure / semiring / fusion
+ring / common positive character, with uniqueness proved, never assumed
+from nonnegativity per audit 4.1; FP dimensions are not physical odds,
+per audit 4.2 with the `tau x tau = 1 + tau` mandatory negative
+control). The twelve carried hostile controls plus six stage-specific
+controls are pinned. The #308 disintegration typing correction is
+recorded as binding for all successors: any future joint law is
+`Gamma_struct(dchi,dH)` with chi-marginal `Pi_phys` and regular
+conditional of H given chi equal to `Gamma_D`. Pre-registered outcomes
+include blocked-at-referent forms at every stage; a negative finite-
+fusion result is fixture-scoped and not a global no-go. Prose-only,
+exact arithmetic, no implementation.
+
+Writable construction paths:
+`v16/paper-23a-sector-multiplicity-fusion-closure.md`,
+`v16/note-paper23a-fusion-closure-construction.md`.
+
+No construction begins in this entry. Units C and D remain authorized
+and unpinned.
