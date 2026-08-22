@@ -7586,3 +7586,28 @@ pin §10/§1 keep the unit investigable). Scope walls held; Paper 17
 gate CLOSED; Paper 22 v3 terminal bytes untouched. Any successor
 (Unit B v2, C, or D) requires explicit user authorization and a
 fresh freeze. No automatic successor exists.
+
+## 2026-08-22 — PAPER 23A V2 PIN FREEZE (v16 LEDGER #315)
+
+The user authorized one mathematics-only Paper 23a v2 after the #314
+rejection, with binding constraints recorded in the pin verbatim in
+substance: trace-sensitive class family (primitive/tensor/simultaneous-
+fusion/staged/bracketing classes distinct unless complete readers prove
+equivalence); stages 1–2 repaired exactly per the #314 replacements;
+stage 3 rebuilt honestly with every algebraic clause proved or refuted
+or blocked, none assumed; finite-closure failure by carrier
+monotonicity; explicit FP-fusion-bootstrap-route closure for the
+present Gamma_D if the negative holds; no code, no new physical
+postulate, no rescue quotient, no automatic v3.
+
+Pin: `v16/note-paper23a-v2-pin.md`, ordinary SHA-256
+`26587fb58f4f30eb52f9daff725d547ba1d7547ead6f1255ce2ae2a83d0b5dd7`
+(184 LF). Ten bound inputs verified on disk, led by terminal Paper 13D
+`3b91766f...`; the v1 chain (#309–#314) bound as salvage source and
+repair authority; Paper 22 v3 context-only, never consumed. Eight
+pre-registered outcome names plus four new hostile controls (19–22:
+rescue quotient, target-level associativity, unproved commutativity,
+FP-closure overstatement); mandatory regressions 3, 14, 15, 16, 17,
+19, 20, 21, 22.
+
+No construction begins in this entry.
