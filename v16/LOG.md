@@ -7132,3 +7132,19 @@ generated evidence was used. Same-source multi-mark composition, fusion
 algebra, occurrence/activity/root, physical regions, chronology, dimension,
 metric, gravity, and actuality remain unconstructed. Status is
 `GREEN-UNREVIEWED`; no acceptance is conferred.
+
+## 2026-08-21 — PAPER 22 V2 DELTA-REVIEW PROTOCOL (v16 LEDGER #297)
+
+The three-seat mathematical delta-review protocol freezes at
+`v16/note-paper22-reversible-structural-instrument-v2-review-protocol.md`,
+ordinary SHA-256
+`88a2609988628e8e9fe1ad2c96a0b65a9cf230a2750feab2207bca5ebfcfd30e`
+(303 LF / 10,030 bytes).
+
+It binds the exact #295 pin and #296 construction and separates
+source/category/functor, probability/instrument, and quantum/no-hiding/physics
+lenses. The heterogeneous-source counterexample and the four other
+adjudicated domain failures are mandatory regressions. Each seat must add at
+least four fresh attacks and return the full product vector. Reports must
+freeze separately before joint adjudication. No implementation or successor
+physics is authorized by this protocol.
