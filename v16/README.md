@@ -58,9 +58,20 @@ theory-selection result.
   the unfused complex and Prop B separates them — unital fails, no
   fusion-unit equation exists in Exec_D. Corrected tag:
   `P23AV2-ALGEBRA-COMMUTATIVE-GRADED-NONASSOCIATIVE-MAGMA-WITHOUT-UNIT`.
-- Authorized next units (user holds ordering):
-  (C) oriented-pair side gate — theorem or no-go on deriving the
-  exchangeable oriented null-realizer pair; (D) Tier-2 declared-input
+- Unit C (Paper 23c oriented-pair side gate, user-authorized) ran and
+  closed: pin #324 (`d50dc41c…`) → construction #325/#326 → three blind
+  seats #327 (all ACCEPT-WITH-FIXES, nine findings, none structural) →
+  adjudication #328 → verified repair #329: **TERMINAL ACCEPT-WITH-
+  SCOPE** at `9f106e45…`. Primary coordinate
+  `P23C-ORIENTED-PAIR-NOT-DERIVABLE` (present-Γ_D fixture scope): the
+  exchangeable oriented null-realizer pair consumed by Paper 15 §4.8's
+  rigidity theorem is provably not derivable from terminal Γ_D — fixed-
+  point obstruction (Prop A), no covariant single order (Prop B),
+  law-rank invariance witness densities 0 vs 1/6 (Lemma C + Prop D),
+  and uniqueness failure on landmark-rigid experiments (Prop F). Only
+  the undirected endpoint-bond graph descends. Paper 15 rigidity stays
+  CONDITIONAL; dimension firewall intact; ensemble gate closed.
+- Authorized next unit (user holds ordering): (D) Tier-2 declared-input
   ensemble calibration study, all results conditional.
 - `RHL` / Paper 11: **TERMINAL REJECT AT
   `RHL-BLOCKED-AT-POINT-FREE-REFERENT`** through v16 ledger #153, with the

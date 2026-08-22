@@ -2031,11 +2031,23 @@ Successor register, current:
   law `Gamma_struct(dchi,dH)`, chi-marginal `Pi_phys`, regular conditional
   of H given chi equal to `Gamma_D`. Stage partition per #308's external
   feedback record.
-- Oriented-pair side gate (Unit C): authorized, pin not yet frozen.
-  Question: can Gamma_D derive the exchangeable oriented null-realizer
-  pair consumed by Paper 15's rigidity theorem, or is it provably not
-  derivable? Both outcomes are wins. Smoothness/aesthetic selection
-  remains forbidden (decoder nonselection wall, #237).
+- Oriented-pair side gate (Unit C): **RAN AND CLOSED — TERMINAL ACCEPT-
+  WITH-SCOPE at #329** (`9f106e45…`, post-repair). Pin #324 →
+  construction #325/#326 → seats C/P/Q #327 (all ACCEPT-WITH-FIXES;
+  nine findings confirmed; none structural) → adjudication #328 (nine
+  prose repairs ordered) → repair verified byte-exact #329. Result: the
+  exchangeable oriented null-realizer pair consumed by Paper 15 §4.8's
+  rigidity theorem is **provably not derivable** from terminal Γ_D at
+  present-Γ_D fixture scope (`P23C-ORIENTED-PAIR-NOT-DERIVABLE`):
+  equivariant fixed-point obstruction under stabilizer transpositions
+  (Prop A), no covariant single order on free carriers (Prop B),
+  law-rank invariance — couplings (L, rev∘L) vs (L,L) share one Γ_D law
+  with oriented-pattern densities 0 vs 1/6 (Lemma C + Prop D) — and
+  uniqueness failure on landmark-rigid experiments (Prop F). Only the
+  undirected endpoint-bond graph and quotient coherence descend (§5).
+  Paper 15 rigidity remains CONDITIONAL with its missing bridge proved
+  missing for the present law; scope walls per pin §324 unchanged; #237
+  wall respected; dimension firewall intact.
 - Tier-2 declared-input ensemble calibration study (Unit D): authorized,
   pin not yet frozen. Openly declared `Pi_phys` family, every result
   conditional, no derivation claims; rehearses the dimension-selection
