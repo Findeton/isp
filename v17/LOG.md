@@ -44,3 +44,22 @@ Bell/no-signalling, contextuality, multi-time memory, and the
 decoherence–record–eraser triad. A separate mathematics-only pin must freeze in
 the next event before any theorem construction or implementation. No v17
 physical coordinate is earned at #1.
+
+## 2026-08-22 — DISPLAY-MATH PREVIEW CORRECTION BEFORE PAPER 01 FREEZE (v17 LEDGER #2)
+
+The user reported that formulas in the Paper 00 VS Code Markdown preview did
+not render. The initialization used LaTeX display delimiters `\[` and `\]`,
+whereas the repository's Markdown renderer expects `$$` fences. Before any
+Paper 01 pin was frozen, every v17 display formula was mechanically normalized
+to `$$` in the three already committed files containing such delimiters:
+
+| artifact | #1 SHA-256 | corrected SHA-256 | scope |
+|---|---|---|---|
+| `v17/paper-00-reality-first-programme.md` | `a4370f71e8af92c0945068ae0dc7d254143ab708f10e9d359f82940e0a6ed82a` | `a9f8456763447eaa25a6a840e8f221f51d961ecd9c3ced649ae35a8616457cbe` | two display blocks |
+| `v17/note-empirical-quantum-adequacy-contract.md` | `0fe45175f69f103004ef0c97a7be619cbdf3101771f8e6889a012114862889cc` | `c5f628dc17a739ae73e2ceb97410625b58722ca51b8e8de0d37c6aa0df92d82f` | eight display blocks |
+| `v17/PLAN.md` | `98d71f28bab24664419e2c1a90c1e90071f0edb7e9b90488c8c51b9e21343a82` | `73da0450c9b7cc436e6614b68c94722becbd4a27a2be8c1d080bf7e703394323` | one display block |
+
+No formula body, claim, input, outcome, programme order, or scientific scope
+changed. A full v17 scan finds no remaining standalone `\[` or `\]` delimiter.
+The uncommitted Paper 01 pin draft was normalized at the same time and will
+bind only these corrected committed parents after this correction lands.

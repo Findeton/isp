@@ -33,9 +33,9 @@ For each finite-dimensional complex Hilbert space `H` it contains:
 
 For an experiment `e` and outcome string `o`, the comparator supplies
 
-\[
+$$
 p_{\rm Q}(o\mid e).
-\]
+$$
 
 The target is the complete family of these probabilities on the frozen
 experiment class, not a preferred Kraus representation, wavefunction, basis,
@@ -48,10 +48,10 @@ ontic is an output coordinate.
 
 A candidate relational stochastic theory supplies
 
-\[
+$$
 (\mathsf{Cfg},\mathsf{Exp},\omega,\boldsymbol\Gamma,
  \mathsf{Read}),
-\]
+$$
 
 with:
 
@@ -63,9 +63,9 @@ with:
 
 For an embedding `J`, operational adequacy is
 
-\[
+$$
 p_{\rm S}(o\mid J(e),\omega_e)=p_{\rm Q}(o\mid e)
-\]
+$$
 
 for every registered `e,o`, with preparation dependence carried by `omega_e`
 or a typed preparation arrow rather than retuning the universal law.
@@ -93,10 +93,10 @@ strongest possible mathematical outcome requires Q0–Q3.
 
 For a qubit path basis, admit a continuous phase
 
-\[
+$$
 U_\phi=|0\rangle\!\langle0|+e^{i\phi}|1\rangle\!\langle1|,
 \qquad \phi\in[0,2\pi).
-\]
+$$
 
 A balanced interferometer produces a sinusoidal fringe over the whole phase
 circle. A candidate must reproduce the complete continuous family, including
@@ -139,11 +139,11 @@ An instrument is not merely an outcome distribution. It specifies the
 post-outcome process available to later experiments. Candidates must reproduce
 both:
 
-\[
+$$
 p(a\mid \mathcal I,\rho)
 \quad\text{and}\quad
 p(b\mid \mathcal J, a,\mathcal I,\rho)
-\]
+$$
 
 for arbitrary registered continuations. Two instruments with equal immediate
 POVM statistics but different disturbance are required to remain distinct.
@@ -173,9 +173,9 @@ Use a two-party, two-setting, two-outcome experiment with freely chosen
 settings in the declared operational model. The quantum target includes a
 state and observables attaining
 
-\[
+$$
 S_{\rm CHSH}=2\sqrt2,
-\]
+$$
 
 while each party's marginal is independent of the other party's setting.
 
@@ -198,13 +198,13 @@ free.
 
 Use the Peres–Mermin square as an exact algebraic control:
 
-\[
+$$
 \begin{array}{ccc}
 X\otimes I&I\otimes X&X\otimes X\\
 I\otimes Y&Y\otimes I&Y\otimes Y\\
 X\otimes Y&Y\otimes X&Z\otimes Z
 \end{array}
-\]
+$$
 
 The commuting row products and first two column products are `+I`, while the
 last column product is `-I`. No context-independent assignment of pre-existing
@@ -296,13 +296,13 @@ Equal terminal probabilities under one reader do not establish gauge.
 The strongest Paper 01 mathematical target is not a cellwise equality table.
 It is a pair of translations on the registered domain:
 
-\[
+$$
 \mathcal Q_{\rm fd}^{\rm proc}
 \xrightarrow{\;J\;}
 \mathcal S_{\rm rel}^{\rm indiv}
 \xrightarrow{\;K\;}
 \mathcal Q_{\rm fd}^{\rm proc},
-\]
+$$
 
 such that:
 

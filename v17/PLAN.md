@@ -27,7 +27,7 @@ to the user.
 
 At every stage:
 
-\[
+$$
 \text{empirical target}
 \rightarrow
 \text{operational interface}
@@ -37,7 +37,7 @@ At every stage:
 \text{prediction}
 \rightarrow
 \text{held-out comparison}.
-\]
+$$
 
 The arrow may not be reversed by designing the ontology from the desired
 answer.

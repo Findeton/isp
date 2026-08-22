@@ -120,11 +120,11 @@ No current v17 object is credited with any of these gravitational properties.
 The broad candidate is a relational stochastic-history ontology. Its neutral
 mathematical packet is
 
-\[
+$$
 \mathfrak T=
 (\mathsf{Cfg},\mathsf{Exp},\Omega,\boldsymbol\Gamma,
  \mathsf{Obs},\mathsf{Act}).
-\]
+$$
 
 The entries are typed as follows.
 
@@ -272,11 +272,11 @@ The same object cannot change roles without an explicit gate.
 
 Every unit updates `DECLARED_INPUTS.md`. A positive result reports:
 
-\[
+$$
 \text{derivation balance}
 =\#(\text{independently derived physical structures})
 -\#(\text{new load-bearing declarations}).
-\]
+$$
 
 The number is diagnostic, not a scientific score. More importantly, the table
 shows whether a purportedly emergent object was supplied under another name.
