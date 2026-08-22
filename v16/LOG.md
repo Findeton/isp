@@ -7973,3 +7973,31 @@ No new construction; no v2; Unit D stays closed pending user
 authorization; one-strike not triggered. Scoped synthesis (present-Γ_D
 only; law-level vs root/state/Π_phys-level symmetry breaking explicitly
 distinguished) separately authorized as the next event.
+
+## 2026-08-22 — SCOPED SYNTHESIS — PRESENT Γ_D ONLY (v16 LEDGER #331)
+
+User-favored synthesis prepared after the #330 correction:
+`v16/note-scoped-synthesis-present-gamma.md` (ordinary SHA-256
+`68c1ec0f6ef9cb6b0ef49f0ddc8a5c83e31541a96f2b7b17546b82eda2020d17`,
+108 LF). Creates no theorem, construction, or coordinate; consolidates
+adjudicated results at their engraved scopes. Content: (§1) what
+terminal Γ_D supplies — finite conditional law, undirected bonds, typed
+traces, bidirectional response, partial Γ-relative operational
+precedence (#282: direction not lost everywhere), corrected sector
+family. (§2) what is proved absent FOR THIS LAW at its own scope:
+realizer-class non-determination (#330 form — determination failure,
+not existence failure), decoder nonselection (#237), sector-arithmetic
+vacuity (#321–#323), dependency≠chronology. One-line summary engraved:
+present Γ_D determines combinatorial and operational-relational
+structure up to exchangeability but not oriented, geometric, or
+sector-statistical structure — no claim about background-free laws in
+general. (§3) the two distinct doors for future orientation, never to
+be conflated: symmetry breaking IN THE LAW (new physical postulate;
+13B/13C ancestors counsel care) versus IN THE STATE/ROOT/WEIGHT
+(asymmetric boundary/root state, SSB sectors, relational clock
+subsystem, actuality weights, environment-selected records) — formally
+the missing whole-process object Γ_struct(dχ,dH) with χ-marginal
+Π_phys and regular conditional = Γ_D, blind to every Unit C obstruction
+by design. (§4) consequence map per gate; emergence route OPEN through
+Γ_struct/Π_phys only. (§5) standing walls unchanged; Unit D decision
+rests with the user.
