@@ -7358,3 +7358,21 @@ the other seats (Theorem 7 intermediate scalar, Corollary 7.1/7.3
 visibility contradiction, control-point exemplar sign, unscoped Theorem 9
 joint law) are ordered as bounded prose repair. No third independent
 semantic counterexample was found.
+
+## 2026-08-22 — PAPER 22 V3 INDEPENDENT ADJUDICATION (v16 LEDGER #306)
+
+The three-seat delta panel is adjudicated at
+`v16/note-paper22-reversible-structural-instrument-v3-adjudication.md`,
+ordinary SHA-256
+`521784834d0aa97308a05f2d638d436dcd61c011d41f94bcae35e459b857ab10`
+(114 LF / 6,210 bytes). Disposition: `ACCEPT-WITH-FIXES — BOUNDED PROSE
+REPAIR ORDERED; ONE STRIKE NOT TRIGGERED`.
+
+All three seats independently confirm both repairs and every v2 survivor;
+the adjudicator's own checks agree. Four convergent MINOR prose defects
+are upheld (Theorem 7 intermediate scalar, Corollary 7.1/7.3 visibility
+contradiction, control-point exemplar sign, unscoped Theorem 9 joint law)
+and a bounded single-pass repair is ordered with numbers frozen. The
+calibrated-lift gauge reading is bound as precedent. Terminal
+ACCEPT-WITH-SCOPE takes effect on the repaired bytes after adjudicator
+verification.
