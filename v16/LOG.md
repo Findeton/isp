@@ -7192,3 +7192,30 @@ counterexample is again complex residual coherence: `v=i` produces a fully
 visible phase-shifted fringe, while the printed `Re(v)` rule predicts no
 interference. The full pinned visibility coordinate therefore fails even
 though its coherent and fully recorded endpoints remain exact.
+
+## 2026-08-21 — PAPER 22 V2 INDEPENDENT ADJUDICATION (v16 LEDGER #301)
+
+The three-seat delta panel is adjudicated at
+`v16/note-paper22-reversible-structural-instrument-v2-adjudication.md`,
+ordinary SHA-256
+`31c0d7ca973ad62c188e946b2d10433705c9c6644ab1bd0ea8579a963e706c04`
+(293 LF / 8,651 bytes). Disposition: `REVISE — DOMAIN REPAIR SURVIVES /
+COMPLETE LOCAL INSTRUMENT NOT ACCEPTED`.
+
+All three seats preserve the homogeneous-source coproduct, total tensor and
+simultaneous-fusion child pair, source-indexed dependent commit, positive and
+branchwise-degenerate restrictions, and external tensor composition. All
+principal `B`, `R`, `C_phi`, `B^2`, `K_phi`, and neutral-odds calculations
+also survive.
+
+Two semantic defects prevent acceptance. The v2 paper substitutes a biased
+qubit for the bound uniform 25-state cross-pair seed without defining the
+fine-to-coarse reversible isometry and complement. It also states the wrong
+general partial-visibility law: complex overlap enters as
+`Re(v e^{i phi})`, not `Re(v)`. The adjudicated reversible-query and full
+exact-local-mode coordinates are therefore `UNCONSTRUCTED`.
+
+The registered no-automatic-v3 rule now fires. No implementation or automatic
+repair begins. Paper 23 and the private regional/metric programme cannot bind
+Paper 22 v2 as accepted input. Any successor requires a separately motivated,
+explicitly authorized pin.
