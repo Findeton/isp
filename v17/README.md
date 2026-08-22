@@ -116,6 +116,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper02-operational-quotient-ontology-residue-pin.md` — frozen
   result-neutral contract for the canonical quotient, ontology fibers,
   contextuality, scalar representation, and discriminator tests.
+- `note-paper02-pin-audit.md` — result-neutral internal feasibility and
+  consistency audit; not an independent review.
 
 ## Permanent honesty wall
 
