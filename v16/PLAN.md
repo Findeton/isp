@@ -1993,7 +1993,11 @@ Successor register, current:
   Corrected tag
   `P23AV2-ALGEBRA-COMMUTATIVE-GRADED-NONASSOCIATIVE-MAGMA-WITHOUT-UNIT`;
   commutativity, nonassociativity, carrier-monotonic finite-closure failure
-  (strengthened), duals-absent, and the fixture-scoped FP-route closure all
+  (strengthened; mechanism re-split at #323: carrier monotonicity on
+  positive-carrier subfamilies, trace-vertex grading $v(x\otimes y)=
+  v(x)+v(y)+1$ on the empty corner), dual structure
+  INAPPLICABLE/UNCONSTRUCTED (#323 — no duality predicate defined after
+  unit withdrawal), and the fixture-scoped FP-route closure all
   retained. Frozen candidate bytes untouched. Pin #315 → construction #316 →
   seats #317–#319 all ACCEPT-WITH-FIXES → adjudication #320 (eight
   findings confirmed, eight replacement sentences ordered) → repair

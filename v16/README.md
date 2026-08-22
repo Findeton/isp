@@ -45,7 +45,13 @@ theory-selection result.
   trace-sensitive sector classes; finite closure fails by carrier
   monotonicity (strengthened at #322: no nontrivial subfamily closes);
   duals absent; the FP fusion-bootstrap route is CLOSED for the present
-  Γ_D (fixture-scoped). Paper 17 gate CLOSED.
+  Γ_D (fixture-scoped). Paper 17 gate CLOSED. Clarification #323
+  (forward-only): finite-closure failure holds by carrier-or-trace
+  monotonicity — carrier monotonicity on positive-carrier subfamilies,
+  trace-vertex grading $v(x\otimes y)=v(x)+v(y)+1$ on the empty corner;
+  `P23AV2-DUALS-ABSENT` replaced by
+  `P23AV2-DUAL-STRUCTURE-INAPPLICABLE (UNCONSTRUCTED)` since no duality
+  predicate is defined after unit withdrawal.
 - Correction #322 (user-ordered): the recheck of Proposition I against
   Paper 13D §§5.2/7.1/10.2 confirmed that fusing with an empty
   component traverses a fusion vertex, so its trace shape differs from
