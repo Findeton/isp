@@ -6957,3 +6957,17 @@ It constructs a dimension-neutral contract for point-free structural sectors,
 resolved channels, restriction, deletion, conditional channel laws, and the
 selector residue. It constructs no physical channel measure, occurrence law,
 root law, chronology, dimension, metric, gravity, or actuality.
+
+## 2026-08-21 — PAPER 19 INTERNAL MATHEMATICAL ARCHIVE (v16 LEDGER #285)
+
+Paper 19's frozen pin, paper, construction note, nonblind internal-review
+protocol, internal report, and adjudication are archived at their existing
+bytes. This is the same post-signing recovery boundary as #283--#284; it does
+not upgrade the internal review to independent or terminal status.
+
+At its exact scope, Paper 19 proves that the accepted Paper 13D conditional
+law has fixed execution syntax and contains no endogenous probability law
+over inequivalent whole process complexes. Selector-robust conditional
+statements survive, but a physical channel measure, activity/root/size law,
+or equivalent parent experiment remains new input. Chronology, dimension,
+metric, gravity, and actuality remain unopened.
