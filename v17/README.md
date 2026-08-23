@@ -206,6 +206,26 @@ cleanly if nature does not support it.
   state-coordinate reduction, B-relative adaptive arithmetic, response and
   baseline controls, and every honesty wall. Paper 05 remains closed because
   this branch supplies no accepted complete clock-relative law.
+- Paper 04B status: **TERMINAL REVISE BEFORE MODEL SELECTION; NO PARENT
+  SELECTED**. The user-authorized model-neutral successor replaced the rejected
+  finite fixture with one operational parent packet, two internal derivations,
+  complete retained instruments, independent held-out data, resource and
+  reciprocal-response ledgers, and permanent nonpromotion walls. Three blind
+  pre-construction reviews froze at ledgers #91--#93. Mathematics and quantum
+  seats accepted with binding scope; the ontology seat supplied an exact
+  counterexample showing that an accurate autonomous controller can pass the
+  architecture without performing a preregistered timekeeping task. Root
+  adjudication #94 independently reproduces that defect, vacuous removal of a
+  dummy scalar at L6, and the insufficiency of structural separation for two
+  empirically adequate clocks at L5. It also closes readout-time laundering:
+  an externally timed endpoint pulse is part of the mechanism, not passive
+  interrogation. A possible repaired pin would need four model-neutral gates:
+  an operational clock-task predicate, nonvacuous scalar replacement, separate
+  adequacy plus joint comparison for two clocks, and an autonomous
+  completion/passive-readout criterion. The exact authorized pin did not pass,
+  so its conditional one-parent attempt never opens. No automatic repair,
+  second model, Paper 05, chronology, spacetime, gravity, hardware, or code
+  programme is authorized.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -489,8 +509,22 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   pre-construction reviews before any model selection.
 - `note-paper04b-pin-review-protocol.md` — immutable result-neutral duties for
   three mutually blind mathematics/probability, quantum-clock/instrument, and
-  ontology/time/relativity seats; model selection remains barred until root
+  ontology/time/relativity seats; it barred model selection pending root
   adjudication.
+- `note-paper04b-pin-audit-mathematics.md` — independent
+  mathematics/probability/identification audit; accepts the architecture with
+  anti-packaging, finite-data, nontrivial-quotient, and cumulative-ladder
+  bindings.
+- `note-paper04b-pin-audit-quantum-clocks.md` — independent quantum-clock,
+  instrument, resource, and quantum-reference-frame audit; accepts with the
+  classical-center record firewall and complete-instrument/resource scope.
+- `note-paper04b-pin-audit-ontology-relativity.md` — independent ontology,
+  time, relativity, and gravity audit; requires clock-task, nonvacuous-scalar,
+  and two-clock-adequacy repairs before model selection.
+- `note-paper04b-pin-review-adjudication.md` — terminal root
+  `REVISE-BEFORE-MODEL-SELECTION`; independently reconstructs all decisive
+  counterexamples, adds the completion/readout firewall, prints exact R1--R4,
+  and bars the conditional parent attempt.
 
 ## Permanent honesty wall
 

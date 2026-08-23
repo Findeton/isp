@@ -5,11 +5,11 @@ Date opened: 2026-08-22
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
 Paper 03 v1/v2/v3.1 terminal REVISE; Paper 03 v3.2 terminal
 ACCEPT-WITH-SCOPE at relativistic quantum operational adequacy with global
-ontology debt; Paper 04 generic mathematical boundary terminally accepted
-with binding scope; the sole finite cyclic candidate terminally
-REJECTED-WITH-EXACT-SALVAGE because its coherent A pointer is not a classical
-record; the finite parent and B-relative clock survive; Paper 05 remains
-closed on this branch**
+ontology debt; Paper 04's sole finite cyclic candidate terminally
+REJECTED-WITH-EXACT-SALVAGE; Paper 04B's model-neutral pin is terminal
+REVISE-BEFORE-MODEL-SELECTION because clock-task, nonvacuous-scalar,
+two-clock-adequacy, and completion/readout predicates are incomplete; no
+parent is selected and Paper 05 remains closed**
 
 ## 0. Authority and workflow
 
@@ -572,10 +572,13 @@ Paper 04 Seat M review              TERMINAL EVIDENCE — REVISE
 Paper 04 Seat Q review              TERMINAL EVIDENCE — REVISE
 Paper 04 Seat O review              TERMINAL EVIDENCE — REJECT
 Paper 04 joint adjudication         TERMINAL REJECT-WITH-EXACT-SALVAGE
-Paper 04B model-neutral pin         FROZEN — PRE-CONSTRUCTION REVIEW REQUIRED
-Paper 04B pin-review protocol       FROZEN — THREE BLIND REVIEWS AUTHORIZED
-Paper 04B pin reviews               RUNNING / MUTUALLY BLIND
-Paper 04B parent model              UNSELECTED / BARRED PENDING PIN ADJUDICATION
+Paper 04B model-neutral pin         TERMINAL REVISE BEFORE MODEL SELECTION
+Paper 04B pin-review protocol       FROZEN — THREE BLIND REVIEWS COMPLETE
+Paper 04B Seat M pin review         FROZEN ACCEPT WITH BINDING SCOPE
+Paper 04B Seat Q pin review         FROZEN ACCEPT WITH BINDING SCOPE
+Paper 04B Seat O pin review         FROZEN REVISE BEFORE MODEL SELECTION
+Paper 04B root pin adjudication     TERMINAL REVISE BEFORE MODEL SELECTION
+Paper 04B parent model              UNSELECTED / BARRED
 Paper 05 operational chronology     CLOSED — NO ACCEPTED CLOCK-RELATIVE LAW
 Phases G/S/P                         CLOSED
 ```

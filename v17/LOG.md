@@ -2113,3 +2113,69 @@ private development files are disclosed contamination and may be read only
 after an independent core reconstruction. No review may select or simulate a
 parent. Root adjudication remains the sole gate to established-family
 comparison.
+
+## 2026-08-23 — PAPER 04B MATHEMATICS PIN AUDIT FROZEN (v17 LEDGER #91)
+
+The blind mathematics/probability/identification report freezes at
+`v17/note-paper04b-pin-audit-mathematics.md`, ordinary SHA-256
+`281cc221f6b693f4911a311772d426ea508f82f1b84fd11cc67545201debbce2`,
+normalized self-SHA-256
+`5c51aa248537f8d5ec1952bd5a03c158685586808c687af42f8e0099601e0bb2`,
+and size 1,019 LF / 57,165 bytes. Verdict is
+`ACCEPT-FOR-MODEL-COMPARISON-WITH-BINDING-SCOPE`.
+
+The report reconstructs one-parent anti-packaging, complete transcript-law
+equality, finite-data statistics, effective-rank overidentification, scoped
+simulator/dilation ceilings, and a finite cyclic nonvacuity witness. It selects
+no model and awards no clock result.
+
+## 2026-08-23 — PAPER 04B QUANTUM-CLOCK PIN AUDIT FROZEN (v17 LEDGER #92)
+
+The blind quantum-clock/instrument/resource report freezes at
+`v17/note-paper04b-pin-audit-quantum-clocks.md`, ordinary SHA-256
+`f52e1d1daa9f5bc8bc1421a022c07531c2aef86538d84ff4b2a0da16247742f4`,
+normalized self-SHA-256
+`20176e5f12672e4a86fca9153d5358884ac555c900857d4bcb0dd2f6597b019d`,
+and size 791 LF / 47,954 bytes. Verdict is
+`ACCEPT-FOR-MODEL-COMPARISON-WITH-BINDING-SCOPE`.
+
+It reproduces Paper 04's classical-record failure and binds any future model
+to complete instruments, center-preserving classical records, explicit
+resources and backreaction, finite-data evidence, full quantum-reference-frame
+maps, and the L6 ceiling. It selects no model and awards no clock result.
+
+## 2026-08-23 — PAPER 04B ONTOLOGY PIN AUDIT FROZEN (v17 LEDGER #93)
+
+The blind ontology/time/relativity/gravity report freezes at
+`v17/note-paper04b-pin-audit-ontology-relativity.md`, ordinary SHA-256
+`827dceebf1c0ef2c702d7653f20557ad9dfb6689d28e602ff1cee2bb65dff281`,
+normalized self-SHA-256
+`e152f94c1c427a7be7ee0326a61698b399c6c0f793fb56728a6f84702c9ef307`,
+and size 820 LF / 48,935 bytes. Verdict is
+`REVISE-BEFORE-MODEL-SELECTION`.
+
+Its decisive counterexample is an accurate autonomous retained-record
+controller that satisfies the printed architecture while performing no
+preregistered clock task. It also finds vacuous dummy-scalar removal at L6
+and structural-but-not-empirical second-clock sufficiency at L5. It prints
+model-neutral repairs and keeps all downstream walls closed.
+
+## 2026-08-23 — PAPER 04B PIN TERMINALLY ADJUDICATED (v17 LEDGER #94)
+
+Root adjudication freezes at
+`v17/note-paper04b-pin-review-adjudication.md`, ordinary SHA-256
+`9343d9845f993081ad9c94ab8200ab761edf31676008c69e00de131352f7f953`,
+normalized self-SHA-256
+`f3a0cb10cd4e7f07e7968b1f35f57a04280ed351b9ee95adb077b6ff6700e226`,
+and size 472 LF / 24,985 bytes. Decision is
+`TERMINAL REVISE-BEFORE-MODEL-SELECTION`.
+
+Independent root reconstruction adopts the controller/clock, dummy-scalar,
+and second-clock counterexamples and adds a readout-time-laundering defect:
+a fixed mechanism can still consume an externally timed pulse that creates
+or selects its endpoint. The exact repair map freezes an operational clock
+predicate, nonvacuous scalar replacement, two separately adequate clocks,
+and an autonomous completion/passive-readout distinction. Because the user
+authorized a parent attempt only if the exact pin passed, no model comparison
+or construction begins. No automatic repaired pin, second model, Paper 05,
+chronology, spacetime, gravity, hardware, or code programme opens.
