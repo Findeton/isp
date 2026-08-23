@@ -326,6 +326,7 @@ selection, or a Barandes completion.
 | Paper 03 v3.2 category pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact pin, full authority corpus, 18 fresh category/operator-algebra countermodels | constant-fiber representation only; common continuous class, joint decomposable normality, record-update nonsingularity, target landing, and exact refusal remain construction duties |
 | Paper 03 v3.2 quantum pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact pin, unchanged instruments/kernels, 18 fresh controls, and a nontrivial old-record continuous qubit instrument | joint extension/posterior/kernel measurability, common null class, target landing, closure, rectangle-to-normal derivation, exact/a.e. separation, and initial-law indexing remain construction duties |
 | Paper 03 v3.2 pin-audit adjudication | `TERMINAL ACCEPT FOR ONE MATHEMATICS CONSTRUCTION WITH BINDING SCOPE` | exact pin, two blind reports, and independent root reconstruction | authorizes one self-contained representation theorem only; same-instrument sample/posterior intertwining, all joint/closure/refusal duties, hostile review, and every downstream wall remain binding |
+| Paper 03 v3.2 complete-boundary construction | `GREEN-UNREVIEWED MATHEMATICS` | sole #64-authorized candidate; unchanged v2 laws and comparators | complete packet-relative predictive algebra, normal `Ens`, paired category, finite/conditional continuous duality, closure and inherited relativistic controls are provisional; no ontology, time, spacetime, gravity, or terminal result before audit/review |
 
 ## Derivation balance
 
@@ -334,7 +335,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0 (Paper 03 v3.1 is terminal REVISE; v3.2 is only a frozen pin)
+green-unreviewed mathematical constructions: 1 (Paper 03 v3.2 complete-boundary representation; no terminal coordinate)
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3

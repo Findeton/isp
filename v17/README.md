@@ -142,8 +142,13 @@ cleanly if nature does not support it.
   are evidence, not votes. Root adjudication independently reconstructs the
   object and now authorizes exactly one mathematics-only construction with
   the additional explicit same-instrument sample/posterior-barycentre proof.
-  No theorem is yet awarded; implementation, Paper 04, clock, spacetime,
-  ontology, and gravity remain closed.
+  That sole candidate now freezes `GREEN-UNREVIEWED`: it constructs the
+  complete packet-relative boundary, normal predual `Ens`, exact paired
+  category, finite and conditional continuous duality, closure, histories,
+  concurrency, and inherited scoped relativistic controls; it also disposes
+  every target/control/attack and all 36 fresh audit countermodels. No theorem
+  is terminal before construction audit and hostile review; implementation,
+  Paper 04, clock, spacetime, ontology, and gravity remain closed.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -397,6 +402,11 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   synthesis; independently verifies noncircular feasibility and authorizes
   one exact mathematics candidate with fourteen binding domain/proof
   conditions, while preserving every ontology and downstream wall.
+- `paper-03v32-complete-boundary-relativistic-adequacy.md` — sole
+  `GREEN-UNREVIEWED` mathematics candidate: complete predictive packets,
+  paired stochastic/Heisenberg arrows, derived same-instrument continuous
+  duality, exact closure and refusal gates, and inherited relativistic
+  operational scope with global ontology debt.
 
 ## Permanent honesty wall
 
