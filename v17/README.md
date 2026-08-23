@@ -231,10 +231,13 @@ cleanly if nature does not support it.
   preserved byte-for-byte under `research-incubator/snapshots/`, with a status
   index and SHA-256 manifest. The active author-side fronts are Q-Cut
   (scalable explanatory cost), E-Comp (endpoint versus coherent composition),
-  and U-Gen (uniform indivisible law class). Q-Cut still requires primary-source
-  reconstruction of its one-way information-compression bridge before any pin
-  may freeze. Repository inclusion does not promote any draft, authorize a
-  Paper 04B successor, or open Paper 05.
+  and U-Gen (uniform indivisible law class). Q-Cut's primary-source bridge has
+  now been reconstructed exactly author-side: HJMR's external information
+  quantity, the natural Partial Matching ensemble, convention translation,
+  and additive constants all survive. Its repaired active package and hash
+  manifest are under `research-incubator/active/qcut/`; no pin or independent
+  review has been authorized. Repository inclusion does not promote any draft,
+  authorize a Paper 04B successor, or open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

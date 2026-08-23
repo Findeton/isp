@@ -24,11 +24,25 @@ The current author-side front has three coupled gates.
 This branch asks whether an ordinary-positive screening variable for a
 registered quantum communication task must retain asymptotically more
 information than the quantum comparator. It is the most empirically selective
-branch, but it is **not ready to freeze**: the cited one-way compression step
-must be reconstructed from primary sources with the correct conditional
-information quantity and constants.
+branch. Its active author-side package now lives under `active/qcut/` and
+includes exact retrieved-source receipts, a repaired typed theorem, candidate
+pin, review contract, readiness audit, and SHA-256 manifest. Primary-source
+reconstruction confirms that HJMR uses external information \(I(XY;Q)\), and
+that the Partial Matching paper fixes the required natural hard ensemble.
+The package is author-side ready for an authorization decision, but no pin is
+frozen and no independent review or scientific result exists.
 
-Core snapshots:
+Active working package:
+
+- `active/qcut/v17_continuous_cut_information_theorem_candidate.md`
+- `active/qcut/v17_continuous_cut_source_quantifier_audit.md`
+- `active/qcut/v17_qcut_primary_source_reconstruction.md`
+- `active/qcut/v17_qcut_result_neutral_candidate_pin.md`
+- `active/qcut/v17_qcut_future_review_contract.md`
+- `active/qcut/v17_qcut_root_readiness_audit.md`
+- `active/qcut/ACTIVE_SHA256.txt`
+
+Preserved precursor snapshots:
 
 - `v17_continuous_cut_information_theorem_candidate.md`
 - `v17_continuous_cut_source_quantifier_audit.md`
