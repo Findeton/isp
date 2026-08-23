@@ -409,6 +409,20 @@ empirical obligation. This is ORS-L2 author-side only: no native response law,
 configuration ontology, bound apparatus, pin, review, U0-T4, or successor is
 created.
 
+The U0 source-constraints synthesis now compresses the mature diagnostics into
+five reusable constraints: source descent and physical reference;
+carrier-relative closure; physical placement of coherently retained
+information; short-time and unbounded directed-response constraints; and
+nomological relocation/descriptor origin. It proves that arbitrary law
+families can be hidden in a conserved source sector, while anonymous strict
+monoidal covariance collapses to identity or uniform reset and physical
+factor marks create channels without selecting their weights. This ends the
+diagnostic ladder. A separately authorized construction would have to compare
+a source-closed higher-boundary/memory architecture against a direct
+whole-boundary relational architecture. R4 remains deferred and MG0 remains a
+declaration-only preflight. NRL-L2 creates no candidate, pin, review, U0-T4,
+Q-Cut cycle, or successor.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

@@ -388,6 +388,21 @@ held-out discriminator. The response rule remains absent. This is ORS-L2
 author-side only and opens no candidate, apparatus, U0-T4, pin, review, or
 successor.
 
+The U0 source-constraints synthesis is the consolidation point, not another
+gate. It records SC1 source descent/reference, SC2 carrier-relative closure,
+SC3 information placement, SC4 short-time/unbounded directed response, and
+SC5 nomological relocation/descriptor origin. Exact author-side theorems show
+that arbitrary law families can be hidden in a conserved state sector;
+anonymous strict monoidal covariance leaves only identity or uniform reset;
+and typed factor/source relations create response channels without selecting
+their weights. The diagnostic ladder therefore stops. A separately authorized
+scientific construction must compare a source-closed higher-boundary/memory
+law with a direct whole-boundary relational law, without importing target
+jets, Hamiltonians, external time, trajectories, phases, or per-program
+tables. R4 is deferred until a candidate survives cheaper controls, and MG0
+remains a declaration-only preflight. This is NRL-L2 author-side only and
+opens no candidate, pin, review, U0-T4, Q-Cut cycle, or successor.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -436,6 +451,7 @@ Active audit:
 - v17_ugen_u0_short_time_probability_jet_source_gate.md
 - v17_ugen_u0_unbounded_cycle_jet_nonclosure_gate.md
 - v17_ugen_u0_reversal_source_architecture_gate.md
+- v17_ugen_u0_source_constraints_synthesis.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -775,8 +791,13 @@ U0 BARE-CARRIER DYNAMICS:      UNDERDETERMINED / BOUNDED CONTROL
 U0 PHYSICAL-REFERENCE SOURCE:  ADMISSIBLE CLASS / NOT SELECTED
 U0 RELATIVE-ORBIT THEOREMS:    EXACT AUTHOR-SIDE / NOT REVIEWED
 U0 REFERENCE AS LAW SELECTOR:  NONSELECTING IN EXACT FINITE CONTROL
+U0 SOURCE-CONSTRAINTS SYNTHESIS: NRL-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+U0 STATIC-SECTOR UNIVERSALITY: FORMALLY VACUOUS WITHOUT PHYSICAL ORIGIN
+U0 STRICT MONOIDAL ANONYMITY:  IDENTITY OR UNIFORM RESET / FINITE CONTROL
+U0 FACTOR-MARKED RESPONSE:     ORBITAL CHANNELS EXIST / WEIGHTS UNSELECTED
 PHYSICAL RELATIONAL STRUCTURE: REQUIRED / NOT YET CHOSEN
-NEXT U0 BOUNDARY:              T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
+NEXT U0 SCIENTIFIC FORK:       MEMORY/HIGHER-BOUNDARY VS WHOLE-BOUNDARY / NOT AUTHORIZED
+R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             ABSENT

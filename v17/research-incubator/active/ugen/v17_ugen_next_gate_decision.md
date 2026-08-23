@@ -233,6 +233,18 @@ interaction-asymmetry controls. The least-committal construction target is a
 joint system--source complete positive law, but no target-blind response rule
 has been found. The packet is ORS-L2 author-side only and opens no new
 authority.
+
+The U0 source-constraints synthesis now consolidates the mature diagnostics
+as SC1--SC5 and ends the diagnostic ladder. Its exact relocation and finite
+orbital theorems show that a formal one-law/static-state rewrite and a
+symmetry-typed response space do not supply the physical member-selection
+principle. The only live scientific construction fork is between a
+source-closed higher-boundary/memory law and a direct whole-boundary
+relational law. Neither is authorized or constructed. R4 is deferred until a
+candidate survives cheaper controls; MG0 requires declarations but remains
+unable to select a matter ontology here. The synthesis is NRL-L2 author-side
+only and opens no Q-Cut cycle, formula freeze, pin, review, U0-T4, or
+successor.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -318,11 +330,16 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 SYMMETRIC-LAW ODD RESPONSE:  CONTINGENT ASYMMETRIC SOURCE CAN SUPPLY
     U0 REFERENCE/GRAMMAR SELECTOR:  REFUTED AT PRINTED SCOPE
     U0 INTRINSIC P/T ASYMMETRY:     EMPIRICAL CONTROL / ORIGIN ABSENT
+    U0 SOURCE-CONSTRAINTS SYNTHESIS: NRL-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+    U0 STATIC-SECTOR UNIVERSALITY:  FORMALLY VACUOUS WITHOUT PHYSICAL ORIGIN
+    U0 STRICT MONOIDAL ANONYMITY:   IDENTITY OR UNIFORM RESET / FINITE CONTROL
+    U0 FACTOR-MARKED RESPONSE:      ORBITAL CHANNELS EXIST / WEIGHTS UNSELECTED
     U0 WHOLE-BOUNDARY ESCAPE:       OPEN / NATIVE RULE ABSENT
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN
-    NEXT U0 BOUNDARY:               T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
+    NEXT U0 SCIENTIFIC FORK:        MEMORY/HIGHER-BOUNDARY VS WHOLE-BOUNDARY / NOT AUTHORIZED
+    R4 IMPLEMENTATION/CUSTODY:      DEFERRED UNTIL CANDIDATE
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

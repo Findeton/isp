@@ -392,6 +392,23 @@ open architecture is a joint system--source whole-process law with intrinsic
 asymmetry retained as a held-out discriminator. Its uniform target-blind
 response rule is absent. The ceiling is ORS-L2 author-side and no official
 authority is created.
+
+The U0 source-constraints synthesis now consolidates the diagnostic work into
+SC1 source descent/reference, SC2 carrier-relative closure, SC3 information
+placement, SC4 short-time/unbounded directed response, and SC5 nomological
+relocation/descriptor origin. Exact relocation and finite orbital theorems
+show why neither “one law plus state” nor symmetry-typed response slots select
+the physical law without independently evidenced source structure and a fixed
+response principle. The diagnostic ladder stops here. The next scientific
+fork, only if separately authorized, compares a source-closed higher-boundary
+or memory law with a direct whole-boundary relational law. Neither class may
+inherit external time, trajectories, target jets, Hamiltonians, wavefunctions,
+actions, phases, or per-program response tables. R4 custody is deferred until
+a candidate survives cheaper controls. MG0 requires ontology and coupling
+declarations at candidate entry but remains unable to select or evaluate the
+matter law before genuinely distinct complete candidates exist. NRL-L2 is
+author-side only and opens no candidate, pin, review, U0-T4, Q-Cut cycle, or
+successor.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

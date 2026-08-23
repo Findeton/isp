@@ -157,6 +157,19 @@ law, not a fundamental phase or handed label, while intrinsic asymmetry
 remains a held-out requirement. This is ORS-L2 author-side only; the uniform
 response rule and native candidate remain absent.
 
+The U0 source-constraints synthesis consolidates these and the earlier source,
+closure, and information-placement results as SC1--SC5. Its relocation theorem
+shows that an arbitrary process family can masquerade as one law plus a static
+sector, while its finite monoidal/orbital theorems show that anonymous
+composition collapses and physical structure supplies response slots without
+their weights. The diagnostic ladder therefore ends. Rival A can advance only
+through a separately authorized source-closed higher-boundary/memory candidate
+or direct whole-boundary relational candidate; neither may inherit target
+jets, Hamiltonians, wavefunctions, external time, trajectories, phases, or
+per-program tables. R4 remains deferred and MG0 remains a declaration-only
+preflight. This is NRL-L2 author-side only and creates no scientific result or
+new authority.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -391,8 +404,13 @@ U0 REVERSAL-SOURCE GATE:                ORS-L2 AUTHOR-SIDE / NO RESULT
 U0 SYMMETRIC-LAW ODD RESPONSE:          POSSIBLE FROM ASYMMETRIC CONTINGENT SOURCE
 U0 REFERENCE/GRAMMAR SELECTOR:          REFUTED AT PRINTED SCOPE
 U0 INTRINSIC P/T ASYMMETRY:             EMPIRICAL CONTROL / ORIGIN ABSENT
+U0 SOURCE-CONSTRAINTS SYNTHESIS:        NRL-L2 AUTHOR-SIDE / NO RESULT
+U0 STATIC-SECTOR UNIVERSALITY:          FORMALLY VACUOUS WITHOUT PHYSICAL ORIGIN
+U0 STRICT MONOIDAL ANONYMITY:           IDENTITY OR UNIFORM RESET / FINITE CONTROL
+U0 FACTOR-MARKED RESPONSE:              ORBITAL CHANNELS EXIST / WEIGHTS UNSELECTED
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
-NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
+NEXT U0 SCIENTIFIC FORK:                MEMORY/HIGHER-BOUNDARY VS WHOLE-BOUNDARY / NOT AUTHORIZED
+R4 IMPLEMENTATION/CUSTODY:              DEFERRED UNTIL CANDIDATE
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
 CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY

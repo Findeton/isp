@@ -524,6 +524,23 @@ cleanly if nature does not support it.
   phase or orientation bit, but its target-blind response rule is still
   absent. This is ORS-L2 author-side only and opens no candidate, apparatus,
   pin, review, U0-T4, or successor.
+  A consolidated U0 source-constraints synthesis now closes the diagnostic
+  ladder rather than adding another equal-status gate. SC1--SC5 combine source
+  descent and physical references, carrier-relative closure, information
+  placement, short-time/unbounded directed response, and nomological
+  relocation. Any family of complete positive laws can be rewritten as one
+  enlarged law with a conserved source-sector label, so “one law plus a state”
+  has no native force unless the sector has independent physical origin and
+  resource content. Full anonymous relabeling plus strict product
+  compatibility leaves only identity or uniform reset; retaining physical
+  factor/source relations restores response channels but does not select
+  their weights. The next scientific fork, if separately authorized, is
+  between a source-closed higher-boundary/memory law and a direct
+  whole-boundary relational law. R4 is deferred until a candidate survives
+  cheaper controls, and MG0 may require declarations but cannot select a
+  matter ontology here. This is NRL-L2 author-side only: no response
+  functional, configuration ontology, candidate, pin, review, U0-T4, or
+  successor is created.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
