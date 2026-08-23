@@ -2095,3 +2095,21 @@ remains supplied; no discrete ontology, chronology, spacetime, gravity, or
 actuality follows. Model selection and construction remain barred until three
 independent pre-construction reviews and root adjudication accept these exact
 bytes.
+
+## 2026-08-23 — PAPER 04B PIN-REVIEW PROTOCOL FROZEN (v17 LEDGER #90)
+
+The result-neutral review protocol freezes at
+`v17/note-paper04b-pin-review-protocol.md`, ordinary SHA-256
+`21f821cb6b9b204da616ce70f4a1acb1b6ce91e55d1575e59e27175a2c420dc2`,
+normalized self-SHA-256
+`b1019c3864e6f064fa143537f2c8170a0463e588cca26792f049db7e7921319f`,
+and size 232 LF / 9,602 bytes.
+
+Three mutually blind seats are authorized: mathematics/probability and
+identification; quantum clocks/instruments/resources; and ontology/time/
+relativity/gravity scope. Each must reconstruct T1--T20, C1--C42, A1--A42,
+all 28 coordinates and L0--L7, plus at least twelve fresh countermodels. The
+private development files are disclosed contamination and may be read only
+after an independent core reconstruction. No review may select or simulate a
+parent. Root adjudication remains the sole gate to established-family
+comparison.

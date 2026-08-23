@@ -487,6 +487,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   internal derivations, an independent held-out laboratory comparator, exact
   statistical/record/parameter-factorization walls, and three mandatory
   pre-construction reviews before any model selection.
+- `note-paper04b-pin-review-protocol.md` — immutable result-neutral duties for
+  three mutually blind mathematics/probability, quantum-clock/instrument, and
+  ontology/time/relativity seats; model selection remains barred until root
+  adjudication.
 
 ## Permanent honesty wall
 
