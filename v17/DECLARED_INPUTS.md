@@ -226,6 +226,7 @@ selection, or a Barandes completion.
 | Review lens | Frozen disposition | Scientific effect | Status |
 |---|---|---|---|
 | AQFT/category/covariance (Seat A) | `REVISE` | ordinary procedure/quotient category unconstructed; localized AQFT/no-signalling subpackage survives | frozen, not adjudicated |
+| quantum measurement/probability/Bell (Seat Q) | `ACCEPT-WITH-SCOPE` | instrument, causal probability, no-signalling/steering, Bell compatibility, and positive-history core survive with packet scopes | frozen, not adjudicated |
 
 ## Derivation balance
 

@@ -30,12 +30,11 @@ cleanly if nature does not support it.
   It repairs the v1 source-domain error, constructs a positive contextual
   existence model, and leaves the particular ontology, Barandes completion,
   and microscopic actuality unselected.
-- Paper 03 status: **HOSTILE REVIEW IN PROGRESS — SEAT A FROZEN REVISE**.
-  Seat A independently reconstructs the localized AQFT/no-signalling core but
-  refutes the printed ordinary procedure category: matching same-boundary
-  timelike endomorphisms may be noncomposable under an extra causal-wiring
-  rule. The quotient layer is therefore unconstructed as written. Seats Q/O
-  and joint adjudication remain pending; no Paper 03 result is terminal.
+- Paper 03 status: **HOSTILE REVIEW IN PROGRESS — SEATS A/Q FROZEN**.
+  Seat A refutes the printed ordinary procedure category; Seat Q independently
+  accepts the quantum measurement, probability, Bell, and positive-history
+  core with explicit normality/measurability/realization scopes. Seat O and
+  joint adjudication remain pending; no Paper 03 result is terminal.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -73,8 +72,8 @@ ontology underdetermination, not a preferred microscopic world.
 
 Paper 03 is in hostile review. Its fixed-packet relativistic measurement core
 remains live, but Seat A has identified an exact source/target typing defect in
-the claimed ordinary procedure category. The remaining blind reports and root
-adjudication must determine the mixed product before any repair or successor.
+the claimed ordinary procedure category. Seat O and root adjudication must
+determine the mixed product before any repair or successor.
 
 ## Reality constraints
 
@@ -188,6 +187,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03-aqft-covariance.md` — frozen Seat A report; `REVISE` on
   procedure-category typing, with the localized AQFT/no-signalling subpackage
   surviving provisionally.
+- `review-paper03-quantum-measurement-bell.md` — frozen Seat Q report;
+  `ACCEPT-WITH-SCOPE` for the measurement/probability/Bell/positive-history
+  core.
 
 ## Permanent honesty wall
 

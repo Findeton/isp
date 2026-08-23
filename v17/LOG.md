@@ -818,3 +818,21 @@ causal-factorization, finite spacelike-schedule, nonselective no-signalling,
 steering/Bell distinctions, and ontology firewalls, with provisional ceiling
 `P03-RELATIVISTIC-NOSIGNALLING-OPERATIONAL-SUBPACKAGE-CONSTRUCTED`. This is not
 adjudication. Seats Q/O must freeze before the root inspects reports jointly.
+
+## 2026-08-22 — PAPER 03 SEAT Q REVIEW FROZEN (v17 LEDGER #34)
+
+The complete independent quantum-measurement/probability/Bell report freezes
+verbatim at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper03-quantum-measurement-bell.md` | `8520421af4dc9d11cb4db238f65bdb5cac2143d63bb570e88edbcb598030f85e` | 691 LF / 41,363 bytes |
+
+Seat Q returns `ACCEPT-WITH-SCOPE` and no decisive counterexample in its lens.
+It reconstructs the induced CP instruments, zero-support and standard-Borel
+discipline, chronological composition, operation-level no-signalling,
+selective steering, Bell premise separation, and positive prefix-coherent
+history representation. Normality, posterior-class closure, measurable
+kernels, independent-probe source lineage, and exact Bell-probe realization
+remain explicit packet/model conditions. This is not joint adjudication; Seat
+O must freeze before the reports are combined.

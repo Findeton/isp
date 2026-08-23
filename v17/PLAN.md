@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 hostile review active; Seat A frozen, Seats Q/O pending**
+Paper 03 hostile review active; Seats A/Q frozen, Seat O pending**
 
 ## 0. Authority and workflow
 
@@ -495,12 +495,13 @@ Paper 03 construction               GREEN-UNREVIEWED
 Paper 03 construction audit         PASS RESULT-NEUTRAL
 Paper 03 hostile-review protocol    FROZEN
 Paper 03 Seat A review              FROZEN REVISE — CATEGORY TYPING DEFECT
-Paper 03 Seats Q/O                  PENDING
+Paper 03 Seat Q review              FROZEN ACCEPT-WITH-SCOPE
+Paper 03 Seat O review              PENDING
 Paper 03 joint adjudication         BLOCKED UNTIL ALL THREE FREEZE
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is completion of the two remaining mutually blind
-Paper 03 reviews, followed by independent joint adjudication. No implementation,
-clock, spacetime-emergence, or gravity unit is open.
+The next scientific action is completion of Seat O's blind Paper 03 review,
+followed by independent joint adjudication. No implementation, clock,
+spacetime-emergence, or gravity unit is open.
