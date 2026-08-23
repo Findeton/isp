@@ -175,7 +175,13 @@ cleanly if nature does not support it.
   nonidentity reparameterization. Root adjudication #76 accepts those findings
   by reconstruction rather than vote. Because selecting clocks and a parent is
   itself semantic physics, their exact pre-fit specification must freeze and
-  pass independent audit before the sole construction.
+  pass independent audit before the sole construction. Ledger #77 now freezes
+  that one selection: a finite $\mathbb Z_7$ constraint with separate A/B
+  clocks, matter systems M/Q, one bilinear reciprocal coupling, exact physical
+  group averaging, clock-specific reduction domains, two training and two
+  held-out points, a complete adaptive sequence, nonidentity coordinate
+  changes, resource/stoppage/recurrence controls, and no hidden external-time
+  result. Three model-pin audits are pending; no formula has been evaluated.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

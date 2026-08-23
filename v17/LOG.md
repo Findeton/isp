@@ -1847,3 +1847,39 @@ fit and must receive independent constrained-dynamics, quantum-clock, and
 ontology/relativity audits before construction. This is the first model
 selection, not an automatic repair successor. No Paper-04 coordinate is
 awarded; Paper 05 and all spacetime/gravity phases remain closed.
+
+## 2026-08-23 — PAPER 04 MODEL-SPECIFIC PREFIT PIN FROZEN (v17 LEDGER #77)
+
+The sole #76-authorized model selection freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper04-two-clock-parent-construction-pin.md` | `8adb5def4c927dd55eba4c2360782b1b6d9370fcf3f5d5c76f5458b1a0fbca4e` | `29e14feae49cc7a88f1da878623c83fead437d82381fe7ce003f10a877480f85` | 758 LF / 34,071 bytes |
+
+The pin contains no derivation, fit, implementation, or result. It selects
+$p=7$ before calculation as the smallest prime in the registered family with
+two calibration points, two nonwrapping held-out points for a rate-two second
+clock, a reciprocal-interaction sector, and a stopped-clock sector. The
+kinematic factors are separate clocks A/B and matter systems M/Q. The frozen
+finite gauge charge is
+
+```text
+D = k_A + 2 k_B + k_M + k_Q + k_A k_Q  (mod 7).
+```
+
+The model fixes finite group averaging, physical inner product, candidate
+A/B reductions and their domains, nine source contexts, a time-sensitive M
+reader, one complete two-step adaptive context, exact training/held-out
+chronology, total-variation zero threshold, no-clock/mistuned baselines, two
+nonidentity reparameterizations, resource and recurrence ledgers, reciprocal
+response arms, the q=6 stopped-A source, coherent frame controls, 24 targets,
+24 model attacks, and a product-valued outcome. Absolute clock numerals are
+not gauge-invariant beables; retained records require a covariant
+reduction/lift or dilation theorem.
+
+The model is a finite discriminator, not a proposed microscopic lattice or
+ontology. Even maximal success cannot select fundamental time, causal order,
+spacetime, gravity, or actuality. Three independent finite-constraint,
+quantum-clock, and ontology/relativity audits must accept these exact bytes
+before root may authorize the one construction. No automatic model repair is
+authorized.
