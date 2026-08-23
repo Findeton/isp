@@ -1435,3 +1435,39 @@ Barandes completion, internal time, emergent geometry, or gravity is derived.
 All three reports are now frozen. Their conflicting verdicts are evidence,
 not votes; independent joint reconstruction and adjudication are next. No
 candidate byte, physical input, implementation, or downstream phase moves.
+
+## 2026-08-22 — PAPER 03 v3.1 HOSTILE REVIEW ADJUDICATED (v17 LEDGER #60)
+
+The terminal joint adjudication freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v31-hostile-review-adjudication.md` | `6eb5bc944a2ad255131e48a9fc6c44f583b482f9ea880bc34d748eafd8a34acc` | `486f8a365c13cfb0606f083b8d1727895131526e81555151836df5ca53357cc2` | 632 LF / 31,606 bytes |
+
+Verdict: `TERMINAL REVISE`. The reports are not counted as votes. Independent
+root reconstruction reproduces Seat A's exact M0 countermodel: Definition
+3.3 admits future-readable memory in a third typed factor, but the hybrid
+algebra, tagged object, `Ens`, and morphism triple represent only the quantum
+algebra and retained record. Two admitted laws therefore induce one identical
+normal boundary state while a licensed future bit reader distinguishes them.
+The global rung is `P03V31-HYBRID-BOUNDARY-TYPE-FAILURE`.
+
+The adjudication independently reproduces two further semantic defects:
+admitted ensemble classes are not required to remain closed under positive
+central conditioning, and the desired general continuous compatibility
+identity is installed as an admission item and then cited rather than derived.
+The physical hom predicate also needs exact kernel/interface data absent from
+the printed `(D,E,Phi)` triple.
+
+Coordinatewise salvage remains substantial: finite/atomic direct-sum
+instruments and guarded control; normal dominated `Ens` on represented
+factors; the exact atomic/nonatomic point-state split; null-ideal lemmas;
+certified primitive pairs, finite paths, and concurrency; and the inherited
+scoped AQFT/no-signalling/steering/Bell/positive-history package. The accepted
+live ceiling remains Paper 03 v2 rung 6. No ontology, actuality, internal
+time, emergent spacetime, or gravity follows.
+
+The frozen candidate is not edited. Any successor must separately freeze one
+complete predictive boundary algebra, exact paired semantic arrows,
+conditioning/path closure, and a derived continuous compatibility theorem.
+No implementation or Paper 04 work is opened.

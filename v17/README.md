@@ -112,8 +112,18 @@ cleanly if nature does not support it.
   Seat O now freezes `ACCEPT-WITH-SCOPE`: it confirms the representation-level
   distinction among samples, ensemble states, records, conditioning,
   divisions, and actuality, while retaining supplied Lorentzian/AQFT inputs
-  and every ontology/gravity debt. All three reports are now frozen; their
-  disagreement is resolved only by the independent joint adjudication.
+  and every ontology/gravity debt. All three reports then froze for independent
+  joint adjudication.
+  Joint adjudication now closes v3.1 `TERMINAL REVISE` at
+  `P03V31-HYBRID-BOUNDARY-TYPE-FAILURE`. The admitted-object definition
+  permits a future-readable third factor absent from the hybrid algebra and
+  `Ens`, so two equal represented boundary states can have different licensed
+  futures. Positive-conditioning closure and general continuous compatibility
+  are independently incomplete. Finite/atomic complete instruments, normal
+  dominated ensemble states on represented factors, the atomic/nonatomic
+  firewall, certified pairs and finite paths, and the inherited scoped
+  AQFT/no-signalling/positive-history package survive. No implementation or
+  Paper 04 is opened; a complete-boundary successor needs a new semantic pin.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -346,6 +356,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03v31-ontology-relativity.md` — frozen Seat O report;
   `ACCEPT-WITH-SCOPE` at representation level, with no local beable, native
   Barandes division, internal-time, spacetime, or gravity promotion.
+- `note-paper03v31-hostile-review-adjudication.md` — terminal `REVISE`:
+  independently reproduces the admitted-memory countermodel, conditioning
+  closure defect, and continuous admission-as-proof gap; preserves the exact
+  finite/integrated/AQFT salvage product and keeps Paper 04 closed.
 
 ## Permanent honesty wall
 

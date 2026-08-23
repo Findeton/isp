@@ -3,7 +3,8 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1/v2 terminal REVISE; Paper 03 v3 result-neutral repair pin frozen**
+Paper 03 v1/v2/v3.1 terminal REVISE; complete-boundary successor not yet
+frozen; Paper 04 closed**
 
 ## 0. Authority and workflow
 
@@ -521,22 +522,27 @@ Paper 03 v3.1 hostile protocol      FROZEN — RESULT-NEUTRAL
 Paper 03 v3.1 Seat A review         FROZEN REVISE — HYBRID BOUNDARY TYPE FAILURE
 Paper 03 v3.1 Seat Q review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.1 Seat O review         FROZEN ACCEPT-WITH-SCOPE
-Paper 03 v3.1 joint adjudication    PENDING
+Paper 03 v3.1 joint adjudication    TERMINAL REVISE — HYBRID BOUNDARY TYPE FAILURE
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The frozen v3.1 pin encodes the attempted correction:
+The frozen v3.1 pin encoded the attempted correction:
 finite/atomic records admit exact point boundary states; continuous records
 admit integrated normal ensemble states and almost-everywhere posterior and
 control fields; generic nonatomic point restart is refused. One corrected
 construction now realizes this distinction, common domination, nonsingular
 pullbacks, tagged
-boundaries, and the unchanged certified-concurrency scope. The exact bytes
-remain unadjudicated until three-lens hostile review closes; the result-neutral
-construction audit passed, but Seat A has produced an exact admitted-memory
-counterexample at the boundary type. The cycle may establish only
-the hybrid classical--quantum Heisenberg
-target, its compatibility laws, exact primitive interfaces, and
-certified-concurrency scope. It may not retune probabilities or add ontology,
+boundaries, and the unchanged certified-concurrency scope. Joint adjudication
+at ledger #60 reproduces the exact admitted-memory counterexample: a third
+future-readable factor is permitted but absent from the hybrid algebra and
+`Ens`. It also reproduces missing positive-conditioning closure and the use of
+the desired general continuous identity as an admission item rather than a
+derivation. The global v3.1 rung is therefore
+`P03V31-HYBRID-BOUNDARY-TYPE-FAILURE`; finite/atomic hybrid instruments,
+normal dominated ensemble states on represented factors, certified pairs,
+finite paths, and the inherited scoped AQFT/no-signalling package survive.
+Any successor must freeze a complete predictive boundary algebra, exact
+paired semantic arrows, conditioning/path closure, and a derived continuous
+compatibility theorem. It may not retune probabilities or add ontology,
 internal time, spacetime emergence, or gravity. Paper 04 remains closed.

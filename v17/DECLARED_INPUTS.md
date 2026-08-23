@@ -306,9 +306,10 @@ selection, or a Barandes completion.
 | Paper 03 v3.1 integrated hybrid construction | `GREEN-UNREVIEWED MATHEMATICS` | sole #53-authorized construction; unchanged v2 laws | finite/atomic point states, dominated predual `Ens`, tagged hybrid category, conditional continuous instruments, finite-path duality, and certified concurrency; no ontology or downstream result before hostile adjudication |
 | Paper 03 v3.1 construction audit | `PASS — RESULT-NEUTRAL` | frozen #54 bytes plus full authority corpus | all 22 obligations, T1--T24, C1--C34, and attack surfaces mapped; author finding only, no coordinate awarded |
 | Paper 03 v3.1 hostile-review protocol | `FROZEN — RESULT-NEUTRAL` | exact #54 candidate and #55 audit | binds three mutually blind review lenses and complete product; no result or physical input |
-| Paper 03 v3.1 Seat A report | `REVISE — EVIDENCE` | frozen v3.1 corpus and category/operator-algebra lens | an admitted future-readable typed memory factor is absent from the hybrid algebra/`Ens`; boundary typing fails before global dual semantics; joint adjudication pending |
-| Paper 03 v3.1 Seat Q report | `ACCEPT WITH SCOPE — EVIDENCE` | frozen v3.1 corpus and quantum/probability lens | certified primitive pairs and finite paths reconstruct; continuous compatibility remains an admission certificate and every history law is conditional on an input state/ensemble; joint adjudication pending |
-| Paper 03 v3.1 Seat O report | `ACCEPT WITH SCOPE — EVIDENCE` | frozen v3.1 corpus and ontology/relativity lens | global predictor is representation, not local beables; comparator spacetime/AQFT remain supplied; Barandes completion, actuality, time, spacetime, and gravity remain unconstructed; joint adjudication pending |
+| Paper 03 v3.1 Seat A report | `REVISE — ADJUDICATED EVIDENCE` | frozen v3.1 corpus and category/operator-algebra lens | admitted-memory countermodel and secondary closure/duality defects independently reproduced at #60 |
+| Paper 03 v3.1 Seat Q report | `ACCEPT WITH SCOPE — ADJUDICATED SALVAGE EVIDENCE` | frozen v3.1 corpus and quantum/probability lens | certified primitive pairs and finite paths survive; acceptance did not repair the full admitted boundary domain |
+| Paper 03 v3.1 Seat O report | `ACCEPT WITH SCOPE — ADJUDICATED SALVAGE EVIDENCE` | frozen v3.1 corpus and ontology/relativity lens | representation/ontology and comparator/gravity walls survive; acceptance did not type the omitted future-readable factor |
+| Paper 03 v3.1 terminal adjudication | `TERMINAL REVISE — HYBRID BOUNDARY TYPE FAILURE` | immutable candidate, three reports, and independent root reconstruction | M0 refutes full boundary/future-sufficiency domain; conditioning closure and general continuous derivation also incomplete; finite/atomic hybrid instruments, normal dominated `Ens` on represented factors, certified pairs/paths, and inherited scoped AQFT package survive; Paper 04 closed |
 
 ## Derivation balance
 
@@ -317,7 +318,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0 (Paper 03 v3.1 has an unadjudicated exact hostile counterexample)
+green-unreviewed mathematical constructions: 0 (Paper 03 v3.1 is terminal REVISE at the hybrid boundary type)
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3
