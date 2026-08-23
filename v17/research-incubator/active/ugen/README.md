@@ -13,8 +13,11 @@ law data as input?
 The preserved U-Gen drafts are not one freeze-ready unit. This routing note is
 the canonical active status document. Their premises and quantifiers have now
 been re-audited against Q-Cut and E-Comp in
-`v17_ugen_dependency_and_physics_audit.md`; the next author-side task is the
-finite composition-lift classification identified there.
+`v17_ugen_dependency_and_physics_audit.md`. The first exact subcase of the
+composition-lift programme is now constructed in the PC2 balanced seam
+classification. It does not complete U-Gen A: multiple primitives,
+higher-dimensional carriers, tensor composition, adaptive instruments,
+interaction generation, and physical selection remain open.
 
 ## Current inputs
 
@@ -45,6 +48,8 @@ adjudication occur.
 Active audit:
 
 - `v17_ugen_dependency_and_physics_audit.md`
+- `v17_pc2_balanced_seam_classification_candidate.md`
+- `v17_pc2_author_readiness_audit.md`
 
 ## Required split before any pin
 
@@ -130,7 +135,8 @@ CANONICAL ACTIVE STATUS:       THIS ROUTING NOTE
 EXACT PRESERVED DRAFTS:        PRESENT / HASHED
 DEPENDENCY AUDIT:              COMPLETE AUTHOR-SIDE
 ONE-PIN U-GEN PACKAGE:         TOO BROAD / MUST SPLIT
-NEXT MATHEMATICAL TARGET:      FINITE COMPOSITION-LIFT CLASSIFICATION
+PC2 BALANCED SEAM SUBCASE:     AUTHOR-SIDE COMPLETE / NOT REVIEWED
+FULL COMPOSITION-LIFT TARGET:  MULTI-PRIMITIVE / TENSOR / ADAPTIVE OPEN
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             NONE
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

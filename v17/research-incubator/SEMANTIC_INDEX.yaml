@@ -181,7 +181,7 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "7505be7371d76f939b3f929b04144d939d78263b3d9c817c822a8247ac6f86b0"
+    sha256: "878c53b00622600f93df1475645c8a55bb3e630ffe158d8ad0be5e7e47354629"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-dependency-audit-complete"
@@ -194,7 +194,7 @@ artifacts:
     maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "b95ff9ea82912519d2526cf5e9269c9b33391b2a78afe577c49adc97df70987b"
+    sha256: "82ac0e28766cc11971895a1d4233c285b901164ff6166960925557388a620396"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
@@ -205,6 +205,32 @@ artifacts:
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "active/ugen/v17_pc2_balanced_seam_classification_candidate.md"
+    sha256: "913b61c27f3a8303df5acb72e75b4a4def61a5b98b7457734b6be3b9bc4f6d4d"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_composition_nonselection_theorem_candidate.md", "active/ugen/v17_ugen_dependency_and_physics_audit.md"]
+    source_audit_status: "author-side-proof-context-sources-bound-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "candidate exact balanced two-state unitary seam classification and homogeneous positive-sequence classifier; no derivation of coherent composition, amplitude ontology, generator, QFT, time, spacetime, or gravity"
+    canonical: false
+  - path: "active/ugen/v17_pc2_author_readiness_audit.md"
+    sha256: "d7f5a4305cd0ba4d81a6445e4b37fc727cb9b75be91d88941b39ac7eb50a691c"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_pc2_balanced_seam_classification_candidate.md"]
+    source_audit_status: "author-side-proof-context-sources-bound-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "readiness and scope audit for the candidate balanced two-state seam classification; no scientific result or successor authority"
     canonical: false
   - path: "snapshots/p04_quantum_record_successor_investigation.md"
     sha256: "68b56d296dd703af2d3ba24247be60e1e1ee58ae75312f0efa34f49d46a85323"

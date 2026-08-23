@@ -108,8 +108,12 @@ not freeze-ready. Its canonical active routing note splits the work into
 source-completion classification, scalable uniformity/information
 displacement, and a constructive positive-generator contest. The author-side
 dependency/physics audit is complete and identifies a finite
-composition-lift classification as the next mathematical task; no such lift
-has yet been constructed or selected.
+composition-lift classification as the next mathematical task. Its first
+exact subcase is now constructed author-side: the balanced two-state PC2
+candidate classifies flat unitary lifts, gauge-invariant internal seam data,
+homogeneous repeated-block laws, and delayed nondivision controls. It does not
+derive the coherent law class or solve the higher-dimensional, tensor,
+adaptive, interaction, or physical-selection gates.
 
 Canonical status: `active/ugen/README.md`.
 
@@ -117,6 +121,8 @@ Active working package:
 
 - `active/ugen/README.md`
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`
+- `active/ugen/v17_pc2_balanced_seam_classification_candidate.md`
+- `active/ugen/v17_pc2_author_readiness_audit.md`
 - `active/ugen/ACTIVE_SHA256.txt`
 
 Core snapshots:

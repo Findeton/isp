@@ -392,11 +392,13 @@ trigger a repair chain across all of them.
 
 ---
 
-## 10. Next compact mathematical gate
+## 10. First compact mathematical gate
 
 The next author-side theorem should not enumerate all U-laws. It should
 classify the **minimal additional composition datum** on one finite separating
-grammar.
+grammar. The balanced two-state, sequential-only subcase is now constructed
+author-side in `v17_pc2_balanced_seam_classification_candidate.md`; the
+remaining bullets still define the larger composition-lift programme.
 
 ### PC2 candidate question
 
@@ -472,7 +474,8 @@ process object as input.
 DEPENDENCY AUDIT:                 COMPLETE AUTHOR-SIDE
 MONOLITHIC U-GEN:                SPLIT REQUIRED
 CANONICAL ROUTING NOTE:          ACTIVE
-PC2 MATHEMATICAL TARGET:         IDENTIFIED / NOT YET CONSTRUCTED
+PC2 BALANCED SUBCASE:            CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
+FULL COMPOSITION-LIFT TARGET:    MULTI-PRIMITIVE / TENSOR / ADAPTIVE OPEN
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE

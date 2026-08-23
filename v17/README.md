@@ -250,8 +250,14 @@ cleanly if nature does not support it.
   must split into source-completion classification, scalable
   uniformity/information displacement, and a constructive generator contest
   before any pin. Its author-side physics audit rejects Borel set-sizedness and
-  finite evaluator syntax as explanatory results, and identifies a finite
-  composition-lift classification as the next mathematical target. Repository
+  finite evaluator syntax as explanatory results. Its first finite
+  composition-lift subcase is now an active author-side PC2 candidate: every
+  balanced two-state unitary lift has form $LHR$, coherent chains are
+  classified by relative internal seam data after endpoint rephasing gauge,
+  and one homogeneous two-step scalar classifies the full positive repeated
+  sequence only inside that declared coherent subclass. The candidate does
+  not derive unitary composition, select a seam law, or solve tensor,
+  adaptive, interaction, QFT, time, spacetime, or gravity gates. Repository
   inclusion does not promote any draft, authorize a Paper 04B successor, or
   open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
