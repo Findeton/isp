@@ -930,3 +930,28 @@ closure, full packet-isomorphism intertwiners, context closure, exact
 source/localization premises, the KMS rest-frame control, and the no-slot-
 ontology wall. Disposition: `FIT-FOR-CONSTRUCTION`. No coordinate is awarded.
 One mathematics-only construction may begin; Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v2 MATHEMATICS GREEN-UNREVIEWED (v17 LEDGER #39)
+
+The self-contained candidate freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/paper-03v2-causal-frontier-relativistic-adequacy.md` | `93eaa95fba10831618512ab95447d3527ff5d8877ab5119237f73bb8c30e0181` | 958 LF / 36,711 bytes |
+
+The candidate constructs lower-set causal frontiers; one-enabled-slot
+primitive arrows; the free path category; a covariant standard-Borel
+state/record kernel functor and contravariant Heisenberg CP-instrument functor;
+certified incomparable exchange and presentation congruences; the complete
+within-packet operational quotient; full packet-isomorphism transport;
+localized instruments, schedule equality, operation-level no-signalling,
+selective steering, Bell compatibility, and positive prefix-coherent record
+histories.
+
+The frame theorem is narrowed exactly: no undeclared coordinate or scheduling
+frame enters the law, while a contingent KMS/material state may select a
+detectable rest frame and idle microscopic structure is not excluded. The
+slot poset is laboratory protocol input, not fundamental happenings, a global
+clock, or spacetime. The claimed provisional ceiling is
+`P03V2-LOCALLY-COVARIANT-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
+No result is awarded. A result-neutral construction audit is next.

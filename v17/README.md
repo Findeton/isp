@@ -36,12 +36,12 @@ cleanly if nature does not support it.
   causal admissibility is not encoded in boundary types; covariance also does
   not forbid a contingent state/apparatus-selected rest frame. A result-neutral
   causal-frontier Paper 03 v2 repair pin is the next authorized step.
-- Paper 03 v2 status: **PIN AUDIT PASSED — CONSTRUCTION NEXT**. It types
+- Paper 03 v2 status: **GREEN-UNREVIEWED MATHEMATICS**. It types
   finite laboratory opportunities by a causal slot poset and completed lower
-  sets, constructs candidate procedures as paths of enabled slot extensions,
-  and binds the exact state/covariance/frame repairs. The author audit verifies
-  finite feasibility and makes the evaluation functor/context closure explicit.
-  It is not a microscopic event web, lattice, foliation, or result.
+  sets; constructs the free path category, Markov-kernel/Heisenberg semantics,
+  causal exchange and operational quotients; and reconstructs the scoped
+  relativistic instrument/no-signalling/positive-history package. It is not a
+  microscopic event web, lattice, foliation, terminal result, or ontology.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -209,6 +209,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v2-pin-audit.md` — result-neutral timelike-chain,
   incomparable-diamond, adaptive-control, evaluation-functor, quotient,
   covariance, and ontology feasibility audit.
+- `paper-03v2-causal-frontier-relativistic-adequacy.md` — green-unreviewed
+  causal-frontier category, dual semantics, relativistic measurement,
+  positive-history, quotient, and ontology-debt construction.
 
 ## Permanent honesty wall
 

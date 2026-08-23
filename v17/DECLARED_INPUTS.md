@@ -260,6 +260,19 @@ selection, or a Barandes completion.
 | Paper 03 v2 result | `UNCONSTRUCTED` | frozen result-neutral pin | Paper 04, ontology, spacetime, gravity remain closed |
 | Paper 03 v2 author audit | `PASS — RESULT-NEUTRAL` | finite category/type/ontology feasibility | authorizes construction only; awards no coordinate |
 
+## Paper 03 v2 green-unreviewed construction balance
+
+| Constructed object | Input | Provisional status | Debt retained |
+|---|---|---|---|
+| lower-set frontier category | finite laboratory slot packet | `GREEN-UNREVIEWED` | lab typing, not microscopic ontology |
+| state/record kernel semantics | admitted standard-Borel update kernels | `GREEN-UNREVIEWED` | state class and measurability model-specific |
+| Heisenberg instrument semantics | localized AQFT system--probe maps | `GREEN-UNREVIEWED CONDITIONAL` | comparator and dynamics declared |
+| exchange/presentation/operational quotient | factorization plus complete contexts | `GREEN-UNREVIEWED SCOPED` | within packet/reachable interface only |
+| no-signalling/steering/Bell | localized maps and named controls | `GREEN-UNREVIEWED` | no Bell-local ontology or universal probe realization |
+| positive histories | complete predictive objects and records | `GREEN-UNREVIEWED WITH COSTS` | global/contextual/memory-bearing/unselected |
+| frame result | packet covariance plus schedule equality | `GREEN-UNREVIEWED NARROWED` | physical rest frames allowed; idle structure not excluded |
+| ontology / spacetime / gravity | none | `UNCONSTRUCTED` | no downstream promotion |
+
 ## Derivation balance
 
 The live adjudicated balance is:
