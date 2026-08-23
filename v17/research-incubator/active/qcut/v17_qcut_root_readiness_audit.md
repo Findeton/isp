@@ -28,7 +28,7 @@ They are not an official freeze and create no review authority.
 | `v17_qcut_future_review_contract.md` | `12f571c77d39203e0695cd7c24d4458e4689afe4510c53ea6e2a9697630f0a7a` |
 | `v17_continuous_cut_information_theorem_candidate.md` | `8eb9e1699d0d8e39cafae07dcd30b2a616c951f90167c00d06b1963e17199e96` |
 | `v17_continuous_cut_source_quantifier_audit.md` | `b651d2694c17dd3b7c4b51da45351f26ef0f98512cf5a2dd3607e89616e5647b` |
-| `v17_qcut_primary_source_reconstruction.md` | `d4a81e0fe3a0f51cfa0bf8c0934e12547f6bf559d8c398d55c415a3f391e862e` |
+| `v17_qcut_primary_source_reconstruction.md` | `81ba149084b6a15486f7d43797ef31a4f451acd6331a8e361e664cd832040609` |
 
 Any edit to one of these files invalidates this readiness receipt and requires
 a new author-side audit before a pin may freeze.
@@ -51,7 +51,11 @@ Primary-source reconstruction confirms both load-bearing external steps. The
 active theorem also now separates the source parameter \(\varepsilon_s\) from
 Q-Cut errors, retains the HJMR additive constant, states the large-\(n\)
 quantifier explicitly, and uses one typed standard-Borel total carrier. The
-candidate remains correctly narrower than the later indivisible-law question:
+source reconstruction also binds the novelty ceiling: the communication
+separation and compression theorem are credited to their published sources;
+only the typed sufficient-cut transfer and escape ledger are candidate v17
+content. The candidate remains correctly narrower than the later
+indivisible-law question:
 
 $$
 \text{positive sufficient cut}

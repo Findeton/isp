@@ -15,6 +15,12 @@ to `/private/tmp/<name>` inside a snapshot now resolve for inspection to
 The import preserves 54 Markdown sources byte-for-byte. Their import hashes are
 listed in `SOURCE_SHA256.txt`.
 
+`SEMANTIC_INDEX.yaml` is the machine-readable authority, status, dependency,
+supersession, source-audit, promotion-readiness, and maximum-claim index for
+all snapshot and active research artifacts. Hash identity answers “which
+bytes?”; the semantic index answers “which bytes may currently be used for
+what?” Every indexed incubator artifact has authority `none`.
+
 ## Active research front
 
 The current author-side front has three coupled gates.
@@ -31,6 +37,8 @@ reconstruction confirms that HJMR uses external information \(I(XY;Q)\), and
 that the Partial Matching paper fixes the required natural hard ensemble.
 The package is author-side ready for an authorization decision, but no pin is
 frozen and no independent review or scientific result exists.
+
+Canonical status: `active/qcut/v17_qcut_result_neutral_candidate_pin.md`.
 
 Active working package:
 
@@ -56,11 +64,32 @@ Preserved precursor snapshots:
 
 This branch proves, on an exact two-state endpoint, that the same positive
 one-step law admits inequivalent coherent completions whose compositions have
-different positive predictions. It separates endpoint adequacy from selection
-of a phase-complete composition law. It remains an author theorem candidate,
-not an accepted ontology.
+different positive predictions. Its sharpened coordinate is a no-congruence
+theorem: the equivalence $U\sim V$ iff
+$|U|^{\odot2}=|V|^{\odot2}$ does not respect sequential multiplication, so
+the positive endpoint quotient cannot inherit the complete coherent product.
+It separates endpoint adequacy from selection of a phase-sensitive
+composition law. It remains an author theorem candidate, not an accepted
+ontology.
 
-Core snapshots:
+The active package also reconstructs the current Barandes source interface.
+It expressly allows a complete fixed indivisible law to supply every target
+transition, treats isolated lift phases as gauge, and distinguishes a bare
+basis endpoint from a fully calibrated laboratory operation. No Barandes
+refutation, ontic amplitude, QFT, time, or gravity result is claimed.
+
+Active working package:
+
+- `active/ecomp/v17_ecomp_minimal_endpoint_embedding.md`
+- `active/ecomp/v17_ecomp_composition_nonselection_theorem_candidate.md`
+- `active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md`
+- `active/ecomp/v17_ecomp_result_neutral_candidate_pin.md`
+- `active/ecomp/v17_ecomp_future_review_contract.md`
+- `active/ecomp/v17_ecomp_root_readiness_audit.md`
+- `active/ecomp/v17_phase_sensitive_composition_investigation.md`
+- `active/ecomp/ACTIVE_SHA256.txt`
+
+Preserved precursor snapshots:
 
 - `v17_ecomp_minimal_endpoint_embedding.md`
 - `v17_ugen_primitive_composition_separation_candidate.md`
@@ -74,7 +103,12 @@ Core snapshots:
 This branch classifies an exact set-sized class of ordinary-positive and
 phase-complete laws and asks which additional physical composition principle,
 if any, selects the quantum structure. It is result-neutral and has not been
-reviewed independently.
+reviewed independently. The inherited package is too broad for one pin and is
+not freeze-ready. Its canonical active routing note splits the work into
+source-completion classification, scalable uniformity/information
+displacement, and a constructive positive-generator contest.
+
+Canonical status: `active/ugen/README.md`.
 
 Core snapshots:
 

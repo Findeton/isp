@@ -1,0 +1,897 @@
+# Machine-readable semantic lineage for the ISP v17 research incubator.
+schema_version: 1
+generated_at: "2026-08-23"
+hash_algorithm: "sha256"
+authority_rule: "Every indexed incubator artifact has authority none; only separately authorized official v17 artifacts can create authority."
+status_rule: "Repository inclusion preserves provenance and never promotes a draft."
+canonical_fronts:
+  qcut: "active/qcut/v17_qcut_result_neutral_candidate_pin.md"
+  ecomp: "active/ecomp/v17_ecomp_result_neutral_candidate_pin.md"
+  ugen: "active/ugen/README.md"
+  crosscutting: "snapshots/v17_reality_identification_selection_accounting.md"
+  clock-history: "v17/note-paper04b-pin-review-adjudication.md"
+artifacts:
+  - path: "active/ecomp/v17_ecomp_composition_nonselection_theorem_candidate.md"
+    sha256: "686af3baf12b0b6af01a966b5342fae8712b26e0baf72e3abdad4b50cbfa878c"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_ugen_primitive_composition_separation_candidate.md"]
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/ecomp/v17_ecomp_future_review_contract.md"
+    sha256: "6b52f826280f8a5da9f87ec5d9714907569c608439852b20b1970e0dc32f1d81"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_ecomp_future_review_contract.md"]
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/ecomp/v17_ecomp_minimal_endpoint_embedding.md"
+    sha256: "31645c244b35774ab057054e8b9a7cf4398db5db040ed669912f1ccde4add8c2"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_ecomp_minimal_endpoint_embedding.md"]
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"
+    sha256: "d12276fb60110b51396d6490ffbc18ef69f9e54a2659dbc776f2234f80ca67bf"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/ecomp/v17_ecomp_result_neutral_candidate_pin.md"
+    sha256: "4133979bc51b23110ef8af5637fda0ecb51e2b841006d3f693b8705d372e7165"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_ecomp_result_neutral_candidate_pin.md"]
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: true
+  - path: "active/ecomp/v17_ecomp_root_readiness_audit.md"
+    sha256: "5774f7310533379e37c56831e73e365df4ef17a0c23a0ecf05fb081322a19e20"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_ecomp_root_readiness_audit.md"]
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/ecomp/v17_phase_sensitive_composition_investigation.md"
+    sha256: "cd1a882b88aa5da4f42b1872de47c7ccb5234db078afce9a3eeea51c558b78c2"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_phase_complete_composition_investigation.md"]
+    superseded_by: []
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/qcut/v17_continuous_cut_information_theorem_candidate.md"
+    sha256: "8eb9e1699d0d8e39cafae07dcd30b2a616c951f90167c00d06b1963e17199e96"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_continuous_cut_information_theorem_candidate.md", "snapshots/v17_operational_cut_nondivision_theorem_candidate.md"]
+    superseded_by: []
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "active/qcut/v17_continuous_cut_source_quantifier_audit.md"
+    sha256: "b651d2694c17dd3b7c4b51da45351f26ef0f98512cf5a2dd3607e89616e5647b"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_continuous_cut_source_quantifier_audit.md"]
+    superseded_by: []
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "active/qcut/v17_qcut_future_review_contract.md"
+    sha256: "12f571c77d39203e0695cd7c24d4458e4689afe4510c53ea6e2a9697630f0a7a"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_qcut_future_review_contract.md"]
+    superseded_by: []
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "active/qcut/v17_qcut_primary_source_reconstruction.md"
+    sha256: "81ba149084b6a15486f7d43797ef31a4f451acd6331a8e361e664cd832040609"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "active-author-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "active/qcut/v17_qcut_result_neutral_candidate_pin.md"
+    sha256: "a382b64b9fe779f8f8a648ffd6f0452cb8c1d68af38973ba6f08dd8fb26034aa"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_qcut_result_neutral_candidate_pin.md"]
+    superseded_by: []
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: true
+  - path: "active/qcut/v17_qcut_root_readiness_audit.md"
+    sha256: "b36104924af6b7f5fb3c378c87ccfbaeaf6ab8cf0c9bff5a52f7f1b80191c163"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "active-author-draft"
+    supersedes: ["snapshots/v17_qcut_root_readiness_audit.md"]
+    superseded_by: []
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "active/ugen/README.md"
+    sha256: "847bd1b9af7a13746404aa24275ac7a3813aa1c39d3baeb11470ec178650c512"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-routing-dependency-audit-pending"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: true
+  - path: "snapshots/p04_quantum_record_successor_investigation.md"
+    sha256: "68b56d296dd703af2d3ba24247be60e1e1ee58ae75312f0efa34f49d46a85323"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/p04_relational_record_implementation_analysis.md"
+    sha256: "a006d11c180855e03f5278596b5802702a7b736831dc49fb0309b08b8c5013ef"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_clock_parent_architecture_selection.md"
+    sha256: "83f4ffa68ee2a98c32a5c48086ca80b7c83cd9bb87d1ae54c3fca38944dc36b0"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_continuous_cut_information_theorem_candidate.md"
+    sha256: "d66646bd35177b5121b8fd506a27cecce66072e9fa0c1b72cbb7d51bceddc754"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/qcut/v17_continuous_cut_information_theorem_candidate.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "snapshots/v17_continuous_cut_source_quantifier_audit.md"
+    sha256: "d8e49b1e6b7ee997c57e11946eca6ef896d3abb4b31c81ff55fe1c7948a01a86"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/qcut/v17_continuous_cut_source_quantifier_audit.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "snapshots/v17_dual_route_clock_preflight_audit.md"
+    sha256: "55982967575fc1197692e5782d949ac802e914788107eec965a177f161d8d83d"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_dual_route_operational_clock_pin_draft.md"
+    sha256: "d80f9b6bb981c48c36e0d671af775d5a3bee024085797cd08ce7621a29b8ed43"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_dual_route_operational_clock_theorem_package.md"
+    sha256: "77a6c898164463d8fbc8c55033df3fbc9a345fdfa21e62efc76d9911c897b4b6"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_ecomp_future_review_contract.md"
+    sha256: "285ac4c5dd233a13654c9dd5b3dbc7c9fdb55277f85a02a9981a24f91b2ff099"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/ecomp/v17_ecomp_future_review_contract.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "snapshots/v17_ecomp_minimal_endpoint_embedding.md"
+    sha256: "928f40ce969eca7de79563171946cf63c58ffa2af96a84cc276126b2ed2bf125"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "snapshots/v17_ecomp_result_neutral_candidate_pin.md"
+    sha256: "9c66a2ff530e58150ef9c5c0e120fe9391b0da87076193793a2a745ed3f61f70"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/ecomp/v17_ecomp_result_neutral_candidate_pin.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "snapshots/v17_ecomp_root_readiness_audit.md"
+    sha256: "3b6997578a8b36006ae05b3a57eec90a45ca4a1c8aab3eb57d96be4decc89e98"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/ecomp/v17_ecomp_root_readiness_audit.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_empirical_protocol.md"
+    sha256: "6af8c8b537e4cfd40ce05b539898d5722317907fa13839a08f024f9970b99031"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_preflight_audit.md"
+    sha256: "36e8a6c8439b61cb0c9088c5a877262b8fd6194e2b44582a5a14cd17889d46ae"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v10.md"
+    sha256: "51900ed9e0c1c6b6298d2427d982756375eddfa49efcf136e4708a59f2ebe19a"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v2.md"
+    sha256: "138b4baef296a04dd563801ae9717716ec53057aa8563f631b49e5768bf5e6f2"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v3.md"
+    sha256: "fb73944642366dc37aeb7d77badbc28922cf7f55ae8beeb9aa386e2c34908a85"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v4.md"
+    sha256: "93fe438939936ff9797060ab2eacca5a6967096f948b40a3a94a7549e4b58243"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v5.md"
+    sha256: "0faa9b62739222370835a15f2a7eaf73260065fd43bf1f79e40a763520a45f1b"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v6.md"
+    sha256: "eb829f6b7fe1742bae7e8b742b8063e233a349a8cb874dd4ad6c4453e72e05ba"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v7.md"
+    sha256: "c73790ce2983a4d84bc35dbce487f3050c12d150697214cdab83a06b2ca4ba31"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v8.md"
+    sha256: "4e486f7daf7c52b2f3b95f330293d65d5ba4f3639a5b13beb47962d5d0fb7ab7"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest_v9.md"
+    sha256: "ce65db1a3784b1c0396a511b1caa6e22e0d9f4626fa4164363d8a82d154cb6bd"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_private_manifest.md"
+    sha256: "3bc48fe75f5632b5dc5de6884bde9a5f413d397e99eb6c1558ea70f13a227f1b"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_invariant_record_theorem_package.md"
+    sha256: "2319e5eb0893da4a3a88e365d2b1e094e06e8aa2732e2c127811741dabf0c1b5"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_minimal_invariant_record_experiment.md"
+    sha256: "1061b130175ae47b93035db4ec1c14489a29a8d2aa2d1093ba1ba657aced3356"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_native_lift_interface_constraints.md"
+    sha256: "d3cd282f0507c2e31ee2f8993bc3547afaec56a02b18b755fa4fc7120dbf931d"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_noncommutative_record_completion.md"
+    sha256: "fd0517b16c3929a8bb9f512ace39337d462cd1d8d0b6e803a90cdcd1c1fe306b"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_one_parent_clock_final_private_audit.md"
+    sha256: "14ca911eaf4f22575f84a2b6d9ad5543b35e8cebc3804aebc3b77f92960643e6"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_one_parent_clock_successor_authorization_packet.md"
+    sha256: "b892b1a419ec906307859763b61d81c62fec9ad40255366b6749124b8cafef1e"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_one_parent_operational_clock_pin_draft_v2.md"
+    sha256: "c64cfa87edbc9a1e993f9eb00c83c6e504dcd97a21bba1b47513089dee66ca41"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_one_parent_operational_clock_theorem_package.md"
+    sha256: "31693b81a83096e826d7176eee520b48f6dbbb87659d1ed4ffe4da518b61e486"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_operational_cut_nondivision_theorem_candidate.md"
+    sha256: "9f06fbf91b91e84e196b425d2be8241c08b9b409233d6d0ee25969b03951119b"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/qcut/v17_continuous_cut_information_theorem_candidate.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "snapshots/v17_paper04b_empirical_feasibility_census.md"
+    sha256: "b5eb66161b32a10b82765d4240e4ebe5cbf2bedd27229286b254e5d8705ba41a"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "deferred-unauthorized-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_paper04b_successor_blueprint.md"
+    sha256: "d861b0265f62049c09a18fd1cdca982d1d3c87543b9f171bc29d5776d4313f74"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "deferred-unauthorized-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_paper04b_successor_physics_feasibility.md"
+    sha256: "3df65266556ee69ed229ead4d5c22f7b3a0a7de329c3fecc55c65ebd5f405bda"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "deferred-unauthorized-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_phase_complete_composition_investigation.md"
+    sha256: "fe0f246944dd754e7f30a8164f0916ed85415cb4b3a18c7157a20dc021935e77"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/ecomp/v17_phase_sensitive_composition_investigation.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "snapshots/v17_positive_history_cost_theorem_feasibility.md"
+    sha256: "adf07ce521e299404f30f56f1d7a1abd0979b654ecfdab81cdea2e264ed8c8b5"
+    created_at: "2026-08-23"
+    front: "crosscutting"
+    status: "active-reference"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/paper-00-reality-first-programme.md"]
+    source_audit_status: "mixed-author-side-reference"
+    authority: "none"
+    promotion_readiness: "not-a-promotion-unit"
+    maximum_claim: "programme accounting or feasibility architecture only; no scientific result"
+    canonical: false
+  - path: "snapshots/v17_qcut_future_review_contract.md"
+    sha256: "7dc35b458e5af1eeeb3ec2b0f40028f4c41b3233492cb89b39c1133e5b65c627"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/qcut/v17_qcut_future_review_contract.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "snapshots/v17_qcut_result_neutral_candidate_pin.md"
+    sha256: "668acba00ccb33c21e74ae99361e8ade5548fe25c65cae3c494ee759c2415bcc"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/qcut/v17_qcut_result_neutral_candidate_pin.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "snapshots/v17_qcut_root_readiness_audit.md"
+    sha256: "0fc581b0afb6b5b82ca689d459fe8036ec812f5e6d7b28dd78cef1a55aa49400"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/qcut/v17_qcut_root_readiness_audit.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
+    canonical: false
+  - path: "snapshots/v17_quantum_reference_record_pin_draft.md"
+    sha256: "980fefe5361083fdd97741d0c46159c93763d7b2e7ff5b3fcb9bad066248b9ef"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_reality_identification_selection_accounting.md"
+    sha256: "a90c109e7137d22179e00749e4d566144a1a62c99af2c06b8703a9abf9566011"
+    created_at: "2026-08-23"
+    front: "crosscutting"
+    status: "active-reference"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/paper-00-reality-first-programme.md"]
+    source_audit_status: "mixed-author-side-reference"
+    authority: "none"
+    promotion_readiness: "not-a-promotion-unit"
+    maximum_claim: "programme accounting or feasibility architecture only; no scientific result"
+    canonical: true
+  - path: "snapshots/v17_record_architecture_discriminators.md"
+    sha256: "c4ebc47005397f87b0771c14981c2e7dbac8f3562b3a7b9cbac342b5cec49a34"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_record_to_clock_bridge_analysis.md"
+    sha256: "80b6c0e071dba6e19482f4e6db4dbe61bacde3ca9e2f84f4989db7879095e070"
+    created_at: "2026-08-23"
+    front: "clock-history"
+    status: "historical-provenance"
+    supersedes: []
+    superseded_by: ["v17/note-paper04b-pin-review-adjudication.md"]
+    depends_on: ["v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "historical-or-not-applicable"
+    authority: "none"
+    promotion_readiness: "blocked-by-terminal-paper04b-adjudication"
+    maximum_claim: "provenance and deferred protocol only; terminal Paper 04B adjudication controls and no successor is open"
+    canonical: false
+  - path: "snapshots/v17_ugen_barandes_source_scope_audit.md"
+    sha256: "518fa31570fc826b6fcbd146fdddbdfe3df9e455b9337a2712b98c1a6a470db1"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_ugen_control_membership_audit.md"
+    sha256: "fee80b32268dc1b1efdd637f53ba4ef905af0bae1b99620cfa624c0f669d17fd"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_ugen_exact_law_class.md"
+    sha256: "d2762de555d0e0294af7bee927090ac3587584c0208a42cd0cc256cd40926d44"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_ugen_future_review_contract.md"
+    sha256: "c8d1551f1ddf5516b65263f7d9fec702641bae88bf236cc5525483050c6b14b8"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_ugen_primitive_composition_separation_candidate.md"
+    sha256: "fb9768e356b71d97040bde06c3c279e7f8a6b63482d29e7a45eb515dc1bfc787"
+    created_at: "2026-08-23"
+    front: "ecomp"
+    status: "superseded-provenance-snapshot"
+    supersedes: []
+    superseded_by: ["active/ecomp/v17_ecomp_composition_nonselection_theorem_candidate.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    source_audit_status: "author-side-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "user-decision-ready"
+    maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "snapshots/v17_ugen_result_neutral_candidate_pin.md"
+    sha256: "6f64975d76ad363e9395798e5b4bd04b3be4c543203ab5a1cb164f6c0521455c"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_ugen_root_readiness_audit.md"
+    sha256: "9868d385ec9e18da6d071b4f2d4c88199825459f26751310bc1561d2503eea23"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_uniform_indivisible_gate_root_audit.md"
+    sha256: "403912b7ebba7c1f09b3088ae6b73dcbb362d2a005ede8ae212cab6a8414ea65"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "snapshots/v17_uniform_indivisible_law_classification_gate.md"
+    sha256: "be167762855d328eea38aa3a4bb3fa6b1c7e2c1a5f6dc956652d04addf7de959"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-draft-source-not-freeze-ready"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/", "active/ecomp/"]
+    source_audit_status: "provisional-author-side-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    canonical: false

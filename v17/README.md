@@ -229,15 +229,28 @@ cleanly if nature does not support it.
 - Author-side research incubator: **PRESERVED IN-REPOSITORY / NONTERMINAL / NO
   UNIT OPENED**. The 54 previously off-tree v17 research documents are now
   preserved byte-for-byte under `research-incubator/snapshots/`, with a status
-  index and SHA-256 manifest. The active author-side fronts are Q-Cut
+  index and SHA-256 manifest. A machine-readable semantic-lineage index now
+  distinguishes active drafts, superseded snapshots, deferred clock material,
+  dependencies, source-audit status, promotion readiness, and maximum claims;
+  every incubator artifact has authority `none`. The active author-side fronts are Q-Cut
   (scalable explanatory cost), E-Comp (endpoint versus coherent composition),
   and U-Gen (uniform indivisible law class). Q-Cut's primary-source bridge has
   now been reconstructed exactly author-side: HJMR's external information
   quantity, the natural Partial Matching ensemble, convention translation,
   and additive constants all survive. Its repaired active package and hash
-  manifest are under `research-incubator/active/qcut/`; no pin or independent
-  review has been authorized. Repository inclusion does not promote any draft,
-  authorize a Paper 04B successor, or open Paper 05.
+  manifest are under `research-incubator/active/qcut/`. E-Comp is also now an
+  active author-side package under `research-incubator/active/ecomp/`. Its
+  sharpened candidate theorem shows that the modulus-square endpoint
+  equivalence is not a congruence for sequential composition: the common
+  positive endpoint pair $(G,G)$ can lead to $I_2$ or $X$ under two fixed
+  coherent completions. Its primary-source reconstruction binds the result to
+  an incomplete endpoint packet, not a fully calibrated gate or a refutation
+  of a complete fixed Barandes law. No E-Comp or Q-Cut pin or independent
+  review has been authorized. U-Gen now has one canonical routing note and
+  must split into source-completion classification, scalable
+  uniformity/information displacement, and a constructive generator contest
+  before any pin. Repository inclusion does not promote any draft, authorize
+  a Paper 04B successor, or open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

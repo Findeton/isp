@@ -461,7 +461,29 @@ law-description length, or preparation cost.
 
 ---
 
-## 8. Source-level verdict
+## 8. Novelty boundary
+
+S2 already supplies the Partial Matching quantum/classical separation and its
+natural hard distribution. S1 already supplies the message-compression bridge
+from external transcript information to bounded communication. Q-Cut does not
+claim either ingredient as new, nor does it claim a new empirical prediction.
+
+The candidate contribution, if independently proved and judged worthwhile,
+is the foundations-level quantifier transfer:
+
+> every admitted standard-Borel ordinary-positive variable that is prepared
+> independently of the later reader choice and approximately screens the
+> registered future responses can be reduced to the published one-way task
+> and must therefore retain the stated preparation mutual information.
+
+Its additional content is the typed physical interface, continuous-carrier
+quantization, and explicit escape ledger for genuinely indivisible
+whole-history laws. The asymptotic communication lower bound remains credited
+to S2 and the compression theorem to S1.
+
+---
+
+## 9. Source-level verdict
 
 ```text
 HJMR INFORMATION QUANTITY:          EXTERNAL I(XY;T) / VERIFIED
