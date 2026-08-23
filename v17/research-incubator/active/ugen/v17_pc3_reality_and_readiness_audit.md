@@ -5,6 +5,11 @@
 **Scientific result awarded:** none
 **Authority created:** none
 
+**Subsequent author-side correction:** PC4 constructs the enlarged positive
+generator that this audit listed as absent. The PC3 projective classification
+survives inside its declared class, but the PC3 endpoint battery is no longer
+an ontology discriminator. The PC4 audit controls current disposition.
+
 This audit asks whether PC3 advances the origin problem or merely hides a
 single-qubit Clifford gate set inside symmetry language.
 
@@ -19,7 +24,7 @@ single-qubit Clifford gate set inside symmetry language.
     DIRECT POSITIVE WHOLE-LAW CONTROL:        PASS / NONUNIQUE
     FRAMEWORK-LEVEL SELECTION:                POSITIVE CANDIDATE
     DYNAMICAL ORIGIN:                         NOT DERIVED
-    STOCHASTIC-NATIVE COMPOSITION GENERATOR:  ABSENT
+    ENLARGED POSITIVE GROUP GENERATOR:         FOUND SUBSEQUENTLY IN PC4
     OFFICIAL FREEZE READINESS:                NO
 
 PC3 is more than another completion example: it classifies a full finite

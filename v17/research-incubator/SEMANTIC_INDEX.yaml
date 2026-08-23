@@ -181,7 +181,7 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "85226781a8654708e2089ca7310431765da0d6b5bee6f13d5aed87695e1f1e9e"
+    sha256: "2a3308994f794074ede4c2eb30011001d28819d588508a189180815b1b455902"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-dependency-audit-complete"
@@ -191,10 +191,10 @@ artifacts:
     source_audit_status: "provisional-author-side-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral uniform source-completion and generator classification with a finite PC3 positive endpoint control; no universal generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "9b1ad2ebc973c3427ebf6c90ede3f14b013373ee431c2ab082250e171dd9e3d3"
+    sha256: "494ba3f18e9eb5b1bfade046e03da43cda1be1c57f742b754357950670ab806d"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
@@ -246,20 +246,20 @@ artifacts:
     maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_ugen_next_gate_decision.md"
-    sha256: "ef6cc5ee2096b6ec0c5c65cc7c162f6efd233aa884315416c94b2d3ab4e577a5"
+    sha256: "333089204efcbd239ee28c728b4f052a1b9dc3004b31b5a2d31252f3001d7cc5"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-decision"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md"]
+    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc4_reality_and_readiness_audit.md"]
     source_audit_status: "inherits-author-side-selector-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding decision recording the constructed but not freeze-ready PC3 algebra and the next native-versus-enlarged-carrier feasibility task while keeping Q-Cut as the recommended next official unit"
+    maximum_claim: "nonbinding decision recording PC4 endpoint nonselection and routing the next author-side task to complete-process and non-Clifford resource displacement while keeping Q-Cut as the recommended next official unit"
     canonical: false
   - path: "active/ugen/v17_pc3_projective_control_covariance_candidate.md"
-    sha256: "cf594941be5da199517ec8e74882e1007b91dea91593dd0f806c1faf5c2119a0"
+    sha256: "8d79740280b5d7bb7192d2a4b064257e03e67ee521a9df1034ffe5638f36987e"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-draft"
@@ -269,20 +269,46 @@ artifacts:
     source_audit_status: "author-side-primary-source-context-audited-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "candidate projective octahedral control-covariance classification selecting one positive two-state coherent word law; covariance origin, native stochastic generator, tensor, QFT, time, spacetime, and gravity remain open"
+    maximum_claim: "candidate projective octahedral control-covariance classification selecting one positive two-state coherent word law inside its declared bridge class; PC4 supplies an enlarged positive realization with the same endpoints, and ontology, tensor, QFT, time, spacetime, and gravity remain open"
     canonical: false
   - path: "active/ugen/v17_pc3_reality_and_readiness_audit.md"
-    sha256: "1e6700ce7de4010d07339b953b3db8bb73e55ee286775e5a3e615dd172fbf936"
+    sha256: "fe79cfa290a59e2b2d5fda0f82bb72be7d76e7d97239b44acfd8967690d32840"
     created_at: "2026-08-23"
     front: "ugen"
-    status: "active-author-audit"
+    status: "superseded-disposition-preserved-audit"
     supersedes: []
-    superseded_by: []
+    superseded_by: ["active/ugen/v17_pc4_reality_and_readiness_audit.md"]
     depends_on: ["active/ugen/v17_pc3_projective_control_covariance_candidate.md"]
     source_audit_status: "author-side-primary-source-context-audited-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "reality, input-origin, hostile-control, and freeze-blocker audit for PC3; no scientific result or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_pc4_positive_dilation_and_frontier.md"
+    sha256: "83b8fe79b864e22cf7f60afdbb34efc918cd8f5520ec69491922a4c33277dc0b"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-draft"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_pc3_projective_control_covariance_candidate.md", "active/ugen/v17_pc3_reality_and_readiness_audit.md"]
+    source_audit_status: "author-side-primary-source-context-audited-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "candidate exact six-state minimum and eight-state deterministic enlarged positive realization of the PC3 endpoint law; no full stabilizer, universal generator, ontology, QFT, time, spacetime, or gravity result"
+    canonical: false
+  - path: "active/ugen/v17_pc4_reality_and_readiness_audit.md"
+    sha256: "11e0d2246a8afa214609f7a9648997c5ce83cc06889cd6a170227707027328c3"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-audit"
+    supersedes: ["active/ugen/v17_pc3_reality_and_readiness_audit.md"]
+    superseded_by: []
+    depends_on: ["active/ugen/v17_pc4_positive_dilation_and_frontier.md"]
+    source_audit_status: "author-side-primary-source-context-audited-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "reality, resource, literature, and next-gate audit for the PC4 positive endpoint control; no scientific result or successor authority"
     canonical: false
   - path: "snapshots/p04_quantum_record_successor_investigation.md"
     sha256: "68b56d296dd703af2d3ba24247be60e1e1ee58ae75312f0efa34f49d46a85323"

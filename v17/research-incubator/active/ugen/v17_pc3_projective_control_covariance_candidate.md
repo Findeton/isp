@@ -618,9 +618,11 @@ physical control symmetry plus a bounded endpoint packet determines the
 transition family.
 
 The projective coherent answer is positive only because the candidate adds a
-map into \(PU(2)\). A stochastic-native successor must either derive an
-equivalent map, construct a different positive generator with the same
-exhaustive predictions, or expose the extra nomological data it requires.
+map into \(PU(2)\). PC4 subsequently constructs a different positive
+generator with the same exhaustive endpoint predictions on a six-state
+carrier. Thus this candidate remains a conditional projective
+classification, while PC4 controls its physical nonselection at the
+registered endpoint scope.
 
 ---
 

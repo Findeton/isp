@@ -118,15 +118,23 @@ selector tournament now distinguishes framework reconstruction from
 dynamical-member and ontology selection. It identifies a bounded PC3
 procedure-groupoid transport classification with held-out closed words as the
 next U-Gen construction, while preserving Q-Cut as the recommended next
-official unit if separately authorized. That PC3 algebraic candidate now
-exists author-side: projective covariance of the octahedral two-generator
-control group selects one positive coherent word law, but the covariance
-bridge itself remains a declared quantum-structural input and the physical
-experiment is not freeze-ready.
+official unit if separately authorized. That PC3 algebraic candidate exists
+author-side: projective covariance of the octahedral two-generator control
+group selects one positive coherent word law, but the covariance bridge
+itself remains a declared quantum-structural input. Its strongest
+enlarged-carrier control is now also constructed in PC4. A minimal six-state
+reversible positive generator and an eight-state deterministic cube generator
+reproduce the same full \(4I_2/4X/16G\) endpoint census. PC3 is therefore not
+an ontology discriminator at its present endpoint scope. The next author-side
+front is complete-process transformation equivalence plus
+non-Clifford/scalable resource displacement; it is not freeze-ready.
 
 Canonical status: `active/ugen/README.md`.
 
 Active working package:
+
+- active/ugen/v17_pc4_positive_dilation_and_frontier.md
+- active/ugen/v17_pc4_reality_and_readiness_audit.md
 
 - `active/ugen/README.md`
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`

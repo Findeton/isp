@@ -23,7 +23,9 @@ FINITE BORN EVALUATOR:            VALID CONTROL / NOT EXPLANATION
 SOURCE-COMPLETION QUESTION:       MUST BE SEPARATE
 UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
-NEXT AUTHOR-SIDE MATHEMATICS:     FINITE COMPOSITION-LIFT CLASSIFICATION
+FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
+ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
+NEXT AUTHOR-SIDE MATHEMATICS:     COMPLETE-PROCESS / RESOURCE DISPLACEMENT
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
 E-COMP DEPENDENCY:                CANDIDATE ONLY / NOT LOAD-BEARING
 OFFICIAL UNIT OR REVIEW:          NONE
@@ -36,6 +38,14 @@ The live question is:
 > an equivalent phase-sensitive process law as primitive data?
 
 That is meaningful. Quantifying over all Borel codes does not answer it.
+
+The first finite selector attempt now has its strongest positive control.
+PC3's projective octahedral bridge generates a unique \(24\)-element endpoint
+law inside its declared coherent class, but PC4 generates the same endpoint
+law through an ordinary reversible positive action on six ontic directions
+or eight cube vertices. Thus neither finite syntax nor endpoint compression
+selects the quantum representation. The next gate must include complete
+operational equivalences or scalable resources.
 
 ---
 

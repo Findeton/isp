@@ -27,14 +27,21 @@ composition member. It identifies PC3—a two-generator gauge-covariant
 procedure-groupoid classification with preregistered held-out closed
 words—as the next author-side construction.
 
-That first PC3 construction now exists author-side. On the balanced mixer plus
+That first PC3 construction exists author-side. On the balanced mixer plus
 configuration-preserving quarter-turn packet, a projective covariance bridge
 from the 24-element octahedral control group selects a unique positive
-coherent word law and an exhaustive (4I_2/4X/16G) endpoint census. The
-candidate simultaneously proves that no two-state Markov group action can
-carry the singular balanced endpoint, while unrestricted direct positive
-whole laws remain nonunique. The physical origin of the projective bridge is
-therefore the next open question.
+coherent word law and an exhaustive (4I_2/4X/16G) endpoint census.
+
+The required enlarged-carrier hostile control now also exists. PC4 gives an
+exact six-state reversible positive generator for the same entire endpoint
+law, proves six states minimal in its declared finite reversible class, and
+gives an eight-state cube realization with deterministic readout. PC3's
+projective classification survives conditionally, but its endpoint battery
+does not discriminate projective from enlarged positive dynamics. The next
+open question is therefore the complete-process and scalable resource
+frontier: operationally equivalent transformation implementations,
+non-Clifford resources, adaptive continuations, and where phase-complete
+information is displaced.
 
 ## Current inputs
 
@@ -63,6 +70,9 @@ controls until their own future authorization, freeze, review, and
 adjudication occur.
 
 Active audit:
+
+- v17_pc4_positive_dilation_and_frontier.md
+- v17_pc4_reality_and_readiness_audit.md
 
 - `v17_ugen_dependency_and_physics_audit.md`
 - `v17_pc2_balanced_seam_classification_candidate.md`
@@ -160,10 +170,12 @@ PC2 BALANCED SEAM SUBCASE:     AUTHOR-SIDE COMPLETE / NOT REVIEWED
 FULL COMPOSITION-LIFT TARGET:  MULTI-PRIMITIVE / TENSOR / ADAPTIVE OPEN
 SELECTOR TOURNAMENT:           COMPLETE AUTHOR-SIDE / NOT REVIEWED
 PC3 PROJECTIVE CONTROL GATE:   AUTHOR-SIDE COMPLETE / NOT FREEZE-READY
-NEXT AUTHOR-SIDE TARGET:       STOCHASTIC-NATIVE VS ENLARGED-CARRIER
-                               GENERATOR FEASIBILITY ON PC3
+PC4 POSITIVE DILATION CONTROL: AUTHOR-SIDE COMPLETE / NOT REVIEWED
+PC3 ONTOLOGY DISCRIMINATION:   FAILS AT ENDPOINT SCOPE
+NEXT AUTHOR-SIDE TARGET:       COMPLETE-PROCESS CONTEXTUALITY PLUS
+                               NON-CLIFFORD RESOURCE DISPLACEMENT
 SOURCE-COMPLETION RESULT:      NONE
-UNIFORM GENERATOR:             NONE
+UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN
 OFFICIAL UNIT:                 NOT OPENED
 ```

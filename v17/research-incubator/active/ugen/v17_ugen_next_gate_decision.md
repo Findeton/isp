@@ -1,4 +1,4 @@
-# ISP v17 — next-gate decision after PC2
+# ISP v17 — next-gate decision after PC4
 
 **Status:** ACTIVE AUTHOR-SIDE ROUTING DECISION / NOT A PIN
 **Date:** 2026-08-23
@@ -12,22 +12,30 @@
 The next official scientific unit, if separately authorized, should still be
 Q-Cut.
 
-The next author-side U-Gen construction should be PC3: a finite
-gauge-covariant composition-transport classification with held-out closed
-words.
+The first PC3 algebraic candidate is constructed. Its readiness audit found
+the projective classification complete but the physical experiment and the
+origin of the covariance bridge under-typed.
 
-The first PC3 algebraic candidate is now constructed. Its readiness audit
-finds the projective classification complete but the physical experiment and
-the origin of the covariance bridge under-typed. The next author-side task is
-therefore not a second fitted control group: it is a feasibility comparison
-between a stochastic-native generator and charged enlarged-carrier
-realizations on the same exhaustive PC3 battery.
+That feasibility comparison has now been performed author-side. PC4 supplies
+both a six-state stochastic-readout generator and an eight-state
+outcome-deterministic cube generator for the same exhaustive PC3 law. It also
+proves six states minimal among finite reversible positive realizations with
+an arbitrary stochastic binary response. The PC3 endpoint battery therefore
+does not discriminate its projective lift from enlarged positive dynamics.
+
+The next author-side task is no longer another PC3 carrier. It is to type the
+first complete-process and scalable resource-displacement gate: registered
+transformation equivalences and records, followed by a non-Clifford resource,
+adaptive continuations, and explicit charging of phase-complete state,
+context, composition, uniformity, and carrier resources.
 
 These are complementary rather than competing choices.
 
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
-    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE VS ENLARGED-CARRIER FEASIBILITY
+    PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
+    NEXT AUTHOR-SIDE U-GEN TASK:    COMPLETE-PROCESS PLUS NON-CLIFFORD
+                                    RESOURCE DISPLACEMENT
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
@@ -130,3 +138,29 @@ It could not establish:
 No Q-Cut pin, PC3 construction, independent review, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
+
+---
+
+## 8. PC4 correction to the PC3 interpretation
+
+PC3's exact projective classification remains valid inside its antecedent:
+
+$$
+\text{projective octahedral covariance}
+\Longrightarrow
+\text{one positive coherent word law}.
+$$
+
+PC4 adds the equally exact operational fact
+
+$$
+\text{ordinary octahedral action on an enlarged positive carrier}
+\Longrightarrow
+\text{the same registered word law}.
+$$
+
+The two implications answer different representation questions. Their common
+endpoint profile means neither representation is selected by PC3. A future
+gate must enlarge the complete operational profile or prove a scalable
+resource separation; changing notation or fitting another finite group would
+not advance the ontology question.
