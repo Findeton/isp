@@ -243,7 +243,21 @@ selection, or a Barandes completion.
 | preferred frame | `NO UNDECLARED SCHEDULING FRAME` | contingent state/apparatus-selected frames may be observable |
 | ontology / actuality / spacetime / gravity | `UNCONSTRUCTED` | no promotion from comparator operational adequacy |
 | Paper 03 v1 overall | `TERMINAL REVISE` | rung 4 `P03-RELATIVISTIC-NOSIGNALLING-OPERATIONAL-SUBPACKAGE-CONSTRUCTED` |
-| Paper 03 v2 | `OPEN FOR RESULT-NEUTRAL PIN` | causal-frontier typing and exact scopes only; no new physics pre-awarded |
+| Paper 03 v2 | `RESULT-NEUTRAL PIN FROZEN` | causal-frontier typing and exact scopes only; no new physics pre-awarded |
+
+## Paper 03 v2 frozen-input balance
+
+| Object | Status at pin freeze | Source / choice | Debt retained |
+|---|---|---|---|
+| finite causal slot structure | `DECLARED LABORATORY PROTOCOL INPUT` | comparator causal support and record/port incidence | not microscopic events, time, or spacetime ontology |
+| lower-set frontier | `TARGET TYPE` | completed laboratory opportunities | not automatically a stochastic division |
+| free path category | `TARGET DERIVATION` | enabled slot-extension graph | must prove exact generator typing and closure |
+| exchange congruence | `TARGET DERIVATION` | map-level causal factorization | no exchange for timelike, record-linked, or source-correlated slots |
+| operational quotient | `TARGET DERIVATION` | complete within-packet contexts | scoped reachable interface; no microscopic inverse |
+| state/update class | `DECLARED AND MODEL-VERIFIED` | normal/Hadamard/measurable packet conditions | no selected natural state |
+| packet covariance | `TARGET DERIVATION` | full packet isomorphism intertwiners | no canonical proper-embedding state pushforward |
+| preferred frame | `NARROWED TARGET` | covariance plus schedule equality | physical state/apparatus rest frames allowed; idle microstructure not excluded |
+| Paper 03 v2 result | `UNCONSTRUCTED` | frozen result-neutral pin | Paper 04, ontology, spacetime, gravity remain closed |
 
 ## Derivation balance
 

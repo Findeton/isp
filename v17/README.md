@@ -36,6 +36,11 @@ cleanly if nature does not support it.
   causal admissibility is not encoded in boundary types; covariance also does
   not forbid a contingent state/apparatus-selected rest frame. A result-neutral
   causal-frontier Paper 03 v2 repair pin is the next authorized step.
+- Paper 03 v2 status: **RESULT-NEUTRAL CAUSAL-FRONTIER PIN FROZEN**. It types
+  finite laboratory opportunities by a causal slot poset and completed lower
+  sets, constructs candidate procedures as paths of enabled slot extensions,
+  and binds the exact state/covariance/frame repairs. It is not a microscopic
+  event web, lattice, foliation, or result.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -197,6 +202,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   and a contingent state/apparatus-selected rest frame.
 - `note-paper03-hostile-review-adjudication.md` — terminal mixed product,
   rung-4 ceiling, and exact Paper 03 v2 causal-frontier repair boundary.
+- `note-paper03v2-causal-frontier-repair-pin.md` — frozen result-neutral
+  lower-set/frontier category repair, 20 targets, 28 controls, 40 hostile
+  attacks, product, rungs, and strict no-ontology/no-clock scope.
 
 ## Permanent honesty wall
 

@@ -883,3 +883,29 @@ Under the user's programme-wide authorization, one result-neutral Paper 03 v2
 pin may repair causal-frontier typing, state-update closure, full packet
 morphisms, measure-kernel scope, source/localization hypotheses, and frame
 language. The frozen v1 candidate remains unchanged. Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v2 CAUSAL-FRONTIER PIN FROZEN (v17 LEDGER #37)
+
+The result-neutral repair contract freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v2-causal-frontier-repair-pin.md` | `d9df65a0bfb39576663396f75476db9c3be9413ebbd281853162411e9376ce73` | 628 LF / 25,109 bytes |
+
+The repair types finite laboratory opportunities by a causal slot poset and
+each boundary by a completed lower set. Primitive arrows fill exactly one
+enabled slot; the procedure referent is the free path category, so every truly
+matching target/source pair composes and associativity is inherited. Certified
+incomparable exchanges become a congruence only after full map-level causal
+factorization. An explicit skip consumes a slot and is not the categorical
+identity.
+
+The pin additionally binds state-class closure under registered updates,
+normal/measure-kernel scope, complete packet-isomorphism intertwiners,
+proper-embedding state-pushforward refusal, exact source/localization premises,
+and the distinction between schedule covariance and a physical KMS/apparatus
+rest frame. The slot poset is declared laboratory protocol structure, not a
+microscopic happening network, lattice, global time, or emergent spacetime.
+
+No result is awarded. A result-neutral author feasibility audit is next;
+construction and Paper 04 remain closed.
