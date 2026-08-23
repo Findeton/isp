@@ -628,3 +628,65 @@ All three report paths and the adjudication path were absent at protocol
 freeze. Candidate bytes remain `d9278763...2a77`. No code, candidate edit,
 Paper 03, clock, QFT, spacetime, or gravity unit opens. The sole next action is
 the three blind reviews.
+
+## 2026-08-22 — PAPER 02 V2 MATHEMATICS REVIEW FROZEN (v17 LEDGER #24)
+
+Seat M freezes `ACCEPT-WITH-SCOPE` with no semantic counterexample:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper02v2-mathematics-procedures.md` | `ca1b20b92e7ba8b849266c0e1680eb8f41bdb61dbdd50e3ce70a7005d2e3e5f4` | 732 LF / 43,539 bytes |
+
+The procedure category, congruence, quotient, positive path lift, idle-fiber
+theorem, and full product reconstruct. Binding scopes are constructor closure,
+packet-specific measurability, and nonisomorphism over the predictive
+projection rather than raw Borel cardinality.
+
+## 2026-08-22 — PAPER 02 V2 QUANTUM REVIEW FROZEN (v17 LEDGER #25)
+
+Seat Q freezes `ACCEPT-WITH-SCOPE` with no semantic counterexample:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper02v2-quantum-contextuality.md` | `97f349942965d2d86d60a69e16770ac476cb8404b9a90e5b497a28722929a888` | 769 LF / 42,093 bytes |
+
+The density/instrument/comb lineage and all POM, rotation, Peres--Mermin,
+CHSH, phase, scalar, and resource controls reconstruct. The review binds
+unequal-kernel transformation witnesses, tensor-pushforward independent
+sources, and chronological positive-support complete-comb conditioning.
+
+## 2026-08-22 — PAPER 02 V2 ONTOLOGY REVIEW FROZEN (v17 LEDGER #26)
+
+Seat O freezes `ACCEPT-WITH-SCOPE` with no semantic counterexample:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper02v2-ontology-barandes.md` | `94ecd3d1a76a2964a4be7a1fd5b2d8f5f882897af8ca5b23914a19ed6977e893` | 686 LF / 38,405 bytes |
+
+The apparatus/system boundary, non-tag positive witness, contextuality/idle
+fiber distinction, record/division/actuality separation, and Barandes wall
+survive. Procedure decomposition alone is not accepted as sufficient for
+transformation contextuality without unequal induced kernels.
+
+## 2026-08-22 — PAPER 02 V2 TERMINAL ACCEPT-WITH-SCOPE (v17 LEDGER #27)
+
+Joint adjudication is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02v2-hostile-review-adjudication.md` | `37e1ada87f17723c248896f77ce03012d809f088632abb50ed01d1b166bed135` | 381 LF / 19,166 bytes |
+
+The adjudicator independently rebuilds the v1 repair and every panel scope.
+No semantic counterexample exists. The terminal ceiling is
+`P02V2-CANONICAL-QUOTIENT-WITH-TYPED-STRUCTURAL-CONTEXTUALITY-AND-IDLE-FIBER-NONSELECTION`.
+
+The result constructs a physical-procedure category, complete operational
+quotient, typed contextuality, a positive contextual existence model, and a
+scoped idle-fiber no-selection theorem. It does not select a particular
+ontology, construct a complete Barandes law/trajectory, derive actuality, or
+promote laboratory order to time. No implementation is scientifically needed.
+
+Paper 03's opening condition is satisfied. Only a separately frozen,
+result-neutral relativistic quantum-operational adequacy pin may open next;
+QFT, preferred-frame absence, internal time, spacetime, and gravity remain
+unawarded.

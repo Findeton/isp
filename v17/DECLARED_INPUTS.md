@@ -170,14 +170,33 @@ selection, or a Barandes completion.
 | Barandes ontology | none | `ADMISSIBLE-BUT-UNCONSTRUCTED-AND-UNSELECTED` | fixed configuration referent, full law, and actual trajectory absent |
 | Paper 03, clock, QFT, spacetime, gravity | none | `CLOSED` | terminal Paper 02 v2 review required first |
 
+## Paper 02 v2 terminal adjudicated balance
+
+| Coordinate | Adjudicated status | Exact boundary / retained debt |
+|---|---|---|
+| procedure category | `DERIVED-MATHEMATICALLY — SCOPED` | small constructor-closed typed laboratory-protocol schema; not apparatus microontology |
+| presentation groupoid | `DERIVED-MATHEMATICALLY` | harmless incidence presentation only; landmarks, calibration, and physical exchange remain physical |
+| operational quotient | `DERIVED-MATHEMATICALLY — SCOPED` | complete contexts on the reachable separated image; measurable only when packet maps are measurable |
+| contextuality typing | `DERIVED-MATHEMATICALLY` | sort-specific failure of system-facing assignments to factor through $q:\mathcal P\to\mathcal Q$ |
+| positive contextual model | `CONSTRUCTED EXISTENCE CONTROL` | predictive density/comb objects; global, memory-bearing, nonexplanatory, unselected |
+| transformation contextuality | `EXHIBITED / PREMISE-NOGO` | requires equal-$q$ procedures with unequal induced kernels; procedure nonidentity alone is insufficient |
+| idle fibers | `CONSTRUCTED CONTROLS` | normalized prefix-coherent fibers under the declared source contract |
+| no-selection | `DERIVED CONDITIONALLY — SCOPED` | naturality only under actually admitted reductions; no universal forgetting map or prior |
+| particular ontology | `UNSELECTED` | predictive model and binary inflation are nonisomorphic over the predictive projection |
+| phase/scalars | `PHASE-COMPLETE / SCALAR-ONTOLOGY NONUNIQUE` | realification retains global $J$, carrier, tensor, and source costs |
+| records/actuality | `OPERATIONAL RECORD DERIVED; MICROACTUALITY UNCONSTRUCTED` | readability is not complete division or history selection |
+| Barandes completion | `ADMISSIBLE BUT UNCONSTRUCTED AND UNSELECTED` | fixed configuration referent, complete indivisible law family, and actual trajectory absent |
+| Paper 02 v2 overall | `TERMINAL ACCEPT-WITH-SCOPE` | rung 7 `P02V2-CANONICAL-QUOTIENT-WITH-TYPED-STRUCTURAL-CONTEXTUALITY-AND-IDLE-FIBER-NONSELECTION` |
+| Paper 03 | `OPEN FOR RESULT-NEUTRAL PIN ONLY` | no QFT, relativistic ontology, preferred frame, internal time, spacetime, or gravity pre-awarded |
+
 ## Derivation balance
 
 The live adjudicated balance is:
 
 ```text
-adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; canonical reachable operational quotient; phase-complete predictive residue
+adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: Paper 02 v2 procedures-first quotient/contextuality repair and positive predictive-object existence control
+green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3

@@ -2,8 +2,8 @@
 
 Date opened: 2026-08-22
 
-Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
-green-unreviewed mathematics and review protocol frozen; blind reports next**
+Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
+Paper 03 result-neutral pin next**
 
 ## 0. Authority and workflow
 
@@ -101,11 +101,9 @@ can upgrade these coordinates.
 
 Opens only if Paper 01 constructs at least process-level equivalence.
 
-**Opening state.** The condition is satisfied. The result-neutral
-mathematics-only pin, self-contained construction, and three-lens hostile-
-review protocol are frozen. The construction is GREEN-UNREVIEWED and awards no
-result or ontology coordinate. The next event is the three mutually blind
-reviews specified by the protocol.
+**Opening state.** The condition was satisfied by Paper 01. Paper 02 v1 was
+adjudicated `REVISE`; the bounded procedures-first v2 repair has now completed
+pin, construction, three blind reviews, and terminal adjudication.
 
 **Question.** Across all stochastic realizers satisfying the Paper 01
 contract, what is invariant, and what is gauge, contingent state, or genuine
@@ -157,7 +155,7 @@ It does not weaken pins, hostile review, result neutrality, declared-input
 accounting, empirical gates, or the prohibition on pre-awarding later physics.
 Paper 03 still opens only after Paper 02 v2 earns a terminal scoped result.
 
-**Paper 02 v2 frozen state.** The result-neutral pin at
+**Paper 02 v2 terminal state.** The result-neutral pin at
 `v17/note-paper02v2-procedure-quotient-repair-pin.md` introduces a physical
 procedure category $\mathcal P$, a separately presentation-quotiented
 procedure referent, trusted physical-randomization constructors, the complete
@@ -167,15 +165,26 @@ It explicitly prevents convex decoding identities from collapsing physical
 mixture procedures inside $\mathcal P$. A positive predictive-object model is
 registered only as an existence control; Barandes ontology, ontology
 selection, actuality, QFT, clocks, spacetime, and gravity remain
-unconstructed. The result-neutral author audit passes without awarding any
-coordinate. The self-contained mathematics construction is now frozen at
-green-unreviewed status, and its author construction audit passes without
-moving a candidate byte. The immutable hostile-review protocol is now frozen.
-The sole next event is the three mutually blind reports.
+unconstructed. Three blind lenses independently find no semantic
+counterexample. Joint adjudication binds constructor-closed boundary scope,
+packet-specific measurability, unequal-kernel transformation witnesses,
+tensor-pushforward source measures, chronological positive-support comb
+conditioning, full no-go premise ledgers, and decoder-preserving
+nonisomorphism. Terminal ceiling:
+`P02V2-CANONICAL-QUOTIENT-WITH-TYPED-STRUCTURAL-CONTEXTUALITY-AND-IDLE-FIBER-NONSELECTION`.
+
+The accepted result is an operational/foundations theorem, not a fundamental
+law or selected ontology. No implementation is required. Paper 03 is now
+eligible to open under a separately frozen result-neutral pin.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 
 Opens only after Paper 01 and a scoped Paper 02 result.
+
+**Opening state.** Satisfied by the terminal Paper 01 and Paper 02 v2
+adjudications. Construction remains closed until a Paper 03 pin freezes its
+relativistic experiment referent, exact comparator scope, covariance and
+microcausality gates, continuum/UV controls, and preferred-structure costs.
 
 **Question.** Can the accepted ontology describe spacelike-separated
 operations, QFT-motivated local algebras or finite-region substitutes, and

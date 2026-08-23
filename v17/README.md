@@ -24,12 +24,12 @@ cleanly if nature does not support it.
   PHASE-COMPLETE RESIDUE SURVIVE**. The contextual-ontology bridge is
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
-- Paper 02 v2 status: **GREEN-UNREVIEWED MATHEMATICS CONSTRUCTED — HOSTILE
-  REVIEW PROTOCOL FROZEN; THREE BLIND REPORTS NEXT**. Its exact scope is the
-  prequotient procedure architecture $\mathcal P\to\mathcal Q$, trusted
-  physical-randomization constructors, system-facing contextuality as a
-  descent obstruction, and the Barandes-row correction. It adds no physical
-  postulate and pre-awards no successor.
+- Paper 02 v2 status: **TERMINAL ACCEPT-WITH-SCOPE — PROCEDURES-FIRST
+  CONTEXTUALITY AND IDLE-FIBER NONSELECTION**. The accepted ceiling is
+  `P02V2-CANONICAL-QUOTIENT-WITH-TYPED-STRUCTURAL-CONTEXTUALITY-AND-IDLE-FIBER-NONSELECTION`.
+  It repairs the v1 source-domain error, constructs a positive contextual
+  existence model, and leaves the particular ontology, Barandes completion,
+  and microscopic actuality unselected.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -57,14 +57,18 @@ The next question is therefore:
 > contract, what is forced by complete operational equivalence, what is
 > gauge, and what is genuine additional ontology?
 
-Paper 02 answers this only partially. Complete future profiles define a
-canonical reachable operational quotient and force phase-complete predictive
-structure. Static and dynamical idle fibers establish scoped
-nonidentifiability. A full contextual-fiber classification requires a
-prequotient laboratory-procedure category
-$\mathcal P\to\mathcal Q$ that the frozen construction lacks. The bounded v2
-repair is now authorized and pinned, but Paper 03 remains closed unless that
-repair is constructed and terminally reviewed.
+Paper 02 v2 now answers the representation question at its registered scope.
+Complete future profiles define a canonical reachable operational quotient;
+the prequotient category $\mathcal P$ retains physical procedure context;
+positive system-facing assignments may fail to descend through
+$q:\mathcal P\to\mathcal Q$; and admitted idle-fiber projections prove a
+limited no-selection theorem. What survives is structural contextuality and
+ontology underdetermination, not a preferred microscopic world.
+
+The Paper 03 opening gate is satisfied. The next unit is a result-neutral pin
+for relativistic quantum-operational adequacy. It must not import a preferred
+frame, spacetime ontology, v16 geometry, or a Barandes completion absent from
+the terminal Paper 02 product.
 
 ## Reality constraints
 
@@ -159,6 +163,11 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   mandatory independent attack surface; not an adjudication.
 - `note-paper02v2-hostile-review-protocol.md` — immutable three-lens review
   duties, fresh attacks, product schema, and adjudication rules.
+- `review-paper02v2-mathematics-procedures.md` — frozen Seat M report.
+- `review-paper02v2-quantum-contextuality.md` — frozen Seat Q report.
+- `review-paper02v2-ontology-barandes.md` — frozen Seat O report.
+- `note-paper02v2-hostile-review-adjudication.md` — terminal scoped product,
+  binding qualifications, and Paper 03 opening condition.
 
 ## Permanent honesty wall
 
