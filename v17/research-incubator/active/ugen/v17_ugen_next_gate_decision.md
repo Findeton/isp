@@ -54,11 +54,14 @@ framework composition properties while differing on held-out relative
 continuations. Thus those principles cannot select $\theta=\pi/4$, and the
 bare gate label is not a physical source referent.
 
-The next author-side U-Gen task is therefore a physically grounded
-action-phase packet: one actual interferometric source/control contract, one
-calibration, held-out electromagnetic or topological and gravitational phase
-controls, and no target quantum matrix in the input. This remains
-result-neutral preparation until a native member or class-wide theorem exists.
+C3 now supplies that author-side action-phase packet. A measurable scalar
+character of additive action is necessarily $e^{i\kappa s}$, but only after
+its action, scalar carrier, composition, and regularity premises are printed.
+The physical source contract uses one calibration plus composition,
+electromagnetic holonomy, and gravitational held-outs without a target quantum
+matrix. It keeps propagation action separate from dimensionless apparatus
+boundary transport and exposes revised-SI and flux-quantization dependencies.
+It remains result-neutral and constructs no native member.
 
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
@@ -72,8 +75,10 @@ result-neutral preparation until a native member or class-wide theorem exists.
     C2 KERNEL DECOMPOSITION:        EXACT AUTHOR-SIDE / NOT REVIEWED
     C2 PHASE-MEMBER SELECTION:      UNDERDETERMINED
     C1 TRACK A SOURCE REFERENT:     PHYSICALLY UNDER-SPECIFIED
-    NEXT AUTHOR-SIDE U-GEN TASK:    PHYSICAL ACTION-PHASE GROUNDING OR
-                                    BOUNDED CLASS-WIDE THEOREM
+    C3 ACTION CHARACTER:            EXACT AUTHOR-SIDE / NOT REVIEWED
+    C3 PHYSICAL GROUNDING:          DRAFTED / NOT FREEZE-READY
+    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
+                                    OR BOUNDED CLASS-WIDE THEOREM
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
@@ -205,7 +210,7 @@ It could not establish:
 
 ## 8. Authority wall
 
-No Q-Cut pin, PC5/PC6/C2 review, U-Gen C1 pin, numbered paper, or
+No Q-Cut pin, PC5/PC6/C2/C3 review, U-Gen C1 pin, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
 

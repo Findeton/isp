@@ -180,6 +180,17 @@ grounding packet with held-out electromagnetic/topological and gravitational
 controls. Q-Cut remains the next recommended official unit if separately
 authorized.
 
+C3 now turns that recommendation into an author-side physical protocol. Its
+exact measurable-character lemma derives $e^{i\kappa s}$ from additive action,
+multiplicative scalar transport, and Borel regularity, while leaving the
+action, carrier, scale, weights, records, and actuality unselected. The
+protocol replaces gate labels with typed interferometer apparatus and
+preregisters composition, shielded electromagnetic holonomy, Earth-field
+neutron, and source-mass atom-interferometer controls. A companion audit keeps
+action-valued propagation separate from dimensionless laser/boundary
+transport and exposes revised-SI and superconducting-flux circularities. No
+data are evaluated, no source bytes are frozen, and no native law is found.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -193,6 +204,13 @@ C2 active files:
 - active/ugen/v17_ugen_c2_action_holonomy_reality_investigation.md
 - active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md
 - active/ugen/v17_ugen_c2_future_review_contract.md
+
+C3 active files:
+
+- active/ugen/v17_ugen_c3_action_character_theorem_candidate.md
+- active/ugen/v17_ugen_c3_physical_action_phase_grounding_protocol.md
+- active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md
+- active/ugen/v17_ugen_c3_future_review_contract.md
 
 Canonical status: `active/ugen/README.md`.
 

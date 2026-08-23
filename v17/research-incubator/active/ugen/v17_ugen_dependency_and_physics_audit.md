@@ -25,7 +25,7 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE MATHEMATICS:     COMPLETE-PROCESS / RESOURCE DISPLACEMENT
+NEXT AUTHOR-SIDE PHYSICS:         NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
 E-COMP DEPENDENCY:                CANDIDATE ONLY / NOT LOAD-BEARING
 OFFICIAL UNIT OR REVIEW:          NONE
@@ -526,6 +526,16 @@ freeze must separate abstract endpoint nonselection from a physically
 grounded source packet containing actual controls and couplings but not the
 target quantum process.
 
+C3 now supplies the missing author-side source architecture. Its measurable-
+character theorem classifies scalar action transport as $e^{i\kappa s}$ under
+explicit composition and regularity premises. Its physical protocol freezes
+the *type* of a calibration plus composition, shielded electromagnetic
+holonomy, and two gravitational held-outs. It keeps propagation action apart
+from dimensionless apparatus boundary transport and exposes modern-SI and
+flux-quantization circularities. This makes C1 Track A physically meaningful
+enough for later candidate construction, but it does not fill the native-law
+slot or earn an empirical result.
+
 1. Q-Cut is author-side ready for an authorization decision, but it is not an
    accepted theorem and cannot be used as a premise.
 2. E-Comp is an active author-side lemma package, but it is not frozen or
@@ -558,7 +568,10 @@ C2 KERNEL DECOMPOSITION:         EXACT AUTHOR-SIDE / NOT REVIEWED
 C2 PHASE-MEMBER NONSELECTION:    EXACT AUTHOR-SIDE / NOT REVIEWED
 C1 TRACK A PHYSICAL REFERENT:    UNDER-SPECIFIED / SPLIT REQUIRED
 ACTION-KERNEL SCHEMA:            TYPED / NATIVE MEMBER ABSENT
-NEXT AUTHOR-SIDE TARGET:         PHYSICAL ACTION-PHASE GROUNDING PACKET
+C3 ACTION CHARACTER:             EXACT AUTHOR-SIDE / NOT REVIEWED
+C3 PHYSICAL SOURCE CONTRACT:     DRAFTED / NOT FREEZE-READY
+C3 METROLOGY AUDIT:              H/E/FLUX DEPENDENCIES EXPOSED
+NEXT AUTHOR-SIDE TARGET:         NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
                                  OR BOUNDED CLASS THEOREM
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

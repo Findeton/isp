@@ -303,8 +303,15 @@ cleanly if nature does not support it.
   It constructs none. It also requires the C1 endpoint track to split into
   abstract nonselection and a physically grounded source experiment before
   any freeze; a bare gate name is not a physical action input. The next
-  author-side target is a held-out action-phase grounding packet, while Q-Cut
-  remains the next recommended official unit if separately authorized.
+  author-side action-phase grounding packet is now drafted as C3. Its exact
+  measurable-character lemma forces $e^{i\kappa s}$ only after additive
+  action, scalar transport, composition, and regularity are supplied. Its
+  experiment contract uses typed matter-wave apparatus and held-out
+  composition, electromagnetic holonomy, and gravitational phase controls,
+  while separately charging dimensionless boundary phases and modern-SI/
+  flux-quantization dependencies. It evaluates no data and constructs no
+  native generator. Q-Cut remains the next recommended official unit if
+  separately authorized.
   Repository inclusion
   does not promote any draft, authorize a Paper
   04B successor, or

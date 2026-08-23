@@ -9,7 +9,7 @@ U-Gen is the large v17 question: can one uniform native law generate the
 complete calibrated quantum process interface without receiving the target
 process, future settings, or equivalent phase-sensitive law data as input?
 The ordinary-positive indivisible whole-law route remains the strongest ISP
-contestant. C1/C2 now also test whether relational pair-history structure is
+contestant. C1--C3 now also test whether relational pair-history structure is
 irreducible at the compositional level while ordinary positivity remains exact
 for stable records.
 
@@ -100,6 +100,24 @@ fact selecting $\pi/4$. Before any C1 freeze, that track must split into
 abstract endpoint nonselection and a physically grounded source packet that
 supplies real controls and couplings but not the target quantum process.
 
+C3 now constructs that grounding packet author-side. Its exact theorem says
+that a Borel-measurable multiplicative scalar transport depending only on an
+additive real action difference must be $e^{i\kappa s}$. This explains the
+exponential only after the action coordinate, scalar $U(1)$ carrier,
+composition, and regularity are supplied; it does not derive any of them or
+select $\kappa$.
+
+The physical protocol replaces gate names with source, splitter, control,
+geometry, recombiner, detector, metrology, and provenance objects. It locks
+one phase scale and preregisters composition, shielded electromagnetic
+holonomy, Earth-field neutron, and source-mass atom-interferometer held-outs.
+Propagation action and dimensionless apparatus boundary transport remain
+separately typed. The source audit also exposes that modern SI fixes the
+numerical values of $h$ and $e$, while shielded AB controls use quantum flux
+sectors; these tests validate holonomy but do not automatically remeasure the
+universal scale independently. C3 constructs no native generator and is not
+freeze-ready.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -127,6 +145,11 @@ controls until their own future authorization, freeze, review, and
 adjudication occur.
 
 Active audit:
+
+- v17_ugen_c3_action_character_theorem_candidate.md
+- v17_ugen_c3_physical_action_phase_grounding_protocol.md
+- v17_ugen_c3_primary_source_metrology_scope_audit.md
+- v17_ugen_c3_future_review_contract.md
 
 - v17_ugen_c2_relational_kernel_decomposition_candidate.md
 - v17_ugen_c2_action_holonomy_reality_investigation.md
@@ -261,7 +284,10 @@ DIAGONAL LAW COMPOSITION:      NONUNIQUE IN EXACT FIXED PRODUCT EXAMPLE
 C2 KERNEL DECOMPOSITION:       EXACT AUTHOR-SIDE / NOT REVIEWED
 C2 PHASE-MEMBER SELECTION:     UNDERDETERMINED / TRACK A UNDER-SPECIFIED
 ACTION-KERNEL SCHEMA:          TYPED / STANDARD QUANTUM MEMBER ZERO GAIN
-NEXT AUTHOR-SIDE TARGET:       PHYSICALLY GROUNDED ACTION-PHASE PACKET
+C3 ACTION CHARACTER:           EXACT AUTHOR-SIDE / NOT REVIEWED
+C3 PHYSICAL GROUNDING:         PROTOCOL DRAFTED / SOURCES NOT FROZEN
+C3 METROLOGY INDEPENDENCE:     PARTIAL / H, E AND FLUX DEBTS PRINTED
+NEXT AUTHOR-SIDE TARGET:       NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
                                OR BOUNDED CLASS-WIDE THEOREM
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL

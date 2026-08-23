@@ -182,30 +182,30 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "9349bbc194075e3e1ddee8b5440eb34c41b6e8f6b172034854dd178e150295cb"
+    sha256: "1457390918d5576d1e81cedb340183b82dd48760df6e60cd389f7e5c872847ae"
     created_at: "2026-08-23"
     front: "ugen"
-    status: "active-routing-c2-frontier-clarified-native-slot-empty"
+    status: "active-routing-c3-physical-grounding-native-slot-empty"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U-Gen routing through the C2 finite kernel decomposition, phase-member nonselection result, and action/holonomy source audit; the physical grounding experiment and native generator remain absent, with no scalable trilemma theorem, universal generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral U-Gen routing through the C3 measurable-action character theorem and physically typed calibration/holdout protocol; no data evaluation, independently verified source freeze, native weight/correlation/actuality generator, scalable trilemma theorem, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "7c61a7a283ed4387f87f92b4b0abbf5f2a607792d90f00256cd117b867fca288"
+    sha256: "1eddda2c06f54a3d15f12661981ddabe97b1fb062dd0da566eda9050aeef83df"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral dependency, resource-coordinate, and generator-contest audit through the C2 relational-kernel decomposition and action/holonomy frontier; no physical grounding experiment, scalable theorem, native generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral dependency, resource-coordinate, and generator-contest audit through the C3 action-character and physical-source-contract frontier; no data evaluation, scalable theorem, native generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_pc2_balanced_seam_classification_candidate.md"
     sha256: "913b61c27f3a8303df5acb72e75b4a4def61a5b98b7457734b6be3b9bc4f6d4d"
@@ -247,17 +247,17 @@ artifacts:
     maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_ugen_next_gate_decision.md"
-    sha256: "881ed8ead22e6a4e2de2ad33eb53a3ff61747bf8eb15dcd0d8c2b40f3fb0fd06"
+    sha256: "11af25d09717dc91c9fd039415e7295e576f9e6cf5173eee99b3b8de63bda6c5"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-decision"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md"]
-    source_audit_status: "inherits-c2-author-side-source-scope-audit"
+    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md"]
+    source_audit_status: "inherits-c3-author-side-source-metrology-scope-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding decision recording the C2 relational-kernel frontier and a physical action-phase grounding packet as the next author-side task while keeping Q-Cut as the recommended next official unit"
+    maximum_claim: "nonbinding decision recording the completed author-side C3 action-phase grounding protocol and the native weight/correlation/actuality rule as the next research frontier while keeping Q-Cut as the recommended next official unit"
     canonical: false
   - path: "active/ugen/v17_ugen_c1_pair_history_composition_candidate.md"
     sha256: "9beceb074a315a2e44e4e92647533e482f923708727b407e4fbea4f3ec943efa"
@@ -362,6 +362,58 @@ artifacts:
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "future three-seat mathematics, quantum/topology/source, and ontology/gravity/empirical review contract only; no activation, review, result, or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_c3_action_character_theorem_candidate.md"
+    sha256: "424402a58c70124b26f0ea90c3e2c5822ce2ae2baa7c4ac22cf68a95e8f5782c"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-mathematics-candidate"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c2_relational_kernel_decomposition_candidate.md", "active/ugen/v17_ugen_c2_action_holonomy_reality_investigation.md"]
+    source_audit_status: "author-side-exact-mathematics-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "candidate exact classification of Borel-measurable scalar characters of additive real action, operational quadrature identifiability, and finite-point global-law nonselection; no derivation of action, phase scale, quantum probabilities, ontology, time, spacetime, or gravity"
+    canonical: false
+  - path: "active/ugen/v17_ugen_c3_physical_action_phase_grounding_protocol.md"
+    sha256: "288d3c1157157362aa2d519b198afac8ccbd8382f0ff8d117a8759df70dacca8"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-experiment-design"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c3_action_character_theorem_candidate.md", "active/ugen/v17_ugen_c2_action_holonomy_reality_investigation.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "candidate typed calibration and held-out composition, electromagnetic-holonomy, and gravity-sensitive matter-wave protocol with separate action and boundary-transport inputs; no data evaluation, result, native generator, ontology, spacetime, or quantum-gravity claim"
+    canonical: false
+  - path: "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md"
+    sha256: "3b3c0c52f2311882dbf221117de075a770d3f6e34ee8d579544350ff3f3fe511"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-source-metrology-scope-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c3_action_character_theorem_candidate.md", "active/ugen/v17_ugen_c3_physical_action_phase_grounding_protocol.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "snapshots/v17_ugen_barandes_source_scope_audit.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "author-side source, metrology, identifiability, ontology, and gravity-ceiling audit exposing revised-SI, flux-sector, apparatus-phase, and low-energy-spacetime input debts; no independent verification, experiment, or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_c3_future_review_contract.md"
+    sha256: "62803f83b4717790eb9e9756a5bf59414a8d7aa44ee3390de4278723834c92b4"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "future-review-design-not-authorized"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c3_action_character_theorem_candidate.md", "active/ugen/v17_ugen_c3_physical_action_phase_grounding_protocol.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md"]
+    source_audit_status: "inherits-c3-author-side-source-metrology-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "future three-seat mathematics, matter-wave experiment/metrology, and quantum-foundations/ontology review contract only; no activation, source freeze, review, data use, result, or successor authority"
     canonical: false
   - path: "active/ugen/v17_pc3_projective_control_covariance_candidate.md"
     sha256: "8d79740280b5d7bb7192d2a4b064257e03e67ee521a9df1034ffe5638f36987e"
