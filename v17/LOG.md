@@ -575,3 +575,29 @@ The provisional ceiling is rung 7,
 It is not awarded. Barandes ontology, ontology selection, microactuality,
 clock, QFT, spacetime, and gravity remain unconstructed. The sole next event
 is an author construction audit; no independent review has begun.
+
+## 2026-08-22 — PAPER 02 V2 CONSTRUCTION AUDIT PASSES (v17 LEDGER #22)
+
+The author audit is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02v2-construction-audit.md` | `74733c5f39ebd710ed7a9bfebcaea8f9b61803428879cb8008a1b2953f2043e0` | 364 LF / 15,654 bytes |
+
+The candidate remains byte-exact at `d9278763...2a77`. The audit independently
+rebuilds the presentation/procedure/quotient lineage, trusted randomization,
+the optional ontological interface, the predictive-object probability
+lineage, the contextuality no-gos, idle-fiber restriction, phase/resource
+regressions, records, actuality, and the Barandes boundary.
+
+Four surfaces are explicitly handed to hostile review rather than hidden:
+
+1. verify one fixed history-rule schema rather than an experiment lookup;
+2. verify conditional-comb contraction and every required memory port;
+3. attack literal same-prefix coherence and pseudo-randomizer correlations;
+4. verify that idle-fiber naturality descends only along actually admitted
+   projections and never erases contextuality by a nonlinear barycenter map.
+
+No exact semantic counterexample is found. Rung 7 remains provisional and
+unawarded. No candidate edit, code, or Paper 03 unit opens. The next action is
+to freeze the three-lens hostile-review protocol.

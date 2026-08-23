@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
-green-unreviewed mathematics constructed; author construction audit next**
+green-unreviewed mathematics and author audit frozen; review protocol next**
 
 ## 0. Authority and workflow
 
@@ -169,8 +169,9 @@ registered only as an existence control; Barandes ontology, ontology
 selection, actuality, QFT, clocks, spacetime, and gravity remain
 unconstructed. The result-neutral author audit passes without awarding any
 coordinate. The self-contained mathematics construction is now frozen at
-green-unreviewed status. The sole next event is its author construction audit;
-independent review has not begun.
+green-unreviewed status, and its author construction audit passes without
+moving a candidate byte. The sole next event is the immutable hostile-review
+protocol; independent review has not begun.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 

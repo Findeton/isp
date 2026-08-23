@@ -25,7 +25,7 @@ cleanly if nature does not support it.
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
 - Paper 02 v2 status: **GREEN-UNREVIEWED MATHEMATICS CONSTRUCTED — AUTHOR
-  CONSTRUCTION AUDIT NEXT**. Its exact scope is the prequotient
+  AUDIT PASSED; HOSTILE-REVIEW PROTOCOL NEXT**. Its exact scope is the prequotient
   procedure architecture $\mathcal P\to\mathcal Q$, trusted
   physical-randomization constructors, system-facing contextuality as a
   descent obstruction, and the Barandes-row correction. It adds no physical
@@ -155,6 +155,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `paper-02v2-procedure-quotient-ontology-residue.md` — green-unreviewed
   procedures-first quotient, contextuality, positive-model, and
   no-selection mathematics; no result is terminal.
+- `note-paper02v2-construction-audit.md` — author proof/overclaim audit and
+  mandatory independent attack surface; not an adjudication.
 
 ## Permanent honesty wall
 
