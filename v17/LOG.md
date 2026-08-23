@@ -836,3 +836,22 @@ history representation. Normality, posterior-class closure, measurable
 kernels, independent-probe source lineage, and exact Bell-probe realization
 remain explicit packet/model conditions. This is not joint adjudication; Seat
 O must freeze before the reports are combined.
+
+## 2026-08-22 — PAPER 03 SEAT O REVIEW FROZEN (v17 LEDGER #35)
+
+The complete independent ontology/locality/gauge/continuum report freezes
+verbatim at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper03-ontology-locality-continuum.md` | `9dbfe7ada3ad4b06ea0e3aeb8b29968717b4e7a45de431ba09077e937346ae2b` | 627 LF / 37,223 bytes |
+
+Seat O returns `REVISE`. A covariant law compares jointly transported state
+and observable data; it does not make a fixed contingent state Lorentz
+invariant. An admitted non-boost-invariant/KMS state can expose an operational
+rest frame. Only absence of undeclared scheduling/serialization dependence is
+proved universally. The positive global history, no-signalling/steering/Bell,
+type-III/split/gauge/continuum firewalls survive this objection.
+
+All three reports are now frozen. This entry is not adjudication; the root must
+independently reproduce each claimed defect and determine the mixed product.

@@ -30,11 +30,13 @@ cleanly if nature does not support it.
   It repairs the v1 source-domain error, constructs a positive contextual
   existence model, and leaves the particular ontology, Barandes completion,
   and microscopic actuality unselected.
-- Paper 03 status: **HOSTILE REVIEW IN PROGRESS — SEATS A/Q FROZEN**.
+- Paper 03 status: **THREE HOSTILE REVIEWS FROZEN — ADJUDICATION NEXT**.
   Seat A refutes the printed ordinary procedure category; Seat Q independently
   accepts the quantum measurement, probability, Bell, and positive-history
-  core with explicit normality/measurability/realization scopes. Seat O and
-  joint adjudication remain pending; no Paper 03 result is terminal.
+  core with explicit normality/measurability/realization scopes; Seat O refutes
+  the universal preferred-frame wording because contingent states/apparatus
+  may physically select a detectable rest frame. Joint adjudication remains
+  pending; no Paper 03 result is terminal.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -70,9 +72,9 @@ $q:\mathcal P\to\mathcal Q$; and admitted idle-fiber projections prove a
 limited no-selection theorem. What survives is structural contextuality and
 ontology underdetermination, not a preferred microscopic world.
 
-Paper 03 is in hostile review. Its fixed-packet relativistic measurement core
-remains live, but Seat A has identified an exact source/target typing defect in
-the claimed ordinary procedure category. Seat O and root adjudication must
+Paper 03's three reports are frozen. Its fixed-packet relativistic measurement
+core remains live, while the ordinary category/quotient claim and universal
+preferred-frame wording face exact counterexamples. Root adjudication must
 determine the mixed product before any repair or successor.
 
 ## Reality constraints
@@ -190,6 +192,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03-quantum-measurement-bell.md` — frozen Seat Q report;
   `ACCEPT-WITH-SCOPE` for the measurement/probability/Bell/positive-history
   core.
+- `review-paper03-ontology-locality-continuum.md` — frozen Seat O report;
+  `REVISE` on the distinction between covariant law, scheduling independence,
+  and a contingent state/apparatus-selected rest frame.
 
 ## Permanent honesty wall
 

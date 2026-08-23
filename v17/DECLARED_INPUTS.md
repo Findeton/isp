@@ -227,6 +227,7 @@ selection, or a Barandes completion.
 |---|---|---|---|
 | AQFT/category/covariance (Seat A) | `REVISE` | ordinary procedure/quotient category unconstructed; localized AQFT/no-signalling subpackage survives | frozen, not adjudicated |
 | quantum measurement/probability/Bell (Seat Q) | `ACCEPT-WITH-SCOPE` | instrument, causal probability, no-signalling/steering, Bell compatibility, and positive-history core survive with packet scopes | frozen, not adjudicated |
+| ontology/locality/gauge/continuum (Seat O) | `REVISE` | universal no-visible-frame claim refuted; only law covariance and scheduling independence survive | frozen, not adjudicated |
 
 ## Derivation balance
 
