@@ -1179,3 +1179,28 @@ objects, complete memory exposure, and certified full-operation exchanges are
 mandatory. One corrected result-neutral v3.1 pin is authorized; no automatic
 further pin chain exists. No v2 probability or physical parameter moves, no
 coordinate is awarded, and construction plus Paper 04 remain closed.
+
+## 2026-08-22 — PAPER 03 v3.1 CORRECTED PIN FROZEN (v17 LEDGER #50)
+
+The sole corrected result-neutral pin freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v31-integrated-hybrid-semantics-pin.md` | `b7ec12ad25c3ac6327cb242ad39ba03e1af541e544f11d32cb86dbce908b5fca` | 760 LF / 30,236 bytes |
+
+The pin implements the #49 repair boundary without changing v2 physics.
+Finite and countable atomic records admit normal point states and exact
+restart controls. Standard-Borel continuous records retain point-valued
+samples in `Ev`, but only dominated ensemble laws map through `Ens` to normal
+states on the hybrid $W^*$ algebra. The target theorem is the integrated
+`Ens`/`Ev`/`Heis` identity with almost-everywhere posterior and control fields;
+generic nonatomic point restart remains expressly unconstructed.
+
+Every integrated boundary must prove one common sigma-finite domination
+class. Every deterministic record map must be measure-class nonsingular.
+Hybrid objects are boundary tagged, all future-relevant memory is exposed,
+continuous instrument extensions must land in the declared algebra, and
+schedule equality remains confined to full certified exchanges in every
+reachable context. The pin awards no result and permits no automatic further
+pin revision. Two independent audits of these exact bytes are next;
+construction and Paper 04 remain closed.
