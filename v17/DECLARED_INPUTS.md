@@ -273,6 +273,7 @@ selection, or a Barandes completion.
 | frame result | packet covariance plus schedule equality | `GREEN-UNREVIEWED NARROWED` | physical rest frames allowed; idle structure not excluded |
 | ontology / spacetime / gravity | none | `UNCONSTRUCTED` | no downstream promotion |
 | Paper 03 v2 construction audit | frozen candidate and pin | `PASS — RESULT-NEUTRAL` | authorizes protocol/review only; awards no coordinate |
+| Paper 03 v2 hostile-review protocol | exact frozen corpus and three independent lenses | `FROZEN — RESULT-NEUTRAL` | binds review duties only; awards no coordinate |
 
 ## Derivation balance
 

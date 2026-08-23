@@ -975,3 +975,25 @@ state/measurability closure, exchange and context congruence, full packet
 intertwiners, and all model-separation/ontology refusals. Disposition:
 `READY-FOR-INDEPENDENT-REVIEW`. No coordinate is awarded. A frozen three-lens
 protocol is next; Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v2 HOSTILE PROTOCOL FROZEN (v17 LEDGER #41)
+
+The result-neutral protocol freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v2-hostile-review-protocol.md` | `2b1d742b09df8e3215c8f51dd0d329222e8237400c4cd83c711a6e9e42461816` | 457 LF / 18,918 bytes |
+
+It binds three mutually blind lenses: category/AQFT/covariance and semantic
+functors; quantum instruments/probability/histories/Bell; and ontology,
+relativity, physical frames, and continuum scope. Every seat must reconstruct
+V2-T1--V2-T20, both directions of C1--C28, attacks 1--40, at least eight fresh
+lens-specific attacks, and the full 31-coordinate product.
+
+The central risk surface is exact: the free path category must have total
+matched composition; primitive interfaces and both semantic target categories
+must be fully typed; exchange and complete-context equivalence must be
+congruences; state and measure kernels must close; packet transport must
+intertwine every field; and neither laboratory slots nor KMS/material rest
+frames may be misread as fundamental spacetime. The protocol awards no result.
+Independent review is next; Paper 04 remains closed.

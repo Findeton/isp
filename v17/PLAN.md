@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1 terminal REVISE; Paper 03 v2 construction audit passed, protocol next**
+Paper 03 v1 terminal REVISE; Paper 03 v2 hostile protocol frozen, reviews next**
 
 ## 0. Authority and workflow
 
@@ -502,11 +502,12 @@ Paper 03 v2 repair pin              FROZEN RESULT-NEUTRAL
 Paper 03 v2 author audit            PASS RESULT-NEUTRAL
 Paper 03 v2 construction            GREEN-UNREVIEWED
 Paper 03 v2 construction audit      PASS RESULT-NEUTRAL
-Paper 03 v2 hostile protocol        NEXT
+Paper 03 v2 hostile protocol        FROZEN RESULT-NEUTRAL
+Paper 03 v2 independent reviews     NEXT — THREE MUTUALLY BLIND SEATS
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is a frozen Paper 03 v2 three-lens hostile-review
-protocol. It may not repair the candidate or add ontology, internal time,
+The next scientific action is the frozen Paper 03 v2 three-lens hostile
+review. The seats may not repair the candidate or add ontology, internal time,
 spacetime emergence, or gravity. Paper 04 remains closed.

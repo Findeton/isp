@@ -34,9 +34,10 @@ cleanly if nature does not support it.
   localized relativistic instrument/factorization/schedule/no-signalling core
   survives. The ordinary procedure and quotient categories fail because
   causal admissibility is not encoded in boundary types; covariance also does
-  not forbid a contingent state/apparatus-selected rest frame. A result-neutral
-  causal-frontier Paper 03 v2 repair pin is the next authorized step.
-- Paper 03 v2 status: **GREEN-UNREVIEWED MATHEMATICS**. It types
+  not forbid a contingent state/apparatus-selected rest frame. Its authorized
+  causal-frontier successor is the current Paper 03 v2 candidate.
+- Paper 03 v2 status: **GREEN-UNREVIEWED MATHEMATICS; HOSTILE PROTOCOL
+  FROZEN**. It types
   finite laboratory opportunities by a causal slot poset and completed lower
   sets; constructs the free path category, Markov-kernel/Heisenberg semantics,
   causal exchange and operational quotients; and reconstructs the scoped
@@ -215,6 +216,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   positive-history, quotient, and ontology-debt construction.
 - `note-paper03v2-construction-audit.md` — result-neutral proof/type/scope
   audit and mandatory high-risk independent-review surface.
+- `note-paper03v2-hostile-review-protocol.md` — immutable category/AQFT,
+  quantum/probability, and ontology/relativity review duties.
 
 ## Permanent honesty wall
 
