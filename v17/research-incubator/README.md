@@ -232,6 +232,15 @@ circle member also proves the printed local law does not generate the global
 phase-holonomy sectors of a fixed periodic quantum theory. It remains Markov,
 nonrelativistic, incomplete at the apparatus/process level, and unreviewed.
 
+N1A now gives the requested bounded repair audit. A strictly cover-local rule
+on the existing node-free Nelson fields cannot enforce global circulation
+integrality while preserving every locally quantum-valid exact-current germ.
+The N1 kinetic metric fixes a $2\pi\kappa$ phase period only inside an explicit
+two-dimensional smooth-target class; it does not force global descent or
+select a topological character. The existing-field cover-local repair route is
+therefore closed at that scope, while modified local physics and a holistic
+indivisible positive parent law remain open and unconstructed.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -270,6 +279,9 @@ Post-C4 routing, comparator, and N1 files:
 - active/ugen/v17_ugen_n1_time_symmetric_diffusion_candidate.md
 - active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md
 - active/ugen/v17_ugen_n1_future_review_contract.md
+- active/ugen/v17_ugen_n1a_global_phase_locality_gate.md
+- active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md
+- active/ugen/v17_ugen_n1a_future_review_contract.md
 
 Canonical status: `active/ugen/README.md`.
 
@@ -290,6 +302,9 @@ Active working package:
 - `active/ugen/v17_ugen_n1_time_symmetric_diffusion_candidate.md`
 - `active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md`
 - `active/ugen/v17_ugen_n1_future_review_contract.md`
+- `active/ugen/v17_ugen_n1a_global_phase_locality_gate.md`
+- `active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md`
+- `active/ugen/v17_ugen_n1a_future_review_contract.md`
 
 - `active/ugen/README.md`
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`

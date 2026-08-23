@@ -336,6 +336,14 @@ cleanly if nature does not support it.
   answer table. Its exact circle control shows that the local law does not
   generate global phase holonomy, and it has no complete adaptive process,
   QFT, internal-time, native indivisible ISP law, or gravity construction.
+  N1A now proves a bounded locality result: no strictly cover-local repair on
+  the existing node-free fields can impose the missing circulation lattice
+  while preserving every locally valid exact-current germ. A smooth
+  two-dimensional target completion fixes a $2\pi\kappa$ phase period under
+  explicit premises but does not supply global descent or select a character.
+  Thus the existing-field cover-local repair class is closed only at the
+  printed scope; modified local physics and a holistic indivisible positive
+  parent law remain open and unconstructed.
   Q-Cut remains the next recommended official unit if separately authorized.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.

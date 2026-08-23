@@ -165,6 +165,17 @@ holonomy. N1 therefore supplies a real positive path member but not the global
 sector law or complete adaptive process compiler. It is not reviewed or
 freeze-ready.
 
+N1A now tests the missing sector law rather than naming one. It proves, in a
+strictly cover-local exact-germ-preserving class, that the existing node-free
+Nelson fields cannot enforce an integral circulation lattice. It also isolates
+a partial positive result: the N1 kinetic value metric selects a
+$2\pi\kappa$ phase period within a declared two-dimensional smooth-target
+category. Period does not imply global descent or choose a
+fundamental-group character, so the fixed quantum sector remains independent.
+N1A closes only the printed existing-field cover-local class; modified local
+physics and a holistic indivisible positive parent law remain untested and
+unconstructed.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -201,6 +212,9 @@ Active audit:
 - v17_ugen_n1_time_symmetric_diffusion_candidate.md
 - v17_ugen_n1_source_physics_and_scope_audit.md
 - v17_ugen_n1_future_review_contract.md
+- v17_ugen_n1a_global_phase_locality_gate.md
+- v17_ugen_n1a_source_topology_and_scope_audit.md
+- v17_ugen_n1a_future_review_contract.md
 
 - v17_ugen_c4_interference_actuality_obstruction_candidate.md
 - v17_ugen_c4_actuality_selector_reality_investigation.md
@@ -333,6 +347,10 @@ Failure must identify an unavoidable input rather than announce that
 12. Local stochastic reconstruction of the Schrödinger equation does not
     establish global quantum equivalence unless phase/bundle holonomies and
     the complete apparatus process are generated rather than imposed.
+13. A smooth local amplitude--phase target can fix a phase period in a
+    declared category without supplying global descent or selecting a
+    topological sector. Period, descent, and sector selection must remain
+    separate ledger coordinates.
 
 ## Present disposition
 
@@ -373,9 +391,12 @@ N1 POSITIVE DIFFUSION:         BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
 N1 LOCAL SCHRODINGER FORM:     DERIVED FROM DECLARED STOCHASTIC PREMISES
 N1 GLOBAL PHASE SECTOR:        NOT GENERATED / CIRCLE CONTROL FAILS
 N1 COMPLETE PROCESS:           NOT CONSTRUCTED / NOT FREEZE-READY
+N1A COVER-LOCAL REPAIR:        BOUNDED NO-GO / AUTHOR-SIDE ONLY
+N1A SMOOTH TARGET PERIOD:      2 PI KAPPA IN PRINTED CLASS / NOT SECTOR
+N1A GLOBAL DESCENT/CHARACTER:  NOT DERIVED / NOT SELECTED
 C-NUMBER EXPANSION:            CLOSED AT C4
-NEXT AUTHOR-SIDE TARGET:       INDEPENDENT N1 HOLONOMY PRINCIPLE OR BOUNDED
-                               NO-GO; COMPLETE PROCESS COMPILER STILL OPEN
+NEXT AUTHOR-SIDE TARGET:       GLOBAL INDIVISIBLE HOLONOMY PARENT LAW OR
+                               BOUNDED HOLISTIC NO-GO; COMPILER STILL OPEN
 SOURCE-COMPLETION RESULT:      NONE
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             N1 LOCAL NONRELATIVISTIC ONLY / NOT UNIVERSAL

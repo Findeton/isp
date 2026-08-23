@@ -95,6 +95,16 @@ stochastic circulation survives where a fixed periodic quantum sector is
 quantized. N1 is therefore partial native progress, not a complete U-Gen
 member and not freeze-ready.
 
+N1A now performs the bounded follow-up rather than declaring a preferred
+repair. A cover-local rule on the existing node-free N1 fields cannot both
+preserve every locally quantum-valid exact-current germ and enforce global
+circulation integrality. The N1 kinetic value metric fixes a
+$2\pi\kappa$ phase period only within a declared two-dimensional smooth-target
+category; period alone neither produces global descent nor selects a
+fundamental-group character. Thus the existing-field cover-local class is
+closed, while modified local physics and an indivisible positive
+whole-experiment law remain untested.
+
 The fundamental-nomology register keeps three rivals live under one ledger:
 ordinary-positive indivisible law, fundamental decoherence functional, and
 standard quantum dynamics plus modified actualization. No rival is selected.
@@ -122,10 +132,13 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     N1 POSITIVE DIFFUSION:          BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
     N1 GLOBAL PHASE SECTOR:         NOT GENERATED / CIRCLE OBSTRUCTION
     N1 COMPLETE PROCESS:            ABSENT / NOT FREEZE-READY
+    N1A COVER-LOCAL REPAIR:         BOUNDED NO-GO / AUTHOR-SIDE ONLY
+    N1A SMOOTH TARGET PERIOD:       2 PI KAPPA / PRINTED CLASS ONLY
+    N1A GLOBAL DESCENT/CHARACTER:   NOT DERIVED / NOT SELECTED
     NATIVE ISP LAW:                 ABSENT
     FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
-    NEXT AUTHOR-SIDE U-GEN TASK:    INDEPENDENT N1 HOLONOMY PRINCIPLE OR
-                                    BOUNDED CLASS-WIDE NO-GO;
+    NEXT AUTHOR-SIDE U-GEN TASK:    GLOBAL INDIVISIBLE HOLONOMY PARENT LAW
+                                    OR BOUNDED HOLISTIC NO-GO;
                                     COMPLETE PROCESS COMPILER STILL OPEN
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED

@@ -25,8 +25,8 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE PHYSICS:         N1 BOUNDED POSITIVE CANDIDATE;
-                                  GLOBAL HOLONOMY/PROCESS LAW OR NO-GO
+NEXT AUTHOR-SIDE PHYSICS:         N1A LOCAL REPAIR NO-GO;
+                                  GLOBAL INDIVISIBLE PARENT LAW OR NO-GO
 BELL-CURRENT ACTUALITY:           STANDARD-QUANTUM COMPARATOR ONLY
 FUNDAMENTAL NOMOLOGY:             PLURAL RIVAL CONTEST / NONE SELECTED
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
@@ -586,6 +586,17 @@ whereas a fixed periodic quantum sector admits only quantized holonomy. Thus
 N1 earns partial native dynamical content but not a global quantum state space
 or complete apparatus compiler.
 
+N1A now closes one precisely typed repair class. Any admissibility rule that
+is cover-local on the existing node-free N1 fields and preserves every
+locally quantum-valid exact-current germ accepts the arbitrary-circulation
+circle family and therefore cannot impose a circulation lattice. The kinetic
+value metric also yields a partial positive theorem: within a declared
+two-dimensional homogeneous target with one smooth phase-blind zero, the
+phase period is $2\pi\kappa$. That theorem does not supply global field descent
+or select a fundamental-group character. The next constructive burden is
+therefore a genuinely global indivisible parent experiment, not another local
+Markov correction.
+
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
 quantum dynamics plus modified actualization. The common operational and
@@ -639,8 +650,11 @@ N1 POSITIVE DIFFUSION:           BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
 N1 LOCAL SCHRODINGER FORM:       EXACT UNDER PRINTED PREMISES
 N1 GLOBAL HOLONOMY:              NOT GENERATED / CIRCLE OBSTRUCTION
 N1 COMPLETE PROCESS:             ABSENT
-NEXT AUTHOR-SIDE TARGET:         INDEPENDENT N1 HOLONOMY PRINCIPLE OR
-                                 BOUNDED CLASS-WIDE NO-GO
+N1A COVER-LOCAL REPAIR:          BOUNDED NO-GO / AUTHOR-SIDE ONLY
+N1A SMOOTH TARGET PERIOD:        EXACT IN PRINTED CLASS / NOT GLOBAL SECTOR
+N1A GLOBAL DESCENT/CHARACTER:    ABSENT / UNSELECTED
+NEXT AUTHOR-SIDE TARGET:         GLOBAL INDIVISIBLE HOLONOMY PARENT LAW OR
+                                 BOUNDED HOLISTIC NO-GO
 NATIVE ISP LAW:                  ABSENT
 PHYSICAL GENERATOR:              FOUND ONLY AT LOCAL NONRELATIVISTIC SCOPE
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

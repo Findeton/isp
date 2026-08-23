@@ -54,6 +54,12 @@ the circle control, and no complete adaptive or interacting generator exists.
 Because N1 is Markov and divisible, it tests only the broader ordinary-positive
 part of this rival. It is not yet a native indivisible ISP member.
 
+N1A proves that no strictly cover-local exact-germ-preserving repair on those
+same node-free fields can impose the missing circulation lattice. Its smooth
+target theorem fixes a phase period only in a declared target category and
+does not select global descent or a character. A global indivisible positive
+parent law therefore remains live but wholly unconstructed.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -183,10 +189,11 @@ The current evidence supports the following order.
    cuts.
 2. **Retained controls/candidates:** E-Comp; C1--C4
    pair-history/action/actuality package; Bell-current actuality comparator;
-   bounded N1 time-symmetric diffusion candidate.
-3. **Next substantive U-Gen question:** derive an independently physical N1
-   holonomy/sector law and complete-process compiler, or prove a bounded
-   class-wide no-go for a precisely stated repair class.
+   bounded N1 time-symmetric diffusion candidate; bounded N1A locality gate.
+3. **Next substantive U-Gen question:** construct one global indivisible
+   positive parent law for relative-holonomy experiments and a complete
+   process compiler, or prove a bounded no-go for a precisely stated holistic
+   class.
 4. **Deferred:** official interferometry benchmark until a distinct candidate
    predicts it; clocks until a native law exists; locality/Tsirelson after the
    composition law is fixed; spacetime and gravity until endogenous influence,
@@ -206,7 +213,8 @@ RIVAL D — COMMON CONTEST:             ADOPTED AUTHOR-SIDE
 EMPIRICALLY SELECTED NOMOLOGY:        NONE
 NEXT OFFICIAL RECOMMENDATION:         Q-CUT ONLY, IF EXPLICITLY AUTHORIZED
 NATIVE ISP LAW:                       ABSENT
-NEXT U-GEN CONSTRUCTION:              N1 HOLONOMY/PROCESS LAW OR BOUNDED NO-GO
+N1A LOCAL REPAIR CLASS:               CLOSED / GLOBAL WHOLE-LAW ROUTE OPEN
+NEXT U-GEN CONSTRUCTION:              GLOBAL HOLONOMY PARENT LAW OR NO-GO
 C-NUMBER EXPANSION:                   CLOSED AT C4
 CLOCK / SPACETIME / GRAVITY:          DEFERRED
 SCIENTIFIC RESULT:                    NONE
