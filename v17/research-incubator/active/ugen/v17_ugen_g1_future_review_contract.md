@@ -35,7 +35,7 @@ A future authorization must name exact SHA-256 values for at least:
 5. the active fundamental-nomology rival register;
 6. the C1 pair-history candidate and source audit;
 7. the C2 kernel decomposition and C3 action-character packet;
-8. the N1/N1A candidate and source audits; and
+8. the N1/N1A prior-art control and source audits; and
 9. the exact machine-readable control output frozen with the pin.
 
 The pin must also print the versions or immutable identifiers of every primary

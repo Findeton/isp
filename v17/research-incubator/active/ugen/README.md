@@ -8,8 +8,9 @@
 U-Gen is the large v17 question: can one uniform native law generate the
 complete calibrated quantum process interface without receiving the target
 process, future settings, or equivalent phase-sensitive law data as input?
-The ordinary-positive indivisible whole-law route remains the strongest ISP
-contestant. C1--C4 now also test whether relational pair-history structure is
+The ordinary-positive indivisible whole-law route remains the primary
+Barandes-facing search branch, not a predetermined ontology. C1--C4 now also
+test whether relational pair-history structure is
 irreducible at the compositional level while ordinary positivity remains exact
 for stable records. The numbered C-series closes at C4. Its C1--C3 artifacts
 are henceforth one pair-history/action benchmark package rather than an open
@@ -153,31 +154,30 @@ minimal Bell rates add a least-traffic/no-counterflow principle. This prevents
 v17 from rediscovering a quantum-driven Bohm/Bell law and calling it native.
 It is a comparator, not C5, not an ISP construction, and not a gravity step.
 
-N1 now enters the contest as the first bounded prior-art positive-dynamics
-candidate with partial native content only in the input-origin sense.
+N1 is retained strictly as a bounded Nelson-mechanics prior-art control.
 Nelson's positive time-symmetric diffusion locally reconstructs Schrödinger
-evolution from $\nu=\hbar/(2m)$, a symmetric
-mean acceleration, mean Newton dynamics, and initial density/current data,
-without consuming a table of future quantum transitions. Its exact circle
-member also exposes the limit: the local stochastic law permits arbitrary
-circulation, while a fixed periodic quantum sector requires quantized phase
-holonomy. N1 therefore supplies a real positive path member but not the global
-sector law or complete adaptive process compiler. It is not reviewed or
-freeze-ready.
+evolution from $\nu=\hbar/(2m)$, a symmetric mean acceleration, mean-Newton
+dynamics, and initial density/current data without consuming a table of
+future quantum transitions. Its exact circle member exposes the limit: those
+local fields permit arbitrary circulation while a fixed periodic quantum
+sector requires quantized phase holonomy. The continuum trajectory, Euclidean
+configuration, Brownian noise, external time, Markov structure, diffusion
+coefficient, mean-Newton law, phase field, and holonomy target are all supplied
+N1 premises and are not inherited by v17.
 
-N1A now tests the missing sector law rather than naming one. It proves, in a
+N1A is a bounded hostile repair control. It proves, in a
 strictly cover-local exact-germ-preserving class, that the existing node-free
 Nelson fields cannot enforce an integral circulation lattice. It also isolates
 a partial positive result: the N1 kinetic value metric selects a
 $2\pi\kappa$ phase period within a declared two-dimensional smooth-target
 category. Period does not imply global descent or choose a
 fundamental-group character, so the fixed quantum sector remains independent.
-N1A closes only the printed existing-field cover-local class; modified local
-physics and a holistic indivisible positive parent law remain untested and
-unconstructed by N1A.
+N1A closes only the printed existing-field cover-local class. It neither
+selects the needed global/topological/whole-process physics nor authorizes an
+N1B repair chain.
 
-G1 now performs the first such global construction at finite scalar scope. It
-maps a typed action/holonomy history packet to one ordinary-positive complete
+G1 is not a Nelson successor. At finite scalar scope it maps a typed
+action/holonomy history packet to one ordinary-positive complete
 record law and supplies exact presentation, retained-record/coherent-eraser,
 connection, independent-product, interacting-parent, adaptive, and causality
 controls. An equivalent real oriented-plane form removes any need to treat a
@@ -208,6 +208,26 @@ with $\nu=\hbar/(2m)$, but no premise identifies Euclidean paths with
 real-time actuality or derives Nelson dynamics. G2 is an author-side
 fixed-background control, not an official result, QFT, clock, or gravity step.
 
+U0 now restores the primary research burden. It is an author-side search
+contract for one uniform ordinary-positive, genuinely indivisible law on an
+abstract measurable configuration domain. A candidate must separately type
+contingent state, physical controls, readers, records, divisions,
+composite-system formation, actuality, and resource costs; predict held-out
+complete processes; and receive no target wavefunction, process matrix,
+action, phase, holonomy, quantum current, or equivalent answer input. Hilbert
+structure can count as secondary only if reconstructed after the positive law
+freezes. The U0-T1 primary-source audit now locates the exact missing map:
+
+$$
+\mathcal S_{\mathcal N}:(S,b,c,R)\longmapsto
+\Gamma^{\mathcal N}_{S,b,c,R}.
+$$
+
+Barandes's correspondence represents a supplied indivisible stochastic law;
+it does not, in the audited sources, uniformly select the complete law for a
+new system and control programme. That is an open construction gate, not a
+no-go or a refutation. The candidate slot remains empty.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -232,7 +252,7 @@ Preserved exact drafts:
 Active author-side dependencies:
 
 - `../qcut/` tests the information burden of an ordinary-positive
-  future-sufficient cut. It does not constrain a whole-history law that denies
+  future-sufficient cut. It does not constrain a whole-process law that denies
   such a cut.
 - `../ecomp/` tests whether positive primitive endpoints plus nondivision can
   determine coherent sequential composition. Its candidate no-congruence
@@ -246,6 +266,9 @@ adjudication occur.
 
 Active audit:
 
+- v17_ugen_nelson_control_scope_correction.md
+- v17_ugen_u0_native_indivisible_law_search_contract.md
+- v17_ugen_u0_barandes_source_completion_audit.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -418,6 +441,14 @@ Failure must identify an unavoidable input rather than announce that
 18. Euclidean heat-kernel positivity and a Wiener measure do not select the
     real-time ontology. Analytic continuation is a reconstruction tool until a
     physical clock/referent law is independently supplied.
+19. N1/N1A are Nelson prior-art controls only. No trajectory, Euclidean
+    geometry, Brownian noise, Markov property, external time, diffusion scale,
+    phase target, bundle, or holonomy sector is inherited.
+20. A native Barandes-facing law must precede its optional Hilbert dilation
+    and predict held-out complete processes. Constructing $\Gamma$ from a
+    target $U$, process matrix, action, phase, or holonomy is compilation.
+21. The configuration domain cannot be chosen after inspecting the target and
+    cannot be promoted from a finite control to a microscopic lattice.
 
 ## Present disposition
 
@@ -454,10 +485,10 @@ FUNDAMENTAL NOMOLOGY POLICY:   PLURAL RIVAL CONTEST / NONE SELECTED
 BELL-CURRENT PATH LAW:         COMPLETE GIVEN QUANTUM INPUTS
 BELL MINIMALITY:               LEAST TRAFFIC / NOT SELECTED BY BORN LAW
 BELL/BARANDES IDENTIFICATION:  REJECTED / MARKOV VS INDIVISIBLE
-N1 POSITIVE DIFFUSION:         BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
+N1 POSITIVE DIFFUSION:         BOUNDED NELSON PRIOR-ART CONTROL / MARKOV
 N1 LOCAL SCHRODINGER FORM:     DERIVED FROM DECLARED STOCHASTIC PREMISES
 N1 GLOBAL PHASE SECTOR:        NOT GENERATED / CIRCLE CONTROL FAILS
-N1 COMPLETE PROCESS:           NOT CONSTRUCTED / NOT FREEZE-READY
+N1 COMPLETE PROCESS:           ABSENT / NOT A NATIVE CANDIDATE
 N1A COVER-LOCAL REPAIR:        BOUNDED NO-GO / AUTHOR-SIDE ONLY
 N1A SMOOTH TARGET PERIOD:      2 PI KAPPA IN PRINTED CLASS / NOT SECTOR
 N1A GLOBAL DESCENT/CHARACTER:  NOT DERIVED / NOT SELECTED
@@ -466,17 +497,21 @@ G1 REAL/COMPLEX ONTOLOGY:      REAL ORIENTED FORM EXISTS / DATA REMAIN
 G1 ENDPOINT-GAMMA COMPOSITION: REFUTED FOR PRINTED PHASE FAMILY
 G1 RECORD/ERASER/HOLONOMY:     EXACT BOUNDED CONTROLS
 G1 MIXED/HIGHER-RANK:          SCALAR CLASS FAILS
-G1 COMPLETE PROCESS COMPILER:  ABSENT
+G1 UNIVERSAL NATIVE GENERATOR: ABSENT
 G2 FREE GALILEI KERNEL:        DERIVED INSIDE DECLARED QUANTUM PREMISES
 G2 REAL-TIME |K|^2 POSITION:   NONNORMALIZABLE / NOT A TRANSITION DENSITY
 G2 POSITION FUTURE CUT:        FAILS FOR RELATIVE-PHASE PREPARATIONS
 G2 EUCLIDEAN HEAT LAW:         EXACT POSITIVE CONTROL / ACTUALITY UNSELECTED
 C-NUMBER EXPANSION:            CLOSED AT C4
-NEXT AUTHOR-SIDE TARGET:       NO AUTOMATIC G3; REVIEW G2 OR DERIVE A
-                               PHYSICAL SELECTION/INTERACTION INPUT
-SOURCE-COMPLETION RESULT:      NONE
+N1/N1A INHERITED ONTOLOGY:     NONE / N1B FORBIDDEN
+U0 NATIVE-LAW CONTRACT:        ACTIVE AUTHOR-SIDE / CANDIDATE SLOT EMPTY
+U0 CONFIGURATION FORM:         UNSELECTED / NO DISCRETE OR CONTINUUM DEFAULT
+U0 TARGET-ANSWER INPUTS:       FORBIDDEN
+U0 SOURCE-COMPLETION AUDIT:    COMPLETE AUTHOR-SIDE / MISSING MAP LOCATED
+NEXT AUTHOR-SIDE TARGET:       U0 NO-EQUIVALENT-INPUT CRITERION + FIXTURE
+SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
-UNIFORM GENERATOR:             N1 LOCAL NONRELATIVISTIC ONLY / NOT UNIVERSAL
+UNIFORM GENERATOR:             ABSENT
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN
 OFFICIAL UNIT:                 NOT OPENED
 ```

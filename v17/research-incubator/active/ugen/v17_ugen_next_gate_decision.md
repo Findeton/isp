@@ -12,6 +12,12 @@
 The next official scientific unit, if separately authorized, should still be
 Q-Cut.
 
+The primary **author-side** investigation is now U0, the Barandes-facing
+native-law search. This is a binding scope correction, not an official unit:
+N1/N1A are Nelson prior-art controls only, G1/G2 are compiler and
+input-origin controls, and the native candidate slot is empty. U0 permits no
+default discrete, continuum, spatial, trajectory, phase, or Hilbert ontology.
+
 PC3 and PC4 established that the finite stabilizer-like endpoint battery does
 not discriminate projective from enlarged positive dynamics. PC5 has now
 performed the next bounded comparison. It registers complete transformation
@@ -33,13 +39,9 @@ also registers non-Markov and efficient contextual positive controls and
 defines the fair whole-law generator contest. The source theorem is
 class-relative and the contest has no candidate yet, so PC6 creates no result.
 
-The next author-side construction should be narrower: a bounded U-Gen C1
-candidate pin on one scalable adaptive Clifford-plus-$T$ family. It must freeze
-the calibration track, held-out programmes, complete retained/erased record
-interface, forbidden answer imports, comparator battery, and distinct resource
-coordinates before any candidate generator is written.
-
-That pre-pin and its review design are now drafted author-side. A pair-history
+The earlier bounded C1 construction narrowed the problem to one scalable
+adaptive Clifford-plus-$T$ family. Its pre-pin and review design are drafted
+author-side. A pair-history
 kernel supplies the exact zero-gain comparator: it reconstructs the complete
 finite quantum process and proves that an isolated diagonal event law does not
 determine composite event laws. The native-generator slot remains empty.
@@ -86,26 +88,30 @@ configuration observable, Born weights, external time, edgewise quantum
 current, and least-traffic minimality are supplied. It therefore prevents a
 false native-generator claim but does not fill the native slot.
 
-N1 now provides a bounded positive candidate rather than another comparator.
+N1 supplies a bounded Nelson-mechanics prior-art control rather than a parent
+ontology or partially accepted native candidate.
 Nelson's time-symmetric diffusion generates local Schrödinger dynamics from a
 diffusion scale, mean-Newton law, and contingent density/current data without
 receiving future quantum transition tables. Its circle member proves that the
 printed local law does not generate global quantum holonomy sectors: arbitrary
 stochastic circulation survives where a fixed periodic quantum sector is
-quantized. N1 is therefore partial native progress, not a complete U-Gen
-member and not freeze-ready.
+quantized. This preserves the three legitimate lessons—local positive-path
+adequacy under strong premises, global-sector underdetermination, and the need
+for additional global/topological/nodal/whole-process physics—without
+inheriting Nelson's trajectories, space, noise, time, Markov property,
+diffusion scale, mean-Newton law, or phase/holonomy ontology.
 
-N1A now performs the bounded follow-up rather than declaring a preferred
-repair. A cover-local rule on the existing node-free N1 fields cannot both
+N1A is the bounded hostile follow-up, not the start of a repair chain. A
+cover-local rule on the existing node-free N1 fields cannot both
 preserve every locally quantum-valid exact-current germ and enforce global
 circulation integrality. The N1 kinetic value metric fixes a
 $2\pi\kappa$ phase period only within a declared two-dimensional smooth-target
 category; period alone neither produces global descent nor selects a
 fundamental-group character. Thus the existing-field cover-local class is
 closed, while modified local physics and an indivisible positive
-whole-experiment law remain untested by N1A.
+whole-experiment law remain untested by N1A. No N1B is authorized.
 
-G1 now supplies the first finite whole-experiment member. Its complete output
+G1 is not a Nelson successor and not a native derivation. Its complete output
 is an ordinary-positive record law conditional on typed history magnitudes and
 global action/holonomy transport. Exact controls show that the complex scalar
 can be replaced by a real oriented plane, but the relational orientation is
@@ -130,7 +136,27 @@ position seam. Imaginary-time continuation yields the heat/Wiener semigroup
 with $\nu=\hbar/(2m)$ but selects neither real-time paths nor Nelson dynamics.
 G2 is author-side and not freeze-ready.
 
-MG0 now supplies a separate author-side co-design contract rather than
+U0 now supplies the governing native-law search contract. It requires one
+uniform ordinary-positive genuinely indivisible law on abstract measurable
+configurations, with separately typed state, interventions, readers,
+divisions, composition, actuality, and resource costs. It must predict held-
+out complete processes without a target wavefunction, process matrix, action,
+phase, holonomy, quantum current, or equivalent answer input. Hilbert space may
+appear only as a representation reconstructed after the positive law freezes.
+The U0-T1 source audit now separates representation from physical law
+selection and locates the missing rule as
+
+$$
+\mathcal S_{\mathcal N}:(S,b,c,R)\longmapsto
+\Gamma^{\mathcal N}_{S,b,c,R}.
+$$
+
+No uniform source-completion map was located in the audited Barandes sources;
+that is an open constructive gate rather than a no-go. No candidate has yet
+filled this slot. U0-T2, a representation-resistant no-equivalent-input
+criterion, is the next author-side task.
+
+MG0 supplies a separate author-side co-design contract rather than
 mislabeling G1 as gravity. It keeps classical, quantum, stochastic,
 actual-history, pair-history, and primitive-joint matter--geometry responses
 open; requires both response directions to arise from one immutable parent;
@@ -162,17 +188,18 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     C4 ACTUALITY BRANCH:            NONE SELECTED
     C-NUMBER EXPANSION:             CLOSED AT C4
     BELL-CURRENT COMPARATOR:        COMPLETE GIVEN QUANTUM INPUTS
-    N1 POSITIVE DIFFUSION:          BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
+    N1 POSITIVE DIFFUSION:          BOUNDED NELSON PRIOR-ART CONTROL / MARKOV
     N1 GLOBAL PHASE SECTOR:         NOT GENERATED / CIRCLE OBSTRUCTION
-    N1 COMPLETE PROCESS:            ABSENT / NOT FREEZE-READY
+    N1 COMPLETE PROCESS:            ABSENT / NOT A NATIVE CANDIDATE
     N1A COVER-LOCAL REPAIR:         BOUNDED NO-GO / AUTHOR-SIDE ONLY
     N1A SMOOTH TARGET PERIOD:       2 PI KAPPA / PRINTED CLASS ONLY
     N1A GLOBAL DESCENT/CHARACTER:   NOT DERIVED / NOT SELECTED
+    N1/N1A INHERITED ONTOLOGY:      NONE / N1B FORBIDDEN
     G1 POSITIVE PARENT:             FINITE CONDITIONAL SCALAR MEMBER
     G1 REAL ORIENTED FORM:          EXACT / COMPLEX MATERIALITY NOT REQUIRED
     G1 ENDPOINT-GAMMA COMPOSITION:  REFUTED FOR PRINTED PHASE FAMILY
     G1 MIXED/HIGHER-RANK:           SCALAR CLASS FAILS
-    G1 COMPLETE PROCESS COMPILER:   ABSENT
+    G1 UNIVERSAL NATIVE GENERATOR:  ABSENT
     G2 FREE GALILEI KERNEL:         DERIVED INSIDE QUANTUM PREMISES
     G2 REAL-TIME |K|^2 POSITION:    NONNORMALIZABLE / NOT STOCHASTIC
     G2 POSITION FUTURE CUT:         FAILS FOR RELATIVE-PHASE FAMILY
@@ -180,8 +207,11 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     NATIVE ISP LAW:                 ABSENT
     FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
     MG0 COMMON-LAW PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
-    NEXT AUTHOR-SIDE U-GEN TASK:    NO AUTOMATIC G3; REVIEW G2 OR SUPPLY ONE
-                                    PHYSICAL SELECTION/INTERACTION PRINCIPLE
+    U0 NATIVE-LAW CONTRACT:         ACTIVE AUTHOR-SIDE / CANDIDATE SLOT EMPTY
+    U0 SOURCE-COMPLETION AUDIT:     COMPLETE AUTHOR-SIDE / GAP LOCATED
+    U0 CONFIGURATION FORM:          UNSELECTED
+    U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN
+    NEXT AUTHOR-SIDE U-GEN TASK:    NO-EQUIVALENT-INPUT CRITERION + FIXTURE
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

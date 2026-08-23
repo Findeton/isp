@@ -5,6 +5,11 @@
 **Scientific result awarded:** none
 **Authority created:** none
 
+**Binding scope correction:** N1A is retained only as a bounded hostile audit
+of Nelson-mechanics repair classes. Its topology, target geometry, phase,
+bundle, and holonomy language is not inherited by U0, and no N1B successor is
+authorized.
+
 ---
 
 ## 0. Purpose
@@ -436,7 +441,7 @@ N1A contains none of the required QFT construction.
 
 Gravity further makes geometry and possibly topology dynamical. A fixed
 configuration manifold and its chosen character cannot be promoted to
-spacetime ontology. A credible gravity successor would need a covariant sum or
+spacetime ontology. A credible gravity theory would need a covariant sum or
 law over global structures, constraint closure, internal time, and reciprocal
 matter--geometry response.
 

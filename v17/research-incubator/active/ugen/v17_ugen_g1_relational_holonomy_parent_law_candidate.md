@@ -1,6 +1,6 @@
 # ISP v17 — U-Gen G1 relational-holonomy positive parent-law candidate
 
-**Status:** ACTIVE AUTHOR-SIDE MATHEMATICS/PHYSICS CANDIDATE / NOT A PIN / NOT REVIEWED
+**Status:** ACTIVE AUTHOR-SIDE COMPILER/CONTROL / NOT A PIN / NOT REVIEWED
 **Date:** 2026-08-23
 **Scientific result awarded:** none
 **Authority created:** none
@@ -9,16 +9,17 @@
 
 ## 0. Question and bounded answer
 
-N1A proves that existing node-free Nelson fields cannot recover global quantum
-circulation through a strictly cover-local exact-germ-preserving repair. It
-leaves a genuinely different possibility open:
+N1A is a bounded Nelson hostile control: its existing node-free fields cannot
+recover global quantum circulation through a strictly cover-local
+exact-germ-preserving repair. G1 does not inherit those fields or succeed N1A.
+It independently tests a different compiler class:
 
 > Can one ordinary-positive law on the complete physical experiment carry
 > relative holonomy globally, without treating patchwise diffusion restarts
 > or a wavefunction as the ontology?
 
-G1 constructs the smallest finite candidate of that type and then audits its
-cost.
+G1 constructs the smallest finite conditional compiler of that type and then
+audits its cost.
 
 1. A typed action/holonomy history packet generates a normalized ordinary
    transition law for complete records.
@@ -35,8 +36,9 @@ cost.
    $$
 
    using only positive output probabilities.
-4. The construction escapes N1A because its loop holonomy is global input to
-   the whole experiment, not a consequence of local current germs.
+4. The construction lies outside N1A's class because its loop holonomy is
+   global input to the whole experiment, not a consequence of local current
+   germs. That is an input charge, not a repair or derivation.
 5. It does **not** derive that holonomy, the action, magnitude law, record
    partition, or composition carrier. With standard quantum inputs it is a
    zero-gain history compiler.
@@ -45,14 +47,14 @@ cost.
    coherent boundary data requires an isometric phase-complete carrier, while
    per-program renormalization sacrifices that functorial structure.
 
-G1 is therefore a concrete positive parent-law candidate and an input-location
-theorem. It is not yet a native ISP unification.
+G1 is therefore a concrete positive compiler/control and an input-location
+candidate theorem. It is not a native ISP unification.
 
 ---
 
 ## 1. Notation firewall
 
-N1 and N1A use the action-valued scale
+The Nelson control N1 uses the action-valued scale
 
 $$
 \kappa_A=2m\nu,

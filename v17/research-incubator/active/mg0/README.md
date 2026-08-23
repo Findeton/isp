@@ -43,21 +43,25 @@ limits, and expose a prospective empirical wedge.
 
 ## Routing
 
-MG0 does not replace Q-Cut, N1/N1A, or G1.
+MG0 does not replace Q-Cut or the U0 native-law search. N1/N1A, G1, and G2
+remain controls rather than candidate matter ontologies supplied to MG0.
 
 1. Q-Cut remains the next recommended **official** theorem gate if separately
    authorized.
-2. N1 is retained as a fixed-background nonrelativistic positive-dynamics
-   control.
-3. G1 is retained as a finite phase/holonomy complete-record control and as a
+2. N1/N1A are retained strictly as fixed-background Nelson prior-art controls;
+   none of their trajectory, geometry, noise, time, or phase structures is
+   inherited.
+3. G1 is retained as a finite phase/holonomy complete-record compiler/control and as a
    warning that endpoint-positive laws do not compile coherent composition.
-4. MG0 is the active **author-side** co-design gate asking what a common
-   matter–geometry law would have to generate.
+4. U0 is the active **author-side** matter-law search; MG0 is only the
+   co-design gate asking what a later common matter–geometry law would have to
+   generate.
 
-The next admissible MG0 action after this preflight is not a fitted gravity
-model. It is a separately authorized candidate freeze, if the contract survives
-future review and a single form-neutral weak-field benchmark can be pinned
-without selecting its winner after construction.
+MG0 cannot select an ontology until at least two genuinely different, fully
+specified matter laws make distinct gravity-sensitive predictions. The next
+admissible MG0 action after this preflight is therefore not a fitted gravity
+model and not a substitute for U0. Any later contract review or candidate
+freeze requires separate authorization.
 
 ## Maximum claim
 

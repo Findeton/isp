@@ -54,6 +54,12 @@ $$
 
 as an honest outcome.
 
+This hypothesis is not actionable until genuinely different, fully specified
+matter laws make distinct gravity-sensitive predictions. MG0 may not compare
+an incomplete native-law sketch with a complete quantum control, use gravity
+to fill U0's missing stochastic law, or treat N1/N1A as the default matter
+ontology.
+
 ---
 
 ## 2. Assumptions forbidden at the contract level

@@ -657,6 +657,10 @@ the interacting real-time quantum law from an ordinary positive path ontology.
 
 ## 13. Relation to Nelson N1
 
+N1/N1A are bounded Nelson prior-art controls only. Nothing in this section
+inherits their configuration space, paths, Brownian noise, external time,
+Markov property, mean-Newton law, phase field, or holonomy sector.
+
 G2 and N1 share the numerical scale
 
 $$
@@ -675,7 +679,8 @@ additionally supplies:
 7. a global-sector rule, which N1 presently lacks.
 
 Euclidean Brownian motion is consequently a prior-art scale and positivity
-control for N1, not a derivation of N1's physical real-time path ontology.
+control against N1, not a derivation of N1's physical real-time path ontology
+and not a route to an N1B successor.
 
 ---
 
@@ -834,4 +839,3 @@ It could not claim:
 6. a continuum fine-history probability law in real time;
 7. an interaction, QFT, spacetime, or gravity law; or
 8. an empirical discovery.
-

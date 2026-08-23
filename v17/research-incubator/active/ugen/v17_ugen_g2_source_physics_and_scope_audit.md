@@ -229,7 +229,8 @@ time-symmetric real-time construction requires forward and backward drifts,
 current and osmotic velocities, mean acceleration, and a physical force law.
 G2's Euclidean heat semigroup contains none of those selections.
 
-N1 remains the appropriate positive real-time comparator.
+N1 remains a bounded hostile positive real-time comparator only. Its ontology
+and kinematics are not inherited.
 
 ---
 
@@ -246,8 +247,8 @@ free heat kernel nor the local Schrödinger differential operator selects every
 global phase bundle/character on a multiply connected configuration space.
 
 G2 deliberately stays on simply connected $\mathbb R^d$. It may not use that
-restriction to claim a universal global quantum law. N1A remains the dedicated
-global-sector audit.
+restriction to claim a universal global quantum law. N1A remains a bounded
+global-sector hostile audit, not a repair route.
 
 ---
 
@@ -504,4 +505,3 @@ QFT / GRAVITY:                           ABSENT
 NOVEL PHYSICS CLAIM:                     NONE
 OFFICIAL REVIEW / RESULT:                NONE
 ```
-

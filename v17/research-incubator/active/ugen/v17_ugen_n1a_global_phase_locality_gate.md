@@ -1,6 +1,6 @@
 # ISP v17 — U-Gen N1A global-phase locality gate
 
-**Status:** ACTIVE AUTHOR-SIDE MATHEMATICS/PHYSICS CANDIDATE / NOT A PIN / NOT REVIEWED
+**Status:** ACTIVE AUTHOR-SIDE NELSON HOSTILE CONTROL / NOT A PIN / NOT REVIEWED
 **Date:** 2026-08-23
 **Scientific result awarded:** none
 **Authority created:** none
@@ -13,8 +13,10 @@ N1 found a real ordinary-positive diffusion law and an exact global defect.
 The local Nelson equations admit every constant circulation on a free circle,
 while a fixed scalar quantum sector admits only an integer lattice.
 
-N1A asks whether the missing condition can be obtained without silently
-putting a wavefunction back into the premises.
+N1A asks, only as a hostile control on the Nelson class, whether the missing
+condition can be obtained without silently putting a wavefunction back into
+the premises. It does not define the native v17 ontology and authorizes no
+N1B repair.
 
 The author-side answer has three parts.
 
@@ -896,8 +898,9 @@ derivation of Planck's constant.
 | N1A-L5 | scalable relativistic QFT and an empirical wedge survive |
 | N1A-L6 | internal time and reciprocal quantum matter--geometry dynamics survive |
 
-N1A-L1 and N1A-L2 are the present author-side candidate results. N1A-L3 and
-above are empty.
+N1A-L1 and N1A-L2 are the present author-side control findings. N1A-L3 and
+above are outside this control and require a separately specified U0
+candidate; no automatic Nelson successor exists.
 
 ---
 

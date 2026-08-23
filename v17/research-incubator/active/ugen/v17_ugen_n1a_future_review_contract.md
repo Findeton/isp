@@ -10,8 +10,8 @@
 ## 0. Activation and freeze wall
 
 This document designs a possible future review. It does not activate one.
-N1A is an author-side mathematics/physics candidate, not an official unit and
-not a repaired stochastic theory.
+N1A is an author-side Nelson hostile control, not an official unit, native
+candidate, or repaired stochastic theory.
 
 Any future review requires separate user authorization and one exact pin that
 freezes, before any reviewer begins:
@@ -28,8 +28,8 @@ freezes, before any reviewer begins:
 No review may repair the candidate by silently adding a wavefunction, phase
 map, line bundle, branch cut, winding label, target sector, global boundary
 condition, or nonlocal whole-experiment rule. Any such addition changes the
-tested class and must be reported as a possible successor premise rather than
-as verification of N1A.
+tested class and must be reported as new independently motivated physics rather
+than as verification of N1A. No N1B successor is authorized.
 
 ---
 

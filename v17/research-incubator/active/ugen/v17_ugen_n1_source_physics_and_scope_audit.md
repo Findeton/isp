@@ -9,9 +9,9 @@
 
 ## 0. Purpose
 
-This audit determines whether time-symmetric stochastic mechanics contributes
-genuine native dynamical content toward v17's generator slot or merely writes
-standard quantum mechanics in diffusion notation.
+This audit determines what time-symmetric stochastic mechanics legitimately
+contributes as a bounded prior-art control and where it merely rewrites or
+imports standard quantum structure.
 
 It separates:
 
@@ -23,18 +23,18 @@ It separates:
 
 The central conclusion is deliberately asymmetric:
 
-> N1 is more than the Bell-current comparator because its local future law is
+> N1 differs usefully from the Bell-current comparator because its local future law is
 > generated from stochastic kinematics and mean-Newton dynamics rather than
-> read from a supplied future wavefunction. It is less than a complete native
-> quantum theory because its diffusion scale, time-symmetric acceleration,
+> read from a supplied future wavefunction. It is not a native v17 candidate:
+> its diffusion scale, time-symmetric acceleration,
 > phase-complete initial current, global holonomy sector, apparatus compiler,
 > external time, and configuration geometry remain independent inputs or
 > open structures.
 
-The word **native** below is restricted to that input-origin comparison. It
-does not classify N1 as a native ISP law. Its Markov divisibility, external
-time, and declared configuration space place it outside the distinctive
-Barandes/ISP architecture at this stage.
+Earlier uses of **native content** in this file are superseded by the binding
+scope correction. N1's Markov divisibility, external time, declared Euclidean
+configuration space, Brownian paths, force law, and phase/current state place
+it outside the form-neutral U0 candidate class. It is a hostile control only.
 
 ---
 
@@ -280,7 +280,8 @@ It does not remove:
 5. global quantum sector selection; or
 6. apparatus/QFT structure.
 
-The honest score is therefore **partial native dynamical content**, not
+The honest score is therefore **one reduced future-solution import inside a
+strongly supplied Nelson control**, not native dynamical status and not a
 derivation of quantum theory from bare probability.
 
 ---
@@ -438,24 +439,18 @@ empirical wedge.
 
 ## 16. Readiness decision
 
-N1 should be retained as the first physically serious positive-dynamics
-candidate toward the native slot at limited scope because it:
+N1 should be retained as a physically serious positive-dynamics prior-art
+control because it:
 
 1. supplies an actual positive path law;
 2. does not consume a table of future quantum processes;
 3. derives local Schrödinger form from a compact stochastic dynamics;
 4. exposes its global failure by an exact circle member; and
-5. identifies the next missing physical principle as phase holonomy rather
-   than another finite probability table.
+5. proves that local fields alone leave additional global, topological, nodal,
+   or whole-process physics necessary.
 
-It should not be frozen as a complete U-Gen candidate now. Before any official
-pin it needs either:
-
-1. a result-neutral N1A global-sector proposal with independently motivated
-   physics and no wavefunction laundering; or
-2. a bounded theorem showing that a specified class of local positive
-   diffusion laws cannot generate the required holonomy without extra
-   topological structure.
+It should not be frozen as a U-Gen candidate. N1A supplies the bounded hostile
+global-sector audit; no N1B or Nelson repair chain is authorized.
 
 The next official recommendation remains Q-Cut if separately authorized. N1
 creates no automatic successor and no review authority.
@@ -467,7 +462,7 @@ creates no automatic successor and no review authority.
 The source-conditioned maximum is:
 
 > Time-symmetric stochastic mechanics is a concrete ordinary-positive
-> trajectory generator with partial native dynamical content in a restricted
+> trajectory-law control in a restricted
 > nonrelativistic domain. Its local equations reconstruct Schrödinger dynamics
 > from a diffusion scale and mean-Newton law, but its local premises admit
 > global circulation sectors excluded by a specified quantum theory. It does

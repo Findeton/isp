@@ -329,23 +329,23 @@ cleanly if nature does not support it.
   a complete positive Markov path law only after the quantum state,
   Hamiltonian, configuration observable, Born law, external time, full
   quantum current, and least-traffic rule are supplied. It is a
-  standard-quantum control, not a C5 successor or native ISP law. N1 now adds
-  a bounded prior-art positive-dynamics candidate with partial native content
-  only in the input-origin sense: Nelson's positive time-symmetric diffusion
-  locally generates Schrödinger evolution from a
-  universal diffusion scale and mean-Newton law without a future quantum
-  answer table. Its exact circle control shows that the local law does not
-  generate global phase holonomy, and it has no complete adaptive process,
-  QFT, internal-time, native indivisible ISP law, or gravity construction.
-  N1A now proves a bounded locality result: no strictly cover-local repair on
+  standard-quantum control, not a C5 successor or native ISP law. N1 is now
+  classified strictly as a bounded Nelson-mechanics prior-art control. Under
+  its supplied Euclidean configuration, external-time, Brownian, diffusion,
+  and mean-Newton premises it locally generates Schrödinger evolution without
+  a future transition table. Its exact circle control shows that those local
+  fields do not generate the global quantum phase sector. None of its
+  trajectories, geometry, noise, Markov property, diffusion scale, phase
+  field, or holonomy structure is inherited by v17. N1A is likewise only a
+  bounded repair control: no strictly cover-local repair on
   the existing node-free fields can impose the missing circulation lattice
   while preserving every locally valid exact-current germ. A smooth
   two-dimensional target completion fixes a $2\pi\kappa$ phase period under
   explicit premises but does not supply global descent or select a character.
   Thus the existing-field cover-local repair class is closed only at the
-  printed scope; modified local physics and a holistic indivisible positive
-  parent law remain open after N1A. G1 now constructs one finite conditional
-  member of that holistic branch. It generates an ordinary-positive complete
+  printed scope; it does not choose the form of the missing physics and no
+  N1B chain is authorized. G1 is not a successor to Nelson. It is one finite
+  conditional compiler/control that generates an ordinary-positive complete
   record from a typed action/holonomy packet and passes exact presentation,
   record/eraser, connection, product, and recorded-adaptation controls. Its
   scalar law has an equivalent real oriented-plane form, so complex notation
@@ -365,6 +365,24 @@ cleanly if nature does not support it.
   $\nu=\hbar/(2m)$, but no physical premise selects Euclidean paths as
   real-time actuality or derives Nelson dynamics. G2 remains author-side,
   unreviewed, and creates no automatic successor.
+  A binding scientific routing correction now restores the primary U-Gen
+  question to the Barandes-facing native-law search. U0 requires one uniform
+  ordinary-positive genuinely indivisible law on an abstract measurable
+  configuration domain; separate contingent state, interventions, readers,
+  divisions, composition, actuality, and resource ledgers; held-out complete
+  process predictions; and a strict ban on supplied wavefunctions, process
+  matrices, actions, phases, holonomies, quantum currents, or equivalent
+  answer encodings. Hilbert structure may be reconstructed only after the
+  positive law freezes. Barandes is a serious guiding hypothesis, not a
+  predetermined ontology. U0 is an author-side search contract with an empty
+  candidate slot, not a pin or result. U0-T1 now reconstructs the cited
+  Barandes source boundary and isolates the open physical map from typed
+  systems, contingent states, controls, and readers to a held-out complete
+  stochastic law. The stochastic--quantum and unistochastic representation
+  results apply after such a law is specified; they do not by themselves
+  select it. This is an open source-completion gate, not a refutation or no-go.
+  The next author-side task is U0-T2, a representation-resistant
+  no-equivalent-input criterion; no candidate or official cycle is opened.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

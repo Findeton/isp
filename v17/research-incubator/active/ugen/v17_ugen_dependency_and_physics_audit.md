@@ -25,8 +25,7 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE PHYSICS:         G1 GLOBAL PARENT + G2 FREE-KERNEL GATE;
-                                  NO AUTOMATIC G3
+NEXT AUTHOR-SIDE PHYSICS:         U0 BARENDES-FACING NATIVE-LAW SEARCH
 BELL-CURRENT ACTUALITY:           STANDARD-QUANTUM COMPARATOR ONLY
 FUNDAMENTAL NOMOLOGY:             PLURAL RIVAL CONTEST / NONE SELECTED
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
@@ -576,17 +575,20 @@ not a native ISP generator and not Barandes indivisibility. It is retained so
 future candidates cannot import the quantum current and configuration packet
 while claiming stochastic derivation.
 
-N1 now supplies the first bounded candidate that improves on that control.
+N1 supplies a bounded Nelson prior-art control, not a parent ontology or
+partial native result.
 Nelson's time-symmetric diffusion evolves an ordinary-positive configuration
 path law from initial density/current data, $\nu=\hbar/(2m)$, and mean-Newton
 dynamics without reading a supplied future wavefunction at each time. The
 local Schrödinger representation is exact under its gradient and regularity
 premises. The same local law admits every constant circulation on a circle,
-whereas a fixed periodic quantum sector admits only quantized holonomy. Thus
-N1 earns partial native dynamical content but not a global quantum state space
-or complete apparatus compiler.
+whereas a fixed periodic quantum sector admits only quantized holonomy. This
+shows local positive-path adequacy under strong supplied premises and a
+global-sector defect. It does not transfer Nelson's configuration space,
+trajectories, noise, time, Markov structure, coefficient, force law, phase
+field, or holonomy target into U-Gen.
 
-N1A now closes one precisely typed repair class. Any admissibility rule that
+N1A closes one precisely typed hostile repair class. Any admissibility rule that
 is cover-local on the existing node-free N1 fields and preserves every
 locally quantum-valid exact-current germ accepts the arbitrary-circulation
 circle family and therefore cannot impose a circulation lattice. The kinetic
@@ -594,10 +596,10 @@ value metric also yields a partial positive theorem: within a declared
 two-dimensional homogeneous target with one smooth phase-blind zero, the
 phase period is $2\pi\kappa$. That theorem does not supply global field descent
 or select a fundamental-group character. The next constructive burden is
-therefore a genuinely global indivisible parent experiment, not another local
-Markov correction.
+therefore additional global, topological, nodal, or whole-process physics.
+Its form is unselected, and no N1B is authorized.
 
-G1 now performs that first global construction at finite scalar scope. It
+G1 is not a Nelson successor. At finite scalar scope it
 defines an ordinary-positive complete-record law from typed action/holonomy
 alternatives and executes presentation, record/eraser, connection, product,
 interaction, adaptation, and causality controls. Its real oriented-plane form
@@ -621,6 +623,27 @@ Euclidean continuation yields the positive heat/Wiener semigroup with
 $\nu=\hbar/(2m)$, but it does not select a real-time path ontology or derive
 Nelson's additional dynamics. G2 therefore derives one aggregate free input
 and sharpens the remaining selector debt without filling the native slot.
+
+U0 now restores the missing constructive burden directly: one uniform
+ordinary-positive genuinely indivisible law on abstract configurations must
+type state, interventions, readers, divisions, composition, actuality, and
+resources and predict held-out complete processes without a target
+wavefunction, process matrix, action, phase, holonomy, quantum current, or
+equivalent encoding. Hilbert structure is secondary only if reconstructed
+after the law freezes. The candidate slot is empty.
+
+U0-T1 now reconstructs the audited Barandes source boundary. It distinguishes
+the downstream stochastic--quantum representation from the open physical
+source-completion rule
+
+$$
+\mathcal S_{\mathcal N}:(S,b,c,R)\longmapsto
+\Gamma^{\mathcal N}_{S,b,c,R}.
+$$
+
+The source gap is not an impossibility theorem. U0-T2 must next define when an
+input packet is information-equivalent to the held-out complete process,
+before any native candidate is compared.
 
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
@@ -672,13 +695,14 @@ C-NUMBER EXPANSION:              CLOSED AT C4
 NOMOLOGY RIVAL REGISTER:         PLURAL CONTEST / NONE SELECTED
 BELL-CURRENT PATH LAW:           COMPLETE GIVEN QUANTUM INPUTS
 BELL CURRENT/MINIMALITY:         ADDITIONAL INPUTS / NOT BORN-SELECTED
-N1 POSITIVE DIFFUSION:           BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
+N1 POSITIVE DIFFUSION:           BOUNDED NELSON PRIOR-ART CONTROL / MARKOV
 N1 LOCAL SCHRODINGER FORM:       EXACT UNDER PRINTED PREMISES
 N1 GLOBAL HOLONOMY:              NOT GENERATED / CIRCLE OBSTRUCTION
-N1 COMPLETE PROCESS:             ABSENT
+N1 COMPLETE PROCESS:             ABSENT / NOT A NATIVE CANDIDATE
 N1A COVER-LOCAL REPAIR:          BOUNDED NO-GO / AUTHOR-SIDE ONLY
 N1A SMOOTH TARGET PERIOD:        EXACT IN PRINTED CLASS / NOT GLOBAL SECTOR
 N1A GLOBAL DESCENT/CHARACTER:    ABSENT / UNSELECTED
+N1/N1A INHERITED ONTOLOGY:       NONE / N1B FORBIDDEN
 G1 POSITIVE PARENT:              FINITE CONDITIONAL SCALAR MEMBER
 G1 PRESENTATION/ERASER/HOLONOMY: EXACT BOUNDED CONTROLS
 G1 ENDPOINT-GAMMA COMPOSITION:   NO-GO FOR PRINTED PHASE FAMILY
@@ -688,9 +712,13 @@ G2 FREE GALILEI KERNEL:          DERIVED INSIDE DECLARED QUANTUM PREMISES
 G2 REAL-TIME |K|^2 POSITION:     NONNORMALIZABLE / NOT A TRANSITION LAW
 G2 POSITION FUTURE CUT:          FAILS FOR RELATIVE-PHASE PREPARATIONS
 G2 EUCLIDEAN WIENER LAW:         EXACT / REAL-TIME ACTUALITY UNSELECTED
-NEXT AUTHOR-SIDE TARGET:         NONE AUTOMATIC / PHYSICAL INPUT OR REVIEW
+U0 NATIVE-LAW CONTRACT:          ACTIVE / CANDIDATE SLOT EMPTY
+U0 SOURCE-COMPLETION AUDIT:      COMPLETE AUTHOR-SIDE / GAP LOCATED
+U0 CONFIGURATION FORM:           UNSELECTED
+U0 TARGET-ANSWER INPUTS:         FORBIDDEN
+NEXT AUTHOR-SIDE TARGET:         U0 NO-EQUIVALENT-INPUT CRITERION + FIXTURE
 NATIVE ISP LAW:                  ABSENT
-PHYSICAL GENERATOR:              FOUND ONLY AT LOCAL NONRELATIVISTIC SCOPE
+PHYSICAL GENERATOR:              NATIVE COMPLETE GENERATOR NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE
 PIN / REVIEW / RESULT:           NONE

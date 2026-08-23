@@ -243,9 +243,20 @@ countermodels.
 **Quantum-nomology incubator boundary.** Separate author-side work preserves
 Q-Cut as the next recommended official theorem if explicitly authorized and
 keeps ordinary-positive indivisible, decoherence-functional, and
-quantum-plus-actualization nomologies live. G1 constructs a finite conditional
-action/holonomy positive-record parent but leaves magnitudes, interactions,
-higher-rank boundaries, and the adaptive compiler open. G2 now derives the
+quantum-plus-actualization nomologies live. The primary author-side search is
+now U0: one uniform ordinary-positive genuinely indivisible law on abstract
+physical configurations must generate held-out complete processes without a
+target wavefunction, process matrix, action, phase, holonomy, quantum current,
+or equivalent answer input. It must type contingent state, interventions,
+readers, divisions, composition, actuality, and resource costs while leaving
+the configuration domain finite/continuous/discrete/spatial/trajectory form
+unselected. N1/N1A are bounded Nelson prior-art controls only; none of their
+continuous trajectories, Euclidean geometry, Brownian noise, external time,
+Markov structure, diffusion scale, mean-Newton law, phase target, bundle, or
+holonomy data is inherited, and no N1B is authorized. G1 constructs a finite
+conditional action/holonomy positive-record compiler/control but leaves
+magnitudes, interactions, higher-rank boundaries, and the adaptive compiler
+open. G2 now derives the
 standard free coherent kernel inside a declared projective-unitary Galilei
 sector; proves that its continuum modulus square is not an exact-position
 transition density and that position density is not future sufficient across
@@ -253,7 +264,15 @@ relative-phase preparations; and derives the positive Euclidean heat/Wiener
 semigroup without selecting it as real-time actuality. G2 assumes $m$,
 $\hbar$, dimension, flat geometry, external time, and quantum representation
 structure, remains unreviewed, creates no automatic G3, and advances no QFT,
-clock, spacetime, or gravity claim.
+clock, spacetime, or gravity claim. U0 is not an official pin, review, model,
+or result; its candidate slot remains empty. U0-T1 now reconstructs the
+Barandes source boundary and isolates the open source-completion map from
+typed systems, contingent states, controls, and readers to a held-out
+complete-process law. The cited stochastic--quantum representation theorems
+act after that law is supplied; they do not select it. This is an author-side
+source finding, not an existence or impossibility theorem. U0-T2 must next
+define a representation-resistant no-equivalent-input criterion before any
+native candidate or fixture can be promoted.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 

@@ -9,8 +9,8 @@
 
 ## 0. Activation wall
 
-This file does not activate review. N1 is an author-side prior-art candidate,
-not an official unit and not a complete U-Gen construction.
+This file does not activate review. N1 is an author-side Nelson prior-art
+control, not an official unit, native candidate, or complete U-Gen construction.
 
 Any future review requires a separately authorized pin freezing:
 
@@ -119,7 +119,8 @@ The root adjudicator must answer separately:
 5. Is the local Schrödinger reconstruction correctly scoped?
 6. Does the circle member defeat global equivalence as stated?
 7. Does any repair add a new physical postulate?
-8. Is N1 more native than Bell only in the bounded printed sense?
+8. Does N1 remove one future-solution import relative to Bell while remaining
+   a supplied Nelson control rather than a native candidate?
 9. Is arbitrary process composition still absent?
 10. Are Barandes, QFT, relativity, gravity, and empirical claims contained?
 
@@ -127,11 +128,11 @@ The root adjudicator must answer separately:
 
 ## 5. Permitted outcomes
 
-### `N1-ACCEPT-AS-BOUNDED-CANDIDATE`
+### `N1-ACCEPT-AS-BOUNDED-CONTROL`
 
 The local generator, positive path law, exact circle obstruction, source
-attribution, and claim ceiling survive. N1 remains a bounded candidate and
-control, not a complete quantum theory.
+attribution, and claim ceiling survive. N1 remains a bounded prior-art control,
+not a native candidate or complete quantum theory.
 
 ### `N1-REVISE-BEFORE-PIN`
 
@@ -153,7 +154,7 @@ clock unit, or advances QFT, spacetime, or gravity.
 Even unanimous acceptance could award only:
 
 > A time-symmetric Nelson diffusion is a correct bounded positive-dynamics
-> candidate toward the native slot that locally reconstructs Schrödinger
+> prior-art control that locally reconstructs Schrödinger
 > dynamics from its printed stochastic premises and supplies an actual path
 > law, while the exact circle
 > member proves that those local premises do not generate the required global

@@ -15,7 +15,7 @@ law. It therefore keeps four programmes distinct and scores them as rivals.
 ```text
 FUNDAMENTAL NOMOLOGY UNDER TEST
 
-A. ordinary-positive indivisible whole-history law
+A. ordinary-positive indivisible configuration/process law
 B. strongly positive decoherence functional / quantum measure
 C. standard quantum process plus empirically modified actualization
 D. plural contest: A--C remain live under one common ledger
@@ -28,13 +28,14 @@ it a fair constructive test, not a reason to declare it true.
 
 ---
 
-## 1. Rival A — ordinary-positive indivisible whole-history law
+## 1. Rival A — ordinary-positive indivisible configuration/process law
 
 ### Fundamental object
 
-An ordinary probability law on complete physical histories, configurations,
-or records, with no requirement that unresolved intermediate cuts admit a
-positive stochastic restart.
+An ordinary-positive law on abstract physical configurations and complete
+registered processes, with no requirement that unresolved intermediate cuts
+admit a positive stochastic restart. A fine-history measure is one possible
+actuality choice, not an assumption of the rival.
 
 ### Required achievement
 
@@ -46,21 +47,24 @@ process or an equivalent answer table.
 ### Current evidence
 
 Positive record-history representations and Barandes-style first-order laws
-are mathematically coherent. N1 now supplies a bounded Nelson diffusion that
+are mathematically coherent. N1 supplies a bounded Nelson prior-art control that
 generates a positive nonrelativistic path law and locally reconstructs
 Schrödinger evolution without a future quantum answer table. Its diffusion
 scale and time-symmetric law are declared, its global quantum holonomy fails
 the circle control, and no complete adaptive or interacting generator exists.
-Because N1 is Markov and divisible, it tests only the broader ordinary-positive
-part of this rival. It is not yet a native indivisible ISP member.
+Because N1 is Markov, divisible, externally timed, and tied to supplied
+continuum trajectory kinematics, it tests only the broader ordinary-positive
+part of this rival. None of those structures is inherited and N1 is not a
+native indivisible ISP candidate.
 
 N1A proves that no strictly cover-local exact-germ-preserving repair on those
 same node-free fields can impose the missing circulation lattice. Its smooth
 target theorem fixes a phase period only in a declared target category and
-does not select global descent or a character. A global indivisible positive
-parent law therefore remains live.
+does not select global descent or a character. The result says additional
+global/topological/nodal/whole-process physics is needed inside the Nelson
+class; it does not select that physics or authorize N1B.
 
-G1 now constructs one finite conditional member of that global class. It sums
+G1 is a finite conditional compiler/control, not a Nelson successor. It sums
 typed action/holonomy contributions and samples only an ordinary-positive
 complete record. Its exact controls show that complex notation can be replaced
 by an oriented real plane, while the relational orientation cannot be removed
@@ -76,7 +80,15 @@ and that position density alone is not future sufficient across relative-phase
 preparations. The Euclidean continuation is a genuine Wiener path law with
 $\nu=\hbar/(2m)$, but no physical premise selects that Euclidean law as
 real-time actuality. G2 therefore narrows the input ledger without yet
-constructing Rival A's required real-time indivisible whole law.
+constructing Rival A's required native indivisible law.
+
+U0 now gives Rival A its correct constructive burden. The configuration form
+is unselected; contingent state, interventions, readers, divisions,
+composition, actuality, and resource costs must be typed separately; and one
+uniform law must predict held-out complete processes without target
+wavefunction, process matrix, action, phase, holonomy, quantum current, or
+equivalent answer input. Hilbert structure may be reconstructed only after the
+positive law freezes. No candidate currently meets this contract.
 
 ### Kill condition
 
@@ -211,17 +223,20 @@ The current evidence supports the following order.
 1. **Official gate if explicitly authorized:** Q-Cut, because it supplies a
    scalable class-wide theorem-or-counterexample about positive sufficient
    cuts.
-2. **Retained controls/candidates:** E-Comp; C1--C4
+2. **Retained controls:** E-Comp; C1--C4
    pair-history/action/actuality package; Bell-current actuality comparator;
-   bounded N1 time-symmetric diffusion candidate; bounded N1A locality gate.
-3. **Current substantive U-Gen test:** G1 is the first global
-   relative-holonomy positive parent candidate. G2 derives its aggregate free
+   bounded N1 time-symmetric diffusion control; bounded N1A locality gate;
+   and the G1/G2 compiler and source-origin controls.
+3. **Current substantive U-Gen search:** U0 is the Barandes-facing native-law
+   contract. G1 is a relative-holonomy positive compiler. G2 derives its aggregate free
    carrier inside a declared quantum Galilei representation and exposes the
    real-time-positive/Euclidean-positive fork. It does not derive fine-history
    magnitudes, interaction, actuality, or a higher-rank/adaptive compiler.
-   There is no automatic G3; the next substantive move must add one
-   independently physical selection/interaction principle or review and close
-   the bounded packet.
+   There is no automatic G3. U0-T1 has now isolated the missing
+   source-completion rule from typed physical experiments to complete
+   stochastic laws. The next author-side move is the U0-T2
+   no-equivalent-input criterion and configuration-neutral fixture, not
+   inheritance from N1/N1A.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -240,21 +255,25 @@ There is no automatic numbered successor after C4.
 ## 7. Author verdict
 
 ```text
-RIVAL A — POSITIVE INDIVISIBLE:       LIVE / N1 MARKOV CONTROL-CANDIDATE ONLY
+RIVAL A — POSITIVE INDIVISIBLE:       LIVE / U0 NATIVE CANDIDATE ABSENT
 RIVAL B — DECOHERENCE FUNCTIONAL:     LIVE / STANDARD-QM COMPARATOR EXISTS
 RIVAL C — MODIFIED ACTUALIZATION:     LIVE / NO V17 CANDIDATE
 RIVAL D — COMMON CONTEST:             ADOPTED AUTHOR-SIDE
 EMPIRICALLY SELECTED NOMOLOGY:        NONE
 NEXT OFFICIAL RECOMMENDATION:         Q-CUT ONLY, IF EXPLICITLY AUTHORIZED
 NATIVE ISP LAW:                       ABSENT
-N1A LOCAL REPAIR CLASS:               CLOSED / GLOBAL WHOLE-LAW ROUTE OPEN
-G1 GLOBAL POSITIVE PARENT:            FINITE CONDITIONAL SCALAR MEMBER
+N1/N1A STATUS:                        BOUNDED NELSON CONTROLS / NO N1B
+N1A LOCAL REPAIR CLASS:               CLOSED AT PRINTED SCOPE ONLY
+G1 GLOBAL POSITIVE PARENT:            FINITE CONDITIONAL COMPILER/CONTROL
 G1 ENDPOINT-GAMMA COMPOSITION:        REFUTED FOR PRINTED PHASE FAMILY
 G1 HIGHER-RANK / ADAPTIVE COMPILER:   ABSENT / SCALAR CLASS FAILS
 G2 FREE GALILEI KERNEL:                DERIVED INSIDE QUANTUM PREMISES
 G2 EXACT-POSITION STOCHASTIC LAW:      FAILS FOR |K|^2
 G2 EUCLIDEAN WIENER LAW:               EXACT / ACTUALITY UNSELECTED
-NEXT U-GEN CONSTRUCTION:               NONE AUTOMATIC / PHYSICAL INPUT NEEDED
+U0 CONFIGURATION FORM:                 UNSELECTED
+U0 TARGET-ANSWER INPUTS:               FORBIDDEN
+U0 SOURCE-COMPLETION AUDIT:             COMPLETE AUTHOR-SIDE / GAP LOCATED
+NEXT U-GEN CONSTRUCTION:               U0 INPUT CRITERION + NEUTRAL FIXTURE
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
 CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY

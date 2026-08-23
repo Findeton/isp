@@ -223,26 +223,26 @@ matching still leaves symmetric counter-traffic, and the minimal Bell rates
 add a least-traffic rule. It is retained as a standard-quantum control, not a
 C5 successor, native ISP law, or gravity result.
 
-N1 is the first bounded prior-art positive-dynamics candidate admitted after
-C4. Its partial native content concerns input origin only; it is not a native
-indivisible ISP law.
+N1 is retained strictly as a bounded Nelson-mechanics prior-art control.
 Nelson's time-symmetric positive diffusion locally reconstructs Schrödinger
-dynamics without consuming a table of future quantum processes. Its exact
-circle member also proves the printed local law does not generate the global
-phase-holonomy sectors of a fixed periodic quantum theory. It remains Markov,
-nonrelativistic, incomplete at the apparatus/process level, and unreviewed.
+dynamics without consuming a table of future quantum processes, but only
+after Euclidean configuration, external time, Brownian noise, a diffusion
+scale, and mean-Newton dynamics are supplied. Its circle member shows that the
+printed local fields do not generate the global quantum phase sector. None of
+those structures is inherited by the native v17 search.
 
-N1A now gives the requested bounded repair audit. A strictly cover-local rule
+N1A is likewise a bounded repair control. A strictly cover-local rule
 on the existing node-free Nelson fields cannot enforce global circulation
 integrality while preserving every locally quantum-valid exact-current germ.
 The N1 kinetic metric fixes a $2\pi\kappa$ phase period only inside an explicit
 two-dimensional smooth-target class; it does not force global descent or
 select a topological character. The existing-field cover-local repair route is
-therefore closed at that scope, while modified local physics and a holistic
-indivisible positive parent law remain open and unconstructed.
+therefore closed at that scope. It does not determine what additional physics
+must be, and there is no automatic N1B repair chain.
 
-G1 now constructs the first finite member of that holistic branch. Its actual
-output is one ordinary-positive complete record sampled from an action/holonomy
+G1 is not a Nelson successor. It constructs a finite conditional
+action/holonomy compiler/control whose actual output is one ordinary-positive
+complete record sampled from an action/holonomy
 parent packet. Exact controls distinguish presentation from physical
 refinement, retained records from coherent erasers, factorized products from
 interacting parents, and recorded adaptation from coherent continuation. The
@@ -265,6 +265,27 @@ retain the recorded/unrecorded division distinction. Euclidean continuation
 does yield the positive heat/Wiener semigroup with $\nu=\hbar/(2m)$, but no
 physical premise identifies it with real-time actuality or derives Nelson's
 dynamics. G2 is author-side, unreviewed, and creates no automatic G3.
+
+The binding U-Gen scope correction and U0 contract now restore the primary
+investigation to the Barandes-facing native-law question. A candidate must be
+one uniform ordinary-positive genuinely indivisible law on an abstract
+configuration domain, with separate state, controls, readers, divisions,
+composition, actuality, and resource costs. It must predict held-out complete
+processes without target quantum or phase-complete inputs. Barandes remains a
+guiding hypothesis rather than a predetermined conclusion, and the native
+candidate slot is still empty. The U0-T1 source-completion audit reconstructs
+the cited Barandes correspondence and locates the remaining physical map as
+
+$$
+\mathcal S_{\mathcal N}:(S,b,c,R)\longmapsto
+\Gamma^{\mathcal N}_{S,b,c,R}.
+$$
+
+The published representation achievements apply after a stochastic law is
+specified; they do not yet select the held-out complete law for a new system,
+control programme, and reader. This is an open construction problem rather
+than a negative result. U0-T2, the no-equivalent-input criterion, is the next
+author-side task.
 
 C1 active files:
 
@@ -294,8 +315,11 @@ C4 active files:
 - active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md
 - active/ugen/v17_ugen_c4_future_review_contract.md
 
-Post-C4 routing, comparator, and N1 files:
+Post-C4 routing, native-search, and control files:
 
+- active/ugen/v17_ugen_nelson_control_scope_correction.md
+- active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md
+- active/ugen/v17_ugen_u0_barandes_source_completion_audit.md
 - active/ugen/v17_ugen_fundamental_nomology_rival_register.md
 - active/ugen/v17_ugen_bell_current_actuality_comparator.md
 - active/ugen/v17_ugen_bell_current_physical_reality_audit.md
@@ -325,7 +349,7 @@ G2 active files:
 ### MG0 — common matter–geometry nomology preflight
 
 MG0 accelerates the binding v17 Phase G0 question only at author-side contract
-scope. It does not replace G1 or open an official gravity paper. Its comparison
+scope. It does not replace U0 or open an official gravity paper. Its comparison
 interface does not assume that matter and gravity are microscopic factors, or
 that geometry is a metric, continuum, lattice, fixed dimension, or quantum
 field. It keeps ordinary-positive, pair-history/decoherence, and
@@ -363,6 +387,9 @@ Active working package:
 - `active/ugen/v17_pc4_reality_and_readiness_audit.md`
 
 - `active/ugen/v17_ugen_fundamental_nomology_rival_register.md`
+- `active/ugen/v17_ugen_nelson_control_scope_correction.md`
+- `active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md`
+- `active/ugen/v17_ugen_u0_barandes_source_completion_audit.md`
 - `active/ugen/v17_ugen_bell_current_actuality_comparator.md`
 - `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
 - `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`
