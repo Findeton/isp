@@ -1361,3 +1361,29 @@ with global ontology debt.
 The protocol awards no result. Candidate edits, implementation, automatic
 repair, Paper 04, clocks, spacetime, and gravity remain closed while the panel
 runs.
+
+## 2026-08-22 — PAPER 03 v3.1 SEAT A HOSTILE REPORT FROZEN (v17 LEDGER #57)
+
+The first mutually blind hostile report freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/review-paper03v31-category-operator-algebra.md` | `11453136158ecb34908f8f254049f5fa8fe38aceeff9e2d167cbf2f901a67e7d` | `8b24499505c7a4c973e82979e7f9707488301c382f08f616bedd10ffb0119c80` | 891 LF / 48,716 bytes |
+
+Verdict: `REVISE`. The first exact countermodel uses the integrated boundary
+$X=[0,1]\times\{0,1\}$ with a future-readable bit placed in Definition
+3.3(8)'s permitted extra typed factor. The printed hybrid algebra and `Ens`
+evaluate only the quantum algebra and retained-record coordinate, so the two
+bit laws induce the same normal state while a licensed future bit reader gives
+probabilities zero and one. The advertised boundary class is therefore not
+future sufficient and the earliest rung is
+`P03V31-HYBRID-BOUNDARY-TYPE-FAILURE`.
+
+The report independently finds that admitted ensemble classes need not be
+closed under the positive conditioning claimed later, and that general
+continuous compatibility is made an admission item and then cited rather than
+derived. Finite direct sums, atomic/nonatomic point separation, normal `Ens`
+on represented factors, null-ideal laws, scoped AQFT/no-signalling controls,
+and all ontology/gravity refusals survive as evidence. The report is not an
+adjudication; Seats Q/O remain blind and pending. No candidate byte, physical
+input, implementation, or downstream phase moves.

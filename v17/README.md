@@ -96,6 +96,13 @@ cleanly if nature does not support it.
   independently reconstruct the category/operator-algebra, quantum
   probability/instrument, and ontology/relativity surfaces before any joint
   adjudication. Candidate edits remain barred while review runs.
+  Seat A now freezes `REVISE`: the admitted-object definition permits a
+  future-readable typed memory factor that is absent from the hybrid algebra
+  and `Ens`, yielding equal represented boundary states with different
+  licensed futures. It also identifies missing conditioning closure and an
+  admission-as-proof defect in general continuous compatibility. These are
+  evidence for joint adjudication, not yet a terminal result; Seats Q/O remain
+  blind and pending at this ledger boundary.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -319,6 +326,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v31-hostile-review-protocol.md` — immutable result-neutral
   three-lens duties, blindness/write boundaries, fresh attacks, product,
   rungs, and adjudication rules for the frozen v3.1 construction.
+- `review-paper03v31-category-operator-algebra.md` — frozen Seat A report;
+  `REVISE` at the hybrid-boundary type because an admitted external memory
+  factor is not represented in the hybrid algebra or `Ens`.
 
 ## Permanent honesty wall
 

@@ -518,20 +518,23 @@ Paper 03 v3.1 joint adjudication    TERMINAL ACCEPT FOR ONE CONSTRUCTION
 Paper 03 v3.1 construction          GREEN-UNREVIEWED MATHEMATICS
 Paper 03 v3.1 construction audit    PASS — RESULT-NEUTRAL
 Paper 03 v3.1 hostile protocol      FROZEN — RESULT-NEUTRAL
-Paper 03 v3.1 blind reviews         DISPATCHED / PENDING
+Paper 03 v3.1 Seat A review         FROZEN REVISE — HYBRID BOUNDARY TYPE FAILURE
+Paper 03 v3.1 Seats Q/O             DISPATCHED / PENDING
+Paper 03 v3.1 joint adjudication    PENDING
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The frozen v3.1 pin encodes the selected physically complete correction:
+The frozen v3.1 pin encodes the attempted correction:
 finite/atomic records admit exact point boundary states; continuous records
 admit integrated normal ensemble states and almost-everywhere posterior and
 control fields; generic nonatomic point restart is refused. One corrected
 construction now realizes this distinction, common domination, nonsingular
 pullbacks, tagged
 boundaries, and the unchanged certified-concurrency scope. The exact bytes
-remain green-unreviewed until three-lens hostile review and adjudication; the
-result-neutral construction audit has passed. The cycle may establish only
+remain unadjudicated until three-lens hostile review closes; the result-neutral
+construction audit passed, but Seat A has produced an exact admitted-memory
+counterexample at the boundary type. The cycle may establish only
 the hybrid classical--quantum Heisenberg
 target, its compatibility laws, exact primitive interfaces, and
 certified-concurrency scope. It may not retune probabilities or add ontology,
