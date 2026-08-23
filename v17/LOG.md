@@ -1547,3 +1547,33 @@ rectangle-to-normal all-reader derivation, exact-versus-a.e. separation, and
 initial-law-indexed finite histories. It awards no result and does not
 authorize construction. Root must adjudicate the two reports by independent
 reconstruction rather than count their matching verdicts.
+
+## 2026-08-23 — PAPER 03 v3.2 PIN AUDITS ADJUDICATED (v17 LEDGER #64)
+
+The terminal pre-construction adjudication freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-pin-audit-adjudication.md` | `176e3f3e3e755c990464061c42db5ad27a858e915dbd07eed5813515f106322e` | `82703226363f8691d9fbda8a02bfc6093ad84349137e9d7dfe8befd2a96ae592` | 498 LF / 19,471 bytes |
+
+Decision: `ACCEPT-FOR-ONE-MATHEMATICS-CONSTRUCTION-WITH-BINDING-SCOPE`;
+first exact blocker: none. The matching audit verdicts are not counted as
+votes. Independent root reconstruction verifies the complete-boundary
+repair, predual `Ens`, conditioning closure, exact five-field paired category,
+and a genuinely nontrivial continuous record-dependent qubit instrument.
+
+The adjudication binds fourteen construction conditions. In particular, the
+sample kernel's conditional state barycentre must equal the posterior produced
+by the very same instrument; matching only outcome probabilities or importing
+posteriors from another instrument fails. Constant-fiber scope, complete
+frozen readers, one common continuous/null class, joint decomposable
+normality/posteriors/kernel, exact record retention, joint null transport,
+target landing, path/mixture/conditioning closure, exact/a.e. separation,
+initial-law indexing, and refusal of all excluded cases are mandatory.
+
+Exactly one mathematics candidate is authorized at
+`v17/paper-03v32-complete-boundary-relativistic-adequacy.md`. It awards no
+result until author audit, a frozen three-lens protocol, three mutually blind
+hostile reviews, and independent terminal adjudication. A semantic failure
+closes this representation branch; no automatic v3.3 exists. Implementation,
+Paper 04, clocks, ontology, spacetime, and gravity remain closed.

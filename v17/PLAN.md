@@ -3,9 +3,9 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1/v2/v3.1 terminal REVISE; v3.2 complete-boundary pin frozen and
-both independent audits accepted with binding scope; root adjudication
-pending; Paper 04 closed**
+Paper 03 v1/v2/v3.1 terminal REVISE; v3.2 pin and two independent audits
+adjudicated ACCEPT for one binding-scope mathematics construction; Paper 04
+closed**
 
 ## 0. Authority and workflow
 
@@ -527,8 +527,8 @@ Paper 03 v3.1 joint adjudication    TERMINAL REVISE — HYBRID BOUNDARY TYPE FAI
 Paper 03 v3.2 complete-boundary pin FROZEN RESULT-NEUTRAL
 Paper 03 v3.2 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.2 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
-Paper 03 v3.2 pin adjudication      PENDING
-Paper 03 v3.2 construction          NOT AUTHORIZED
+Paper 03 v3.2 pin adjudication      TERMINAL ACCEPT FOR ONE CONSTRUCTION
+Paper 03 v3.2 construction          AUTHORIZED — NOT YET FROZEN
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
@@ -561,3 +561,12 @@ mandatory; and the continuous identity must be derived from a common
 NEP-qualified instrument with explicit old-record retention. This is a
 representation theorem target only. Two independent pin audits must accept
 the exact bytes before the sole possible mathematics construction.
+
+Ledger #64 now completes that independent pin adjudication. Both audits and
+root reconstruction find no blocker and verify a nonempty continuous domain.
+One self-contained mathematics candidate is authorized at
+`v17/paper-03v32-complete-boundary-relativistic-adequacy.md`. It must prove
+same-instrument sample/posterior intertwining, all common-class/joint-
+measurability/decomposable-normality/null-transport/closure duties, and exact
+refusals. No theorem is awarded before construction audit, three blind hostile
+reviews, and terminal adjudication; no automatic v3.3 or implementation exists.

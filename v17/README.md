@@ -139,9 +139,11 @@ cleanly if nature does not support it.
   fresh countermodels and an explicit nontrivial old-record continuous qubit
   instrument, while binding joint measurability, common null class, posterior
   kernel, closure, normal extension, and initial-law indexing. These reports
-  are evidence, not authorization; root adjudication remains required. No
-  construction, implementation, Paper 04, clock, spacetime, or gravity claim
-  is open.
+  are evidence, not votes. Root adjudication independently reconstructs the
+  object and now authorizes exactly one mathematics-only construction with
+  the additional explicit same-instrument sample/posterior-barycentre proof.
+  No theorem is yet awarded; implementation, Paper 04, clock, spacetime,
+  ontology, and gravity remain closed.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -391,6 +393,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   quantum instrument/probability audit; accepts the pin with a constructive
   continuous nonvacuity witness and binding posterior, null-class, closure,
   old-record, history-indexing, and exact/a.e. scopes; awards no theorem.
+- `note-paper03v32-pin-audit-adjudication.md` — terminal pre-construction
+  synthesis; independently verifies noncircular feasibility and authorizes
+  one exact mathematics candidate with fourteen binding domain/proof
+  conditions, while preserving every ontology and downstream wall.
 
 ## Permanent honesty wall
 
