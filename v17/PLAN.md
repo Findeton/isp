@@ -287,6 +287,14 @@ underdetermined packet nor a target-equivalent apparatus model is a fair
 native-law test. A bounded feasibility census found no inspected historical
 resource adequate for R4; a modular heralded-photon parent is the strongest
 inspected prospective platform but remains unbound and ontologically neutral.
+The source-descent theorem package now makes the representation requirement
+exact. A candidate must be equivariant under a verified neutral groupoid, while
+the groupoid may not silently absorb physically meaningful context. The
+orbit-mismatch and fixed-point theorems, finite bare-carrier classification,
+whole-history equality-pattern corollary, and marginal-to-parent witness prove
+that covariance and anonymous relations constrain but do not generally select
+the native law. The next missing object is target-blind physical relational
+structure together with its source rule; neither is chosen here.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

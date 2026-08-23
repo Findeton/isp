@@ -262,6 +262,18 @@ authorized hardware programme. NIST/Bath records, a classical eraser build,
 and process-tensor experiments remain retrospective, classical, or
 target-complete controls at their printed scopes.
 
+The source-descent audit and theorem package now extract the invariant content
+of “configuration-neutral.” A candidate must commute with verified relabeling,
+coordinate, gauge, and lossless-record transformations, but the neutral
+groupoid must not be enlarged to all operational equivalences: that would
+silently impose generalized noncontextuality. Exact author-side theorems give
+an orbit-mismatch error bound, an automorphism fixed-point condition,
+covariance nonselection, a finite anonymous-carrier classification, and a
+binary marginal-to-parent underdetermination witness. The physical conclusion
+is that configuration neutrality requires target-blind relational structure,
+not a structureless carrier. That structure and the native law remain
+unselected.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -310,6 +322,8 @@ Active audit:
 - v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
 - v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md
 - v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
+- v17_ugen_u0_t3_source_descent_primary_scope_audit.md
+- v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -555,6 +569,9 @@ U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
 U0 DESCRIPTOR-SUFFICIENCY:     CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
 U0 R4 FEASIBILITY:             NO ADEQUATE HISTORICAL FIXTURE LOCATED
 PROSPECTIVE PHOTON PARENT:     STRONGEST INSPECTED ARCHITECTURE / UNBOUND
+U0 SOURCE DESCENT:             EXACT AUTHOR-SIDE NECESSARY CONDITION
+U0 BARE-CARRIER DYNAMICS:      UNDERDETERMINED / BOUNDED CONTROL
+PHYSICAL RELATIONAL STRUCTURE: REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:              T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

@@ -164,8 +164,12 @@ evaluability, source identifiability, and predictive adequacy and requires
 no-refit implementation transfer for uniform-law credit. A bounded R4 census
 located no adequate historical fixture; its strongest inspected prospective
 platform is a modular heralded-photon parent, unbound and ontologically
-neutral. No real implementation, target data, candidate, or official cycle is
-opened.
+neutral. The source-descent package now makes configuration neutrality exact:
+verified presentation transformations require equivariance, but physically
+meaningful context cannot be erased by imposing generalized
+noncontextuality. The finite anonymous-carrier and marginal-parent theorems
+show that covariance and component laws remain dynamically underselective.
+No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
 mislabeling G1 as gravity. It keeps classical, quantum, stochastic,
@@ -225,6 +229,9 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0-T3 PHYSICAL FIXTURE:         T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
     U0 DESCRIPTOR-SUFFICIENCY:      CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
     U0 R4 FEASIBILITY:              NO ADEQUATE HISTORICAL FIXTURE LOCATED
+    U0 SOURCE DESCENT:              EXACT AUTHOR-SIDE NECESSARY CONDITION
+    U0 BARE-CARRIER DYNAMICS:       UNDERDETERMINED / BOUNDED CONTROL
+    PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN
     NEXT U0 BOUNDARY:               T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED

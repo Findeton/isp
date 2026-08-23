@@ -240,6 +240,10 @@ The current evidence supports the following order.
    separates physical source sufficiency from answer import and requires
    no-refit transfer. No inspected historical fixture passes R4; the strongest
    prospective photon platform remains unbound and ontologically neutral. A
+   source-descent theorem package now proves the neutral-equivariance,
+   fixed-point, bare-carrier, and marginal-parent constraints without imposing
+   full operational noncontextuality. It identifies target-blind physical
+   relational structure as necessary but does not choose that structure. A
    real implementation, candidate, and result remain absent.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
@@ -281,6 +285,9 @@ U0 NO-EQUIVALENT-INPUT GATE:            COMPLETE AUTHOR-SIDE / NO RESULT
 U0-T3 PHYSICAL FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
 U0 DESCRIPTOR-SUFFICIENCY:              CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
 U0 R4 FEASIBILITY:                      NO ADEQUATE HISTORICAL FIXTURE LOCATED
+U0 SOURCE DESCENT:                      EXACT AUTHOR-SIDE NECESSARY CONDITION
+U0 BARE-CARRIER DYNAMICS:               UNDERDETERMINED / BOUNDED CONTROL
+PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT

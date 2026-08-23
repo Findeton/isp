@@ -583,7 +583,13 @@ one ontology by type.
 
 **Author-side status:** schema outcome T3-R3 is constructed in the physical
 interface audit, configuration-neutral fixture, and calibration-fiber theorem
-files. No microscopic configuration form is selected. A real
+files. The descriptor/transfer and source-descent gates now prove that
+configuration neutrality cannot mean structurelessness: predictions must
+descend through verified presentation changes, while physically meaningful
+context cannot be quotiented away. The finite anonymous-carrier control leaves
+one free one-step persistence parameter and only equality-pattern whole-history
+invariants; covariance therefore constrains but does not generally select a
+law. No microscopic configuration form is selected. A real
 implementation-bound R4 packet and independently reviewed R5 admission remain
 absent. No candidate, official pin, review cycle, or result is opened.
 
@@ -687,6 +693,9 @@ N1/N1A:                               HOSTILE PRIOR-ART CONTROLS ONLY
 G1/G2:                                COMPILER / SOURCE-ORIGIN CONTROLS
 MG0:                                  GRAVITY PREFLIGHT ONLY
 NATIVE CANDIDATE:                      ABSENT
+SOURCE DESCENT:                        EXACT AUTHOR-SIDE NECESSARY CONDITION
+BARE-CARRIER DYNAMICS:                 UNDERDETERMINED / BOUNDED CONTROL
+PHYSICAL RELATIONAL STRUCTURE:         REQUIRED / NOT YET CHOSEN
 OFFICIAL PIN / REVIEW / RESULT:        NONE
 ```
 

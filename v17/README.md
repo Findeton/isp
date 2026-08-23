@@ -405,6 +405,16 @@ cleanly if nature does not support it.
   unbound experimental platform rather than photon ontology or an authorized
   hardware programme. The next U0 boundary is implementation/custody
   authority, not a native-law result.
+  The source-descent package now proves what configuration neutrality can and
+  cannot mean. Verified presentation changes must transport the complete law
+  equivariantly, but all operational equivalences cannot be quotiented ontically
+  without imposing a substantive noncontextuality assumption. On an anonymous
+  finite carrier, full relabeling covariance leaves a one-parameter one-step
+  family and restricts indivisible histories only to equality-pattern orbits;
+  it does not select dynamics. Component marginals likewise do not generate
+  an interacting parent. The missing input is therefore independently physical,
+  target-blind relational structure—not labels, a lattice, or the quantum
+  answer. Its form and native law remain open.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

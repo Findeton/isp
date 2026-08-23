@@ -304,6 +304,16 @@ no inspected historical data set adequate for that R4 role. The strongest
 inspected prospective design is a modular heralded-photon parent, retained
 only as an unbound and ontology-neutral experimental platform.
 
+The source-descent source audit and theorem package now separate mandatory
+presentation covariance from the stronger, unassumed identification of all
+operationally equivalent procedures. Exact results establish an aligned
+orbit-mismatch bound, automorphism fixed-point constraint, covariance
+nonselection, the one-parameter finite anonymous-carrier transition family,
+whole-history equality-pattern invariants, and generic marginal-to-parent
+underdetermination. The resulting requirement is structured but form-neutral,
+target-blind physical input. No particular relational structure or law is
+selected.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -344,6 +354,8 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
 - active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
+- active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
+- active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md
 - active/ugen/v17_ugen_fundamental_nomology_rival_register.md
 - active/ugen/v17_ugen_bell_current_actuality_comparator.md
 - active/ugen/v17_ugen_bell_current_physical_reality_audit.md
@@ -421,6 +433,8 @@ Active working package:
 - `active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md`
 - `active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md`
 - `active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md`
+- `active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md`
+- `active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md`
 - `active/ugen/v17_ugen_bell_current_actuality_comparator.md`
 - `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
 - `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`

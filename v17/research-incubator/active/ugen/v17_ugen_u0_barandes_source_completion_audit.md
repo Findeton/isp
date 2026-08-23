@@ -505,8 +505,12 @@ by that rule, and makes a rigorously nontrivial calibration fiber necessary
 for native member-selection credit. U0-T3 now constructs the
 configuration-neutral complete-process fixture and proves a nontrivial fiber
 at schema scope. It binds no apparatus or target data and selects no native
-law. None of this authorizes a candidate, pin, review cycle, paper, or
-automatic successor.
+law. The downstream source-descent gate now makes functoriality exact without
+imposing full operational noncontextuality: a native law must be equivariant
+under verified presentation changes, but may use independently described
+physical context. Its finite bare-carrier theorem proves that anonymous
+relabeling covariance leaves dynamics underselected. None of this authorizes
+a candidate, pin, review cycle, paper, or automatic successor.
 
 ---
 

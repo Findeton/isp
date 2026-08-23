@@ -655,7 +655,12 @@ false failures and target-equivalent apparatus-model false successes, and
 requires no-refit implementation transfer for a uniform-law claim. The
 bounded feasibility census located no adequate historical R4 fixture and
 retains its strongest inspected photon architecture only as an unbound
-laboratory platform. The implementation-bound T3-R4 packet, independent
+laboratory platform. The source-descent package now proves that verified
+presentation changes must act equivariantly while full operational
+noncontextuality remains unassumed. Its exact fixed-point, bare-carrier, and
+marginal-parent results locate the remaining requirement in independently
+physical relational structure rather than labels or anonymous relations. The
+implementation-bound T3-R4 packet, independent
 leakage review, and candidate contest remain absent.
 
 The fundamental-nomology register adopts a plural contest among ordinary-
@@ -732,6 +737,9 @@ U0 CALIBRATION FIBER:            NONTRIVIAL AT SCHEMA SCOPE / NOT SELECTING
 U0-T3 PHYSICAL FIXTURE:          T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
 U0 DESCRIPTOR-SUFFICIENCY:       CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
 U0 R4 FEASIBILITY:               NO ADEQUATE HISTORICAL FIXTURE LOCATED
+U0 SOURCE DESCENT:               EXACT AUTHOR-SIDE NECESSARY CONDITION
+U0 BARE-CARRIER DYNAMICS:        UNDERDETERMINED / BOUNDED CONTROL
+PHYSICAL RELATIONAL STRUCTURE:   REQUIRED / NOT YET CHOSEN
 U0 CONFIGURATION FORM:           UNSELECTED
 U0 TARGET-ANSWER INPUTS:         FORBIDDEN
 NEXT U0 BOUNDARY:                T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED

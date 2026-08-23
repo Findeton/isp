@@ -261,7 +261,7 @@ artifacts:
     maximum_claim: "binding author-side routing that retains N1/N1A solely as Nelson prior-art controls, G1/G2 as compiler and source-origin controls, restores the form-neutral Barandes-facing native-law search, and keeps MG0 downstream; no N1B, pin, review, model, paper, or scientific result"
     canonical: false
   - path: "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md"
-    sha256: "c34ac91cca57e8a7a51d2fd818fb926f51590057014e9ab6090eb31044dd27fa"
+    sha256: "b96a603216a9ceb74e538e52c31f923b9027cfc19c5fbde03d04fe2c28ae5135"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-native-law-search-contract"
@@ -271,10 +271,10 @@ artifacts:
     source_audit_status: "author-side-contract-source-completion-audit-separate-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "form-neutral search contract for a uniform ordinary-positive genuinely indivisible complete-process law with typed state, controls, readers, division, composition, actuality, and resources; no candidate, existence or no-go theorem, pin, review, ontology selection, or scientific result"
+    maximum_claim: "form-neutral search contract for a uniform ordinary-positive genuinely indivisible complete-process law with typed state, controls, readers, division, composition, actuality, resources, and verified source descent; no candidate, existence or no-go theorem, pin, review, ontology selection, or scientific result"
     canonical: false
   - path: "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md"
-    sha256: "c8aed3862d3c166829fb5c8ddd526ce711e01f093583ecadcb4d3498613b761b"
+    sha256: "64d84c8aed7e4ebfc7ed41e820808603b9355c650ef62fb23f191aec0e38cd5b"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-u0-t1-primary-source-audit"
@@ -284,7 +284,7 @@ artifacts:
     source_audit_status: "author-side-version-bound-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "source-scoped separation of Barandes stochastic-law representation from the open physical source-completion map for held-out complete processes; no impossibility theorem, refutation, candidate law, pin, review, or scientific result"
+    maximum_claim: "source-scoped separation of Barandes stochastic-law representation from the open physical source-completion map, with the downstream presentation-descent and anonymous-carrier underselection conditions recorded; no impossibility theorem, refutation, candidate law, pin, review, or scientific result"
     canonical: false
   - path: "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md"
     sha256: "44fd9bb8abefd604a1fd4cdb4f007e86b81c919d52a126840523fcb941bb521c"
@@ -377,31 +377,57 @@ artifacts:
     promotion_readiness: "not-ready"
     maximum_claim: "bounded author-side finding that no inspected historical resource is an adequate target-blind transfer-ready R4 fixture and that a modular heralded-photon parent is the strongest inspected prospective architecture; no data acquisition, apparatus binding, photon ontology, candidate, pin, review, or scientific result"
     canonical: false
+  - path: "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md"
+    sha256: "e1ead3be30e8ace466a48527f45a6d28292084c3f1a7334db321b89e9e0c38b6"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-u0-t3-source-descent-primary-scope-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md"]
+    source_audit_status: "author-side-version-bound-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "source-scoped separation of mandatory representation descent from unassumed generalized noncontextuality, with configuration neutrality typed as structured but form-neutral and symmetry retained as constraint rather than automatic selector; no candidate, configuration ontology, implementation, pin, review, or scientific result"
+    canonical: false
+  - path: "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md"
+    sha256: "301c3a2e05f5640397580aba1448db5d8b0bc108d902e6ea48b22188aa49d3b0"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-u0-t3-source-descent-mathematics"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md"]
+    source_audit_status: "inherits-u0-t3-source-descent-author-side-primary-scope-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "exact author-side orbit-mismatch, automorphism fixed-point, covariance nonselection, finite bare-carrier, whole-history equality-pattern, spontaneous-asymmetry, and marginal-parent theorems establishing necessary target-blind physical relational structure; no native law, ontology, implementation, pin, review, or scientific result"
+    canonical: false
   - path: "active/ugen/README.md"
-    sha256: "bfc0e78ecd6a2e4859e7813581db5691c69721c1633c1379067acd7806650fb2"
+    sha256: "a630754c60f9469b5cafd0ff87bdc66a01b9ba0e95937363611f160422fa5ccc"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-u0-native-search-nelson-controls"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/mg0/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/mg0/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls, G1/G2 as compiler and source-origin controls, locates the open Barandes source-completion map, reaches a T3-R3 configuration-neutral fixture, constructs the descriptor/transfer gate, and finds no adequate historical R4 fixture while leaving the prospective platform, implementation, and native candidate slots unbound; MG0 remains downstream; no pin, review, existence or no-go result, native law, ontology selection, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls, G1/G2 as compiler and source-origin controls, reaches a T3-R3 configuration-neutral fixture, constructs descriptor/transfer and source-descent gates, and finds no adequate historical R4 fixture while leaving physical relational structure, implementation, and native candidate unselected; MG0 remains downstream; no pin, review, source-complete existence or no-go result, native law, ontology selection, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "fa07b19a49701d2074c5c4480d4503e061a94c72c1bdc62c66a181a658f3beb8"
+    sha256: "1f22bb8a569658e00efdcedaa8a7619185dd668ed88aadec5732fbd019b01e3e"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral dependency and physics audit locating the U0 source-completion burden, retaining N1/N1A and G1/G2 only as controls, adding descriptor/transfer safeguards and the bounded R4 feasibility finding, and preserving the plural nomology contest; no existence or no-go theorem, data evaluation, bound apparatus, native complete law, selected actuality, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral dependency and physics audit locating the U0 source-completion burden, retaining N1/N1A and G1/G2 only as controls, adding descriptor/transfer and source-descent safeguards plus the bounded R4 feasibility finding, and preserving the plural nomology contest; no source-complete existence or no-go theorem, data evaluation, bound apparatus, native complete law, selected actuality, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_pc2_balanced_seam_classification_candidate.md"
     sha256: "913b61c27f3a8303df5acb72e75b4a4def61a5b98b7457734b6be3b9bc4f6d4d"
@@ -443,17 +469,17 @@ artifacts:
     maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_ugen_next_gate_decision.md"
-    sha256: "99e6d1454931eb85bb94aac692f2fbff2a175d2a387279cac7dcf8082669bb7c"
+    sha256: "b895bb19783adcde3fe274a36efa4c6c8158bd14ca865599649591f35c576788"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-decision"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md"]
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md"]
     source_audit_status: "inherits-c4-author-side-source-scope-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding routing that preserves Q-Cut as a separately authorized official option, records U0-T2/T3 author-side descriptor and fixture progress with no adequate historical R4 implementation located, and retains N1/N1A and G1/G2 solely as controls; no bound apparatus, candidate, pin, review, result, N1B, G3, or gravity model"
+    maximum_claim: "nonbinding routing that preserves Q-Cut as a separately authorized official option, records U0-T2/T3 fixture, descriptor, and source-descent progress with no adequate historical R4 implementation or selected physical relational structure, and retains N1/N1A and G1/G2 solely as controls; no bound apparatus, candidate, pin, review, result, N1B, G3, or gravity model"
     canonical: false
   - path: "active/ugen/v17_ugen_c1_pair_history_composition_candidate.md"
     sha256: "9beceb074a315a2e44e4e92647533e482f923708727b407e4fbea4f3ec943efa"
@@ -716,17 +742,17 @@ artifacts:
     maximum_claim: "future three-seat probability/current, quantum-foundations/source, and operational-QFT/gravity review contract only; no activation, source freeze, review, result, ontology selection, or successor authority"
     canonical: false
   - path: "active/ugen/v17_ugen_fundamental_nomology_rival_register.md"
-    sha256: "e1a515947f68f3adbae5775ae6bae8f7bd6d9ed825786e48773fbdef6c5506a8"
+    sha256: "09989253af7ec0eb9aa23cd6c61b66fe47adeef5f38a5100e5de9456db5d43a7"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-register"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md", "active/ugen/v17_ugen_bell_current_physical_reality_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md"]
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md", "active/ugen/v17_ugen_bell_current_physical_reality_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md"]
     source_audit_status: "inherits-c4-bell-current-n1-n1a-g1-and-g2-author-side-source-audits-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding plural contest among ordinary-positive, fundamental decoherence-functional, and modified-actualization nomologies, with U0 source completion open, descriptor/transfer safeguards and the bounded R4 feasibility finding recorded, N1/N1A and G1/G2 retained as controls, and MG0 only a downstream discriminator preflight; no rival selection, bound apparatus, native complete law, official unit, empirical result, or successor authority"
+    maximum_claim: "nonbinding plural contest among ordinary-positive, fundamental decoherence-functional, and modified-actualization nomologies, with U0 source completion open, descriptor/transfer and source-descent safeguards plus the bounded R4 feasibility finding recorded, N1/N1A and G1/G2 retained as controls, and MG0 only a downstream discriminator preflight; no rival selection, bound apparatus, native complete law, official unit, empirical result, or successor authority"
     canonical: false
   - path: "active/ugen/v17_ugen_n1_time_symmetric_diffusion_candidate.md"
     sha256: "72894e9fb2bb4c755ced50f456cf76889d3134c70bfad27aae74cf1a327ac325"
