@@ -1883,3 +1883,65 @@ spacetime, gravity, or actuality. Three independent finite-constraint,
 quantum-clock, and ontology/relativity audits must accept these exact bytes
 before root may authorize the one construction. No automatic model repair is
 authorized.
+
+## 2026-08-23 — PAPER 04 MODEL MATHEMATICS AUDIT FROZEN (v17 LEDGER #78)
+
+The mutually blind finite-constraint seat authenticates #77 and returns
+`ACCEPT-FOR-ONE-CONSTRUCTION-WITH-BINDING-SCOPE`. Its report
+`v17/note-paper04-model-pin-audit-mathematics.md` has ordinary SHA-256
+`a2fd150f75557c992a746e78b1e9b3b209bc7d0adca0ca8cee5bcb192d7a9ce9`,
+normalized self-SHA-256
+`e4db2a28790b87f02350e2c822a2586701d16a30877fc90330821ea22bf9ed8e`,
+and size 881 LF / 41,768 bytes. It reconstructs physical dimension 343,
+source denominator 1/7, global B reduction, exact $Q\ne6$ A reduction, and
+the q=6 rank-loss sector. A physical clock packet must use a covariant
+reduction/record lift; the bare phase PVM is not a Dirac endomorphism.
+
+## 2026-08-23 — PAPER 04 MODEL QUANTUM-CLOCK AUDIT FROZEN (v17 LEDGER #79)
+
+The mutually blind quantum-clock seat returns the same scoped feasibility
+verdict. Its report `v17/note-paper04-model-pin-audit-quantum-clocks.md` has
+ordinary SHA-256
+`69c7deae38b115fd60d31006e5b5f79f5167e8e655bf9f3a0c7867ebbd809c1d`,
+normalized self-SHA-256
+`7a8682a17358da5a7eac393faed927c62e2205c840fac456950ebf2ca7c35760`,
+and size 821 LF / 40,765 bytes. It proves feasibility of a transforming
+record dilation, requires a coherent Q-controlled A-record action, and makes
+the complete adaptive arrow the earliest scientific construction gate.
+
+## 2026-08-23 — PAPER 04 MODEL ONTOLOGY AUDIT FROZEN (v17 LEDGER #80)
+
+The mutually blind ontology/relativity seat also returns
+`ACCEPT-FOR-ONE-CONSTRUCTION-WITH-BINDING-SCOPE`. Its report
+`v17/note-paper04-model-pin-audit-ontology-relativity.md` has ordinary
+SHA-256
+`ebd1fa98640accbe036d8097802f27e050875a09771f0d646ed7027e302bf0d6`,
+normalized self-SHA-256
+`25ceba2e955bd5584669484f8228dc73ddbccfcd6dc7a84e3284b4f7795bc0db`,
+and size 866 LF / 52,036 bytes. It binds the finite group as a QRF testbed,
+not a lattice or event ontology; the co-designed comparator caps success at a
+conditional structural theorem; causal order, spacetime, gravity, fundamental
+time, and actuality remain supplied or unconstructed.
+
+## 2026-08-23 — PAPER 04 MODEL PIN TERMINALLY ADJUDICATED (v17 LEDGER #81)
+
+Root independently reconstructs the panel's mathematical and physical
+findings and freezes
+`v17/note-paper04-model-pin-audit-adjudication.md` at ordinary SHA-256
+`f0d2ae0142192683192a5e033c572d0c5906feb546d14268f7525f1b9a0a42cc`,
+normalized self-SHA-256
+`49bb5d4905a659a9c7c3a980969c80e4ff6cd30d4e9f1ffa0d37eea68c7b69c4`,
+and size 500 LF / 20,123 bytes. Disposition:
+
+```text
+ACCEPT-MODEL-PIN-FOR-ONE-CONSTRUCTION-WITH-BINDING-SCOPE
+NO PAPER-04 SCIENTIFIC RESULT AWARDED
+```
+
+The exact finite constraint is feasible, while bare phase compression is not
+physical. The sole construction must use transforming relational records,
+coherent A/Q lineage, one complete adaptive arrow, strict held-out and
+hidden-time gates, exact finite resources, and the full ontology/spacetime
+ceiling. Exactly one mathematical construction of #77 is authorized. No
+automatic model repair, implementation-selected physics, Paper 05, spacetime,
+or gravity unit is opened.

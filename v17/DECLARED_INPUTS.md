@@ -359,7 +359,11 @@ selection, or a Barandes completion.
 | Paper 04 Seat Q audit | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE — ADJUDICATED EVIDENCE` | exact #74 report; clocks, instruments, sequential statistics, finite resources, frame changes | time-sensitive held-out task, overidentified affine fit, and operational two-way backreaction bind |
 | Paper 04 Seat O audit | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE — ADJUDICATED EVIDENCE` | exact #75 report; ontology, relativity, Barandes, hidden time | nonidentity reparameterization, supplied-order, record/division, ontology and gravity walls bind |
 | Paper 04 root pin adjudication | `TERMINAL ACCEPT MATHEMATICAL BOUNDARY — ONE PREFIT PIN AUTHORIZED` | #76 independent reconstruction; 18 binding conditions | exact two-clock parent/model/test selection must freeze before construction and receive independent audit |
-| Paper 04 finite cyclic model pin | `FROZEN RESULT-NEUTRAL — THREE AUDITS PENDING` | exact #77 pre-fit selection; $\mathbb Z_7$ parent, A/B clocks, M/Q systems, bilinear A--Q coupling, fixed sources/tests/resources | no derived identity or result; construction closed pending independent model-pin adjudication |
+| Paper 04 finite cyclic model pin | `FROZEN RESULT-NEUTRAL — AUDITS ACCEPTED` | exact #77 pre-fit selection; $\mathbb Z_7$ parent, A/B clocks, M/Q systems, bilinear A--Q coupling, fixed sources/tests/resources | no derived identity or result; exactly one construction authorized by #81 |
+| Paper 04 model Seat M audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #78 report; constraint, projector, reductions, covariant direct-sum record lift | bare phase PVM is not a Dirac endomorphism; exact domains and packet lift bind |
+| Paper 04 model Seat Q audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #79 report; complete instruments, coherent A-record action, adaptive law | gauge-trivial records and post-result measurement-route choice are refused |
+| Paper 04 model Seat O audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #80 report; model ontology, supplied order, Barandes and gravity scope | finite testbed and co-designed comparator cannot select nature or timeless ontology |
+| Paper 04 model-pin adjudication | `TERMINAL ACCEPT FOR EXACTLY ONE CONSTRUCTION WITH BINDING SCOPE` | #81 root reconstruction; R1--R12 and B1--B20 | one frozen mathematical construction authorized; no scientific coordinate awarded |
 
 ## Derivation balance
 
@@ -370,7 +374,7 @@ adjudicated v17 mathematical structures: positive record-history Q0--Q3 represen
 adjudicated new fundamental physical structures: 0
 green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
-open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy; exact finite cyclic Paper-04 model feasibility
+open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy in the sole exact finite cyclic Paper-04 construction
 standard empirical/theory comparators: quantum Q0–Q3 and supplied AQFT/Lorentzian laboratory background
 supplied comparator geometry: 1 declared Paper 03 background family
 derived geometry or gravity: 0

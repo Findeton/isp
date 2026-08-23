@@ -7,7 +7,7 @@ Paper 03 v1/v2/v3.1 terminal REVISE; Paper 03 v3.2 terminal
 ACCEPT-WITH-SCOPE at relativistic quantum operational adequacy with global
 ontology debt; Paper 04 generic mathematical boundary terminally accepted
 with binding scope; the sole model-specific finite cyclic two-clock pre-fit
-pin frozen pending three independent audits**
+pin terminally accepted for exactly one construction with binding scope**
 
 ## 0. Authority and workflow
 
@@ -552,8 +552,9 @@ Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Paper 04 relational-clock pin       TERMINAL GENERIC BOUNDARY ACCEPT-WITH-SCOPE
 Paper 04 three pin audits           FROZEN ACCEPT WITH BINDING SCOPE
 Paper 04 root pin adjudication      TERMINAL — ONE MODEL-SPECIFIC PREFIT PIN AUTHORIZED
-Paper 04 model-specific prefit pin  FROZEN RESULT-NEUTRAL — AUDITS PENDING
-Phase T construction                CLOSED PENDING THREE MODEL-PIN AUDITS
+Paper 04 model-pin three audits     TERMINAL ACCEPT FOR ONE CONSTRUCTION WITH SCOPE
+Paper 04 model-pin adjudication     TERMINAL — EXACTLY ONE CONSTRUCTION AUTHORIZED
+Phase T construction                OPEN FOR THE SOLE FROZEN MODEL ONLY
 Phases G/S/P                         CLOSED
 ```
 

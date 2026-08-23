@@ -181,7 +181,12 @@ cleanly if nature does not support it.
   group averaging, clock-specific reduction domains, two training and two
   held-out points, a complete adaptive sequence, nonidentity coordinate
   changes, resource/stoppage/recurrence controls, and no hidden external-time
-  result. Three model-pin audits are pending; no formula has been evaluated.
+  result. Ledgers #78--#80 independently accept its mathematical feasibility,
+  quantum-clock instrumentation route, and ontology/relativity scope. Root
+  adjudication #81 authorizes exactly one construction under a covariant
+  record-lift, complete adaptive-history, deep hidden-time, common-domain,
+  and structural-success ceiling. No Paper-04 scientific result has yet been
+  evaluated or awarded.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
