@@ -306,6 +306,16 @@ output.
 
 ## 4. Phase G0 — matter and geometry in one theory
 
+**Current preparation boundary.** An author-side MG0 preflight now types a
+form-neutral common-law contract and reciprocal weak-field selector benchmark.
+It treats matter and gravity as operational projections rather than assumed
+microscopic factors; assumes no metric, continuum, dimension, foliation,
+Einstein equation, or classical/quantum gravity verdict; and keeps
+ordinary-positive, decoherence-functional, and quantum-plus-actualization
+nomologies live. This preparation opens neither Paper 06 nor Paper 07 and
+awards no gravity result. Q-Cut remains the next recommended official unit if
+separately authorized.
+
 ### Paper 06 — configuration ontology for matter plus geometry
 
 **Question.** What complete relational configuration supports both the

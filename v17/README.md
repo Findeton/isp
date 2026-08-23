@@ -234,7 +234,8 @@ cleanly if nature does not support it.
   dependencies, source-audit status, promotion readiness, and maximum claims;
   every incubator artifact has authority `none`. The active author-side fronts are Q-Cut
   (scalable explanatory cost), E-Comp (endpoint versus coherent composition),
-  and U-Gen (uniform indivisible law class). Q-Cut's primary-source bridge has
+  U-Gen (uniform indivisible law class), and MG0 (form-neutral common
+  matter--geometry preflight). Q-Cut's primary-source bridge has
   now been reconstructed exactly author-side: HJMR's external information
   quantity, the natural Partial Matching ensemble, convention translation,
   and additive constants all survive. Its repaired active package and hash
@@ -353,6 +354,16 @@ cleanly if nature does not support it.
   scalar G1 fails mixed/higher-rank boundaries and the C1 $D_\pm$ control. It
   remains a bounded compiler and obstruction dossier, not a native ISP law,
   complete quantum process, empirical result, QFT, spacetime, or gravity.
+  MG0 now accelerates the already declared Phase G0 only at author-side
+  contract level. It types matter and gravity as operational projections
+  rather than assumed microscopic factors, keeps positive, pair-history, and
+  quantum-plus-actualization nomologies live, requires both response
+  directions to descend from one joint parent, and preregisters
+  Page--Geilker, mediator-entanglement, nonlinear-signalling,
+  decoherence--diffusion, gauge/gluing, conservation, clock, and dual-limit
+  controls. It assumes no metric, continuum, dimension, foliation, Einstein
+  equation, or classical/quantum gravity verdict; constructs no model; and
+  opens no official Paper 06/07 or gravity result.
   Q-Cut remains the next recommended official unit if separately authorized.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.

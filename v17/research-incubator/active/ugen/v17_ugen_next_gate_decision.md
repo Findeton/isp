@@ -116,6 +116,14 @@ adaptive controls, while scalar G1 fails mixed/higher-rank boundaries and has
 no uniform interacting or complete adaptive compiler. It therefore
 instantiates the requested branch without filling the native slot.
 
+MG0 now supplies a separate author-side co-design contract rather than
+mislabeling G1 as gravity. It keeps classical, quantum, stochastic,
+actual-history, pair-history, and primitive-joint matter--geometry responses
+open; requires both response directions to arise from one immutable parent;
+and preregisters source, gauge, conservation, signalling, gluing, dual-limit,
+and empirical controls. It constructs no candidate and does not alter the
+official Q-Cut ordering.
+
 The fundamental-nomology register keeps three rivals live under one ledger:
 ordinary-positive indivisible law, fundamental decoherence functional, and
 standard quantum dynamics plus modified actualization. No rival is selected.
@@ -153,12 +161,13 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     G1 COMPLETE PROCESS COMPILER:   ABSENT
     NATIVE ISP LAW:                 ABSENT
     FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
+    MG0 COMMON-LAW PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
     NEXT AUTHOR-SIDE U-GEN TASK:    DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
                                     IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
-    SPACETIME / GRAVITY:            NOT OPEN / PRECONDITIONS ABSENT
+    OFFICIAL SPACETIME / GRAVITY:   NOT OPEN / PRECONDITIONS ABSENT
 
 ---
 

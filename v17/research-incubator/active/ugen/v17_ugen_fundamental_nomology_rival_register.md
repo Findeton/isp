@@ -204,10 +204,16 @@ The current evidence supports the following order.
    supplied input, acquire a representation-independent higher-rank/adaptive
    compiler without target import, or terminate as a bounded zero-gain
    comparator and obstruction dossier.
-4. **Deferred:** official interferometry benchmark until a distinct candidate
-   predicts it; clocks until a native law exists; locality/Tsirelson after the
-   composition law is fixed; spacetime and gravity until endogenous influence,
-   clocks, scaling, and reciprocal response exist.
+4. **Author-side co-design:** the separate MG0 preflight now asks whether
+   gravity can distinguish the rivals through an exact source functional,
+   reciprocal common parent, gauge/conservation closure, two immutable-law
+   limits, and a prospective empirical wedge. It constructs no candidate and
+   opens no official Phase G0 unit.
+5. **Deferred official claims:** interferometry until a distinct candidate
+   predicts it; clocks until a valid parent exists; locality/Tsirelson after
+   the composition law is fixed; and spacetime/gravity results until
+   endogenous influence, clocks, scaling, reciprocal response, and both
+   low-energy limits exist.
 
 There is no automatic numbered successor after C4.
 
@@ -229,6 +235,7 @@ G1 ENDPOINT-GAMMA COMPOSITION:        REFUTED FOR PRINTED PHASE FAMILY
 G1 HIGHER-RANK / ADAPTIVE COMPILER:   ABSENT / SCALAR CLASS FAILS
 NEXT U-GEN CONSTRUCTION:              DERIVE ONE G1 INPUT OR BOUNDED NO-GO
 C-NUMBER EXPANSION:                   CLOSED AT C4
-CLOCK / SPACETIME / GRAVITY:          DEFERRED
+MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
+CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY
 SCIENTIFIC RESULT:                    NONE
 ```

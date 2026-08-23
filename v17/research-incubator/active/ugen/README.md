@@ -187,6 +187,14 @@ laws. Scalar G1 also fails the mixed/higher-rank boundary and C1 $D_\pm$
 controls. It is consequently a bounded conditional member and obstruction
 dossier, not a native ISP unification or complete process compiler.
 
+A separate MG0 author-side preflight now uses gravity as a possible selector
+among the plural nomologies without calling G1 gravitational. It requires a
+single reciprocal matter--geometry parent, exact source and actuality typing,
+gauge/conservation/causality/gluing controls, two immutable-law limits, and a
+prospective empirical wedge. It assumes no metric, continuum, dimension,
+foliation, Einstein equation, or classical/quantum gravity verdict, and opens
+no official gravity unit.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -208,8 +216,10 @@ Active author-side dependencies:
 - `../ecomp/` tests whether positive primitive endpoints plus nondivision can
   determine coherent sequential composition. Its candidate no-congruence
   theorem says the endpoint quotient alone cannot carry the full product.
+- `../mg0/` types the common matter--geometry admission and selector contract.
+  It constructs no joint law and creates no gravity result.
 
-Neither dependency is an accepted result. U-Gen may use them only as candidate
+None of these dependencies is an accepted result. U-Gen may use them only as candidate
 controls until their own future authorization, freeze, review, and
 adjudication occur.
 

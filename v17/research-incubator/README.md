@@ -29,7 +29,7 @@ no scientific evidence.
 
 ## Active research front
 
-The current author-side front has three coupled gates.
+The current author-side front has four coupled gates.
 
 ### Q-Cut — scalable explanatory-cost discriminator
 
@@ -302,7 +302,36 @@ G1 active files:
 - active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md
 - active/ugen/v17_ugen_g1_future_review_contract.md
 
-Canonical status: `active/ugen/README.md`.
+### MG0 — common matter–geometry nomology preflight
+
+MG0 accelerates the binding v17 Phase G0 question only at author-side contract
+scope. It does not replace G1 or open an official gravity paper. Its comparison
+interface does not assume that matter and gravity are microscopic factors, or
+that geometry is a metric, continuum, lattice, fixed dimension, or quantum
+field. It keeps ordinary-positive, pair-history/decoherence, and
+quantum-plus-actualization rivals live.
+
+The packet requires one immutable joint parent for matter-to-gravity and
+gravity-to-matter response, an exact source-of-gravity declaration,
+gauge/conservation/causality/composition closure, fixed-geometry quantum and
+classical-gravity limits, and a prospective empirical wedge. Its reciprocal
+source--gravity--probe diamond preregisters expectation-versus-actual source,
+coherent-versus-mixed source, mediator-entanglement, and
+decoherence--diffusion controls. No candidate, parameters, data, result, pin,
+or review exists.
+
+Active MG0 files:
+
+- `active/mg0/README.md`
+- `active/mg0/v17_mg0_common_matter_geometry_contract.md`
+- `active/mg0/v17_mg0_selector_controls_and_benchmark.md`
+- `active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md`
+- `active/mg0/v17_mg0_future_review_contract.md`
+- `active/mg0/ACTIVE_SHA256.txt`
+
+Canonical MG0 status: `active/mg0/README.md`.
+
+U-Gen canonical status: `active/ugen/README.md`.
 
 Active working package:
 
