@@ -2074,3 +2074,24 @@ adaptive arithmetic, calibration/response/baseline controls, recurrence,
 and all permanent walls. The failure is physical and semantic, not software.
 No candidate edit, automatic Paper-04 successor, Paper 05, spacetime, or
 gravity unit opens.
+
+## 2026-08-23 — PAPER 04B MODEL-NEUTRAL PIN FROZEN (v17 LEDGER #89)
+
+The user explicitly authorizes one new-physics clock branch, capped at L6 with
+one parent-model attempt and no automatic successor. Its model-neutral pin
+freezes at `v17/note-paper04b-one-parent-operational-clock-pin.md`, ordinary
+SHA-256
+`4de2baab9b28135b83cec8fe17bceb7591327e88a2bfd216e6882269e8f22661`,
+normalized self-SHA-256
+`a2a435c4709a7b9f0189e8e94e44c184d8b07c24c6b8189ae42195f3f6fabf96`,
+and size 552 LF / 23,614 bytes.
+
+The pin replaces the rejected `Z_7` fixture rather than repairing it. It binds
+one operational laboratory parent packet, two internal derivations, and one
+independent held-out comparator. Conditional agreement includes the root law;
+finite data are tested statistically; coherent memory is not a classical
+record; scalar redundancy is predictor factorization; laboratory slot order
+remains supplied; no discrete ontology, chronology, spacetime, gravity, or
+actuality follows. Model selection and construction remain barred until three
+independent pre-construction reviews and root adjudication accept these exact
+bytes.

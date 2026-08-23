@@ -482,6 +482,11 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper04-hostile-review-adjudication.md` — terminal root
   `REJECT-WITH-EXACT-SALVAGE`; no automatic Paper-04 successor or Paper-05
   opening.
+- `note-paper04b-one-parent-operational-clock-pin.md` — user-authorized,
+  model-neutral new-physics clock pin: one operational parent packet, two
+  internal derivations, an independent held-out laboratory comparator, exact
+  statistical/record/parameter-factorization walls, and three mandatory
+  pre-construction reviews before any model selection.
 
 ## Permanent honesty wall
 

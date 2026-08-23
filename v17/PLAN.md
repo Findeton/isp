@@ -572,6 +572,8 @@ Paper 04 Seat M review              TERMINAL EVIDENCE — REVISE
 Paper 04 Seat Q review              TERMINAL EVIDENCE — REVISE
 Paper 04 Seat O review              TERMINAL EVIDENCE — REJECT
 Paper 04 joint adjudication         TERMINAL REJECT-WITH-EXACT-SALVAGE
+Paper 04B model-neutral pin         FROZEN — PRE-CONSTRUCTION REVIEW REQUIRED
+Paper 04B parent model              UNSELECTED / BARRED PENDING PIN ADJUDICATION
 Paper 05 operational chronology     CLOSED — NO ACCEPTED CLOCK-RELATIVE LAW
 Phases G/S/P                         CLOSED
 ```
