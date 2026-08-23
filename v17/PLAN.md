@@ -356,6 +356,15 @@ set in the joint commutant. Finite controls show both nonunique and empty
 sets, while a classical Koopman flow passes the one-flow theorem. The gate
 therefore reaches DCS-L2 author-side only: it corrects the representation
 question without supplying the native positive law or a quantum criterion.
+The next author-side source gate uses the short-separation probability jet.
+Doukas's zero-rate theorem is retained as prior art; an elementary uniqueness
+corollary excludes regular autonomous first-order dynamics on the
+instantaneous stochastic kernel alone. Exact controls locate coupling
+magnitudes in the second jet and directed loop response in the third. A
+conjugate triangle defeats magnitude-plus-spectrum selection, while a real
+positive second-order two-state equation and finite spectral ODEs remain
+compiler controls. The maximum state is PJ-L2 author-side: no complex
+ontology, time, native law, U0-T4, pin, review, or scientific result follows.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

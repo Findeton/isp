@@ -486,6 +486,18 @@ cleanly if nature does not support it.
   sharpens how complex Hilbert structure might be secondary while leaving the
   positive source law, common coherent family, complete quantum process, and
   actuality map absent.
+  A short-time probability-jet gate now attacks the source form rather than
+  another representation. It credits Doukas's differentiable
+  squared-modulus zero-rate result, proves the bounded corollary that a regular
+  autonomous first-order equation on the instantaneous stochastic kernel
+  cannot leave the identity, and reconstructs exact higher positive response.
+  Second derivatives carry coupling magnitudes; third derivatives can carry
+  directed loop asymmetry. A conjugate triangle shares edge magnitudes and
+  spectrum while reversing that cubic response. An exact real second-order
+  two-state control and finite target-derived spectral ODEs show why neither
+  complex amplitudes nor a fitted differential equation is thereby selected
+  as ontology. The gate is PJ-L2 author-side only and leaves the native
+  whole-boundary/memory-bearing law absent; no U0-T4, pin, or review opens.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

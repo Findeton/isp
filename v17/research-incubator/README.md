@@ -366,6 +366,19 @@ Koopman dynamics pass the one-flow theorem, so the packet reaches only DCS-L2
 author-side: it identifies a possible secondary representation route but does
 not construct the native law or establish quantum ontology.
 
+The short-time probability-jet gate now constrains the missing source law
+directly. It credits Doukas's zero-rate theorem, proves that a regular
+autonomous first-order equation on the instantaneous stochastic kernel cannot
+leave an identity boundary, and reconstructs the higher positive response:
+second derivatives carry edge-coupling magnitudes, while third derivatives
+can carry directed loop interference. A three-state conjugate pair has the
+same magnitudes and spectrum but opposite cubic transport response. A real
+positive second-order two-state control and finite target-derived spectral
+ODEs prevent promotion of complex notation or differential representation to
+ontology. This is PJ-L2 author-side only; whole-boundary indivisible laws and
+independently physical memory remain open, and no candidate or official cycle
+is created.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

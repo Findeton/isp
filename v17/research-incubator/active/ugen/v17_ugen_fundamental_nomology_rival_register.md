@@ -119,6 +119,18 @@ representation progress. It neither generates the real flow family from a
 positive source law nor establishes the complete nonclassical process
 interface.
 
+The short-time probability-jet gate constrains Rival A's source form more
+directly. The differentiable squared-modulus zero-rate result is published
+prior art. Its regular autonomous first-order consequence is exact: a
+locally-Lipschitz equation on the instantaneous stochastic kernel alone
+cannot leave an identity boundary. The second positive jet carries coupling
+magnitudes and the third can carry directed loop response; a conjugate
+triangle has identical magnitudes and spectrum but opposite cubic transport
+asymmetry. An exact real positive second-order two-state endpoint equation
+prevents promotion of complex amplitudes to ontology, while finite
+target-derived spectral ODEs remain compilers. This narrows Rival A without
+selecting its memory, whole-boundary law, configuration form, or actuality.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -286,7 +298,10 @@ The current evidence supports the following order.
    result remain absent. The dynamical complex-structure gate then proves that
    one oriented real flow has a canonical polar $J$, but a family-level
    complex carrier is a joint-commutant question. Exact nonunique, empty, and
-   classical Koopman controls prevent its promotion to quantum ontology.
+   classical Koopman controls prevent its promotion to quantum ontology. The
+   probability-jet gate additionally excludes regular autonomous first-order
+   dynamics on the visible kernel at an identity boundary, while leaving
+   independently physical higher-jet/memory and whole-boundary laws open.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -339,6 +354,10 @@ U0 DYNAMICAL COMPLEX GATE:              DCS-L2 / REPRESENTATION ONLY
 U0 ONE-FLOW POLAR J:                    EXACT / PARAMETER NOT PHYSICAL TIME
 U0 FAMILY COMMON-J SET:                 MAY BE NONUNIQUE OR EMPTY
 U0 COMPLEX QUANTUM CRITERION:           NOT EARNED / KOOPMAN PASSES
+U0 PROBABILITY-JET GATE:                PJ-L2 AUTHOR-SIDE / NO RESULT
+U0 FIRST-ORDER VISIBLE-KERNEL SOURCE:   EXCLUDED AT PRINTED REGULAR SCOPE
+U0 HIGHER POSITIVE JETS:                MAGNITUDE + LOOP DIRECTION LOCATED
+U0 POSITIVE SECOND-ORDER CONTROL:       EXACT ENDPOINT COMPILER / NOT NATIVE
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4

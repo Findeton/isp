@@ -200,6 +200,16 @@ by its joint-commutant common-$J$ set, which exact examples make nonunique or
 empty. Classical Koopman dynamics pass the one-flow theorem. Together these
 controls locate secondary Hilbert/complex representation without providing a
 quantum criterion or the native positive source law.
+The short-time probability-jet gate then constrains the source form itself.
+It credits the published differentiable zero-rate result and proves the
+bounded uniqueness consequence: a regular autonomous first-order equation on
+the instantaneous stochastic kernel cannot generate nontrivial coherent
+quadratic departure from identity. Exact controls put coupling magnitudes in
+the second jet and directed loop response in the third. The conjugate triangle
+shows that edge magnitudes and spectrum do not select chirality; the real
+second-order two-state control shows that this does not select complex
+ontology. Target-derived finite spectral ODEs remain compilers. No native
+candidate or official cycle is opened.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -275,6 +285,10 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 DYNAMICAL COMPLEX GATE:      DCS-L2 / JOINT-COMMUTANT TEST
     U0 FAMILY COMMON-J SET:         MAY BE NONUNIQUE OR EMPTY
     U0 QUANTUM CRITERION:           NOT EARNED / KOOPMAN PASSES
+    U0 PROBABILITY-JET GATE:        PJ-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+    U0 FIRST-ORDER KERNEL SOURCE:   EXCLUDED UNDER REGULAR AUTONOMOUS PREMISES
+    U0 HIGHER POSITIVE RESPONSE:    MAGNITUDE + DIRECTED LOOP DATA LOCATED
+    U0 WHOLE-BOUNDARY ESCAPE:       OPEN / NATIVE RULE ABSENT
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN

@@ -343,6 +343,20 @@ dynamics pass the one-flow theorem, so this is a DCS-L2 representation gate,
 not a quantum criterion, native law, or complex ontology. The source-generated
 real flow family and complete nonclassical process interface remain absent.
 
+The short-time probability-jet source gate now returns to the missing law
+itself. Doukas's differentiable squared-modulus zero-rate theorem is credited
+as prior art. The elementary autonomous-ODE corollary then excludes a regular
+first-order law on the instantaneous stochastic kernel alone: uniqueness
+would leave the identity fixed. Exact unitary controls show that the second
+positive-probability jet carries coupling magnitudes and the third can carry
+directed loop response. A conjugate triangle has the same edge magnitudes and
+spectrum but opposite cubic transport asymmetry, while an exact real
+second-order two-state equation proves that this does not select complex
+amplitude as ontology. Finite spectral ODEs remain target-derived compiler
+controls. The packet reaches only PJ-L2 author-side and leaves enlarged
+physical memory, singular laws, and genuinely indivisible whole-boundary laws
+open; it constructs no U0 candidate or official cycle.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -388,6 +402,7 @@ Active audit:
 - v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
 - v17_ugen_u0_reflection_positive_euclidean_control.md
 - v17_ugen_u0_dynamical_complex_structure_gate.md
+- v17_ugen_u0_short_time_probability_jet_source_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -622,6 +637,17 @@ Failure must identify an unavoidable input rather than announce that
 34. A reversing symmetry with $RJR^{-1}=-J$ must be typed separately from
     continuous complex-linear dynamics; conjugation is not by itself a family
     inconsistency.
+35. A differentiable coherent identity-boundary family has zero first
+    stochastic rate; a regular autonomous first-order law on $\Gamma$ alone
+    therefore stalls rather than generating the quadratic departure.
+36. This short-time obstruction does not select complex ontology: a positive
+    real second-order endpoint control exists, but its coupling, boundary jet,
+    and family remain supplied.
+37. Second- and third-order probability response can carry coupling magnitude
+    and directed loop information. Edge magnitudes and spectrum alone cannot
+    select a conjugate triangle's chirality.
+38. A probability-coordinate differential equation reconstructed from target
+    spectral gaps and initial jets is a compiler, not a native source law.
 
 ## Present disposition
 
@@ -694,6 +720,10 @@ U0 DYNAMICAL COMPLEX GATE:      DCS-L2 AUTHOR-SIDE / REPRESENTATION ONLY
 U0 ONE-FLOW POLAR J:            EXACT ON MOVING SECTOR / TIME NOT DERIVED
 U0 FAMILY COMMON-J SET:         JOINT COMMUTANT MAY BE MANY OR EMPTY
 U0 COMPLEX QUANTUM CRITERION:   NOT EARNED / KOOPMAN CONTROL PASSES
+U0 PROBABILITY-JET GATE:        PJ-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+U0 FIRST-ORDER KERNEL LAW:      STALLS UNDER PRINTED REGULAR AUTONOMOUS PREMISES
+U0 HIGHER POSITIVE JETS:        MAGNITUDE + LOOP DIRECTION VISIBLE IN CONTROLS
+U0 POSITIVE SECOND-ORDER:       EXACT TWO-STATE COMPILER / NOT NATIVE LAW
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
