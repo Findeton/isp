@@ -2009,3 +2009,68 @@ products, and at least twenty fresh semantic countermodels. The protocol
 singles out record physicality, all-branch scheduling, UCOH reader admission,
 quotient-level two-clock independence, formal-wrapper scope, and permanent
 walls. No repair successor or downstream phase is authorized.
+
+## 2026-08-23 — PAPER 04 ONTOLOGY HOSTILE REVIEW FROZEN (v17 LEDGER #85)
+
+The blind ontology/time/gravity report freezes at
+`v17/review-paper04-ontology-time-gravity.md`, ordinary SHA-256
+`13b75275c450f6f555b7a0a788aa5833ad3986066050eaa6de8b10f89de6fbc5`,
+normalized self-SHA-256
+`8039b8bc765aec3d77c8b9a97f7f8087aa5b5cb089753b3c793c8367949b264f`,
+and size 896 LF / 44,044 bytes. Verdict is `REJECT`.
+
+The first decisive counterexample is H8/M4. A Q-controlled pointer shift is
+reversible on a quantum pointer Hilbert space but does not preserve the
+center of the accepted Paper-03 classical record algebra. UCOH prevents both
+superselection and harmless dephasing. The finite parent, B clock, restricted
+A state map, reduced histories, and permanent walls survive.
+
+## 2026-08-23 — PAPER 04 MATHEMATICS HOSTILE REVIEW FROZEN (v17 LEDGER #86)
+
+The blind mathematics report freezes at
+`v17/review-paper04-mathematics-clocks.md`, ordinary SHA-256
+`9a1f651212a9d9c5b0f319359ed81a87176ed72bd393458513d8ddb8f7504877`,
+normalized self-SHA-256
+`4324bb4da17e66a7c1cfe7d5bdd0a51ad852114ab9f955fad633f95e5758416c`,
+and size 1,003 LF / 43,069 bytes. Verdict is `REVISE`.
+
+The frozen +q term supplies a relative factor $\omega^s$ omitted from the
+UCOH orbit. At A record one, the candidate's frozen $F_+$ probability is
+$(1-\cos(\pi/7))/2$, not one. The dephased value remains one half, so the
+qualitative scalar-information-loss theorem survives while its exact frozen
+certificate does not. Conditional USEQ values, stoppage weights, and exact
+division typing also need correction.
+
+## 2026-08-23 — PAPER 04 QUANTUM HOSTILE REVIEW FROZEN (v17 LEDGER #87)
+
+The blind quantum-instrument report freezes at
+`v17/review-paper04-quantum-instruments.md`, ordinary SHA-256
+`042f770a4d0af3502890151abcb04628bf876a5a99a587920388b498c42cca00`,
+normalized self-SHA-256
+`0cd66411a2181189199311a68c5aa0146d01fe11823e8c959f4d90a226a66afa`,
+and size 920 LF / 42,107 bytes. Verdict is `REVISE`.
+
+The A-conditioned UCOH state coherently combines comparator labels $s=1$
+and $s=4$, so it is not any single frozen laboratory comparator member. The
+candidate also never constructs the required complete stopped-A and USEQ
+paired arrows, target memory, and all-reader identities. State/reduction
+arithmetic remains exact salvage.
+
+## 2026-08-23 — PAPER 04 TERMINALLY ADJUDICATED (v17 LEDGER #88)
+
+Root adjudication freezes at
+`v17/note-paper04-hostile-review-adjudication.md`, ordinary SHA-256
+`4e186ce91e7213f48a52992f9eade633a6cd35b89b0b094505bc5efd3390115e`,
+normalized self-SHA-256
+`b4dd7b9c0183dd6358e327ee5532642f8f70ab86847771f189ad1347bc80d771`,
+and size 519 LF / 21,746 bytes. Decision is
+`TERMINAL REJECT-WITH-EXACT-SALVAGE`.
+
+Independent reconstruction adopts the classical-record type counterexample
+as controlling, corrects the exact UCOH phase/value, rejects the A comparator
+bridge and incomplete paired-arrow claims, and preserves the finite parent,
+global B-relative clock, q-not-6 A state-coordinate reduction, B-relative
+adaptive arithmetic, calibration/response/baseline controls, recurrence,
+and all permanent walls. The failure is physical and semantic, not software.
+No candidate edit, automatic Paper-04 successor, Paper 05, spacetime, or
+gravity unit opens.

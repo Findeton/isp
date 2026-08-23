@@ -364,9 +364,13 @@ selection, or a Barandes completion.
 | Paper 04 model Seat Q audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #79 report; complete instruments, coherent A-record action, adaptive law | gauge-trivial records and post-result measurement-route choice are refused |
 | Paper 04 model Seat O audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #80 report; model ontology, supplied order, Barandes and gravity scope | finite testbed and co-designed comparator cannot select nature or timeless ontology |
 | Paper 04 model-pin adjudication | `TERMINAL ACCEPT FOR EXACTLY ONE CONSTRUCTION WITH BINDING SCOPE` | #81 root reconstruction; R1--R12 and B1--B20 | one frozen mathematical construction authorized; no scientific coordinate awarded |
-| Paper 04 finite relational-clock candidate | `GREEN-UNREVIEWED` | exact #82 construction; finite parent, covariant records, adaptive law, full frame map, scalar failure, full product | candidate only; construction audit and hostile review pending |
-| Paper 04 construction audit | `READY FOR INDEPENDENT HOSTILE REVIEW` | exact #83 result-neutral fidelity audit; 24 targets, 42 controls, 92 attacks, products and walls | author trace only; no scientific coordinate awarded |
+| Paper 04 finite relational-clock candidate | `TERMINAL REJECT-WITH-EXACT-SALVAGE` | exact #82 construction adjudicated at #88 | complete A-clock/two-clock/external-parameter product fails; finite constrained parent, B clock, q-not-6 A state-coordinate map, and reduced controls survive |
+| Paper 04 construction audit | `PASS — RESULT-NEUTRAL AUTHOR TRACE ONLY` | exact #83 fidelity audit | its missed semantic defects demonstrate why it cannot substitute for hostile review |
 | Paper 04 hostile-review protocol | `FROZEN — THREE BLIND REVIEWS AUTHORIZED` | exact #84 corpus; Seats M/Q/O, H1--H30, full controls/attacks/products | no candidate repair or downstream unit during review |
+| Paper 04 hostile Seat O | `REJECT — ADJUDICATED EVIDENCE` | exact #85 report | Q-controlled A pointer does not preserve the Paper-03 classical-record algebra; four division cases unconstructed |
+| Paper 04 hostile Seat M | `REVISE — ADJUDICATED EVIDENCE` | exact #86 report | omitted UCOH phase makes the printed reader probability false; qualitative no-go survives |
+| Paper 04 hostile Seat Q | `REVISE — ADJUDICATED EVIDENCE` | exact #87 report | A/UCOH is not one comparator member; stopped/adaptive paired arrows unconstructed |
+| Paper 04 terminal adjudication | `TERMINAL REJECT-WITH-EXACT-SALVAGE` | #88 independent root reconstruction | earliest failure `P04-CLOCK-A-PHYSICAL-PACKET-UNCONSTRUCTED`; Paper 05 and all spacetime/gravity phases remain closed |
 
 ## Derivation balance
 
@@ -375,9 +379,9 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue; complete-boundary paired relativistic quantum operational representation
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 1 (Paper 04 finite relational-clock candidate)
+green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
-open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy in the sole exact finite cyclic Paper-04 construction
+open hypotheses under test: relational stochastic history; one actual history; physical clocks and clock-neutral parents in general, but no live Paper-04 construction
 standard empirical/theory comparators: quantum Q0–Q3 and supplied AQFT/Lorentzian laboratory background
 supplied comparator geometry: 1 declared Paper 03 background family
 derived geometry or gravity: 0

@@ -6,8 +6,10 @@ Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
 Paper 03 v1/v2/v3.1 terminal REVISE; Paper 03 v3.2 terminal
 ACCEPT-WITH-SCOPE at relativistic quantum operational adequacy with global
 ontology debt; Paper 04 generic mathematical boundary terminally accepted
-with binding scope; the sole model-specific finite cyclic two-clock pre-fit
-pin terminally accepted for exactly one construction with binding scope**
+with binding scope; the sole finite cyclic candidate terminally
+REJECTED-WITH-EXACT-SALVAGE because its coherent A pointer is not a classical
+record; the finite parent and B-relative clock survive; Paper 05 remains
+closed on this branch**
 
 ## 0. Authority and workflow
 
@@ -271,6 +273,15 @@ derived.
 
 **Strongest result.** Clock-relative quantum process equivalence. It does not
 yet imply a fundamental timeless ontology, spacetime chronology, or gravity.
+
+**Terminal result of the sole model branch.** Ledger #88 rejects the complete
+two-clock claim. The finite constrained parent, global B clock, q-not-6 A
+state-coordinate reduction, B-relative adaptive arithmetic, response
+controls, and finite clock limits survive. The Q-controlled A pointer does
+not preserve the accepted classical-record algebra on the coherent UCOH
+source; the exact UCOH phase and flagship reader value are also wrong; and
+the stopped/adaptive paired arrows are incomplete. No automatic model repair
+or Paper 05 opening follows.
 
 ### Paper 05 — operational causal structure
 
@@ -554,9 +565,14 @@ Paper 04 three pin audits           FROZEN ACCEPT WITH BINDING SCOPE
 Paper 04 root pin adjudication      TERMINAL — ONE MODEL-SPECIFIC PREFIT PIN AUTHORIZED
 Paper 04 model-pin three audits     TERMINAL ACCEPT FOR ONE CONSTRUCTION WITH SCOPE
 Paper 04 model-pin adjudication     TERMINAL — EXACTLY ONE CONSTRUCTION AUTHORIZED
-Phase T construction                GREEN-UNREVIEWED — SOLE MODEL CANDIDATE FROZEN
-Paper 04 construction audit         READY FOR INDEPENDENT HOSTILE REVIEW
+Phase T construction                TERMINAL REJECT-WITH-EXACT-SALVAGE
+Paper 04 construction audit         PASS — RESULT-NEUTRAL AUTHOR TRACE ONLY
 Paper 04 hostile protocol           FROZEN — THREE BLIND REVIEWS AUTHORIZED
+Paper 04 Seat M review              TERMINAL EVIDENCE — REVISE
+Paper 04 Seat Q review              TERMINAL EVIDENCE — REVISE
+Paper 04 Seat O review              TERMINAL EVIDENCE — REJECT
+Paper 04 joint adjudication         TERMINAL REJECT-WITH-EXACT-SALVAGE
+Paper 05 operational chronology     CLOSED — NO ACCEPTED CLOCK-RELATIVE LAW
 Phases G/S/P                         CLOSED
 ```
 

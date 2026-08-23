@@ -158,8 +158,8 @@ cleanly if nature does not support it.
   continuous duality remains conditional on the complete common-instrument
   package. No implementation is required. Paper 04 needs a separately frozen
   physical question.
-- Paper 04 status: **GENERIC MATHEMATICAL BOUNDARY TERMINALLY ACCEPTED WITH
-  BINDING SCOPE; ONE MODEL-SPECIFIC PREFIT PIN AUTHORIZED**. Ledger #72 separates clock
+- Paper 04 status: **SOLE FINITE MODEL TERMINALLY REJECTED WITH EXACT
+  SALVAGE; NO AUTOMATIC SUCCESSOR**. Ledger #72 separates clock
   correlation, clock-relative adequacy, formal parametrization, operational
   redundancy of an external scalar parameter, and the fundamental status of
   time. It requires two genuine physical clocks in one joint law, held-out
@@ -195,6 +195,17 @@ cleanly if nature does not support it.
   protocol freeze, not scientific acceptance. Ledger #84 freezes three
   mutually blind mathematics, quantum-instrument, and ontology/time/gravity
   reviews with 30 common reconstructions and complete control/attack duties.
+  Ledgers #85--#87 find complementary semantic failures. The Q-controlled A
+  pointer is a coherent quantum premeasurement, not an automorphism of the
+  accepted classical-record algebra; the UCOH orbit omits a relative phase;
+  the A-relative state is not one frozen laboratory comparator member; and
+  complete stopped/adaptive paired arrows were not constructed. Root
+  adjudication #88 therefore rejects the complete two-clock and
+  external-parameter-redundancy product. It preserves the exact finite
+  constrained parent, global B-relative clock packet, q-not-6 A
+  state-coordinate reduction, B-relative adaptive arithmetic, response and
+  baseline controls, and every honesty wall. Paper 05 remains closed because
+  this branch supplies no accepted complete clock-relative law.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -459,6 +470,18 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   held-out external-parameter redundancy, and fundamental-time status; it
   binds 25 targets, 42 paired controls, 68 attacks, 28 product coordinates,
   and three independent pre-construction audits.
+- `paper-04-finite-relational-clock-parent.md` — frozen sole finite candidate;
+  terminally rejected at the complete A-clock/two-clock packet level, with a
+  finite parent and B-relative clock salvage.
+- `review-paper04-mathematics-clocks.md` — blind mathematics review; exact
+  UCOH phase/probability and joint-history normalization counterexamples.
+- `review-paper04-quantum-instruments.md` — blind quantum review; A-relative
+  comparator-bridge and complete paired-arrow counterexamples.
+- `review-paper04-ontology-time-gravity.md` — blind ontology review; decisive
+  quantum-pointer versus classical-record type counterexample.
+- `note-paper04-hostile-review-adjudication.md` — terminal root
+  `REJECT-WITH-EXACT-SALVAGE`; no automatic Paper-04 successor or Paper-05
+  opening.
 
 ## Permanent honesty wall
 
