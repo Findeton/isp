@@ -1991,3 +1991,21 @@ calibration/baselines/responses, hidden-time graph, resources, divisions,
 products, and every permanent wall. It finds no discrepancy and identifies
 six exact hostile-review priorities. The next authorized action is protocol
 freeze only.
+
+## 2026-08-23 — PAPER 04 HOSTILE PROTOCOL FROZEN (v17 LEDGER #84)
+
+The mutually blind scientific-review protocol freezes at
+`v17/note-paper04-hostile-review-protocol.md`, ordinary SHA-256
+`d763bb685003312e4529b62e29cceebd7eb0182d2a4ca3fbb3f6c118176715e9`,
+normalized self-SHA-256
+`4775f0a5aebfc7f72367caed61b72574c5eadafc74dcdfd24ad0052e860f8c4f`,
+and size 269 LF / 12,524 bytes.
+
+Three isolated seats are authorized: constrained mathematics/temporal-frame
+category; quantum instruments/histories; and ontology/time/relativity/
+Barandes/gravity. Each must authenticate and read the complete corpus,
+reconstruct H1--H30, C1--C42, attacks 1--68 and X1--X24, B1--B20, both
+products, and at least twenty fresh semantic countermodels. The protocol
+singles out record physicality, all-branch scheduling, UCOH reader admission,
+quotient-level two-clock independence, formal-wrapper scope, and permanent
+walls. No repair successor or downstream phase is authorized.

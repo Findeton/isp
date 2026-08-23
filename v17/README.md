@@ -192,7 +192,9 @@ cleanly if nature does not support it.
   q=6, and reading-only frame sufficiency fails on UCOH. These are candidate
   results only. Result-neutral construction audit #83 finds no pin-fidelity,
   typing, arithmetic, product, or claim-ceiling discrepancy and authorizes
-  protocol freeze, not scientific acceptance.
+  protocol freeze, not scientific acceptance. Ledger #84 freezes three
+  mutually blind mathematics, quantum-instrument, and ontology/time/gravity
+  reviews with 30 common reconstructions and complete control/attack duties.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
