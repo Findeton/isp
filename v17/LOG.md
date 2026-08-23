@@ -1610,3 +1610,34 @@ comparators, not an ontology, actuality rule, internal clock, spacetime, or
 gravity result. A result-neutral construction audit is next. Hostile review,
 terminal adjudication, implementation, Paper 04, and every downstream phase
 remain closed.
+
+## 2026-08-23 — PAPER 03 v3.2 CONSTRUCTION AUDIT PASSES (v17 LEDGER #66)
+
+The result-neutral author audit freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-construction-audit.md` | `a28a921dbc87dd86e0b5e8dfdb7bc5b1712d13f069a14d955ddadc78d1ed90bb` | `e72aec5a8ed6802c6b09514a0a76ac3e7c7347cc692964a543edd9ba4f62865c` | 528 LF / 24,519 bytes |
+
+Disposition: `READY-FOR-INDEPENDENT-HOSTILE-REVIEW`; first exact semantic
+counterexample: none found; scientific coordinates awarded: none. The audit
+reauthenticates the complete #65 candidate and every authority, then
+independently traces all fourteen binding construction conditions. It
+reconstructs the complete-boundary repair, normal predual `Ens`, exact paired
+category, finite direct-sum guards, common-instrument continuous theorem,
+record-dependent continuous qubit nonvacuity witness, paths, conditioning,
+feedback, packet transport, certified schedules, finite histories, and the
+inherited AQFT/no-signalling/steering/Bell scopes.
+
+The audit also verifies the full census: 24 targets, 40 two-way controls, 64
+mandatory attacks, 18 category and 18 quantum pre-construction countermodels,
+and 41 product coordinates. Fourteen additional reconstruction attacks are
+recorded. No physical probability, instrument, comparator, parameter, or
+interpretation changes.
+
+The provisional rung remains nonterminal and representation-level:
+`P03V32-RELATIVISTIC-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
+The complete predictor is not promoted to ontology; supplied AQFT spacetime
+is not emergent geometry; actuality, internal time, Paper 04, and gravity
+remain closed. The next permitted step is one exact result-neutral
+three-lens hostile-review protocol.

@@ -147,8 +147,12 @@ cleanly if nature does not support it.
   category, finite and conditional continuous duality, closure, histories,
   concurrency, and inherited scoped relativistic controls; it also disposes
   every target/control/attack and all 36 fresh audit countermodels. No theorem
-  is terminal before construction audit and hostile review; implementation,
-  Paper 04, clock, spacetime, ontology, and gravity remain closed.
+  is terminal. The result-neutral construction audit now reconstructs every
+  binding condition, the genuinely record-dependent continuous qubit witness,
+  all attack surfaces, and every ontology/gravity wall without finding a
+  semantic counterexample. A separately frozen hostile protocol and three
+  blind reviews remain mandatory; implementation, Paper 04, clock, spacetime,
+  ontology, and gravity remain closed.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

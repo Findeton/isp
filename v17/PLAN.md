@@ -5,7 +5,8 @@ Date opened: 2026-08-22
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
 Paper 03 v1/v2/v3.1 terminal REVISE; v3.2 pin and two independent audits
 adjudicated ACCEPT; the sole v3.2 mathematics candidate is frozen
-GREEN-UNREVIEWED and awaits construction audit; Paper 04 closed**
+GREEN-UNREVIEWED and its result-neutral construction audit passes; hostile
+review protocol next; Paper 04 closed**
 
 ## 0. Authority and workflow
 
@@ -529,8 +530,8 @@ Paper 03 v3.2 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.2 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.2 pin adjudication      TERMINAL ACCEPT FOR ONE CONSTRUCTION
 Paper 03 v3.2 construction          GREEN-UNREVIEWED MATHEMATICS
-Paper 03 v3.2 construction audit    NEXT — NOT YET FROZEN
-Paper 03 v3.2 hostile protocol      CLOSED PENDING CONSTRUCTION AUDIT
+Paper 03 v3.2 construction audit    PASS — RESULT-NEUTRAL
+Paper 03 v3.2 hostile protocol      NEXT — NOT YET FROZEN
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
