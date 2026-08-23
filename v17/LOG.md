@@ -909,3 +909,24 @@ microscopic happening network, lattice, global time, or emergent spacetime.
 
 No result is awarded. A result-neutral author feasibility audit is next;
 construction and Paper 04 remain closed.
+
+## 2026-08-22 — PAPER 03 v2 PIN AUDIT PASSES (v17 LEDGER #38)
+
+The result-neutral author audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v2-pin-audit.md` | `ccce3ca2600f9096b25686aea36db4b79a2a4b94ad66d95b8f5c1c1bbc852f91` | 274 LF / 10,465 bytes |
+
+The audit reconstructs the exact timelike two-slot chain, incomparable diamond,
+and same-slot procedure-alternative controls. It verifies that the free path
+category has identities, total matched composition, and associativity; that an
+explicit skip differs from identity by future availability; and that lower-set
+frontiers forget incomparable serialization without introducing a total clock.
+
+Construction must print the evaluation functor to the admitted
+operation/kernel category, adaptive classical-register semantics, state/update
+closure, full packet-isomorphism intertwiners, context closure, exact
+source/localization premises, the KMS rest-frame control, and the no-slot-
+ontology wall. Disposition: `FIT-FOR-CONSTRUCTION`. No coordinate is awarded.
+One mathematics-only construction may begin; Paper 04 remains closed.

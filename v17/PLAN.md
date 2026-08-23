@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1 terminal REVISE; Paper 03 v2 pin frozen, author audit next**
+Paper 03 v1 terminal REVISE; Paper 03 v2 pin audit passed, construction next**
 
 ## 0. Authority and workflow
 
@@ -499,12 +499,12 @@ Paper 03 Seat Q review              FROZEN ACCEPT-WITH-SCOPE
 Paper 03 Seat O review              FROZEN REVISE — FRAME CLAIM OVERBROAD
 Paper 03 joint adjudication         TERMINAL REVISE — RUNG 4
 Paper 03 v2 repair pin              FROZEN RESULT-NEUTRAL
-Paper 03 v2 author audit            NEXT
+Paper 03 v2 author audit            PASS RESULT-NEUTRAL
+Paper 03 v2 construction            NEXT — MATHEMATICS ONLY
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is a result-neutral author audit of the Paper 03 v2
-pin's category/type feasibility. It may not retune the AQFT comparator or add
-ontology, internal time, spacetime emergence, or gravity. Paper 04 remains
-closed.
+The next scientific action is one self-contained Paper 03 v2 mathematics-only
+construction. It may not retune the AQFT comparator or add ontology, internal
+time, spacetime emergence, or gravity. Paper 04 remains closed.
