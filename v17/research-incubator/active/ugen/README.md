@@ -63,6 +63,22 @@ must produce complete held-out process laws without receiving the target
 process, answer table, or uncharged per-program advice. No concrete scalable
 generator or class-wide trilemma theorem has yet been constructed.
 
+The bounded C1 pre-pin is now drafted. It fixes a scalable adaptive
+Clifford-plus-$T$ grammar, keeps endpoint-only and complete-process
+calibrations as separate tracks, preregisters six held-out process families,
+and charges distinct predictive, memory, context, communication, process,
+composition, uniformity, and physical resources. The native-candidate slot is
+deliberately empty, so the packet is **not ready for official freeze**.
+
+C1 also adds the exact zero-gain comparator needed to prevent false progress.
+Two strongly positive pair-history laws can have the same complete ordinary
+diagonal event law yet produce $3/8$ and $5/8$ for one fixed composite event.
+A strongly positive pair-history kernel uniformly reconstructs the complete
+finite quantum record law, but it reconstructs Hilbert/process structure and
+therefore does not derive quantum dynamics, actuality, ontology, time, or
+gravity. The candidate $D$-over-$\Gamma$ hierarchy remains a v17 synthesis,
+not a claim about Barandes' published law.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -90,6 +106,11 @@ controls until their own future authorization, freeze, review, and
 adjudication occur.
 
 Active audit:
+
+- v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
+- v17_ugen_c1_pair_history_composition_candidate.md
+- v17_ugen_c1_source_scope_and_readiness_audit.md
+- v17_ugen_c1_future_review_contract.md
 
 - `v17_pc6_scalable_markov_and_indivisible_frontier.md`
 - `v17_pc6_source_scope_and_readiness_audit.md`
@@ -201,8 +222,11 @@ FINITE FUNCTORIAL CARRIER:     REFUTED FOR EXACT UNBOUNDED H,T FAMILY
 POSITIVE ONTOLOGY GENERALLY:   NOT REFUTED / CONTINUOUS CONTROL PASSES
 PC6 SCALABLE FRONTIER:         SOURCE/CONTROL/CONTEST PACKET COMPLETE
 SCALABLE TRILEMMA THEOREM:     NOT PROVED
-NEXT AUTHOR-SIDE TARGET:       BOUNDED U-GEN C1 ADAPTIVE
-                               CLIFFORD-PLUS-T PIN DRAFT
+C1 SCALABLE PRE-PIN:           DRAFTED / NATIVE CANDIDATE SLOT EMPTY
+C1 PAIR-HISTORY CONTROL:       EXACT AUTHOR-SIDE / ZERO EXPLANATORY GAIN
+DIAGONAL LAW COMPOSITION:      NONUNIQUE IN EXACT FIXED PRODUCT EXAMPLE
+NEXT AUTHOR-SIDE TARGET:       INDEPENDENTLY MOTIVATED NATIVE GENERATOR
+                               OR BOUNDED CLASS-WIDE THEOREM
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

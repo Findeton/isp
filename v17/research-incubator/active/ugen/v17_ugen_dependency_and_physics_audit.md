@@ -494,6 +494,21 @@ The next author-side task is therefore a bounded U-Gen C1 candidate pin for one
 adaptive Clifford-plus-$T$ family, not a broader Borel census or another finite
 endpoint example.
 
+That author-side pre-pin is now complete. It freezes two noninterchangeable
+calibration tracks, the adaptive Clifford-plus-$T$ grammar, six held-out
+process families, a comparator battery, and the expanded resource vector.
+The exact pair-history comparator shows that the full diagonal history law of
+an isolated system can remain ordinary while relative off-diagonal data change
+a composed event from $3/8$ to $5/8$. A strongly positive pair-history
+compiler then reconstructs all finite quantum records, but only by retaining
+the supplied phase-complete process structure. It is therefore a zero-gain
+control, not a native stochastic generator.
+
+The pre-pin remains blocked from official freeze because no independently
+motivated native generator has entered the contest and no bounded class-wide
+trilemma theorem has been proved. The $D$-over-$\Gamma$ hierarchy is a
+candidate synthesis under investigation, not a Barandes source claim.
+
 1. Q-Cut is author-side ready for an authorization decision, but it is not an
    accepted theorem and cannot be used as a premise.
 2. E-Comp is an active author-side lemma package, but it is not frozen or
@@ -520,7 +535,9 @@ PC4 POSITIVE CONTROL:            CONSTRUCTED / ENDPOINT NONSELECTION
 PC5 PROCESS FRONTIER:            FINITE CLASS OBSTRUCTION / CONTROLS OPEN
 PC6 SCALABLE FRONTIER:           SOURCE/CONTROL/CONTEST PACKET COMPLETE
 SCALABLE TRILEMMA:               NOT PROVED
-NEXT AUTHOR-SIDE TARGET:         BOUNDED U-GEN C1 PIN DRAFT
+C1 SCALABLE PRE-PIN:             COMPLETE AUTHOR-SIDE / NATIVE SLOT EMPTY
+C1 PAIR-HISTORY COMPARATOR:      EXACT / ZERO EXPLANATORY GAIN
+NEXT AUTHOR-SIDE TARGET:         NATIVE GENERATOR OR BOUNDED CLASS THEOREM
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE

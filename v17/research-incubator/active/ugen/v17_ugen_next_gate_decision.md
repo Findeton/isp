@@ -39,6 +39,13 @@ the calibration track, held-out programmes, complete retained/erased record
 interface, forbidden answer imports, comparator battery, and distinct resource
 coordinates before any candidate generator is written.
 
+That pre-pin and its review design are now drafted author-side. A pair-history
+kernel supplies the exact zero-gain comparator: it reconstructs the complete
+finite quantum process and proves that an isolated diagonal event law does not
+determine composite event laws. The native-generator slot remains empty.
+Accordingly C1 is prepared as a contest specification but is not ready for an
+official freeze.
+
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
     PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
@@ -46,8 +53,10 @@ coordinates before any candidate generator is written.
     CONTINUOUS POSITIVE CONTROL:    PASSES / POSITIVITY NOT REFUTED
     PC6 SCALABLE FRONTIER:          SOURCE/CONTROL/CONTEST PACKET COMPLETE
     SCALABLE TRILEMMA THEOREM:      NOT PROVED
-    NEXT AUTHOR-SIDE U-GEN TASK:    BOUNDED U-GEN C1 ADAPTIVE
-                                    CLIFFORD-PLUS-T PIN DRAFT
+    C1 PRE-PIN:                     DRAFTED / NATIVE SLOT EMPTY
+    C1 PAIR-HISTORY CONTROL:        EXACT / ZERO EXPLANATORY GAIN
+    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE GENERATOR PRINCIPLE OR
+                                    BOUNDED CLASS-WIDE THEOREM
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

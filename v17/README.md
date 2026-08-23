@@ -286,9 +286,15 @@ cleanly if nature does not support it.
   contextual stabilizer and non-Markov controls and types a fair uniform
   indivisible-generator contest against complete process laws. It does not
   prove the proposed phase/context/composition trilemma or construct a
-  scalable generator. The next author-side target is a bounded U-Gen C1
-  adaptive Clifford-plus-$T$ candidate pin. Repository inclusion does not
-  promote any draft, authorize a Paper
+  scalable generator. The bounded U-Gen C1 adaptive Clifford-plus-$T$ pre-pin
+  is now drafted author-side. It freezes separate endpoint and complete-process
+  calibration tracks, held-out adaptive/tensor tests, forbidden answer
+  imports, and distinct resource coordinates. Its pair-history comparator
+  proves an exact diagonal-noncomposition example and uniformly reconstructs
+  the supplied finite quantum process, but receives zero explanatory credit:
+  it retains equivalent phase-complete structure. The native-generator slot
+  remains empty, so C1 is not ready for official freeze. Repository inclusion
+  does not promote any draft, authorize a Paper
   04B successor, or
   open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.

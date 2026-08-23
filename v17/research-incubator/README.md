@@ -148,7 +148,24 @@ per-program advice while allowing global or retrocausal candidates with their
 dependencies printed. The resulting phase/context/composition trilemma is a
 research frontier, not a proved theorem. The next author-side construction is
 a bounded U-Gen C1 candidate pin on one scalable adaptive Clifford-plus-$T$
-family; no such pin or generator exists yet.
+family.
+
+That C1 packet is now drafted as a **pre-pin**, not an official or freeze-ready
+pin. It preregisters the adaptive programme grammar, separate endpoint and
+complete-process calibration tracks, held-out process families, comparator
+battery, and resource ledger. Its exact pair-history control demonstrates that
+two strongly positive systems with the same complete ordinary diagonal event
+law can yield different composite event probabilities, while the full
+pair-history compiler reconstructs standard finite quantum processes with zero
+explanatory reduction. No native generator has entered the contest, so C1
+remains author-side and not ready for official freeze.
+
+C1 active files:
+
+- active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
+- active/ugen/v17_ugen_c1_pair_history_composition_candidate.md
+- active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md
+- active/ugen/v17_ugen_c1_future_review_contract.md
 
 Canonical status: `active/ugen/README.md`.
 
