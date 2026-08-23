@@ -272,6 +272,7 @@ selection, or a Barandes completion.
 | positive histories | complete predictive objects and records | `GREEN-UNREVIEWED WITH COSTS` | global/contextual/memory-bearing/unselected |
 | frame result | packet covariance plus schedule equality | `GREEN-UNREVIEWED NARROWED` | physical rest frames allowed; idle structure not excluded |
 | ontology / spacetime / gravity | none | `UNCONSTRUCTED` | no downstream promotion |
+| Paper 03 v2 construction audit | frozen candidate and pin | `PASS — RESULT-NEUTRAL` | authorizes protocol/review only; awards no coordinate |
 
 ## Derivation balance
 

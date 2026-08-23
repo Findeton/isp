@@ -955,3 +955,23 @@ slot poset is laboratory protocol input, not fundamental happenings, a global
 clock, or spacetime. The claimed provisional ceiling is
 `P03V2-LOCALLY-COVARIANT-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
 No result is awarded. A result-neutral construction audit is next.
+
+## 2026-08-22 — PAPER 03 v2 CONSTRUCTION AUDIT PASSES (v17 LEDGER #40)
+
+The result-neutral author audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v2-construction-audit.md` | `713d8aab7a7b4f9366536316432c939174e1cc9de9965a99ad4fbb8ee1ca8694` | 228 LF / 9,551 bytes |
+
+The audit reconstructs the category repair, covariant state/record kernel and
+contravariant Heisenberg semantics, measurement/probability core,
+presentation/operational quotient, packet covariance, KMS frame distinction,
+and no-slot-ontology wall. No semantic counterexample is found.
+
+The hostile round must independently type the target category of complete
+instruments with classical outputs; verify every primitive boundary interface,
+state/measurability closure, exchange and context congruence, full packet
+intertwiners, and all model-separation/ontology refusals. Disposition:
+`READY-FOR-INDEPENDENT-REVIEW`. No coordinate is awarded. A frozen three-lens
+protocol is next; Paper 04 remains closed.

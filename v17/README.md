@@ -42,6 +42,7 @@ cleanly if nature does not support it.
   causal exchange and operational quotients; and reconstructs the scoped
   relativistic instrument/no-signalling/positive-history package. It is not a
   microscopic event web, lattice, foliation, terminal result, or ontology.
+  Its result-neutral construction audit passes; independent review is next.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -212,6 +213,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `paper-03v2-causal-frontier-relativistic-adequacy.md` — green-unreviewed
   causal-frontier category, dual semantics, relativistic measurement,
   positive-history, quotient, and ontology-debt construction.
+- `note-paper03v2-construction-audit.md` — result-neutral proof/type/scope
+  audit and mandatory high-risk independent-review surface.
 
 ## Permanent honesty wall
 
