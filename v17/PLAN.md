@@ -365,6 +365,18 @@ conjugate triangle defeats magnitude-plus-spectrum selection, while a real
 positive second-order two-state equation and finite spectral ODEs remain
 compiler controls. The maximum state is PJ-L2 author-side: no complex
 ontology, time, native law, U0-T4, pin, review, or scientific result follows.
+The odd-cycle extension then proves an unbounded-order obstruction for that
+same shortcut. For every finite \(K\), an odd cycle with \(L>K\) has conjugate
+standard-quantum endpoint families whose complete positive jets agree through
+\(K\) and whose first directed difference occurs at order \(L\). Tree,
+even-cycle, zero-response, unreferenced-reflection, explicit-control, and
+target-Hamiltonian controls fix the scope. Hence no fixed finite locally
+unique kernel-jet closure with conjugation-even descriptors works uniformly;
+size-growing physical state, independently typed orientation, a printed
+selector, or a whole-boundary law remain open. The comparator contributes no
+graph, lattice, trajectory, external time, phase, bundle, or holonomy to the
+native ontology. The ceiling is CJ-L2 author-side and no official authority
+is created.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

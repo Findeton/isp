@@ -379,6 +379,20 @@ ontology. This is PJ-L2 author-side only; whole-boundary indivisible laws and
 independently physical memory remain open, and no candidate or official cycle
 is created.
 
+The unbounded odd-cycle jet gate extends that control without proposing a
+cycle ontology. For every fixed finite jet order \(K\), a longer conjugate
+odd-cycle comparator has the same entire stochastic-kernel \(K\)-jet and the
+same conjugation-even supplied descriptors, but its first directed difference
+appears at the cycle length. A locally unique fixed-order kernel equation
+therefore cannot be the uniform source law for this family unless additional
+physical orientation/state is supplied. Tree, even-cycle, zero-response,
+unreferenced-reflection, explicit-control, and target-Hamiltonian controls
+prevent gauge, labels, or a supplied answer from doing the explanatory work.
+This is CJ-L2 author-side only. It leaves richer local carriers, size-growing
+memory, and direct whole-boundary positive laws open, inherits no graph,
+phase, time, or trajectory ontology, and opens no candidate or official
+cycle.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

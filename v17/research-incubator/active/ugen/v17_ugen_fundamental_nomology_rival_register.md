@@ -131,6 +131,18 @@ prevents promotion of complex amplitudes to ontology, while finite
 target-derived spectral ODEs remain compilers. This narrows Rival A without
 selecting its memory, whole-boundary law, configuration form, or actuality.
 
+The unbounded odd-cycle gate excludes a stronger finite-jet completion of
+Rival A. For any fixed order \(K\), a longer conjugate standard-quantum
+comparator agrees in its entire positive-kernel \(K\)-jet and every supplied
+conjugation-even descriptor but differs at the cycle-length directed
+response. Fixed-order locally unique kernel dynamics therefore cannot serve
+as the uniform source for this family. The exact tree, even-cycle,
+zero-response, reflection, explicit-control, and target-Hamiltonian controls
+leave physical orientation-bearing state, growing memory, and direct
+whole-boundary laws open. This is a CJ-L2 author-side class obstruction, not a
+graph, phase, time, complex, or Hilbert ontology and not a general no-go for
+ordinary-positive indivisible law.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -358,6 +370,9 @@ U0 PROBABILITY-JET GATE:                PJ-L2 AUTHOR-SIDE / NO RESULT
 U0 FIRST-ORDER VISIBLE-KERNEL SOURCE:   EXCLUDED AT PRINTED REGULAR SCOPE
 U0 HIGHER POSITIVE JETS:                MAGNITUDE + LOOP DIRECTION LOCATED
 U0 POSITIVE SECOND-ORDER CONTROL:       EXACT ENDPOINT COMPILER / NOT NATIVE
+U0 UNBOUNDED CYCLE-JET GATE:            CJ-L2 AUTHOR-SIDE / NO RESULT
+U0 FIXED FINITE JET CLOSURE:            EXCLUDED AT PRINTED COMPARATOR SCOPE
+U0 ORIENTATION-BEARING SOURCE:          REQUIRED OR GENERATED / ABSENT
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4

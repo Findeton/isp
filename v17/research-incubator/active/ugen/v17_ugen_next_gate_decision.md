@@ -210,6 +210,17 @@ shows that edge magnitudes and spectrum do not select chirality; the real
 second-order two-state control shows that this does not select complex
 ontology. Target-derived finite spectral ODEs remain compilers. No native
 candidate or official cycle is opened.
+The unbounded odd-cycle extension strengthens that bounded source constraint.
+For every fixed jet order, a longer conjugate comparator agrees in every
+positive-kernel derivative through that order and in all supplied
+conjugation-even descriptors, yet differs at the cycle-length derivative.
+Thus no locally unique fixed-order kernel law using only those data works
+uniformly. Tree, even-cycle, zero-response, unreferenced-reflection,
+explicit-control, and target-Hamiltonian controls keep the theorem from
+promoting gauge, labels, complex notation, or supplied quantum answers to
+physics. Physical orientation-bearing controls/carriers, growing memory,
+nonunique dynamics with a stated selector, and direct whole-boundary laws
+remain open. The packet is CJ-L2 author-side only and opens no new authority.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -288,6 +299,9 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 PROBABILITY-JET GATE:        PJ-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
     U0 FIRST-ORDER KERNEL SOURCE:   EXCLUDED UNDER REGULAR AUTONOMOUS PREMISES
     U0 HIGHER POSITIVE RESPONSE:    MAGNITUDE + DIRECTED LOOP DATA LOCATED
+    U0 UNBOUNDED CYCLE-JET GATE:    CJ-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+    U0 FIXED FINITE JET CLOSURE:    EXCLUDED AT PRINTED COMPARATOR SCOPE
+    U0 ORIENTATION SOURCE:          PHYSICAL INPUT/GENERATION REQUIRED / ABSENT
     U0 WHOLE-BOUNDARY ESCAPE:       OPEN / NATIVE RULE ABSENT
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED

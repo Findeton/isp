@@ -498,6 +498,18 @@ cleanly if nature does not support it.
   complex amplitudes nor a fitted differential equation is thereby selected
   as ontology. The gate is PJ-L2 author-side only and leaves the native
   whole-boundary/memory-bearing law absent; no U0-T4, pin, or review opens.
+  An unbounded odd-cycle extension now closes a stronger shortcut at the same
+  author-side level. For every fixed jet order, a larger conjugate
+  standard-quantum comparator has identical full stochastic-kernel jets and
+  conjugation-even descriptors through that order, while its first directed
+  difference appears at the cycle length. Thus no locally unique fixed-order
+  kernel equation with only those descriptors is a uniform source law for
+  the family. The escape is physical rather than notational: an independently
+  real orientation-bearing control or carrier, size-growing memory, a
+  nonunique law plus a printed selector, or a direct whole-boundary rule. The
+  graph, parameter, complex weights, and loop phase remain comparator data;
+  none is inherited as U0 ontology. This is CJ-L2 author-side only and creates
+  no candidate, pin, review, U0-T4, or successor.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
