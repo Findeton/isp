@@ -509,8 +509,8 @@ Paper 03 v2 Seat O review           FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v2 joint adjudication      TERMINAL REVISE — RUNG 6
 Paper 03 v3 repair pin              FROZEN RESULT-NEUTRAL
 Paper 03 v3 category pin audit      FROZEN REVISE BEFORE CONSTRUCTION
-Paper 03 v3 quantum pin audit       PENDING FREEZE
-Paper 03 v3 joint pin adjudication  PENDING
+Paper 03 v3 quantum pin audit       FROZEN ACCEPT WITH BINDING SCOPE
+Paper 03 v3 joint pin adjudication  NEXT — RESOLVE POINT VS ENSEMBLE SEMANTICS
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```

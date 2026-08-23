@@ -59,7 +59,10 @@ cleanly if nature does not support it.
   a nonatomic point-valued record is not a normal state on an $L^\infty$
   equivalence-class algebra, and deterministic record pullbacks need
   measure-class nonsingularity. The finite/direct-sum and certified-exchange
-  components pass. The quantum audit and joint adjudication remain.
+  components pass. The independent quantum audit accepts construction with
+  binding common-domination, nonsingular-pullback, full-memory, and
+  integrated-evaluation obligations. Joint adjudication must resolve whether
+  the continuous theorem is ensemble/a.e. or pointwise before construction.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -252,6 +255,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v3-pin-audit-category.md` — independent category/mathematics
   audit; `REVISE BEFORE CONSTRUCTION` on continuous point-record normality
   and nonsingular pullback typing, with the finite repair surviving.
+- `note-paper03v3-pin-audit-quantum.md` — independent quantum/instrument audit;
+  accepts the finite repair and conditional continuous ensemble route with
+  explicit measure-class, memory, evaluation, and concurrency obligations.
 
 ## Permanent honesty wall
 

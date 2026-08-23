@@ -1131,3 +1131,27 @@ pushforward source measure class is absolutely continuous with respect to the
 target class. The audit awards no result and orders no repair by itself. The
 blind quantum audit and joint adjudication remain; construction and Paper 04
 stay closed.
+
+## 2026-08-22 — PAPER 03 v3 QUANTUM PIN AUDIT FROZEN (v17 LEDGER #48)
+
+The second independent audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v3-pin-audit-quantum.md` | `ca5d9d8e2e1c97c86862f813709cd1c42b3e0b4e74a67a4c8f764f6285190f28` | 597 LF / 28,350 bytes |
+
+Verdict: `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE`. The finite direct-sum
+complete instrument exactly repairs the retained binary result followed by an
+`I/X` guard without moving any v2 probability. The continuous route is
+accepted only if each exact boundary has one proved common dominating measure
+class, every classical pullback is measure-class nonsingular, every
+future-relevant memory is exposed, each instrument proves NEP and measurable
+posterior data, and `Ev`/`Heis` agreement is the literal integrated
+state-evaluation identity.
+
+The audit independently reproduces the common-dominator and nonsingular-map
+risks, but reads the pin's admission clauses as sufficient to refuse bad
+packets. It does not address the category audit's stronger objection to
+making every point-valued nonatomic boundary into a normal hybrid state.
+Joint adjudication must resolve that quantifier before construction. No result
+is awarded; Paper 04 remains closed.

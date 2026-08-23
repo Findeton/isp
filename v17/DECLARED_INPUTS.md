@@ -294,6 +294,7 @@ selection, or a Barandes completion.
 | Paper 03 v3 result | `UNCONSTRUCTED` | frozen result-neutral pin | independent pin audits, construction, and hostile adjudication required |
 | ontology / internal time / spacetime / gravity | `UNCONSTRUCTED` | no input | Paper 04 and later phases remain closed |
 | Paper 03 v3 category pin audit | `REVISE BEFORE CONSTRUCTION — EVIDENCE` | frozen pin and bound v2 point-record semantics | finite/direct-sum repair survives; continuous point-record normal state and merely measurable $L^\infty$ pullback fail |
+| Paper 03 v3 quantum pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen pin, v2 instruments, NEP and measure-class controls | finite repair passes; continuous route requires common domination, nonsingular pullbacks, complete memory, and integrated `Ev`/`Heis` proof |
 
 ## Derivation balance
 
