@@ -87,6 +87,11 @@ cleanly if nature does not support it.
   have paired `Ev`/`Ens`/`Heis` semantics. This is a representation theorem
   candidate, not a selected ontology. A construction audit is next; no
   Paper 03 coordinate or Paper 04 opening has been awarded.
+  The result-neutral construction audit now passes: it reconstructs all 22
+  binding obligations, the complete target/control/attack surface, and the
+  downstream refusals without finding an author-level semantic counterexample.
+  It opens only a frozen three-lens hostile-review protocol; the candidate is
+  still green-unreviewed and Paper 04 remains closed.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -304,6 +309,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   it gives exact finite/atomic and conditional integrated hybrid semantics,
   preserves the v2 physical laws, and awards no terminal result before audit
   and hostile review.
+- `note-paper03v31-construction-audit.md` — result-neutral author trace over
+  every binding obligation, target, control, hostile attack, source scope,
+  and ontology wall; it authorizes only the independent-review protocol.
 
 ## Permanent honesty wall
 

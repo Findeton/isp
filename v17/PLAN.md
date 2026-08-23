@@ -516,7 +516,8 @@ Paper 03 v3.1 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 joint adjudication    TERMINAL ACCEPT FOR ONE CONSTRUCTION
 Paper 03 v3.1 construction          GREEN-UNREVIEWED MATHEMATICS
-Paper 03 v3.1 construction audit    NEXT — RESULT-NEUTRAL
+Paper 03 v3.1 construction audit    PASS — RESULT-NEUTRAL
+Paper 03 v3.1 hostile protocol      NEXT — RESULT-NEUTRAL
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
@@ -528,8 +529,9 @@ control fields; generic nonatomic point restart is refused. One corrected
 construction now realizes this distinction, common domination, nonsingular
 pullbacks, tagged
 boundaries, and the unchanged certified-concurrency scope. The exact bytes
-remain green-unreviewed until a construction audit and three-lens hostile
-review. The cycle may establish only the hybrid classical--quantum Heisenberg
+remain green-unreviewed until three-lens hostile review and adjudication; the
+result-neutral construction audit has passed. The cycle may establish only
+the hybrid classical--quantum Heisenberg
 target, its compatibility laws, exact primitive interfaces, and
 certified-concurrency scope. It may not retune probabilities or add ontology,
 internal time, spacetime emergence, or gravity. Paper 04 remains closed.

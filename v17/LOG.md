@@ -1308,3 +1308,31 @@ The provisional ceiling remains
 No scientific coordinate is awarded. A result-neutral construction audit is
 next; hostile review, terminal adjudication, and any Paper 04 opening remain
 closed.
+
+## 2026-08-22 — PAPER 03 v3.1 CONSTRUCTION AUDIT FROZEN (v17 LEDGER #55)
+
+The result-neutral author audit freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v31-construction-audit.md` | `7341381b74c1f92540d4d2a1fc386fdec3de0886e26fd61803276dae7307a992` | `df68cb7d03d1334241a10216e6b4844507dadd6c04ba0ae790bb1fd86190c9b6` | 570 LF / 25,539 bytes |
+
+Disposition: `READY-FOR-INDEPENDENT-HOSTILE-REVIEW`; first author-level
+semantic counterexample: none found. The audit authenticates the #54
+construction and maps every one of the 22 #53 obligations, V31-T1--T24,
+C1--C34 in both directions, attacks 1--52, and the twenty independent
+pin-audit attacks.
+
+The predual `Ens` proof, atomic/nonatomic restart split, deterministic and
+stochastic null ideals, tagged hybrid category, complete finite instrument,
+conditional continuous-instrument gate, one-step and finite-path duality,
+decomposable feedback, division test, reachable-context concurrency, QFT
+scope, quotient, histories, and ontology walls all reconstruct at author-audit
+scope. This awards no result and does not make the technical hybrid algebra
+ontic.
+
+The audit authorizes only a frozen result-neutral protocol for three mutually
+blind lenses: category/operator algebra/covariance; quantum
+probability/instruments/Bell; and ontology/locality/Barandes/gravity walls.
+No candidate edit, implementation, automatic repair, or Paper 04 work is
+opened.
