@@ -415,6 +415,16 @@ cleanly if nature does not support it.
   an interacting parent. The missing input is therefore independently physical,
   target-blind relational structure—not labels, a lattice, or the quantum
   answer. Its form and native law remain open.
+  The physical-reference audit and companion exact theorems now identify one
+  admissible source architecture without choosing it. A transformable,
+  readable, contingent, and costed reference can be included inside the joint
+  configuration so that the complete law remains invariant under simultaneous
+  presentation changes while depending nontrivially on system--reference
+  relations. Exact finite/compact controls prove relative-orbit
+  factorization, covariant relative asymmetry, reference-removal averaging,
+  shared-reference correlation, and reference nonselection. They also show
+  why a physical token can still smuggle target advice. No group, reference,
+  law, quantum phase, clock, implementation, or ontology is selected.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

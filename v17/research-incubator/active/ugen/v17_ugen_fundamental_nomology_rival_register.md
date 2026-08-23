@@ -243,8 +243,14 @@ The current evidence supports the following order.
    source-descent theorem package now proves the neutral-equivariance,
    fixed-point, bare-carrier, and marginal-parent constraints without imposing
    full operational noncontextuality. It identifies target-blind physical
-   relational structure as necessary but does not choose that structure. A
-   real implementation, candidate, and result remain absent.
+   relational structure as necessary but does not choose that structure.
+   physical-reference audit and exact theorem package now prove that a
+   transformable, readable, costed reference is one admissible way to supply
+   relative structure without an absolute background. Joint covariance and
+   nontrivial relational response coexist, but multiple response laws remain;
+   reference loss, shared-reference common causes, and target-advice capacity
+   are separately controlled. No reference, phase, clock, law, or ontology is
+   selected. A real implementation, candidate, and result remain absent.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -287,6 +293,9 @@ U0 DESCRIPTOR-SUFFICIENCY:              CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
 U0 R4 FEASIBILITY:                      NO ADEQUATE HISTORICAL FIXTURE LOCATED
 U0 SOURCE DESCENT:                      EXACT AUTHOR-SIDE NECESSARY CONDITION
 U0 BARE-CARRIER DYNAMICS:               UNDERDETERMINED / BOUNDED CONTROL
+U0 PHYSICAL-REFERENCE SOURCE:           ADMISSIBLE CLASS / NOT SELECTED
+U0 RELATIVE-ORBIT THEOREMS:             EXACT AUTHOR-SIDE / NOT REVIEWED
+U0 REFERENCE AS LAW SELECTOR:           NONSELECTING IN EXACT FINITE CONTROL
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4

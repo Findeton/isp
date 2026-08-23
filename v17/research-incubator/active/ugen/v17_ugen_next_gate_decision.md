@@ -169,6 +169,12 @@ verified presentation transformations require equivariance, but physically
 meaningful context cannot be erased by imposing generalized
 noncontextuality. The finite anonymous-carrier and marginal-parent theorems
 show that covariance and component laws remain dynamically underselective.
+The physical-reference package now gives the exact positive complement: a
+joint system--reference law may remain presentation covariant while depending
+on relative orbits. It also proves reference nonselection, reference-removal
+averaging, shared-reference common-cause correlation, and the risk of target
+advice stored in a physical token. Thus physical references are an admissible
+source class, not a selected reference, phase, clock, ontology, or law.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -231,6 +237,9 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 R4 FEASIBILITY:              NO ADEQUATE HISTORICAL FIXTURE LOCATED
     U0 SOURCE DESCENT:              EXACT AUTHOR-SIDE NECESSARY CONDITION
     U0 BARE-CARRIER DYNAMICS:       UNDERDETERMINED / BOUNDED CONTROL
+    U0 PHYSICAL-REFERENCE SOURCE:   ADMISSIBLE CLASS / NOT SELECTED
+    U0 RELATIVE-ORBIT THEOREMS:     EXACT AUTHOR-SIDE / NOT REVIEWED
+    U0 REFERENCE AS LAW SELECTOR:   NONSELECTING IN EXACT FINITE CONTROL
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN

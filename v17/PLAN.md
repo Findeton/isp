@@ -295,6 +295,15 @@ whole-history equality-pattern corollary, and marginal-to-parent witness prove
 that covariance and anonymous relations constrain but do not generally select
 the native law. The next missing object is target-blind physical relational
 structure together with its source rule; neither is chosen here.
+The physical-reference package now proves a positive source-level opening:
+joint system--reference laws can be presentation covariant while depending on
+relative configurations. It cleanly separates absolute labels, covariant
+nomology, contingent asymmetric reference states, reference loss, and shared
+reference correlations. The same exact controls prove that references expose
+relational variables but do not select their response law and may act as
+target-advice channels unless U0-T2 is enforced. Thus a physical reference is
+an admissible, resource-charged source class—not a chosen background,
+configuration ontology, quantum phase, clock, or native generator.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

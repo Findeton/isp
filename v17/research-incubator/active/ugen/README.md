@@ -274,6 +274,16 @@ is that configuration neutrality requires target-blind relational structure,
 not a structureless carrier. That structure and the native law remain
 unselected.
 
+The physical-reference audit and theorem package now prove that a physical,
+contingent reference is one admissible source of such structure. A joint law
+can be invariant under simultaneous system--reference transformations while
+responding to relative orbits. Exact controls separate relative asymmetry from
+absolute background, show what is lost when a reference is averaged out, and
+distinguish shared-reference common causes from interaction. The same package
+proves nonselection and advice-embedding controls: a reference neither chooses
+the response law nor becomes explanatory merely by being embodied. No
+reference carrier, group, phase, clock, law, or ontology is selected.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -324,6 +334,8 @@ Active audit:
 - v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md
+- v17_ugen_u0_t3_physical_reference_source_audit.md
+- v17_ugen_u0_t3_reference_bearing_relational_theorems.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -571,6 +583,9 @@ U0 R4 FEASIBILITY:             NO ADEQUATE HISTORICAL FIXTURE LOCATED
 PROSPECTIVE PHOTON PARENT:     STRONGEST INSPECTED ARCHITECTURE / UNBOUND
 U0 SOURCE DESCENT:             EXACT AUTHOR-SIDE NECESSARY CONDITION
 U0 BARE-CARRIER DYNAMICS:      UNDERDETERMINED / BOUNDED CONTROL
+U0 PHYSICAL-REFERENCE SOURCE:  ADMISSIBLE CLASS / NOT SELECTED
+U0 RELATIVE-ORBIT THEOREMS:    EXACT AUTHOR-SIDE / NOT REVIEWED
+U0 REFERENCE AS LAW SELECTOR:  NONSELECTING IN EXACT FINITE CONTROL
 PHYSICAL RELATIONAL STRUCTURE: REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:              T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT

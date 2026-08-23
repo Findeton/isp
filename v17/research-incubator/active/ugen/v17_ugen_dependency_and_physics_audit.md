@@ -660,7 +660,15 @@ presentation changes must act equivariantly while full operational
 noncontextuality remains unassumed. Its exact fixed-point, bare-carrier, and
 marginal-parent results locate the remaining requirement in independently
 physical relational structure rather than labels or anonymous relations. The
-implementation-bound T3-R4 packet, independent
+physical-reference package now proves that one such source class can be
+included without an absolute background: invariant joint kernels may depend
+on system--reference orbits. Its finite/compact controls separate contingent
+relative asymmetry, reference removal, and shared-reference common causes,
+while proving that neither covariance nor the reference selects the response
+law. A distinguishable physical token can still carry target advice, so the
+U0-T2 fiber and resource tests remain load-bearing. No reference, group,
+phase, clock, or candidate is selected.
+The implementation-bound T3-R4 packet, independent
 leakage review, and candidate contest remain absent.
 
 The fundamental-nomology register adopts a plural contest among ordinary-
@@ -739,6 +747,9 @@ U0 DESCRIPTOR-SUFFICIENCY:       CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
 U0 R4 FEASIBILITY:               NO ADEQUATE HISTORICAL FIXTURE LOCATED
 U0 SOURCE DESCENT:               EXACT AUTHOR-SIDE NECESSARY CONDITION
 U0 BARE-CARRIER DYNAMICS:        UNDERDETERMINED / BOUNDED CONTROL
+U0 PHYSICAL-REFERENCE SOURCE:    ADMISSIBLE CLASS / NOT SELECTED
+U0 RELATIVE-ORBIT THEOREMS:      EXACT AUTHOR-SIDE / NOT REVIEWED
+U0 REFERENCE AS LAW SELECTOR:    NONSELECTING IN EXACT FINITE CONTROL
 PHYSICAL RELATIONAL STRUCTURE:   REQUIRED / NOT YET CHOSEN
 U0 CONFIGURATION FORM:           UNSELECTED
 U0 TARGET-ANSWER INPUTS:         FORBIDDEN
