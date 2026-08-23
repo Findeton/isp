@@ -293,7 +293,19 @@ cleanly if nature does not support it.
   proves an exact diagonal-noncomposition example and uniformly reconstructs
   the supplied finite quantum process, but receives zero explanatory credit:
   it retains equivalent phase-complete structure. The native-generator slot
-  remains empty, so C1 is not ready for official freeze. Repository inclusion
+  remains empty, so C1 is not ready for official freeze. C2 now decomposes
+  every finite strongly positive atomic kernel into nonnegative weights and a
+  unit-diagonal relational correlation matrix, with relative $U(1)$ phase
+  only at rank one, and proves by the $T_\theta$ family that endpoint data and
+  framework composition do not select the physical phase member. Its source
+  audit leaves ordinary-positive whole laws, action-generated pair kernels,
+  Euclidean reflection-positive laws, and separate actuality dynamics open.
+  It constructs none. It also requires the C1 endpoint track to split into
+  abstract nonselection and a physically grounded source experiment before
+  any freeze; a bare gate name is not a physical action input. The next
+  author-side target is a held-out action-phase grounding packet, while Q-Cut
+  remains the next recommended official unit if separately authorized.
+  Repository inclusion
   does not promote any draft, authorize a Paper
   04B successor, or
   open Paper 05.

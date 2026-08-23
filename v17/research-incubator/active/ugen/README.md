@@ -5,10 +5,13 @@
 **Scientific result awarded:** none
 **Authority created:** none
 
-U-Gen is the large v17 question: can one uniform ordinary-positive indivisible
-law generate the complete calibrated quantum process interface without
-receiving the target process, future settings, or equivalent phase-sensitive
-law data as input?
+U-Gen is the large v17 question: can one uniform native law generate the
+complete calibrated quantum process interface without receiving the target
+process, future settings, or equivalent phase-sensitive law data as input?
+The ordinary-positive indivisible whole-law route remains the strongest ISP
+contestant. C1/C2 now also test whether relational pair-history structure is
+irreducible at the compositional level while ordinary positivity remains exact
+for stable records.
 
 The preserved U-Gen drafts are not one freeze-ready unit. This routing note is
 the canonical active status document. Their premises and quantifiers have now
@@ -79,6 +82,24 @@ therefore does not derive quantum dynamics, actuality, ontology, time, or
 gravity. The candidate $D$-over-$\Gamma$ hierarchy remains a v17 synthesis,
 not a claim about Barandes' published law.
 
+C2 now isolates the exact finite datum exposed by C1. Every strongly positive
+atomic kernel is uniquely a nonnegative weight vector plus a unit-diagonal
+positive-semidefinite correlation matrix on its support. Rank one reduces to
+relative $U(1)$ phase; general kernels need not. Tensor composition carries
+both layers. A continuum of phase gates $T_\theta$ shares the same supplied
+endpoint law and framework-level composition properties while giving
+different relative-continuation predictions. Framework selection therefore
+does not select the dynamical member.
+
+The associated source investigation keeps four live routes separate: an
+ordinary-positive indivisible whole law, an action-generated pair-history
+law, a reflection-positive Euclidean generator, and a separately testable
+actuality dynamics. None is selected. It also finds C1 Track A physically
+under-specified: the bare label `T` and an identity endpoint kernel contain no
+fact selecting $\pi/4$. Before any C1 freeze, that track must split into
+abstract endpoint nonselection and a physically grounded source packet that
+supplies real controls and couplings but not the target quantum process.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -106,6 +127,11 @@ controls until their own future authorization, freeze, review, and
 adjudication occur.
 
 Active audit:
+
+- v17_ugen_c2_relational_kernel_decomposition_candidate.md
+- v17_ugen_c2_action_holonomy_reality_investigation.md
+- v17_ugen_c2_source_scope_and_readiness_audit.md
+- v17_ugen_c2_future_review_contract.md
 
 - v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
 - v17_ugen_c1_pair_history_composition_candidate.md
@@ -179,6 +205,11 @@ uniform native generator for the complete registered process interface.
 Success must show where the phase-sensitive and adaptive composition capacity
 resides without merely renaming the Hilbert process table.
 
+In parallel, any relational pair-history candidate must derive or physically
+ground its correlation/action law rather than receive the quantum process in
+another notation. The two branches face the same held-out interface and
+resource ledger; neither is privileged by vocabulary.
+
 Failure must identify an unavoidable input rather than announce that
 “positivity failed”:
 
@@ -203,6 +234,8 @@ Failure must identify an unavoidable input rather than announce that
    physical principle and additional information are independently stated.
 6. No clock, causal order, QFT, spacetime, or gravity conclusion follows from
    a composition classifier.
+7. Ordinary positivity of actual records does not imply that the complete
+   compositional predictive law is diagonal or Kolmogorov.
 
 ## Present disposition
 
@@ -225,7 +258,10 @@ SCALABLE TRILEMMA THEOREM:     NOT PROVED
 C1 SCALABLE PRE-PIN:           DRAFTED / NATIVE CANDIDATE SLOT EMPTY
 C1 PAIR-HISTORY CONTROL:       EXACT AUTHOR-SIDE / ZERO EXPLANATORY GAIN
 DIAGONAL LAW COMPOSITION:      NONUNIQUE IN EXACT FIXED PRODUCT EXAMPLE
-NEXT AUTHOR-SIDE TARGET:       INDEPENDENTLY MOTIVATED NATIVE GENERATOR
+C2 KERNEL DECOMPOSITION:       EXACT AUTHOR-SIDE / NOT REVIEWED
+C2 PHASE-MEMBER SELECTION:     UNDERDETERMINED / TRACK A UNDER-SPECIFIED
+ACTION-KERNEL SCHEMA:          TYPED / STANDARD QUANTUM MEMBER ZERO GAIN
+NEXT AUTHOR-SIDE TARGET:       PHYSICALLY GROUNDED ACTION-PHASE PACKET
                                OR BOUNDED CLASS-WIDE THEOREM
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL

@@ -509,6 +509,23 @@ motivated native generator has entered the contest and no bounded class-wide
 trilemma theorem has been proved. The $D$-over-$\Gamma$ hierarchy is a
 candidate synthesis under investigation, not a Barandes source claim.
 
+C2 now makes that investigation exact at finite scope. A strongly positive
+atomic kernel decomposes uniquely into nonnegative weights and a
+unit-diagonal positive-semidefinite correlation matrix. Rank-one kernels
+reduce to relative $U(1)$ phase, while the C1 witness is rank two. The family
+$T_\theta$ proves that endpoint data, strong positivity, reversibility,
+functorial composition, and tensoriality do not select the physical phase
+member. The best-known action-generated kernel is therefore a zero-gain
+standard-quantum member until an independently grounded action or correlation
+law enters.
+
+This also exposes a referent defect in C1 Track A rather than a failed
+generator: a bare operation name plus its endpoint kernel cannot carry the
+physical control data from which a phase could be generated. Any future C1
+freeze must separate abstract endpoint nonselection from a physically
+grounded source packet containing actual controls and couplings but not the
+target quantum process.
+
 1. Q-Cut is author-side ready for an authorization decision, but it is not an
    accepted theorem and cannot be used as a premise.
 2. E-Comp is an active author-side lemma package, but it is not frozen or
@@ -537,7 +554,12 @@ PC6 SCALABLE FRONTIER:           SOURCE/CONTROL/CONTEST PACKET COMPLETE
 SCALABLE TRILEMMA:               NOT PROVED
 C1 SCALABLE PRE-PIN:             COMPLETE AUTHOR-SIDE / NATIVE SLOT EMPTY
 C1 PAIR-HISTORY COMPARATOR:      EXACT / ZERO EXPLANATORY GAIN
-NEXT AUTHOR-SIDE TARGET:         NATIVE GENERATOR OR BOUNDED CLASS THEOREM
+C2 KERNEL DECOMPOSITION:         EXACT AUTHOR-SIDE / NOT REVIEWED
+C2 PHASE-MEMBER NONSELECTION:    EXACT AUTHOR-SIDE / NOT REVIEWED
+C1 TRACK A PHYSICAL REFERENT:    UNDER-SPECIFIED / SPLIT REQUIRED
+ACTION-KERNEL SCHEMA:            TYPED / NATIVE MEMBER ABSENT
+NEXT AUTHOR-SIDE TARGET:         PHYSICAL ACTION-PHASE GROUNDING PACKET
+                                 OR BOUNDED CLASS THEOREM
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE

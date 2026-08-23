@@ -160,12 +160,39 @@ pair-history compiler reconstructs standard finite quantum processes with zero
 explanatory reduction. No native generator has entered the contest, so C1
 remains author-side and not ready for official freeze.
 
+C2 now records the exact next correction. Every finite strongly positive
+atomic pair-history kernel decomposes uniquely into nonnegative weights and a
+unit-diagonal positive-semidefinite relational correlation matrix; rank one
+reduces to relative $U(1)$ phase, while the C1 witness is rank two. Tensor
+composition transports both layers. A continuum of $T_\theta$ members shares
+the endpoint-only source packet and framework composition properties but
+differs on phase-sensitive continuations, so those premises do not select the
+physical phase member.
+
+The associated source and reality audit compares Feynman action, operational
+reconstruction, Barandes potentials, quantum measure, influence functionals,
+holonomy, stochastic mechanics, Euclidean reflection positivity, and
+conditional gravity constraints. It constructs no native law. Its semantic
+finding is that C1 Track A must separate abstract endpoint nonselection from a
+physically grounded source experiment; a gate name plus endpoint matrix is not
+a physical action input. The next author-side target is one action-phase
+grounding packet with held-out electromagnetic/topological and gravitational
+controls. Q-Cut remains the next recommended official unit if separately
+authorized.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
 - active/ugen/v17_ugen_c1_pair_history_composition_candidate.md
 - active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md
 - active/ugen/v17_ugen_c1_future_review_contract.md
+
+C2 active files:
+
+- active/ugen/v17_ugen_c2_relational_kernel_decomposition_candidate.md
+- active/ugen/v17_ugen_c2_action_holonomy_reality_investigation.md
+- active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md
+- active/ugen/v17_ugen_c2_future_review_contract.md
 
 Canonical status: `active/ugen/README.md`.
 

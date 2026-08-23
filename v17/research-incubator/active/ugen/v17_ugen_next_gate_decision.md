@@ -46,6 +46,20 @@ determine composite event laws. The native-generator slot remains empty.
 Accordingly C1 is prepared as a contest specification but is not ready for an
 official freeze.
 
+C2 now identifies the pair-history datum exactly and closes one false route.
+Every finite strongly positive kernel is nonnegative atomic weight plus a
+unit-diagonal relational correlation matrix; rank one is relative $U(1)$
+phase. The continuum family $T_\theta$ shares the Track A endpoint law and
+framework composition properties while differing on held-out relative
+continuations. Thus those principles cannot select $\theta=\pi/4$, and the
+bare gate label is not a physical source referent.
+
+The next author-side U-Gen task is therefore a physically grounded
+action-phase packet: one actual interferometric source/control contract, one
+calibration, held-out electromagnetic or topological and gravitational phase
+controls, and no target quantum matrix in the input. This remains
+result-neutral preparation until a native member or class-wide theorem exists.
+
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
     PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
@@ -55,7 +69,10 @@ official freeze.
     SCALABLE TRILEMMA THEOREM:      NOT PROVED
     C1 PRE-PIN:                     DRAFTED / NATIVE SLOT EMPTY
     C1 PAIR-HISTORY CONTROL:        EXACT / ZERO EXPLANATORY GAIN
-    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE GENERATOR PRINCIPLE OR
+    C2 KERNEL DECOMPOSITION:        EXACT AUTHOR-SIDE / NOT REVIEWED
+    C2 PHASE-MEMBER SELECTION:      UNDERDETERMINED
+    C1 TRACK A SOURCE REFERENT:     PHYSICALLY UNDER-SPECIFIED
+    NEXT AUTHOR-SIDE U-GEN TASK:    PHYSICAL ACTION-PHASE GROUNDING OR
                                     BOUNDED CLASS-WIDE THEOREM
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
@@ -188,7 +205,7 @@ It could not establish:
 
 ## 8. Authority wall
 
-No Q-Cut pin, PC5/PC6 review, U-Gen C1 pin, numbered paper, or
+No Q-Cut pin, PC5/PC6/C2 review, U-Gen C1 pin, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
 
