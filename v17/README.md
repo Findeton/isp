@@ -65,10 +65,12 @@ $q:\mathcal P\to\mathcal Q$; and admitted idle-fiber projections prove a
 limited no-selection theorem. What survives is structural contextuality and
 ontology underdetermination, not a preferred microscopic world.
 
-The Paper 03 opening gate is satisfied. The next unit is a result-neutral pin
-for relativistic quantum-operational adequacy. It must not import a preferred
-frame, spacetime ontology, v16 geometry, or a Barandes completion absent from
-the terminal Paper 02 product.
+The Paper 03 opening gate is satisfied and its result-neutral mathematical pin
+is frozen. The next action is a source- and type-level author audit before any
+construction. Paper 03 tests relativistic quantum-operational adequacy on a
+declared locally covariant AQFT comparator; it does not import a preferred
+frame, promote the comparator spacetime to ontology, reuse v16 geometry, or
+assume a Barandes completion absent from the terminal Paper 02 product.
 
 ## Reality constraints
 
@@ -168,6 +170,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper02v2-ontology-barandes.md` — frozen Seat O report.
 - `note-paper02v2-hostile-review-adjudication.md` — terminal scoped product,
   binding qualifications, and Paper 03 opening condition.
+- `note-paper03-relativistic-quantum-operational-adequacy-pin.md` — frozen
+  result-neutral AQFT/system--probe comparator, theorem targets, 32 two-way
+  controls, 76 hostile attacks, quantifier ledger, and ontology walls.
 
 ## Permanent honesty wall
 

@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 result-neutral pin next**
+Paper 03 result-neutral pin frozen; author audit next**
 
 ## 0. Authority and workflow
 
@@ -196,6 +196,15 @@ degrees, and controlled continuum/UV scope.
 
 **Outcomes.** Covariant extension; preferred-structure cost; QFT interface
 unconstructed; or exact obstruction.
+
+**Frozen pin.** `v17/note-paper03-relativistic-quantum-operational-adequacy-pin.md`
+binds a declared locally covariant AQFT comparator, localized system--probe
+instruments, causal factorization, operational no-signalling, Bell/locality
+distinctions, a relativistic procedure quotient, type-III/split/gauge/UV
+firewalls, exact theorem quantifiers, 32 two-way controls, and 76 attacks. It
+awards no QFT ontology, preferred-frame absence beyond registered operations,
+internal time, spacetime derivation, or gravity. Construction remains closed
+until the separate author audit passes.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
@@ -450,12 +459,15 @@ Era charter                         RECORDED
 v16 inheritance balance             RECORDED
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
-Paper 01 mathematical pin           FROZEN
-Paper 01 construction               NOT STARTED
-Paper 01 review                      NOT DISPATCHED
-Paper 01 implementation             NOT AUTHORIZED
+Paper 01                            TERMINAL ACCEPT-WITH-SCOPE
+Paper 02 v2                         TERMINAL ACCEPT-WITH-SCOPE
+Paper 03 mathematical pin           FROZEN RESULT-NEUTRAL
+Paper 03 author audit               NEXT
+Paper 03 construction/review        CLOSED PENDING AUDIT
+Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is the Paper 01 mathematics-only theorem
-construction under the frozen pin. No implementation or later phase is open.
+The next scientific action is the Paper 03 result-neutral author audit. No
+construction, implementation, clock, spacetime-emergence, or gravity unit is
+open before that audit.

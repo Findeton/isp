@@ -690,3 +690,26 @@ Paper 03's opening condition is satisfied. Only a separately frozen,
 result-neutral relativistic quantum-operational adequacy pin may open next;
 QFT, preferred-frame absence, internal time, spacetime, and gravity remain
 unawarded.
+
+## 2026-08-22 — PAPER 03 RELATIVISTIC ADEQUACY PIN FROZEN (v17 LEDGER #28)
+
+The result-neutral mathematical pin freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03-relativistic-quantum-operational-adequacy-pin.md` | `0486f7ce04bc70c5f14d7609e4baf9244dc02195248d45d66ccb3c8a46813696` | 694 LF / 30,954 bytes |
+
+It binds a declared locally covariant AQFT comparator, localized
+system--probe instruments, causal factorization, nonselective no-signalling,
+steering and Bell distinctions, a relativistic procedure quotient, a global
+positive predictive-history control, type-III/split/gauge/continuum
+firewalls, 32 two-way controls, 76 hostile attacks, and an explicit theorem
+quantifier/model ledger. Observable transport is covariant; state comparison
+is contravariant under embeddings, with no presumed canonical state
+extension or preferred natural state.
+
+No theorem or physical coordinate is awarded. In particular, the comparator
+spacetime, field net, state class, and coupling dynamics are declared inputs;
+QFT ontology, a preferred or absent hidden frame, internal time, spacetime
+emergence, gravity, and actuality remain unconstructed. The only next action
+is a result-neutral source/type/feasibility author audit.

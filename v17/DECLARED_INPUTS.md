@@ -189,6 +189,21 @@ selection, or a Barandes completion.
 | Paper 02 v2 overall | `TERMINAL ACCEPT-WITH-SCOPE` | rung 7 `P02V2-CANONICAL-QUOTIENT-WITH-TYPED-STRUCTURAL-CONTEXTUALITY-AND-IDLE-FIBER-NONSELECTION` |
 | Paper 03 | `OPEN FOR RESULT-NEUTRAL PIN ONLY` | no QFT, relativistic ontology, preferred frame, internal time, spacetime, or gravity pre-awarded |
 
+## Paper 03 frozen-input balance
+
+| Object | Status at pin freeze | Source/choice | What it may establish | What it cannot establish |
+|---|---|---|---|---|
+| `Loc` and Lorentzian comparator spacetime | `STANDARD-THEORY COMPARATOR` | BFV locally covariant QFT scope | covariant typing and support relations | fundamental or emergent spacetime |
+| locally covariant algebra functor | `STANDARD-THEORY COMPARATOR` | declared AQFT packet | relativistic operational predictions | derivation of field dynamics or an interacting 3+1 model |
+| admissible state class | `DECLARED TEST INPUT` | packet-specific locally normal/Hadamard hypotheses | evaluation of registered experiments | preferred vacuum, cosmological state, or actuality |
+| system--probe scattering scheme | `STANDARD MEASUREMENT INTERFACE` | Fewster--Verch-type localized coupling | induced instruments and causal factorization | microscopic ontology or universal collapse law |
+| relativistic procedure category and quotient | `TARGET DERIVATION` | Paper 02 v2 architecture plus localized experiments | operational contextuality and schedule-independent quotient | full microscopic equivalence |
+| positive predictive history | `POSITIVE EXISTENCE CONTROL` | algebraic states and instrument updates | positive compositional representation | relativistically local or selected ontology |
+| type-III, split, Reeh--Schlieder, gauge, sector controls | `MODEL-SPECIFIC / CONDITIONAL` | separately named comparator models | refusal of naive tensor/local-state claims | one model possessing every listed property |
+| Bell control | `EXISTENTIAL COMPARATOR TEST` | named model/state/regions | CHSH violation compatible with no-signalling | Bell-local causation or signalling |
+| preferred frame | `OPERATIONAL TEST ONLY` | registered covariance and schedule tests | no visible frame in the tested domain | absence of idle microscopic preferred structure |
+| Paper 03 result | `UNCONSTRUCTED` | frozen result-neutral pin | nothing until construction and review | QFT ontology, internal time, spacetime derivation, gravity |
+
 ## Derivation balance
 
 The live adjudicated balance is:
