@@ -279,7 +279,15 @@ calibration fiber is necessary but not sufficient for native selection. U0-T3
 now reaches schema outcome T3-R3 author-side: typed physical module and
 program interfaces, complete-record and custody surfaces, and exact positive
 fiber witnesses exist without selecting a microscopic configuration form.
-The implementation-bound R4 packet, independent source/leakage review,
+The descriptor-sufficiency gate now requires a common metrological packet,
+candidate-relative but target-blind augmentation, source identifiability, and
+no-refit implementation transfer. It distinguishes development-member
+extrapolation from uniform-law transfer and proves that neither an
+underdetermined packet nor a target-equivalent apparatus model is a fair
+native-law test. A bounded feasibility census found no inspected historical
+resource adequate for R4; a modular heralded-photon parent is the strongest
+inspected prospective platform but remains unbound and ontologically neutral.
+The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
 

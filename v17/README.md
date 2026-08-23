@@ -394,6 +394,17 @@ cleanly if nature does not support it.
   positive witnesses establish a nontrivial calibration fiber at schema scope
   without selecting a law or configuration ontology. No apparatus/data
   packet, candidate, official cycle, or result is opened.
+  The new descriptor-sufficiency gate proves why this schema needs both more
+  and less than calibration: a physically evaluable source map may need
+  candidate-relative target-blind measurements, but any joint packet that
+  already decodes the held-out process is a compiler input. Within-device
+  extrapolation and cross-implementation uniformity therefore receive
+  different freeze orders. A bounded real-fixture audit located no adequate
+  historical R4 data set. Its strongest inspected prospective architecture is
+  a modular heralded-photon laboratory parent, retained strictly as an
+  unbound experimental platform rather than photon ontology or an authorized
+  hardware programme. The next U0 boundary is implementation/custody
+  authority, not a native-law result.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

@@ -236,8 +236,11 @@ The current evidence supports the following order.
    from typed physical experiments to complete stochastic laws. U0-T2 now
    supplies the no-equivalent-input and calibration-fiber gate author-side.
    U0-T3 now constructs its configuration-neutral schema and proves the
-   schema fiber nontrivial without inheriting N1/N1A. A real implementation,
-   candidate, and result remain absent.
+   schema fiber nontrivial without inheriting N1/N1A. Its descriptor gate
+   separates physical source sufficiency from answer import and requires
+   no-refit transfer. No inspected historical fixture passes R4; the strongest
+   prospective photon platform remains unbound and ontologically neutral. A
+   real implementation, candidate, and result remain absent.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -276,7 +279,9 @@ U0 TARGET-ANSWER INPUTS:               FORBIDDEN
 U0 SOURCE-COMPLETION AUDIT:             COMPLETE AUTHOR-SIDE / GAP LOCATED
 U0 NO-EQUIVALENT-INPUT GATE:            COMPLETE AUTHOR-SIDE / NO RESULT
 U0-T3 PHYSICAL FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
-NEXT U0 BOUNDARY:                       T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
+U0 DESCRIPTOR-SUFFICIENCY:              CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
+U0 R4 FEASIBILITY:                      NO ADEQUATE HISTORICAL FIXTURE LOCATED
+NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
 CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY

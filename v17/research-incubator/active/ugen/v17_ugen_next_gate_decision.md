@@ -159,7 +159,13 @@ complete-process target quotient, decoder closures, calibration-fiber test,
 provenance and resources, and opaque-program boundary without constructing a
 law. U0-T3 now reaches schema outcome T3-R3 author-side with a
 configuration-neutral physical fixture and exact nontrivial-fiber witnesses.
-No real implementation, target data, candidate, or official cycle is opened.
+Its descriptor gate separates metrological sufficiency, source-map
+evaluability, source identifiability, and predictive adequacy and requires
+no-refit implementation transfer for uniform-law credit. A bounded R4 census
+located no adequate historical fixture; its strongest inspected prospective
+platform is a modular heralded-photon parent, unbound and ontologically
+neutral. No real implementation, target data, candidate, or official cycle is
+opened.
 
 MG0 supplies a separate author-side co-design contract rather than
 mislabeling G1 as gravity. It keeps classical, quantum, stochastic,
@@ -217,9 +223,11 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 NO-EQUIVALENT-INPUT GATE:    COMPLETE AUTHOR-SIDE / NO RESULT
     U0 CALIBRATION-FIBER TEST:      NONTRIVIAL AT SCHEMA SCOPE / NOT SELECTING
     U0-T3 PHYSICAL FIXTURE:         T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
+    U0 DESCRIPTOR-SUFFICIENCY:      CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
+    U0 R4 FEASIBILITY:              NO ADEQUATE HISTORICAL FIXTURE LOCATED
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN
-    NEXT U0 BOUNDARY:               T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
+    NEXT U0 BOUNDARY:               T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

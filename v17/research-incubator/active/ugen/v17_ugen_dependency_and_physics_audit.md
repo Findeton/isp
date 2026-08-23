@@ -650,8 +650,13 @@ for arbitrary opaque programs. The criterion constructs no candidate and
 awards no result.
 U0-T3 now supplies a configuration-neutral fixture and an author-side
 schema-level nontrivial-fiber certificate. It binds no real apparatus or
-target data. The implementation-bound T3-R4 packet, independent leakage
-review, and candidate contest remain absent.
+target data. Its descriptor gate now prevents both underdescribed-source
+false failures and target-equivalent apparatus-model false successes, and
+requires no-refit implementation transfer for a uniform-law claim. The
+bounded feasibility census located no adequate historical R4 fixture and
+retains its strongest inspected photon architecture only as an unbound
+laboratory platform. The implementation-bound T3-R4 packet, independent
+leakage review, and candidate contest remain absent.
 
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
@@ -725,9 +730,11 @@ U0 SOURCE-COMPLETION AUDIT:      COMPLETE AUTHOR-SIDE / GAP LOCATED
 U0 NO-EQUIVALENT-INPUT GATE:     COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION FIBER:            NONTRIVIAL AT SCHEMA SCOPE / NOT SELECTING
 U0-T3 PHYSICAL FIXTURE:          T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
+U0 DESCRIPTOR-SUFFICIENCY:       CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
+U0 R4 FEASIBILITY:               NO ADEQUATE HISTORICAL FIXTURE LOCATED
 U0 CONFIGURATION FORM:           UNSELECTED
 U0 TARGET-ANSWER INPUTS:         FORBIDDEN
-NEXT U0 BOUNDARY:                T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
+NEXT U0 BOUNDARY:                T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 NATIVE ISP LAW:                  ABSENT
 PHYSICAL GENERATOR:              NATIVE COMPLETE GENERATOR NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

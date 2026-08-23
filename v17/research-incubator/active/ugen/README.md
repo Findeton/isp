@@ -243,6 +243,25 @@ custody, and finite/continuous/contextual/whole-program controls without
 selecting an ontology. The implementation-bound R4 packet is absent; no
 candidate or official cycle follows.
 
+The descriptor-sufficiency gate now separates four questions that the fixture
+must not conflate: whether measurements are traceable, whether a candidate's
+source map is evaluable, whether its unresolved source states are predictively
+identified, and whether its held-out complete-process prediction is correct.
+A nontrivial public-packet fiber implies a sharp packet-only error lower bound,
+while any augmentation that independently decodes the target remains an
+answer import. Initial within-device prediction and genuine uniform-law
+transfer therefore have different freeze orders. This is author-side
+mathematics, not a result.
+
+A bounded R4 feasibility audit found no inspected historical data set that is
+simultaneously target-blind, source-descriptive, intervention-complete,
+prospectively custodied, and transfer-ready. A modular heralded-photon parent
+is the strongest prospective architecture located in that audit, but remains
+an unbound laboratory fixture, not photon ontology, a candidate law, or an
+authorized hardware programme. NIST/Bath records, a classical eraser build,
+and process-tensor experiments remain retrospective, classical, or
+target-complete controls at their printed scopes.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -289,6 +308,8 @@ Active audit:
 - v17_ugen_u0_t3_physical_interface_source_audit.md
 - v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md
 - v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
+- v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md
+- v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -531,7 +552,10 @@ U0 SOURCE-COMPLETION AUDIT:    COMPLETE AUTHOR-SIDE / MISSING MAP LOCATED
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
-NEXT U0 BOUNDARY:              T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
+U0 DESCRIPTOR-SUFFICIENCY:     CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
+U0 R4 FEASIBILITY:             NO ADEQUATE HISTORICAL FIXTURE LOCATED
+PROSPECTIVE PHOTON PARENT:     STRONGEST INSPECTED ARCHITECTURE / UNBOUND
+NEXT U0 BOUNDARY:              T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             ABSENT

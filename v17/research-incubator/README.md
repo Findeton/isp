@@ -295,6 +295,15 @@ continuous-actuator, marker/record, and nonsignalling witnesses. No real
 apparatus/data packet is bound, and no candidate, pin, review, or result is
 opened.
 
+The companion descriptor gate now proves that calibration traceability,
+candidate evaluability, source identifiability, and predictive adequacy are
+different obligations. It permits bounded target-blind physical
+augmentations, forbids target-equivalent completion, and requires a no-refit
+transfer member before uniform-law credit. A bounded real-fixture census found
+no inspected historical data set adequate for that R4 role. The strongest
+inspected prospective design is a modular heralded-photon parent, retained
+only as an unbound and ontology-neutral experimental platform.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -333,6 +342,8 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md
 - active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md
 - active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
+- active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md
+- active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_fundamental_nomology_rival_register.md
 - active/ugen/v17_ugen_bell_current_actuality_comparator.md
 - active/ugen/v17_ugen_bell_current_physical_reality_audit.md
@@ -408,6 +419,8 @@ Active working package:
 - `active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md`
 - `active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md`
 - `active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md`
+- `active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md`
+- `active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md`
 - `active/ugen/v17_ugen_bell_current_actuality_comparator.md`
 - `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
 - `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`
