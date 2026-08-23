@@ -135,9 +135,13 @@ cleanly if nature does not support it.
   pre-construction pin audits are required. The category/operator-algebra
   audit now accepts construction with binding constant-fiber, common-class,
   decomposable-normality, joint-null-transport, and refusal scopes after 18
-  fresh countermodels. This is evidence, not authorization; the independent
-  quantum audit and root adjudication remain required. No construction,
-  implementation, Paper 04, clock, spacetime, or gravity claim is open.
+  fresh countermodels. The independent quantum audit also accepts after 18
+  fresh countermodels and an explicit nontrivial old-record continuous qubit
+  instrument, while binding joint measurability, common null class, posterior
+  kernel, closure, normal extension, and initial-law indexing. These reports
+  are evidence, not authorization; root adjudication remains required. No
+  construction, implementation, Paper 04, clock, spacetime, or gravity claim
+  is open.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -383,6 +387,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   category/operator-algebra audit; accepts the pin with binding
   constant-fiber, common-class, joint-measurability, assembled-normality,
   target-landing, and refusal scope; awards no theorem.
+- `note-paper03v32-pin-audit-quantum.md` — independent pre-construction
+  quantum instrument/probability audit; accepts the pin with a constructive
+  continuous nonvacuity witness and binding posterior, null-class, closure,
+  old-record, history-indexing, and exact/a.e. scopes; awards no theorem.
 
 ## Permanent honesty wall
 

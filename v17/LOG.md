@@ -1523,3 +1523,27 @@ fiberwise NEP without joint assembly, and generic diffuse point restart are
 refused or require a separately frozen theorem. The audit awards no result and
 does not authorize construction; the mutually blind quantum audit and root
 adjudication remain required.
+
+## 2026-08-23 — PAPER 03 v3.2 QUANTUM PIN AUDIT FROZEN (v17 LEDGER #63)
+
+The second mutually blind pre-construction audit freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-pin-audit-quantum.md` | `9d46f9ce90c97c066eb58b3820fb092ab7dcdbfad52a0bd1fdbac83d62902d07` | `3d7dad45a1f244d29fdc3573770730eb960253e27be648000848ad40d07fe372` | 752 LF / 42,899 bytes |
+
+Verdict: `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE`; first exact blocker:
+none. Seat Q reconstructs T1--T24, C1--C40, attacks 1--64, all 41 product
+coordinates, and 18 fresh probability/instrument countermodels. Its explicit
+nonvacuity witness is a record-dependent continuous qubit instrument with
+strictly positive density, a normal UCP extension, jointly Borel posteriors,
+and record update `j(r,s)=(r,s)`; both semantic routes agree reader by reader.
+
+The report independently binds the same scope as Seat A: fiberwise NEP is not
+enough; the construction owes joint record measurability, a common
+operator-control/null class, exact target landing through `j`, one jointly
+Borel posterior sample kernel, state/ensemble/conditioning closure,
+rectangle-to-normal all-reader derivation, exact-versus-a.e. separation, and
+initial-law-indexed finite histories. It awards no result and does not
+authorize construction. Root must adjudicate the two reports by independent
+reconstruction rather than count their matching verdicts.
