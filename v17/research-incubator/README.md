@@ -324,6 +324,16 @@ reference can create ordinary common-source correlation. Multiple invariant
 relative laws remain, and a distinguishable reference token can encode target
 advice. The package therefore opens no native candidate or ontology.
 
+The Barandes Markovian-embedding companion audit now checks the 2026
+complex-number argument against the U0 complete-process burden. A same-size
+$3\times3$ Fourier witness genuinely separates complex unitary from real
+orthogonal lifts. But the cited $N^2$ dilation proof can be carried out over
+the reals, so every finite stochastic matrix is a marginal of an
+orthostochastic matrix. Complex structure is not forced by an isolated
+endpoint table. Whether it is reconstructed by coherent smooth evolution,
+counterfactual controls, and composition remains open. The audit creates no
+candidate, pin, review, or successor.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -357,6 +367,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_nelson_control_scope_correction.md
 - active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md
 - active/ugen/v17_ugen_u0_barandes_source_completion_audit.md
+- active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
 - active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
 - active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md

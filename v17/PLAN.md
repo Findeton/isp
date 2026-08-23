@@ -316,6 +316,19 @@ whereas arbitrary target-built hidden states do not. The finite
 positive-inverse theorem is reproved as the reversible-capacity boundary. No
 configuration ontology, absolute completeness claim, native law, official
 pin, or U0-T4 follows.
+A companion Barandes 2026 Markovian-embedding audit now separates four
+notions that cannot be merged: full-history Markovization, a minimal
+predictive quotient, a Hilbert lift of supplied sparse $\Gamma$, and an
+independently physical carrier enlargement. It proves that a representation
+of sparse $\Gamma$ cannot reconstruct two complete controlled laws in the
+same $\Gamma$ fiber. It also proves both sides of the complex-structure
+boundary: the flat $3\times3$ stochastic matrix is unistochastic but not
+orthostochastic at the same size, while every finite stochastic matrix admits
+a real orthogonal marginal dilation of dimension at most $N^2$. Complex
+structure is consequently neither promoted to ontology nor dismissed; its
+possible necessity moves to coherent smooth/interventional/compositional
+representation of one generated complete-law family. No such native family,
+pin, review, or U0-T4 is opened.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

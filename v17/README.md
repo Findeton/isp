@@ -438,6 +438,20 @@ cleanly if nature does not support it.
   rather than selecting the possible homes of quantum-process capacity. No
   native law, absolute ontic-completeness theorem, implementation, official
   cycle, or result follows.
+  A version-bound audit of Barandes's 2026 Markovian-embedding account now
+  sharpens that distinction. The account supports Hilbert states as secondary
+  predictive coordinates for a supplied sparse indivisible law, but it does
+  not generate the law or choose a complete controlled realizer. An exact
+  $3\times3$ Fourier witness proves a genuine same-size complex-over-real
+  lifting advantage. Conversely, the constructive unistochastic dilation can
+  be performed with real square roots and real Gram--Schmidt, proving that
+  every finite stochastic matrix has an orthostochastic marginal dilation of
+  dimension at most $N^2$. Endpoint positivity therefore does not force
+  complex ontology. The live possibility is instead that one coherent complex
+  structure is reconstructed as an economical representation of a single
+  target-blind family of complete positive laws across interventions and
+  composition. That family and its source rule remain absent; no U0-T4,
+  official pin, or successor is opened.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

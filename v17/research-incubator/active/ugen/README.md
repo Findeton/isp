@@ -293,6 +293,19 @@ physical credit only on a target-independently justified source-closed carrier
 after every evidenced reference or memory is included. The result is exact
 author-side and opens no U0-T4, candidate, pin, review, or result.
 
+The Barandes 2026 Markovian-embedding companion audit now sharpens the
+representation boundary. A sparse indivisible law can be lifted to a
+first-order Hilbert description without making that description material
+ontology, but the lift neither supplies the sparse law nor selects a complete
+controlled realizer. The flat $3\times3$ Fourier matrix gives an exact
+same-size complex advantage. At enlarged endpoint scope, however, the cited
+$N^2$ construction can be completed over the reals, so every finite
+stochastic matrix has an orthostochastic marginal dilation. Complex structure
+is therefore not forced by endpoint positivity; its possible non-arbitrariness
+must be earned from coherent smooth evolution, counterfactual interventions,
+and composition across one source-generated family. That family remains
+missing, and no U0-T4 or official cycle follows.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -527,6 +540,14 @@ Failure must identify an unavoidable input rather than announce that
     target $U$, process matrix, action, phase, or holonomy is compilation.
 21. The configuration domain cannot be chosen after inspecting the target and
     cannot be promoted from a finite control to a microscopic lattice.
+22. A same-size complex lift can carry structure unavailable to a same-size
+    real orthogonal lift, while bounded real dilation still reproduces every
+    finite endpoint stochastic matrix. Endpoint representability cannot decide
+    complex ontology.
+23. The serious complex-structure question is global coherence across
+    interventions and composition. It must be asked only after one native
+    positive complete-law family is generated, not answered by independently
+    lifting each target table.
 
 ## Present disposition
 
@@ -586,6 +607,9 @@ U0 NATIVE-LAW CONTRACT:        ACTIVE AUTHOR-SIDE / CANDIDATE SLOT EMPTY
 U0 CONFIGURATION FORM:         UNSELECTED / NO DISCRETE OR CONTINUUM DEFAULT
 U0 TARGET-ANSWER INPUTS:       FORBIDDEN
 U0 SOURCE-COMPLETION AUDIT:    COMPLETE AUTHOR-SIDE / MISSING MAP LOCATED
+U0 MARKOVIAN-EMBEDDING AUDIT:  ME-L3 AUTHOR-SIDE / NO CANDIDATE OR RESULT
+U0 SAME-SIZE COMPLEX WITNESS:  EXACT 3x3 / REPRESENTATION-SCOPED
+U0 REAL ENDPOINT DILATION:     EXACT AT <= N^2 / COMPLETENESS NOT EARNED
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
