@@ -177,6 +177,17 @@ for every *licensed* positive restart through the claimed intermediate
 configuration. The witness must not be manufactured by omitting state that
 the candidate elsewhere declares physically available.
 
+This is a carrier- and interface-relative claim. It is not a claim of
+non-Markovizability under arbitrary mathematical dilation: every finite
+complete transcript law can be made Markov by taking its whole past as a
+state. Such a target-built history state, or the minimal predictive quotient
+computed from the complete target law, is a charged representation and not an
+independently physical counterexample. Conversely, an independently
+evidenced reference or memory that carries future-relevant information must
+be included before a nondivision witness can receive native credit. Source
+closure, predictive sufficiency, and ultimate ontic completeness remain
+distinct.
+
 ### 2.6 One native law
 
 $\mathcal N$ is a single mathematical rule assigning ordinary-positive laws

@@ -304,6 +304,18 @@ relational variables but do not select their response law and may act as
 target-advice channels unless U0-T2 is enforced. Thus a physical reference is
 an admissible, resource-charged source class—not a chosen background,
 configuration ontology, quantum phase, clock, or native generator.
+The indivisibility-placement package now proves the complementary dynamical
+boundary. Every finite prefix-causal complete-record law can be Markovized on
+its whole observed history, and its smallest exact predictor is the quotient
+of histories with identical future laws. Because both objects are computed
+from the complete target law, they are representations, not native
+source-completion. A physically meaningful nondivision claim is consequently
+relative to a target-independently justified source-closed carrier and its
+licensed interventions; omitted evidenced memories invalidate the witness,
+whereas arbitrary target-built hidden states do not. The finite
+positive-inverse theorem is reproved as the reversible-capacity boundary. No
+configuration ontology, absolute completeness claim, native law, official
+pin, or U0-T4 follows.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

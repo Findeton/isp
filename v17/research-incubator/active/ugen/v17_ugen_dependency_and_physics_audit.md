@@ -131,6 +131,16 @@ A candidate earns explanatory reduction only when a comparator input is
 derived from older independently motivated premises without an equally strong
 surrogate elsewhere.
 
+The same rule now applies to Markov dilation. Every finite prefix-causal
+transcript law can be represented on the full observed history, and its
+minimal future-sufficient quotient can be constructed from its complete
+conditional laws. Neither object is an independently motivated physical input:
+both sit downstream of the target. They may measure predictive capacity or
+exhibit a representation, but they cannot fill the native source-completion
+slot. An enlarged carrier gains physical status only through independent
+preparation, intervention, readout, isolation, transfer, or novel-prediction
+evidence.
+
 ---
 
 ## 4. Why the fixed quantum control is necessary but insufficient

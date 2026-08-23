@@ -284,6 +284,15 @@ proves nonselection and advice-embedding controls: a reference neither chooses
 the response law nor becomes explanatory merely by being embodied. No
 reference carrier, group, phase, clock, law, or ontology is selected.
 
+The indivisibility-placement audit and theorem package now prevent arbitrary
+hidden-state dilation from deciding the ontology. Full observed history always
+Markovizes a finite prefix-causal transcript law, and its predictive quotient
+is minimal, but both are computed from the complete target law. They are
+representations rather than native generators. A nondivision witness receives
+physical credit only on a target-independently justified source-closed carrier
+after every evidenced reference or memory is included. The result is exact
+author-side and opens no U0-T4, candidate, pin, review, or result.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -336,6 +345,8 @@ Active audit:
 - v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md
 - v17_ugen_u0_t3_physical_reference_source_audit.md
 - v17_ugen_u0_t3_reference_bearing_relational_theorems.md
+- v17_ugen_u0_t3_indivisibility_placement_source_audit.md
+- v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md

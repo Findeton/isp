@@ -175,6 +175,15 @@ on relative orbits. It also proves reference nonselection, reference-removal
 averaging, shared-reference common-cause correlation, and the risk of target
 advice stored in a physical token. Thus physical references are an admissible
 source class, not a selected reference, phase, clock, ontology, or law.
+The indivisibility-placement package now fixes how that reference structure
+enters the dynamical claim. Any finite prefix-causal transcript law can be
+Markovized on full observed history and compressed to a minimal predictive
+quotient, but both constructions consume the complete target law. They are
+therefore controls against false impossibility and false derivation, not
+candidate physics. A native nondivision witness must use a carrier fixed by a
+target-independent source rule, include every independently evidenced
+reference or memory, and quantify only over licensed positive restarts. No
+finite test establishes absolute ontic completeness.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -240,6 +249,11 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 PHYSICAL-REFERENCE SOURCE:   ADMISSIBLE CLASS / NOT SELECTED
     U0 RELATIVE-ORBIT THEOREMS:     EXACT AUTHOR-SIDE / NOT REVIEWED
     U0 REFERENCE AS LAW SELECTOR:   NONSELECTING IN EXACT FINITE CONTROL
+    U0 HISTORY MARKOVIZATION:       ALWAYS EXISTS FINITELY / TARGET-BUILT
+    U0 PREDICTIVE QUOTIENT:         EXACT MINIMAL PREDICTOR / ZERO SOURCE CREDIT
+    U0 PHYSICAL CLOSURE:            CARRIER- AND INTERFACE-RELATIVE
+    U0 ABSOLUTE INDIVISIBILITY:     NOT CLAIMED / ARBITRARY DILATIONS EXIST
+    U0 REVERSIBLE POSITIVE FINITE:  PERMUTATION BOUNDARY / NO ONTOLOGY SELECTED
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN

@@ -90,6 +90,15 @@ wavefunction, process matrix, action, phase, holonomy, quantum current, or
 equivalent answer input. Hilbert structure may be reconstructed only after the
 positive law freezes. No candidate currently meets this contract.
 
+The U0-T3 indivisibility-placement theorem now removes a misleading escape in
+both directions. A full-history or minimal predictive state can Markovize any
+finite complete transcript law, but it is computed from that law and therefore
+does not generate it. Conversely, failure of a system-only restart is not a
+native witness if an independently evidenced reference or memory was omitted.
+Rival A must earn a target-independent physical carrier and then state
+indivisibility only relative to its licensed interface. It need not and cannot
+claim that no abstract dilation exists.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,

@@ -368,6 +368,8 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md
 - active/ugen/v17_ugen_u0_t3_physical_reference_source_audit.md
 - active/ugen/v17_ugen_u0_t3_reference_bearing_relational_theorems.md
+- active/ugen/v17_ugen_u0_t3_indivisibility_placement_source_audit.md
+- active/ugen/v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md
 - active/ugen/v17_ugen_fundamental_nomology_rival_register.md
 - active/ugen/v17_ugen_bell_current_actuality_comparator.md
 - active/ugen/v17_ugen_bell_current_physical_reality_audit.md
@@ -449,6 +451,8 @@ Active working package:
 - `active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md`
 - `active/ugen/v17_ugen_u0_t3_physical_reference_source_audit.md`
 - `active/ugen/v17_ugen_u0_t3_reference_bearing_relational_theorems.md`
+- `active/ugen/v17_ugen_u0_t3_indivisibility_placement_source_audit.md`
+- `active/ugen/v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md`
 - `active/ugen/v17_ugen_bell_current_actuality_comparator.md`
 - `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
 - `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`

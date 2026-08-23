@@ -425,6 +425,19 @@ cleanly if nature does not support it.
   shared-reference correlation, and reference nonselection. They also show
   why a physical token can still smuggle target advice. No group, reference,
   law, quantum phase, clock, implementation, or ontology is selected.
+  The indivisibility-placement package now closes a second conceptual
+  loophole. Every finite prefix-causal controlled transcript law has an exact
+  positive Markov representation on its full observed history and a minimal
+  predictive quotient relative to licensed future policies. Both are built
+  from the complete target law, so neither supplies a physical configuration
+  or earns native source-completion credit. Indivisibility must therefore be
+  claimed only relative to a target-independently justified, source-closed
+  carrier and intervention interface. An independently evidenced reference or
+  memory must be included; an arbitrary hidden history state need not be.
+  Exact finite positive reversibility still reduces to permutations, locating
+  rather than selecting the possible homes of quantum-process capacity. No
+  native law, absolute ontic-completeness theorem, implementation, official
+  cycle, or result follows.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
