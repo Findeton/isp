@@ -1336,3 +1336,28 @@ blind lenses: category/operator algebra/covariance; quantum
 probability/instruments/Bell; and ontology/locality/Barandes/gravity walls.
 No candidate edit, implementation, automatic repair, or Paper 04 work is
 opened.
+
+## 2026-08-22 — PAPER 03 v3.1 HOSTILE-REVIEW PROTOCOL FROZEN (v17 LEDGER #56)
+
+The immutable result-neutral protocol freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v31-hostile-review-protocol.md` | `66342f937de99b4a8450f1e8fe10c0156af13f697ad488a0f6495d8caeba7094` | `e03798b1cd0a4ef6c06355b0a7cf30c888008746163035ed44e74a5fbf5870ce` | 558 LF / 22,604 bytes |
+
+It binds three mutually blind, sole-write-path lenses:
+
+1. category, operator algebra, AQFT, and covariance;
+2. quantum instruments, probability, histories, and Bell; and
+3. ontology, locality, Barandes, continuum, and gravity walls.
+
+Every seat must independently reconstruct V31-T1--T24, C1--C34 in both
+directions, attacks 1--52 continuously, at least twelve fresh lens-specific
+attacks, all 36 product coordinates, and the outcome ladder. Integrated
+almost-everywhere equality never substitutes for exact frozen-kernel equality.
+The strongest permitted rung remains comparator-level operational adequacy
+with global ontology debt.
+
+The protocol awards no result. Candidate edits, implementation, automatic
+repair, Paper 04, clocks, spacetime, and gravity remain closed while the panel
+runs.

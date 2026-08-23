@@ -92,6 +92,10 @@ cleanly if nature does not support it.
   downstream refusals without finding an author-level semantic counterexample.
   It opens only a frozen three-lens hostile-review protocol; the candidate is
   still green-unreviewed and Paper 04 remains closed.
+  That immutable protocol is now frozen. Three mutually blind seats must
+  independently reconstruct the category/operator-algebra, quantum
+  probability/instrument, and ontology/relativity surfaces before any joint
+  adjudication. Candidate edits remain barred while review runs.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -312,6 +316,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v31-construction-audit.md` — result-neutral author trace over
   every binding obligation, target, control, hostile attack, source scope,
   and ontology wall; it authorizes only the independent-review protocol.
+- `note-paper03v31-hostile-review-protocol.md` — immutable result-neutral
+  three-lens duties, blindness/write boundaries, fresh attacks, product,
+  rungs, and adjudication rules for the frozen v3.1 construction.
 
 ## Permanent honesty wall
 

@@ -517,7 +517,8 @@ Paper 03 v3.1 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 joint adjudication    TERMINAL ACCEPT FOR ONE CONSTRUCTION
 Paper 03 v3.1 construction          GREEN-UNREVIEWED MATHEMATICS
 Paper 03 v3.1 construction audit    PASS — RESULT-NEUTRAL
-Paper 03 v3.1 hostile protocol      NEXT — RESULT-NEUTRAL
+Paper 03 v3.1 hostile protocol      FROZEN — RESULT-NEUTRAL
+Paper 03 v3.1 blind reviews         DISPATCHED / PENDING
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
