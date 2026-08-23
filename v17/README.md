@@ -186,7 +186,11 @@ cleanly if nature does not support it.
   adjudication #81 authorizes exactly one construction under a covariant
   record-lift, complete adaptive-history, deep hidden-time, common-domain,
   and structural-success ceiling. No Paper-04 scientific result has yet been
-  evaluated or awarded.
+  terminally awarded. Ledger #82 freezes the sole green construction: full
+  quantum frame equivalence succeeds on the common sector, the finite
+  adaptive history and reciprocal source-response tests pass, A stops at
+  q=6, and reading-only frame sufficiency fails on UCOH. These are candidate
+  results pending construction audit and hostile review.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

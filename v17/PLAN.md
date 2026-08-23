@@ -554,7 +554,8 @@ Paper 04 three pin audits           FROZEN ACCEPT WITH BINDING SCOPE
 Paper 04 root pin adjudication      TERMINAL — ONE MODEL-SPECIFIC PREFIT PIN AUTHORIZED
 Paper 04 model-pin three audits     TERMINAL ACCEPT FOR ONE CONSTRUCTION WITH SCOPE
 Paper 04 model-pin adjudication     TERMINAL — EXACTLY ONE CONSTRUCTION AUTHORIZED
-Phase T construction                OPEN FOR THE SOLE FROZEN MODEL ONLY
+Phase T construction                GREEN-UNREVIEWED — SOLE MODEL CANDIDATE FROZEN
+Paper 04 construction audit         PENDING
 Phases G/S/P                         CLOSED
 ```
 

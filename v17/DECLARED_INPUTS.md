@@ -364,6 +364,7 @@ selection, or a Barandes completion.
 | Paper 04 model Seat Q audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #79 report; complete instruments, coherent A-record action, adaptive law | gauge-trivial records and post-result measurement-route choice are refused |
 | Paper 04 model Seat O audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #80 report; model ontology, supplied order, Barandes and gravity scope | finite testbed and co-designed comparator cannot select nature or timeless ontology |
 | Paper 04 model-pin adjudication | `TERMINAL ACCEPT FOR EXACTLY ONE CONSTRUCTION WITH BINDING SCOPE` | #81 root reconstruction; R1--R12 and B1--B20 | one frozen mathematical construction authorized; no scientific coordinate awarded |
+| Paper 04 finite relational-clock candidate | `GREEN-UNREVIEWED` | exact #82 construction; finite parent, covariant records, adaptive law, full frame map, scalar failure, full product | candidate only; construction audit and hostile review pending |
 
 ## Derivation balance
 
@@ -372,7 +373,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue; complete-boundary paired relativistic quantum operational representation
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0
+green-unreviewed mathematical constructions: 1 (Paper 04 finite relational-clock candidate)
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy in the sole exact finite cyclic Paper-04 construction
 standard empirical/theory comparators: quantum Q0–Q3 and supplied AQFT/Lorentzian laboratory background

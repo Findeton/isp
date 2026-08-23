@@ -1945,3 +1945,30 @@ hidden-time gates, exact finite resources, and the full ontology/spacetime
 ceiling. Exactly one mathematical construction of #77 is authorized. No
 automatic model repair, implementation-selected physics, Paper 05, spacetime,
 or gravity unit is opened.
+
+## 2026-08-23 — PAPER 04 SOLE FINITE CLOCK CONSTRUCTION FROZEN (v17 LEDGER #82)
+
+The #81-authorized mathematical candidate freezes at
+`v17/paper-04-finite-relational-clock-parent.md`, ordinary SHA-256
+`25d6771bd4bbfb658a54da7f65cdcc9620b0769f6d7be6075103ff5d44230dc6`,
+normalized self-SHA-256
+`5f5e2aebd8b7382df97e07914ee552a3d95ffebd9103f8da5ffbf7377fabe600`,
+and size 1,197 LF / 45,211 bytes. Status is `GREEN-UNREVIEWED`.
+
+The candidate proves the 343-dimensional physical parent, all source
+normalizations, the global B and $Q\ne6$ A reductions, the q=6 stopped-A
+rank loss, transforming clock records, two physically distinct clocks, the
+parent-to-lab bridge, two untouched affine held-out points, the complete USEQ
+history, exact common-sector quantum round trips, two reciprocal operational
+response arms, finite baselines/resources/recurrence, and the absence of
+runtime $s$ from the frozen parent predictor. It also prints exact negative
+coordinates: reading-only sufficiency fails on UCOH, scalar dynamics is
+clock/source dependent, and causal order, ontology, spacetime, gravity,
+fundamental time, and actuality remain supplied or unconstructed.
+
+A private bounded Rust arithmetic checker, written only after the candidate
+mathematics froze, passed 118,749 exact assertions and made no repository or
+semantic change. It is diagnostic evidence only, not a physics selector or
+committed implementation. No downstream unit opens before a result-neutral
+construction audit, frozen hostile protocol, three blind reviews, and root
+terminal adjudication.
