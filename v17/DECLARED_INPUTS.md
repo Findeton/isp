@@ -229,6 +229,22 @@ selection, or a Barandes completion.
 | quantum measurement/probability/Bell (Seat Q) | `ACCEPT-WITH-SCOPE` | instrument, causal probability, no-signalling/steering, Bell compatibility, and positive-history core survive with packet scopes | frozen, not adjudicated |
 | ontology/locality/gauge/continuum (Seat O) | `REVISE` | universal no-visible-frame claim refuted; only law covariance and scheduling independence survive | frozen, not adjudicated |
 
+## Paper 03 v1 terminal adjudicated balance
+
+| Object | Adjudicated status | Exact boundary / retained debt |
+|---|---|---|
+| localized AQFT instruments | `CONSTRUCTED CONDITIONALLY` | fixed admitted system--probe schemes; normality/localization hypotheses explicit |
+| causal factorization and schedules | `CONSTRUCTED CONDITIONALLY` | named finite schemes; comparator causal order remains declared |
+| no-signalling / steering / Bell | `CONSTRUCTED / SCOPED CONTROLS` | nonselective operation theorem; selected record cost; Bell compatibility only |
+| positive finite-program histories | `CONSTRUCTED WITH COSTS` | global/contextual/memory-bearing; update closure and measurable kernels required |
+| relativistic procedure category | `UNCONSTRUCTED AS PRINTED` | causal admissibility missing from boundary types |
+| operational quotient category | `UNCONSTRUCTED AS PRINTED` | depends on failed source category |
+| covariance | `EVALUATION NATURALITY CONSTRUCTED` | full packet morphisms and proper-embedding state extension unconstructed |
+| preferred frame | `NO UNDECLARED SCHEDULING FRAME` | contingent state/apparatus-selected frames may be observable |
+| ontology / actuality / spacetime / gravity | `UNCONSTRUCTED` | no promotion from comparator operational adequacy |
+| Paper 03 v1 overall | `TERMINAL REVISE` | rung 4 `P03-RELATIVISTIC-NOSIGNALLING-OPERATIONAL-SUBPACKAGE-CONSTRUCTED` |
+| Paper 03 v2 | `OPEN FOR RESULT-NEUTRAL PIN` | causal-frontier typing and exact scopes only; no new physics pre-awarded |
+
 ## Derivation balance
 
 The live adjudicated balance is:

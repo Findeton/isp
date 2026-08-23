@@ -30,13 +30,12 @@ cleanly if nature does not support it.
   It repairs the v1 source-domain error, constructs a positive contextual
   existence model, and leaves the particular ontology, Barandes completion,
   and microscopic actuality unselected.
-- Paper 03 status: **THREE HOSTILE REVIEWS FROZEN — ADJUDICATION NEXT**.
-  Seat A refutes the printed ordinary procedure category; Seat Q independently
-  accepts the quantum measurement, probability, Bell, and positive-history
-  core with explicit normality/measurability/realization scopes; Seat O refutes
-  the universal preferred-frame wording because contingent states/apparatus
-  may physically select a detectable rest frame. Joint adjudication remains
-  pending; no Paper 03 result is terminal.
+- Paper 03 v1 status: **TERMINAL REVISE — MIXED RUNG-4 SURVIVAL**. The
+  localized relativistic instrument/factorization/schedule/no-signalling core
+  survives. The ordinary procedure and quotient categories fail because
+  causal admissibility is not encoded in boundary types; covariance also does
+  not forbid a contingent state/apparatus-selected rest frame. A result-neutral
+  causal-frontier Paper 03 v2 repair pin is the next authorized step.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -72,10 +71,11 @@ $q:\mathcal P\to\mathcal Q$; and admitted idle-fiber projections prove a
 limited no-selection theorem. What survives is structural contextuality and
 ontology underdetermination, not a preferred microscopic world.
 
-Paper 03's three reports are frozen. Its fixed-packet relativistic measurement
-core remains live, while the ordinary category/quotient claim and universal
-preferred-frame wording face exact counterexamples. Root adjudication must
-determine the mixed product before any repair or successor.
+Paper 03 v1 is adjudicated. Its fixed-packet relativistic measurement core is
+the surviving input to one new v2 pin. That pin must encode causal frontiers in
+boundary types, close state classes under registered updates, define full
+packet morphisms, use measure kernels for nonatomic outcomes, and restrict the
+frame claim to covariance and scheduling independence.
 
 ## Reality constraints
 
@@ -195,6 +195,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03-ontology-locality-continuum.md` — frozen Seat O report;
   `REVISE` on the distinction between covariant law, scheduling independence,
   and a contingent state/apparatus-selected rest frame.
+- `note-paper03-hostile-review-adjudication.md` — terminal mixed product,
+  rung-4 ceiling, and exact Paper 03 v2 causal-frontier repair boundary.
 
 ## Permanent honesty wall
 

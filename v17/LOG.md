@@ -855,3 +855,31 @@ type-III/split/gauge/continuum firewalls survive this objection.
 
 All three reports are now frozen. This entry is not adjudication; the root must
 independently reproduce each claimed defect and determine the mixed product.
+
+## 2026-08-22 — PAPER 03 v1 TERMINAL REVISE (v17 LEDGER #36)
+
+The joint adjudication freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03-hostile-review-adjudication.md` | `165fa3690dda1613152bfa94c2188823a296063678a5ebdea8be5dcd34e796b7` | 339 LF / 16,311 bytes |
+
+The root independently reproduces both semantic defects. First, the printed
+boundary type omits a causal frontier, so two same-boundary forgotten-outcome
+timelike endomorphisms have matching category types although the external
+causal-wiring predicate forbids one composite. The ordinary procedure and
+quotient categories are therefore unconstructed. Second, covariance compares
+jointly transported state/observable data and does not make a fixed contingent
+state invariant; a material/KMS rest frame may be detectable. Only absence of
+undeclared scheduling-frame dependence survives.
+
+The terminal v1 ceiling is
+`P03-RELATIVISTIC-NOSIGNALLING-OPERATIONAL-SUBPACKAGE-CONSTRUCTED`. Localized
+CP instruments, named causal factorization, equality of spacelike schedules,
+nonselective no-signalling, selective steering with record cost, Bell
+compatibility, and positive finite-program histories survive conditionally.
+
+Under the user's programme-wide authorization, one result-neutral Paper 03 v2
+pin may repair causal-frontier typing, state-update closure, full packet
+morphisms, measure-kernel scope, source/localization hypotheses, and frame
+language. The frozen v1 candidate remains unchanged. Paper 04 remains closed.
