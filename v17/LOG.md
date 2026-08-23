@@ -1109,3 +1109,25 @@ commuting squares of complete operations and state/record kernels. All linear
 extensions agree only for fully exchange-certified protocols. The pin awards
 no result, ontology, actuality, clock, spacetime, or gravity. Two independent
 mathematics/source audits are next; Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v3 CATEGORY PIN AUDIT FROZEN (v17 LEDGER #47)
+
+The first independent audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v3-pin-audit-category.md` | `5430ece42ca9e09c82442a9ea2abfa77127b579e06cc9be6b023cc7de780f3fc` | 422 LF / 19,117 bytes |
+
+Disposition: `REVISE BEFORE CONSTRUCTION`. The finite direct-sum instrument,
+adaptive guard, hybrid category, and certified trace congruence are coherent.
+The exact first blocker is confined to the continuous retained-record claim:
+for nonatomic $\nu$, point evaluation at the v2 boundary record $r$ is not
+well defined on $L^\infty(R,\nu)$ equivalence classes and is not a normal
+state. NEP supplies an integrated normal extension and an almost-everywhere
+posterior field, not one normal state for every point record.
+
+Independently, a measurable map induces an $L^\infty$ pullback only when its
+pushforward source measure class is absolutely continuous with respect to the
+target class. The audit awards no result and orders no repair by itself. The
+blind quantum audit and joint adjudication remain; construction and Paper 04
+stay closed.

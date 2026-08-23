@@ -508,14 +508,17 @@ Paper 03 v2 Seat Q review           FROZEN REVISE — SAME HEISENBERG DEFECT
 Paper 03 v2 Seat O review           FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v2 joint adjudication      TERMINAL REVISE — RUNG 6
 Paper 03 v3 repair pin              FROZEN RESULT-NEUTRAL
-Paper 03 v3 independent pin audits  NEXT — CATEGORY + QUANTUM
+Paper 03 v3 category pin audit      FROZEN REVISE BEFORE CONSTRUCTION
+Paper 03 v3 quantum pin audit       PENDING FREEZE
+Paper 03 v3 joint pin adjudication  PENDING
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is independent mathematics review of the frozen
-Paper 03 v3 pin. Only if those audits accept its implementability and scope may
-one mathematics-only construction begin. The v3 cycle may construct only the
+The category audit has identified an exact continuous-record typing blocker;
+the independent quantum audit and joint adjudication must determine the
+smallest result-neutral correction before any construction. The v3 cycle may
+construct only the
 hybrid classical--quantum Heisenberg target, its compatibility laws, exact
 primitive interfaces, and certified-concurrency scope. It may not retune
 probabilities or add ontology, internal time, spacetime emergence, or gravity.

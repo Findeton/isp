@@ -293,6 +293,7 @@ selection, or a Barandes completion.
 | physical probabilities and instruments | `FROZEN UNCHANGED INPUT` | terminal v2 surviving subpackage | no retuning permitted |
 | Paper 03 v3 result | `UNCONSTRUCTED` | frozen result-neutral pin | independent pin audits, construction, and hostile adjudication required |
 | ontology / internal time / spacetime / gravity | `UNCONSTRUCTED` | no input | Paper 04 and later phases remain closed |
+| Paper 03 v3 category pin audit | `REVISE BEFORE CONSTRUCTION — EVIDENCE` | frozen pin and bound v2 point-record semantics | finite/direct-sum repair survives; continuous point-record normal state and merely measurable $L^\infty$ pullback fail |
 
 ## Derivation balance
 

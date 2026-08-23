@@ -55,7 +55,11 @@ cleanly if nature does not support it.
   normalized CP arrow, requires `Ev`/`Heis` agreement on complete readers,
   and limits schedule equality to paths connected by certified full-operation
   exchanges. It changes no probabilities or physics and awards no result.
-  Independent mathematics and quantum pin audits are next.
+  The first independent category audit returns `REVISE BEFORE CONSTRUCTION`:
+  a nonatomic point-valued record is not a normal state on an $L^\infty$
+  equivalence-class algebra, and deterministic record pullbacks need
+  measure-class nonsingularity. The finite/direct-sum and certified-exchange
+  components pass. The quantum audit and joint adjudication remain.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -245,6 +249,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   hybrid classical--quantum boundary/category repair, complete-instrument and
   adaptive-control semantics, `Ev`/`Heis` compatibility, NEP-scoped
   standard-Borel extension, and certified-concurrency quantifiers.
+- `note-paper03v3-pin-audit-category.md` — independent category/mathematics
+  audit; `REVISE BEFORE CONSTRUCTION` on continuous point-record normality
+  and nonsingular pullback typing, with the finite repair surviving.
 
 ## Permanent honesty wall
 
