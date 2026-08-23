@@ -226,6 +226,15 @@ cleanly if nature does not support it.
   so its conditional one-parent attempt never opens. No automatic repair,
   second model, Paper 05, chronology, spacetime, gravity, hardware, or code
   programme is authorized.
+- Author-side research incubator: **PRESERVED IN-REPOSITORY / NONTERMINAL / NO
+  UNIT OPENED**. The 54 previously off-tree v17 research documents are now
+  preserved byte-for-byte under `research-incubator/snapshots/`, with a status
+  index and SHA-256 manifest. The active author-side fronts are Q-Cut
+  (scalable explanatory cost), E-Comp (endpoint versus coherent composition),
+  and U-Gen (uniform indivisible law class). Q-Cut still requires primary-source
+  reconstruction of its one-way information-compression bridge before any pin
+  may freeze. Repository inclusion does not promote any draft, authorize a
+  Paper 04B successor, or open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
