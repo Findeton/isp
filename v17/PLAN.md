@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1 terminal REVISE; Paper 03 v2 Seat A frozen REVISE, Q/O next**
+Paper 03 v1 terminal REVISE; Paper 03 v2 Seats A/Q frozen REVISE, O next**
 
 ## 0. Authority and workflow
 
@@ -504,13 +504,14 @@ Paper 03 v2 construction            GREEN-UNREVIEWED
 Paper 03 v2 construction audit      PASS RESULT-NEUTRAL
 Paper 03 v2 hostile protocol        FROZEN RESULT-NEUTRAL
 Paper 03 v2 Seat A review           FROZEN REVISE — HEISENBERG TARGET UNCONSTRUCTED
-Paper 03 v2 Seats Q/O               NEXT — REPORT COMMITS
+Paper 03 v2 Seat Q review           FROZEN REVISE — SAME HEISENBERG DEFECT
+Paper 03 v2 Seat O review           NEXT — REPORT COMMIT
 Paper 03 v2 joint adjudication      BLOCKED UNTIL ALL THREE REPORTS COMMITTED
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is separate Q/O report freeze/commit followed by
+The next scientific action is the separate Seat O report commit followed by
 independent joint adjudication. No seat may repair the candidate or add
 ontology, internal time, spacetime emergence, or gravity. Paper 04 remains
 closed.

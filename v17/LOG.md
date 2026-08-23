@@ -1019,3 +1019,25 @@ exchange is certified only for factorizing incomparable pairs. Strongest Seat
 A rung: `P03V2-RELATIVISTIC-NOSIGNALLING-PACKAGE-CONSTRUCTED`. This report is
 evidence, not adjudication. Seats Q/O and joint reconstruction remain; Paper
 04 stays closed.
+
+## 2026-08-22 — PAPER 03 v2 SEAT Q REVIEW FROZEN (v17 LEDGER #43)
+
+Seat Q's quantum/probability report freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper03v2-quantum-probability.md` | `fd9b031bf76dcb9344db9be98ffa793b2e59bf060e52742b11dcf899cff8d667` | 672 LF / 35,807 bytes |
+
+Verdict: `REVISE`. Independently of Seat A, Seat Q identifies the same first
+semantic defect: a complete binary instrument with retained result followed by
+an outcome-controlled operation cannot be represented by the printed
+`CP_Xi`. A branch map loses completeness, while the nonselective sum erases
+the record needed by the guard. A direct-sum or measurable hybrid
+classical--quantum target is new semantic structure and is not present.
+
+The covariant state/record kernel, localized probability, no-signalling,
+steering, Bell-compatibility, and positive-history subpackage otherwise
+survives at its printed scope. Strongest Seat Q rung:
+`P03V2-POSITIVE-RELATIVISTIC-PREDICTIVE-REPRESENTATION-CONSTRUCTED-WITH-COSTS`.
+This report is evidence, not adjudication. Seat O and joint reconstruction
+remain; Paper 04 stays closed.

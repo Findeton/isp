@@ -36,16 +36,16 @@ cleanly if nature does not support it.
   causal admissibility is not encoded in boundary types; covariance also does
   not forbid a contingent state/apparatus-selected rest frame. Its authorized
   causal-frontier successor is the current Paper 03 v2 candidate.
-- Paper 03 v2 status: **UNDER HOSTILE REVIEW; SEAT A REVISE**. It types
+- Paper 03 v2 status: **UNDER HOSTILE REVIEW; SEATS A/Q REVISE**. It types
   finite laboratory opportunities by a causal slot poset and completed lower
   sets; constructs the free path category, Markov-kernel/Heisenberg semantics,
   causal exchange and operational quotients; and reconstructs the scoped
   relativistic instrument/no-signalling/positive-history package. It is not a
   microscopic event web, lattice, foliation, terminal result, or ontology.
   Its result-neutral construction audit passes. Seat A confirms the category
-  repair but finds the Heisenberg target for retained classical records
-  unconstructed and schedule equality overquantified. Q/O reports and joint
-  adjudication remain.
+  repair and stochastic probability route but independently find the
+  Heisenberg target for retained classical records unconstructed; Seat A also
+  finds schedule equality overquantified. Seat O and joint adjudication remain.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -223,6 +223,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03v2-category-aqft.md` — Seat A `REVISE`: path category passes;
   hybrid classical--quantum Heisenberg target and universal schedule theorem
   fail as printed.
+- `review-paper03v2-quantum-probability.md` — Seat Q `REVISE`: probability
+  kernel route survives; retained-result adaptive Heisenberg composition is
+  untyped.
 
 ## Permanent honesty wall
 
