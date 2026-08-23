@@ -77,7 +77,9 @@ cleanly if nature does not support it.
   directly at ensemble level, with one state-independent target-landing
   extension, joint posterior measurability, stochastic null-ideal
   preservation, path closure, complete memory, and exact two-layer exchange
-  certificates. Neither audit awards a result; joint adjudication is next.
+  certificates. Joint adjudication accepts exactly one mathematics-only
+  construction with those obligations. It awards no result, permits no
+  automatic pin successor or implementation, and leaves Paper 04 closed.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -287,6 +289,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   audit; accepts one construction attempt with binding ensemble-level
   duality, normal-extension, posterior, null-ideal, closure, memory, and
   certificate obligations.
+- `note-paper03v31-pin-audit-adjudication.md` — terminal pre-construction
+  synthesis; authorizes one mathematics-only construction while preserving
+  the nonatomic point-restart refusal and every downstream wall.
 
 ## Permanent honesty wall
 

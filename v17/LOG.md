@@ -1252,3 +1252,30 @@ deterministic null-ideal preservation, complete future-memory exposure, and
 exact two-layer concurrency certificates. It preserves every v2 probability
 and awards no coordinate. Joint adjudication is next; construction and Paper
 04 remain closed.
+
+## 2026-08-22 — PAPER 03 v3.1 PIN AUDITS ADJUDICATED (v17 LEDGER #53)
+
+The terminal pre-construction adjudication freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v31-pin-audit-adjudication.md` | `613c006a5933db29cd29e3d1c6e3594fa044c4f1fb150d6f904882768588c96f` | 464 LF / 19,099 bytes |
+
+Decision: `ACCEPT-FOR-ONE-MATHEMATICS-CONSTRUCTION-WITH-BINDING-SCOPE`.
+The reports agree: dominated record marginals and a strongly measurable
+conditional predual barycenter define a normal representative-independent
+`Ens`; finite/atomic point restart is exact; generic nonatomic point restart
+is refused; and continuous feedback remains an integrated whole-program
+operation rather than a fictitious point checkpoint.
+
+Construction must additionally prove deterministic and stochastic null-ideal
+preservation, one state-independent target-landing UCP extension, joint
+posterior measurability, ensemble/path closure, complete future-memory
+exposure, ensemble-level one-step duality before induction, and exact
+two-layer exchange certificates in every reachable adaptive context. Exact
+`Ev` kernel equality and integrated a.e. equality remain distinct.
+
+No scientific coordinate is awarded and no v2 probability, instrument,
+physical parameter, comparator, or ontology claim moves. One self-contained
+mathematics construction is next. There is no automatic pin successor,
+implementation stage, or Paper 04 opening.

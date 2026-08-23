@@ -514,7 +514,8 @@ Paper 03 v3 joint pin adjudication  TERMINAL REVISE BEFORE CONSTRUCTION
 Paper 03 v3.1 corrected pin         FROZEN RESULT-NEUTRAL
 Paper 03 v3.1 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
-Paper 03 v3.1 joint adjudication    NEXT
+Paper 03 v3.1 joint adjudication    TERMINAL ACCEPT FOR ONE CONSTRUCTION
+Paper 03 v3.1 construction          NEXT — MATHEMATICS ONLY
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```

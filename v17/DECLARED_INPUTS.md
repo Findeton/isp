@@ -302,6 +302,7 @@ selection, or a Barandes completion.
 | deterministic continuous record map | `CONDITIONAL ADMISSION` | packet primitive/interface | pushforward source class must be absolutely continuous with respect to target class |
 | Paper 03 v3.1 category pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and full authority corpus | predual `Ens`, tagged category, atomic restart, nonsingular maps, a.e. guards, memory and concurrency are jointly feasible; awards no coordinate |
 | Paper 03 v3.1 quantum pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and unchanged v2 instruments | continuous duality must begin at ensemble level; state-independent target landing, joint posterior measurability, stochastic null-ideal preservation, path closure and complete memory remain construction obligations |
+| Paper 03 v3.1 pin-audit adjudication | `TERMINAL ACCEPT FOR ONE MATHEMATICS CONSTRUCTION` | exact pin plus two blind audits and direct rebuild | authorizes construction of the frozen representation only; awards no probability, ontology, time, spacetime, or gravity coordinate |
 
 ## Derivation balance
 
