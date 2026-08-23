@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 mathematics green-unreviewed; construction audit next**
+Paper 03 construction audit passes; hostile-review protocol next**
 
 ## 0. Authority and workflow
 
@@ -221,6 +221,12 @@ relativistic procedure quotient, and positive contextual predictive histories.
 Its claimed rung-7 ceiling remains green-unreviewed and explicitly retains the
 declared background, global predictive-state cost, ontology nonselection, and
 actuality debt.
+
+**Construction-audit state.** The author trace passes at ledger #31. It binds
+five high-risk scopes for independent review: declared background/causal
+order; state variance and packet-specific closure; separate QFT Bell and
+split-qubit controls; the nonexplanatory global predictive-state cost; and
+strict model separation for type-III/split/gauge/sector claims.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
@@ -480,12 +486,13 @@ Paper 02 v2                         TERMINAL ACCEPT-WITH-SCOPE
 Paper 03 mathematical pin           FROZEN RESULT-NEUTRAL
 Paper 03 author audit               PASS RESULT-NEUTRAL
 Paper 03 construction               GREEN-UNREVIEWED
-Paper 03 construction audit         NEXT
-Paper 03 review                     CLOSED PENDING AUDIT/PROTOCOL
+Paper 03 construction audit         PASS RESULT-NEUTRAL
+Paper 03 hostile-review protocol    NEXT
+Paper 03 independent review         CLOSED PENDING PROTOCOL
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is the Paper 03 construction audit, followed—only
-if it passes—by a frozen three-lens hostile-review protocol. No implementation,
-clock, spacetime-emergence, or gravity unit is open.
+The next scientific action is a frozen Paper 03 three-lens hostile-review
+protocol. No implementation, clock, spacetime-emergence, or gravity unit is
+open.

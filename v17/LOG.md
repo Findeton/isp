@@ -756,3 +756,24 @@ remain declared comparator inputs. The predictive history is global,
 memory-bearing, contextual, nonexplanatory, and unselected. QFT ontology,
 actuality, internal time, spacetime emergence, and gravity remain
 unconstructed. The sole next action is a result-neutral construction audit.
+
+## 2026-08-22 — PAPER 03 CONSTRUCTION AUDIT PASSES (v17 LEDGER #31)
+
+The result-neutral author audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03-construction-audit.md` | `bdabe5b9aa4331b43dc4c1b2b8bfb0db6bed673268aa27fa8ce88e2e5e1a27ef` | 302 LF / 12,476 bytes |
+
+The audit reconstructs the state/algebra variance, induced instrument,
+causal-factorization, nonselective no-signalling, positive-history, procedure-
+quotient, contextuality, and idle-fiber proofs. No semantic counterexample is
+found. It makes five scopes binding for hostile review: declared comparator
+geometry and causal order; packet-specific state-class closure; separation of
+the QFT Bell existence theorem from the exact split-qubit calibration; the
+global/nonexplanatory predictive-state cost; and no migration of type-III,
+split, gauge, sector, or Hadamard properties across models.
+
+Disposition: `READY-FOR-INDEPENDENT-REVIEW`. No coordinate is awarded. The
+next action is a frozen three-lens hostile-review protocol; code and all later
+physical phases remain closed.

@@ -218,6 +218,7 @@ selection, or a Barandes completion.
 | positive predictive histories | algebraic states/conditional process objects | `GREEN-UNREVIEWED EXISTENCE CONTROL` | global, contextual, memory-bearing, nonexplanatory, unselected |
 | preferred-frame conclusion | covariance plus spacelike schedule equality | `GREEN-UNREVIEWED OPERATIONAL SCOPE` | idle microscopic preferred structure not excluded |
 | QFT ontology / actuality / internal time / gravity | none | `UNCONSTRUCTED` | cannot be promoted by this candidate |
+| Paper 03 construction audit | frozen candidate/source trace | `PASS — RESULT-NEUTRAL` | authorizes protocol/review only; awards no coordinate |
 
 ## Derivation balance
 

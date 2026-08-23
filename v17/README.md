@@ -183,6 +183,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   quantifier, and construction-feasibility audit; it awards no coordinate.
 - `paper-03-relativistic-quantum-operational-adequacy.md` — green-unreviewed
   mathematics; conditional relativistic adequacy and explicit ontology debt.
+- `note-paper03-construction-audit.md` — author proof, source-scope, model-
+  separation, overclaim, and independent-review attack audit.
 
 ## Permanent honesty wall
 
