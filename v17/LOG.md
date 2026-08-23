@@ -1972,3 +1972,22 @@ semantic change. It is diagnostic evidence only, not a physics selector or
 committed implementation. No downstream unit opens before a result-neutral
 construction audit, frozen hostile protocol, three blind reviews, and root
 terminal adjudication.
+
+## 2026-08-23 — PAPER 04 CONSTRUCTION AUDIT FROZEN (v17 LEDGER #83)
+
+The result-neutral author audit freezes at
+`v17/note-paper04-construction-audit.md`, ordinary SHA-256
+`d596f2a6c0ed7240d655780b61927eef71b908b14b1bc905f6418cef76bbc484`,
+normalized self-SHA-256
+`c71a00c0ff08c75bea0f4881785b67ae4313215d60c8eb8171e18a6b0758f141`,
+and size 283 LF / 12,759 bytes. Disposition is
+`READY-FOR-INDEPENDENT-HOSTILE-REVIEW`; no scientific coordinate is awarded.
+
+The audit independently rechecks pin immutability, parent/reduction algebra,
+the bare-PVM obstruction and covariant-record repair, quotient-level clock
+independence, the all-branch adaptive history, UCOH coherence witness,
+calibration/baselines/responses, hidden-time graph, resources, divisions,
+24 targets, 42 paired controls, 68 generic plus 24 model attacks, both
+products, and every permanent wall. It finds no discrepancy and identifies
+six exact hostile-review priorities. The next authorized action is protocol
+freeze only.

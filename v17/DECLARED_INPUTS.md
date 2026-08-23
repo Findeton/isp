@@ -365,6 +365,7 @@ selection, or a Barandes completion.
 | Paper 04 model Seat O audit | `ACCEPT FOR ONE CONSTRUCTION WITH BINDING SCOPE — ADJUDICATED EVIDENCE` | exact #80 report; model ontology, supplied order, Barandes and gravity scope | finite testbed and co-designed comparator cannot select nature or timeless ontology |
 | Paper 04 model-pin adjudication | `TERMINAL ACCEPT FOR EXACTLY ONE CONSTRUCTION WITH BINDING SCOPE` | #81 root reconstruction; R1--R12 and B1--B20 | one frozen mathematical construction authorized; no scientific coordinate awarded |
 | Paper 04 finite relational-clock candidate | `GREEN-UNREVIEWED` | exact #82 construction; finite parent, covariant records, adaptive law, full frame map, scalar failure, full product | candidate only; construction audit and hostile review pending |
+| Paper 04 construction audit | `READY FOR INDEPENDENT HOSTILE REVIEW` | exact #83 result-neutral fidelity audit; 24 targets, 42 controls, 92 attacks, products and walls | author trace only; no scientific coordinate awarded |
 
 ## Derivation balance
 

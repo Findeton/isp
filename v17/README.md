@@ -190,7 +190,9 @@ cleanly if nature does not support it.
   quantum frame equivalence succeeds on the common sector, the finite
   adaptive history and reciprocal source-response tests pass, A stops at
   q=6, and reading-only frame sufficiency fails on UCOH. These are candidate
-  results pending construction audit and hostile review.
+  results only. Result-neutral construction audit #83 finds no pin-fidelity,
+  typing, arithmetic, product, or claim-ceiling discrepancy and authorizes
+  protocol freeze, not scientific acceptance.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

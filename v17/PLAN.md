@@ -555,7 +555,8 @@ Paper 04 root pin adjudication      TERMINAL — ONE MODEL-SPECIFIC PREFIT PIN A
 Paper 04 model-pin three audits     TERMINAL ACCEPT FOR ONE CONSTRUCTION WITH SCOPE
 Paper 04 model-pin adjudication     TERMINAL — EXACTLY ONE CONSTRUCTION AUTHORIZED
 Phase T construction                GREEN-UNREVIEWED — SOLE MODEL CANDIDATE FROZEN
-Paper 04 construction audit         PENDING
+Paper 04 construction audit         READY FOR INDEPENDENT HOSTILE REVIEW
+Paper 04 hostile protocol           NEXT FREEZE
 Phases G/S/P                         CLOSED
 ```
 
