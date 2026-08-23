@@ -510,15 +510,20 @@ Paper 03 v2 joint adjudication      TERMINAL REVISE — RUNG 6
 Paper 03 v3 repair pin              FROZEN RESULT-NEUTRAL
 Paper 03 v3 category pin audit      FROZEN REVISE BEFORE CONSTRUCTION
 Paper 03 v3 quantum pin audit       FROZEN ACCEPT WITH BINDING SCOPE
-Paper 03 v3 joint pin adjudication  NEXT — RESOLVE POINT VS ENSEMBLE SEMANTICS
+Paper 03 v3 joint pin adjudication  TERMINAL REVISE BEFORE CONSTRUCTION
+Paper 03 v3.1 corrected pin         NEXT — INTEGRATED CONTINUOUS SEMANTICS
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The category audit has identified an exact continuous-record typing blocker;
-the independent quantum audit and joint adjudication must determine the
-smallest result-neutral correction before any construction. The v3 cycle may
-construct only the
+Joint adjudication selects the smallest physically complete correction:
+finite/atomic records admit exact point boundary states; continuous records
+admit integrated normal ensemble states and almost-everywhere posterior and
+control fields; generic nonatomic point restart is refused. One corrected
+v3.1 pin must freeze this distinction, common domination, nonsingular
+pullbacks, tagged boundaries, and the unchanged certified-concurrency scope,
+then pass the same two independent audits before any construction. The cycle
+may construct only the
 hybrid classical--quantum Heisenberg target, its compatibility laws, exact
 primitive interfaces, and certified-concurrency scope. It may not retune
 probabilities or add ontology, internal time, spacetime emergence, or gravity.

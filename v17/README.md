@@ -63,6 +63,10 @@ cleanly if nature does not support it.
   binding common-domination, nonsingular-pullback, full-memory, and
   integrated-evaluation obligations. Joint adjudication must resolve whether
   the continuous theorem is ensemble/a.e. or pointwise before construction.
+  Joint adjudication resolves it in favor of integrated ensemble/a.e.
+  semantics: point-valued `Ev` samples remain distinct from normal `Heis`
+  states. The frozen v3 pin is closed `REVISE BEFORE CONSTRUCTION`; one
+  corrected v3.1 pin is authorized, with no automatic successor chain.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -258,6 +262,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v3-pin-audit-quantum.md` — independent quantum/instrument audit;
   accepts the finite repair and conditional continuous ensemble route with
   explicit measure-class, memory, evaluation, and concurrency obligations.
+- `note-paper03v3-pin-audit-adjudication.md` — terminal pre-construction
+  adjudication: finite repair survives; generic nonatomic point-state duality
+  is refuted; one integrated-semantics v3.1 pin is authorized.
 
 ## Permanent honesty wall
 

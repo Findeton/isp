@@ -295,6 +295,8 @@ selection, or a Barandes completion.
 | ontology / internal time / spacetime / gravity | `UNCONSTRUCTED` | no input | Paper 04 and later phases remain closed |
 | Paper 03 v3 category pin audit | `REVISE BEFORE CONSTRUCTION — EVIDENCE` | frozen pin and bound v2 point-record semantics | finite/direct-sum repair survives; continuous point-record normal state and merely measurable $L^\infty$ pullback fail |
 | Paper 03 v3 quantum pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen pin, v2 instruments, NEP and measure-class controls | finite repair passes; continuous route requires common domination, nonsingular pullbacks, complete memory, and integrated `Ev`/`Heis` proof |
+| Paper 03 v3 pin adjudication | `TERMINAL REVISE BEFORE CONSTRUCTION` | two independent audits plus direct reconstruction | exact point samples and normal ensemble states separated; one integrated-semantics v3.1 pin authorized |
+| continuous point restart | `UNCONSTRUCTED GENERICALLY` | nonatomic standard-Borel outcome | atom, positive-measure coarse-graining, or separately proved canonical pointwise regularity required |
 
 ## Derivation balance
 

@@ -1155,3 +1155,27 @@ packets. It does not address the category audit's stronger objection to
 making every point-valued nonatomic boundary into a normal hybrid state.
 Joint adjudication must resolve that quantifier before construction. No result
 is awarded; Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v3 PIN AUDITS ADJUDICATED (v17 LEDGER #49)
+
+The independent adjudication freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v3-pin-audit-adjudication.md` | `a4cba0b98ceafa65888bca1a57b8b8205b26c186f264a807a37daf4c5eecb087` | 422 LF / 16,061 bytes |
+
+Verdict: terminal `REVISE BEFORE CONSTRUCTION` for the frozen v3 pin. The
+category counterexample and quantum integrated theorem are both correct. A
+nonatomic sampled record point is not a well-defined normal state on an
+$L^\infty$ equivalence-class algebra; nevertheless the joint outcome law and
+almost-everywhere posterior field define a normal ensemble state and exact
+integrated `Ev`/`Heis` duality.
+
+The selected repair therefore separates point-valued stochastic samples from
+normal ensemble states through an explicit `Ens` bridge. Finite/atomic records
+retain exact point-state semantics. Generic continuous point restart is not a
+division theorem. Common domination, nonsingular pullbacks, tagged boundary
+objects, complete memory exposure, and certified full-operation exchanges are
+mandatory. One corrected result-neutral v3.1 pin is authorized; no automatic
+further pin chain exists. No v2 probability or physical parameter moves, no
+coordinate is awarded, and construction plus Paper 04 remain closed.
