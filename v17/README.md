@@ -510,6 +510,20 @@ cleanly if nature does not support it.
   graph, parameter, complex weights, and loop phase remain comparator data;
   none is inherited as U0 ontology. This is CJ-L2 author-side only and creates
   no candidate, pin, review, U0-T4, or successor.
+  A reversal-source architecture gate now prevents the CJ result from being
+  overread as fundamental law-level handedness. Exact ordinary-positive
+  involution theorems show that a covariant law plus an asymmetric contingent
+  source/reference can produce directed response, while a reversal-fixed
+  complete packet cannot. Symmetric source mixing cancels odd response;
+  neither the reference nor a noncommuting intervention grammar selects the
+  response law; and the same observed family can place the asymmetry in the
+  process or reader. Onsager controls establish the source-conditioned case,
+  while parity and direct T-violation data keep genuine interaction-level
+  asymmetry empirically live. The least-committal constructive architecture is
+  therefore a joint system--source complete positive law, not a fundamental
+  phase or orientation bit, but its target-blind response rule is still
+  absent. This is ORS-L2 author-side only and opens no candidate, apparatus,
+  pin, review, U0-T4, or successor.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

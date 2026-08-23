@@ -143,6 +143,20 @@ whole-boundary laws open. This is a CJ-L2 author-side class obstruction, not a
 graph, phase, time, complex, or Hilbert ontology and not a general no-go for
 ordinary-positive indivisible law.
 
+The reversal-source gate then corrects the strongest possible overreading.
+Exact ordinary-positive involution mathematics allows a covariant law to
+produce directed response from a contingent asymmetric source/reference and
+forces odd response to vanish for a reversal-fixed complete packet or
+invariant source mixture. But the same physical reference and the same
+noncommuting program grammar support multiple response laws, and an observed
+family admits distinct process/reader factorizations. Source-conditioned
+transport and empirical weak P/T violation keep contingent-state and
+interaction-level explanations simultaneously live. Rival A's most
+economical open architecture is therefore a joint system--source complete
+law, not a fundamental phase or handed label, while intrinsic asymmetry
+remains a held-out requirement. This is ORS-L2 author-side only; the uniform
+response rule and native candidate remain absent.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -373,6 +387,10 @@ U0 POSITIVE SECOND-ORDER CONTROL:       EXACT ENDPOINT COMPILER / NOT NATIVE
 U0 UNBOUNDED CYCLE-JET GATE:            CJ-L2 AUTHOR-SIDE / NO RESULT
 U0 FIXED FINITE JET CLOSURE:            EXCLUDED AT PRINTED COMPARATOR SCOPE
 U0 ORIENTATION-BEARING SOURCE:          REQUIRED OR GENERATED / ABSENT
+U0 REVERSAL-SOURCE GATE:                ORS-L2 AUTHOR-SIDE / NO RESULT
+U0 SYMMETRIC-LAW ODD RESPONSE:          POSSIBLE FROM ASYMMETRIC CONTINGENT SOURCE
+U0 REFERENCE/GRAMMAR SELECTOR:          REFUTED AT PRINTED SCOPE
+U0 INTRINSIC P/T ASYMMETRY:             EMPIRICAL CONTROL / ORIGIN ABSENT
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4

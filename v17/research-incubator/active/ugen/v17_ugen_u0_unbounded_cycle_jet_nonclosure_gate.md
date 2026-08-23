@@ -1045,6 +1045,13 @@ multi-cycle resource, no-equivalent-input, and complete-process controls.
 It may not assume a fundamental discrete web, continuum, trajectory, phase,
 or spacetime.
 
+The companion reversal-source architecture gate now performs this comparison
+at author-side scope. It proves that a covariant positive law plus a
+contingent asymmetric source can generate odd response, while the reference
+and a noncommuting intervention grammar remain nonselecting. It also retains
+empirical interaction-level P/T violation as a distinct control. No native
+response rule is thereby constructed.
+
 ---
 
 ## 21. Authority ledger
@@ -1056,7 +1063,7 @@ or spacetime.
 \text{first unequal derivative} & \text{exact author-side theorem}\\
 \text{fixed finite jet closure} & \text{excluded at printed scope}\\
 \text{tree/even-cycle controls} & \text{pass}\\
-\text{conjugation-odd physical input} & \text{required or generated, absent}\\
+\text{conjugation-odd distinction} & \text{source routes classified / law absent}\\
 \text{native positive source law} & \text{absent}\\
 \text{configuration ontology} & \text{unselected}\\
 \text{fundamental phase/holonomy} & \text{not inferred}\\

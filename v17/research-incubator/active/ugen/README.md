@@ -371,6 +371,23 @@ controls/carriers, growing state, nonunique dynamics with a selector, and
 whole-boundary laws open. The packet is CJ-L2 author-side only and creates no
 U0 candidate, U0-T4, pin, review, or successor.
 
+The reversal-source architecture gate now prevents a law-asymmetry
+overclaim. For a measurable source and complete-record involution, exact
+ordinary-positive theorems force odd response to reverse sign and to vanish
+on reversal-fixed packets and invariant source mixtures. A symmetric law plus
+an asymmetric contingent source can produce a directed response, but a
+one-parameter family proves that the source does not select its magnitude or
+form. A matching family on any finite reversal-bearing program grammar proves
+that noncommutativity is also nonselecting, while two positive
+process/reader factorizations require separate calibration before locating
+the asymmetry internally. Primary-source controls keep reversible
+magnetic/rotational source effects distinct from empirical parity and direct
+T violation. The least-committal open architecture is a joint
+system--source complete positive law with intrinsic asymmetry retained as a
+held-out discriminator. The response rule remains absent. This is ORS-L2
+author-side only and opens no candidate, apparatus, U0-T4, pin, review, or
+successor.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -418,6 +435,7 @@ Active audit:
 - v17_ugen_u0_dynamical_complex_structure_gate.md
 - v17_ugen_u0_short_time_probability_jet_source_gate.md
 - v17_ugen_u0_unbounded_cycle_jet_nonclosure_gate.md
+- v17_ugen_u0_reversal_source_architecture_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -742,6 +760,10 @@ U0 POSITIVE SECOND-ORDER:       EXACT TWO-STATE COMPILER / NOT NATIVE LAW
 U0 UNBOUNDED CYCLE-JET GATE:    CJ-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
 U0 FIXED FINITE JET CLOSURE:    EXCLUDED UNIFORMLY AT PRINTED COMPARATOR SCOPE
 U0 ORIENTATION-BEARING SOURCE: REQUIRED OR GENERATED / ABSENT
+U0 REVERSAL-SOURCE GATE:       ORS-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+U0 SYMMETRIC-LAW ODD RESPONSE: POSSIBLE FROM CONTINGENT ASYMMETRIC SOURCE
+U0 REFERENCE/GRAMMAR SELECTOR: REFUTED AT PRINTED SCOPE
+U0 INTRINSIC P/T ASYMMETRY:    EMPIRICAL HELD-OUT OBLIGATION / NOT EXPLAINED
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND

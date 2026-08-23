@@ -221,6 +221,18 @@ promoting gauge, labels, complex notation, or supplied quantum answers to
 physics. Physical orientation-bearing controls/carriers, growing memory,
 nonunique dynamics with a stated selector, and direct whole-boundary laws
 remain open. The packet is CJ-L2 author-side only and opens no new authority.
+The reversal-source gate now resolves the first architectural ambiguity.
+Directed response need not mean an asymmetric fundamental law: a covariant
+positive law with an asymmetric contingent source/reference produces it
+exactly, while fixed packets and invariant source mixtures cannot. The
+reference still leaves a continuum of response laws, noncommuting program
+grammar is likewise nonselecting, and process/reader placement is not
+identified without calibration. Known source-conditioned transport and
+empirical weak P/T violation require both contingent-source and
+interaction-asymmetry controls. The least-committal construction target is a
+joint system--source complete positive law, but no target-blind response rule
+has been found. The packet is ORS-L2 author-side only and opens no new
+authority.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -302,6 +314,10 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 UNBOUNDED CYCLE-JET GATE:    CJ-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
     U0 FIXED FINITE JET CLOSURE:    EXCLUDED AT PRINTED COMPARATOR SCOPE
     U0 ORIENTATION SOURCE:          PHYSICAL INPUT/GENERATION REQUIRED / ABSENT
+    U0 REVERSAL-SOURCE GATE:        ORS-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+    U0 SYMMETRIC-LAW ODD RESPONSE:  CONTINGENT ASYMMETRIC SOURCE CAN SUPPLY
+    U0 REFERENCE/GRAMMAR SELECTOR:  REFUTED AT PRINTED SCOPE
+    U0 INTRINSIC P/T ASYMMETRY:     EMPIRICAL CONTROL / ORIGIN ABSENT
     U0 WHOLE-BOUNDARY ESCAPE:       OPEN / NATIVE RULE ABSENT
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED

@@ -377,6 +377,21 @@ selector, or a whole-boundary law remain open. The comparator contributes no
 graph, lattice, trajectory, external time, phase, bundle, or holonomy to the
 native ontology. The ceiling is CJ-L2 author-side and no official authority
 is created.
+The reversal-source architecture gate now closes the false inference from
+directed response to fundamental law asymmetry. For an abstract physical
+reversal involution, an odd complete-record statistic changes sign under a
+covariant law and vanishes on a reversal-fixed packet or invariant source
+mixture. A symmetric positive law with an asymmetric contingent state is
+constructed exactly, but a continuum of response strengths proves
+nonselection. The same is true for a noncommuting program grammar, and exact
+factorizations show why process/source/reader attribution requires separate
+calibration. Primary-source controls distinguish ordinary source-conditioned
+reversal from empirical weak-interaction P/T violation; neither imports
+space, external time, a phase, or a Hamiltonian into U0. The highest-leverage
+open architecture is a joint system--source whole-process law with intrinsic
+asymmetry retained as a held-out discriminator. Its uniform target-blind
+response rule is absent. The ceiling is ORS-L2 author-side and no official
+authority is created.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

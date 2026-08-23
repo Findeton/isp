@@ -393,6 +393,22 @@ memory, and direct whole-boundary positive laws open, inherits no graph,
 phase, time, or trajectory ontology, and opens no candidate or official
 cycle.
 
+The reversal-source architecture gate now asks where that missing distinction
+may physically live. Exact measurable involution theorems prove that a
+covariant ordinary-positive law can turn an asymmetric contingent
+source/reference into directed records, but a reversal-fixed complete packet
+or invariant source mixture has zero odd response. A one-parameter positive
+witness proves that the source does not select the response law; a parallel
+construction proves that noncommuting program grammar does not select it
+either; and two exact factorizations expose process/reader attribution
+ambiguity. Onsager, quantum-reference, weak parity, and direct T-violation
+controls keep source-conditioned and interaction-level asymmetry distinct.
+The packet therefore recommends—but does not select—a joint system--source
+complete-law architecture while preserving intrinsic asymmetry as a held-out
+empirical obligation. This is ORS-L2 author-side only: no native response law,
+configuration ontology, bound apparatus, pin, review, U0-T4, or successor is
+created.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
