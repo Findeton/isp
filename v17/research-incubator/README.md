@@ -430,6 +430,17 @@ preflight. This
 author-side work creates no official candidate, pin, review, U0-T4 cycle,
 Q-Cut cycle, or successor.
 
+The direct Barandes `qCor` investigation then audits the first formula seed.
+It proves that raw `qCor=C-BA` is a signed division-response residual whose
+affine, multi-cut, and tensor identities are kinematic; a fixed-unitary
+two-state fiber supplies a continuum of values and a PR control satisfies the
+local-zero constraints. Strong positivity and the vanishing third-order
+interference rule are retained as serious Q-layer controls, but the
+almost-quantum family blocks a full quantum-selection claim. The next T4-P
+work must therefore predict the executable division-response hierarchy and a
+held-out material member from one target-blind source law. No candidate,
+primitive pair-history ontology, official cycle, or result is created.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -472,6 +483,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_reversal_source_architecture_gate.md
 - active/ugen/v17_ugen_u0_source_constraints_synthesis.md
 - active/ugen/v17_ugen_u0_candidate_architecture_preconstruction.md
+- active/ugen/v17_ugen_u0_qcor_native_composition_seed_investigation.md
 - active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
 - active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md

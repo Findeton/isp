@@ -415,6 +415,17 @@ but remains unable to select or evaluate the matter law before genuinely
 distinct complete candidates exist. This work is author-side only and opens
 no official candidate, pin, review, U0-T4 official cycle, Q-Cut cycle, or
 successor.
+The direct `qCor` seed investigation further shows that the signed residual
+$C-BA$ is operationally meaningful as a physical division response but is
+not a selection law: affine, multi-cut, and tensor constraints admit the full
+stochastic residual polytope, a fixed-unitary two-state continuum, and an
+exact locally invisible PR control. Strong positivity and vanishing
+third-order interference remain serious Q-layer constraints, but
+almost-quantum correlations block their promotion to a complete quantum
+selector. T4-P must therefore instantiate a target-blind source map that
+predicts an executable division-response hierarchy and at least one held-out
+material response; it may not receive `qCor`, a pair-history kernel, or a
+quantum target as input. This opens no T4-E, R4, review, or result.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

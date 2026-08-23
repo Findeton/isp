@@ -410,6 +410,20 @@ exact formula survives cheaper controls, and MG0 remains a declaration-only
 preflight. This work is author-side only and opens no candidate, pin, review,
 U0-T4 official cycle, Q-Cut cycle, or successor.
 
+The `qCor` native-composition seed investigation now tests Barandes's own
+suggested stochastic-side route directly. It classifies `qCor=C-BA` as a
+signed physical-division response, proves the exact affine residual polytope,
+four-boundary cocycle, and tensor identity, and reconstructs the full
+two-state fixed-unitary residual interval. A PR residual passes the zero-sum,
+local-marginal, product, and per-setting-global-unistochastic controls.
+Strongly positive pair-history completion can recover the CHSH Tsirelson
+bound under known premises, but the almost-quantum set remains strictly
+supraquantum. The retained physics target is a source-generated executable
+division-response hierarchy, with $I_3=0$, strong positivity, PR, and
+almost-quantum behavior held out, plus a material-member selector. Raw
+`qCor` is neither an ordinary probability nor a native law. The packet is
+T4-P author-side only and opens no candidate, pin, review, or apparatus.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,

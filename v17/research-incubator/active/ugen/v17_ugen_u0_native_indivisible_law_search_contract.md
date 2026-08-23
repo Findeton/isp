@@ -612,7 +612,11 @@ custody, while target access never precedes a freeze.
 1. **T4-P, author-side preconstruction.** Exact formulas may be prototyped
    from target-blind primitives and tested against theorem, synthetic, public,
    and retrospective controls. This creates no official candidate, pin,
-   empirical claim, or target access.
+   empirical claim, or target access. The first formula must predict, rather
+   than receive, its executable division-response hierarchy; raw `qCor`, a
+   target decoherence functional, or a completed interference table earns no
+   source-completion credit. Vanishing third-order interference, strong
+   positivity, PR, and almost-quantum behavior are held-out Q-layer controls.
 2. **T4-E, candidate-entry readiness.** Before requesting a freeze, one exact
    formula must print its source map, actuality rule, composition rule,
    falsifier, resource bound, and deliberately different positive control,

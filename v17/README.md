@@ -547,6 +547,20 @@ cleanly if nature does not support it.
   declarations but cannot select a matter ontology here. This work is
   author-side only: no response functional, configuration ontology, official
   candidate, pin, review, U0-T4 official cycle, or successor is created.
+  The first Barandes-native formula seed has now been tested directly rather
+  than promoted by analogy. The interference correction `qCor` is exactly a
+  signed response to inserting a physical division, but as the residual
+  $C-BA$ it fills the translated stochastic polytope; its zero-sum,
+  multi-cut, and tensor identities are kinematic. A fixed-unitary two-state
+  fiber leaves a continuum of residuals, and an exact PR residual obeys the
+  local-zero and product bookkeeping constraints. Strongly positive
+  pair-history completion is a substantive Q-layer clue and can recover the
+  CHSH Tsirelson bound under known joint-history premises, but the
+  almost-quantum control proves that it does not select the full quantum set.
+  The retained construction target is therefore one source-generated family
+  of executable division responses, including held-out $I_3=0$, strong-
+  positivity, PR, and almost-quantum controls, plus an independent
+  material-member rule. Raw `qCor` is not a candidate or a new primitive.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
