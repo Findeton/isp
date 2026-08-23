@@ -40,9 +40,9 @@ Any failure returns `INVALID-DISPATCH`.
 
 ---
 
-## 3. Three blind seats
+## 3. Two independent seats
 
-### Seat A — algebra, probability, and uniformity
+### Seat A — algebra, probability, uniformity, and logical identification
 
 Independently reconstruct:
 
@@ -60,11 +60,18 @@ Independently reconstruct:
 11. unitarity of $U_\theta$, its common one-step endpoint, its two-step family,
     and the rank classification.
 12. the no-congruence theorem and the nonexistence of a universal endpoint-only
-    binary product reproducing unitary composition.
+    binary product reproducing unitary composition;
+13. the exact antecedent shared by $Q,M,V$ and whether any conclusion is hidden
+    in the base embedding;
+14. whether the complete reader genuinely separates the laws;
+15. the distinction between finite uniformity, empirical adequacy, logical
+    derivability, and physical plausibility; and
+16. the exact surviving inference if $M$, $V$, or the continuum
+    classification fails.
 
 Seat A must derive values from formulas rather than import expected arrays.
 
-### Seat S — stochastic-process and Barandes source scope
+### Seat S — stochastic-process source, gauge, and physical scope
 
 Independently reconstruct:
 
@@ -76,32 +83,19 @@ Independently reconstruct:
 5. whether the actual $m$ operation supplies a division event;
 6. the difference between primitive endpoint input and a fixed law that already
    contains every $\Gamma_n$;
-7. the Schur--Hadamard gauge scope; and
-8. whether the candidate overstates any conclusion about Barandes.
+7. the Schur--Hadamard gauge scope;
+8. whether the candidate overstates any conclusion about Barandes;
+9. whether idle ontology or presentation changes affect the result;
+10. the distinction between a continuum of mathematical laws and the
+    finite-effective subclass;
+11. the full-calibration counterfactual: process tomography supplies missing
+    data rather than deriving them from $G$; and
+12. every forbidden promotion beyond the lemma grammar.
 
 Seat S must attempt the strongest source-faithful rejection of $V$, including
 the objection that $H$ and $V$ are isolated-endpoint phase lifts. The report
 must decide whether their different completed-record laws are one gauge orbit
 or distinct completions of an incomplete base packet.
-
-### Seat L — logic, identification, and physical meaning
-
-Independently reconstruct:
-
-1. the exact antecedent whose nonselection is claimed;
-2. whether $Q,M,V$ share every datum in that antecedent;
-3. whether any conclusion is hidden in the base embedding;
-4. whether nondivision is merely a label or an exact failed factorization;
-5. whether a complete reader genuinely separates the laws;
-6. whether finite uniformity is confused with physical plausibility;
-7. whether empirical adequacy and logical derivability are kept separate;
-8. whether idle ontology or presentation changes affect the result;
-9. the exact surviving inference if $M$ or $V$ fails;
-10. the distinction between a continuum of mathematical laws and the
-    finite-effective subclass; and
-11. the full-calibration counterfactual: process tomography supplies missing
-    data rather than deriving them from $G$; and
-12. every forbidden promotion beyond the lemma grammar.
 
 ---
 
@@ -162,7 +156,11 @@ Automated seats are adversarial QA, not external human scientific review.
 
 ---
 
-## 7. Seat L mutants
+## 7. Cross-seat logic and promotion mutants
+
+Both seats must address these mutants from their respective expertise. A
+mutant may not disappear merely because the third seat was intentionally
+removed from this compact-lemma protocol.
 
 1. Add the quantum whole-word rule to the antecedent and then call it derived.
 2. Remove $V$ after seeing that it defeats nondivision selection.

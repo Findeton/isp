@@ -25,7 +25,7 @@ artifacts:
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "active/ecomp/v17_ecomp_future_review_contract.md"
-    sha256: "6b52f826280f8a5da9f87ec5d9714907569c608439852b20b1970e0dc32f1d81"
+    sha256: "b62bdc7f62233edab2ad2942f38b3a7ad6e39a2bca1c1f19d9ceb4b67412e7ae"
     created_at: "2026-08-23"
     front: "ecomp"
     status: "active-author-draft"
@@ -77,7 +77,7 @@ artifacts:
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: true
   - path: "active/ecomp/v17_ecomp_root_readiness_audit.md"
-    sha256: "5774f7310533379e37c56831e73e365df4ef17a0c23a0ecf05fb081322a19e20"
+    sha256: "017b74f8fb00b331d485292654361aa989aacfd7cd71b0540ed8f0c041cd24b3"
     created_at: "2026-08-23"
     front: "ecomp"
     status: "active-author-draft"

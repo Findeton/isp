@@ -659,7 +659,7 @@ manifest hashes and format checks have been rebuilt. A valid authorization
 would cover only:
 
 1. exact pin freeze;
-2. three blind reviews under the drafted contract; and
+2. two independent reviews under the drafted compact-lemma contract; and
 3. one terminal adjudication.
 
 It should not authorize a replacement completion after freeze, an automatic
