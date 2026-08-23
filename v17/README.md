@@ -125,37 +125,39 @@ cleanly if nature does not support it.
   AQFT/no-signalling/positive-history package survive. No implementation or
   Paper 04 is opened; a complete-boundary successor needs a new semantic pin.
 - Paper 03 v3.2 status: **COMPLETE-BOUNDARY PAIRED-SEMANTICS PIN FROZEN —
-  RESULT-NEUTRAL**. This is one final representation-level repair, not new
-  physics. It freezes the licensed future interface first; places every
+  TERMINAL `ACCEPT-WITH-SCOPE`**. This is one final representation-level
+  repair, not a new microscopic law. It freezes the licensed future interface
+  first; places every
   future-readable nonrecord variable inside one complete predictive algebra;
   requires exact closure under paths, mixtures, and positive registered
   conditioning; makes the physical arrow the paired stochastic/UCP object;
   and requires continuous duality to be derived from a common NEP-qualified
   instrument while preserving all older records. Two independent
-  pre-construction pin audits are required. The category/operator-algebra
-  audit now accepts construction with binding constant-fiber, common-class,
+  pre-construction pin audits accepted the construction boundary with binding
+  constant-fiber, common-class,
   decomposable-normality, joint-null-transport, and refusal scopes after 18
-  fresh countermodels. The independent quantum audit also accepts after 18
+  category countermodels. The quantum audit also accepted after 18
   fresh countermodels and an explicit nontrivial old-record continuous qubit
   instrument, while binding joint measurability, common null class, posterior
-  kernel, closure, normal extension, and initial-law indexing. These reports
-  are evidence, not votes. Root adjudication independently reconstructs the
-  object and now authorizes exactly one mathematics-only construction with
-  the additional explicit same-instrument sample/posterior-barycentre proof.
-  That sole candidate now freezes `GREEN-UNREVIEWED`: it constructs the
+  kernel, closure, normal extension, and initial-law indexing. Root then
+  authorized and froze exactly one mathematics-only construction with the
+  explicit same-instrument sample/posterior-barycentre proof. It constructs the
   complete packet-relative boundary, normal predual `Ens`, exact paired
   category, finite and conditional continuous duality, closure, histories,
   concurrency, and inherited scoped relativistic controls; it also disposes
-  every target/control/attack and all 36 fresh audit countermodels. No theorem
-  is terminal. The result-neutral construction audit now reconstructs every
+  every target/control/attack and all 36 pin-audit countermodels. The
+  result-neutral construction audit reconstructs every
   binding condition, the genuinely record-dependent continuous qubit witness,
   all attack surfaces, and every ontology/gravity wall without finding a
-  semantic counterexample. A separately frozen hostile protocol and three
-  blind reviews remain mandatory; implementation, Paper 04, clock, spacetime,
-  ontology, and gravity remain closed. The exact three-lens protocol now
-  freezes those reviews against immutable bytes and requires full target,
-  control, attack, product, source, quantifier, and fresh-countermodel
-  reconstruction before any terminal result.
+  semantic counterexample. The exact three-lens protocol then froze
+  three mutually blind reports, all `ACCEPT-WITH-SCOPE`; root independently
+  reconstructs rather than counts them and terminally awards only
+  `P03V32-RELATIVISTIC-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
+  Registered presentation equations must be certified full-packet
+  transports; the quotient retains every source/prefix/ancilla context; and
+  continuous duality remains conditional on the complete common-instrument
+  package. No implementation is required. Paper 04 needs a separately frozen
+  physical question.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.

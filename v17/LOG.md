@@ -1671,3 +1671,72 @@ finding. The strongest protocol-permitted rung remains representation-level
 operational adequacy with global ontology debt. Selected local ontology and
 empirical ontology discrimination are impossible-to-award controls. Paper 04,
 implementation, internal time, spacetime, and gravity remain closed.
+
+## 2026-08-23 — PAPER 03 v3.2 SEAT O REPORT FROZEN (v17 LEDGER #68)
+
+| artifact | SHA-256 | normalized self-SHA-256 | size | verdict |
+|---|---|---|---:|---|
+| `v17/review-paper03v32-ontology-relativity.md` | `50ab1e5c6238ce4d82919d7323e5fe3ca9903fb444ef7c157dcf27dcccd81175` | `cc5706925461b665b28959bac7dd161c1826a991d45648fa148445593621c7fe` | 731 LF / 43,806 bytes | `ACCEPT-WITH-SCOPE` |
+
+Seat O finds no decisive semantic counterexample after the full protocol and
+18 fresh ontology/relativity attacks. It supports rung 7 only. The complete
+predictor is packet-relative and unselected; record, conditioning, division,
+and actuality remain distinct; laboratory order is not microscopic time;
+AQFT spacetime is supplied; gravity is absent. The report is evidence, not an
+adjudication.
+
+## 2026-08-23 — PAPER 03 v3.2 SEAT Q REPORT FROZEN (v17 LEDGER #69)
+
+| artifact | SHA-256 | normalized self-SHA-256 | size | verdict |
+|---|---|---|---:|---|
+| `v17/review-paper03v32-quantum-probability.md` | `36ecf51d8eeddd2e1e16291ca505e070e0a441ca85bf9fcfba042c41b25ab8f7` | `9326ae9d8af6480709dc91b7aa8f5a78c220d04df5c2e8878c487ee96e2f34a0` | 745 LF / 53,286 bytes | `ACCEPT-WITH-SCOPE` |
+
+Seat Q finds no decisive semantic counterexample after reconstructing finite
+retained guards, the continuous same-instrument theorem, the old-record qubit
+witness reader by reader, the epsilon endpoint, conditioning, histories,
+no-signalling, steering, Bell premises, and 16 fresh attacks. It supports
+rung 7 only. The report is evidence, not an adjudication.
+
+## 2026-08-23 — PAPER 03 v3.2 SEAT A REPORT FROZEN (v17 LEDGER #70)
+
+| artifact | SHA-256 | normalized self-SHA-256 | size | verdict |
+|---|---|---|---:|---|
+| `v17/review-paper03v32-category-operator-algebra.md` | `f62c55a635173c7ab45a3899455f444f44c3ae2571ad3e3d59c322a37c7f3173` | `a0019dd9938ded3f5d5279398b5d51899a4cf1ea9082c16ecfbd71f551b68d6a` | 980 LF / 50,322 bytes | `ACCEPT-WITH-SCOPE` |
+
+Seat A finds no decisive semantic counterexample after reconstructing the
+complete boundary, predual `Ens`, paired category, finite/continuous arrows,
+decomposable normality, presentation/quotient, AQFT/covariance, all protocol
+surfaces, and 18 fresh attacks. It binds certified-equation descent and the
+inherited complete-context congruence quantifier. The report is evidence, not
+an adjudication.
+
+## 2026-08-23 — PAPER 03 v3.2 TERMINAL ADJUDICATION (v17 LEDGER #71)
+
+The independent terminal adjudication freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-hostile-review-adjudication.md` | `b42fcf6201e249f03772ae2f1e037c2c945e98e4221c89a629d744de937e6104` | `deff9b88c73a8635dc0ec4d044b901a58e1f3daffcff91b4f411be7904374430` | 502 LF / 21,215 bytes |
+
+Decision: `TERMINAL ACCEPT-WITH-SCOPE`; first decisive semantic
+counterexample: none. Matching reports are not counted as votes. Root
+independently reconstructs the complete-boundary repair, normal integrated
+state, paired category, finite retained records, common-instrument continuous
+theorem, nonempty old-record witness, closure, presentation, congruence,
+histories, relativistic scopes, all protocol surfaces, and 14 fresh root
+countermodels.
+
+The earliest terminal positive rung is
+`P03V32-CAUSAL-FRONTIER-PAIRED-DUAL-SEMANTICS-CONSTRUCTED`; the strongest is
+`P03V32-RELATIVISTIC-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
+Binding scope: presentation equations are only certified full-packet
+transports; complete equivalence quantifies over all source ensembles,
+prefixes, entangled ancillas, adaptive continuations and readers; joint
+measurability includes decomposable normal assembly; the qubit witness keeps
+`0<epsilon<1`; and all public language remains packet-relative and on a
+supplied Lorentzian/AQFT comparator.
+
+No local microontology, selected actuality, internal clock, emergent
+spacetime, matter--geometry dynamics, or gravity is constructed. No
+implementation is required. There is no v3.3. Paper 04 is not opened by this
+adjudication and needs a separately frozen reality-first physical question.

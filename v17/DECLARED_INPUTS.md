@@ -329,19 +329,24 @@ selection, or a Barandes completion.
 | Paper 03 v3.2 complete-boundary construction | `GREEN-UNREVIEWED MATHEMATICS` | sole #64-authorized candidate; unchanged v2 laws and comparators | complete packet-relative predictive algebra, normal `Ens`, paired category, finite/conditional continuous duality, closure and inherited relativistic controls are provisional; no ontology, time, spacetime, gravity, or terminal result before audit/review |
 | Paper 03 v3.2 construction audit | `PASS — RESULT-NEUTRAL AUTHOR EVIDENCE` | exact #65 candidate plus pin/audits/adjudication and unchanged v2 corpus | traces all 14 binding conditions, targets, controls, attacks, nonvacuity and walls; awards no coordinate and cannot replace hostile review |
 | Paper 03 v3.2 hostile-review protocol | `FROZEN — RESULT-NEUTRAL` | exact #65 candidate and #66 audit | binds three mutually blind category, quantum, and ontology lenses; no report or result yet |
+| Paper 03 v3.2 Seat A report | `ACCEPT-WITH-SCOPE — ADJUDICATED EVIDENCE` | category/operator-algebra/AQFT/covariance reconstruction plus 18 fresh attacks | binds certified-equation descent, complete-context congruence, and decomposable normality readings |
+| Paper 03 v3.2 Seat Q report | `ACCEPT-WITH-SCOPE — ADJUDICATED EVIDENCE` | quantum/probability/history/Bell reconstruction plus 16 fresh attacks | binds same-instrument posteriors, strict witness domain, closure, and finite-history scope |
+| Paper 03 v3.2 Seat O report | `ACCEPT-WITH-SCOPE — ADJUDICATED EVIDENCE` | ontology/locality/Barandes/gravity reconstruction plus 18 fresh attacks | predictor remains unselected and supplied AQFT spacetime remains input |
+| Paper 03 v3.2 terminal adjudication | `TERMINAL ACCEPT-WITH-SCOPE — RUNG 7` | exact candidate, three blind reports, and independent root reconstruction | coherent relativistic quantum operational representation only; no local microontology, actuality, internal time, emergent spacetime, or gravity |
 
 ## Derivation balance
 
 The live adjudicated balance is:
 
 ```text
-adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue
+adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue; complete-boundary paired relativistic quantum operational representation
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 1 (Paper 03 v3.2 complete-boundary representation; no terminal coordinate)
+green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
-standard empirical/theory comparators: quantum Q0–Q3
-geometry/gravity inputs: 0 in the live unit
+standard empirical/theory comparators: quantum Q0–Q3 and supplied AQFT/Lorentzian laboratory background
+supplied comparator geometry: 1 declared Paper 03 background family
+derived geometry or gravity: 0
 ```
 
 This table changes only by forward entries after a unit freezes or closes.
