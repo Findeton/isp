@@ -1060,3 +1060,29 @@ it; and a lower-set frontier is not automatically a probabilistic division.
 Seat O supports the provisional rung-7 ontology/frame scope, but its report
 cannot repair the independent A/Q semantic defect. All three reports are now
 frozen. Independent joint adjudication is next; Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v2 TERMINAL REVISE (v17 LEDGER #45)
+
+The independent adjudication freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v2-hostile-review-adjudication.md` | `74303ddd93b4aac35d3368760da4a0ad3d442570cb16320467076aa5f93ea358` | 476 LF / 22,617 bytes |
+
+Direct reconstruction confirms both semantic findings. The free path category
+is a genuine repair of v1. The covariant Markov-kernel representation,
+localized instruments, operation-level no-signalling, steering/Bell
+distinctions, positive histories, and ontology/frame walls survive.
+
+The claimed contravariant `Heis_Xi` does not: `CP_Xi` has no hybrid
+classical--quantum objects or composition carrying a retained result into a
+later guard. A branch map is incomplete, while the nonselective sum erases the
+record. Corollary 7.4 also quantifies over all linear extensions although only
+specified factorizing incomparable swaps are certified.
+
+Verdict: terminal `REVISE`. Strongest supported rung:
+`P03V2-POSITIVE-RELATIVISTIC-PREDICTIVE-REPRESENTATION-CONSTRUCTED-WITH-COSTS`.
+One result-neutral v3 semantic cycle is authorized at the exact adjudicated
+boundary: construct the hybrid classical--quantum target and functor laws,
+reprove compatibility, and restrict or strengthen concurrency certification.
+No probability or physical parameter may move. Paper 04 remains closed.

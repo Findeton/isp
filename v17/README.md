@@ -36,7 +36,7 @@ cleanly if nature does not support it.
   causal admissibility is not encoded in boundary types; covariance also does
   not forbid a contingent state/apparatus-selected rest frame. Its authorized
   causal-frontier successor is the current Paper 03 v2 candidate.
-- Paper 03 v2 status: **THREE REPORTS FROZEN; JOINT ADJUDICATION NEXT**. It types
+- Paper 03 v2 status: **TERMINAL REVISE — RUNG 6**. It types
   finite laboratory opportunities by a causal slot poset and completed lower
   sets; constructs the free path category, Markov-kernel/Heisenberg semantics,
   causal exchange and operational quotients; and reconstructs the scoped
@@ -47,7 +47,8 @@ cleanly if nature does not support it.
   Heisenberg target for retained classical records unconstructed; Seat A also
   finds schedule equality overquantified. Seat O finds no ontology/relativity
   counterexample, while binding retained-record and nondivision scopes. Joint
-  adjudication remains.
+  adjudication preserves the positive Markov representation at rung 6 and
+  authorizes one v3 hybrid-semantics repair cycle. Paper 04 remains closed.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -231,6 +232,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03v2-ontology-relativity.md` — Seat O `ACCEPT-WITH-SCOPE`:
   laboratory slots stay nonontic, material frames stay physical, and records
   persist only under typed retaining futures.
+- `note-paper03v2-hostile-review-adjudication.md` — terminal `REVISE`, rung-6
+  mixed product, and exact v3 hybrid-semantics/exchange repair boundary.
 
 ## Permanent honesty wall
 
