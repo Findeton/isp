@@ -274,6 +274,7 @@ selection, or a Barandes completion.
 | ontology / spacetime / gravity | none | `UNCONSTRUCTED` | no downstream promotion |
 | Paper 03 v2 construction audit | frozen candidate and pin | `PASS — RESULT-NEUTRAL` | authorizes protocol/review only; awards no coordinate |
 | Paper 03 v2 hostile-review protocol | exact frozen corpus and three independent lenses | `FROZEN — RESULT-NEUTRAL` | binds review duties only; awards no coordinate |
+| Paper 03 v2 Seat A review | frozen v2 corpus | `REVISE — EVIDENCE` | path category survives; hybrid Heisenberg target and universal schedule theorem fail as printed; adjudication pending |
 
 ## Derivation balance
 

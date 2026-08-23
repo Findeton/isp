@@ -997,3 +997,25 @@ congruences; state and measure kernels must close; packet transport must
 intertwine every field; and neither laboratory slots nor KMS/material rest
 frames may be misread as fundamental spacetime. The protocol awards no result.
 Independent review is next; Paper 04 remains closed.
+
+## 2026-08-22 — PAPER 03 v2 SEAT A REVIEW FROZEN (v17 LEDGER #42)
+
+Seat A's category/AQFT report freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper03v2-category-aqft.md` | `ba12c6d5fea7b497f5d5f194d0bba6cadb2c58f7becb69a8ca747e490926d9ac` | 686 LF / 35,611 bytes |
+
+Verdict: `REVISE`. The v1 same-boundary composition defect is repaired: the
+lower-set frontier and free path category give total matched composition.
+The first new semantic counterexample is the unconstructed target
+`CP_Xi`: no hybrid classical--quantum objects, retained-output morphisms,
+identity/composition law, or relation between complete instruments and branch
+maps is defined. A binary measurement followed by an outcome-guarded operation
+is a valid `Ev_Xi` kernel but no printed Heisenberg arrow carries its result.
+
+Independently, finite schedule equality is universal in the candidate while
+exchange is certified only for factorizing incomparable pairs. Strongest Seat
+A rung: `P03V2-RELATIVISTIC-NOSIGNALLING-PACKAGE-CONSTRUCTED`. This report is
+evidence, not adjudication. Seats Q/O and joint reconstruction remain; Paper
+04 stays closed.
