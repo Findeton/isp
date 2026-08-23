@@ -16,10 +16,18 @@ The next author-side U-Gen construction should be PC3: a finite
 gauge-covariant composition-transport classification with held-out closed
 words.
 
+The first PC3 algebraic candidate is now constructed. Its readiness audit
+finds the projective classification complete but the physical experiment and
+the origin of the covariance bridge under-typed. The next author-side task is
+therefore not a second fitted control group: it is a feasibility comparison
+between a stochastic-native generator and charged enlarged-carrier
+realizations on the same exhaustive PC3 battery.
+
 These are complementary rather than competing choices.
 
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
-    NEXT AUTHOR-SIDE U-GEN TASK:    PC3 PROCEDURE-GROUPOID TRANSPORT
+    PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
+    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE VS ENLARGED-CARRIER FEASIBILITY
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

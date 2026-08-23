@@ -27,6 +27,15 @@ composition member. It identifies PC3—a two-generator gauge-covariant
 procedure-groupoid classification with preregistered held-out closed
 words—as the next author-side construction.
 
+That first PC3 construction now exists author-side. On the balanced mixer plus
+configuration-preserving quarter-turn packet, a projective covariance bridge
+from the 24-element octahedral control group selects a unique positive
+coherent word law and an exhaustive (4I_2/4X/16G) endpoint census. The
+candidate simultaneously proves that no two-state Markov group action can
+carry the singular balanced endpoint, while unrestricted direct positive
+whole laws remain nonunique. The physical origin of the projective bridge is
+therefore the next open question.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -60,6 +69,8 @@ Active audit:
 - `v17_pc2_author_readiness_audit.md`
 - `v17_ugen_composition_selector_tournament.md`
 - `v17_ugen_next_gate_decision.md`
+- `v17_pc3_projective_control_covariance_candidate.md`
+- `v17_pc3_reality_and_readiness_audit.md`
 
 ## Required split before any pin
 
@@ -148,7 +159,9 @@ ONE-PIN U-GEN PACKAGE:         TOO BROAD / MUST SPLIT
 PC2 BALANCED SEAM SUBCASE:     AUTHOR-SIDE COMPLETE / NOT REVIEWED
 FULL COMPOSITION-LIFT TARGET:  MULTI-PRIMITIVE / TENSOR / ADAPTIVE OPEN
 SELECTOR TOURNAMENT:           COMPLETE AUTHOR-SIDE / NOT REVIEWED
-NEXT AUTHOR-SIDE TARGET:       PC3 HELD-OUT PROCEDURE-GROUPOID TRANSPORT
+PC3 PROJECTIVE CONTROL GATE:   AUTHOR-SIDE COMPLETE / NOT FREEZE-READY
+NEXT AUTHOR-SIDE TARGET:       STOCHASTIC-NATIVE VS ENLARGED-CARRIER
+                               GENERATOR FEASIBILITY ON PC3
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             NONE
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

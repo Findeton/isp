@@ -118,7 +118,11 @@ selector tournament now distinguishes framework reconstruction from
 dynamical-member and ontology selection. It identifies a bounded PC3
 procedure-groupoid transport classification with held-out closed words as the
 next U-Gen construction, while preserving Q-Cut as the recommended next
-official unit if separately authorized.
+official unit if separately authorized. That PC3 algebraic candidate now
+exists author-side: projective covariance of the octahedral two-generator
+control group selects one positive coherent word law, but the covariance
+bridge itself remains a declared quantum-structural input and the physical
+experiment is not freeze-ready.
 
 Canonical status: `active/ugen/README.md`.
 
@@ -130,6 +134,8 @@ Active working package:
 - `active/ugen/v17_pc2_author_readiness_audit.md`
 - `active/ugen/v17_ugen_composition_selector_tournament.md`
 - `active/ugen/v17_ugen_next_gate_decision.md`
+- `active/ugen/v17_pc3_projective_control_covariance_candidate.md`
+- `active/ugen/v17_pc3_reality_and_readiness_audit.md`
 - `active/ugen/ACTIVE_SHA256.txt`
 
 Core snapshots:

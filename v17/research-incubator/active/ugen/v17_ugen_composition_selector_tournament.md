@@ -354,6 +354,11 @@ enough.
 
 ## 5. Proposed bounded PC3 gate
 
+The first exact author-side construction of this proposal now appears in
+`v17_pc3_projective_control_covariance_candidate.md`. It uses the octahedral
+two-generator control group and an exhaustive 24-element prediction battery.
+It remains nonbinding and does not derive its projective covariance bridge.
+
 The next U-Gen A subproblem should be:
 
 > On one finite two-generator reversible procedure groupoid, classify all

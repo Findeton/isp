@@ -262,8 +262,13 @@ cleanly if nature does not support it.
   may select a quantum framework while leaving the actual Hamiltonian or
   composition member free, and why gate-set tomography identifies relational
   composition data empirically rather than deriving its origin. The next
-  preparatory target is a two-generator gauge-covariant procedure-groupoid
-  classification with fixed held-out closed words. Repository
+  preparatory target was a two-generator gauge-covariant procedure-groupoid
+  classification with a prediction-independent exhaustive battery. Its first
+  author-side PC3 candidate is now constructed: octahedral projective
+  covariance selects one positive coherent 24-element word law, while a
+  two-state Markov action is impossible and direct positive whole laws remain
+  nonunique. The projective covariance bridge is still an unearned framework
+  input, so PC3 is not freeze-ready. Repository
   inclusion does not promote any draft, authorize a Paper 04B successor, or
   open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
