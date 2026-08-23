@@ -132,8 +132,12 @@ cleanly if nature does not support it.
   conditioning; makes the physical arrow the paired stochastic/UCP object;
   and requires continuous duality to be derived from a common NEP-qualified
   instrument while preserving all older records. Two independent
-  pre-construction pin audits are next. No construction, implementation,
-  Paper 04, clock, spacetime, or gravity claim is open.
+  pre-construction pin audits are required. The category/operator-algebra
+  audit now accepts construction with binding constant-fiber, common-class,
+  decomposable-normality, joint-null-transport, and refusal scopes after 18
+  fresh countermodels. This is evidence, not authorization; the independent
+  quantum audit and root adjudication remain required. No construction,
+  implementation, Paper 04, clock, spacetime, or gravity claim is open.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -375,6 +379,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   closure-complete ensembles, exact paired stochastic/UCP arrows, and a
   constructor-derived continuous instrument theorem; independent pin audits
   must accept its exact bytes before any construction.
+- `note-paper03v32-pin-audit-category.md` — independent pre-construction
+  category/operator-algebra audit; accepts the pin with binding
+  constant-fiber, common-class, joint-measurability, assembled-normality,
+  target-landing, and refusal scope; awards no theorem.
 
 ## Permanent honesty wall
 

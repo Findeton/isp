@@ -3,8 +3,9 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1/v2/v3.1 terminal REVISE; v3.2 complete-boundary pin frozen and
-awaiting two independent pre-construction audits; Paper 04 closed**
+Paper 03 v1/v2/v3.1 terminal REVISE; v3.2 complete-boundary pin frozen,
+category audit accepted with binding scope, quantum audit/root adjudication
+pending; Paper 04 closed**
 
 ## 0. Authority and workflow
 
@@ -524,7 +525,7 @@ Paper 03 v3.1 Seat Q review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.1 Seat O review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.1 joint adjudication    TERMINAL REVISE — HYBRID BOUNDARY TYPE FAILURE
 Paper 03 v3.2 complete-boundary pin FROZEN RESULT-NEUTRAL
-Paper 03 v3.2 category pin audit    PENDING
+Paper 03 v3.2 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.2 quantum pin audit     PENDING
 Paper 03 v3.2 construction          NOT AUTHORIZED
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED

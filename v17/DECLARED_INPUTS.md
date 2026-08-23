@@ -323,6 +323,7 @@ selection, or a Barandes completion.
 | continuous instrument semantics | `CONDITIONAL TARGET DERIVATION` | common NEP-qualified decomposable instrument, jointly measurable posterior kernel, exact record append, and target landing | compatibility may not be inserted as an admission axiom; non-NEP/ambient-only cases are refused |
 | probabilities, instruments, AQFT comparator | `FROZEN UNCHANGED INPUT` | terminal Paper 03 v2 salvage | no retuning, new law, preferred frame, or QFT ontology |
 | Paper 03 v3.2 result | `UNCONSTRUCTED — PIN AUDITS PENDING` | exact result-neutral pin | no theorem, implementation, Paper 04, clock, spacetime, or gravity coordinate |
+| Paper 03 v3.2 category pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | exact pin, full authority corpus, 18 fresh category/operator-algebra countermodels | constant-fiber representation only; common continuous class, joint decomposable normality, record-update nonsingularity, target landing, and exact refusal remain construction duties; root adjudication pending |
 
 ## Derivation balance
 

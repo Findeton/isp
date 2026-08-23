@@ -1499,3 +1499,27 @@ pre-construction audits—category/operator algebra and quantum
 instrument/probability—must accept the exact pin before at most one
 construction. No implementation, Paper 04, clock, ontology, spacetime, or
 gravity unit is authorized.
+
+## 2026-08-23 — PAPER 03 v3.2 CATEGORY PIN AUDIT FROZEN (v17 LEDGER #62)
+
+The first independent pre-construction audit freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-pin-audit-category.md` | `e9e3a7facff3ba7a5332e464c69b985e186fe705a148743b56e83e8c2f75fb8d` | `ff8f06aa8cf938f890a992b6efeedb23ae49a01cc5d5b2371086233c6af518b6` | 837 LF / 47,446 bytes |
+
+Verdict: `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE`; first exact blocker:
+none. Seat A independently reconstructs the predual `Ens`, exact five-field
+paired category, composite all-reader identity, conditioning/path closure,
+decomposable continuous-instrument assembly, covariance, T1--T24, C1--C40,
+attacks 1--64, all 41 product coordinates, and 18 fresh countermodels.
+
+The acceptance is deliberately narrow. The positive domain uses one common
+predictive algebra across record fibers, one common continuous outcome/null
+class, jointly measurable extension/posterior/kernel families, a separately
+proved decomposable normal map, exact record-update nonsingularity, and exact
+target landing. Outcome-dependent nonisomorphic algebra fields, fake padding,
+fiberwise NEP without joint assembly, and generic diffuse point restart are
+refused or require a separately frozen theorem. The audit awards no result and
+does not authorize construction; the mutually blind quantum audit and root
+adjudication remain required.
