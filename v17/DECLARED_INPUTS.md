@@ -307,6 +307,7 @@ selection, or a Barandes completion.
 | Paper 03 v3.1 construction audit | `PASS — RESULT-NEUTRAL` | frozen #54 bytes plus full authority corpus | all 22 obligations, T1--T24, C1--C34, and attack surfaces mapped; author finding only, no coordinate awarded |
 | Paper 03 v3.1 hostile-review protocol | `FROZEN — RESULT-NEUTRAL` | exact #54 candidate and #55 audit | binds three mutually blind review lenses and complete product; no result or physical input |
 | Paper 03 v3.1 Seat A report | `REVISE — EVIDENCE` | frozen v3.1 corpus and category/operator-algebra lens | an admitted future-readable typed memory factor is absent from the hybrid algebra/`Ens`; boundary typing fails before global dual semantics; joint adjudication pending |
+| Paper 03 v3.1 Seat Q report | `ACCEPT WITH SCOPE — EVIDENCE` | frozen v3.1 corpus and quantum/probability lens | certified primitive pairs and finite paths reconstruct; continuous compatibility remains an admission certificate and every history law is conditional on an input state/ensemble; joint adjudication pending |
 
 ## Derivation balance
 

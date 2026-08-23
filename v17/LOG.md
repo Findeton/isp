@@ -1387,3 +1387,27 @@ on represented factors, null-ideal laws, scoped AQFT/no-signalling controls,
 and all ontology/gravity refusals survive as evidence. The report is not an
 adjudication; Seats Q/O remain blind and pending. No candidate byte, physical
 input, implementation, or downstream phase moves.
+
+## 2026-08-22 — PAPER 03 v3.1 SEAT Q HOSTILE REPORT FROZEN (v17 LEDGER #58)
+
+The second mutually blind hostile report freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/review-paper03v31-quantum-probability.md` | `a42f9d3828277c63035d5e24df248b2ceece5eda8146e21743da53d35d940e5f` | `7c36159be34eee7197aab5b7dfab575c405628445354be8e7aa1078e2a8a689b` | 702 LF / 43,341 bytes |
+
+Verdict: `ACCEPT-WITH-SCOPE`; first decisive semantic counterexample: none.
+The report reconstructs complete finite direct-sum instruments, the
+atomic/nonatomic point split, normal dominated `Ens`, null ideals, certified
+primitive pairs, finite-path induction, continuous feedback, conditional
+histories, localized no-signalling/steering/Bell scopes, and all ontology and
+gravity walls.
+
+Its acceptance is explicitly conditional: Definition 8.4(8) is an admission
+certificate, not a derivation from NEP, target landing, or posterior
+measurability; a path gives a conditional history kernel until an initial
+predictive value or admitted ensemble is fixed; and no null-point restart or
+infinite-history promotion follows. It supports rung 8 within those scopes.
+The report is evidence, not adjudication; the conflicting Seat A result and
+the still-blind Seat O report must be resolved together. No candidate byte,
+physical input, implementation, or downstream phase moves.
