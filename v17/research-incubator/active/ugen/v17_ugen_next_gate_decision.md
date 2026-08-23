@@ -184,6 +184,22 @@ candidate physics. A native nondivision witness must use a carrier fixed by a
 target-independent source rule, include every independently evidenced
 reference or memory, and quantify only over licensed positive restarts. No
 finite test establishes absolute ontic completeness.
+Four representation controls now sharpen, but do not fill, this source gap.
+The Barandes Markovian-embedding audit shows that complex carriers have a
+same-size endpoint advantage in one exact case while bounded real dilation
+still represents every finite stochastic endpoint. The coherent-dilation
+theorems show that objectwise reversible lifts do not compose through a
+nontrivial stochastic idempotent and that exact many-to-one reversal retains
+the lost distinction in memory, correlation, export, or uncomputation. The
+reflection-positive control proves positive-first Hilbert reconstruction at
+finite scope but consumes a target-equivalent transfer law and does not make
+the Euclidean chain Lorentzian actuality. Finally, the dynamical
+complex-structure gate proves that one oriented real orthogonal flow has a
+canonical polar $J$ on its moving sector, while a control family is governed
+by its joint-commutant common-$J$ set, which exact examples make nonunique or
+empty. Classical Koopman dynamics pass the one-flow theorem. Together these
+controls locate secondary Hilbert/complex representation without providing a
+quantum criterion or the native positive source law.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
@@ -254,6 +270,11 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     U0 PHYSICAL CLOSURE:            CARRIER- AND INTERFACE-RELATIVE
     U0 ABSOLUTE INDIVISIBILITY:     NOT CLAIMED / ARBITRARY DILATIONS EXIST
     U0 REVERSIBLE POSITIVE FINITE:  PERMUTATION BOUNDARY / NO ONTOLOGY SELECTED
+    U0 COHERENT DILATION:           NO MONOID SECTION / MEMORY LOSS CHARGED
+    U0 REFLECTION POSITIVITY:       RP-L3 CONTROL / SOURCE LAW STILL ABSENT
+    U0 DYNAMICAL COMPLEX GATE:      DCS-L2 / JOINT-COMMUTANT TEST
+    U0 FAMILY COMMON-J SET:         MAY BE NONUNIQUE OR EMPTY
+    U0 QUANTUM CRITERION:           NOT EARNED / KOOPMAN PASSES
     PHYSICAL RELATIONAL STRUCTURE:  REQUIRED / NOT YET CHOSEN
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN

@@ -474,6 +474,18 @@ cleanly if nature does not support it.
   is possible; it does not generate the positive law, establish Euclidean
   actuality, or supply complete interventions. Euclidean time, reflection,
   fields, lattices, actions, and Markov ontology remain uninherited.
+  A dynamical complex-structure gate now checks the strongest downstream
+  representation claim without supplying $U(1)$ or a wavefunction. For one
+  finite real orthogonal flow, polar decomposition gives a unique orthogonal
+  complex structure on its moving sector once an oriented positive-frequency
+  factorization is required. This does not derive time or energy. Across a
+  control family, the correct test is the joint-commutant set of compatible
+  complex structures, not equality of each control's polar factor; exact
+  finite families can leave many choices or none. Classical Koopman dynamics
+  pass the one-flow theorem, so the packet is DCS-L2 author-side only. It
+  sharpens how complex Hilbert structure might be secondary while leaving the
+  positive source law, common coherent family, complete quantum process, and
+  actuality map absent.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

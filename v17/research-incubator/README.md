@@ -354,6 +354,18 @@ Hamiltonian. The control therefore demonstrates positive-first Hilbert
 reconstruction while leaving the source measure, actuality bridge, complete
 interventions, and form-neutral U0 law absent.
 
+The dynamical complex-structure gate now tests whether a complex carrier could
+be secondary even when it is not supplied by the positive law. One real
+orthogonal flow has a canonical polar complex structure on its moving sector,
+conditional on an oriented positive-frequency factorization. The group
+coordinate is not thereby physical time and the frequency magnitude is not
+thereby energy. For multiple controls, the exact object is the set of common
+complex structures in their joint commutant. Two finite controls can leave
+that set highly nonunique, while another exact pair makes it empty. Classical
+Koopman dynamics pass the one-flow theorem, so the packet reaches only DCS-L2
+author-side: it identifies a possible secondary representation route but does
+not construct the native law or establish quantum ontology.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -390,6 +402,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
 - active/ugen/v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
 - active/ugen/v17_ugen_u0_reflection_positive_euclidean_control.md
+- active/ugen/v17_ugen_u0_dynamical_complex_structure_gate.md
 - active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
 - active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md

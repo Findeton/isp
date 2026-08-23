@@ -330,6 +330,19 @@ positive whole-law packet, but it does not generate that packet or meet U0's
 complete intervention and no-equivalent-input gates. No Euclidean, lattice,
 continuum, action, reflection, time, or Markov ontology is inherited.
 
+The dynamical complex-structure gate now asks the next downstream question
+without importing a complex carrier. For one finite real orthogonal flow, the
+polar factor of its skew generator uniquely supplies an orthogonal complex
+structure on the moving sector once an oriented positive-frequency
+factorization is required. The flow parameter is not thereby physical time,
+and $|A|$ is not thereby energy. More importantly, a coherent family must be
+tested through the complex structures in the joint commutant of all its
+generators—not by demanding equal polar factors control by control. Exact
+families can have many common complex structures or none. Classical Koopman
+dynamics pass the one-flow theorem, so this is a DCS-L2 representation gate,
+not a quantum criterion, native law, or complex ontology. The source-generated
+real flow family and complete nonclassical process interface remain absent.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -374,6 +387,7 @@ Active audit:
 - v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
 - v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
 - v17_ugen_u0_reflection_positive_euclidean_control.md
+- v17_ugen_u0_dynamical_complex_structure_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -594,6 +608,20 @@ Failure must identify an unavoidable input rather than announce that
 29. Vacuum correlators and reconstructed closed evolution are not yet a
     complete adaptive process law with physical preparations, interventions,
     readers, records, erasers, and composites.
+30. A supplied one-parameter group coordinate is not automatically physical
+    time, and its positive generator magnitude is not automatically energy.
+31. Equal per-flow polar factors are not the family-level complex-structure
+    criterion. The exact object is the joint-commutant set
+    $\mathfrak J(\mathcal A)$.
+32. A nonempty common-$J$ set may remain highly nonunique, while an empty set
+    may require a charged carrier enlargement. Neither outcome may be patched
+    control by control.
+33. Classical Koopman dynamics can carry Hilbert, orthogonal, Fourier-phase,
+    and polar-complex structure. These features alone do not establish a
+    quantum process or ontology.
+34. A reversing symmetry with $RJR^{-1}=-J$ must be typed separately from
+    continuous complex-linear dynamics; conjugation is not by itself a family
+    inconsistency.
 
 ## Present disposition
 
@@ -662,6 +690,10 @@ U0 COHERENT DILATION PACKET:   CD-L2 AUTHOR-SIDE / NO NATIVE LAW
 U0 REFLECTION-POSITIVE CONTROL: RP-L3 AUTHOR-SIDE / POSITIVE POSSIBILITY
 U0 EUCLIDEAN/LORENTZIAN BRIDGE: RECONSTRUCTION YES / ACTUALITY NOT DERIVED
 U0 RP SOURCE/INTERVENTIONS:     ABSENT / TARGET-BLIND RULE STILL MISSING
+U0 DYNAMICAL COMPLEX GATE:      DCS-L2 AUTHOR-SIDE / REPRESENTATION ONLY
+U0 ONE-FLOW POLAR J:            EXACT ON MOVING SECTOR / TIME NOT DERIVED
+U0 FAMILY COMMON-J SET:         JOINT COMMUTANT MAY BE MANY OR EMPTY
+U0 COMPLEX QUANTUM CRITERION:   NOT EARNED / KOOPMAN CONTROL PASSES
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND

@@ -347,6 +347,15 @@ not the reconstructed Lorentzian process. Its transfer matrix is exactly
 equivalent to the Hamiltonian, so a per-target Euclidean measure fails the
 no-equivalent-input gate. This establishes positive-first representation, not
 Euclidean actuality, complete-process generation, or native U0 physics.
+A companion dynamical complex-structure gate then asks whether the complex
+carrier can emerge after a real predictive flow is generated. Polar
+decomposition gives one oriented real orthogonal flow a canonical $J$ on its
+moving sector, but neither the group coordinate nor $|A|$ is thereby physical
+time or energy. For a coherent family the exact criterion is the common-$J$
+set in the joint commutant. Finite controls show both nonunique and empty
+sets, while a classical Koopman flow passes the one-flow theorem. The gate
+therefore reaches DCS-L2 author-side only: it corrects the representation
+question without supplying the native positive law or a quantum criterion.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

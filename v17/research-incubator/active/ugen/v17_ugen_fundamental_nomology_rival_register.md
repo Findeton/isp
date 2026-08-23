@@ -108,6 +108,17 @@ process; its transfer matrix is information-equivalent to the Hamiltonian.
 Thus positive-first Hilbert reconstruction is possible, while the target-blind
 source law, complete interventions, and actuality bridge remain absent.
 
+The dynamical complex-structure gate further shows that complex Hilbert
+structure could be secondary without yet selecting Rival A. One oriented real
+orthogonal flow canonically yields $J=A|A|^{-1}$ on its moving sector, but the
+parameter is not thereby physical time and $|A|$ is not thereby energy. For a
+control family the correct object is the joint-commutant set
+$\mathfrak J(\mathcal A)$: exact examples make it nonunique or empty, and a
+classical Koopman flow passes the one-flow theorem. This is DCS-L2
+representation progress. It neither generates the real flow family from a
+positive source law nor establishes the complete nonclassical process
+interface.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -262,7 +273,7 @@ The current evidence supports the following order.
    fixed-point, bare-carrier, and marginal-parent constraints without imposing
    full operational noncontextuality. It identifies target-blind physical
    relational structure as necessary but does not choose that structure.
-   physical-reference audit and exact theorem package now prove that a
+   The physical-reference audit and exact theorem package now prove that a
    transformable, readable, costed reference is one admissible way to supply
    relative structure without an absolute background. Joint covariance and
    nontrivial relational response coexist, but multiple response laws remain;
@@ -272,7 +283,10 @@ The current evidence supports the following order.
    that one positive whole-law packet can reconstruct a coherent Hilbert
    member, but its supplied transfer law and temporal reflection fail native
    source and form-neutrality credit. A real implementation, candidate, and
-   result remain absent.
+   result remain absent. The dynamical complex-structure gate then proves that
+   one oriented real flow has a canonical polar $J$, but a family-level
+   complex carrier is a joint-commutant question. Exact nonunique, empty, and
+   classical Koopman controls prevent its promotion to quantum ontology.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -321,6 +335,10 @@ U0 REFERENCE AS LAW SELECTOR:           NONSELECTING IN EXACT FINITE CONTROL
 U0 REFLECTION-POSITIVE CONTROL:         RP-L3 / POSITIVE POSSIBILITY ONLY
 U0 EUCLIDEAN/LORENTZIAN ACTUALITY:      DISTINCT / BRIDGE ABSENT
 U0 RP SOURCE/COMPLETE PROCESSES:        ABSENT
+U0 DYNAMICAL COMPLEX GATE:              DCS-L2 / REPRESENTATION ONLY
+U0 ONE-FLOW POLAR J:                    EXACT / PARAMETER NOT PHYSICAL TIME
+U0 FAMILY COMMON-J SET:                 MAY BE NONUNIQUE OR EMPTY
+U0 COMPLEX QUANTUM CRITERION:           NOT EARNED / KOOPMAN PASSES
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4
