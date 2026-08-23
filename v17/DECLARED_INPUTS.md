@@ -219,6 +219,7 @@ selection, or a Barandes completion.
 | preferred-frame conclusion | covariance plus spacelike schedule equality | `GREEN-UNREVIEWED OPERATIONAL SCOPE` | idle microscopic preferred structure not excluded |
 | QFT ontology / actuality / internal time / gravity | none | `UNCONSTRUCTED` | cannot be promoted by this candidate |
 | Paper 03 construction audit | frozen candidate/source trace | `PASS — RESULT-NEUTRAL` | authorizes protocol/review only; awards no coordinate |
+| Paper 03 hostile-review protocol | frozen candidate and three independent lenses | `FROZEN RESULT-NEUTRAL` | controls review duties; awards no coordinate |
 
 ## Derivation balance
 

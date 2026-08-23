@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 construction audit passes; hostile-review protocol next**
+Paper 03 hostile-review protocol frozen; three blind reviews next**
 
 ## 0. Authority and workflow
 
@@ -227,6 +227,12 @@ five high-risk scopes for independent review: declared background/causal
 order; state variance and packet-specific closure; separate QFT Bell and
 split-qubit controls; the nonexplanatory global predictive-state cost; and
 strict model separation for type-III/split/gauge/sector claims.
+
+**Review-protocol state.** Ledger #32 freezes three mutually blind lenses:
+AQFT/category/covariance; quantum measurement/probability/Bell; and
+ontology/locality/gauge/continuum. Each must reconstruct 18 targets, 32
+two-way controls, 76 attacks, the full product, and eight fresh lens-specific
+countermodels.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
@@ -487,12 +493,11 @@ Paper 03 mathematical pin           FROZEN RESULT-NEUTRAL
 Paper 03 author audit               PASS RESULT-NEUTRAL
 Paper 03 construction               GREEN-UNREVIEWED
 Paper 03 construction audit         PASS RESULT-NEUTRAL
-Paper 03 hostile-review protocol    NEXT
-Paper 03 independent review         CLOSED PENDING PROTOCOL
+Paper 03 hostile-review protocol    FROZEN
+Paper 03 independent review         NEXT — THREE BLIND LENSES
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is a frozen Paper 03 three-lens hostile-review
-protocol. No implementation, clock, spacetime-emergence, or gravity unit is
-open.
+The next scientific action is the three mutually blind Paper 03 reviews. No
+implementation, clock, spacetime-emergence, or gravity unit is open.

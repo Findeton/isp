@@ -185,6 +185,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   mathematics; conditional relativistic adequacy and explicit ontology debt.
 - `note-paper03-construction-audit.md` — author proof, source-scope, model-
   separation, overclaim, and independent-review attack audit.
+- `note-paper03-hostile-review-protocol.md` — immutable AQFT/category,
+  measurement/Bell, and ontology/locality/continuum blind-review duties.
 
 ## Permanent honesty wall
 

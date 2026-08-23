@@ -777,3 +777,23 @@ split, gauge, sector, or Hadamard properties across models.
 Disposition: `READY-FOR-INDEPENDENT-REVIEW`. No coordinate is awarded. The
 next action is a frozen three-lens hostile-review protocol; code and all later
 physical phases remain closed.
+
+## 2026-08-22 — PAPER 03 HOSTILE-REVIEW PROTOCOL FROZEN (v17 LEDGER #32)
+
+The immutable protocol freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03-hostile-review-protocol.md` | `c3b387e53b14efd9d705d911a3ea717cce9395103f073e9fddbc46c1b7f78f9e` | 263 LF / 10,472 bytes |
+
+It binds three mutually blind reports: AQFT/category/covariance;
+measurement/probability/Bell; and ontology/locality/gauge/continuum. Every
+seat must reconstruct the complete theorem package, quantifier ledger, 32
+two-way controls, 76 attacks, 31-coordinate product, and eight fresh
+lens-specific attacks. Bell QFT existence and split-qubit calibration,
+state-pullback variance, packet-specific state closure, model separation, and
+the global predictive-history cost are mandatory attack surfaces.
+
+No result is awarded. The next action is the three blind reviews. Candidate
+editing, implementation, Paper 04, spacetime emergence, and gravity remain
+closed.
