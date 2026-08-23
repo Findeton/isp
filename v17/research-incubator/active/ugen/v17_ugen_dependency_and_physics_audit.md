@@ -479,6 +479,21 @@ process object as input.
 
 ## 12. Dependency and authority rules
 
+### PC6 scalable update
+
+PC6 has now carried out the two preparatory routes identified after PC5. The
+Montina source theorem is reconstructed only for regular Markov ontological
+models with local support regularity, all-unitary coverage, and weak
+invertibility. Separate controls show that non-Markov shrinking and quadratic
+contextual stabilizer simulation remain possible. A complete process-tensor
+interface and a fair indivisible whole-program contest are now typed, but no
+candidate generator has entered it and the proposed scalable trilemma is not a
+theorem.
+
+The next author-side task is therefore a bounded U-Gen C1 candidate pin for one
+adaptive Clifford-plus-$T$ family, not a broader Borel census or another finite
+endpoint example.
+
 1. Q-Cut is author-side ready for an authorization decision, but it is not an
    accepted theorem and cannot be used as a premise.
 2. E-Comp is an active author-side lemma package, but it is not frozen or
@@ -501,7 +516,11 @@ PC2 BALANCED SUBCASE:            CONSTRUCTED AUTHOR-SIDE / NOT REVIEWED
 FULL COMPOSITION-LIFT TARGET:    MULTI-PRIMITIVE / TENSOR / ADAPTIVE OPEN
 SELECTOR TOURNAMENT:             COMPLETE AUTHOR-SIDE / NOT REVIEWED
 PC3 PROJECTIVE CONTROL GATE:     CONSTRUCTED / NOT FREEZE-READY
-NEXT AUTHOR-SIDE TARGET:         NATIVE VS ENLARGED-CARRIER FEASIBILITY
+PC4 POSITIVE CONTROL:            CONSTRUCTED / ENDPOINT NONSELECTION
+PC5 PROCESS FRONTIER:            FINITE CLASS OBSTRUCTION / CONTROLS OPEN
+PC6 SCALABLE FRONTIER:           SOURCE/CONTROL/CONTEST PACKET COMPLETE
+SCALABLE TRILEMMA:               NOT PROVED
+NEXT AUTHOR-SIDE TARGET:         BOUNDED U-GEN C1 PIN DRAFT
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE

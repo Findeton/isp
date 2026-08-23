@@ -138,10 +138,24 @@ dimension theorem is recorded only as an assumption-heavy external candidate;
 the scalable bridge and constructive indivisible generator contest remain
 open. PC5 is not freeze-ready.
 
+PC6 now supplies the scalable source/control/contest synthesis. It reconstructs
+Montina's $M\ge2N-2$ theorem only for its exact regular Markov manifold class,
+keeps continuous dimension distinct from bits and physical resources, and
+registers non-Markov and efficient contextual stabilizer controls. It also
+defines a fair uniform indivisible-generator contest against the complete
+process-tensor interface, forbidding target-process tables and uncharged
+per-program advice while allowing global or retrocausal candidates with their
+dependencies printed. The resulting phase/context/composition trilemma is a
+research frontier, not a proved theorem. The next author-side construction is
+a bounded U-Gen C1 candidate pin on one scalable adaptive Clifford-plus-$T$
+family; no such pin or generator exists yet.
+
 Canonical status: `active/ugen/README.md`.
 
 Active working package:
 
+- `active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md`
+- `active/ugen/v17_pc6_source_scope_and_readiness_audit.md`
 - `active/ugen/v17_pc5_complete_process_resource_displacement.md`
 - `active/ugen/v17_pc5_source_scope_and_readiness_audit.md`
 - `active/ugen/v17_pc4_positive_dilation_and_frontier.md`

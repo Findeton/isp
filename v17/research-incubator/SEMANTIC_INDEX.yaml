@@ -182,30 +182,30 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "10538ef94bb8c2519a440ea10e74471a0589a7c83b9356250b54e139cb3ff8f1"
+    sha256: "9cdfff4b9af62aa74cc8b310d1eb64e9c4d8f462377798a5545028ede5031da8"
     created_at: "2026-08-23"
     front: "ugen"
-    status: "active-routing-dependency-audit-complete"
+    status: "active-routing-pc6-scalable-frontier-complete"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/"]
-    source_audit_status: "provisional-author-side-audit"
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral uniform source-completion and generator classification including the class-relative PC5 finite-carrier obstruction and continuous positive control; no scalable theorem, universal generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral uniform source-completion and generator classification including the PC6 regular-Markov source theorem reconstruction, efficient controls, and fair indivisible-generator contest; no scalable trilemma theorem, universal generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "9ba07dc3e7187fffb1f8e5bae11aef5c5ef4d3cd6b0864017f33f89959ce9dcf"
+    sha256: "0032deb40a1c656cb930f01fe6d3f503217c7340c576ba541907c2341f7a38ab"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/"]
-    source_audit_status: "provisional-author-side-audit"
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral dependency, resource-coordinate, and generator-contest audit through PC6; no scalable theorem, generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_pc2_balanced_seam_classification_candidate.md"
     sha256: "913b61c27f3a8303df5acb72e75b4a4def61a5b98b7457734b6be3b9bc4f6d4d"
@@ -247,17 +247,17 @@ artifacts:
     maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_ugen_next_gate_decision.md"
-    sha256: "1be015432a19ca10289382740906276df72fe6ab0f60873c0e1761f34284bda1"
+    sha256: "8b3d7f6f2e8945bcda18895d5048a2aff98bb967e59680e914363fc26fe14063"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-decision"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc5_source_scope_and_readiness_audit.md"]
-    source_audit_status: "inherits-pc5-author-side-source-scope-audit"
+    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md"]
+    source_audit_status: "inherits-pc6-author-side-source-scope-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding decision recording the PC5 finite-carrier obstruction, continuous positive escape, and routing to scalable resource displacement plus the indivisible generator contest while keeping Q-Cut as the recommended next official unit"
+    maximum_claim: "nonbinding decision recording the PC6 scalable source/control/contest frontier and routing to a bounded U-Gen C1 adaptive Clifford-plus-T pin draft while keeping Q-Cut as the recommended next official unit"
     canonical: false
   - path: "active/ugen/v17_pc3_projective_control_covariance_candidate.md"
     sha256: "8d79740280b5d7bb7192d2a4b064257e03e67ee521a9df1034ffe5638f36987e"
@@ -330,12 +330,38 @@ artifacts:
     front: "ugen"
     status: "active-author-audit"
     supersedes: ["active/ugen/v17_pc4_reality_and_readiness_audit.md"]
-    superseded_by: []
+    superseded_by: ["active/ugen/v17_pc6_source_scope_and_readiness_audit.md"]
     depends_on: ["active/ugen/v17_pc5_complete_process_resource_displacement.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "source, scope, hostile-control, and readiness audit for the PC5 class-relative finite-carrier obstruction and positive escapes; no scientific result or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md"
+    sha256: "681acefb514c5e46e8caa4526eaea0e91e65bed42065cda8c8f445ae6b42a43c"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-frontier-packet"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_pc5_source_scope_and_readiness_audit.md", "snapshots/v17_ugen_barandes_source_scope_audit.md", "active/qcut/v17_qcut_result_neutral_candidate_pin.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "source-reconstructed regular-Markov continuous-dimension theorem scope, distinct resource ledger, efficient contextual and non-Markov controls, and a fair indivisible-generator contest; no scalable trilemma theorem, generator, ontology, QFT, time, spacetime, or gravity result"
+    canonical: false
+  - path: "active/ugen/v17_pc6_source_scope_and_readiness_audit.md"
+    sha256: "3a429e51bda086cd6215a2a2b8388805da77702cedeb745634f45ae09c9e34cb"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-audit"
+    supersedes: ["active/ugen/v17_pc5_source_scope_and_readiness_audit.md"]
+    superseded_by: []
+    depends_on: ["active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "snapshots/v17_ugen_barandes_source_scope_audit.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "source, scope, hostile-control, external-review, and readiness audit for the PC6 scalable frontier; no scientific result or successor authority"
     canonical: false
   - path: "snapshots/p04_quantum_record_successor_investigation.md"
     sha256: "68b56d296dd703af2d3ba24247be60e1e1ee58ae75312f0efa34f49d46a85323"

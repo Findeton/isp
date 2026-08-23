@@ -279,11 +279,16 @@ cleanly if nature does not support it.
   family. This is not a positivity no-go: an exact continuous Bloch-sphere
   positive control survives, while contextual, hidden-memory, non-disjoint,
   and indivisible whole-program branches remain charged escapes. Montina's
-  $2N-2$ continuous-dimension theorem is recorded only as an external
-  comparator because its all-unitary and post-transient support assumptions
-  have not been admitted as v17 premises. Scalable many-body displacement and
-  the constructive indivisible generator contest are the next author-side
-  targets. Repository inclusion does not promote any draft, authorize a Paper
+  $2N-2$ continuous-dimension theorem is now reconstructed in PC6 only as an
+  external regular-Markov class theorem: local support regularity and weak
+  process invertibility remain printed antecedents, and continuous dimension
+  is not relabeled as bits or physical resources. PC6 registers efficient
+  contextual stabilizer and non-Markov controls and types a fair uniform
+  indivisible-generator contest against complete process laws. It does not
+  prove the proposed phase/context/composition trilemma or construct a
+  scalable generator. The next author-side target is a bounded U-Gen C1
+  adaptive Clifford-plus-$T$ candidate pin. Repository inclusion does not
+  promote any draft, authorize a Paper
   04B successor, or
   open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.

@@ -1,4 +1,4 @@
-# ISP v17 — next-gate decision after PC5
+# ISP v17 — next-gate decision after PC6
 
 **Status:** ACTIVE AUTHOR-SIDE ROUTING DECISION / NOT A PIN
 **Date:** 2026-08-23
@@ -26,22 +26,28 @@ model still reproduces the single-qubit unitary/projective interface. The
 result therefore locates phase-complete capacity; it does not refute
 positivity or select amplitudes as ontology.
 
-The next author-side task is now scalable. It must either reconstruct a
-many-body Markov ontic-dimension theorem with every extra support and
-continuity premise exposed, or build the constructive indivisible generator
-contest on a scalable Clifford-plus-resource family. These routes should be
-developed together because a no-go class is only meaningful when the strongest
-whole-law escape is tested fairly.
+PC6 has now developed those complementary routes together. It reconstructs the
+many-body Markov ontic-dimension theorem with its differentiable-manifold,
+support-regularity, all-unitary, and weak-invertibility premises exposed. It
+also registers non-Markov and efficient contextual positive controls and
+defines the fair whole-law generator contest. The source theorem is
+class-relative and the contest has no candidate yet, so PC6 creates no result.
 
-These are complementary rather than competing choices.
+The next author-side construction should be narrower: a bounded U-Gen C1
+candidate pin on one scalable adaptive Clifford-plus-$T$ family. It must freeze
+the calibration track, held-out programmes, complete retained/erased record
+interface, forbidden answer imports, comparator battery, and distinct resource
+coordinates before any candidate generator is written.
 
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
     PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
     PC5 COMPLETE-PROCESS GATE:      CONSTRUCTED / FINITE CLASS OBSTRUCTION
     CONTINUOUS POSITIVE CONTROL:    PASSES / POSITIVITY NOT REFUTED
-    NEXT AUTHOR-SIDE U-GEN TASK:    SCALABLE RESOURCE BRIDGE PLUS
-                                    INDIVISIBLE GENERATOR CONTEST
+    PC6 SCALABLE FRONTIER:          SOURCE/CONTROL/CONTEST PACKET COMPLETE
+    SCALABLE TRILEMMA THEOREM:      NOT PROVED
+    NEXT AUTHOR-SIDE U-GEN TASK:    BOUNDED U-GEN C1 ADAPTIVE
+                                    CLIFFORD-PLUS-T PIN DRAFT
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
@@ -173,7 +179,7 @@ It could not establish:
 
 ## 8. Authority wall
 
-No Q-Cut pin, PC5 review, scalable successor, numbered paper, or
+No Q-Cut pin, PC5/PC6 review, U-Gen C1 pin, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
 

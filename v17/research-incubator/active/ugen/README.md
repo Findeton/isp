@@ -50,6 +50,19 @@ Bloch-sphere positive model survives, while contextual, hidden-memory,
 non-disjoint, and indivisible whole-program branches remain open and charged.
 PC5 is not a scalable many-body theorem and is not freeze-ready.
 
+PC6 now reconstructs the scalable frontier without promoting PC5 into a
+general positivity no-go. It separates continuous ontic dimension,
+future-sufficient information, online memory, context, communication, process
+representation, composition, uniformity, and physical resources. Montina's
+$M\ge2N-2$ result is admitted only as a source theorem for regular Markov
+ontological models with local support regularity and weak process
+invertibility. A non-Markov qubit model and quadratic contextual stabilizer
+models are mandatory escape/positive controls. PC6 also freezes the
+author-side *type* of a fair indivisible-generator contest: one uniform rule
+must produce complete held-out process laws without receiving the target
+process, answer table, or uncharged per-program advice. No concrete scalable
+generator or class-wide trilemma theorem has yet been constructed.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -78,6 +91,8 @@ adjudication occur.
 
 Active audit:
 
+- `v17_pc6_scalable_markov_and_indivisible_frontier.md`
+- `v17_pc6_source_scope_and_readiness_audit.md`
 - `v17_pc5_complete_process_resource_displacement.md`
 - `v17_pc5_source_scope_and_readiness_audit.md`
 - `v17_pc4_positive_dilation_and_frontier.md`
@@ -184,8 +199,10 @@ PC3 ONTOLOGY DISCRIMINATION:   FAILS AT ENDPOINT SCOPE
 PC5 COMPLETE-PROCESS GATE:     AUTHOR-SIDE COMPLETE / NOT REVIEWED
 FINITE FUNCTORIAL CARRIER:     REFUTED FOR EXACT UNBOUNDED H,T FAMILY
 POSITIVE ONTOLOGY GENERALLY:   NOT REFUTED / CONTINUOUS CONTROL PASSES
-NEXT AUTHOR-SIDE TARGET:       SCALABLE MANY-BODY RESOURCE BRIDGE PLUS
-                               INDIVISIBLE GENERATOR CONTEST
+PC6 SCALABLE FRONTIER:         SOURCE/CONTROL/CONTEST PACKET COMPLETE
+SCALABLE TRILEMMA THEOREM:     NOT PROVED
+NEXT AUTHOR-SIDE TARGET:       BOUNDED U-GEN C1 ADAPTIVE
+                               CLIFFORD-PLUS-T PIN DRAFT
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN
