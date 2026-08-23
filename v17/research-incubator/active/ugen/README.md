@@ -37,11 +37,18 @@ exact six-state reversible positive generator for the same entire endpoint
 law, proves six states minimal in its declared finite reversible class, and
 gives an eight-state cube realization with deterministic readout. PC3's
 projective classification survives conditionally, but its endpoint battery
-does not discriminate projective from enlarged positive dynamics. The next
-open question is therefore the complete-process and scalable resource
-frontier: operationally equivalent transformation implementations,
-non-Clifford resources, adaptive continuations, and where phase-complete
-information is displaced.
+does not discriminate projective from enlarged positive dynamics.
+
+PC5 now reaches the first complete-process/non-Clifford frontier author-side.
+It types retained versus operationally erased implementation records,
+reconstructs the eight-state depolarizing-channel parity obstruction, and
+proves that the calibrated projective channel $HT$ has infinite order. Hence
+no finite positive carrier can realize the exact unbounded $H,T$ word family
+simultaneously functorially, transformation-noncontextually, and with positive
+ontic inverses. The result is deliberately class-relative: an exact continuous
+Bloch-sphere positive model survives, while contextual, hidden-memory,
+non-disjoint, and indivisible whole-program branches remain open and charged.
+PC5 is not a scalable many-body theorem and is not freeze-ready.
 
 ## Current inputs
 
@@ -71,8 +78,10 @@ adjudication occur.
 
 Active audit:
 
-- v17_pc4_positive_dilation_and_frontier.md
-- v17_pc4_reality_and_readiness_audit.md
+- `v17_pc5_complete_process_resource_displacement.md`
+- `v17_pc5_source_scope_and_readiness_audit.md`
+- `v17_pc4_positive_dilation_and_frontier.md`
+- `v17_pc4_reality_and_readiness_audit.md`
 
 - `v17_ugen_dependency_and_physics_audit.md`
 - `v17_pc2_balanced_seam_classification_candidate.md`
@@ -172,8 +181,11 @@ SELECTOR TOURNAMENT:           COMPLETE AUTHOR-SIDE / NOT REVIEWED
 PC3 PROJECTIVE CONTROL GATE:   AUTHOR-SIDE COMPLETE / NOT FREEZE-READY
 PC4 POSITIVE DILATION CONTROL: AUTHOR-SIDE COMPLETE / NOT REVIEWED
 PC3 ONTOLOGY DISCRIMINATION:   FAILS AT ENDPOINT SCOPE
-NEXT AUTHOR-SIDE TARGET:       COMPLETE-PROCESS CONTEXTUALITY PLUS
-                               NON-CLIFFORD RESOURCE DISPLACEMENT
+PC5 COMPLETE-PROCESS GATE:     AUTHOR-SIDE COMPLETE / NOT REVIEWED
+FINITE FUNCTORIAL CARRIER:     REFUTED FOR EXACT UNBOUNDED H,T FAMILY
+POSITIVE ONTOLOGY GENERALLY:   NOT REFUTED / CONTINUOUS CONTROL PASSES
+NEXT AUTHOR-SIDE TARGET:       SCALABLE MANY-BODY RESOURCE BRIDGE PLUS
+                               INDIVISIBLE GENERATOR CONTEST
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

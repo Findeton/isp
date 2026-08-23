@@ -5,6 +5,11 @@
 **Scientific result awarded:** none
 **Authority created:** none
 
+**Subsequent author-side status:** PC5 has now carried out the bounded
+complete-process/non-Clifford construction requested by Sections 8--9. This
+does not alter PC4's theorem or ontology demotion; it supersedes only PC4's
+next-task routing.
+
 ---
 
 ## 1. Root verdict

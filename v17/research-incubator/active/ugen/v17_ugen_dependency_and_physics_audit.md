@@ -301,6 +301,19 @@ coordinate rather than declare victory.
 This staging prevents a result about universal quantum computation from being
 misreported as a burden of every quantum or contextual family.
 
+The first two rungs now have an author-side exact control in PC5. The
+stabilizer endpoint family admits a finite positive generator. The exact
+unbounded calibrated $H,T$ process group does not admit a finite carrier that
+is simultaneously functorial, transformation-noncontextual, and equipped with
+positive ontic inverses, but it does admit a continuous positive qubit model.
+Thus the next theorem must quantify the displaced scalable capacity rather
+than report the failure of a finite cube.
+
+Montina's $2N-2$ continuous-variable theorem is a candidate comparator, not a
+current dependency. Its all-unitary interface and post-transient support
+Property 2 require independent reconstruction, and continuous dimension must
+not be relabeled as bits, energy, or volume.
+
 ---
 
 ## 8. Required split: U-Gen C

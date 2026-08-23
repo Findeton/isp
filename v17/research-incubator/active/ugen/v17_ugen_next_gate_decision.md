@@ -1,4 +1,4 @@
-# ISP v17 — next-gate decision after PC4
+# ISP v17 — next-gate decision after PC5
 
 **Status:** ACTIVE AUTHOR-SIDE ROUTING DECISION / NOT A PIN
 **Date:** 2026-08-23
@@ -12,30 +12,36 @@
 The next official scientific unit, if separately authorized, should still be
 Q-Cut.
 
-The first PC3 algebraic candidate is constructed. Its readiness audit found
-the projective classification complete but the physical experiment and the
-origin of the covariance bridge under-typed.
+PC3 and PC4 established that the finite stabilizer-like endpoint battery does
+not discriminate projective from enlarged positive dynamics. PC5 has now
+performed the next bounded comparison. It registers complete transformation
+equivalence with retained/erased record typing and an exact unbounded
+non-Clifford word family.
 
-That feasibility comparison has now been performed author-side. PC4 supplies
-both a six-state stochastic-readout generator and an eight-state
-outcome-deterministic cube generator for the same exhaustive PC3 law. It also
-proves six states minimal among finite reversible positive realizations with
-an arbitrary stochastic binary response. The PC3 endpoint battery therefore
-does not discriminate its projective lift from enlarged positive dynamics.
+Its finite theorem is exact but class-relative. The projective channel $HT$
+has infinite order, so no finite carrier realizes the word group while
+remaining functorial, transformation-noncontextual, and ontically reversible
+through positive stochastic inverses. A continuous positive Bloch-sphere
+model still reproduces the single-qubit unitary/projective interface. The
+result therefore locates phase-complete capacity; it does not refute
+positivity or select amplitudes as ontology.
 
-The next author-side task is no longer another PC3 carrier. It is to type the
-first complete-process and scalable resource-displacement gate: registered
-transformation equivalences and records, followed by a non-Clifford resource,
-adaptive continuations, and explicit charging of phase-complete state,
-context, composition, uniformity, and carrier resources.
+The next author-side task is now scalable. It must either reconstruct a
+many-body Markov ontic-dimension theorem with every extra support and
+continuity premise exposed, or build the constructive indivisible generator
+contest on a scalable Clifford-plus-resource family. These routes should be
+developed together because a no-go class is only meaningful when the strongest
+whole-law escape is tested fairly.
 
 These are complementary rather than competing choices.
 
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
     PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
-    NEXT AUTHOR-SIDE U-GEN TASK:    COMPLETE-PROCESS PLUS NON-CLIFFORD
-                                    RESOURCE DISPLACEMENT
+    PC5 COMPLETE-PROCESS GATE:      CONSTRUCTED / FINITE CLASS OBSTRUCTION
+    CONTINUOUS POSITIVE CONTROL:    PASSES / POSITIVITY NOT REFUTED
+    NEXT AUTHOR-SIDE U-GEN TASK:    SCALABLE RESOURCE BRIDGE PLUS
+                                    INDIVISIBLE GENERATOR CONTEST
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
@@ -74,9 +80,38 @@ not treat the word “reconstruction” as completion.
 
 ---
 
-## 4. PC3 construction firewall
+## 4. PC5 correction to the finite-carrier interpretation
 
-A future PC3 candidate must be rejected author-side before any pin if:
+The exact author-side implication is
+
+$$
+\begin{aligned}
+&\text{finite carrier}
++\text{positive stochastic inverses}
++\text{functorial process descent}\\
+&\qquad
++\text{transformation noncontextuality}
+\Longrightarrow
+\text{failure on the unbounded calibrated }H,T\text{ family}.
+\end{aligned}
+$$
+
+Dropping any antecedent enters a named branch. In particular, continuous
+positive carriers, implementation context, hidden irreversibility,
+non-disjoint ontic structure, and indivisible whole-program laws are not
+counterexamples to PC5 because they are not in its finite class. They also
+receive no explanatory credit until their displaced capacity is charged.
+
+Montina's external $2N-2$ theorem is not silently imported. Its all-unitary
+scope and post-transient support-time-symmetry Property 2 must pass a separate
+premise audit before it can constrain a v17 candidate.
+
+---
+
+## 5. Preserved construction firewall
+
+Any future composition or generator candidate must be rejected author-side
+before any pin if:
 
 1. a gate name imports complete quantum process calibration;
 2. the held-out word is chosen after inspecting candidate predictions;
@@ -90,21 +125,22 @@ A future PC3 candidate must be rejected author-side before any pin if:
 
 ---
 
-## 5. Minimal PC3 grammar
+## 6. Minimum scalable successor grammar
 
-The smallest useful grammar needs:
+The smallest useful scalable grammar now needs:
 
-1. two reversible generators \(a,b\);
-2. at least two operationally distinct paths with common typed endpoints;
-3. one complete reader that separates some candidate extensions;
-4. one actual record-insertion control;
-5. a finite set of training relations;
-6. at least one held-out closed word;
-7. an endpoint-only positive source packet;
-8. one quantum composition control;
-9. one positive Markov control;
-10. one alternative coherent control; and
-11. one unrestricted direct-whole-law control.
+1. one family uniform in system number and program depth;
+2. a finite, fully calibrated primitive interface;
+3. at least one non-Clifford resource;
+4. complete retained/erased record semantics;
+5. adaptive held-out continuations;
+6. one finite positive control;
+7. one continuous phase-complete positive control;
+8. one context-sensitive or hidden-memory control;
+9. one unrestricted indivisible whole-law control;
+10. a no-target-process-input rule; and
+11. separate predictive, context, composition, uniformity, and physical
+    resource coordinates.
 
 The training relations must be motivated by independently calibrated physical
 symmetry or interaction data. A purely abstract group presentation can
@@ -112,14 +148,16 @@ classify lifts but cannot claim to explain nature.
 
 ---
 
-## 6. Maximum legitimate PC3 claim
+## 7. Maximum legitimate next claim
 
-If successful after a future freeze and independent review:
+If a future scalable gate succeeds after freeze and independent review:
 
-> At the printed finite operational scope, independently registered
-> symmetry/interaction relations constrain or uniquely determine the
-> gauge-equivalence class of a complete composition extension and correctly
-> predict specified held-out closed-word probabilities.
+> At the printed scalable operational scope, every admitted ordinary-positive
+> realization either pays a quantified resource that asymptotically exceeds
+> the matched quantum comparator or rejects one named cut, context,
+> composition, uniformity, or physical-independence premise; an explicit
+> indivisible generator, if found, must predict held-out complete processes
+> without receiving the target process.
 
 It could not establish:
 
@@ -133,15 +171,15 @@ It could not establish:
 
 ---
 
-## 7. Authority wall
+## 8. Authority wall
 
-No Q-Cut pin, PC3 construction, independent review, numbered paper, or
+No Q-Cut pin, PC5 review, scalable successor, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
 
 ---
 
-## 8. PC4 correction to the PC3 interpretation
+## 9. Preserved PC4 correction to the PC3 interpretation
 
 PC3's exact projective classification remains valid inside its antecedent:
 

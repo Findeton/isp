@@ -271,9 +271,20 @@ cleanly if nature does not support it.
   eight-state deterministic cube generator reproduce the same exhaustive
   endpoint law. PC3 therefore does not discriminate ontology at its present
   scope. The projective and ordinary covariance bridges are both charged
-  inputs; complete transformation equivalences and non-Clifford/scalable
-  resource displacement are the next author-side target. Repository
-  inclusion does not promote any draft, authorize a Paper 04B successor, or
+  inputs. PC5 now supplies a bounded complete-process/non-Clifford
+  classification: retained versus operationally erased implementation records
+  are typed explicitly; the calibrated projective channel $HT$ has infinite
+  order; and no finite functorial transformation-noncontextual positive
+  carrier with positive ontic inverses can reproduce the exact unbounded word
+  family. This is not a positivity no-go: an exact continuous Bloch-sphere
+  positive control survives, while contextual, hidden-memory, non-disjoint,
+  and indivisible whole-program branches remain charged escapes. Montina's
+  $2N-2$ continuous-dimension theorem is recorded only as an external
+  comparator because its all-unitary and post-transient support assumptions
+  have not been admitted as v17 premises. Scalable many-body displacement and
+  the constructive indivisible generator contest are the next author-side
+  targets. Repository inclusion does not promote any draft, authorize a Paper
+  04B successor, or
   open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
