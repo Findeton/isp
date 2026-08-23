@@ -797,3 +797,24 @@ the global predictive-history cost are mandatory attack surfaces.
 No result is awarded. The next action is the three blind reviews. Candidate
 editing, implementation, Paper 04, spacetime emergence, and gravity remain
 closed.
+
+## 2026-08-22 — PAPER 03 SEAT A REVIEW FROZEN (v17 LEDGER #33)
+
+The complete independent AQFT/category/covariance report freezes verbatim at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper03-aqft-covariance.md` | `1a2aed079ffa09594da5d9a978ccafe3b1b2423a92125ecf861c57409f8c0ff6` | 662 LF / 36,079 bytes |
+
+Seat A returns `REVISE`. Its first semantic counterexample is exact: the
+printed boundary type omits causal-frontier data, yet the claimed ordinary
+category admits same-boundary forgotten-outcome timelike endomorphisms while
+an extra causal-wiring predicate may forbid their reverse composite. Matching
+category arrows must compose, so the printed procedure category, quotient
+category, and ordinary universal property are not constructed.
+
+The report independently preserves the fixed-packet AQFT instrument,
+causal-factorization, finite spacelike-schedule, nonselective no-signalling,
+steering/Bell distinctions, and ontology firewalls, with provisional ceiling
+`P03-RELATIVISTIC-NOSIGNALLING-OPERATIONAL-SUBPACKAGE-CONSTRUCTED`. This is not
+adjudication. Seats Q/O must freeze before the root inspects reports jointly.

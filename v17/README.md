@@ -30,12 +30,12 @@ cleanly if nature does not support it.
   It repairs the v1 source-domain error, constructs a positive contextual
   existence model, and leaves the particular ontology, Barandes completion,
   and microscopic actuality unselected.
-- Paper 03 status: **GREEN-UNREVIEWED MATHEMATICAL CONSTRUCTION —
-  RELATIVISTIC OPERATIONAL ADEQUACY WITH GLOBAL ONTOLOGY DEBT**. The candidate
-  constructs localized AQFT instruments, causal/schedule/no-signalling
-  theorems, a relativistic procedure quotient, and a positive global
-  predictive-history representation on declared comparator packets. Nothing
-  is terminal before independent review.
+- Paper 03 status: **HOSTILE REVIEW IN PROGRESS — SEAT A FROZEN REVISE**.
+  Seat A independently reconstructs the localized AQFT/no-signalling core but
+  refutes the printed ordinary procedure category: matching same-boundary
+  timelike endomorphisms may be noncomposable under an extra causal-wiring
+  rule. The quotient layer is therefore unconstructed as written. Seats Q/O
+  and joint adjudication remain pending; no Paper 03 result is terminal.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -71,12 +71,10 @@ $q:\mathcal P\to\mathcal Q$; and admitted idle-fiber projections prove a
 limited no-selection theorem. What survives is structural contextuality and
 ontology underdetermination, not a preferred microscopic world.
 
-The Paper 03 opening gate is satisfied and its result-neutral mathematical pin
-is frozen. The next action is a source- and type-level author audit before any
-construction. Paper 03 tests relativistic quantum-operational adequacy on a
-declared locally covariant AQFT comparator; it does not import a preferred
-frame, promote the comparator spacetime to ontology, reuse v16 geometry, or
-assume a Barandes completion absent from the terminal Paper 02 product.
+Paper 03 is in hostile review. Its fixed-packet relativistic measurement core
+remains live, but Seat A has identified an exact source/target typing defect in
+the claimed ordinary procedure category. The remaining blind reports and root
+adjudication must determine the mixed product before any repair or successor.
 
 ## Reality constraints
 
@@ -187,6 +185,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   separation, overclaim, and independent-review attack audit.
 - `note-paper03-hostile-review-protocol.md` — immutable AQFT/category,
   measurement/Bell, and ontology/locality/continuum blind-review duties.
+- `review-paper03-aqft-covariance.md` — frozen Seat A report; `REVISE` on
+  procedure-category typing, with the localized AQFT/no-signalling subpackage
+  surviving provisionally.
 
 ## Permanent honesty wall
 

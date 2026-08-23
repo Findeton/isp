@@ -221,6 +221,12 @@ selection, or a Barandes completion.
 | Paper 03 construction audit | frozen candidate/source trace | `PASS — RESULT-NEUTRAL` | authorizes protocol/review only; awards no coordinate |
 | Paper 03 hostile-review protocol | frozen candidate and three independent lenses | `FROZEN RESULT-NEUTRAL` | controls review duties; awards no coordinate |
 
+## Paper 03 independent-review balance
+
+| Review lens | Frozen disposition | Scientific effect | Status |
+|---|---|---|---|
+| AQFT/category/covariance (Seat A) | `REVISE` | ordinary procedure/quotient category unconstructed; localized AQFT/no-signalling subpackage survives | frozen, not adjudicated |
+
 ## Derivation balance
 
 The live adjudicated balance is:
