@@ -86,6 +86,15 @@ configuration observable, Born weights, external time, edgewise quantum
 current, and least-traffic minimality are supplied. It therefore prevents a
 false native-generator claim but does not fill the native slot.
 
+N1 now provides a bounded positive candidate rather than another comparator.
+Nelson's time-symmetric diffusion generates local Schrödinger dynamics from a
+diffusion scale, mean-Newton law, and contingent density/current data without
+receiving future quantum transition tables. Its circle member proves that the
+printed local law does not generate global quantum holonomy sectors: arbitrary
+stochastic circulation survives where a fixed periodic quantum sector is
+quantized. N1 is therefore partial native progress, not a complete U-Gen
+member and not freeze-ready.
+
 The fundamental-nomology register keeps three rivals live under one ledger:
 ordinary-positive indivisible law, fundamental decoherence functional, and
 standard quantum dynamics plus modified actualization. No rival is selected.
@@ -110,10 +119,14 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     C4 ACTUALITY BRANCH:            NONE SELECTED
     C-NUMBER EXPANSION:             CLOSED AT C4
     BELL-CURRENT COMPARATOR:        COMPLETE GIVEN QUANTUM INPUTS
+    N1 POSITIVE DIFFUSION:          BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
+    N1 GLOBAL PHASE SECTOR:         NOT GENERATED / CIRCLE OBSTRUCTION
+    N1 COMPLETE PROCESS:            ABSENT / NOT FREEZE-READY
+    NATIVE ISP LAW:                 ABSENT
     FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
-    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE COMPLETE LAW FOR WEIGHTS,
-                                    CORRELATIONS, REFERENT, HELD-OUT RECORDS;
-                                    OR BOUNDED CLASS-WIDE NO-GO
+    NEXT AUTHOR-SIDE U-GEN TASK:    INDEPENDENT N1 HOLONOMY PRINCIPLE OR
+                                    BOUNDED CLASS-WIDE NO-GO;
+                                    COMPLETE PROCESS COMPILER STILL OPEN
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

@@ -153,6 +153,18 @@ minimal Bell rates add a least-traffic/no-counterflow principle. This prevents
 v17 from rediscovering a quantum-driven Bohm/Bell law and calling it native.
 It is a comparator, not C5, not an ISP construction, and not a gravity step.
 
+N1 now enters the contest as the first bounded prior-art positive-dynamics
+candidate with partial native content only in the input-origin sense.
+Nelson's positive time-symmetric diffusion locally reconstructs Schrödinger
+evolution from $\nu=\hbar/(2m)$, a symmetric
+mean acceleration, mean Newton dynamics, and initial density/current data,
+without consuming a table of future quantum transitions. Its exact circle
+member also exposes the limit: the local stochastic law permits arbitrary
+circulation, while a fixed periodic quantum sector requires quantized phase
+holonomy. N1 therefore supplies a real positive path member but not the global
+sector law or complete adaptive process compiler. It is not reviewed or
+freeze-ready.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -186,6 +198,9 @@ Active audit:
 - v17_ugen_bell_current_physical_reality_audit.md
 - v17_ugen_bell_current_primary_source_scope_audit.md
 - v17_ugen_bell_current_future_review_contract.md
+- v17_ugen_n1_time_symmetric_diffusion_candidate.md
+- v17_ugen_n1_source_physics_and_scope_audit.md
+- v17_ugen_n1_future_review_contract.md
 
 - v17_ugen_c4_interference_actuality_obstruction_candidate.md
 - v17_ugen_c4_actuality_selector_reality_investigation.md
@@ -315,6 +330,9 @@ Failure must identify an unavoidable input rather than announce that
 11. The C-series ends at C4. The next substantive U-Gen object must be a native
     generator or a bounded class-wide no-go, not another description of the
     missing quantum datum.
+12. Local stochastic reconstruction of the Schrödinger equation does not
+    establish global quantum equivalence unless phase/bundle holonomies and
+    the complete apparatus process are generated rather than imposed.
 
 ## Present disposition
 
@@ -351,12 +369,16 @@ FUNDAMENTAL NOMOLOGY POLICY:   PLURAL RIVAL CONTEST / NONE SELECTED
 BELL-CURRENT PATH LAW:         COMPLETE GIVEN QUANTUM INPUTS
 BELL MINIMALITY:               LEAST TRAFFIC / NOT SELECTED BY BORN LAW
 BELL/BARANDES IDENTIFICATION:  REJECTED / MARKOV VS INDIVISIBLE
+N1 POSITIVE DIFFUSION:         BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
+N1 LOCAL SCHRODINGER FORM:     DERIVED FROM DECLARED STOCHASTIC PREMISES
+N1 GLOBAL PHASE SECTOR:        NOT GENERATED / CIRCLE CONTROL FAILS
+N1 COMPLETE PROCESS:           NOT CONSTRUCTED / NOT FREEZE-READY
 C-NUMBER EXPANSION:            CLOSED AT C4
-NEXT AUTHOR-SIDE TARGET:       NATIVE COMPLETE LAW FOR WEIGHTS,
-                               CORRELATIONS, REFERENT, AND HELD-OUT RECORDS
-                               OR A BOUNDED CLASS-WIDE NO-GO
+NEXT AUTHOR-SIDE TARGET:       INDEPENDENT N1 HOLONOMY PRINCIPLE OR BOUNDED
+                               NO-GO; COMPLETE PROCESS COMPILER STILL OPEN
 SOURCE-COMPLETION RESULT:      NONE
-UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
+NATIVE ISP LAW:                ABSENT
+UNIFORM GENERATOR:             N1 LOCAL NONRELATIVISTIC ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN
 OFFICIAL UNIT:                 NOT OPENED
 ```

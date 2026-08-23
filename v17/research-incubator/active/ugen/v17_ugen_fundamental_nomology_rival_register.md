@@ -46,8 +46,13 @@ process or an equivalent answer table.
 ### Current evidence
 
 Positive record-history representations and Barandes-style first-order laws
-are mathematically coherent. No native scalable interacting generator has been
-constructed in v17.
+are mathematically coherent. N1 now supplies a bounded Nelson diffusion that
+generates a positive nonrelativistic path law and locally reconstructs
+Schrödinger evolution without a future quantum answer table. Its diffusion
+scale and time-symmetric law are declared, its global quantum holonomy fails
+the circle control, and no complete adaptive or interacting generator exists.
+Because N1 is Markov and divisible, it tests only the broader ordinary-positive
+part of this rival. It is not yet a native indivisible ISP member.
 
 ### Kill condition
 
@@ -176,10 +181,12 @@ The current evidence supports the following order.
 1. **Official gate if explicitly authorized:** Q-Cut, because it supplies a
    scalable class-wide theorem-or-counterexample about positive sufficient
    cuts.
-2. **Retained controls:** E-Comp; C1--C4 pair-history/action/actuality package;
-   Bell-current actuality comparator.
-3. **Next substantive U-Gen object:** one native generator or one bounded
-   class-wide no-go theorem.
+2. **Retained controls/candidates:** E-Comp; C1--C4
+   pair-history/action/actuality package; Bell-current actuality comparator;
+   bounded N1 time-symmetric diffusion candidate.
+3. **Next substantive U-Gen question:** derive an independently physical N1
+   holonomy/sector law and complete-process compiler, or prove a bounded
+   class-wide no-go for a precisely stated repair class.
 4. **Deferred:** official interferometry benchmark until a distinct candidate
    predicts it; clocks until a native law exists; locality/Tsirelson after the
    composition law is fixed; spacetime and gravity until endogenous influence,
@@ -192,13 +199,14 @@ There is no automatic numbered successor after C4.
 ## 7. Author verdict
 
 ```text
-RIVAL A — POSITIVE INDIVISIBLE:       LIVE / NATIVE GENERATOR ABSENT
+RIVAL A — POSITIVE INDIVISIBLE:       LIVE / N1 MARKOV CONTROL-CANDIDATE ONLY
 RIVAL B — DECOHERENCE FUNCTIONAL:     LIVE / STANDARD-QM COMPARATOR EXISTS
 RIVAL C — MODIFIED ACTUALIZATION:     LIVE / NO V17 CANDIDATE
 RIVAL D — COMMON CONTEST:             ADOPTED AUTHOR-SIDE
 EMPIRICALLY SELECTED NOMOLOGY:        NONE
 NEXT OFFICIAL RECOMMENDATION:         Q-CUT ONLY, IF EXPLICITLY AUTHORIZED
-NEXT U-GEN CONSTRUCTION:              NATIVE GENERATOR OR BOUNDED NO-GO
+NATIVE ISP LAW:                       ABSENT
+NEXT U-GEN CONSTRUCTION:              N1 HOLONOMY/PROCESS LAW OR BOUNDED NO-GO
 C-NUMBER EXPANSION:                   CLOSED AT C4
 CLOCK / SPACETIME / GRAVITY:          DEFERRED
 SCIENTIFIC RESULT:                    NONE

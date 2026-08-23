@@ -328,8 +328,15 @@ cleanly if nature does not support it.
   a complete positive Markov path law only after the quantum state,
   Hamiltonian, configuration observable, Born law, external time, full
   quantum current, and least-traffic rule are supplied. It is a
-  standard-quantum control, not a C5 successor or native ISP law. Q-Cut
-  remains the next recommended official unit if separately authorized.
+  standard-quantum control, not a C5 successor or native ISP law. N1 now adds
+  a bounded prior-art positive-dynamics candidate with partial native content
+  only in the input-origin sense: Nelson's positive time-symmetric diffusion
+  locally generates Schrödinger evolution from a
+  universal diffusion scale and mean-Newton law without a future quantum
+  answer table. Its exact circle control shows that the local law does not
+  generate global phase holonomy, and it has no complete adaptive process,
+  QFT, internal-time, native indivisible ISP law, or gravity construction.
+  Q-Cut remains the next recommended official unit if separately authorized.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No v17 scientific evaluator, generated physics artifact, or numerical fit

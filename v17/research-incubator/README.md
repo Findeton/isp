@@ -223,6 +223,15 @@ matching still leaves symmetric counter-traffic, and the minimal Bell rates
 add a least-traffic rule. It is retained as a standard-quantum control, not a
 C5 successor, native ISP law, or gravity result.
 
+N1 is the first bounded prior-art positive-dynamics candidate admitted after
+C4. Its partial native content concerns input origin only; it is not a native
+indivisible ISP law.
+Nelson's time-symmetric positive diffusion locally reconstructs Schrödinger
+dynamics without consuming a table of future quantum processes. Its exact
+circle member also proves the printed local law does not generate the global
+phase-holonomy sectors of a fixed periodic quantum theory. It remains Markov,
+nonrelativistic, incomplete at the apparatus/process level, and unreviewed.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -251,13 +260,16 @@ C4 active files:
 - active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md
 - active/ugen/v17_ugen_c4_future_review_contract.md
 
-Post-C4 routing and comparator files:
+Post-C4 routing, comparator, and N1 files:
 
 - active/ugen/v17_ugen_fundamental_nomology_rival_register.md
 - active/ugen/v17_ugen_bell_current_actuality_comparator.md
 - active/ugen/v17_ugen_bell_current_physical_reality_audit.md
 - active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md
 - active/ugen/v17_ugen_bell_current_future_review_contract.md
+- active/ugen/v17_ugen_n1_time_symmetric_diffusion_candidate.md
+- active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md
+- active/ugen/v17_ugen_n1_future_review_contract.md
 
 Canonical status: `active/ugen/README.md`.
 
@@ -275,6 +287,9 @@ Active working package:
 - `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
 - `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`
 - `active/ugen/v17_ugen_bell_current_future_review_contract.md`
+- `active/ugen/v17_ugen_n1_time_symmetric_diffusion_candidate.md`
+- `active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md`
+- `active/ugen/v17_ugen_n1_future_review_contract.md`
 
 - `active/ugen/README.md`
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`

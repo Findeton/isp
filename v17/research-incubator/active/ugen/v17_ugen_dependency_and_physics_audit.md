@@ -25,8 +25,8 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE PHYSICS:         C-SERIES CLOSED AT C4;
-                                  NATIVE GENERATOR OR BOUNDED NO-GO
+NEXT AUTHOR-SIDE PHYSICS:         N1 BOUNDED POSITIVE CANDIDATE;
+                                  GLOBAL HOLONOMY/PROCESS LAW OR NO-GO
 BELL-CURRENT ACTUALITY:           STANDARD-QUANTUM COMPARATOR ONLY
 FUNDAMENTAL NOMOLOGY:             PLURAL RIVAL CONTEST / NONE SELECTED
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
@@ -576,6 +576,16 @@ not a native ISP generator and not Barandes indivisibility. It is retained so
 future candidates cannot import the quantum current and configuration packet
 while claiming stochastic derivation.
 
+N1 now supplies the first bounded candidate that improves on that control.
+Nelson's time-symmetric diffusion evolves an ordinary-positive configuration
+path law from initial density/current data, $\nu=\hbar/(2m)$, and mean-Newton
+dynamics without reading a supplied future wavefunction at each time. The
+local Schrödinger representation is exact under its gradient and regularity
+premises. The same local law admits every constant circulation on a circle,
+whereas a fixed periodic quantum sector admits only quantized holonomy. Thus
+N1 earns partial native dynamical content but not a global quantum state space
+or complete apparatus compiler.
+
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
 quantum dynamics plus modified actualization. The common operational and
@@ -625,10 +635,14 @@ C-NUMBER EXPANSION:              CLOSED AT C4
 NOMOLOGY RIVAL REGISTER:         PLURAL CONTEST / NONE SELECTED
 BELL-CURRENT PATH LAW:           COMPLETE GIVEN QUANTUM INPUTS
 BELL CURRENT/MINIMALITY:         ADDITIONAL INPUTS / NOT BORN-SELECTED
-NEXT AUTHOR-SIDE TARGET:         NATIVE COMPLETE LAW FOR WEIGHTS,
-                                 CORRELATIONS, REFERENT, AND HELD-OUT RECORDS
-                                 OR BOUNDED CLASS-WIDE NO-GO
-PHYSICAL GENERATOR:              NOT FOUND
+N1 POSITIVE DIFFUSION:           BOUNDED POSITIVE-DYNAMICS CANDIDATE / MARKOV
+N1 LOCAL SCHRODINGER FORM:       EXACT UNDER PRINTED PREMISES
+N1 GLOBAL HOLONOMY:              NOT GENERATED / CIRCLE OBSTRUCTION
+N1 COMPLETE PROCESS:             ABSENT
+NEXT AUTHOR-SIDE TARGET:         INDEPENDENT N1 HOLONOMY PRINCIPLE OR
+                                 BOUNDED CLASS-WIDE NO-GO
+NATIVE ISP LAW:                  ABSENT
+PHYSICAL GENERATOR:              FOUND ONLY AT LOCAL NONRELATIVISTIC SCOPE
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE
 PIN / REVIEW / RESULT:           NONE
