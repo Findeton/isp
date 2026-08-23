@@ -1,6 +1,6 @@
 # ISP v17 — U-Gen active routing note
 
-**Status:** ACTIVE AUTHOR-SIDE ROUTING / DEPENDENCY AUDIT PENDING / NOT A PIN
+**Status:** ACTIVE AUTHOR-SIDE ROUTING / DEPENDENCY AUDIT COMPLETE / NOT A PIN
 **Date:** 2026-08-23
 **Scientific result awarded:** none
 **Authority created:** none
@@ -10,9 +10,11 @@ law generate the complete calibrated quantum process interface without
 receiving the target process, future settings, or equivalent phase-sensitive
 law data as input?
 
-The preserved U-Gen drafts are not yet one freeze-ready unit. This routing note
-is the canonical active status document until their premises and quantifiers
-are re-audited against Q-Cut and E-Comp.
+The preserved U-Gen drafts are not one freeze-ready unit. This routing note is
+the canonical active status document. Their premises and quantifiers have now
+been re-audited against Q-Cut and E-Comp in
+`v17_ugen_dependency_and_physics_audit.md`; the next author-side task is the
+finite composition-lift classification identified there.
 
 ## Current inputs
 
@@ -39,6 +41,10 @@ Active author-side dependencies:
 Neither dependency is an accepted result. U-Gen may use them only as candidate
 controls until their own future authorization, freeze, review, and
 adjudication occur.
+
+Active audit:
+
+- `v17_ugen_dependency_and_physics_audit.md`
 
 ## Required split before any pin
 
@@ -122,8 +128,9 @@ Failure must identify an unavoidable input rather than announce that
 ```text
 CANONICAL ACTIVE STATUS:       THIS ROUTING NOTE
 EXACT PRESERVED DRAFTS:        PRESENT / HASHED
-DEPENDENCY AUDIT:              PENDING
+DEPENDENCY AUDIT:              COMPLETE AUTHOR-SIDE
 ONE-PIN U-GEN PACKAGE:         TOO BROAD / MUST SPLIT
+NEXT MATHEMATICAL TARGET:      FINITE COMPOSITION-LIFT CLASSIFICATION
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             NONE
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

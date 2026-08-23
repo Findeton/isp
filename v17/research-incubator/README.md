@@ -106,9 +106,18 @@ if any, selects the quantum structure. It is result-neutral and has not been
 reviewed independently. The inherited package is too broad for one pin and is
 not freeze-ready. Its canonical active routing note splits the work into
 source-completion classification, scalable uniformity/information
-displacement, and a constructive positive-generator contest.
+displacement, and a constructive positive-generator contest. The author-side
+dependency/physics audit is complete and identifies a finite
+composition-lift classification as the next mathematical task; no such lift
+has yet been constructed or selected.
 
 Canonical status: `active/ugen/README.md`.
+
+Active working package:
+
+- `active/ugen/README.md`
+- `active/ugen/v17_ugen_dependency_and_physics_audit.md`
+- `active/ugen/ACTIVE_SHA256.txt`
 
 Core snapshots:
 

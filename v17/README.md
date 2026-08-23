@@ -249,8 +249,11 @@ cleanly if nature does not support it.
   review has been authorized. U-Gen now has one canonical routing note and
   must split into source-completion classification, scalable
   uniformity/information displacement, and a constructive generator contest
-  before any pin. Repository inclusion does not promote any draft, authorize
-  a Paper 04B successor, or open Paper 05.
+  before any pin. Its author-side physics audit rejects Borel set-sizedness and
+  finite evaluator syntax as explanatory results, and identifies a finite
+  composition-lift classification as the next mathematical target. Repository
+  inclusion does not promote any draft, authorize a Paper 04B successor, or
+  open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
