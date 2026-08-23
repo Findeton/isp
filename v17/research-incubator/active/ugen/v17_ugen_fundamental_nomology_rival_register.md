@@ -99,6 +99,15 @@ Rival A must earn a target-independent physical carrier and then state
 indivisibility only relative to its licensed interface. It need not and cannot
 claim that no abstract dilation exists.
 
+The reflection-positive Euclidean control supplies a genuine positive result
+without promoting it into Rival A's ontology. One exact stationary positive
+Markov law plus a supplied reflection reconstructs a Hilbert quotient,
+Hamiltonian, and Lorentzian endpoint family with stochastic nondivision. But
+the Euclidean chain is divisible and is not proved to be the Lorentzian actual
+process; its transfer matrix is information-equivalent to the Hamiltonian.
+Thus positive-first Hilbert reconstruction is possible, while the target-blind
+source law, complete interventions, and actuality bridge remain absent.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -259,7 +268,11 @@ The current evidence supports the following order.
    nontrivial relational response coexist, but multiple response laws remain;
    reference loss, shared-reference common causes, and target-advice capacity
    are separately controlled. No reference, phase, clock, law, or ontology is
-   selected. A real implementation, candidate, and result remain absent.
+   selected. The reflection-positive Euclidean control additionally proves
+   that one positive whole-law packet can reconstruct a coherent Hilbert
+   member, but its supplied transfer law and temporal reflection fail native
+   source and form-neutrality credit. A real implementation, candidate, and
+   result remain absent.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -305,6 +318,9 @@ U0 BARE-CARRIER DYNAMICS:               UNDERDETERMINED / BOUNDED CONTROL
 U0 PHYSICAL-REFERENCE SOURCE:           ADMISSIBLE CLASS / NOT SELECTED
 U0 RELATIVE-ORBIT THEOREMS:             EXACT AUTHOR-SIDE / NOT REVIEWED
 U0 REFERENCE AS LAW SELECTOR:           NONSELECTING IN EXACT FINITE CONTROL
+U0 REFLECTION-POSITIVE CONTROL:         RP-L3 / POSITIVE POSSIBILITY ONLY
+U0 EUCLIDEAN/LORENTZIAN ACTUALITY:      DISTINCT / BRIDGE ABSENT
+U0 RP SOURCE/COMPLETE PROCESSES:        ABSENT
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 NEXT U0 BOUNDARY:                       T3-R4 IMPLEMENTATION/CUSTODY AUTHORITY / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4

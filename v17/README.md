@@ -463,6 +463,17 @@ cleanly if nature does not support it.
   reversible ontology or thermodynamic heat. They sharpen the need for one
   source-generated parent with typed seams, records, memory, erasure, and
   division, but construct no native law and open no official cycle.
+  A reflection-positive Euclidean control now supplies the strongest exact
+  positive result on the other side of that boundary. One stationary
+  two-state Markov law plus a supplied reflection reconstructs a Hilbert
+  quotient, $H=-\log T$, and a Lorentzian endpoint family with an exact
+  nondivision witness. But the Euclidean Markov process and reconstructed
+  Lorentzian process are different objects, and $T$ is
+  information-equivalent to $H$ in the witness. Osterwalder--Schrader
+  reconstruction therefore proves that positive-first Hilbert reconstruction
+  is possible; it does not generate the positive law, establish Euclidean
+  actuality, or supply complete interventions. Euclidean time, reflection,
+  fields, lattices, actions, and Markov ontology remain uninherited.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

@@ -344,6 +344,16 @@ than free notation. The proof applies to real and complex lifts alike and
 does not select reversible ontology, attach a thermodynamic cost, or construct
 the missing source law.
 
+The reflection-positive Euclidean control now provides the exact constructive
+counterweight. A stationary positive two-state Markov measure and reflection
+reconstruct $\mathbb C^2$, a positive Hamiltonian, and—after analytic
+continuation—a Lorentzian positive endpoint family with a sharp nondivision
+witness. The Euclidean sample law is divisible and is not that Lorentzian
+process; moreover its transfer matrix is information-equivalent to the
+Hamiltonian. The control therefore demonstrates positive-first Hilbert
+reconstruction while leaving the source measure, actuality bridge, complete
+interventions, and form-neutral U0 law absent.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -379,6 +389,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_barandes_source_completion_audit.md
 - active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
 - active/ugen/v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
+- active/ugen/v17_ugen_u0_reflection_positive_euclidean_control.md
 - active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
 - active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md

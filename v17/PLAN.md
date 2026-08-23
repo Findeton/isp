@@ -338,6 +338,15 @@ cardinality at least the largest input fiber. The conclusion is scalar-field
 neutral and does not infer fundamental reversibility or Landauer heat. It
 separates objectwise representation from one physical composition law and
 leaves the native source law, physical carrier, and implementation unselected.
+A bounded reflection-positive Euclidean control now proves a complementary
+possibility result. An exact positive two-sided Markov law reconstructs a
+two-dimensional Hilbert quotient and Hamiltonian; analytic continuation then
+yields an endpoint stochastic family that fails ordinary composition at a
+printed seam. The positive Euclidean chain is nevertheless divisible and is
+not the reconstructed Lorentzian process. Its transfer matrix is exactly
+equivalent to the Hamiltonian, so a per-target Euclidean measure fails the
+no-equivalent-input gate. This establishes positive-first representation, not
+Euclidean actuality, complete-process generation, or native U0 physics.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

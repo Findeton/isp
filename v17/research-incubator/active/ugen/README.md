@@ -318,6 +318,18 @@ but neither select reversible ontology nor imply thermodynamic heat. They
 locate the missing composition data without generating the target-blind
 source law.
 
+The reflection-positive Euclidean control now tests one of the strongest known
+positive-first reconstruction route at exact finite scope. One stationary
+two-state Markov measure with a supplied reflection reconstructs
+$\mathbb C^2$, $H=-\log T$, and a Lorentzian endpoint family whose two-half
+composition fails maximally. The Euclidean positive process itself remains
+Markov and divisible, however, and is not proved to be Lorentzian actuality;
+the transfer matrix is also information-equivalent to the Hamiltonian. Thus
+reflection positivity proves that Hilbert structure can be secondary to a
+positive whole-law packet, but it does not generate that packet or meet U0's
+complete intervention and no-equivalent-input gates. No Euclidean, lattice,
+continuum, action, reflection, time, or Markov ontology is inherited.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -361,6 +373,7 @@ Active audit:
 - v17_ugen_u0_barandes_source_completion_audit.md
 - v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
 - v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
+- v17_ugen_u0_reflection_positive_euclidean_control.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -572,6 +585,15 @@ Failure must identify an unavoidable input rather than announce that
 26. Complex amplitudes do not create a multiplicative group section of
     ordinary stochastic composition. Any coherent seam data must be generated
     by the source law rather than independently chosen for each endpoint.
+27. Ordinary positivity of a Euclidean measure does not imply reflection
+    positivity, and reflection positivity does not identify Euclidean samples
+    with actual Lorentzian histories.
+28. A transfer matrix, complete Schwinger hierarchy, or Euclidean measure
+    tailored to a target can be information-equivalent to the target quantum
+    dynamics. Reconstruction is not source completion.
+29. Vacuum correlators and reconstructed closed evolution are not yet a
+    complete adaptive process law with physical preparations, interventions,
+    readers, records, erasers, and composites.
 
 ## Present disposition
 
@@ -637,6 +659,9 @@ U0 REAL ENDPOINT DILATION:     EXACT AT <= N^2 / COMPLETENESS NOT EARNED
 U0 REVERSIBLE SECTION:         IMPOSSIBLE WITH NONTRIVIAL IDEMPOTENT
 U0 MANY-TO-ONE DILATION:       MEMORY/CORRELATION/RESET MUST CARRY LOSS
 U0 COHERENT DILATION PACKET:   CD-L2 AUTHOR-SIDE / NO NATIVE LAW
+U0 REFLECTION-POSITIVE CONTROL: RP-L3 AUTHOR-SIDE / POSITIVE POSSIBILITY
+U0 EUCLIDEAN/LORENTZIAN BRIDGE: RECONSTRUCTION YES / ACTUALITY NOT DERIVED
+U0 RP SOURCE/INTERVENTIONS:     ABSENT / TARGET-BLIND RULE STILL MISSING
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
