@@ -25,7 +25,8 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE PHYSICS:         NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
+NEXT AUTHOR-SIDE PHYSICS:         C4 ACTUALITY BOUNDARY CONSTRUCTED;
+                                  NATIVE COMPLETE LAW STILL ABSENT
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
 E-COMP DEPENDENCY:                CANDIDATE ONLY / NOT LOAD-BEARING
 OFFICIAL UNIT OR REVIEW:          NONE
@@ -536,6 +537,22 @@ flux-quantization circularities. This makes C1 Track A physically meaningful
 enough for later candidate construction, but it does not fill the native-law
 slot or earn an empirical result.
 
+C4 now prevents the phrase “one actual history” from hiding three different
+coordinates. Its exact finite packet proves when $D(A,A)$ is a Kolmogorov law
+on the full event algebra or a declared record algebra, shows that record
+probabilities do not select hidden within-record refinements, and adds an
+even/odd parity example in which every one- and two-time distribution agrees
+while the three-time trajectory law differs. Thus even a complete pairwise
+first-order $\Gamma$ table does not universally select a Kolmogorov tower.
+
+This is not a demand for a deterministic cause of the particular random
+sample. Irreducible chance is legitimate once the physical referent and its
+law are typed. The companion source audit therefore treats Barandes fairly:
+thin actuality at licensed targets can stop at the minimalist law, while a
+thick complete-path assertion owes a realizer or a different actuality rule.
+No branch is selected, no collapse law is constructed, and no empirical or
+gravity result follows.
+
 1. Q-Cut is author-side ready for an authorization decision, but it is not an
    accepted theorem and cannot be used as a premise.
 2. E-Comp is an active author-side lemma package, but it is not frozen or
@@ -571,8 +588,13 @@ ACTION-KERNEL SCHEMA:            TYPED / NATIVE MEMBER ABSENT
 C3 ACTION CHARACTER:             EXACT AUTHOR-SIDE / NOT REVIEWED
 C3 PHYSICAL SOURCE CONTRACT:     DRAFTED / NOT FREEZE-READY
 C3 METROLOGY AUDIT:              H/E/FLUX DEPENDENCIES EXPOSED
-NEXT AUTHOR-SIDE TARGET:         NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
-                                 OR BOUNDED CLASS THEOREM
+C4 INTERFERENCE/ADDITIVITY:      EXACT AUTHOR-SIDE / NOT REVIEWED
+C4 RECORD-PARTITION LAW:         EXACT / HIDDEN REFINEMENT UNSELECTED
+C4 FIRST-ORDER REALIZER:         PAIRWISE DATA NONUNIQUE IN GENERAL
+C4 ACTUALITY COMPARISON:         SOURCE-SCOPED / NO BRANCH SELECTED
+NEXT AUTHOR-SIDE TARGET:         NATIVE COMPLETE LAW FOR WEIGHTS,
+                                 CORRELATIONS, REFERENT, AND HELD-OUT RECORDS
+                                 OR FROZEN EMPIRICAL COLLAPSE WEDGE
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE

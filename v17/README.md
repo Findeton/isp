@@ -310,8 +310,17 @@ cleanly if nature does not support it.
   composition, electromagnetic holonomy, and gravitational phase controls,
   while separately charging dimensionless boundary phases and modern-SI/
   flux-quantization dependencies. It evaluates no data and constructs no
-  native generator. Q-Cut remains the next recommended official unit if
-  separately authorized.
+  native generator. C4 now fixes the next actuality boundary author-side: real
+  interference exactly obstructs a Kolmogorov reading of $D(A,A)$ on the same
+  full finite event algebra; weak decoherence licenses ordinary probabilities
+  on a declared record partition; those records do not select hidden
+  within-fiber histories; and even complete pairwise first-order laws can
+  leave a three-time parity trajectory undetermined. Its source-scoped
+  comparison distinguishes record-only, Barandes, consistent-history,
+  coevent, Bohm, objective-collapse, and Everett branches without selecting
+  one. It does not demand a deterministic cause for the particular random
+  sample and constructs no native actuality law or empirical wedge. Q-Cut
+  remains the next recommended official unit if separately authorized.
   Repository inclusion
   does not promote any draft, authorize a Paper
   04B successor, or

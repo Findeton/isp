@@ -63,6 +63,22 @@ matrix. It keeps propagation action separate from dimensionless apparatus
 boundary transport and exposes revised-SI and flux-quantization dependencies.
 It remains result-neutral and constructs no native member.
 
+C4 now closes the immediate semantic ambiguity around actuality without
+inventing its missing law. It proves, author-side, the exact real-interference
+condition for ordinary probability on a finite event algebra and the weak-
+decoherence condition for a declared record partition. It then proves two
+independent nonselection results: record probabilities admit many hidden
+within-fiber lifts, and equal one- and two-time laws can support opposite
+three-time parity trajectories. The source comparison prints record-only,
+Barandes, consistent-history, coevent, Bohm, objective-collapse, and Everett
+branches without choosing among them.
+
+The resulting debt is narrower than “why this random outcome?” A stochastic
+theory may take the realized sample as irreducible chance. What remains to be
+supplied is the physical referent and its complete law. C4 supplies neither a
+native generator nor a collapse candidate, so it does not change the official
+ordering.
+
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
     PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
@@ -77,8 +93,13 @@ It remains result-neutral and constructs no native member.
     C1 TRACK A SOURCE REFERENT:     PHYSICALLY UNDER-SPECIFIED
     C3 ACTION CHARACTER:            EXACT AUTHOR-SIDE / NOT REVIEWED
     C3 PHYSICAL GROUNDING:          DRAFTED / NOT FREEZE-READY
-    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
-                                    OR BOUNDED CLASS-WIDE THEOREM
+    C4 INTERFERENCE/PROBABILITY:    EXACT AUTHOR-SIDE / NOT REVIEWED
+    C4 RECORD ACTUALITY:            ORDINARY / FINE LAW UNSELECTED
+    C4 PAIRWISE REALIZER:           NONUNIQUE IN GENERAL
+    C4 ACTUALITY BRANCH:            NONE SELECTED
+    NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE COMPLETE LAW FOR WEIGHTS,
+                                    CORRELATIONS, REFERENT, HELD-OUT RECORDS;
+                                    OR FROZEN EMPIRICAL COLLAPSE WEDGE
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
@@ -210,7 +231,7 @@ It could not establish:
 
 ## 8. Authority wall
 
-No Q-Cut pin, PC5/PC6/C2/C3 review, U-Gen C1 pin, numbered paper, or
+No Q-Cut pin, PC5/PC6/C2/C3/C4 review, U-Gen C1 pin, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
 

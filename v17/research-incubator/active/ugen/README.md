@@ -9,7 +9,7 @@ U-Gen is the large v17 question: can one uniform native law generate the
 complete calibrated quantum process interface without receiving the target
 process, future settings, or equivalent phase-sensitive law data as input?
 The ordinary-positive indivisible whole-law route remains the strongest ISP
-contestant. C1--C3 now also test whether relational pair-history structure is
+contestant. C1--C4 now also test whether relational pair-history structure is
 irreducible at the compositional level while ordinary positivity remains exact
 for stable records.
 
@@ -118,6 +118,22 @@ sectors; these tests validate holonomy but do not automatically remeasure the
 universal scale independently. C3 constructs no native generator and is not
 freeze-ready.
 
+C4 now fixes the actuality boundary that C3 left open. For a finite normalized
+strongly positive pair-history law, real interference is exactly the
+obstruction to treating $\mu(A)=D(A,A)$ as an ordinary probability on the same
+full event algebra. A declared record partition carries ordinary probabilities
+exactly under weak decoherence, but those probabilities do not select a hidden
+within-record history. A stronger parity control shows that even all one- and
+two-time distributions can agree while three-time trajectory laws differ.
+
+The companion reality investigation distinguishes record-only, Barandes,
+consistent-history, quantum-measure/coevent, Bohm, objective-collapse, and
+Everett branches without selecting one. It also makes a crucial correction:
+irreducible chance need not derive a deterministic selector for the particular
+sample that occurs. The missing coordinates are the physical referent and its
+law. C4 constructs neither a native actuality law nor an empirical
+discriminator, and it remains author-side only.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -145,6 +161,11 @@ controls until their own future authorization, freeze, review, and
 adjudication occur.
 
 Active audit:
+
+- v17_ugen_c4_interference_actuality_obstruction_candidate.md
+- v17_ugen_c4_actuality_selector_reality_investigation.md
+- v17_ugen_c4_primary_source_scope_and_readiness_audit.md
+- v17_ugen_c4_future_review_contract.md
 
 - v17_ugen_c3_action_character_theorem_candidate.md
 - v17_ugen_c3_physical_action_phase_grounding_protocol.md
@@ -259,6 +280,10 @@ Failure must identify an unavoidable input rather than announce that
    a composition classifier.
 7. Ordinary positivity of actual records does not imply that the complete
    compositional predictive law is diagonal or Kolmogorov.
+8. One random outcome need not have a hidden deterministic selector, but a
+   claimed fine trajectory still requires a typed referent and law.
+9. Decoherence licenses probabilities on a tested record algebra; it does not
+   select a hidden refinement or a unique actuality ontology.
 
 ## Present disposition
 
@@ -287,8 +312,13 @@ ACTION-KERNEL SCHEMA:          TYPED / STANDARD QUANTUM MEMBER ZERO GAIN
 C3 ACTION CHARACTER:           EXACT AUTHOR-SIDE / NOT REVIEWED
 C3 PHYSICAL GROUNDING:         PROTOCOL DRAFTED / SOURCES NOT FROZEN
 C3 METROLOGY INDEPENDENCE:     PARTIAL / H, E AND FLUX DEBTS PRINTED
-NEXT AUTHOR-SIDE TARGET:       NATIVE WEIGHT/CORRELATION/ACTUALITY RULE
-                               OR BOUNDED CLASS-WIDE THEOREM
+C4 INTERFERENCE/PROBABILITY:   EXACT AUTHOR-SIDE / NOT REVIEWED
+C4 RECORD ACTUALITY:           ORDINARY / HIDDEN REFINEMENT UNSELECTED
+C4 PAIRWISE REALIZER:          NONUNIQUE IN GENERAL / PARITY CONTROL
+C4 ACTUALITY BRANCH:           NONE SELECTED / NO EMPIRICAL RESULT
+NEXT AUTHOR-SIDE TARGET:       NATIVE COMPLETE LAW FOR WEIGHTS,
+                               CORRELATIONS, REFERENT, AND HELD-OUT RECORDS
+                               OR A FROZEN EMPIRICAL COLLAPSE WEDGE
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

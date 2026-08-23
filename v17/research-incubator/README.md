@@ -191,6 +191,19 @@ action-valued propagation separate from dimensionless laser/boundary
 transport and exposes revised-SI and superconducting-flux circularities. No
 data are evaluated, no source bytes are frozen, and no native law is found.
 
+C4 now isolates the remaining actuality coordinate without proposing a new
+interpretation. Its exact finite candidate proves that real interference is
+the obstruction to treating $D(A,A)$ as a Kolmogorov law on the same full
+event algebra, and that weak decoherence is exactly what licenses ordinary
+probabilities on a declared record partition. Record probabilities do not
+select hidden histories inside their fibers, and an even/odd parity control
+shows that all pairwise first-order transition laws can agree while a
+three-time trajectory law differs. A source-scoped comparison distinguishes
+Barandes, consistent/decoherent histories, quantum measure/coevents, Bohm,
+objective collapse, Everett, and record-only agnosticism. It selects none and
+correctly does not demand a deterministic selector for an irreducibly random
+sample. No native actuality law or empirical result exists.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -211,6 +224,13 @@ C3 active files:
 - active/ugen/v17_ugen_c3_physical_action_phase_grounding_protocol.md
 - active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md
 - active/ugen/v17_ugen_c3_future_review_contract.md
+
+C4 active files:
+
+- active/ugen/v17_ugen_c4_interference_actuality_obstruction_candidate.md
+- active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md
+- active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md
+- active/ugen/v17_ugen_c4_future_review_contract.md
 
 Canonical status: `active/ugen/README.md`.
 
