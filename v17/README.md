@@ -257,7 +257,13 @@ cleanly if nature does not support it.
   and one homogeneous two-step scalar classifies the full positive repeated
   sequence only inside that declared coherent subclass. The candidate does
   not derive unitary composition, select a seam law, or solve tensor,
-  adaptive, interaction, QFT, time, spacetime, or gravity gates. Repository
+  adaptive, interaction, QFT, time, spacetime, or gravity gates. Its
+  author-side selector tournament now shows exactly why reconstruction axioms
+  may select a quantum framework while leaving the actual Hamiltonian or
+  composition member free, and why gate-set tomography identifies relational
+  composition data empirically rather than deriving its origin. The next
+  preparatory target is a two-generator gauge-covariant procedure-groupoid
+  classification with fixed held-out closed words. Repository
   inclusion does not promote any draft, authorize a Paper 04B successor, or
   open Paper 05.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.

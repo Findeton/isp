@@ -181,7 +181,7 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "878c53b00622600f93df1475645c8a55bb3e630ffe158d8ad0be5e7e47354629"
+    sha256: "950f808f78b399230a76cba78e5ea9eb9382728480e8d426cd9a3afb39a3e420"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-dependency-audit-complete"
@@ -194,7 +194,7 @@ artifacts:
     maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "82ac0e28766cc11971895a1d4233c285b901164ff6166960925557388a620396"
+    sha256: "6266cc4278ce6da77900e7090260e9c1e5e2658ccc812daf331a927df29b5e50"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
@@ -231,6 +231,32 @@ artifacts:
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "readiness and scope audit for the candidate balanced two-state seam classification; no scientific result or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_composition_selector_tournament.md"
+    sha256: "8bc59ae2839da3d60cbddb98c35fcf635ba9921ec56518cd3740ce8c4ac51ef5"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-investigation"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_pc2_balanced_seam_classification_candidate.md", "snapshots/v17_ugen_barandes_source_scope_audit.md"]
+    source_audit_status: "author-side-primary-source-context-audited-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
+    canonical: false
+  - path: "active/ugen/v17_ugen_next_gate_decision.md"
+    sha256: "7b5e78fa722df51dd145a944947d2863e28a2799e2f114327663b9442b51a1b6"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-routing-decision"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md"]
+    source_audit_status: "inherits-author-side-selector-audit"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "nonbinding decision to prepare a held-out procedure-groupoid composition gate while keeping Q-Cut as the recommended next official unit"
     canonical: false
   - path: "snapshots/p04_quantum_record_successor_investigation.md"
     sha256: "68b56d296dd703af2d3ba24247be60e1e1ee58ae75312f0efa34f49d46a85323"

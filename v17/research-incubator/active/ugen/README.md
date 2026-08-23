@@ -19,6 +19,14 @@ classification. It does not complete U-Gen A: multiple primitives,
 higher-dimensional carriers, tensor composition, adaptive instruments,
 interaction generation, and physical selection remain open.
 
+The active composition-selector tournament now separates framework
+reconstruction, member selection, empirical calibration, and ontology. Its
+exact PC2 feasibility table shows that positivity, homogeneity,
+reversibility, continuity, reciprocity, and nondivision do not select the
+composition member. It identifies PC3—a two-generator gauge-covariant
+procedure-groupoid classification with preregistered held-out closed
+words—as the next author-side construction.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -50,6 +58,8 @@ Active audit:
 - `v17_ugen_dependency_and_physics_audit.md`
 - `v17_pc2_balanced_seam_classification_candidate.md`
 - `v17_pc2_author_readiness_audit.md`
+- `v17_ugen_composition_selector_tournament.md`
+- `v17_ugen_next_gate_decision.md`
 
 ## Required split before any pin
 
@@ -137,6 +147,8 @@ DEPENDENCY AUDIT:              COMPLETE AUTHOR-SIDE
 ONE-PIN U-GEN PACKAGE:         TOO BROAD / MUST SPLIT
 PC2 BALANCED SEAM SUBCASE:     AUTHOR-SIDE COMPLETE / NOT REVIEWED
 FULL COMPOSITION-LIFT TARGET:  MULTI-PRIMITIVE / TENSOR / ADAPTIVE OPEN
+SELECTOR TOURNAMENT:           COMPLETE AUTHOR-SIDE / NOT REVIEWED
+NEXT AUTHOR-SIDE TARGET:       PC3 HELD-OUT PROCEDURE-GROUPOID TRANSPORT
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             NONE
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

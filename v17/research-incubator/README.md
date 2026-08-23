@@ -113,7 +113,12 @@ exact subcase is now constructed author-side: the balanced two-state PC2
 candidate classifies flat unitary lifts, gauge-invariant internal seam data,
 homogeneous repeated-block laws, and delayed nondivision controls. It does not
 derive the coherent law class or solve the higher-dimensional, tensor,
-adaptive, interaction, or physical-selection gates.
+adaptive, interaction, or physical-selection gates. A new author-side
+selector tournament now distinguishes framework reconstruction from
+dynamical-member and ontology selection. It identifies a bounded PC3
+procedure-groupoid transport classification with held-out closed words as the
+next U-Gen construction, while preserving Q-Cut as the recommended next
+official unit if separately authorized.
 
 Canonical status: `active/ugen/README.md`.
 
@@ -123,6 +128,8 @@ Active working package:
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`
 - `active/ugen/v17_pc2_balanced_seam_classification_candidate.md`
 - `active/ugen/v17_pc2_author_readiness_audit.md`
+- `active/ugen/v17_ugen_composition_selector_tournament.md`
+- `active/ugen/v17_ugen_next_gate_decision.md`
 - `active/ugen/ACTIVE_SHA256.txt`
 
 Core snapshots:
