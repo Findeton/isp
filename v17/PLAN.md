@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 pin audit passes; mathematical construction next**
+Paper 03 mathematics green-unreviewed; construction audit next**
 
 ## 0. Authority and workflow
 
@@ -212,6 +212,15 @@ system--probe construction, causal-factorization scope, operation-level
 no-signalling, split/type-III and no-natural-state restrictions, and the
 global contextual cost of the positive history model. One mathematics-only
 construction is now open; no implementation or later phase is opened.
+
+**Construction state.** The self-contained candidate freezes at ledger #30.
+It constructs variance-correct AQFT packet evaluation, localized system--probe
+instruments, causal factorization, spacelike schedule independence,
+nonselective no-signalling, selective steering, Bell compatibility, the
+relativistic procedure quotient, and positive contextual predictive histories.
+Its claimed rung-7 ceiling remains green-unreviewed and explicitly retains the
+declared background, global predictive-state cost, ontology nonselection, and
+actuality debt.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
@@ -470,12 +479,13 @@ Paper 01                            TERMINAL ACCEPT-WITH-SCOPE
 Paper 02 v2                         TERMINAL ACCEPT-WITH-SCOPE
 Paper 03 mathematical pin           FROZEN RESULT-NEUTRAL
 Paper 03 author audit               PASS RESULT-NEUTRAL
-Paper 03 construction               NEXT
-Paper 03 review                     CLOSED PENDING CONSTRUCTION
+Paper 03 construction               GREEN-UNREVIEWED
+Paper 03 construction audit         NEXT
+Paper 03 review                     CLOSED PENDING AUDIT/PROTOCOL
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is one self-contained Paper 03 mathematical
-construction. No implementation, clock, spacetime-emergence, or gravity unit
-is open.
+The next scientific action is the Paper 03 construction audit, followed—only
+if it passes—by a frozen three-lens hostile-review protocol. No implementation,
+clock, spacetime-emergence, or gravity unit is open.

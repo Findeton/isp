@@ -205,6 +205,20 @@ selection, or a Barandes completion.
 | Paper 03 author audit | `PASS — RESULT-NEUTRAL` | source/type/quantifier audit | authorizes one mathematical construction | awards no theorem or physical coordinate |
 | Paper 03 result | `UNCONSTRUCTED` | frozen result-neutral pin | nothing until construction and review | QFT ontology, internal time, spacetime derivation, gravity |
 
+## Paper 03 green-unreviewed construction balance
+
+| Constructed object | Inputs | Provisional status | Debt retained |
+|---|---|---|---|
+| variance-correct AQFT packet category | declared `Loc`, algebra functor, state class | `GREEN-UNREVIEWED CONDITIONAL MATHEMATICS` | comparator spacetime/net/state/dynamics un-derived |
+| localized induced instruments | system--probe scattering scheme | `GREEN-UNREVIEWED` | only admitted coupling packets; no universal collapse law |
+| causal factorization and schedule independence | factorizing scattering maps | `GREEN-UNREVIEWED` | comparator causal order declared |
+| nonselective no-signalling and steering split | localized complete instruments and records | `GREEN-UNREVIEWED` | no Bell-local ontology or actuality |
+| Bell compatibility | Summers--Werner existence theorem plus separate split-qubit calibration | `GREEN-UNREVIEWED EXISTENTIAL/CONTROL` | no exact universal probe realization or all-model claim |
+| relativistic procedure quotient | Paper 02 v2 architecture plus packet testers | `GREEN-UNREVIEWED — REACHABLE INTERFACE` | new readers may refine it |
+| positive predictive histories | algebraic states/conditional process objects | `GREEN-UNREVIEWED EXISTENCE CONTROL` | global, contextual, memory-bearing, nonexplanatory, unselected |
+| preferred-frame conclusion | covariance plus spacelike schedule equality | `GREEN-UNREVIEWED OPERATIONAL SCOPE` | idle microscopic preferred structure not excluded |
+| QFT ontology / actuality / internal time / gravity | none | `UNCONSTRUCTED` | cannot be promoted by this candidate |
+
 ## Derivation balance
 
 The live adjudicated balance is:

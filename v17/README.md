@@ -30,6 +30,12 @@ cleanly if nature does not support it.
   It repairs the v1 source-domain error, constructs a positive contextual
   existence model, and leaves the particular ontology, Barandes completion,
   and microscopic actuality unselected.
+- Paper 03 status: **GREEN-UNREVIEWED MATHEMATICAL CONSTRUCTION —
+  RELATIVISTIC OPERATIONAL ADEQUACY WITH GLOBAL ONTOLOGY DEBT**. The candidate
+  constructs localized AQFT instruments, causal/schedule/no-signalling
+  theorems, a relativistic procedure quotient, and a positive global
+  predictive-history representation on declared comparator packets. Nothing
+  is terminal before independent review.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -175,6 +181,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   controls, 76 hostile attacks, quantifier ledger, and ontology walls.
 - `note-paper03-pin-audit.md` — result-neutral source, variance, type,
   quantifier, and construction-feasibility audit; it awards no coordinate.
+- `paper-03-relativistic-quantum-operational-adequacy.md` — green-unreviewed
+  mathematics; conditional relativistic adequacy and explicit ontology debt.
 
 ## Permanent honesty wall
 

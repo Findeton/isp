@@ -732,3 +732,27 @@ predictive-history construction.
 Disposition: `FIT-FOR-CONSTRUCTION`. This awards no Paper 03 coordinate. One
 self-contained mathematics-only construction may begin; code, clocks,
 spacetime emergence, matter--geometry, and gravity remain closed.
+
+## 2026-08-22 — PAPER 03 MATHEMATICS GREEN-UNREVIEWED (v17 LEDGER #30)
+
+The self-contained candidate freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/paper-03-relativistic-quantum-operational-adequacy.md` | `6506c950ec26354e063960631aaabfb759216ddf0822f3be8057dad2250036af` | 1,068 LF / 46,560 bytes |
+
+The candidate constructs a variance-correct locally covariant packet category;
+localized system--probe instruments; causal factorization; equality of all
+spacelike schedule linearizations; nonselective no-signalling; selective
+steering; an existential QFT Bell control separated from an exact split-qubit
+calibration; a physical relativistic procedure category and complete reachable
+quotient; and positive contextual predictive histories for all admitted finite
+programs.
+
+The claimed provisional ceiling is
+`P03-LOCALLY-COVARIANT-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
+The background, algebra net, state class, coupling dynamics, and causal order
+remain declared comparator inputs. The predictive history is global,
+memory-bearing, contextual, nonexplanatory, and unselected. QFT ontology,
+actuality, internal time, spacetime emergence, and gravity remain
+unconstructed. The sole next action is a result-neutral construction audit.
