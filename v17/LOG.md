@@ -1641,3 +1641,33 @@ The complete predictor is not promoted to ontology; supplied AQFT spacetime
 is not emergent geometry; actuality, internal time, Paper 04, and gravity
 remain closed. The next permitted step is one exact result-neutral
 three-lens hostile-review protocol.
+
+## 2026-08-23 — PAPER 03 v3.2 HOSTILE PROTOCOL FROZEN (v17 LEDGER #67)
+
+The result-neutral three-lens protocol freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-hostile-review-protocol.md` | `97c734b71f1ba43235f73e8d9c9f96e0362f062a83151dc78208d296bdd8bd85` | `6dc047f0405ec7a3fc0698b36b8d0506f0852fd7348df7bcd882706c3758066e` | 551 LF / 22,705 bytes |
+
+The protocol awards no result. It binds three mutually blind, path-isolated
+lenses: category/operator algebra/AQFT/covariance; quantum instruments/
+probability/histories/Bell; and ontology/locality/Barandes/continuum/gravity.
+Every seat must independently reconstruct the immutable corpus, all 24
+targets, C1--C40 in both directions, attacks 1--64 continuously, all 36
+pre-construction countermodels, the exact 41-coordinate product, and at least
+twelve fresh lens-specific attacks.
+
+The common decisive question is whether the unchanged physical kernels and
+instruments generate both exact stochastic and normal Heisenberg semantics
+through one complete-boundary paired category. The protocol expressly
+forbids treating fiberwise NEP as joint normal assembly, probability-only
+agreement as posterior agreement, integrated equality as exact kernel
+equality, future sufficiency as ontic completeness, laboratory order as
+microscopic time, or supplied AQFT geometry as emergent gravity.
+
+Reports are evidence, never votes; root must independently rebuild every
+finding. The strongest protocol-permitted rung remains representation-level
+operational adequacy with global ontology debt. Selected local ontology and
+empirical ontology discrimination are impossible-to-award controls. Paper 04,
+implementation, internal time, spacetime, and gravity remain closed.

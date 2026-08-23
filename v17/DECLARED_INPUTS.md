@@ -328,6 +328,7 @@ selection, or a Barandes completion.
 | Paper 03 v3.2 pin-audit adjudication | `TERMINAL ACCEPT FOR ONE MATHEMATICS CONSTRUCTION WITH BINDING SCOPE` | exact pin, two blind reports, and independent root reconstruction | authorizes one self-contained representation theorem only; same-instrument sample/posterior intertwining, all joint/closure/refusal duties, hostile review, and every downstream wall remain binding |
 | Paper 03 v3.2 complete-boundary construction | `GREEN-UNREVIEWED MATHEMATICS` | sole #64-authorized candidate; unchanged v2 laws and comparators | complete packet-relative predictive algebra, normal `Ens`, paired category, finite/conditional continuous duality, closure and inherited relativistic controls are provisional; no ontology, time, spacetime, gravity, or terminal result before audit/review |
 | Paper 03 v3.2 construction audit | `PASS — RESULT-NEUTRAL AUTHOR EVIDENCE` | exact #65 candidate plus pin/audits/adjudication and unchanged v2 corpus | traces all 14 binding conditions, targets, controls, attacks, nonvacuity and walls; awards no coordinate and cannot replace hostile review |
+| Paper 03 v3.2 hostile-review protocol | `FROZEN — RESULT-NEUTRAL` | exact #65 candidate and #66 audit | binds three mutually blind category, quantum, and ontology lenses; no report or result yet |
 
 ## Derivation balance
 

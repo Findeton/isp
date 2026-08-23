@@ -152,7 +152,10 @@ cleanly if nature does not support it.
   all attack surfaces, and every ontology/gravity wall without finding a
   semantic counterexample. A separately frozen hostile protocol and three
   blind reviews remain mandatory; implementation, Paper 04, clock, spacetime,
-  ontology, and gravity remain closed.
+  ontology, and gravity remain closed. The exact three-lens protocol now
+  freezes those reviews against immutable bytes and requires full target,
+  control, attack, product, source, quantifier, and fresh-countermodel
+  reconstruction before any terminal result.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
