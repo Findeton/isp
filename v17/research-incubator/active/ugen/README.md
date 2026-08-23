@@ -228,6 +228,16 @@ it does not, in the audited sources, uniformly select the complete law for a
 new system and control programme. That is an open construction gate, not a
 no-go or a refutation. The candidate slot remains empty.
 
+U0-T2 is now complete author-side as a primary-source audit and mathematical
+input gate. It defines the target as a complete-process operational quotient,
+tests neutral, quantum-comparator, tomography, and advice recovery, and
+requires a rigorously nontrivial calibration fiber before native
+member-selection credit is possible. It also records the Rice-theorem limit:
+arbitrary opaque programs cannot be certified clean by a universal scanner,
+so the gate is proof-carrying and relative to a frozen input language. This is
+an admissibility criterion, not a candidate or scientific result. U0-T3, a
+configuration-neutral physical fixture, is the next author-side task.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -269,6 +279,8 @@ Active audit:
 - v17_ugen_nelson_control_scope_correction.md
 - v17_ugen_u0_native_indivisible_law_search_contract.md
 - v17_ugen_u0_barandes_source_completion_audit.md
+- v17_ugen_u0_t2_information_equivalence_source_audit.md
+- v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -508,7 +520,9 @@ U0 NATIVE-LAW CONTRACT:        ACTIVE AUTHOR-SIDE / CANDIDATE SLOT EMPTY
 U0 CONFIGURATION FORM:         UNSELECTED / NO DISCRETE OR CONTINUUM DEFAULT
 U0 TARGET-ANSWER INPUTS:       FORBIDDEN
 U0 SOURCE-COMPLETION AUDIT:    COMPLETE AUTHOR-SIDE / MISSING MAP LOCATED
-NEXT AUTHOR-SIDE TARGET:       U0 NO-EQUIVALENT-INPUT CRITERION + FIXTURE
+U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
+U0 CALIBRATION-FIBER TEST:     DEFINED / PROOF-CARRYING AND SCOPE-RELATIVE
+NEXT AUTHOR-SIDE TARGET:       U0-T3 CONFIGURATION-NEUTRAL FIXTURE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             ABSENT

@@ -270,9 +270,14 @@ Barandes source boundary and isolates the open source-completion map from
 typed systems, contingent states, controls, and readers to a held-out
 complete-process law. The cited stochastic--quantum representation theorems
 act after that law is supplied; they do not select it. This is an author-side
-source finding, not an existence or impossibility theorem. U0-T2 must next
-define a representation-resistant no-equivalent-input criterion before any
-native candidate or fixture can be promoted.
+source finding, not an existence or impossibility theorem. U0-T2 is now
+constructed author-side: its representation-resistant no-equivalent-input
+criterion fixes the complete-process operational quotient,
+target-independent decoder closures, calibration fibers, provenance, resource
+charges, and the opaque-program undecidability boundary. A nontrivial
+calibration fiber is necessary but not sufficient for native selection. U0-T3
+is the next author-side fixture task; no candidate, official pin, review, or
+result has been opened.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 

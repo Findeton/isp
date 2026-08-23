@@ -284,8 +284,13 @@ $$
 The published representation achievements apply after a stochastic law is
 specified; they do not yet select the held-out complete law for a new system,
 control programme, and reader. This is an open construction problem rather
-than a negative result. U0-T2, the no-equivalent-input criterion, is the next
-author-side task.
+than a negative result. U0-T2 is now complete author-side. Its source audit
+and mathematical criterion define the complete-process operational quotient,
+target-independent decoder closures, calibration fibers, provenance and
+resource ledgers, and the undecidability boundary for opaque encodings. A
+nontrivial fiber is necessary but not sufficient for native-law credit. The
+next author-side task is U0-T3, a configuration-neutral physical fixture; no
+candidate, pin, review, or result is opened.
 
 C1 active files:
 

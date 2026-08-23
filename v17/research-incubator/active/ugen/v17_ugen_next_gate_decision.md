@@ -153,8 +153,11 @@ $$
 
 No uniform source-completion map was located in the audited Barandes sources;
 that is an open constructive gate rather than a no-go. No candidate has yet
-filled this slot. U0-T2, a representation-resistant no-equivalent-input
-criterion, is the next author-side task.
+filled this slot. U0-T2 is now complete author-side: the
+representation-resistant no-equivalent-input criterion defines the
+complete-process target quotient, decoder closures, calibration-fiber test,
+provenance and resources, and opaque-program boundary without constructing a
+law. U0-T3, a configuration-neutral physical fixture, is next author-side.
 
 MG0 supplies a separate author-side co-design contract rather than
 mislabeling G1 as gravity. It keeps classical, quantum, stochastic,
@@ -209,9 +212,11 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     MG0 COMMON-LAW PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
     U0 NATIVE-LAW CONTRACT:         ACTIVE AUTHOR-SIDE / CANDIDATE SLOT EMPTY
     U0 SOURCE-COMPLETION AUDIT:     COMPLETE AUTHOR-SIDE / GAP LOCATED
+    U0 NO-EQUIVALENT-INPUT GATE:    COMPLETE AUTHOR-SIDE / NO RESULT
+    U0 CALIBRATION-FIBER TEST:      DEFINED / NONTRIVIALITY NECESSARY
     U0 CONFIGURATION FORM:          UNSELECTED
     U0 QUANTUM-ANSWER INPUTS:       FORBIDDEN
-    NEXT AUTHOR-SIDE U-GEN TASK:    NO-EQUIVALENT-INPUT CRITERION + FIXTURE
+    NEXT AUTHOR-SIDE U-GEN TASK:    U0-T3 CONFIGURATION-NEUTRAL FIXTURE
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

@@ -641,9 +641,15 @@ $$
 \Gamma^{\mathcal N}_{S,b,c,R}.
 $$
 
-The source gap is not an impossibility theorem. U0-T2 must next define when an
-input packet is information-equivalent to the held-out complete process,
-before any native candidate is compared.
+The source gap is not an impossibility theorem. U0-T2 now defines when an
+input packet is information-equivalent to the held-out complete process. It
+uses an intervention-complete operational quotient; frozen neutral, quantum,
+tomography, and advice decoder classes; calibration-fiber diameter;
+provenance; and resource charges. It also prints the undecidability boundary
+for arbitrary opaque programs. The criterion constructs no candidate and
+awards no result.
+U0-T3, a configuration-neutral fixture with a certified nontrivial fiber, is
+the next author-side task.
 
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
@@ -714,9 +720,11 @@ G2 POSITION FUTURE CUT:          FAILS FOR RELATIVE-PHASE PREPARATIONS
 G2 EUCLIDEAN WIENER LAW:         EXACT / REAL-TIME ACTUALITY UNSELECTED
 U0 NATIVE-LAW CONTRACT:          ACTIVE / CANDIDATE SLOT EMPTY
 U0 SOURCE-COMPLETION AUDIT:      COMPLETE AUTHOR-SIDE / GAP LOCATED
+U0 NO-EQUIVALENT-INPUT GATE:     COMPLETE AUTHOR-SIDE / NO RESULT
+U0 CALIBRATION FIBER:            DEFINED / NONTRIVIALITY NECESSARY
 U0 CONFIGURATION FORM:           UNSELECTED
 U0 TARGET-ANSWER INPUTS:         FORBIDDEN
-NEXT AUTHOR-SIDE TARGET:         U0 NO-EQUIVALENT-INPUT CRITERION + FIXTURE
+NEXT AUTHOR-SIDE TARGET:         U0-T3 CONFIGURATION-NEUTRAL FIXTURE
 NATIVE ISP LAW:                  ABSENT
 PHYSICAL GENERATOR:              NATIVE COMPLETE GENERATOR NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

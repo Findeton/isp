@@ -497,10 +497,14 @@ NATIVE U0 CANDIDATE:                   ABSENT
 OFFICIAL PIN / REVIEW / RESULT:        NONE
 ```
 
-The next author-side task is U0-T2: define a representation-resistant
-no-equivalent-input criterion, then construct a configuration-neutral
-complete-process fixture. That task does not authorize a candidate, pin,
-review cycle, paper, or automatic successor.
+U0-T2 is now constructed author-side in
+v17_ugen_u0_t2_information_equivalence_source_audit.md and
+v17_ugen_u0_t2_no_equivalent_input_criterion.md. It distinguishes target
+recovery before the proposed nomological rule acts from legitimate prediction
+by that rule, and makes a rigorously nontrivial calibration fiber necessary
+for native member-selection credit. The next author-side task is U0-T3, a
+configuration-neutral complete-process fixture. None of this authorizes a
+candidate, pin, review cycle, paper, or automatic successor.
 
 ---
 

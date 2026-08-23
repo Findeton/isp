@@ -566,7 +566,13 @@ Give a representation-resistant definition of when a calibration packet is
 information-equivalent to a target complete process. Q-Cut is a possible
 bounded theorem input only if separately authorized and accepted.
 
-**Author-side status:** next task; not yet constructed.
+**Author-side status:** completed as a source reconstruction and mathematical
+gate in v17_ugen_u0_t2_information_equivalence_source_audit.md and
+v17_ugen_u0_t2_no_equivalent_input_criterion.md. The criterion freezes the
+complete-process operational quotient, neutral/quantum/tomography/advice
+decoder classes, calibration fibers, provenance, resource accounting, and the
+opaque-program undecidability boundary. It constructs no law and awards no
+scientific result.
 
 ### Task U0-T3 — configuration-neutral complete-process fixture
 
@@ -574,6 +580,9 @@ Replace bare gate names by typed physical intervention equivalence classes,
 while keeping the target process hidden. The fixture must admit finite,
 continuous, contextual, and whole-program positive controls without selecting
 one ontology by type.
+
+**Author-side status:** next task. No fixture, ontology, candidate, official
+pin, review cycle, or result is opened by T2.
 
 ### Task U0-T4 — native candidate contest
 

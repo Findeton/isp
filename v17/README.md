@@ -381,8 +381,15 @@ cleanly if nature does not support it.
   stochastic law. The stochastic--quantum and unistochastic representation
   results apply after such a law is specified; they do not by themselves
   select it. This is an open source-completion gate, not a refutation or no-go.
-  The next author-side task is U0-T2, a representation-resistant
-  no-equivalent-input criterion; no candidate or official cycle is opened.
+  U0-T2 is now complete author-side as a primary-source reconstruction and a
+  representation-resistant no-equivalent-input criterion. It distinguishes
+  target recovery before the proposed nomological rule acts from legitimate
+  prediction by that rule; fixes neutral, quantum-comparator, tomography, and
+  advice recovery classes; and requires a nontrivial calibration fiber,
+  provenance, and resource accounting. Arbitrary opaque encodings remain
+  proof-carrying and scope-relative. U0-T3, a configuration-neutral
+  complete-process fixture, is next author-side; no candidate or official
+  cycle is opened.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

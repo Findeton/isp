@@ -232,11 +232,11 @@ The current evidence supports the following order.
    carrier inside a declared quantum Galilei representation and exposes the
    real-time-positive/Euclidean-positive fork. It does not derive fine-history
    magnitudes, interaction, actuality, or a higher-rank/adaptive compiler.
-   There is no automatic G3. U0-T1 has now isolated the missing
-   source-completion rule from typed physical experiments to complete
-   stochastic laws. The next author-side move is the U0-T2
-   no-equivalent-input criterion and configuration-neutral fixture, not
-   inheritance from N1/N1A.
+   There is no automatic G3. U0-T1 isolated the missing source-completion rule
+   from typed physical experiments to complete stochastic laws. U0-T2 now
+   supplies the no-equivalent-input and calibration-fiber gate author-side,
+   without a candidate or result. The next author-side move is U0-T3, a
+   configuration-neutral fixture, not inheritance from N1/N1A.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -273,7 +273,8 @@ G2 EUCLIDEAN WIENER LAW:               EXACT / ACTUALITY UNSELECTED
 U0 CONFIGURATION FORM:                 UNSELECTED
 U0 TARGET-ANSWER INPUTS:               FORBIDDEN
 U0 SOURCE-COMPLETION AUDIT:             COMPLETE AUTHOR-SIDE / GAP LOCATED
-NEXT U-GEN CONSTRUCTION:               U0 INPUT CRITERION + NEUTRAL FIXTURE
+U0 NO-EQUIVALENT-INPUT GATE:            COMPLETE AUTHOR-SIDE / NO RESULT
+NEXT U-GEN CONSTRUCTION:               U0-T3 NEUTRAL PHYSICAL FIXTURE
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
 CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY
