@@ -235,8 +235,13 @@ requires a rigorously nontrivial calibration fiber before native
 member-selection credit is possible. It also records the Rice-theorem limit:
 arbitrary opaque programs cannot be certified clean by a universal scanner,
 so the gate is proof-carrying and relative to a frozen input language. This is
-an admissibility criterion, not a candidate or scientific result. U0-T3, a
-configuration-neutral physical fixture, is the next author-side task.
+an admissibility criterion, not a candidate or scientific result. U0-T3 now
+constructs a configuration-neutral physical fixture schema and proves its
+calibration fiber nontrivial at schema scope. The construction retains
+complete raw records, physical marker/record distinctions, sealed target
+custody, and finite/continuous/contextual/whole-program controls without
+selecting an ontology. The implementation-bound R4 packet is absent; no
+candidate or official cycle follows.
 
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
@@ -281,6 +286,9 @@ Active audit:
 - v17_ugen_u0_barandes_source_completion_audit.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
+- v17_ugen_u0_t3_physical_interface_source_audit.md
+- v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md
+- v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -521,8 +529,9 @@ U0 CONFIGURATION FORM:         UNSELECTED / NO DISCRETE OR CONTINUUM DEFAULT
 U0 TARGET-ANSWER INPUTS:       FORBIDDEN
 U0 SOURCE-COMPLETION AUDIT:    COMPLETE AUTHOR-SIDE / MISSING MAP LOCATED
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
-U0 CALIBRATION-FIBER TEST:     DEFINED / PROOF-CARRYING AND SCOPE-RELATIVE
-NEXT AUTHOR-SIDE TARGET:       U0-T3 CONFIGURATION-NEUTRAL FIXTURE
+U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
+U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
+NEXT U0 BOUNDARY:              T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             ABSENT

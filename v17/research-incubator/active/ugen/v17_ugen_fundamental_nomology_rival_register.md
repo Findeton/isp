@@ -234,9 +234,10 @@ The current evidence supports the following order.
    magnitudes, interaction, actuality, or a higher-rank/adaptive compiler.
    There is no automatic G3. U0-T1 isolated the missing source-completion rule
    from typed physical experiments to complete stochastic laws. U0-T2 now
-   supplies the no-equivalent-input and calibration-fiber gate author-side,
-   without a candidate or result. The next author-side move is U0-T3, a
-   configuration-neutral fixture, not inheritance from N1/N1A.
+   supplies the no-equivalent-input and calibration-fiber gate author-side.
+   U0-T3 now constructs its configuration-neutral schema and proves the
+   schema fiber nontrivial without inheriting N1/N1A. A real implementation,
+   candidate, and result remain absent.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -274,7 +275,8 @@ U0 CONFIGURATION FORM:                 UNSELECTED
 U0 TARGET-ANSWER INPUTS:               FORBIDDEN
 U0 SOURCE-COMPLETION AUDIT:             COMPLETE AUTHOR-SIDE / GAP LOCATED
 U0 NO-EQUIVALENT-INPUT GATE:            COMPLETE AUTHOR-SIDE / NO RESULT
-NEXT U-GEN CONSTRUCTION:               U0-T3 NEUTRAL PHYSICAL FIXTURE
+U0-T3 PHYSICAL FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
+NEXT U0 BOUNDARY:                       T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
 CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY

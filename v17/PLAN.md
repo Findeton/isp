@@ -276,8 +276,12 @@ criterion fixes the complete-process operational quotient,
 target-independent decoder closures, calibration fibers, provenance, resource
 charges, and the opaque-program undecidability boundary. A nontrivial
 calibration fiber is necessary but not sufficient for native selection. U0-T3
-is the next author-side fixture task; no candidate, official pin, review, or
-result has been opened.
+now reaches schema outcome T3-R3 author-side: typed physical module and
+program interfaces, complete-record and custody surfaces, and exact positive
+fiber witnesses exist without selecting a microscopic configuration form.
+The implementation-bound R4 packet, independent source/leakage review,
+candidate contest, official pin, and scientific result remain absent and are
+not opened automatically.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 

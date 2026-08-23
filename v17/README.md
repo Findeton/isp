@@ -387,9 +387,13 @@ cleanly if nature does not support it.
   prediction by that rule; fixes neutral, quantum-comparator, tomography, and
   advice recovery classes; and requires a nontrivial calibration fiber,
   provenance, and resource accounting. Arbitrary opaque encodings remain
-  proof-carrying and scope-relative. U0-T3, a configuration-neutral
-  complete-process fixture, is next author-side; no candidate or official
-  cycle is opened.
+  proof-carrying and scope-relative. U0-T3 now constructs a
+  configuration-neutral fixture schema from typed physical modules,
+  deliberately incomplete calibration, complete raw transcripts, sealed
+  target custody, and a 13-control/30-attack battery. Author-side exact
+  positive witnesses establish a nontrivial calibration fiber at schema scope
+  without selecting a law or configuration ontology. No apparatus/data
+  packet, candidate, official cycle, or result is opened.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

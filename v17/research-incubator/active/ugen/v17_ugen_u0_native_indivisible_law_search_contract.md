@@ -581,14 +581,19 @@ while keeping the target process hidden. The fixture must admit finite,
 continuous, contextual, and whole-program positive controls without selecting
 one ontology by type.
 
-**Author-side status:** next task. No fixture, ontology, candidate, official
-pin, review cycle, or result is opened by T2.
+**Author-side status:** schema outcome T3-R3 is constructed in the physical
+interface audit, configuration-neutral fixture, and calibration-fiber theorem
+files. No microscopic configuration form is selected. A real
+implementation-bound R4 packet and independently reviewed R5 admission remain
+absent. No candidate, official pin, review cycle, or result is opened.
 
 ### Task U0-T4 — native candidate contest
 
-Only after T1--T3, write at least one explicit candidate and one deliberately
-different positive control from independently motivated primitives. Freeze the
-candidate before evaluation. Do not select the winner after opening targets.
+Only after T1--T3 reaches implementation-bound, independently audited
+candidate-entry readiness may a separately authorized contest write at least
+one explicit candidate and one deliberately different positive control from
+independently motivated primitives. Freeze the candidate before evaluation.
+Do not select the winner after opening targets.
 
 ### Task U0-T5 — scaling and actuality audit
 

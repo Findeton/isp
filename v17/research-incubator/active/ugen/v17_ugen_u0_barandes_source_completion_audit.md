@@ -502,9 +502,11 @@ v17_ugen_u0_t2_information_equivalence_source_audit.md and
 v17_ugen_u0_t2_no_equivalent_input_criterion.md. It distinguishes target
 recovery before the proposed nomological rule acts from legitimate prediction
 by that rule, and makes a rigorously nontrivial calibration fiber necessary
-for native member-selection credit. The next author-side task is U0-T3, a
-configuration-neutral complete-process fixture. None of this authorizes a
-candidate, pin, review cycle, paper, or automatic successor.
+for native member-selection credit. U0-T3 now constructs the
+configuration-neutral complete-process fixture and proves a nontrivial fiber
+at schema scope. It binds no apparatus or target data and selects no native
+law. None of this authorizes a candidate, pin, review cycle, paper, or
+automatic successor.
 
 ---
 

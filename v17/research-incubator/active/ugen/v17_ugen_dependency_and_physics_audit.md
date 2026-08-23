@@ -648,8 +648,10 @@ tomography, and advice decoder classes; calibration-fiber diameter;
 provenance; and resource charges. It also prints the undecidability boundary
 for arbitrary opaque programs. The criterion constructs no candidate and
 awards no result.
-U0-T3, a configuration-neutral fixture with a certified nontrivial fiber, is
-the next author-side task.
+U0-T3 now supplies a configuration-neutral fixture and an author-side
+schema-level nontrivial-fiber certificate. It binds no real apparatus or
+target data. The implementation-bound T3-R4 packet, independent leakage
+review, and candidate contest remain absent.
 
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
@@ -721,10 +723,11 @@ G2 EUCLIDEAN WIENER LAW:         EXACT / REAL-TIME ACTUALITY UNSELECTED
 U0 NATIVE-LAW CONTRACT:          ACTIVE / CANDIDATE SLOT EMPTY
 U0 SOURCE-COMPLETION AUDIT:      COMPLETE AUTHOR-SIDE / GAP LOCATED
 U0 NO-EQUIVALENT-INPUT GATE:     COMPLETE AUTHOR-SIDE / NO RESULT
-U0 CALIBRATION FIBER:            DEFINED / NONTRIVIALITY NECESSARY
+U0 CALIBRATION FIBER:            NONTRIVIAL AT SCHEMA SCOPE / NOT SELECTING
+U0-T3 PHYSICAL FIXTURE:          T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND
 U0 CONFIGURATION FORM:           UNSELECTED
 U0 TARGET-ANSWER INPUTS:         FORBIDDEN
-NEXT AUTHOR-SIDE TARGET:         U0-T3 CONFIGURATION-NEUTRAL FIXTURE
+NEXT U0 BOUNDARY:                T3-R4 REAL APPARATUS/DATA PACKET / NOT OPENED
 NATIVE ISP LAW:                  ABSENT
 PHYSICAL GENERATOR:              NATIVE COMPLETE GENERATOR NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

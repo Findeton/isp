@@ -288,9 +288,12 @@ than a negative result. U0-T2 is now complete author-side. Its source audit
 and mathematical criterion define the complete-process operational quotient,
 target-independent decoder closures, calibration fibers, provenance and
 resource ledgers, and the undecidability boundary for opaque encodings. A
-nontrivial fiber is necessary but not sufficient for native-law credit. The
-next author-side task is U0-T3, a configuration-neutral physical fixture; no
-candidate, pin, review, or result is opened.
+nontrivial fiber is necessary but not sufficient for native-law credit. U0-T3
+now constructs the configuration-neutral fixture schema and proves its
+calibration fiber nontrivial at schema scope using ordinary-positive terminal,
+continuous-actuator, marker/record, and nonsignalling witnesses. No real
+apparatus/data packet is bound, and no candidate, pin, review, or result is
+opened.
 
 C1 active files:
 
@@ -325,6 +328,11 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_nelson_control_scope_correction.md
 - active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md
 - active/ugen/v17_ugen_u0_barandes_source_completion_audit.md
+- active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
+- active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
+- active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md
+- active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md
+- active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
 - active/ugen/v17_ugen_fundamental_nomology_rival_register.md
 - active/ugen/v17_ugen_bell_current_actuality_comparator.md
 - active/ugen/v17_ugen_bell_current_physical_reality_audit.md
@@ -395,6 +403,11 @@ Active working package:
 - `active/ugen/v17_ugen_nelson_control_scope_correction.md`
 - `active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md`
 - `active/ugen/v17_ugen_u0_barandes_source_completion_audit.md`
+- `active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md`
+- `active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md`
+- `active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md`
+- `active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md`
+- `active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md`
 - `active/ugen/v17_ugen_bell_current_actuality_comparator.md`
 - `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
 - `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`

@@ -401,5 +401,7 @@ The sources do not prove:
 > native indivisible stochastic law.
 
 The source audit and companion criterion complete U0-T2 author-side only.
-U0-T3 remains a configuration-neutral fixture task; no candidate, official
-pin, review, result, or successor paper is opened.
+The downstream U0-T3 companion files now construct the
+configuration-neutral schema and its nontrivial-fiber witnesses, but bind no
+real apparatus or target data. No candidate, official pin, review, result, or
+successor paper is opened.

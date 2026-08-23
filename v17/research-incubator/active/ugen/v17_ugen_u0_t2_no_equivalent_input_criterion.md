@@ -743,6 +743,12 @@ author-side, must supply:
 
 The target processes remain hidden. A fixture is not a theory.
 
+**Downstream author-side status (2026-08-23):** the U0-T3 companion files now
+realize these requirements at schema level and prove a nontrivial fiber for
+the schema comparison class. They do not bind an apparatus implementation,
+open target data, construct a candidate, or change this T2 criterion into a
+scientific result.
+
 ---
 
 ## 15. Present verdict
