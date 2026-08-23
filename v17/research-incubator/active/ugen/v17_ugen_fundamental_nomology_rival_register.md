@@ -69,6 +69,15 @@ product, and recorded-feed-forward controls, but fails higher-rank boundaries
 and has no uniform interacting parent compiler. G1 therefore locates the
 missing input without filling the native slot.
 
+G2 now derives the aggregate free coherent kernel from a narrower declared
+projective-unitary Galilei package. It simultaneously proves that the
+continuum kernel modulus square is not an exact-position transition density
+and that position density alone is not future sufficient across relative-phase
+preparations. The Euclidean continuation is a genuine Wiener path law with
+$\nu=\hbar/(2m)$, but no physical premise selects that Euclidean law as
+real-time actuality. G2 therefore narrows the input ledger without yet
+constructing Rival A's required real-time indivisible whole law.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -103,6 +112,12 @@ C1--C3 show that diagonal event data are not compositionally complete, that
 $D$ contains weights plus relational correlations, and that additive scalar
 action with $U(1)$ transport yields an exponential character. These are
 diagnostic lemmas. They do not generate nature's $D$.
+
+G2 adds a free-sector control: projective Galilei composition fixes the
+standard oscillatory propagator, whose coherent convolution works exactly
+where its entrywise modulus square fails stochastic composition. This supports
+the need for relational pair/composition data but does not make a decoherence
+functional fundamental or generate an interacting one.
 
 ### Kill condition
 
@@ -200,10 +215,13 @@ The current evidence supports the following order.
    pair-history/action/actuality package; Bell-current actuality comparator;
    bounded N1 time-symmetric diffusion candidate; bounded N1A locality gate.
 3. **Current substantive U-Gen test:** G1 is the first global
-   relative-holonomy positive parent candidate. It must derive a presently
-   supplied input, acquire a representation-independent higher-rank/adaptive
-   compiler without target import, or terminate as a bounded zero-gain
-   comparator and obstruction dossier.
+   relative-holonomy positive parent candidate. G2 derives its aggregate free
+   carrier inside a declared quantum Galilei representation and exposes the
+   real-time-positive/Euclidean-positive fork. It does not derive fine-history
+   magnitudes, interaction, actuality, or a higher-rank/adaptive compiler.
+   There is no automatic G3; the next substantive move must add one
+   independently physical selection/interaction principle or review and close
+   the bounded packet.
 4. **Author-side co-design:** the separate MG0 preflight now asks whether
    gravity can distinguish the rivals through an exact source functional,
    reciprocal common parent, gauge/conservation closure, two immutable-law
@@ -233,7 +251,10 @@ N1A LOCAL REPAIR CLASS:               CLOSED / GLOBAL WHOLE-LAW ROUTE OPEN
 G1 GLOBAL POSITIVE PARENT:            FINITE CONDITIONAL SCALAR MEMBER
 G1 ENDPOINT-GAMMA COMPOSITION:        REFUTED FOR PRINTED PHASE FAMILY
 G1 HIGHER-RANK / ADAPTIVE COMPILER:   ABSENT / SCALAR CLASS FAILS
-NEXT U-GEN CONSTRUCTION:              DERIVE ONE G1 INPUT OR BOUNDED NO-GO
+G2 FREE GALILEI KERNEL:                DERIVED INSIDE QUANTUM PREMISES
+G2 EXACT-POSITION STOCHASTIC LAW:      FAILS FOR |K|^2
+G2 EUCLIDEAN WIENER LAW:               EXACT / ACTUALITY UNSELECTED
+NEXT U-GEN CONSTRUCTION:               NONE AUTOMATIC / PHYSICAL INPUT NEEDED
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
 CLOCK / SPACETIME / GRAVITY CLAIMS:   DEFERRED OFFICIALLY

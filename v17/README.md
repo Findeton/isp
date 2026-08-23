@@ -354,6 +354,17 @@ cleanly if nature does not support it.
   scalar G1 fails mixed/higher-rank boundaries and the C1 $D_\pm$ control. It
   remains a bounded compiler and obstruction dossier, not a native ISP law,
   complete quantum process, empirical result, QFT, spacetime, or gravity.
+  G2 now derives the standard free coherent propagator from a narrower
+  projective-unitary Galilei control package, while charging its quantum
+  representation, mass, $\hbar$, dimension, flat geometry, and external time.
+  The exact continuum $|K_t(x,y)|^2$ column is nonnormalizable and position
+  density fails as a future-sufficient cut for relative-phase preparations.
+  Normalized preparations and instruments still yield ordinary record laws
+  and preserve the physical division/nondivision distinction. The
+  continuation $t=-i\tau$ gives the positive heat/Wiener semigroup with
+  $\nu=\hbar/(2m)$, but no physical premise selects Euclidean paths as
+  real-time actuality or derives Nelson dynamics. G2 remains author-side,
+  unreviewed, and creates no automatic successor.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

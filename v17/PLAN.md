@@ -240,6 +240,21 @@ ontology/locality/gauge/continuum. Each must reconstruct 18 targets, 32
 two-way controls, 76 attacks, the full product, and eight fresh lens-specific
 countermodels.
 
+**Quantum-nomology incubator boundary.** Separate author-side work preserves
+Q-Cut as the next recommended official theorem if explicitly authorized and
+keeps ordinary-positive indivisible, decoherence-functional, and
+quantum-plus-actualization nomologies live. G1 constructs a finite conditional
+action/holonomy positive-record parent but leaves magnitudes, interactions,
+higher-rank boundaries, and the adaptive compiler open. G2 now derives the
+standard free coherent kernel inside a declared projective-unitary Galilei
+sector; proves that its continuum modulus square is not an exact-position
+transition density and that position density is not future sufficient across
+relative-phase preparations; and derives the positive Euclidean heat/Wiener
+semigroup without selecting it as real-time actuality. G2 assumes $m$,
+$\hbar$, dimension, flat geometry, external time, and quantum representation
+structure, remains unreviewed, creates no automatic G3, and advances no QFT,
+clock, spacetime, or gravity claim.
+
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
 ### Paper 04 — internal clocks and parametrized process law

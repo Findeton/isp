@@ -116,6 +116,20 @@ adaptive controls, while scalar G1 fails mixed/higher-rank boundaries and has
 no uniform interacting or complete adaptive compiler. It therefore
 instantiates the requested branch without filling the native slot.
 
+G2 now executes the first permitted G1 follow-up rather than adding another
+interferometer. In a declared free spinless projective-unitary Galilei sector,
+the mass central charge and composition fix
+$H=P^2/(2m)+E_0I$ and the standard coherent propagator. This derives the free
+aggregate carrier from narrower premises, but the premises already include
+quantum representation structure, $m$, $\hbar$, flat geometry, and external
+time. The continuum $|K_t(x,y)|^2$ column is spatially constant and
+nonnormalizable, and position density fails as a future-sufficient state for
+relative-phase preparations. Normalized preparations and instruments still
+give ordinary record laws, generically indivisible through an unrecorded
+position seam. Imaginary-time continuation yields the heat/Wiener semigroup
+with $\nu=\hbar/(2m)$ but selects neither real-time paths nor Nelson dynamics.
+G2 is author-side and not freeze-ready.
+
 MG0 now supplies a separate author-side co-design contract rather than
 mislabeling G1 as gravity. It keeps classical, quantum, stochastic,
 actual-history, pair-history, and primitive-joint matter--geometry responses
@@ -159,11 +173,15 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     G1 ENDPOINT-GAMMA COMPOSITION:  REFUTED FOR PRINTED PHASE FAMILY
     G1 MIXED/HIGHER-RANK:           SCALAR CLASS FAILS
     G1 COMPLETE PROCESS COMPILER:   ABSENT
+    G2 FREE GALILEI KERNEL:         DERIVED INSIDE QUANTUM PREMISES
+    G2 REAL-TIME |K|^2 POSITION:    NONNORMALIZABLE / NOT STOCHASTIC
+    G2 POSITION FUTURE CUT:         FAILS FOR RELATIVE-PHASE FAMILY
+    G2 EUCLIDEAN HEAT/WIENER LAW:   EXACT / REAL-TIME ACTUALITY UNSELECTED
     NATIVE ISP LAW:                 ABSENT
     FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
     MG0 COMMON-LAW PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT
-    NEXT AUTHOR-SIDE U-GEN TASK:    DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
-                                    IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
+    NEXT AUTHOR-SIDE U-GEN TASK:    NO AUTOMATIC G3; REVIEW G2 OR SUPPLY ONE
+                                    PHYSICAL SELECTION/INTERACTION PRINCIPLE
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED
@@ -295,7 +313,7 @@ It could not establish:
 
 ## 8. Authority wall
 
-No Q-Cut pin, PC5/PC6/C2/C3/C4 review, U-Gen C1 pin, numbered paper, or
+No Q-Cut pin, PC5/PC6/C2/C3/C4/G2 review, U-Gen C1 pin, numbered paper, or
 official result is opened by this decision note. It records the rational next
 steps so future work cannot quietly drift back to fitted finite examples.
 

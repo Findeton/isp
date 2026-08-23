@@ -187,6 +187,27 @@ laws. Scalar G1 also fails the mixed/higher-rank boundary and C1 $D_\pm$
 controls. It is consequently a bounded conditional member and obstruction
 dossier, not a native ISP unification or complete process compiler.
 
+G2 now reduces one of G1's supplied inputs in the strongest low-energy sector
+where symmetry can do so honestly. A strongly continuous irreducible
+projective-unitary Galilei representation with fixed mass, $\hbar$, flat
+configuration geometry, and external time fixes
+
+$$
+H=P^2/(2m)+E_0I
+$$
+
+and the standard free coherent propagator. This is genuine aggregate-kernel
+input-origin progress, but it already assumes quantum representation
+structure and does not construct G1's continuum fine-history magnitude law.
+The real-time kernel's modulus square is spatially constant and
+nonnormalizable on exact position, while normalized preparations and
+finite-resolution instruments retain ordinary record probabilities. Position
+density alone also fails as a future-sufficient cut for relative-phase
+preparations. The continuation $t=-i\tau$ yields the positive heat/Wiener law
+with $\nu=\hbar/(2m)$, but no premise identifies Euclidean paths with
+real-time actuality or derives Nelson dynamics. G2 is an author-side
+fixed-background control, not an official result, QFT, clock, or gravity step.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -240,6 +261,10 @@ Active audit:
 - v17_ugen_g1_exact_controls_and_native_slot_gate.md
 - v17_ugen_g1_source_physics_and_scope_audit.md
 - v17_ugen_g1_future_review_contract.md
+- v17_ugen_g2_galilean_kernel_candidate.md
+- v17_ugen_g2_positive_transition_and_euclidean_gate.md
+- v17_ugen_g2_source_physics_and_scope_audit.md
+- v17_ugen_g2_future_review_contract.md
 
 - v17_ugen_c4_interference_actuality_obstruction_candidate.md
 - v17_ugen_c4_actuality_selector_reality_investigation.md
@@ -383,6 +408,16 @@ Failure must identify an unavoidable input rather than announce that
     law is positive. Its history magnitudes, relational transport, interaction,
     higher-rank boundaries, and record grammar remain charged inputs until
     derived by one uniform physical rule.
+16. Projective Galilei symmetry can fix a free quantum representation member
+    only after the projective-unitary carrier, mass sector, action scale,
+    background geometry, and external time are supplied. That is not
+    quantization from classical relativity.
+17. A coherent continuum kernel is not an exact-position stochastic kernel.
+    Generalized position states, preparation resolution, phase/current data,
+    and physical instruments must not be erased from the probability type.
+18. Euclidean heat-kernel positivity and a Wiener measure do not select the
+    real-time ontology. Analytic continuation is a reconstruction tool until a
+    physical clock/referent law is independently supplied.
 
 ## Present disposition
 
@@ -432,9 +467,13 @@ G1 ENDPOINT-GAMMA COMPOSITION: REFUTED FOR PRINTED PHASE FAMILY
 G1 RECORD/ERASER/HOLONOMY:     EXACT BOUNDED CONTROLS
 G1 MIXED/HIGHER-RANK:          SCALAR CLASS FAILS
 G1 COMPLETE PROCESS COMPILER:  ABSENT
+G2 FREE GALILEI KERNEL:        DERIVED INSIDE DECLARED QUANTUM PREMISES
+G2 REAL-TIME |K|^2 POSITION:   NONNORMALIZABLE / NOT A TRANSITION DENSITY
+G2 POSITION FUTURE CUT:        FAILS FOR RELATIVE-PHASE PREPARATIONS
+G2 EUCLIDEAN HEAT LAW:         EXACT POSITIVE CONTROL / ACTUALITY UNSELECTED
 C-NUMBER EXPANSION:            CLOSED AT C4
-NEXT AUTHOR-SIDE TARGET:       DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
-                               IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
+NEXT AUTHOR-SIDE TARGET:       NO AUTOMATIC G3; REVIEW G2 OR DERIVE A
+                               PHYSICAL SELECTION/INTERACTION INPUT
 SOURCE-COMPLETION RESULT:      NONE
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             N1 LOCAL NONRELATIVISTIC ONLY / NOT UNIVERSAL

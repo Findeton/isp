@@ -25,8 +25,8 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE PHYSICS:         N1A LOCAL REPAIR NO-GO;
-                                  GLOBAL INDIVISIBLE PARENT LAW OR NO-GO
+NEXT AUTHOR-SIDE PHYSICS:         G1 GLOBAL PARENT + G2 FREE-KERNEL GATE;
+                                  NO AUTOMATIC G3
 BELL-CURRENT ACTUALITY:           STANDARD-QUANTUM COMPARATOR ONLY
 FUNDAMENTAL NOMOLOGY:             PLURAL RIVAL CONTEST / NONE SELECTED
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
@@ -608,6 +608,20 @@ that scalar G1 is not closed under higher-rank boundaries. The construction
 therefore supplies a bounded parent member and obstruction dossier, not the
 uniform native generator.
 
+G2 now performs the first allowed input-origin test on G1 rather than adding
+another finite fringe member. A massive irreducible projective-unitary Galilei
+sector fixes the free generator and coherent kernel, but only after quantum
+representation structure, $m$, $\hbar$, dimension, flat geometry, and
+external time are declared. The resulting $|K_t(x,y)|^2$ is
+nonnormalizable as a continuum exact-position transition density, and
+position density is not future sufficient across relative-phase
+preparations. A physical instrument restores ordinary finite record
+probabilities and decides whether an intermediate seam is a division.
+Euclidean continuation yields the positive heat/Wiener semigroup with
+$\nu=\hbar/(2m)$, but it does not select a real-time path ontology or derive
+Nelson's additional dynamics. G2 therefore derives one aggregate free input
+and sharpens the remaining selector debt without filling the native slot.
+
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
 quantum dynamics plus modified actualization. The common operational and
@@ -621,7 +635,8 @@ gains standing.
 3. U-Gen author-side preparation may continue without evaluating either
    candidate as true.
 4. Any official U-Gen A/B/C pin requires fresh, specific user authorization.
-5. No automatic review, construction, replacement model, U-Loc, clock,
+5. No automatic G2 review or G3 follows from the author-side packet.
+6. No automatic review, construction, replacement model, U-Loc, clock,
    chronology, spacetime, or gravity unit follows.
 
 ---
@@ -669,8 +684,11 @@ G1 PRESENTATION/ERASER/HOLONOMY: EXACT BOUNDED CONTROLS
 G1 ENDPOINT-GAMMA COMPOSITION:   NO-GO FOR PRINTED PHASE FAMILY
 G1 MIXED/HIGHER-RANK BOUNDARY:   SCALAR CLASS FAILS
 G1 INTERACTING/ADAPTIVE COMPILER: ABSENT
-NEXT AUTHOR-SIDE TARGET:         DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
-                                 IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
+G2 FREE GALILEI KERNEL:          DERIVED INSIDE DECLARED QUANTUM PREMISES
+G2 REAL-TIME |K|^2 POSITION:     NONNORMALIZABLE / NOT A TRANSITION LAW
+G2 POSITION FUTURE CUT:          FAILS FOR RELATIVE-PHASE PREPARATIONS
+G2 EUCLIDEAN WIENER LAW:         EXACT / REAL-TIME ACTUALITY UNSELECTED
+NEXT AUTHOR-SIDE TARGET:         NONE AUTOMATIC / PHYSICAL INPUT OR REVIEW
 NATIVE ISP LAW:                  ABSENT
 PHYSICAL GENERATOR:              FOUND ONLY AT LOCAL NONRELATIVISTIC SCOPE
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

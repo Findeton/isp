@@ -253,6 +253,19 @@ orientation, and rank-two mixed/C1 controls lie outside scalar G1. The packet
 therefore locates the missing composition data without deriving it or filling
 the native slot.
 
+G2 now tests whether known low-energy symmetry can derive one of those inputs.
+Inside a declared free spinless irreducible projective-unitary Galilei sector,
+the mass central charge fixes $H=P^2/(2m)+E_0I$ and the standard coherent
+propagator. The quantum representation, $m$, $\hbar$, dimension, flat geometry,
+and external time remain inputs. The continuum kernel modulus square is
+constant and nonnormalizable as an exact-position transition density, and
+position density is not future sufficient across relative-phase
+preparations. Finite-resolution records remain ordinary probabilities and
+retain the recorded/unrecorded division distinction. Euclidean continuation
+does yield the positive heat/Wiener semigroup with $\nu=\hbar/(2m)$, but no
+physical premise identifies it with real-time actuality or derives Nelson's
+dynamics. G2 is author-side, unreviewed, and creates no automatic G3.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -301,6 +314,13 @@ G1 active files:
 - active/ugen/v17_ugen_g1_exact_controls_and_native_slot_gate.md
 - active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md
 - active/ugen/v17_ugen_g1_future_review_contract.md
+
+G2 active files:
+
+- active/ugen/v17_ugen_g2_galilean_kernel_candidate.md
+- active/ugen/v17_ugen_g2_positive_transition_and_euclidean_gate.md
+- active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md
+- active/ugen/v17_ugen_g2_future_review_contract.md
 
 ### MG0 — common matter–geometry nomology preflight
 
