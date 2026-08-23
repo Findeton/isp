@@ -1204,3 +1204,27 @@ schedule equality remains confined to full certified exchanges in every
 reachable context. The pin awards no result and permits no automatic further
 pin revision. Two independent audits of these exact bytes are next;
 construction and Paper 04 remain closed.
+
+## 2026-08-22 — PAPER 03 v3.1 CATEGORY PIN AUDIT FROZEN (v17 LEDGER #51)
+
+The first independent v3.1 audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v31-pin-audit-category.md` | `86eb3e42782e36685e5017b74fd790215b5296287a96bbb5d72d420f80d8a761` | 827 LF / 37,425 bytes |
+
+Verdict: `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE`; first exact blocker:
+none. With record marginal $\eta\ll\nu$, density $h$, and strongly measurable
+conditional predual barycenter $\bar\rho_r$, the field
+$h(r)\bar\rho_r\in L^1(\nu;\mathcal A_*)$ defines a representative-independent
+normal `Ens` state. The audit also reconstructs finite/atomic point restart,
+one common domination class, nonsingular pullbacks, tagged hybrid category
+and contravariance, continuous decomposable guards, full memory sufficiency,
+finite-path `Ev`/`Ens`/`Heis` induction, transport, quotient, and
+reachable-context exchange certificates.
+
+The acceptance binds ensemble-class closure, explicit predual construction,
+exact frozen `Ev` representatives versus integrated a.e. equality, and full
+memory/certificate data. It awards no result and opens no construction by
+itself. The independent quantum audit and joint adjudication remain; Paper 04
+stays closed.

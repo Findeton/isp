@@ -300,6 +300,7 @@ selection, or a Barandes completion.
 | Paper 03 v3.1 corrected pin | `FROZEN RESULT-NEUTRAL` | terminal #49 repair boundary | point `Ev` samples separated from normal ensemble `Heis` states by `Ens`; no result before audits/construction/review |
 | boundary measure class | `DECLARED TECHNICAL TYPE WITH PROOF OBLIGATION` | one exact integrated boundary schema | must dominate every admitted incoming ensemble; never a physical prior or selector |
 | deterministic continuous record map | `CONDITIONAL ADMISSION` | packet primitive/interface | pushforward source class must be absolutely continuous with respect to target class |
+| Paper 03 v3.1 category pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and full authority corpus | predual `Ens`, tagged category, atomic restart, nonsingular maps, a.e. guards, memory and concurrency are jointly feasible; awards no coordinate |
 
 ## Derivation balance
 

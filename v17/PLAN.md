@@ -512,7 +512,9 @@ Paper 03 v3 category pin audit      FROZEN REVISE BEFORE CONSTRUCTION
 Paper 03 v3 quantum pin audit       FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3 joint pin adjudication  TERMINAL REVISE BEFORE CONSTRUCTION
 Paper 03 v3.1 corrected pin         FROZEN RESULT-NEUTRAL
-Paper 03 v3.1 independent audits    NEXT — CATEGORY + QUANTUM
+Paper 03 v3.1 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
+Paper 03 v3.1 quantum pin audit     NEXT — FREEZE/RECORD
+Paper 03 v3.1 joint adjudication    PENDING
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```

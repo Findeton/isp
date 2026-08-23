@@ -69,8 +69,11 @@ cleanly if nature does not support it.
   corrected v3.1 pin is now frozen, with no automatic successor chain. It
   keeps finite/atomic point restart exact, treats continuous records through
   an integrated `Ens` bridge and a.e. posterior/control fields, and requires
-  common domination plus nonsingular record maps. Two independent audits are
-  next.
+  common domination plus nonsingular record maps. The independent category
+  audit accepts construction with binding scope after reconstructing the
+  predual `Ens` theorem, tagged category, exact atomic restart, measure-class
+  maps, memory and reachable-context concurrency. It awards no result; the
+  quantum audit and joint adjudication remain.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -273,6 +276,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   pin separating exact samples from normal ensemble states, with atomic
   restart, integrated duality, common-domination/nonsingularity gates, tagged
   hybrid objects, and certified concurrency.
+- `note-paper03v31-pin-audit-category.md` — independent category/mathematics
+  audit; accepts one construction attempt with binding predual, closure,
+  memory, exact-versus-a.e., and concurrency obligations.
 
 ## Permanent honesty wall
 
