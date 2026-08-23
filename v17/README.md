@@ -24,9 +24,9 @@ cleanly if nature does not support it.
   PHASE-COMPLETE RESIDUE SURVIVE**. The contextual-ontology bridge is
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
-- Paper 02 v2 status: **GREEN-UNREVIEWED MATHEMATICS CONSTRUCTED — AUTHOR
-  AUDIT PASSED; HOSTILE-REVIEW PROTOCOL NEXT**. Its exact scope is the prequotient
-  procedure architecture $\mathcal P\to\mathcal Q$, trusted
+- Paper 02 v2 status: **GREEN-UNREVIEWED MATHEMATICS CONSTRUCTED — HOSTILE
+  REVIEW PROTOCOL FROZEN; THREE BLIND REPORTS NEXT**. Its exact scope is the
+  prequotient procedure architecture $\mathcal P\to\mathcal Q$, trusted
   physical-randomization constructors, system-facing contextuality as a
   descent obstruction, and the Barandes-row correction. It adds no physical
   postulate and pre-awards no successor.
@@ -157,6 +157,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   no-selection mathematics; no result is terminal.
 - `note-paper02v2-construction-audit.md` — author proof/overclaim audit and
   mandatory independent attack surface; not an adjudication.
+- `note-paper02v2-hostile-review-protocol.md` — immutable three-lens review
+  duties, fresh attacks, product schema, and adjudication rules.
 
 ## Permanent honesty wall
 

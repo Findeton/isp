@@ -601,3 +601,30 @@ Four surfaces are explicitly handed to hostile review rather than hidden:
 No exact semantic counterexample is found. Rung 7 remains provisional and
 unawarded. No candidate edit, code, or Paper 03 unit opens. The next action is
 to freeze the three-lens hostile-review protocol.
+
+## 2026-08-22 — PAPER 02 V2 HOSTILE-REVIEW PROTOCOL FROZEN (v17 LEDGER #23)
+
+The immutable review contract is frozen at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper02v2-hostile-review-protocol.md` | `1f04d42fda7e607b42471c683f305a44744ce77fd5030dbb90c4736ac23d0366` | 459 LF / 18,157 bytes |
+
+Three mutually blind seats are bound:
+
+1. M — category, procedure referent, quotient, kernels, measurability, and
+   quantifiers;
+2. Q — positive contextual probability, process combs, contextuality, Bell,
+   phase, scalar, and resources;
+3. O — apparatus/system ontology, idle-versus-structural distinctions,
+   records, Barandes, actuality, discriminators, and downstream walls.
+
+Every seat must reconstruct the full common core, C1--C24, attacks 1--56,
+the 20 theorem items, 22-coordinate product, and at least eight exact fresh
+attacks. The reports are not votes. The first semantic counterexample controls
+the earliest rung and must be independently rebuilt by the adjudicator.
+
+All three report paths and the adjudication path were absent at protocol
+freeze. Candidate bytes remain `d9278763...2a77`. No code, candidate edit,
+Paper 03, clock, QFT, spacetime, or gravity unit opens. The sole next action is
+the three blind reviews.

@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
-green-unreviewed mathematics and author audit frozen; review protocol next**
+green-unreviewed mathematics and review protocol frozen; blind reports next**
 
 ## 0. Authority and workflow
 
@@ -170,8 +170,8 @@ selection, actuality, QFT, clocks, spacetime, and gravity remain
 unconstructed. The result-neutral author audit passes without awarding any
 coordinate. The self-contained mathematics construction is now frozen at
 green-unreviewed status, and its author construction audit passes without
-moving a candidate byte. The sole next event is the immutable hostile-review
-protocol; independent review has not begun.
+moving a candidate byte. The immutable hostile-review protocol is now frozen.
+The sole next event is the three mutually blind reports.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 
