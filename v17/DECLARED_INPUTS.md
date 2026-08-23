@@ -301,6 +301,7 @@ selection, or a Barandes completion.
 | boundary measure class | `DECLARED TECHNICAL TYPE WITH PROOF OBLIGATION` | one exact integrated boundary schema | must dominate every admitted incoming ensemble; never a physical prior or selector |
 | deterministic continuous record map | `CONDITIONAL ADMISSION` | packet primitive/interface | pushforward source class must be absolutely continuous with respect to target class |
 | Paper 03 v3.1 category pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and full authority corpus | predual `Ens`, tagged category, atomic restart, nonsingular maps, a.e. guards, memory and concurrency are jointly feasible; awards no coordinate |
+| Paper 03 v3.1 quantum pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and unchanged v2 instruments | continuous duality must begin at ensemble level; state-independent target landing, joint posterior measurability, stochastic null-ideal preservation, path closure and complete memory remain construction obligations |
 
 ## Derivation balance
 

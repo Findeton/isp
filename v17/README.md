@@ -72,8 +72,12 @@ cleanly if nature does not support it.
   common domination plus nonsingular record maps. The independent category
   audit accepts construction with binding scope after reconstructing the
   predual `Ens` theorem, tagged category, exact atomic restart, measure-class
-  maps, memory and reachable-context concurrency. It awards no result; the
-  quantum audit and joint adjudication remain.
+  maps, memory and reachable-context concurrency. The independent quantum
+  audit also accepts with binding scope: continuous duality must be proved
+  directly at ensemble level, with one state-independent target-landing
+  extension, joint posterior measurability, stochastic null-ideal
+  preservation, path closure, complete memory, and exact two-layer exchange
+  certificates. Neither audit awards a result; joint adjudication is next.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -279,6 +283,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v31-pin-audit-category.md` — independent category/mathematics
   audit; accepts one construction attempt with binding predual, closure,
   memory, exact-versus-a.e., and concurrency obligations.
+- `note-paper03v31-pin-audit-quantum.md` — independent quantum/instrument
+  audit; accepts one construction attempt with binding ensemble-level
+  duality, normal-extension, posterior, null-ideal, closure, memory, and
+  certificate obligations.
 
 ## Permanent honesty wall
 

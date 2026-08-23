@@ -1228,3 +1228,27 @@ exact frozen `Ev` representatives versus integrated a.e. equality, and full
 memory/certificate data. It awards no result and opens no construction by
 itself. The independent quantum audit and joint adjudication remain; Paper 04
 stays closed.
+
+## 2026-08-22 — PAPER 03 v3.1 QUANTUM PIN AUDIT FROZEN (v17 LEDGER #52)
+
+The second independent v3.1 audit freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/note-paper03v31-pin-audit-quantum.md` | `a25cf562d4f25b8fccebd3546e19ecccfde8fe3aac975ae047051c2c2319cb78` | 745 LF / 36,220 bytes |
+
+Verdict: `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE`; first exact blocker:
+none. The finite/atomic complete-instrument and restart laws remain exact. In
+the nonatomic regime, point samples stay in `Ev`, while only dominated
+ensemble laws produce normal `Ens` states. The one-step duality proof must be
+an equality of normal ensemble functionals from the outset; evaluating an
+$L^\infty$ class at each exact point before integration would recreate the
+rejected v3 error.
+
+The audit additionally binds one state-independent UCP extension landing in
+the declared target algebra, jointly measurable posterior kernels, closure of
+the admitted ensemble class at every path step, stochastic as well as
+deterministic null-ideal preservation, complete future-memory exposure, and
+exact two-layer concurrency certificates. It preserves every v2 probability
+and awards no coordinate. Joint adjudication is next; construction and Paper
+04 remain closed.
