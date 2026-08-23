@@ -606,11 +606,26 @@ absent. No candidate, official pin, review cycle, or result is opened.
 
 ### Task U0-T4 — native candidate contest
 
-Only after T1--T3 reaches implementation-bound, independently audited
-candidate-entry readiness may a separately authorized contest write at least
-one explicit candidate and one deliberately different positive control from
-independently motivated primitives. Freeze the candidate before evaluation.
-Do not select the winner after opening targets.
+T4 is staged so that formula construction does not require premature apparatus
+custody, while target access never precedes a freeze.
+
+1. **T4-P, author-side preconstruction.** Exact formulas may be prototyped
+   from target-blind primitives and tested against theorem, synthetic, public,
+   and retrospective controls. This creates no official candidate, pin,
+   empirical claim, or target access.
+2. **T4-E, candidate-entry readiness.** Before requesting a freeze, one exact
+   formula must print its source map, actuality rule, composition rule,
+   falsifier, resource bound, and deliberately different positive control,
+   and must survive the cheap controls.
+3. **R4, implementation and custody.** Only after a separately authorized
+   formula freeze may a prospective or otherwise information-safe fixture be
+   bound and independently audited for source lineage and leakage.
+4. **T4-O, official evaluation.** Only a separately authorized official cycle
+   may open held-out targets and award a scientific result.
+
+Do not select a formula or a winner after opening targets. None of T4-E, R4,
+T4-O, a formula freeze, or an official contest is opened by this sequencing
+clarification.
 
 ### Task U0-T5 — scaling and actuality audit
 

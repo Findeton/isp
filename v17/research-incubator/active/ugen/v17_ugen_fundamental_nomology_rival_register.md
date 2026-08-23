@@ -162,13 +162,19 @@ closure, and information-placement results as SC1--SC5. Its relocation theorem
 shows that an arbitrary process family can masquerade as one law plus a static
 sector, while its finite monoidal/orbital theorems show that anonymous
 composition collapses and physical structure supplies response slots without
-their weights. The diagnostic ladder therefore ends. Rival A can advance only
-through a separately authorized source-closed higher-boundary/memory candidate
-or direct whole-boundary relational candidate; neither may inherit target
-jets, Hamiltonians, wavefunctions, external time, trajectories, phases, or
-per-program tables. R4 remains deferred and MG0 remains a declaration-only
-preflight. This is NRL-L2 author-side only and creates no scientific result or
-new authority.
+their weights. The diagnostic ladder therefore ends. The architecture
+preconstruction proves that source-closed memory and direct whole-program
+forms are interrepresentable at finite prefix-autonomous scope. A complete
+Markov memory divides the enlarged carrier; a non-prefix law must change
+source/control semantics. Exact PR and per-setting global-unistochastic
+controls further show that a distinct quantum-composition principle is
+missing. Rival A can advance only through one source-closed contextual
+whole-process functional that supplies both this Q-layer and a material-member
+M-layer; it may inherit
+no target jets, Hamiltonians, wavefunctions, external time, trajectories,
+phases, or per-program tables. R4 remains deferred and MG0 remains a
+declaration-only preflight. This is author-side only and creates no scientific
+result or new authority.
 
 ### Kill condition
 

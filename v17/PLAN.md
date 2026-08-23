@@ -399,15 +399,21 @@ placement, SC4 short-time/unbounded directed response, and SC5 nomological
 relocation/descriptor origin. Exact relocation and finite orbital theorems
 show why neither “one law plus state” nor symmetry-typed response slots select
 the physical law without independently evidenced source structure and a fixed
-response principle. The diagnostic ladder stops here. The next scientific
-fork, only if separately authorized, compares a source-closed higher-boundary
-or memory law with a direct whole-boundary relational law. Neither class may
-inherit external time, trajectories, target jets, Hamiltonians, wavefunctions,
-actions, phases, or per-program response tables. R4 custody is deferred until
-a candidate survives cheaper controls. MG0 requires ontology and coupling
-declarations at candidate entry but remains unable to select or evaluate the
-matter law before genuinely distinct complete candidates exist. NRL-L2 is
-author-side only and opens no candidate, pin, review, U0-T4, Q-Cut cycle, or
+response principle. The diagnostic ladder stops here. Exact architecture
+preconstruction proves that finite prefix-autonomous whole laws and sequential
+history-memory laws are interrepresentable; a complete Markov memory is
+divisible on the enlarged carrier, while non-prefix laws owe an explicit
+source/control modification. Stochastic marginal locality and per-setting
+global unistochasticity also admit an exact PR control, so they do not select
+the quantum boundary. The next formula target is one source-closed contextual
+whole-process functional supplying both process-composition and
+material-member selection. It may not inherit external time, trajectories,
+target jets, Hamiltonians, wavefunctions, actions, phases, or per-program
+response tables. R4 custody is deferred until an exact formula survives cheap
+controls. MG0 requires ontology and coupling declarations at candidate entry
+but remains unable to select or evaluate the matter law before genuinely
+distinct complete candidates exist. This work is author-side only and opens
+no official candidate, pin, review, U0-T4 official cycle, Q-Cut cycle, or
 successor.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are

@@ -534,13 +534,19 @@ cleanly if nature does not support it.
   resource content. Full anonymous relabeling plus strict product
   compatibility leaves only identity or uniform reset; retaining physical
   factor/source relations restores response channels but does not select
-  their weights. The next scientific fork, if separately authorized, is
-  between a source-closed higher-boundary/memory law and a direct
-  whole-boundary relational law. R4 is deferred until a candidate survives
-  cheaper controls, and MG0 may require declarations but cannot select a
-  matter ontology here. This is NRL-L2 author-side only: no response
-  functional, configuration ontology, candidate, pin, review, U0-T4, or
-  successor is created.
+  their weights. The architecture preconstruction then proves that the
+  apparent memory/whole-program fork is not an empirical dichotomy at finite
+  prefix-autonomous scope. Complete Markov memory makes the enlarged law
+  divisible; non-prefix laws owe changed control/source semantics; and an
+  exact PR control shows that stochastic marginal locality plus per-setting
+  global unistochasticity does not derive the quantum composition boundary.
+  The next formula must be one source-closed complete-process functional that
+  supplies both quantum-bound composition and material-member selection. R4 is
+  deferred
+  until an exact formula survives cheaper controls, and MG0 may require
+  declarations but cannot select a matter ontology here. This work is
+  author-side only: no response functional, configuration ontology, official
+  candidate, pin, review, U0-T4 official cycle, or successor is created.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

@@ -395,13 +395,20 @@ SC5 nomological relocation/descriptor origin. Exact author-side theorems show
 that arbitrary law families can be hidden in a conserved state sector;
 anonymous strict monoidal covariance leaves only identity or uniform reset;
 and typed factor/source relations create response channels without selecting
-their weights. The diagnostic ladder therefore stops. A separately authorized
-scientific construction must compare a source-closed higher-boundary/memory
-law with a direct whole-boundary relational law, without importing target
-jets, Hamiltonians, external time, trajectories, phases, or per-program
-tables. R4 is deferred until a candidate survives cheaper controls, and MG0
-remains a declaration-only preflight. This is NRL-L2 author-side only and
-opens no candidate, pin, review, U0-T4, Q-Cut cycle, or successor.
+their weights. The diagnostic ladder therefore stops. The subsequent
+architecture preconstruction proves that source-closed memory and direct
+whole-program formulas are representationally interconvertible at finite
+prefix-autonomous scope; a complete Markov memory makes the enlarged law
+divisible, while a non-prefix whole law owes changed source or intervention
+semantics. Its exact PR control also shows that stochastic marginal locality
+and per-setting global unistochasticity do not derive the quantum composition
+boundary. The next formula must therefore supply one source-closed
+whole-process functional with both a quantum-bound composition rule and a
+material-member response rule, without target jets, Hamiltonians, external
+time, trajectories, phases, or per-program tables. R4 is deferred until an
+exact formula survives cheaper controls, and MG0 remains a declaration-only
+preflight. This work is author-side only and opens no candidate, pin, review,
+U0-T4 official cycle, Q-Cut cycle, or successor.
 
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
@@ -452,6 +459,7 @@ Active audit:
 - v17_ugen_u0_unbounded_cycle_jet_nonclosure_gate.md
 - v17_ugen_u0_reversal_source_architecture_gate.md
 - v17_ugen_u0_source_constraints_synthesis.md
+- v17_ugen_u0_candidate_architecture_preconstruction.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md

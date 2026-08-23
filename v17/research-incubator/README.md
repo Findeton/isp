@@ -417,10 +417,17 @@ nomological relocation/descriptor origin. It proves that arbitrary law
 families can be hidden in a conserved source sector, while anonymous strict
 monoidal covariance collapses to identity or uniform reset and physical
 factor marks create channels without selecting their weights. This ends the
-diagnostic ladder. A separately authorized construction would have to compare
-a source-closed higher-boundary/memory architecture against a direct
-whole-boundary relational architecture. R4 remains deferred and MG0 remains a
-declaration-only preflight. NRL-L2 creates no candidate, pin, review, U0-T4,
+diagnostic ladder. The later architecture preconstruction proves that the
+apparent memory/whole-program fork is representational at finite
+prefix-autonomous scope unless additional physical claims distinguish the
+carriers. Complete Markov memory is divisible on the enlarged carrier;
+non-prefix laws owe changed control/source semantics; and a PR control shows
+that stochastic marginal locality plus per-setting global unistochasticity
+does not select quantum composition. The next formula must supply both that
+composition rule and material-member response in one source-closed
+whole-process nomology. R4 remains deferred and MG0 remains a declaration-only
+preflight. This
+author-side work creates no official candidate, pin, review, U0-T4 cycle,
 Q-Cut cycle, or successor.
 
 C1 active files:
@@ -460,6 +467,11 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
 - active/ugen/v17_ugen_u0_reflection_positive_euclidean_control.md
 - active/ugen/v17_ugen_u0_dynamical_complex_structure_gate.md
+- active/ugen/v17_ugen_u0_short_time_probability_jet_source_gate.md
+- active/ugen/v17_ugen_u0_unbounded_cycle_jet_nonclosure_gate.md
+- active/ugen/v17_ugen_u0_reversal_source_architecture_gate.md
+- active/ugen/v17_ugen_u0_source_constraints_synthesis.md
+- active/ugen/v17_ugen_u0_candidate_architecture_preconstruction.md
 - active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
 - active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md

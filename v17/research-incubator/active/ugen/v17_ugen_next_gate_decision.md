@@ -238,13 +238,18 @@ The U0 source-constraints synthesis now consolidates the mature diagnostics
 as SC1--SC5 and ends the diagnostic ladder. Its exact relocation and finite
 orbital theorems show that a formal one-law/static-state rewrite and a
 symmetry-typed response space do not supply the physical member-selection
-principle. The only live scientific construction fork is between a
-source-closed higher-boundary/memory law and a direct whole-boundary
-relational law. Neither is authorized or constructed. R4 is deferred until a
-candidate survives cheaper controls; MG0 requires declarations but remains
-unable to select a matter ontology here. The synthesis is NRL-L2 author-side
-only and opens no Q-Cut cycle, formula freeze, pin, review, U0-T4, or
-successor.
+principle. The later architecture preconstruction removes the apparent
+memory/whole-program fork as a finite prefix-autonomous dichotomy: history
+memory represents any such whole law, complete Markov physical memory makes
+the enlarged law divisible, and non-prefix laws owe changed source/control
+semantics. Its exact PR and global-unistochastic controls also locate an
+independent missing quantum-composition rule. The next formula target is one
+source-closed contextual whole-process functional with both that Q-layer and
+a material-member M-layer. No such functional is constructed. R4 is deferred
+until an exact formula survives cheaper controls; MG0 requires declarations
+but remains unable to select a matter ontology here. This work is author-side
+only and opens no Q-Cut cycle, formula freeze, pin, review, U0-T4 official
+cycle, or successor.
 No real implementation, target data, candidate, or official cycle is opened.
 
 MG0 supplies a separate author-side co-design contract rather than
