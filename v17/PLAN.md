@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1/v2 terminal REVISE; one scoped Paper 03 v3 repair pin next**
+Paper 03 v1/v2 terminal REVISE; Paper 03 v3 result-neutral repair pin frozen**
 
 ## 0. Authority and workflow
 
@@ -507,13 +507,16 @@ Paper 03 v2 Seat A review           FROZEN REVISE — HEISENBERG TARGET UNCONSTR
 Paper 03 v2 Seat Q review           FROZEN REVISE — SAME HEISENBERG DEFECT
 Paper 03 v2 Seat O review           FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v2 joint adjudication      TERMINAL REVISE — RUNG 6
-Paper 03 v3 repair pin              NEXT — HYBRID CQ TARGET + CERTIFIED CONCURRENCY
+Paper 03 v3 repair pin              FROZEN RESULT-NEUTRAL
+Paper 03 v3 independent pin audits  NEXT — CATEGORY + QUANTUM
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is one result-neutral Paper 03 v3 repair pin. It
-may construct only the hybrid classical--quantum Heisenberg target, its
-compatibility laws, exact primitive interfaces, and certified-concurrency
-scope. It may not retune probabilities or add ontology, internal time,
-spacetime emergence, or gravity. Paper 04 remains closed.
+The next scientific action is independent mathematics review of the frozen
+Paper 03 v3 pin. Only if those audits accept its implementability and scope may
+one mathematics-only construction begin. The v3 cycle may construct only the
+hybrid classical--quantum Heisenberg target, its compatibility laws, exact
+primitive interfaces, and certified-concurrency scope. It may not retune
+probabilities or add ontology, internal time, spacetime emergence, or gravity.
+Paper 04 remains closed.

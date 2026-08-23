@@ -49,6 +49,13 @@ cleanly if nature does not support it.
   counterexample, while binding retained-record and nondivision scopes. Joint
   adjudication preserves the positive Markov representation at rung 6 and
   authorizes one v3 hybrid-semantics repair cycle. Paper 04 remains closed.
+- Paper 03 v3 status: **RESULT-NEUTRAL REPAIR PIN FROZEN**. The pin assigns
+  each exact laboratory boundary a hybrid classical--quantum observable
+  algebra, represents a complete retained-outcome instrument as one
+  normalized CP arrow, requires `Ev`/`Heis` agreement on complete readers,
+  and limits schedule equality to paths connected by certified full-operation
+  exchanges. It changes no probabilities or physics and awards no result.
+  Independent mathematics and quantum pin audits are next.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -234,6 +241,10 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   persist only under typed retaining futures.
 - `note-paper03v2-hostile-review-adjudication.md` — terminal `REVISE`, rung-6
   mixed product, and exact v3 hybrid-semantics/exchange repair boundary.
+- `note-paper03v3-hybrid-instrument-semantics-pin.md` — frozen result-neutral
+  hybrid classical--quantum boundary/category repair, complete-instrument and
+  adaptive-control semantics, `Ev`/`Heis` compatibility, NEP-scoped
+  standard-Borel extension, and certified-concurrency quantifiers.
 
 ## Permanent honesty wall
 

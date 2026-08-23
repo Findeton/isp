@@ -280,6 +280,20 @@ selection, or a Barandes completion.
 | Paper 03 v2 terminal adjudication | frozen candidate plus three reports | `TERMINAL REVISE — RUNG 6` | positive Markov representation survives; hybrid Heisenberg target and universal schedule theorem fail |
 | Paper 03 v3 repair authority | v2 terminal repair boundary | `AUTHORIZED RESULT-NEUTRAL` | hybrid CQ target, semantic compatibility, exact interfaces, certified concurrency only; no probability or physics retuning |
 
+## Paper 03 v3 frozen-input balance
+
+| Object | Status at pin freeze | Source / choice | Debt retained |
+|---|---|---|---|
+| finite hybrid record algebra | `TARGET MATHEMATICS` | $\ell^\infty(R_D)\otimes\mathcal A_D$ for exact finite boundary schema | operational representation, not ontology |
+| standard-Borel hybrid algebra | `CONDITIONAL TARGET MATHEMATICS` | represented sigma-finite $W^*$ packet, separable predual, faithful technical reference measure class, and NEP | excludes instruments lacking the hypotheses; reference is not a physical state |
+| complete instrument arrow | `TARGET DERIVATION` | direct-sum or NEP normal extension of the unchanged v2 branch maps | must distinguish complete arrow, branch, and nonselective restriction |
+| `Hyb_Xi` and `Heis_Xi` | `TARGET DERIVATION` | exact boundary schemas and primitive CP maps | identities, total matched composition, retained records, and controls unproved until construction |
+| `Ev`/`Heis` compatibility | `TARGET DERIVATION` | unchanged v2 state/record kernels and complete readers | no actuality and no null-outcome posterior |
+| certified concurrency | `NARROWED TARGET` | equal complete hybrid maps and kernels with output permutation/source lineage | no equality for uncertified incomparable operations |
+| physical probabilities and instruments | `FROZEN UNCHANGED INPUT` | terminal v2 surviving subpackage | no retuning permitted |
+| Paper 03 v3 result | `UNCONSTRUCTED` | frozen result-neutral pin | independent pin audits, construction, and hostile adjudication required |
+| ontology / internal time / spacetime / gravity | `UNCONSTRUCTED` | no input | Paper 04 and later phases remain closed |
+
 ## Derivation balance
 
 The live adjudicated balance is:
