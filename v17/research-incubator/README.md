@@ -241,6 +241,18 @@ select a topological character. The existing-field cover-local repair route is
 therefore closed at that scope, while modified local physics and a holistic
 indivisible positive parent law remain open and unconstructed.
 
+G1 now constructs the first finite member of that holistic branch. Its actual
+output is one ordinary-positive complete record sampled from an action/holonomy
+parent packet. Exact controls distinguish presentation from physical
+refinement, retained records from coherent erasers, factorized products from
+interacting parents, and recorded adaptation from coherent continuation. The
+same scalar law has a real oriented-plane form, so complex notation is not
+promoted to material ontology. Nevertheless, a fixed continuation proves that
+isolated endpoint $\Gamma$ laws cannot carry the required relational
+orientation, and rank-two mixed/C1 controls lie outside scalar G1. The packet
+therefore locates the missing composition data without deriving it or filling
+the native slot.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -283,6 +295,13 @@ Post-C4 routing, comparator, and N1 files:
 - active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md
 - active/ugen/v17_ugen_n1a_future_review_contract.md
 
+G1 active files:
+
+- active/ugen/v17_ugen_g1_relational_holonomy_parent_law_candidate.md
+- active/ugen/v17_ugen_g1_exact_controls_and_native_slot_gate.md
+- active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md
+- active/ugen/v17_ugen_g1_future_review_contract.md
+
 Canonical status: `active/ugen/README.md`.
 
 Active working package:
@@ -305,6 +324,10 @@ Active working package:
 - `active/ugen/v17_ugen_n1a_global_phase_locality_gate.md`
 - `active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md`
 - `active/ugen/v17_ugen_n1a_future_review_contract.md`
+- `active/ugen/v17_ugen_g1_relational_holonomy_parent_law_candidate.md`
+- `active/ugen/v17_ugen_g1_exact_controls_and_native_slot_gate.md`
+- `active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md`
+- `active/ugen/v17_ugen_g1_future_review_contract.md`
 
 - `active/ugen/README.md`
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`

@@ -58,7 +58,16 @@ N1A proves that no strictly cover-local exact-germ-preserving repair on those
 same node-free fields can impose the missing circulation lattice. Its smooth
 target theorem fixes a phase period only in a declared target category and
 does not select global descent or a character. A global indivisible positive
-parent law therefore remains live but wholly unconstructed.
+parent law therefore remains live.
+
+G1 now constructs one finite conditional member of that global class. It sums
+typed action/holonomy contributions and samples only an ordinary-positive
+complete record. Its exact controls show that complex notation can be replaced
+by an oriented real plane, while the relational orientation cannot be removed
+from held-out composition. The scalar packet passes finite eraser, connection,
+product, and recorded-feed-forward controls, but fails higher-rank boundaries
+and has no uniform interacting parent compiler. G1 therefore locates the
+missing input without filling the native slot.
 
 ### Kill condition
 
@@ -190,10 +199,11 @@ The current evidence supports the following order.
 2. **Retained controls/candidates:** E-Comp; C1--C4
    pair-history/action/actuality package; Bell-current actuality comparator;
    bounded N1 time-symmetric diffusion candidate; bounded N1A locality gate.
-3. **Next substantive U-Gen question:** construct one global indivisible
-   positive parent law for relative-holonomy experiments and a complete
-   process compiler, or prove a bounded no-go for a precisely stated holistic
-   class.
+3. **Current substantive U-Gen test:** G1 is the first global
+   relative-holonomy positive parent candidate. It must derive a presently
+   supplied input, acquire a representation-independent higher-rank/adaptive
+   compiler without target import, or terminate as a bounded zero-gain
+   comparator and obstruction dossier.
 4. **Deferred:** official interferometry benchmark until a distinct candidate
    predicts it; clocks until a native law exists; locality/Tsirelson after the
    composition law is fixed; spacetime and gravity until endogenous influence,
@@ -214,7 +224,10 @@ EMPIRICALLY SELECTED NOMOLOGY:        NONE
 NEXT OFFICIAL RECOMMENDATION:         Q-CUT ONLY, IF EXPLICITLY AUTHORIZED
 NATIVE ISP LAW:                       ABSENT
 N1A LOCAL REPAIR CLASS:               CLOSED / GLOBAL WHOLE-LAW ROUTE OPEN
-NEXT U-GEN CONSTRUCTION:              GLOBAL HOLONOMY PARENT LAW OR NO-GO
+G1 GLOBAL POSITIVE PARENT:            FINITE CONDITIONAL SCALAR MEMBER
+G1 ENDPOINT-GAMMA COMPOSITION:        REFUTED FOR PRINTED PHASE FAMILY
+G1 HIGHER-RANK / ADAPTIVE COMPILER:   ABSENT / SCALAR CLASS FAILS
+NEXT U-GEN CONSTRUCTION:              DERIVE ONE G1 INPUT OR BOUNDED NO-GO
 C-NUMBER EXPANSION:                   CLOSED AT C4
 CLOCK / SPACETIME / GRAVITY:          DEFERRED
 SCIENTIFIC RESULT:                    NONE

@@ -182,30 +182,30 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "70056a64790baf22f5f6cd322b862179944dc671c011363438d639f53e1f733e"
+    sha256: "4669460710984d309bd2a837589685a6a6858ea74a9f8b7c83e8261bdf9b272d"
     created_at: "2026-08-23"
     front: "ugen"
-    status: "active-routing-post-n1a-local-repair-gate-complete-slot-empty"
+    status: "active-routing-post-g1-bounded-parent-controls-native-slot-empty"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U-Gen routing closing the C-series at C4, adopting a plural nomology contest, retaining Bell-current dynamics as a quantum-input comparator, admitting N1 only as a bounded local nonrelativistic positive candidate, and routing N1A as a bounded local-repair obstruction with global descent and the holistic parent-law slot open; no data evaluation, independently verified source freeze, native complete law, actuality selection, scalable trilemma theorem, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral U-Gen routing closing the C-series at C4, adopting a plural nomology contest, retaining Bell-current and N1/N1A controls, and classifying G1 as a bounded finite positive scalar parent whose endpoint-Gamma composition and higher-rank limits leave the native slot empty; no data evaluation, independently verified source freeze, native complete law, actuality selection, scalable trilemma theorem, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "3840b2f268fc771a59c770cec3052f3521c3274c74466523c5b7a99828ff57a5"
+    sha256: "4cafd3502ab848d24131b00c3c688974c17afb48e3821b817ac462898196bd84"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral dependency, resource-coordinate, generator-contest, plural-nomology, Bell-current comparator, bounded N1 positive-diffusion, and bounded N1A local-repair audit; no data evaluation, holistic no-go, scalable theorem, native complete law, selected actuality, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral dependency, resource-coordinate, generator-contest, plural-nomology, Bell-current, N1/N1A, and bounded G1 positive-parent audit; no data evaluation, universal holistic no-go, scalable theorem, native complete law, selected actuality, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_pc2_balanced_seam_classification_candidate.md"
     sha256: "913b61c27f3a8303df5acb72e75b4a4def61a5b98b7457734b6be3b9bc4f6d4d"
@@ -247,17 +247,17 @@ artifacts:
     maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_ugen_next_gate_decision.md"
-    sha256: "a0cf25eb662d95958b1adf4aefe715231dd8c900face10d2b6893169116f6800"
+    sha256: "780ef517e40efee4df89a568a82001a0e2f5e365f550da9beb780a764f9109b2"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-decision"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md"]
+    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md"]
     source_audit_status: "inherits-c4-author-side-source-scope-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding decision closing the C-series at C4, retaining Bell-current dynamics as a quantum-input comparator, admitting N1 only as a bounded local positive candidate, recording N1A's bounded cover-local repair obstruction, and preserving Q-Cut as the recommended next official unit"
+    maximum_claim: "nonbinding decision closing the C-series at C4, retaining Bell-current and N1/N1A controls, classifying G1 as a bounded conditional positive parent with exact composition and higher-rank limits, and preserving Q-Cut as the recommended next official unit"
     canonical: false
   - path: "active/ugen/v17_ugen_c1_pair_history_composition_candidate.md"
     sha256: "9beceb074a315a2e44e4e92647533e482f923708727b407e4fbea4f3ec943efa"
@@ -364,7 +364,7 @@ artifacts:
     maximum_claim: "future three-seat mathematics, quantum/topology/source, and ontology/gravity/empirical review contract only; no activation, review, result, or successor authority"
     canonical: false
   - path: "active/ugen/v17_ugen_c3_action_character_theorem_candidate.md"
-    sha256: "424402a58c70124b26f0ea90c3e2c5822ce2ae2baa7c4ac22cf68a95e8f5782c"
+    sha256: "19206306da5dd91a31b05717a9827bb9f4c3de68344eec055f43829f3d7551fd"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-mathematics-candidate"
@@ -520,17 +520,17 @@ artifacts:
     maximum_claim: "future three-seat probability/current, quantum-foundations/source, and operational-QFT/gravity review contract only; no activation, source freeze, review, result, ontology selection, or successor authority"
     canonical: false
   - path: "active/ugen/v17_ugen_fundamental_nomology_rival_register.md"
-    sha256: "046c463b2bdc1b68260d604e94900f45fb435ced94ba4caf91bc830fd3711ab9"
+    sha256: "e3a7356de2dfdfbe32d1b2936f009ad5c2b6453d562bce8e5a807e8de9690070"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-register"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md", "active/ugen/v17_ugen_bell_current_physical_reality_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md"]
-    source_audit_status: "inherits-c4-bell-current-n1-and-n1a-author-side-source-audits-independent-review-pending"
+    depends_on: ["active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md", "active/ugen/v17_ugen_bell_current_physical_reality_audit.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md"]
+    source_audit_status: "inherits-c4-bell-current-n1-n1a-and-g1-author-side-source-audits-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding plural contest among ordinary-positive, fundamental decoherence-functional, and modified-actualization nomologies under one operational ledger, with N1 admitted only as a bounded Markov positive candidate and N1A closing only its strictly local repair class; no rival selection, official unit, empirical result, or successor authority"
+    maximum_claim: "nonbinding plural contest among ordinary-positive, fundamental decoherence-functional, and modified-actualization nomologies under one operational ledger, with N1/N1A bounded and G1 admitted only as a finite conditional positive parent plus obstruction dossier; no rival selection, native complete law, official unit, empirical result, or successor authority"
     canonical: false
   - path: "active/ugen/v17_ugen_n1_time_symmetric_diffusion_candidate.md"
     sha256: "9bd91570416c8fd37796ae05fe3e9a064de1f0e32916ca90afff8227042cbfa0"
@@ -572,7 +572,7 @@ artifacts:
     maximum_claim: "future three-seat stochastic-analysis, topology/gauge, and operational-QFT/gravity review contract only; no activation, source freeze, review, result, ontology selection, or successor authority"
     canonical: false
   - path: "active/ugen/v17_ugen_n1a_global_phase_locality_gate.md"
-    sha256: "c13bf7feb4391d42e6ad445b8bd6a09b5b9ddf0d35340c6ef49c0fdeca02596d"
+    sha256: "dcc8dd754267091262b57979032f9c6836de15e07ebe28e9e9de880157b8777e"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-bounded-mathematics-physics-candidate"
@@ -609,6 +609,58 @@ artifacts:
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "future three-seat topology/geometry, stochastic/gauge/source, and ontology/composition/unification review contract only; no activation, source freeze, review, result, ontology selection, or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_g1_relational_holonomy_parent_law_candidate.md"
+    sha256: "013ec48a455f3f17c70db13de7026b0e884947eea40bf57499f91dc8ea61fa81"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-bounded-positive-parent-candidate"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_n1a_global_phase_locality_gate.md", "active/ugen/v17_ugen_c3_action_character_theorem_candidate.md", "active/ugen/v17_ugen_c3_physical_action_phase_grounding_protocol.md", "active/ugen/v17_ugen_c1_pair_history_composition_candidate.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "finite conditional ordinary-positive complete-record compiler from typed action/holonomy data, with exact gauge, nondivision, normalization, causality, and scope walls; no derivation of the phase-complete carrier, mixed-boundary closure, complete adaptive compiler, native ISP unification, empirical result, QFT, spacetime, or gravity"
+    canonical: false
+  - path: "active/ugen/v17_ugen_g1_exact_controls_and_native_slot_gate.md"
+    sha256: "10101c23cc82218b8ab6eb6c9f075da54bd089348342d5fdab420ccf29c86a6d"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-control-obstruction-dossier"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_g1_relational_holonomy_parent_law_candidate.md", "active/ugen/v17_ugen_c1_pair_history_composition_candidate.md", "active/ugen/v17_ugen_c2_relational_kernel_decomposition_candidate.md"]
+    source_audit_status: "inherits-g1-author-side-source-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "exact finite presentation, eraser, holonomy, product, supplied-interaction, recorded-adaptation, endpoint-Gamma noncomposition, and scalar higher-rank obstruction controls; no universal positive-law no-go, native generator, empirical result, QFT, spacetime, or gravity"
+    canonical: false
+  - path: "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md"
+    sha256: "a0844499c7d3887073b370df48e88452486a7a6213a44ec9be2caa91ceac4a89"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-source-physics-scope-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_g1_relational_holonomy_parent_law_candidate.md", "active/ugen/v17_ugen_g1_exact_controls_and_native_slot_gate.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-moving-barandes-source-not-frozen-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "source attribution and physical accounting for the bounded G1 positive parent, its standard action/path prior art, Barandes compatibility, composition and actuality debts, exact scalar-class failures, and QFT/gravity ceilings; no official source freeze, review, native complete law, empirical result, or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_g1_future_review_contract.md"
+    sha256: "422efdf3e991ed24956d2b13ff9c2efeb2ec6406be552fdad1e4ab66669859a6"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "future-review-design-not-authorized"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_g1_relational_holonomy_parent_law_candidate.md", "active/ugen/v17_ugen_g1_exact_controls_and_native_slot_gate.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md"]
+    source_audit_status: "inherits-g1-author-side-source-physics-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "future three-seat mathematics/invariance, ontology/source, and composition/causality review contract for the bounded G1 compiler and obstructions only; no activation, pin, review, native-law claim, result, Q-Cut, clock, QFT, spacetime, gravity, or successor authority"
     canonical: false
   - path: "active/ugen/v17_pc3_projective_control_covariance_candidate.md"
     sha256: "8d79740280b5d7bb7192d2a4b064257e03e67ee521a9df1034ffe5638f36987e"

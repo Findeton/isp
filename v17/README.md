@@ -343,7 +343,16 @@ cleanly if nature does not support it.
   explicit premises but does not supply global descent or select a character.
   Thus the existing-field cover-local repair class is closed only at the
   printed scope; modified local physics and a holistic indivisible positive
-  parent law remain open and unconstructed.
+  parent law remain open after N1A. G1 now constructs one finite conditional
+  member of that holistic branch. It generates an ordinary-positive complete
+  record from a typed action/holonomy packet and passes exact presentation,
+  record/eraser, connection, product, and recorded-adaptation controls. Its
+  scalar law has an equivalent real oriented-plane form, so complex notation
+  is not promoted to material ontology. But held-out composition requires
+  relational orientation absent from isolated endpoint $\Gamma$ laws, and
+  scalar G1 fails mixed/higher-rank boundaries and the C1 $D_\pm$ control. It
+  remains a bounded compiler and obstruction dossier, not a native ISP law,
+  complete quantum process, empirical result, QFT, spacetime, or gravity.
   Q-Cut remains the next recommended official unit if separately authorized.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.

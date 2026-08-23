@@ -303,7 +303,7 @@ class assumption directly.
 If an action changes by an endpoint term
 
 $$
-S[h]\mapsto S[h]+f(b_{m out})-f(b_{m in}),
+S[h]\mapsto S[h]+f(b_{\rm out})-f(b_{\rm in}),
 $$
 
 then the amplitude character changes by boundary phases. For two alternatives

@@ -597,6 +597,17 @@ or select a fundamental-group character. The next constructive burden is
 therefore a genuinely global indivisible parent experiment, not another local
 Markov correction.
 
+G1 now performs that first global construction at finite scalar scope. It
+defines an ordinary-positive complete-record law from typed action/holonomy
+alternatives and executes presentation, record/eraser, connection, product,
+interaction, adaptation, and causality controls. Its real oriented-plane form
+shows that complex notation is not forced as material ontology. Its exact
+$T_\theta$ continuation proves that isolated endpoint $\Gamma$ laws cannot
+compile phase-sensitive composition, and its mixed-boundary/C1 controls prove
+that scalar G1 is not closed under higher-rank boundaries. The construction
+therefore supplies a bounded parent member and obstruction dossier, not the
+uniform native generator.
+
 The fundamental-nomology register adopts a plural contest among ordinary-
 positive indivisible laws, fundamental decoherence functionals, and standard
 quantum dynamics plus modified actualization. The common operational and
@@ -653,8 +664,13 @@ N1 COMPLETE PROCESS:             ABSENT
 N1A COVER-LOCAL REPAIR:          BOUNDED NO-GO / AUTHOR-SIDE ONLY
 N1A SMOOTH TARGET PERIOD:        EXACT IN PRINTED CLASS / NOT GLOBAL SECTOR
 N1A GLOBAL DESCENT/CHARACTER:    ABSENT / UNSELECTED
-NEXT AUTHOR-SIDE TARGET:         GLOBAL INDIVISIBLE HOLONOMY PARENT LAW OR
-                                 BOUNDED HOLISTIC NO-GO
+G1 POSITIVE PARENT:              FINITE CONDITIONAL SCALAR MEMBER
+G1 PRESENTATION/ERASER/HOLONOMY: EXACT BOUNDED CONTROLS
+G1 ENDPOINT-GAMMA COMPOSITION:   NO-GO FOR PRINTED PHASE FAMILY
+G1 MIXED/HIGHER-RANK BOUNDARY:   SCALAR CLASS FAILS
+G1 INTERACTING/ADAPTIVE COMPILER: ABSENT
+NEXT AUTHOR-SIDE TARGET:         DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
+                                 IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
 NATIVE ISP LAW:                  ABSENT
 PHYSICAL GENERATOR:              FOUND ONLY AT LOCAL NONRELATIVISTIC SCOPE
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND

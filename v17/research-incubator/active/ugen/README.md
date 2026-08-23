@@ -174,7 +174,18 @@ category. Period does not imply global descent or choose a
 fundamental-group character, so the fixed quantum sector remains independent.
 N1A closes only the printed existing-field cover-local class; modified local
 physics and a holistic indivisible positive parent law remain untested and
-unconstructed.
+unconstructed by N1A.
+
+G1 now performs the first such global construction at finite scalar scope. It
+maps a typed action/holonomy history packet to one ordinary-positive complete
+record law and supplies exact presentation, retained-record/coherent-eraser,
+connection, independent-product, interacting-parent, adaptive, and causality
+controls. An equivalent real oriented-plane form removes any need to treat a
+complex number as material, but held-out continuations prove that the
+relational orientation cannot be recovered from isolated endpoint $\Gamma$
+laws. Scalar G1 also fails the mixed/higher-rank boundary and C1 $D_\pm$
+controls. It is consequently a bounded conditional member and obstruction
+dossier, not a native ISP unification or complete process compiler.
 
 ## Current inputs
 
@@ -215,6 +226,10 @@ Active audit:
 - v17_ugen_n1a_global_phase_locality_gate.md
 - v17_ugen_n1a_source_topology_and_scope_audit.md
 - v17_ugen_n1a_future_review_contract.md
+- v17_ugen_g1_relational_holonomy_parent_law_candidate.md
+- v17_ugen_g1_exact_controls_and_native_slot_gate.md
+- v17_ugen_g1_source_physics_and_scope_audit.md
+- v17_ugen_g1_future_review_contract.md
 
 - v17_ugen_c4_interference_actuality_obstruction_candidate.md
 - v17_ugen_c4_actuality_selector_reality_investigation.md
@@ -351,6 +366,13 @@ Failure must identify an unavoidable input rather than announce that
     declared category without supplying global descent or selecting a
     topological sector. Period, descent, and sector selection must remain
     separate ledger coordinates.
+14. Replacing complex phase by an oriented real plane changes representation,
+    not information content. Held-out composition still requires relational
+    orientation absent from isolated endpoint probabilities.
+15. A finite action/holonomy compiler is not native merely because its final
+    law is positive. Its history magnitudes, relational transport, interaction,
+    higher-rank boundaries, and record grammar remain charged inputs until
+    derived by one uniform physical rule.
 
 ## Present disposition
 
@@ -394,9 +416,15 @@ N1 COMPLETE PROCESS:           NOT CONSTRUCTED / NOT FREEZE-READY
 N1A COVER-LOCAL REPAIR:        BOUNDED NO-GO / AUTHOR-SIDE ONLY
 N1A SMOOTH TARGET PERIOD:      2 PI KAPPA IN PRINTED CLASS / NOT SECTOR
 N1A GLOBAL DESCENT/CHARACTER:  NOT DERIVED / NOT SELECTED
+G1 POSITIVE PARENT:            FINITE CONDITIONAL SCALAR MEMBER
+G1 REAL/COMPLEX ONTOLOGY:      REAL ORIENTED FORM EXISTS / DATA REMAIN
+G1 ENDPOINT-GAMMA COMPOSITION: REFUTED FOR PRINTED PHASE FAMILY
+G1 RECORD/ERASER/HOLONOMY:     EXACT BOUNDED CONTROLS
+G1 MIXED/HIGHER-RANK:          SCALAR CLASS FAILS
+G1 COMPLETE PROCESS COMPILER:  ABSENT
 C-NUMBER EXPANSION:            CLOSED AT C4
-NEXT AUTHOR-SIDE TARGET:       GLOBAL INDIVISIBLE HOLONOMY PARENT LAW OR
-                               BOUNDED HOLISTIC NO-GO; COMPILER STILL OPEN
+NEXT AUTHOR-SIDE TARGET:       DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
+                               IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
 SOURCE-COMPLETION RESULT:      NONE
 NATIVE ISP LAW:                ABSENT
 UNIFORM GENERATOR:             N1 LOCAL NONRELATIVISTIC ONLY / NOT UNIVERSAL

@@ -103,7 +103,18 @@ $2\pi\kappa$ phase period only within a declared two-dimensional smooth-target
 category; period alone neither produces global descent nor selects a
 fundamental-group character. Thus the existing-field cover-local class is
 closed, while modified local physics and an indivisible positive
-whole-experiment law remain untested.
+whole-experiment law remain untested by N1A.
+
+G1 now supplies the first finite whole-experiment member. Its complete output
+is an ordinary-positive record law conditional on typed history magnitudes and
+global action/holonomy transport. Exact controls show that the complex scalar
+can be replaced by a real oriented plane, but the relational orientation is
+still operationally required: identical isolated endpoint $\Gamma$ laws lead
+to different fixed continuations. The packet passes finite presentation,
+eraser, connection, factorized-product, supplied-interaction, and recorded
+adaptive controls, while scalar G1 fails mixed/higher-rank boundaries and has
+no uniform interacting or complete adaptive compiler. It therefore
+instantiates the requested branch without filling the native slot.
 
 The fundamental-nomology register keeps three rivals live under one ledger:
 ordinary-positive indivisible law, fundamental decoherence functional, and
@@ -135,11 +146,15 @@ standard quantum dynamics plus modified actualization. No rival is selected.
     N1A COVER-LOCAL REPAIR:         BOUNDED NO-GO / AUTHOR-SIDE ONLY
     N1A SMOOTH TARGET PERIOD:       2 PI KAPPA / PRINTED CLASS ONLY
     N1A GLOBAL DESCENT/CHARACTER:   NOT DERIVED / NOT SELECTED
+    G1 POSITIVE PARENT:             FINITE CONDITIONAL SCALAR MEMBER
+    G1 REAL ORIENTED FORM:          EXACT / COMPLEX MATERIALITY NOT REQUIRED
+    G1 ENDPOINT-GAMMA COMPOSITION:  REFUTED FOR PRINTED PHASE FAMILY
+    G1 MIXED/HIGHER-RANK:           SCALAR CLASS FAILS
+    G1 COMPLETE PROCESS COMPILER:   ABSENT
     NATIVE ISP LAW:                 ABSENT
     FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
-    NEXT AUTHOR-SIDE U-GEN TASK:    GLOBAL INDIVISIBLE HOLONOMY PARENT LAW
-                                    OR BOUNDED HOLISTIC NO-GO;
-                                    COMPLETE PROCESS COMPILER STILL OPEN
+    NEXT AUTHOR-SIDE U-GEN TASK:    DERIVE ONE G1 INPUT, EXTEND WITHOUT TARGET
+                                    IMPORT, OR PROVE BOUNDED HOLISTIC NO-GO
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

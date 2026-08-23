@@ -53,6 +53,27 @@ proof and claims no priority for that idea.
 
 ## 1. Existing N1 data
 
+### 1.1 Notation firewall
+
+N1/N1A use an action-valued constant
+
+$$
+\kappa_A=2m\nu,
+$$
+
+so their phase is $e^{iS/\kappa_A}$. C3 instead denoted the
+inverse-action coefficient in $e^{i\kappa_C S}$ by $\kappa_C$. Whenever the
+two packets are compared,
+
+$$
+\boxed{\kappa_C=\kappa_A^{-1}}.
+$$
+
+The symbols must not be equated without this inversion. Below, the shorter
+$\kappa$ means $\kappa_A$ only.
+
+### 1.2 Local fields
+
 Let $M$ be a connected smooth configuration manifold and let
 
 $$
