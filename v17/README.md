@@ -124,6 +124,16 @@ cleanly if nature does not support it.
   firewall, certified pairs and finite paths, and the inherited scoped
   AQFT/no-signalling/positive-history package survive. No implementation or
   Paper 04 is opened; a complete-boundary successor needs a new semantic pin.
+- Paper 03 v3.2 status: **COMPLETE-BOUNDARY PAIRED-SEMANTICS PIN FROZEN —
+  RESULT-NEUTRAL**. This is one final representation-level repair, not new
+  physics. It freezes the licensed future interface first; places every
+  future-readable nonrecord variable inside one complete predictive algebra;
+  requires exact closure under paths, mixtures, and positive registered
+  conditioning; makes the physical arrow the paired stochastic/UCP object;
+  and requires continuous duality to be derived from a common NEP-qualified
+  instrument while preserving all older records. Two independent
+  pre-construction pin audits are next. No construction, implementation,
+  Paper 04, clock, spacetime, or gravity claim is open.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -360,6 +370,11 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   independently reproduces the admitted-memory countermodel, conditioning
   closure defect, and continuous admission-as-proof gap; preserves the exact
   finite/integrated/AQFT salvage product and keeps Paper 04 closed.
+- `note-paper03v32-complete-boundary-paired-semantics-pin.md` — frozen
+  result-neutral successor contract for complete predictive boundaries,
+  closure-complete ensembles, exact paired stochastic/UCP arrows, and a
+  constructor-derived continuous instrument theorem; independent pin audits
+  must accept its exact bytes before any construction.
 
 ## Permanent honesty wall
 

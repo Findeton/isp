@@ -1471,3 +1471,31 @@ The frozen candidate is not edited. Any successor must separately freeze one
 complete predictive boundary algebra, exact paired semantic arrows,
 conditioning/path closure, and a derived continuous compatibility theorem.
 No implementation or Paper 04 work is opened.
+
+## 2026-08-22 — PAPER 03 v3.2 COMPLETE-BOUNDARY PIN FROZEN (v17 LEDGER #61)
+
+One final result-neutral representation-level successor pin freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper03v32-complete-boundary-paired-semantics-pin.md` | `bf7b587c521f0b407a8df5c8c657ee69a5891d707c89d0ee3c96d6b6b3c07376` | `6a40c56797acc37cc0558b209d7d64e7e4cc44b73f257fe259e6ec00ef802ac8` | 848 LF / 34,048 bytes |
+
+The pin changes no probability, instrument, source, AQFT comparator, or
+physical interpretation. It freezes the licensed future interface before any
+sufficiency claim; places every future-readable nonrecord variable inside one
+complete predictive von Neumann algebra; requires exact path, mixture, and
+positive-conditioning closure; and defines physical arrows as exact paired
+stochastic/UCP semantics rather than either projection alone.
+
+For a continuous instrument, compatibility must be derived reader by reader
+from one common NEP-qualified decomposable instrument, a jointly measurable
+posterior kernel, exact target landing, and an explicit record update that
+retains older records. The desired all-reader identity cannot be an admission
+axiom. Non-NEP, ambient-only, singular, hidden-memory, and post-freeze-reader
+cases are refused.
+
+This freezes a mathematical question, not a result. Two mutually blind
+pre-construction audits—category/operator algebra and quantum
+instrument/probability—must accept the exact pin before at most one
+construction. No implementation, Paper 04, clock, ontology, spacetime, or
+gravity unit is authorized.

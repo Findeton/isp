@@ -311,6 +311,19 @@ selection, or a Barandes completion.
 | Paper 03 v3.1 Seat O report | `ACCEPT WITH SCOPE — ADJUDICATED SALVAGE EVIDENCE` | frozen v3.1 corpus and ontology/relativity lens | representation/ontology and comparator/gravity walls survive; acceptance did not type the omitted future-readable factor |
 | Paper 03 v3.1 terminal adjudication | `TERMINAL REVISE — HYBRID BOUNDARY TYPE FAILURE` | immutable candidate, three reports, and independent root reconstruction | M0 refutes full boundary/future-sufficiency domain; conditioning closure and general continuous derivation also incomplete; finite/atomic hybrid instruments, normal dominated `Ens` on represented factors, certified pairs/paths, and inherited scoped AQFT package survive; Paper 04 closed |
 
+## Paper 03 v3.2 frozen-input balance
+
+| Object | Status at pin freeze | Source / choice | Debt retained |
+|---|---|---|---|
+| licensed future interface | `FROZEN PACKET TYPE` | exact v2 source/target ports, records, mechanisms, memories, and readers | completeness is relative to this licensed finite-continuation family, not the universe |
+| complete predictive algebra $\mathcal B_D$ | `DECLARED REPRESENTATION TARGET` | one represented sigma-finite von Neumann algebra with separable predual containing all licensed nonrecord memory | no internal tensor factorization, local beables, ontology, or physical selector follows |
+| record/hybrid algebra $\mathcal O_D$ | `DECLARED REPRESENTATION TARGET` | finite/countable atomic direct sum or constant-fiber $L^\infty$ packet | constant-fiber scope is restrictive and technical; no product-state claim |
+| admitted ensemble class $\mathfrak E_D$ | `TARGET CLOSURE THEOREM` | dominated laws with integrable strongly measurable complete predual fields | must close under every licensed path, finite mixture, and positive registered central conditioning |
+| paired semantic arrow $(K_a,\Phi_a)$ | `TARGET DERIVATION` | one common unchanged physical primitive | neither stochastic nor Heisenberg projection alone is the physical arrow |
+| continuous instrument semantics | `CONDITIONAL TARGET DERIVATION` | common NEP-qualified decomposable instrument, jointly measurable posterior kernel, exact record append, and target landing | compatibility may not be inserted as an admission axiom; non-NEP/ambient-only cases are refused |
+| probabilities, instruments, AQFT comparator | `FROZEN UNCHANGED INPUT` | terminal Paper 03 v2 salvage | no retuning, new law, preferred frame, or QFT ontology |
+| Paper 03 v3.2 result | `UNCONSTRUCTED — PIN AUDITS PENDING` | exact result-neutral pin | no theorem, implementation, Paper 04, clock, spacetime, or gravity coordinate |
+
 ## Derivation balance
 
 The live adjudicated balance is:
@@ -318,7 +331,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0 (Paper 03 v3.1 is terminal REVISE at the hybrid boundary type)
+green-unreviewed mathematical constructions: 0 (Paper 03 v3.1 is terminal REVISE; v3.2 is only a frozen pin)
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3

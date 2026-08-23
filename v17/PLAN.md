@@ -3,8 +3,8 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 v1/v2/v3.1 terminal REVISE; complete-boundary successor not yet
-frozen; Paper 04 closed**
+Paper 03 v1/v2/v3.1 terminal REVISE; v3.2 complete-boundary pin frozen and
+awaiting two independent pre-construction audits; Paper 04 closed**
 
 ## 0. Authority and workflow
 
@@ -515,7 +515,7 @@ Paper 03 v3 joint pin adjudication  TERMINAL REVISE BEFORE CONSTRUCTION
 Paper 03 v3.1 corrected pin         FROZEN RESULT-NEUTRAL
 Paper 03 v3.1 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
-Paper 03 v3.1 joint adjudication    TERMINAL ACCEPT FOR ONE CONSTRUCTION
+Paper 03 v3.1 joint pin adjudication TERMINAL ACCEPT FOR ONE CONSTRUCTION
 Paper 03 v3.1 construction          GREEN-UNREVIEWED MATHEMATICS
 Paper 03 v3.1 construction audit    PASS — RESULT-NEUTRAL
 Paper 03 v3.1 hostile protocol      FROZEN — RESULT-NEUTRAL
@@ -523,6 +523,10 @@ Paper 03 v3.1 Seat A review         FROZEN REVISE — HYBRID BOUNDARY TYPE FAILU
 Paper 03 v3.1 Seat Q review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.1 Seat O review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.1 joint adjudication    TERMINAL REVISE — HYBRID BOUNDARY TYPE FAILURE
+Paper 03 v3.2 complete-boundary pin FROZEN RESULT-NEUTRAL
+Paper 03 v3.2 category pin audit    PENDING
+Paper 03 v3.2 quantum pin audit     PENDING
+Paper 03 v3.2 construction          NOT AUTHORIZED
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
@@ -546,3 +550,12 @@ Any successor must freeze a complete predictive boundary algebra, exact
 paired semantic arrows, conditioning/path closure, and a derived continuous
 compatibility theorem. It may not retune probabilities or add ontology,
 internal time, spacetime emergence, or gravity. Paper 04 remains closed.
+
+Ledger #61 now freezes that successor contract. Every licensed
+future-readable variable must be represented inside one complete predictive
+boundary algebra; the stochastic and Heisenberg routes are projections of one
+paired-arrow category; ensemble, path, and positive-conditioning closure are
+mandatory; and the continuous identity must be derived from a common
+NEP-qualified instrument with explicit old-record retention. This is a
+representation theorem target only. Two independent pin audits must accept
+the exact bytes before the sole possible mathematics construction.
