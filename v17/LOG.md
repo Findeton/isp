@@ -1776,3 +1776,74 @@ Three independent pin audits—constrained mathematics/probability, quantum
 clocks/processes, and ontology/relativity/Barandes—must accept the exact bytes
 before root may authorize one construction. Phase G and all spacetime/gravity
 claims remain closed.
+
+## 2026-08-23 — PAPER 04 SEAT M PIN AUDIT FROZEN (v17 LEDGER #73)
+
+| artifact | SHA-256 | normalized self-SHA-256 | size | verdict |
+|---|---|---|---:|---|
+| `v17/note-paper04-pin-audit-mathematics.md` | `2151bee5c6ac9b93f315047f2164c995a7fdbc6726a431ebd992814071d0d204` | `25d075f1c1e9da4a0c667fc1ed19c218951ac325802907827e7b51768e2227e5` | 837 LF / 41,302 bytes | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE` |
+
+Seat M finds no semantic blocker. It reconstructs conditioning, constrained
+normalization, reduction maps, periodic/stopped clocks, multiple choice, all
+targets/controls/attacks, and twenty fresh countermodels. Its decisive scope
+is that a common joint law does not imply the displayed stochastic
+change-of-clock mixture: complete-reader conditional sufficiency or a full
+parent reduction is additionally required. Physical inner products,
+nonvacuous reparameterizations, genuine cycle records, complete sequential
+instruments, and pre-fit source chronology are binding. No result is awarded.
+
+## 2026-08-23 — PAPER 04 SEAT Q PIN AUDIT FROZEN (v17 LEDGER #74)
+
+| artifact | SHA-256 | normalized self-SHA-256 | size | verdict |
+|---|---|---|---:|---|
+| `v17/note-paper04-pin-audit-quantum-clocks.md` | `3440dd49b51ae8245070c23963c7a51fc43fe5c02a5c54d4308b4cefd71ec8f2` | `b5e27c123ab2d9fcae88a55329bbeaec4efa42fe7286b0b1407572ea659b3a18` | 825 LF / 52,916 bytes | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE` |
+
+Seat Q finds no semantic blocker after reconstructing complete clock
+instruments, sequential/adaptive histories, Page--Wootters scopes, temporal
+frame maps, finite resources, backreaction, all registered surfaces, and
+eighteen fresh controls. It binds a nonstationary time-sensitive held-out
+task, an informative error gate, at least one overidentifying calibration
+region, complete-instrument lineage, and operationally detectable effects in
+both clock-to-system and system-to-clock directions. A target-fitted history
+state remains formal parametrization. No result is awarded.
+
+## 2026-08-23 — PAPER 04 SEAT O PIN AUDIT FROZEN (v17 LEDGER #75)
+
+| artifact | SHA-256 | normalized self-SHA-256 | size | verdict |
+|---|---|---|---:|---|
+| `v17/note-paper04-pin-audit-ontology-relativity.md` | `76c2a5d412f56b031ff4e0bbce87a22f9c7ea65a4fe24f62289fbcc12be6defd` | `d340016a701be6b1c1353124e7c2445a5c206ade1f492ecba7283b8bc874c198` | 916 LF / 59,146 bytes | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE` |
+
+Seat O finds no semantic blocker after reconstructing the ontology,
+relativity, Barandes, hidden-time, record/division, and gravity boundaries.
+It adds twenty fresh countermodels. Its new nonvacuity binding requires at
+least one nonidentity orientation-preserving reading-coordinate map with the
+complete instrument, record, measure, calibration, and reader pushforward.
+Supplied causal order, paths, metric, and proper time remain comparator input;
+operational redundancy cannot select timeless ontology or actuality.
+
+## 2026-08-23 — PAPER 04 GENERIC PIN ADJUDICATED (v17 LEDGER #76)
+
+The independent root adjudication freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper04-pin-audit-adjudication.md` | `d683901fb1fba9da1b21839839cd955270f1c7c7e2405e7948b7b9b3d0b106b5` | `88b74315e541694ddc8361939aa9320186503b9f32a2b72709ca51f097f3015b` | 465 LF / 19,476 bytes |
+
+Disposition:
+`ACCEPT-MATHEMATICAL-BOUNDARY-WITH-BINDING-SCOPE` and
+`MODEL-SPECIFIC-PREFIT-FREEZE-REQUIRED-BEFORE-CONSTRUCTION`. Matching reports
+are not counted as votes. Root independently reconstructs the joint-law
+mixture counterexample, two-point affine tautology, temporally empty task,
+dummy interaction, identity-only covariance, equal-POVM/unequal-instrument
+case, one-time/process mismatch, periodic winding smuggling, target-fitted
+history wrapper, encoded schedule, record/division independence, and idle
+temporal-sector nonuniqueness.
+
+Eighteen conditions bind the sole possible construction. Because concrete
+clocks, parent, constraint, interactions, instruments, calibration, held-out
+tests, and thresholds are semantic choices, exactly one result-neutral
+model-specific pre-fit pin is authorized next. It must contain no result or
+fit and must receive independent constrained-dynamics, quantum-clock, and
+ontology/relativity audits before construction. This is the first model
+selection, not an automatic repair successor. No Paper-04 coordinate is
+awarded; Paper 05 and all spacetime/gravity phases remain closed.

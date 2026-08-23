@@ -354,7 +354,11 @@ selection, or a Barandes completion.
 | operational external-parameter redundancy | `UNCONSTRUCTED PROMOTION TARGET` | held-out complete-reader predictions from the parent without an external parameter | does not settle whether time is fundamental |
 | causal order / time arrow | `SUPPLIED / UNCONSTRUCTED` | causal frontier remains the Paper-03 comparator input | increasing readings cannot derive influence or orientation |
 | spacetime / metric / gravity / actuality | `UNCONSTRUCTED` | no Paper-04 input | every later-phase wall remains closed |
-| Paper 04 pin | `FROZEN RESULT-NEUTRAL — CONSTRUCTION ABSENT` | exact #72 bytes, 25 targets, 42 controls, 68 attacks, 28-coordinate product | three independent pin audits and root adjudication required before one construction |
+| Paper 04 pin | `TERMINAL GENERIC BOUNDARY ACCEPTED WITH BINDING SCOPE` | exact #72 bytes, 25 targets, 42 controls, 68 attacks, 28-coordinate product | no scientific coordinate; model selection remains semantic and unconstructed |
+| Paper 04 Seat M audit | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE — ADJUDICATED EVIDENCE` | exact #73 report; constrained dynamics, probability, reduction, periodic-clock and multiple-choice reconstruction | clock-change mixture requires sufficiency; physical normalization and pre-fit lineage bind |
+| Paper 04 Seat Q audit | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE — ADJUDICATED EVIDENCE` | exact #74 report; clocks, instruments, sequential statistics, finite resources, frame changes | time-sensitive held-out task, overidentified affine fit, and operational two-way backreaction bind |
+| Paper 04 Seat O audit | `ACCEPT-FOR-CONSTRUCTION-WITH-BINDING-SCOPE — ADJUDICATED EVIDENCE` | exact #75 report; ontology, relativity, Barandes, hidden time | nonidentity reparameterization, supplied-order, record/division, ontology and gravity walls bind |
+| Paper 04 root pin adjudication | `TERMINAL ACCEPT MATHEMATICAL BOUNDARY — ONE PREFIT PIN AUTHORIZED` | #76 independent reconstruction; 18 binding conditions | exact two-clock parent/model/test selection must freeze before construction and receive independent audit |
 
 ## Derivation balance
 
@@ -365,7 +369,7 @@ adjudicated v17 mathematical structures: positive record-history Q0--Q3 represen
 adjudicated new fundamental physical structures: 0
 green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
-open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy
+open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy; one model-specific Paper-04 pre-fit selection
 standard empirical/theory comparators: quantum Q0–Q3 and supplied AQFT/Lorentzian laboratory background
 supplied comparator geometry: 1 declared Paper 03 background family
 derived geometry or gravity: 0

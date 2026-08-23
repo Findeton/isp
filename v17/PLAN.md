@@ -5,8 +5,9 @@ Date opened: 2026-08-22
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
 Paper 03 v1/v2/v3.1 terminal REVISE; Paper 03 v3.2 terminal
 ACCEPT-WITH-SCOPE at relativistic quantum operational adequacy with global
-ontology debt; Paper 04 result-neutral physical pin frozen pending three
-independent pre-construction audits**
+ontology debt; Paper 04 generic mathematical boundary terminally accepted
+with binding scope; one model-specific pre-fit pin authorized before any
+construction**
 
 ## 0. Authority and workflow
 
@@ -243,9 +244,12 @@ countermodels.
 
 **Opening state.** Ledger #72 freezes the exact physical question, three
 separate claim levels, 25 targets, 42 paired controls, 68 hostile attacks, a
-28-coordinate product, and a 16-source primary ledger. Construction is absent
-until three independent constrained-dynamics, quantum-clock, and
-ontology/relativity audits accept the frozen boundary.
+28-coordinate product, and a 16-source primary ledger. Three independent
+constrained-dynamics, quantum-clock, and ontology/relativity audits accept the
+generic boundary at #73--#75. Root adjudication #76 independently reconstructs
+their decisive countermodels and authorizes one model-specific result-neutral
+pre-fit pin. No clock or parent may be constructed before that exact semantic
+selection is separately frozen and audited.
 
 **Question.** Can an external scalar evolution/schedule parameter in the
 accepted quantum-process comparator be made operationally redundant through
@@ -545,8 +549,10 @@ Paper 03 v3.2 Seat Q review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.2 Seat O review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.2 joint adjudication    TERMINAL ACCEPT-WITH-SCOPE — RUNG 7
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
-Paper 04 relational-clock pin       FROZEN RESULT-NEUTRAL — AUDITS PENDING
-Phase T construction                CLOSED PENDING THREE PIN AUDITS
+Paper 04 relational-clock pin       TERMINAL GENERIC BOUNDARY ACCEPT-WITH-SCOPE
+Paper 04 three pin audits           FROZEN ACCEPT WITH BINDING SCOPE
+Paper 04 root pin adjudication      TERMINAL — ONE MODEL-SPECIFIC PREFIT PIN AUTHORIZED
+Phase T construction                CLOSED PENDING MODEL-SPECIFIC FREEZE/AUDIT
 Phases G/S/P                         CLOSED
 ```
 

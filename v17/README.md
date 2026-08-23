@@ -158,8 +158,8 @@ cleanly if nature does not support it.
   continuous duality remains conditional on the complete common-instrument
   package. No implementation is required. Paper 04 needs a separately frozen
   physical question.
-- Paper 04 status: **RELATIONAL-CLOCK AND EXTERNAL-PARAMETER PIN FROZEN —
-  RESULT-NEUTRAL; THREE PIN AUDITS PENDING**. Ledger #72 separates clock
+- Paper 04 status: **GENERIC MATHEMATICAL BOUNDARY TERMINALLY ACCEPTED WITH
+  BINDING SCOPE; ONE MODEL-SPECIFIC PREFIT PIN AUTHORIZED**. Ledger #72 separates clock
   correlation, clock-relative adequacy, formal parametrization, operational
   redundancy of an external scalar parameter, and the fundamental status of
   time. It requires two genuine physical clocks in one joint law, held-out
@@ -168,7 +168,14 @@ cleanly if nature does not support it.
   reparameterization covariance, and one separately typed clock-neutral
   parent. The supplied Paper-03 causal frontier remains input. No clock,
   parent, internal time, chronology, spacetime, metric, gravity, or actuality
-  coordinate is awarded before three independent pin audits and construction.
+  coordinate is awarded. Three independent audits #73--#75 found no semantic
+  blocker while binding nonvacuous calibration, complete temporal-frame
+  sufficiency, physical normalization, full sequential instruments,
+  bidirectional operational backreaction, deep hidden-time exclusion, and a
+  nonidentity reparameterization. Root adjudication #76 accepts those findings
+  by reconstruction rather than vote. Because selecting clocks and a parent is
+  itself semantic physics, their exact pre-fit specification must freeze and
+  pass independent audit before the sole construction.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
