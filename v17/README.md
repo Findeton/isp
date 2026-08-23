@@ -319,13 +319,23 @@ cleanly if nature does not support it.
   comparison distinguishes record-only, Barandes, consistent-history,
   coevent, Bohm, objective-collapse, and Everett branches without selecting
   one. It does not demand a deterministic cause for the particular random
-  sample and constructs no native actuality law or empirical wedge. Q-Cut
+  sample and constructs no native actuality law or empirical wedge. The
+  numbered C-series now closes at C4, with C1--C3 retained as one
+  pair-history/action benchmark package. A fundamental-nomology register keeps
+  ordinary-positive indivisible law, fundamental decoherence functional, and
+  standard quantum dynamics plus modified actualization live under the same
+  ledger; none is selected. A separate Bell-current comparator reconstructs
+  a complete positive Markov path law only after the quantum state,
+  Hamiltonian, configuration observable, Born law, external time, full
+  quantum current, and least-traffic rule are supplied. It is a
+  standard-quantum control, not a C5 successor or native ISP law. Q-Cut
   remains the next recommended official unit if separately authorized.
-  Repository inclusion
-  does not promote any draft, authorize a Paper
-  04B successor, or
-  open Paper 05.
-- No v17 code, evaluator, generated artifact, or numerical fit exists.
+  Repository inclusion does not promote any draft, authorize a Paper 04B
+  successor, or open Paper 05.
+- No v17 scientific evaluator, generated physics artifact, or numerical fit
+  exists. A small repository utility validates semantic-index hashes,
+  dependencies, cycles, canonical paths, authority, and promotion consistency;
+  it creates no scientific result.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
 - v16 Papers 14–16 are retained as structural and conditional diagnostic

@@ -25,8 +25,10 @@ UNIFORMITY/INFORMATION QUESTION:  MUST BE SEPARATE
 CONSTRUCTIVE GENERATOR CONTEST:   MUST BE SEPARATE
 FINITE COMPOSITION CLASSIFIER:    PC2/PC3 COMPLETE AUTHOR-SIDE
 ENLARGED POSITIVE CONTROL:        PC4 COMPLETE AUTHOR-SIDE
-NEXT AUTHOR-SIDE PHYSICS:         C4 ACTUALITY BOUNDARY CONSTRUCTED;
-                                  NATIVE COMPLETE LAW STILL ABSENT
+NEXT AUTHOR-SIDE PHYSICS:         C-SERIES CLOSED AT C4;
+                                  NATIVE GENERATOR OR BOUNDED NO-GO
+BELL-CURRENT ACTUALITY:           STANDARD-QUANTUM COMPARATOR ONLY
+FUNDAMENTAL NOMOLOGY:             PLURAL RIVAL CONTEST / NONE SELECTED
 Q-CUT DEPENDENCY:                 CANDIDATE ONLY / NOT LOAD-BEARING
 E-COMP DEPENDENCY:                CANDIDATE ONLY / NOT LOAD-BEARING
 OFFICIAL UNIT OR REVIEW:          NONE
@@ -553,6 +555,33 @@ thick complete-path assertion owes a realizer or a different actuality rule.
 No branch is selected, no collapse law is constructed, and no empirical or
 gravity result follows.
 
+The C-series therefore terminates at C4. Its C1--C3 content is retained as one
+pair-history/action benchmark package, not extended into progressively finer
+descriptions of standard quantum structure.
+
+The separate Bell-current comparator now answers the strongest available
+positive-control question. Given $H$, $\psi$, a configuration observable,
+Born weights, external time, and a rate-selection rule, it supplies a complete
+ordinary-positive Markov path measure. Its exact hierarchy is
+
+$$
+\text{Born equivariance}
+<\text{standard-current matching}
+<\text{least-traffic Bell rates}.
+$$
+
+The first condition fixes only current divergence; the second still leaves
+symmetric counter-traffic; the third adds the no-counterflow choice. This is
+not a native ISP generator and not Barandes indivisibility. It is retained so
+future candidates cannot import the quantum current and configuration packet
+while claiming stochastic derivation.
+
+The fundamental-nomology register adopts a plural contest among ordinary-
+positive indivisible laws, fundamental decoherence functionals, and standard
+quantum dynamics plus modified actualization. The common operational and
+resource ledger, not narrative preference, determines whether any branch
+gains standing.
+
 1. Q-Cut is author-side ready for an authorization decision, but it is not an
    accepted theorem and cannot be used as a premise.
 2. E-Comp is an active author-side lemma package, but it is not frozen or
@@ -592,9 +621,13 @@ C4 INTERFERENCE/ADDITIVITY:      EXACT AUTHOR-SIDE / NOT REVIEWED
 C4 RECORD-PARTITION LAW:         EXACT / HIDDEN REFINEMENT UNSELECTED
 C4 FIRST-ORDER REALIZER:         PAIRWISE DATA NONUNIQUE IN GENERAL
 C4 ACTUALITY COMPARISON:         SOURCE-SCOPED / NO BRANCH SELECTED
+C-NUMBER EXPANSION:              CLOSED AT C4
+NOMOLOGY RIVAL REGISTER:         PLURAL CONTEST / NONE SELECTED
+BELL-CURRENT PATH LAW:           COMPLETE GIVEN QUANTUM INPUTS
+BELL CURRENT/MINIMALITY:         ADDITIONAL INPUTS / NOT BORN-SELECTED
 NEXT AUTHOR-SIDE TARGET:         NATIVE COMPLETE LAW FOR WEIGHTS,
                                  CORRELATIONS, REFERENT, AND HELD-OUT RECORDS
-                                 OR FROZEN EMPIRICAL COLLAPSE WEDGE
+                                 OR BOUNDED CLASS-WIDE NO-GO
 PHYSICAL GENERATOR:              NOT FOUND
 INDEPENDENT PRINCIPLE SELECTOR:  NOT FOUND
 EMPIRICAL WEDGE:                 NONE

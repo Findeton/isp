@@ -1,4 +1,4 @@
-# ISP v17 — next-gate decision after PC6
+# ISP v17 — next-gate decision after actuality closure
 
 **Status:** ACTIVE AUTHOR-SIDE ROUTING DECISION / NOT A PIN
 **Date:** 2026-08-23
@@ -79,6 +79,17 @@ supplied is the physical referent and its complete law. C4 supplies neither a
 native generator nor a collapse candidate, so it does not change the official
 ordering.
 
+The C-series now closes at C4. A separate Bell-current comparator reconstructs
+the strongest known ordinary-positive actuality control from standard quantum
+inputs. It gives a complete Markov path law only after $H$, $\psi$, a chosen
+configuration observable, Born weights, external time, edgewise quantum
+current, and least-traffic minimality are supplied. It therefore prevents a
+false native-generator claim but does not fill the native slot.
+
+The fundamental-nomology register keeps three rivals live under one ledger:
+ordinary-positive indivisible law, fundamental decoherence functional, and
+standard quantum dynamics plus modified actualization. No rival is selected.
+
     NEXT OFFICIAL RECOMMENDATION:   Q-CUT ONLY
     PC3 ALGEBRAIC CANDIDATE:        CONSTRUCTED / NOT FREEZE-READY
     PC4 POSITIVE CONTROL:            CONSTRUCTED / PC3 ENDPOINT NONSELECTION
@@ -97,9 +108,12 @@ ordering.
     C4 RECORD ACTUALITY:            ORDINARY / FINE LAW UNSELECTED
     C4 PAIRWISE REALIZER:           NONUNIQUE IN GENERAL
     C4 ACTUALITY BRANCH:            NONE SELECTED
+    C-NUMBER EXPANSION:             CLOSED AT C4
+    BELL-CURRENT COMPARATOR:        COMPLETE GIVEN QUANTUM INPUTS
+    FUNDAMENTAL NOMOLOGY:           PLURAL RIVAL CONTEST / NONE SELECTED
     NEXT AUTHOR-SIDE U-GEN TASK:    NATIVE COMPLETE LAW FOR WEIGHTS,
                                     CORRELATIONS, REFERENT, HELD-OUT RECORDS;
-                                    OR FROZEN EMPIRICAL COLLAPSE WEDGE
+                                    OR BOUNDED CLASS-WIDE NO-GO
     E-COMP / PC2 STATUS:            COMPACT CANDIDATE INPUTS / NOT RESULTS
     CLOCK BRANCH:                   DEFERRED
     LOCALITY / TSIRELSON:           DEFERRED

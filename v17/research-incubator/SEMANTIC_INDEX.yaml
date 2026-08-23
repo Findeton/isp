@@ -45,7 +45,7 @@ artifacts:
     status: "active-author-draft"
     supersedes: ["snapshots/v17_ecomp_minimal_endpoint_embedding.md"]
     superseded_by: []
-    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    depends_on: []
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "user-decision-ready"
@@ -58,7 +58,7 @@ artifacts:
     status: "active-author-draft"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
+    depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "user-decision-ready"
@@ -149,7 +149,7 @@ artifacts:
     status: "active-author-draft"
     supersedes: []
     superseded_by: []
-    depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
+    depends_on: ["v17/paper-01-positive-record-histories.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "user-decision-ready"
@@ -182,30 +182,30 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "8359e6641db11d8135b5c82f86b943c4969df802b98a85af6c2bb3e522d80b2f"
+    sha256: "91f13563c241e972c021c07d1cf7d655b2a452e74043ce35de2e4e3fa6f9cf9a"
     created_at: "2026-08-23"
     front: "ugen"
-    status: "active-routing-c4-actuality-boundary-native-slot-empty"
+    status: "active-routing-post-c4-plural-nomology-native-slot-empty"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U-Gen routing through the C4 interference, record-probability, hidden-refinement, and pairwise-realizer actuality boundary; no data evaluation, independently verified source freeze, native complete law, actuality selection, scalable trilemma theorem, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral U-Gen routing closing the C-series at C4, adopting a plural nomology contest, and retaining Bell-current dynamics only as a quantum-input actuality comparator; no data evaluation, independently verified source freeze, native complete law, actuality selection, scalable trilemma theorem, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
-    sha256: "82080d595e271c085b3549d050b5e1dcaa5d35386ad8d9f4e8815607e7c8a7f1"
+    sha256: "c5305e826bf2b716658303762038eb12627c797c07273e780764ba3e989e7ba0"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-audit"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/ugen/v17_pc6_scalable_markov_and_indivisible_frontier.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral dependency, resource-coordinate, generator-contest, and actuality-law audit through the C4 finite interference and realizer frontier; no data evaluation, scalable theorem, native complete law, selected actuality, quantum ontology, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral dependency, resource-coordinate, generator-contest, plural-nomology, and Bell-current comparator audit after closing the C-series at C4; no data evaluation, scalable theorem, native complete law, selected actuality, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_pc2_balanced_seam_classification_candidate.md"
     sha256: "913b61c27f3a8303df5acb72e75b4a4def61a5b98b7457734b6be3b9bc4f6d4d"
@@ -214,7 +214,7 @@ artifacts:
     status: "active-author-draft"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ecomp/v17_ecomp_composition_nonselection_theorem_candidate.md", "active/ugen/v17_ugen_dependency_and_physics_audit.md"]
+    depends_on: ["active/ecomp/v17_ecomp_composition_nonselection_theorem_candidate.md"]
     source_audit_status: "author-side-proof-context-sources-bound-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
@@ -247,17 +247,17 @@ artifacts:
     maximum_claim: "candidate selector-accounting framework and exact PC2 feasible-set table; no physical selector, generator, ontology, QFT, time, spacetime, or gravity result"
     canonical: false
   - path: "active/ugen/v17_ugen_next_gate_decision.md"
-    sha256: "c17978a2e1fae55dcc3884a29bb660db995b2a19f8446632b9f4dec7e12bbf0d"
+    sha256: "2c5fa38a24b1699480b6e69580c3a007614ec5d59de230adf4ca4e249b737bf6"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-author-routing-decision"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md"]
+    depends_on: ["active/ugen/v17_ugen_composition_selector_tournament.md", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md"]
     source_audit_status: "inherits-c4-author-side-source-scope-audit"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "nonbinding decision recording the completed author-side C4 actuality boundary, the absence of a native complete law or empirical collapse wedge, and Q-Cut as the recommended next official unit"
+    maximum_claim: "nonbinding decision closing the C-series at C4, retaining Bell-current dynamics only as a quantum-input comparator, requiring a native generator or bounded no-go next, and preserving Q-Cut as the recommended next official unit"
     canonical: false
   - path: "active/ugen/v17_ugen_c1_pair_history_composition_candidate.md"
     sha256: "9beceb074a315a2e44e4e92647533e482f923708727b407e4fbea4f3ec943efa"
@@ -467,6 +467,71 @@ artifacts:
     promotion_readiness: "not-ready"
     maximum_claim: "future three-seat finite-probability, ontology/source, and empirical/gravity review contract only; no activation, source freeze, review, interpretation selection, data use, result, or successor authority"
     canonical: false
+  - path: "active/ugen/v17_ugen_bell_current_actuality_comparator.md"
+    sha256: "d9b9bdf72eeb81b1f3c5f3cbd87fea10484c939ca737673430625d04c4774a1a"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-standard-quantum-comparator"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c4_interference_actuality_obstruction_candidate.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "finite Bell-current positive-path comparator classifying equivariant current, symmetric traffic, and least-traffic minimality conditional on supplied quantum and Markov inputs; no native ISP law, ontology selection, empirical deviation, QFT completion, clock, spacetime, or gravity result"
+    canonical: false
+  - path: "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md"
+    sha256: "f3f8a288ef278acc94b6a411258d4f2d3188d7e6708b4af135386b9808e095df"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-source-scope-readiness-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_bell_current_actuality_comparator.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-moving-barandes-source-not-frozen-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "primary-source attribution, novelty, global-existence, QFT, Barandes, collapse-rival, and claim-ceiling audit for the Bell-current comparator; no official source freeze, independent review, native law, empirical result, or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_bell_current_physical_reality_audit.md"
+    sha256: "090ecf2891f4f1126e68d00117b7f25b9619ef047e181d52e939fe314516309a"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-physics-comparator-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_bell_current_actuality_comparator.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md"]
+    source_audit_status: "inherits-bell-current-author-side-source-scope-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "physical input, ontology, path-record, Barandes, regularized-QFT, external-time, and gravity-ceiling audit treating Bell-current dynamics solely as a standard-quantum comparator; no native generator, empirical selection, or gravity result"
+    canonical: false
+  - path: "active/ugen/v17_ugen_bell_current_future_review_contract.md"
+    sha256: "08b4b284bd6e472ffa2dd948a0c56114070a160c1aa8c9d1cb876d7aff9d1f65"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "future-review-design-not-authorized"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_bell_current_actuality_comparator.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_bell_current_physical_reality_audit.md"]
+    source_audit_status: "inherits-bell-current-author-side-source-scope-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "future three-seat probability/current, quantum-foundations/source, and operational-QFT/gravity review contract only; no activation, source freeze, review, result, ontology selection, or successor authority"
+    canonical: false
+  - path: "active/ugen/v17_ugen_fundamental_nomology_rival_register.md"
+    sha256: "c566e4e2662230089cd437d59da6fb2f76990374191fac997b0f36e89b02d6e5"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-routing-register"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c4_actuality_selector_reality_investigation.md", "active/ugen/v17_ugen_bell_current_physical_reality_audit.md"]
+    source_audit_status: "inherits-c4-and-bell-current-author-side-source-audits-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "nonbinding plural contest among ordinary-positive indivisible, fundamental decoherence-functional, and modified-actualization nomologies under one operational ledger; no rival selection, official unit, empirical result, or successor authority"
+    canonical: false
   - path: "active/ugen/v17_pc3_projective_control_covariance_candidate.md"
     sha256: "8d79740280b5d7bb7192d2a4b064257e03e67ee521a9df1034ffe5638f36987e"
     created_at: "2026-08-23"
@@ -620,7 +685,7 @@ artifacts:
     depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "snapshots/v17_continuous_cut_source_quantifier_audit.md"
@@ -633,7 +698,7 @@ artifacts:
     depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "snapshots/v17_dual_route_clock_preflight_audit.md"
@@ -685,7 +750,7 @@ artifacts:
     depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "snapshots/v17_ecomp_minimal_endpoint_embedding.md"
@@ -698,7 +763,7 @@ artifacts:
     depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "snapshots/v17_ecomp_result_neutral_candidate_pin.md"
@@ -711,7 +776,7 @@ artifacts:
     depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "snapshots/v17_ecomp_root_readiness_audit.md"
@@ -724,7 +789,7 @@ artifacts:
     depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "snapshots/v17_invariant_record_empirical_protocol.md"
@@ -997,7 +1062,7 @@ artifacts:
     depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "snapshots/v17_paper04b_empirical_feasibility_census.md"
@@ -1049,7 +1114,7 @@ artifacts:
     depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "snapshots/v17_positive_history_cost_theorem_feasibility.md"
@@ -1075,7 +1140,7 @@ artifacts:
     depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "snapshots/v17_qcut_result_neutral_candidate_pin.md"
@@ -1088,7 +1153,7 @@ artifacts:
     depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "snapshots/v17_qcut_root_readiness_audit.md"
@@ -1101,7 +1166,7 @@ artifacts:
     depends_on: ["v17/paper-01-positive-record-histories.md", "active/qcut/v17_qcut_primary_source_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "snapshots/v17_quantum_reference_record_pin_draft.md"
@@ -1218,7 +1283,7 @@ artifacts:
     depends_on: ["active/ecomp/v17_ecomp_minimal_endpoint_embedding.md", "active/ecomp/v17_ecomp_primary_source_scope_reconstruction.md"]
     source_audit_status: "author-side-reconstructed-independent-review-pending"
     authority: "none"
-    promotion_readiness: "user-decision-ready"
+    promotion_readiness: "not-a-promotion-unit"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
     canonical: false
   - path: "snapshots/v17_ugen_result_neutral_candidate_pin.md"

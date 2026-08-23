@@ -11,7 +11,9 @@ process, future settings, or equivalent phase-sensitive law data as input?
 The ordinary-positive indivisible whole-law route remains the strongest ISP
 contestant. C1--C4 now also test whether relational pair-history structure is
 irreducible at the compositional level while ordinary positivity remains exact
-for stable records.
+for stable records. The numbered C-series closes at C4. Its C1--C3 artifacts
+are henceforth one pair-history/action benchmark package rather than an open
+classification ladder.
 
 The preserved U-Gen drafts are not one freeze-ready unit. This routing note is
 the canonical active status document. Their premises and quantifiers have now
@@ -134,6 +136,23 @@ sample that occurs. The missing coordinates are the physical referent and its
 law. C4 constructs neither a native actuality law nor an empirical
 discriminator, and it remains author-side only.
 
+The explicit fundamental-nomology register now keeps three scientific rivals
+separate: an ordinary-positive indivisible whole-history law, a fundamental
+strongly positive decoherence functional, and standard quantum dynamics plus
+an empirically modified actualization law. The current research policy is a
+plural contest under one operational and explanatory ledger; none is selected
+by narrative priority.
+
+A Bell-current actuality comparator now supplies the strongest known positive
+control. Conditional on a quantum state, Hamiltonian, chosen configuration
+observable, Born distribution, external time, and current/minimality rules, it
+defines a complete ordinary-positive Markov path law. Exact finite
+classification shows that equivariance fixes only current divergence,
+standard-current matching still leaves symmetric counter-traffic, and the
+minimal Bell rates add a least-traffic/no-counterflow principle. This prevents
+v17 from rediscovering a quantum-driven Bohm/Bell law and calling it native.
+It is a comparator, not C5, not an ISP construction, and not a gravity step.
+
 ## Current inputs
 
 Preserved exact drafts:
@@ -161,6 +180,12 @@ controls until their own future authorization, freeze, review, and
 adjudication occur.
 
 Active audit:
+
+- v17_ugen_fundamental_nomology_rival_register.md
+- v17_ugen_bell_current_actuality_comparator.md
+- v17_ugen_bell_current_physical_reality_audit.md
+- v17_ugen_bell_current_primary_source_scope_audit.md
+- v17_ugen_bell_current_future_review_contract.md
 
 - v17_ugen_c4_interference_actuality_obstruction_candidate.md
 - v17_ugen_c4_actuality_selector_reality_investigation.md
@@ -284,6 +309,12 @@ Failure must identify an unavoidable input rather than announce that
    claimed fine trajectory still requires a typed referent and law.
 9. Decoherence licenses probabilities on a tested record algebra; it does not
    select a hidden refinement or a unique actuality ontology.
+10. A Bell/Bohm trajectory law driven by $H$, $\psi$, a configuration
+    observable, and external time is a standard-quantum comparator, not a
+    native stochastic explanation.
+11. The C-series ends at C4. The next substantive U-Gen object must be a native
+    generator or a bounded class-wide no-go, not another description of the
+    missing quantum datum.
 
 ## Present disposition
 
@@ -316,9 +347,14 @@ C4 INTERFERENCE/PROBABILITY:   EXACT AUTHOR-SIDE / NOT REVIEWED
 C4 RECORD ACTUALITY:           ORDINARY / HIDDEN REFINEMENT UNSELECTED
 C4 PAIRWISE REALIZER:          NONUNIQUE IN GENERAL / PARITY CONTROL
 C4 ACTUALITY BRANCH:           NONE SELECTED / NO EMPIRICAL RESULT
+FUNDAMENTAL NOMOLOGY POLICY:   PLURAL RIVAL CONTEST / NONE SELECTED
+BELL-CURRENT PATH LAW:         COMPLETE GIVEN QUANTUM INPUTS
+BELL MINIMALITY:               LEAST TRAFFIC / NOT SELECTED BY BORN LAW
+BELL/BARANDES IDENTIFICATION:  REJECTED / MARKOV VS INDIVISIBLE
+C-NUMBER EXPANSION:            CLOSED AT C4
 NEXT AUTHOR-SIDE TARGET:       NATIVE COMPLETE LAW FOR WEIGHTS,
                                CORRELATIONS, REFERENT, AND HELD-OUT RECORDS
-                               OR A FROZEN EMPIRICAL COLLAPSE WEDGE
+                               OR A BOUNDED CLASS-WIDE NO-GO
 SOURCE-COMPLETION RESULT:      NONE
 UNIFORM GENERATOR:             FINITE PC3 ENDPOINT ONLY / NOT UNIVERSAL
 INDEPENDENT REVIEW:            NOT AUTHORIZED / NOT RUN

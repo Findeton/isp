@@ -21,6 +21,12 @@ all snapshot and active research artifacts. Hash identity answers “which
 bytes?”; the semantic index answers “which bytes may currently be used for
 what?” Every indexed incubator artifact has authority `none`.
 
+`validate_semantic_index.rb` checks artifact hashes, required fields,
+dependency and supersession targets, self-edges, dependency cycles, canonical
+paths, complete Markdown-artifact coverage, authority, and
+archival/promotion consistency. It is repository governance only and creates
+no scientific evidence.
+
 ## Active research front
 
 The current author-side front has three coupled gates.
@@ -204,6 +210,19 @@ objective collapse, Everett, and record-only agnosticism. It selects none and
 correctly does not demand a deterministic selector for an irreducibly random
 sample. No native actuality law or empirical result exists.
 
+The numbered C-series now closes at C4. C1--C3 are retained as one
+pair-history/action benchmark package rather than an open ladder. A concise
+fundamental-nomology register keeps three rivals live under a common ledger:
+ordinary-positive indivisible law, fundamental decoherence functional, and
+standard quantum dynamics plus modified actualization. None is selected.
+
+A separate Bell-current actuality comparator reconstructs a complete positive
+Markov path law from known quantum inputs. Its exact finite hierarchy shows
+that Born equivariance fixes only current divergence, full quantum-current
+matching still leaves symmetric counter-traffic, and the minimal Bell rates
+add a least-traffic rule. It is retained as a standard-quantum control, not a
+C5 successor, native ISP law, or gravity result.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -232,6 +251,14 @@ C4 active files:
 - active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md
 - active/ugen/v17_ugen_c4_future_review_contract.md
 
+Post-C4 routing and comparator files:
+
+- active/ugen/v17_ugen_fundamental_nomology_rival_register.md
+- active/ugen/v17_ugen_bell_current_actuality_comparator.md
+- active/ugen/v17_ugen_bell_current_physical_reality_audit.md
+- active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md
+- active/ugen/v17_ugen_bell_current_future_review_contract.md
+
 Canonical status: `active/ugen/README.md`.
 
 Active working package:
@@ -242,6 +269,12 @@ Active working package:
 - `active/ugen/v17_pc5_source_scope_and_readiness_audit.md`
 - `active/ugen/v17_pc4_positive_dilation_and_frontier.md`
 - `active/ugen/v17_pc4_reality_and_readiness_audit.md`
+
+- `active/ugen/v17_ugen_fundamental_nomology_rival_register.md`
+- `active/ugen/v17_ugen_bell_current_actuality_comparator.md`
+- `active/ugen/v17_ugen_bell_current_physical_reality_audit.md`
+- `active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md`
+- `active/ugen/v17_ugen_bell_current_future_review_contract.md`
 
 - `active/ugen/README.md`
 - `active/ugen/v17_ugen_dependency_and_physics_audit.md`
