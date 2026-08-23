@@ -520,7 +520,7 @@ Paper 03 v3.1 construction audit    PASS — RESULT-NEUTRAL
 Paper 03 v3.1 hostile protocol      FROZEN — RESULT-NEUTRAL
 Paper 03 v3.1 Seat A review         FROZEN REVISE — HYBRID BOUNDARY TYPE FAILURE
 Paper 03 v3.1 Seat Q review         FROZEN ACCEPT-WITH-SCOPE
-Paper 03 v3.1 Seat O review         DISPATCHED / PENDING
+Paper 03 v3.1 Seat O review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.1 joint adjudication    PENDING
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED

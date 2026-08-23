@@ -1411,3 +1411,27 @@ infinite-history promotion follows. It supports rung 8 within those scopes.
 The report is evidence, not adjudication; the conflicting Seat A result and
 the still-blind Seat O report must be resolved together. No candidate byte,
 physical input, implementation, or downstream phase moves.
+
+## 2026-08-22 — PAPER 03 v3.1 SEAT O HOSTILE REPORT FROZEN (v17 LEDGER #59)
+
+The third mutually blind hostile report freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/review-paper03v31-ontology-relativity.md` | `a9273ad0971fc44cbd25312560f7435595bf7ed0a2c62d335f70682c084a628c` | `9e5debd0c3c7dbee58841b8930ad6e32b813489988120b98e19b573b0d7f1330` | 793 LF / 46,859 bytes |
+
+Verdict: `ACCEPT-WITH-SCOPE`; first decisive semantic counterexample: none.
+The report reconstructs exact sample versus normal ensemble semantics,
+technical measure classes, grammar-relative records, representation-level
+future sufficiency, localized no-signalling versus Bell locality, contingent
+physical frames versus law covariance, and every continuum/ontology/gravity
+firewall.
+
+Its strongest supported rung is comparator-level relativistic quantum
+operational adequacy with global ontology debt. The Lorentzian background,
+AQFT net, instruments, sources, apparatus, and laboratory order remain
+supplied; the hybrid algebra is not local beable ontology; no actual history,
+Barandes completion, internal time, emergent geometry, or gravity is derived.
+All three reports are now frozen. Their conflicting verdicts are evidence,
+not votes; independent joint reconstruction and adjudication are next. No
+candidate byte, physical input, implementation, or downstream phase moves.

@@ -109,6 +109,11 @@ cleanly if nature does not support it.
   NEP and indexing every history law by its initial state or ensemble. The
   disagreement is unresolved until independent joint adjudication; Seat O
   remains pending at this ledger boundary.
+  Seat O now freezes `ACCEPT-WITH-SCOPE`: it confirms the representation-level
+  distinction among samples, ensemble states, records, conditioning,
+  divisions, and actuality, while retaining supplied Lorentzian/AQFT inputs
+  and every ontology/gravity debt. All three reports are now frozen; their
+  disagreement is resolved only by the independent joint adjudication.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -338,6 +343,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `review-paper03v31-quantum-probability.md` — frozen Seat Q report;
   `ACCEPT-WITH-SCOPE` for certified instrument/history pairs, with continuous
   compatibility admission and initial-law indexing explicit.
+- `review-paper03v31-ontology-relativity.md` — frozen Seat O report;
+  `ACCEPT-WITH-SCOPE` at representation level, with no local beable, native
+  Barandes division, internal-time, spacetime, or gravity promotion.
 
 ## Permanent honesty wall
 
