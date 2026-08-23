@@ -536,3 +536,42 @@ existence proof, not an explanation or selected ontology.
 No Paper 02 v2 coordinate is awarded. No code or Paper 03 unit opens. The sole
 next action is the self-contained mathematics construction under the frozen
 pin.
+
+## 2026-08-22 — PAPER 02 V2 MATHEMATICS CONSTRUCTED (v17 LEDGER #21)
+
+The self-contained construction is frozen at green-unreviewed status:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/paper-02v2-procedure-quotient-ontology-residue.md` | `d92787631860e9dcc7379a5922a4213585571d61f98a2a1fb82aa1dc18ba2a77` | 1,400 LF / 60,916 bytes |
+
+The manuscript constructs 13 named theorems covering all 20 mandatory theorem
+items, C1--C24 in both directions, and attacks 1--56 continuously. Its core
+lineage is:
+
+```text
+procedure presentations
+  -> physical procedures P
+  -> complete operational quotient Q
+  -> optional system-facing ontological assignments
+  -> noncontextuality iff descent through q:P->Q fails or succeeds.
+```
+
+The exact positive control uses normalized predictive objects rather than a
+procedure tag. Direct preparations are point measures; trusted mixtures are
+mixtures of those measures; channels and instruments provide the full Born
+lineage. Distinct decompositions of one density operator are therefore
+operationally equal and ontologically unequal in the model.
+
+One overreach was found and repaired before freeze. Naturality under an idle
+fiber projection proves only blindness to that fiber and factorization
+through the base representation. Further descent through $q$ is claimed only
+when an independently admitted chain of positive affine representation
+morphisms actually reaches $q$. This is what allows structural contextuality
+and idle-fiber nonselection to coexist without contradiction.
+
+The provisional ceiling is rung 7,
+`P02V2-CANONICAL-QUOTIENT-WITH-TYPED-STRUCTURAL-CONTEXTUALITY-AND-IDLE-FIBER-NONSELECTION`.
+It is not awarded. Barandes ontology, ontology selection, microactuality,
+clock, QFT, spacetime, and gravity remain unconstructed. The sole next event
+is an author construction audit; no independent review has begun.

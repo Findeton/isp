@@ -24,8 +24,8 @@ cleanly if nature does not support it.
   PHASE-COMPLETE RESIDUE SURVIVE**. The contextual-ontology bridge is
   ill-typed because the source category quotients laboratory procedures before
   their ontic representations may distinguish them.
-- Paper 02 v2 status: **MATHEMATICAL REPAIR PIN FROZEN — RESULT-NEUTRAL
-  AUTHOR AUDIT PASSED; CONSTRUCTION NEXT**. Its exact scope is the prequotient
+- Paper 02 v2 status: **GREEN-UNREVIEWED MATHEMATICS CONSTRUCTED — AUTHOR
+  CONSTRUCTION AUDIT NEXT**. Its exact scope is the prequotient
   procedure architecture $\mathcal P\to\mathcal Q$, trusted
   physical-randomization constructors, system-facing contextuality as a
   descent obstruction, and the Barandes-row correction. It adds no physical
@@ -152,6 +152,9 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   procedures-first repair contract; construction has not begun.
 - `note-paper02v2-pin-audit.md` — result-neutral feasibility audit; it
   authorizes mathematics-only construction but awards no coordinate.
+- `paper-02v2-procedure-quotient-ontology-residue.md` — green-unreviewed
+  procedures-first quotient, contextuality, positive-model, and
+  no-selection mathematics; no result is terminal.
 
 ## Permanent honesty wall
 

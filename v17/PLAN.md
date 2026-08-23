@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Paper 01 terminal, Paper 02 v2
-semantic repair pin and author audit frozen; mathematics construction next**
+green-unreviewed mathematics constructed; author construction audit next**
 
 ## 0. Authority and workflow
 
@@ -168,8 +168,9 @@ mixture procedures inside $\mathcal P$. A positive predictive-object model is
 registered only as an existence control; Barandes ontology, ontology
 selection, actuality, QFT, clocks, spacetime, and gravity remain
 unconstructed. The result-neutral author audit passes without awarding any
-coordinate. The sole next event is the self-contained mathematics
-construction.
+coordinate. The self-contained mathematics construction is now frozen at
+green-unreviewed status. The sole next event is its author construction audit;
+independent review has not begun.
 
 ### Paper 03 — relativistic quantum-operational adequacy
 

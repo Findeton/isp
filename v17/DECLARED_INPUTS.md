@@ -157,6 +157,19 @@ No Paper 02 v2 result exists at pin freeze. In particular, the pin does not
 award contextuality factorization, positive-model adequacy, ontology
 selection, or a Barandes completion.
 
+## Paper 02 v2 green-unreviewed construction balance
+
+| Constructed object | Upstream inputs | Provisional status | Debt retained |
+|---|---|---|---|
+| physical procedure category and presentation groupoid | frozen procedure referent and typed incidence rules | `GREEN-UNREVIEWED MATHEMATICS` | laboratory procedures are declared protocol types, not a microscopic ontology |
+| complete quotient $q:\mathcal P\to\mathcal Q$ | accepted Paper 01 comparator and fixed complete context family | `GREEN-UNREVIEWED MATHEMATICS — REACHABLE IMAGE` | new readers may refine the quotient; no microscopic inverse |
+| standard ontological interface and factorization predicate | optional typed $\Lambda_A$ subclass | `GREEN-UNREVIEWED FOUNDATIONS TYPING` | not applicable to arbitrary whole-history packets |
+| predictive-object positive contextual model | quantum states/conditional combs reified as candidate ontic variables | `GREEN-UNREVIEWED POSITIVE EXISTENCE CONTROL` | global, memory-bearing, nonexplanatory, and unselected |
+| idle-fiber no-selection | explicit positive affine inflation/projection diagrams | `GREEN-UNREVIEWED CONDITIONAL THEOREM` | fiber blindness only along admitted reductions; no automatic descent through $q$ |
+| structural contextuality | POM, six-rotation, Peres--Mermin, and CHSH premise packages | `GREEN-UNREVIEWED PREMISE-INDEXED NOGO` | does not select one contextual ontology or refute positive histories |
+| Barandes ontology | none | `ADMISSIBLE-BUT-UNCONSTRUCTED-AND-UNSELECTED` | fixed configuration referent, full law, and actual trajectory absent |
+| Paper 03, clock, QFT, spacetime, gravity | none | `CLOSED` | terminal Paper 02 v2 review required first |
+
 ## Derivation balance
 
 The live adjudicated balance is:
@@ -164,7 +177,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; canonical reachable operational quotient; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0
+green-unreviewed mathematical constructions: Paper 02 v2 procedures-first quotient/contextuality repair and positive predictive-object existence control
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3
