@@ -3,7 +3,7 @@
 Date opened: 2026-08-22
 
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
-Paper 03 result-neutral pin frozen; author audit next**
+Paper 03 pin audit passes; mathematical construction next**
 
 ## 0. Authority and workflow
 
@@ -205,6 +205,13 @@ firewalls, exact theorem quantifiers, 32 two-way controls, and 76 attacks. It
 awards no QFT ontology, preferred-frame absence beyond registered operations,
 internal time, spacetime derivation, or gravity. Construction remains closed
 until the separate author audit passes.
+
+**Author-audit state.** The source/type/quantifier audit passes at ledger #29.
+It verifies the covariant-observable/contravariant-state variance, localized
+system--probe construction, causal-factorization scope, operation-level
+no-signalling, split/type-III and no-natural-state restrictions, and the
+global contextual cost of the positive history model. One mathematics-only
+construction is now open; no implementation or later phase is opened.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
@@ -462,12 +469,13 @@ declared-input registry             OPEN
 Paper 01                            TERMINAL ACCEPT-WITH-SCOPE
 Paper 02 v2                         TERMINAL ACCEPT-WITH-SCOPE
 Paper 03 mathematical pin           FROZEN RESULT-NEUTRAL
-Paper 03 author audit               NEXT
-Paper 03 construction/review        CLOSED PENDING AUDIT
+Paper 03 author audit               PASS RESULT-NEUTRAL
+Paper 03 construction               NEXT
+Paper 03 review                     CLOSED PENDING CONSTRUCTION
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
 
-The next scientific action is the Paper 03 result-neutral author audit. No
-construction, implementation, clock, spacetime-emergence, or gravity unit is
-open before that audit.
+The next scientific action is one self-contained Paper 03 mathematical
+construction. No implementation, clock, spacetime-emergence, or gravity unit
+is open.

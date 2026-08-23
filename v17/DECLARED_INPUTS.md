@@ -202,6 +202,7 @@ selection, or a Barandes completion.
 | type-III, split, Reeh--Schlieder, gauge, sector controls | `MODEL-SPECIFIC / CONDITIONAL` | separately named comparator models | refusal of naive tensor/local-state claims | one model possessing every listed property |
 | Bell control | `EXISTENTIAL COMPARATOR TEST` | named model/state/regions | CHSH violation compatible with no-signalling | Bell-local causation or signalling |
 | preferred frame | `OPERATIONAL TEST ONLY` | registered covariance and schedule tests | no visible frame in the tested domain | absence of idle microscopic preferred structure |
+| Paper 03 author audit | `PASS — RESULT-NEUTRAL` | source/type/quantifier audit | authorizes one mathematical construction | awards no theorem or physical coordinate |
 | Paper 03 result | `UNCONSTRUCTED` | frozen result-neutral pin | nothing until construction and review | QFT ontology, internal time, spacetime derivation, gravity |
 
 ## Derivation balance

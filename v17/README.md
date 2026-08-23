@@ -173,6 +173,8 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03-relativistic-quantum-operational-adequacy-pin.md` — frozen
   result-neutral AQFT/system--probe comparator, theorem targets, 32 two-way
   controls, 76 hostile attacks, quantifier ledger, and ontology walls.
+- `note-paper03-pin-audit.md` — result-neutral source, variance, type,
+  quantifier, and construction-feasibility audit; it awards no coordinate.
 
 ## Permanent honesty wall
 
