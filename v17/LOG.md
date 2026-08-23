@@ -1041,3 +1041,22 @@ survives at its printed scope. Strongest Seat Q rung:
 `P03V2-POSITIVE-RELATIVISTIC-PREDICTIVE-REPRESENTATION-CONSTRUCTED-WITH-COSTS`.
 This report is evidence, not adjudication. Seat O and joint reconstruction
 remain; Paper 04 stays closed.
+
+## 2026-08-22 — PAPER 03 v2 SEAT O REVIEW FROZEN (v17 LEDGER #44)
+
+Seat O's ontology/relativity report freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/review-paper03v2-ontology-relativity.md` | `dc0c5e832d76eef41fb0047e9d6d4380fd50062b921bfa390d7a908a0aa918e6` | 569 LF / 35,017 bytes |
+
+Verdict: `ACCEPT-WITH-SCOPE`; first semantic counterexample: none. The slot
+poset remains laboratory protocol rather than microscopic happenings, global
+time, or spacetime. Local covariance does not erase physical KMS, material,
+apparatus, or preparation rest frames. Idle labels do not construct a
+geometric foliation; a record persists only through typed futures that retain
+it; and a lower-set frontier is not automatically a probabilistic division.
+
+Seat O supports the provisional rung-7 ontology/frame scope, but its report
+cannot repair the independent A/Q semantic defect. All three reports are now
+frozen. Independent joint adjudication is next; Paper 04 remains closed.

@@ -276,6 +276,7 @@ selection, or a Barandes completion.
 | Paper 03 v2 hostile-review protocol | exact frozen corpus and three independent lenses | `FROZEN — RESULT-NEUTRAL` | binds review duties only; awards no coordinate |
 | Paper 03 v2 Seat A review | frozen v2 corpus | `REVISE — EVIDENCE` | path category survives; hybrid Heisenberg target and universal schedule theorem fail as printed; adjudication pending |
 | Paper 03 v2 Seat Q review | frozen v2 corpus | `REVISE — EVIDENCE` | stochastic probabilities survive; retained-output Heisenberg composition untyped; adjudication pending |
+| Paper 03 v2 Seat O review | frozen v2 corpus | `ACCEPT-WITH-SCOPE — EVIDENCE` | slots nonontic; retained-record persistence and frontier nondivision scoped; adjudication pending |
 
 ## Derivation balance
 
