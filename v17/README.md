@@ -452,6 +452,17 @@ cleanly if nature does not support it.
   target-blind family of complete positive laws across interventions and
   composition. That family and its source rule remain absent; no U0-T4,
   official pin, or successor is opened.
+  An exact coherent-dilation companion now proves why independently lifting
+  each endpoint cannot fill that gap. Any stochastic submonoid containing a
+  nonidentity idempotent has no composition-preserving section into a
+  reversible group. At implementation level, an exact reversible many-to-one
+  map must retain at least the distinguishability of the collapsed input
+  fiber in memory, correlation, exported state, or a later uncomputation;
+  returning only the environment marginal is not a clean reset. These are
+  logical placement theorems over real and complex carriers, not a proof of
+  reversible ontology or thermodynamic heat. They sharpen the need for one
+  source-generated parent with typed seams, records, memory, erasure, and
+  division, but construct no native law and open no official cycle.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

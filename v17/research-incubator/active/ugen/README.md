@@ -306,6 +306,18 @@ must be earned from coherent smooth evolution, counterfactual interventions,
 and composition across one source-generated family. That family remains
 missing, and no U0-T4 or official cycle follows.
 
+The coherent-dilation and memory-placement theorem packet now makes the next
+boundary exact. Any endpoint stochastic monoid containing a nonidentity
+idempotent has no composition-preserving section into a reversible group.
+Separately, an exact reversible implementation of a many-to-one map must
+retain enough auxiliary distinguishability to label the collapsed input
+fiber; repeated independent losses require fresh capacity, reset/export, or
+reversible uncomputation. A restored environment marginal is weaker than a
+clean uncorrelated reset. These conclusions apply to real and complex lifts,
+but neither select reversible ontology nor imply thermodynamic heat. They
+locate the missing composition data without generating the target-blind
+source law.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -347,6 +359,8 @@ Active audit:
 - v17_ugen_nelson_control_scope_correction.md
 - v17_ugen_u0_native_indivisible_law_search_contract.md
 - v17_ugen_u0_barandes_source_completion_audit.md
+- v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
+- v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -548,6 +562,16 @@ Failure must identify an unavoidable input rather than announce that
     interventions and composition. It must be asked only after one native
     positive complete-law family is generated, not answered by independently
     lifting each target table.
+24. Objectwise reversible dilation is not a physical composition law. A
+    fresh lift or clean ancilla selected for each target is a charged resource
+    or compiler input.
+25. In an exact reversible realization, many-to-one reduced dynamics retain
+    the lost distinction in memory, correlation, export/reset, or
+    uncomputation. Equality of an environment marginal is not product-clean
+    reuse, and no heat follows without thermodynamic premises.
+26. Complex amplitudes do not create a multiplicative group section of
+    ordinary stochastic composition. Any coherent seam data must be generated
+    by the source law rather than independently chosen for each endpoint.
 
 ## Present disposition
 
@@ -610,6 +634,9 @@ U0 SOURCE-COMPLETION AUDIT:    COMPLETE AUTHOR-SIDE / MISSING MAP LOCATED
 U0 MARKOVIAN-EMBEDDING AUDIT:  ME-L3 AUTHOR-SIDE / NO CANDIDATE OR RESULT
 U0 SAME-SIZE COMPLEX WITNESS:  EXACT 3x3 / REPRESENTATION-SCOPED
 U0 REAL ENDPOINT DILATION:     EXACT AT <= N^2 / COMPLETENESS NOT EARNED
+U0 REVERSIBLE SECTION:         IMPOSSIBLE WITH NONTRIVIAL IDEMPOTENT
+U0 MANY-TO-ONE DILATION:       MEMORY/CORRELATION/RESET MUST CARRY LOSS
+U0 COHERENT DILATION PACKET:   CD-L2 AUTHOR-SIDE / NO NATIVE LAW
 U0 NO-EQUIVALENT-INPUT GATE:   COMPLETE AUTHOR-SIDE / NO RESULT
 U0 CALIBRATION-FIBER TEST:     NONTRIVIAL AT T3 SCHEMA SCOPE / NOT NATURE-SELECTING
 U0-T3 FIXTURE:                 T3-R3 AUTHOR-SIDE / IMPLEMENTATION UNBOUND

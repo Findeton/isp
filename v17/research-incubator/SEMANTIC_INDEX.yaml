@@ -299,6 +299,19 @@ artifacts:
     promotion_readiness: "not-ready"
     maximum_claim: "source-scoped separation of sparse-law Hilbert embedding from complete-process and source completion, plus exact same-size complex advantage and bounded real orthogonal endpoint dilation controls; no complex ontology, native law, pin, review, successor, or scientific result"
     canonical: false
+  - path: "active/ugen/v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md"
+    sha256: "e02f8cfd6a866fd6cad734c6053b8201f1a71e0dab20c1ce7dcde9013b11e93a"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-u0-coherent-dilation-memory-placement-mathematics"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md", "active/ugen/v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md", "active/ugen/v17_pc5_complete_process_resource_displacement.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md"]
+    source_audit_status: "author-side-primary-source-and-elementary-mathematics-reconstructed-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "exact author-side no-section theorem for stochastic monoids with nontrivial idempotents, clean reusable-environment injectivity, many-to-one memory-cardinality and marginal-reset controls; no fundamental reversibility, thermodynamic heat, complex ontology, native law, pin, review, successor, or scientific result"
+    canonical: false
   - path: "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md"
     sha256: "44fd9bb8abefd604a1fd4cdb4f007e86b81c919d52a126840523fcb941bb521c"
     created_at: "2026-08-23"
@@ -469,17 +482,17 @@ artifacts:
     maximum_claim: "exact finite author-side full-history Markovization, minimal predictive quotient, target-dependency, carrier-relative closure placement, omitted-memory and interference controls, and stochastic-inverse permutation theorem; no physical configuration, native law, absolute ontic completeness, pin, review, or scientific result"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "07a537ce4cfb18f5c525c11ac60d3399a196dfb65d26a1538a0d0463c4fbe9f3"
+    sha256: "77c603d8930e7abc9ea6d1678fa125eebff940e83a45078b4f4277d7bf0bf0b8"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-u0-native-search-nelson-controls"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/qcut/", "active/ecomp/", "active/mg0/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md", "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md", "active/ugen/v17_ugen_u0_t3_physical_reference_source_audit.md", "active/ugen/v17_ugen_u0_t3_reference_bearing_relational_theorems.md", "active/ugen/v17_ugen_u0_t3_indivisibility_placement_source_audit.md", "active/ugen/v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md"]
+    depends_on: ["active/qcut/", "active/ecomp/", "active/mg0/", "active/ugen/v17_pc6_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c1_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c2_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_c3_primary_source_metrology_scope_audit.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_fundamental_nomology_rival_register.md", "active/ugen/v17_ugen_bell_current_primary_source_scope_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "active/ugen/v17_ugen_u0_barandes_source_completion_audit.md", "active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md", "active/ugen/v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md", "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md", "active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md", "active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md", "active/ugen/v17_ugen_u0_t3_physical_reference_source_audit.md", "active/ugen/v17_ugen_u0_t3_reference_bearing_relational_theorems.md", "active/ugen/v17_ugen_u0_t3_indivisibility_placement_source_audit.md", "active/ugen/v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md", "active/ugen/v17_ugen_n1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_n1a_source_topology_and_scope_audit.md", "active/ugen/v17_ugen_g1_source_physics_and_scope_audit.md", "active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md"]
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls, G1/G2 as compiler and source-origin controls, reaches a T3-R3 configuration-neutral fixture, and constructs descriptor/transfer, source-descent, physical-reference, and indivisibility-placement gates while leaving the physical carrier, implementation, and native candidate unselected; MG0 remains downstream; no pin, review, source-complete existence or no-go result, native law, ontology selection, QFT, clock, spacetime, or gravity result"
+    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls, G1/G2 as compiler and source-origin controls, reaches a T3-R3 configuration-neutral fixture, and constructs descriptor/transfer, source-descent, physical-reference, indivisibility-placement, and coherent-dilation memory-placement gates while leaving the physical carrier, implementation, and native candidate unselected; MG0 remains downstream; no pin, review, source-complete existence or no-go result, native law, ontology selection, QFT, clock, spacetime, or gravity result"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
     sha256: "19c409a751d99f6ccda0d7f41046983e1df6b4cd45becbba3a5aedcd7fc89548"

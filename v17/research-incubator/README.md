@@ -334,6 +334,16 @@ endpoint table. Whether it is reconstructed by coherent smooth evolution,
 counterfactual controls, and composition remains open. The audit creates no
 candidate, pin, review, or successor.
 
+The coherent-dilation and memory-placement packet now attacks that
+composition gap exactly. Nonidentity stochastic idempotents forbid a
+multiplicative section into any reversible group, while exact reversible
+many-to-one implementations require auxiliary distinguishability at least as
+large as the collapsed input fiber. Fresh ancillas, carried correlations,
+reset/export, and uncomputation are consequently physical alternatives rather
+than free notation. The proof applies to real and complex lifts alike and
+does not select reversible ontology, attach a thermodynamic cost, or construct
+the missing source law.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -368,6 +378,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md
 - active/ugen/v17_ugen_u0_barandes_source_completion_audit.md
 - active/ugen/v17_ugen_u0_barandes_markovian_embedding_scope_audit.md
+- active/ugen/v17_ugen_u0_coherent_dilation_and_memory_placement_theorems.md
 - active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md
 - active/ugen/v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - active/ugen/v17_ugen_u0_t3_physical_interface_source_audit.md

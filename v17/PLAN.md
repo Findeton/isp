@@ -329,6 +329,15 @@ structure is consequently neither promoted to ontology nor dismissed; its
 possible necessity moves to coherent smooth/interventional/compositional
 representation of one generated complete-law family. No such native family,
 pin, review, or U0-T4 is opened.
+An exact author-side coherent-dilation packet now closes a narrower loophole.
+A stochastic monoid containing a nontrivial idempotent cannot admit a
+group-valued multiplicative section of its endpoint readout. Exact reversible
+implementations of many-to-one maps must place the collapsed distinction in
+memory, correlation, export/reset, or reversible uncomputation, with a memory
+cardinality at least the largest input fiber. The conclusion is scalar-field
+neutral and does not infer fundamental reversibility or Landauer heat. It
+separates objectwise representation from one physical composition law and
+leaves the native source law, physical carrier, and implementation unselected.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
