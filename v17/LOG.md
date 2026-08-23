@@ -1740,3 +1740,39 @@ No local microontology, selected actuality, internal clock, emergent
 spacetime, matter--geometry dynamics, or gravity is constructed. No
 implementation is required. There is no v3.3. Paper 04 is not opened by this
 adjudication and needs a separately frozen reality-first physical question.
+
+## 2026-08-23 — PAPER 04 RELATIONAL-CLOCK PHYSICAL PIN FROZEN (v17 LEDGER #72)
+
+The first Phase-T question freezes at:
+
+| artifact | SHA-256 | normalized self-SHA-256 | size |
+|---|---|---|---:|
+| `v17/note-paper04-relational-clock-external-time-pin.md` | `da48bc95bf02c93393697ad6b447605ab89879ff45a1be6896abf6ce6a276b0c` | `6b903e20eb0507ed1f8d1b6fa1a9ca2378b0994ca108b16a9c0ccbd7220493bf` | 1,016 LF / 45,152 bytes |
+
+The pin awards no clock, law, internal time, chronology, spacetime, or gravity
+result. It separates clock correlation, clock-relative adequacy, formal
+clock-neutral parametrization, operational redundancy of an external scalar
+parameter, and the fundamental status of time. Paper 03's causal frontier and
+Lorentzian/AQFT comparator remain supplied inputs.
+
+The frozen target requires two genuinely distinct physical clocks inside one
+complete joint clock--system law; finite and almost-everywhere continuous
+conditioning; sequential/adaptive probability equivalence; preregistered
+same-path affine calibration; complete clock-frame transformations; finite
+resource, recurrence, stoppage, readout-disturbance, and nonzero backreaction
+controls; reparameterization covariance; and one normalized or physical-inner-
+product-complete clock-neutral parent. A Page--Wootters/constraint route and a
+positive stochastic route remain live, but neither is presumed fundamental.
+
+The anti-tautology firewall is binding: wrapping arbitrary time-indexed
+dynamics in a history state or decorative constraint can earn only a formal
+representation. Operational redundancy requires held-out complete-reader
+predictions computed without the external parameter. Even that does not
+settle whether time is fundamental or derive causal order.
+
+The census freezes 25 targets, 42 paired controls, 68 hostile attacks, 28
+product coordinates, an eight-rung outcome ladder, and 16 primary sources.
+Three independent pin audits—constrained mathematics/probability, quantum
+clocks/processes, and ontology/relativity/Barandes—must accept the exact bytes
+before root may authorize one construction. Phase G and all spacetime/gravity
+claims remain closed.

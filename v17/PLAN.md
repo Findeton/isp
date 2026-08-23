@@ -5,7 +5,8 @@ Date opened: 2026-08-22
 Status: **ACTIVE REALITY-FIRST PROGRAMME; Papers 01 and 02 v2 terminal;
 Paper 03 v1/v2/v3.1 terminal REVISE; Paper 03 v3.2 terminal
 ACCEPT-WITH-SCOPE at relativistic quantum operational adequacy with global
-ontology debt; Paper 04 requires a separately frozen physical question**
+ontology debt; Paper 04 result-neutral physical pin frozen pending three
+independent pre-construction audits**
 
 ## 0. Authority and workflow
 
@@ -240,9 +241,17 @@ countermodels.
 
 ### Paper 04 — internal clocks and parametrized process law
 
-**Question.** Can external slot labels in the accepted quantum-process theory
-be replaced by physical clock records without changing relational
-probabilities?
+**Opening state.** Ledger #72 freezes the exact physical question, three
+separate claim levels, 25 targets, 42 paired controls, 68 hostile attacks, a
+28-coordinate product, and a 16-source primary ledger. Construction is absent
+until three independent constrained-dynamics, quantum-clock, and
+ontology/relativity audits accept the frozen boundary.
+
+**Question.** Can an external scalar evolution/schedule parameter in the
+accepted quantum-process comparator be made operationally redundant through
+physical clock records without changing relational probabilities? The
+supplied Paper-03 causal-frontier order is not claimed to be removed or
+derived.
 
 **Required controls.**
 
@@ -257,7 +266,7 @@ probabilities?
 - no use of program order as time.
 
 **Strongest result.** Clock-relative quantum process equivalence. It does not
-yet imply spacetime chronology.
+yet imply a fundamental timeless ontology, spacetime chronology, or gravity.
 
 ### Paper 05 — operational causal structure
 
@@ -536,7 +545,9 @@ Paper 03 v3.2 Seat Q review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.2 Seat O review         FROZEN ACCEPT-WITH-SCOPE
 Paper 03 v3.2 joint adjudication    TERMINAL ACCEPT-WITH-SCOPE — RUNG 7
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
-Phases T/G/S/P                       CLOSED
+Paper 04 relational-clock pin       FROZEN RESULT-NEUTRAL — AUDITS PENDING
+Phase T construction                CLOSED PENDING THREE PIN AUDITS
+Phases G/S/P                         CLOSED
 ```
 
 The frozen v3.1 pin encoded the attempted correction:

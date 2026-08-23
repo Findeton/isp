@@ -334,6 +334,28 @@ selection, or a Barandes completion.
 | Paper 03 v3.2 Seat O report | `ACCEPT-WITH-SCOPE — ADJUDICATED EVIDENCE` | ontology/locality/Barandes/gravity reconstruction plus 18 fresh attacks | predictor remains unselected and supplied AQFT spacetime remains input |
 | Paper 03 v3.2 terminal adjudication | `TERMINAL ACCEPT-WITH-SCOPE — RUNG 7` | exact candidate, three blind reports, and independent root reconstruction | coherent relativistic quantum operational representation only; no local microontology, actuality, internal time, emergent spacetime, or gravity |
 
+## Paper 04 relational-clock pin balance
+
+| Object | Status at pin freeze | Source / choice | Debt retained |
+|---|---|---|---|
+| Paper 03 complete-boundary process | `FROZEN ACCEPTED INPUT` | terminal v3.2 candidate and adjudication | packet-relative predictor on a supplied Lorentzian/AQFT comparator; no internal time or ontology |
+| comparator evolution/schedule parameter | `DECLARED CALIBRATION INPUT` | Paper 03 laboratory description | candidate for operational redundancy only; supplied causal order remains distinct |
+| clock A | `UNCONSTRUCTED TARGET` | must be one typed physical subsystem, preparation, law, POVM/instrument, record, window, resources, and complete readers | cannot be a program index, copied clock, or postprocessing alias |
+| clock B | `UNCONSTRUCTED INDEPENDENT TARGET` | distinct physical subsystem with independently variable preparation, generator, or readout | need not be probabilistically independent; joint correlations remain physical |
+| two-clock joint law | `UNCONSTRUCTED TARGET` | one common complete Paper-03 experiment packet | separately fitted clock tables are forbidden |
+| clock-relative conditionals | `UNCONSTRUCTED TARGET` | positive finite/bin events and standard-Borel diffuse kernels | zero support refused; diffuse point laws only almost everywhere |
+| same-path affine calibration | `DECLARED HELD-OUT TEST` | one preregistered good-clock window and training/test split | no different-worldline affine requirement; no post-hoc window or units |
+| clock-frame transformation | `UNCONSTRUCTED TARGET` | must descend from the common joint law/parent and act on complete states, records, observables, and readers | scalar relabel alone is insufficient; noisy loss must be exposed |
+| finite-clock resource/backreaction ledger | `MANDATORY TARGET` | at least one finite clock and one nonzero clock--system interaction/readout disturbance | ideal tensor-sum clock alone cannot earn the physical result |
+| stopped/periodic/recurrent clocks | `MANDATORY FAILURE CONTROLS` | physical readings and retained cycle records only | path position cannot supply an unrecorded winding number |
+| Page--Wootters/constraint route | `STANDARD-THEORY COMPARATOR — UNCONSTRUCTED HERE` | exact constraint, physical inner product, covariant clock POVMs, relational observables, reduction maps | formal stationary state or arbitrary factorization is insufficient |
+| positive stochastic clock-neutral route | `LIVE ALTERNATIVE — UNCONSTRUCTED` | one positive history/configuration law with physical clocks and exact reductions | a Barandes time-indexed transition law cannot become clock-neutral by renaming its indices |
+| clock-neutral parent | `UNCONSTRUCTED TARGET` | one normalized or physical-inner-product-complete object reducing to laboratory and both clocks | post-hoc history-state wrapping earns formal representation only |
+| operational external-parameter redundancy | `UNCONSTRUCTED PROMOTION TARGET` | held-out complete-reader predictions from the parent without an external parameter | does not settle whether time is fundamental |
+| causal order / time arrow | `SUPPLIED / UNCONSTRUCTED` | causal frontier remains the Paper-03 comparator input | increasing readings cannot derive influence or orientation |
+| spacetime / metric / gravity / actuality | `UNCONSTRUCTED` | no Paper-04 input | every later-phase wall remains closed |
+| Paper 04 pin | `FROZEN RESULT-NEUTRAL — CONSTRUCTION ABSENT` | exact #72 bytes, 25 targets, 42 controls, 68 attacks, 28-coordinate product | three independent pin audits and root adjudication required before one construction |
+
 ## Derivation balance
 
 The live adjudicated balance is:
@@ -343,7 +365,7 @@ adjudicated v17 mathematical structures: positive record-history Q0--Q3 represen
 adjudicated new fundamental physical structures: 0
 green-unreviewed mathematical constructions: 0
 new v17 fundamental physical postulates: 0
-open hypotheses under test: relational stochastic history; one actual history
+open hypotheses under test: relational stochastic history; one actual history; physical clocks; clock-neutral parent and operational external-parameter redundancy
 standard empirical/theory comparators: quantum Q0–Q3 and supplied AQFT/Lorentzian laboratory background
 supplied comparator geometry: 1 declared Paper 03 background family
 derived geometry or gravity: 0

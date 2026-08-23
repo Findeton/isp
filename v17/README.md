@@ -158,6 +158,17 @@ cleanly if nature does not support it.
   continuous duality remains conditional on the complete common-instrument
   package. No implementation is required. Paper 04 needs a separately frozen
   physical question.
+- Paper 04 status: **RELATIONAL-CLOCK AND EXTERNAL-PARAMETER PIN FROZEN —
+  RESULT-NEUTRAL; THREE PIN AUDITS PENDING**. Ledger #72 separates clock
+  correlation, clock-relative adequacy, formal parametrization, operational
+  redundancy of an external scalar parameter, and the fundamental status of
+  time. It requires two genuine physical clocks in one joint law, held-out
+  same-path calibration, full clock-frame maps, sequential/adaptive
+  probabilities, finite resources, backreaction, stopped/periodic clocks,
+  reparameterization covariance, and one separately typed clock-neutral
+  parent. The supplied Paper-03 causal frontier remains input. No clock,
+  parent, internal time, chronology, spacetime, metric, gravity, or actuality
+  coordinate is awarded before three independent pin audits and construction.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -416,6 +427,12 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   paired stochastic/Heisenberg arrows, derived same-instrument continuous
   duality, exact closure and refusal gates, and inherited relativistic
   operational scope with global ontology debt.
+- `note-paper04-relational-clock-external-time-pin.md` — frozen
+  result-neutral Phase-T contract separating physical clock construction,
+  two-clock operational comparison, formal clock-neutral embedding,
+  held-out external-parameter redundancy, and fundamental-time status; it
+  binds 25 targets, 42 paired controls, 68 attacks, 28 product coordinates,
+  and three independent pre-construction audits.
 
 ## Permanent honesty wall
 
