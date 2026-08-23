@@ -80,6 +80,13 @@ cleanly if nature does not support it.
   certificates. Joint adjudication accepts exactly one mathematics-only
   construction with those obligations. It awards no result, permits no
   automatic pin successor or implementation, and leaves Paper 04 closed.
+  That construction now freezes as `GREEN-UNREVIEWED MATHEMATICS`: finite and
+  declared atomic records have exact normal point states, generic nonatomic
+  samples remain outside point-restart semantics, dominated ensemble laws
+  map through an explicit predual `Ens` bridge, and admitted finite programs
+  have paired `Ev`/`Ens`/`Heis` semantics. This is a representation theorem
+  candidate, not a selected ontology. A construction audit is next; no
+  Paper 03 coordinate or Paper 04 opening has been awarded.
 - No v17 code, evaluator, generated artifact, or numerical fit exists.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,
   not adopted as the fundamental law of nature.
@@ -292,6 +299,11 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `note-paper03v31-pin-audit-adjudication.md` — terminal pre-construction
   synthesis; authorizes one mathematics-only construction while preserving
   the nonatomic point-restart refusal and every downstream wall.
+- `paper-03v31-integrated-hybrid-relativistic-adequacy.md` — the sole
+  `GREEN-UNREVIEWED` mathematics construction authorized by that synthesis;
+  it gives exact finite/atomic and conditional integrated hybrid semantics,
+  preserves the v2 physical laws, and awards no terminal result before audit
+  and hostile review.
 
 ## Permanent honesty wall
 

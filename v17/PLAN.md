@@ -515,7 +515,8 @@ Paper 03 v3.1 corrected pin         FROZEN RESULT-NEUTRAL
 Paper 03 v3.1 category pin audit    FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 quantum pin audit     FROZEN ACCEPT WITH BINDING SCOPE
 Paper 03 v3.1 joint adjudication    TERMINAL ACCEPT FOR ONE CONSTRUCTION
-Paper 03 v3.1 construction          NEXT — MATHEMATICS ONLY
+Paper 03 v3.1 construction          GREEN-UNREVIEWED MATHEMATICS
+Paper 03 v3.1 construction audit    NEXT — RESULT-NEUTRAL
 Paper 03 implementation             NOT REQUIRED / NOT AUTHORIZED
 Phases T/G/S/P                       CLOSED
 ```
@@ -524,11 +525,11 @@ The frozen v3.1 pin encodes the selected physically complete correction:
 finite/atomic records admit exact point boundary states; continuous records
 admit integrated normal ensemble states and almost-everywhere posterior and
 control fields; generic nonatomic point restart is refused. One corrected
-It freezes this distinction, common domination, nonsingular pullbacks, tagged
+construction now realizes this distinction, common domination, nonsingular
+pullbacks, tagged
 boundaries, and the unchanged certified-concurrency scope. The exact bytes
-must now pass the same two independent audits before any construction. The cycle
-may construct only the
-hybrid classical--quantum Heisenberg target, its compatibility laws, exact
-primitive interfaces, and certified-concurrency scope. It may not retune
-probabilities or add ontology, internal time, spacetime emergence, or gravity.
-Paper 04 remains closed.
+remain green-unreviewed until a construction audit and three-lens hostile
+review. The cycle may establish only the hybrid classical--quantum Heisenberg
+target, its compatibility laws, exact primitive interfaces, and
+certified-concurrency scope. It may not retune probabilities or add ontology,
+internal time, spacetime emergence, or gravity. Paper 04 remains closed.

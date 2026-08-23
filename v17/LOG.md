@@ -1279,3 +1279,32 @@ No scientific coordinate is awarded and no v2 probability, instrument,
 physical parameter, comparator, or ontology claim moves. One self-contained
 mathematics construction is next. There is no automatic pin successor,
 implementation stage, or Paper 04 opening.
+
+## 2026-08-22 — PAPER 03 v3.1 MATHEMATICS CONSTRUCTION FROZEN (v17 LEDGER #54)
+
+The sole #53-authorized construction freezes at:
+
+| artifact | SHA-256 | size |
+|---|---|---:|
+| `v17/paper-03v31-integrated-hybrid-relativistic-adequacy.md` | `f808455f4ad240e2cd2751eccad32aa59ecb6e941caba8e9d4324fda3959b533` | 1,632 LF / 62,503 bytes |
+
+Status: `GREEN-UNREVIEWED MATHEMATICS`. The construction leaves every v2
+probability and physical mechanism unchanged. It gives exact direct-sum
+semantics and normal point states to finite/declared atomic records, keeps
+exact standard-Borel samples in `Ev`, and maps only dominated ensemble laws
+to normal hybrid states through an explicit strongly measurable predual
+`Ens` construction. Generic nonatomic point restart remains unconstructed.
+
+Every admitted continuous instrument must provide one state-independent
+normal UCP target-landing extension, a jointly measurable posterior kernel,
+stochastic and deterministic null-ideal preservation, ensemble/path closure,
+complete future memory, and an independently proved ensemble compatibility
+identity from the same immutable instrument data. Finite-path duality follows
+only after those one-step obligations. Schedule equality remains limited to
+full map-and-kernel certificates in every reachable adaptive context.
+
+The provisional ceiling remains
+`P03V31-RELATIVISTIC-QUANTUM-OPERATIONAL-ADEQUACY-WITH-GLOBAL-ONTOLOGY-DEBT`.
+No scientific coordinate is awarded. A result-neutral construction audit is
+next; hostile review, terminal adjudication, and any Paper 04 opening remain
+closed.

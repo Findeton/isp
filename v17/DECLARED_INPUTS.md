@@ -303,6 +303,7 @@ selection, or a Barandes completion.
 | Paper 03 v3.1 category pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and full authority corpus | predual `Ens`, tagged category, atomic restart, nonsingular maps, a.e. guards, memory and concurrency are jointly feasible; awards no coordinate |
 | Paper 03 v3.1 quantum pin audit | `ACCEPT FOR CONSTRUCTION WITH BINDING SCOPE — EVIDENCE` | frozen v3.1 pin and unchanged v2 instruments | continuous duality must begin at ensemble level; state-independent target landing, joint posterior measurability, stochastic null-ideal preservation, path closure and complete memory remain construction obligations |
 | Paper 03 v3.1 pin-audit adjudication | `TERMINAL ACCEPT FOR ONE MATHEMATICS CONSTRUCTION` | exact pin plus two blind audits and direct rebuild | authorizes construction of the frozen representation only; awards no probability, ontology, time, spacetime, or gravity coordinate |
+| Paper 03 v3.1 integrated hybrid construction | `GREEN-UNREVIEWED MATHEMATICS` | sole #53-authorized construction; unchanged v2 laws | finite/atomic point states, dominated predual `Ens`, tagged hybrid category, conditional continuous instruments, finite-path duality, and certified concurrency; no ontology or downstream result before hostile adjudication |
 
 ## Derivation balance
 
@@ -311,7 +312,7 @@ The live adjudicated balance is:
 ```text
 adjudicated v17 mathematical structures: positive record-history Q0--Q3 representation; physical-procedure category; canonical reachable operational quotient; typed structural contextuality; positive contextual existence model; scoped idle-fiber no-selection; phase-complete predictive residue
 adjudicated new fundamental physical structures: 0
-green-unreviewed mathematical constructions: 0
+green-unreviewed mathematical constructions: 1 (Paper 03 v3.1 integrated hybrid representation)
 new v17 fundamental physical postulates: 0
 open hypotheses under test: relational stochastic history; one actual history
 standard empirical/theory comparators: quantum Q0–Q3
