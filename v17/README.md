@@ -700,6 +700,19 @@ cleanly if nature does not support it.
   carrier, or incomplete as a native source law. The next exact task is a
   configuration-to-operational bridge feasibility audit; no bridge, material
   member, actuality law, candidate, or Paper 04B successor is awarded.
+  That audit now reaches BFA-L2 author-side scope. Three exact finite witnesses
+  show that a passive positive law alone does not determine physical
+  intervention responses, subsystem factorization, or the stable-record
+  quotient. A complementary quotient proposition proves that a typed positive
+  category of complete physical instruments does generate an operational-
+  probabilistic theory when composition is restricted to certified divisions;
+  indivisible interiors therefore need not be Markovized. The missing physics
+  is the first arrow: one closed parent must generate physical source ports,
+  coupling changes, readers, records, erasers, and divisions. Barandes,
+  QFT/decoherence, Bell/Bohm, collapse, process-matrix, Euclidean, causal-set,
+  and bootstrap routes each supply only part or import quantum/spacetime data.
+  The next exact control is a known-physics autonomous parent-interface descent,
+  not a guessed carrier or native candidate.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

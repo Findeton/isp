@@ -575,6 +575,17 @@ incomplete as a native source law. This earns QPB-L2 author-side only. The
 configuration-to-operational bridge, material member, actuality, QFT, and
 gravity remain open.
 
+The bridge-feasibility audit now closes the next boundary at BFA-L2. Exact
+finite witnesses show that passive correlations do not identify intervention
+semantics, subsystem factorization, or stable-record coarse-graining. A
+positive feasibility proposition also shows that typed complete physical
+instruments admit an operational quotient without composing through
+uncertified indivisible interiors. Thus a positive ontology is not ruled out;
+the missing object is one source-complete closed parent that physically
+generates its interfaces, readers, records, erasers, and divisions. The next
+control must reconstruct that descent inside known QFT/material physics and
+expose every supplied quantum/spacetime coordinate before any native proposal.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -634,6 +645,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_s2_empirical_residual_and_admission_gate.md
 - active/ugen/v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
 - active/ugen/v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
+- active/ugen/v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

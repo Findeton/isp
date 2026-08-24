@@ -575,6 +575,18 @@ which known physical constructions can generate the operational substrate and
 principle domains without receiving the target quantum process. No native
 bridge, candidate, review, material member, actuality result, or Paper 04B
 successor follows.
+The bridge feasibility audit now reaches BFA-L2 author-side scope. Passive
+positive histories are insufficient in three independent ways: the same law
+can support different intervention responses, subsystem decompositions, and
+record quotients. Conversely, a typed category of positive complete physical
+instruments has a well-defined operational quotient while composing only at
+certified divisions, so this obstruction does not refute a positive
+indivisible ontology. It identifies the missing physical construction: a
+closed parent must generate source/control/reader interfaces, stable records,
+erasers, and complete divisions before operational reconstruction begins. The
+next gate is BFA-L3, one known-physics autonomous parent-interface control that
+prints every quantum, spacetime, material-response, and actuality input. It is
+not a native candidate and creates no official authority.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

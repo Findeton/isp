@@ -579,6 +579,19 @@ carrier at the licensed cut, or incomplete as a native source law. No native
 configuration-to-operational bridge, material member, actuality law, or
 candidate is constructed; bridge feasibility is now the exact next question.
 
+That bridge audit now reaches BFA-L2 author-side scope. Three exact finite
+counterexamples separate passive probability from physical intervention,
+subsystem factorization, and stable-record identification. A complementary
+construction proves that any typed ordinary-positive category of complete
+physical instruments has an operational quotient when contexts are closed and
+composition is restricted to certified divisions. This preserves indivisible
+interiors and locates the genuine burden in the closed-parent descent from
+material sources and couplings to instruments, readers, records, erasers, and
+divisions. No surveyed Barandes, QFT/decoherence, Bell/Bohm, collapse,
+process-matrix, Euclidean, causal-set, or bootstrap route closes that descent
+without imported quantum or spacetime structure. The next control is one
+known-physics autonomous parent-interface construction, not a native law.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -641,6 +654,7 @@ Active audit:
 - v17_ugen_u0_s2_empirical_residual_and_admission_gate.md
 - v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
 - v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
+- v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1010,7 +1024,10 @@ U0 S2 ISOTROPIC FAMILY:        CHSH 4V / LOCAL-QUANTUM-PR CONTROLS
 U0 Q-SOURCE PREMISE AUDIT:     QPB-L2 / CONDITIONAL Q-LAYER
 U0 Q-SOURCE NATIVE ONTOLOGY:   NOT SELECTED / QUOTIENT INVARIANT
 U0 PURIFICATION CARRIER:       PREDICTIVE OR DIVISIBLE OR INCOMPLETE
-NEXT U0 SCIENTIFIC WORK:       CONFIGURATION-TO-OPERATIONAL BRIDGE FEASIBILITY
+U0 BARE BRIDGE:                NONIDENTIFIABLE / INTERVENTION-FACTOR-RECORD
+U0 TYPED POSITIVE OPT BRIDGE:  CONSTRUCTIBLE AT CERTIFIED DIVISIONS
+U0 BRIDGE FEASIBILITY:         BFA-L2 / NO NATIVE BRIDGE
+NEXT U0 SCIENTIFIC WORK:       KNOWN-PHYSICS CLOSED-PARENT INTERFACE DESCENT
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
