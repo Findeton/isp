@@ -625,6 +625,21 @@ jointly generate spontaneous fluctuations and intervention response, including
 complete records and one interacting parent, without importing a quantum
 state, Hamiltonian, action, phase, KMS condition, or target response.
 
+The fluctuation--response parent gate now exhausts that immediate mechanism
+at FRP-L2 author-side scope. A reversal-even positive noise coordinate leaves
+the reversal-odd ordered response in a full positivity interval. Detailed
+balance conditionally selects the two-outcome response
+$\tanh(\!\sigma/2)$ from a real exchange/log-likelihood coordinate, but a
+continuous real likelihood character on a compact reversible cycle is
+trivial. Quantum KMS conditionally selects the ordered spectral asymmetry
+$\tanh(\!\beta\hbar\omega/2)$ by importing quantum ordering, thermal
+Hamiltonian/modular evolution, a state, coupling, $\beta$, and $\hbar$.
+Exact same-covariance/different-fourth-moment and same-linear/different-finite-
+response families prove that FDT-level data do not close a process. A
+positive three-cycle proves that periodicity and complex spectral syntax do
+not select quantum ontology. The next live question is whole-process
+reciprocity, not a timeless-KMS slogan.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

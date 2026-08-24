@@ -750,6 +750,19 @@ cleanly if nature does not support it.
   supplied; it is not a native source derivation. The next exact construction
   target is therefore a joint fluctuation--intervention parent, not another
   phase, representation, or conservation relabeling.
+  The fluctuation--response parent gate now reaches FRP-L2 author-side scope.
+  Positive undirected noise leaves the ordered response free. Detailed
+  balance is a real source-compression principle: with an independently typed
+  log-likelihood/exchange coordinate it uniquely gives logistic probabilities
+  and $\tanh(\!\sigma/2)$ response. But a real continuous likelihood character
+  on a compact reversible cycle is necessarily trivial. The supplied quantum
+  KMS relation restores an ordered spectral response only with a quantum
+  algebra, Hamiltonian/modular time, thermal state, conjugate coupling,
+  $\beta$, and $\hbar$. Two-point and linear-response closure are proved
+  insufficient for a complete process, and a positive permutation control
+  shows that oscillation and complex spectra are not quantum selectors. The
+  remaining author-side problem is a whole-process reciprocity law that does
+  not collapse into classical path ratios or import a quantum process.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

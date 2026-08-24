@@ -625,6 +625,20 @@ next formula target is one form-neutral positive parent that jointly generates
 spontaneous fluctuations, intervention response, complete records, products,
 and one interacting parent; importing a KMS state, commutator, Hamiltonian,
 action, phase, or target response remains zero-credit known-physics input.
+That fluctuation--response attempt now reaches FRP-L2 author-side scope.
+Undirected positive fluctuations fix only the sum of forward/reverse ordered
+weights; their directed difference remains free. A real detailed-balance
+coordinate $\sigma$ genuinely closes the two-outcome parent conditionally,
+giving logistic weights and response $\tanh(\!\sigma/2)$, but every continuous
+real likelihood character on a compact reversible cycle is trivial. Quantum
+KMS fixes the ordered spectral asymmetry through
+$\tanh(\!\beta\hbar\omega/2)$ only after importing quantum ordering,
+Hamiltonian/modular time, a thermal state, conjugate coupling, $\beta$, and
+$\hbar$. Exact countermodels show that two-point fluctuations do not close
+higher-order process statistics and linear response does not close finite
+response; a positive deterministic three-cycle also blocks any inference from
+oscillation or complex spectrum to quantum ontology. The next nonduplicative
+question is whole-process reciprocity, not another equilibrium FDT.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

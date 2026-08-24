@@ -629,6 +629,18 @@ interacting parent is generated, and CCS/EDR native-candidate entry remains
 closed. The next construction question is a single positive law jointly
 generating spontaneous fluctuations and controlled response.
 
+That construction now reaches FRP-L2 only. Exact positive-pair mathematics
+shows that undirected fluctuations do not select ordered response. A real
+detailed-balance exchange coordinate conditionally produces logistic weights
+and $\tanh(\!\sigma/2)$ response, while a compact reversible control admits no
+nontrivial continuous real likelihood character. Quantum KMS supplies the
+ordered spectral ratio only after quantum operator ordering, thermal
+Hamiltonian/modular evolution, a conjugate coupling, $\beta$, and $\hbar$ are
+given. Exact higher-moment and nonlinear-response countermodels defeat
+two-point/linear closure, and a positive deterministic three-cycle defeats
+oscillation-as-quantum reasoning. The remaining source question is a bounded
+whole-process reciprocity identity with an explicit probability functional.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -695,6 +707,7 @@ Active audit:
 - v17_ugen_u0_s2_known_physics_effective_parent_interface_audit.md
 - v17_ugen_u0_cross_context_composition_source_gate.md
 - v17_ugen_u0_exchange_deformation_response_selection_gate.md
+- v17_ugen_u0_fluctuation_response_parent_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1072,7 +1085,9 @@ U0 SOURCE-COMPLETE PARENT:     BFA-L3 OPEN / KERNELS AND TRANSFER ABSENT
 U0 CROSS-CONTEXT SOURCE GATE:  CCS-L2 / TRANSPORT LOCATED, LAW ABSENT
 U0 EXCHANGE-DEFORMATION GATE:  EDR-L2 / SECTOR AND READER UNSELECTED
 U0 CONDITIONAL SCALAR CYCLE:   POSITIVE COMPARATOR / NO NATIVE CREDIT
-NEXT U0 SCIENTIFIC WORK:       JOINT FLUCTUATION-RESPONSE PARENT FORMULA
+U0 FLUCTUATION-RESPONSE GATE:  FRP-L2 / DETAILED BALANCE DISSIPATIVE ONLY
+U0 KMS RESPONSE CONTROL:       CONDITIONAL QUANTUM INPUT / NO NATIVE CREDIT
+NEXT U0 SCIENTIFIC WORK:       WHOLE-PROCESS RECIPROCITY FEASIBILITY
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
