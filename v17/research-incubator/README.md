@@ -900,10 +900,20 @@ Its ceiling is `CQG-L2`: real weak-field reciprocity and empirical
 accountability, but no freeze-ready full matter–gravity member and no
 classical/quantum gravity or ontology verdict.
 
+The follow-on kernel-selection gate proves a finite-band underdetermination
+theorem rather than fitting one of those members. Modewise CP positivity leaves
+an arbitrary positive spectrum and diffusion slack after the mean response
+and spatial symmetry are fixed. Saturation remains nonselecting, and
+two-sided finite-order locality at saturation forces the ultralocal
+constant-symbol corner. Conservation is kept as an independent generator
+duty; full nonlinear constraint/conservation selection remains untested. The
+result is `KSG-L2` author-side and opens no model.
+
 Active MG0 files:
 
 - `active/mg0/README.md`
 - `active/mg0/v17_mg0_common_matter_geometry_contract.md`
+- `active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md`
 - `active/mg0/v17_mg0_selector_controls_and_benchmark.md`
 - `active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md`
 - `active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md`

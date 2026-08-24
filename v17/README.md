@@ -847,6 +847,16 @@ cleanly if nature does not support it.
   vacuum, interacting-matter renormalization, actuality/readers, parameter
   selection, and held-out transfer. The ceiling is `CQG-L2` author-side; no
   classical/quantum gravity verdict, MG0 pin, or ontology selection follows.
+  A follow-on exact kernel-selection gate reaches `KSG-L2`. On a finite
+  weak-field Fourier band, complete positivity, spatial covariance, and fixed
+  mean Newtonian response parameterize a convex admissible set with an arbitrary positive
+  decoherence spectrum and nonnegative diffusion slack; even saturation does
+  not choose a member. If both saturated scalar kernels are finite-order local,
+  polynomial-inverse rigidity forces the ultralocal constant-symbol corner.
+  Conservation is an independent adjoint-generator duty and generally leaves
+  rates unselected. Full nonlinear constraint plus conservation selection
+  remains untested, not refuted, because those equations have not been closed
+  for the same member. No CP-CQ kernel or gravity ontology is promoted.
   A post-A1 relevance adjudication retains Q-Cut as an optional review-ready
   scoped theorem but no longer ranks it as the next unification gate. No next
   official physics unit is currently selected. A candidate-neutral post-A1

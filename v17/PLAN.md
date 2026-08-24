@@ -882,6 +882,20 @@ parameter selection, and no-refit transfer do not close together in any
 audited member. The family remains a serious MG0 comparator, not a selected
 gravity ontology or an authorized model.
 
+A subsequent exact feasibility gate now tests whether the available CP-CQ
+principles choose the missing member. On a finite symmetry-closed weak-field
+mode band, the modewise Schur complement completely parameterizes the
+fixed-response admissible set: after mean response is fixed, an arbitrary positive
+decoherence spectrum and nonnegative diffusion slack remain. Saturation
+removes only the slack. A separate polynomial-inverse theorem shows that two
+saturated finite-order local scalar kernels must have constant Fourier
+symbols, locating the ultralocal corner subjected to the existing heating and
+stability controls. Conservation is a separate generator equation and does
+not generally select rates. The stronger conjunction with nonlinear
+constraint propagation is `UNTESTED`, because no one audited member closes
+those equations. The author-side ceiling is `KSG-L2`; no model-selection or
+gravity verdict follows.
+
 ### Paper 06 — configuration ontology for matter plus geometry
 
 **Question.** What complete relational configuration supports both the

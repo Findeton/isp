@@ -33,6 +33,9 @@ limits, and expose a prospective empirical wedge.
 ## Active files
 
 - `v17_mg0_common_matter_geometry_contract.md` — form-neutral typed contract;
+- `v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md` —
+  exact finite-band fixed-response CP-kernel set, saturation/locality boundary, and
+  conservation-selection firewall;
 - `v17_mg0_selector_controls_and_benchmark.md` — hostile controls and the
   proposed first reciprocal weak-field benchmark;
 - `v17_mg0_primary_source_and_scope_reconstruction.md` — primary-source
@@ -73,6 +76,17 @@ accountability, but no one source-fixed member closes full constraints,
 conservation, stable vacuum, interacting-matter renormalization,
 actuality/readers, parameter selection, and held-out transfer. No gravity
 model or ontology is selected.
+
+The follow-on CP-CQ kernel-selection gate now proves exactly what those
+general constraints fail to do. On a finite weak-field Fourier band, fixed
+mean response, spatial covariance, and complete positivity leave an arbitrary
+positive decoherence spectrum plus nonnegative diffusion slack. Saturation
+removes only the slack. Requiring both saturated scalar kernels to be
+finite-order local forces the ultralocal constant-symbol corner, while exact
+conservation is a separate generator equation that generally leaves rates
+free. The stronger conjunction with full nonlinear constraint propagation is
+untested because no audited source closes it on the same member. The ceiling
+is `KSG-L2`; no kernel, model, or gravity verdict is selected.
 
 MG0 cannot select an ontology until at least two genuinely different, fully
 specified matter laws make distinct gravity-sensitive predictions. The next
