@@ -676,6 +676,16 @@ Euclidean actuality. Purification, local tomography, complex composition,
 Bell boundary, readers, interacting parents, transfer, and MG0 declarations
 are construction tests rather than premises.
 
+The first CRP construction is now complete author-side. One exact positive
+reversible Gibbs law plus a positive correlated source reconstructs coherent
+single-system nondivision and a secondary Bell-violating two-qubit process
+with CHSH $8\sqrt2/5$. The directly sampled positive law remains Markov and
+its local configuration readers obey Bell; contextwise reflection positivity
+also embeds PR. The mathematical control reaches CRP-L2, while native U0
+admission is rejected for this model because analytic continuation and the
+noncommuting reader/actuality bridge belong to a second predictive layer. No
+second CRP member or different architecture opens automatically.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

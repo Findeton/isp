@@ -176,13 +176,13 @@ The allowed information flow is
 
 $$
 \begin{aligned}
-&\text{geometry + causal material response + real pump}\
+&\text{geometry + causal material response + real pump}\\
 &\quad\longrightarrow
-\text{retarded Green tensor + nonlinear source kernel}\
+\text{retarded Green tensor + nonlinear source kernel}\\
 &\quad\longrightarrow
-\text{multimode quantum optical process + loss environment}\
+\text{multimode quantum optical process + loss environment}\\
 &\quad\longrightarrow
-\text{complete detector instrument}\
+\text{complete detector instrument}\\
 &\quad\longrightarrow
 \text{ordinary-positive stable-record law}.
 \end{aligned}

@@ -674,6 +674,17 @@ cut, target action/transfer matrix/covariance, Born reader, purification,
 local tomography, complex structure, or Euclidean actuality may be called
 derived. Exactly one bounded CRP construction attempt is next.
 
+That attempt is now complete in
+`v17_ugen_u0_crp_first_construction_attempt.md`. It constructs an exact
+positive reversible Gibbs parent, secondary coherent qubit, positive-source
+entangled state, and secondary CHSH value $8\sqrt2/5$. The sampled positive
+law is nevertheless Markov; its direct local record algebra is commuting and
+Bell-local. A separate theorem gives every finite record table, including PR,
+a contextwise diagonal reflection-positive completion. The control reaches
+CRP-L2 mathematically but the model is rejected for native U0 admission: its
+quantum controls and readers are not records of the same positive actuality.
+This is a semantic failure, and no second model or architecture is opened.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -744,6 +755,7 @@ Active audit:
 - v17_ugen_u0_whole_process_reciprocity_feasibility_gate.md
 - v17_ugen_u0_r1_baseline_native_source_gap_synthesis.md
 - v17_ugen_u0_single_candidate_architecture_selection.md
+- v17_ugen_u0_crp_first_construction_attempt.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1126,8 +1138,9 @@ U0 KMS RESPONSE CONTROL:       CONDITIONAL QUANTUM INPUT / NO NATIVE CREDIT
 U0 WHOLE-PROCESS RECIPROCITY:  WPR-L2 / EXACT RELATION, SOURCE UNSELECTED
 U0 POSITIVE SCALAR FRINGE:     POSSIBLE / READER-SUPPLIED CONTROL ONLY
 U0 R1/NATIVE-GAP SYNTHESIS:    SYN-R1-L1 / NO NEW RESULT OR PROMOTION
-U0 SINGLE ARCHITECTURE:        CRP SELECTED / NOT YET A CANDIDATE
-NEXT U0 SCIENTIFIC WORK:       ONE BOUNDED CRP CONSTRUCTION ATTEMPT
+U0 SINGLE ARCHITECTURE:        CRP SELECTED / ONE MODEL EXHAUSTED
+U0 CRP FIRST ATTEMPT:          CONTROL L2 / NATIVE MODEL REJECTED
+NEXT U0 SCIENTIFIC WORK:       REASSESS ONTOLOGY FORK / NO AUTO SUCCESSOR
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

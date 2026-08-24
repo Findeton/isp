@@ -18,8 +18,8 @@ is selected as follows:
 $$
 \boxed{
 \begin{gathered}
-\text{CUT-LOCAL REFLECTION-POSITIVE}\
-\text{WHOLE-BOUNDARY PARENT}\
+\text{CUT-LOCAL REFLECTION-POSITIVE}\\
+\text{WHOLE-BOUNDARY PARENT}\\
 \text{SELECTED FOR ONE AUTHOR-SIDE CONSTRUCTION ATTEMPT.}
 \end{gathered}}
 \tag{CSA-1}

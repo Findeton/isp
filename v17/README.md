@@ -796,6 +796,16 @@ cleanly if nature does not support it.
   chronology, and actuality remain outputs to derive. A supplied Euclidean
   time, target action/transfer matrix, covariance, Born reader, or global
   preferred cut kills native credit.
+  The first CRP construction has now been carried through exactly. The
+  positive kernel $K=[[9/10,1/10],[1/10,9/10]]$ reconstructs a coherent
+  qubit; a positive Gibbs source reconstructs
+  $(3|00\rangle+|01\rangle+|10\rangle+3|11\rangle)/(2\sqrt5)$ and secondary
+  controls give CHSH $8\sqrt2/5$. But the directly sampled law is Markov,
+  its physical cylinder readers are commuting and Bell-local, and arbitrary
+  contextwise positive tables including PR have diagonal reflection-positive
+  completions. CRP therefore remains a valid positive-first representation
+  control and fails native U0 admission for this model. The failure is the
+  missing physical reader/actuality bridge, not code.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

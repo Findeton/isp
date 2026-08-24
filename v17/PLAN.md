@@ -673,6 +673,16 @@ continuity, purification, local tomography, complex structure, or a target
 action. Those are hostile tests. The next step is one bounded CRP
 construction attempt; semantic failure ends the architecture unless a new
 scientific object is explicitly authorized.
+The first exact CRP construction now reaches a split author-side verdict. A
+single reversible Gibbs kernel and positive source insertion reconstruct a
+secondary qubit Hamiltonian, coherent nondivision, an entangled state, and
+CHSH $8\sqrt2/5$. The sampled positive process itself is Markov and
+dissipative; its directly measurable local records obey CHSH at most two.
+Contextwise reflection positivity also admits the complete local--quantum--PR
+family. Hence the model reaches CRP-L2 as a mathematical control but is not
+admitted as a native U0 law: the noncommuting reader/composition and actuality
+bridge remains a second quantum-layer rule. This semantic failure exhausts
+the one selected CRP model; no automatic alternative or repair follows.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
