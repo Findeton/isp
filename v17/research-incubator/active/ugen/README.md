@@ -705,6 +705,15 @@ transfer, conservation, and reciprocal gravity remain absent. A1 imports
 quantum dynamics and background spacetime, is not a v17 candidate, and opens
 no repair, pin, independent review, apparatus, successor, or gravity law.
 
+The post-A1 Q-Cut relevance audit now separates mathematical readiness from
+frontier priority. Q-Cut's standard-Borel sufficient-cut lower bound remains
+review-ready author-side, but it applies only when one positive intermediate
+variable screens every later registered reader. A genuinely indivisible
+whole-process law is outside that premise, and Q-Cut does not address the CRP
+reader/actuality split or A1 process incompleteness. Q-Cut is therefore an
+optional side theorem and hostile control, not the selected next unification
+gate. No next official physics unit is currently selected.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -1166,6 +1175,8 @@ POST-CRP ONTOLOGY MAP:         PREDICTION / ACTUALITY AXES SEPARATED
 A1 FINITE INTERACTING LAW:     NORMALIZED / PRIMITIVE REFERENT EXPLICIT
 A1 INDEFINITE PROCESS:         NOT ESTABLISHED / LIMIT UNPROVED
 A1 EMPIRICAL/QFT/GRAVITY:      MODEL TRANSFER / COMPLETE MATTER LAW ABSENT
+Q-CUT MATHEMATICAL STATUS:     REVIEW-READY AUTHOR-SIDE / NO RESULT
+Q-CUT FRONTIER PRIORITY:       OPTIONAL SIDE THEOREM / NOT UNIFICATION GATE
 NEXT AUTHOR-SIDE CONTROL:      NONE AUTOMATIC
 A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE

@@ -169,6 +169,19 @@ artifacts:
     promotion_readiness: "user-decision-ready"
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: true
+  - path: "active/qcut/v17_qcut_post_a1_frontier_relevance_adjudication.md"
+    sha256: "0d90f8b207077dd1677a458626b94ffb3f6d89859a73b7c9c3410134f7512e1c"
+    created_at: "2026-08-23"
+    front: "qcut"
+    status: "complete-author-side-routing-adjudication"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/qcut/v17_qcut_result_neutral_candidate_pin.md", "active/qcut/v17_qcut_future_review_contract.md", "active/qcut/v17_continuous_cut_information_theorem_candidate.md", "active/qcut/v17_continuous_cut_source_quantifier_audit.md", "active/qcut/v17_qcut_primary_source_reconstruction.md", "active/qcut/v17_qcut_root_readiness_audit.md", "active/ugen/v17_ugen_u0_crp_first_construction_attempt.md", "active/ugen/v17_ugen_post_crp_ontology_fork_reassessment.md", "active/ugen/v17_ugen_a1_interacting_relativistic_grw_flash_source_reconstruction.md"]
+    source_audit_status: "qcut-source-chain-author-side-pass-post-crp-a1-relevance-adjudicated-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "optional-review-ready-not-current-frontier"
+    maximum_claim: "Q-Cut remains an author-side review-ready L3 candidate lower bound on retained preparation information for standard-Borel ordinary-positive future-sufficient cuts, but does not measure total explanatory cost, apply to genuinely indivisible whole-process laws without such a cut, resolve the CRP predictive/actuality split or A1 process incompleteness, select ontology, or advance QFT, spacetime, gravity, or unification; no next official physics unit is selected"
+    canonical: false
   - path: "active/qcut/v17_qcut_root_readiness_audit.md"
     sha256: "b36104924af6b7f5fb3c378c87ccfbaeaf6ab8cf0c9bff5a52f7f1b80191c163"
     created_at: "2026-08-23"
@@ -872,7 +885,7 @@ artifacts:
     maximum_claim: "exact finite author-side full-history Markovization, minimal predictive quotient, target-dependency, carrier-relative closure placement, omitted-memory and interference controls, and stochastic-inverse permutation theorem; no physical configuration, native law, absolute ontic completeness, pin, review, or scientific result"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "dfd0c53db92410249f70f3917275f3831b322ae12abb5a9aa0c55800e0a552f7"
+    sha256: "47dd4898435e73a097b2560fcc0d26143fd692047b52d7812191ac9a70f32dc5"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-u0-native-search-nelson-controls"
@@ -882,7 +895,7 @@ artifacts:
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls and G1/G2 as compiler/source-origin controls, consolidates SC1--SC5 and the R1 native-source gap, records one CRP positive-first reconstruction at mathematical L2 and its semantic failure to identify noncommuting quantum readers with records of the same positive actuality, then separates predictive nomology from one-run actuality; quantum/QFT, Gram, and pair-history structure is retained only as the provisional complete fixed-background predictive baseline, the positive-native rival remains logically live but paused without an admitted model, and the completed A1 audit earns only fixed finite-count interacting flash-law salvage because no indefinite interacting process, exact reader-level no-signalling, complete QFT matter law, model-specific empirical transfer, conservation, or reciprocal gravity is established; source completion, target-independent material transfer, microscopic actuality selection, QFT/spacetime derivation, unification, T4-E, R4, and official cycles remain absent or deferred, and no A1 repair or Q-Cut pin, review, apparatus, scientific result, source-complete existence, or general no-go follows"
+    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls and G1/G2 as compiler/source-origin controls, consolidates SC1--SC5 and the R1 native-source gap, records one CRP positive-first reconstruction at mathematical L2 and its semantic failure to identify noncommuting quantum readers with records of the same positive actuality, then separates predictive nomology from one-run actuality; quantum/QFT, Gram, and pair-history structure is retained only as the provisional complete fixed-background predictive baseline, the positive-native rival remains logically live but paused without an admitted model, and the completed A1 audit earns only fixed finite-count interacting flash-law salvage because no indefinite interacting process, exact reader-level no-signalling, complete QFT matter law, model-specific empirical transfer, conservation, or reciprocal gravity is established; the post-A1 relevance adjudication retains Q-Cut as an optional review-ready sufficient-cut information theorem but not the next unification gate; source completion, target-independent material transfer, microscopic actuality selection, QFT/spacetime derivation, unification, T4-E, R4, and official cycles remain absent or deferred, and no A1 repair or Q-Cut pin, review, apparatus, scientific result, source-complete existence, general no-go, or next official physics unit follows"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
     sha256: "19c409a751d99f6ccda0d7f41046983e1df6b4cd45becbba3a5aedcd7fc89548"

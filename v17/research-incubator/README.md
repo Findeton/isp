@@ -29,19 +29,24 @@ no scientific evidence.
 
 ## Active research front
 
-The current author-side front has four coupled gates.
+The incubator preserves four gates, but they no longer have equal frontier
+priority.
 
-### Q-Cut — scalable explanatory-cost discriminator
+### Q-Cut — positive sufficient-cut information discriminator
 
 This branch asks whether an ordinary-positive screening variable for a
 registered quantum communication task must retain asymptotically more
-information than the quantum comparator. It is the most empirically selective
-branch. Its active author-side package now lives under `active/qcut/` and
+information than the quantum comparator. It is a representation-resistant
+scoped information theorem, not a total physical-cost or ontology theorem.
+Its active author-side package now lives under `active/qcut/` and
 includes exact retrieved-source receipts, a repaired typed theorem, candidate
 pin, review contract, readiness audit, and SHA-256 manifest. Primary-source
 reconstruction confirms that HJMR uses external information \(I(XY;Q)\), and
 that the Partial Matching paper fixes the required natural hard ensemble.
-The package is author-side ready for an authorization decision, but no pin is
+The package is author-side review-ready, but the post-A1 frontier adjudication
+shows that its sufficient-cut premise excludes the central genuinely
+indivisible whole-process branch. It is therefore an optional side theorem and
+future hostile control, not the currently selected unification gate. No pin is
 frozen and no independent review or scientific result exists.
 
 Canonical status: `active/qcut/v17_qcut_result_neutral_candidate_pin.md`.
@@ -54,6 +59,7 @@ Active working package:
 - `active/qcut/v17_qcut_result_neutral_candidate_pin.md`
 - `active/qcut/v17_qcut_future_review_contract.md`
 - `active/qcut/v17_qcut_root_readiness_audit.md`
+- `active/qcut/v17_qcut_post_a1_frontier_relevance_adjudication.md`
 - `active/qcut/ACTIVE_SHA256.txt`
 
 Preserved precursor snapshots:
@@ -123,8 +129,9 @@ adaptive, interaction, or physical-selection gates. A new author-side
 selector tournament now distinguishes framework reconstruction from
 dynamical-member and ontology selection. It identifies a bounded PC3
 procedure-groupoid transport classification with held-out closed words as the
-next U-Gen construction, while preserving Q-Cut as the recommended next
-official unit if separately authorized. That PC3 algebraic candidate exists
+next U-Gen construction. At that stage Q-Cut was still provisionally ranked as
+the next separately authorized official unit; the post-A1 relevance audit now
+supersedes that priority ranking. That PC3 algebraic candidate exists
 author-side: projective covariance of the octahedral two-generator control
 group selects one positive coherent word law, but the covariance bridge
 itself remains a declared quantum-structural input. Its strongest
@@ -183,8 +190,9 @@ finding is that C1 Track A must separate abstract endpoint nonselection from a
 physically grounded source experiment; a gate name plus endpoint matrix is not
 a physical action input. The next author-side target is one action-phase
 grounding packet with held-out electromagnetic/topological and gravitational
-controls. Q-Cut remains the next recommended official unit if separately
-authorized.
+controls. At that stage Q-Cut remained the provisionally recommended official
+unit; the post-A1 relevance audit now retains it only as an optional scoped
+theorem.
 
 C3 now turns that recommendation into an author-side physical protocol. Its
 exact measurable-character lemma derives $e^{i\kappa s}$ from additive action,

@@ -241,8 +241,9 @@ two-way controls, 76 attacks, the full product, and eight fresh lens-specific
 countermodels.
 
 **Quantum-nomology incubator boundary.** Separate author-side work preserves
-Q-Cut as the next recommended official theorem if explicitly authorized and
-keeps ordinary-positive indivisible, decoherence-functional, and
+Q-Cut as an optional review-ready sufficient-cut theorem, but the post-A1
+frontier audit no longer ranks it as the next unification gate. It keeps
+ordinary-positive indivisible, decoherence-functional, and
 quantum-plus-actualization nomologies live. The primary author-side search is
 now U0: one uniform ordinary-positive genuinely indivisible law on abstract
 physical configurations must generate held-out complete processes without a
@@ -785,8 +786,8 @@ microscopic factors; assumes no metric, continuum, dimension, foliation,
 Einstein equation, or classical/quantum gravity verdict; and keeps
 ordinary-positive, decoherence-functional, and quantum-plus-actualization
 nomologies live. This preparation opens neither Paper 06 nor Paper 07 and
-awards no gravity result. Q-Cut remains the next recommended official unit if
-separately authorized.
+awards no gravity result. Q-Cut remains separately authorizable as a scoped
+information theorem, but no next official physics unit is selected.
 
 ### Paper 06 — configuration ontology for matter plus geometry
 

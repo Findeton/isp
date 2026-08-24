@@ -233,7 +233,7 @@ cleanly if nature does not support it.
   distinguishes active drafts, superseded snapshots, deferred clock material,
   dependencies, source-audit status, promotion readiness, and maximum claims;
   every incubator artifact has authority `none`. The active author-side fronts are Q-Cut
-  (scalable explanatory cost), E-Comp (endpoint versus coherent composition),
+  (positive sufficient-cut information), E-Comp (endpoint versus coherent composition),
   U-Gen (uniform indivisible law class), and MG0 (form-neutral common
   matter--geometry preflight). Q-Cut's primary-source bridge has
   now been reconstructed exactly author-side: HJMR's external information
@@ -835,7 +835,9 @@ cleanly if nature does not support it.
   controls. It assumes no metric, continuum, dimension, foliation, Einstein
   equation, or classical/quantum gravity verdict; constructs no model; and
   opens no official Paper 06/07 or gravity result.
-  Q-Cut remains the next recommended official unit if separately authorized.
+  A post-A1 relevance adjudication retains Q-Cut as an optional review-ready
+  scoped theorem but no longer ranks it as the next unification gate. No next
+  official physics unit is currently selected.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No official v17 scientific evaluator, bound empirical artifact, or
