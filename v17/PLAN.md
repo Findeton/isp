@@ -639,6 +639,21 @@ higher-order process statistics and linear response does not close finite
 response; a positive deterministic three-cycle also blocks any inference from
 oscillation or complex spectrum to quantum ontology. The next nonduplicative
 question is whole-process reciprocity, not another equilibrium FDT.
+That whole-process reciprocity gate now reaches WPR-L2 author-side scope. A
+forward complete-history measure, typed reversal, and normalized
+Radon--Nikodym exponent uniquely generate the reverse measure, while finite
+endpoint reweighting gives an exact reciprocal bridge and product endpoint
+weights give a Doob transform. Reciprocity nevertheless leaves the forward
+law and readers unselected. Fixed nonnegative route kernels add and cannot
+destructively cancel; exact two-route controls retain identical positive path
+and reversal data while changing balanced recombination through off-diagonal
+orientation. Conversely, an explicit positive circle configuration,
+reversible rotation, and supplied cosine reader reproduce a scalar fringe,
+so no general positive-ontology no-go is claimed. Known complete quantum
+response instead uses doubled SK/Gram/decoherence-functional structure whose
+source and actuality remain open. The generic mechanism census is now closed;
+the next work is R1/native-gap consolidation followed by at most one explicit
+candidate-driven positive contextual parent attempt.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

@@ -640,6 +640,21 @@ positive three-cycle proves that periodicity and complex spectral syntax do
 not select quantum ontology. The next live question is whole-process
 reciprocity, not a timeless-KMS slogan.
 
+The whole-process reciprocity gate now reaches WPR-L2 author-side scope. A
+forward complete-history law, physical reversal, and normalized path exponent
+generate a unique positive reverse law; endpoint reweighting gives a finite
+reciprocal bridge and product factors give a Doob transform. Those relations
+do not select the forward source or reader. Nonnegative route kernels add and
+cannot destructively cancel, while an exact two-route witness keeps all
+positive path/reversal data fixed and changes recombination through a free
+off-diagonal orientation. A separate positive circle/rotation/cosine-reader
+construction reproduces a scalar fringe and thereby blocks a general no-go,
+but its reader is supplied. Known SK, Gram, quantum-measure, and
+decoherence-functional structures are therefore serious doubled predictive
+controls, not selected ontology. The generic mechanism census is now
+sufficient; the next route is consolidation and one explicit
+candidate-driven contextual parent.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

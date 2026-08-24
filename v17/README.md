@@ -763,6 +763,19 @@ cleanly if nature does not support it.
   shows that oscillation and complex spectra are not quantum selectors. The
   remaining author-side problem is a whole-process reciprocity law that does
   not collapse into classical path ratios or import a quantum process.
+  That gate now reaches WPR-L2 author-side scope. Exact Radon--Nikodym
+  reconstruction and reciprocal-bridge/Doob-transform mathematics show what
+  positive whole-process reciprocity really earns. It relates supplied
+  complete laws but selects neither the forward source nor the readers, and
+  fixed nonnegative route kernels cannot cancel. The same positive path law
+  and zero-affinity reversal data support opposite balanced quantum outputs
+  once off-diagonal orientation changes. An explicit positive circle model
+  with reversible rotations and a supplied cosine reader also reproduces one
+  scalar fringe, preventing an overbroad impossibility claim while exposing
+  that the response has been inserted. SK, Gram, and decoherence-functional
+  controls carry the missing doubled relation but are not thereby ontic or
+  source-complete. The next work is consolidation and one candidate-driven
+  parent attempt, not another generic reciprocity gate.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

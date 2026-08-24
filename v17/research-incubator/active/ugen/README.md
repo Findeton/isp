@@ -641,6 +641,19 @@ two-point/linear closure, and a positive deterministic three-cycle defeats
 oscillation-as-quantum reasoning. The remaining source question is a bounded
 whole-process reciprocity identity with an explicit probability functional.
 
+That gate now reaches WPR-L2 only. Exact positive path-ratio reconstruction
+and reciprocal-bridge/Doob-transform theorems establish a genuine
+whole-process control, but reciprocity leaves the forward law and reader free.
+Nonnegative route kernels cannot cancel. Identical positive path and reversal
+data permit opposite balanced recombination when off-diagonal orientation is
+changed. Conversely, a positive circle-valued configuration with reversible
+rotations and a supplied cosine reader reproduces a scalar fringe, so the
+result is not a positive-ontology no-go. Doubled SK/Gram/decoherence-functional
+objects carry complete quantum response in known physics but remain unsourced
+and non-ontic by default. The mechanism census now stops; the next work is a
+consolidated R1/native-gap package and at most one explicit candidate-driven
+positive contextual parent.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -708,6 +721,7 @@ Active audit:
 - v17_ugen_u0_cross_context_composition_source_gate.md
 - v17_ugen_u0_exchange_deformation_response_selection_gate.md
 - v17_ugen_u0_fluctuation_response_parent_gate.md
+- v17_ugen_u0_whole_process_reciprocity_feasibility_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1087,7 +1101,9 @@ U0 EXCHANGE-DEFORMATION GATE:  EDR-L2 / SECTOR AND READER UNSELECTED
 U0 CONDITIONAL SCALAR CYCLE:   POSITIVE COMPARATOR / NO NATIVE CREDIT
 U0 FLUCTUATION-RESPONSE GATE:  FRP-L2 / DETAILED BALANCE DISSIPATIVE ONLY
 U0 KMS RESPONSE CONTROL:       CONDITIONAL QUANTUM INPUT / NO NATIVE CREDIT
-NEXT U0 SCIENTIFIC WORK:       WHOLE-PROCESS RECIPROCITY FEASIBILITY
+U0 WHOLE-PROCESS RECIPROCITY:  WPR-L2 / EXACT RELATION, SOURCE UNSELECTED
+U0 POSITIVE SCALAR FRINGE:     POSSIBLE / READER-SUPPLIED CONTROL ONLY
+NEXT U0 SCIENTIFIC WORK:       CONSOLIDATE THEN ONE CANDIDATE-DRIVEN PARENT
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
