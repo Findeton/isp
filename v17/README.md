@@ -618,6 +618,21 @@ cleanly if nature does not support it.
   MRD-L2 author-side architecture only: the stochastic cascade, phase-slip
   hazards, implementation transfer, stable-division test, native actuality,
   spacetime, and gravity remain open.
+  The source-to-record common-parent closure now proves why this still is not
+  the native law. Every prefix-autonomous complete stable-record family has a
+  positive conditional $\Gamma$ on its retained prefixes, so the existence of
+  a record-level stochastic process is generic rather than ontology-selecting.
+  An exact pair-history witness gives identical isolated positive event laws
+  but different composite predictions, while an exact refinement theorem
+  gives indefinitely many latent histories behind the same records. The
+  missing object is therefore cross-context relational nomology plus an
+  actuality rule, not another endpoint table. A standard
+  decoherence-functional/QFT parent is retained as the strongest serious
+  baseline: it generates positive probabilities on physically stable
+  decoherent record sectors, but imports quantum relational structure and
+  does not make one outcome actual. This reaches SCR-L2 author-side
+  architecture only; no native U0 law, official cycle, spacetime, or gravity
+  result follows.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

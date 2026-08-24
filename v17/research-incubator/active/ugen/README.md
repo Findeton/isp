@@ -487,6 +487,23 @@ absorption, switching, and electronics factors cannot be recovered from one
 click law. This is MRD-L2 author-side only: event-level stochastic closure,
 implementation transfer, division, actuality, and gravity remain open.
 
+The source-to-record common-parent closure now binds those results to the
+native-law burden. Its stable-boundary theorem shows that every
+prefix-autonomous complete record family admits ordinary-positive conditional
+kernels, so a record-level $\Gamma$ is common to classical, quantum,
+collapse, and history formulations. Its exact pair-history witness shows that
+the isolated positive record shadow does not determine composition, while its
+latent-refinement theorem shows that records do not select microscopic
+happenings. A future-sufficient physical carrier makes the enlarged law
+divisible; a target-derived predictive carrier only relocates the answer.
+The strongest non-invented baseline is a QFT/decoherence-functional common
+parent whose diagonal on physically stable decoherent records is positive.
+That baseline still assumes quantum relational structure and does not select
+one actual outcome. The packet reaches SCR-L2 author-side architecture only.
+The next genuine construction must print one target-blind whole-boundary
+functional generating cross-context composition, a bounded material member,
+and actuality; no such formula, pin, review, target, or gravity unit is opened.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -893,7 +910,11 @@ U0 PREPARATION/RECORD CLOSURE: PRC-L2 AUTHOR-SIDE / MULTIPAIR PARENT
 U0 PREPARATION DESCENT:        CONDITIONAL EFFECTIVE / MICROSCOPIC OPEN
 U0 READER DESCENT:             MRD-L2 AUTHOR-SIDE / CONDITIONAL LIFT
 U0 INTERMEDIATE HAPPENINGS:    REQUIRE PHYSICAL RECORD OR NONDISTURBANCE
-NEXT U0 SCIENTIFIC WORK:       NATIVE COMPLETE-PROCESS LAW / AUTHOR-SIDE
+U0 STABLE-BOUNDARY GAMMA:      GENERIC FOR PREFIX-AUTONOMOUS RECORD LAWS
+U0 RECORD SHADOW COMPOSITION:  INSUFFICIENT / EXACT PAIR-HISTORY WITNESS
+U0 LATENT HAPPENINGS:          NONSELECTED BY RECORD LAW
+U0 COMMON-PARENT CLOSURE:      SCR-L2 AUTHOR-SIDE / RELATIONAL BASELINE
+NEXT U0 SCIENTIFIC WORK:       EXPLICIT NATIVE WHOLE-BOUNDARY FUNCTIONAL
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

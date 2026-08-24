@@ -492,6 +492,24 @@ candidate division at the retained record rather than absorption. The ceiling
 is MRD-L2 author-side; no event-level stochastic lift, fabricated-device
 prediction, native actuality, official pin, spacetime, or gravity result is
 earned.
+The source-to-record common-parent closure now binds the Q-framework,
+material, preparation, and reader packets to the native-law question without
+promoting their interfaces to ontology. Exact finite theorems prove that every
+prefix-autonomous stable-record family has an ordinary-positive conditional
+$\Gamma$ on positive record prefixes, that this positive record shadow does
+not determine composition, that stable records do not select unique latent
+happenings, and that a future-sufficient physical carrier makes the enlarged
+process divisible while a target-derived carrier is only a representation.
+The strongest non-invented baseline is therefore a relational
+decoherence-functional/QFT parent with ordinary probabilities on physically
+stable decoherent record sectors. It remains a comparator: the quantum
+relational rule, boundary state, background, and actual selection of one
+record are not derived. The native opening is one explicit target-blind
+whole-boundary functional that generates the missing cross-context relational
+content, quantum rather than PR/almost-quantum composition, a bounded material
+member, and an actuality rule under one resource ledger. No such functional,
+official pin, review, target, spacetime, or gravity result is opened. The
+author-side ceiling is SCR-L2 architecture only.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
