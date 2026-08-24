@@ -33,7 +33,7 @@ ordinary-positive formula predicts the complete record law for every setting
 from only the empty, singleton, and pair settings:
 
 $$
-P_{m DR2}(r\mid x)
+P_{\mathrm{DR2}}(r\mid x)
 =
 \alpha_r
 +\sum_i\beta_{ri}x_i
