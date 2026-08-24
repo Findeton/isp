@@ -453,6 +453,18 @@ indivisibility, chronology, QFT, and gravity remain absent. The packet reaches
 only `QSR-L2` author-side and routes the next construction to a bounded
 material M-source descent attempt.
 
+The M-source QED material-descent audit now constructs the strongest
+known-physics version of that attempt. It separates preparation, material
+response, propagation/nonlinear generation, and detector amplification.
+Causal constitutive data, measured geometry, and a real reference-bearing
+pump feed one fixed Green-function/macroscopic-QED rule, which outputs
+complex amplitudes, relative phase, loss reservoirs, and the conditional
+quantum process. This reaches MSD-L2 author-side, not native completion:
+incoming state and reader descent remain partial, and the construction
+assumes background spacetime, time, QFT, and the conditional Q-framework.
+It is a recovery comparator rather than a U0 ontology and opens no
+implementation, pin, review, Paper 17 emergence, or gravity result.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -506,6 +518,7 @@ Active audit:
 - v17_ugen_u0_qcor_native_composition_seed_investigation.md
 - v17_ugen_u0_explicit_positive_formula_tournament.md
 - v17_ugen_u0_qsource_operational_reconstruction_audit.md
+- v17_ugen_u0_msource_qed_material_descent_audit.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -850,7 +863,11 @@ U0 STATIC-SECTOR UNIVERSALITY: FORMALLY VACUOUS WITHOUT PHYSICAL ORIGIN
 U0 STRICT MONOIDAL ANONYMITY:  IDENTITY OR UNIFORM RESET / FINITE CONTROL
 U0 FACTOR-MARKED RESPONSE:     ORBITAL CHANNELS EXIST / WEIGHTS UNSELECTED
 PHYSICAL RELATIONAL STRUCTURE: REQUIRED / NOT YET CHOSEN
-NEXT U0 SCIENTIFIC FORK:       MEMORY/HIGHER-BOUNDARY VS WHOLE-BOUNDARY / NOT AUTHORIZED
+U0 Q-SOURCE FRAMEWORK:         QSR-L2 AUTHOR-SIDE / FINITE CONDITIONAL
+U0 EFFECTIVE M-SOURCE:         MSD-L2 AUTHOR-SIDE / GREEN-MQED CONTROL
+U0 PREPARATION DESCENT:        PARTIAL / NOT CLOSED
+U0 READER DESCENT:             PARTIAL / NOT CLOSED
+NEXT U0 SCIENTIFIC WORK:       PREPARATION + READER DESCENT / AUTHOR-SIDE
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

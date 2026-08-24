@@ -588,6 +588,16 @@ cleanly if nature does not support it.
   spacetime, or gravity is derived. The next construction target is the
   physical M-source map for one bounded modular reference-bearing family, not
   another framework gate.
+  The subsequent M-source audit constructs the strongest known-physics
+  middle layer without promoting it to ontology. Causal material response,
+  measured geometry, a real pump/reference waveform, and one fixed
+  macroscopic-QED rule generate the Green tensor, nonlinear source kernel,
+  loss-reservoir completion, and secondary complex amplitudes. This shows
+  that an abstract phase need not be supplied. It does not close
+  preparation or detector amplification, and it presupposes laboratory
+  spacetime, time, QFT, material constitutive functions, and the conditional
+  Q-framework. The result is MSD-L2 author-side only; implementation
+  transfer, native actuality, Paper 17 emergence, and gravity remain closed.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

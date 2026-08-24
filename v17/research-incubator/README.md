@@ -469,6 +469,18 @@ configuration process, chronology, QFT, or gravity follows. The result is
 `QSR-L2` author-side and routes the next formula work to one bounded M-source
 descent attempt; it opens no official cycle.
 
+The M-source QED material-descent construction now performs that attempt
+against known physics before inventing new ontology. It stratifies target
+tables, calibrated-module composition, constitutive material descent,
+microscopic matter-to-record closure, and native U0 descent. At the
+constitutive level, one fixed causal Green/macroscopic-QED/nonlinear rule
+derives complex source amplitudes and loss-complete quantum processes from
+geometry, material response, and a real physical pump/reference waveform.
+Preparation, incoming state, detector amplification, and exact material
+response remain only partially descended. The author-side ceiling is
+MSD-L2; no implementation, target, native law, spacetime emergence, or
+gravity result is opened.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

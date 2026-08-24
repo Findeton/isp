@@ -457,6 +457,19 @@ configuration, chronology, QFT, or gravity coupling. The finite framework
 Q-layer is therefore classified `QSR-L2` author-side, while the next explicit
 construction is a bounded material source-descent map on a modular
 reference-bearing family. No official cycle is opened.
+The M-source QED material-descent audit now constructs that bounded
+known-physics control and separates four arrows that must not be conflated:
+preparation, constitutive material response, field propagation/nonlinear
+generation, and detector amplification. A fixed causal
+Green-function/macroscopic-QED rule maps geometry, material response, and a
+real reference-bearing pump waveform to loss-complete quantum optical
+processes; complex amplitudes and relative phase are outputs rather than
+public primitives. The construction reaches only MSD-L2 author-side.
+Incoming state preparation and detector-to-record descent remain partial,
+the material response is effective, and background spacetime, time, QFT, and
+the Q-source framework are assumed. It is therefore a recovery comparator,
+not a native positive ontology and not an opening of Paper 17 emergence,
+R4, review, or gravity.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

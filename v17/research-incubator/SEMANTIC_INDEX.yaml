@@ -442,6 +442,19 @@ artifacts:
     promotion_readiness: "not-ready"
     maximum_claim: "conditional author-side reconstruction of the complete finite-dimensional complex quantum operational framework from the six CDP principles, including exact adaptive ordinary-positive record laws, tensor and link-product composition, and theory-level exclusion of PR and almost-quantum correlations, with substantive-premise, material-member, actuality, indivisibility, chronology, QFT, spacetime, and gravity ceilings; QSR-L2 only, no native law, candidate pin, review, implementation, or scientific award"
     canonical: false
+  - path: "active/ugen/v17_ugen_u0_msource_qed_material_descent_audit.md"
+    sha256: "5366d756d2a0e37948fc315757fbb61355e3860a2ac9aea29a86b449ca7efbb1"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-u0-msource-qed-material-descent-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_u0_qsource_operational_reconstruction_audit.md", "active/ugen/v17_ugen_u0_source_constraints_synthesis.md", "active/ugen/v17_ugen_u0_candidate_architecture_preconstruction.md", "active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md", "active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md", "active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md"]
+    source_audit_status: "author-side-version-bound-primary-source-qed-material-preparation-reader-and-target-equivalence-audited-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "conditional author-side MD2 material-descent control in which causal constitutive response, geometry, and real reference-bearing pump data generate Green tensors, complex SPDC amplitudes, loss completion, and a quantum optical process under fixed macroscopic QED, with exact phase-output and analytic order controls; preparation, incoming state, detector amplification, microscopic matter, native ordinary-positive actuality, indivisibility, background independence, Paper 17 emergence, QFT derivation, and gravity remain open, with no implementation, target, pin, review, or scientific award"
+    canonical: false
   - path: "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md"
     sha256: "44fd9bb8abefd604a1fd4cdb4f007e86b81c919d52a126840523fcb941bb521c"
     created_at: "2026-08-23"
@@ -612,7 +625,7 @@ artifacts:
     maximum_claim: "exact finite author-side full-history Markovization, minimal predictive quotient, target-dependency, carrier-relative closure placement, omitted-memory and interference controls, and stochastic-inverse permutation theorem; no physical configuration, native law, absolute ontic completeness, pin, review, or scientific result"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "bde8acd6f83e9726b367de03dd556009cae4f3015a8c7b304c49773a561578ab"
+    sha256: "05a7529be08a1f477ac55d620857e57c2880679ecb010eeb72457ba811572eed"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-u0-native-search-nelson-controls"
