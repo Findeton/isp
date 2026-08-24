@@ -504,6 +504,28 @@ MRD-L2. Full stochastic material fluctuations, phase-slip hazards,
 implementation transfer, operational division, native actuality, spacetime,
 and gravity remain open.
 
+The source-to-record closure then proves that any prefix-autonomous complete
+stable-record family already has an ordinary-positive conditional $\Gamma$ on
+its retained prefixes. That record shadow is therefore generic and does not
+select an ontology. Exact pair-history and latent-refinement witnesses show
+respectively that the shadow does not determine composition and that records
+do not select unique microscopic happenings. The strongest non-invented
+common parent remains QFT/decoherent histories, which supplies positive stable
+record probabilities while importing the quantum relational rule, boundary,
+background, and outcome problem. The ceiling is SCR-L2 author-side.
+
+The direct whole-boundary attempt now tests the missing formula instead of
+leaving it as a blank. It proves that fixed nonnegative fine-history weights
+cannot reproduce quantum darkening merely by adding an unresolved route, and
+constructs an exact finite witness. An oriented Gram functional supplies the
+needed cross-terms and is conditionally complete for all finite quantum
+instruments, but it must retain complex orientation (or preserved real $J$),
+composition, rank, and calibrated normalization. The target-independent
+physical map that generates that Gram field is still absent. The packet is
+NWB-L2 author-side architecture only; it opens no candidate, pin, review,
+Paper 04B successor, spacetime, or gravity unit. Its grounded next route is an
+explicit known-physics macroscopic-QED member, not an invented native law.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -553,6 +575,12 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_t3_configuration_neutral_complete_process_fixture.md
 - active/ugen/v17_ugen_u0_t3_calibration_fiber_and_control_theorems.md
 - active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md
+- active/ugen/v17_ugen_u0_qsource_operational_reconstruction_audit.md
+- active/ugen/v17_ugen_u0_msource_qed_material_descent_audit.md
+- active/ugen/v17_ugen_u0_msource_preparation_record_closure.md
+- active/ugen/v17_ugen_u0_msource_microscopic_reader_descent.md
+- active/ugen/v17_ugen_u0_source_to_record_common_parent_closure.md
+- active/ugen/v17_ugen_u0_native_whole_boundary_functional_attempt.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

@@ -510,6 +510,18 @@ content, quantum rather than PR/almost-quantum composition, a bounded material
 member, and an actuality rule under one resource ledger. No such functional,
 official pin, review, target, spacetime, or gravity result is opened. The
 author-side ceiling is SCR-L2 architecture only.
+The first direct functional attempt now proves an exact boundary on that
+opening. Fixed nonnegative fine-history weights make old-record odds monotone
+when an unresolved alternative is added, whereas a normalized finite quantum
+control darkens one old record. An oriented Gram whole-boundary law supplies
+the necessary relational cross-terms and embeds every finite quantum
+instrument conditionally, provided its complex orientation (or preserved real
+$J$) and required rank survive composition. Its physical source map remains
+unconstructed, so it earns NWB-L2 architecture and no scientific award. The
+next permitted author-side construction is the strongest known-physics R1
+control: one explicit macroscopic-QED common parent with every quantum,
+boundary, background, reader, and approximation input charged. A novel S2
+source law remains unsourced and must not be invented to satisfy the plan.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

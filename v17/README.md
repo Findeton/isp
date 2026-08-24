@@ -633,6 +633,21 @@ cleanly if nature does not support it.
   does not make one outcome actual. This reaches SCR-L2 author-side
   architecture only; no native U0 law, official cycle, spacetime, or gravity
   result follows.
+  The direct native whole-boundary attempt now sharpens that opening. A
+  positive fine-history Gibbs law cannot reproduce destructive darkening when
+  a newly opened unresolved alternative only adds weight and leaves every old
+  history weight fixed: the relevant old-record odds are then monotone. An
+  exact normalized finite witness exhibits the failure. The minimal explicit
+  escape constructed here is an oriented Gram whole-boundary law, equivalently
+  a strongly positive pair-history kernel, which contains every finite quantum
+  instrument conditionally and keeps stable-record probabilities ordinary and
+  positive. It must retain complex orientation (or a real carrier plus
+  preserved $J$) and higher rank where required. This is NWB-L2 architecture,
+  not native completion: the target-independent physical source map generating
+  the Gram field, composition, boundary state, reader, and actuality rule is
+  absent. The next grounded author-side control is an explicit transferred
+  macroscopic-QED member; no unevidenced native law, pin, review, Paper 04B
+  successor, spacetime, or gravity claim is opened.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

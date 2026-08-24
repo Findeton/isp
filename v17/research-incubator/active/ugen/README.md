@@ -504,6 +504,23 @@ The next genuine construction must print one target-blind whole-boundary
 functional generating cross-context composition, a bounded material member,
 and actuality; no such formula, pin, review, target, or gravity unit is opened.
 
+The first direct whole-boundary attempt is now constructed author-side. An
+ordinary-positive Gibbs measure on mutually exclusive fine histories is a
+valid indivisible all-at-once law, but its old-record odds are monotone when
+opening an unresolved alternative only adds nonnegative weight and leaves old
+weights fixed. An exact normalized four-record witness therefore forces
+whole-context reweighting or relational cross-terms for quantum darkening. An
+oriented Gram functional supplies those cross-terms and contains every finite
+quantum instrument conditionally, while preserving ordinary positivity for
+the actual stable records. Full composition requires the complex orientation
+or an equivalent real carrier with a preserved complex structure $J$;
+higher-rank carriers are mandatory for mixed and open boundaries. This reaches
+NWB-L2 architecture only. The target-independent source map from physical
+boundary facts and controls to the Gram field remains absent, so the formula
+is a quantum-complete envelope rather than a native law. The grounded next
+control is one fully explicit macroscopic-QED common-parent member; inventing
+an unevidenced native source law is not licensed progress.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -914,7 +931,11 @@ U0 STABLE-BOUNDARY GAMMA:      GENERIC FOR PREFIX-AUTONOMOUS RECORD LAWS
 U0 RECORD SHADOW COMPOSITION:  INSUFFICIENT / EXACT PAIR-HISTORY WITNESS
 U0 LATENT HAPPENINGS:          NONSELECTED BY RECORD LAW
 U0 COMMON-PARENT CLOSURE:      SCR-L2 AUTHOR-SIDE / RELATIONAL BASELINE
-NEXT U0 SCIENTIFIC WORK:       EXPLICIT NATIVE WHOLE-BOUNDARY FUNCTIONAL
+U0 WHOLE-BOUNDARY ATTEMPT:     NWB-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
+U0 FIXED POSITIVE HISTORIES:   ODDS-MONOTONE / DARKENING FAILS
+U0 ORIENTED GRAM ENVELOPE:     QUANTUM-COMPLETE GIVEN PROCESS INPUT
+U0 GRAM SOURCE MAP:            ABSENT / NATIVE LAW NOT CONSTRUCTED
+NEXT U0 SCIENTIFIC WORK:       EXPLICIT KNOWN-PHYSICS R1 MEMBER / S2 UNSOURCED
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
