@@ -441,6 +441,21 @@ work must therefore predict the executable division-response hierarchy and a
 held-out material member from one target-blind source law. No candidate,
 primitive pair-history ontology, official cycle, or result is created.
 
+The subsequent explicit positive formula tournament instantiates the first
+T4-P equations. A degree-two complete-record law reconstructs every
+many-alternative setting from empty, singleton, and pair calibration and is
+an ordinary normalized probability law whenever held-out positivity passes.
+It therefore demonstrates bounded amplitude-free interference prediction.
+Exact controls also establish its ceiling: any binary-setting Bell box,
+including PR, has the same program degree, and independent products generate
+higher combined-program degree. A strongly positive pair-history completion
+adds relational composition information but is not implied by event
+positivity; a neutral minimum-information completion cannot create directed
+imaginary response; and almost-quantum correlations remain. Ordered
+operational reconstruction can constrain the Q-framework while leaving the
+M-layer free. No entrant is T4-E ready, no configuration ontology is selected,
+and no official or gravity authority is opened.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

@@ -631,6 +631,19 @@ Do not select a formula or a winner after opening targets. None of T4-E, R4,
 T4-O, a formula freeze, or an official contest is opened by this sequencing
 clarification.
 
+**Author-side T4-P status:** the first explicit formula tournament is now
+complete in `v17_ugen_u0_explicit_positive_formula_tournament.md`. It
+constructs an exact degree-two ordinary-positive complete-record extension
+from empty/single/pair calibration and proves its normalization, held-out
+many-alternative prediction, PR nonexclusion, and independent-product
+nonclosure in the combined program grading. Additive histories,
+strongly-positive pair histories plus a neutral minimum-information
+completion, ordered operational processes, and the supplied quantum compiler
+are tested on the same interface. The tournament finds no formula with both a
+native quantum-composition Q-layer and a transferable material-member
+M-layer; T4-E remains unearned. This author-side construction opens no pin,
+review, target, apparatus, or result.
+
 ### Task U0-T5 — scaling and actuality audit
 
 For any surviving finite candidate, test unbounded depth, composite-system

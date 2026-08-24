@@ -561,6 +561,19 @@ cleanly if nature does not support it.
   of executable division responses, including held-out $I_3=0$, strong-
   positivity, PR, and almost-quantum controls, plus an independent
   material-member rule. Raw `qCor` is not a candidate or a new primitive.
+  The subsequent explicit positive formula tournament now performs the first
+  actual T4-P construction. A degree-two complete-record law predicts every
+  many-alternative setting from empty, singleton, and pair calibration with
+  automatic normalization and a held-out positivity falsifier. This is a
+  bounded ordinary-positive interference law with no amplitude input. It is
+  not quantum-complete: PR passes the same binary-setting degree test,
+  independent products escape the naive combined-program degree, and
+  strongly positive pair-history completion still permits almost-quantum
+  correlations. A neutral minimum-information completion cannot generate
+  directed imaginary response, while ordered operational reconstruction
+  leaves material states and instruments unsourced. No entrant supplies both
+  the Q-layer and M-layer; T4-E, R4, ontology selection, and gravity remain
+  closed.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
@@ -574,8 +587,8 @@ cleanly if nature does not support it.
   Q-Cut remains the next recommended official unit if separately authorized.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
-- No v17 scientific evaluator, generated physics artifact, or numerical fit
-  exists. A small repository utility validates semantic-index hashes,
+- No official v17 scientific evaluator, bound empirical artifact, or
+  numerical fit exists. A small repository utility validates semantic-index hashes,
   dependencies, cycles, canonical paths, authority, and promotion consistency;
   it creates no scientific result.
 - v16 Paper 13D is retained as a terminally reviewed finite reference model,

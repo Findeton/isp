@@ -426,6 +426,22 @@ selector. T4-P must therefore instantiate a target-blind source map that
 predicts an executable division-response hierarchy and at least one held-out
 material response; it may not receive `qCor`, a pair-history kernel, or a
 quantum target as input. This opens no T4-E, R4, review, or result.
+The explicit positive formula tournament now instantiates that T4-P demand.
+Its degree-two `DR2` law uses empty, singleton, and pair complete-record
+calibration to predict every higher-weight optional-alternative setting. The
+formula is automatically normalized and is ordinary positive exactly when
+its held-out entries remain nonnegative. It therefore supplies a real bounded
+amplitude-free prediction. Exact controls locate the ceiling: every binary
+Bell box including PR has degree at most two in its setting bits;
+independent products need not remain degree two on the combined program
+controls; event positivity does not imply strong positivity; and a
+conjugation-neutral minimum-information pair-history completion cannot create
+directed imaginary response. Strong positivity remains a serious conditional
+composition principle but almost quantum survives; ordered operational
+reconstruction can constrain a Q-framework while leaving the material member
+free. No entrant supplies both Q- and M-layers, so T4-E remains unearned and
+the next author-side target is a source-generated compositional response law,
+not an official cycle.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

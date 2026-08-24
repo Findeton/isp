@@ -424,6 +424,22 @@ almost-quantum behavior held out, plus a material-member selector. Raw
 `qCor` is neither an ordinary probability nor a native law. The packet is
 T4-P author-side only and opens no candidate, pin, review, or apparatus.
 
+The explicit positive formula tournament now performs the required T4-P
+construction. Its `DR2` entrant is a normalized complete-record law on a
+typed optional-alternative family: empty, singleton, and pair calibration
+uniquely predict every higher-weight setting whenever the held-out entries
+remain nonnegative. Exact controls show why this is real but bounded progress.
+Every binary-setting Bell box, including PR, is degree two in its setting
+bits, and independent products of degree-two program laws generate nonzero
+higher combined-program coefficients. Program-response grade is therefore
+not Sorkin history-event grade. A strongly positive pair-history completion
+adds compositionally active information, but event positivity does not imply
+it, a conjugation-neutral minimum-information completion cannot generate
+directed imaginary response, and almost-quantum correlations remain. Ordered
+operational reconstruction may select a quantum framework but not the
+material member. No entrant supplies both the Q-layer and M-layer, so T4-E,
+R4, ontology, and gravity remain closed.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -474,6 +490,8 @@ Active audit:
 - v17_ugen_u0_reversal_source_architecture_gate.md
 - v17_ugen_u0_source_constraints_synthesis.md
 - v17_ugen_u0_candidate_architecture_preconstruction.md
+- v17_ugen_u0_qcor_native_composition_seed_investigation.md
+- v17_ugen_u0_explicit_positive_formula_tournament.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md

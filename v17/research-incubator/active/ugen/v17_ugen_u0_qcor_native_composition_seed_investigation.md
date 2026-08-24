@@ -634,10 +634,17 @@ $$
 I_3(A,B,C)
 ={}&\mu(A\cup B\cup C)
 -\mu(A\cup B)-\mu(A\cup C)-\mu(B\cup C)\\
-&+\mu(A)+\mu(B)+\mu(C).
+&+\mu(A)+\mu(B)+\mu(C)-\mu(\varnothing).
 \end{aligned}
 \tag{29}
 $$
+
+The all-closed term is mandatory for executable record probabilities because
+dark counts, leakage, source failures, or other background records can make
+$\mu(\varnothing)\ne0$. It vanishes in the ideal event-algebra formula where
+the empty event has zero measure. Treating measured all-closed response as
+identically zero without a registered background statement would be a
+semantic change, not harmless notation.
 
 Ordinary classical additivity has no interference. Standard quantum theory
 permits pairwise interference but gives
