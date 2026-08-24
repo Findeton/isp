@@ -1077,8 +1077,9 @@ passes the hostile mathematical mutants. `P-B0-1` remains open.
 One selected massive apparatus is described by fixed component-level inputs
 and generates every preparation, reader, failure, and nuisance record without
 target-complete tomography. Its candidate-neutral calibration direction,
-complete attempted-run information ledger, and resource cap are typed.
-Transfer is not yet earned.
+complete attempted-run information ledger, context-score rank or higher-order
+separation certificate, and resource cap are typed. Transfer is not yet
+earned.
 
 ### B0-L4 — no-refit mechanical transfer
 
@@ -1170,6 +1171,9 @@ commissioned. The reviewers should answer:
 6. Does the complete-record information audit include attempted-run failures,
    calibrated nuisance projection, exact response contexts, and an independent
    resource cap without promoting a necessary bound to a sufficient design?
+7. Does every claimed reversal include its actuator, recoil, support,
+   reference, timing, and failure records, and are target-like odd nuisance
+   scores included in the context-rank audit?
 
 ### Foundations and gravity firewall
 

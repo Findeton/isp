@@ -956,6 +956,15 @@ generated candidate-neutral calibration directions. It does not pre-certify a
 difference between unknown gravity laws. Candidate-specific separation is a
 later output computed from frozen entrant profiles on the unchanged packet;
 zero separation and infeasibility remain valid outcomes.
+The exact reversal analysis supplies the first constructive escape from the
+single-context phase no-go. Balanced physical reversal makes the odd response
+score orthogonal to an even common drift, retaining `q V^2` first-order
+information. It does not defeat an odd nuisance with the same complete score
+at first order; exact degeneracy further requires matching full response and
+an admissible parameter translation. The platform gate therefore requires
+`rank[H g] > rank(H)` for first-order claims, or a separately preregistered
+higher-order finite-separation certificate. Reversal parity alone is not
+evidence for gravity.
 
 A pre-pin closure audit now separates the next three logical gates. Because
 the exact B0-T witness already exists in open author-side form, the immediate

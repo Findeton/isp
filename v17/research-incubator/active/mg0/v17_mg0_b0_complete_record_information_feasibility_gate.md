@@ -446,7 +446,105 @@ B0 packet supplies all entries of Equation (20). The existing author-side
 
 ---
 
-## 9. Hostile controls
+## 9. Proposition IF-5 — what a physical reversal does and does not remove
+
+Let `u` be a genuinely implemented reversal context with balanced values
+`u=+1,-1`. For a successful binary fringe, consider
+
+$$
+p(r\mid u,\Phi,\delta,S=1)
+=
+\frac{1+rV\sin(u\Phi+\delta)}{2},
+\qquad
+r\in\{+1,-1\}.
+\tag{22}
+$$
+
+Here `Phi` is odd under the reversal and `delta` is a common even phase drift.
+At `Phi=delta=0`, the balanced-context score moments are
+
+$$
+I_{\Phi\Phi}=V^2,
+\qquad
+I_{\delta\delta}=V^2,
+\qquad
+I_{\Phi\delta}=0.
+\tag{23}
+$$
+
+With a common success probability `q`, all three coordinates acquire the
+factor `q`. Thus a balanced physical reversal restores the ideal first-order
+phase information against an **even** common offset.
+
+### Proof
+
+At the origin,
+
+$$
+s_\Phi=ruV,
+\qquad
+s_\delta=rV.
+$$
+
+Since `E[r^2]=1`, `E[u]=0`, and the contexts are balanced, Equation (23)
+follows. The score vectors occupy the odd and even reversal sectors.
+
+The escape is not universal. If a freely varying admitted nuisance `epsilon`
+has a domain closed under the tested translation and enters as
+
+$$
+p(r\mid u,\Phi,\epsilon,S=1)
+=
+\frac{1+rV\sin(u(\Phi+\epsilon))}{2},
+\tag{24}
+$$
+
+then `s_Phi=s_epsilon`, the two composite families are identical under the
+admissible map `epsilon -> epsilon+Phi`, and both the robust divergence and
+profiled Fisher information vanish. Without translation closure, equal scores
+prove only first-order blindness and the finite joint divergence must be
+tested. An actuator-correlated electric, magnetic, Casimir, support, or
+readout phase can therefore defeat a reversal if its **complete record
+response**, not merely its verbal label, matches the target.
+
+### General context-rank gate
+
+Stack the complete-record scores from every frozen context into the direct-sum
+score space
+
+$$
+\mathcal K
+=
+\bigoplus_{c\in\mathcal C}L_0^2(p_0(\cdot\mid c)).
+$$
+
+Let `g` be the registered calibration-response score and let the columns of
+`H` be every admitted nuisance score, including even and odd reversal sectors.
+Then first-order identification requires
+
+$$
+\boxed{
+\operatorname{rank}[H\;g]
+>
+\operatorname{rank}H
+\iff
+g\notin\operatorname{span}H.}
+\tag{25}
+$$
+
+Parity is therefore a diagnostic partition, not a gravity certificate. A
+reversal removes only the nuisance components whose full context-record
+scores are linearly independent of the target score. Odd nuisances require
+independent monitors, material or geometry scaling, additional contexts, or a
+separate physical suppression bound.
+
+The reversal itself must include its actuator, recoil, support, reference,
+timing, and failure records. Relabelling the same physical run with `u=+1`
+and `u=-1` creates no score separation.
+
+---
+
+## 10. Hostile controls
 
 A future review must reject at least these attacks:
 
@@ -461,14 +559,16 @@ A future review must reject at least these attacks:
 7. report the necessary information bound as a sufficient sample-size design;
 8. optimize contexts after opening the held-out record;
 9. call a symbolic sign flip a physical reversal without its controller,
-   recoil, and reference records; or
-10. multiply one-run information by `N` despite cross-run memory or drift; or
-11. use candidate-specific private records to improve only one entrant's
+   recoil, and reference records;
+10. infer gravity isolation from odd parity when an admitted nuisance has the
+    same complete context-record score;
+11. multiply one-run information by `N` despite cross-run memory or drift; or
+12. use candidate-specific private records to improve only one entrant's
     effective information.
 
 ---
 
-## 10. Maximum legitimate author-side claim
+## 11. Maximum legitimate author-side claim
 
 > Finite complete joint-record laws obey an exact data-processing lower bound
 > on attempted-run discrimination; only independent attempts make the
@@ -477,7 +577,11 @@ A future review must reject at least these attacks:
 > the signal-score component orthogonal to calibrated nuisance scores. In an
 > ideal binary fringe, attempted-run information scales as `q V^2 Phi^2` at
 > small phase; a freely moving ordinary phase offset makes the gravitational
-> phase locally unidentifiable. Applied to the existing deliberately favorable
+> phase exactly nonidentifiable. A balanced physical reversal restores that
+> information only against even common drift; an odd nuisance with the same
+> complete score causes first-order blindness and becomes exactly degenerate
+> only when its full response and admissible parameter domain permit the
+> target translation. Applied to the existing deliberately favorable
 > B0 phase controls, even the ideal necessary counts range from roughly
 > `4.8e4` to `6.1e40` attempts. This sharpens platform readiness without
 > selecting an apparatus or gravity law. Calibration information does not

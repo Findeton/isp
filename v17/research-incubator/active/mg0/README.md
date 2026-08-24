@@ -73,7 +73,8 @@ not turn either source document into a pin or award a scientific result.
 - `v17_mg0_b0_complete_record_information_feasibility_gate.md` — exact
   complete-record discrimination bound, null/failure chain rule,
   nuisance-efficient Fisher ceiling, phase-offset degeneracy, and idealized
-  attempted-run reach receipt for the registered B0 phase controls;
+  attempted-run reach receipt for the registered B0 phase controls, plus the
+  exact balanced-reversal/context-rank gate;
 - `v17_mg0_b0_primary_source_claim_and_version_audit.md` — author-side
   registry of twenty-six primary-source identities, exact consumed claims,
   forbidden promotions, explicit arXiv versions, and the still-owed pin-time
@@ -203,6 +204,11 @@ cannot certify that unknown future entrants differ. Their separation is
 computed later from frozen profiles on the unchanged packet, with exact
 agreement and infeasibility still allowed. No exact public packet closes the
 information ledger, so `NO-SELECTION` remains unchanged.
+The same theorem proves that a balanced physical reversal restores
+first-order information against an even common drift but fails exactly against
+an odd nuisance only when its full response and admissible parameter domain
+duplicate the translated target. Matching scores alone prove first-order
+blindness. Parity is a diagnostic partition, not a gravity certificate.
 
 The pre-pin closure audit corrects the remaining procedural ambiguity. The
 exact synthetic witness already exists as open author-side work and therefore

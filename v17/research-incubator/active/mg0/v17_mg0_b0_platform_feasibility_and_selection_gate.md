@@ -261,6 +261,26 @@ E_{\rm INFO}^{\rm cal}
  \ge d(1-\beta\Vert\alpha)].
 $$
 
+For any first-order calibration claim, the frozen context-score audit must
+also satisfy
+
+$$
+\operatorname{rank}[H\;g]
+>
+\operatorname{rank}H,
+$$
+
+where `g` is the calibration-response score and `H` contains every admitted
+nuisance score across the complete context-record space. If this rank gate
+fails, only an independently preregistered higher-order finite-separation test
+may recover eligibility; positive unprofiled Fisher information may not.
+
+A balanced physical reversal separates an odd target from an even common
+drift. It does not separate a target from an electric, magnetic, Casimir,
+support, controller, or reader nuisance with the same odd complete-record
+score. The reversal parity and rank ledger must therefore include the
+actuator, recoil, reference, timing, and failure records.
+
 Passing this gate proves neither that the bound is sufficient nor that future
 entrants differ. Candidate-specific separation is calculated only after at
 least two complete laws freeze, using the unchanged public packet and common
@@ -322,7 +342,8 @@ can, from public inputs:
 7. reproduce a fixed external classical-gravity calibration from independent
    source geometry;
 8. pass `E_INFO^cal` for a physically generated candidate-neutral calibration
-   direction under a frozen attempted-run cap; and
+   direction under a frozen attempted-run cap, including the context-rank gate
+   or an independently preregistered higher-order separation certificate; and
 9. pass at least one preregistered no-refit transfer.
 
 Different papers may establish component plausibility. They cannot jointly
@@ -508,8 +529,10 @@ A future pin should freeze this order before choosing a platform.
 5. **B0 closure.** Require all `E_B0` gates conjunctively.
 6. **Candidate-neutral information.** Require a physically generated
    calibration direction, complete joint attempted-run law, nuisance family,
-   error targets, and resource cap. Reject unprofiled Fisher information,
-   postselected counts, and i.i.d. scaling under cross-run memory.
+   error targets, resource cap, and complete context-score rank audit. Reject
+   unprofiled Fisher information, postselected counts, i.i.d. scaling under
+   cross-run memory, and reversals whose target score remains in the nuisance
+   span.
 7. **Arena compatibility.** Require the same apparatus and packet to pass
    `E_MG0`; do not swap platforms after B0 review.
 8. **No target-conditioned score.** Do not choose using the sign or magnitude
@@ -555,7 +578,9 @@ This rule currently returns `NO-SELECTION`.
 18. Multiply one-run divergence by `N` despite shared drift, memory, or
     adaptive feedback.
 19. Call a symbolic sign flip a gravity-isolating reversal when an admitted
-    electromagnetic or controller nuisance has the same response parity.
+    electromagnetic or controller nuisance has the same complete
+    context-record score; matching parity alone is a warning, while matching
+    score is the exact first-order obstruction.
 20. Select an apparatus by a predicted difference between future candidates
     that have not yet been frozen.
 

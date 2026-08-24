@@ -908,6 +908,12 @@ cleanly if nature does not support it.
   calibration information. It cannot promise that unknown future entrants
   differ; candidate-specific separation is evaluated later on the unchanged
   packet and may return agreement, nonidentifiability, or infeasibility.
+  A balanced physical reversal is now typed precisely: it separates an odd
+  response from even common drift, but any actuator-correlated nuisance with
+  the same complete context-record score causes first-order blindness. Exact
+  degeneracy additionally requires the same full response and an admissible
+  nuisance translation. Future platform eligibility therefore requires a
+  context-score rank test, not a symbolic sign flip or parity slogan.
   A companion source-lineage audit registers twenty-six primary objects by
   evidence class, scholarly version, exact consumed claim, and forbidden
   promotion. The mutable arXiv citations are now version-specific, and an APS

@@ -2602,3 +2602,28 @@ that future entrants are distinguishable. No platform presently closes these
 coordinates, so `NO-SELECTION` remains. No terminal bytes, pin, review,
 apparatus, candidate, entrant, comparison, gravity verdict, ontology, or
 successor opens.
+
+## 2026-08-24 — B0 PHYSICAL-REVERSAL CONTEXT-RANK GATE DERIVED AUTHOR-SIDE (v17 LEDGER #112)
+
+The complete-record audit now derives the exact escape from the
+single-context phase-offset obstruction. For a balanced physical reversal
+`u=+1,-1`, an odd target phase and an even common drift have orthogonal scores;
+the retained first-order information is `V^2` per successful run and `q V^2`
+per attempted run. If an admitted nuisance enters with the same odd
+context-record score as the target, their scores coincide and first-order
+information vanishes. Exact family identity additionally requires the same
+full response and an admissible nuisance-parameter translation. Reversal parity
+is therefore a diagnostic partition, not a gravity certificate.
+
+The general gate stacks all complete-record scores across contexts and
+requires `rank[H g] > rank(H)` for a first-order claim, where `g` is the
+registered calibration response and `H` contains every admitted nuisance
+score. A failed rank test may be escaped only by a separately preregistered
+higher-order finite-separation test. The platform rule now requires this audit
+and carries actuator, recoil, support, reference, timing, and failure records
+inside every claimed reversal.
+
+No current apparatus supplies that exact public ledger, so `NO-SELECTION`
+remains. No terminal byte, B0 level, pin, review, platform, candidate, entrant,
+comparison, gravity verdict, ontology, chronology, spacetime, or successor is
+opened.
