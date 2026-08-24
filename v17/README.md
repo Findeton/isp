@@ -1157,9 +1157,14 @@ regional substitution/reconnection arms. Its author-side P0 audit selects a
 two-transmon system--memory platform and a modular multiport microwave
 platform, while finding no existing public packet that executes either full
 experiment. Its result-neutral contract and root mutant audit are written.
-No immutable contract-review pin, exact apparatus packet, empirical
-evaluation pin, independent review, held-out result, chronology, spacetime,
-gravity, or ontology award exists.
+Its first immutable three-axis contract review is now terminal `SPB-D2 —
+REVISE BEFORE PHYSICAL PIN`; `SPB-L0` was not awarded. The physical
+architectures remain feasible, but the current screening outcome space,
+three-way statistical decision, regional complete-law composition, duty
+independence, carrier typing, singular policy, and passive port quotient are
+not semantically closed enough to govern acquisition. No corrected contract,
+exact apparatus packet, empirical evaluation pin, held-out result, chronology,
+spacetime, gravity, or ontology award exists.
 
 ## Scientific order
 
@@ -1216,6 +1221,19 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `research-incubator/active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md`
   — author-side hidden-assumption and pin-readiness audit; not an independent
   review or scientific result.
+- `note-spb-sufficient-physical-boundary-contract-review-pin.md` — immutable
+  result-neutral first SPB contract-review pin.
+- `review-spb-contract-mathematics-statistics.md` — frozen Seat M report.
+- `review-spb-contract-physical-temporal.md` — frozen temporal apparatus
+  subreport.
+- `review-spb-contract-physical-regional.md` — frozen regional apparatus
+  subreport.
+- `review-spb-contract-physical-joint.md` — frozen joint physical-source and
+  apparatus disposition.
+- `review-spb-contract-foundations-ontology.md` — frozen Seat O report.
+- `note-spb-sufficient-physical-boundary-contract-review-adjudication.md` —
+  terminal `SPB-D2` adjudication, exact salvage, and minimum successor duties;
+  no `SPB-L0` or empirical result.
 - `PLAN.md` — ordered units, gates, stopping rules, and later gravity route.
 - `LOG.md` — append-only v17 event ledger.
 - `note-paper01-relational-quantum-process-pin.md` — the frozen first-unit pin.

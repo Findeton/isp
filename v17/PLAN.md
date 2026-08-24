@@ -1258,6 +1258,20 @@ independent review; an empirical evaluation pin additionally requires exact
 physical apparatus, calibration, attempted-run, and held-out packet bytes.
 Simulation cannot substitute for those records.
 
+The first immutable contract-review cycle is now terminal `SPB-D2 — REVISE
+BEFORE PHYSICAL PIN`; `SPB-L0` was not awarded. Mathematics/statistics found
+that the screening law lacks one typed common outcome projection and causal
+estimand, the decision rule lacks an explicit fail/underdetermined split, the
+regional `S`-matrix predictor has the wrong codomain for a complete-attempt
+law, singular seam cases are conflated, and presentation symmetry is mixed
+with empirical closeness. Foundations independently found that composition
+already implies the allegedly separate transfer duty and that the regional
+candidate omits its carrier/instrument coordinates and typed passive port
+action. The apparatus review establishes that both bounded experiments are
+physically feasible and that their exact run packets remain absent;
+feasibility does not repair the semantic defects. No corrected contract opens
+automatically.
+
 ### F7 — amplitudes
 
 Complex amplitudes are neither banned nor presumed fundamental. If the
@@ -1306,9 +1320,12 @@ v16 inheritance balance             RECORDED
 Foundational necessity charter      ACTIVE AUTHOR-SIDE / SPB OPENED
 N1--N28 parallel audits             COMPLETE AUTHOR-SIDE / FAD-L1 / NO AWARD
 SPB-P0 source/platform audit         COMPLETE AUTHOR-SIDE / NO AWARD
-SPB result-neutral contract         WRITTEN / PRE-PIN / NO AWARD
+SPB result-neutral contract         TERMINAL D2 / REVISE BEFORE PHYSICAL PIN
 SPB root mutant/readiness audit     PASS-WITH-SCOPE AUTHOR-SIDE
-SPB contract-review pin             ABSENT / SEPARATE AUTHORIZED REHASH OWED
+SPB contract-review pin             FROZEN AT 014c820
+SPB independent reports             FROZEN / M:D2 P:D3 O:D2
+SPB root adjudication               TERMINAL D2 / SPB-L0 NOT AWARDED
+SPB corrected contract              NOT OPENED / FRESH AUTHORITY REQUIRED
 SPB exact physical run packet       ABSENT
 SPB empirical evaluation pin        INELIGIBLE UNTIL PHYSICAL PACKET CLOSES
 empirical quantum adequacy contract RECORDED

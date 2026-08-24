@@ -50,13 +50,19 @@ isoscattering work does not combine fixed-port multiport equality, public raw
 records, reconnection, and triple gluing. This is a physical packet gap, not an
 SPB result or a computational problem.
 
-The result-neutral contract and author-side mutant audit are complete. They
-block process-matrix/referent collapse, similarity-as-fixed-interface
-equality, untyped erasure, hidden controller memory, fitted composition,
-failure-to-reject-as-equivalence, and chronology or ontology promotion. The
-package is eligible for a separately authorized immutable contract-review pin;
-an empirical evaluation pin remains ineligible until an exact apparatus and
-raw-run packet exists.
+The result-neutral contract and author-side mutant audit were completed and
+then subjected to one immutable three-axis review. The terminal disposition is
+`SPB-D2 — REVISE BEFORE PHYSICAL PIN`; `SPB-L0` was not awarded. The reviews
+confirm that both selected apparatus architectures are feasible and that the
+source roles and anti-ontology ceilings are mostly sound. They also reproduce
+load-bearing semantic defects: the screening law lacks one typed common
+outcome/causal estimand and an explicit fail-versus-underdetermined decision;
+the regional `S` relation does not generate the demanded complete-attempt law;
+composition already contains the allegedly separate transfer duty; and the
+regional carrier, instrument, singular-seam, and passive-port types are not
+closed. No corrected contract opens automatically. An empirical evaluation
+pin remains ineligible independently because no exact apparatus/raw-run packet
+exists.
 
 Active working package:
 
@@ -67,8 +73,19 @@ Active working package:
 - `active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md`
 - `active/spb/ACTIVE_SHA256.txt`
 
-No immutable pin, independent review, held-out evaluation, scientific
-boundary result, ontology, chronology, spacetime, or gravity result exists.
+Terminal official record:
+
+- `../note-spb-sufficient-physical-boundary-contract-review-pin.md`
+- `../review-spb-contract-mathematics-statistics.md`
+- `../review-spb-contract-physical-temporal.md`
+- `../review-spb-contract-physical-regional.md`
+- `../review-spb-contract-physical-joint.md`
+- `../review-spb-contract-foundations-ontology.md`
+- `../note-spb-sufficient-physical-boundary-contract-review-adjudication.md`
+
+The first immutable review cycle is terminal historical evidence. No accepted
+contract, corrected successor, held-out evaluation, scientific boundary
+result, ontology, chronology, spacetime, or gravity result exists.
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

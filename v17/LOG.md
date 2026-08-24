@@ -2846,3 +2846,60 @@ authorized immutable contract-review rehash and hostile review, followed only
 if that survives and a real packet is available by a distinct empirical pin.
 No boundary ontology, universal state, Markovianity, chronology, spacetime,
 gravity, Barandes confirmation, or automatic successor is opened.
+
+## 2026-08-24 — SPB CONTRACT REVIEW TERMINAL D2; NO SPB-L0 (v17 LEDGER #119)
+
+One immutable result-neutral SPB contract-review pin was frozen at commit
+`014c820` over the exact seven-object package and six primary scholarly
+receipts. Three mutually blind review axes authenticated the pin, repository
+objects, sources, two author repositories, and selected public data/code
+files. Seat P supplied separately signed temporal and regional apparatus
+subreports plus one joint disposition. All reports were frozen verbatim before
+root adjudication.
+
+The reports split. Mathematics/statistics and foundations/ontology recommended
+`SPB-D2 — REVISE BEFORE PHYSICAL PIN`; physical source/apparatus recommended
+`SPB-D3 — ACCEPT-WITH-SCOPE`. Root independently reproduced every
+load-bearing finding rather than using a majority.
+
+The physical-source conclusions survive. Pollock supplies a causal-break
+criterion but no memory carrier; Giarmatzi supplies complete system-side
+three-time tomography but not the direct memory grammar or source closure;
+Xiang supplies an engineered two-transmon predecessor but no full memory
+battery or raw DataVault. Farooq supplies exact ideal scalar one-port equality
+and approximate laboratory agreement, Ławniczak supplies transplantation
+conjugacy rather than fixed-port equality, and Kostrykin--Schrader supplies a
+unitary self-adjoint graph theorem rather than lossy apparatus composition.
+Both selected bounded apparatus architectures are feasible, no exact run
+packet exists, and the printed `T_4` has eigenvalues
+`2-sqrt(2),2-sqrt(2),2+sqrt(2),2+sqrt(2)` in `T_4^dagger T_4`, so scalar
+normalization cannot make it a passive unitary mixer.
+
+The contract defects are semantic. The complete attempted-run object contains
+the assigned history, commands, and future policy, while the screening law
+uses an undefined `omega_F`; including the history makes every nontrivial pair
+have total-variation distance one, while projecting fields out without a
+frozen map can hide real differences. The positive equivalence rule lacks a
+binding fail-versus-underdetermined branch and conflates scientific tolerance
+with parts of the uncertainty budget. The regional `S`-matrix/seam relation
+predicts deterministic coherent response but not the normalized noisy,
+failed-attempt law required by the common composition rule. Singular seam
+existence, internal uniqueness, exterior uniqueness, conditioning, global
+solve, and sequential bracketings are not separated. Exact presentation
+symmetry and empirical closeness share one relation. Composition already
+requires no-refit held-out transfer, defeating the advertised independence of
+`C` and `X`. The regional candidate also omits the physical carrier and
+instrument coordinates required by the generic boundary type, and its passive
+port quotient lacks a typed action. Root additionally found inconsistent
+meanings of `SPB-L0` between contract freeze and independent acceptance.
+
+The terminal adjudication is `SPB-D2`; `SPB-L0` is not awarded. Exact salvage
+includes the central question, source roles, apparatus architectures, temporal
+memory grammar, direct pair/triple composition requirement, `T_4` control,
+resource ledger, simulation firewall, and all ontology/chronology/gravity
+ceilings. A possible successor must repair the interacting estimand,
+three-way decision, duty, regional carrier/complete-law, seam, quotient, and
+ladder defects under one new result-neutral pin. No successor, physical pin,
+pilot, apparatus operation, acquisition, simulation-as-result, boundary,
+ontology, chronology, spacetime, gravity, or unified theory opens
+automatically.

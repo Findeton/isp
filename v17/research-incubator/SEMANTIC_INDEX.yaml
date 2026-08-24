@@ -2532,7 +2532,7 @@ artifacts:
     supersedes: []
     superseded_by: []
     depends_on: ["active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md", "active/spb/v17_spb_primary_source_receipt_manifest.md"]
-    source_audit_status: "exact-p0-source-receipts-closed-public-complete-run-packets-absent-independent-review-pending"
+    source_audit_status: "exact-p0-source-receipts-authenticated-by-terminal-spb-review-public-complete-run-packets-absent"
     authority: "none"
     promotion_readiness: "contract-pre-pin-only-not-evaluation-ready"
     maximum_claim: "two-transmon temporal and modular-microwave regional architectures selected for SPB design; no audited public packet executes either complete experiment; no no-go, boundary result, ontology, chronology, spacetime, gravity, or successor"
@@ -2541,38 +2541,38 @@ artifacts:
     sha256: "7212e363cea918e82343eaa0dfe930aa27210c1fbbda4eae3115ccd98174b4d8"
     created_at: "2026-08-24"
     front: "spb"
-    status: "active-author-side-result-neutral-pre-pin-contract"
+    status: "terminal-reviewed-spb-d2-revise-before-physical-pin"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md"]
-    source_audit_status: "p0-source-scope-closed-exact-apparatus-and-evaluation-source-packet-absent-independent-review-pending"
+    depends_on: ["active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "v17/note-spb-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "terminal-independent-review-authenticated-sources-and-found-semantic-contract-defects-exact-evaluation-packet-absent"
     authority: "none"
-    promotion_readiness: "eligible-for-separately-authorized-contract-review-pin-not-evaluation-ready"
-    maximum_claim: "result-neutral temporal causal-break/memory and regional fixed-interface/reconnection gate design through SPB-L6 ceiling; no pin, review, physical result, ontology, chronology, spacetime, gravity, or successor"
+    promotion_readiness: "not-ready-terminal-spb-d2-corrected-contract-requires-fresh-authority"
+    maximum_claim: "terminally reviewed first SPB contract rejected for revision before physical pin; exact architecture/source salvage only; no SPB-L0, accepted contract, evaluation, physical result, ontology, chronology, spacetime, gravity, or successor"
     canonical: false
   - path: "active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md"
     sha256: "fdb1808a007dce02c4f606889c5632f1d6369542056c3f7664a2f8d63341cd68"
     created_at: "2026-08-24"
     front: "spb"
-    status: "complete-author-side-contract-readiness-and-mutant-audit"
+    status: "historical-author-side-readiness-audit-superseded-by-terminal-spb-d2"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/spb/v17_spb_result_neutral_gate_contract.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_primary_source_receipt_manifest.md"]
-    source_audit_status: "root-rebuilt-hidden-assumption-and-mutant-surface-independent-review-pending-empirical-source-closure-failed-closed"
+    depends_on: ["active/spb/v17_spb_result_neutral_gate_contract.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "v17/note-spb-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "author-side-audit-did-not-catch-all-terminally-reproduced-semantic-defects-empirical-source-closure-failed-closed"
     authority: "none"
-    promotion_readiness: "eligible-for-separately-authorized-contract-review-pin-not-evaluation-ready"
-    maximum_claim: "SPB-P0A author-side pass-with-scope for contract review readiness; exact apparatus, statistics, and raw-run packet absent; no SPB-L0+, scientific boundary result, ontology, chronology, spacetime, gravity, or successor"
+    promotion_readiness: "not-ready-historical-author-side-input-terminal-spb-d2-controls"
+    maximum_claim: "historical SPB-P0A author-side readiness opinion superseded by terminal D2; retained mutant and apparatus duties only; no SPB-L0+, scientific boundary result, ontology, chronology, spacetime, gravity, or successor"
     canonical: false
   - path: "active/spb/README.md"
     sha256: "04b985f737ca4179c132be03daa1ff169827ff041e407c4921b2dbe532fe933b"
     created_at: "2026-08-24"
     front: "spb"
-    status: "active-user-authorized-gate-p0-and-pre-pin-contract-audit-complete"
+    status: "terminal-first-contract-review-spb-d2-awaiting-fresh-successor-authority"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_result_neutral_gate_contract.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md"]
-    source_audit_status: "p0-exact-receipts-closed-public-complete-run-packets-absent-independent-review-pending"
+    depends_on: ["active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_result_neutral_gate_contract.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md", "v17/note-spb-sufficient-physical-boundary-contract-review-pin.md", "v17/note-spb-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "terminal-independent-review-authenticated-p0-sources-semantic-contract-defects-reproduced-public-complete-run-packets-absent"
     authority: "none"
-    promotion_readiness: "eligible-for-separately-authorized-contract-review-pin-not-evaluation-ready"
-    maximum_claim: "canonical routing for the opened SPB branch through author-side P0 and pre-pin contract readiness; no immutable pin, independent review, physical data evaluation, boundary result, ontology, chronology, spacetime, gravity, or successor"
+    promotion_readiness: "not-ready-terminal-spb-d2-corrected-contract-requires-fresh-authority"
+    maximum_claim: "canonical routing for terminal first SPB contract review: D2 revise before physical pin, SPB-L0 not awarded, exact architecture/source salvage only; no corrected contract, evaluation, boundary result, ontology, chronology, spacetime, gravity, or successor"
     canonical: true
