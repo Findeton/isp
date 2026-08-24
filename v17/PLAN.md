@@ -883,15 +883,21 @@ output.
 
 ## 4. Phase G0 — matter and geometry in one theory
 
-**Current preparation boundary.** An author-side MG0 preflight now types a
-form-neutral common-law contract and reciprocal weak-field selector benchmark.
+**Current preparation boundary.** One immutable result-neutral MG0 pin now
+freezes the form-neutral common-law contract and reciprocal weak-field selector
+benchmark at commit `f844666`.
 It treats matter and gravity as operational projections rather than assumed
 microscopic factors; assumes no metric, continuum, dimension, foliation,
 Einstein equation, or classical/quantum gravity verdict; and keeps
 ordinary-positive, decoherence-functional, and quantum-plus-actualization
-nomologies live. This preparation opens neither Paper 06 nor Paper 07 and
-awards no gravity result. Q-Cut remains separately authorizable as a scoped
-information theorem, but no next official physics unit is selected.
+nomologies live. Terminal R1RR-L4 is the fixed-background baseline. A
+comparison is barred unless later independent review certifies at least two
+genuinely distinct, fully specified laws generating the same complete
+source--geometry--probe experiment from one frozen public input packet. No
+benchmark review, candidate construction, comparison, ontology selection,
+Paper 06, Paper 07, or gravity result is authorized. Q-Cut remains separately
+authorizable as a scoped information theorem, but no next official physics
+unit is selected.
 
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
@@ -1215,6 +1221,7 @@ R1 Seat M review                    FROZEN D3 — MATHEMATICS SURVIVES WITH SCOP
 R1 Seat P reviews                   FROZEN D3 — SOURCE/READER/JOINT SCOPE
 R1 Seat O review                    FROZEN D3 — ONTOLOGY BOUNDARIES SURVIVE
 R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
+MG0 result-neutral benchmark pin    FROZEN — REVIEW/CANDIDATES NOT AUTHORIZED
 ```
 
 The frozen v3.1 pin encoded the attempted correction:

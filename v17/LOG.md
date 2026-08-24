@@ -2272,3 +2272,32 @@ gap. It is not a native positive law, microscopic actuality mechanism,
 hardware-certified stable division, no-refit transfer, chronology, spacetime,
 gravity theory or unification. The review cycle halts; no repair or successor
 opens automatically.
+
+## 2026-08-24 — MG0 RESULT-NEUTRAL BENCHMARK PIN FROZEN (v17 LEDGER #100)
+
+The authorized MG0 scientific amendment freezes first at commit `0ed5f3c`.
+It changes only the existing common matter--geometry contract and reciprocal
+selector benchmark: terminal R1RR-L4 is bound as the fixed-background
+baseline, and a hard entrant-completeness gate bars comparison until at least
+two genuinely distinct, fully specified laws generate the same complete
+source--geometry--probe experiment from one frozen public input packet. The
+laws need not disagree; agreement is an admissible nonselection result.
+
+The separate immutable pin freezes at
+`v17/note-mg0-common-law-reciprocal-benchmark-pin.md`, commit `f844666`,
+ordinary SHA-256
+`2355b2f6809b1ddaed8ec4a2dc8792980bcb051f075383d11ba240b21a27ade8`,
+normalized self-SHA-256
+`e36bf6032d79cd03a1cf4be481f84f9eae4c60cac1da493529eefad21590faa2`,
+and size 427 LF / 16,227 bytes. It authenticates the amended contract at
+`3552e4d00806c1a17294b9e57a4a1d693e72bfb0fdff0356411f6af2fa12d475`,
+the amended benchmark at
+`7d527e68df9ab788433d3d953b607181d1624e46aea40b50b630e675c70d8482`,
+and the R1 adjudication at
+`53f38d9bdda430f41c857cb73d44f48c13be2f79f5432277fd217718a0f03668`.
+
+The pin freezes the public-input schema and requires actual values, apparatus,
+calibrations, nuisance controls, held-out settings, tolerances, and record
+interface to be frozen in one public packet before any later comparison. It
+opens no review, candidate construction, entrant completion, numerical
+evaluation, comparison, ontology selection, gravity verdict, or successor.

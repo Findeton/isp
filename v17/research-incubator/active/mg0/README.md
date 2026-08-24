@@ -1,9 +1,9 @@
-# ISP v17 — MG0 active author-side matter–geometry preflight
+# ISP v17 — MG0 matter–geometry benchmark and author-side preflight
 
-**Status:** ACTIVE AUTHOR-SIDE PREFLIGHT / NOT A PIN / NOT REVIEWED
-**Date:** 2026-08-23
+**Status:** RESULT-NEUTRAL BENCHMARK PIN FROZEN / NOT REVIEWED / NO CANDIDATES
+**Date:** 2026-08-24
 **Scientific result awarded:** none
-**Authority created:** none
+**Authority created:** immutable benchmark bytes only
 
 ---
 
@@ -32,6 +32,13 @@ limits, and expose a prospective empirical wedge.
 
 ## Active files
 
+The two scientific objects retain their pre-pin author-side status lines as
+historical metadata. The separate root pin freezes their exact bytes; it does
+not turn either source document into a pin or award a scientific result.
+
+- `v17/note-mg0-common-law-reciprocal-benchmark-pin.md` — repository-root
+  immutable pin binding the two benchmark objects, terminal R1RR-L4 baseline,
+  and two-complete-distinct-law comparison gate;
 - `v17_mg0_common_matter_geometry_contract.md` — form-neutral typed contract;
 - `v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md` —
   exact finite-band fixed-response CP-kernel set, saturation/locality boundary, and
@@ -104,11 +111,14 @@ bath/reference/boundary carrier is exposed. The ceiling is `BCG-L2`; this does
 not decide covariant non-Markovian CP-CQ gravity, indivisible whole-process
 laws, or any ontology.
 
-MG0 cannot select an ontology until at least two genuinely different, fully
-specified matter laws make distinct gravity-sensitive predictions. The next
-admissible MG0 action after this preflight is therefore not a fitted gravity
-model and not a substitute for U0. Any later contract review or candidate
-freeze requires separate authorization.
+The result-neutral MG0 benchmark pin now freezes the common contract and
+reciprocal benchmark at commit `f844666`. It binds terminal R1RR-L4 as the
+fixed-background baseline and bars comparison unless independent review later
+certifies at least two genuinely distinct, fully specified laws that generate
+the same complete source--geometry--probe experiment from one frozen public
+input packet. The laws need not disagree; agreement is a nonselection result.
+No review, candidate freeze, construction, numerical comparison, ontology
+selection, or gravity verdict is authorized by the pin.
 
 ## Maximum claim
 

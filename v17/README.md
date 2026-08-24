@@ -847,16 +847,20 @@ cleanly if nature does not support it.
   and reciprocal gravity remain absent. A1 therefore closes at finite-law
   salvage and is not an official candidate, pin, review cycle, apparatus, or
   gravity model; no repair chain opens automatically.
-  MG0 now accelerates the already declared Phase G0 only at author-side
-  contract level. It types matter and gravity as operational projections
+  MG0 now has one frozen result-neutral benchmark pin at `f844666`. It types
+  matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
   quantum-plus-actualization nomologies live, requires both response
   directions to descend from one joint parent, and preregisters
   Page--Geilker, mediator-entanglement, nonlinear-signalling,
   decoherence--diffusion, gauge/gluing, conservation, clock, and dual-limit
-  controls. It assumes no metric, continuum, dimension, foliation, Einstein
-  equation, or classical/quantum gravity verdict; constructs no model; and
-  opens no official Paper 06/07 or gravity result.
+  controls. It binds terminal R1RR-L4 as the fixed-background baseline and
+  admits no comparison unless later review certifies at least two genuinely
+  distinct, fully specified laws generating the same complete
+  source--geometry--probe experiment from one frozen public input packet. It
+  assumes no metric, continuum, dimension, foliation, Einstein equation, or
+  classical/quantum gravity verdict; constructs no model; and opens no review,
+  candidate, official Paper 06/07, or gravity result.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,
@@ -867,8 +871,9 @@ cleanly if nature does not support it.
   results, and empirical accountability. It does not yet supply one member
   that simultaneously closes nonlinear constraints, conservation, stable
   vacuum, interacting-matter renormalization, actuality/readers, parameter
-  selection, and held-out transfer. The ceiling is `CQG-L2` author-side; no
-  classical/quantum gravity verdict, MG0 pin, or ontology selection follows.
+  selection, and held-out transfer. The ceiling is `CQG-L2` author-side; the
+  family is not a complete pinned MG0 entrant and no classical/quantum gravity
+  verdict or ontology selection follows.
   A follow-on exact kernel-selection gate reaches `KSG-L2`. On a finite
   weak-field Fourier band, complete positivity, spatial covariance, and fixed
   mean Newtonian response parameterize a convex admissible set with an arbitrary positive
