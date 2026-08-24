@@ -539,6 +539,19 @@ experiment has run, and quantum composition, background geometry, incoming
 state, reader closure, and actuality are not derived. It is the explicit
 baseline for a future S2 constraint investigation, not the native law.
 
+The S2 empirical-residual gate now formalizes that investigation. It proves
+that complete-record operational equivalence blocks empirical ontology
+selection inside the equivalent domain. It also gives an exact
+Gaussian-reference relocation: every finite strongly positive pair kernel
+has an ordinary-positive joint field/record lift, but the covariance is the
+full kernel input and the conditional response retains a norm square. Thus a
+positive latent representation is possible without being explanatory. The
+packet audits the different debts of contextual whole-boundary,
+retro/two-boundary, collapse, Euclidean, reconstruction, Barandes-native, and
+discrete routes, and requires independent source compression or a prospective
+deviation. The ceiling is S2-L1 author-side; no native formula or empirical
+residual is established.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -595,6 +608,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_source_to_record_common_parent_closure.md
 - active/ugen/v17_ugen_u0_native_whole_boundary_functional_attempt.md
 - active/ugen/v17_ugen_u0_r1_macroscopic_qed_whole_boundary_member.md
+- active/ugen/v17_ugen_u0_s2_empirical_residual_and_admission_gate.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

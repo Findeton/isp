@@ -662,6 +662,18 @@ cleanly if nature does not support it.
   detector descent, and actuality are still supplied or open, and no
   implementation transfer has run. R1 is therefore the explicit
   known-physics baseline, not native ISP completion.
+  The post-R1 S2 gate now proves why another positive representation is not
+  enough. Exact operational equivalence makes every record-only selector
+  powerless wherever S2 and R1 agree. Every finite strongly positive
+  pair-history kernel also has an ordinary-positive Gaussian-reference joint
+  lift over latent fields and records, but its covariance contains the entire
+  kernel and its conditional record response retains the norm-square rule.
+  This establishes compatibility, not source descent. The gate separately
+  audits contextual, retro/two-boundary, collapse, Euclidean,
+  framework-reconstruction, Barandes-native, and discrete-carrier routes and
+  requires either independent source compression or a prospective
+  complete-record deviation. It reaches S2-L1 author-side only: no native
+  formula or empirical residual is selected.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

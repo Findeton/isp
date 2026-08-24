@@ -536,6 +536,21 @@ state, incomplete detector descent, and one-record actuality remain inputs or
 open. No implementation transfer has run, so R1 is the calibrated baseline
 against which any native source law must improve rather than a native result.
 
+The post-R1 S2 admission gate now separates quantum recovery from empirical
+selection. Its operational-equivalence theorem proves that no record-only
+experiment in a domain where S2 and R1 agree can select their ontologies. Its
+Gaussian-reference relocation theorem proves that every finite strongly
+positive pair-history kernel admits an ordinary-positive joint lift over
+latent field values and records—but the entire kernel is then encoded in the
+field covariance and the norm-square response reappears conditionally. Positive
+latent variables are therefore compatible with quantum records but not a
+source derivation by existence alone. Contextual whole-boundary,
+retro/two-boundary, collapse, Euclidean, reconstruction, Barandes-native, and
+discrete-carrier routes are audited as different theories with different
+debts. The packet reaches S2-L1 exact admission results only: no empirical
+post-R1 residual or native formula is established. Future entry requires
+independent source compression or a preregistered complete-record deviation.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -953,7 +968,10 @@ U0 GRAM SOURCE MAP:            ABSENT / NATIVE LAW NOT CONSTRUCTED
 U0 R1 MQED COMMON PARENT:      R1-L2 EXPLICIT CONDITIONAL ARCHITECTURE
 U0 R1 COMPLETE RECORD MEMBER:  EXACT ONE-MODE / NO TRANSFER EVALUATION
 U0 R1 NATIVE CREDIT:           NONE / QUANTUM NOMOLOGY SUPPLIED
-NEXT U0 SCIENTIFIC WORK:       EMPIRICAL CONSTRAINTS ON S2 / NO INVENTED LAW
+U0 S2 OPERATIONAL RESIDUAL:    NOT ESTABLISHED / RECOVERY IS NOT SELECTION
+U0 S2 POSITIVE LATENT LIFT:    EXACT / COVARIANCE CARRIES QUANTUM PAYLOAD
+U0 S2 ADMISSION GATE:          S2-L1 AUTHOR-SIDE / NO NATIVE FORMULA
+NEXT U0 SCIENTIFIC WORK:       TEST MINIMAL PREMISE CONJUNCTION / QUANTUM BOUNDARY
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

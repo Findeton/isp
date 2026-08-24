@@ -535,6 +535,20 @@ input or debt; no implementation transfer exists. The next author-side gate
 must therefore classify empirical constraints capable of selecting or
 refuting an S2 source law beyond this baseline. It may not manufacture a law
 merely because R1 prints the empty slot.
+The post-R1 S2 gate now closes the representation loophole. If an S2 law and
+R1 give the same complete laws on the admitted experiment family, no adaptive
+record statistic can select between them. Moreover every finite strongly
+positive kernel has an explicit ordinary-positive Gaussian-reference joint
+lift, but the quantum kernel is exactly its covariance input and the
+norm-square record response remains. This proves positive-variable
+compatibility while denying native-source credit to covariance relabeling.
+Contextual, retro/two-boundary, collapse, Euclidean, reconstruction,
+Barandes-native, and discrete-carrier routes remain distinct. The packet earns
+S2-L1 author-side admission results only; no post-R1 empirical residual or law
+is established. The next exact mathematics should test whether source descent,
+products, one interacting-parent rule, reversible unresolved composition,
+stable division/erasers, and finite scalable resources select a quantum
+boundary or still admit inequivalent controls.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
