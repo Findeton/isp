@@ -2430,3 +2430,31 @@ mechanical modes, and torsion sensors close different coordinates, but no one
 apparatus closes the conjunction. The author-side outcome is
 `NO-SELECTION`; no pin, platform, candidate, entrant, comparison, or gravity
 verdict is opened.
+
+## 2026-08-24 — B0 PRE-PIN CHRONOLOGY AND PACKET FIREWALL CLOSED AUTHOR-SIDE (v17 LEDGER #106)
+
+An unfrozen author-side closure audit corrects the remaining B0 procedural
+ambiguity. The exact synthetic B0-T witness predates any official pin and is
+already open, so a later cycle may freeze and independently review those bytes
+but may not advertise their reconstruction as a new post-pin blind
+construction. The immediate proposed official gate is therefore a review-only
+B0-T pin with B0-L2 as its maximum ceiling. A physical B0-E model remains a
+separate future construction requiring one exact apparatus to pass both
+`E_B0` and `E_MG0`; the current outcome remains `NO-SELECTION`.
+
+The same audit types the common packet as raw apparatus identity, preparation
+and control waveforms, independently measured material and relative-geometry
+inputs, calibration-only records, complete contexts and records, nuisance
+covariance, sealed held-out schedules or prospective acquisition protocols,
+and tolerances. It expressly excludes the B0 predicted profile, a solved
+gravity response, future outcomes, and candidate-private calibration.
+Candidate presentation maps must round-trip every registered public field.
+Only apparatus coordinates certified independent of the gravity-sensitive
+law may use a common nuisance kernel; gravity-coupled coordinates remain
+inside each entrant's reciprocal parent.
+
+The logical sequence is now B0-T review at no more than B0-L2, future B0-E
+construction at no more than B0-L4, then separate B0-L5 common-packet
+authentication before `P-B0-1` can be submitted for discharge. No official
+pin, reviewer, platform, model, candidate, entrant, comparison, ontology, or
+successor is opened.

@@ -70,6 +70,10 @@ not turn either source document into a pin or award a scientific result.
   branch-density, many-body, coherence, complete-reader, nuisance, and
   mechanics gate; incorporates the 2026 metal-nanoparticle interference
   result and returns candidate-neutral `NO-SELECTION`;
+- `v17_mg0_b0_pre_pin_closure_and_common_packet_firewall.md` — author-side
+  correction of the B0 chronology, separation of review-only B0-T from future
+  B0-E and B0-L5, and a raw-input/held-out-output firewall for the common
+  packet;
 - `v17_mg0_b0_matter_exact_synthetic_witness.md` — exact finite
   common-seed interface witness for preparation, coherence, temporary
   marking, retained records, complete noisy readers, correlated nuisance, and
@@ -168,11 +172,23 @@ of `P-B0-1` for authentication of that same baseline inside the frozen common
 packet at `B0-L5`, followed by terminal review.
 No current platform passes both conjunctive gates, so no platform is selected.
 
+The pre-pin closure audit corrects the remaining procedural ambiguity. The
+exact synthetic witness already exists as open author-side work and therefore
+cannot later be advertised as a new post-pin construction. The immediate
+official gate, if separately authorized, is a review pin over the existing
+B0-T bundle, with B0-L2 as its maximum ceiling. A physical B0-E model waits
+for a later evidence-date selection that returns one exact eligible apparatus.
+The common-packet firewall also separates raw apparatus and calibration inputs
+from sealed B0/MG0 outcomes: neither the baseline prediction table nor the
+gravity-sensitive target may be supplied to entrants. B0-L5 remains a later
+identity/authentication gate, not a consequence of shared variable names.
+
 ## Maximum claim
 
 This packet now supplies an independently reviewed result-neutral admissibility
 contract and source-scoped benchmark design, plus explicitly unreviewed
-author-side preparation and a no-selection feasibility result for the missing
-B0 gate. It supplies no completed
+author-side preparation, a no-selection feasibility result, and an unfrozen
+pre-pin chronology/common-packet firewall for the missing B0 gate. It supplies
+no completed
 massive-mechanical baseline, common matter–geometry law, gravity ontology,
 QFT, clock, spacetime, GR, or empirical result.

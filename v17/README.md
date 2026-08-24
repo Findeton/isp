@@ -888,6 +888,16 @@ cleanly if nature does not support it.
   alone is not treated author-side as discharge of `P-B0-1`; the proposed
   future ladder requires the same object to be authenticated inside the
   B0-L5 common packet and reviewed terminally.
+  A pre-pin closure audit now corrects the construction chronology: the exact
+  B0-T witness is already open author-side work, so a future pin may freeze
+  and review it but may not call it a new post-pin blind construction. The
+  immediate proposed official gate is review-only and can earn at most
+  B0-L2. A later B0-E construction waits for one exact apparatus to pass the
+  conjunctive selection rule. The same audit records a
+  raw-input/held-out-output firewall: common apparatus, calibration, record,
+  nuisance, and tolerance fields may be shared, but neither the B0 prediction
+  table nor an MG0 gravity-sensitive answer may be supplied to entrants;
+  gravity-coupled apparatus coordinates remain inside each reciprocal parent.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,

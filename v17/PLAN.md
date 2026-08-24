@@ -926,6 +926,18 @@ platform-scoped mechanics in the proposed author-side ladder; only B0-L5
 common-packet authentication can be submitted for terminal discharge of
 `P-B0-1`. No accepted MG0 bytes are amended.
 
+A pre-pin closure audit now separates the next three logical gates. Because
+the exact B0-T witness already exists in open author-side form, the immediate
+proposed official action is a review-only pin over those bytes, not a claim of
+new post-pin construction; its maximum ceiling is B0-L2. B0-E waits for a
+future evidence-date pass that selects one exact apparatus under both
+eligibility conjunctions. B0-L5 then authenticates that same reviewed
+platform baseline inside the common packet. The packet contains raw apparatus,
+calibration, record-interface, nuisance, sealed-schedule, and tolerance data,
+not the B0 or gravity-sensitive predicted answer. Candidate presentation maps
+must preserve every public registered field, while any gravity-coupled
+apparatus coordinate remains inside the candidate's reciprocal parent.
+
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
 primary-source versions are bound, and the general CP-CQ theorem, objective
@@ -1251,8 +1263,9 @@ R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
 MG0 result-neutral benchmark pin    FROZEN
 MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
-MG0 B0 author-side preparation      READY FOR USER-CONTROLLED PIN / UNREVIEWED
+MG0 B0-T author-side bundle         READY FOR REVIEW-ONLY PIN / UNREVIEWED
 MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
+MG0 B0-E / B0-L5                    ABSENT / CLOSED
 MG0 candidate roster/comparison     EMPTY / CLOSED
 ```
 
