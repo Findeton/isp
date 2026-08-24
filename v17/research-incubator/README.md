@@ -674,6 +674,17 @@ declared-input census, empirical ladder, ontology fork, and gravity wall. Its
 candidate contract admits one author-side positive contextual parent attempt
 and no automatic official cycle.
 
+The exact review-readiness packet is now recorded in
+`active/ugen/v17_ugen_u0_r1_synthesis_review_readiness_audit.md` at
+`R1RR-L2` author-side. It hashes the synthesis and dependencies, authenticates
+21 exact-version primary-source PDFs, rebuilds the seven finite claims, and
+prints three independent future seat duties. Its source check corrects the
+SNSPD literature summary: the cited device comparison includes a best-fit
+hotspot parameter and other informed inputs and is not a parameter-free
+complete reader prediction. No pin, reviewer appointment, report,
+adjudication, or promotion is created; a specific user authorization remains
+mandatory.
+
 The one architecture is now selected as CRP: cut-local reflection-positive
 whole-boundary probability. This is an author-side architecture choice, not a
 candidate or result. It uses the only audited positive-first route with a

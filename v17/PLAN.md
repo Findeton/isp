@@ -665,6 +665,16 @@ derived balance sheet, ontology fork, empirical ladder, and gravity wall.
 It creates no new theorem or promotion. Its admission contract permits one
 author-side candidate-driven positive contextual parent attempt; no second
 candidate or official cycle follows automatically.
+An exact review-readiness audit now reaches `R1RR-L2` author-side. It binds the
+lead synthesis and all direct dependencies by SHA-256, authenticates 21
+load-bearing primary-source PDFs at exact arXiv versions and byte digests,
+rebuilds the seven finite mathematical claims, and separates future
+mathematics, physical-source, and foundations/ontology review duties. The
+source audit also corrects one pre-freeze overstatement: the strongest cited
+SNSPD calculation contains a best-fit hotspot parameter and other informed
+inputs, so it is not a parameter-free complete detector law. The package is
+ready to request independent review but has no pin, appointed seats, review,
+adjudication, or promotion; no review starts without specific user authority.
 That single architecture is now selected author-side as CRP: a cut-local
 reflection-positive whole-boundary parent. CRP is chosen because it is the
 strongest audited mechanism with ordinary probability genuinely upstream of

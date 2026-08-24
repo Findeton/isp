@@ -175,9 +175,13 @@ The following primary sources fix the scientific comparison.
    superconducting detectors and qubits*](https://arxiv.org/abs/2501.13791),
    arXiv:2501.13791v3. The paper combines density-functional material data,
    quasiparticle/phonon kinetic equations, and order-parameter dynamics. It
-   predicts an SNSPD detection-current threshold without target fit, while
-   explicitly identifying missing spatial, thermal, Fano, jitter, dark-count,
-   absorption, and circuit work needed for end-to-end prediction.
+   computes SNSPD detection-current controls and makes genuine ab initio
+   material progress, but its device comparison includes a best-fit hotspot
+   parameter, experimentally informed device/material inputs, and a
+   strong-coupling gap rescaling. It explicitly leaves spatial, thermal,
+   Fano, jitter, dark-count, absorption, and circuit work for end-to-end
+   prediction. It is therefore not a parameter-free or no-target-fit complete
+   detector law.
 2. A. G. Kozorezov et al., [*Fano fluctuations in superconducting nanowire
    single-photon detectors*](https://arxiv.org/abs/1702.02813),
    arXiv:1702.02813. It models stochastic energy partition during the

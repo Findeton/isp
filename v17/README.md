@@ -787,6 +787,16 @@ cleanly if nature does not support it.
   author-side step is selection of exactly one candidate architecture under
   the printed source, reader, composition, Bell, resource, QFT, and gravity
   admission contract.
+  A subsequent review-readiness audit reaches `R1RR-L2` author-side. It
+  authenticates the exact synthesis/dependency bytes, binds 21 primary-source
+  PDFs by arXiv version, byte length, and SHA-256, and rebuilds author-side the
+  seven load-bearing finite claims. It corrects one source-scope sentence:
+  Simon et al.'s SNSPD comparison uses a best-fit hotspot parameter and other
+  informed inputs, so it is not an end-to-end no-target-fit reader law. Three
+  future seats are now sharply typed for mathematics, physical source/descent,
+  and foundations/Barandes/actuality. This is readiness to request a pin, not
+  an opened pin, review, adjudication, scientific result, or selected next
+  official physics unit.
   That architecture is now selected as CRP, a cut-local
   reflection-positive whole-boundary parent. It is not an official candidate
   and no source law has yet passed. Reflection positivity is selected as the

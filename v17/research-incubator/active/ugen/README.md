@@ -664,6 +664,18 @@ ledger, ontology fork, empirical ladder, and gravity wall. Its final contract
 admits exactly one author-side candidate architecture before the ontology
 fork is reassessed.
 
+The review-readiness audit
+`v17_ugen_u0_r1_synthesis_review_readiness_audit.md` now reaches `R1RR-L2`
+author-side. It binds the exact synthesis/dependency bytes, authenticates 21
+primary-source PDFs by exact arXiv version and digest, rebuilds all seven
+load-bearing finite claims, and types separate mathematics,
+QED/source/detector, and foundations/Barandes/actuality seats. It also corrects
+one source-scope overstatement: the cited SNSPD device comparison uses a
+best-fit hotspot parameter and other informed inputs and is not a
+parameter-free complete reader law. This is a prepared request surface only;
+no pin, review, report, adjudication, promotion, successor, or official unit
+is opened.
+
 That architecture is selected in
 `v17_ugen_u0_single_candidate_architecture_selection.md` as CRP: cut-local
 reflection-positive whole-boundary probability. The selection is not an
@@ -1243,6 +1255,7 @@ U0 KMS RESPONSE CONTROL:       CONDITIONAL QUANTUM INPUT / NO NATIVE CREDIT
 U0 WHOLE-PROCESS RECIPROCITY:  WPR-L2 / EXACT RELATION, SOURCE UNSELECTED
 U0 POSITIVE SCALAR FRINGE:     POSSIBLE / READER-SUPPLIED CONTROL ONLY
 U0 R1/NATIVE-GAP SYNTHESIS:    SYN-R1-L1 / NO NEW RESULT OR PROMOTION
+U0 R1 REVIEW READINESS:        R1RR-L2 / EXACT SOURCES + THREE SEATS PREPARED
 U0 SINGLE ARCHITECTURE:        CRP SELECTED / ONE MODEL EXHAUSTED
 U0 CRP FIRST ATTEMPT:          CONTROL L2 / NATIVE MODEL REJECTED
 POST-CRP ONTOLOGY MAP:         PREDICTION / ACTUALITY AXES SEPARATED
