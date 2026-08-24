@@ -759,6 +759,22 @@ source-exhibited pointer member is eligible only for a separately authorized
 bounded architecture pin, not a reality-grade matter-law freeze. No pin,
 review, ontology selection, gravity model, or successor opens automatically.
 
+The next source-bounded audit tests the genuinely non-Markovian opening rather
+than assuming it is empty. Kent's Lorentzian-reality programme supplies a
+coherent all-at-once one-world architecture: a Born-distributed late-boundary
+outcome and a causal-complement conditional rule induce an ordinary-positive
+measure on finite beable configurations without stochastic state reduction.
+The audit separates the RWI, two-class ABL, causal-complement, late-
+photodetection, beable-guided, and gravity-test objects. It proves only the
+finite pushforward law and records the realistic interacting-QFT,
+sequence-independent asymptotic, reader, unique-beable, conservation,
+empirical-residual, and reciprocal-gravity gates as open. Because the Born
+measure, quantum unitary, final observable, and background causal geometry are
+inputs, this is Rival-C actuality architecture rather than a native U0 source
+or Paper 04B clock parent. The author-side ceiling is `K-L1`; no K-CLC pin,
+review, model selection, repair, gravity model, or successor opens
+automatically.
+
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
 ### Paper 04 — internal clocks and parametrized process law

@@ -756,6 +756,18 @@ stable-vacuum, standard-QFT scope and does not close genuinely non-Markovian or
 indivisible whole-process routes. The present ceiling is `RCF-L1`; a pointer
 member is eligible only for a separately authorized bounded architecture pin.
 
+The Kent Lorentzian-reality pre-authorization audit now tests the all-at-once
+opening that the Myrvold boundary leaves untouched. It reconstructs the exact
+finite Born measure and its ordinary-positive pushforward to one causal-
+complement conditional beable field, while keeping Kent's distinct RWI,
+two-class ABL, causal-complement, late-photodetection, beable-guided, and
+gravity-test objects separate. A realistic interacting infrared-safe QFT
+boundary law, sequence-independent asymptotic process, unique beable/final
+observable, physical readers, new empirical residual, conserved realized
+source, and reciprocal geometry are not constructed. The status is `K-L1`:
+K-CLC is the strongest audited all-at-once Rival-C actuality architecture, not
+a native U0 source, Paper 04B clock parent, or authorized control pin.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -843,6 +855,7 @@ Active audit:
 - v17_ugen_u0_t3_indivisibility_placement_source_audit.md
 - v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md
 - v17_ugen_relativistic_collapse_family_pre_authorization_readiness_audit.md
+- v17_ugen_kent_lorentzian_reality_pre_authorization_readiness_audit.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -1227,7 +1240,11 @@ RCF FAMILY READINESS:          HIGH INFORMATION / DISTINCT OBJECTS SEPARATED
 RCF POINTER ARCHITECTURE:      POSSIBLE L2 PIN / NOT REALITY-GRADE MATTER LAW
 RCF STANDARD-FIELD ROUTE:      WITHDRAWN / INCOMPATIBLE KERNEL
 RCF MARKOV VACUUM BOUNDARY:    MYRVOLD THEOREM / INDIVISIBLE ROUTE NOT CLOSED
-POSSIBLE NEXT CONTROL:         POINTER ARCHITECTURE ONLY IF EXPLICITLY AUTHORIZED
+KENT FAMILY READINESS:         K-L1 / DISTINCT OBJECTS SEPARATED
+KENT FINITE ACTUALITY:         BORN PUSHFORWARD / ALL-AT-ONCE ONE-WORLD CONTROL
+KENT QFT PROCESS:              ASYMPTOTIC COMPLETION ASSUMED / NOT PROVED
+KENT NATIVE/GRAVITY STATUS:    ABSENT / NO PAPER04B PARENT
+POSSIBLE NEXT CONTROL:         K-CLC OR RCF-PTR ONLY IF EXPLICITLY AUTHORIZED
 NEXT AUTHOR-SIDE CONTROL:      NONE AUTOMATIC
 A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE

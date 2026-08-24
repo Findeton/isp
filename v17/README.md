@@ -870,6 +870,19 @@ cleanly if nature does not support it.
   genuinely non-Markovian/indivisible routes open. The family reaches RCF-L1
   author-side only. A pointer member could be considered later as an explicitly
   authorized architecture control, not as a completed matter law.
+  A late-boundary actuality audit now tests the all-at-once route left open by
+  the Markovian-collapse boundary. Kent's causal-complement construction gives
+  an exact ordinary-positive pushforward on finite beable configurations once
+  a quantum initial state, unitary law, final observable, Born rule, late
+  boundary, and fixed causal geometry are supplied. The audit keeps the RWI,
+  two-class ABL, causal-complement, photodetection, beable-guided, and
+  gravity-test objects distinct. No source proves one sequence-independent
+  asymptotic beable process for realistic interacting infrared-safe QFT,
+  selects a unique final observable or beable rule, constructs complete
+  readers, supplies a new empirical residual, conserves the realized beable
+  tensor, or closes reciprocal gravity. The author-side status is `K-L1`:
+  Kent is the leading audited all-at-once Rival-C actuality control, not a
+  native Barandes source law, Paper 04B parent, or authorized pin.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No official v17 scientific evaluator, bound empirical artifact, or

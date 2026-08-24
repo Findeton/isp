@@ -751,6 +751,18 @@ non-Markovian whole-process laws. The author-side status is `RCF-L1`; no
 official pin, review cycle, model selection, successor, ontology result, or
 gravity result follows.
 
+The all-at-once actuality audit is recorded in
+`active/ugen/v17_ugen_kent_lorentzian_reality_pre_authorization_readiness_audit.md`.
+It separates Kent's branching, two-class ABL, causal-complement,
+late-photodetection, beable-guided, and gravity-test proposals, reconstructs
+the exact finite Born-pushforward beable law, and shows why this is a genuine
+escape from Markovian stochastic state reduction. The realistic interacting-
+QFT final measure, sequence-independent asymptotic process, complete readers,
+unique beable/final observable, empirical residual, conserved actual source,
+and reciprocal geometry remain absent. Its `K-L1` ceiling is a source-bounded
+Rival-C architecture control only; no K-CLC pin, review, native U0 law, Paper
+04B parent, chronology, gravity theory, or scientific result is created.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
