@@ -1208,6 +1208,26 @@ One actual history may remain a primitive ontological assertion. It is not a
 random selector over laws. If an actualization dynamics is proposed, it must
 have novel testable content or be classified as empirically equivalent.
 
+### F6A — necessity before construction
+
+Every supposedly necessary structure must be classified as a definition,
+theorem, empirical regularity, modelling convenience, or ontology postulate.
+The programme now maintains an author-side assumption-deletion charter that
+audits illicit converses, representation/referent collapse,
+conditional/intervention collapse, effective-to-fundamental promotion,
+existence-to-selection promotion, and syntax-to-physics promotion. Barandes's
+own configuration space, trajectory, time index, composition, and division
+inputs are audited by the same standard as Hilbert space, tensor factors,
+purification, causal order, and spacetime.
+
+The first high-leverage shared question is whether nature supplies an
+independently identifiable sufficient physical boundary. An instantaneous
+state and a tensor-factor subsystem are temporal and regional special cases;
+a boundary algebra, gauge charge/edge interface, growing history, or genuinely
+whole-process law are admissible outcomes. Q-Cut remains only a conditional
+control for ordinary-positive sufficient cuts. No official assumption audit,
+candidate, pin, review, or ontology selection is opened by this charter.
+
 ### F7 — amplitudes
 
 Complex amplitudes are neither banned nor presumed fundamental. If the
@@ -1253,6 +1273,7 @@ Pause for user direction when:
 ```text
 Era charter                         RECORDED
 v16 inheritance balance             RECORDED
+Foundational necessity charter      ACTIVE AUTHOR-SIDE / NO UNIT OPENED
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
 Paper 01                            TERMINAL ACCEPT-WITH-SCOPE

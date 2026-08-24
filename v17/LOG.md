@@ -2681,3 +2681,41 @@ newly authorized differential audit; exact source provision would require a
 fresh total rehash. No repair, B0-E apparatus, `P-B0-1` discharge, candidate,
 entrant, comparison, ontology selection, gravity verdict, implementation,
 clock, spacetime, or automatic successor opens.
+
+## 2026-08-24 — FOUNDATIONAL ASSUMPTION-DELETION PROGRAMME RECORDED AUTHOR-SIDE (v17 LEDGER #115)
+
+The user directed v17 to generalize the methodological lesson behind
+Barandes's rejection of automatic Markov divisibility: search for structures
+that physics has silently promoted from sufficient, representational,
+effective, or convenient to necessary or ontic. A result-neutral charter now
+classifies six recurrent errors: illicit converse,
+representation--referent collapse, conditional--intervention collapse,
+effective--fundamental promotion, existence--selection promotion, and
+syntax--physics promotion.
+
+The charter applies the method symmetrically. Barandes's supplied
+configuration space, time index, contingent state, first-order law, division
+grammar, trajectory language, Cartesian composition, and causal-locality
+premises are not inherited as findings. Existing v17 results are mapped into
+the census so the programme does not rerun settled scoped distinctions:
+Markov versus stochastic, endpoint versus complete process, Hilbert
+representation versus ontology, operational quotient versus reality,
+programme order versus chronology, record probability versus actuality,
+mathematical memory versus physical carrier, and entanglement witness versus
+gravity ontology.
+
+The first high-leverage necessity question is whether nature supplies an
+independently identifiable sufficient physical boundary. An instantaneous
+state and a tensor-factor subsystem are temporal and regional special cases;
+noncommutative boundary algebras, gauge/gluing data, growing histories,
+scale-dependent interfaces, and genuinely whole-process laws remain allowed.
+Q-Cut is retained only as a conditional ordinary-positive-cut theorem
+candidate. Every later audit must delete one premise, recover known physics on
+the same interface, charge replacement resources, and earn a theorem,
+counterexample, empirical discriminator, resource bound, or exact
+underdetermination.
+
+This ledger event records research method and candidate questions only. It
+opens no official unit, pin, construction, review, Barandes completion,
+process-matrix ontology, nonfactorizing gravity theory, B0 repair, entrant,
+comparison, chronology, spacetime, or automatic successor.

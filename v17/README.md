@@ -1121,6 +1121,28 @@ optional aesthetic goals:
 8. count every declared input and prevent a fitted assumption from reappearing
    as a derived conclusion.
 
+## Foundational assumption-deletion programme
+
+v17 now carries a result-neutral author-side charter for finding structures
+that physics may have promoted from sufficient or representational to
+necessary or ontic. It generalizes the Barandes lesson without making
+Barandes exempt: fixed configuration space, trajectories, supplied time,
+Cartesian composition, and division structure are audited alongside Markov
+divisibility, Hilbert ontology, tensor factors, local tomography,
+purification, fixed causal order, local stress-energy sourcing, and manifold
+geometry.
+
+The initial unifying question is whether a complete physical process admits
+an independently identified sufficient boundary object. Temporal cuts recover
+the instantaneous-state question; regional cuts recover the subsystem and
+locality question. The possible answer may be an ordinary positive state, a
+noncommutative boundary algebra, gauge/gluing data, a growing history,
+scale-dependent effective separability, or no proper sufficient interface.
+Removing an assumption earns nothing by itself: every audit must recover the
+relevant R1/B0/MG0 physics, expose replacement resources, and end in a theorem,
+counterexample, discriminator, resource bound, or named underdetermination.
+No official unit or successor is opened.
+
 ## Scientific order
 
 The programme order is now:
