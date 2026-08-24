@@ -54,11 +54,32 @@ $$
 
 as an honest outcome.
 
-This hypothesis is not actionable until genuinely different, fully specified
-matter laws make distinct gravity-sensitive predictions. MG0 may not compare
-an incomplete native-law sketch with a complete quantum control, use gravity
-to fill U0's missing stochastic law, or treat N1/N1A as the default matter
-ontology.
+This hypothesis is not actionable until at least two genuinely different,
+fully specified laws generate complete predictions for the same registered
+source--geometry--probe experiment. MG0 may not compare an incomplete
+native-law sketch with a complete quantum control, use gravity to fill U0's
+missing stochastic law, or treat N1/N1A as the default matter ontology.
+
+### 1.1 Fixed-background baseline bound from R1RR-L4
+
+MG0 binds the terminal R1/native-source-gap adjudication as its sole
+fixed-background quantum baseline:
+
+```text
+adjudication: v17/note-r1-native-source-gap-independent-review-adjudication.md
+commit:       1eebddef46a677c67c465deb352d022c01e15fca
+SHA-256:      53f38d9bdda430f41c857cb73d44f48c13be2f79f5432277fd217718a0f03668
+rung:         R1RR-L4 — TERMINAL ACCEPT-WITH-SCOPE
+```
+
+The binding baseline is the conditional fixed-background
+Maxwell--macroscopic-QED--quantum-instrument source-to-record chain and its
+reviewed scope. It supplies neither a native ordinary-positive source of
+cross-context quantum composition nor microscopic actuality, chronology,
+spacetime, gravity, or unification. MG0 may use it to test the fixed-geometry
+quantum limit and to identify imported quantum structure. It may not promote
+that predictive chain to ontology, modify it to help a candidate, or count it
+as one of the distinct reciprocal matter--geometry entrants.
 
 ---
 
@@ -576,6 +597,43 @@ A candidate may enter construction review only if its pre-fit bytes specify:
 No candidate may be selected from several constructed laws because it later
 fits the desired result. A plural contest must freeze its entrants and scoring
 rule before evaluation.
+
+### 15.1 Entrant-completeness gate
+
+No MG0 comparison may be admitted unless independent review first certifies at
+least two entrants satisfying all of the following conditions.
+
+1. Each entrant is one fully specified law, not an architecture, effective
+   equation, compiler, representation, source prescription, or list of
+   desiderata. Its frozen bytes specify the complete parent carrier or
+   algebra, law, contingent state, controls, source functional, reciprocal
+   matter--geometry coupling, registered readers and records, probability or
+   rival prediction semantics, actuality claim if any, composition, gauge,
+   constraints, conservation, causality, limit maps, parameters, resources,
+   and uncertainty model at the claimed scope.
+2. The entrants are genuinely distinct in physical nomology or referent. A
+   gauge choice, presentation change, relabelling, parameter value, different
+   mathematical unravelling with no independently physical referent, or the
+   same target table packaged in different notation does not supply a second
+   entrant. An objective unravelling may count only if its actual referent and
+   reciprocal source law are part of the frozen physical nomology.
+3. Every entrant generates, from the same frozen public input packet, the same
+   complete registered source--geometry--probe experiment: preparation,
+   apparatus, reciprocal response directions, intervention family, nuisance
+   controls, complete record algebra, calibration data, held-out settings,
+   and comparison map. Here “geometry” names the registered
+   gravity-sensitive part of the experiment; it does not assume a metric,
+   continuum, dimension, or classical carrier.
+4. Each entrant returns its complete prediction on that common interface
+   without receiving the target process, solved geometry, response table,
+   future setting, or candidate-specific private datum as input.
+5. The common input packet, entrant bytes, equivalence tests, tolerances, and
+   outcome ladder are frozen before either prediction is evaluated.
+
+The two laws need not disagree. Agreement is an admissible nonselection
+result. Until this gate is certified, MG0 has no admissible comparison roster:
+no candidate construction, numerical contest, ontology selection, or gravity
+verdict may begin under this contract.
 
 ---
 

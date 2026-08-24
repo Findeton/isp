@@ -27,6 +27,24 @@ $$
 
 and whether those links belong to one immutable parent law.
 
+### 0.1 Fixed-background control
+
+Stage B is bound to the terminal R1/native-source-gap baseline, not to an
+author-chosen substitute:
+
+```text
+adjudication: v17/note-r1-native-source-gap-independent-review-adjudication.md
+commit:       1eebddef46a677c67c465deb352d022c01e15fca
+SHA-256:      53f38d9bdda430f41c857cb73d44f48c13be2f79f5432277fd217718a0f03668
+rung:         R1RR-L4 — TERMINAL ACCEPT-WITH-SCOPE
+```
+
+This fixes a reviewed conditional source-to-record quantum control and its
+ceilings. It is not a matter--geometry entrant, an actuality law, or an
+ontology. Its role is to prevent a gravity candidate from weakening, silently
+replacing, or taking explanatory credit for the fixed-background physics it
+must recover.
+
 ---
 
 ## 1. The reciprocal source–gravity–probe diamond
@@ -367,6 +385,37 @@ The first contest must print one row per pinned candidate.
 
 No scalar “simplicity score” may choose a winner unless its weights and
 physical justification are frozen first.
+
+### 8.1 Entrant-completeness gate
+
+The comparison roster is empty until independent review certifies at least two
+genuinely distinct, fully specified laws. For each proposed entrant, the
+review must be able to reconstruct from frozen bytes:
+
+1. one complete source--geometry--probe parent law, including its carrier,
+   state/control split, source functional, both reciprocal response
+   directions, readers, complete records, prediction semantics, actuality if
+   claimed, gauge quotient, constraints, conservation, causality,
+   composition, limit maps, parameter provenance, resources, and uncertainty
+   model;
+2. a total prediction for the complete registered experiment of Sections
+   1--6, not merely one conditional channel, expectation value, fringe,
+   solved background, or effective source equation;
+3. generation from one common frozen public input packet containing the
+   apparatus, preparation family, interventions, nuisance controls,
+   calibration data, held-out settings, record interface, and comparison map,
+   with no target prediction or candidate-private answer input; and
+4. physical distinctness from every other entrant: not gauge, notation,
+   relabelling, parameter choice, a merely mathematical unravelling with no
+   independently physical referent, or a shared answer table presented twice.
+   An objective unravelling counts only when its actual referent and reciprocal
+   source law are frozen as physical nomology.
+
+All admitted laws must address the same experiment and output interface; they
+need not yield different predictions. Exact agreement earns
+`RECIPROCAL-BUT-NONSELECTING`, not a forced distinction. No entrant may be
+built, completed, repaired, or selected inside this benchmark cycle. If fewer
+than two laws pass the gate, no comparison is run.
 
 ---
 
