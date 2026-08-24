@@ -698,13 +698,19 @@ is selected. Rival A remains logically live but its abstract construction
 search pauses until a new physical mechanism supplies source, composition,
 readers, and actuality rather than another representation.
 
-The next bounded author-side control is A1: reconstruction of the interacting
-relativistic GRW flash process from frozen primary sources. A1 tests an explicit
-stochastic referent, interaction, no-signalling, records, model-specific
-empirical deviations, QFT scope, conservation, and MG0 readiness. It imports
-quantum dynamics and background spacetime and is neither a v17 candidate nor a
-gravity proposal. No A1 pin, independent review, apparatus, successor, or
-official scientific unit is opened by this routing decision.
+The bounded A1 author-side control is now reconstructed from version-bound
+primary sources. Conditional on a supplied interaction-local hypersurface
+unitary, it earns an exact normalized ordinary-positive law and primitive
+flash referent for every fixed finite vector of flash counts. It does not earn
+one indefinitely continuing interacting process: unlike the noninteracting
+2004 control, the printed fixed-count family is not projectively consistent
+under deletion of later flashes, and the proposed infinite-count limit is not
+proved. Exact no-signalling with readers, stable record descent,
+identical-particle or variable-number QFT, model-specific current empirical
+transfer, conservation, and reciprocal gravity therefore remain closed. This
+is `A1-FINITE-NORMALIZATION-NOT-PROCESS-COMPLETION`, with finite-law salvage
+only. No A1 repair, pin, independent review, apparatus, successor, or official
+scientific unit opens automatically.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 

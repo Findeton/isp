@@ -44,8 +44,8 @@ The word “provisional” is binding. It means that every known complete
 prediction currently requires the quantum relational layer. It does not mean
 that the layer is final, irreducible, or ontic.
 
-The next author-side construction route is selected as a bounded prior-art
-actuality control:
+The bounded author-side construction route was selected as a prior-art
+actuality control and has now been reconstructed:
 
 $$
 \boxed{
@@ -56,10 +56,10 @@ $$
 \tag{PF-2}
 $$
 
-A1 is not a new v17 theory and is not an official candidate. It asks how far
-one of the most explicit existing objective-actualization laws actually closes
-the post-CRP gaps, and where it still imports quantum theory, spacetime, and
-parameters.
+A1 is not a new v17 theory and is not an official candidate. Its completed
+source reconstruction shows how far one of the most explicit existing
+objective-actualization laws closes the post-CRP gaps, and where it still
+imports quantum theory, spacetime, and parameters.
 
 ---
 
@@ -233,7 +233,7 @@ directly falsifiable without first solving quantum gravity.
 
 ---
 
-## 4. Why the next control is interacting relativistic GRW flashes
+## 4. Why A1 was selected as the interacting relativistic GRW-flash control
 
 The bounded A1 control is based on:
 
@@ -264,10 +264,12 @@ The interacting relativistic flash model has unusually explicit typing:
 
 1. the primitive ontology is a random set of spacetime flashes;
 2. the flash distribution is governed by the quantum state and collapse law;
-3. the model is nonlocal but operationally no-signalling;
+3. the model is nonlocal and aims at operational no-signalling, while the
+   detailed source audit must distinguish exact from approximate support;
 4. it avoids a preferred foliation in its stated relativistic domain;
 5. an interaction-local Tomonaga--Schwinger evolution supplies interactions;
-6. it has a controlled nonrelativistic GRW limit; and
+6. it has a conditional nonrelativistic GRW limit when the supplied unitary
+   evolution has that limit; and
 7. it makes deviations from unitary quantum theory possible in principle.
 
 This gives A1 a real law/referent relation to audit. It is not a record-table
@@ -286,6 +288,10 @@ The model also declares its limitations:
 6. flashes are not yet shown to source gravity consistently;
 7. conservation behavior requires exact accounting; and
 8. it does not derive quantum composition, field content, or spacetime.
+
+The completed audit adds a decisive ninth limitation: the interacting source
+normalizes every fixed finite flash-count law but does not prove one
+projectively consistent or limiting indefinitely continuing process.
 
 A1 therefore tests actuality completion, not the origin of the Q-layer.
 
@@ -341,8 +347,10 @@ truth that collapse does not address.
 
 ## 7. A1 audit contract
 
-The A1 author-side unit must reconstruct rather than paraphrase the selected
-law.
+The A1 author-side unit was required to reconstruct rather than paraphrase the
+selected law. The completed reconstruction is
+`v17_ugen_a1_interacting_relativistic_grw_flash_source_reconstruction.md`;
+the requirements below remain its audit ledger.
 
 ### 7.1 Exact objects
 
@@ -449,7 +457,8 @@ a profile not already excluded and not chosen after inspecting the target.
 
 ~~~text
 A1-L0  selected source versions or law reconstruction are inconsistent
-A1-L1  exact fixed-background flash law and primitive ontology are reconstructed
+A1-L1F fixed finite-count interacting flash law and primitive referent are reconstructed
+A1-L1∞ one unique indefinitely continuing interacting flash process is established
 A1-L2  interaction, no-signalling, records, and nonrelativistic limit close
 A1-L3  historical parameters and current experimental bounds are adjudicated
 A1-L4  indistinguishable-particle and variable-number QFT scope closes
@@ -462,7 +471,10 @@ Current status:
 
 $$
 \boxed{
-\text{A1 ROUTE SELECTED AUTHOR-SIDE / A1-L0 NOT YET RUN}.}
+\begin{gathered}
+\text{A1 SOURCE RECONSTRUCTION COMPLETE AUTHOR-SIDE,}\\
+\text{A1-L1F PASS / A1-L1}_{\infty}\text{ NOT ESTABLISHED.}
+\end{gathered}}
 \tag{PF-8}
 $$
 
@@ -472,11 +484,13 @@ $$
 
 The next order is:
 
-1. reconstruct and audit A1 from frozen primary sources;
-2. stop immediately if its law, domain, or parameter claims are mis-stated;
-3. if A1 reaches L2, adjudicate its model-specific current empirical status;
+1. retain A1 only as an exact fixed-count actuality control;
+2. do not assume, simulate into existence, or silently repair its unproved
+   infinite interacting limit;
+3. do not transfer CSL or Diósi--Penrose bounds to rGRWf without deriving the
+   model-specific observable map;
 4. retain coevents and standard unitary record theory as actuality controls;
-5. do not use gravity until A1 is a sufficiently complete matter law;
+5. do not use gravity until a sufficiently complete matter law exists;
 6. do not reopen positive-source model search without a new physical
    mechanism; and
 7. do not promote quantum/pair-history ontology merely because A1 or CRP
@@ -496,11 +510,13 @@ reconstruction only.
 > actuality. At fixed-background scope, quantum relational structure is
 > retained as the provisional complete predictive baseline without being
 > promoted to ontology. The ordinary-positive native branch remains logically
-> open but has no admitted model and is paused. The next author-side
-> reality-first control is the interacting relativistic GRW flash law because
-> it has an explicit stochastic primitive ontology, relativistic
-> fixed-background construction, and in-principle empirical deviations. It
-> still imports quantum dynamics, spacetime, matter content, interactions,
-> and collapse parameters, and supplies no reciprocal gravity law. No
+> open but has no admitted model and is paused. The interacting relativistic
+> GRW-flash audit reconstructs an exact normalized fixed-count law and a
+> primitive flash referent, but the printed interacting family lacks the
+> projective consistency or proved limiting construction required for one
+> indefinitely continuing process. It also imports quantum dynamics,
+> spacetime, matter content, interactions, and collapse parameters, and
+> supplies no model-specific current empirical transfer or reciprocal gravity
+> law. No
 > ontology, candidate, empirical result, QFT origin, spacetime, gravity, or
 > unification is selected by this reassessment.

@@ -813,12 +813,18 @@ cleanly if nature does not support it.
   empirical actuality floor, while microscopic actuality remains unselected.
   The positive-native rival remains logically live but no second architecture
   opens without a new physical source-and-reader mechanism.
-  The next author-side prior-art control is A1, a bounded reconstruction of the
-  interacting relativistic GRW flash law. It will audit exact flashes,
-  interaction, no-signalling, records, parameter origin, present empirical
-  status, QFT limits, conservation, and MG0 readiness while charging imported
-  quantum dynamics and background spacetime. A1 is not an official candidate,
-  pin, review cycle, apparatus, or gravity model.
+  The bounded A1 prior-art control is now reconstructed. It confirms an exact
+  normalized positive interacting flash law and primitive referent for every
+  fixed finite flash-count vector, conditional on supplied interaction-local
+  hypersurface quantum dynamics. It does not confirm one indefinitely
+  continuing interacting process: later flashes alter earlier cell profiles,
+  the fixed-count family is not the projectively consistent family required
+  by the POVM extension theorem, and the proposed infinite-count limit is not
+  proved. Exact no-signalling with readers, stable records, variable-number or
+  identical-particle QFT, model-specific experimental transfer, conservation,
+  and reciprocal gravity remain absent. A1 therefore closes at finite-law
+  salvage and is not an official candidate, pin, review cycle, apparatus, or
+  gravity model; no repair chain opens automatically.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

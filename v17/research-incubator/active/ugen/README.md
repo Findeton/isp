@@ -691,11 +691,19 @@ one-run actuality are now separate scoring axes. Quantum/QFT, Gram, and
 pair-history structure is retained as the provisional complete
 fixed-background predictive baseline without ontological promotion. The
 positive-native rival remains logically live but paused after one CRP model.
-The next bounded author-side control is A1, reconstruction of the interacting
-relativistic GRW flash process as an actuality, empirical-accounting, QFT-
-scope, and gravity-readiness audit. A1 imports quantum dynamics and background
-spacetime, is not a v17 candidate, and opens no pin, independent review,
-apparatus, successor, or gravity law.
+That bounded A1 control is now complete in
+`v17_ugen_a1_interacting_relativistic_grw_flash_source_reconstruction.md`.
+It reconstructs a normalized ordinary-positive interacting flash law and
+primitive referent for each fixed finite flash-count vector, conditional on a
+supplied interaction-local hypersurface quantum evolution. The printed
+fixed-count family is not projectively consistent under deletion of later
+flashes, however, and the proposed infinite-count limit is not proved. A1
+therefore closes at finite-law salvage rather than one complete interacting
+matter process. Exact no-signalling with readers, stable-record descent,
+identical-particle or variable-number QFT, model-specific experimental
+transfer, conservation, and reciprocal gravity remain absent. A1 imports
+quantum dynamics and background spacetime, is not a v17 candidate, and opens
+no repair, pin, independent review, apparatus, successor, or gravity law.
 
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
@@ -769,6 +777,7 @@ Active audit:
 - v17_ugen_u0_single_candidate_architecture_selection.md
 - v17_ugen_u0_crp_first_construction_attempt.md
 - v17_ugen_post_crp_ontology_fork_reassessment.md
+- v17_ugen_a1_interacting_relativistic_grw_flash_source_reconstruction.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1154,7 +1163,10 @@ U0 R1/NATIVE-GAP SYNTHESIS:    SYN-R1-L1 / NO NEW RESULT OR PROMOTION
 U0 SINGLE ARCHITECTURE:        CRP SELECTED / ONE MODEL EXHAUSTED
 U0 CRP FIRST ATTEMPT:          CONTROL L2 / NATIVE MODEL REJECTED
 POST-CRP ONTOLOGY MAP:         PREDICTION / ACTUALITY AXES SEPARATED
-NEXT AUTHOR-SIDE CONTROL:      A1 RELATIVISTIC GRW FLASH RECONSTRUCTION
+A1 FINITE INTERACTING LAW:     NORMALIZED / PRIMITIVE REFERENT EXPLICIT
+A1 INDEFINITE PROCESS:         NOT ESTABLISHED / LIMIT UNPROVED
+A1 EMPIRICAL/QFT/GRAVITY:      MODEL TRANSFER / COMPLETE MATTER LAW ABSENT
+NEXT AUTHOR-SIDE CONTROL:      NONE AUTOMATIC
 A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT

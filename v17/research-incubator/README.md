@@ -691,12 +691,18 @@ predictive nomology and one-run actuality. Quantum/QFT, Gram, and pair-history
 structure is retained as the provisional complete fixed-background predictive
 baseline, not selected ontology. Ordinary-positive stable records remain the
 empirical floor; the native positive rival remains logically open but its
-abstract model search pauses after CRP-1. The next bounded author-side
-prior-art control is A1, reconstruction of the interacting relativistic GRW
-flash process. A1 is an actuality, empirical-accounting, and gravity-readiness
-audit that explicitly charges its imported wavefunction, dynamics, spacetime,
-matter law, and collapse parameters. It creates no candidate, scientific
-result, pin, independent review, apparatus, successor, or gravity law.
+abstract model search pauses after CRP-1. The bounded A1 prior-art control is
+now reconstructed in
+`active/ugen/v17_ugen_a1_interacting_relativistic_grw_flash_source_reconstruction.md`.
+It earns an exact normalized positive interacting law and primitive flash
+referent at each fixed finite count, conditional on imported quantum
+hypersurface dynamics. It does not earn a complete indefinite process: the
+printed finite family is not projectively consistent and its proposed
+infinite-count limit is unproved. Exact no-signalling with readers, stable
+record descent, relativistic variable-number QFT, model-specific empirical
+transfer, conservation, and reciprocal gravity remain absent. It creates no
+candidate, scientific result, repair, pin, independent review, apparatus,
+successor, or gravity law.
 
 C1 active files:
 

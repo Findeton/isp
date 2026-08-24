@@ -275,12 +275,16 @@ The post-CRP reassessment separates empirically equivalent actualizations from
 dynamics-modifying ones. The former cannot be selected by a record class on
 which they agree. The latter carry rates, localization scales, radiation,
 heating, covariance, conservation, and prospective-deviation obligations.
-One bounded author-side prior-art control, A1, is selected for reconstruction:
-the interacting relativistic GRW flash process. A1 is not a v17 candidate and
-does not derive quantum composition. It tests whether an explicit stochastic
-referent closes actuality, interaction, no-signalling, record, empirical, and
-gravity-readiness duties while charging its imported wavefunction, spacetime,
-matter law, and collapse parameters.
+One bounded author-side prior-art control, A1, has now been reconstructed: the
+interacting relativistic GRW flash process. A1 is not a v17 candidate and does
+not derive quantum composition. It gives an exact normalized positive law and
+primitive referent at fixed finite flash count, conditional on imported
+quantum hypersurface dynamics. It does not give one indefinitely continuing
+interacting process: its fixed-count family is not projectively consistent
+under deletion of later flashes and its proposed infinite-count limit is not
+proved. Exact no-signalling with readers, stable records, relativistic
+variable-number QFT, model-specific empirical transfer, conservation, and
+gravity readiness therefore remain open.
 
 ### Kill condition
 
@@ -404,8 +408,8 @@ The live order is now:
    provisional complete predictive baseline without promoting it to ontology;
 2. keep Rival A logically open but do not run another positive-representation
    search without a new physical source and reader mechanism;
-3. reconstruct A1 author-side from frozen primary sources as a bounded
-   actuality and empirical-accounting control;
+3. retain the completed A1 reconstruction as a bounded fixed-count actuality
+   and process-completeness control, with no automatic limit repair;
 4. retain coevents, Bell-current paths, and ordinary unitary record theory as
    actuality comparators;
 5. apply MG0 only as a declaration and consistency firewall—curved-background
@@ -413,8 +417,8 @@ The live order is now:
 6. keep Q-Cut as the sole prepared official theorem unit, unopened unless it
    receives separate explicit authorization.
 
-No A1 pin, independent review, apparatus, successor model, spacetime result,
-or gravity law is opened by this routing update.
+No A1 repair, pin, independent review, apparatus, successor model, spacetime
+result, or gravity law is opened by this routing update.
 
 ---
 
@@ -423,7 +427,7 @@ or gravity law is opened by this routing update.
 ```text
 RIVAL A — POSITIVE INDIVISIBLE:       LIVE / PRIORITY PAUSED / NO ADMITTED MODEL
 RIVAL B — RELATIONAL PREDICTION:      PROVISIONAL COMPLETE BASELINE / NOT ONTOLOGY
-RIVAL C — MODIFIED ACTUALIZATION:     LIVE / A1 PRIOR-ART CONTROL SELECTED
+RIVAL C — MODIFIED ACTUALIZATION:     LIVE / A1 FINITE-LAW CONTROL COMPLETE
 RIVAL D — COMMON CONTEST:             ADOPTED AUTHOR-SIDE
 EMPIRICALLY SELECTED NOMOLOGY:        NONE
 NEXT OFFICIAL RECOMMENDATION:         Q-CUT ONLY, IF EXPLICITLY AUTHORIZED
@@ -473,7 +477,10 @@ U0 FACTOR-MARKED RESPONSE:              ORBITAL CHANNELS EXIST / WEIGHTS UNSELEC
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
 U0 CRP FIRST MODEL:                     CONTROL L2 / NATIVE MODEL REJECTED
 POST-CRP ONTOLOGY MAP:                  PREDICTION AND ACTUALITY SEPARATED
-NEXT AUTHOR-SIDE CONTROL:               A1 RELATIVISTIC GRW FLASH RECONSTRUCTION
+A1 FINITE INTERACTING LAW:              NORMALIZED / PRIMITIVE REFERENT EXPLICIT
+A1 INDEFINITE PROCESS:                  NOT ESTABLISHED / LIMIT UNPROVED
+A1 QFT / EMPIRICAL / GRAVITY:           COMPLETE MATTER-LAW TRANSFER ABSENT
+NEXT AUTHOR-SIDE CONTROL:               NONE AUTOMATIC
 A1 OFFICIAL STATUS:                     NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:              DEFERRED UNTIL CANDIDATE
 C-NUMBER EXPANSION:                   CLOSED AT C4
