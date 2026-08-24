@@ -603,6 +603,19 @@ remains open. The next native question is the physical source of the
 cross-context quantum composition law together with those interfaces, not a
 new label for a supplied quantum kernel.
 
+That question is now localized at CCS-L2 author-side scope. Exact finite
+theorems separate local record packets from cross-context connectors, prove
+connector gauge covariance and loop conjugacy, classify reversible rank-one
+transport by spanning-tree gauge plus independent cycle holonomies, and give
+an exact two-route recombination witness. A scalar propensity over base
+descriptors is proved inert on an unrepresented transport fiber, while a
+source map fitted on a proper subset has distinct held-out extensions unless a
+physical relation constrains it. The comparison graph and predictive fibers
+are theorem coordinates only. No phase, connection, Hilbert, pair-history, or
+discrete ontology is selected. The next author-side construction must predict
+one held-out operational cycle from source, control, and reader descriptors
+under one complete ordinary-positive law.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -667,6 +680,7 @@ Active audit:
 - v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
 - v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
 - v17_ugen_u0_s2_known_physics_effective_parent_interface_audit.md
+- v17_ugen_u0_cross_context_composition_source_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1041,7 +1055,8 @@ U0 TYPED POSITIVE OPT BRIDGE:  CONSTRUCTIBLE AT CERTIFIED DIVISIONS
 U0 BRIDGE FEASIBILITY:         BFA-L2 / NO NATIVE BRIDGE
 U0 EFFECTIVE INTERFACE AUDIT:  KPC-L2E / EXACT CONDITIONAL SCHEMA
 U0 SOURCE-COMPLETE PARENT:     BFA-L3 OPEN / KERNELS AND TRANSFER ABSENT
-NEXT U0 SCIENTIFIC WORK:       NATIVE QUANTUM-COMPOSITION SOURCE GATE
+U0 CROSS-CONTEXT SOURCE GATE:  CCS-L2 / TRANSPORT LOCATED, LAW ABSENT
+NEXT U0 SCIENTIFIC WORK:       ONE SOURCE-GENERATED OPERATIONAL CYCLE
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

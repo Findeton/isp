@@ -598,6 +598,19 @@ next native search must generate quantum cross-context composition and the
 interface structure from one target-blind law rather than supply an
 answer-equivalent Gram, action, state, process, or reader.
 
+The cross-context source gate now sharpens that debt at CCS-L2 author-side
+scope. Local predictive presentations can be changed independently, so
+isolated positive laws do not determine the connectors required to compose
+contexts. Connector covariance makes closed composites presentation
+independent up to conjugacy. For a finite reversible rank-one comparison
+grammar, a spanning tree carries only gauge while each non-tree edge supplies
+one cycle holonomy; a two-route witness shows why equal route probabilities
+need not fix the recombined record. Scalar base weights cannot select absent
+fiber data, and an unstructured fitted source map has nonunique held-out
+extensions. These are source-location theorems, not a bundle, graph, phase, or
+Hilbert ontology. The next formula must generate one complete held-out
+operational cycle from independent physical descriptors.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -659,6 +672,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
 - active/ugen/v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
 - active/ugen/v17_ugen_u0_s2_known_physics_effective_parent_interface_audit.md
+- active/ugen/v17_ugen_u0_cross_context_composition_source_gate.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

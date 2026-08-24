@@ -723,6 +723,20 @@ cleanly if nature does not support it.
   source-complete closure. BFA-L3 remains open, and the next author-side
   physics question is which target-blind physical law, if any, generates the
   cross-context quantum composition structure together with those interfaces.
+  The cross-context source gate now reaches CCS-L2 author-side scope. It proves
+  that isolated record probabilities leave independent predictive
+  presentations at each context, that compatible connectors transform at
+  both endpoints, and that closed composites carry presentation-independent
+  conjugacy data. In the exact reversible rank-one control, spanning-tree
+  phases are gauge while every independent experimental cycle carries one
+  $U(1)$ holonomy; two separately identical routes can therefore differ under
+  a held-out balanced recombination. Scalar reweighting of a descriptor space
+  cannot select an unrepresented transport fiber, and a finite fitted family
+  has nonunique held-out extensions unless physical structure relates the
+  descriptors. This locates the missing source law without selecting a graph,
+  phase, Hilbert, connection, or pair-history ontology. The next author-side
+  construction is one source-generated operational cycle, not another
+  representation theorem.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

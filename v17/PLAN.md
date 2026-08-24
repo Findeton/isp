@@ -599,6 +599,18 @@ construction. The next native investigation must target the physical origin
 of cross-context quantum composition while inheriting these interface duties;
 it may not hide them in a Gram kernel, action, wavefunction, POVM, or external
 operation label.
+That source-location audit now reaches CCS-L2 author-side scope. It separates
+isolated positive record laws from the family-level transport needed to compare
+and compose physical contexts. Exact finite theorems establish endpoint gauge
+covariance, loop conjugacy, a spanning-tree/cycle classification for reversible
+rank-one representations, a two-route recombination witness, scalar-base
+fiber inertness, and unstructured held-out-extension nonidentifiability. The
+graph and predictive fibers are audit coordinates, not ontology. The result
+turns the next formula target into one bounded source-generated operational
+cycle: calibrate a spanning tree and predict a preregistered chord/loop,
+division, eraser, product, and interacting parent from independent physical
+descriptors. No native law, candidate, pin, review, implementation, or
+scientific result is created.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
