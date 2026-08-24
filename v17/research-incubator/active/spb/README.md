@@ -1,10 +1,11 @@
 # ISP v17 — Sufficient Physical Boundary Gate
 
-**Status:** PRIMARY PHYSICAL QUESTION / V1 AND V2 CONTRACT REVIEWS TERMINAL D2
+**Status:** PRIMARY PHYSICAL QUESTION / V3 AUTHOR-SIDE FINAL CANDIDATE
 **Date opened:** 2026-08-24
 **Scientific result awarded:** none
 **SPB-L0 awarded:** no
 **Immutable v2 review pin:** terminal historical evidence
+**Immutable v3 review pin:** absent
 **Immutable evaluation pin:** absent
 **Empirical evaluation:** not begun
 
@@ -86,12 +87,36 @@ Independently, the exact device/module identities, intervention and reader
 implementations, nuisance and attempt schemas, acquisition split, and
 held-out physical records do not exist as one immutable evaluation packet.
 
+The user has now authorized one and only one final clean successor. The v3
+author package is complete and awaiting its immutable contract-review pin. It
+adds explicit randomized and causal-transport identification routes;
+strictly interior matching and screening margins with nonvacuous simultaneous
+coverage and two-sided power; an initial preparation law; globally disjoint
+causal, composition, seam, and bracketing routes; physically typed material
+B3 admission forms that are ineligible unless instantiated before data;
+physical-embedding partial orders; minimal passing antichains distinct from
+registered necessity; and duty-, candidate-, regime-, and quantifier-specific
+outcomes. The root pre-pin audit reconstructs all v2 counterexamples and adds
+staged-assignment, uninstantiated-carrier, and mixed-admissible-set attacks.
+
+Author-side readiness is not acceptance. The v3 bytes award no `SPB-L0`, no
+apparatus packet, and no boundary result. They may now undergo exactly one
+immutable, mutually blind mathematics/statistics, split physical-apparatus,
+and foundations/ontology review cycle.
+
+Final v3 author-side inputs:
+
+- [v3 result-neutral contract](v17_spb_v3_result_neutral_gate_contract.md)
+- [v3 root pre-pin adversarial audit](v17_spb_v3_root_pre_pin_adversarial_audit.md)
+- [v3 SHA-256 manifest](SPB_V3_SHA256.txt)
+
 ## Authority boundary
 
 The two terminal D2 cycles are immutable. Neither may be repaired by prose,
-code, simulation, or an apparatus fit. No automatic v3 is authorized. A new
-contract would require separate explicit authorization and a fresh pin before
-review.
+code, simulation, or an apparatus fit. V3 is the separately authorized final
+contract successor. Its author-side bytes must freeze before review. If its
+independent review finds a semantic defect, the SPB contract route halts: no
+repair, second successor, or v4 is authorized.
 
 Only after a corrected contract independently earns `SPB-L0` may one exact
 apparatus packet, intervention grammar, readers, nuisance model, held-outs,

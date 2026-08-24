@@ -101,6 +101,17 @@ individual necessity; and B3 response histories/kernels are not typed
 physical carriers. The exact apparatus packets also remain absent. No
 automatic v3 or empirical evaluation is open.
 
+The user subsequently authorized one and only one final v3 contract
+successor. Its author-side contract and root adversarial audit now specify the
+complete causal-identification, margin/power, initial-preparation,
+classification, material-carrier, partial-order/minimality, and
+duty-specific-outcome law. Abstract B3 response histories remain coordinate
+controls; material B3 rows are only admission types and cannot be scored
+unless an exact device is instantiated before data. The package is ready for
+one immutable independent contract-review pin and awards no `SPB-L0` or
+physical result. A semantic review failure terminates this contract route;
+there is no automatic repair or v4.
+
 Terminal v2 record and author-side inputs:
 
 - `active/spb/v17_spb_v2_result_neutral_gate_contract.md`
@@ -113,6 +124,12 @@ Terminal v2 record and author-side inputs:
 - `../review-spb-v2-contract-physical-joint.md`
 - `../review-spb-v2-contract-foundations-ontology.md`
 - `../note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md`
+
+Final v3 author-side package:
+
+- `active/spb/v17_spb_v3_result_neutral_gate_contract.md`
+- `active/spb/v17_spb_v3_root_pre_pin_adversarial_audit.md`
+- `active/spb/SPB_V3_SHA256.txt`
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

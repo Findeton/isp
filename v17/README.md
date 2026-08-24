@@ -1181,6 +1181,17 @@ is an experiment-design stop, not a computational failure or a result about
 nature. No automatic v3, acquisition, boundary, ontology, chronology,
 spacetime, gravity, or unification claim follows.
 
+The user then explicitly authorized exactly one final v3 successor. Its
+author-side contract and root adversarial audit are now complete but not yet
+frozen or independently accepted. V3 supplies the missing causal
+identification routes, strictly nonempty statistical margins with bounded
+coverage/power errors, explicit initial preparation, exhaustive disjoint
+finite-resolution routing, conditional material B3 admission types, physical
+partial orders, honest minimal antichains/registered necessity, and
+duty-specific predicates. This creates no physical result. The only next
+stage is one immutable review pin and mutually blind contract review; any
+semantic failure halts the SPB contract route with no repair or v4.
+
 ## Scientific order
 
 The programme order is now:
@@ -1245,6 +1256,16 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   and routing defects.
 - `research-incubator/active/spb/SPB_V2_SHA256.txt` — author-side integrity
   receipt for the v2 candidate, audit, and terminal predecessor adjudication.
+- `research-incubator/active/spb/v17_spb_v3_result_neutral_gate_contract.md`
+  — final authorized author-side contract candidate with explicit causal
+  identification, nonvacuous margins/power, initial preparation, disjoint
+  classifiers, material-carrier admission types, and duty-specific outcomes.
+- `research-incubator/active/spb/v17_spb_v3_root_pre_pin_adversarial_audit.md`
+  — final author-side reconstruction of every v2 blocker and the additional
+  staged-assignment, mixed-classifier, and uninstantiated-B3 attacks; not an
+  independent review or result.
+- `research-incubator/active/spb/SPB_V3_SHA256.txt` — exact author-side v3 and
+  terminal-predecessor integrity manifest for the future immutable pin.
 - `note-spb-v2-sufficient-physical-boundary-contract-review-pin.md` —
   immutable result-neutral v2 contract-review pin.
 - `review-spb-v2-contract-mathematics-statistics.md` — frozen v2 Seat M

@@ -2996,3 +2996,46 @@ failure, not a software defect, an empirical negative, or evidence that nature
 lacks a sufficient boundary. No automatic v3, new pin, apparatus operation,
 acquisition, simulation-as-result, boundary claim, ontology selection,
 chronology, spacetime, gravity, or unification result follows.
+
+## 2026-08-24 — FINAL CLEAN SPB V3 AUTHOR PACKAGE READY FOR IMMUTABLE REVIEW PIN (v17 LEDGER #122)
+
+The user explicitly authorized one and only one final SPB contract successor,
+with no apparatus acquisition, empirical result, post-hoc threshold selection,
+automatic repair, second successor, or v4. Root prepared the complete v3
+mathematical and physical inference law and a separate author-side adversarial
+audit. Neither object awards `SPB-L0` or a scientific boundary result.
+
+V3 repairs every terminal v2 defect in one frozen design surface. It separates
+immutable context, physical assignment, execution, and complete observation;
+admits either a physically audited randomized intervention or an explicitly
+conditional causal-transport bridge; treats adaptive futures as preassigned
+sequential policies; and preserves noncompliance, failures, carryover, and
+accessible material traces. Matching and screening use strictly interior
+total-variation margins, physical loss/resolution justifications, nonempty
+inside/outside alternatives, simultaneous coverage, and two-sided power with
+all error targets below one-half. The complete composition law begins with an
+explicit normalized preparation kernel and retains failure sentinels.
+
+The causal, local-decision, feedback-composition, deterministic-seam, global,
+and bracketing codomains are exhaustive and disjoint at registered resolution.
+The temporal and regional B3 forms now denote only typed additional material
+memory admission classes. Unless a future authorized physical pin instantiates
+one exact device before data, the row is removed from scoring and cannot enter
+minimality or necessity; abstract response histories and higher kernels remain
+coordinate controls only. Candidate order is a physical partial order, not an
+assumed lattice. Minimal passing antichains, registered necessity, and every
+duty- and regime-specific outcome predicate have separate quantifiers.
+
+The root audit reconstructs the full v2 defect matrix and adds countercontrols
+for randomizer confounding, staged positivity, vacuous power, preparation
+failure, mixed admissible classifier sets, uninstantiated B3 symbols,
+incomparable minima, unknown competitors, target-sized predictors, and
+coordinate-to-ontology promotion. The exact v3 author objects and all terminal
+v2/source dependencies are recorded in `SPB_V3_SHA256.txt`.
+
+The next and only open stage is to commit these author bytes, create one
+immutable v3 review pin, and dispatch mutually blind mathematics/statistics,
+split temporal/regional physical-apparatus, and foundations/ontology seats.
+If semantic review fails, the SPB contract route halts. Physical acquisition,
+an evaluation pin, boundary promotion, ontology, chronology, spacetime,
+gravity, and unification remain closed.

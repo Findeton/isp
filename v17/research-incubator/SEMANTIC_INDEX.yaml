@@ -2589,16 +2589,42 @@ artifacts:
     promotion_readiness: "not-ready-historical-author-side-input-terminal-spb-v2-d2-controls"
     maximum_claim: "historical author-side opinion that v2 was review-ready, superseded by terminal D2; retained countermodels and exact salvage only; no SPB-L0, physical packet, acquisition, boundary result, ontology, chronology, spacetime, gravity, or successor"
     canonical: false
-  - path: "active/spb/README.md"
-    sha256: "c7b3c743d3d15e50073246632085a435cc24ba0be3daa53b5d51ca3457adaa4d"
+  - path: "active/spb/v17_spb_v3_result_neutral_gate_contract.md"
+    sha256: "06b5f87ce2de2e31d82622d07f8aba80b47606a1d46224c2fd73545618ba3c54"
     created_at: "2026-08-24"
     front: "spb"
-    status: "current-routing-terminal-spb-v2-d2"
+    status: "final-author-side-v3-contract-candidate-not-yet-frozen"
+    supersedes: ["active/spb/v17_spb_v2_result_neutral_gate_contract.md"]
+    superseded_by: []
+    depends_on: ["active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "v17/note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "terminal-v2-source-and-review-evidence-inherited-exact-apparatus-packets-absent-independent-v3-review-pending"
+    authority: "none"
+    promotion_readiness: "ready-for-authorized-immutable-v3-contract-review-pin-only"
+    maximum_claim: "author-side final SPB v3 contract closes the registered v2 causal, margin/power, initial-law, classifier, material-B3, partial-order/minimality, and outcome-predicate defects; no SPB-L0, accepted contract, apparatus packet, acquisition, boundary result, ontology, chronology, spacetime, gravity, or v4"
+    canonical: false
+  - path: "active/spb/v17_spb_v3_root_pre_pin_adversarial_audit.md"
+    sha256: "80dd14c5be7397e2676771f067279909b740fe62e935f33d8d71b58f9a016ce5"
+    created_at: "2026-08-24"
+    front: "spb"
+    status: "complete-author-side-final-v3-pre-pin-adversarial-audit"
+    supersedes: ["active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md"]
+    superseded_by: []
+    depends_on: ["active/spb/v17_spb_v3_result_neutral_gate_contract.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "v17/note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "author-side-reconstruction-of-terminal-v2-and-new-v3-countercontrols-independent-review-pending-exact-apparatus-packets-absent"
+    authority: "none"
+    promotion_readiness: "ready-for-authorized-immutable-v3-contract-review-pin-only"
+    maximum_claim: "author-side evidence that the v3 bytes route the registered causal, nonvacuity, composition, seam, carrier, antichain, and quantifier attacks; no independent acceptance, SPB-L0, apparatus packet, acquisition, boundary result, ontology, chronology, spacetime, gravity, or v4"
+    canonical: false
+  - path: "active/spb/README.md"
+    sha256: "51617841a7630f90b64a817df6d6cf7c66d37ed05b370f1e49b368dd2e02990f"
+    created_at: "2026-08-24"
+    front: "spb"
+    status: "current-routing-final-v3-author-candidate-review-pin-authorized"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_result_neutral_gate_contract.md", "active/spb/v17_spb_v2_result_neutral_gate_contract.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md", "active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md", "v17/note-spb-sufficient-physical-boundary-contract-review-pin.md", "v17/note-spb-sufficient-physical-boundary-contract-review-adjudication.md", "v17/note-spb-v2-sufficient-physical-boundary-contract-review-pin.md", "v17/note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md"]
-    source_audit_status: "terminal-v1-and-v2-independent-reviews-authenticated-sources-and-found-semantic-contract-defects-public-complete-run-packets-absent"
+    depends_on: ["active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_result_neutral_gate_contract.md", "active/spb/v17_spb_v2_result_neutral_gate_contract.md", "active/spb/v17_spb_v3_result_neutral_gate_contract.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md", "active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md", "active/spb/v17_spb_v3_root_pre_pin_adversarial_audit.md", "v17/note-spb-sufficient-physical-boundary-contract-review-pin.md", "v17/note-spb-sufficient-physical-boundary-contract-review-adjudication.md", "v17/note-spb-v2-sufficient-physical-boundary-contract-review-pin.md", "v17/note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "terminal-v1-and-v2-independent-review-evidence-plus-final-v3-author-audit-public-complete-run-packets-absent-v3-independent-review-pending"
     authority: "none"
-    promotion_readiness: "not-ready-terminal-spb-v2-d2-new-contract-requires-separate-authorization"
-    maximum_claim: "current routing for terminal SPB v2 D2: central experiment and architecture/source salvage survive, SPB-L0 not awarded, no accepted contract, evaluation, physical result, ontology, chronology, spacetime, gravity, or automatic successor"
+    promotion_readiness: "ready-for-authorized-immutable-v3-contract-review-pin-only"
+    maximum_claim: "current routing for one final author-side v3 contract candidate after terminal v1/v2 D2; no SPB-L0, accepted contract, evaluation, physical result, ontology, chronology, spacetime, gravity, repair, or v4"
     canonical: false

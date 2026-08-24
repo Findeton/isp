@@ -1343,10 +1343,15 @@ SPB root mutant/readiness audit     PASS-WITH-SCOPE AUTHOR-SIDE
 SPB contract-review pin             FROZEN AT 014c820
 SPB independent reports             FROZEN / M:D2 P:D3 O:D2
 SPB root adjudication               TERMINAL D2 / SPB-L0 NOT AWARDED
-SPB v2 corrected contract           COMPLETE AUTHOR-SIDE / NOT PINNED
-SPB v2 root countermodel audit      PASS FOR CONTRACT REVIEW ONLY
-SPB v2 immutable review pin         NOT YET CREATED
-SPB v2 independent review           NOT BEGUN
+SPB v2 corrected contract           TERMINAL D2 / IMMUTABLE
+SPB v2 root countermodel audit      HISTORICAL AUTHOR-SIDE INPUT
+SPB v2 immutable review pin         FROZEN AT 7221d77
+SPB v2 independent review           FROZEN / M:D2 P:D4 O:D2
+SPB v2 root adjudication            TERMINAL D2 / SPB-L0 NOT AWARDED
+SPB v3 final contract               COMPLETE AUTHOR-SIDE / NOT PINNED
+SPB v3 root adversarial audit       COMPLETE AUTHOR-SIDE / NO AWARD
+SPB v3 immutable review pin         NOT YET CREATED
+SPB v3 independent review           NOT BEGUN
 SPB exact physical run packet       ABSENT
 SPB empirical evaluation pin        INELIGIBLE UNTIL PHYSICAL PACKET CLOSES
 empirical quantum adequacy contract RECORDED
