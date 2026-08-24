@@ -29,8 +29,46 @@ no scientific evidence.
 
 ## Active research front
 
-The incubator preserves five active research fronts, but they no longer have equal frontier
-priority.
+The incubator preserves six active research fronts, but they no longer have
+equal frontier priority.
+
+### SPB — Sufficient Physical Boundary Gate
+
+This is the current promotion-bearing branch. It tests whether an
+independently identified physical interface screens a complete experiment and
+supports held-out composition without encoding the target process. Its
+temporal arm uses a source-closed system--memory causal break with direct
+memory read, toggle, randomize, reset, and isolate controls. Its regional arm
+uses fixed-interface interior substitution, physical reconnection, and direct
+three-module gluing. The arms are scored separately.
+
+The P0 source/platform audit selects a two-transmon system--memory architecture
+and a modular multiport microwave architecture. It also finds that no audited
+public packet executes either complete experiment. Existing multi-time process
+tomography does not close direct memory interventions; existing
+isoscattering work does not combine fixed-port multiport equality, public raw
+records, reconnection, and triple gluing. This is a physical packet gap, not an
+SPB result or a computational problem.
+
+The result-neutral contract and author-side mutant audit are complete. They
+block process-matrix/referent collapse, similarity-as-fixed-interface
+equality, untyped erasure, hidden controller memory, fitted composition,
+failure-to-reject-as-equivalence, and chronology or ontology promotion. The
+package is eligible for a separately authorized immutable contract-review pin;
+an empirical evaluation pin remains ineligible until an exact apparatus and
+raw-run packet exists.
+
+Active working package:
+
+- `active/spb/README.md`
+- `active/spb/v17_spb_primary_source_receipt_manifest.md`
+- `active/spb/v17_spb_p0_physical_platform_and_source_audit.md`
+- `active/spb/v17_spb_result_neutral_gate_contract.md`
+- `active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md`
+- `active/spb/ACTIVE_SHA256.txt`
+
+No immutable pin, independent review, held-out evaluation, scientific
+boundary result, ontology, chronology, spacetime, or gravity result exists.
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

@@ -1239,14 +1239,24 @@ compositional sufficiency, physical intervention/readout, and held-out
 transfer. Temporal restart/future-policy tests and regional
 substitution/gluing tests remain distinct.
 
-The highest-leverage possible successor is provisionally named the
-**Sufficient Physical Boundary Gate (SPB)**. It would contain two separately
-scored arms: (T) source-closed causal break plus memory read/toggle/erase/
-isolate controls; and (R) equal-boundary interior substitution plus exterior
-screening, reconnection, and triple gluing. Positive, negative,
-resource-heavy, noncommutative, whole-process, and underdetermined outcomes
-must all be allowed. This ranking records no authority. An SPB pin, platform,
-review, construction, or experiment requires separate user authorization.
+The highest-leverage successor was provisionally named the **Sufficient
+Physical Boundary Gate (SPB)**. The user has now directed the programme to
+open that branch. It contains two separately scored arms: (T) source-closed
+causal break plus memory read/toggle/randomize/reset/isolate controls; and (R)
+fixed-interface interior substitution plus exterior screening, physical
+reconnection, and direct triple gluing. Positive, negative, resource-heavy,
+noncommutative, whole-process, and underdetermined outcomes remain allowed.
+
+SPB-P0 selects a two-transmon system--memory architecture and a modular
+multiport microwave architecture. It finds no current public packet that
+executes either complete gate: the temporal sources reconstruct system-side
+processes without the full direct memory grammar, and the regional sources do
+not combine fixed-port multiport equality, raw records, reconnection, and
+three-region gluing. The result-neutral contract and root mutant audit are
+complete author-side. A contract-review pin requires an immutable rehash and
+independent review; an empirical evaluation pin additionally requires exact
+physical apparatus, calibration, attempted-run, and held-out packet bytes.
+Simulation cannot substitute for those records.
 
 ### F7 — amplitudes
 
@@ -1293,9 +1303,14 @@ Pause for user direction when:
 ```text
 Era charter                         RECORDED
 v16 inheritance balance             RECORDED
-Foundational necessity charter      ACTIVE AUTHOR-SIDE / NO UNIT OPENED
+Foundational necessity charter      ACTIVE AUTHOR-SIDE / SPB OPENED
 N1--N28 parallel audits             COMPLETE AUTHOR-SIDE / FAD-L1 / NO AWARD
-Sufficient Physical Boundary gate  RECOMMENDED ONLY / NOT OPENED
+SPB-P0 source/platform audit         COMPLETE AUTHOR-SIDE / NO AWARD
+SPB result-neutral contract         WRITTEN / PRE-PIN / NO AWARD
+SPB root mutant/readiness audit     PASS-WITH-SCOPE AUTHOR-SIDE
+SPB contract-review pin             ABSENT / SEPARATE AUTHORIZED REHASH OWED
+SPB exact physical run packet       ABSENT
+SPB empirical evaluation pin        INELIGIBLE UNTIL PHYSICAL PACKET CLOSES
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
 Paper 01                            TERMINAL ACCEPT-WITH-SCOPE

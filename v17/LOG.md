@@ -2799,3 +2799,50 @@ metadata. No theorem, source contract, benchmark equation, candidate,
 platform, B0 level, `P-B0-1` discharge, entrant, comparison, ontology,
 gravity verdict, official pin, review, or automatic successor was created or
 modified.
+
+## 2026-08-24 — SUFFICIENT PHYSICAL BOUNDARY GATE OPENED THROUGH AUTHOR-SIDE PRE-PIN (v17 LEDGER #118)
+
+The user directed v17 to proceed with the highest-ranked promotion-bearing
+experiment rather than leave it as a recommendation. SPB is now active with
+two separately scored arms. SPB-T asks whether an independently addressed
+physical memory at a causal break screens incompatible held-out futures and
+supports direct temporal composition. SPB-R asks whether different interiors
+at one fixed physical interface screen exterior readers and support direct
+two- and three-module reconnection without refitting.
+
+The P0 source/platform audit selected a two-transmon system--memory
+architecture and a modular multiport microwave architecture. Exact receipts
+were recorded for six primary scholarly objects and two immutable author-code
+commits. Existing controls are substantial but incomplete. Published
+superconducting multi-time tomography supplies complete system-side process
+reconstruction or an explicit nearby memory, but not the full direct memory
+read/toggle/randomize/reset/isolate grammar on one held-out family. Published
+microwave isoscattering supplies literal fixed-contact equality in one port or
+conjugate full responses in four ports, but not fixed-interface multiport
+equality, public raw records, registered reconnection, and direct triple
+gluing in one packet. The printed four-port transplantation matrix is not
+unitary up to scalar normalization, so its similarity relation was retained
+as a control rather than relabelled as a passive physical adapter.
+
+A result-neutral gate contract now specifies the object types, five duties,
+candidate lattice, complete attempted-run schema, temporal memory grammar,
+regional fixed-interface and seam equations, held-outs, nuisance and
+uncertainty duties, resource ledger, hostile mutants, separate outcome
+vectors, and `SPB-L0--L6` ceiling. The root pre-pin audit attacks tensor
+factorization, causal-break backaction on memory, destructive readout,
+information export during reset, retained random seeds, unproved isolation,
+target-sized process maps, finite-future overclaim, linear/stationary
+scattering assumptions, similarity-as-equality, loss outside the unitary
+graph theorem, singular seams, hidden ports/stubs, and
+failure-to-reject-as-equivalence. The author-side verdict is
+`PASS-WITH-SCOPE` for contract review readiness.
+
+No scientific SPB result is awarded. No immutable contract-review pin or
+independent report exists. More importantly, no exact apparatus/raw-run
+packet exists, so an empirical evaluation pin fails closed. Numerical
+fixtures may validate analysis but cannot supply direct memory interventions
+or physical reconnection records. The next allowed stages are a separately
+authorized immutable contract-review rehash and hostile review, followed only
+if that survives and a real packet is available by a distinct empirical pin.
+No boundary ontology, universal state, Markovianity, chronology, spacetime,
+gravity, Barandes confirmation, or automatic successor is opened.

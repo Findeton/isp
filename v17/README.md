@@ -1141,7 +1141,8 @@ scale-dependent effective separability, or no proper sufficient interface.
 Removing an assumption earns nothing by itself: every audit must recover the
 relevant R1/B0/MG0 physics, expose replacement resources, and end in a theorem,
 counterexample, discriminator, resource bound, or named underdetermination.
-No official unit or successor is opened.
+The charter by itself opened no unit. The user subsequently selected its
+highest-leverage experiment, the Sufficient Physical Boundary Gate.
 
 The first parallel census is now complete at author-side scope. Four audits
 cover N1--N28: temporal sufficiency; subsystem/locality; operational axioms;
@@ -1151,11 +1152,14 @@ questions, and nonselecting principles. Their common result is that a serious
 boundary claim has five distinct duties: target-independent descent,
 screening, composition/gluing, physical intervention/readout, and no-refit
 transfer. Temporal and regional sufficiency share this form but remain
-different tests. The integrated recommendation is a future Sufficient
-Physical Boundary gate with separate causal-break/memory and regional
-substitution/reconnection arms. It remains only a recommended gate: no pin,
-review, platform, construction, chronology, spacetime, gravity, or ontology
-is authorized.
+different tests. SPB is now open with separate causal-break/memory and
+regional substitution/reconnection arms. Its author-side P0 audit selects a
+two-transmon system--memory platform and a modular multiport microwave
+platform, while finding no existing public packet that executes either full
+experiment. Its result-neutral contract and root mutant audit are written.
+No immutable contract-review pin, exact apparatus packet, empirical
+evaluation pin, independent review, held-out result, chronology, spacetime,
+gravity, or ontology award exists.
 
 ## Scientific order
 
@@ -1200,6 +1204,18 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `research-incubator/active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md`
   — integrated necessity map, five-predicate sufficient-boundary contract,
   permanent firewalls, hostile battery, and ranked future gates.
+- `research-incubator/active/spb/README.md` — current SPB routing and authority
+  boundary.
+- `research-incubator/active/spb/v17_spb_p0_physical_platform_and_source_audit.md`
+  — exact temporal and regional platform/source closure audit.
+- `research-incubator/active/spb/v17_spb_result_neutral_gate_contract.md` —
+  candidate boundaries, interventions, held-outs, composition tests, resource
+  ledger, possible outcomes, and review duties for both arms.
+- `research-incubator/active/spb/v17_spb_primary_source_receipt_manifest.md` —
+  exact P0 scholarly and author-repository receipts and source-role ceilings.
+- `research-incubator/active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md`
+  — author-side hidden-assumption and pin-readiness audit; not an independent
+  review or scientific result.
 - `PLAN.md` — ordered units, gates, stopping rules, and later gravity route.
 - `LOG.md` — append-only v17 event ledger.
 - `note-paper01-relational-quantum-process-pin.md` — the frozen first-unit pin.
