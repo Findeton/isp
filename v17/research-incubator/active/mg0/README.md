@@ -76,8 +76,12 @@ not turn either source document into a pin or award a scientific result.
   packet;
 - `v17_mg0_b0_matter_exact_synthetic_witness.md` — exact finite
   common-seed interface witness for preparation, coherence, temporary
-  marking, retained records, complete noisy readers, correlated nuisance, and
-  controller-tag nonidentifiability; it is not an apparatus model;
+  marking, a retained-register proxy, complete noisy readers, correlated
+  nuisance, and idle external-tag nonidentifiability; it is not an apparatus
+  model and does not certify a stable record or exchange ledger;
+- `v17_mg0_b0_t_author_reconstruction_and_semantic_audit.md` — author-side
+  exact rebuild of the witness, including the null-complete correlated reader
+  and six applied scope/typing corrections; it is not an independent review;
 - `v17_mg0_future_review_contract.md` — superseded historical author-side
   review-design precursor; the root protocol and adjudication govern;
 - `ACTIVE_SHA256.txt` — active-byte manifest.
@@ -151,10 +155,15 @@ The terminal `P-B0-1` gap has now been developed author-side into an exact
 pre-authorization design. It separates `B0-T`, the conventional
 fixed-background mathematical control, from `B0-E`, one public
 single-platform empirical realization. The accompanying finite witness
-generates its preparations from a common seed, retains its dephasing and
-controller tags, supplies normalized complete noisy records, and realizes
-exact coherence, eraser, retained-record, and correlated-nuisance controls.
-Its controller tag has no calibrated energy or momentum meaning, and the
+generates its preparations from a common seed, retains its dephasing memory and
+idle external tag, and supplies normalized complete noisy records. An author
+reconstruction preserves its coherence, eraser, retained-register, and
+correlated-nuisance algebra while correcting six scopes/types: the retained qubit
+is not a physical stable record, the idle tag is not an exchange carrier, the
+nuisance control requires the printed null-inclusive joint tables, and state
+separation is relative to the licensed physical algebra; the local-erasure
+proof also separates the accessible carrier from the inaccessible record
+environment, and incompatible reads remain alternative contexts. The
 witness contains no massive material, apparatus, empirical packet, no-refit
 transfer, or reciprocal gravity. These files are not a pin or review result;
 they do not discharge `P-B0-1` or authorize B0 construction.

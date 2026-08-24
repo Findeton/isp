@@ -870,10 +870,16 @@ cleanly if nature does not support it.
   `B0-T`, a conventional fixed-background mathematical source-to-record
   control, and `B0-E`, one public single-platform empirical realization. An
   exact finite common-seed witness realizes the preparation, matched-algebra,
-  temporary-marker, retained-record, complete-reader, correlated-nuisance,
-  and controller-tag interfaces. It deliberately lacks calibrated work and
-  momentum, massive apparatus physics, empirical bytes, no-refit transfer,
-  and reciprocity. This preparation is neither a pin nor a reviewed result;
+  temporary-marker, retained-register, complete-reader, correlated-nuisance,
+  and idle external-tag interfaces. An author reconstruction corrects six
+  scopes: the retained qubit is not a physical stable record, the tag is not
+  an exchange carrier, the correlated reader must include null records, and
+  state separation is relative to the licensed physical algebra; the local
+  erasure proof also types accessible and inaccessible carriers separately,
+  and incompatible reads remain alternative contexts. It
+  deliberately lacks calibrated work and momentum, massive
+  apparatus physics, empirical bytes, no-refit transfer, and reciprocity. This
+  preparation is neither a pin nor a reviewed result;
   `P-B0-1` remains open and entrant admission remains closed.
   A quantitative platform gate now corrects the experimental frontier:
   2026 sodium-cluster interferometry demonstrates COM delocalization above

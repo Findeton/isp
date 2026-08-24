@@ -618,15 +618,23 @@ e^{-i\varphi}|L\rangle\langle R|
 +e^{i\varphi}|R\rangle\langle L|.
 $$
 
-### Proposition B0-B — no universal physical matching
+### Proposition B0-B — no universal matching on a separating physical algebra
 
-If `rho_coh != rho_mix`, then there exists a bounded observable whose
-expectation differs. Consequently no preparation can match **all** physical
-coordinates while retaining the coherence distinction.
+Let `omega_coh` and `omega_mix` be distinct states on the declared licensed
+physical observable algebra `A_phys`. Then some self-adjoint
+`A in A_phys` has different expectations in the two states. Consequently the
+preparations cannot match **all licensed physical coordinates** while
+retaining that state distinction.
 
-This follows directly from state separation by observables. On the complete
-apparatus carrier, the preparation devices or environments also differ unless
-one physical operation generates both contextual branches.
+Matrix inequality `rho_coh != rho_mix` alone guarantees a separating bounded
+operator only in the full represented algebra. Under a gauge restriction,
+superselection rule, or restricted experiment class, the two matrices may
+represent the same physical state on `A_phys`. B0 therefore cannot infer a
+physical distinction from matrix entries alone: the registered complementary
+coherence witness must belong to `A_phys` and must separate the two prepared
+states. On the complete apparatus carrier, preparation devices or environments
+can also differ unless one physical operation generates both contextual
+branches.
 
 Therefore B0 must freeze:
 
@@ -673,25 +681,35 @@ timeout, remain in the complete alphabet.
 
 ### Proposition B0-C — local erasure cannot reverse an inaccessible record
 
-Suppose retained alternatives correlate with orthogonal inaccessible
-environment states:
+Let `A` contain every accessible source and visible-marker coordinate. Suppose
+retained alternatives correlate with orthogonal inaccessible environment
+states:
 
 $$
 |\Psi\rangle
 =
-\frac{|L\rangle|E_L\rangle
-+e^{i\varphi}|R\rangle|E_R\rangle}{\sqrt2},
+\frac{|A_L\rangle|E_L\rangle
++e^{i\varphi}|A_R\rangle|E_R\rangle}{\sqrt2},
 \qquad
 \langle E_L|E_R\rangle=0.
 $$
 
-No channel acting only on the source and a visible marker can restore the
-original source coherence for every phase. It would have to increase the
-distinguishability/coherence available after tracing an inaccessible
-environment and undo correlations it cannot access. More directly, after the
-orthogonal environment is traced out, the accessible reduced state is the
-same for every `varphi`. One fixed local channel therefore has the same output
-for every `varphi` and cannot reproduce the distinct family
+No channel acting only on `A` can restore the original source coherence for
+every phase. More directly, after the orthogonal environment is traced out,
+the accessible reduced state is
+
+$$
+\rho_A
+=
+\frac12
+\left(
+|A_L\rangle\langle A_L|
++|A_R\rangle\langle A_R|
+\right),
+$$
+
+which is the same for every `varphi`. One fixed local channel therefore has
+the same output for every `varphi` and cannot reproduce the distinct family
 `{|psi_varphi><psi_varphi|}`. A channel supplied with `varphi` could prepare a
 new coherent state, but that would be repreparation from an extra phase input,
 not erasure of the retained record.
@@ -825,32 +843,35 @@ Those belong to future entrants.
 
 ## 16. Exact finite synthetic witness
 
-A future B0-T construction should include a small exact witness whose only
-purpose is to verify typing and complete-record logic.
+The existing open author-side B0-T witness is a small exact control whose only
+purpose is to verify typing and complete-record logic. It is prior work for a
+future review pin, not an unbuilt post-pin candidate.
 
-Use path qubits `S,P`, reversible marker `M`, record register `R`, and an
-explicit controller/work register `W`. Generate:
+It uses path qubits `S,P`, a reversible marker `M`, a retained-register proxy
+`R`, a dephasing/randomizer memory `W_D`, and an uninterpreted external tag
+`W_X`. It generates:
 
 1. `E_L,E_R` by common-seed finite gate branches;
 2. `E_phi` by one splitter and phase rule;
 3. `E_mix` by a registered randomizer/dephaser;
 4. `E_erase` by `U_mark` followed by `U_mark^{-1}`;
-5. `E_retain` by `U_mark` followed by record amplification;
+5. `E_retain` by `U_mark` followed by a finite retained-register copy;
 6. a fixed external phase on `P` as the classical-gravity calibration; and
-7. complete source/probe/marker/controller/record readers with explicit
-   null/failure outcomes.
+7. complete source/probe/marker/register/tag readers with explicit
+   null/failure outcomes and a correlated joint-reader kernel.
 
-The witness must verify:
+The witness verifies:
 
 $$
-\sum_{r_S,r_P,r_C}p_0(r_S,r_P,r_C\mid b,c)=1
+\sum_{y\in\mathcal R_c}p_{\rm syn}(y\mid b,c)=1
 $$
 
 for every context, the matched-algebra theorem, eraser typing, correlated
-nuisance handling, and the fact that identical reduced operations with
-different controller/exchange records remain distinct. A finite controller
-tag demonstrates that bookkeeping obligation; it does not itself supply a
-physical work, momentum, heat, or conservation ledger.
+nuisance handling, and the fact that identical reduced operations need not
+determine every external tag. The retained qubit does not certify an amplified
+stable record, and the idle tag does not realize a coupled controller or
+exchange carrier. Physical durability, work, momentum, heat, recoil, and
+conservation remain B0-E duties.
 
 The finite witness is not evidence that reality is discrete, qubit-like, or a
 lattice. It is not `B0-E`, and it cannot discharge `P-B0-1`.
@@ -1088,8 +1109,9 @@ phrased:
 
 > Authorize one immutable, result-neutral B0-T independent-review pin. The
 > pin must freeze and rehash the existing author-side B0 readiness audit,
-> exact synthetic witness, platform feasibility gate, and pre-pin
-> common-packet firewall. It must state that the witness predates the pin and
+> exact synthetic witness, author reconstruction, platform feasibility gate,
+> and pre-pin common-packet firewall. It must state that the witness predates
+> the pin and
 > is under review rather than being newly constructed. Run three independent
 > mathematics, physical-source/apparatus, and foundations/gravity-firewall
 > reviews, followed by one root adjudication. The maximum award is B0-L2.

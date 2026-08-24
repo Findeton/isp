@@ -93,9 +93,9 @@ The present witness openly specifies:
 
 - its finite carrier;
 - localized, coherent, and mixed preparation maps;
-- marker, eraser, and retained-record maps;
+- marker, eraser, and retained-register maps;
 - the complete noisy reader;
-- the controller/exchange tag;
+- the idle external tag;
 - the shared-nuisance countermodel; and
 - every claimed exact output.
 
@@ -125,8 +125,9 @@ synthetic fixture would add ceremony without closing any physical coordinate.
 B0-T asks whether the proposed conventional source-to-record interface is
 mathematically coherent. Its current finite witness tests normalization,
 matched diagonal statistics, coherence sensitivity, temporary marking,
-coherent erasure, stable retention, complete readers, controller-tag
-nonidentifiability, and correlated nuisance.
+coherent erasure, a retained-register proxy, complete readers, idle-tag
+nonidentifiability, and correlated nuisance. It does not certify physical
+record stability or a controller/exchange ledger.
 
 It contains no material source, apparatus dynamics, calibrated work or
 momentum exchange, empirical uncertainty, or gravitational reciprocity.
@@ -397,8 +398,8 @@ If the user separately authorizes it, the immediate promotion-bearing action
 should be one immutable **review pin** for the existing B0-T author-side
 bundle. The future pin should:
 
-1. rehash the then-current readiness audit, exact witness, platform gate, and
-   this closure/firewall;
+1. rehash the then-current readiness audit, exact witness, author
+   reconstruction, platform gate, and this closure/firewall;
 2. state that the witness predates the pin and is being reviewed, not newly
    constructed;
 3. freeze exact theorem claims, negative ceilings, sample spaces, and
@@ -507,8 +508,9 @@ The next user-controlled action, if desired, is:
 
 > Authorize one immutable, result-neutral B0-T independent-review pin. The
 > pin must freeze and rehash the existing author-side B0 readiness audit,
-> exact synthetic witness, platform feasibility gate, and pre-pin
-> common-packet firewall. It must state that the witness predates the pin and
+> exact synthetic witness, author reconstruction, platform feasibility gate,
+> and pre-pin common-packet firewall. It must state that the witness predates
+> the pin and
 > is under review rather than being newly constructed. Run three independent
 > mathematics, physical-source/apparatus, and foundations/gravity-firewall
 > reviews, followed by one root adjudication. The maximum award is B0-L2.

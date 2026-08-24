@@ -905,11 +905,16 @@ An author-side B0 readiness audit now resolves the construction target without
 opening it. `B0-T` is the conventional fixed-background mathematical control;
 `B0-E` is one public single-platform massive-apparatus realization. The exact
 finite witness generates coherent and mixed preparations from a common seed,
-types reversible marking versus retained records, keeps dephasing and
-controller tags in the complete law, and supplies exact noisy-reader and
-correlated-nuisance countermodels. It is an interface test only: it has no
-calibrated energy/momentum ledger, massive material, apparatus data, no-refit
-transfer, or reciprocal gravity. No official B0 pin or review exists,
+types reversible marking versus a retained-register proxy, keeps dephasing
+memory and an idle external tag in the complete law, and supplies exact
+noisy-reader and correlated-nuisance countermodels. An author reconstruction
+adds the complete null-inclusive joint reader and binds that neither the
+retained qubit nor the idle tag is a physical stable record or exchange
+carrier, state separation is licensed-algebra-relative, local erasure has
+separate accessible/inaccessible carriers, and incompatible reads are
+alternative contexts. It is an interface test only: it has no calibrated energy/momentum
+ledger, massive material, apparatus data, no-refit transfer, or reciprocal
+gravity. No official B0 pin or review exists,
 `P-B0-1` remains open, and the candidate roster remains empty.
 
 The subsequent author-side platform feasibility gate makes selection
@@ -1263,7 +1268,7 @@ R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
 MG0 result-neutral benchmark pin    FROZEN
 MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
-MG0 B0-T author-side bundle         READY FOR REVIEW-ONLY PIN / UNREVIEWED
+MG0 B0-T author-side bundle         RECONSTRUCTED / READY FOR REVIEW-ONLY PIN
 MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
 MG0 B0-E / B0-L5                    ABSENT / CLOSED
 MG0 candidate roster/comparison     EMPTY / CLOSED

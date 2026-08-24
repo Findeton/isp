@@ -2458,3 +2458,32 @@ construction at no more than B0-L4, then separate B0-L5 common-packet
 authentication before `P-B0-1` can be submitted for discharge. No official
 pin, reviewer, platform, model, candidate, entrant, comparison, ontology, or
 successor is opened.
+
+## 2026-08-24 — B0-T EXACT WITNESS RECONSTRUCTED AND SCOPES REPAIRED AUTHOR-SIDE (v17 LEDGER #107)
+
+An author-side reconstruction preserves the finite B0-T preparation,
+coherence, marker/eraser, noisy-reader, and nuisance algebra while correcting
+six semantic scopes before any independent review freeze. First, the single
+`R` qubit is a retained-register proxy, not an amplified stable physical
+record. Second, the common-nuisance two-by-two table is conditional on both
+readers registering; the corrected witness now prints exact null-inclusive
+three-by-three common and factorized tables. Both sum to one and have identical
+one-role marginals `(9/16,3/16,1/4)` while retaining different correlations.
+Third, `W_X` is an idle external tag rather than a controller/exchange carrier.
+
+Fourth, the no-universal-matching proposition now separates states on the
+licensed physical observable algebra; unequal density matrices alone do not
+guarantee a licensed distinction under gauge or superselection restrictions.
+Fifth, the local-erasure proof explicitly separates the complete accessible
+carrier from the orthogonal inaccessible record environment. Sixth, ideal and
+registered record laws are indexed by licensed contexts: `X`, `Y`, and path
+reads on one source are alternatives, not simultaneous fields of a hidden
+global distribution.
+
+A general normalized correlated-reader kernel now closes complete contextual
+records without assuming fieldwise independence. A Ruby exact-rational rebuild
+verifies both nuisance tables, their marginals and conditional tables, and a
+reader sweep. These are forward author-side corrections to unfrozen objects,
+not review findings or an awarded B0 level. No stable material record,
+exchange/conservation ledger, apparatus, platform, pin, reviewer, B0-E model,
+`P-B0-1` discharge, gravity candidate, or successor is opened.

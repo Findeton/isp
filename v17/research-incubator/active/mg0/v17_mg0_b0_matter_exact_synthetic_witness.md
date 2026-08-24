@@ -14,10 +14,13 @@ B0-Matter readiness audit. It is deliberately too small to be a laboratory
 model. In particular, it tests:
 
 1. coherent source phase versus an incoherent mixture;
-2. a reversible temporary path marker versus an amplified retained record;
-3. complete noisy reader normalization;
-4. an independently supplied fixed-background probe phase; and
-5. a shared-nuisance countermodel with unchanged marginals but changed joint
+2. a reversible temporary path marker and coherent eraser;
+3. a retained-register proxy, explicitly short of physical stable-record
+   certification;
+4. complete noisy reader normalization, including a correlated null-inclusive
+   joint kernel;
+5. an independently supplied fixed-background probe phase; and
+6. a shared-nuisance countermodel with unchanged marginals but changed joint
    records.
 
 It does not model a massive material, support, trap, Casimir force, gravity
@@ -28,8 +31,8 @@ source, reciprocal backreaction, or emergent spacetime. It cannot discharge
 
 ## 1. Effective finite carrier
 
-Use two-dimensional source, marker, retained-record, and probe roles together
-with a four-dimensional controller/exchange role
+Use two-dimensional source, marker, retained-register, and probe roles together
+with a four-dimensional auxiliary role
 
 $$
 \mathcal H_{\rm syn}
@@ -47,10 +50,11 @@ Here:
 
 - `S` is a source path bit with basis `|L⟩,|R⟩`;
 - `M` is a reversible path-marker bit;
-- `R` is a retained-record bit;
+- `R` is a retained-register bit used only as a finite proxy for a later
+  amplified record;
 - `P` is a probe path bit;
 - `W_D` retains the finite dephasing/randomizer branch; and
-- `W_X` is a controller/exchange tag used to test whether two identical
+- `W_X` is an uninterpreted external tag used to test whether two identical
   reduced operations are being silently identified.
 
 These are operational test roles. They are not discrete ontology.
@@ -226,9 +230,9 @@ record can be erased locally.
 
 ---
 
-## 5. Retained record
+## 5. Retained-register proxy
 
-Retention copies the marker into the record register:
+The finite retention proxy copies the marker into the register:
 
 $$
 U_{\rm retain}=\operatorname{CNOT}_{M\rightarrow R}.
@@ -263,9 +267,16 @@ p(r=0,x=+)=p(r=0,x=-)
 =p(r=1,x=+)=p(r=1,x=-)=\frac14.
 $$
 
-Resetting the visible value of `R` without recovering `M` and every amplified
-environmental copy leaves the source reduced state mixed. The witness thereby
-separates visible reset from coherent uncomputation.
+Resetting the visible value of `R` without recovering `M` leaves the source
+reduced state mixed. The witness thereby separates visible reset from coherent
+uncomputation at this finite interface.
+
+This construction does **not** certify a stable physical record. It has no
+amplifying material, redundant environmental copies, durability interval, or
+licensed future grammar under which the record sectors are proved invariant.
+`R` is a retained-register proxy showing the typing distinction that a future
+B0-E apparatus must realize physically. Calling this qubit itself an
+amplified stable record would exceed the witness.
 
 ---
 
@@ -289,7 +300,7 @@ The phase `alpha` is a fixed-background input in this witness. It is not
 generated from `S`, so the witness contains no matter-to-gravity arrow and no
 reciprocity.
 
-### 6.1 Controller/exchange-tag control
+### 6.1 External-tag nonidentifiability control
 
 Let `V_S` be any one-qubit source operation used by a synthetic context. The
 two global unitaries
@@ -311,7 +322,7 @@ U^{(j)}(\rho_S\otimes|0\rangle\langle0|)U^{(j)\dagger}
 \qquad j\in\{0,1\}.
 $$
 
-But their complete controller records differ deterministically:
+But their complete external-tag records differ deterministically:
 
 $$
 p(w_X=0\mid U^{(0)})=1,
@@ -319,14 +330,46 @@ p(w_X=0\mid U^{(0)})=1,
 p(w_X=1\mid U^{(1)})=1.
 $$
 
-Thus the reduced target gate does not determine the controller/exchange
-ledger. `W_X` is only an exact structural tag: no energy or momentum value is
-assigned to it, so this control demonstrates the bookkeeping obligation but
-does not close physical conservation.
+Thus the reduced target gate does not determine every external record.
+`W_X` is deliberately the idle-tag limit of that nonidentifiability statement:
+it is not coupled source dynamics and has no assigned energy, momentum, work,
+or heat. The control proves only that a reduced gate cannot exclude an
+unseen external change. It is not a positive realization of the physical
+controller/exchange ledger required by Proposition B0-D, and it earns no
+conservation coordinate.
 
 ---
 
 ## 7. Complete noisy reader
+
+The ideal readers are contextual instruments, not one global probability law
+over incompatible observables. A licensed context chooses at most one basis
+for each role. The witness uses `Z` path/bit reads on `S,M,R,W_D,W_X` where
+registered, `X` or `Y` as alternative coherence reads on `S`, and `X` as the
+displayed probe read. Projectors on different tensor factors may be combined
+inside one context.
+
+For context `c`, with one chosen projector family on each read role, the
+complete ideal law is
+
+$$
+p_{\rm ideal}(z\mid b,c)
+=
+\operatorname{Tr}
+\left[
+\left(
+\bigotimes_{j\in J_c}\Pi_{z_j}^{(j,c)}
+\right)
+\rho_{b,c}
+\right],
+\qquad
+\sum_{z\in\mathcal Z_c}p_{\rm ideal}(z\mid b,c)=1.
+$$
+
+There is no licensed joint context containing both `X` and `Y` on the same
+source instance. "Complete" means every outcome field, including null and
+failure, for one declared context—not a hidden joint distribution across
+incompatible contexts.
 
 Use the same three-outcome reader form for each binary ideal record. Let
 
@@ -378,18 +421,53 @@ For independently read source and probe roles, the registered joint law is the
 product of their complete three-outcome laws only if the nuisance parent
 certifies their independence.
 
+### 7.1 General complete joint reader
+
+For a joint context, let `z` be the complete ideal record, `n` a retained or
+integrated nuisance value with normalized law `mu`, and `y` the complete
+registered record including null fields. A correlated reader is a stochastic
+kernel
+
+$$
+K_n(y\mid z)\ge0,
+\qquad
+\sum_y K_n(y\mid z)=1.
+$$
+
+The registered law is
+
+$$
+p_{\rm reg}(y\mid b,c)
+=
+\sum_{z,n}
+K_n(y\mid z)\,\mu(n\mid b,c)\,p_{\rm ideal}(z\mid n,b,c),
+$$
+
+where the conditional ideal law is normalized for every admitted `n`.
+
+Consequently
+
+$$
+\sum_y p_{\rm reg}(y\mid b,c)=1
+$$
+
+without assuming that different record fields are independent. The product of
+the one-field `q` kernels is one allowed special case, not the general law.
+
 ---
 
-## 8. Shared-nuisance countermodel
+## 8. Complete shared-nuisance countermodel
 
-Take ideal source and probe reads that would both return `+`. Let one common
-unobserved nuisance bit `N` flip both registered signs with probability
+Take ideal source and probe reads that would both return `+`. Let the source
+and probe registration bits be independent with registration probability
+`eta=3/4`. Conditional on registration, let one common unobserved nuisance bit
+`N` flip both signs with probability
 
 $$
 p(N=1)=\frac14.
 $$
 
-The true joint law is
+Conditional on **both** roles registering, the true sign law is
 
 $$
 p(++ )=\frac34,
@@ -401,8 +479,8 @@ p(-+)=0,
 p(--)=\frac14.
 $$
 
-Each marginal has flip probability `1/4`. A falsely factorized model with two
-independent flip bits and the same marginals predicts
+Each conditional sign marginal has flip probability `1/4`. A falsely
+factorized model with two independent flip bits and the same marginals predicts
 
 $$
 p_{\rm fact}(++ )=\frac9{16},
@@ -412,7 +490,36 @@ p_{\rm fact}(+-)=p_{\rm fact}(-+)=\frac3{16},
 p_{\rm fact}(--)=\frac1{16}.
 $$
 
-The one-body records are identical while the correlations differ. A shared
+The earlier two-by-two display is therefore a conditional table, not a
+complete reader. Including null records gives the common-nuisance law
+
+| source / probe | `+` | `-` | `null` |
+|---|---:|---:|---:|
+| `+` | `27/64` | `0` | `9/64` |
+| `-` | `0` | `9/64` | `3/64` |
+| `null` | `9/64` | `3/64` | `1/16` |
+
+and the falsely factorized law
+
+| source / probe | `+` | `-` | `null` |
+|---|---:|---:|---:|
+| `+` | `81/256` | `27/256` | `36/256` |
+| `-` | `27/256` | `9/256` | `12/256` |
+| `null` | `36/256` | `12/256` | `16/256` |
+
+Both complete tables are normalized. Both have the same one-role marginals
+
+$$
+p(+)=\frac9{16},
+\qquad
+p(-)=\frac3{16},
+\qquad
+p(\varnothing)=\frac14,
+$$
+
+while their correlations differ. The nuisance flip probability `1/4` is a
+separate hostile control, not the single-reader misclassification parameter
+`epsilon=1/10` used in Section 7. A shared
 laser, support, field supply, shield vibration, or acquisition error can
 therefore imitate or hide a joint source--probe signature without changing
 the separate calibration marginals.
@@ -421,9 +528,11 @@ the separate calibration marginals.
 
 ## 9. Normalization audit
 
-Every ideal branch is generated from the common seed by a unitary.
-Every registered binary reader is completed by the null outcome. Hence for
-every preparation, marker context, probe phase, and readout context,
+Every ideal branch is generated from the common seed by a unitary. Every
+registered binary reader is completed by the null outcome. Every correlated
+joint reader is required to satisfy the stochastic-kernel normalization in
+Section 7.1. Hence for every preparation, marker context, probe phase, and
+readout context,
 
 $$
 \sum_{r_S,r_M,r_R,r_P,r_{W_D},r_{W_X}}
@@ -431,10 +540,13 @@ p_{\rm syn}
 (r_S,r_M,r_R,r_P,r_{W_D},r_{W_X}\mid b,c)=1.
 $$
 
-The shared-nuisance mixture is normalized because it is a convex combination
-of two deterministic joint flips. The factorized mutant is also normalized;
-normalization alone cannot detect the false independence. Joint held-outs are
-required.
+Each record symbol in this sum denotes the single basis licensed for that role
+by `c`; the equation does not combine incompatible source reads.
+
+The complete shared-nuisance table sums to one because it combines normalized
+registration bits with a normalized common-flip mixture. The factorized mutant
+is also normalized. Normalization alone cannot detect false independence;
+joint held-outs are required.
 
 ---
 
@@ -443,13 +555,14 @@ required.
 The witness distinguishes:
 
 1. coherent phase from a diagonal mixture using two quadratures;
-2. a reversible mark from a retained record;
+2. a reversible mark from a retained-register proxy, without claiming
+   physical record stability;
 3. coherent uncomputation from visible reset;
 4. complete records from accepted-only records;
-5. a fixed external probe phase from a reciprocal source response; and
+5. a fixed external probe phase from a reciprocal source response;
 6. a common nuisance parent from factorized marginals; and
-7. identical reduced source operations with distinct controller/exchange
-   records.
+7. identical reduced source operations with distinct uninterpreted external
+   tags, without claiming a physical exchange ledger.
 
 It also demonstrates that these are independent gates: normalization does not
 prove physical source descent, correct marginals do not prove a correct joint
@@ -464,15 +577,17 @@ This witness deliberately fails the real B0 requirements:
 
 1. its source, marker, probe, and record are abstract qubits;
 2. it has no mass distribution, trap, support, actuator, or material reader;
-3. `W_D,W_X` are abstract finite tags, not calibrated energy, momentum, heat,
+3. `R` is only a retained-register proxy, not an amplified durable record with
+   a proved stable-future grammar;
+4. `W_D,W_X` are abstract finite tags, not calibrated energy, momentum, heat,
    recoil, or boundary-flux carriers, so it has no physical conservation
    closure;
-4. it has no electromagnetic, Casimir, thermal, collisional, seismic, or
+5. it has no electromagnetic, Casimir, thermal, collisional, seismic, or
    backaction physics;
-5. it is handed the preparation family and external probe phase;
-6. it has no no-refit transfer to another apparatus;
-7. it has no dynamical gravity or reciprocal response; and
-8. it has no microscopic actuality claim.
+6. it is handed the preparation family and external probe phase;
+7. it has no no-refit transfer to another apparatus;
+8. it has no dynamical gravity or reciprocal response; and
+9. it has no microscopic actuality claim.
 
 Therefore its maximum status is author-side `B0-L2` evidence if independently
 rebuilt under a future pin. No level is awarded here.
@@ -482,10 +597,12 @@ rebuilt under a future pin. No level is awarded here.
 ## 12. Maximum legitimate claim
 
 > One exact finite standard-quantum witness realizes the B0 matched-diagonal,
-> coherence, temporary-marker, coherent-eraser, retained-record,
-> fixed-background phase, complete-reader, and correlated-nuisance types. The
-> record laws are positive and normalized, and exact countermodels show why a
-> second quadrature, stable-record typing, null outcomes, and a common
-> nuisance parent are necessary. The witness is an abstract interface test,
-> not a massive apparatus, gravity law, ontology, experiment, or discharge of
-> `P-B0-1`.
+> coherence, temporary-marker, coherent-eraser, retained-register,
+> fixed-background phase, complete-reader, and correlated-nuisance interface
+> types. Its complete null-inclusive record laws are positive and normalized,
+> and exact countermodels show why a second quadrature, physical stable-record
+> certification, null outcomes, and a common nuisance parent are necessary.
+> The retained qubit and external tag are deliberately not a durable material
+> record or physical exchange ledger. The witness is an abstract interface
+> test, not a massive apparatus, gravity law, ontology, experiment, or
+> discharge of `P-B0-1`.
