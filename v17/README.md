@@ -776,6 +776,17 @@ cleanly if nature does not support it.
   controls carry the missing doubled relation but are not thereby ontic or
   source-complete. The next work is consolidation and one candidate-driven
   parent attempt, not another generic reciprocity gate.
+  The consolidation is now written at SYN-R1-L1 author-side scope. It places
+  the exact R1 complete-record member beside the stable-record positivity,
+  compositional nonclosure, fixed-positive-route, Gram/Gaussian relocation,
+  PR-boundary, interface, response, and reciprocity results in one dependency-
+  faithful manuscript. A declared-versus-derived table prevents effective
+  material/QED inputs from being called emergence; an ontology fork keeps
+  ordinary-positive, relational predictive, and quantum-plus-actualization
+  rivals live. No new theorem or scientific award is created. The next
+  author-side step is selection of exactly one candidate architecture under
+  the printed source, reader, composition, Bell, resource, QFT, and gravity
+  admission contract.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

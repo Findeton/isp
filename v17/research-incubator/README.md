@@ -655,6 +655,17 @@ controls, not selected ontology. The generic mechanism census is now
 sufficient; the next route is consolidation and one explicit
 candidate-driven contextual parent.
 
+That consolidation now reaches SYN-R1-L1 author-side scope. It is not another
+source theorem: it places the exact R1 material-QED complete-record
+construction and the shortest exact native-source obstruction chain in one
+manuscript, with dependency ceilings preserved. It includes the one-mode
+vacuum/multipair/loss/dark click formula, stable-record $\Gamma$ theorem,
+composition witness, fixed-positive-route obstruction, Gram and Gaussian
+relocation results, PR underselection family, later bridge/response results,
+declared-input census, empirical ladder, ontology fork, and gravity wall. Its
+candidate contract admits one author-side positive contextual parent attempt
+and no automatic official cycle.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

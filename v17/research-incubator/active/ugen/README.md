@@ -654,6 +654,16 @@ and non-ontic by default. The mechanism census now stops; the next work is a
 consolidated R1/native-gap package and at most one explicit candidate-driven
 positive contextual parent.
 
+The consolidation is now complete at SYN-R1-L1 author-side scope in
+`v17_ugen_u0_r1_baseline_native_source_gap_synthesis.md`. It carries no new
+theorem or promotion. The manuscript unifies the exact R1 material-QED
+complete-record member, generic stable-$\Gamma$ theorem, composition and
+fixed-positive-route obstructions, Gram/Gaussian relocation, PR
+underselection, later bridge/response placement, declared-versus-derived
+ledger, ontology fork, empirical ladder, and gravity wall. Its final contract
+admits exactly one author-side candidate architecture before the ontology
+fork is reassessed.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -722,6 +732,7 @@ Active audit:
 - v17_ugen_u0_exchange_deformation_response_selection_gate.md
 - v17_ugen_u0_fluctuation_response_parent_gate.md
 - v17_ugen_u0_whole_process_reciprocity_feasibility_gate.md
+- v17_ugen_u0_r1_baseline_native_source_gap_synthesis.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1103,7 +1114,8 @@ U0 FLUCTUATION-RESPONSE GATE:  FRP-L2 / DETAILED BALANCE DISSIPATIVE ONLY
 U0 KMS RESPONSE CONTROL:       CONDITIONAL QUANTUM INPUT / NO NATIVE CREDIT
 U0 WHOLE-PROCESS RECIPROCITY:  WPR-L2 / EXACT RELATION, SOURCE UNSELECTED
 U0 POSITIVE SCALAR FRINGE:     POSSIBLE / READER-SUPPLIED CONTROL ONLY
-NEXT U0 SCIENTIFIC WORK:       CONSOLIDATE THEN ONE CANDIDATE-DRIVEN PARENT
+U0 R1/NATIVE-GAP SYNTHESIS:    SYN-R1-L1 / NO NEW RESULT OR PROMOTION
+NEXT U0 SCIENTIFIC WORK:       SELECT ONE CANDIDATE-DRIVEN PARENT
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

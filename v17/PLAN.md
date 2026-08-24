@@ -654,6 +654,16 @@ response instead uses doubled SK/Gram/decoherence-functional structure whose
 source and actuality remain open. The generic mechanism census is now closed;
 the next work is R1/native-gap consolidation followed by at most one explicit
 candidate-driven positive contextual parent attempt.
+The R1/native-source-gap synthesis now reaches SYN-R1-L1 author-side scope.
+It consolidates the effective Maxwell--macroscopic-QED--instrument map, exact
+one-mode vacuum/multipair/loss/dark/complete-click member, generic stable-
+record $\Gamma$ theorem, exact composition and fixed-positive-route
+obstructions, Gram-envelope and Gaussian-relocation results, PR-boundary
+counterfamily, later bridge/response placement results, declared-versus-
+derived balance sheet, ontology fork, empirical ladder, and gravity wall.
+It creates no new theorem or promotion. Its admission contract permits one
+author-side candidate-driven positive contextual parent attempt; no second
+candidate or official cycle follows automatically.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
