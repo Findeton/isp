@@ -198,8 +198,11 @@ freely drifting phase offset makes the phase families exactly identical. Even
 with unit success and visibility, the existing idealized phase controls require
 from `48,381` to roughly `6.1e40` attempted runs at the printed illustrative
 error targets. These are necessary, not sufficient, counts and do not select a
-platform. No exact public packet closes the information ledger, so
-`NO-SELECTION` remains unchanged.
+platform. B0 can certify only candidate-neutral calibration information; it
+cannot certify that unknown future entrants differ. Their separation is
+computed later from frozen profiles on the unchanged packet, with exact
+agreement and infeasibility still allowed. No exact public packet closes the
+information ledger, so `NO-SELECTION` remains unchanged.
 
 The pre-pin closure audit corrects the remaining procedural ambiguity. The
 exact synthetic witness already exists as open author-side work and therefore

@@ -17,7 +17,7 @@ one complete source--apparatus--probe record law, not a best-of-platform
 collage.
 
 This audit derives a conjunctive selection rule and applies it to the current
-primary evidence. It produces four conclusions.
+primary evidence. It produces five conclusions.
 
 1. A newly published 2026 experiment demonstrates center-of-mass
    matter-wave interference of sodium clusters above `170 kDa`, with a
@@ -40,6 +40,10 @@ primary evidence. It produces four conclusions.
    common-packet gravity-arena gate in one demonstrated apparatus. The
    candidate-neutral selection outcome is therefore `NO-SELECTION`, not a
    forced cold-atom or microsolid winner.
+5. A complete attempted-run calibration law can establish apparatus
+   information only after failures, nuisance degeneracy, and cross-run memory
+   are included. It cannot establish in advance that unknown future gravity
+   entrants differ; exact agreement remains admissible.
 
 The result also sharpens governance. `B0-L4` can establish a transferable
 mechanical baseline at one platform scope. It cannot by itself discharge the
@@ -50,6 +54,7 @@ That binding occurs at `B0-L5`.
 ```text
 B0 PHYSICS FIGURES OF MERIT:         DERIVED AUTHOR-SIDE
 B0 PLATFORM ELIGIBILITY RULE:        DERIVED AUTHOR-SIDE
+B0 COMPLETE-RECORD INFORMATION:      DERIVED NECESSARY GATE
 NEW 2026 NANOPARTICLE EVIDENCE:      INCORPORATED
 B0-E PLATFORM SELECTED:              NO
 B0-L4 TRANSFER OBJECT:               ABSENT
@@ -221,24 +226,47 @@ The platform must predict the complete distribution of the witness and its
 failures. One fitted visibility is not a decoherence law. Shared phase noise
 and common-mode subtraction remain inside the joint nuisance parent.
 
-### 4.3 Complete-record sensitivity ledger
+### 4.3 Complete-record information ledger
 
-For the complete registered law `p(r|Phi,c)`, a local sensitivity control is
+The earlier unprofiled one-coordinate Fisher sum is not an eligibility test.
+It can remain positive even when an admitted phase drift or nuisance response
+exactly reproduces the target score. The complete ledger is instead
 
 $$
-\mathcal I_\Phi(c)
+\mathsf I_{\rm cal}
 =
-\sum_{r:p(r|\Phi,c)>0}
-p(r|\Phi,c)
-\left[
-\partial_\Phi\log p(r|\Phi,c)
-\right]^2.
+(\mathcal R,\mathcal C,p_0,\Delta_{\rm cal},\mathcal H_\eta,
+\{\mathcal D_{\rm sep}^{(N)}\}_{N\le N_{\rm cap}},
+I_{\Delta\mid\eta},q,V,N_{\rm cap}),
 $$
 
-The null, failure, drift, overwrite, and invalid outcomes remain in the sum.
-Any projected phase resolution must state repetitions, correlations,
-calibration uncertainty, and the systematic floor. Fisher information is not
-evidence if the assumed reader has not been built.
+with the types and exact bounds derived in the companion complete-record
+information gate. All null, failure, drift, overwrite, invalid, support, and
+reference records remain inside the joint attempted-run law. Cross-run memory
+or drift requires the full joint divergence; multiplying one-run information
+by `N` is then forbidden.
+
+At B0 scope, `Delta_cal` must be a physically generated, preregistered
+candidate-neutral calibration direction: for example the independently
+metered fixed classical-gravity control, an injected source/probe phase, or a
+registered reader response. It is not a guessed difference between future
+gravity laws. The necessary calibration gate is
+
+$$
+E_{\rm INFO}^{\rm cal}
+=
+[\mathsf I_{\rm cal}\ \text{is complete}]
+\land
+[\mathcal D_{\rm sep}^{(N_{\rm cap})}
+ \ge d(1-\beta\Vert\alpha)].
+$$
+
+Passing this gate proves neither that the bound is sufficient nor that future
+entrants differ. Candidate-specific separation is calculated only after at
+least two complete laws freeze, using the unchanged public packet and common
+calibration evidence while retaining each law's gravity-coupled nuisance
+dynamics inside its frozen parent. Exact agreement remains an allowed MG0
+result.
 
 ### 4.4 Nuisance and mechanics ledger
 
@@ -257,9 +285,11 @@ $$
 
 This is not a discovery statistic and no universal pass threshold is set
 here. It prevents raw gravitational phase from being compared with only one
-noise term. Large electromagnetic forces are not fatal if their held-out
-uncertainty is sufficiently controlled; small nominal forces are not safe if
-their tails or correlations are unknown.
+noise term, but it cannot replace `E_INFO^cal`: quadrature addition does not
+detect exact nuisance degeneracy, non-Gaussian tails, postselection, or
+cross-run memory. Large electromagnetic forces are not fatal if their
+held-out uncertainty is sufficiently controlled; small nominal forces are not
+safe if their tails or correlations are unknown.
 
 The separate hard mechanics vector is
 
@@ -290,8 +320,10 @@ can, from public inputs:
 5. expose supports, work, recoil, heat, backaction, and boundary fluxes;
 6. predict complete records with a common correlated nuisance parent;
 7. reproduce a fixed external classical-gravity calibration from independent
-   source geometry; and
-8. pass at least one preregistered no-refit transfer.
+   source geometry;
+8. pass `E_INFO^cal` for a physically generated candidate-neutral calibration
+   direction under a frozen attempted-run cap; and
+9. pass at least one preregistered no-refit transfer.
 
 Different papers may establish component plausibility. They cannot jointly
 constitute one `E_B0` apparatus.
@@ -305,11 +337,14 @@ the mechanical portion of the frozen common packet. Therefore it must also:
 1. realize the exact registered source--probe geometry to be consumed by all
    future entrants;
 2. freeze its extended branch density and many-body source semantics;
-3. possess a complete-record sensitivity and nuisance envelope capable of
-   testing the preregistered PG/CP/ME/DD surfaces without selecting an answer;
+3. freeze the complete record alphabet, context/reversal schedule,
+   candidate-neutral calibration-response family, common nuisance evidence and
+   classification ledger, and attempted-run resource cap needed to evaluate
+   later PG/CP/ME/DD profiles;
 4. expose every candidate-independent classical and nongravitational channel;
-   and
-5. remain byte-identical when candidate laws are later attached.
+5. remain byte-identical when candidate laws are later attached; and
+6. permit future entrant agreement, nonidentifiability, or infeasibility
+   without changing the apparatus or calibration model.
 
 The conjunction is
 
@@ -321,6 +356,11 @@ $$
 
 `E_B0` success elsewhere is valuable B0-L4 evidence. Only common-packet
 binding at B0-L5 can discharge `P-B0-1` for entrant admission.
+
+Neither eligibility stage asserts that unknown future entrants are
+distinguishable. B0 certifies one complete calibration-bearing apparatus;
+candidate-specific information is a later comparison output, with
+gravity-coupled nuisance dynamics kept inside each entrant's parent.
 
 ---
 
@@ -466,18 +506,22 @@ A future pin should freeze this order before choosing a platform.
    MODEL`, `PROPOSED`, or `ABSENT`. A proposal cannot satisfy a demonstrated
    edge.
 5. **B0 closure.** Require all `E_B0` gates conjunctively.
-6. **Arena compatibility.** Require the same apparatus and packet to pass
+6. **Candidate-neutral information.** Require a physically generated
+   calibration direction, complete joint attempted-run law, nuisance family,
+   error targets, and resource cap. Reject unprofiled Fisher information,
+   postselected counts, and i.i.d. scaling under cross-run memory.
+7. **Arena compatibility.** Require the same apparatus and packet to pass
    `E_MG0`; do not swap platforms after B0 review.
-7. **No target-conditioned score.** Do not choose using the sign or magnitude
+8. **No target-conditioned score.** Do not choose using the sign or magnitude
    favored by one gravity entrant. Use the declared Newtonian interaction
-   scale, complete-reader sensitivity, and candidate-independent nuisance
-   envelope only.
-8. **No compensating average.** Extra mass cannot buy a missing reader;
+   scale, calibration information, and candidate-independent nuisance envelope
+   only. Do not promise separation of unknown entrants.
+9. **No compensating average.** Extra mass cannot buy a missing reader;
    visibility cannot buy missing recoil; projected SNR cannot buy absent
    source generation.
-9. **Permit no selection.** If no row passes, terminate with the frontier and
+10. **Permit no selection.** If no row passes, terminate with the frontier and
    keep entrant admission closed.
-10. **Freeze before construction.** Only the selected exact apparatus version
+11. **Freeze before construction.** Only the selected exact apparatus version
     may enter B0-E construction.
 
 This rule currently returns `NO-SELECTION`.
@@ -505,6 +549,15 @@ This rule currently returns `NO-SELECTION`.
 14. Infer a quantum mediator from entanglement without the frozen theory-class
     premises.
 15. Treat `NO-SELECTION` as procedural failure and lower a hard gate.
+16. Use unprofiled `I_Phi,Phi` when the phase score lies in the nuisance span.
+17. Convert detected-event counts into attempted-run reach without the success
+    and failure law.
+18. Multiply one-run divergence by `N` despite shared drift, memory, or
+    adaptive feedback.
+19. Call a symbolic sign flip a gravity-isolating reversal when an admitted
+    electromagnetic or controller nuisance has the same response parity.
+20. Select an apparatus by a predicted difference between future candidates
+    that have not yet been frozen.
 
 ---
 

@@ -2571,3 +2571,34 @@ or resource cap required to award information eligibility. The author-side
 platform outcome therefore remains `NO-SELECTION`; no B0 level, pin, review,
 apparatus, candidate, entrant, comparison, gravity verdict, ontology, or
 successor opens.
+
+## 2026-08-24 — B0 CALIBRATION/ENTRANT INFORMATION FIREWALL INTEGRATED AUTHOR-SIDE (v17 LEDGER #111)
+
+The platform eligibility rule now consumes the complete-record theorem
+without claiming knowledge of future gravity-law differences. The earlier
+unprofiled one-coordinate Fisher ledger is replaced by a complete joint
+attempted-run calibration ledger with nulls, failures, nuisance profiling,
+cross-run memory, registered errors, and an independent resource cap.
+`E_B0` requires that necessary gate for one physically generated
+candidate-neutral calibration direction. `E_MG0` freezes the record
+interface, calibration-response family, common nuisance evidence and
+classification ledger, and resource ledger without promising that PG/CP/ME/DD
+predictions from unknown entrants will differ.
+
+Candidate-specific information is evaluated only after two complete laws and
+their predictions freeze, using the unchanged public packet. Exact agreement,
+Nuisance dynamics coupled to gravity remain inside each law's frozen parent;
+only calibration evidence and registered classification are common.
+Agreement, nuisance nonidentifiability, and experimental infeasibility remain
+admissible outcomes. The selection algorithm now rejects postselection, unprofiled
+Fisher coordinates, false i.i.d. scaling under shared drift, symbolic
+reversals whose nuisance parity is identical, and apparatus selection based
+on unopened candidate outputs.
+
+The B0 ladder is correspondingly narrowed: B0-L3 types the calibration
+information ledger, B0-L4 requires no-refit transfer of that calibration
+information, and B0-L5 authenticates the same packet but still does not imply
+that future entrants are distinguishable. No platform presently closes these
+coordinates, so `NO-SELECTION` remains. No terminal bytes, pin, review,
+apparatus, candidate, entrant, comparison, gravity verdict, ontology, or
+successor opens.

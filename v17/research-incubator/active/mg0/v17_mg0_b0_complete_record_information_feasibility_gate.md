@@ -401,13 +401,34 @@ Here:
 1. `R` is the complete attempted-run record alphabet;
 2. `C` is the frozen context/reversal schedule;
 3. `p_0` is the calibrated complete B0 profile;
-4. `Delta` is a preregistered response direction, not a fitted residual;
+4. `Delta` is a physically generated, preregistered B0 calibration or injected
+   response direction, not a fitted residual and not an unknown future
+   candidate difference;
 5. `H_eta` is the calibration-supported nuisance family;
 6. `D_sep^(N)` is the robust joint-law profile separation through the resource
    cap;
 7. `I_Delta|eta` is the local nuisance-efficient information;
 8. `q,V` are complete-law success and coherence coordinates; and
 9. `N_cap` is the independently justified attempted-run resource cap.
+
+This ledger certifies only the apparatus's candidate-neutral calibration
+information. It cannot prove in advance that two future entrants differ:
+
+$$
+\boxed{
+E_{\rm B0}^{\rm info}
+\not\Longrightarrow
+D(P_i^{(N)}\Vert P_j^{(N)})>0
+\quad\text{for future entrants }i,j.}
+\tag{21}
+$$
+
+After two complete entrants freeze, their profiles must be pushed through the
+unchanged public packet and common calibration evidence, while every
+gravity-coupled nuisance dynamic remains inside its entrant's frozen parent.
+Equality, nonidentifiability, or an infeasible separation remains an
+admissible result. B0 may demonstrate that the apparatus reads its calibration
+directions; it may not manufacture or presuppose the laws' difference.
 
 The information outcomes are:
 
@@ -417,7 +438,7 @@ The information outcomes are:
 | `B0-INFO-NONIDENTIFIABLE` | `D_sep^(N)=0` throughout the registered resource range; the admitted composite families have zero robust finite separation there |
 | `B0-INFO-FIRST-ORDER-BLIND` | the registered local score lies in the nuisance span; an independently preregistered higher-order test would still be required |
 | `B0-INFO-INFEASIBLE` | the necessary attempted-run bound exceeds the frozen resource cap |
-| `B0-INFO-ELIGIBLE` | the necessary gate survives; sufficiency, apparatus closure, and B0/MG0 authentication remain unproved |
+| `B0-INFO-ELIGIBLE` | the candidate-neutral calibration gate survives; sufficiency, apparatus closure, future-law distinguishability, and B0/MG0 authentication remain unproved |
 
 No current platform can be assigned the last outcome because no exact public
 B0 packet supplies all entries of Equation (20). The existing author-side
@@ -459,7 +480,9 @@ A future review must reject at least these attacks:
 > phase locally unidentifiable. Applied to the existing deliberately favorable
 > B0 phase controls, even the ideal necessary counts range from roughly
 > `4.8e4` to `6.1e40` attempts. This sharpens platform readiness without
-> selecting an apparatus or gravity law. No exact public packet currently
+> selecting an apparatus or gravity law. Calibration information does not
+> imply that future entrants differ; that comparison must use their frozen
+> complete profiles on the unchanged packet. No exact public packet currently
 > closes the information ledger, so `NO-SELECTION` remains author-side and no
 > B0 level, candidate, entrant, experiment, gravity verdict, or ontology claim
 > follows.

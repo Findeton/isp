@@ -1031,19 +1031,27 @@ A future B0 pin should preregister at least these attacks.
 22. Treat an unexplained residual as gravity.
 23. Freeze a posterior after opening held-out data and call it prior
     uncertainty.
+24. Use an unprofiled signal Fisher coordinate when a calibrated nuisance has
+    the same score.
+25. Multiply one-run information by the attempt count despite shared drift or
+    memory.
+26. Quote detected-event resources while omitting null, failure, and invalid
+    attempted-run records.
+27. Claim that B0 calibration sensitivity guarantees two unknown gravity laws
+    will be distinguishable.
 
 ### Gravity and ontology leakage
 
-24. Supply a solved potential for each source alternative.
-25. Append a one-way gravity phase without reciprocal parent and call B0 an
+28. Supply a solved potential for each source alternative.
+29. Append a one-way gravity phase without reciprocal parent and call B0 an
     entrant.
-26. Infer quantized gravity from a fixed classical-source phase.
-27. Infer quantized gravity from entanglement without the frozen theory-class
+30. Infer quantized gravity from a fixed classical-source phase.
+31. Infer quantized gravity from entanglement without the frozen theory-class
     assumptions and nongravitational channel audit.
-28. Infer microscopic trajectories or wavefunction ontology from the record
+32. Infer microscopic trajectories or wavefunction ontology from the record
     law.
-29. Claim that a process-tensor reconstruction generated the physical law.
-30. Let B0-T success discharge B0-E or `P-B0-1`.
+33. Claim that a process-tensor reconstruction generated the physical law.
+34. Let B0-T success discharge B0-E or `P-B0-1`.
 
 ---
 
@@ -1068,15 +1076,19 @@ passes the hostile mathematical mutants. `P-B0-1` remains open.
 
 One selected massive apparatus is described by fixed component-level inputs
 and generates every preparation, reader, failure, and nuisance record without
-target-complete tomography. Transfer is not yet earned.
+target-complete tomography. Its candidate-neutral calibration direction,
+complete attempted-run information ledger, and resource cap are typed.
+Transfer is not yet earned.
 
 ### B0-L4 — no-refit mechanical transfer
 
 The same fixed model predicts preregistered source, coherence, marker,
 classical-gravity, probe, nuisance, and complete-reader held-outs, including a
-new setting or implementation, within frozen uncertainty. This completes a
-transferable platform-scoped baseline; it does not yet prove that the object
-is the mechanical portion of the common MG0 packet.
+new setting or implementation, within frozen uncertainty. The no-refit
+calibration information gate survives on the joint attempted-run law. This
+completes a transferable platform-scoped baseline; it does not yet prove that
+the object is the mechanical portion of the common MG0 packet or that future
+gravity entrants differ.
 
 ### B0-L5 — common-packet readiness
 
@@ -1084,7 +1096,9 @@ The reviewed B0-L4 object is authenticated as the mechanical portion of one
 exact public packet ready to be consumed unchanged by future reciprocal
 entrants. This is the minimum level at which terminal review may discharge
 `P-B0-1`. Entrant review still waits until at least two separately frozen laws
-exist and pass their own completeness and distinctness gates.
+exist and pass their own completeness and distinctness gates. Their
+candidate-specific information may still be zero or experimentally
+infeasible.
 
 ### B0-L6 — native matter explanation
 

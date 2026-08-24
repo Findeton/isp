@@ -951,6 +951,11 @@ necessary counts range from `48,381` to approximately `6.1e40`. These are
 necessary rather than sufficient and do not alter `NO-SELECTION`, because no
 exact public B0 packet currently supplies the complete law, nuisance family,
 response direction, or resource cap.
+The platform eligibility rule now consumes that gate only for physically
+generated candidate-neutral calibration directions. It does not pre-certify a
+difference between unknown gravity laws. Candidate-specific separation is a
+later output computed from frozen entrant profiles on the unchanged packet;
+zero separation and infeasibility remain valid outcomes.
 
 A pre-pin closure audit now separates the next three logical gates. Because
 the exact B0-T witness already exists in open author-side form, the immediate

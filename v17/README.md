@@ -904,7 +904,10 @@ cleanly if nature does not support it.
   between `48,381` and about `6.1e40` attempts at the illustrative error
   targets. The counts are not sufficient designs and award no platform;
   absent an exact public record law and nuisance family, `NO-SELECTION`
-  remains binding author-side.
+  remains binding author-side. This gate certifies only candidate-neutral
+  calibration information. It cannot promise that unknown future entrants
+  differ; candidate-specific separation is evaluated later on the unchanged
+  packet and may return agreement, nonidentifiability, or infeasibility.
   A companion source-lineage audit registers twenty-six primary objects by
   evidence class, scholarly version, exact consumed claim, and forbidden
   promotion. The mutable arXiv citations are now version-specific, and an APS
