@@ -563,6 +563,18 @@ PR material, and the reversible premise is weaker than purification of every
 process; both stronger requirements remain live. The ceiling is QB-L2
 author-side, with no candidate or scientific result.
 
+The Q-source premise-physics audit then separates conditional reconstruction
+from native explanation. The finite CDP substrate and six-principle package
+can select the complex finite quantum operational framework, but typed systems,
+circuit and product grammar, convexity, finite information, and the complete
+test quotient enter as physical assumptions. An exact quotient theorem shows
+that all operational principles survive arbitrary ordinary-positive latent
+refinements with the same pushforward; a carrier trilemma places purification
+as predictive, divisible through a complete actual restartable enlargement, or
+incomplete as a native source law. This earns QPB-L2 author-side only. The
+configuration-to-operational bridge, material member, actuality, QFT, and
+gravity remain open.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -621,6 +633,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_r1_macroscopic_qed_whole_boundary_member.md
 - active/ugen/v17_ugen_u0_s2_empirical_residual_and_admission_gate.md
 - active/ugen/v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
+- active/ugen/v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

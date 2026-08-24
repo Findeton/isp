@@ -561,6 +561,20 @@ purification. The next gate must audit the full Q-source reconstruction
 conjunction, separating empirically grounded physical principles from
 comparison-category definitions and premises that merely encode the quantum
 framework; M-layer source selection and actuality remain separate.
+That audit now closes at QPB-L2 author-side scope. The finite CDP package
+conditionally selects complex quantum operational structure, but its typed
+systems, circuit order, product grammar, mixtures, finite information, and
+complete test quotient are supplied comparison structure. Every predicate on
+that quotient is invariant under ordinary-positive latent refinements with the
+same pushforward, so the principles cannot select microscopic ontology. The
+purification carrier is correspondingly predictive, an actual complete
+restartable carrier through which the law is divisible at the licensed cut, or
+an incomplete carrier still owing a whole-process source law. The next gate is
+therefore a configuration-to-operational bridge feasibility audit: it must ask
+which known physical constructions can generate the operational substrate and
+principle domains without receiving the target quantum process. No native
+bridge, candidate, review, material member, actuality result, or Paper 04B
+successor follows.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

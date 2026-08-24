@@ -566,6 +566,19 @@ reversibility criterion is weaker than universal purification. The packet
 reaches QB-L2 author-side only and routes the next test to the physical content
 of the stronger Q-source reconstruction premises.
 
+That premise audit now closes at QPB-L2 author-side scope. The finite CDP
+operational substrate plus causality, perfect distinguishability, ideal
+compression, local distinguishability, pure conditioning, and purification
+conditionally selects finite complex quantum operational theory. But systems,
+sequential and parallel grammar, mixtures, finite information, and the complete
+operational quotient are supplied physical structure. Every quotient-level
+principle is invariant under ordinary-positive latent refinements with the same
+pushforward, so the package cannot identify microscopic ontology. Purification
+is predictive, divisible through an actual complete restartable enlarged
+carrier at the licensed cut, or incomplete as a native source law. No native
+configuration-to-operational bridge, material member, actuality law, or
+candidate is constructed; bridge feasibility is now the exact next question.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -622,6 +635,12 @@ Active audit:
 - v17_ugen_u0_msource_qed_material_descent_audit.md
 - v17_ugen_u0_msource_preparation_record_closure.md
 - v17_ugen_u0_msource_microscopic_reader_descent.md
+- v17_ugen_u0_source_to_record_common_parent_closure.md
+- v17_ugen_u0_native_whole_boundary_functional_attempt.md
+- v17_ugen_u0_r1_macroscopic_qed_whole_boundary_member.md
+- v17_ugen_u0_s2_empirical_residual_and_admission_gate.md
+- v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
+- v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -988,7 +1007,10 @@ U0 S2 POSITIVE LATENT LIFT:    EXACT / COVARIANCE CARRIES QUANTUM PAYLOAD
 U0 S2 ADMISSION GATE:          S2-L1 AUTHOR-SIDE / NO NATIVE FORMULA
 U0 S2 MINIMAL PREMISES:        QB-L2 EXACT COUNTERMODEL / QUANTUM NOT SELECTED
 U0 S2 ISOTROPIC FAMILY:        CHSH 4V / LOCAL-QUANTUM-PR CONTROLS
-NEXT U0 SCIENTIFIC WORK:       AUDIT Q-SOURCE PREMISE PHYSICS / NATIVE BRIDGE
+U0 Q-SOURCE PREMISE AUDIT:     QPB-L2 / CONDITIONAL Q-LAYER
+U0 Q-SOURCE NATIVE ONTOLOGY:   NOT SELECTED / QUOTIENT INVARIANT
+U0 PURIFICATION CARRIER:       PREDICTIVE OR DIVISIBLE OR INCOMPLETE
+NEXT U0 SCIENTIFIC WORK:       CONFIGURATION-TO-OPERATIONAL BRIDGE FEASIBILITY
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

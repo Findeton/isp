@@ -686,6 +686,20 @@ cleanly if nature does not support it.
   premises not tested here. The next exact question is which strong Q-source
   reconstruction premises have independent physical/native meaning rather
   than merely defining quantum operational structure.
+  The resulting Q-source premise audit now answers that question at QPB-L2
+  author-side scope. The finite CDP substrate plus its six principles
+  conditionally selects the complex finite quantum operational framework, but
+  it begins with typed systems, sequential and parallel composition, convex
+  mixtures, finite information, and a complete operational quotient. Those
+  are substantive physical premises, not consequences of positivity or a
+  native configuration law. An exact quotient-invariance theorem shows that
+  arbitrarily many ordinary-positive latent refinements inherit every such
+  operational principle, so the reconstruction cannot select microscopic
+  ontology. A separate carrier trilemma shows that purification is either
+  predictive, divisible through a complete actual restartable enlarged
+  carrier, or incomplete as a native source law. The next exact task is a
+  configuration-to-operational bridge feasibility audit; no bridge, material
+  member, actuality law, candidate, or Paper 04B successor is awarded.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
