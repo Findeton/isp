@@ -891,12 +891,22 @@ coherent-versus-mixed source, mediator-entanglement, and
 decoherence--diffusion controls. No candidate, parameters, data, result, pin,
 or review exists.
 
+The completely-positive classical–quantum gravity readiness audit now applies
+that contract to thirteen exact primary-source versions. It prevents the
+general theorem, objective trajectories, canonical/covariant constructions,
+Newtonian member, pure-gravity mode/renormalization results, adverse scattering
+member, and dilation controls from silently donating passes to one another.
+Its ceiling is `CQG-L2`: real weak-field reciprocity and empirical
+accountability, but no freeze-ready full matter–gravity member and no
+classical/quantum gravity or ontology verdict.
+
 Active MG0 files:
 
 - `active/mg0/README.md`
 - `active/mg0/v17_mg0_common_matter_geometry_contract.md`
 - `active/mg0/v17_mg0_selector_controls_and_benchmark.md`
 - `active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md`
+- `active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md`
 - `active/mg0/v17_mg0_future_review_contract.md`
 - `active/mg0/ACTIVE_SHA256.txt`
 

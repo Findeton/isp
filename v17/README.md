@@ -835,6 +835,18 @@ cleanly if nature does not support it.
   controls. It assumes no metric, continuum, dimension, foliation, Einstein
   equation, or classical/quantum gravity verdict; constructs no model; and
   opens no official Paper 06/07 or gravity result.
+  A thirteen-source CP-CQ gravity readiness audit now tests the most developed
+  audited classical-gravity/quantum-matter family without treating it as one
+  model. It separates the general Markovian theorem, objective unravellings,
+  canonical and covariant gravity families, Newtonian member, pure-gravity
+  renormalization/modes, constant-kernel scattering member, and quantum
+  dilation/conservation controls. The family earns genuine weak-field
+  reciprocity, a decoherence–diffusion cost, substantial covariant partial
+  results, and empirical accountability. It does not yet supply one member
+  that simultaneously closes nonlinear constraints, conservation, stable
+  vacuum, interacting-matter renormalization, actuality/readers, parameter
+  selection, and held-out transfer. The ceiling is `CQG-L2` author-side; no
+  classical/quantum gravity verdict, MG0 pin, or ontology selection follows.
   A post-A1 relevance adjudication retains Q-Cut as an optional review-ready
   scoped theorem but no longer ranks it as the next unification gate. No next
   official physics unit is currently selected. A candidate-neutral post-A1

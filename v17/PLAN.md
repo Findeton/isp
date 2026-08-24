@@ -868,6 +868,20 @@ nomologies live. This preparation opens neither Paper 06 nor Paper 07 and
 awards no gravity result. Q-Cut remains separately authorizable as a scoped
 information theorem, but no next official physics unit is selected.
 
+The first detailed family comparison against that contract is now complete
+author-side for completely-positive classical–quantum gravity. Thirteen exact
+primary-source versions are bound, and the general CP-CQ theorem, objective
+unravelling subclass, canonical and covariant gravity families, Newtonian
+member, pure-gravity renormalization/modes, constant-kernel scattering member,
+and dilation/conservation controls are kept separate. The resulting
+`CQG-L2` ceiling recognizes real weak-field reciprocity and empirical
+decoherence/diffusion/noise/scattering wedges while refusing to combine them
+into a nonexistent full member. Constraint closure, conservation, stable
+vacuum, interacting-matter renormalization, complete actuality/readers,
+parameter selection, and no-refit transfer do not close together in any
+audited member. The family remains a serious MG0 comparator, not a selected
+gravity ontology or an authorized model.
+
 ### Paper 06 — configuration ontology for matter plus geometry
 
 **Question.** What complete relational configuration supports both the

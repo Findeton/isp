@@ -37,6 +37,10 @@ limits, and expose a prospective empirical wedge.
   proposed first reciprocal weak-field benchmark;
 - `v17_mg0_primary_source_and_scope_reconstruction.md` — primary-source
   constraint audit and novelty boundary;
+- `v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md`
+  — thirteen-source classification of the completely-positive
+  classical–quantum gravity family against the MG0 gates, with no model
+  selected;
 - `v17_mg0_future_review_contract.md` — possible future review design, with no
   authorization or frozen bytes;
 - `ACTIVE_SHA256.txt` — active-byte manifest.
@@ -46,8 +50,10 @@ limits, and expose a prospective empirical wedge.
 MG0 does not replace Q-Cut or the U0 native-law search. N1/N1A, G1, and G2
 remain controls rather than candidate matter ontologies supplied to MG0.
 
-1. Q-Cut remains the next recommended **official** theorem gate if separately
-   authorized.
+1. Q-Cut remains an optional review-ready scoped information theorem if
+   separately authorized; the post-A1 relevance adjudication no longer ranks
+   it as the next unification gate, and no next official physics unit is
+   selected.
 2. N1/N1A are retained strictly as fixed-background Nelson prior-art controls;
    none of their trajectory, geometry, noise, time, or phase structures is
    inherited.
@@ -56,6 +62,17 @@ remain controls rather than candidate matter ontologies supplied to MG0.
 4. U0 is the active **author-side** matter-law search; MG0 is only the
    co-design gate asking what a later common matter–geometry law would have to
    generate.
+
+The CP-CQ gravity readiness audit now supplies the first detailed family test
+against this contract. It separates the general Markovian CP-CQ theorem,
+objective unravellings, canonical and covariant gravity families, Newtonian
+weak-field member, pure-gravity renormalization/modes, constant-kernel
+scattering member, and dilation/conservation controls. The author-side ceiling
+is `CQG-L2`: the family has real weak-field reciprocity and empirical
+accountability, but no one source-fixed member closes full constraints,
+conservation, stable vacuum, interacting-matter renormalization,
+actuality/readers, parameter selection, and held-out transfer. No gravity
+model or ontology is selected.
 
 MG0 cannot select an ontology until at least two genuinely different, fully
 specified matter laws make distinct gravity-sensitive predictions. The next
