@@ -29,12 +29,12 @@ no scientific evidence.
 
 ## Active research front
 
-The incubator preserves six active research fronts, but they no longer have
-equal frontier priority.
+The incubator preserves six named research fronts, including terminal
+historical branches; they do not have equal frontier priority.
 
 ### SPB — Sufficient Physical Boundary Gate
 
-This is the current promotion-bearing branch. It tests whether an
+This was the programme's promotion-bearing boundary branch. It tests whether an
 independently identified physical interface screens a complete experiment and
 supports held-out composition without encoding the target process. Its
 temporal arm uses a source-closed system--memory causal break with direct
@@ -101,16 +101,18 @@ individual necessity; and B3 response histories/kernels are not typed
 physical carriers. The exact apparatus packets also remain absent. No
 automatic v3 or empirical evaluation is open.
 
-The user subsequently authorized one and only one final v3 contract
-successor. Its author-side contract and root adversarial audit now specify the
-complete causal-identification, margin/power, initial-preparation,
-classification, material-carrier, partial-order/minimality, and
-duty-specific-outcome law. Abstract B3 response histories remain coordinate
-controls; material B3 rows are only admission types and cannot be scored
-unless an exact device is instantiated before data. The package is ready for
-one immutable independent contract-review pin and awards no `SPB-L0` or
-physical result. A semantic review failure terminates this contract route;
-there is no automatic repair or v4.
+The user subsequently authorized one and only one final v3 contract successor.
+It was frozen and subjected to mutually blind mathematics/statistics, split
+physical-source/apparatus, and foundations/ontology review. The physical and
+ontology axes accept their assigned scopes, but the mathematics review and
+root reproduce four semantic defects: either power alternative can be empty
+inside the predeclared model class; the bracketing vocabulary has no decision
+map; an empty seam confidence set makes universal branches vacuous; and the
+composition classifier has no total lift into `C` and `X_C`. The first two
+independently defeat submitted claims. The terminal disposition is `SPB-D2 —
+SEMANTIC REVIEW FAILED / HALT SPB CONTRACT ROUTE`; `SPB-L0` is not awarded.
+No apparatus packet, acquisition, empirical result, repair, second successor,
+or v4 is open.
 
 Terminal v2 record and author-side inputs:
 
@@ -125,11 +127,18 @@ Terminal v2 record and author-side inputs:
 - `../review-spb-v2-contract-foundations-ontology.md`
 - `../note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md`
 
-Final v3 author-side package:
+Final v3 package and terminal official record:
 
 - `active/spb/v17_spb_v3_result_neutral_gate_contract.md`
 - `active/spb/v17_spb_v3_root_pre_pin_adversarial_audit.md`
 - `active/spb/SPB_V3_SHA256.txt`
+- `../note-spb-v3-sufficient-physical-boundary-contract-review-pin.md`
+- `../review-spb-v3-contract-mathematics-statistics.md`
+- `../review-spb-v3-contract-physical-temporal.md`
+- `../review-spb-v3-contract-physical-regional.md`
+- `../review-spb-v3-contract-physical-joint.md`
+- `../review-spb-v3-contract-foundations-ontology.md`
+- `../note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md`
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

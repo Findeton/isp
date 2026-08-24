@@ -3039,3 +3039,57 @@ split temporal/regional physical-apparatus, and foundations/ontology seats.
 If semantic review fails, the SPB contract route halts. Physical acquisition,
 an evaluation pin, boundary promotion, ontology, chronology, spacetime,
 gravity, and unification remain closed.
+
+## 2026-08-24 — FINAL SPB V3 REVIEW TERMINAL D2; CONTRACT ROUTE HALTED (v17 LEDGER #123)
+
+The one authorized final SPB successor completed its immutable review cycle.
+The author package was committed at `0a74a36`; the immutable pin at
+`fed678f`; the foundations/ontology report at `bad75b0`; the separately signed
+temporal, regional, and joint physical-source/apparatus reports at `0288dce`;
+and the mathematics/statistics report at `a9d5ee5`. All pinned scientific
+objects, terminal dependencies, scholarly receipts, report bytes, counts, and
+self-hashes authenticated. No apparatus was acquired or operated and no
+empirical record was evaluated.
+
+Seats O and P recommended `SPB-D4` on their assigned axes. They confirm that
+carrier, coordinate, kernel, and instrument are distinguished; B3 is a
+material admission type only; physical candidate order and antichain language
+are honest; ontology and gravity firewalls hold; both bounded architectures
+are feasible in principle; and exact run packets and material B3
+instantiations remain absent. Seat M recommended `SPB-D2`. Root independently
+reproduced all four mathematical/statistical findings, so the protocol's
+one-counterexample rule controls over the apparent two-to-one split.
+
+Two defects independently defeat frozen claims. First, the numerical
+total-variation gaps are nonempty in `[0,1]`, but a predeclared restricted
+model class can have an empty pass-side or fail-side alternative. The stated
+power on that side is then vacuous, so the answer can be encoded in the model
+class while every printed inequality holds. Second, the bracketing section
+enumerates possible `GLOBAL-*` and `PIVOT-*` words without defining the
+coefficient problems, predicates, priorities, or simultaneous-set aggregation
+that would make those words an exhaustive disjoint classifier.
+
+Root also reproduced two major defects. An empty realized seam confidence set
+can satisfy contradictory uniform propositions vacuously and route to
+`SEAM-NO-SOLUTION`; and the six exact `COMP-*` states have no frozen total map
+to the four-valued `C` and `X_C` duties used by minimality, necessity,
+transfer, and exclusion predicates. Consequently `V3-C5` and `V3-C13` fail,
+`V3-C6` fails globally, and `V3-C7` is not established. Ledger #122's
+author-side statements that both power alternatives were nonempty and every
+classifier was exhaustive/disjoint are superseded by this independent
+terminal review.
+
+The root adjudication at commit `f72f1b1` selects `SPB-D2 — SEMANTIC REVIEW
+FAILED / HALT SPB CONTRACT ROUTE`. `SPB-L0` is not awarded. Causal
+identification conditions, the normalized target-independent initial
+preparation law, material-only B3 typing, physical embeddings, antichain
+minimality, registered-necessity limits, source roles, bounded apparatus
+feasibility, and ontology/chronology/gravity ceilings survive as exact salvage
+only; they do not form an accepted inference contract.
+
+This is a semantic experiment-design failure, not an empirical negative about
+physical boundaries and not a software problem. Under the user's binding
+stopping rule there is no repair, second successor, v4, apparatus packet,
+acquisition, evaluation pin, boundary result, ontology selection, chronology,
+spacetime, gravity, unification claim, or automatic successor. The SPB
+contract route is terminal.

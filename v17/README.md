@@ -1152,7 +1152,7 @@ questions, and nonselecting principles. Their common result is that a serious
 boundary claim has five distinct duties: target-independent descent,
 screening, composition/gluing, physical intervention/readout, and no-refit
 transfer. Temporal and regional sufficiency share this form but remain
-different tests. SPB is now open with separate causal-break/memory and
+different tests. SPB opened with separate causal-break/memory and
 regional substitution/reconnection arms. Its author-side P0 audit selects a
 two-transmon system--memory platform and a modular multiport microwave
 platform, while finding no existing public packet that executes either full
@@ -1166,10 +1166,10 @@ not semantically closed enough to govern acquisition. No corrected contract,
 exact apparatus packet, empirical evaluation pin, held-out result, chronology,
 spacetime, gravity, or ontology award exists.
 
-SPB remains the primary promotion-bearing question, but its clean v2 contract
-review is now terminal `SPB-D2 — REVISE BEFORE PHYSICAL PIN`; `SPB-L0` was not
-awarded. V2 repairs most v1 defects and both apparatus architectures remain
-physically feasible. The frozen inference still fails independent hostile
+The clean v2 contract review is terminal `SPB-D2 — REVISE BEFORE PHYSICAL
+PIN`; `SPB-L0` was not awarded. V2 repairs most v1 defects and both apparatus
+architectures remain physically feasible. The frozen inference still fails
+independent hostile
 review: nonrandom source closure does not identify a do-law; unconstrained
 matching and screening margins permit tautological equivalence; acyclic
 kernel composition omits the initial boundary/preparation law; feedback and
@@ -1178,19 +1178,23 @@ with individual necessity; B3 response histories/kernels lack physical
 carrier/instrument types; and several aggregate or “only” flags outrun the
 duty-specific evidence. Both exact apparatus/run packets remain absent. This
 is an experiment-design stop, not a computational failure or a result about
-nature. No automatic v3, acquisition, boundary, ontology, chronology,
-spacetime, gravity, or unification claim follows.
+nature. No v3 followed automatically, and no acquisition, boundary, ontology,
+chronology, spacetime, gravity, or unification claim follows.
 
-The user then explicitly authorized exactly one final v3 successor. Its
-author-side contract and root adversarial audit are now complete but not yet
-frozen or independently accepted. V3 supplies the missing causal
-identification routes, strictly nonempty statistical margins with bounded
-coverage/power errors, explicit initial preparation, exhaustive disjoint
-finite-resolution routing, conditional material B3 admission types, physical
-partial orders, honest minimal antichains/registered necessity, and
-duty-specific predicates. This creates no physical result. The only next
-stage is one immutable review pin and mutually blind contract review; any
-semantic failure halts the SPB contract route with no repair or v4.
+The user then explicitly authorized exactly one final v3 successor. Its bytes
+were frozen and subjected to mutually blind mathematics/statistics, split
+physical-source/apparatus, and foundations/ontology review. V3 genuinely
+repairs causal identification, initial preparation, material B3 typing,
+physical candidate order, antichain minimality, and several outcome
+firewalls. The physical and ontology axes accept their assigned scopes. The
+mathematics review and root nevertheless reproduce four semantic defects:
+either side of the claimed power duty can be empty inside the predeclared
+model class; the bracketing labels have no classifier; an empty realized seam
+confidence set makes uniform branches vacuous; and the `COMP-*` states have no
+total lift into `C` and `X_C`. The first two independently defeat frozen
+claims. V3 is terminal `SPB-D2 — SEMANTIC REVIEW FAILED / HALT SPB CONTRACT
+ROUTE`; no `SPB-L0`, apparatus packet, physical acquisition, empirical result,
+repair, second successor, or v4 exists.
 
 ## Scientific order
 
@@ -1257,15 +1261,29 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `research-incubator/active/spb/SPB_V2_SHA256.txt` — author-side integrity
   receipt for the v2 candidate, audit, and terminal predecessor adjudication.
 - `research-incubator/active/spb/v17_spb_v3_result_neutral_gate_contract.md`
-  — final authorized author-side contract candidate with explicit causal
-  identification, nonvacuous margins/power, initial preparation, disjoint
-  classifiers, material-carrier admission types, and duty-specific outcomes.
+  — final authorized contract, now terminally reviewed `SPB-D2`; its causal,
+  initial-preparation, carrier, and antichain salvage survives, but its
+  nonvacuity and total-classifier claims do not.
 - `research-incubator/active/spb/v17_spb_v3_root_pre_pin_adversarial_audit.md`
-  — final author-side reconstruction of every v2 blocker and the additional
-  staged-assignment, mixed-classifier, and uninstantiated-B3 attacks; not an
-  independent review or result.
+  — historical author-side reconstruction of v2 blockers and additional
+  staged-assignment, mixed-classifier, and uninstantiated-B3 attacks; it did
+  not catch all terminal v3 defects and is not an independent result.
 - `research-incubator/active/spb/SPB_V3_SHA256.txt` — exact author-side v3 and
-  terminal-predecessor integrity manifest for the future immutable pin.
+  terminal-predecessor integrity manifest consumed by the immutable pin.
+- `note-spb-v3-sufficient-physical-boundary-contract-review-pin.md` — immutable
+  final v3 contract-review pin.
+- `review-spb-v3-contract-mathematics-statistics.md` — frozen v3 Seat M report;
+  terminal recommendation `SPB-D2`.
+- `review-spb-v3-contract-physical-temporal.md` — frozen v3 temporal apparatus
+  subreport.
+- `review-spb-v3-contract-physical-regional.md` — frozen v3 regional apparatus
+  subreport.
+- `review-spb-v3-contract-physical-joint.md` — frozen v3 joint physical-source
+  and apparatus disposition.
+- `review-spb-v3-contract-foundations-ontology.md` — frozen v3 Seat O report.
+- `note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md`
+  — terminal `SPB-D2` adjudication; SPB contract route halted with no `SPB-L0`,
+  acquisition, empirical result, repair, or v4.
 - `note-spb-v2-sufficient-physical-boundary-contract-review-pin.md` —
   immutable result-neutral v2 contract-review pin.
 - `review-spb-v2-contract-mathematics-statistics.md` — frozen v2 Seat M

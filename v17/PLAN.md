@@ -1290,6 +1290,22 @@ failures or evidence against a sufficient boundary in nature. No automatic
 v3, physical pin, acquisition, boundary result, or downstream promotion
 follows.
 
+The user then authorized one and only one final v3 successor. Its complete
+contract, root pre-pin audit, immutable pin, and mutually blind
+mathematics/statistics, split physical-source/apparatus, and
+foundations/ontology reports are now frozen. Seat P finds both bounded
+architectures physically feasible, and Seat O accepts the carrier/ontology
+firewalls at their declared scope. Seat M and root reproduce four semantic
+defects: a predeclared model class may leave either advertised power
+alternative empty; the bracketing vocabulary has no mathematical decision
+map; an empty seam confidence set makes universal classifier branches
+vacuous; and `COMP-*` has no total map into `C` and `X_C`. The first two
+independently falsify frozen claims `V3-C5` and `V3-C13`. The terminal
+disposition is `SPB-D2 — SEMANTIC REVIEW FAILED / HALT SPB CONTRACT ROUTE`.
+No `SPB-L0`, physical packet, acquisition, empirical result, repair, second
+successor, or v4 follows. This is a failure of the final inference contract,
+not evidence that a sufficient physical boundary is absent in nature.
+
 ### F7 — amplitudes
 
 Complex amplitudes are neither banned nor presumed fundamental. If the
@@ -1335,7 +1351,7 @@ Pause for user direction when:
 ```text
 Era charter                         RECORDED
 v16 inheritance balance             RECORDED
-Foundational necessity charter      ACTIVE AUTHOR-SIDE / SPB OPENED
+Foundational necessity charter      RECORDED / SPB CONTRACT ROUTE HALTED
 N1--N28 parallel audits             COMPLETE AUTHOR-SIDE / FAD-L1 / NO AWARD
 SPB-P0 source/platform audit         COMPLETE AUTHOR-SIDE / NO AWARD
 SPB result-neutral contract         TERMINAL D2 / REVISE BEFORE PHYSICAL PIN
@@ -1348,12 +1364,13 @@ SPB v2 root countermodel audit      HISTORICAL AUTHOR-SIDE INPUT
 SPB v2 immutable review pin         FROZEN AT 7221d77
 SPB v2 independent review           FROZEN / M:D2 P:D4 O:D2
 SPB v2 root adjudication            TERMINAL D2 / SPB-L0 NOT AWARDED
-SPB v3 final contract               COMPLETE AUTHOR-SIDE / NOT PINNED
-SPB v3 root adversarial audit       COMPLETE AUTHOR-SIDE / NO AWARD
-SPB v3 immutable review pin         NOT YET CREATED
-SPB v3 independent review           NOT BEGUN
+SPB v3 final contract               TERMINAL D2 / IMMUTABLE
+SPB v3 root adversarial audit       HISTORICAL AUTHOR-SIDE INPUT
+SPB v3 immutable review pin         FROZEN AT fed678f
+SPB v3 independent review           FROZEN / M:D2 P:D4 O:D4
+SPB v3 root adjudication            TERMINAL D2 / ROUTE HALTED / NO SPB-L0
 SPB exact physical run packet       ABSENT
-SPB empirical evaluation pin        INELIGIBLE UNTIL PHYSICAL PACKET CLOSES
+SPB empirical evaluation pin        NOT AUTHORIZED / ROUTE HALTED
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
 Paper 01                            TERMINAL ACCEPT-WITH-SCOPE
