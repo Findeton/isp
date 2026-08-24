@@ -552,6 +552,17 @@ discrete routes, and requires independent source compression or a prospective
 deviation. The ceiling is S2-L1 author-side; no native formula or empirical
 residual is established.
 
+The minimal-premise quantum-boundary test then gives an exact finite
+counterfamily. Its common grammar includes identical single-system darkening,
+target-independent source typing, products, one bipartite parent, reversible
+controls, stable records and erasure, prefix autonomy, no-signalling, and
+linear resources. The isotropic coefficient $v$ nevertheless moves CHSH as
+$4v$ from local-boundary through Tsirelson-bound to PR. Hence those premises
+do not select quantum composition. The formal source rule is not an observed
+PR material, and the reversible premise is weaker than purification of every
+process; both stronger requirements remain live. The ceiling is QB-L2
+author-side, with no candidate or scientific result.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -609,6 +620,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_native_whole_boundary_functional_attempt.md
 - active/ugen/v17_ugen_u0_r1_macroscopic_qed_whole_boundary_member.md
 - active/ugen/v17_ugen_u0_s2_empirical_residual_and_admission_gate.md
+- active/ugen/v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

@@ -551,6 +551,21 @@ debts. The packet reaches S2-L1 exact admission results only: no empirical
 post-R1 residual or native formula is established. Future entry requires
 independent source compression or a preregistered complete-record deviation.
 
+The first S2 premise-conjunction test now closes negatively at exact finite
+scope. One common grammar carries the same darkening interferometer, product
+and adaptive rules, stable records, typed eraser, and finite resource account,
+while an isotropic bipartite parent
+$P_v(a,b\mid x,y)=[1+v(-1)^{a\oplus b\oplus xy}]/4$ spans local-boundary,
+Tsirelson-bound, and PR controls with CHSH $4v$. Every member is positive,
+normalized, no-signalling, prefix autonomous, and covariant under local
+relabelings. Thus the printed source/product/parent/reversibility/record/
+resource conjunction, even with exact single-system darkening, does not select
+the quantum correlation boundary. The source criterion is formal
+target-independent typing, not a claim that PR material exists, and the
+reversibility criterion is weaker than universal purification. The packet
+reaches QB-L2 author-side only and routes the next test to the physical content
+of the stronger Q-source reconstruction premises.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -971,7 +986,9 @@ U0 R1 NATIVE CREDIT:           NONE / QUANTUM NOMOLOGY SUPPLIED
 U0 S2 OPERATIONAL RESIDUAL:    NOT ESTABLISHED / RECOVERY IS NOT SELECTION
 U0 S2 POSITIVE LATENT LIFT:    EXACT / COVARIANCE CARRIES QUANTUM PAYLOAD
 U0 S2 ADMISSION GATE:          S2-L1 AUTHOR-SIDE / NO NATIVE FORMULA
-NEXT U0 SCIENTIFIC WORK:       TEST MINIMAL PREMISE CONJUNCTION / QUANTUM BOUNDARY
+U0 S2 MINIMAL PREMISES:        QB-L2 EXACT COUNTERMODEL / QUANTUM NOT SELECTED
+U0 S2 ISOTROPIC FAMILY:        CHSH 4V / LOCAL-QUANTUM-PR CONTROLS
+NEXT U0 SCIENTIFIC WORK:       AUDIT Q-SOURCE PREMISE PHYSICS / NATIVE BRIDGE
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

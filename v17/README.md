@@ -674,6 +674,18 @@ cleanly if nature does not support it.
   requires either independent source compression or a prospective
   complete-record deviation. It reaches S2-L1 author-side only: no native
   formula or empirical residual is selected.
+  The first minimal-premise test then constructs one exact isotropic
+  counterfamily on a common grammar. All members share interferometer
+  darkening, target-independent source typing, products, an interacting
+  parent, reversible controls, stable records/erasers, finite resources,
+  prefix autonomy, and no-signalling, while CHSH varies as $4v$ through
+  local-boundary, Tsirelson-bound, and PR members. The printed conjunction
+  therefore does not select the quantum correlation boundary. This is a
+  formal QB-L2 countermodel, not evidence for PR material: independent
+  material realization and universal reversible purification are stronger
+  premises not tested here. The next exact question is which strong Q-source
+  reconstruction premises have independent physical/native meaning rather
+  than merely defining quantum operational structure.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

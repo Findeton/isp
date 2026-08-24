@@ -549,6 +549,18 @@ is established. The next exact mathematics should test whether source descent,
 products, one interacting-parent rule, reversible unresolved composition,
 stable division/erasers, and finite scalable resources select a quantum
 boundary or still admit inequivalent controls.
+That conjunction now fails by exact countermodel. On one common finite grammar,
+an isotropic parent $P_v=[1+v(-1)^{a\oplus b\oplus xy}]/4$ shares the same
+darkening interferometer, source typing, products, interaction rule,
+reversible controls, stable records/eraser, prefix law, and linear resources
+for every $v\in[-1,1]$, while CHSH equals $4v$. Local-boundary,
+Tsirelson-bound, and PR members therefore pass the printed premises. The result
+is QB-L2 architecture: its source condition is target-independent formal
+typing, not an observed PR material, and it does not test universal reversible
+purification. The next gate must audit the full Q-source reconstruction
+conjunction, separating empirically grounded physical principles from
+comparison-category definitions and premises that merely encode the quantum
+framework; M-layer source selection and actuality remain separate.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
