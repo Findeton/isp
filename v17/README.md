@@ -883,6 +883,21 @@ cleanly if nature does not support it.
   tensor, or closes reciprocal gravity. The author-side status is `K-L1`:
   Kent is the leading audited all-at-once Rival-C actuality control, not a
   native Barandes source law, Paper 04B parent, or authorized pin.
+  A complementary source-fixed audit now separates four quantum-measure/
+  coevent objects that must not donate passes to one another. Static
+  primitive-preclusive-multiplicative reality depends only on exact null
+  events; it therefore has one possibility set for every nontrivially biased
+  binary classical measure, while quantitative prediction retains the full
+  quantum measure plus weak Cournot. Its indefinite $n$-site-hopper failure is
+  also binding. The evolving scheme earns future independence only relative to
+  a supplied discrete stage grammar and supplies no probability on coevents.
+  Gudder generation filters can uniquely select a coevent when generation
+  exists, while existence and classical/process closure are nongeneric; finite
+  ordinary-positive transfers are nonunique representations. The resulting
+  `COE-L2` ceiling makes coevents a serious Rival-B one-world actuality
+  comparator, not a complete matter law, native U0 source, Paper 04B parent,
+  empirical discriminator, or gravity theory. No pin, review, or successor is
+  opened.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No official v17 scientific evaluator, bound empirical artifact, or

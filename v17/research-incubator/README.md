@@ -763,6 +763,21 @@ and reciprocal geometry remain absent. Its `K-L1` ceiling is a source-bounded
 Rival-C architecture control only; no K-CLC pin, review, native U0 law, Paper
 04B parent, chronology, gravity theory, or scientific result is created.
 
+The complementary Rival-B family audit is recorded in
+`active/ugen/v17_ugen_coevent_actuality_family_pre_authorization_readiness_audit.md`.
+It reconstructs static primitive-preclusive-multiplicative coevents, evolving
+coevents, Gudder generation/actualization filters, and finite positive
+transfers as four distinct objects. Static MPS factors through the exact
+null-event family, so its possible realities do not recover nonzero
+probabilities; published prediction retains the full quantum measure and weak
+Cournot, and the indefinite $n$-site hopper supplies a model-specific semantic
+failure. ECS earns future independence only on supplied discrete stages. GEN
+can uniquely select a coevent when generation exists but does not generically
+close existence, classical recovery, composition, readers, or QFT. XFER is a
+nonunique positive representation. The author-side ceiling is `COE-L2`; no
+candidate, official pin, review, Paper 04B parent, chronology, gravity model,
+or scientific result is created.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

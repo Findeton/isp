@@ -775,6 +775,23 @@ or Paper 04B clock parent. The author-side ceiling is `K-L1`; no K-CLC pin,
 review, model selection, repair, gravity model, or successor opens
 automatically.
 
+The coevent actuality-family audit now completes the principal Rival-B
+comparison without merging distinct schemes. Static primitive-preclusive-
+multiplicative reality (`MPS`) reads only the exact null-event family, so an
+exact finite theorem and binary classical control show that its possibility
+set cannot recover nonzero probability values. Quantitative prediction instead
+retains the supplied quantum measure plus weak Cournot. Static MPS also has the
+source-proved indefinite-time $n$-site-hopper failure. The evolving scheme
+(`ECS`) repairs dependence on later stages only by consuming a supplied
+discrete stage/prolongation grammar and still assigns no probabilities to its
+allowed realities. Gudder's generation filters (`GEN`) genuinely use the full
+measure and can uniquely select a coevent when one is generated, but existence,
+classical recovery, composition, readers, and QFT remain incomplete; finite
+ordinary-positive transfers (`XFER`) are nonunique representations. The
+author-side ceiling is `COE-L2`: a serious one-world actuality comparator, not
+a freeze-ready matter law, native U0 source, Paper 04B parent, empirical
+discriminator, or gravity theory. No official cycle or successor opens.
+
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
 ### Paper 04 — internal clocks and parametrized process law

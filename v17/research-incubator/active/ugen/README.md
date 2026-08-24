@@ -1,7 +1,7 @@
 # ISP v17 — U-Gen active routing note
 
 **Status:** ACTIVE AUTHOR-SIDE ROUTING / DEPENDENCY AUDIT COMPLETE / NOT A PIN
-**Date:** 2026-08-23
+**Date:** 2026-08-24
 **Scientific result awarded:** none
 **Authority created:** none
 
@@ -768,6 +768,23 @@ source, and reciprocal geometry are not constructed. The status is `K-L1`:
 K-CLC is the strongest audited all-at-once Rival-C actuality architecture, not
 a native U0 source, Paper 04B clock parent, or authorized control pin.
 
+The coevent actuality-family pre-authorization audit now supplies the
+complementary Rival-B comparison. It keeps static primitive-preclusive-
+multiplicative coevents (`MPS`), evolving coevents (`ECS`), Gudder generation
+and actualization filters (`GEN`), and finite ordinary-positive transfers
+(`XFER`) mathematically separate. MPS factors exactly through the null-event
+family, so one finite theorem and a binary classical family prove that its
+possibility set cannot recover nonzero probabilities. Published prediction
+instead keeps the quantum measure and weak Cournot. Static MPS has a binding
+indefinite $n$-site-hopper failure; ECS gains future independence only from a
+supplied discrete stage/prolongation grammar and assigns no coevent
+probabilities; GEN can uniquely select a coevent when generation exists but
+has no general existence, classical-recovery, composition, reader, or QFT
+closure; XFER is finite and nonunique. The ceiling is `COE-L2`, not a native
+U0 source, complete matter law, Paper 04B parent, empirical discriminator, or
+gravity theory. No candidate, official pin, independent review, or successor
+opens.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -856,6 +873,7 @@ Active audit:
 - v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md
 - v17_ugen_relativistic_collapse_family_pre_authorization_readiness_audit.md
 - v17_ugen_kent_lorentzian_reality_pre_authorization_readiness_audit.md
+- v17_ugen_coevent_actuality_family_pre_authorization_readiness_audit.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -1244,7 +1262,12 @@ KENT FAMILY READINESS:         K-L1 / DISTINCT OBJECTS SEPARATED
 KENT FINITE ACTUALITY:         BORN PUSHFORWARD / ALL-AT-ONCE ONE-WORLD CONTROL
 KENT QFT PROCESS:              ASYMPTOTIC COMPLETION ASSUMED / NOT PROVED
 KENT NATIVE/GRAVITY STATUS:    ABSENT / NO PAPER04B PARENT
-POSSIBLE NEXT CONTROL:         K-CLC OR RCF-PTR ONLY IF EXPLICITLY AUTHORIZED
+COEVENT FAMILY READINESS:      COE-L2 / FOUR DISTINCT SCHEMES SEPARATED
+COEVENT MPS PREDICTION:        MU + WEAK COURNOT / POSSIBILITY SET NONSELECTING
+COEVENT MPS INDEFINITE LAW:    N-SITE-HOPPER FAILURE / NOT UNIVERSAL NO-GO
+COEVENT ECS/GEN/XFER:          STAGED / EXISTENCE-LIMITED / NONUNIQUE LIFT
+COEVENT MATTER/GRAVITY STATUS: ABSENT / NO PAPER04B PARENT
+POSSIBLE NEXT CONTROL:         NONE AUTOMATIC / EXACT MEMBER ONLY IF AUTHORIZED
 NEXT AUTHOR-SIDE CONTROL:      NONE AUTOMATIC
 A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
