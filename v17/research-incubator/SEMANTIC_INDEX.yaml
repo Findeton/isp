@@ -598,6 +598,19 @@ artifacts:
     promotion_readiness: "not-ready"
     maximum_claim: "exact author-side CCS-L2 source-location audit: isolated local record probabilities do not identify cross-context connectors; compatible connectors transform at both endpoints and loops carry conjugacy data; reversible rank-one transport on a finite connected comparison grammar is spanning-tree gauge plus one U(1) holonomy per independent cycle; an exact two-route quantum witness separates local probabilities from recombination, scalar base weighting is inert on unrepresented transport fibers, and unstructured fitted source maps have nonunique held-out extensions; the graph and fibers are representation controls only, while a source-generated operational cycle, native positive law, ontology selection, material transfer, candidate, pin, review, implementation, QFT/spacetime, gravity, unification, and scientific award remain absent"
     canonical: false
+  - path: "active/ugen/v17_ugen_u0_exchange_deformation_response_selection_gate.md"
+    sha256: "9dfcd5eabc4eaa5c0306cdcfd9cbc21618ed9584744b6600a80d4c09f40c6d62"
+    created_at: "2026-08-23"
+    front: "ugen"
+    status: "active-author-u0-exchange-deformation-response-selection-gate"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/ugen/v17_ugen_c3_action_character_theorem_candidate.md", "active/ugen/v17_pc3_projective_control_covariance_candidate.md", "active/ugen/v17_ugen_u0_source_constraints_synthesis.md", "active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md", "active/ugen/v17_ugen_u0_t3_physical_reference_source_audit.md", "active/ugen/v17_ugen_u0_t3_descriptor_sufficiency_and_transfer_gate.md", "active/ugen/v17_ugen_u0_r1_macroscopic_qed_whole_boundary_member.md", "active/ugen/v17_ugen_u0_source_to_record_common_parent_closure.md", "active/ugen/v17_ugen_u0_cross_context_composition_source_gate.md"]
+    source_audit_status: "version-bound-Barandes-Wigner-Stone-Bargmann-Aharonov-Susskind-reference-frame-and-DHR-scope-audit-with-exact-Abelian-bicharacter-sector-reader-positive-cycle-and-calibration-extension-mathematics-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready"
+    maximum_claim: "exact author-side EDR-L2 response-selection audit: conserved exchange records do not select cross-context response; continuous scalar exchange/deformation bicharacters are e^(i kappa a s) on R x R and e^(i k n theta) on Z x U(1), while the coupling or integer sector remains free; even a fixed character admits infinitely many normalized positive readers, physical references expose but do not generate relational response, and an exact cosine-fringe law is only a conditional ordinary-positive rank-one comparator; a native source-generated cycle, reader origin, interacting parent, mixed/open/adaptive completion, material transfer, candidate, pin, review, implementation, QFT/spacetime, gravity, unification, and scientific award remain absent"
+    canonical: false
   - path: "active/ugen/v17_ugen_u0_t2_information_equivalence_source_audit.md"
     sha256: "44fd9bb8abefd604a1fd4cdb4f007e86b81c919d52a126840523fcb941bb521c"
     created_at: "2026-08-23"
@@ -768,7 +781,7 @@ artifacts:
     maximum_claim: "exact finite author-side full-history Markovization, minimal predictive quotient, target-dependency, carrier-relative closure placement, omitted-memory and interference controls, and stochastic-inverse permutation theorem; no physical configuration, native law, absolute ontic completeness, pin, review, or scientific result"
     canonical: false
   - path: "active/ugen/README.md"
-    sha256: "fa812a15ead125238b206a0db65f90de62794fbf0b7d557b04952ead75acf040"
+    sha256: "0fcaea73a662471448b751fbd9102954fe3ecad85adfd7db8fbc99fbcdaee90f"
     created_at: "2026-08-23"
     front: "ugen"
     status: "active-routing-u0-native-search-nelson-controls"
@@ -778,7 +791,7 @@ artifacts:
     source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls and G1/G2 as compiler/source-origin controls, consolidates SC1--SC5, binds QSR-L2, MSD-L2, PRC-L2, MRD-L2, SCR-L2, NWB-L2, R1-L2, S2-L1, the QB-L2 exact minimal-premise countermodel, QPB-L2 conditional quantum-framework/latent-ontology/purification placement results, BFA-L2 exact passive-law intervention/factor/record nonidentifiability plus certified-division positive-instrument operational-quotient feasibility, KPC-L2E exact effective-interface criteria and normalized finite wrappers, and CCS-L2 exact cross-context transport/cycle source-location results; the source-complete BFA-L3 parent, target-independent source-generated operational cycle, post-R1 empirical residual, source-complete event-level stochastic cascade, implementation transfer, actuality completion, chronology, QFT/spacetime derivation, and gravity remain absent, T4-E, R4, and official cycles remain deferred, and no Q-Cut cycle, pin, review, source-complete existence or general no-go result follows"
+    maximum_claim: "result-neutral U0 routing that treats N1/N1A strictly as Nelson controls and G1/G2 as compiler/source-origin controls, consolidates SC1--SC5, binds QSR-L2, MSD-L2, PRC-L2, MRD-L2, SCR-L2, NWB-L2, R1-L2, S2-L1, the QB-L2 exact minimal-premise countermodel, QPB-L2 conditional quantum-framework/latent-ontology/purification placement results, BFA-L2 exact passive-law intervention/factor/record nonidentifiability plus certified-division positive-instrument operational-quotient feasibility, KPC-L2E exact effective-interface criteria and normalized finite wrappers, CCS-L2 exact cross-context transport/cycle source-location results, and EDR-L2 exact exchange/deformation character-sector and reader nonselection plus a conditional positive scalar-cycle comparator; the source-complete BFA-L3 parent, target-independent source-generated operational cycle, joint fluctuation-response parent, post-R1 empirical residual, source-complete event-level stochastic cascade, implementation transfer, actuality completion, chronology, QFT/spacetime derivation, and gravity remain absent, T4-E, R4, and official cycles remain deferred, and no Q-Cut cycle, pin, review, source-complete existence or general no-go result follows"
     canonical: true
   - path: "active/ugen/v17_ugen_dependency_and_physics_audit.md"
     sha256: "19c409a751d99f6ccda0d7f41046983e1df6b4cd45becbba3a5aedcd7fc89548"

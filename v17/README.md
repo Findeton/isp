@@ -737,6 +737,19 @@ cleanly if nature does not support it.
   phase, Hilbert, connection, or pair-history ontology. The next author-side
   construction is one source-generated operational cycle, not another
   representation theorem.
+  The exchange--deformation response-selection gate now reaches EDR-L2
+  author-side scope. Conservation and balance records physically type
+  additive source sectors, while executable reversible controls type the
+  deformation grammar. At bounded Abelian rank-one scope their jointly
+  continuous scalar response is classified as $e^{i\kappa as}$, or
+  $e^{ikn\theta}$ for integer sectors and a periodic control, but neither the
+  coupling/sector nor the complete reader law is selected. A physical
+  reference can expose relational response only by becoming a prepared,
+  coupled, degradable resource. An ideal cosine fringe is a valid
+  ordinary-positive final-record comparator once those response choices are
+  supplied; it is not a native source derivation. The next exact construction
+  target is therefore a joint fluctuation--intervention parent, not another
+  phase, representation, or conservation relabeling.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

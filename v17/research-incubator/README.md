@@ -611,6 +611,20 @@ extensions. These are source-location theorems, not a bundle, graph, phase, or
 Hilbert ontology. The next formula must generate one complete held-out
 operational cycle from independent physical descriptors.
 
+The exchange--deformation response-selection gate now asks whether the most
+physical available descriptors actually generate that cycle. At exact
+bounded scope, exchange conservation identifies additive sector relations but
+not the response member. Continuous bicharacter composition yields
+$e^{i\kappa as}$, or $e^{ikn\theta}$ for an integer sector and periodic
+control, while leaving $\kappa$ or $k$ unselected. Even a fixed character
+admits infinitely many normalized positive readers, and a physical reference
+makes the relation measurable only by adding a prepared, coupled, degradable
+resource. The conditional cosine law is therefore a useful positive
+rank-one comparator but receives no native credit. The next formula must
+jointly generate spontaneous fluctuations and intervention response, including
+complete records and one interacting parent, without importing a quantum
+state, Hamiltonian, action, phase, KMS condition, or target response.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

@@ -616,6 +616,19 @@ discrete ontology is selected. The next author-side construction must predict
 one held-out operational cycle from source, control, and reader descriptors
 under one complete ordinary-positive law.
 
+The exchange--deformation response-selection gate now reaches EDR-L2
+author-side scope. It proves that physical exchange/conservation records do
+not select a cross-context response, classifies continuous scalar
+exchange/deformation composition as $e^{i\kappa as}$ or $e^{ikn\theta}$ at
+the two printed Abelian scopes, and proves that a fixed character still leaves
+the positive reader functional nonunique. Physical references make relational
+response operational but carry preparation, coupling, alignment, degradation,
+and resource debts. An exact cosine-fringe cycle is printed only as a
+conditional positive comparator; its sector and reader are supplied, no
+interacting parent is generated, and CCS/EDR native-candidate entry remains
+closed. The next construction question is a single positive law jointly
+generating spontaneous fluctuations and controlled response.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -681,6 +694,7 @@ Active audit:
 - v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
 - v17_ugen_u0_s2_known_physics_effective_parent_interface_audit.md
 - v17_ugen_u0_cross_context_composition_source_gate.md
+- v17_ugen_u0_exchange_deformation_response_selection_gate.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1056,7 +1070,9 @@ U0 BRIDGE FEASIBILITY:         BFA-L2 / NO NATIVE BRIDGE
 U0 EFFECTIVE INTERFACE AUDIT:  KPC-L2E / EXACT CONDITIONAL SCHEMA
 U0 SOURCE-COMPLETE PARENT:     BFA-L3 OPEN / KERNELS AND TRANSFER ABSENT
 U0 CROSS-CONTEXT SOURCE GATE:  CCS-L2 / TRANSPORT LOCATED, LAW ABSENT
-NEXT U0 SCIENTIFIC WORK:       ONE SOURCE-GENERATED OPERATIONAL CYCLE
+U0 EXCHANGE-DEFORMATION GATE:  EDR-L2 / SECTOR AND READER UNSELECTED
+U0 CONDITIONAL SCALAR CYCLE:   POSITIVE COMPARATOR / NO NATIVE CREDIT
+NEXT U0 SCIENTIFIC WORK:       JOINT FLUCTUATION-RESPONSE PARENT FORMULA
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

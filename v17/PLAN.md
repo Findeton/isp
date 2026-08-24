@@ -611,6 +611,20 @@ cycle: calibrate a spanning tree and predict a preregistered chord/loop,
 division, eraser, product, and interacting parent from independent physical
 descriptors. No native law, candidate, pin, review, implementation, or
 scientific result is created.
+The exchange--deformation response gate now tests the strongest immediate
+physical input surface rather than inventing a carrier. Exact bounded
+theorems show that conserved exchange records label additive sectors but do
+not select cross-context response; continuous scalar composition classifies
+the response as $e^{i\kappa as}$ (or $e^{ikn\theta}$ for integer sectors and a
+periodic control) while leaving the coupling/sector free; and even a fixed
+character admits infinitely many positive reader laws. A physical reference
+makes a relation operational and resource-bearing but does not generate its
+sector or reader. The ideal cosine cycle is therefore constructed only as a
+conditional ordinary-positive comparator and receives no native credit. The
+next formula target is one form-neutral positive parent that jointly generates
+spontaneous fluctuations, intervention response, complete records, products,
+and one interacting parent; importing a KMS state, commutator, Hamiltonian,
+action, phase, or target response remains zero-credit known-physics input.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
