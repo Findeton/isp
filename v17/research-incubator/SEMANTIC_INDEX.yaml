@@ -196,14 +196,14 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/mg0/README.md"
-    sha256: "0d7a9475a7ec4c248970c5c59d0f062fb920ff95cb95f16d169debeb715ad4f1"
+    sha256: "831d9877eedb8c405a9902b1e7375a99a9c83ee5a42e322f31ba9eefdde27b81"
     created_at: "2026-08-23"
     front: "mg0"
     status: "active-routing-mg0-preflight-no-model"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md", "active/mg0/v17_mg0_future_review_contract.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md"]
-    source_audit_status: "author-side-primary-source-reconstructed-cpcq-family-and-kernel-selection-audited-independent-review-pending"
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md", "active/mg0/v17_mg0_closed_system_balance_and_conservation_gate.md", "active/mg0/v17_mg0_future_review_contract.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md"]
+    source_audit_status: "author-side-primary-source-reconstructed-cpcq-family-kernel-selection-and-closed-carrier-balance-audited-independent-review-pending"
     authority: "none"
     promotion_readiness: "not-ready"
     maximum_claim: "result-neutral routing for a form-neutral common matter--geometry admission contract and reciprocal selector benchmark, explicitly downstream of genuinely distinct complete U0 matter laws; no candidate law, ontology selection, pin, review, data, QFT, clock, spacetime, GR, empirical result, or successor authority"
@@ -233,6 +233,19 @@ artifacts:
     authority: "none"
     promotion_readiness: "not-ready-no-selected-kernel-or-member"
     maximum_claim: "KSG-L2 exact finite-band parameterization showing CP, declared spatial covariance, and fixed mean response leave arbitrary positive decoherence spectrum and diffusion slack; saturation remains nonselecting; two saturated finite-order local scalar kernels must have constant symbols; conservation is an independent generally rate-nonselecting duty; full nonlinear constraint-plus-conservation selection remains untested; no CP-CQ impossibility, quantum-gravity verdict, model, pin, review, or ontology selection"
+    canonical: false
+  - path: "active/mg0/v17_mg0_closed_system_balance_and_conservation_gate.md"
+    sha256: "9c2553a5c0e17b9235b7af1e8b5c08ce83559bd428839bdc831fd4da8f199220"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-mathematical-physical-feasibility-gate"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md"]
+    source_audit_status: "inherits-cpcq-family-and-kernel-audits-plus-six-exact-balance-conservation-prior-art-sources-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready-no-closed-carrier-or-gravity-member"
+    maximum_claim: "BCG-L2 exact finite detailed-balance conductance nonselection plus positive-semigroup ground-face theorem: same-carrier conservation of a nonconstant lower-bounded observable forbids primitive relaxation to, or uniqueness of, a faithful finite-temperature Gibbs state; reduced thermalization requires an explicit enlarged energy/reference/boundary carrier; no covariant non-Markovian gravity no-go, CP-CQ impossibility, Barandes refutation, model, pin, review, or ontology selection"
     canonical: false
   - path: "active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md"
     sha256: "6607ef80595962de797aca6c5ac04b6073630e73e7f0e640aae03a555f20bf65"

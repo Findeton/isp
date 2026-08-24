@@ -36,6 +36,9 @@ limits, and expose a prospective empirical wedge.
 - `v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md` —
   exact finite-band fixed-response CP-kernel set, saturation/locality boundary, and
   conservation-selection firewall;
+- `v17_mg0_closed_system_balance_and_conservation_gate.md` — exact
+  detailed-balance conductance freedom and finite closed-carrier
+  conservation/thermalization boundary;
 - `v17_mg0_selector_controls_and_benchmark.md` — hostile controls and the
   proposed first reciprocal weak-field benchmark;
 - `v17_mg0_primary_source_and_scope_reconstruction.md` — primary-source
@@ -87,6 +90,19 @@ conservation is a separate generator equation that generally leaves rates
 free. The stronger conjunction with full nonlinear constraint propagation is
 untested because no audited source closes it on the same member. The ceiling
 is `KSG-L2`; no kernel, model, or gravity verdict is selected.
+
+The closed-system balance gate now tests whether a stationary state supplies
+the missing selector. Six additional exact source versions are bound,
+including the August-2026 hybrid thermal-state construction and established
+fixed-point/primitivity controls. Detailed balance leaves symmetric
+conductances and rate mechanisms free. A separate positive-semigroup theorem
+shows that exact same-carrier conservation for every admitted state of a
+nonconstant lower-bounded energy preserves the ground face and forbids
+primitive faithful finite-$\beta$
+relaxation. Reduced thermalization remains coherent only after the physical
+bath/reference/boundary carrier is exposed. The ceiling is `BCG-L2`; this does
+not decide covariant non-Markovian CP-CQ gravity, indivisible whole-process
+laws, or any ontology.
 
 MG0 cannot select an ontology until at least two genuinely different, fully
 specified matter laws make distinct gravity-sensitive predictions. The next

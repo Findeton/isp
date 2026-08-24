@@ -920,11 +920,23 @@ constant-symbol corner. Conservation is kept as an independent generator
 duty; full nonlinear constraint/conservation selection remains untested. The
 result is `KSG-L2` author-side and opens no model.
 
+The closed-system balance gate adds the exact August-2026 hybrid thermal-state
+source and five primary prior-art controls. It proves at finite scope that
+detailed balance fixes only rate ratios while symmetric conductances remain
+free. It also proves that a positive semigroup exactly conserving for every
+state a nonconstant lower-bounded energy on the same carrier preserves the
+ground face and therefore cannot primitively relax to a faithful finite-temperature
+Gibbs state. Thermalization is compatible with total conservation on an
+enlarged carrier, but the bath/reference/boundary carrier must then be part of
+the physical law. The ceiling is `BCG-L2`; no covariant gravity no-go, model,
+or ontology result is created.
+
 Active MG0 files:
 
 - `active/mg0/README.md`
 - `active/mg0/v17_mg0_common_matter_geometry_contract.md`
 - `active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md`
+- `active/mg0/v17_mg0_closed_system_balance_and_conservation_gate.md`
 - `active/mg0/v17_mg0_selector_controls_and_benchmark.md`
 - `active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md`
 - `active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md`

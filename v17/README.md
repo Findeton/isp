@@ -867,6 +867,18 @@ cleanly if nature does not support it.
   rates unselected. Full nonlinear constraint plus conservation selection
   remains untested, not refuted, because those equations have not been closed
   for the same member. No CP-CQ kernel or gravity ontology is promoted.
+  A closed-system balance gate now reaches `BCG-L2` author-side. It incorporates
+  the exact August-2026 hybrid thermal-state construction and five additional
+  source receipts. Detailed balance leaves symmetric conductances and
+  mechanism/rate freedom. More generally, exact all-state conservation of a
+  nonconstant lower-bounded energy by a finite positive semigroup preserves
+  the ground face, so the same carrier cannot also relax primitively to a faithful
+  finite-temperature Gibbs state. An explicit bath, reference, boundary flux,
+  or enlarged charge carrier can restore total conservation while the reduced
+  subsystem thermalizes; omitting that carrier cannot define a fundamental
+  closed universe. This is a scoped carrier-accounting result, not a no-go for
+  CP-CQ gravity, covariant non-Markovian laws, or Barandes-style indivisible
+  processes, and it opens no model or official unit.
   A post-A1 relevance adjudication retains Q-Cut as an optional review-ready
   scoped theorem but no longer ranks it as the next unification gate. No next
   official physics unit is currently selected. A candidate-neutral post-A1

@@ -906,6 +906,20 @@ constraint propagation is `UNTESTED`, because no one audited member closes
 those equations. The author-side ceiling is `KSG-L2`; no model-selection or
 gravity verdict follows.
 
+The closed-system balance follow-on now tests the proposed stable-state lever
+itself. Six additional exact primary sources, including the August-2026 hybrid
+thermal construction, are bound. Detailed balance is parameterized by
+symmetric edge conductances, so a Gibbs state fixes rate ratios but not the
+generator. An exact finite positive-semigroup theorem then shows that
+same-carrier conservation for every admitted state of a nonconstant
+lower-bounded energy preserves the ground-state face and is incompatible with
+primitive relaxation to a faithful
+finite-temperature Gibbs state. Canonical thermalization can remain valid as
+reduced dynamics only when the bath, reference, boundary flux, or larger
+charge carrier is explicit. The ceiling is `BCG-L2`; covariant non-Markovian
+gravity and indivisible whole-process laws remain untested, and no MG0 model,
+ontology, or official authority follows.
+
 ### Paper 06 — configuration ontology for matter plus geometry
 
 **Question.** What complete relational configuration supports both the
