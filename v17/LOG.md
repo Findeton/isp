@@ -2539,3 +2539,35 @@ to request a separate user-controlled pin.
 No terminal MG0, R1, or B0 bytes are amended. No candidate is constructed,
 selected, authorized, admitted, compared, or promoted, and no B0-E, gravity,
 ontology, chronology, spacetime, or successor unit opens.
+
+## 2026-08-24 — B0 COMPLETE-RECORD INFORMATION GATE DERIVED AUTHOR-SIDE (v17 LEDGER #110)
+
+An exact finite-record audit replaces raw gravitational phase as a readiness
+criterion. Data processing proves that any `N`-attempt decision rule with
+registered type-I and type-II errors must satisfy
+`D(P_1^(N)||P_0^(N)) >= d(1-beta||alpha)` for the complete joint record laws;
+only independent identical attempts reduce the left side to `N D(P_1||P_0)`.
+The relative-entropy chain rule retains
+success, null, invalid, and failure records, so postselected detected-event
+counts cannot be substituted for attempted-run resources. With admitted
+nuisance coordinates, the local surviving information is the squared norm of
+the signal score outside the nuisance-score span; zero profiled Fisher
+information is correctly classified as first-order blindness rather than a
+global no-go.
+
+For a freely moving ordinary phase offset, the obstruction is stronger:
+`p(r|Phi,delta)=p(r|0,delta+Phi)`, so the composite families are identical and
+the robust finite separation vanishes. A physical reversal or independent
+reference is required. An exact ideal-binary-fringe receipt with unit success
+and visibility and illustrative one-sided five-sigma/90-percent-power errors
+gives necessary attempted-run counts of `12,160,369`, `48,381`, and about
+`6.1126e40` for the three previously registered phase controls. The final
+cluster calculation remains deliberately fictitious and favorable, not a
+prediction for the demonstrated beam.
+
+The gate is necessary, not sufficient. No current public packet supplies the
+complete attempted-run law, nuisance family, registered response direction,
+or resource cap required to award information eligibility. The author-side
+platform outcome therefore remains `NO-SELECTION`; no B0 level, pin, review,
+apparatus, candidate, entrant, comparison, gravity verdict, ontology, or
+successor opens.

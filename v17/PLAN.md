@@ -940,6 +940,18 @@ platform-scoped mechanics in the proposed author-side ladder; only B0-L5
 common-packet authentication can be submitted for terminal discharge of
 `P-B0-1`. No accepted MG0 bytes are amended.
 
+A complete-record information gate now derives the missing quantitative
+feasibility criterion. Any decision rule obeys an exact relative-entropy lower
+bound on attempted runs; success/failure postselection obeys a chain rule; and
+the local information surviving nuisance profiling is the squared norm of the
+signal score outside the nuisance span. A freely moving phase offset makes the
+two phase families globally identical, not merely noisy. For the existing
+idealized phase controls with unit success and visibility, the illustrative
+necessary counts range from `48,381` to approximately `6.1e40`. These are
+necessary rather than sufficient and do not alter `NO-SELECTION`, because no
+exact public B0 packet currently supplies the complete law, nuisance family,
+response direction, or resource cap.
+
 A pre-pin closure audit now separates the next three logical gates. Because
 the exact B0-T witness already exists in open author-side form, the immediate
 proposed official action is a review-only pin over those bytes, not a claim of
@@ -1291,6 +1303,7 @@ MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
 MG0 B0-T author-side bundle         RECONSTRUCTED / READY FOR REVIEW-ONLY PIN
 MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
 MG0 B0 source lineage               REGISTERED AUTHOR-SIDE / BYTE RECEIPTS OWED
+MG0 B0 complete-record information  EXACT AUTHOR-SIDE NECESSARY GATE / NO-SELECTION
 MG0 B0-E / B0-L5                    ABSENT / CLOSED
 MG0 candidate roster/comparison     EMPTY / CLOSED
 ```

@@ -610,7 +610,8 @@ The next user-controlled action, if desired, is:
 > Authorize one immutable, result-neutral B0-T independent-review pin. The
 > pin must freeze and rehash the existing author-side B0 readiness audit,
 > exact synthetic witness, author reconstruction, platform feasibility gate,
-> primary-source claim/version audit, and pre-pin common-packet firewall. It
+> complete-record information feasibility gate, primary-source claim/version
+> audit, and pre-pin common-packet firewall. It
 > must state that the witness predates
 > the pin and
 > is under review rather than being newly constructed. Run three independent

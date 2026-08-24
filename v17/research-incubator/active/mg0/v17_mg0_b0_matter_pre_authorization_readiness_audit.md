@@ -1153,6 +1153,9 @@ commissioned. The reviewers should answer:
    enough to govern a future B0-E pin?
 5. Is any future fixed classical gravity calibration required to use
    independent geometry and source metrology?
+6. Does the complete-record information audit include attempted-run failures,
+   calibrated nuisance projection, exact response contexts, and an independent
+   resource cap without promoting a necessary bound to a sufficient design?
 
 ### Foundations and gravity firewall
 
@@ -1178,7 +1181,8 @@ phrased:
 > Authorize one immutable, result-neutral B0-T independent-review pin. The
 > pin must freeze and rehash the existing author-side B0 readiness audit,
 > exact synthetic witness, author reconstruction, platform feasibility gate,
-> pre-pin common-packet firewall, and primary-source claim/version audit. It
+> complete-record information feasibility gate, pre-pin common-packet
+> firewall, and primary-source claim/version audit. It
 > must retrieve and hash the exact load-bearing primary PDFs and supplements
 > before reviewers begin. It must state that the witness predates
 > the pin and

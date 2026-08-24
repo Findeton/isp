@@ -70,6 +70,10 @@ not turn either source document into a pin or award a scientific result.
   branch-density, many-body, coherence, complete-reader, nuisance, and
   mechanics gate; incorporates the 2026 metal-nanoparticle interference
   result and returns candidate-neutral `NO-SELECTION`;
+- `v17_mg0_b0_complete_record_information_feasibility_gate.md` — exact
+  complete-record discrimination bound, null/failure chain rule,
+  nuisance-efficient Fisher ceiling, phase-offset degeneracy, and idealized
+  attempted-run reach receipt for the registered B0 phase controls;
 - `v17_mg0_b0_primary_source_claim_and_version_audit.md` — author-side
   registry of twenty-six primary-source identities, exact consumed claims,
   forbidden promotions, explicit arXiv versions, and the still-owed pin-time
@@ -185,6 +189,17 @@ baseline, not yet common-experiment identity. It reserves possible discharge
 of `P-B0-1` for authentication of that same baseline inside the frozen common
 packet at `B0-L5`, followed by terminal review.
 No current platform passes both conjunctive gates, so no platform is selected.
+
+The complete-record information gate sharpens why a nonzero raw phase is not
+enough. Data processing gives an exact necessary attempted-run bound; null and
+failure records enter by a relative-entropy chain rule; and only the signal
+score orthogonal to calibrated nuisance scores contributes at first order. A
+freely drifting phase offset makes the phase families exactly identical. Even
+with unit success and visibility, the existing idealized phase controls require
+from `48,381` to roughly `6.1e40` attempted runs at the printed illustrative
+error targets. These are necessary, not sufficient, counts and do not select a
+platform. No exact public packet closes the information ledger, so
+`NO-SELECTION` remains unchanged.
 
 The pre-pin closure audit corrects the remaining procedural ambiguity. The
 exact synthetic witness already exists as open author-side work and therefore

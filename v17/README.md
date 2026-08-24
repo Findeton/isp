@@ -895,6 +895,16 @@ cleanly if nature does not support it.
   alone is not treated author-side as discharge of `P-B0-1`; the proposed
   future ladder requires the same object to be authenticated inside the
   B0-L5 common packet and reviewed terminally.
+  A complete-record information gate now replaces raw-phase rhetoric with an
+  exact necessary discrimination bound. It includes all attempted-run nulls
+  and failures, profiles calibrated nuisance directions, and proves that a
+  freely moving ordinary phase offset is exactly degenerate with the target
+  phase in a single unreversed context. Under deliberately ideal unit
+  success/visibility assumptions, the registered phase controls still require
+  between `48,381` and about `6.1e40` attempts at the illustrative error
+  targets. The counts are not sufficient designs and award no platform;
+  absent an exact public record law and nuisance family, `NO-SELECTION`
+  remains binding author-side.
   A companion source-lineage audit registers twenty-six primary objects by
   evidence class, scholarly version, exact consumed claim, and forbidden
   promotion. The mutable arXiv citations are now version-specific, and an APS
