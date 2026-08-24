@@ -989,6 +989,14 @@ outside the four MG0 target surfaces. Constructing a quantized mediator and a
 CP-CQ hybrid merely to fill two roster slots is classified
 `THEORY-FACTORY-REJECT`, not progress toward unification.
 
+The author-side B0-T review-bundle audit now closes preparation at the correct
+boundary. One lead, three direct, and three secondary objects carry C1--C12;
+the current snapshot hashes and counts pass, and the maximum outcome is
+B0-L2. This means only `PIN-CREATION-ELIGIBLE`. It is not an immutable pin and
+review may not begin: an authorized pin must rehash all seven objects and
+retrieve/hash twenty-six exact primary sources and every load-bearing
+supplement first.
+
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
 primary-source versions are bound, and the general CP-CQ theorem, objective
@@ -1314,7 +1322,8 @@ R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
 MG0 result-neutral benchmark pin    FROZEN
 MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
-MG0 B0-T author-side bundle         RECONSTRUCTED / READY FOR REVIEW-ONLY PIN
+MG0 B0-T author-side bundle         SNAPSHOT-AUDITED / PIN-CREATION-ELIGIBLE
+MG0 B0-T immutable review pin       NOT AUTHORIZED / SOURCE BYTES OWED
 MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
 MG0 B0 source lineage               REGISTERED AUTHOR-SIDE / BYTE RECEIPTS OWED
 MG0 B0 complete-record information  EXACT AUTHOR-SIDE NECESSARY GATE / NO-SELECTION

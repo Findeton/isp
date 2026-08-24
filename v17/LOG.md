@@ -2627,3 +2627,30 @@ No current apparatus supplies that exact public ledger, so `NO-SELECTION`
 remains. No terminal byte, B0 level, pin, review, platform, candidate, entrant,
 comparison, gravity verdict, ontology, chronology, spacetime, or successor is
 opened.
+
+## 2026-08-24 — B0-T REVIEW-BUNDLE READINESS AUDITED AUTHOR-SIDE (v17 LEDGER #113)
+
+The proposed review surface is now bounded as one lead object, three direct
+claim objects, and three secondary context objects. A twelve-claim vector
+covers common-seed preparation, complete contextual records, marker/eraser
+typing, correlated nuisance, licensed-algebra separation,
+accessible/inaccessible erasure, public-input/baseline/output typing,
+joint-record discrimination, nuisance-efficient information, phase/reversal
+scope, the idealized reach receipt, and the platform/chronology ceiling.
+Mathematics, physical-source/apparatus, and foundations/gravity-firewall
+ownership is explicit; the physical seat must separately cover
+preparation/metrology and reader/nuisance physics.
+
+The seven repository objects pass current hash, LF, byte, final-LF, no-CR,
+equation-tag, and active-manifest checks at snapshot commit `e95ff15`.
+This establishes `B0-T PIN-CREATION-ELIGIBLE`, not an immutable pin. Exact
+bytes for twenty-six primary scholarly objects and all load-bearing
+supplements remain owed. Authorized pin creation must retrieve and hash those
+sources, rehash the seven review objects and three governing dependencies,
+freeze C1--C12 and the allowed outcomes, and only then permit mutually blind
+reviewers to begin.
+
+The maximum possible award is B0-L2. No pin or review is authorized here; no
+repair, B0-E apparatus, B0-L3+, `P-B0-1` discharge, candidate, entrant,
+comparison, gravity verdict, ontology, chronology, spacetime, or automatic
+successor opens.

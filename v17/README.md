@@ -938,6 +938,12 @@ cleanly if nature does not support it.
   one-parent closure, complete failure surface, and at least one generated
   consequence outside the four MG0 target surfaces before it is even eligible
   for a separately authorized pin.
+  A final author-side bundle audit now identifies one lead, three direct, and
+  three secondary B0-T review objects and freezes no authority. It enumerates
+  C1--C12, reviewer ownership, allowed outcomes, and the B0-L2 ceiling. The
+  repository bytes are ready for user-controlled pin creation, but reviewers
+  may not begin until a new pin rehashes the seven objects and retrieves and
+  hashes all twenty-six primary sources plus load-bearing supplements.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,

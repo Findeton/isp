@@ -83,6 +83,10 @@ not turn either source document into a pin or award a scientific result.
   correction of the B0 chronology, separation of review-only B0-T from future
   B0-E and B0-L5, and an input/held-out-output firewall for the common
   packet;
+- `v17_mg0_b0_t_review_bundle_readiness_and_claim_audit.md` — exact
+  author-side snapshot of the proposed one-lead/three-direct/three-secondary
+  review bundle, C1--C12 claim vector, reviewer ownership, source-receipt debt,
+  and B0-L2 ceiling; it is not a pin;
 - `v17_mg0_b0_matter_exact_synthetic_witness.md` — exact finite
   common-seed interface witness for preparation, coherence, temporary
   marking, a retained-register proxy, complete noisy readers, correlated
@@ -236,6 +240,14 @@ Four arXiv citations now use explicit versions, and one 2026 APS accepted
 manuscript remains typed as accepted rather than as a version of record. No
 source PDF or supplement bytes are frozen: any future B0-T review pin must
 retrieve, hash, and bind those exact bytes before reviewers begin.
+
+The final review-bundle audit now makes the promotion boundary exact. The
+proposed B0-T cycle has one lead, three direct, and three secondary objects,
+twelve bounded claims, three reviewer axes, and a maximum B0-L2 outcome.
+Current repository bytes pass at snapshot commit `e95ff15`, but the bundle is
+only eligible for pin creation. Review cannot begin until the user authorizes a
+pin that rehashes those bytes and retrieves/hashes all twenty-six primary
+source objects and load-bearing supplements.
 
 ## Maximum claim
 
