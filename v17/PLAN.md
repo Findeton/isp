@@ -687,6 +687,25 @@ The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
 
+The post-CRP ontology reassessment now separates two questions that the
+earlier rival register mixed: the law that generates complete cross-context
+predictions and the referent, if any, that is actual in one run. At fixed-
+background laboratory scope, standard quantum/QFT, Gram, or pair-history
+structure is retained as the provisional complete predictive baseline without
+being promoted to ontology. Ordinary-positive stable records are the empirical
+actuality floor; no microscopic actuality and no source-complete Barandes law
+is selected. Rival A remains logically live but its abstract construction
+search pauses until a new physical mechanism supplies source, composition,
+readers, and actuality rather than another representation.
+
+The next bounded author-side control is A1: reconstruction of the interacting
+relativistic GRW flash process from frozen primary sources. A1 tests an explicit
+stochastic referent, interaction, no-signalling, records, model-specific
+empirical deviations, QFT scope, conservation, and MG0 readiness. It imports
+quantum dynamics and background spacetime and is neither a v17 candidate nor a
+gravity proposal. No A1 pin, independent review, apparatus, successor, or
+official scientific unit is opened by this routing decision.
+
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
 ### Paper 04 — internal clocks and parametrized process law

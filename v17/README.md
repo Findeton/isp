@@ -806,6 +806,19 @@ cleanly if nature does not support it.
   completions. CRP therefore remains a valid positive-first representation
   control and fails native U0 admission for this model. The failure is the
   missing physical reader/actuality bridge, not code.
+  A post-CRP reassessment now separates predictive nomology from actuality.
+  Standard quantum/QFT, Gram, or pair-history structure is retained only as
+  the provisional complete fixed-background predictive baseline; it is not
+  declared fundamental ontology. Ordinary-positive stable records are the
+  empirical actuality floor, while microscopic actuality remains unselected.
+  The positive-native rival remains logically live but no second architecture
+  opens without a new physical source-and-reader mechanism.
+  The next author-side prior-art control is A1, a bounded reconstruction of the
+  interacting relativistic GRW flash law. It will audit exact flashes,
+  interaction, no-signalling, records, parameter origin, present empirical
+  status, QFT limits, conservation, and MG0 readiness while charging imported
+  quantum dynamics and background spacetime. A1 is not an official candidate,
+  pin, review cycle, apparatus, or gravity model.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

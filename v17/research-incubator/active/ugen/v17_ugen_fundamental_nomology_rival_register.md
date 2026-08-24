@@ -176,6 +176,21 @@ phases, or per-program tables. R4 remains deferred and MG0 remains a
 declaration-only preflight. This is author-side only and creates no scientific
 result or new authority.
 
+The R1/native-source-gap synthesis and the first CRP construction now sharpen
+this standing. R1 proves that known Maxwell--macroscopic-QED--instrument
+physics generates a substantial complete stable-record law while importing
+the quantum composition layer. CRP-1 then begins with one exact
+ordinary-positive reversible Gibbs law and reconstructs a secondary Hilbert
+space, entanglement, and Bell-violating quantum predictions. Its directly
+sampled configurations nevertheless have commuting local readers and obey the
+Bell bound; analytic continuation and the noncommuting reader rule belong to a
+second predictive layer. Contextwise reflection positivity also admits PR.
+Thus positive-first representation is real, but this model does not make the
+positive actuality the source of complete quantum prediction. Rival A remains
+logically live with no admitted model; its constructive priority is paused
+until an independently motivated physical mechanism supplies the source,
+reader, composition, and actuality bridge. This is not a class-wide no-go.
+
 ### Kill condition
 
 If the candidate merely encodes the complete quantum process in its state,
@@ -217,6 +232,14 @@ where its entrywise modulus square fails stochastic composition. This supports
 the need for relational pair/composition data but does not make a decoherence
 functional fundamental or generate an interacting one.
 
+R1, the Gram-envelope controls, and CRP-1 now make Rival B the leading
+complete predictive comparator at fixed-background laboratory scope. This is
+a provisional ranking of predictive adequacy, not an ontological award.
+Strong positivity or Hilbert reconstruction does not say whether histories,
+fields, operators, amplitudes, or only records are actual; nor does it source
+the state, matter content, couplings, boundary condition, spacetime, or
+gravity.
+
 ### Kill condition
 
 If $D$ is simply the standard quantum process rewritten on histories, the
@@ -247,6 +270,17 @@ The Bell-current comparator supplies a positive actual path without modifying
 ordinary quantum predictions at equilibrium, but imports the quantum current,
 configuration observable, external time, and least-traffic rule. It is a
 control, not a native Rival C discovery.
+
+The post-CRP reassessment separates empirically equivalent actualizations from
+dynamics-modifying ones. The former cannot be selected by a record class on
+which they agree. The latter carry rates, localization scales, radiation,
+heating, covariance, conservation, and prospective-deviation obligations.
+One bounded author-side prior-art control, A1, is selected for reconstruction:
+the interacting relativistic GRW flash process. A1 is not a v17 candidate and
+does not derive quantum composition. It tests whether an explicit stochastic
+referent closes actuality, interaction, no-signalling, record, empirical, and
+gravity-readiness duties while charging its imported wavefunction, spacetime,
+matter law, and collapse parameters.
 
 ### Kill condition
 
@@ -302,9 +336,9 @@ without a fixed and physically justified scoring rule.
 
 ---
 
-## 6. Current routing
+## 6. Historical routing before the CRP adjudication
 
-The current evidence supports the following order.
+For provenance, the route that led from the diagnostic controls to CRP was:
 
 1. **Official gate if explicitly authorized:** Q-Cut, because it supplies a
    scalable class-wide theorem-or-counterexample about positive sufficient
@@ -362,12 +396,34 @@ There is no automatic numbered successor after C4.
 
 ---
 
-## 7. Author verdict
+## 7. Current post-CRP routing
+
+The live order is now:
+
+1. retain standard quantum/QFT, Gram, and pair-history structure as the
+   provisional complete predictive baseline without promoting it to ontology;
+2. keep Rival A logically open but do not run another positive-representation
+   search without a new physical source and reader mechanism;
+3. reconstruct A1 author-side from frozen primary sources as a bounded
+   actuality and empirical-accounting control;
+4. retain coevents, Bell-current paths, and ordinary unitary record theory as
+   actuality comparators;
+5. apply MG0 only as a declaration and consistency firewall—curved-background
+   propagation is not reciprocal gravity; and
+6. keep Q-Cut as the sole prepared official theorem unit, unopened unless it
+   receives separate explicit authorization.
+
+No A1 pin, independent review, apparatus, successor model, spacetime result,
+or gravity law is opened by this routing update.
+
+---
+
+## 8. Author verdict
 
 ```text
-RIVAL A — POSITIVE INDIVISIBLE:       LIVE / U0 NATIVE CANDIDATE ABSENT
-RIVAL B — DECOHERENCE FUNCTIONAL:     LIVE / STANDARD-QM COMPARATOR EXISTS
-RIVAL C — MODIFIED ACTUALIZATION:     LIVE / NO V17 CANDIDATE
+RIVAL A — POSITIVE INDIVISIBLE:       LIVE / PRIORITY PAUSED / NO ADMITTED MODEL
+RIVAL B — RELATIONAL PREDICTION:      PROVISIONAL COMPLETE BASELINE / NOT ONTOLOGY
+RIVAL C — MODIFIED ACTUALIZATION:     LIVE / A1 PRIOR-ART CONTROL SELECTED
 RIVAL D — COMMON CONTEST:             ADOPTED AUTHOR-SIDE
 EMPIRICALLY SELECTED NOMOLOGY:        NONE
 NEXT OFFICIAL RECOMMENDATION:         Q-CUT ONLY, IF EXPLICITLY AUTHORIZED
@@ -415,7 +471,10 @@ U0 STATIC-SECTOR UNIVERSALITY:          FORMALLY VACUOUS WITHOUT PHYSICAL ORIGIN
 U0 STRICT MONOIDAL ANONYMITY:           IDENTITY OR UNIFORM RESET / FINITE CONTROL
 U0 FACTOR-MARKED RESPONSE:              ORBITAL CHANNELS EXIST / WEIGHTS UNSELECTED
 PHYSICAL RELATIONAL STRUCTURE:          REQUIRED / NOT YET CHOSEN
-NEXT U0 SCIENTIFIC FORK:                MEMORY/HIGHER-BOUNDARY VS WHOLE-BOUNDARY / NOT AUTHORIZED
+U0 CRP FIRST MODEL:                     CONTROL L2 / NATIVE MODEL REJECTED
+POST-CRP ONTOLOGY MAP:                  PREDICTION AND ACTUALITY SEPARATED
+NEXT AUTHOR-SIDE CONTROL:               A1 RELATIVISTIC GRW FLASH RECONSTRUCTION
+A1 OFFICIAL STATUS:                     NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:              DEFERRED UNTIL CANDIDATE
 C-NUMBER EXPANSION:                   CLOSED AT C4
 MG0 MATTER--GEOMETRY PREFLIGHT:       ACTIVE AUTHOR-SIDE / NO MODEL OR RESULT

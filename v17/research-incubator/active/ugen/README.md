@@ -685,6 +685,18 @@ CRP-L2 mathematically but the model is rejected for native U0 admission: its
 quantum controls and readers are not records of the same positive actuality.
 This is a semantic failure, and no second model or architecture is opened.
 
+The ontology fork is therefore reassessed in
+`v17_ugen_post_crp_ontology_fork_reassessment.md`. Predictive nomology and
+one-run actuality are now separate scoring axes. Quantum/QFT, Gram, and
+pair-history structure is retained as the provisional complete
+fixed-background predictive baseline without ontological promotion. The
+positive-native rival remains logically live but paused after one CRP model.
+The next bounded author-side control is A1, reconstruction of the interacting
+relativistic GRW flash process as an actuality, empirical-accounting, QFT-
+scope, and gravity-readiness audit. A1 imports quantum dynamics and background
+spacetime, is not a v17 candidate, and opens no pin, independent review,
+apparatus, successor, or gravity law.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -756,6 +768,7 @@ Active audit:
 - v17_ugen_u0_r1_baseline_native_source_gap_synthesis.md
 - v17_ugen_u0_single_candidate_architecture_selection.md
 - v17_ugen_u0_crp_first_construction_attempt.md
+- v17_ugen_post_crp_ontology_fork_reassessment.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1140,7 +1153,9 @@ U0 POSITIVE SCALAR FRINGE:     POSSIBLE / READER-SUPPLIED CONTROL ONLY
 U0 R1/NATIVE-GAP SYNTHESIS:    SYN-R1-L1 / NO NEW RESULT OR PROMOTION
 U0 SINGLE ARCHITECTURE:        CRP SELECTED / ONE MODEL EXHAUSTED
 U0 CRP FIRST ATTEMPT:          CONTROL L2 / NATIVE MODEL REJECTED
-NEXT U0 SCIENTIFIC WORK:       REASSESS ONTOLOGY FORK / NO AUTO SUCCESSOR
+POST-CRP ONTOLOGY MAP:         PREDICTION / ACTUALITY AXES SEPARATED
+NEXT AUTHOR-SIDE CONTROL:      A1 RELATIVISTIC GRW FLASH RECONSTRUCTION
+A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

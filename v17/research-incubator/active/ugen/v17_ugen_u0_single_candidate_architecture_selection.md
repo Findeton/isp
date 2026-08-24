@@ -221,8 +221,8 @@ may be used as theorem controls without being promoted to ontology.
 
 ## 5. One fixed source rule
 
-The candidate attempt must instantiate one fixed nomology $\mathcal N_{m
-CRP}$ and one map
+The candidate attempt must instantiate one fixed nomology
+$\mathcal N_{\rm CRP}$ and one map
 
 $$
 \boxed{
