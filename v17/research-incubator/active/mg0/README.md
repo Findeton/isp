@@ -249,13 +249,29 @@ only eligible for pin creation. Review cannot begin until the user authorizes a
 pin that rehashes those bytes and retrieves/hashes all twenty-six primary
 source objects and load-bearing supplements.
 
+The user subsequently authorized that exact fail-closed pin-creation attempt.
+The seven-object bundle and three terminal dependencies rehashed without byte
+drift, but exact source closure failed: only fifteen of twenty-six registered
+primary PDFs were retrieved as the named scholarly versions, eleven remained
+unclosed, and multiple load-bearing supplements were unavailable as exact
+bytes. The authorized procedure therefore stopped before freezing C1--C12 or
+dispatching reviewers. The governing current state is `PIN CREATION FAILED
+CLOSED / NO IMMUTABLE B0-T PIN / NO REVIEW DISPATCHED`, as recorded in
+`v17/note-mg0-b0-t-review-pin-source-closure-failure.md`. This is a procedural
+source-authentication failure, not a scientific rejection of the author-side
+B0-T mathematics. A future attempt requires either the exact missing bytes or
+an explicitly authorized changed source-equivalence contract and fresh
+differential audit.
+
 ## Maximum claim
 
 This packet now supplies an independently reviewed result-neutral admissibility
 contract and source-scoped benchmark design, plus explicitly unreviewed
 author-side preparation, a no-selection feasibility result, an unfrozen
 pre-pin chronology/common-packet firewall, and an unfrozen source-lineage
-audit for the missing B0 gate. It supplies
+audit for the missing B0 gate. The one authorized B0-T pin-creation attempt
+failed closed at exact source and supplement bytes; no immutable B0-T pin or
+review exists. It supplies
 no completed
 massive-mechanical baseline, common matter–geometry law, gravity ontology,
 QFT, clock, spacetime, GR, or empirical result.

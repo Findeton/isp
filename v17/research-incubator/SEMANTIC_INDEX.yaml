@@ -197,30 +197,30 @@ artifacts:
     maximum_claim: "candidate L3 standard-Borel positive sufficient-cut information lower bound; no whole-history no-go, physical-cost claim, or ontology selection"
     canonical: false
   - path: "active/mg0/README.md"
-    sha256: "831d9877eedb8c405a9902b1e7375a99a9c83ee5a42e322f31ba9eefdde27b81"
+    sha256: "da747074fb9e1b5e1f5e4b6d19c0cc86396e896e19717e8eabdd1a76260009ff"
     created_at: "2026-08-23"
     front: "mg0"
-    status: "active-routing-mg0-preflight-no-model"
+    status: "terminal-benchmark-design-routing-b0-pin-creation-failed-closed"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md", "active/mg0/v17_mg0_closed_system_balance_and_conservation_gate.md", "active/mg0/v17_mg0_future_review_contract.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md"]
-    source_audit_status: "author-side-primary-source-reconstructed-cpcq-family-kernel-selection-and-closed-carrier-balance-audited-independent-review-pending"
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/mg0/v17_mg0_postquantum_classical_gravity_family_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md", "active/mg0/v17_mg0_closed_system_balance_and_conservation_gate.md", "active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_b0_matter_exact_synthetic_witness.md", "active/mg0/v17_mg0_b0_platform_feasibility_and_selection_gate.md", "active/mg0/v17_mg0_b0_complete_record_information_feasibility_gate.md", "active/mg0/v17_mg0_b0_primary_source_claim_and_version_audit.md", "active/mg0/v17_mg0_b0_pre_pin_closure_and_common_packet_firewall.md", "active/mg0/v17_mg0_b0_t_author_reconstruction_and_semantic_audit.md", "active/mg0/v17_mg0_b0_t_review_bundle_readiness_and_claim_audit.md", "active/mg0/v17_mg0_future_review_contract.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md", "v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md", "v17/note-mg0-b0-t-review-pin-source-closure-failure.md"]
+    source_audit_status: "mg0-benchmark-independently-reviewed-terminal-b0-source-lineage-author-side-audited-pin-creation-failed-exact-byte-closure"
     authority: "none"
-    promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral routing for a form-neutral common matter--geometry admission contract and reciprocal selector benchmark, explicitly downstream of genuinely distinct complete U0 matter laws; no candidate law, ontology selection, pin, review, data, QFT, clock, spacetime, GR, empirical result, or successor authority"
+    promotion_readiness: "not-ready-b0-pin-creation-failed-closed-no-candidate-roster"
+    maximum_claim: "routing for the terminal independently reviewed result-neutral MG0 admission contract and benchmark design plus unreviewed B0 author-side controls; the authorized B0-T pin attempt failed exact source-byte and supplement closure, so no B0 pin, B0 review, massive-mechanical baseline, candidate, entrant, comparison, ontology selection, QFT, spacetime, GR, empirical result, or successor authority"
     canonical: true
   - path: "active/mg0/v17_mg0_common_matter_geometry_contract.md"
-    sha256: "f134727c1ef4fafb03c1ca30aeb701348a74731f50077be5e070289c30bb51d8"
+    sha256: "3552e4d00806c1a17294b9e57a4a1d693e72bfb0fdff0356411f6af2fa12d475"
     created_at: "2026-08-23"
     front: "mg0"
-    status: "active-author-form-neutral-contract"
+    status: "terminal-reviewed-frozen-benchmark-input-source-document"
     supersedes: []
     superseded_by: []
     depends_on: ["v17/paper-00-reality-first-programme.md", "v17/PLAN.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "active/ugen/v17_ugen_c4_primary_source_scope_and_readiness_audit.md", "active/ugen/v17_ugen_nelson_control_scope_correction.md", "active/ugen/v17_ugen_u0_native_indivisible_law_search_contract.md"]
-    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    source_audit_status: "independently-reviewed-terminal-accept-with-scope-under-external-pin"
     authority: "none"
-    promotion_readiness: "not-ready"
-    maximum_claim: "candidate-neutral admission contract separating law, state, controls, records, actuality, source functional, reciprocity, gauge, constraints, limits, and empirical wedge; no common law or gravity result"
+    promotion_readiness: "terminal-benchmark-input-no-model-or-entrant"
+    maximum_claim: "externally pinned and independently reviewed candidate-neutral admission contract separating law, state, controls, records, actuality, source functional, reciprocity, gauge, constraints, limits, and empirical wedge; no common law, candidate, entrant, or gravity result"
     canonical: false
   - path: "active/mg0/v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md"
     sha256: "76f58d121b3faaa489e2e486270b8f08b0561e6d66a6a4715a2910dea6322149"
@@ -262,17 +262,17 @@ artifacts:
     maximum_claim: "CQG-L2 source-fixed classification of the general CP-CQ theorem, objective unravellings, canonical/covariant gravity families, Newtonian member, pure-gravity renormalization/modes, adverse constant-kernel scattering member, and dilation/conservation controls; real weak-field reciprocity and empirical accountability but no single member closing constraints, conservation, stable vacuum, interacting-matter renormalization, actuality/readers, parameter selection, or held-out transfer; no classical/quantum gravity verdict, model, pin, review, or ontology selection"
     canonical: false
   - path: "active/mg0/v17_mg0_selector_controls_and_benchmark.md"
-    sha256: "23436298bdcf30932bb0d315a01f9f7f5e81da042b6c14ffe8c1e8251c706902"
+    sha256: "7d527e68df9ab788433d3d953b607181d1624e46aea40b50b630e675c70d8482"
     created_at: "2026-08-23"
     front: "mg0"
-    status: "active-author-benchmark-design-not-run"
+    status: "terminal-reviewed-frozen-benchmark-input-design-not-run"
     supersedes: []
     superseded_by: []
     depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md"]
-    source_audit_status: "author-side-primary-source-reconstructed-independent-review-pending"
+    source_audit_status: "independently-reviewed-terminal-accept-with-scope-under-external-pin"
     authority: "none"
-    promotion_readiness: "not-ready"
-    maximum_claim: "result-neutral reciprocal source--gravity--probe benchmark, source-functional classifier, hostile mutants, and held-out protocol; no model, parameter fit, experiment, or physical result"
+    promotion_readiness: "terminal-benchmark-design-no-model-or-comparison"
+    maximum_claim: "externally pinned and independently reviewed result-neutral reciprocal source--gravity--probe benchmark design, source-functional classifier, hostile mutants, and held-out protocol; no model, parameter fit, experiment, entrant comparison, or physical result"
     canonical: false
   - path: "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md"
     sha256: "ee1a4c69963f126689b4f24856fa4893852c288a8fcda8d100bd03d43e762ae1"
@@ -288,17 +288,121 @@ artifacts:
     maximum_claim: "source-scoped reconstruction of Barandes, semiclassical, hybrid, histories, general-boundary, relational-time, signalling, low-energy-gravity, and gravity-witness constraints; no selected ontology or law"
     canonical: false
   - path: "active/mg0/v17_mg0_future_review_contract.md"
-    sha256: "4a4bb62564af8708b49bf3fe2b33bc609fcc27aedba08cbcbaacb03b67992cf8"
+    sha256: "bcf8935febb1502ebd74e76989a7a21ddfdb10ae584d2b0af3623c2afd148f97"
     created_at: "2026-08-23"
     front: "mg0"
-    status: "future-review-not-authorized"
+    status: "superseded-historical-author-side-review-design"
+    supersedes: []
+    superseded_by: ["v17/note-mg0-common-law-reciprocal-benchmark-review-protocol.md", "v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md"]
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md"]
+    source_audit_status: "superseded-by-frozen-independent-review-protocol-and-terminal-adjudication"
+    authority: "none"
+    promotion_readiness: "not-applicable-superseded"
+    maximum_claim: "historical author-side three-seat review-design precursor only; the external frozen protocol and terminal adjudication govern; no live duty, authority, model, result, or successor"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md"
+    sha256: "59bd04faa658040ec2f02e18c6cad2c06309436598116fb23c3f63453779fe29"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-preauthorization-readiness-audit"
     supersedes: []
     superseded_by: []
-    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md"]
-    source_audit_status: "inherits-mg0-author-side-source-scope-audit-independent-review-pending"
+    depends_on: ["active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "v17/note-r1-native-source-gap-independent-review-adjudication.md", "v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md"]
+    source_audit_status: "twenty-six-primary-object-lineage-author-side-version-classified-exact-source-byte-closure-failed-at-authorized-pin-attempt-independent-review-not-run"
     authority: "none"
-    promotion_readiness: "not-ready"
-    maximum_claim: "future three-seat foundations, gravity, and operational review design only; no pin, review, model, result, or successor authority"
+    promotion_readiness: "not-ready-no-single-platform-public-packet"
+    maximum_claim: "author-side type contract and readiness audit for a conventional fixed-background B0-T control and future one-platform B0-E baseline; no platform closes every physical arrow, no B0 level is awarded, P-B0-1 remains open, and no gravity entrant or ontology follows"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_matter_exact_synthetic_witness.md"
+    sha256: "f25c192b92d00ebe9bb2836158cf83b47723e78cd8a17c8782556017b4d89d17"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-exact-synthetic-interface-control"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md"]
+    source_audit_status: "finite-mathematics-author-side-reconstructed-source-physics-and-apparatus-not-established-independent-review-not-run"
+    authority: "none"
+    promotion_readiness: "not-ready-abstract-interface-control-only"
+    maximum_claim: "exact finite standard-quantum witness for B0 preparation, coherence, marker, eraser, retained-register proxy, complete reader, correlated nuisance, and idle-tag distinctions; no stable physical record, massive apparatus, gravity law, experiment, B0 award, or P-B0-1 discharge"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_platform_feasibility_and_selection_gate.md"
+    sha256: "2ee72aeaf8fe28885e99ae1527f202fa732d4e1a713f6816b8deb71002c29cb1"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-platform-feasibility-selection-gate"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md", "v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md"]
+    source_audit_status: "primary-source-author-side-current-through-evidence-date-2026-08-24-exact-source-byte-closure-incomplete-independent-review-not-run"
+    authority: "none"
+    promotion_readiness: "not-ready-no-platform-selected"
+    maximum_claim: "author-side conjunctive source-functional, coherence, complete-record, nuisance, and mechanics gate returning NO-SELECTION on current evidence; no apparatus packet, B0 transfer level, P-B0-1 discharge, gravity candidate, or ontology result"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_complete_record_information_feasibility_gate.md"
+    sha256: "8a8605337428412b83949c24802107ef6222ec9d1e58572849283c34731f75de"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-information-feasibility-gate"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_b0_platform_feasibility_and_selection_gate.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md"]
+    source_audit_status: "finite-information-theory-author-side-reconstructed-independent-review-not-run"
+    authority: "none"
+    promotion_readiness: "not-ready-necessary-information-gate-only"
+    maximum_claim: "exact finite complete-record discrimination, null/failure, nuisance-score, phase-offset, balanced-reversal, and context-rank necessity controls; no sufficient apparatus design, platform selection, B0 award, gravity law, or ontology claim"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_primary_source_claim_and_version_audit.md"
+    sha256: "2dc7a57394a741c708c4c5b59495c8cd6423e0d31fa4e345937212a82be79946"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-source-claim-version-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_b0_platform_feasibility_and_selection_gate.md", "active/mg0/v17_mg0_primary_source_and_scope_reconstruction.md"]
+    source_audit_status: "twenty-six-objects-version-classified-fifteen-exact-primary-pdfs-retrieved-eleven-primary-objects-and-multiple-load-bearing-supplements-unclosed-no-pin"
+    authority: "none"
+    promotion_readiness: "not-ready-exact-source-byte-closure-failed"
+    maximum_claim: "author-side claim and version lineage for twenty-six primary scholarly objects with permitted uses and forbidden promotions; exact total PDF and supplement closure failed, so no immutable source receipt set, B0 pin, B0 review, platform, or result exists"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_pre_pin_closure_and_common_packet_firewall.md"
+    sha256: "6810773f9b0a3737cee4ea9dfd8f2682ddd70c491aa5789dcbac1bb477d40694"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-pre-pin-closure-common-packet-firewall"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_b0_matter_exact_synthetic_witness.md", "active/mg0/v17_mg0_b0_platform_feasibility_and_selection_gate.md", "v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md"]
+    source_audit_status: "author-side-chronology-and-common-packet-scope-audit-independent-review-not-run"
+    authority: "none"
+    promotion_readiness: "not-ready-no-b0-e-platform-or-common-packet"
+    maximum_claim: "author-side chronology separating review of pre-existing B0-T bytes from a future B0-E platform and B0-L5 common-packet authentication, with answer-table and theory-factory firewalls; no platform, model, pin, P-B0-1 discharge, entrant, or successor"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_t_author_reconstruction_and_semantic_audit.md"
+    sha256: "0152ead7f37c6d8ed094550372bcb91984d77ffbebc9fc462d4608de810e533a"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "complete-author-side-b0-t-reconstruction-semantic-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_b0_matter_exact_synthetic_witness.md"]
+    source_audit_status: "exact-author-side-reconstruction-and-seven-scope-typing-corrections-independent-review-not-run"
+    authority: "none"
+    promotion_readiness: "not-ready-independent-review-not-run"
+    maximum_claim: "exact author-side rebuild preserving the finite B0-T algebra while correcting seven record, nuisance, carrier, context, licensed-algebra, and public-input typing defects; no B0 award, apparatus, gravity, or ontology claim"
+    canonical: false
+  - path: "active/mg0/v17_mg0_b0_t_review_bundle_readiness_and_claim_audit.md"
+    sha256: "83f12c199de759e97eb73ba5db83f031a65828abbb6d707c2a3c06e0e2b5e7d2"
+    created_at: "2026-08-24"
+    front: "mg0"
+    status: "historical-author-side-b0-t-pin-readiness-snapshot-pin-attempt-failed-closed"
+    supersedes: []
+    superseded_by: ["v17/note-mg0-b0-t-review-pin-source-closure-failure.md"]
+    depends_on: ["active/mg0/v17_mg0_b0_matter_pre_authorization_readiness_audit.md", "active/mg0/v17_mg0_b0_matter_exact_synthetic_witness.md", "active/mg0/v17_mg0_b0_t_author_reconstruction_and_semantic_audit.md", "active/mg0/v17_mg0_b0_complete_record_information_feasibility_gate.md", "active/mg0/v17_mg0_b0_platform_feasibility_and_selection_gate.md", "active/mg0/v17_mg0_b0_primary_source_claim_and_version_audit.md", "active/mg0/v17_mg0_b0_pre_pin_closure_and_common_packet_firewall.md", "v17/note-r1-native-source-gap-independent-review-adjudication.md", "v17/note-mg0-common-law-reciprocal-benchmark-pin.md", "v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md"]
+    source_audit_status: "seven-object-three-dependency-repository-bytes-reauthenticated-source-byte-closure-failed-no-pin-no-review"
+    authority: "none"
+    promotion_readiness: "not-ready-pin-creation-failed-closed"
+    maximum_claim: "historical author-side readiness snapshot defining C1--C12, roles, outcomes, and B0-L2 ceiling; the subsequent authorized pin creation failed exact source-byte and supplement closure, so no pin, review, B0 award, apparatus, P-B0-1 discharge, entrant, or ontology result"
     canonical: false
   - path: "active/ugen/v17_ugen_nelson_control_scope_correction.md"
     sha256: "54c48d39c2eba2f7b582a3db2eb627e630bb4d8ba3b213f3ba3402dedc5453ab"

@@ -2771,3 +2771,31 @@ design. No scientific result, official unit, pin, review, platform,
 construction, Barandes completion, Hilbert demotion, chronology, spacetime,
 gravity theory, ontology selection, B0 repair, or automatic successor is
 opened.
+
+## 2026-08-24 — MG0 SEMANTIC REGISTRY RESTORED WITHOUT SCIENTIFIC MUTATION (v17 LEDGER #117)
+
+The post-assumption audit reproduced twelve pre-existing semantic-index
+defects: eight unindexed B0 author-side Markdown objects and four stale MG0
+hashes. Each defect was traced to later repository history before repair. The
+eight B0 objects are now indexed with their actual author-side roles, source
+status, dependencies, ceilings, and `authority: none`. The common contract and
+reciprocal benchmark records now identify their external terminal review
+status without assigning incubator authority, and the old future-review
+contract is typed as superseded historical provenance.
+
+The canonical MG0 routing document was also corrected semantically rather than
+merely rehashed. It now records that the subsequently authorized B0-T pin
+attempt reauthenticated all seven review objects and three terminal
+dependencies but failed closed because eleven of twenty-six named primary
+objects and multiple load-bearing supplements did not close at exact-byte
+scope. Consequently no immutable B0-T pin exists, no review was dispatched,
+and C1--C12 remain unreviewed. The MG0 active-byte manifest was refreshed for
+that routing-only amendment.
+
+The repository semantic validator now passes with 192 artifacts, complete
+active/snapshot Markdown coverage, current hashes, existing dependency
+targets, no self-edges or cycles, and consistent canonical and promotion
+metadata. No theorem, source contract, benchmark equation, candidate,
+platform, B0 level, `P-B0-1` discharge, entrant, comparison, ontology,
+gravity verdict, official pin, review, or automatic successor was created or
+modified.
