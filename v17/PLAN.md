@@ -470,6 +470,16 @@ the material response is effective, and background spacetime, time, QFT, and
 the Q-source framework are assumed. It is therefore a recovery comparator,
 not a native positive ontology and not an opening of Paper 17 emergence,
 R4, review, or gravity.
+The preparation/record closure now pushes that control one physical step
+further. Green/QED-derived mode gains generate the full unconditioned
+vacuum, one-pair, and multipair law; independently sourced local threshold
+efficiency and dark inputs then generate an exact normalized four-outcome
+herald/signal record law. Herald conditioning is derived from the parent.
+An exact witness proves that source brightness and detector efficiency are
+not identifiable from target clicks alone, so independent lineage remains
+mandatory. The ceiling is PRC-L2 author-side: vacuum/thermal boundary
+selection, pump depletion, mode-tail control, microscopic detector
+amplification, temporal transfer, and native actuality remain open.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

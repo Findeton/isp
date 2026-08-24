@@ -465,6 +465,16 @@ assumes background spacetime, time, QFT, and the conditional Q-framework.
 It is a recovery comparator rather than a U0 ontology and opens no
 implementation, pin, review, Paper 17 emergence, or gravity result.
 
+The preparation/record closure now uses the Green/QED-derived source gains
+to generate the entire unconditioned vacuum, one-pair, and multipair law.
+With only independently sourced local threshold efficiency and dark inputs,
+it derives the exact four-outcome herald/signal table and conditions on the
+herald only afterward. Exact rational controls validate normalization and
+prove brightness/efficiency nonidentifiability. The packet reaches PRC-L2
+author-side only; incoming boundary selection, pump depletion, mode tails,
+microscopic detector amplification/memory, transfer, and native actuality
+remain open.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -519,6 +529,7 @@ Active audit:
 - v17_ugen_u0_explicit_positive_formula_tournament.md
 - v17_ugen_u0_qsource_operational_reconstruction_audit.md
 - v17_ugen_u0_msource_qed_material_descent_audit.md
+- v17_ugen_u0_msource_preparation_record_closure.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -865,9 +876,10 @@ U0 FACTOR-MARKED RESPONSE:     ORBITAL CHANNELS EXIST / WEIGHTS UNSELECTED
 PHYSICAL RELATIONAL STRUCTURE: REQUIRED / NOT YET CHOSEN
 U0 Q-SOURCE FRAMEWORK:         QSR-L2 AUTHOR-SIDE / FINITE CONDITIONAL
 U0 EFFECTIVE M-SOURCE:         MSD-L2 AUTHOR-SIDE / GREEN-MQED CONTROL
-U0 PREPARATION DESCENT:        PARTIAL / NOT CLOSED
+U0 PREPARATION/RECORD CLOSURE: PRC-L2 AUTHOR-SIDE / MULTIPAIR PARENT
+U0 PREPARATION DESCENT:        CONDITIONAL EFFECTIVE / MICROSCOPIC OPEN
 U0 READER DESCENT:             PARTIAL / NOT CLOSED
-NEXT U0 SCIENTIFIC WORK:       PREPARATION + READER DESCENT / AUTHOR-SIDE
+NEXT U0 SCIENTIFIC WORK:       MICROSCOPIC READER DESCENT / AUTHOR-SIDE
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

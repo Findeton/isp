@@ -481,6 +481,16 @@ response remain only partially descended. The author-side ceiling is
 MSD-L2; no implementation, target, native law, spacetime emergence, or
 gravity result is opened.
 
+The preparation and complete-record closure then derives the full
+unconditioned multimode SPDC number law from the physical source gains.
+Vacuum, one-pair, multipair, failed heralds, dark events, loss, and all four
+herald/signal click outcomes remain in one normalized positive parent.
+Herald conditioning is secondary. An exact brightness/efficiency ambiguity
+shows why target clicks cannot supply source or reader lineage. The
+author-side ceiling is PRC-L2; strong-pump dynamics, incoming boundary
+selection, mode-tail error, detector amplification/memory, transfer, and
+native ontology remain open.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

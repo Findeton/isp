@@ -598,6 +598,14 @@ cleanly if nature does not support it.
   spacetime, time, QFT, material constitutive functions, and the conditional
   Q-framework. The result is MSD-L2 author-side only; implementation
   transfer, native actuality, Paper 17 emergence, and gravity remain closed.
+  The preparation/record companion derives the unconditioned multimode
+  vacuum/one-pair/multipair law from those physical source gains and, given
+  independently calibrated local threshold readers, an exact complete
+  herald/signal click table. It retains failed heralds and derives
+  conditioning only afterward. A rational counterexample proves that
+  source brightness and detector efficiency cannot be inferred separately
+  from one target click law. This reaches PRC-L2 author-side; microscopic
+  preparation, detector amplification/memory, and transfer remain open.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
