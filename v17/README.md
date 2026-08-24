@@ -1166,18 +1166,20 @@ not semantically closed enough to govern acquisition. No corrected contract,
 exact apparatus packet, empirical evaluation pin, held-out result, chronology,
 spacetime, gravity, or ontology award exists.
 
-SPB is again the primary promotion-bearing track. A single clean v2
-author-side successor now addresses the whole terminal defect set. It
-separates immutable context from physical intervention, archives literal
-execution while scoring a common compliance/deviation projection, forbids
-that projection from hiding future-accessible physical traces, distinguishes
-exact presentation from matching and screening, indexes transfer by the duty
-actually transferred, gives the regional carrier a complete stochastic law,
-and treats stochastic feedback existence/uniqueness separately from an
-`S`-matrix seam solve. Candidate partial orders prevent “larger passes” from
-being misreported as “larger required.” Root's v2 countermodel audit passes
-for immutable contract review only; `SPB-L0`, apparatus acquisition, and every
-physical or ontological conclusion remain absent.
+SPB remains the primary promotion-bearing question, but its clean v2 contract
+review is now terminal `SPB-D2 — REVISE BEFORE PHYSICAL PIN`; `SPB-L0` was not
+awarded. V2 repairs most v1 defects and both apparatus architectures remain
+physically feasible. The frozen inference still fails independent hostile
+review: nonrandom source closure does not identify a do-law; unconstrained
+matching and screening margins permit tautological equivalence; acyclic
+kernel composition omits the initial boundary/preparation law; feedback and
+seam status codomains are incomplete; minimal passing antichains are confused
+with individual necessity; B3 response histories/kernels lack physical
+carrier/instrument types; and several aggregate or “only” flags outrun the
+duty-specific evidence. Both exact apparatus/run packets remain absent. This
+is an experiment-design stop, not a computational failure or a result about
+nature. No automatic v3, acquisition, boundary, ontology, chronology,
+spacetime, gravity, or unification claim follows.
 
 ## Scientific order
 
@@ -1235,13 +1237,28 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   — author-side hidden-assumption and pin-readiness audit; not an independent
   review or scientific result.
 - `research-incubator/active/spb/v17_spb_v2_result_neutral_gate_contract.md`
-  — one clean corrected author-side contract; not yet pinned or independently
-  accepted.
+  — frozen v2 contract, now terminally reviewed `SPB-D2`; retained as
+  historical input, not an accepted physical protocol.
 - `research-incubator/active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md`
-  — root reconstruction of the v1 defects plus new label, stochastic-cycle,
-  transfer, and minimality countermodels; review readiness only.
+  — historical author-side readiness audit; its useful countermodels survive,
+  but terminal review found additional causal, margin, initial-law, carrier,
+  and routing defects.
 - `research-incubator/active/spb/SPB_V2_SHA256.txt` — author-side integrity
   receipt for the v2 candidate, audit, and terminal predecessor adjudication.
+- `note-spb-v2-sufficient-physical-boundary-contract-review-pin.md` —
+  immutable result-neutral v2 contract-review pin.
+- `review-spb-v2-contract-mathematics-statistics.md` — frozen v2 Seat M
+  report.
+- `review-spb-v2-contract-physical-temporal.md` — frozen v2 temporal
+  apparatus subreport.
+- `review-spb-v2-contract-physical-regional.md` — frozen v2 regional
+  apparatus subreport.
+- `review-spb-v2-contract-physical-joint.md` — frozen v2 joint
+  physical-source/apparatus disposition.
+- `review-spb-v2-contract-foundations-ontology.md` — frozen v2 Seat O report.
+- `note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md`
+  — terminal v2 `SPB-D2` adjudication; no `SPB-L0`, physical pin, or boundary
+  result.
 - `note-spb-sufficient-physical-boundary-contract-review-pin.md` — immutable
   result-neutral first SPB contract-review pin.
 - `review-spb-contract-mathematics-statistics.md` — frozen Seat M report.

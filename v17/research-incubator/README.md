@@ -88,23 +88,31 @@ contract, corrected successor, held-out evaluation, scientific boundary
 result, ontology, chronology, spacetime, or gravity result exists.
 
 The user subsequently returned SPB to the primary promotion-bearing track.
-One clean v2 author-side successor now repairs the whole interacting v1 defect
-set: immutable context versus physical assignment; a common scored execution
-projection that cannot copy treatment labels or hide future-accessible
-records; exact presentation versus statistical matching versus screening;
-three-way inference; duty-indexed transfer; a physical regional carrier with
-complete stochastic kernels; deterministic and stochastic seam
-well-posedness; candidate partial orders; and one cumulative ladder. Root's
-countermodel audit found and repaired five additional pre-pin defects,
-including cyclic local kernels that define no joint law or many joint laws.
-The v2 package is ready for an immutable contract-review pin only. It earns no
-`SPB-L0`, physical packet, boundary result, or downstream ontology claim.
+One clean v2 contract was pinned and subjected to mutually blind
+mathematics/statistics, split physical-source/apparatus, and
+foundations/ontology review. The cycle is terminal `SPB-D2 — REVISE BEFORE
+PHYSICAL PIN`; `SPB-L0` was not awarded. V2 repairs most v1 defects, and the
+apparatus seat confirms physical feasibility, but root reproduces decisive
+new semantic countermodels: nonrandom source closure does not identify the
+printed do-law; maximal margins can make maximal physical disagreement pass;
+the acyclic composition rule lacks an initial preparation law; status
+codomains have overlaps and gaps; candidate minimality is overstated as
+individual necessity; and B3 response histories/kernels are not typed
+physical carriers. The exact apparatus packets also remain absent. No
+automatic v3 or empirical evaluation is open.
 
-Active v2 author-side package:
+Terminal v2 record and author-side inputs:
 
 - `active/spb/v17_spb_v2_result_neutral_gate_contract.md`
 - `active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md`
 - `active/spb/SPB_V2_SHA256.txt`
+- `../note-spb-v2-sufficient-physical-boundary-contract-review-pin.md`
+- `../review-spb-v2-contract-mathematics-statistics.md`
+- `../review-spb-v2-contract-physical-temporal.md`
+- `../review-spb-v2-contract-physical-regional.md`
+- `../review-spb-v2-contract-physical-joint.md`
+- `../review-spb-v2-contract-foundations-ontology.md`
+- `../note-spb-v2-sufficient-physical-boundary-contract-review-adjudication.md`
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

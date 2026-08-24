@@ -1272,19 +1272,23 @@ physically feasible and that their exact run packets remain absent;
 feasibility does not repair the semantic defects. No corrected contract opens
 automatically.
 
-The user has now returned SPB to the primary promotion-bearing track. One
-clean v2 author-side successor repairs the ten terminal duties together and
-adds root countercontrols for treatment-label leakage, invalid intervention
-typing, duty-switching transfer, stochastic feedback
-nonexistence/nonuniqueness, and false minimality. Its common law separates
-immutable context, assigned physical intervention, full archival execution,
-and a comparison-invariant scored execution projection while requiring every
-future-accessible physical trace to remain in the boundary/nuisance record.
-Regional composition now requires a normalized complete stochastic law, not
-an `S` matrix, and reports both deterministic seam and stochastic
-compatibility status. The v2 root readiness audit passes for immutable
-contract review only. No `SPB-L0`, exact physical packet, acquisition,
-boundary result, or automatic v3 follows.
+The user returned SPB to the primary promotion-bearing track and one clean v2
+contract was frozen and reviewed. Its immutable cycle is now terminal
+`SPB-D2 — REVISE BEFORE PHYSICAL PIN`; `SPB-L0` was not awarded. V2 genuinely
+repairs most v1 defects, and the apparatus review confirms that both bounded
+experiments are physically feasible. Root nevertheless reproduces new
+contract-level counterexamples: a known nonrandom assignment source does not
+identify the displayed do-law; unconstrained matching and screening margins
+can call maximal TV disagreement equivalent; the acyclic composition formula
+omits its initial boundary/preparation law; feedback and seam status codomains
+overlap or omit finite-resolution cases; minimal passing antichains are called
+individually required; B3 response histories/kernels are called carriers
+without physical carrier/instrument types; and aggregate or “only” headlines
+outrun the duty-specific local vector. Both exact apparatus/run packets also
+remain absent. These are semantic experiment-design defects, not software
+failures or evidence against a sufficient boundary in nature. No automatic
+v3, physical pin, acquisition, boundary result, or downstream promotion
+follows.
 
 ### F7 — amplitudes
 

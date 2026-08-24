@@ -2951,3 +2951,48 @@ mathematics/statistics, temporal-plus-regional apparatus, and
 foundations/ontology review. Physical acquisition remains closed unless that
 review accepts the contract and a separately frozen exact apparatus/source
 packet exists.
+
+## 2026-08-24 — SPB V2 CONTRACT REVIEW TERMINAL D2; NO SPB-L0 (v17 LEDGER #121)
+
+The Sufficient Physical Boundary Gate remained the primary promotion-bearing
+track and was taken through the complete authorized v2 contract-review cycle.
+The immutable pin was frozen at commit `7221d77`; mutually blind
+mathematics/statistics and foundations/ontology reports were frozen at
+`25ea29f` and `4e615e2`; and separately signed temporal, regional, and joint
+physical-source/apparatus reports were frozen together at `4fc648a`. All
+report signatures and source receipts were independently rehashed before root
+adjudication.
+
+Seat P found both selected bounded experiments physically feasible, all
+source-role ceilings sound, and no exact temporal or regional apparatus/run
+packet present. It recommended `SPB-D4` at the contract/apparatus axis while
+awarding no empirical result. Seats M and O independently recommended
+`SPB-D2`. Root did not average the seats and reproduced every controlling
+counterexample.
+
+Three defects are independently decisive. First, a known nonrandom assignment
+source can preserve confounding and lack overlap, so source closure alone does
+not identify the displayed interventional kernel. Second, because neither the
+matching radius nor the screening margin is bound below the distance diameter,
+choosing both equal to one makes even maximal total-variation disagreement
+pass. Third, the acyclic composition formula supplies conditional kernels and
+a nuisance/reference law but no initial boundary/preparation probability, so
+Ionescu--Tulcea does not produce the claimed unique normalized prediction.
+
+Root also reproduced overlapping `COMP-*` routes; a missing finite-resolution
+seam status and simultaneous-pivot state; minimal passing antichains
+misreported as individual necessity; B3 response histories/higher kernels
+called carriers without material carrier/instrument types; duty-aggregate
+transfer headlines; and “only target-built predicts” flags that can exclude
+an underdetermined or unrun proper candidate. The typed parent, physical-trace
+firewall, presentation/matching/screening distinction, complete stochastic
+regional carrier, direct triple, physical memory/adapter costs, source roles,
+apparatus feasibility, and all ontology/chronology/gravity ceilings survive as
+exact salvage.
+
+The terminal adjudication at commit `a4c873f` is `SPB-D2 — REVISE BEFORE
+PHYSICAL PIN`; `SPB-L0` is not awarded. This is a semantic experiment-design
+failure, not a software defect, an empirical negative, or evidence that nature
+lacks a sufficient boundary. No automatic v3, new pin, apparatus operation,
+acquisition, simulation-as-result, boundary claim, ontology selection,
+chronology, spacetime, gravity, or unification result follows.
