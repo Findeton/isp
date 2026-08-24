@@ -440,6 +440,19 @@ operational reconstruction may select a quantum framework but not the
 material member. No entrant supplies both the Q-layer and M-layer, so T4-E,
 R4, ontology, and gravity remain closed.
 
+The Q-source operational reconstruction audit now makes the framework branch
+exact. It binds the finite Chiribella--D'Ariano--Perinotti theorem and derives
+the adaptive complete-record CP-instrument formula, tensor-product
+composition, and quantum-network link product from the six printed
+operational principles. The full conjunction conditionally excludes PR and
+almost-quantum correlations and permits Hilbert space to be secondary as a
+predictive representation. It does not create a native U0 law: purification,
+local tomography, system factors, and circuit order are substantive inputs;
+the physical source-to-state/instrument map, actual configuration carrier,
+indivisibility, chronology, QFT, and gravity remain absent. The packet reaches
+only `QSR-L2` author-side and routes the next construction to a bounded
+material M-source descent attempt.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -492,6 +505,7 @@ Active audit:
 - v17_ugen_u0_candidate_architecture_preconstruction.md
 - v17_ugen_u0_qcor_native_composition_seed_investigation.md
 - v17_ugen_u0_explicit_positive_formula_tournament.md
+- v17_ugen_u0_qsource_operational_reconstruction_audit.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md

@@ -456,6 +456,19 @@ operational reconstruction can constrain the Q-framework while leaving the
 M-layer free. No entrant is T4-E ready, no configuration ontology is selected,
 and no official or gravity authority is opened.
 
+The subsequent Q-source operational reconstruction audit now fixes the
+strongest exact framework conclusion without combining incompatible routes.
+The six finite `CDP` principles conditionally derive complex density-matrix
+state spaces and all CP trace-nonincreasing transformations, hence the full
+adaptive record formula, independent tensor products, and interacting
+link-product networks. PR and almost-quantum distributions are excluded only
+under this full theory-level conjunction. The audit also fixes the ceiling:
+purification, local tomography, system factors, and ordered circuits are
+substantive inputs; no material member, physical source map, actual
+configuration process, chronology, QFT, or gravity follows. The result is
+`QSR-L2` author-side and routes the next formula work to one bounded M-source
+descent attempt; it opens no official cycle.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

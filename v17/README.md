@@ -574,6 +574,20 @@ cleanly if nature does not support it.
   leaves material states and instruments unsourced. No entrant supplies both
   the Q-layer and M-layer; T4-E, R4, ontology selection, and gravity remain
   closed.
+  The Q-source audit now replaces that generic reconstruction reference by
+  one exact, internally compatible theorem. The finite `CDP` operational
+  substrate plus causality, perfect distinguishability, ideal compression,
+  local distinguishability, pure conditioning, and purification derives
+  complex quantum state spaces and all CP trace-nonincreasing maps. Its
+  secondary representation gives normalized adaptive complete-record laws,
+  tensor products, and link-product network composition, conditionally
+  excluding PR and almost quantum. This earns only `QSR-L2` author-side:
+  purification and local tomography are substantive postulates, circuit order
+  and subsystem grammar are assumed, and no material state/instrument source,
+  actual configuration law, Barandes-native indivisibility, chronology, QFT,
+  spacetime, or gravity is derived. The next construction target is the
+  physical M-source map for one bounded modular reference-bearing family, not
+  another framework gate.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

@@ -442,6 +442,21 @@ reconstruction can constrain a Q-framework while leaving the material member
 free. No entrant supplies both Q- and M-layers, so T4-E remains unearned and
 the next author-side target is a source-generated compositional response law,
 not an official cycle.
+The Q-source operational reconstruction audit now binds one internally
+compatible route rather than mixing reconstruction axioms. In the finite
+ordered operational-probabilistic framework of Chiribella--D'Ariano--Perinotti,
+causality, perfect distinguishability, ideal compression, local
+distinguishability, pure conditioning, and purification conditionally derive
+complex density matrices and every completely positive trace-nonincreasing
+transformation. This supplies exact adaptive complete-record, tensor-product,
+and quantum-network composition and therefore excludes PR and almost-quantum
+correlations under the full conjunction. The principles are substantive
+universal laws, however, and assume system, composite, and circuit-order
+grammar. They select no material state, instrument, source response, actual
+configuration, chronology, QFT, or gravity coupling. The finite framework
+Q-layer is therefore classified `QSR-L2` author-side, while the next explicit
+construction is a bounded material source-descent map on a modular
+reference-bearing family. No official cycle is opened.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.
