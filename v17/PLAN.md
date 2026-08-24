@@ -664,6 +664,15 @@ derived balance sheet, ontology fork, empirical ladder, and gravity wall.
 It creates no new theorem or promotion. Its admission contract permits one
 author-side candidate-driven positive contextual parent attempt; no second
 candidate or official cycle follows automatically.
+That single architecture is now selected author-side as CRP: a cut-local
+reflection-positive whole-boundary parent. CRP is chosen because it is the
+strongest audited mechanism with ordinary probability genuinely upstream of
+a secondary Hilbert construction and a QFT-facing composition law. The
+selection does not assume Euclidean actuality, a global time, discreteness,
+continuity, purification, local tomography, complex structure, or a target
+action. Those are hostile tests. The next step is one bounded CRP
+construction attempt; semantic failure ends the architecture unless a new
+scientific object is explicitly authorized.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

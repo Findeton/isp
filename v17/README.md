@@ -787,6 +787,15 @@ cleanly if nature does not support it.
   author-side step is selection of exactly one candidate architecture under
   the printed source, reader, composition, Bell, resource, QFT, and gravity
   admission contract.
+  That architecture is now selected as CRP, a cut-local
+  reflection-positive whole-boundary parent. It is not an official candidate
+  and no source law has yet passed. Reflection positivity is selected as the
+  one construction route because it is the strongest known positive-first
+  mechanism for producing secondary Hilbert composition and has real QFT
+  reach. Purification, local tomography, Tsirelson, complex structure,
+  chronology, and actuality remain outputs to derive. A supplied Euclidean
+  time, target action/transfer matrix, covariance, Born reader, or global
+  preferred cut kills native credit.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

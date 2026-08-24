@@ -664,6 +664,16 @@ ledger, ontology fork, empirical ladder, and gravity wall. Its final contract
 admits exactly one author-side candidate architecture before the ontology
 fork is reassessed.
 
+That architecture is selected in
+`v17_ugen_u0_single_candidate_architecture_selection.md` as CRP: cut-local
+reflection-positive whole-boundary probability. The selection is not an
+official candidate and constructs no source law. It chooses the strongest
+audited positive-first route to secondary Hilbert composition and QFT while
+making its debts fatal tests: no supplied Euclidean time, preferred global
+cut, target action/transfer matrix/covariance, Born reader, purification,
+local tomography, complex structure, or Euclidean actuality may be called
+derived. Exactly one bounded CRP construction attempt is next.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -733,6 +743,7 @@ Active audit:
 - v17_ugen_u0_fluctuation_response_parent_gate.md
 - v17_ugen_u0_whole_process_reciprocity_feasibility_gate.md
 - v17_ugen_u0_r1_baseline_native_source_gap_synthesis.md
+- v17_ugen_u0_single_candidate_architecture_selection.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1115,7 +1126,8 @@ U0 KMS RESPONSE CONTROL:       CONDITIONAL QUANTUM INPUT / NO NATIVE CREDIT
 U0 WHOLE-PROCESS RECIPROCITY:  WPR-L2 / EXACT RELATION, SOURCE UNSELECTED
 U0 POSITIVE SCALAR FRINGE:     POSSIBLE / READER-SUPPLIED CONTROL ONLY
 U0 R1/NATIVE-GAP SYNTHESIS:    SYN-R1-L1 / NO NEW RESULT OR PROMOTION
-NEXT U0 SCIENTIFIC WORK:       SELECT ONE CANDIDATE-DRIVEN PARENT
+U0 SINGLE ARCHITECTURE:        CRP SELECTED / NOT YET A CANDIDATE
+NEXT U0 SCIENTIFIC WORK:       ONE BOUNDED CRP CONSTRUCTION ATTEMPT
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

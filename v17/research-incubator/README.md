@@ -666,6 +666,16 @@ declared-input census, empirical ladder, ontology fork, and gravity wall. Its
 candidate contract admits one author-side positive contextual parent attempt
 and no automatic official cycle.
 
+The one architecture is now selected as CRP: cut-local reflection-positive
+whole-boundary probability. This is an author-side architecture choice, not a
+candidate or result. It uses the only audited positive-first route with a
+genuine theorem from ordinary probability to secondary Hilbert structure and
+with established QFT relevance. It explicitly refuses to inherit a global
+Euclidean time, lattice, continuum, target action, transfer matrix, or
+Euclidean actuality. Purification, local tomography, complex composition,
+Bell boundary, readers, interacting parents, transfer, and MG0 declarations
+are construction tests rather than premises.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
