@@ -526,6 +526,19 @@ NWB-L2 author-side architecture only; it opens no candidate, pin, review,
 Paper 04B successor, spacetime, or gravity unit. Its grounded next route is an
 explicit known-physics macroscopic-QED member, not an invented native law.
 
+The R1 member now fills that known-physics control explicitly. It connects a
+fixed Maxwell/macroscopic-QED/nonlinear material rule to the unconditioned
+multimode source, loss environment, coherent interaction, conditional
+material reader, oriented Gram field, and complete stable records. Its exact
+one-mode formula includes vacuum, multipair, dark, loss, herald failures, and
+every output click pattern; an inclusion--exclusion theorem proves positivity
+and normalization, while the blocked/open arm pair gives exact darkening.
+Mixture, prefix, and product controls are proved under their physical
+factorization premises. The packet remains R1-L2 author-side only: no transfer
+experiment has run, and quantum composition, background geometry, incoming
+state, reader closure, and actuality are not derived. It is the explicit
+baseline for a future S2 constraint investigation, not the native law.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -581,6 +594,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_msource_microscopic_reader_descent.md
 - active/ugen/v17_ugen_u0_source_to_record_common_parent_closure.md
 - active/ugen/v17_ugen_u0_native_whole_boundary_functional_attempt.md
+- active/ugen/v17_ugen_u0_r1_macroscopic_qed_whole_boundary_member.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

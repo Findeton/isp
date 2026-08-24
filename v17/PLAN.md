@@ -522,6 +522,19 @@ next permitted author-side construction is the strongest known-physics R1
 control: one explicit macroscopic-QED common parent with every quantum,
 boundary, background, reader, and approximation input charged. A novel S2
 source law remains unsourced and must not be invented to satisfy the plan.
+The R1 control is now constructed explicitly. Its fixed
+Maxwell--macroscopic-QED--nonlinear rule descends real material/source facts to
+a multimode source, loss-complete common interaction, conditional reader
+instrument, and oriented-Gram stable-record law. The one-mode closed form
+retains vacuum, multipair, loss, dark, and every click pattern and proves exact
+normalization, affine mixtures, prefix autonomy, conditional products, and
+blocked/open-arm darkening. It reaches R1-L2 architecture only because the
+quantum composition rule, preserved complex orientation, background
+spacetime, boundary state, incomplete reader physics, and actuality remain
+input or debt; no implementation transfer exists. The next author-side gate
+must therefore classify empirical constraints capable of selecting or
+refuting an S2 source law beyond this baseline. It may not manufacture a law
+merely because R1 prints the empty slot.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

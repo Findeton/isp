@@ -648,6 +648,20 @@ cleanly if nature does not support it.
   absent. The next grounded author-side control is an explicit transferred
   macroscopic-QED member; no unevidenced native law, pin, review, Paper 04B
   successor, spacetime, or gravity claim is opened.
+  That R1 member is now explicit. The same fixed
+  Maxwell--macroscopic-QED--nonlinear-response stack maps independently
+  sourced material, geometry, boundaries, and a real pump to a multimode
+  source, loss-complete interaction parent, conditional detector instrument,
+  and oriented-Gram complete-record law. A closed one-mode
+  herald/interferometer/threshold formula retains vacuum, multipair, loss,
+  dark, no-click, and all click records; it is exactly positive and normalized
+  and yields blocked/open-arm darkening without a per-program table. Mixture,
+  prefix, and independent-product laws close under printed premises. The
+  ceiling is R1-L2 author-side architecture: quantum composition, preserved
+  complex orientation, background spacetime, incoming state, incomplete
+  detector descent, and actuality are still supplied or open, and no
+  implementation transfer has run. R1 is therefore the explicit
+  known-physics baseline, not native ISP completion.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

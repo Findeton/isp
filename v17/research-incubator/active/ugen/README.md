@@ -521,6 +521,21 @@ is a quantum-complete envelope rather than a native law. The grounded next
 control is one fully explicit macroscopic-QED common-parent member; inventing
 an unevidenced native source law is not licensed progress.
 
+That R1 known-physics member is now explicit author-side. One fixed
+Maxwell--macroscopic-QED--nonlinear-response rule maps independently sourced
+material, geometry, boundary, and real-pump facts to a multimode source,
+loss-complete optical parent, derived reader instrument, and oriented Gram
+record law. A closed one-Schmidt-mode herald/interferometer/threshold member
+retains vacuum, every multipair sector, loss, dark events, and all click
+patterns; exact inclusion--exclusion proves positivity and normalization, and
+the blocked/open arm control produces genuine darkening from the same common
+law. Mixtures, prefixes, and independent products close under printed
+conditions. This reaches R1-L2 architecture only. Quantum composition,
+preserved complex orientation, background spacetime, incoming vacuum/thermal
+state, incomplete detector descent, and one-record actuality remain inputs or
+open. No implementation transfer has run, so R1 is the calibrated baseline
+against which any native source law must improve rather than a native result.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -935,7 +950,10 @@ U0 WHOLE-BOUNDARY ATTEMPT:     NWB-L2 AUTHOR-SIDE / NO SCIENTIFIC AWARD
 U0 FIXED POSITIVE HISTORIES:   ODDS-MONOTONE / DARKENING FAILS
 U0 ORIENTED GRAM ENVELOPE:     QUANTUM-COMPLETE GIVEN PROCESS INPUT
 U0 GRAM SOURCE MAP:            ABSENT / NATIVE LAW NOT CONSTRUCTED
-NEXT U0 SCIENTIFIC WORK:       EXPLICIT KNOWN-PHYSICS R1 MEMBER / S2 UNSOURCED
+U0 R1 MQED COMMON PARENT:      R1-L2 EXPLICIT CONDITIONAL ARCHITECTURE
+U0 R1 COMPLETE RECORD MEMBER:  EXACT ONE-MODE / NO TRANSFER EVALUATION
+U0 R1 NATIVE CREDIT:           NONE / QUANTUM NOMOLOGY SUPPLIED
+NEXT U0 SCIENTIFIC WORK:       EMPIRICAL CONSTRAINTS ON S2 / NO INVENTED LAW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT
