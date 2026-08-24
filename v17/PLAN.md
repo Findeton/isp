@@ -713,6 +713,20 @@ is `A1-FINITE-NORMALIZATION-NOT-PROCESS-COMPLETION`, with finite-law salvage
 only. No A1 repair, pin, independent review, apparatus, successor, or official
 scientific unit opens automatically.
 
+The post-A1 matter-law triage now reaches MLT-L2 author-side routing scope.
+It scores standard QFT/R1, Bell-type QFT, relativistic pointer-field collapse,
+A1 rGRWf, quantum-measure/coevent, Newtonian collapse-gravity,
+classical--quantum gravity, and the Barandes-native open slot on predictive
+completeness, actuality, indefinite process consistency, variable-number QFT,
+readers, transfer, reciprocal gravity, native depth, and background debt. No
+audited law closes the full vector. Bell-type QFT is the single highest-value
+next **prior-art control** because it supplies regularized variable-number
+configuration dynamics with creation/annihilation while exposing its supplied
+wavefunction, Hamiltonian, configuration observable, external time, cutoff,
+global-existence, Lorentz, reader, and gravity debts. This is a routing
+recommendation only: B1 has no authority, pin, model construction, review, or
+automatic successor.
+
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
 ### Paper 04 — internal clocks and parametrized process law

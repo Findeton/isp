@@ -837,7 +837,14 @@ cleanly if nature does not support it.
   opens no official Paper 06/07 or gravity result.
   A post-A1 relevance adjudication retains Q-Cut as an optional review-ready
   scoped theorem but no longer ranks it as the next unification gate. No next
-  official physics unit is currently selected.
+  official physics unit is currently selected. A candidate-neutral post-A1
+  matter-law triage now finds no audited law that jointly closes complete
+  prediction, one-run actuality, indefinitely extensible interacting process,
+  variable-number QFT, readers, transfer, and reciprocal gravity. It selects
+  Bell-type QFT only as the highest-value possible next prior-art control:
+  regularized creation/annihilation configuration dynamics would complement
+  A1 while keeping its quantum, external-time, cutoff, Lorentz, existence,
+  reader, and gravity inputs charged. B1 remains unauthorized and unopened.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No official v17 scientific evaluator, bound empirical artifact, or

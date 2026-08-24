@@ -712,6 +712,18 @@ transfer, conservation, and reciprocal gravity remain absent. It creates no
 candidate, scientific result, repair, pin, independent review, apparatus,
 successor, or gravity law.
 
+The candidate-neutral post-A1 matter-law matrix is now recorded in
+`active/ugen/v17_ugen_post_a1_matter_law_candidate_triage.md`. No audited
+control jointly closes complete quantum prediction, one-run actuality,
+indefinite process consistency, variable-number QFT, physical readers,
+no-refit transfer, reciprocal gravity, native source depth, and background
+debt. Bell-type QFT is selected only as the single most informative possible
+next prior-art control because its regularized creation/annihilation process
+tests the corner A1 leaves open. It remains quantum-law-, external-time-,
+configuration-observable-, and cutoff-dependent, with general global
+existence, Lorentz completion, transfer, readers, and gravity open. No B1 pin,
+construction, review, repair, successor, or official unit is authorized.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
