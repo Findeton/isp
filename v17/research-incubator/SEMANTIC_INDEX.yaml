@@ -10,6 +10,7 @@ canonical_fronts:
   ecomp: "active/ecomp/v17_ecomp_result_neutral_candidate_pin.md"
   ugen: "active/ugen/README.md"
   mg0: "active/mg0/README.md"
+  assumptions: "active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md"
   crosscutting: "snapshots/v17_reality_identification_selection_accounting.md"
   clock-history: "v17/note-paper04b-pin-review-adjudication.md"
 artifacts:
@@ -2340,3 +2341,68 @@ artifacts:
     promotion_readiness: "not-ready"
     maximum_claim: "result-neutral uniform source-completion and generator classification; no generator, quantum ontology, QFT, clock, spacetime, or gravity result"
     canonical: false
+  - path: "active/assumptions/v17_assumption_temporal_sufficiency_audit.md"
+    sha256: "681773147fc3458a68d4123779f36863fb49b7420065244a8d524943dc1a7e08"
+    created_at: "2026-08-24"
+    front: "assumptions"
+    status: "complete-author-side-result-neutral-assumption-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-foundational-assumption-deletion-programme.md", "active/qcut/v17_qcut_result_neutral_candidate_pin.md", "active/ugen/v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md", "v17/note-paper04-hostile-review-adjudication.md", "v17/note-paper04b-pin-review-adjudication.md"]
+    source_audit_status: "primary-scholarly-scope-author-side-reconstructed-no-byte-frozen-source-review-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready-result-neutral-no-unit-opened"
+    maximum_claim: "N1--N4 necessity map: history Markovization, forward factorization, and relational-time representations do not establish physical states, source laws, or clocks; source-closed memory and nonvacuous clock tests designed; no ontology, clock, chronology, spacetime, gravity, or successor"
+    canonical: false
+  - path: "active/assumptions/v17_assumption_subsystem_locality_audit.md"
+    sha256: "fae4c160dfb38ed625322a35abdfed55e1aa454974792423412e90bd7ca98b6c"
+    created_at: "2026-08-24"
+    front: "assumptions"
+    status: "complete-author-side-result-neutral-assumption-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-foundational-assumption-deletion-programme.md", "v17/note-paper03v32-hostile-review-adjudication.md", "active/mg0/v17_mg0_common_matter_geometry_contract.md"]
+    source_audit_status: "primary-scholarly-scope-author-side-reconstructed-no-byte-frozen-source-review-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready-result-neutral-no-unit-opened"
+    maximum_claim: "N7--N9 with N18/N24 interface necessity map: tensor factors, AQFT algebras, gauge centres/edges, and gravitational dressings are inequivalent boundary types; operational screening and gluing are the shared test; no boundary ontology, locality derivation, matter--geometry law, spacetime, gravity, or successor"
+    canonical: false
+  - path: "active/assumptions/v17_assumption_operational_axioms_audit.md"
+    sha256: "26d074b5a27abb9d4ae826cbec676ca12076a79d7eef576e405f81830df44113"
+    created_at: "2026-08-24"
+    front: "assumptions"
+    status: "complete-author-side-result-neutral-assumption-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-foundational-assumption-deletion-programme.md", "v17/note-paper02-hostile-review-adjudication.md", "v17/note-r1-native-source-gap-independent-review-adjudication.md"]
+    source_audit_status: "primary-scholarly-scope-author-side-reconstructed-finite-controls-checked-no-byte-frozen-source-review-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready-result-neutral-no-unit-opened"
+    maximum_claim: "N10--N17 necessity map and exact controls: operational reconstruction, tomography, purification, Hilbert representation, observables, decoherence, and dilation do not by themselves select a physical source, referent, actuality, or environment; no alternative ontology or successor"
+    canonical: false
+  - path: "active/assumptions/v17_assumption_causality_gravity_nomology_audit.md"
+    sha256: "874b569ae97e2db4468c328605d37c6f65e746beada236b409af8c0a848f0a67"
+    created_at: "2026-08-24"
+    front: "assumptions"
+    status: "complete-author-side-result-neutral-assumption-audit"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["v17/note-foundational-assumption-deletion-programme.md", "active/mg0/v17_mg0_common_matter_geometry_contract.md", "active/mg0/v17_mg0_selector_controls_and_benchmark.md"]
+    source_audit_status: "primary-scholarly-scope-author-side-reconstructed-current-gravity-entanglement-dispute-left-open-no-byte-frozen-source-review-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready-result-neutral-no-unit-opened"
+    maximum_claim: "N5--N6 and N18--N28 necessity map: fixed order and quantizing GR are not necessity theorems; no-signalling/locality and continuum/lattice are false identifications; gravity source, dimension, and matter--geometry descent remain open; familiar nomological principles do not select without extra inputs; no theory or successor"
+    canonical: false
+  - path: "active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md"
+    sha256: "6c7dabbe3cc673e0410ce5b3a04d4ea61b20fa08c97e3b6903c3cb013f6775a8"
+    created_at: "2026-08-24"
+    front: "assumptions"
+    status: "complete-author-side-result-neutral-synthesis"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/assumptions/v17_assumption_temporal_sufficiency_audit.md", "active/assumptions/v17_assumption_subsystem_locality_audit.md", "active/assumptions/v17_assumption_operational_axioms_audit.md", "active/assumptions/v17_assumption_causality_gravity_nomology_audit.md"]
+    source_audit_status: "integrated-author-side-scope-reconstruction-and-countercontrol-audit-independent-review-pending"
+    authority: "none"
+    promotion_readiness: "not-ready-recommended-spb-gate-not-opened"
+    maximum_claim: "FAD-L1 integrated necessity map: independently physical sufficient boundaries are a shared candidate pressure point with distinct descent, screening, composition, physical-interface, and transfer duties; SPB temporal and regional arms recommended only; no pin, review, candidate, ontology, chronology, spacetime, gravity, or successor"
+    canonical: true

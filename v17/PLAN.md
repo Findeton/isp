@@ -1228,6 +1228,26 @@ whole-process law are admissible outcomes. Q-Cut remains only a conditional
 control for ordinary-positive sufficient cuts. No official assumption audit,
 candidate, pin, review, or ontology selection is opened by this charter.
 
+The N1--N28 author-side parallel investigation is now complete. Its four lanes
+separate: (i) false identifications/type errors; (ii) valid theorems inside
+printed domains; (iii) open physical emergence/descent questions; and (iv)
+symmetry, stationarity, maximum-entropy, action, simplicity, and low-energy
+principles that do not select a fundamental law without additional physical
+input. Their common candidate is not one universal boundary ontology but a
+five-predicate test: independent descent, screening sufficiency,
+compositional sufficiency, physical intervention/readout, and held-out
+transfer. Temporal restart/future-policy tests and regional
+substitution/gluing tests remain distinct.
+
+The highest-leverage possible successor is provisionally named the
+**Sufficient Physical Boundary Gate (SPB)**. It would contain two separately
+scored arms: (T) source-closed causal break plus memory read/toggle/erase/
+isolate controls; and (R) equal-boundary interior substitution plus exterior
+screening, reconnection, and triple gluing. Positive, negative,
+resource-heavy, noncommutative, whole-process, and underdetermined outcomes
+must all be allowed. This ranking records no authority. An SPB pin, platform,
+review, construction, or experiment requires separate user authorization.
+
 ### F7 — amplitudes
 
 Complex amplitudes are neither banned nor presumed fundamental. If the
@@ -1274,6 +1294,8 @@ Pause for user direction when:
 Era charter                         RECORDED
 v16 inheritance balance             RECORDED
 Foundational necessity charter      ACTIVE AUTHOR-SIDE / NO UNIT OPENED
+N1--N28 parallel audits             COMPLETE AUTHOR-SIDE / FAD-L1 / NO AWARD
+Sufficient Physical Boundary gate  RECOMMENDED ONLY / NOT OPENED
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
 Paper 01                            TERMINAL ACCEPT-WITH-SCOPE

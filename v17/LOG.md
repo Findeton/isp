@@ -2719,3 +2719,55 @@ This ledger event records research method and candidate questions only. It
 opens no official unit, pin, construction, review, Barandes completion,
 process-matrix ontology, nonfactorizing gravity theory, B0 repair, entrant,
 comparison, chronology, spacetime, or automatic successor.
+
+## 2026-08-24 — N1--N28 PARALLEL ASSUMPTION AUDITS INTEGRATED AUTHOR-SIDE (v17 LEDGER #116)
+
+The user authorized as many foundational hidden-assumption investigations as
+could be run in parallel. Four result-neutral lanes were completed and then
+independently integrated at root: temporal sufficiency/Markov enlargement/law
+form/external time; subsystem/locality/composition; operational quantum
+axioms and representation; and causal order/gravity/carrier/nomological
+selection. Each lane prints exact necessity records, theorem domains,
+smallest deletions, known-physics recovery duties, replacement costs, allowed
+outcomes, primary-source scope, and hostile controls.
+
+The census separates four different scientific statuses. No-signalling versus
+causal locality, observational conditionals versus interventions, decoherence
+versus actuality, tomography versus source law, dilation versus real
+environment, and continuum versus lattice are false identifications or
+mandatory type separations. Local tomography, purification, complex Hilbert
+structure, contextual observables, tensor products, AQFT microcausality, and
+product composition remain powerful domain-limited structures that every
+deeper proposal must recover. Instantaneous state, physical memory, forward
+law form, internal time, causal order, background independence,
+matter--geometry sourcing, mediator classification, dimension/signature, and
+matter/geometry priority remain physical descent questions. Symmetry,
+stationarity, naturalness, maximum entropy, a supplied action, simplicity,
+and low-energy success constrain or rank only after additional structures are
+given; they do not presently select the law.
+
+The four lanes converge on the hypothesis that many familiar formalisms assume
+independently physical sufficient boundaries. The synthesis refuses to turn
+that convergence into ontology. A serious boundary claim must separately earn
+target-independent descent, screening, target-blind composition/gluing,
+physical intervention/readout, and held-out transfer. Temporal causal-break
+tests and regional substitution/reconnection tests share this schema but are
+not interchangeable.
+
+Ten exact countercontrols survive integration: parity-process one-step
+noncompletion; evidenced-memory closure; the two-rebit local-tomography
+witness; common-cause conditioning/intervention separation; equal effects
+with different instruments; decoherence without a selector; idle dilation;
+free symmetry-orbit weights; identity-kernel stationarity; and no-signalling
+PR correlations. They support type and representation boundaries, not a new
+law of reality.
+
+The highest-leverage possible successor is provisionally named the
+Sufficient Physical Boundary Gate, with a temporal causal-break/memory arm
+and a regional equal-boundary substitution/reconnection/triple-gluing arm.
+It is recommended only. The present author-side ceiling is `FAD-L1`:
+assumption domains, exact controls, recovery obligations, and future gate
+design. No scientific result, official unit, pin, review, platform,
+construction, Barandes completion, Hilbert demotion, chronology, spacetime,
+gravity theory, ontology selection, B0 repair, or automatic successor is
+opened.

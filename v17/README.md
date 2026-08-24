@@ -1143,6 +1143,20 @@ relevant R1/B0/MG0 physics, expose replacement resources, and end in a theorem,
 counterexample, discriminator, resource bound, or named underdetermination.
 No official unit or successor is opened.
 
+The first parallel census is now complete at author-side scope. Four audits
+cover N1--N28: temporal sufficiency; subsystem/locality; operational axioms;
+and causality/gravity/nomological selection. They separate false
+identifications from valid domain-limited theorems, open physical descent
+questions, and nonselecting principles. Their common result is that a serious
+boundary claim has five distinct duties: target-independent descent,
+screening, composition/gluing, physical intervention/readout, and no-refit
+transfer. Temporal and regional sufficiency share this form but remain
+different tests. The integrated recommendation is a future Sufficient
+Physical Boundary gate with separate causal-break/memory and regional
+substitution/reconnection arms. It remains only a recommended gate: no pin,
+review, platform, construction, chronology, spacetime, gravity, or ontology
+is authorized.
+
 ## Scientific order
 
 The programme order is now:
@@ -1167,6 +1181,25 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   target for the first phase.
 - `DECLARED_INPUTS.md` — the accretion ledger: every declared versus derived
   object, with downstream consumers.
+- `note-foundational-assumption-deletion-programme.md` — result-neutral
+  necessity-audit charter, N1--N28 census, sufficient-boundary hypothesis,
+  recovery rules, and no-authority firewall.
+- `research-incubator/active/assumptions/v17_assumption_temporal_sufficiency_audit.md`
+  — N1--N4 audit of physical state, hidden memory, forward law form, and
+  external time.
+- `research-incubator/active/assumptions/v17_assumption_subsystem_locality_audit.md`
+  — N7--N9 regional subsystem, locality, composition, gauge, and gravity
+  boundary audit.
+- `research-incubator/active/assumptions/v17_assumption_operational_axioms_audit.md`
+  — N10--N17 audit of tomography, purification, causal maps, Hilbert
+  representation, observables, decoherence, source identification, and
+  dilation.
+- `research-incubator/active/assumptions/v17_assumption_causality_gravity_nomology_audit.md`
+  — N5--N6 and N18--N28 audit of causal order, gravity, carrier alternatives,
+  dimension, action payload, and selector claims.
+- `research-incubator/active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md`
+  — integrated necessity map, five-predicate sufficient-boundary contract,
+  permanent firewalls, hostile battery, and ranked future gates.
 - `PLAN.md` — ordered units, gates, stopping rules, and later gravity route.
 - `LOG.md` — append-only v17 event ledger.
 - `note-paper01-relational-quantum-process-pin.md` — the frozen first-unit pin.

@@ -29,7 +29,7 @@ no scientific evidence.
 
 ## Active research front
 
-The incubator preserves four gates, but they no longer have equal frontier
+The incubator preserves five active research fronts, but they no longer have equal frontier
 priority.
 
 ### Q-Cut — positive sufficient-cut information discriminator
@@ -883,6 +883,36 @@ G2 active files:
 - active/ugen/v17_ugen_g2_positive_transition_and_euclidean_gate.md
 - active/ugen/v17_ugen_g2_source_physics_and_scope_audit.md
 - active/ugen/v17_ugen_g2_future_review_contract.md
+
+### Assumption deletion — sufficient physical boundary frontier
+
+This front applies the Barandes-style necessity audit symmetrically to
+Markov state, forward law, external time, tensor subsystems, locality,
+operational reconstruction, Hilbert representation, decoherence, tomography,
+causal order, gravity, carrier choice, and nomological selection. Four
+parallel author-side audits cover N1--N28 and an integrated synthesis separates
+false identifications, domain-limited theorems, open physical descent
+questions, and principles that constrain but do not select a law.
+
+The common candidate pressure point is an independently physical sufficient
+boundary, with five separately scored duties: target-independent descent,
+screening, composition/gluing, physical intervention/readout, and no-refit
+transfer. Temporal restart/future-policy and regional
+substitution/reconnection tests remain different. The provisional Sufficient
+Physical Boundary gate is only a recommendation; no unit, pin, review,
+platform, experiment, ontology, chronology, spacetime, or gravity claim is
+opened.
+
+Canonical status:
+`active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md`.
+
+Active files:
+
+- active/assumptions/v17_assumption_temporal_sufficiency_audit.md
+- active/assumptions/v17_assumption_subsystem_locality_audit.md
+- active/assumptions/v17_assumption_operational_axioms_audit.md
+- active/assumptions/v17_assumption_causality_gravity_nomology_audit.md
+- active/assumptions/v17_assumption_parallel_synthesis_and_next_gates.md
 
 ### MG0 — common matter–geometry nomology preflight
 
