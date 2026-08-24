@@ -39,6 +39,10 @@ in one apparatus. In particular:
   two quantum sources remains unobserved and recent atom-interferometric
   proposals still require total masses near the Planck scale absent strong
   squeezing;
+- free-beam metal-nanoparticle interferometry now demonstrates genuine
+  center-of-mass delocalization above `170 kDa` on a `133 nm` scale, but it
+  does not provide a held two-branch source, reversible marker/eraser,
+  independent nearby probe, or reciprocal geometry;
 - levitated nanoparticles and nanodiamonds have increasingly strong
   ground-state, position, spin, and high-vacuum control, but no audited
   experiment has yet demonstrated the required large center-of-mass spatial
@@ -205,6 +209,14 @@ map only; their titles are not treated as ontology verdicts.
   kDa”](https://doi.org/10.1038/s41567-019-0663-9), demonstrate interference
   for molecules above 25,000 Da. The source is not trapped and does not form a
   reciprocal gravity pair.
+- Pedalino *et al.*, [“Probing quantum mechanics with nanoparticle
+  matter-wave interferometry”](https://doi.org/10.1038/s41586-025-09917-9),
+  demonstrate quantum interference of sodium clusters above `170 kDa` with
+  center-of-mass delocalization on a `133 nm` scale. This corrects any blanket
+  claim that nanoparticle COM interference is absent. The multipath
+  Talbot--Lau beam is not a held two-branch reciprocal source, and its present
+  higher-mass fringes do not by themselves distinguish quantum from classical
+  near-field propagation.
 - Bild *et al.*, [“Schrödinger cat states of a 16-microgram mechanical
   oscillator”](https://doi.org/10.1126/science.adf7553), demonstrate Wigner
   interference for two coherent states of an acoustic phonon mode. The
@@ -301,6 +313,7 @@ platform selection.
 | single atom / cold-atom pair | demonstrated strongly | extremely small | mathematically clean; experimental correlation proposal | mass, interrogation time, many-body interaction, shared-laser correlations | best exact B0 mathematics; empirical wedge open |
 | BEC / two-mode atom interferometers | demonstrated with interactions and phase diffusion | larger total mass but state semantics are many-body | 2026 proposal is direct | a two-mode coherent state is not automatically the benchmark's two-configuration cat; near-Planck total mass or squeezing | promising only with exact source-state retyping |
 | large molecules | demonstrated beyond 25 kDa | too small for present reciprocal gravity readout | no held paired probe | trapping, branch control, marker/eraser, gravity sensitivity | hostile coherence/decoherence control |
+| free-beam metal nanoparticles | demonstrated above 170 kDa on a 133-nm COM delocalization scale | still far below reciprocal phase scale | no held paired probe | multipath-to-two-branch map, hold/reversal, work/support ledger, gravity calibration | genuine source frontier; not B0-complete |
 | optically/electrically levitated nanoparticle | ground-state and position control demonstrated | favorable relative to atoms | proposed | large spatial cat and recombination absent; charge, stray field, libration, heating, backaction | strongest long-term source platform; not B0-complete |
 | NV nanodiamond Stern--Gerlach | spin and high-vacuum component control demonstrated | targeted BMV/QGEM regime | proposed | no complete COM cat; spin coherence, rotation, field gradients, neutralization, shielding | do not call constructed |
 | clamped acoustic mechanical mode | 16-microgram mode cat demonstrated | source-functional meaning unclear | no clean independent gravity channel | tiny displacement field, supports, piezo/microwave coupling, short cat lifetime | non-COM control only |
@@ -329,13 +342,20 @@ reviewed and has no apparatus credit.
 records, nuisance data, exclusions, held-outs, and complete observed record
 interface.
 
-The implication is one-way:
+The implication relevant to entrant admission is one-way:
 
 $$
-\text{B0-E passes no-refit transfer under B0-T}
+\begin{gathered}
+\text{B0-E passes no-refit transfer under B0-T}\\
+\text{and the same object is authenticated as the mechanical portion}\\
+\text{of the frozen common MG0 packet}
+\end{gathered}
 \Longrightarrow
 \text{P-B0-1 may be adjudicated as discharged}.
 $$
+
+No-refit transfer on a different apparatus earns a B0 baseline result but
+does not establish common-experiment identity for MG0.
 
 The converse is false:
 
@@ -964,14 +984,17 @@ target-complete tomography. Transfer is not yet earned.
 
 The same fixed model predicts preregistered source, coherence, marker,
 classical-gravity, probe, nuisance, and complete-reader held-outs, including a
-new setting or implementation, within frozen uncertainty. This is the minimum
-level at which adjudicators may consider `P-B0-1` discharged.
+new setting or implementation, within frozen uncertainty. This completes a
+transferable platform-scoped baseline; it does not yet prove that the object
+is the mechanical portion of the common MG0 packet.
 
 ### B0-L5 — common-packet readiness
 
-The reviewed B0-L4 object and its exact public packet are ready to be consumed
-unchanged by at least two future reciprocal entrants. This admits an entrant
-review only after the entrants themselves exist and pass their separate gate.
+The reviewed B0-L4 object is authenticated as the mechanical portion of one
+exact public packet ready to be consumed unchanged by future reciprocal
+entrants. This is the minimum level at which terminal review may discharge
+`P-B0-1`. Entrant review still waits until at least two separately frozen laws
+exist and pass their own completeness and distinctness gates.
 
 ### B0-L6 — native matter explanation
 
@@ -1057,18 +1080,21 @@ phrased:
 > observable algebra, temporary-marker versus stable-record typing, explicit
 > controller/support/environment accounting, the complete record law, a
 > platform-selection rule, hostile mutants, and the outcome ladder above.
-> It may attempt one exact synthetic B0-T witness and one selected
-> single-platform model. Synthetic success cannot discharge `P-B0-1`; only
-> independently reviewed no-refit platform transfer at B0-L4 may do so. No
-> gravity candidate, entrant admission, comparison, ontology selection,
+> It may attempt one exact synthetic B0-T witness and, only if the frozen
+> selection rule returns an eligible platform, one single-platform model.
+> Synthetic success cannot discharge `P-B0-1`; only
+> independently reviewed no-refit transfer authenticated inside the same
+> common public packet at B0-L5 may do so. No gravity candidate, entrant
+> admission, comparison, ontology selection,
 > chronology, spacetime, or automatic successor follows.
 
-The pin should select exactly one platform before construction. On present
-evidence, a cold-atom implementation is the best source-to-record control,
-while a levitated microsolid is the better long-term gravity source. That is a
-real physical tradeoff, not a wording issue. The platform decision must be
-made against frozen completeness and signal requirements, not aesthetic
-preference.
+The pin should apply one frozen selection rule before construction and must
+permit `NO-SELECTION`. On present evidence, cold atoms lead in integrated
+source-to-record control, free-beam metal clusters now lead a distinct
+single-particle COM-interference frontier, and levitated microsolids retain
+better prospective reciprocal gravitational reach. No one platform combines
+those strengths. The decision must be made against frozen completeness and
+signal requirements, not aesthetic preference or a desired gravity result.
 
 ---
 

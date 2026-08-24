@@ -2398,3 +2398,35 @@ interface control, not a discharge of `P-B0-1`.
 No official B0 pin, independent review, baseline construction, platform
 selection, entrant admission, comparison, gravity verdict, or successor is
 opened. The next promotion-bearing step remains user-controlled.
+
+## 2026-08-24 — B0 PLATFORM FEASIBILITY GATE RETURNS NO-SELECTION (v17 LEDGER #105)
+
+An unpinned author-side physics audit now replaces platform adjectives with a
+conjunctive feasibility rule. The Newtonian control is expressed through the
+extended branch-density interaction and its local-phase-invariant
+two-body combination. Total mass, effective mode mass, and macroscopicity are
+insufficient without the many-body state class, branch density, controller
+and support correlations, coherence, complete-reader sensitivity, nuisance
+covariance, and hard mechanics closure.
+
+The audit incorporates Pedalino et al.'s 2026 demonstration of sodium-cluster
+matter-wave interference above 170 kDa on a 133-nm delocalization scale. This
+corrects any blanket statement that nanoparticle COM interference is absent.
+The Talbot--Lau beam is not silently retyped as the benchmark's held
+two-branch source. Giving that demonstrated mass and scale an unrealistically
+favorable one-second, 35-micrometre paired geometry yields
+`abs(Phi_N)=2.08075e-20`, versus `1.47523e-3` for the screened
+`1e-14 kg`, one-micrometre reference, a scale ratio of about `7.09e16`.
+
+The selection rule separates platform-scoped baseline eligibility from
+common-arena compatibility. B0-L4 can establish no-refit mechanical transfer;
+it cannot discharge the terminal entrant condition on a different apparatus.
+The conservative author-side ladder proposed for a future pin reserves
+possible discharge for B0-L5 authentication of that same baseline as the
+mechanical portion of the frozen common packet, followed by independent
+terminal review. It amends no terminal MG0 bytes. Cold atoms, beam
+nanoparticles, levitated microsolids,
+mechanical modes, and torsion sensors close different coordinates, but no one
+apparatus closes the conjunction. The author-side outcome is
+`NO-SELECTION`; no pin, platform, candidate, entrant, comparison, or gravity
+verdict is opened.

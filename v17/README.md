@@ -875,6 +875,19 @@ cleanly if nature does not support it.
   momentum, massive apparatus physics, empirical bytes, no-refit transfer,
   and reciprocity. This preparation is neither a pin nor a reviewed result;
   `P-B0-1` remains open and entrant admission remains closed.
+  A quantitative platform gate now corrects the experimental frontier:
+  2026 sodium-cluster interferometry demonstrates COM delocalization above
+  170 kDa on a 133-nm scale, but an intentionally overgenerous paired-phase
+  comparison remains about `7.09e16` below the favorable screened
+  `1e-14 kg` reference. Total mass is rejected as a source coordinate unless
+  the branch-density and many-body correlation structure justify it. Cold
+  atoms, beam nanoparticles, levitated microsolids, acoustic modes, and
+  classical torsion sensors each close different coordinates; none closes
+  the single-apparatus baseline and common-arena conjunction. The current
+  author-side platform outcome is therefore `NO-SELECTION`. B0-L4 transfer
+  alone is not treated author-side as discharge of `P-B0-1`; the proposed
+  future ladder requires the same object to be authenticated inside the
+  B0-L5 common packet and reviewed terminally.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,

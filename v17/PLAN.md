@@ -912,6 +912,20 @@ calibrated energy/momentum ledger, massive material, apparatus data, no-refit
 transfer, or reciprocal gravity. No official B0 pin or review exists,
 `P-B0-1` remains open, and the candidate roster remains empty.
 
+The subsequent author-side platform feasibility gate makes selection
+conjunctive rather than score-based. It uses the extended branch-density
+functional and many-body state class, coherence, complete-reader sensitivity,
+nuisance covariance, and hard mechanics closure. It incorporates the 2026
+demonstration of 170-kDa sodium-cluster COM interference on a 133-nm scale
+without misclassifying that multipath beam as a held reciprocal source. An
+overgenerous point-mass comparison still leaves its paired Newtonian phase
+about `7.09e16` below the favorable screened microsolid reference. No
+platform passes both baseline eligibility and common-arena compatibility, so
+the frozen-form rule returns `NO-SELECTION`. B0-L4 now means transferable
+platform-scoped mechanics in the proposed author-side ladder; only B0-L5
+common-packet authentication can be submitted for terminal discharge of
+`P-B0-1`. No accepted MG0 bytes are amended.
+
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
 primary-source versions are bound, and the general CP-CQ theorem, objective
@@ -1238,6 +1252,7 @@ MG0 result-neutral benchmark pin    FROZEN
 MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
 MG0 B0 author-side preparation      READY FOR USER-CONTROLLED PIN / UNREVIEWED
+MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
 MG0 candidate roster/comparison     EMPTY / CLOSED
 ```
 

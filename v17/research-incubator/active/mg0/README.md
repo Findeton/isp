@@ -66,6 +66,10 @@ not turn either source document into a pin or award a scientific result.
   derivation of the two-layer `B0-T`/`B0-E` boundary, candidate-neutral
   massive-apparatus packet, matched-algebra and record requirements,
   platform reality audit, held-outs, hostile controls, and outcome ladder;
+- `v17_mg0_b0_platform_feasibility_and_selection_gate.md` — quantitative
+  branch-density, many-body, coherence, complete-reader, nuisance, and
+  mechanics gate; incorporates the 2026 metal-nanoparticle interference
+  result and returns candidate-neutral `NO-SELECTION`;
 - `v17_mg0_b0_matter_exact_synthetic_witness.md` — exact finite
   common-seed interface witness for preparation, coherence, temporary
   marking, retained records, complete noisy readers, correlated nuisance, and
@@ -151,10 +155,24 @@ witness contains no massive material, apparatus, empirical packet, no-refit
 transfer, or reciprocal gravity. These files are not a pin or review result;
 they do not discharge `P-B0-1` or authorize B0 construction.
 
+The follow-on platform gate corrects two possible overstatements. First,
+center-of-mass matter-wave interference is now demonstrated for sodium
+clusters above 170 kDa on a 133-nm delocalization scale, so nanoparticle COM
+interference cannot be called generically absent. Exact point-mass controls
+still place even an unrealistically favorable one-second paired version about
+`7.09e16` below the phase scale of the screened `1e-14 kg`,
+one-micrometre reference. Second, the conservative ladder proposed for a
+future pin treats no-refit transfer at `B0-L4` as a platform-scoped
+baseline, not yet common-experiment identity. It reserves possible discharge
+of `P-B0-1` for authentication of that same baseline inside the frozen common
+packet at `B0-L5`, followed by terminal review.
+No current platform passes both conjunctive gates, so no platform is selected.
+
 ## Maximum claim
 
 This packet now supplies an independently reviewed result-neutral admissibility
 contract and source-scoped benchmark design, plus explicitly unreviewed
-author-side preparation for the missing B0 gate. It supplies no completed
+author-side preparation and a no-selection feasibility result for the missing
+B0 gate. It supplies no completed
 massive-mechanical baseline, common matter–geometry law, gravity ontology,
 QFT, clock, spacetime, GR, or empirical result.
