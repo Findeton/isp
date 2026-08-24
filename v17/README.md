@@ -838,13 +838,22 @@ cleanly if nature does not support it.
   A post-A1 relevance adjudication retains Q-Cut as an optional review-ready
   scoped theorem but no longer ranks it as the next unification gate. No next
   official physics unit is currently selected. A candidate-neutral post-A1
-  matter-law triage now finds no audited law that jointly closes complete
+  matter-law triage finds no audited law that jointly closes complete
   prediction, one-run actuality, indefinitely extensible interacting process,
   variable-number QFT, readers, transfer, and reciprocal gravity. It selects
-  Bell-type QFT only as the highest-value possible next prior-art control:
+  At family resolution it initially ranked Bell-type QFT as the highest-value
+  possible next prior-art control:
   regularized creation/annihilation configuration dynamics would complement
   A1 while keeping its quantum, external-time, cutoff, Lorentz, existence,
   reader, and gravity inputs charged. B1 remains unauthorized and unopened.
+  A deeper pre-authorization source audit now separates the broad regularized
+  Bell family, the conditional lattice global-existence theorem, named
+  nonrelativistic IBC Hamiltonians and their non-rigorous trajectory laws, and
+  the relativistic $1+1$ finite-sector multi-time predictor. No exact audited
+  source supplies one named sector-changing model with both an actual
+  variable-number path and a same-model global existence theorem. B1 remains a
+  high-information family but has no freeze-ready single model; no pin should
+  presently be requested.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No official v17 scientific evaluator, bound empirical artifact, or

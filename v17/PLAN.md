@@ -719,13 +719,28 @@ A1 rGRWf, quantum-measure/coevent, Newtonian collapse-gravity,
 classical--quantum gravity, and the Barandes-native open slot on predictive
 completeness, actuality, indefinite process consistency, variable-number QFT,
 readers, transfer, reciprocal gravity, native depth, and background debt. No
-audited law closes the full vector. Bell-type QFT is the single highest-value
-next **prior-art control** because it supplies regularized variable-number
+audited law closes the full vector. At family resolution, Bell-type QFT was
+initially ranked as the highest-value possible next **prior-art control**
+because it supplies regularized variable-number
 configuration dynamics with creation/annihilation while exposing its supplied
 wavefunction, Hamiltonian, configuration observable, external time, cutoff,
 global-existence, Lorentz, reader, and gravity debts. This is a routing
-recommendation only: B1 has no authority, pin, model construction, review, or
+recommendation only; the readiness audit below now controls whether any member
+can be frozen. B1 has no authority, pin, model construction, review, or
 automatic successor.
+
+The pre-authorization B1 family-readiness audit now separates four objects
+that the family label had obscured: a broad regularized construction, the
+conditional lattice nonexplosion theorem, named nonrelativistic continuum IBC
+Hamiltonians with formal actual processes, and a relativistic $1+1$
+finite-sector multi-time predictor without an actual path. None of the exact
+audited sources supplies one named sector-changing model with both an actual
+variable-number path and a same-model global existence theorem. Continuum,
+Lorentz, reader, transfer, native-source, and gravity coordinates remain
+additional debts rather than post-hoc requirements for a bounded control. The
+route is therefore narrowed to `B1-FAMILY-HIGH-INFORMATION /
+B1-SINGLE-MODEL-NOT-FREEZE-READY`: no B1 pin should presently be requested,
+and no official unit, construction, repair, or successor opens.
 
 ## 3. Phase T — clocks, order, and generally covariant process structure
 

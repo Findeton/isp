@@ -717,12 +717,24 @@ The candidate-neutral post-A1 matter-law matrix is now recorded in
 control jointly closes complete quantum prediction, one-run actuality,
 indefinite process consistency, variable-number QFT, physical readers,
 no-refit transfer, reciprocal gravity, native source depth, and background
-debt. Bell-type QFT is selected only as the single most informative possible
-next prior-art control because its regularized creation/annihilation process
+debt. At family resolution Bell-type QFT was initially ranked as the single
+most informative possible next prior-art control because its regularized
+creation/annihilation process
 tests the corner A1 leaves open. It remains quantum-law-, external-time-,
 configuration-observable-, and cutoff-dependent, with general global
 existence, Lorentz completion, transfer, readers, and gravity open. No B1 pin,
 construction, review, repair, successor, or official unit is authorized.
+
+The subsequent pre-authorization readiness audit is recorded in
+`active/ugen/v17_ugen_b1_family_pre_authorization_readiness_audit.md`. It
+separates the broad regularized family, conditional lattice nonexplosion
+theorem, named nonrelativistic IBC Hamiltonians with formal actual processes,
+and relativistic $1+1$ finite-sector multi-time predictor. No exact audited
+source supplies one named sector-changing model with both an actual
+variable-number path and a same-model global existence theorem. The result is
+`B1-FAMILY-HIGH-INFORMATION / B1-SINGLE-MODEL-NOT-FREEZE-READY`; it creates no
+B1 authority, pin request, model selection, review, repair, successor, or
+scientific result.
 
 C1 active files:
 

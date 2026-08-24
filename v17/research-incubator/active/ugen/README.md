@@ -718,13 +718,27 @@ The post-A1 matter-law triage is now complete author-side in
 `v17_ugen_post_a1_matter_law_candidate_triage.md`. It integrates the newer R1
 review without promoting pair-history structure to ontology, then scores the
 best available predictive and actuality laws on one common nine-coordinate
-admission vector. No audited law closes the vector. Bell-type QFT is the one
-recommended next bounded prior-art control because it supplies regularized
+admission vector. No audited law closes the vector. At family resolution,
+Bell-type QFT was initially the recommended next bounded prior-art control
+because it supplies regularized
 variable-number configuration dynamics with creation and annihilation while
 printing its wavefunction, Hamiltonian, position-observable, external-time,
 cutoff, general-existence, Lorentz, reader, transfer, and gravity debts. The
 recommendation creates no B1 authority, pin, construction, independent review,
 repair chain, or scientific result.
+
+The B1 family pre-authorization readiness audit now checks whether that routing
+recommendation contains one source-fixed model worth freezing. It does not.
+The rigorous all-time process theorem is conditional and lattice-based; its
+variable-number carrier changes sector only for a supplied sector-changing
+Hamiltonian, and the source does not freeze one named physical member. Named
+continuum IBC Hamiltonians are rigorous, but their actual processes are
+developed non-rigorously; the relativistic $1+1$ finite-sector IBC source proves
+wavefunction existence and conserved probability, not one actual stochastic
+history. These passes cannot be assembled across models. The author-side
+ceiling is `B1R-L1`: the family is high-information, no single model is
+freeze-ready, and no B1 pin, construction, review, or successor should be
+requested.
 
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
@@ -1190,7 +1204,9 @@ A1 EMPIRICAL/QFT/GRAVITY:      MODEL TRANSFER / COMPLETE MATTER LAW ABSENT
 Q-CUT MATHEMATICAL STATUS:     REVIEW-READY AUTHOR-SIDE / NO RESULT
 Q-CUT FRONTIER PRIORITY:       OPTIONAL SIDE THEOREM / NOT UNIFICATION GATE
 POST-A1 MATTER-LAW MATRIX:     MLT-L2 / NO COMPLETE LAW FOUND
-POSSIBLE NEXT CONTROL:         B1 BELL-TYPE QFT / AUTHORIZATION REQUIRED
+B1 FAMILY READINESS:           HIGH INFORMATION / FOUR OBJECTS SEPARATED
+B1 SINGLE-MODEL CORE:          NOT REACHED / NO FREEZE-READY MEMBER
+POSSIBLE NEXT CONTROL:         NONE FREEZE-READY / B1 PIN NOT REQUESTED
 NEXT AUTHOR-SIDE CONTROL:      NONE AUTOMATIC
 A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
