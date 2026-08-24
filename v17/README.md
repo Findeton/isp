@@ -871,12 +871,13 @@ cleanly if nature does not support it.
   control, and `B0-E`, one public single-platform empirical realization. An
   exact finite common-seed witness realizes the preparation, matched-algebra,
   temporary-marker, retained-register, complete-reader, correlated-nuisance,
-  and idle external-tag interfaces. An author reconstruction corrects six
+  and idle external-tag interfaces. An author reconstruction corrects seven
   scopes: the retained qubit is not a physical stable record, the tag is not
   an exchange carrier, the correlated reader must include null records, and
   state separation is relative to the licensed physical algebra; the local
   erasure proof also types accessible and inaccessible carriers separately,
-  and incompatible reads remain alternative contexts. It
+  incompatible reads remain alternative contexts, and the public input packet
+  is distinct from the B0 nomology and output profile. It
   deliberately lacks calibrated work and momentum, massive
   apparatus physics, empirical bytes, no-refit transfer, and reciprocity. This
   preparation is neither a pin nor a reviewed result;
@@ -894,13 +895,20 @@ cleanly if nature does not support it.
   alone is not treated author-side as discharge of `P-B0-1`; the proposed
   future ladder requires the same object to be authenticated inside the
   B0-L5 common packet and reviewed terminally.
+  A companion source-lineage audit registers twenty-six primary objects by
+  evidence class, scholarly version, exact consumed claim, and forbidden
+  promotion. The mutable arXiv citations are now version-specific, and an APS
+  accepted manuscript is not silently promoted to a version of record or an
+  accomplished apparatus. Exact PDF and supplement byte receipts remain owed
+  at any future B0-T review pin; no source authentication or B0 award follows
+  from author-side DOI links alone.
   A pre-pin closure audit now corrects the construction chronology: the exact
   B0-T witness is already open author-side work, so a future pin may freeze
   and review it but may not call it a new post-pin blind construction. The
   immediate proposed official gate is review-only and can earn at most
   B0-L2. A later B0-E construction waits for one exact apparatus to pass the
   conjunctive selection rule. The same audit records a
-  raw-input/held-out-output firewall: common apparatus, calibration, record,
+  an input/held-out-output firewall: common apparatus, calibration, record,
   nuisance, and tolerance fields may be shared, but neither the B0 prediction
   table nor an MG0 gravity-sensitive answer may be supplied to entrants;
   gravity-coupled apparatus coordinates remain inside each reciprocal parent.

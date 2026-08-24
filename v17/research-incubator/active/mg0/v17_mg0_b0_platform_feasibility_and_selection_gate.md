@@ -212,9 +212,9 @@ preparation. A target branch density supplied by hand earns no source credit.
 For an independently calibrated off-diagonal witness `C`, define
 
 $$
-\Lambda_{m obs}
+\Lambda_{\mathrm{obs}}
 =
--\log\left|\frac{C_{m out}}{C_{\rm ideal}}\right|.
+-\log\left|\frac{C_{\mathrm{out}}}{C_{\mathrm{ideal}}}\right|.
 $$
 
 The platform must predict the complete distribution of the witness and its
@@ -264,7 +264,7 @@ their tails or correlations are unknown.
 The separate hard mechanics vector is
 
 $$
-\mathsf C_{m mech}
+\mathsf C_{\mathrm{mech}}
 =
 (\text{preparation},\text{support},\text{work},\text{recoil},
 \text{backaction},\text{reader},\text{failure},\text{transfer}).
@@ -351,7 +351,7 @@ same quantum witness.
 
 Schut and Mazumdar, [“Parameter scanning in a quantum-gravity-induced
 entanglement of masses experiment with electromagnetic
-screening”](https://arxiv.org/abs/2502.12474), analyze a favorable reference
+screening”](https://arxiv.org/abs/2502.12474v1), analyze a favorable reference
 with masses near `1e-14 kg`, separation near `35 micrometres`, hold time near
 `1 s`, micron-scale superposition, and decoherence rates around `1e-3 Hz`.
 The paper is a parameter scan, not a demonstration of the source cat or
@@ -406,9 +406,9 @@ the frozen entrant class before any inference about gravity is made.
 Use
 
 $$
-G=6.67430\times10^{-11}\ {m m^3\,kg^{-1}\,s^{-2}},
+G=6.67430\times10^{-11}\ {\mathrm{m^3\,kg^{-1}\,s^{-2}}},
 \qquad
-\hbar=1.054571817\times10^{-34}\ {m J\,s}.
+\hbar=1.054571817\times10^{-34}\ {\mathrm{J\,s}}.
 $$
 
 For the screened point-mass comparison geometry:

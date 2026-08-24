@@ -172,8 +172,9 @@ forbidden.
 ## 4. Primary-source reality audit
 
 Primary publisher and author sources were checked author-side on 2026-08-24.
-No source bytes or versions are frozen here. These sources support the scope
-map only; their titles are not treated as ontology verdicts.
+The companion source-lineage audit identifies the consumed scholarly versions
+and claim ceilings, but no source bytes are frozen here. These sources support
+the scope map only; their titles are not treated as ontology verdicts.
 
 ### 4.1 Demonstrated fixed-background gravity-sensitive matter waves
 
@@ -294,14 +295,14 @@ class-relative discriminator, not an automatic ontology verdict.
 ### 4.7 Representation and controller controls
 
 - Pollock *et al.*, [“Non-Markovian quantum processes: complete framework and
-  efficient characterisation”](https://arxiv.org/abs/1512.00589), support the
+  efficient characterisation”](https://arxiv.org/abs/1512.00589v3), support the
   use of a process tensor as a multitime representation when memory is
   relevant. Tomography of that tensor would be target-complete input, so B0
   may use the representation but may not claim source descent from tomography.
 - Strasberg, [“An operational approach to quantum stochastic
-  thermodynamics”](https://arxiv.org/abs/1810.00698), and Strasberg *et al.*,
+  thermodynamics”](https://arxiv.org/abs/1810.00698v4), and Strasberg *et al.*,
   [“Quantum and Information Thermodynamics: A Unifying Framework based on
-  Repeated Interactions”](https://arxiv.org/abs/1610.01829), support explicit
+  Repeated Interactions”](https://arxiv.org/abs/1610.01829v3), support explicit
   intervention, controller, work, heat, and information ledgers. They do not
   select the B0 apparatus or native ontology.
 
@@ -410,14 +411,33 @@ weak classical potential. Every one is charged as an input.
 
 ---
 
-## 8. Public physical packet
+## 8. Public input packet and separate B0 law bundle
 
-For apparatus version `e`, the public packet must contain
+For apparatus version `e`, the public input packet must contain
 
 $$
-X_e^{(0)}=
-(M_e,G_e,B_e,A_e,K_e,N_e,D_e,U_e,V_e,\mathsf{Prov}_e).
+\Pi_e^{\rm in}=
+(M_e,G_e,B_e,A_e,N_e,D_e,U_e,V_e,\mathsf{Prov}_e).
 $$
+
+It has two subtypes:
+
+$$
+\Pi_e^{\rm in}
+=
+\left(
+\Pi_e^{\rm data},
+\Pi_e^{\rm reg}
+\right).
+$$
+
+`Pi_data` contains physical identity, metrology, waveforms, and calibration
+records. `Pi_reg` contains the preregistered control grammar, record decoder,
+nuisance/uncertainty family, held-out partition, invalid-run rule, tolerances,
+and scoring contract. The second object is declared comparison
+infrastructure, not raw detector output and not a candidate law.
+One source file may contribute bytes to both subpackets; every field must be
+typed by meaning and provenance rather than classified by filename.
 
 Here:
 
@@ -425,21 +445,65 @@ Here:
    composition, binding and kinetic model, charge and multipole bounds;
 2. `G_e`: apparatus geometry, alignment, separations, source and probe support
    geometry, shield geometry, and uncertainty;
-3. `B_e`: initial bath, field, apparatus, controller, and reference states;
+3. `B_e`: independently specified preparation conditions for baths, fields,
+   apparatus, controllers, and references; it is not a target density matrix;
 4. `A_e`: actuator waveforms and the physical devices that produce them;
-5. `K_e`: one fixed Hamiltonian/QFT/effective-kernel rule and approximation
-   hierarchy;
-6. `N_e`: electromagnetic, Casimir--Polder, collision, thermal-radiation,
+5. `N_e`: electromagnetic, Casimir--Polder, collision, thermal-radiation,
    vibration, seismic, laser, magnetic, electric, charge, patch-potential,
    libration, measurement-backaction, and cross-talk data;
-7. `D_e`: reader, waveform, threshold, timestamp, invalid, dead-time, reset,
-   overwrite, and stable-storage model;
-8. `U_e`: calibration likelihoods or uncertainty sets with covariance and
+6. `D_e`: reader hardware identity plus waveform, threshold, timestamp,
+   invalid, dead-time, reset, overwrite, stable-storage, and raw calibration
+   records;
+7. `U_e`: calibration likelihoods or uncertainty sets with covariance and
    provenance;
-9. `V_e`: preregistered calibration/validation/held-out split, tolerances, and
+8. `V_e`: preregistered calibration/validation/held-out split, tolerances, and
    scoring rule; and
-10. `Prov_e`: byte/version identity, custody, source lineage, and every
+9. `Prov_e`: byte/version identity, custody, source lineage, and every
     transformation used to build the packet.
+
+The complete conventional B0 baseline is a different frozen object:
+
+$$
+\mathcal B_{0,e}
+=
+\left(
+K_e,
+\rho_{\rm seed},
+\{\mathcal P_b\}_b,
+\{\mathcal U_k\}_k,
+\{\mathcal I_{r\mid c}^{(k)}\}_{k,r,c}
+\right),
+$$
+
+where `K_e` is the fixed Hamiltonian/QFT/effective-kernel rule and
+approximation hierarchy. Only `K_e` is the openly supplied conventional
+nomological input. `B0-E` must generate `rho_seed`, the preparation maps,
+propagation channels, and instruments from that nomology plus `Pi_in`; those
+generated objects form the baseline's closure certificate. It may not print
+them from a target table.
+
+The distinction is binding:
+
+$$
+\boxed{
+\Pi_e^{\rm in}
+\ne
+\mathcal B_{0,e}
+\ne
+\mathcal O_{0,e}.}
+$$
+
+`Pi_in` may later be common to all entrants. `B_0,e` is the conventional
+recovery object against which their fixed-background limit is tested; it is
+not automatically an input field of their parent law. A candidate may openly
+postulate standard quantum nomology as part of its own charged law, but it
+cannot receive the complete B0 context-to-output profile as data.
+
+The nuisance and reader fields in `Pi_in` contain measured apparatus facts,
+calibration records, and declared comparison infrastructure—not a theorem that those
+coordinates factor from gravity. Any support, environment, or reader
+coordinate that couples to an entrant's gravity-sensitive object remains
+inside that entrant's reciprocal parent under the common-packet firewall.
 
 The packet must not contain:
 
@@ -499,11 +563,12 @@ $$
 \text{ trace preserving}.
 $$
 
-The complete record law is
+With the input/law split explicit, the complete record law is
 
 $$
 \begin{aligned}
-p_0(\mathbf r\mid b,\mathbf c,X_e^{(0)})
+p_0(\mathbf r\mid b,\mathbf c,
+\Pi_e^{\rm in},\mathcal B_{0,e})
 =\operatorname{Tr}\Big[
 &\mathcal I_{r_n\mid c_n}^{(n)}\mathcal U_n
 \cdots
@@ -1099,6 +1164,9 @@ commissioned. The reviewers should answer:
    probabilities charged as supplied structure?
 5. Does the common-packet firewall exclude B0 and gravity-sensitive answer
    tables while preserving every raw registered field?
+6. Does the source-lineage audit bind the scholarly version and exact consumed
+   claim for every primary source, and does the future pin carry a byte-exact
+   PDF receipt for every load-bearing source and supplement?
 
 ---
 
@@ -1110,7 +1178,9 @@ phrased:
 > Authorize one immutable, result-neutral B0-T independent-review pin. The
 > pin must freeze and rehash the existing author-side B0 readiness audit,
 > exact synthetic witness, author reconstruction, platform feasibility gate,
-> and pre-pin common-packet firewall. It must state that the witness predates
+> pre-pin common-packet firewall, and primary-source claim/version audit. It
+> must retrieve and hash the exact load-bearing primary PDFs and supplements
+> before reviewers begin. It must state that the witness predates
 > the pin and
 > is under review rather than being newly constructed. Run three independent
 > mathematics, physical-source/apparatus, and foundations/gravity-firewall

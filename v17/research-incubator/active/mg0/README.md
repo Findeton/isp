@@ -70,9 +70,13 @@ not turn either source document into a pin or award a scientific result.
   branch-density, many-body, coherence, complete-reader, nuisance, and
   mechanics gate; incorporates the 2026 metal-nanoparticle interference
   result and returns candidate-neutral `NO-SELECTION`;
+- `v17_mg0_b0_primary_source_claim_and_version_audit.md` — author-side
+  registry of twenty-six primary-source identities, exact consumed claims,
+  forbidden promotions, explicit arXiv versions, and the still-owed pin-time
+  PDF/supplement receipt contract;
 - `v17_mg0_b0_pre_pin_closure_and_common_packet_firewall.md` — author-side
   correction of the B0 chronology, separation of review-only B0-T from future
-  B0-E and B0-L5, and a raw-input/held-out-output firewall for the common
+  B0-E and B0-L5, and an input/held-out-output firewall for the common
   packet;
 - `v17_mg0_b0_matter_exact_synthetic_witness.md` — exact finite
   common-seed interface witness for preparation, coherence, temporary
@@ -81,7 +85,7 @@ not turn either source document into a pin or award a scientific result.
   model and does not certify a stable record or exchange ledger;
 - `v17_mg0_b0_t_author_reconstruction_and_semantic_audit.md` — author-side
   exact rebuild of the witness, including the null-complete correlated reader
-  and six applied scope/typing corrections; it is not an independent review;
+  and seven applied scope/typing corrections; it is not an independent review;
 - `v17_mg0_future_review_contract.md` — superseded historical author-side
   review-design precursor; the root protocol and adjudication govern;
 - `ACTIVE_SHA256.txt` — active-byte manifest.
@@ -158,12 +162,13 @@ single-platform empirical realization. The accompanying finite witness
 generates its preparations from a common seed, retains its dephasing memory and
 idle external tag, and supplies normalized complete noisy records. An author
 reconstruction preserves its coherence, eraser, retained-register, and
-correlated-nuisance algebra while correcting six scopes/types: the retained qubit
+correlated-nuisance algebra while correcting seven scopes/types: the retained qubit
 is not a physical stable record, the idle tag is not an exchange carrier, the
 nuisance control requires the printed null-inclusive joint tables, and state
 separation is relative to the licensed physical algebra; the local-erasure
 proof also separates the accessible carrier from the inaccessible record
-environment, and incompatible reads remain alternative contexts. The
+environment, incompatible reads remain alternative contexts, and the public
+input packet is separate from both B0 nomology and predicted output. The
 witness contains no massive material, apparatus, empirical packet, no-refit
 transfer, or reciprocal gravity. These files are not a pin or review result;
 they do not discharge `P-B0-1` or authorize B0 construction.
@@ -187,17 +192,26 @@ cannot later be advertised as a new post-pin construction. The immediate
 official gate, if separately authorized, is a review pin over the existing
 B0-T bundle, with B0-L2 as its maximum ceiling. A physical B0-E model waits
 for a later evidence-date selection that returns one exact eligible apparatus.
-The common-packet firewall also separates raw apparatus and calibration inputs
+The common-packet firewall also separates public apparatus and calibration inputs
 from sealed B0/MG0 outcomes: neither the baseline prediction table nor the
 gravity-sensitive target may be supplied to entrants. B0-L5 remains a later
 identity/authentication gate, not a consequence of shared variable names.
+
+The source-lineage audit prevents a parallel evidential shortcut. It registers
+twenty-six primary objects as demonstrations, proposals, theoretical ceilings,
+or representation/accounting controls and binds their exact permitted uses.
+Four arXiv citations now use explicit versions, and one 2026 APS accepted
+manuscript remains typed as accepted rather than as a version of record. No
+source PDF or supplement bytes are frozen: any future B0-T review pin must
+retrieve, hash, and bind those exact bytes before reviewers begin.
 
 ## Maximum claim
 
 This packet now supplies an independently reviewed result-neutral admissibility
 contract and source-scoped benchmark design, plus explicitly unreviewed
-author-side preparation, a no-selection feasibility result, and an unfrozen
-pre-pin chronology/common-packet firewall for the missing B0 gate. It supplies
+author-side preparation, a no-selection feasibility result, an unfrozen
+pre-pin chronology/common-packet firewall, and an unfrozen source-lineage
+audit for the missing B0 gate. It supplies
 no completed
 massive-mechanical baseline, common matter–geometry law, gravity ontology,
 QFT, clock, spacetime, GR, or empirical result.

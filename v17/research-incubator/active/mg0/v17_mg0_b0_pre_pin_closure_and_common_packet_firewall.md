@@ -21,7 +21,7 @@ to decide whether the existing object earns the narrow B0-L2 interface-control
 ceiling.
 
 The empirical object is different. B0-E requires one exact apparatus version,
-one common raw-input packet, physical preparation and readout arrows, and
+one common public-input packet, physical preparation and readout arrows, and
 no-refit transfer. The current frozen-form selection rule returns
 `NO-SELECTION`, so no B0-E construction can presently be pinned without
 lowering a physical gate or choosing a device by taste.
@@ -160,7 +160,7 @@ different apparatus when gravity entrants arrive.
 |---|---|---|---|---|
 | B0-T | exact conventional finite complete-record interface | tests whether the proposed record and memory types are coherent | receives standard quantum structure openly and earns no native-law credit | malformed marker/eraser, incomplete reader, hidden controller, or nuisance mutant changes a claimed equality |
 | B0-E | one exact massive source--apparatus--probe realization | removes the `P-B0-1` preparation/readout confound | no target fringe, solved gravity response, target-complete tomography, or component collage | held-out no-refit source, reader, nuisance, and fixed-background records |
-| common packet | same raw apparatus facts and record semantics for every entrant | makes output differences attributable to laws rather than different experiments | contains no held-out outcomes or candidate-private response table | byte and invariant-map audit detects packet substitution or extra information |
+| common packet | same public apparatus inputs and record semantics for every entrant | makes output differences attributable to laws rather than different experiments | contains no held-out outcomes or candidate-private response table | byte and invariant-map audit detects packet substitution or extra information |
 | B0-L5 authentication | identity of B0-L4 apparatus with MG0 mechanical packet | prevents cross-platform discharge of `P-B0-1` | cannot be earned from shared names or fitted output agreement | exact identity and round-trip field checks pass or fail before entrant outputs are opened |
 
 No object passes merely because it is mathematically convenient.
@@ -172,7 +172,7 @@ No object passes merely because it is mathematically convenient.
 Let the pre-outcome registered packet have the typed form
 
 $$
-\Pi_{\rm raw}
+\Pi_{\rm in}
 =
 \bigl(
 I_{\rm apparatus},
@@ -191,6 +191,25 @@ D_{\rm cal},
 \tag{2}
 $$
 
+This packet decomposes as
+
+$$
+\Pi_{\rm in}
+=
+\left(
+\Pi_{\rm data},
+\Pi_{\rm reg}
+\right).
+$$
+
+`Pi_data` contains apparatus identity, metrology, waveforms, and calibration
+records. `Pi_reg` contains the preregistered controls, record decoder,
+nuisance/uncertainty family, sealed schedules, invalid-run rules, tolerances,
+and scoring contract. The latter is common comparison infrastructure, not raw
+detector output and not candidate nomology.
+One source file may contribute bytes to both subpackets; fields are classified
+by meaning and provenance, not by filename.
+
 Here:
 
 - `I_apparatus` fixes physical components and versions;
@@ -201,7 +220,9 @@ Here:
 - `D_cal` contains calibration-only records available before model freeze;
 - `C` is the complete licensed control grammar;
 - `R` is the complete registered record interface;
-- `N` is the candidate-neutral nuisance and covariance ledger;
+- `N` is the common nuisance evidence, covariance, and classification ledger;
+  it does not assert that gravity-coupled nuisance dynamics are
+  candidate-independent;
 - `S_B0` is a seal over the B0 transfer schedule and, when already acquired,
   blinded record bytes; for a prospective run it instead freezes the
   acquisition protocol and empty record schema;
@@ -244,7 +265,7 @@ The conventional baseline is a separately frozen map
 
 $$
 \mathcal B_0:
-\Pi_{\rm raw}^{\rm open}
+\Pi_{\rm in}^{\rm open}
 \longrightarrow
 \left\{
 p_0(r_S,r_P,r_C\mid b,c)
@@ -256,7 +277,7 @@ not an answer table fed to entrants. A future entrant must generate its own
 complete profile
 
 $$
-\mathcal N_i\bigl[\iota_i(\Pi_{\rm raw}^{\rm open})\bigr]
+\mathcal N_i\bigl[\iota_i(\Pi_{\rm in}^{\rm open})\bigr]
 \longrightarrow
 \left\{
 p_i(r_S,r_G,r_P,r_C\mid b,c)
@@ -286,7 +307,7 @@ language. Each candidate may therefore supply a frozen presentation map
 
 $$
 \iota_i:
-\Pi_{\rm raw}^{\rm open}
+\Pi_{\rm in}^{\rm open}
 \longrightarrow
 \Pi_i.
 \tag{5}
@@ -297,7 +318,7 @@ On registered public fields, the map must have a checked round trip
 $$
 \pi_i\circ\iota_i
 =
-\operatorname{id}_{\Pi_{\rm raw}^{\rm open}}.
+\operatorname{id}_{\Pi_{\rm in}^{\rm open}}.
 \tag{6}
 $$
 
@@ -379,7 +400,7 @@ records unless a licensed reader records their erasure.
 | `R1RR-L4` | terminal R1 review adjudication | fixed-background quantum recovery target only |
 | `MG0P-D3` | terminal MG0 benchmark review adjudication | accepted comparison-design ceiling |
 | `P-B0-1` | terminal MG0 benchmark review adjudication | mandatory massive-mechanical baseline before entrants |
-| common experiment | governing MG0 pin, Sections 4 and 7 | one raw packet and one registered interface, not one ontology |
+| common experiment | governing MG0 pin, Sections 4 and 7 | one public input packet and one registered interface, not one ontology |
 | B0-T | B0 readiness audit, Section 6.1 | mathematical interface control |
 | B0-E | B0 readiness audit, Section 6.2 | one physical platform baseline |
 | stable record | B0 readiness audit, Section 12 | amplified retained record, distinct from temporary marker |
@@ -437,7 +458,7 @@ A future B0-E pin would have to freeze before model construction:
 1. exact hardware, material, controller, support, shield, environment, and
    detector versions;
 2. physical preparation and reader procedures;
-3. the complete raw packet of Equation (2);
+3. the complete public input packet of Equation (2);
 4. calibration-only and sealed held-out partitions;
 5. the standard-quantum fixed-background parent;
 6. source, controller, work, momentum, heat, and recoil ledgers;
@@ -527,7 +548,7 @@ This language is a proposal. It is not itself authorization.
 > The existing B0-T witness is mature enough to be frozen and independently
 > reviewed as prior author-side mathematics, but not to be reconstructed
 > later under the fiction of a new post-pin candidate. A common MG0 packet
-> must contain raw apparatus facts, calibration-only records, sealed
+> must contain public apparatus inputs, calibration-only records, sealed
 > held-out schedules, record semantics, nuisance ledgers, and tolerances—not
 > the B0 or gravity-sensitive answer tables. Candidate presentation maps must
 > preserve every registered public field, and gravity-coupled apparatus

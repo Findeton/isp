@@ -10,7 +10,7 @@
 ## 0. Disposition
 
 An exact reconstruction of the open B0-T witness preserves its core finite
-quantum algebra but finds six scope/typing defects that had to be corrected before
+quantum algebra but finds seven scope/typing defects that had to be corrected before
 an independent review pin could be responsibly proposed.
 
 1. The finite `R` qubit is a retained-register proxy, not an amplified stable
@@ -27,6 +27,9 @@ an independent review pin could be responsibly proposed.
 6. Complete records must be context-indexed: `X`, `Y`, and path reads on one
    source are alternative instruments, not simultaneous fields of one global
    joint law.
+7. The public input packet—apparatus evidence plus registered comparison
+   infrastructure—must be separated from the conventional B0 nomology and
+   from the predicted output profile.
 
 The active witness now prints those ceilings and lifts the nuisance example to
 two exact normalized three-by-three tables. No massive apparatus, physical
@@ -37,7 +40,7 @@ The author-side disposition is
 
 $$
 \boxed{
-\text{FINITE ALGEBRA SURVIVES / SIX SCOPE-TYPING REPAIRS APPLIED / REVIEW STILL REQUIRED}.}
+\text{FINITE ALGEBRA SURVIVES / SEVEN SCOPE-TYPING REPAIRS APPLIED / REVIEW STILL REQUIRED}.}
 \tag{1}
 $$
 
@@ -352,6 +355,38 @@ scope: equal one-role registered marginals do not determine the joint law.
 
 ---
 
+### 8.1 Public input, conventional law, and output are distinct
+
+The cross-file audit found that the earlier B0 packet placed `K_e`, the
+conventional Hamiltonian/QFT/effective-kernel rule, beside measured apparatus
+inputs. That conflated common input data with the law used to predict from
+those data.
+
+The corrected types are
+
+$$
+\Pi_e^{\rm in}
+\ne
+\mathcal B_{0,e}
+\ne
+\mathcal O_{0,e}.
+\tag{21}
+$$
+
+`Pi_in` contains raw apparatus evidence plus the registered control, record,
+nuisance, held-out, tolerance, and scoring contract. The B0 law
+bundle contains the openly supplied conventional nomology and the states,
+channels, and instruments it generates. `O_0,e` is the resulting contextual
+record profile.
+
+Future gravity entrants may consume the same public input packet and may independently
+postulate standard quantum nomology as a charged part of their own law. They
+may not receive `B_0,e` or `O_0,e` as an answer-bearing lookup field. The
+reviewed B0 object remains a public recovery criterion, not forbidden
+knowledge.
+
+---
+
 ## 9. Proposition audit
 
 | proposition | disposition | exact ceiling |
@@ -384,6 +419,9 @@ scope: equal one-role registered marginals do not determine the joint law.
    different contexts?
 10. Can any claimed B0-L2 coordinate be obtained only by importing an answer
     table rather than deriving it from the finite maps?
+11. Are the public input packet, conventional B0 law, and predicted profile
+    separate typed objects throughout the bundle, with apparatus evidence distinct
+    from registered comparison infrastructure inside the packet?
 
 ---
 
@@ -395,10 +433,11 @@ scope: equal one-role registered marginals do not determine the joint law.
 > correlated-reader normalization, and common-versus-factorized nuisance
 > countermodel are mathematically consistent. The complete nuisance tables
 > are positive, normalized, and have identical one-role marginals. The audit
-> corrects six prior scope/typing errors: the original wording had not
+> corrects seven prior scope/typing errors: the original wording had not
 > established a physical stable record or controller exchange; its joint
 > nuisance reader, licensed-algebra separator, and accessible/inaccessible
 > erasure carrier were incomplete; and incompatible source reads had not been
-> explicitly separated into alternative contexts. These
+> explicitly separated into alternative contexts. It also conflated the
+> public input packet with the conventional B0 nomology. These
 > corrections remain unreviewed author-side
 > work and earn no B0 level, apparatus, gravity, or ontology claim.

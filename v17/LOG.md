@@ -2487,3 +2487,32 @@ reader sweep. These are forward author-side corrections to unfrozen objects,
 not review findings or an awarded B0 level. No stable material record,
 exchange/conservation ledger, apparatus, platform, pin, reviewer, B0-E model,
 `P-B0-1` discharge, gravity candidate, or successor is opened.
+
+## 2026-08-24 — B0 INPUT/NOMOLOGY AND SOURCE-LINEAGE FIREWALL CLOSED AUTHOR-SIDE (v17 LEDGER #108)
+
+A seventh author-side semantic correction now separates three objects that
+the earlier readiness packet had partially conflated. The common public input
+packet contains apparatus evidence and registered comparison infrastructure;
+the conventional B0 law bundle contains the supplied standard-quantum
+nomology and the states, channels, and instruments generated under it; and the
+B0 output is the predicted complete contextual record profile. In symbols,
+`Pi_in != B_0,e != O_0,e`. The common packet is further split into measured
+data and the preregistered interface/scoring contract. It cannot hand a future
+entrant either the B0 law as an answer-bearing field or the B0/MG0 prediction
+table. Gravity-coupled support, environment, nuisance, and reader coordinates
+remain inside each entrant's reciprocal parent.
+
+A companion source-lineage audit registers all twenty-six primary objects
+consumed by the B0 readiness and platform files. Each is typed as a
+demonstration, proposal, theoretical ceiling, or representation/accounting
+control, with one exact consumed claim and a forbidden promotion. Four
+mutable arXiv locators are replaced by explicit versions. The 2026 Moorthy
+source remains an APS accepted manuscript rather than a version of record or
+an accomplished experiment. DOI and version identity are explicitly
+separated from byte identity: exact PDFs and load-bearing supplements must be
+retrieved, hashed, and bound during any future immutable B0-T review pin.
+
+These are corrections to unfrozen author-side preparation. They award no B0
+level, freeze no source bytes, select no platform, and open no pin, review,
+B0-E model, `P-B0-1` discharge, gravity candidate, entrant, comparison,
+ontology, or successor.

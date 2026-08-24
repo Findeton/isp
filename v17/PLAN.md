@@ -912,10 +912,19 @@ adds the complete null-inclusive joint reader and binds that neither the
 retained qubit nor the idle tag is a physical stable record or exchange
 carrier, state separation is licensed-algebra-relative, local erasure has
 separate accessible/inaccessible carriers, and incompatible reads are
-alternative contexts. It is an interface test only: it has no calibrated energy/momentum
+alternative contexts. The common public input packet is also separated from
+the conventional B0 nomology and its predicted profile. It is an interface test
+only: it has no calibrated energy/momentum
 ledger, massive material, apparatus data, no-refit transfer, or reciprocal
 gravity. No official B0 pin or review exists,
 `P-B0-1` remains open, and the candidate roster remains empty.
+
+A companion author-side source-lineage audit registers all twenty-six primary
+objects consumed by the readiness and platform files, separates demonstrated
+components from proposals, theory ceilings, and representation tools, and
+binds explicit versions for every arXiv source. This is not a byte freeze:
+future B0-T pin creation must retrieve and hash every load-bearing PDF and
+supplement before review. DOI resolution or a title match is insufficient.
 
 The subsequent author-side platform feasibility gate makes selection
 conjunctive rather than score-based. It uses the extended branch-density
@@ -1270,6 +1279,7 @@ MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
 MG0 B0-T author-side bundle         RECONSTRUCTED / READY FOR REVIEW-ONLY PIN
 MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
+MG0 B0 source lineage               REGISTERED AUTHOR-SIDE / BYTE RECEIPTS OWED
 MG0 B0-E / B0-L5                    ABSENT / CLOSED
 MG0 candidate roster/comparison     EMPTY / CLOSED
 ```
