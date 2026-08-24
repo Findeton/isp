@@ -946,11 +946,22 @@ proposed official action is a review-only pin over those bytes, not a claim of
 new post-pin construction; its maximum ceiling is B0-L2. B0-E waits for a
 future evidence-date pass that selects one exact apparatus under both
 eligibility conjunctions. B0-L5 then authenticates that same reviewed
-platform baseline inside the common packet. The packet contains raw apparatus,
-calibration, record-interface, nuisance, sealed-schedule, and tolerance data,
+platform baseline inside the common packet. The packet contains public apparatus
+inputs, calibration records, registered interfaces, nuisance evidence, sealed
+schedules, and tolerances,
 not the B0 or gravity-sensitive predicted answer. Candidate presentation maps
 must preserve every public registered field, while any gravity-coupled
 apparatus coordinate remains inside the candidate's reciprocal parent.
+
+The same unfrozen closure now binds a candidate-provenance firewall. The
+terminal requirement of two complete distinct entrants is a quantifier on a
+future comparison, never a target for theory construction. A later candidate
+must have its own physical principle, a hash-verifiable chronology with no
+held-out read edge, independent parameter provenance, one-parent reciprocal
+closure, complete failure records, and at least one generated consequence
+outside the four MG0 target surfaces. Constructing a quantized mediator and a
+CP-CQ hybrid merely to fill two roster slots is classified
+`THEORY-FACTORY-REJECT`, not progress toward unification.
 
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact

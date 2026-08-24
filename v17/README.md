@@ -907,11 +907,18 @@ cleanly if nature does not support it.
   and review it but may not call it a new post-pin blind construction. The
   immediate proposed official gate is review-only and can earn at most
   B0-L2. A later B0-E construction waits for one exact apparatus to pass the
-  conjunctive selection rule. The same audit records a
-  an input/held-out-output firewall: common apparatus, calibration, record,
+  conjunctive selection rule. The same audit records an
+  input/held-out-output firewall: common apparatus, calibration, record,
   nuisance, and tolerance fields may be shared, but neither the B0 prediction
   table nor an MG0 gravity-sensitive answer may be supplied to entrants;
   gravity-coupled apparatus coordinates remain inside each reciprocal parent.
+  It also closes the theory-factory loophole: the two-complete-distinct-law
+  inequality is a condition for comparison, not authority to manufacture a
+  quantized-mediator/CP-CQ pair. Any future candidate needs its own physical
+  principle, no-held-out-read chronology, independent parameter origin,
+  one-parent closure, complete failure surface, and at least one generated
+  consequence outside the four MG0 target surfaces before it is even eligible
+  for a separately authorized pin.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,

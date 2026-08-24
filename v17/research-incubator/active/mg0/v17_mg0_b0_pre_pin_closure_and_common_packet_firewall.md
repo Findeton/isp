@@ -520,6 +520,86 @@ A future review must reject at least the following attacks.
 14. Select a platform after candidate predictions are known.
 15. Fill the entrant roster with two representations of one law.
 16. Let B0 review automatically authorize B0-E, entrants, or comparison.
+17. Construct a quantized-mediator law and a CP classical--quantum law merely
+    because two roster slots are required.
+18. Tune the second candidate after opening the first candidate's MG0 output
+    so that the pair exhibits a desired discriminator.
+19. Add an out-of-benchmark domain only in prose, without one law generating
+    its complete controls and records there.
+20. Reclassify a candidate-specific coupling, kernel, or source prescription
+    as common calibration in order to make its provenance appear independent.
+
+### 14.1 Two entrants are not a construction target
+
+The terminal entrant quantifier is a condition on a later comparison. It is
+not an instruction to manufacture the minimum roster:
+
+$$
+\boxed{
+N_{\mathrm{complete,distinct}}\ge 2
+\quad\text{is a comparison precondition, not a theory-generation rule}.}
+\tag{10}
+$$
+
+A quantized mediator and a source-fixed CP classical--quantum hybrid remain
+useful hostile comparison classes. Their names do not supply either complete
+law, and the benchmark's desire for two competitors is not independent
+physical motivation for constructing them.
+
+Any future candidate programme therefore requires its own authorization and
+pin. Before it can later be submitted for entrant review, its frozen
+provenance packet must establish all of the following:
+
+1. **Nomological origin.** One physical principle, action, generator,
+   whole-process measure, constraint system, or explicitly new law determines
+   the candidate's form before MG0 held-out records or rival outputs are
+   opened. A family name is not a law.
+2. **No held-out read edge.** The construction chronology contains no causal
+   information path
+
+   $$
+   D_{\mathrm{hold}}
+   \not\longrightarrow
+   (\mathcal N_i,\theta_i,\iota_i),
+   \tag{11}
+   $$
+
+   where the right side contains the law bytes, parameters, and public-input
+   presentation map. Hash chronology, not an author's declaration, must
+   establish this.
+3. **Independent parameter origin.** Constants and kernels descend from the
+   principle, independent metrology, or a calibration-only likelihood frozen
+   before the target. A value chosen to maximize PG, CP, ME, or DD separation
+   is target-imported.
+4. **Domain larger than the target surfaces.** The same law and parameters
+   generate at least one complete non-MG0-target consequence: for example an
+   R1/B0 recovery control, a different source mass or species, a changed
+   geometry, a null channel, or a conservation/no-signalling transfer test.
+   Merely declaring a larger domain does not count.
+5. **One-parent closure.** Matter-to-gravity response, gravity-to-matter
+   response, noise, records, supports, and exchange carriers descend from one
+   parent. Two fitted arrows joined after calibration fail provenance.
+6. **Complete failure surface.** Nulls, invalid runs, detector failures,
+   preparation failures, and nuisance correlations are predictions of the
+   same law rather than discarded cases.
+7. **Independent scientific debt ledger.** Relativistic, QFT, continuum,
+   chronology, actuality, and cosmological debts are printed even when they
+   do not affect the finite weak-field fixture.
+
+“Independent” does not mean that a candidate must predate MG0 or be published
+elsewhere. A genuinely new law is admissible in principle. It means its form,
+parameters, and larger-domain consequences cannot be reverse-engineered from
+the target answers or from the need to populate a second roster slot.
+
+The author-side provenance outcomes are:
+
+| outcome | meaning |
+|---|---|
+| `THEORY-FACTORY-REJECT` | a benchmark-specific ansatz or second slot was manufactured to create a contest |
+| `PROVENANCE-INCOMPLETE` | a potentially serious law lacks independent parameter, chronology, or transfer evidence |
+| `CANDIDATE-PIN-ELIGIBLE` | provenance is coherent enough to request a separate user-controlled candidate pin; no entrant status follows |
+
+No outcome in this section authorizes construction or admission.
 
 ---
 
@@ -530,7 +610,8 @@ The next user-controlled action, if desired, is:
 > Authorize one immutable, result-neutral B0-T independent-review pin. The
 > pin must freeze and rehash the existing author-side B0 readiness audit,
 > exact synthetic witness, author reconstruction, platform feasibility gate,
-> and pre-pin common-packet firewall. It must state that the witness predates
+> primary-source claim/version audit, and pre-pin common-packet firewall. It
+> must state that the witness predates
 > the pin and
 > is under review rather than being newly constructed. Run three independent
 > mathematics, physical-source/apparatus, and foundations/gravity-firewall

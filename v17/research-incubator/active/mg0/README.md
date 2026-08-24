@@ -197,6 +197,14 @@ from sealed B0/MG0 outcomes: neither the baseline prediction table nor the
 gravity-sensitive target may be supplied to entrants. B0-L5 remains a later
 identity/authentication gate, not a consequence of shared variable names.
 
+The same closure treats the two-entrant minimum as a comparison precondition,
+not a theory-generation target. A future law must have independently frozen
+nomological and parameter provenance, no read edge from held-out records,
+one-parent reciprocity, complete failures, and a generated transfer consequence
+outside the four MG0 target surfaces. Deliberately manufacturing a
+quantized-mediator/CP-CQ pair to populate the roster is
+`THEORY-FACTORY-REJECT`; neither candidate class is authorized here.
+
 The source-lineage audit prevents a parallel evidential shortcut. It registers
 twenty-six primary objects as demonstrations, proposals, theoretical ceilings,
 or representation/accounting controls and binds their exact permitted uses.

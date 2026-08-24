@@ -2516,3 +2516,26 @@ These are corrections to unfrozen author-side preparation. They award no B0
 level, freeze no source bytes, select no platform, and open no pin, review,
 B0-E model, `P-B0-1` discharge, gravity candidate, entrant, comparison,
 ontology, or successor.
+
+## 2026-08-24 — MG0 THEORY-FACTORY LOOPHOLE CLOSED AUTHOR-SIDE (v17 LEDGER #109)
+
+The unfrozen B0 common-packet closure now states an implication that was
+present only indirectly in the terminal MG0 no-answer and distinctness walls:
+the requirement of at least two complete distinct entrants is a precondition
+for comparison, not a theory-generation rule. It does not authorize the
+programme to manufacture a quantized-mediator law and a CP
+classical--quantum law merely to populate two roster slots.
+
+Any future candidate request must carry its own nomological origin, a
+hash-verifiable chronology with no read edge from MG0 held-out records or
+rival outputs, independently sourced parameters, one-parent reciprocal
+closure, complete failure records, and at least one generated consequence
+outside the four MG0 target surfaces. A new theory need not predate the
+benchmark, but it cannot be reverse-engineered from the target answer or from
+the institutional need for a competitor. Benchmark-specific ansatzes are
+classified `THEORY-FACTORY-REJECT`; coherent provenance earns only eligibility
+to request a separate user-controlled pin.
+
+No terminal MG0, R1, or B0 bytes are amended. No candidate is constructed,
+selected, authorized, admitted, compared, or promoted, and no B0-E, gravity,
+ontology, chronology, spacetime, or successor unit opens.
