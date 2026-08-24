@@ -586,6 +586,18 @@ generates its interfaces, readers, records, erasers, and divisions. The next
 control must reconstruct that descent inside known QFT/material physics and
 expose every supplied quantum/spacetime coordinate before any native proposal.
 
+The resulting effective-parent audit reaches only KPC-L2E, not BFA-L3. It
+inherits one exact outcome-complete R1 finite member, proves an exact
+intervention/conditioning criterion and conditional product implication,
+types an ideal information-preserving eraser, states the all-futures division
+criterion, and proves quotient existence if all physical interfaces are
+discharged. It does not derive the controller, microscopic detector, memory,
+bath, or material-erasure kernels; it verifies no physical port, division, or
+transfer. The unqualified phrase “closed parent” is therefore refused. The
+next native search must generate quantum cross-context composition and the
+interface structure from one target-blind law rather than supply an
+answer-equivalent Gram, action, state, process, or reader.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
@@ -646,6 +658,7 @@ Post-C4 routing, native-search, and control files:
 - active/ugen/v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
 - active/ugen/v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
 - active/ugen/v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
+- active/ugen/v17_ugen_u0_s2_known_physics_effective_parent_interface_audit.md
 - active/ugen/v17_ugen_u0_t3_r4_fixture_feasibility_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_primary_scope_audit.md
 - active/ugen/v17_ugen_u0_t3_source_descent_and_symmetry_theorems.md

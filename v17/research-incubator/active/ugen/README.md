@@ -592,6 +592,17 @@ process-matrix, Euclidean, causal-set, or bootstrap route closes that descent
 without imported quantum or spacetime structure. The next control is one
 known-physics autonomous parent-interface construction, not a native law.
 
+That attempted construction now terminates at KPC-L2E effective-interface
+scope. Equations for one R1 finite member and a supplied
+controller--record--eraser wrapper are normalized. The intervention,
+factorization, eraser, division, and quotient results are exact conditional
+criteria, but $\mathcal N_C,\mathcal N_D,\mathcal N_M,$ and $\mathcal N_B$
+remain named input slots; no microscopic reader, material eraser, actual
+division, physical transfer, or source-complete parent is constructed. BFA-L3
+remains open. The next native question is the physical source of the
+cross-context quantum composition law together with those interfaces, not a
+new label for a supplied quantum kernel.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -655,6 +666,7 @@ Active audit:
 - v17_ugen_u0_s2_minimal_premise_quantum_boundary_test.md
 - v17_ugen_u0_s2_qsource_premise_physics_and_native_bridge_audit.md
 - v17_ugen_u0_s2_configuration_to_operational_bridge_feasibility_audit.md
+- v17_ugen_u0_s2_known_physics_effective_parent_interface_audit.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -1027,7 +1039,9 @@ U0 PURIFICATION CARRIER:       PREDICTIVE OR DIVISIBLE OR INCOMPLETE
 U0 BARE BRIDGE:                NONIDENTIFIABLE / INTERVENTION-FACTOR-RECORD
 U0 TYPED POSITIVE OPT BRIDGE:  CONSTRUCTIBLE AT CERTIFIED DIVISIONS
 U0 BRIDGE FEASIBILITY:         BFA-L2 / NO NATIVE BRIDGE
-NEXT U0 SCIENTIFIC WORK:       KNOWN-PHYSICS CLOSED-PARENT INTERFACE DESCENT
+U0 EFFECTIVE INTERFACE AUDIT:  KPC-L2E / EXACT CONDITIONAL SCHEMA
+U0 SOURCE-COMPLETE PARENT:     BFA-L3 OPEN / KERNELS AND TRANSFER ABSENT
+NEXT U0 SCIENTIFIC WORK:       NATIVE QUANTUM-COMPOSITION SOURCE GATE
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

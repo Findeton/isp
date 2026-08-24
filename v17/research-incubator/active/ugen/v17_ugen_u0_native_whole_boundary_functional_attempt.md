@@ -42,8 +42,8 @@ This packet makes the first direct attempt and obtains a restrictive result.
    relational cross-terms that are not probabilities of the individual
    histories.
 
-2. A minimal explicit relational construction that carries those cross-terms
-   is an oriented Gram law,
+2. A natural universal Gram envelope that carries those cross-terms is an
+   oriented Gram law,
 
    $$
    \boxed{

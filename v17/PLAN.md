@@ -587,6 +587,18 @@ erasers, and complete divisions before operational reconstruction begins. The
 next gate is BFA-L3, one known-physics autonomous parent-interface control that
 prints every quantum, spacetime, material-response, and actuality input. It is
 not a native candidate and creates no official authority.
+That attempted control now stops honestly at KPC-L2E. The R1 one-mode member
+and a supplied controller--record--eraser wrapper are exactly normalized;
+intervention versus conditioning, factorized products, ideal erasure,
+division, and quotient existence have exact conditional statements. But the
+controller, microscopic detector, memory, bath, and material-erasure laws are
+named input slots rather than outputs of one autonomous model; no R1 division
+or transfer test is discharged. BFA-L3 therefore remains open. This is an
+effective-interface audit and source-debt result, not a closed-parent
+construction. The next native investigation must target the physical origin
+of cross-context quantum composition while inheriting these interface duties;
+it may not hide them in a Gram kernel, action, wavefunction, POVM, or external
+operation label.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

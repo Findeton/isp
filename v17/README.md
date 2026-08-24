@@ -713,6 +713,16 @@ cleanly if nature does not support it.
   and bootstrap routes each supply only part or import quantum/spacetime data.
   The next exact control is a known-physics autonomous parent-interface descent,
   not a guessed carrier or native candidate.
+  That attempt now earns only KPC-L2E. One finite R1 record member and a
+  controller--record--eraser wrapper are normalized, and exact conditional
+  theorems locate intervention semantics, product response, ideal erasure,
+  divisions, and the operational quotient. The controller, microscopic
+  detector, memory, bath, material eraser, physical port tests, actual
+  divisions, and implementation transfer are not constructed. “Outcome
+  complete” at this effective member scope is not microscopic or
+  source-complete closure. BFA-L3 remains open, and the next author-side
+  physics question is which target-blind physical law, if any, generates the
+  cross-context quantum composition structure together with those interfaces.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and
