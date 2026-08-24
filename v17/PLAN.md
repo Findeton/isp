@@ -670,11 +670,26 @@ lead synthesis and all direct dependencies by SHA-256, authenticates 21
 load-bearing primary-source PDFs at exact arXiv versions and byte digests,
 rebuilds the seven finite mathematical claims, and separates future
 mathematics, physical-source, and foundations/ontology review duties. The
-source audit also corrects one pre-freeze overstatement: the strongest cited
-SNSPD calculation contains a best-fit hotspot parameter and other informed
-inputs, so it is not a parameter-free complete detector law. The package is
-ready to request independent review but has no pin, appointed seats, review,
-adjudication, or promotion; no review starts without specific user authority.
+readiness narrative attempted one SNSPD source correction, but terminal review
+later fixed its exact ownership: Simon et al.'s best-fit `eta=0.2` belongs to
+the phenomenological comparator, not the ab-initio curve. The broader absence
+of a complete event-level detector law remains independently supported.
+
+The user-authorized immutable review pin now freezes the finalized sixteen-
+object bundle and all 21 exact source receipts at `befe415`. Five mutually
+blind signed reports are frozen at `5b2bec0`, `07aa7e0`, and `f93fecd`:
+mathematics, source/optics, reader/detector, their joint physical disposition,
+and foundations/ontology. Root adjudication at `1eebdde` independently
+rebuilds every load-bearing claim and confers `R1RR-L4 TERMINAL
+ACCEPT-WITH-SCOPE`. The finite mathematics survives. The four named
+fixed-route escapes are nonexhaustive; Gram closure is complete-record rather
+than a reusable-instrument theorem; the Gaussian lift is not generally an
+affine preparation family; the one-mode reader is bounded and conditional;
+stable division and no-refit transfer remain unexecuted; and one-record
+occurrence remains operational or postulated. The exact scientific award is a
+substantial fixed-background conditional source-to-record baseline plus a
+precisely located native-source gap. No native law, actuality, chronology,
+spacetime, gravity, unification, repair, or successor follows automatically.
 That single architecture is now selected author-side as CRP: a cut-local
 reflection-positive whole-boundary parent. CRP is chosen because it is the
 strongest audited mechanism with ordinary probability genuinely upstream of
@@ -1195,6 +1210,11 @@ Paper 04B root pin adjudication     TERMINAL REVISE BEFORE MODEL SELECTION
 Paper 04B parent model              UNSELECTED / BARRED
 Paper 05 operational chronology     CLOSED — NO ACCEPTED CLOCK-RELATIVE LAW
 Phases G/S/P                         CLOSED
+R1 immutable review pin             FROZEN — 16 OBJECTS / 21 SOURCE RECEIPTS
+R1 Seat M review                    FROZEN D3 — MATHEMATICS SURVIVES WITH SCOPE
+R1 Seat P reviews                   FROZEN D3 — SOURCE/READER/JOINT SCOPE
+R1 Seat O review                    FROZEN D3 — ONTOLOGY BOUNDARIES SURVIVE
+R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
 ```
 
 The frozen v3.1 pin encoded the attempted correction:

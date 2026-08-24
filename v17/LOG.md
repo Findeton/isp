@@ -2179,3 +2179,96 @@ and an autonomous completion/passive-readout distinction. Because the user
 authorized a parent attempt only if the exact pin passed, no model comparison
 or construction begins. No automatic repaired pin, second model, Paper 05,
 chronology, spacetime, gravity, hardware, or code programme opens.
+
+## 2026-08-24 — R1 INDEPENDENT-REVIEW PIN FROZEN (v17 LEDGER #95)
+
+The user-authorized immutable R1/native-source-gap review pin freezes at
+`v17/note-r1-native-source-gap-independent-review-pin.md`, commit `befe415`,
+ordinary SHA-256
+`617223214d37fb37a2e896b9ac6b019b0d7040b4dcef6c9410d52abfebb8c9e8`,
+normalized self-SHA-256
+`91c5451004d7f8a5988310084402629f305dabf73ccab0934743d209ec7c5bff`,
+and size 534 LF / 26,150 bytes.
+
+It binds the finalized sixteen-object synthesis/dependency bundle, 21 exact-
+version primary-source receipts, C1--C12, separate mathematics, source/optics,
+reader/detector and foundations/ontology duties, report signatures, D0--D4,
+and one terminal root adjudication. It accurately records that final bundle
+immutability begins at the review-readiness stage, not throughout the full
+preceding investigation. No repair or successor is authorized.
+
+## 2026-08-24 — R1 ONTOLOGY REVIEW FROZEN (v17 LEDGER #96)
+
+The blind foundations/ontology report freezes at
+`v17/review-r1-native-source-gap-ontology.md`, commit `5b2bec0`, ordinary
+SHA-256
+`b8c6fed2385305e0b95b2c236240f5e1dc41c96a548233790b625db1fb87ff1a`,
+normalized self-SHA-256
+`6a79be225bf28c8853c3258c69be8ba7505ed9295646af678c67de39d73fcf31`,
+and size 536 LF / 27,882 bytes. Recommendation is D3.
+
+The report independently confirms that stable-record factorization,
+Barandes configuration ontology, stochastic--quantum representation,
+predictive quantum nomology, positive records and one-run actuality remain
+distinct. One-record occurrence is operational or postulated, not derived
+from normalization, decoherence or amplification.
+
+## 2026-08-24 — R1 MATHEMATICS REVIEW FROZEN (v17 LEDGER #97)
+
+The blind mathematics report freezes at
+`v17/review-r1-native-source-gap-mathematics.md`, commit `07aa7e0`, ordinary
+SHA-256
+`8a8e89db518e98f6209bd600351bb30192355102ef0f3dbf7678d3bde4b8e27f`,
+normalized self-SHA-256
+`e44234b9bcd00862881a41b18f0fdfd7ac5b9dfe5d46890a58ca6329c7e0f21a`,
+and size 731 LF / 29,345 bytes. Recommendation is D3.
+
+All load-bearing finite mathematics survives. The report binds three scopes:
+the four named fixed-route escapes do not exhaust all premise failures; the
+Gram result embeds a supplied experiment's complete record predictions rather
+than a reusable instrument; and the Gaussian lift is not generally an affine
+physical preparation family.
+
+## 2026-08-24 — R1 PHYSICAL-SOURCE REVIEWS FROZEN (v17 LEDGER #98)
+
+Commit `f93fecd` freezes three separately signed blind report objects:
+
+1. source/optics, ordinary SHA-256
+   `0cad699ac4df33b4f0c0c51051d46eeafa8141ca98e1e0e9dff14ff23eb5c0a0`,
+   353 LF / 18,648 bytes;
+2. reader/detector, ordinary SHA-256
+   `1cbbd8bfbfbf08243c76ff3cc18a374455361a2e4948482d3bf245f442388ce2`,
+   428 LF / 23,717 bytes; and
+3. joint physical disposition, ordinary SHA-256
+   `ee9c8fe01f70e35bb0f21474789419df49eaf087c4f662dda0ca380e36937b94`,
+   350 LF / 19,713 bytes.
+
+All recommend D3. The optical stack earns genuine conditional source
+compression under supplied material and quantum premises. The bounded click
+member receives efficiency, dark and local-reader inputs; microscopic event
+kernels, recovery, stable-division certification and no-refit transfer remain
+absent. The review fixes an exact source ownership: Simon et al.'s best-fit
+`eta=0.2` belongs to the phenomenological comparator, not the ab-initio curve.
+
+## 2026-08-24 — R1 REVIEW TERMINALLY ADJUDICATED (v17 LEDGER #99)
+
+Root adjudication freezes at
+`v17/note-r1-native-source-gap-independent-review-adjudication.md`, commit
+`1eebdde`, ordinary SHA-256
+`53f38d9bdda430f41c857cb73d44f48c13be2f79f5432277fd217718a0f03668`,
+normalized self-SHA-256
+`1a6b3fc32de563a1b8d82c7f1fa5d7e7fdac4f0acb67b6be2d3a3ceb7655b786`,
+and size 646 LF / 26,718 bytes. Decision is
+`R1RR-L4 TERMINAL ACCEPT-WITH-SCOPE`.
+
+Independent root reconstruction accepts every load-bearing theorem at its
+binding scope, adopts all mathematical, physical-source and ontology
+ceilings, and gives no credit to the erroneous stronger inference that the
+phenomenological `eta` fit belonged to the ab-initio prediction. The exact
+scientific award is a substantial fixed-background conditional
+Maxwell--macroscopic-QED--quantum-instrument source-to-record baseline, one
+complete bounded positive record member and a precisely located native-source
+gap. It is not a native positive law, microscopic actuality mechanism,
+hardware-certified stable division, no-refit transfer, chronology, spacetime,
+gravity theory or unification. The review cycle halts; no repair or successor
+opens automatically.

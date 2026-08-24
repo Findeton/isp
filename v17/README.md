@@ -790,13 +790,25 @@ cleanly if nature does not support it.
   A subsequent review-readiness audit reaches `R1RR-L2` author-side. It
   authenticates the exact synthesis/dependency bytes, binds 21 primary-source
   PDFs by arXiv version, byte length, and SHA-256, and rebuilds author-side the
-  seven load-bearing finite claims. It corrects one source-scope sentence:
-  Simon et al.'s SNSPD comparison uses a best-fit hotspot parameter and other
-  informed inputs, so it is not an end-to-end no-target-fit reader law. Three
-  future seats are now sharply typed for mathematics, physical source/descent,
-  and foundations/Barandes/actuality. This is readiness to request a pin, not
-  an opened pin, review, adjudication, scientific result, or selected next
-  official physics unit.
+  seven load-bearing finite claims. Its initial SNSPD correction is superseded
+  on one exact ownership point: Simon et al.'s best-fit `eta=0.2` belongs to
+  the phenomenological diffusive-hotspot comparator, not the ab-initio curve.
+  The ab-initio calculation still consumes informed/approximate material
+  coordinates and a strong-coupling rescaling and still is not a complete
+  event-level reader law.
+  The subsequently authorized immutable pin freezes the final sixteen-object
+  bundle and 21 source receipts at `befe415`. Five signed blind reports freeze
+  at `5b2bec0`, `07aa7e0`, and `f93fecd`, with separate mathematics,
+  source/optics, reader/detector, joint physical-source, and
+  foundations/ontology evidence. Root adjudication at `1eebdde` reaches
+  `R1RR-L4 TERMINAL ACCEPT-WITH-SCOPE`. It confirms the finite mathematics and
+  the conditional fixed-background source compression while binding the
+  nonexhaustive route-escape list, complete-record-only Gram scope,
+  non-affine Gaussian-family ceiling, conditional bounded reader, unvalidated
+  stable division, absent no-refit transfer, and postulated/operational
+  one-record stance. The review validates the problem map and native-source
+  gap. It selects no ontology, actuality law, chronology, spacetime, gravity,
+  unification, repair, or successor.
   That architecture is now selected as CRP, a cut-local
   reflection-positive whole-boundary parent. It is not an official candidate
   and no source law has yet passed. Reflection positivity is selected as the
