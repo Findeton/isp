@@ -1166,6 +1166,19 @@ not semantically closed enough to govern acquisition. No corrected contract,
 exact apparatus packet, empirical evaluation pin, held-out result, chronology,
 spacetime, gravity, or ontology award exists.
 
+SPB is again the primary promotion-bearing track. A single clean v2
+author-side successor now addresses the whole terminal defect set. It
+separates immutable context from physical intervention, archives literal
+execution while scoring a common compliance/deviation projection, forbids
+that projection from hiding future-accessible physical traces, distinguishes
+exact presentation from matching and screening, indexes transfer by the duty
+actually transferred, gives the regional carrier a complete stochastic law,
+and treats stochastic feedback existence/uniqueness separately from an
+`S`-matrix seam solve. Candidate partial orders prevent “larger passes” from
+being misreported as “larger required.” Root's v2 countermodel audit passes
+for immutable contract review only; `SPB-L0`, apparatus acquisition, and every
+physical or ontological conclusion remain absent.
+
 ## Scientific order
 
 The programme order is now:
@@ -1221,6 +1234,14 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
 - `research-incubator/active/spb/v17_spb_root_pre_pin_readiness_and_mutant_audit.md`
   — author-side hidden-assumption and pin-readiness audit; not an independent
   review or scientific result.
+- `research-incubator/active/spb/v17_spb_v2_result_neutral_gate_contract.md`
+  — one clean corrected author-side contract; not yet pinned or independently
+  accepted.
+- `research-incubator/active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md`
+  — root reconstruction of the v1 defects plus new label, stochastic-cycle,
+  transfer, and minimality countermodels; review readiness only.
+- `research-incubator/active/spb/SPB_V2_SHA256.txt` — author-side integrity
+  receipt for the v2 candidate, audit, and terminal predecessor adjudication.
 - `note-spb-sufficient-physical-boundary-contract-review-pin.md` — immutable
   result-neutral first SPB contract-review pin.
 - `review-spb-contract-mathematics-statistics.md` — frozen Seat M report.

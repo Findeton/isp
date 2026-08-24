@@ -1272,6 +1272,20 @@ physically feasible and that their exact run packets remain absent;
 feasibility does not repair the semantic defects. No corrected contract opens
 automatically.
 
+The user has now returned SPB to the primary promotion-bearing track. One
+clean v2 author-side successor repairs the ten terminal duties together and
+adds root countercontrols for treatment-label leakage, invalid intervention
+typing, duty-switching transfer, stochastic feedback
+nonexistence/nonuniqueness, and false minimality. Its common law separates
+immutable context, assigned physical intervention, full archival execution,
+and a comparison-invariant scored execution projection while requiring every
+future-accessible physical trace to remain in the boundary/nuisance record.
+Regional composition now requires a normalized complete stochastic law, not
+an `S` matrix, and reports both deterministic seam and stochastic
+compatibility status. The v2 root readiness audit passes for immutable
+contract review only. No `SPB-L0`, exact physical packet, acquisition,
+boundary result, or automatic v3 follows.
+
 ### F7 — amplitudes
 
 Complex amplitudes are neither banned nor presumed fundamental. If the
@@ -1325,7 +1339,10 @@ SPB root mutant/readiness audit     PASS-WITH-SCOPE AUTHOR-SIDE
 SPB contract-review pin             FROZEN AT 014c820
 SPB independent reports             FROZEN / M:D2 P:D3 O:D2
 SPB root adjudication               TERMINAL D2 / SPB-L0 NOT AWARDED
-SPB corrected contract              NOT OPENED / FRESH AUTHORITY REQUIRED
+SPB v2 corrected contract           COMPLETE AUTHOR-SIDE / NOT PINNED
+SPB v2 root countermodel audit      PASS FOR CONTRACT REVIEW ONLY
+SPB v2 immutable review pin         NOT YET CREATED
+SPB v2 independent review           NOT BEGUN
 SPB exact physical run packet       ABSENT
 SPB empirical evaluation pin        INELIGIBLE UNTIL PHYSICAL PACKET CLOSES
 empirical quantum adequacy contract RECORDED

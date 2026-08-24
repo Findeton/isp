@@ -2903,3 +2903,51 @@ ladder defects under one new result-neutral pin. No successor, physical pin,
 pilot, apparatus operation, acquisition, simulation-as-result, boundary,
 ontology, chronology, spacetime, gravity, or unified theory opens
 automatically.
+
+## 2026-08-24 — ONE CLEAN SPB V2 AUTHOR-SIDE SUCCESSOR READY FOR CONTRACT PIN (v17 LEDGER #120)
+
+The user returned the Sufficient Physical Boundary Gate to the primary
+promotion-bearing track. Under the standing v17 authority to repair justified
+semantic defects, root prepared one clean v2 contract addressing the complete
+interacting `SPB-D2` duty set. This is not an automatic repair chain: no v3 is
+authorized if v2 fails independent review.
+
+The first v2 draft itself failed root's pre-pin attack because it placed the
+literal executed history inside the scored outcome, recreating the v1
+total-variation-equals-one defect. Root repaired this before any immutable pin
+by separating immutable context `C=(j,s,rho,c)`, physical intervention
+`A=(h,i,f,z)`, the full archival execution `E`, and a frozen
+comparison-invariant projection `E_star`. The projection may remove treatment
+syntax but cannot hide a future-accessible controller log, seed carrier, heat
+load, pulse residue, or physical trace; those remain in the boundary/nuisance
+record. `do` is now applied only to physically assignable coordinates.
+
+The successor also separates exact presentation, validation matching, and
+held-out screening; binds pass/fail/underdetermined inference; separates
+scientific margin from reader/calibration uncertainty; replaces scalar
+transfer by `(X_D,X_S,X_C,X_I)`; types the regional port-collar carrier and
+complete stochastic kernel separately from `S`; distinguishes deterministic
+seam existence/internal uniqueness/exterior uniqueness/conditioning from
+stochastic joint-law existence and uniqueness; separates passive port
+presentation from active rewiring and adapters; freezes candidate partial
+orders so an unknown predecessor cannot support a necessity claim; and uses
+one cumulative `SPB-L0--L6` ladder.
+
+The root countermodel audit explicitly rebuilds: treatment-label leakage;
+interval-straddling ignorance; nontransitive matching; equal `S` with unequal
+noise/failure laws; cyclic local kernels with no compatible joint law; cyclic
+kernels with multiple joint laws; singular internal seams with unique exterior
+response; pairwise-good/direct-triple-bad laws; primary composition versus
+duty-indexed transfer; and larger-pass/predecessor-underdetermined false
+minimality. Its author-side disposition is readiness for an immutable v2
+contract-review pin only.
+
+The canonical SPB semantic front now points to the v2 candidate while all v1
+bytes and terminal findings remain immutable historical evidence. No
+`SPB-L0`, physical run packet, acquisition, boundary result, ontology,
+chronology, spacetime, gravity, or unification result is awarded. The next
+legitimate stage is an exact-byte v2 contract pin followed by mutually blind
+mathematics/statistics, temporal-plus-regional apparatus, and
+foundations/ontology review. Physical acquisition remains closed unless that
+review accepts the contract and a separately frozen exact apparatus/source
+packet exists.

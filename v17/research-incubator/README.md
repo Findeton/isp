@@ -87,6 +87,25 @@ The first immutable review cycle is terminal historical evidence. No accepted
 contract, corrected successor, held-out evaluation, scientific boundary
 result, ontology, chronology, spacetime, or gravity result exists.
 
+The user subsequently returned SPB to the primary promotion-bearing track.
+One clean v2 author-side successor now repairs the whole interacting v1 defect
+set: immutable context versus physical assignment; a common scored execution
+projection that cannot copy treatment labels or hide future-accessible
+records; exact presentation versus statistical matching versus screening;
+three-way inference; duty-indexed transfer; a physical regional carrier with
+complete stochastic kernels; deterministic and stochastic seam
+well-posedness; candidate partial orders; and one cumulative ladder. Root's
+countermodel audit found and repaired five additional pre-pin defects,
+including cyclic local kernels that define no joint law or many joint laws.
+The v2 package is ready for an immutable contract-review pin only. It earns no
+`SPB-L0`, physical packet, boundary result, or downstream ontology claim.
+
+Active v2 author-side package:
+
+- `active/spb/v17_spb_v2_result_neutral_gate_contract.md`
+- `active/spb/v17_spb_v2_root_readiness_and_countermodel_audit.md`
+- `active/spb/SPB_V2_SHA256.txt`
+
 ### Q-Cut — positive sufficient-cut information discriminator
 
 This branch asks whether an ordinary-positive screening variable for a
