@@ -944,6 +944,15 @@ cleanly if nature does not support it.
   repository bytes are ready for user-controlled pin creation, but reviewers
   may not begin until a new pin rehashes the seven objects and retrieves and
   hashes all twenty-six primary sources plus load-bearing supplements.
+  The authorized pin-creation attempt then failed closed without reviewer
+  dispatch. The seven objects and three dependencies remained byte-exact, and
+  fifteen registered primary PDFs were retrieved, but eleven primary objects
+  and multiple load-bearing supplement receipts did not close. Seven Nature
+  PDF endpoints returned subscription-preview HTML, three Science objects
+  lacked frozen local version-of-record bytes, two load-bearing APS
+  supplements were subscription-gated, and the frozen Moorthy accepted-object
+  locator does not match the live APSOS route. No substitution or silent
+  locator repair was made; no immutable B0-T pin or B0 result exists.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,

@@ -2654,3 +2654,30 @@ The maximum possible award is B0-L2. No pin or review is authorized here; no
 repair, B0-E apparatus, B0-L3+, `P-B0-1` discharge, candidate, entrant,
 comparison, gravity verdict, ontology, chronology, spacetime, or automatic
 successor opens.
+
+## 2026-08-24 — B0-T REVIEW PIN CREATION FAILED CLOSED AT SOURCE BYTES (v17 LEDGER #114)
+
+The user authorized one immutable result-neutral B0-T review-pin creation and,
+only after a valid pin, one blind three-axis review cycle. The seven proposed
+review objects and three governing dependencies were rehashed and matched the
+authorized snapshot exactly. Source retrieval then triggered the preregistered
+fail-closed rule before any reviewer dispatch.
+
+Fifteen of the twenty-six registered primary PDFs were retrieved exactly.
+Eleven did not close at byte level: seven Nature publisher PDF endpoints
+returned subscription-preview HTML; three Science versions of record lacked
+hash-frozen local PDF bytes; and the frozen Moorthy accepted-manuscript locator
+does not match the live APSOS route or yield the exact accepted bytes.
+Load-bearing supplement closure also fails: the Kamba and Seta supplements are
+publisher-marked subscription-required, while the Overstreet supplement was
+viewer-visible but not frozen as exact local bytes. No abstract, repository
+copy, author manuscript, later version, or browser rendering was substituted.
+
+The outcome is procedural invalidity, not scientific acceptance or rejection.
+No immutable B0-T pin exists, no review task was sent, no report or root
+adjudication exists, and no B0 level is awarded. C1--C12 and the B0-L2 ceiling
+remain proposed author-side scope only. Any source-contract change requires a
+newly authorized differential audit; exact source provision would require a
+fresh total rehash. No repair, B0-E apparatus, `P-B0-1` discharge, candidate,
+entrant, comparison, ontology selection, gravity verdict, implementation,
+clock, spacetime, or automatic successor opens.

@@ -997,6 +997,15 @@ review may not begin: an authorized pin must rehash all seven objects and
 retrieve/hash twenty-six exact primary sources and every load-bearing
 supplement first.
 
+The authorized pin-creation attempt subsequently failed closed at that exact
+source boundary. All seven review objects and three governing dependencies
+still matched, and fifteen of twenty-six registered primary PDFs were
+retrieved exactly. Eleven primary objects did not close at byte level;
+multiple load-bearing supplements were unavailable or not hash-frozen; and
+the frozen Moorthy accepted-manuscript locator does not match the live APSOS
+route. No substitution or locator repair was made. Consequently no immutable
+B0-T pin exists, no review seat was dispatched, and C1--C12 remain unreviewed.
+
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
 primary-source versions are bound, and the general CP-CQ theorem, objective
@@ -1323,9 +1332,9 @@ MG0 result-neutral benchmark pin    FROZEN
 MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
 MG0 B0-T author-side bundle         SNAPSHOT-AUDITED / PIN-CREATION-ELIGIBLE
-MG0 B0-T immutable review pin       NOT AUTHORIZED / SOURCE BYTES OWED
+MG0 B0-T immutable review pin       PIN CREATION FAILED-CLOSED / NO REVIEW DISPATCHED
 MG0 B0 platform selection           NO-SELECTION AUTHOR-SIDE
-MG0 B0 source lineage               REGISTERED AUTHOR-SIDE / BYTE RECEIPTS OWED
+MG0 B0 source lineage               15/26 PRIMARY PDF RECEIPTS / TOTAL CLOSURE FAILED
 MG0 B0 complete-record information  EXACT AUTHOR-SIDE NECESSARY GATE / NO-SELECTION
 MG0 B0-E / B0-L5                    ABSENT / CLOSED
 MG0 candidate roster/comparison     EMPTY / CLOSED
