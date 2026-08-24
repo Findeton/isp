@@ -740,6 +740,22 @@ ceiling is `B1R-L1`: the family is high-information, no single model is
 freeze-ready, and no B1 pin, construction, review, or successor should be
 requested.
 
+The relativistic-collapse family pre-authorization audit now follows that
+failed B1 readiness search without merging distinct models. It separates
+Bedingham's pointer-field and Poisson-hit architectures, the conditional
+past-light-cone matter-density ontology, Pearle's withdrawn standard-field
+kernel, the explicitly energy-divergent scalar model, the outcome-first
+interpretation, and the 2025 quantized-time finite-particle construction. The
+pointer-field architecture is the strongest audited same-object control: it
+has formal Lorentz-covariant stochastic QFT evolution, norm-weighted physical
+probabilities, finite causal smearing, and candidate beables. Its smearing and
+referent are not uniquely frozen; global well-posed interacting dynamics,
+physical readers, model-specific transfer, exact conservation, and reciprocal
+gravity are absent. Myrvold's theorem is retained at its exact Markovian,
+stable-vacuum, standard-QFT scope and does not close genuinely non-Markovian or
+indivisible whole-process routes. The present ceiling is `RCF-L1`; a pointer
+member is eligible only for a separately authorized bounded architecture pin.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -826,6 +842,7 @@ Active audit:
 - v17_ugen_u0_t3_reference_bearing_relational_theorems.md
 - v17_ugen_u0_t3_indivisibility_placement_source_audit.md
 - v17_ugen_u0_t3_history_markovization_and_physical_closure_theorems.md
+- v17_ugen_relativistic_collapse_family_pre_authorization_readiness_audit.md
 - v17_ugen_fundamental_nomology_rival_register.md
 - v17_ugen_bell_current_actuality_comparator.md
 - v17_ugen_bell_current_physical_reality_audit.md
@@ -1206,7 +1223,11 @@ Q-CUT FRONTIER PRIORITY:       OPTIONAL SIDE THEOREM / NOT UNIFICATION GATE
 POST-A1 MATTER-LAW MATRIX:     MLT-L2 / NO COMPLETE LAW FOUND
 B1 FAMILY READINESS:           HIGH INFORMATION / FOUR OBJECTS SEPARATED
 B1 SINGLE-MODEL CORE:          NOT REACHED / NO FREEZE-READY MEMBER
-POSSIBLE NEXT CONTROL:         NONE FREEZE-READY / B1 PIN NOT REQUESTED
+RCF FAMILY READINESS:          HIGH INFORMATION / DISTINCT OBJECTS SEPARATED
+RCF POINTER ARCHITECTURE:      POSSIBLE L2 PIN / NOT REALITY-GRADE MATTER LAW
+RCF STANDARD-FIELD ROUTE:      WITHDRAWN / INCOMPATIBLE KERNEL
+RCF MARKOV VACUUM BOUNDARY:    MYRVOLD THEOREM / INDIVISIBLE ROUTE NOT CLOSED
+POSSIBLE NEXT CONTROL:         POINTER ARCHITECTURE ONLY IF EXPLICITLY AUTHORIZED
 NEXT AUTHOR-SIDE CONTROL:      NONE AUTOMATIC
 A1 OFFICIAL STATUS:            NOT OPEN / NO PIN OR REVIEW
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE

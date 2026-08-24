@@ -854,6 +854,22 @@ cleanly if nature does not support it.
   variable-number path and a same-model global existence theorem. B1 remains a
   high-information family but has no freeze-ready single model; no pin should
   presently be requested.
+  A further source-bounded audit now separates the relativistic-collapse
+  family into distinct pointer-field, Poisson-hit, matter-density,
+  standard-field, local-scalar, outcome-ontology, and quantized-time objects.
+  Pearle's apparent standard-field finite-energy escape was withdrawn for
+  incompatible kernel requirements, while the explicit local scalar model has
+  fatal infinite energy and particle production. Bedingham's 2010 pointer
+  architecture is the strongest audited member, with formal covariant
+  stochastic QFT evolution and candidate beables, but its smearing and
+  referent are not uniquely frozen, global well-posed interacting dynamics and
+  readers are unproved, empirical transfer is absent, and its strongest total-
+  energy statement is approximate. Myrvold's theorem explains why a
+  Markovian, stable-vacuum relativistic collapse law using only standard QFT
+  degrees cannot be nontrivially stochastic; it leaves nonstandard and
+  genuinely non-Markovian/indivisible routes open. The family reaches RCF-L1
+  author-side only. A pointer member could be considered later as an explicitly
+  authorized architecture control, not as a completed matter law.
   Repository inclusion does not promote any draft, authorize a Paper 04B
   successor, or open Paper 05.
 - No official v17 scientific evaluator, bound empirical artifact, or

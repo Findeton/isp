@@ -736,6 +736,21 @@ variable-number path and a same-model global existence theorem. The result is
 B1 authority, pin request, model selection, review, repair, successor, or
 scientific result.
 
+The next source-bounded audit is recorded in
+`active/ugen/v17_ugen_relativistic_collapse_family_pre_authorization_readiness_audit.md`.
+It keeps the pointer-field QFT architecture, Poisson-hit outline,
+past-light-cone matter-density map, withdrawn standard-field proposal,
+energy-divergent scalar model, outcome-first ontology, and quantized-time
+finite-particle construction distinct. The pointer-field architecture is the
+highest-information same-object member, but it leaves its exact smearing and
+actual referent unselected, lacks a global well-posed interacting matter
+theorem and physical readers, and has no model-specific empirical transfer or
+reciprocal gravity. The audit also records the exact Myrvold Markovian
+stable-vacuum theorem boundary without applying it to indivisible or
+non-Markovian whole-process laws. The author-side status is `RCF-L1`; no
+official pin, review cycle, model selection, successor, ontology result, or
+gravity result follows.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md

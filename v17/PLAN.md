@@ -742,6 +742,23 @@ route is therefore narrowed to `B1-FAMILY-HIGH-INFORMATION /
 B1-SINGLE-MODEL-NOT-FREEZE-READY`: no B1 pin should presently be requested,
 and no official unit, construction, repair, or successor opens.
 
+The subsequent relativistic-collapse family audit now separates the 2010
+pointer-field QFT architecture, its 2011 Poisson-hit outline, the 2013
+past-light-cone matter-density prescription, Pearle's withdrawn 2014
+standard-field kernel, the explicitly unviable 2019 scalar-field model, the
+2016 outcome-first ontology, and the 2025 quantized-time finite-particle model.
+The strongest same-object architecture remains Bedingham's pointer field: it
+combines formal Lorentz-covariant stochastic QFT evolution, norm-weighted
+ordinary probabilities, causal smearing, and candidate local beables. It does
+not freeze one unique smearing/referent, prove global well-posed interacting
+dynamics, construct realistic readers or empirical transfer, or close exact
+conservation and gravity. Myrvold's theorem supplies the exact Markovian
+stable-vacuum boundary without applying to genuinely non-Markovian or
+indivisible whole-process laws. The author-side ceiling is `RCF-L1`; one
+source-exhibited pointer member is eligible only for a separately authorized
+bounded architecture pin, not a reality-grade matter-law freeze. No pin,
+review, ontology selection, gravity model, or successor opens automatically.
+
 ## 3. Phase T — clocks, order, and generally covariant process structure
 
 ### Paper 04 — internal clocks and parametrized process law
