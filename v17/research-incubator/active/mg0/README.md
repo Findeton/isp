@@ -1,9 +1,9 @@
 # ISP v17 — MG0 matter–geometry benchmark and author-side preflight
 
-**Status:** RESULT-NEUTRAL BENCHMARK PIN FROZEN / NOT REVIEWED / NO CANDIDATES
+**Status:** TERMINAL BENCHMARK-DESIGN ACCEPT-WITH-SCOPE / P-B0-1 / NO CANDIDATES
 **Date:** 2026-08-24
 **Scientific result awarded:** none
-**Authority created:** immutable benchmark bytes only
+**Authority created:** benchmark-design use under binding scope only
 
 ---
 
@@ -39,6 +39,14 @@ not turn either source document into a pin or award a scientific result.
 - `v17/note-mg0-common-law-reciprocal-benchmark-pin.md` — repository-root
   immutable pin binding the two benchmark objects, terminal R1RR-L4 baseline,
   and two-complete-distinct-law comparison gate;
+- `v17/note-mg0-common-law-reciprocal-benchmark-review-protocol.md` — frozen
+  three-axis independent-review protocol;
+- `v17/review-mg0-common-law-reciprocal-benchmark-mathematics.md`,
+  `v17/review-mg0-common-law-reciprocal-benchmark-physical.md`, and
+  `v17/review-mg0-common-law-reciprocal-benchmark-ontology.md` — verbatim
+  independent reports;
+- `v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md` —
+  terminal `MG0P-D3` / `P-B0-1` root adjudication;
 - `v17_mg0_common_matter_geometry_contract.md` — form-neutral typed contract;
 - `v17_mg0_cpcq_kernel_selection_and_joint_closure_feasibility_gate.md` —
   exact finite-band fixed-response CP-kernel set, saturation/locality boundary, and
@@ -54,8 +62,8 @@ not turn either source document into a pin or award a scientific result.
   — thirteen-source classification of the completely-positive
   classical–quantum gravity family against the MG0 gates, with no model
   selected;
-- `v17_mg0_future_review_contract.md` — possible future review design, with no
-  authorization or frozen bytes;
+- `v17_mg0_future_review_contract.md` — superseded historical author-side
+  review-design precursor; the root protocol and adjudication govern;
 - `ACTIVE_SHA256.txt` — active-byte manifest.
 
 ## Routing
@@ -111,17 +119,21 @@ bath/reference/boundary carrier is exposed. The ceiling is `BCG-L2`; this does
 not decide covariant non-Markovian CP-CQ gravity, indivisible whole-process
 laws, or any ontology.
 
-The result-neutral MG0 benchmark pin now freezes the common contract and
-reciprocal benchmark at commit `f844666`. It binds terminal R1RR-L4 as the
-fixed-background baseline and bars comparison unless independent review later
-certifies at least two genuinely distinct, fully specified laws that generate
-the same complete source--geometry--probe experiment from one frozen public
-input packet. The laws need not disagree; agreement is a nonselection result.
-No review, candidate freeze, construction, numerical comparison, ontology
-selection, or gravity verdict is authorized by the pin.
+The result-neutral pin freezes the common contract and reciprocal benchmark at
+`f844666`. Three blind reviews and independent root reconstruction now close
+the benchmark design `MG0P-D3 TERMINAL ACCEPT-WITH-SCOPE` at `908be75`. The
+binding physical decision is `P-B0-1`: R1RR-L4 remains the fixed-background
+quantum recovery target, but a separately completed, candidate-neutral massive
+mechanical source-to-record baseline is mandatory before entrant admission.
+The design also binds an intersected complete-and-distinct pair gate,
+context-indexed registered-record comparison, one native reciprocal parent per
+entrant, and exact agreement as nonselection. No mechanical baseline, public
+numerical packet, candidate, admission, comparison, ontology selection, or
+gravity verdict is authorized or obtained.
 
 ## Maximum claim
 
-This packet supplies a result-neutral admissibility contract and source-scoped
-benchmark design. It supplies no common matter–geometry law, no gravity
-ontology, no QFT, clock, spacetime, GR, or empirical result.
+This packet now supplies an independently reviewed result-neutral admissibility
+contract and source-scoped benchmark design, accepted only under the terminal
+bindings above. It supplies no common matter–geometry law, massive-mechanical
+baseline, gravity ontology, QFT, clock, spacetime, GR, or empirical result.

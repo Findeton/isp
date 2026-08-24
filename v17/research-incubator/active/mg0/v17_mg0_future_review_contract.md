@@ -1,13 +1,19 @@
 # ISP v17 — MG0 future review contract
 
-**Status:** FUTURE-REVIEW CONTRACT / NOT AUTHORIZED / NOT A PIN
-**Date:** 2026-08-23
+**Status:** SUPERSEDED HISTORICAL AUTHOR-SIDE REVIEW DESIGN / NOT GOVERNING
+**Date:** 2026-08-24
 **Scientific result awarded:** none
 **Authority created:** none
 
 ---
 
 ## 0. Scope firewall
+
+This author-side precursor is superseded by the immutable protocol at
+`v17/note-mg0-common-law-reciprocal-benchmark-review-protocol.md` and the
+terminal adjudication at
+`v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md`. It is
+retained for provenance and supplies no live review duties or authority.
 
 This document prepares a possible independent review of the author-side MG0
 preflight. It does not authorize review, freeze bytes, open Paper 06 or 07,

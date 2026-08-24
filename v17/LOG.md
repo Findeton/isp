@@ -2301,3 +2301,74 @@ calibrations, nuisance controls, held-out settings, tolerances, and record
 interface to be frozen in one public packet before any later comparison. It
 opens no review, candidate construction, entrant completion, numerical
 evaluation, comparison, ontology selection, gravity verdict, or successor.
+
+## 2026-08-24 — MG0 THREE-AXIS REVIEW PROTOCOL FROZEN (v17 LEDGER #101)
+
+The user-authorized result-neutral review protocol freezes at
+`v17/note-mg0-common-law-reciprocal-benchmark-review-protocol.md`, commit
+`c54b54f`, ordinary SHA-256
+`11ee64b5da11dbad3833cb43097b8130a91f95c27d494ce6a58b197ce3e00217`,
+normalized self-SHA-256
+`7f8aad7ac09ecdbb90f7c17897a2d66d78c938f3c78ea34ea89c215496ed0e0b`,
+and size 439 LF / 16,950 bytes.
+
+It binds mutually blind mathematics, physical, and foundations/ontology
+reviews of the exact two-object benchmark plus governing pin and consumed R1
+baseline. The physical seat must decide `P-B0-0`/`P-B0-1`/`P-B0-2` on the
+massive source--probe apparatus. No seat may construct a baseline, candidate,
+comparison, or ontology.
+
+## 2026-08-24 — MG0 THREE BLIND REPORTS FROZEN (v17 LEDGER #102)
+
+Three verbatim independent reports freeze:
+
+1. physical at commit `1159086`, ordinary SHA-256
+   `57da9845e65c0f0408dfdd4aaed6b3b4040bd18366461ea2d8868087790f7333`,
+   normalized self-SHA-256
+   `ee6fa1ce6463440c01d11e1c59bc1e406b7a96f1e807e45b6409529146035135`,
+   520 LF / 28,265 bytes;
+2. foundations/ontology at commit `25844cd`, ordinary SHA-256
+   `9a690861c43ebfdcc1e38d61f1a00da65c017f0a6d1e575c3de30b43e387c003`,
+   normalized self-SHA-256
+   `5c478aec0962a5d48487fb8b884b1e602a3b86692c9ce1134c0482416de2c379`,
+   600 LF / 31,289 bytes; and
+3. mathematics at commit `0276312`, ordinary SHA-256
+   `2c933cb204209c960ef6b56e7aeb4fce6adf23ec39f59b1d90dcb6610099fbed`,
+   normalized self-SHA-256
+   `0bbb0d634b196440b0445f3bfa5c54b542b41b757146982a3ddddc5fbc2182e5`,
+   860 LF / 39,243 bytes.
+
+All recommend `MG0P-D3`. Independently, all find that R1RR-L4 cannot close the
+massive mechanical source--apparatus--probe chain and that the frozen Stage-A,
+apparatus, public-packet, nuisance, record, failure, and uncertainty clauses
+already type a mandatory pre-entrant candidate-neutral baseline. The physical
+seat returns `P-B0-1`. These are frozen findings, not yet a vote-derived
+decision.
+
+## 2026-08-24 — MG0 BENCHMARK REVIEW TERMINALLY ADJUDICATED (v17 LEDGER #103)
+
+Root adjudication freezes at
+`v17/note-mg0-common-law-reciprocal-benchmark-review-adjudication.md`, commit
+`908be75`, ordinary SHA-256
+`94ad64a252280f9d299df7fa8f8b082d048c95964483842e6656a21e6fac3f58`,
+normalized self-SHA-256
+`0f5cecc7fc4e0db6a66227a12488bb4fafd5674c5e1f89c79d4a3d49094fa909`,
+and size 688 LF / 27,662 bytes. The terminal decision is
+`MG0P-D3 ACCEPT-WITH-SCOPE`; the massive-apparatus disposition is `P-B0-1`.
+
+Independent reconstruction accepts the contextual registered-record
+interface, one native reciprocal parent per entrant, complete-and-distinct
+pair gate, conservative finite-roster distinctness test, and exact agreement
+as nonselection. It binds the raw count formula to the same complete-distinct
+pair, separates roster outcomes from per-candidate shorthand, and resolves the
+construction-order wording through the governing pin: separately authorized
+candidate development may precede entrant admission, but this review grants no
+such authority. It also binds the coherent-versus-mixture control to the full
+mechanical and source-coordinate ledger rather than one-body diagonal density
+alone.
+
+R1 remains the fixed-background quantum recovery target. A separately frozen,
+candidate-neutral massive-mechanical source-to-record baseline and one actual
+public packet are mandatory before entrant admission, but neither is built or
+authorized. The admitted candidate count remains zero; comparison, ontology
+selection, gravity verdict, spacetime, and unification remain closed.

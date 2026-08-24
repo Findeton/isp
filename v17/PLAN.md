@@ -883,21 +883,23 @@ output.
 
 ## 4. Phase G0 — matter and geometry in one theory
 
-**Current preparation boundary.** One immutable result-neutral MG0 pin now
-freezes the form-neutral common-law contract and reciprocal weak-field selector
-benchmark at commit `f844666`.
+**Current preparation boundary.** One immutable result-neutral MG0 pin freezes
+the form-neutral common-law contract and reciprocal weak-field selector
+benchmark at `f844666`; its three-axis review closes at `908be75` with
+`MG0P-D3 TERMINAL ACCEPT-WITH-SCOPE` and `P-B0-1`.
 It treats matter and gravity as operational projections rather than assumed
 microscopic factors; assumes no metric, continuum, dimension, foliation,
 Einstein equation, or classical/quantum gravity verdict; and keeps
 ordinary-positive, decoherence-functional, and quantum-plus-actualization
-nomologies live. Terminal R1RR-L4 is the fixed-background baseline. A
-comparison is barred unless later independent review certifies at least two
-genuinely distinct, fully specified laws generating the same complete
-source--geometry--probe experiment from one frozen public input packet. No
-benchmark review, candidate construction, comparison, ontology selection,
-Paper 06, Paper 07, or gravity result is authorized. Q-Cut remains separately
-authorizable as a scoped information theorem, but no next official physics
-unit is selected.
+nomologies live. Terminal R1RR-L4 is the fixed-background quantum recovery
+target, but a candidate-neutral massive-mechanical source-to-record baseline
+is mandatory before entrant admission. A comparison remains barred unless a
+later review certifies at least two laws that are each complete and physically
+distinct from one another on the same complete experiment and frozen public
+packet. No mechanical baseline, candidate construction, admission, comparison,
+ontology selection, Paper 06, Paper 07, or gravity result is authorized.
+Q-Cut remains separately authorizable as a scoped information theorem, but no
+next official physics unit is selected.
 
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
@@ -1221,7 +1223,10 @@ R1 Seat M review                    FROZEN D3 — MATHEMATICS SURVIVES WITH SCOP
 R1 Seat P reviews                   FROZEN D3 — SOURCE/READER/JOINT SCOPE
 R1 Seat O review                    FROZEN D3 — ONTOLOGY BOUNDARIES SURVIVE
 R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
-MG0 result-neutral benchmark pin    FROZEN — REVIEW/CANDIDATES NOT AUTHORIZED
+MG0 result-neutral benchmark pin    FROZEN
+MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
+MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
+MG0 candidate roster/comparison     EMPTY / CLOSED
 ```
 
 The frozen v3.1 pin encoded the attempted correction:
