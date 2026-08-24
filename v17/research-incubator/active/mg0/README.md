@@ -62,6 +62,14 @@ not turn either source document into a pin or award a scientific result.
   — thirteen-source classification of the completely-positive
   classical–quantum gravity family against the MG0 gates, with no model
   selected;
+- `v17_mg0_b0_matter_pre_authorization_readiness_audit.md` — author-side
+  derivation of the two-layer `B0-T`/`B0-E` boundary, candidate-neutral
+  massive-apparatus packet, matched-algebra and record requirements,
+  platform reality audit, held-outs, hostile controls, and outcome ladder;
+- `v17_mg0_b0_matter_exact_synthetic_witness.md` — exact finite
+  common-seed interface witness for preparation, coherence, temporary
+  marking, retained records, complete noisy readers, correlated nuisance, and
+  controller-tag nonidentifiability; it is not an apparatus model;
 - `v17_mg0_future_review_contract.md` — superseded historical author-side
   review-design precursor; the root protocol and adjudication govern;
 - `ACTIVE_SHA256.txt` — active-byte manifest.
@@ -131,9 +139,22 @@ entrant, and exact agreement as nonselection. No mechanical baseline, public
 numerical packet, candidate, admission, comparison, ontology selection, or
 gravity verdict is authorized or obtained.
 
+The terminal `P-B0-1` gap has now been developed author-side into an exact
+pre-authorization design. It separates `B0-T`, the conventional
+fixed-background mathematical control, from `B0-E`, one public
+single-platform empirical realization. The accompanying finite witness
+generates its preparations from a common seed, retains its dephasing and
+controller tags, supplies normalized complete noisy records, and realizes
+exact coherence, eraser, retained-record, and correlated-nuisance controls.
+Its controller tag has no calibrated energy or momentum meaning, and the
+witness contains no massive material, apparatus, empirical packet, no-refit
+transfer, or reciprocal gravity. These files are not a pin or review result;
+they do not discharge `P-B0-1` or authorize B0 construction.
+
 ## Maximum claim
 
 This packet now supplies an independently reviewed result-neutral admissibility
-contract and source-scoped benchmark design, accepted only under the terminal
-bindings above. It supplies no common matter–geometry law, massive-mechanical
-baseline, gravity ontology, QFT, clock, spacetime, GR, or empirical result.
+contract and source-scoped benchmark design, plus explicitly unreviewed
+author-side preparation for the missing B0 gate. It supplies no completed
+massive-mechanical baseline, common matter–geometry law, gravity ontology,
+QFT, clock, spacetime, GR, or empirical result.

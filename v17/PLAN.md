@@ -901,6 +901,17 @@ ontology selection, Paper 06, Paper 07, or gravity result is authorized.
 Q-Cut remains separately authorizable as a scoped information theorem, but no
 next official physics unit is selected.
 
+An author-side B0 readiness audit now resolves the construction target without
+opening it. `B0-T` is the conventional fixed-background mathematical control;
+`B0-E` is one public single-platform massive-apparatus realization. The exact
+finite witness generates coherent and mixed preparations from a common seed,
+types reversible marking versus retained records, keeps dephasing and
+controller tags in the complete law, and supplies exact noisy-reader and
+correlated-nuisance countermodels. It is an interface test only: it has no
+calibrated energy/momentum ledger, massive material, apparatus data, no-refit
+transfer, or reciprocal gravity. No official B0 pin or review exists,
+`P-B0-1` remains open, and the candidate roster remains empty.
+
 The first detailed family comparison against that contract is now complete
 author-side for completely-positive classical–quantum gravity. Thirteen exact
 primary-source versions are bound, and the general CP-CQ theorem, objective
@@ -1226,6 +1237,7 @@ R1 root adjudication                TERMINAL ACCEPT-WITH-SCOPE — R1RR-L4
 MG0 result-neutral benchmark pin    FROZEN
 MG0 three-axis design review        TERMINAL ACCEPT-WITH-SCOPE — P-B0-1
 MG0 massive-mechanical baseline     MANDATORY PRE-ENTRANT / NOT AUTHORIZED
+MG0 B0 author-side preparation      READY FOR USER-CONTROLLED PIN / UNREVIEWED
 MG0 candidate roster/comparison     EMPTY / CLOSED
 ```
 

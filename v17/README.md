@@ -866,6 +866,15 @@ cleanly if nature does not support it.
   dimension, foliation, Einstein equation, or classical/quantum gravity
   verdict; constructs no model; and opens no baseline, candidate, official
   Paper 06/07, or gravity result.
+  Author-side preparation now sharpens the missing baseline into two objects:
+  `B0-T`, a conventional fixed-background mathematical source-to-record
+  control, and `B0-E`, one public single-platform empirical realization. An
+  exact finite common-seed witness realizes the preparation, matched-algebra,
+  temporary-marker, retained-record, complete-reader, correlated-nuisance,
+  and controller-tag interfaces. It deliberately lacks calibrated work and
+  momentum, massive apparatus physics, empirical bytes, no-refit transfer,
+  and reciprocity. This preparation is neither a pin nor a reviewed result;
+  `P-B0-1` remains open and entrant admission remains closed.
   A thirteen-source CP-CQ gravity readiness audit now tests the most developed
   audited classical-gravity/quantum-matter family without treating it as one
   model. It separates the general Markovian theorem, objective unravellings,

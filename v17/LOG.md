@@ -2372,3 +2372,29 @@ candidate-neutral massive-mechanical source-to-record baseline and one actual
 public packet are mandatory before entrant admission, but neither is built or
 authorized. The admitted candidate count remains zero; comparison, ontology
 selection, gravity verdict, spacetime, and unification remain closed.
+
+## 2026-08-24 — B0-MATTER AUTHOR-SIDE READINESS PREPARED (v17 LEDGER #104)
+
+Two unpinned, unreviewed research-incubator objects now make the terminal
+`P-B0-1` requirement constructible without opening a gravity candidate. The
+readiness audit separates `B0-T`, a conventional fixed-background
+mathematical source-to-record control, from `B0-E`, one public
+single-platform empirical realization. It freezes no platform, data, or
+scientific result, but specifies the candidate-neutral physical packet,
+matched observable algebra, source-generation and record duties, explicit
+controller/support/environment ledger, nuisance parent, fixed-classical-
+gravity ceiling, held-outs, hostile controls, and `B0-L0`--`B0-L6` outcome
+ladder.
+
+The accompanying exact finite witness generates localized, coherent, and
+mixed preparations from one seed; distinguishes temporary coherent marking
+from retained records; completes every binary reader with a null outcome;
+retains correlated nuisance and controller/exchange tags; and verifies its
+record probabilities exactly. The tags carry no calibrated energy or
+momentum, and the witness contains no massive material, apparatus, public
+packet, no-refit transfer, reciprocal gravity, or ontology. It is an
+interface control, not a discharge of `P-B0-1`.
+
+No official B0 pin, independent review, baseline construction, platform
+selection, entrant admission, comparison, gravity verdict, or successor is
+opened. The next promotion-bearing step remains user-controlled.
