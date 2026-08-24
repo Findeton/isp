@@ -480,6 +480,18 @@ not identifiable from target clicks alone, so independent lineage remains
 mandatory. The ceiling is PRC-L2 author-side: vacuum/thermal boundary
 selection, pump depletion, mode-tail control, microscopic detector
 amplification, temporal transfer, and native actuality remain open.
+The microscopic reader-descent packet now fixes a single dirty-limit SNSPD
+stack from field absorption through material cascade, switching, waveform,
+timestamp, and storage. It proves exact complete-law normalization
+conditional on physically licensed stochastic kernels, but bars silent
+classicalization of unobserved intermediate sectors: when their propagated
+interference is not negligible, only the final stable-record quantum
+instrument is licensed. Exact witnesses prove drift insufficiency and
+reader-factor nonidentifiability, while memory and eraser tests locate the
+candidate division at the retained record rather than absorption. The ceiling
+is MRD-L2 author-side; no event-level stochastic lift, fabricated-device
+prediction, native actuality, official pin, spacetime, or gravity result is
+earned.
 The implementation/custody authority, independent source/leakage review,
 candidate contest, official pin, and scientific result remain absent and are
 not opened automatically.

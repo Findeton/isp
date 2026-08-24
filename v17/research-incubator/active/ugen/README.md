@@ -475,6 +475,18 @@ author-side only; incoming boundary selection, pump depletion, mode tails,
 microscopic detector amplification/memory, transfer, and native actuality
 remain open.
 
+The microscopic reader-descent audit now follows one fixed dirty-limit SNSPD
+from field interaction to stable storage. It separates absorption, material
+cascade, switching, circuit waveform, threshold/timestamp, and record
+persistence; derives the final quantum instrument from detector physics; and
+constructs a normalized positive latent-history lift only conditionally.
+Intermediate labels are barred from becoming happenings unless their
+physical record or propagated nondisturbance is demonstrated. Exact witnesses
+show that mean cascade response cannot select threshold statistics and that
+absorption, switching, and electronics factors cannot be recovered from one
+click law. This is MRD-L2 author-side only: event-level stochastic closure,
+implementation transfer, division, actuality, and gravity remain open.
+
 A separate MG0 author-side preflight now uses gravity as a possible selector
 among the plural nomologies without calling G1 gravitational. It requires a
 single reciprocal matter--geometry parent, exact source and actuality typing,
@@ -530,6 +542,7 @@ Active audit:
 - v17_ugen_u0_qsource_operational_reconstruction_audit.md
 - v17_ugen_u0_msource_qed_material_descent_audit.md
 - v17_ugen_u0_msource_preparation_record_closure.md
+- v17_ugen_u0_msource_microscopic_reader_descent.md
 - v17_ugen_u0_t2_information_equivalence_source_audit.md
 - v17_ugen_u0_t2_no_equivalent_input_criterion.md
 - v17_ugen_u0_t3_physical_interface_source_audit.md
@@ -878,8 +891,9 @@ U0 Q-SOURCE FRAMEWORK:         QSR-L2 AUTHOR-SIDE / FINITE CONDITIONAL
 U0 EFFECTIVE M-SOURCE:         MSD-L2 AUTHOR-SIDE / GREEN-MQED CONTROL
 U0 PREPARATION/RECORD CLOSURE: PRC-L2 AUTHOR-SIDE / MULTIPAIR PARENT
 U0 PREPARATION DESCENT:        CONDITIONAL EFFECTIVE / MICROSCOPIC OPEN
-U0 READER DESCENT:             PARTIAL / NOT CLOSED
-NEXT U0 SCIENTIFIC WORK:       MICROSCOPIC READER DESCENT / AUTHOR-SIDE
+U0 READER DESCENT:             MRD-L2 AUTHOR-SIDE / CONDITIONAL LIFT
+U0 INTERMEDIATE HAPPENINGS:    REQUIRE PHYSICAL RECORD OR NONDISTURBANCE
+NEXT U0 SCIENTIFIC WORK:       NATIVE COMPLETE-PROCESS LAW / AUTHOR-SIDE
 R4 IMPLEMENTATION/CUSTODY:     DEFERRED UNTIL CANDIDATE
 SOURCE-COMPLETION THEOREM:     OPEN / NO EXISTENCE OR NO-GO RESULT
 NATIVE ISP LAW:                ABSENT

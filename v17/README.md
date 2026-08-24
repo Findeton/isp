@@ -606,6 +606,18 @@ cleanly if nature does not support it.
   source brightness and detector efficiency cannot be inferred separately
   from one target click law. This reaches PRC-L2 author-side; microscopic
   preparation, detector amplification/memory, and transfer remain open.
+  The microscopic-reader companion now binds one fixed dirty-limit SNSPD
+  architecture and types absorption, quasiparticle/phonon cascade,
+  phase-slip/hotspot switching, circuit waveform, comparator timestamp, and
+  storage separately. A derived final-record instrument can make the POVM an
+  output of standard material/QFT physics, but intermediate detector labels
+  form a positive history only after a physical-record or propagated
+  nondisturbance test. Exact controls prove that mean material response does
+  not determine threshold records and that absorption, switching, and
+  electronics factors are not identifiable from one click law. This reaches
+  MRD-L2 author-side architecture only: the stochastic cascade, phase-slip
+  hazards, implementation transfer, stable-division test, native actuality,
+  spacetime, and gravity remain open.
   MG0 now accelerates the already declared Phase G0 only at author-side
   contract level. It types matter and gravity as operational projections
   rather than assumed microscopic factors, keeps positive, pair-history, and

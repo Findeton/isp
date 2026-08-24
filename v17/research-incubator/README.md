@@ -491,6 +491,19 @@ author-side ceiling is PRC-L2; strong-pump dynamics, incoming boundary
 selection, mode-tail error, detector amplification/memory, transfer, and
 native ontology remain open.
 
+The microscopic reader-descent construction now binds one fixed
+superconducting-nanowire architecture rather than importing a detector POVM.
+It types absorption, quasiparticle/phonon response, switching, circuit,
+waveform, timestamp, and storage; derives the final-record instrument as an
+output of standard quantum/material physics; and proves normalized
+conditional reader composition, drift insufficiency, and exact
+absorption/response nonidentifiability. It also closes a semantic loophole:
+unobserved intermediate labels may enter a positive history only after a
+physical-record or propagated nondisturbance test. The author-side ceiling is
+MRD-L2. Full stochastic material fluctuations, phase-slip hazards,
+implementation transfer, operational division, native actuality, spacetime,
+and gravity remain open.
+
 C1 active files:
 
 - active/ugen/v17_ugen_c1_scalable_adaptive_clifford_t_candidate_pin.md
