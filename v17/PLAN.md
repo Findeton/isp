@@ -1315,7 +1315,7 @@ memory; sufficiency of `B0=S` for memory-different histories; and natural
 sufficiency of `B1=S+M` for boundary-matched but history-different
 preparations. The coordinates cannot discharge one another.
 
-The completed author design uses randomized physical operations, separate
+The first author design used randomized physical operations, separate
 validation and scored copies, no full-candidate reset in the scored `B1`
 continuation, a complete 32-cell registered outcome law, 148 assigned cell
 laws, 80 distances, and a total
@@ -1325,14 +1325,30 @@ as sufficiency failures. Physically typed pass and fail witnesses make both
 interior power neighborhoods nonempty without encoding an answer in a
 restricted model class. A schedule-average martingale calculation selects
 103,936 issued attempts per cell, or 15,382,528 total, at the author-registered
-resolution. The Rust reference semantics and hostile finite cases pass.
+resolution. Its first Rust reference semantics and hostile finite cases pass,
+but a subsequent pre-pin audit correctly found that this cell-specific
+schedule bound did not itself identify a common causal comparison under drift.
 
-This earns only `PTS0-AUTHOR-DESIGN COMPLETE / EXECUTABLE QA PASS`. It is not a
-pin, independent acceptance, device packet, acquisition, empirical result,
-universal temporal or Markov theorem, Barandes selection, ontology,
-chronology, spacetime, gravity, or unification result. Any pin, review,
-apparatus work, threshold change, PTS-1, or successor requires new explicit
-authority.
+The authorized differential closure replaces that estimand with 80 paired
+common-opportunity edges. Each edge receives 104,192 two-opportunity
+microblocks with randomized arm order, so both arms average over the same
+physical opportunities and assignment randomness is included in the
+martingale bound. The resulting 160 edge-arm laws require 16,670,720 issued
+attempts at the unchanged statistical radius. Every anchor/control now has a
+coordinate-specific total route; boundary-reader intervals aggregate by an
+executable maximum; core `D_M` is separated from the all-24 instrument-quality
+diagnostic; a trace veto bounds the finite refined-law pass distance by `0.15`;
+and six separate four-qubit parents generate all 148 cell types and populate
+the pass/fail alternatives without cellwise answer assignment. The current
+checker passes eight tests, 196,608 control routes, and 888 parent cell laws.
+
+This earns only `PTS0-PRE-PIN DIFFERENTIAL CLOSURE COMPLETE / EXECUTABLE QA
+PASS-WITH-SCOPE`. It is author-side eligible for a future user decision about
+a review pin, but it is not a pin, independent acceptance, device packet,
+acquisition, empirical result, universal temporal or Markov theorem, Barandes
+selection, ontology, chronology, spacetime, gravity, or unification result.
+Any pin, review, apparatus work, threshold change, PTS-1, or successor requires
+new explicit authority.
 
 ### F7 — amplitudes
 
@@ -1400,7 +1416,9 @@ SPB v3 root adjudication            TERMINAL D2 / ROUTE HALTED / NO SPB-L0
 SPB exact physical run packet       ABSENT
 SPB empirical evaluation pin        NOT AUTHORIZED / ROUTE HALTED
 PTS-0 author design                 COMPLETE / AUTHORITY NONE / NOT SPB V4
-PTS-0 executable semantic audit     PASS-WITH-SCOPE AUTHOR-SIDE
+PTS-0 first semantic audit          HISTORICAL / SIX FINDINGS SUPERSEDED
+PTS-0 differential closure          COMPLETE AUTHOR-SIDE / PIN-DECISION-ELIGIBLE
+PTS-0 differential checker          PASS-WITH-SCOPE / 8 TESTS
 PTS-0 pin / independent review      NOT AUTHORIZED / ABSENT
 PTS-0 apparatus / empirical result  NOT AUTHORIZED / ABSENT
 empirical quantum adequacy contract RECORDED

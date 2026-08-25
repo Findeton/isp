@@ -372,6 +372,28 @@ selection, or a Barandes completion.
 | Paper 04 hostile Seat Q | `REVISE — ADJUDICATED EVIDENCE` | exact #87 report | A/UCOH is not one comparator member; stopped/adaptive paired arrows unconstructed |
 | Paper 04 terminal adjudication | `TERMINAL REJECT-WITH-EXACT-SALVAGE` | #88 independent root reconstruction | earliest failure `P04-CLOCK-A-PHYSICAL-PACKET-UNCONSTRUCTED`; Paper 05 and all spacetime/gravity phases remain closed |
 
+## PTS-0 pre-pin differential input balance
+
+| Object | Status | Source / choice | Debt retained |
+|---|---|---|---|
+| `S`, `M`, coupling and readers | `DECLARED APPARATUS ROLES` | inherited two-transmon feasibility control; no serial-labelled packet | physical implementation and calibration absent |
+| `B0=S`, `B1=S+M` | `DECLARED CANDIDATE BOUNDARIES` | PTS-0 authorization | no minimality, completeness, or universal boundary claim |
+| B0/B1 history families | `DECLARED PHYSICAL PREPARATIONS` | `H-M0/H-M1`, `P-LOOP`, `P-CONTROLLER` | exact pulse and device realization absent |
+| `PI-EX`, `PI-PHASE`, `PI-NULL` | `DECLARED FUTURE POLICIES` | PTS-0 author design | held-out phase implementation and no-refit transfer untested |
+| 32-cell primary score | `DECLARED FINITE PROJECTION` | 16 terminal codes crossed with `G=0/1` | not the raw continuous apparatus law or universe |
+| finite exterior trace refinement | `DECLARED AUDIT REGISTER` | controller/seed/resonator/reservoir/heat/latency/lineage bins | bin adequacy and continuous within-bin distinctions unreviewed |
+| trace veto `tau_G=0.05` | `DECLARED OPERATIONAL RESOLUTION` | differential audit | a coarse pass bounds the finite refinement only by TV `0.15` |
+| TV thresholds `0.10/0.25` | `DECLARED OPERATIONAL RESOLUTION` | equal-prior guessing ceilings `0.55/0.625` | constants of nature not claimed; device resolvability unproved |
+| 80 paired causal edges | `DECLARED INFERENCE FAMILY` | every registered distance gets its own common opportunity | no reuse across edges; runtime cost high |
+| paired order randomizer | `DECLARED CAUSAL RESOURCE` | fair recorded arm swap in every two-slot microblock | exogeneity, literal execution, washout and no interference unproved physically |
+| 104,192 microblocks per edge | `DERIVED AUTHOR-SIDE DESIGN COUNT` | 160-arm finite-alphabet martingale union bound | mathematical count only; 16,670,720-attempt device feasibility absent |
+| `D_M` core predicate | `DECLARED RESULT SEMANTICS` | readable write, causal toggle, policy specificity, held-out transfer and existential removal | apparatus-scoped; no universal memory ontology |
+| `Q_M^suite` | `DECLARED NONCOORDINATE DIAGNOSTIC` | original all-24 conjunction | instrument quality cannot fill `D_M` or boundary coordinates |
+| exterior qubit `E` | `WITNESS-MODEL RESOURCE` | B1-fail coherent parent | not selected as actual apparatus ontology |
+| inaccessible sink qubit `R` | `WITNESS-MODEL RESOURCE / EXPLICIT DEBT` | unitary reset/relaxation dilation in B0-pass and memory parents | carries old information outside registered readers; no global erasure claim |
+| six finite parents | `AUTHOR-SIDE NONEMPTY CONTROL FAMILY` | B0/B1/memory pass and fail alternatives | controls only; none selected by data or theory |
+| PTS-0 differential status | `AUTHOR-SIDE QA PASS-WITH-SCOPE` | mathematical audit plus Rust conformance | no pin, independent review, apparatus packet, empirical result, ontology, time, spacetime, or gravity |
+
 ## Derivation balance
 
 The live adjudicated balance is:

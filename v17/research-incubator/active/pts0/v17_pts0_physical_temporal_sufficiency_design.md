@@ -11,6 +11,14 @@ Authority: **none**
 Maximum possible claim of this file: **a bounded experiment and inference
 design is internally specified; no physical result exists**
 
+> **Current-lineage notice.** This file is the first author design. Its
+> cell-specific schedule estimand, unlifted controls, implicit reader
+> aggregation, all-24 meaning of `D_M`, point-law witness proof, and raw `G`
+> interpretation are superseded by
+> `v17_pts0_pre_pin_differential_closure_audit.md`. The scientific question,
+> histories, boundaries, policies, and three-coordinate vector are unchanged.
+> This file must not be pinned or reviewed without that differential law.
+
 ---
 
 ## 0. Authorization and route separation

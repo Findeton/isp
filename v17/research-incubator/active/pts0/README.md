@@ -2,7 +2,7 @@
 
 **Programme:** Physical Temporal Sufficiency under an evidenced memory
 
-**Status:** AUTHOR-SIDE DESIGN COMPLETE / EXECUTABLE QA PASS
+**Status:** PRE-PIN DIFFERENTIAL CLOSURE COMPLETE / EXECUTABLE QA PASS-WITH-SCOPE
 
 **Authority:** none
 
@@ -40,15 +40,30 @@ boundary cannot score natural-state sufficiency.
 ## Author package
 
 - [physical and statistical design](v17_pts0_physical_temporal_sufficiency_design.md)
-- [author semantic/power audit](v17_pts0_author_semantic_power_audit.md)
-- [Rust executable reference semantics](check_pts0_semantics.rs)
+- [pre-pin differential closure audit](v17_pts0_pre_pin_differential_closure_audit.md)
+- [current Rust differential semantics](check_pts0_differential.rs)
+- [historical first author semantic/power audit](v17_pts0_author_semantic_power_audit.md)
+- [historical first Rust semantics](check_pts0_semantics.rs)
 - [author-side SHA-256 manifest](PTS0_SHA256.txt)
 
-The design uses 148 randomized assigned cell laws, a complete 32-cell outcome
-alphabet at registered resolution, 80 predeclared distances, and a
-distribution-free randomized-schedule martingale bound. The conservative
-author reference calculation selects 103,936 issued attempts per cell, or
-15,382,528 attempts total. This is not an apparatus or runtime claim.
+The current differential law retains 148 unique cell types and 80 predeclared
+distances but acquires every distance as a two-arm common-opportunity edge.
+The 160 edge-arm laws include random assignment and predictable drift in one
+paired martingale target. The conservative author reference calculation
+selects 104,192 two-opportunity microblocks per edge, or 16,670,720 issued
+attempts total. This is not an apparatus or runtime claim.
+
+Every anchor/control now has a coordinate-specific total route; individual
+reader intervals aggregate by an executable maximum; `D_M` is core causal
+memory while the all-24 instrument suite is a printed diagnostic; and the
+one-bit exterior trace is a veto with a quantified `0.15` refined-law pass
+ceiling. Six separate four-qubit parent models generate all 148 cell types and
+populate the B0, B1, and memory pass/fail interiors. The differential checker
+passes eight tests, 196,608 control routes, and 888 generated parent cell laws.
+
+The first design, audit, and checker remain historical lineage. Their schedule,
+control, witness, memory, and trace meanings are superseded by the differential
+closure and cannot be used alone.
 
 ## Lineage boundary
 
@@ -65,6 +80,8 @@ histories, boundary readers, and future policies. Nothing in this directory
 selects Barandes, a universal Markov ontology, Hilbert ontology, chronology,
 spacetime, gravity, or unification.
 
-The authorized work stops at this author-side design and executable audit. A
-pin, independent review, device packet, acquisition, threshold change, PTS-1,
-or successor requires new explicit authority.
+The authorized work stops at this author-side differential closure and
+executable audit. It is author-side eligible for a future user decision about
+an immutable review pin, but no pin exists and no independent acceptance is
+implied. A pin, independent review, device packet, acquisition, threshold
+change, PTS-1, or successor requires new explicit authority.

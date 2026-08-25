@@ -1207,11 +1207,19 @@ histories. No coordinate fills another, boundary mismatch is not
 insufficiency, and a full reset of the scored candidate boundary is invalid
 for natural sufficiency.
 
-The author package has a complete 32-cell registered outcome law, 148
-randomized assigned cell laws, 80 registered distances, a total four-valued
-classifier, nonempty typed pass/fail controls, and a conservative
-randomized-schedule martingale power calculation. Its pure-Rust semantic audit
-passes. This is design coherence only: PTS-0 has no pin, independent review,
+The first author package exposed six remaining pre-pin gaps. The authorized
+differential closure now compares every one of the 80 distances on shared
+two-opportunity microblocks, so assignment randomness and predictable drift
+enter one common causal target. It also gives all eight controls a total
+coordinate route, makes the reader maximum executable, separates core memory
+from optional instrument quality, replaces independent point witnesses with
+six coherent finite parents, and turns the exterior trace bit into a veto with
+a quantitative finite-refinement ceiling.
+
+The revised author calculation uses 160 edge-arm laws, 104,192 microblocks per
+edge, and 16,670,720 issued attempts. The differential Rust audit passes eight
+tests, 196,608 control routes, and 888 parent-generated cell laws. This is
+author-side pre-pin coherence only: PTS-0 has no pin, independent review,
 device packet, acquisition, empirical result, universal temporal or Markov
 theorem, Barandes selection, ontology, chronology, spacetime, gravity, or
 successor authority.
@@ -1296,10 +1304,15 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   — bounded two-transmon memory-descent and natural fixed-boundary design,
   complete finite outcome law, total classifier, controls, and sample plan.
 - `research-incubator/active/pts0/v17_pts0_author_semantic_power_audit.md`
-  — author reconstruction of the semantics, nonvacuity, power, and authority
-  limits; not an independent review or scientific result.
+  — historical first author reconstruction; its six affected findings are
+  superseded by the differential closure.
 - `research-incubator/active/pts0/check_pts0_semantics.rs` — dependency-free
-  executable reference classifier and finite hostile-case audit.
+  historical first reference classifier.
+- `research-incubator/active/pts0/v17_pts0_pre_pin_differential_closure_audit.md`
+  — current common-opportunity estimand, control descent, reader aggregation,
+  physical-parent models, memory split, and operational-resolution audit.
+- `research-incubator/active/pts0/check_pts0_differential.rs` — current
+  dependency-free executable differential semantics and hostile audit.
 - `research-incubator/active/pts0/PTS0_SHA256.txt` — author-side byte-integrity
   manifest; not an immutable scientific pin.
 - `note-spb-v3-sufficient-physical-boundary-contract-review-pin.md` — immutable

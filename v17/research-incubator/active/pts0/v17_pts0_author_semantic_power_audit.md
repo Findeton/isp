@@ -10,6 +10,13 @@ Authority: **none**
 
 Independent review: **not authorized and not performed**
 
+> **Historical-scope notice.** This audit reconstructs the first author
+> package. Its findings on schedule-level causality, control descent, reader
+> aggregation, physical-model nonemptiness, the meaning of `D_M`, and the `G`
+> projection are superseded by
+> `v17_pts0_pre_pin_differential_closure_audit.md`. It remains provenance, not
+> the current pre-pin readiness disposition.
+
 ---
 
 ## 0. Audit question

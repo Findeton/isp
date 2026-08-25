@@ -149,14 +149,20 @@ predictive after the candidate boundary has been independently matched. Its
 reported vector is `(D_M,S_B0,S_B1)`, with `B0=S` and `B1=S+M`; no coordinate
 may fill another.
 
-The design freezes a complete 32-cell registered outcome alphabet, 148
-randomized assigned cell laws, 80 predeclared distances, a total
-`INVALID/PASS/FAIL/UNDERDETERMINED` classifier, explicit empty-set and forced
-restart routes, and physically typed nonempty pass/fail controls. The
-distribution-free author calculation selects 103,936 issued attempts per
-cell, or 15,382,528 attempts total. That number is a conservative mathematical
-design quantity, not a hardware, runtime, feasibility, or acquisition claim.
-The pure-Rust reference semantics and its six tests pass author-side.
+The first design froze a complete 32-cell registered outcome alphabet, 148
+unique assigned cell types, 80 distances, and a total classifier. A subsequent
+authorized pre-pin differential audit confirms six real gaps and closes them
+author-side: each distance is now a paired common-opportunity causal edge that
+includes assignment randomness and predictable drift; every control has a
+coordinate route; reader maxima have an interval map; core memory is separated
+from instrument quality; trace coarsening has a veto and quantitative ceiling;
+and six coherent finite parent models replace independent point-law witnesses.
+
+The revised distribution-free calculation uses 160 edge-arm laws and 104,192
+two-opportunity microblocks per edge, or 16,670,720 issued attempts total. The
+current Rust checker passes eight tests, all 196,608 control routes, and 888
+parent-generated cell laws. Those numbers are conservative mathematical design
+quantities, not hardware, runtime, feasibility, or acquisition claims.
 
 The natural `B1=S+M` test never resets the complete candidate boundary in its
 scored continuation. Isolation and reset controls may suppress a
@@ -170,12 +176,15 @@ Active author package:
 - `active/pts0/v17_pts0_physical_temporal_sufficiency_design.md`
 - `active/pts0/v17_pts0_author_semantic_power_audit.md`
 - `active/pts0/check_pts0_semantics.rs`
+- `active/pts0/v17_pts0_pre_pin_differential_closure_audit.md`
+- `active/pts0/check_pts0_differential.rs`
 - `active/pts0/PTS0_SHA256.txt`
 
 PTS-0 has authority `none`. No immutable pin, independent review, exact device
 packet, acquisition, empirical result, threshold retuning, successor,
 Barandes selection, universal Markov claim, ontology, chronology, spacetime,
-gravity, or unification claim is authorized or present.
+gravity, or unification claim is authorized or present. The closure is only
+author-side eligibility for a future pin decision.
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

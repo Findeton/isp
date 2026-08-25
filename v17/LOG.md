@@ -3149,3 +3149,79 @@ coordinate-separation firewalls. The author package was committed at
 no scientific award. Any pin, independent review, exact device packet,
 acquisition, threshold retuning, PTS-1, or successor requires new explicit
 authorization.
+
+## 2026-08-24 — PTS-0 PRE-PIN DIFFERENTIAL CLOSURE COMPLETE AUTHOR-SIDE (v17 LEDGER #125)
+
+The user authorized one PTS-0 pre-pin differential closure audit and no pin,
+independent review, acquisition, PTS-1, regional composition, ontology,
+chronology, spacetime, gravity, or automatic successor. The scientific
+question, `B0=S`, `B1=S+M`, the frozen B0/B1 history families, the three future
+policies, and the result vector `(D_M,S_B0,S_B1)` remain unchanged.
+
+Root reproduces all six pre-pin findings against the first package. Most
+importantly, concentration around each cell's own realized-time average does
+not by itself compare two cells on one causal drift history. PTS-0 now acquires
+each of its 80 registered distances as a two-arm microblock: both arms occupy
+the same two physical opportunities and a recorded fair bit randomizes their
+order. Slot-specific predictable drift is allowed; treatment-dependent
+carryover, failed washout, order leakage, and nonexogenous assignment invalidate
+the affected edge. The common opportunity-indexed potential laws average each
+arm over both slots, so the order bit and physical outcomes form one bounded
+martingale difference rather than leaving assignment imbalance outside the
+coverage theorem.
+
+There remain 148 unique cell types, but pair-specific acquisition produces 160
+edge-arm laws. A union bound over those laws and every nontrivial subset of the
+32-cell alphabet gives `J_min=104174` microblocks per edge. The smallest
+32-macroblock-compatible value is `J=104192`, yielding 16,670,720 issued
+attempts and simultaneous error bound `0.009942177412159`. This is a
+mathematical reference design, not a claim that a device can sustain the run.
+
+Every remaining semantic input now has a total descent. The boundary mismatch
+interval is `[max_v L_v,max_v U_v]` over the three B0 or nine B1 readers;
+malformed or empty reader families invalidate the row. All eight anchors have
+frozen expected directions, affected coordinates, and routes. Known-null,
+randomizer-crosstalk, and repeated-reference contradictions invalidate their
+coordinates; failed sensitivity controls withhold them as underdetermined.
+Controls never manufacture scientific pass or fail.
+
+`D_M` now reports core causal memory: readable history writes, exchange and
+held-out phase transfer, null-policy specificity, randomized toggle effects,
+and at least one fully evidenced randomize/reset/isolate removal family. The
+original all-24 conjunction survives separately as `Q_M^suite`, an instrument
+quality diagnostic. A causally real but invasively read memory can therefore
+have `D_M=PASS,Q_M^suite=FAIL`; neither fills a boundary coordinate.
+
+The numerical thresholds now have an operational meaning through
+`p_guess=(1+d_TV)/2`: the `0.10` pass ceiling allows at most 55% equal-prior
+history guessing from the registered record, while the `0.25` fail floor
+supports at least 62.5%. The one-bit exterior flag is no longer treated as an
+exterior-state quotient. Boundary pass also requires each arm's trace
+probability to have upper bound at most `0.05`. Under the printed injectivity
+condition off the trace sector, a coarse pass then bounds the finite refined
+law by `0.15`; otherwise the row is underdetermined. Continuous distinctions
+inside unregistered nominal bins remain explicit debt.
+
+Six separate finite four-qubit parents over `S,M,E,R` populate B0, B1, and
+memory pass/fail alternatives. Their operations are compositions of unitary
+channels, mixtures of unitaries, replacement channels, projective instruments,
+and explicit dilations. `E` is an exterior controller/resonator memory and `R`
+an inaccessible sink. In the B0-pass parent, a `SWAP_MR` transfers the old M
+state to R before the later registered M record becomes common; information is
+not cloned or destroyed. Each parent generates all 148 cell types through one
+shared operation grammar. They are alternative worlds fixed before data, not
+one model forced to pass and fail at once.
+
+The new dependency-free differential checker compiles with warnings denied.
+It passes eight tests, all 196,608 control-evidence/coordinate routes, 16
+binary common-opportunity assignment patterns, the trace and reader maps, the
+core/suite separation, and 888 generated parent cell laws. The historical
+first checker also continues to pass as provenance but no longer controls the
+six superseded meanings.
+
+The author-side disposition is `PTS0-PRE-PIN DIFFERENTIAL CLOSURE COMPLETE /
+EXECUTABLE QA PASS-WITH-SCOPE`. This makes the package eligible only for a
+future user decision about an immutable review pin. It is not independently
+accepted and creates no physical memory result, boundary result, device
+packet, acquisition, empirical power, Barandes selection, Markov theorem,
+ontology, chronology, spacetime, gravity, unification claim, or successor.
