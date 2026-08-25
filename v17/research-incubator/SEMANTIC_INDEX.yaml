@@ -7,6 +7,7 @@ status_rule: "Repository inclusion preserves provenance and never promotes a dra
 canonical_rule: "A canonical front may point to an external official v17 authority artifact; external targets are verified for existence but are not indexed here with incubator authority none."
 canonical_fronts:
   spb: "v17/note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md"
+  pts0: "active/pts0/README.md"
   qcut: "active/qcut/v17_qcut_result_neutral_candidate_pin.md"
   ecomp: "active/ecomp/v17_ecomp_result_neutral_candidate_pin.md"
   ugen: "active/ugen/README.md"
@@ -105,6 +106,45 @@ artifacts:
     authority: "none"
     promotion_readiness: "user-decision-ready"
     maximum_claim: "candidate endpoint-quotient noncomposition and carrier-relative nondivision nonselection; no amplitude ontology or Barandes fixed-law refutation"
+    canonical: false
+  - path: "active/pts0/README.md"
+    sha256: "bfa6979389bc821539c67b3e544537f1ba0e277a03e03a1f8c0bd118197df294"
+    created_at: "2026-08-24"
+    front: "pts0"
+    status: "current-routing-author-side-design-and-executable-qa-complete"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/pts0/v17_pts0_physical_temporal_sufficiency_design.md", "active/pts0/v17_pts0_author_semantic_power_audit.md", "active/assumptions/v17_assumption_temporal_sufficiency_audit.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "v17/note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "exact-terminal-spb-salvage-and-temporal-source-receipts-consumed-no-new-source-or-apparatus-claim"
+    authority: "none"
+    promotion_readiness: "not-ready-explicit-new-authority-required-for-any-pin-review-or-acquisition"
+    maximum_claim: "routing for a new bounded author-side PTS-0 design separating memory descent from natural fixed-boundary sufficiency, with executable finite semantics and conditional power calculation; no pin, independent acceptance, device packet, acquisition, empirical result, Barandes selection, ontology, chronology, spacetime, gravity, unification, or successor"
+    canonical: true
+  - path: "active/pts0/v17_pts0_author_semantic_power_audit.md"
+    sha256: "d099b92a79abd66505fa2153d8cfd583ed8ddd0e6c94484b59af628b3460988b"
+    created_at: "2026-08-24"
+    front: "pts0"
+    status: "complete-author-side-pass-with-scope-no-scientific-award"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/pts0/v17_pts0_physical_temporal_sufficiency_design.md", "active/assumptions/v17_assumption_temporal_sufficiency_audit.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "v17/note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md"]
+    source_audit_status: "author-side-reconstruction-with-exact-inherited-source-ceilings-executable-rust-checker-pass-no-physical-packet"
+    authority: "none"
+    promotion_readiness: "not-ready-author-side-only-new-authority-required-for-pin"
+    maximum_claim: "author-side pass-with-scope that the PTS-0 finite classifier and distribution-free interior-power design are internally coherent at registered resolution; no independent acceptance, apparatus feasibility packet, acquisition, empirical power, memory result, boundary result, ontology, chronology, spacetime, gravity, or successor"
+    canonical: false
+  - path: "active/pts0/v17_pts0_physical_temporal_sufficiency_design.md"
+    sha256: "793abb8c06a88a90fe648d006f0eadb4f127a96e526ef859b5753c0b4e27f24b"
+    created_at: "2026-08-24"
+    front: "pts0"
+    status: "complete-author-side-bounded-design-no-pin"
+    supersedes: []
+    superseded_by: []
+    depends_on: ["active/assumptions/v17_assumption_temporal_sufficiency_audit.md", "active/spb/v17_spb_p0_physical_platform_and_source_audit.md", "active/spb/v17_spb_primary_source_receipt_manifest.md", "v17/note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md", "v17/review-spb-v3-contract-physical-temporal.md", "v17/review-spb-v3-contract-physical-joint.md"]
+    source_audit_status: "exact-terminal-spb-salvage-and-source-receipts-consumed-no-new-literature-apparatus-or-empirical-claim"
+    authority: "none"
+    promotion_readiness: "not-ready-explicit-new-authority-required-for-any-pin-review-or-acquisition"
+    maximum_claim: "author-side two-transmon PTS-0 design with separate memory-descent and operationally matched B0/B1 natural-sufficiency coordinates, 32-cell ITT law, total classifier, physically typed nonempty power controls, and conservative schedule-average martingale sample calculation; no pin, independent review, device packet, acquisition, empirical result, universal Markov claim, Barandes selection, ontology, chronology, spacetime, gravity, unification, or successor"
     canonical: false
   - path: "active/qcut/v17_continuous_cut_information_theorem_candidate.md"
     sha256: "8eb9e1699d0d8e39cafae07dcd30b2a616c951f90167c00d06b1963e17199e96"

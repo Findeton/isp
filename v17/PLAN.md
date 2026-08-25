@@ -1306,6 +1306,34 @@ No `SPB-L0`, physical packet, acquisition, empirical result, repair, second
 successor, or v4 follows. This is a failure of the final inference contract,
 not evidence that a sufficient physical boundary is absent in nature.
 
+The user has separately authorized one author-side **Physical Temporal
+Sufficiency under an evidenced memory (PTS-0)** design and executable
+semantic/power audit. This is a genuinely new, narrow temporal investigation,
+not SPB v4 and not a repair of the terminal SPB contract. It factorizes the
+scientific question into `(D_M,S_B0,S_B1)`: causal descent of the proposed
+memory; sufficiency of `B0=S` for memory-different histories; and natural
+sufficiency of `B1=S+M` for boundary-matched but history-different
+preparations. The coordinates cannot discharge one another.
+
+The completed author design uses randomized physical operations, separate
+validation and scored copies, no full-candidate reset in the scored `B1`
+continuation, a complete 32-cell registered outcome law, 148 assigned cell
+laws, 80 distances, and a total
+`INVALID/PASS/FAIL/UNDERDETERMINED` classifier. Empty confidence sets and
+forced full-boundary restarts route invalid; unmatched boundaries never count
+as sufficiency failures. Physically typed pass and fail witnesses make both
+interior power neighborhoods nonempty without encoding an answer in a
+restricted model class. A schedule-average martingale calculation selects
+103,936 issued attempts per cell, or 15,382,528 total, at the author-registered
+resolution. The Rust reference semantics and hostile finite cases pass.
+
+This earns only `PTS0-AUTHOR-DESIGN COMPLETE / EXECUTABLE QA PASS`. It is not a
+pin, independent acceptance, device packet, acquisition, empirical result,
+universal temporal or Markov theorem, Barandes selection, ontology,
+chronology, spacetime, gravity, or unification result. Any pin, review,
+apparatus work, threshold change, PTS-1, or successor requires new explicit
+authority.
+
 ### F7 — amplitudes
 
 Complex amplitudes are neither banned nor presumed fundamental. If the
@@ -1371,6 +1399,10 @@ SPB v3 independent review           FROZEN / M:D2 P:D4 O:D4
 SPB v3 root adjudication            TERMINAL D2 / ROUTE HALTED / NO SPB-L0
 SPB exact physical run packet       ABSENT
 SPB empirical evaluation pin        NOT AUTHORIZED / ROUTE HALTED
+PTS-0 author design                 COMPLETE / AUTHORITY NONE / NOT SPB V4
+PTS-0 executable semantic audit     PASS-WITH-SCOPE AUTHOR-SIDE
+PTS-0 pin / independent review      NOT AUTHORIZED / ABSENT
+PTS-0 apparatus / empirical result  NOT AUTHORIZED / ABSENT
 empirical quantum adequacy contract RECORDED
 declared-input registry             OPEN
 Paper 01                            TERMINAL ACCEPT-WITH-SCOPE

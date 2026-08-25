@@ -29,7 +29,7 @@ no scientific evidence.
 
 ## Active research front
 
-The incubator preserves six named research fronts, including terminal
+The incubator preserves seven named research fronts, including terminal
 historical branches; they do not have equal frontier priority.
 
 ### SPB — Sufficient Physical Boundary Gate
@@ -139,6 +139,43 @@ Final v3 package and terminal official record:
 - `../review-spb-v3-contract-physical-joint.md`
 - `../review-spb-v3-contract-foundations-ontology.md`
 - `../note-spb-v3-sufficient-physical-boundary-contract-review-adjudication.md`
+
+### PTS-0 — Physical Temporal Sufficiency under an evidenced memory
+
+PTS-0 is a new bounded author-side design, not an SPB repair or v4. It keeps
+two questions logically separate: whether the proposed memory `M` is an
+independently manipulable causal carrier, and whether earlier history remains
+predictive after the candidate boundary has been independently matched. Its
+reported vector is `(D_M,S_B0,S_B1)`, with `B0=S` and `B1=S+M`; no coordinate
+may fill another.
+
+The design freezes a complete 32-cell registered outcome alphabet, 148
+randomized assigned cell laws, 80 predeclared distances, a total
+`INVALID/PASS/FAIL/UNDERDETERMINED` classifier, explicit empty-set and forced
+restart routes, and physically typed nonempty pass/fail controls. The
+distribution-free author calculation selects 103,936 issued attempts per
+cell, or 15,382,528 attempts total. That number is a conservative mathematical
+design quantity, not a hardware, runtime, feasibility, or acquisition claim.
+The pure-Rust reference semantics and its six tests pass author-side.
+
+The natural `B1=S+M` test never resets the complete candidate boundary in its
+scored continuation. Isolation and reset controls may suppress a
+history-to-system channel while the complete raw record still retains history;
+they are not treated as global information erasure. Boundary mismatch is not
+called insufficiency, and memory descent never proves boundary sufficiency.
+
+Active author package:
+
+- `active/pts0/README.md`
+- `active/pts0/v17_pts0_physical_temporal_sufficiency_design.md`
+- `active/pts0/v17_pts0_author_semantic_power_audit.md`
+- `active/pts0/check_pts0_semantics.rs`
+- `active/pts0/PTS0_SHA256.txt`
+
+PTS-0 has authority `none`. No immutable pin, independent review, exact device
+packet, acquisition, empirical result, threshold retuning, successor,
+Barandes selection, universal Markov claim, ontology, chronology, spacetime,
+gravity, or unification claim is authorized or present.
 
 ### Q-Cut — positive sufficient-cut information discriminator
 

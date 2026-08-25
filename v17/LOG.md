@@ -3093,3 +3093,59 @@ stopping rule there is no repair, second successor, v4, apparatus packet,
 acquisition, evaluation pin, boundary result, ontology selection, chronology,
 spacetime, gravity, unification claim, or automatic successor. The SPB
 contract route is terminal.
+
+## 2026-08-24 — BOUNDED PTS-0 AUTHOR DESIGN AND EXECUTABLE AUDIT COMPLETE (v17 LEDGER #124)
+
+The user authorized one author-side Physical Temporal Sufficiency under an
+evidenced memory (`PTS-0`) design and one executable semantic/power audit. The
+authorization explicitly excludes an immutable pin, independent review,
+apparatus acquisition, empirical result, composition or regional gluing,
+minimality or universal necessity, Barandes selection, ontology, chronology,
+spacetime, gravity, and any automatic successor. PTS-0 is therefore recorded
+as a genuinely new bounded temporal investigation, not a repair, continuation,
+or v4 of the terminal SPB contract route.
+
+The construction corrects the rejected unconditional history-distance idea.
+It reports `(D_M,S_B0,S_B1)` and keeps the three coordinates separate. `D_M`
+tests whether a named memory is independently readable and manipulable as a
+causal carrier. `B0=S` compares equal fresh system preparations with different
+memory histories. `B1=S+M` compares distinct earlier preparations that are
+independently validated, on separate copies, to have the same operationally
+resolved candidate boundary. The scored natural `B1` continuation never
+resets the full candidate boundary. Mismatch of the boundary premise does not
+count as insufficiency, and memory descent never fills either sufficiency
+coordinate.
+
+Root corrected three hidden assumptions before package closure. First,
+controller, reference, reservoir, and failure information is represented in
+the primary registered law rather than being retained only in an unscored raw
+side channel: 16 terminal codes are crossed with a predeclared trace bit to
+give a complete 32-cell registered alphabet. Second, memory isolation or reset
+may suppress the history-to-system channel while the memory, controller, seed,
+reservoir, or complete raw record still retains history; no local intervention
+is called global erasure. Third, uniform power is stated only on physically
+typed interior neighborhoods, not at the decision boundary. Both pass and fail
+neighborhoods have explicit two-transmon witness laws inside the unrestricted
+finite simplex.
+
+The final author design contains 148 randomized assigned cell laws and 80
+predeclared total-variation distances. Its classifier is total over
+`INVALID`, `PASS`, `FAIL`, and `UNDERDETERMINED`; malformed or empty confidence
+sets and forced full-boundary restarts route invalid. A bounded-martingale
+union bound for randomized-schedule average conditional laws, without an
+i.i.d. premise, gives a minimum 103,924 issued attempts per cell. The
+block-compatible design selects 103,936 attempts per cell and 15,382,528 total
+issued attempts, with simultaneous error bound
+`0.009962464798987583`, empirical-law TV radius `0.0125`, and pair-distance
+radius `0.025`. These are conservative mathematical design quantities, not
+runtime or hardware claims.
+
+The dependency-free Rust checker compiles with warnings denied, passes all six
+tests, enumerates 343 boundary aggregate cases, 19,208 numeric row cases, and
+256 memory aggregate cases, and verifies the empty-set, mismatch, restart, and
+coordinate-separation firewalls. The author package was committed at
+`2986076`. Its terminal author-side disposition is
+`PTS0-AUTHOR-DESIGN COMPLETE / EXECUTABLE QA PASS`, with authority `none` and
+no scientific award. Any pin, independent review, exact device packet,
+acquisition, threshold retuning, PTS-1, or successor requires new explicit
+authorization.

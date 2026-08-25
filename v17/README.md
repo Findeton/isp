@@ -232,10 +232,11 @@ cleanly if nature does not support it.
   index and SHA-256 manifest. A machine-readable semantic-lineage index now
   distinguishes active drafts, superseded snapshots, deferred clock material,
   dependencies, source-audit status, promotion readiness, and maximum claims;
-  every incubator artifact has authority `none`. The active author-side fronts are Q-Cut
-  (positive sufficient-cut information), E-Comp (endpoint versus coherent composition),
-  U-Gen (uniform indivisible law class), and MG0 (form-neutral common
-  matter--geometry preflight). Q-Cut's primary-source bridge has
+  every incubator artifact has authority `none`. The active author-side fronts
+  are PTS-0 (memory descent versus natural temporal sufficiency), Q-Cut
+  (positive sufficient-cut information), E-Comp (endpoint versus coherent
+  composition), U-Gen (uniform indivisible law class), and MG0 (form-neutral
+  common matter--geometry preflight). Q-Cut's primary-source bridge has
   now been reconstructed exactly author-side: HJMR's external information
   quantity, the natural Partial Matching ensemble, convention translation,
   and additive constants all survive. Its repaired active package and hash
@@ -1196,6 +1197,25 @@ claims. V3 is terminal `SPB-D2 — SEMANTIC REVIEW FAILED / HALT SPB CONTRACT
 ROUTE`; no `SPB-L0`, apparatus packet, physical acquisition, empirical result,
 repair, second successor, or v4 exists.
 
+The user has separately authorized one bounded author-side **PTS-0** design.
+PTS-0 is not an SPB repair: it isolates the temporal question and reports the
+three-coordinate vector `(D_M,S_B0,S_B1)`. `D_M` asks whether the proposed
+memory is an independently manipulable causal carrier; `S_B0` asks whether
+`S` screens histories that differ in `M`; and `S_B1` asks whether naturally
+prepared, operationally matched `S+M` boundaries screen distinct earlier
+histories. No coordinate fills another, boundary mismatch is not
+insufficiency, and a full reset of the scored candidate boundary is invalid
+for natural sufficiency.
+
+The author package has a complete 32-cell registered outcome law, 148
+randomized assigned cell laws, 80 registered distances, a total four-valued
+classifier, nonempty typed pass/fail controls, and a conservative
+randomized-schedule martingale power calculation. Its pure-Rust semantic audit
+passes. This is design coherence only: PTS-0 has no pin, independent review,
+device packet, acquisition, empirical result, universal temporal or Markov
+theorem, Barandes selection, ontology, chronology, spacetime, gravity, or
+successor authority.
+
 ## Scientific order
 
 The programme order is now:
@@ -1270,6 +1290,18 @@ curvature extraction, and GR recovery are closed until the earlier gates pass.
   not catch all terminal v3 defects and is not an independent result.
 - `research-incubator/active/spb/SPB_V3_SHA256.txt` — exact author-side v3 and
   terminal-predecessor integrity manifest consumed by the immutable pin.
+- `research-incubator/active/pts0/README.md` — canonical PTS-0 status,
+  lineage, ceiling, and stop boundary.
+- `research-incubator/active/pts0/v17_pts0_physical_temporal_sufficiency_design.md`
+  — bounded two-transmon memory-descent and natural fixed-boundary design,
+  complete finite outcome law, total classifier, controls, and sample plan.
+- `research-incubator/active/pts0/v17_pts0_author_semantic_power_audit.md`
+  — author reconstruction of the semantics, nonvacuity, power, and authority
+  limits; not an independent review or scientific result.
+- `research-incubator/active/pts0/check_pts0_semantics.rs` — dependency-free
+  executable reference classifier and finite hostile-case audit.
+- `research-incubator/active/pts0/PTS0_SHA256.txt` — author-side byte-integrity
+  manifest; not an immutable scientific pin.
 - `note-spb-v3-sufficient-physical-boundary-contract-review-pin.md` — immutable
   final v3 contract-review pin.
 - `review-spb-v3-contract-mathematics-statistics.md` — frozen v3 Seat M report;
